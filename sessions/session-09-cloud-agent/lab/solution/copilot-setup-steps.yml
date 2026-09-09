@@ -1,0 +1,14 @@
+# .github/copilot-setup-steps.yml
+# Configures the Copilot cloud agent's development environment.
+# The agent runs these steps before working on any assigned issue.
+
+name: "Copilot Setup Steps"
+
+steps:
+  - name: "Install Node.js dependencies"
+    run: |
+      npm ci
+
+  - name: "Verify project builds and tests pass"
+    run: |
+      npm test

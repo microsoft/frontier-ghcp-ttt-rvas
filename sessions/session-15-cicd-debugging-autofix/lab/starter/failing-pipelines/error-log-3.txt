@@ -1,0 +1,67 @@
+Matrix Build Results:
+=====================
+
+✅ ubuntu-latest  + Node 20  — PASSED (2m 14s)
+✅ ubuntu-latest  + Node 18  — PASSED (2m 08s)
+❌ ubuntu-latest  + Node 16  — FAILED (0m 42s)
+✅ macos-latest   + Node 20  — PASSED (3m 01s)
+✅ macos-latest   + Node 18  — PASSED (2m 55s)
+❌ macos-latest   + Node 16  — FAILED (0m 38s)
+✅ windows-latest + Node 20  — PASSED (3m 22s) [see warning below]
+✅ windows-latest + Node 18  — PASSED (3m 18s) [see warning below]
+❌ windows-latest + Node 16  — FAILED (0m 44s)
+
+---
+
+FAILURE: ubuntu-latest + Node 16
+=================================
+
+Run npm ci
+npm warn engine copilot-webapp@1.0.0: wanted: {"node":">=18.0.0"}
+
+Run npm test
+FAIL tests/app.test.js
+
+  ● Items API > GET /api/items returns all items
+
+    TypeError: Array.prototype.structuredClone is not a function
+
+      at Object.<anonymous> (src/routes.js:14:25)
+
+  ● Items API > POST /api/items creates a new item
+
+    TypeError: Object.hasOwn is not a function
+
+      at validateInput (src/routes.js:38:12)
+
+Tests:       4 failed, 2 passed, 6 total
+Error: Process completed with exit code 1.
+
+---
+
+FAILURE: windows-latest + Node 16
+===================================
+
+(Same errors as ubuntu + Node 16, plus additional path assertion error)
+
+---
+
+WARNING: windows-latest + Node 20 / Node 18
+=============================================
+
+Run npm test
+
+  console.warn
+    Warning: Test "GET /api/items/:id returns one item" used a 
+    platform-specific path assertion:
+      Expected: "uploads/images/photo.jpg"
+      Received: "uploads\\images\\photo.jpg"
+
+    This warning is treated as an error when CI=true is not set.
+    Set CI=true to convert warnings to non-fatal.
+
+Tests:       6 passed, 6 total (with 1 warning)
+
+Note: Windows tests passed but only because CI=true was not set in the 
+environment. If CI=true were set, the path assertion warning would 
+become a fatal error.

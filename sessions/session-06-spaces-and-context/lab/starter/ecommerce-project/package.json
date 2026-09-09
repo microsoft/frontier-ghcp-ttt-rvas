@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "E-commerce product API for Spaces lab",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

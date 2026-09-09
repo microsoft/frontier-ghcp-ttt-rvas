@@ -1,0 +1,17 @@
+{
+  "name": "skills-lab-project",
+  "version": "1.0.0",
+  "description": "Sample API project for the Agent Skills lab",
+  "main": "src/api/routes.js",
+  "scripts": {
+    "start": "node src/api/routes.js",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}

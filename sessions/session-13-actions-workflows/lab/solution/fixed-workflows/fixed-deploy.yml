@@ -1,0 +1,52 @@
+# FIXED VERSION — all 4 issues resolved
+
+name: Deploy to Production
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    # FIX 2: Changed from ubuntu-18.04 (deprecated) to ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+      # FIX 3: Added missing actions/checkout step
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # FIX 4: Fixed typo — 'refs/head/main' → 'refs/heads/main' (plural)
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+
+      - name: Deploy to server
+        run: |
+          echo "Deploying to production..."
+          curl -X POST https://deploy.example.com/api/deploy \
+            -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" \
+            -d '{"version": "${{ github.sha }}"}'
+        # FIX 1: Changed DEPLOY_KEY → DEPLOY_TOKEN (matching actual secret name)
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -f https://api.example.com/health || exit 1

@@ -1,0 +1,42 @@
+{
+  "scenario": "Fictional bounded trial",
+  "purpose": "Practice documenting evidence for a customer-owned governance decision.",
+  "scope": {
+    "repository": "non-sensitive training sandbox",
+    "task": "A bounded, human-reviewed change",
+    "data_classification": "Customer-defined"
+  },
+  "measurement": {
+    "source": "Customer-defined current measurement source",
+    "observation_window": "Customer-defined bounded period",
+    "stop_guard": {
+      "threshold": "Customer-defined",
+      "escalation": "Customer-designated owner",
+      "fallback": "Manual repository-sandbox workflow"
+    }
+  },
+  "observations": [
+    {
+      "area": "Quality",
+      "evidence": "Acceptance criteria and focused checks",
+      "decision_owner": "Human reviewer"
+    },
+    {
+      "area": "Safety",
+      "evidence": "Approved data and tool boundaries",
+      "decision_owner": "Customer-designated security or data owner"
+    },
+    {
+      "area": "Measurement",
+      "evidence": "Current customer-defined meter",
+      "decision_owner": "Customer-designated finance or platform owner"
+    }
+  ],
+  "change_review": [
+    {
+      "change": "Proposed workflow adjustment",
+      "required_evidence": "Current official documentation and customer policy",
+      "decision": "Pending customer owner review"
+    }
+  ]
+}

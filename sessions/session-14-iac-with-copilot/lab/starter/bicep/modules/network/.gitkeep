@@ -1,0 +1,2 @@
+// This directory will contain the network module (network.bicep).
+// Copilot should generate the VNet, subnets, and NSGs here.

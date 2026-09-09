@@ -1,0 +1,35 @@
+# TODO: Complete this CodeQL workflow for the vulnerable-app project
+
+name: "CodeQL Analysis"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# TODO: Add permissions block for security-events
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    # TODO: Add timeout
+    # TODO: Add permissions if not set at workflow level
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ ] # TODO: Set the correct language
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # TODO: Initialize CodeQL
+      # Hint: uses github/codeql-action/init@v3
+
+      # TODO: Build the project (or use autobuild)
+
+      # TODO: Run CodeQL analysis
+      # Hint: uses github/codeql-action/analyze@v3

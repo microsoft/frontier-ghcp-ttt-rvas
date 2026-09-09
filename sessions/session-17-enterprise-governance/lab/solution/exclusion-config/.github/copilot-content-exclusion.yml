@@ -1,0 +1,32 @@
+# Content Exclusion Configuration — Solution
+# This is the completed exclusion configuration for the lab exercise.
+
+# Files containing secrets or credentials (by name pattern)
+- "**/*secret*"
+- "**/*credential*"
+- "**/*secrets*"
+
+# Configuration files with sensitive data
+- "**/config/database-*"
+- "**/config/*credentials*"
+
+# Internal/proprietary directories
+- "**/internal/**"
+- "**/proprietary/**"
+
+# Common sensitive file types
+- "**/*.env"
+- "**/.env.*"
+- "**/*.pem"
+- "**/*.key"
+- "**/*.p12"
+- "**/*.pfx"
+- "**/*.jks"
+
+# Key and token files
+- "**/*-key.json"
+- "**/service-account*.json"
+
+# Terraform state (may contain secrets)
+- "**/*.tfstate"
+- "**/*.tfstate.backup"

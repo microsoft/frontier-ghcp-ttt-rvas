@@ -1,0 +1,13 @@
+{
+  "name": "todo-driven",
+  "version": "1.0.0",
+  "description": "TODO-driven development — reference solution",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.1.5"
+  }
+}

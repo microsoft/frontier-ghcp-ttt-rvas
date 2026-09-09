@@ -1,0 +1,18 @@
+# Content Exclusion Configuration
+# Docs: https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/setting-a-content-exclusion-policy
+#
+# TODO: Configure exclusion patterns to prevent Copilot from accessing
+# sensitive files in this project.
+#
+# Hint: You need to exclude:
+# 1. Files containing secrets or credentials
+# 2. Configuration files with database connection strings
+# 3. Any file with "internal" or "secret" in the name
+# 4. Common sensitive file types (.env, .pem, .key)
+#
+# Syntax: Each entry is a glob pattern
+# - "**/*secret*"  matches any file with "secret" in the name
+# - "**/config/**"  matches everything in config directories
+# - "**/*.env"  matches all .env files
+
+# Add your exclusion patterns below:

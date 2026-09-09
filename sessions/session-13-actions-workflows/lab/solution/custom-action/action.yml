@@ -1,0 +1,22 @@
+name: 'Code Quality Scanner'
+description: 'Scans JavaScript files and computes a code quality score based on lines of code, TODO count, and complexity.'
+
+inputs:
+  threshold:
+    description: 'Minimum quality score to pass (0-100). Action fails if score is below this value.'
+    required: false
+    default: '70'
+  report-format:
+    description: 'Output format for the quality report — "json" or "markdown".'
+    required: false
+    default: 'markdown'
+
+outputs:
+  score:
+    description: 'The computed code quality score (0-100).'
+  passed:
+    description: 'Whether the score met or exceeded the threshold (true/false).'
+
+runs:
+  using: 'node20'
+  main: 'src/main.js'

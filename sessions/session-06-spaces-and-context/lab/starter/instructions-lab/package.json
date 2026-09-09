@@ -1,0 +1,12 @@
+{
+  "name": "instructions-lab",
+  "version": "1.0.0",
+  "description": "Custom instructions exercise",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

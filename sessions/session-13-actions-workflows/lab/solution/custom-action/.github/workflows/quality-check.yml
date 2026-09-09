@@ -1,0 +1,12 @@
+name: Quality check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install --prefix lab/solution/custom-action
+      - uses: ./lab/solution/custom-action

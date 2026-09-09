@@ -1,0 +1,24 @@
+{
+  "name": "ghcp-ttt",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "npm install -g @marp-team/marp-cli markdownlint-cli2 && cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit && echo '✅ Marp CLI, markdownlint, and pre-commit hook ready'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "marp-team.marp-vscode",
+        "DavidAnson.vscode-markdownlint",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "markdown.marp.enableHtml": true,
+        "markdownlint.config": {
+          "extends": ".markdownlint.json"
+        }
+      }
+    }
+  }
+}

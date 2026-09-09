@@ -1,0 +1,25 @@
+# TODO: Complete this custom Action metadata
+# This action scans JavaScript files and computes a code quality score.
+
+name: # TODO: Give this action a name
+description: # TODO: Describe what this action does
+
+inputs:
+  threshold:
+    description: # TODO: Describe the threshold input
+    required: false
+    default: # TODO: Set a sensible default (0-100)
+  report-format:
+    description: # TODO: Describe the report format options
+    required: false
+    default: # TODO: 'json' or 'markdown'
+
+outputs:
+  score:
+    description: # TODO: Describe the score output
+  passed:
+    description: # TODO: Describe the passed output
+
+runs:
+  using: 'node20'
+  main: 'src/main.js'

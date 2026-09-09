@@ -1,0 +1,55 @@
+# .specify.yml — Exercise 1 Skeleton
+
+# Specification Metadata
+title: "User API"
+description: "REST API for user record management"
+version: "0.1.0"
+
+# Integration with Copilot
+integration:
+  provider: "copilot"
+  enabled: true
+  options:
+    skills: true
+    model: "claude-sonnet-4.5"
+    fallback_model: "gpt-4-turbo"
+
+# Phase Status Tracking
+phases:
+  constitution:
+    status: "pending"  # pending, in_progress, completed
+    file: ".specify/constitution.md"
+  specify:
+    status: "pending"
+    file: ".specify/specification.yml"
+  clarify:
+    status: "pending"
+    file: ".specify/clarifications.md"
+  plan:
+    status: "pending"
+    file: ".specify/plan.md"
+  checklist:
+    status: "pending"
+    file: ".specify/checklist.md"
+  tasks:
+    status: "pending"
+    file: ".specify/tasks.yml"
+  analyze:
+    status: "pending"
+    file: ".specify/analysis.md"
+  implement:
+    status: "pending"
+    file: "src/"
+  converge:
+    status: "pending"
+    file: ".specify/convergence.md"
+
+# Content Exclusion (Enterprise Governance)
+exclusions:
+  patterns:
+    - "**/.env*"
+    - "**/secrets/**"
+    - "**/*.key"
+    - "**/*.pem"
+
+# Add skill names after `specify init` creates `.github/skills/` in the target project.

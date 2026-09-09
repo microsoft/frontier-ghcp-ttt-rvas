@@ -1,0 +1,158 @@
+name: Build & Deploy Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Job 1: Validate lab starter and solution code
+  # ─────────────────────────────────────────────────────────────────────────────
+  validate-labs:
+    name: Validate Lab Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: hashicorp/setup-terraform@v4.0.1
+        with:
+          terraform_version: '1.15.9'
+
+      - name: Install Bicep CLI
+        run: az bicep install --version v0.46.1
+
+      - name: Validate lab files
+        run: bash scripts/validate-labs.sh
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Job 2: Render Marp presentations → output/html/*.html + output/pdf/*.pdf
+  # ─────────────────────────────────────────────────────────────────────────────
+  render-presentations:
+    name: Render Presentations (Marp)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Install Chromium for Marp PDF export
+        run: npx puppeteer browsers install chrome
+
+      - name: Build all presentations
+        run: bash scripts/build-slides.sh
+
+      - name: Upload presentation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentations
+          path: |
+            output/html/
+            output/pdf/
+          retention-days: 7
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Job 3: Render trainer guides → output/trainer/*.html
+  # ─────────────────────────────────────────────────────────────────────────────
+  render-trainer-guides:
+    name: Render Trainer Guides
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install markdown pymdown-extensions
+
+      - name: Render trainer guides
+        run: python scripts/render-trainer-guides.py
+
+      - name: Upload trainer guide artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: trainer-guides
+          path: output/trainer/
+          retention-days: 7
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Job 4: Build MkDocs site (runs on PRs and pushes; no environment gate)
+  # ─────────────────────────────────────────────────────────────────────────────
+  build:
+    name: Build MkDocs Site
+    runs-on: ubuntu-latest
+    needs: [validate-labs, render-presentations, render-trainer-guides]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install MkDocs dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download presentation artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: presentations
+          path: output/
+
+      - name: Download trainer guide artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: trainer-guides
+          path: output/trainer/
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Job 5: Deploy MkDocs site to GitHub Pages (main pushes only)
+  # ─────────────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [build]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

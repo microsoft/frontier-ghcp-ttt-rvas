@@ -1,0 +1,10 @@
+# Ignore Marp slide decks (frontmatter directives trigger false positives)
+**/slides.md
+# Ignore generated output
+output/
+# Ignore squad internal files
+.squad/
+# Ignore copilot skills (Squad infrastructure, not curriculum content)
+.copilot/
+# Ignore GitHub config
+.github/

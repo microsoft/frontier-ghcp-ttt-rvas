@@ -1,0 +1,5 @@
+mkdocs-material>=9.5
+mkdocs-same-dir>=0.1
+# Trainer guide renderer
+markdown>=3.6
+pymdown-extensions>=10.7

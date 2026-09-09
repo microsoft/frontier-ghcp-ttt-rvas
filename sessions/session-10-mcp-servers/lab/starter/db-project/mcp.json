@@ -1,0 +1,14 @@
+{
+  "// NOTE": "This mcp.json configures the SQLite MCP server for the db-project.",
+  "// USAGE": "Place this alongside your VS Code workspace mcp.json or use it as reference.",
+  "servers": {
+    "sqlite": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-sqlite",
+        "--db-path",
+        "./data/app.db"
+      ]
+    }
+  }
+}

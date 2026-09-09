@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block header %}
+  {% include "partials/rvap-header.html" %}
+{% endblock %}
+
+{% block tabs %}{% endblock %}
+
+{% block hero %}
+{% if page and (page.url == "." or page.url == "" or page.file.src_path == "README.md") %}
+<section class="ghcp-hero md-typeset" aria-labelledby="curriculum-title">
+ <div class="ghcp-hero__inner">
+ <div>
+  <h1 class="ghcp-hero__title" id="curriculum-title">
+    Master the art of<br>
+    <em>teaching AI-assisted development</em>
+  </h1>
+  <p class="ghcp-hero__sub">
+    A structured, repeatable curriculum for trainers. 19 sessions across 5 modules —
+    from Copilot fundamentals to enterprise-scale agentic workflows.
+  </p>
+  <div class="ghcp-hero__actions">
+    <a class="rvap-action rvap-action--primary" href="{{ session_catalog.sessions[0].url }}">Start with session 01</a>
+    <a class="rvap-action" href="#learning-tracks">Choose a learning track</a>
+  </div>
+ </div>
+ <nav class="ghcp-curriculum" aria-labelledby="curriculum-map">
+  <h2 id="curriculum-map">Curriculum Map</h2>
+  <div class="ghcp-timeline">
+    <a href="#module-1" class="ghcp-module-node">
+      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="1">M1</div>
+      <div class="ghcp-module-node__label">Copilot Fundamentals</div>
+    </a>
+    <a href="#module-2" class="ghcp-module-node">
+      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="2">M2</div>
+      <div class="ghcp-module-node__label">Copilot in Practice</div>
+    </a>
+    <a href="#module-3" class="ghcp-module-node">
+      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="3">M3</div>
+      <div class="ghcp-module-node__label">Agentic Workflows</div>
+    </a>
+    <a href="#module-4" class="ghcp-module-node">
+      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="4">M4</div>
+      <div class="ghcp-module-node__label">DevOps &amp; Infrastructure</div>
+    </a>
+    <a href="#module-5" class="ghcp-module-node">
+      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="5">M5</div>
+      <div class="ghcp-module-node__label">Advanced Topics &amp; Capstone</div>
+    </a>
+  </div>
+ </nav>
+ </div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if page and (page.url == "." or page.url == "" or page.file.src_path == "README.md") %}
+<div class="rvap-home">
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     SESSION CARDS
+═══════════════════════════════════════════════════════════════════════════ -->
+<div>
+
+  {% for module in session_catalog.modules %}
+  <h2 class="ghcp-section-title" id="module-{{ module.id }}" tabindex="-1">Module {{ module.id }} — {{ module.title | e }}</h2>
+  <div class="ghcp-sessions">
+
+    {% for session in session_catalog.sessions if session.module == module.id %}
+    <a href="{{ session.url | e }}" class="ghcp-session-card" data-number="{{ session.id }}">
+      <div class="ghcp-session-card__badges">
+        {% include "partials/session-badges.html" %}
+        <span class="ghcp-badge ghcp-badge--duration">{% if session.duration_minutes % 60 == 0 %}{{ session.duration_minutes // 60 }}h{% else %}{{ session.duration_minutes }}m{% endif %}</span>
+      </div>
+      <div class="ghcp-session-card__title">{{ session.title | e }}</div>
+      <div class="ghcp-session-card__desc">{{ session.description | e }}</div>
+      <span class="ghcp-session-card__arrow">Open session {{ session.id }}</span>
+    </a>
+    {% endfor %}
+
+  </div>
+  {% endfor %}
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       LEARNING TRACKS
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <h2 class="ghcp-section-title" id="learning-tracks">Learning Tracks</h2>
+  <div class="ghcp-tracks">
+
+    <a href="tracks/beginner-essentials/" class="ghcp-track-card">
+      <div class="ghcp-track-card__title">Copilot Essentials</div>
+      <div class="ghcp-track-card__desc">Sessions 01–03. Perfect for developers new to AI-assisted coding.</div>
+    </a>
+
+    <a href="tracks/developer-productivity/" class="ghcp-track-card">
+      <div class="ghcp-track-card__title">Developer Productivity</div>
+      <div class="ghcp-track-card__desc">Sessions 01–07. Core capabilities for high-velocity development teams.</div>
+    </a>
+
+    <a href="tracks/agentic-development/" class="ghcp-track-card">
+      <div class="ghcp-track-card__title">Agentic Development</div>
+      <div class="ghcp-track-card__desc">Sessions 05, 09–12. Deep dive into autonomous AI agents and custom tooling.</div>
+    </a>
+
+    <a href="tracks/devops-automation/" class="ghcp-track-card">
+      <div class="ghcp-track-card__title">DevOps &amp; Automation</div>
+      <div class="ghcp-track-card__desc">Sessions 07, 13–15. CI/CD, IaC, and automated security remediation.</div>
+    </a>
+
+    <a href="tracks/enterprise-rollout/" class="ghcp-track-card">
+      <div class="ghcp-track-card__title">Enterprise Rollout</div>
+      <div class="ghcp-track-card__desc">Sessions 01–03, 06, 17. Governance, policies, and adoption at scale.</div>
+    </a>
+
+    <a href="tracks/full-mastery/" class="ghcp-track-card">
+      <div class="ghcp-track-card__title">Full Mastery</div>
+      <div class="ghcp-track-card__desc">All sessions. The complete journey from zero to enterprise-ready Copilot delivery.</div>
+    </a>
+
+  </div>
+
+</div>
+</div>
+
+{% else %}
+  {{ super() }}
+{% endif %}
+{% endblock %}

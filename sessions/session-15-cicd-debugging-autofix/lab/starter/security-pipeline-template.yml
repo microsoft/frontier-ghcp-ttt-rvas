@@ -1,0 +1,46 @@
+# Security CI/CD Pipeline Template
+# TODO: Add security scanning steps to this pipeline
+
+name: Secure CI/CD
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  # TODO: Add a CodeQL analysis job
+  # Requirements:
+  # - Scan JavaScript/TypeScript
+  # - Upload SARIF results
+  # - Don't block the build job
+
+  # TODO: Add a dependency review job
+  # Requirements:
+  # - Only run on pull_request events
+  # - Block PRs that add critical vulnerabilities
+  # - Allow informational/low severity
+
+  # TODO: Add a secret scanning verification step
+  # Requirements:
+  # - Check for accidentally committed secrets
+  # - Run as part of the CI job or as a separate job

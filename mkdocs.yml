@@ -1,0 +1,194 @@
+site_name: GitHub Copilot Train-the-Trainer
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 19 sessions across 5 modules.
+site_author: GitHub Copilot TTT
+docs_dir: .
+site_dir: site
+
+exclude_docs: |
+  .git/
+  .github/
+  .squad/
+  .devcontainer/
+  .copilot/
+  .agents/
+  .claude/
+  .codex/
+  .impeccable/
+  .vscode/
+  node_modules/
+  site/
+  graphify-out/
+  hooks/
+  tests/
+  scripts/
+  themes/
+  data/
+  track-template/
+  PRODUCT.md
+  DESIGN.md
+  AGENTS.md
+  skills-lock.json
+  requirements.txt
+  overrides/main.html
+  overrides/partials/
+  overrides/set-builder.html
+  overrides/session-set.html
+  **/__pycache__/
+  .gitignore
+  .gitattributes
+  .markdownlint.json
+  .markdownlintignore
+  .squad-workstream
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logos/rvap-full.png
+  favicon: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  font: false
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.pruning
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - overrides/rvap-brand.css
+  - overrides/extra.css
+  - overrides/set-builder.css
+
+extra_javascript:
+  - overrides/session.js
+  - overrides/sets.js
+
+plugins:
+  - same-dir
+  - search
+
+hooks:
+  - hooks/presentation_embed.py
+
+validation:
+  links:
+    unrecognized_links: ignore
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: README.md
+  - Build your set: build-set.md
+  - Curriculum: curriculum-plan.md
+  - Tracks:
+    - Overview: tracks/README.md
+    - Copilot Essentials: tracks/beginner-essentials.md
+    - Developer Productivity: tracks/developer-productivity.md
+    - Agentic Development: tracks/agentic-development.md
+    - DevOps & Automation: tracks/devops-automation.md
+    - Enterprise Rollout: tracks/enterprise-rollout.md
+    - Full Mastery: tracks/full-mastery.md
+  - Sessions:
+    - Module 1 — Copilot Fundamentals:
+      - "01 — Intro to Copilot":
+        - Overview: sessions/session-01-intro-to-copilot/README.md
+        - Lab: sessions/session-01-intro-to-copilot/lab/README.md
+        - Trainer Guide: sessions/session-01-intro-to-copilot/trainer-content/README.md
+      - "02 — Chat & Inline Suggestions":
+        - Overview: sessions/session-02-chat-and-inline/README.md
+        - Lab: sessions/session-02-chat-and-inline/lab/README.md
+        - Trainer Guide: sessions/session-02-chat-and-inline/trainer-content/README.md
+      - "03 — Prompt Engineering":
+        - Overview: sessions/session-03-prompt-engineering/README.md
+        - Lab: sessions/session-03-prompt-engineering/lab/README.md
+        - Trainer Guide: sessions/session-03-prompt-engineering/trainer-content/README.md
+    - Module 2 — Copilot in Practice:
+      - "04 — Copilot CLI":
+        - Overview: sessions/session-04-copilot-cli/README.md
+        - Lab: sessions/session-04-copilot-cli/lab/README.md
+        - Trainer Guide: sessions/session-04-copilot-cli/trainer-content/README.md
+      - "05 — Agent Mode in the IDE":
+        - Overview: sessions/session-05-agent-mode-ide/README.md
+        - Lab: sessions/session-05-agent-mode-ide/lab/README.md
+        - Trainer Guide: sessions/session-05-agent-mode-ide/trainer-content/README.md
+      - "06 — Spaces & Context":
+        - Overview: sessions/session-06-spaces-and-context/README.md
+        - Lab: sessions/session-06-spaces-and-context/lab/README.md
+        - Trainer Guide: sessions/session-06-spaces-and-context/trainer-content/README.md
+      - "07 — Code Review & PRs":
+        - Overview: sessions/session-07-code-review-prs/README.md
+        - Lab: sessions/session-07-code-review-prs/lab/README.md
+        - Trainer Guide: sessions/session-07-code-review-prs/trainer-content/README.md
+    - Module 3 — Agentic Workflows:
+      - "08 — Copilot App & Canvases":
+        - Overview: sessions/session-08-copilot-app-canvases/README.md
+        - Lab: sessions/session-08-copilot-app-canvases/lab/README.md
+        - Trainer Guide: sessions/session-08-copilot-app-canvases/trainer-content/README.md
+      - "09 — Cloud Agent":
+        - Overview: sessions/session-09-cloud-agent/README.md
+        - Lab: sessions/session-09-cloud-agent/lab/README.md
+        - Trainer Guide: sessions/session-09-cloud-agent/trainer-content/README.md
+      - "10 — MCP Servers":
+        - Overview: sessions/session-10-mcp-servers/README.md
+        - Lab: sessions/session-10-mcp-servers/lab/README.md
+        - Trainer Guide: sessions/session-10-mcp-servers/trainer-content/README.md
+      - "11 — Custom Agents":
+        - Overview: sessions/session-11-custom-agents/README.md
+        - Lab: sessions/session-11-custom-agents/lab/README.md
+        - Trainer Guide: sessions/session-11-custom-agents/trainer-content/README.md
+      - "12 — Agent Skills & Ecosystem":
+        - Overview: sessions/session-12-agent-skills-ecosystem/README.md
+        - Lab: sessions/session-12-agent-skills-ecosystem/lab/README.md
+        - Trainer Guide: sessions/session-12-agent-skills-ecosystem/trainer-content/README.md
+    - Module 4 — DevOps & Infrastructure:
+      - "13 — Actions & Workflows":
+        - Overview: sessions/session-13-actions-workflows/README.md
+        - Lab: sessions/session-13-actions-workflows/lab/README.md
+        - Trainer Guide: sessions/session-13-actions-workflows/trainer-content/README.md
+      - "14 — IaC with Copilot":
+        - Overview: sessions/session-14-iac-with-copilot/README.md
+        - Lab: sessions/session-14-iac-with-copilot/lab/README.md
+        - Trainer Guide: sessions/session-14-iac-with-copilot/trainer-content/README.md
+      - "15 — CI/CD & Debugging":
+        - Overview: sessions/session-15-cicd-debugging-autofix/README.md
+        - Lab: sessions/session-15-cicd-debugging-autofix/lab/README.md
+        - Trainer Guide: sessions/session-15-cicd-debugging-autofix/trainer-content/README.md
+    - Module 5 — Advanced Topics & Capstone:
+      - "16 — Multi-Agent Team Orchestration":
+        - Overview: sessions/session-16-squad-orchestration/README.md
+        - Lab: sessions/session-16-squad-orchestration/lab/README.md
+        - Trainer Guide: sessions/session-16-squad-orchestration/trainer-content/README.md
+      - "17 — Enterprise Governance":
+        - Overview: sessions/session-17-enterprise-governance/README.md
+        - Lab: sessions/session-17-enterprise-governance/lab/README.md
+        - Trainer Guide: sessions/session-17-enterprise-governance/trainer-content/README.md
+      - "18 — Spec Kit":
+        - Overview: sessions/session-18-spec-kit/README.md
+        - Lab: sessions/session-18-spec-kit/lab/README.md
+        - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
+      - "19 — Capstone":
+        - Overview: sessions/session-19-capstone/README.md
+        - Lab: sessions/session-19-capstone/lab/README.md
+        - Trainer Guide: sessions/session-19-capstone/trainer-content/README.md

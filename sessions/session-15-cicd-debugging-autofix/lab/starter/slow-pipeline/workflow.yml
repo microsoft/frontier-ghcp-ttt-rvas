@@ -1,0 +1,75 @@
+# Slow CI/CD pipeline — working but unoptimized (~12 minutes)
+# All jobs run serially, no caching, full checkout, single matrix
+
+name: CI/CD
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        # Full clone — fetches entire git history (~30s on large repos)
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          # No caching configured
+
+      - run: npm ci
+        # Installs all dependencies from scratch (~60s)
+
+      - run: npm run lint
+        # ~30s
+
+  test:
+    needs: lint  # Waits for lint to finish — could run in parallel!
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+        # Reinstalls everything again (~60s)
+
+      - run: npm test
+        # ~45s
+
+  build:
+    needs: test  # Waits for test — which already waited for lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+        # Third time installing deps (~60s)
+
+      - run: npm run build
+        # ~90s
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # Deploys on EVERY push — even PRs and doc changes!
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-output
+
+      - run: echo "Deploying to production..."

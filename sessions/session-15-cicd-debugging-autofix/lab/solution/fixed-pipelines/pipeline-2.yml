@@ -1,0 +1,40 @@
+# FIXED: Proper cache key + legacy-peer-deps for compatibility
+# Root cause 1: Static cache key never invalidated when package-lock.json changed
+# Root cause 2: eslint-plugin-import@2.29.1 has a peer dep conflict with eslint@9
+
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'  # FIX 2: Use built-in cache with automatic key based on package-lock.json
+          # This replaces the manual actions/cache step with a static key.
+          # The built-in cache uses hashFiles('**/package-lock.json') automatically.
+
+      # FIX 1: Removed the manual cache step with static key.
+      # The static key 'node-modules-cache' never changed when dependencies
+      # were updated, causing stale node_modules to persist across runs.
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+        # FIX 1: Added --legacy-peer-deps to resolve the eslint-plugin-import
+        # peer dependency conflict with eslint@9. Alternatively, update
+        # eslint-plugin-import to a version that supports eslint@9.
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test

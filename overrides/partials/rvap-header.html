@@ -1,0 +1,38 @@
+<header class="md-header" data-md-component="header">
+  <div class="md-header__inner md-grid">
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Open navigation">
+      {% include ".icons/material/menu.svg" %}
+    </label>
+    <a href="{{ nav.homepage.url | url }}" class="md-header__button md-logo"
+       aria-label="RVAP - {{ config.site_name }} home" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">{{ config.site_name }}</span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">{% if page and page.meta.title %}{{ page.meta.title }}{% elif page %}{{ page.title }}{% else %}{{ config.site_name }}{% endif %}</span>
+        </div>
+      </div>
+    </div>
+    {% import "partials/tabs-item.html" as item with context %}
+    <nav class="md-tabs" aria-label="Primary">
+      <ul class="md-tabs__list">
+        {% for nav_item in nav.items %}
+          {{ item.render(nav_item) }}
+        {% endfor %}
+      </ul>
+    </nav>
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search" aria-label="Open search">
+          {% include ".icons/material/magnify.svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+  </div>
+</header>

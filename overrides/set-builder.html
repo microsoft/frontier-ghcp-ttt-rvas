@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="set-builder" data-set-builder data-set-url="{{ session_set_url }}">
+  <h1 id="build-your-set">Build your set</h1>
+  <p class="set-lead">Choose sessions for your group. Add a title and introduction, arrange the order, then share a page.</p>
+  <p data-set-loading>Loading the builder. If it does not appear, enable JavaScript and reload. You can also <a href="{{ nav.homepage.url | url }}">browse the curriculum</a>.</p>
+  <p class="set-message" role="alert" data-set-error hidden></p>
+  <div class="set-workspace" data-set-workspace hidden>
+    <section class="set-catalog" aria-labelledby="set-catalog-title">
+      <h2 id="set-catalog-title">Session catalog</h2>
+      <div class="set-filters">
+        <label class="set-field set-filter-search">Search sessions
+          <input type="search" data-set-search placeholder="Title or topic" autocomplete="off">
+        </label>
+        <label class="set-field">Module
+          <select data-set-module>
+            <option value="">All modules</option>
+            {% for module in session_catalog.modules %}
+            <option value="{{ module.id }}">M{{ module.id }} - {{ module.title }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="set-field">Level
+          <select data-set-level>
+            <option value="">All levels</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+        </label>
+      </div>
+      <div class="set-filter-actions">
+        <span data-set-results role="status"></span>
+        <button class="rvap-action" type="button" data-set-add-matching>Add matching sessions</button>
+        <button class="set-text-button" type="button" data-set-clear-filters>Clear filters</button>
+      </div>
+      <p data-set-no-results hidden>No sessions match. Try a different search or clear the filters.</p>
+      <div class="set-catalog-list">
+        {% for session in session_catalog.sessions %}
+        <div class="set-catalog-row" data-session-id="{{ session.id }}">
+          <label class="set-session-choice">
+            <input type="checkbox" value="{{ session.id }}" aria-label="Include session {{ session.id }}: {{ session.title }}">
+            <span class="set-session-copy">
+              <span class="set-session-meta ghcp-session-card__badges">
+                <span>Session {{ session.id }}</span>
+                {% include "partials/session-badges.html" %}
+              </span>
+              <strong>{{ session.title }}</strong>
+              <span class="set-session-description">{{ session.description }}</span>
+              <span class="set-session-meta">{{ session.duration_minutes // 60 }} hours</span>
+            </span>
+          </label>
+          <a class="set-preview-link" href="{{ session.url }}">Overview<span class="set-sr-only"> of session {{ session.id }}</span></a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <aside class="set-composer" aria-labelledby="set-composer-title">
+      <h2 id="set-composer-title">Your set</h2>
+      <label class="set-field">Set title
+        <input type="text" maxlength="80" data-set-name placeholder="My training set" autocomplete="off">
+      </label>
+      <label class="set-field">Introduction <span class="set-field-hint">(optional)</span>
+        <textarea rows="3" maxlength="400" data-set-intro placeholder="Who this is for and what to prepare"></textarea>
+      </label>
+      <p class="set-summary" data-set-summary aria-live="polite"></p>
+      <p data-set-selection-empty>Select sessions from the catalog to start your set.</p>
+      <ol class="set-selected" data-set-selected aria-label="Sessions in delivery order"></ol>
+      <div class="set-actions">
+        <button class="rvap-action rvap-action--primary" type="button" data-set-create disabled>Create page</button>
+        <button class="set-text-button" type="button" data-set-clear disabled>Clear selection</button>
+      </div>
+      <p class="set-help">The link contains your title, introduction, and session choices. Anyone with the link can read them. Do not include confidential information.</p>
+      <div class="set-share" data-set-share hidden>
+        <label class="set-field">Shareable link
+          <input type="text" readonly data-set-link>
+        </label>
+        <div class="set-actions">
+          <button class="rvap-action" type="button" data-set-copy>Copy link</button>
+          <a class="rvap-action rvap-action--primary" data-set-open>Open page</a>
+        </div>
+      </div>
+      <p class="set-status" role="status" aria-live="polite" data-set-status></p>
+    </aside>
+  </div>
+</div>
+<script type="application/json" id="set-catalog-data">{{ session_catalog | tojson }}</script>
+{% endblock %}

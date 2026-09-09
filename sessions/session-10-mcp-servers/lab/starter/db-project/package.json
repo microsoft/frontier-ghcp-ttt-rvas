@@ -1,0 +1,12 @@
+{
+  "name": "mcp-db-lab",
+  "version": "1.0.0",
+  "description": "Database MCP server lab — SQLite project with sample data",
+  "scripts": {
+    "setup": "node setup-db.js && node seed-data.js",
+    "query": "node query-db.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.6.0"
+  }
+}

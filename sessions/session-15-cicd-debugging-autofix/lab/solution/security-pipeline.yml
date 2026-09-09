@@ -1,0 +1,114 @@
+# Complete security-first CI/CD pipeline
+# Includes: build, CodeQL analysis, dependency review, secret scanning
+
+name: Secure CI/CD
+
+permissions:
+  contents: read
+  security-events: write  # Required for CodeQL SARIF upload
+  pull-requests: write    # Required for dependency review comments
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # --- Standard CI ---
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  # --- CodeQL Analysis (parallel with build) ---
+  codeql:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      security-events: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+          queries: security-and-quality  # Broader query suite
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: '/language:javascript-typescript'
+
+  # --- Dependency Review (PRs only) ---
+  dependency-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: critical  # Block PRs with critical vulnerabilities
+          comment-summary-in-pr: always
+          allow-licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC
+
+  # --- Secret Scanning Check ---
+  secret-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for secret scanning
+
+      - name: Check for secrets
+        run: |
+          echo "Checking for accidentally committed secrets..."
+          
+          # Check for common secret patterns in tracked files
+          PATTERNS=(
+            'AKIA[0-9A-Z]{16}'           # AWS Access Key
+            'password\s*=\s*["\x27][^"\x27]+'  # Hardcoded passwords
+            'sk-[a-zA-Z0-9]{48}'          # OpenAI API key
+            'ghp_[a-zA-Z0-9]{36}'         # GitHub personal access token
+          )
+          
+          FOUND=0
+          for pattern in "${PATTERNS[@]}"; do
+            if git grep -lE "$pattern" -- ':(exclude)*.yml' ':(exclude)*.md' 2>/dev/null; then
+              echo "⚠️ Potential secret pattern found: $pattern"
+              FOUND=1
+            fi
+          done
+          
+          if [ $FOUND -eq 1 ]; then
+            echo "❌ Potential secrets detected. Review the files listed above."
+            echo "If these are false positives, add them to .gitignore or use GitHub Secrets."
+            exit 1
+          else
+            echo "✅ No secrets detected."
+          fi

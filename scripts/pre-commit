@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Pre-commit hook: lint markdown files that are staged for commit.
+# Install: cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+set -euo pipefail
+
+# Collect staged .md files (excluding ignored paths)
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' | grep -v '^\.squad/' | grep -v '^\.copilot/' | grep -v '^\.github/' | grep -v 'slides\.md$' | grep -v '^output/' || true)
+
+if [[ -z "$STAGED_MD" ]]; then
+  exit 0
+fi
+
+echo "🔍 Linting staged markdown files..."
+
+# Check if markdownlint-cli2 is available
+if ! command -v npx &> /dev/null; then
+  echo "⚠️  npx not found — skipping markdown lint (install Node.js to enable)"
+  exit 0
+fi
+
+# Lint only the staged files
+FAILED=0
+for file in $STAGED_MD; do
+  if [[ -f "$file" ]]; then
+    if ! npx markdownlint-cli2 "$file" 2>/dev/null; then
+      FAILED=1
+    fi
+  fi
+done
+
+if [[ $FAILED -ne 0 ]]; then
+  echo ""
+  echo "❌ Markdown lint errors found. Fix them with:"
+  echo "   ./scripts/lint-markdown.sh --fix"
+  echo ""
+  echo "   Or bypass with: git commit --no-verify"
+  exit 1
+fi
+
+echo "✅ Markdown lint passed"

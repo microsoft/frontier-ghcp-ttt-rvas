@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-07T12:37:44.742Z",
+        "reason": "user confirmed RVAP branding, whose supplied font stack uses Inter as the body web fallback"
+      }
+    ]
+  }
+}

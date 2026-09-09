@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-07T16:37:24+02:00",
+  "title": "Design System: RVAP Technical Field Guide",
+  "extensions": {
+    "colorMeta": {
+      "rvap-blue": {
+        "role": "primary",
+        "displayName": "RVAP Blue",
+        "tonalRamp": ["oklch(15% 0.1836 256.06)", "oklch(26.43% 0.1836 256.06)", "oklch(37.86% 0.1836 256.06)", "oklch(49.29% 0.1836 256.06)", "oklch(60.71% 0.1836 256.06)", "oklch(72.14% 0.1836 256.06)", "oklch(83.57% 0.1836 256.06)", "oklch(95% 0.1836 256.06)"]
+      },
+      "ms-blue": {
+        "role": "primary",
+        "displayName": "Microsoft Blue / Actions and Navigation",
+        "tonalRamp": ["oklch(15% 0.1665 251.31)", "oklch(26.43% 0.1665 251.31)", "oklch(37.86% 0.1665 251.31)", "oklch(49.29% 0.1665 251.31)", "oklch(60.71% 0.1665 251.31)", "oklch(72.14% 0.1665 251.31)", "oklch(83.57% 0.1665 251.31)", "oklch(95% 0.1665 251.31)"]
+      },
+      "deep-navy": {
+        "role": "secondary",
+        "displayName": "Deep Navy",
+        "tonalRamp": ["oklch(15% 0.0982 259.57)", "oklch(26.43% 0.0982 259.57)", "oklch(37.86% 0.0982 259.57)", "oklch(49.29% 0.0982 259.57)", "oklch(60.71% 0.0982 259.57)", "oklch(72.14% 0.0982 259.57)", "oklch(83.57% 0.0982 259.57)", "oklch(95% 0.0982 259.57)"]
+      },
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal Reading Text",
+        "tonalRamp": ["oklch(15% 0.0087 268.44)", "oklch(26.43% 0.0087 268.44)", "oklch(37.86% 0.0087 268.44)", "oklch(49.29% 0.0087 268.44)", "oklch(60.71% 0.0087 268.44)", "oklch(72.14% 0.0087 268.44)", "oklch(83.57% 0.0087 268.44)", "oklch(95% 0.0087 268.44)"]
+      },
+      "light-neutral": {
+        "role": "neutral",
+        "displayName": "Light Neutral",
+        "tonalRamp": ["oklch(15% 0.0100 267.36)", "oklch(26.43% 0.0100 267.36)", "oklch(37.86% 0.0100 267.36)", "oklch(49.29% 0.0100 267.36)", "oklch(60.71% 0.0100 267.36)", "oklch(72.14% 0.0100 267.36)", "oklch(83.57% 0.0100 267.36)", "oklch(95% 0.0100 267.36)"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": ["oklch(15% 0.0000 0.00)", "oklch(26.43% 0.0000 0.00)", "oklch(37.86% 0.0000 0.00)", "oklch(49.29% 0.0000 0.00)", "oklch(60.71% 0.0000 0.00)", "oklch(72.14% 0.0000 0.00)", "oklch(83.57% 0.0000 0.00)", "oklch(95% 0.0000 0.00)"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Light Reading Surface",
+        "tonalRamp": ["oklch(15% 0.0086 264.52)", "oklch(26.43% 0.0086 264.52)", "oklch(37.86% 0.0086 264.52)", "oklch(49.29% 0.0086 264.52)", "oklch(60.71% 0.0086 264.52)", "oklch(72.14% 0.0086 264.52)", "oklch(83.57% 0.0086 264.52)", "oklch(95% 0.0086 264.52)"]
+      },
+      "surface-alt": {
+        "role": "neutral",
+        "displayName": "Alternate Surface",
+        "tonalRamp": ["oklch(15% 0.0029 264.54)", "oklch(26.43% 0.0029 264.54)", "oklch(37.86% 0.0029 264.54)", "oklch(49.29% 0.0029 264.54)", "oklch(60.71% 0.0029 264.54)", "oklch(72.14% 0.0029 264.54)", "oklch(83.57% 0.0029 264.54)", "oklch(95% 0.0029 264.54)"]
+      },
+      "navy-light": {
+        "role": "neutral",
+        "displayName": "Navy Tint / Hover and Hero Emphasis",
+        "tonalRamp": ["oklch(15% 0.0251 263.33)", "oklch(26.43% 0.0251 263.33)", "oklch(37.86% 0.0251 263.33)", "oklch(49.29% 0.0251 263.33)", "oklch(60.71% 0.0251 263.33)", "oklch(72.14% 0.0251 263.33)", "oklch(83.57% 0.0251 263.33)", "oklch(95% 0.0251 263.33)"]
+      },
+      "category-teal": {
+        "role": "tertiary",
+        "displayName": "Category Dark Teal / M2 and Beginner",
+        "tonalRamp": ["oklch(15% 0.0742 198.65)", "oklch(26.43% 0.0742 198.65)", "oklch(37.86% 0.0742 198.65)", "oklch(49.29% 0.0742 198.65)", "oklch(60.71% 0.0742 198.65)", "oklch(72.14% 0.0742 198.65)", "oklch(83.57% 0.0742 198.65)", "oklch(95% 0.0742 198.65)"]
+      },
+      "category-teal-light": {
+        "role": "tertiary",
+        "displayName": "Category Teal Tint / Beginner",
+        "tonalRamp": ["oklch(15% 0.0190 192.81)", "oklch(26.43% 0.0190 192.81)", "oklch(37.86% 0.0190 192.81)", "oklch(49.29% 0.0190 192.81)", "oklch(60.71% 0.0190 192.81)", "oklch(72.14% 0.0190 192.81)", "oklch(83.57% 0.0190 192.81)", "oklch(95% 0.0190 192.81)"]
+      },
+      "purple": {
+        "role": "tertiary",
+        "displayName": "Purple / M3 and Advanced",
+        "tonalRamp": ["oklch(15% 0.1298 288.76)", "oklch(26.43% 0.1298 288.76)", "oklch(37.86% 0.1298 288.76)", "oklch(49.29% 0.1298 288.76)", "oklch(60.71% 0.1298 288.76)", "oklch(72.14% 0.1298 288.76)", "oklch(83.57% 0.1298 288.76)", "oklch(95% 0.1298 288.76)"]
+      },
+      "purple-light": {
+        "role": "tertiary",
+        "displayName": "Purple Tint / Advanced",
+        "tonalRamp": ["oklch(15% 0.0192 299.06)", "oklch(26.43% 0.0192 299.06)", "oklch(37.86% 0.0192 299.06)", "oklch(49.29% 0.0192 299.06)", "oklch(60.71% 0.0192 299.06)", "oklch(72.14% 0.0192 299.06)", "oklch(83.57% 0.0192 299.06)", "oklch(95% 0.0192 299.06)"]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Material Default Foreground",
+        "tonalRamp": ["oklch(15% 0.0318 264.66)", "oklch(26.43% 0.0318 264.66)", "oklch(37.86% 0.0318 264.66)", "oklch(49.29% 0.0318 264.66)", "oklch(60.71% 0.0318 264.66)", "oklch(72.14% 0.0318 264.66)", "oklch(83.57% 0.0318 264.66)", "oklch(95% 0.0318 264.66)"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Muted Slide Captions",
+        "tonalRamp": ["oklch(15% 0.0234 264.36)", "oklch(26.43% 0.0234 264.36)", "oklch(37.86% 0.0234 264.36)", "oklch(49.29% 0.0234 264.36)", "oklch(60.71% 0.0234 264.36)", "oklch(72.14% 0.0234 264.36)", "oklch(83.57% 0.0234 264.36)", "oklch(95% 0.0234 264.36)"]
+      },
+      "hero-mid": {
+        "role": "secondary",
+        "displayName": "Hero and Slide Gradient Midpoint",
+        "tonalRamp": ["oklch(15% 0.1188 258.93)", "oklch(26.43% 0.1188 258.93)", "oklch(37.86% 0.1188 258.93)", "oklch(49.29% 0.1188 258.93)", "oklch(60.71% 0.1188 258.93)", "oklch(72.14% 0.1188 258.93)", "oklch(83.57% 0.1188 258.93)", "oklch(95% 0.1188 258.93)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Reading H1", "purpose": "Document title; mobile overrides it to 1.55rem. Home and slides have separate title sizes."},
+      "headline": {"displayName": "Reading H2", "purpose": "Main document sections."},
+      "title": {"displayName": "Reading H3", "purpose": "Subsections."},
+      "heading-small": {"displayName": "Reading H4", "purpose": "Small headings; line height remains inherited from Material."},
+      "body": {"displayName": "Reading Copy", "purpose": "Shared lab and trainer prose; the captured Material rem gives 17px text."},
+      "mono": {"displayName": "Code", "purpose": "Local monospace fallbacks; code blocks use 1.6 line height."},
+      "button": {"displayName": "Compact Action", "purpose": "Slide links and trainer controls; hero actions share the type with separate color variants."},
+      "label": {"displayName": "Compact Badge", "purpose": "Distinct difficulty tints and M1-M5 fills with visible labels; duration stays neutral. Category colors have no Build / Innovate / Scale mapping."},
+      "nav": {"displayName": "Sidebar Navigation", "purpose": "Native Material navigation and table of contents."},
+      "session-tab": {"displayName": "Session Material Link", "purpose": "Overview, Lab, and Trainer Guide; mobile labels use .72rem."},
+      "card-title": {"displayName": "Card Title", "purpose": "Session and track card headings."},
+      "table": {"displayName": "Reading Table", "purpose": "Shared lab and trainer tables with normal word wrapping."},
+      "set-input": {"displayName": "Set Field Value", "purpose": "Native builder inputs, selects, and textarea; also the readonly share link on either set surface."}
+    },
+    "shadows": [
+      {"name": "card", "value": "0 1px 3px rgba(3, 34, 84, 0.08), 0 4px 12px rgba(3, 34, 84, 0.06)", "purpose": "Supplied navy-tinted shadow on session and track cards."}
+    ],
+    "motion": [
+      {"name": "action-transition", "value": "background-color .15s, border-color .15s", "purpose": "Compact action hover feedback."},
+      {"name": "card-transition", "value": "border-color .15s, background-color .15s", "purpose": "Session and track card hover feedback."},
+      {"name": "curriculum-transition", "value": "background-color .15s, color .15s", "purpose": "Curriculum jump-link hover and current-location feedback."},
+      {"name": "reduced-motion-duration", "value": ".01ms", "purpose": "Reduced-motion override for CSS animation and transition duration; section scrolling becomes instant."}
+    ],
+    "breakpoints": [
+      {"name": "mobile", "value": "40em"},
+      {"name": "reading-narrow", "value": "59.9844em"},
+      {"name": "drawer-title", "value": "76.2344em"},
+      {"name": "home-wide", "value": "76.25em"}
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Microsoft Blue action for slide launchers and trainer timer controls; the hero uses its own white variant.",
+      "html": "<button class=\"ds-primary\" type=\"button\">View slides</button>",
+      "css": ".ds-primary { display:inline-flex; justify-content:center; align-items:center; gap:8px; min-height:44px; padding:9px 16px; border:1px solid var(--color-ms-blue,#0078D4); border-radius:var(--radius-md,6px); background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); font:600 15px/1.4 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); cursor:pointer; text-decoration:none; transition:background-color .15s,border-color .15s; } .ds-primary:hover { background:var(--color-surface,#F5F8FE); border-color:var(--color-deep-navy,#032254); color:var(--color-deep-navy,#032254); } .ds-primary:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(prefers-reduced-motion:reduce) { .ds-primary { transition-duration:.01ms; } }"
+    },
+    {
+      "name": "Outline Action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "White action with a neutral border and navy label, as used beside the slide launcher.",
+      "html": "<a class=\"ds-outline\" href=\"/output/pdf/session-01-intro-to-copilot.pdf\" target=\"_blank\" rel=\"noopener\">Download PDF</a>",
+      "css": ".ds-outline { display:inline-flex; justify-content:center; align-items:center; gap:8px; min-height:44px; padding:9px 16px; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); background:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); font:600 15px/1.4 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); cursor:pointer; text-decoration:none; transition:background-color .15s,border-color .15s; } .ds-outline:hover { background:var(--color-surface,#F5F8FE); border-color:var(--color-deep-navy,#032254); color:var(--color-deep-navy,#032254); } .ds-outline:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(prefers-reduced-motion:reduce) { .ds-outline { transition-duration:.01ms; } }"
+    },
+    {
+      "name": "Shared RVAP Header",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "One white row with the approved full RVAP asset, title, blue current-page menu, and native search. The relative image path resolves from the site root. Preview Menu/Search labels stand in for Material icons; drawer and search runtime are omitted.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header-inner\"><button class=\"ds-header-mobile\" type=\"button\" aria-label=\"Open navigation (preview only)\">Menu</button><a class=\"ds-header-logo\" href=\"/\" aria-label=\"RVAP - GitHub Copilot Train-the-Trainer home\"><img class=\"ds-header-image\" src=\"assets/logos/rvap-full.png\" alt=\"RVAP\" width=\"1058\" height=\"376\"></a><div class=\"ds-header-title\">GitHub Copilot Train-the-Trainer</div><nav class=\"ds-top-nav\" aria-label=\"Primary\"><a class=\"ds-top-link\" href=\"/\" aria-current=\"page\">Home</a><a class=\"ds-top-link\" href=\"/curriculum-plan/\">Curriculum</a><a class=\"ds-top-link\" href=\"/tracks/\">Tracks</a><a class=\"ds-top-link\" href=\"/sessions/session-01-intro-to-copilot/\">Sessions</a></nav><div class=\"ds-header-search\"><input class=\"ds-header-input\" type=\"search\" aria-label=\"Search (preview only)\" placeholder=\"Search\"></div><button class=\"ds-header-mobile\" type=\"button\" aria-label=\"Open search (preview only)\">Search</button></div></header>",
+      "css": ".ds-header { background:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); border-bottom:1px solid var(--color-light-neutral,#E3E6ED); box-shadow:none; font-family:var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-header-inner { display:flex; align-items:center; min-height:68px; max-width:1240px; margin-inline:auto; padding-inline:24px; gap:8px; } .ds-header-logo { display:block; flex-shrink:0; padding:8px; } .ds-header-image { display:block; height:36px; width:auto; } .ds-header-title { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-inline:8px; font:600 16px/1.5 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); } .ds-top-nav { display:flex; flex-shrink:0; gap:5px; margin-inline:8px; } .ds-top-link { display:inline-flex; align-items:center; min-height:44px; padding:9px 13px; border-radius:var(--radius-md,6px); font:400 14.4px/1.5 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); color:var(--color-charcoal,#47494E); text-decoration:none; } .ds-top-link:hover { color:var(--color-deep-navy,#032254); background:var(--color-navy-light,#DDE6F7); } .ds-top-link[aria-current=\"page\"] { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); font-weight:600; } .ds-header-search { width:234px; height:36px; background:var(--color-surface,#F5F8FE); border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); } .ds-header-input { width:100%; height:100%; padding:0; border:0; background:transparent; color:var(--color-charcoal,#47494E); font:400 16px/1.5 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); text-indent:12px; } .ds-header-input::placeholder { color:var(--color-charcoal,#47494E); } .ds-header-mobile { display:none; border:0; background:transparent; color:var(--color-deep-navy,#032254); font:600 14px/1.5 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); cursor:pointer; } .ds-header-mobile:hover { background:var(--color-navy-light,#DDE6F7); } .ds-header-logo:focus-visible,.ds-top-link:focus-visible,.ds-header-input:focus-visible,.ds-header-mobile:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(max-width:76.2344em) { .ds-top-nav { display:none; } .ds-header-mobile:first-child { display:block; } } @media(max-width:59.9844em) { .ds-header-search { display:none; } .ds-header-mobile { display:block; } } @media(max-width:40em) { .ds-header-inner { gap:2px; padding-inline:8px; } .ds-header-image { height:32px; } .ds-header-title { font-size:14px; margin-inline:4px; } }"
+    },
+    {
+      "name": "Home Hero and Curriculum Map",
+      "kind": "custom",
+      "refersTo": "hero",
+      "description": "Full-width brand gradient with responsive copy and five curriculum jump links. M3 demonstrates the selected location; the target-heading sample sits below the hero. Preview anchors are native; hash synchronization lives in overrides/session.js.",
+      "html": "<section class=\"ds-hero\" aria-labelledby=\"ds-hero-title\"><div class=\"ds-hero-inner\"><div><h1 class=\"ds-hero-title\" id=\"ds-hero-title\">Master the art of<br><em class=\"ds-hero-emphasis\">teaching AI-assisted development</em></h1><p class=\"ds-hero-copy\">A structured, repeatable curriculum for trainers. 19 sessions across 5 modules &mdash; from Copilot fundamentals to enterprise-scale agentic workflows.</p><div class=\"ds-hero-actions\"><a class=\"ds-hero-action ds-hero-primary\" href=\"/sessions/session-01-intro-to-copilot/\">Start with session 01</a><a class=\"ds-hero-action\" href=\"#learning-tracks\">Choose a learning track</a></div></div><nav class=\"ds-curriculum\" aria-labelledby=\"ds-curriculum-title\"><h2 class=\"ds-curriculum-title\" id=\"ds-curriculum-title\">Curriculum Map</h2><div class=\"ds-curriculum-links\"><a class=\"ds-module\" href=\"#module-1\"><span class=\"ds-module-number\" data-module=\"1\">M1</span><span class=\"ds-module-label\">Copilot Fundamentals</span></a><a class=\"ds-module\" href=\"#module-2\"><span class=\"ds-module-number\" data-module=\"2\">M2</span><span class=\"ds-module-label\">Copilot in Practice</span></a><a class=\"ds-module\" href=\"#module-3\" aria-current=\"location\"><span class=\"ds-module-number\" data-module=\"3\">M3</span><span class=\"ds-module-label\">Agentic Workflows</span></a><a class=\"ds-module\" href=\"#module-4\"><span class=\"ds-module-number\" data-module=\"4\">M4</span><span class=\"ds-module-label\">DevOps &amp; Infrastructure</span></a><a class=\"ds-module\" href=\"#module-5\"><span class=\"ds-module-number\" data-module=\"5\">M5</span><span class=\"ds-module-label\">Advanced Topics &amp; Capstone</span></a></div></nav></div></section><h2 class=\"ds-module-target ds-module-target-preview\" id=\"module-3\" tabindex=\"-1\">Module 3 &mdash; Agentic Workflows</h2>",
+      "css": ".ds-hero { background:var(--rvap-hero-gradient,linear-gradient(135deg,var(--color-deep-navy,#032254) 0%,var(--color-hero-mid,#0F3A7A) 60%,var(--color-rvap-blue,#1A77E3) 100%)); color:var(--color-white,#FFFFFF); font:400 17px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); overflow-wrap:anywhere; } .ds-hero-inner { display:grid; grid-template-columns:1.3fr 1fr; align-items:center; gap:60px; max-width:1240px; margin-inline:auto; padding:64px 48px; } .ds-hero-title { margin:0 0 20px; color:var(--color-white,#FFFFFF); font:600 48px/1.15 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); letter-spacing:-.015em; text-wrap:pretty; } .ds-hero-emphasis { font-style:normal; color:var(--color-navy-light,#DDE6F7); } .ds-hero-copy { max-width:50ch; font-size:19px; margin:16px 0; } .ds-hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; } .ds-hero-action { display:inline-flex; align-items:center; justify-content:center; min-height:44px; gap:8px; padding:9px 16px; border:1px solid var(--color-navy-light,#DDE6F7); border-radius:var(--radius-md,6px); background:transparent; color:var(--color-white,#FFFFFF); font:600 15px/1.4 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); text-decoration:none; transition:background-color .15s,border-color .15s; } .ds-hero-primary { background:var(--color-white,#FFFFFF); border-color:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); } .ds-hero-action:hover { background:var(--color-navy-light,#DDE6F7); border-color:var(--color-navy-light,#DDE6F7); color:var(--color-deep-navy,#032254); } .ds-curriculum-title { margin:0 0 16px; color:var(--color-white,#FFFFFF); font:600 21px/1.3 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); letter-spacing:-.015em; } .ds-curriculum-links { display:grid; gap:9px; } .ds-module { display:flex; align-items:center; gap:16px; min-height:56px; padding:11px 16px; border:1px solid rgba(255,255,255,.45); border-radius:var(--radius-md,6px); background:rgba(3,34,84,.3); color:var(--color-white,#FFFFFF); text-decoration:none; transition:background-color .15s,color .15s; } .ds-module:hover,.ds-module[aria-current=\"location\"] { background:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); } .ds-module-number { flex-shrink:0; white-space:nowrap; font-size:15px; font-weight:600; padding:2.4px 7px; border:1px solid var(--color-white,#FFFFFF); border-radius:var(--radius-sm,4px); background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-module-number[data-module=\"2\"] { background:var(--color-category-teal,#0E6467); } .ds-module-number[data-module=\"3\"] { background:var(--color-purple,#504092); } .ds-module-number[data-module=\"4\"] { background:var(--color-deep-navy,#032254); } .ds-module-number[data-module=\"5\"] { background:var(--color-charcoal,#47494E); } .ds-module-label { font-size:16px; line-height:1.4; } .ds-module[aria-current=\"location\"] .ds-module-label { text-decoration:underline; text-underline-offset:.18em; } .ds-hero-action:focus-visible,.ds-module:focus-visible { outline:2px solid var(--color-white,#FFFFFF); outline-offset:3px; } .ds-module-target { margin:48px 0 20px; color:var(--color-deep-navy,#032254); font:600 26px/1.3 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); letter-spacing:-.015em; } .ds-module-target:target,.ds-module-target-preview { text-decoration:underline; text-decoration-color:var(--color-rvap-blue,#1A77E3); text-decoration-thickness:3px; text-underline-offset:.25em; } .ds-module-target:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(max-width:59.9844em) { .ds-hero-inner { gap:40px; padding:48px 36px; } .ds-hero-title { font-size:40px; } } @media(max-width:40em) { .ds-hero-inner { grid-template-columns:minmax(0,1fr); gap:32px; padding:40px 24px; } .ds-hero-title { font-size:36px; } } @media(prefers-reduced-motion:reduce) { .ds-hero-action,.ds-module { transition-duration:.01ms; } }"
+    },
+    {
+      "name": "Session Material Tabs",
+      "kind": "nav",
+      "refersTo": "session-tabs",
+      "description": "Three page links before H1, shared by session overviews, labs, and trainer guides.",
+      "html": "<nav class=\"ds-session-tabs\" aria-label=\"Session materials\"><a class=\"ds-session-link\" href=\"/sessions/session-01-intro-to-copilot/\">Overview</a><a class=\"ds-session-link\" href=\"/sessions/session-01-intro-to-copilot/lab/\">Lab</a><a class=\"ds-session-link\" href=\"/sessions/session-01-intro-to-copilot/trainer-content/\" aria-current=\"page\">Trainer Guide</a></nav>",
+      "css": ".ds-session-tabs { display:flex; flex-wrap:wrap; gap:6px; padding:5px; margin:0 0 28px; background:var(--color-surface,#F5F8FE); border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); } .ds-session-link { display:inline-flex; align-items:center; min-height:44px; padding:7px 16px; border-radius:var(--radius-sm,4px); color:var(--color-charcoal,#47494E); font:600 15.6px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); text-decoration:none; } .ds-session-link:hover { background:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); } .ds-session-link[aria-current=\"page\"] { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-session-link:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(max-width:40em) { .ds-session-tabs { gap:2px; } .ds-session-link { flex:1; justify-content:center; padding-inline:8px; font-size:14.4px; } }"
+    },
+    {
+      "name": "Trainer Controls",
+      "kind": "custom",
+      "refersTo": "trainer-controls",
+      "description": "Visible initialized state after H1. Preview only; timer, section navigation, and print behavior live in overrides/session.js.",
+      "html": "<div class=\"ds-trainer\" role=\"group\" aria-label=\"Trainer controls\"><span class=\"ds-timer\" role=\"timer\" aria-label=\"Elapsed session time\" aria-live=\"off\">00:00</span><button class=\"ds-trainer-button ds-trainer-toggle\" type=\"button\">Start timer</button><button class=\"ds-trainer-button\" type=\"button\">Reset timer</button><button class=\"ds-trainer-button\" type=\"button\" disabled>Previous section</button><button class=\"ds-trainer-button\" type=\"button\">Next section</button><button class=\"ds-trainer-button\" type=\"button\">Print guide</button><label class=\"ds-shortcuts\"><input class=\"ds-shortcuts-input\" type=\"checkbox\">Enable shortcuts (J: next, K: previous, T: timer)</label></div>",
+      "css": ".ds-trainer { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:28px; padding:16px; background:var(--color-surface,#F5F8FE); border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); color:var(--color-charcoal,#47494E); font:400 15px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-timer { color:var(--color-deep-navy,#032254); font-size:20px; font-weight:600; font-variant-numeric:tabular-nums; } .ds-trainer-button { display:inline-flex; justify-content:center; align-items:center; gap:8px; min-height:44px; padding:9px 16px; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); background:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); font:600 15px/1.4 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); cursor:pointer; transition:background-color .15s,border-color .15s; } .ds-trainer-toggle { background:var(--color-ms-blue,#0078D4); border-color:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-trainer-button:hover { background:var(--color-surface,#F5F8FE); border-color:var(--color-deep-navy,#032254); color:var(--color-deep-navy,#032254); } .ds-trainer-button:disabled { color:var(--color-charcoal,#47494E); background:var(--color-light-neutral,#E3E6ED); border-color:var(--color-light-neutral,#E3E6ED); cursor:not-allowed; } .ds-shortcuts { display:inline-flex; align-items:flex-start; gap:8px; flex-wrap:nowrap; } .ds-shortcuts-input { flex-shrink:0; margin-top:5px; accent-color:var(--color-deep-navy,#032254); } .ds-trainer-button:focus-visible,.ds-shortcuts-input:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(max-width:40em) { .ds-trainer { padding:12px; } } @media(prefers-reduced-motion:reduce) { .ds-trainer-button { transition-duration:.01ms; } } @media print { .ds-trainer { display:none; } }"
+    },
+    {
+      "name": "Session Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White session card with category badges and a Microsoft Blue action label. M1 and Beginner shown; duration stays neutral. Track cards share its shape but use a light tint, changing to navy-light on hover/focus. Badges carry no pillar meaning.",
+      "html": "<a class=\"ds-card\" href=\"/sessions/session-01-intro-to-copilot/\"><div class=\"ds-card-badges\"><span class=\"ds-card-badge ds-card-module\">M1</span><span class=\"ds-card-badge ds-card-beginner\">Beginner</span><span class=\"ds-card-badge\">3h</span></div><div class=\"ds-card-title\">Introduction to GitHub Copilot</div><div class=\"ds-card-copy\">What Copilot is, how the LLM works, plan tiers, privacy, and getting it running in the IDE for the first time.</div><span class=\"ds-card-action\">Open session 01</span></a>",
+      "css": ".ds-card { display:flex; flex-direction:column; gap:12px; padding:24px; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-lg,10px); background:var(--color-white,#FFFFFF); color:var(--color-charcoal,#47494E); font:400 17px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); text-decoration:none; box-shadow:var(--shadow-card,0 1px 3px rgba(3,34,84,.08),0 4px 12px rgba(3,34,84,.06)); transition:border-color .15s,background-color .15s; } .ds-card:hover { background:var(--color-surface,#F5F8FE); border-color:var(--color-rvap-blue,#1A77E3); } .ds-card:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } .ds-card-badges { display:flex; flex-wrap:wrap; gap:7px; } .ds-card-badge { font-size:13px; font-weight:600; padding:2.4px 7px; color:var(--color-charcoal,#47494E); background:var(--color-surface,#F5F8FE); border-radius:var(--radius-sm,4px); } .ds-card-module { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-card-beginner { background:var(--color-category-teal-light,#E0F2F1); color:var(--color-category-teal,#0E6467); } .ds-card-title { color:var(--color-deep-navy,#032254); font:600 20px/1.35 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); } .ds-card-copy { font-size:15.6px; line-height:1.6; } .ds-card-action { color:var(--color-ms-blue,#0078D4); margin-top:auto; padding-top:6px; font-size:14.4px; font-weight:600; } .ds-card:hover .ds-card-action { color:var(--color-deep-navy,#032254); } @media(prefers-reduced-motion:reduce) { .ds-card { transition-duration:.01ms; } }"
+    },
+    {
+      "name": "Curriculum Category Badges",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Non-interactive difficulty and module labels shared across home and set surfaces. All pairs meet 4.5:1; dark category teal adapts the kit teal, whose white-text contrast is 4.37:1. Keep visible labels. These colors have no Build / Innovate / Scale mapping.",
+      "html": "<div class=\"ds-category-palette\"><div class=\"ds-category-group\" role=\"group\" aria-label=\"Difficulty\"><span class=\"ds-badge ds-badge-beginner\">Beginner</span><span class=\"ds-badge ds-badge-intermediate\">Intermediate</span><span class=\"ds-badge ds-badge-advanced\">Advanced</span></div><div class=\"ds-category-group\" role=\"group\" aria-label=\"Module\"><span class=\"ds-badge ds-badge-module\" data-module=\"1\">M1</span><span class=\"ds-badge ds-badge-module\" data-module=\"2\">M2</span><span class=\"ds-badge ds-badge-module\" data-module=\"3\">M3</span><span class=\"ds-badge ds-badge-module\" data-module=\"4\">M4</span><span class=\"ds-badge ds-badge-module\" data-module=\"5\">M5</span></div></div>",
+      "css": ".ds-category-palette { display:grid; gap:12px; } .ds-category-group { display:flex; flex-wrap:wrap; align-items:center; gap:7px; } .ds-badge { font:600 13px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); padding:2.4px 7px; color:var(--color-charcoal,#47494E); background:var(--color-surface,#F5F8FE); border-radius:var(--radius-sm,4px); } .ds-badge-beginner { background:var(--color-category-teal-light,#E0F2F1); color:var(--color-category-teal,#0E6467); } .ds-badge-intermediate { background:var(--color-navy-light,#DDE6F7); color:var(--color-deep-navy,#032254); } .ds-badge-advanced { background:var(--color-purple-light,#EDE9F7); color:var(--color-purple,#504092); } .ds-badge-module { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-badge-module[data-module=\"2\"] { background:var(--color-category-teal,#0E6467); } .ds-badge-module[data-module=\"3\"] { background:var(--color-purple,#504092); } .ds-badge-module[data-module=\"4\"] { background:var(--color-deep-navy,#032254); } .ds-badge-module[data-module=\"5\"] { background:var(--color-charcoal,#47494E); }"
+    },
+    {
+      "name": "Reading Table",
+      "kind": "custom",
+      "refersTo": "reading-table",
+      "description": "Tinted header, normal word wrapping, and local horizontal scrolling; links use navy.",
+      "html": "<div class=\"ds-table-scroll\"><table class=\"ds-table\"><thead><tr><th class=\"ds-th\">Session</th><th class=\"ds-th\">Material</th></tr></thead><tbody><tr class=\"ds-tr\"><td class=\"ds-td\">Introduction to GitHub Copilot</td><td class=\"ds-td\"><a class=\"ds-table-link\" href=\"/sessions/session-01-intro-to-copilot/lab/\">Lab</a></td></tr><tr class=\"ds-tr\"><td class=\"ds-td\">Enterprise Governance, Policies &amp; Analytics</td><td class=\"ds-td\"><a class=\"ds-table-link\" href=\"/sessions/session-17-enterprise-governance/trainer-content/\">Trainer Guide</a></td></tr></tbody></table></div>",
+      "css": ".ds-table-scroll { overflow-x:auto; margin:24px 0; } .ds-table { width:100%; display:table; border-collapse:separate; border-spacing:0; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); overflow:hidden; background:var(--color-white,#FFFFFF); color:var(--color-charcoal,#47494E); font:400 15.6px/1.55 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); font-variant-numeric:tabular-nums; overflow-wrap:normal; word-break:normal; } .ds-th { color:var(--color-deep-navy,#032254); background:var(--color-surface,#F5F8FE); padding:14px 16px; font-weight:700; min-width:120px; text-align:left; } .ds-td { padding:14px 16px; vertical-align:top; border-top:1px solid var(--color-light-neutral,#E3E6ED); } .ds-tr { transition:background-color 125ms; } .ds-tr:hover { background:var(--color-surface-alt,#FAFBFD); box-shadow:0 1px 0 var(--color-white,#FFFFFF) inset; } .ds-table-link { color:var(--color-deep-navy,#032254); text-decoration:underline; text-underline-offset:.18em; text-decoration-thickness:1px; } .ds-table-link:hover { color:var(--color-deep-navy,#032254); } .ds-table-link:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(prefers-reduced-motion:reduce) { .ds-tr { transition-duration:.01ms; } }"
+    },
+    {
+      "name": "Reading Code and Link",
+      "kind": "custom",
+      "refersTo": "reading-code",
+      "description": "Navy code on tint, with local block scrolling and a navy linked-code label.",
+      "html": "<div class=\"ds-code-sample\"><p class=\"ds-code-copy\">Open <a class=\"ds-code-link\" href=\"/sessions/session-01-intro-to-copilot/lab/\"><code class=\"ds-inline-code\">README.md</code></a>.</p><pre class=\"ds-pre\"><code class=\"ds-block-code\">git status</code></pre></div>",
+      "css": ".ds-code-sample { color:var(--color-charcoal,#47494E); font:400 17px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-code-copy { margin:16px 0; } .ds-inline-code,.ds-block-code { font-family:var(--font-mono,\"Cascadia Code\",\"JetBrains Mono\",\"Fira Code\",monospace); font-size:15.6px; color:var(--color-deep-navy,#032254); background:var(--color-surface,#F5F8FE); border-radius:var(--radius-sm,4px); } .ds-inline-code { padding:0 .2941176471em; } .ds-code-link { color:var(--color-ms-blue,#0078D4); text-decoration:underline; text-underline-offset:.18em; text-decoration-thickness:1px; } .ds-code-link:hover { color:var(--color-deep-navy,#032254); } .ds-code-link:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } .ds-pre { overflow:auto; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); background:var(--color-surface,#F5F8FE); font:400 15.6px/1.6 var(--font-mono,\"Cascadia Code\",\"JetBrains Mono\",\"Fira Code\",monospace); } .ds-block-code { display:block; padding:20px; white-space:pre; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Closed desktop search field's RVAP fill and border; preview omits the icon and search-results runtime.",
+      "html": "<div class=\"ds-search-form\"><input class=\"ds-search\" type=\"search\" aria-label=\"Search\" placeholder=\"Search\"></div>",
+      "css": ".ds-search-form { height:36px; background:var(--color-surface,#F5F8FE); border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); } .ds-search { height:100%; width:100%; border:0; background:transparent; color:var(--color-charcoal,#47494E); caret-color:var(--color-deep-navy,#032254); font-family:var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); font-size:16px; padding:0 44px; text-overflow:ellipsis; } .ds-search::placeholder { color:var(--color-charcoal,#47494E); } .ds-search:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; }"
+    },
+    {
+      "name": "Set Field and Native Choice",
+      "kind": "input",
+      "refersTo": "set-field",
+      "description": "Labeled field and catalog choice. The navy checkbox reflects Material's winning rule; selection changes the row tint. This preview does not filter or save a set.",
+      "html": "<div class=\"ds-set-catalog\"><label class=\"ds-set-field\">Search sessions<input type=\"search\" placeholder=\"Title or topic\" autocomplete=\"off\"></label><div class=\"ds-set-choice-row\"><label class=\"ds-set-choice\"><input type=\"checkbox\" checked aria-label=\"Include session 01: Introduction to GitHub Copilot\"><span class=\"ds-set-copy\"><span class=\"ds-set-meta ds-set-badges\"><span>Session 01</span><span class=\"ds-set-badge ds-set-module\">M1</span><span class=\"ds-set-badge ds-set-beginner\">Beginner</span></span><strong>Introduction to GitHub Copilot</strong><span class=\"ds-set-description\">What Copilot is, how the LLM works, plan tiers, privacy, and getting it running in the IDE for the first time.</span><span class=\"ds-set-meta\">3 hours</span></span></label><a class=\"ds-set-preview\" href=\"/sessions/session-01-intro-to-copilot/\">Overview<span class=\"ds-set-sr\"> of session 01</span></a></div></div>",
+      "css": ".ds-set-catalog { color:var(--color-charcoal,#47494E); background:var(--color-white,#FFFFFF); font:400 17px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-set-field { display:flex; flex-direction:column; gap:6px; min-width:0; color:var(--color-deep-navy,#032254); font-size:15px; font-weight:600; } .ds-set-field input { min-width:0; min-height:44px; padding:10px 12px; border:1px solid var(--color-charcoal,#47494E); border-radius:var(--radius-sm,4px); background:var(--color-white,#FFFFFF); color:var(--color-charcoal,#47494E); font:400 16px/1.5 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-set-field input::placeholder { color:var(--color-charcoal,#47494E); } .ds-set-choice-row { margin-top:16px; padding:16px; border-block:1px solid var(--color-light-neutral,#E3E6ED); } .ds-set-choice-row:has(input:checked) { background:var(--color-navy-light,#DDE6F7); } .ds-set-choice-row:has(input:focus-visible) { outline:2px solid var(--color-deep-navy,#032254); outline-offset:-2px; } .ds-set-choice { display:flex; align-items:flex-start; gap:13px; cursor:pointer; } .ds-set-choice input { appearance:auto; width:20px; height:20px; flex:0 0 20px; margin:3px 0 0; accent-color:var(--color-deep-navy,#032254); } .ds-set-copy { display:flex; flex-direction:column; gap:6px; min-width:0; } .ds-set-copy strong { color:var(--color-deep-navy,#032254); font-size:17px; line-height:1.4; } .ds-set-description { font-size:15px; line-height:1.6; } .ds-set-meta,.ds-set-preview { font-size:14px; } .ds-set-badges { display:flex; flex-wrap:wrap; align-items:center; gap:7px; } .ds-set-badge { font-size:13px; font-weight:600; padding:2.4px 7px; border-radius:var(--radius-sm,4px); } .ds-set-module { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-set-beginner { background:var(--color-category-teal-light,#E0F2F1); color:var(--color-category-teal,#0E6467); } .ds-set-preview { display:inline-block; margin-left:33px; padding-block:6px; color:var(--color-deep-navy,#032254); text-decoration:underline; text-underline-offset:.18em; } .ds-set-preview:hover { color:var(--color-deep-navy,#032254); } .ds-set-field input:focus-visible,.ds-set-choice input:focus-visible,.ds-set-preview:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } .ds-set-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }"
+    },
+    {
+      "name": "Selected Set Composer",
+      "kind": "custom",
+      "refersTo": "set-composer",
+      "description": "Tinted composer with bounded fields, delivery order, disabled boundary moves, and privacy copy. The preview omits sticky positioning and JavaScript; the shipped desktop column is 20rem wide. Set primary actions use white on Microsoft Blue at rest/focus and Deep Navy on hover/active. The :not(:disabled) scope keeps empty-state Create page gray; focus-visible keeps a 2px navy outline with a 3px offset. White text never transitions across a light fill, fixing Open page without changing home or other actions.",
+      "html": "<aside class=\"ds-set-composer\" aria-labelledby=\"ds-set-composer-title\"><h2 id=\"ds-set-composer-title\">Your set</h2><label class=\"ds-compose-field\">Set title<input type=\"text\" maxlength=\"80\" placeholder=\"My training set\" autocomplete=\"off\"></label><label class=\"ds-compose-field\">Introduction <span class=\"ds-compose-hint\">(optional)</span><textarea rows=\"3\" maxlength=\"400\" placeholder=\"Who this is for and what to prepare\"></textarea></label><p class=\"ds-compose-summary\">1 session / Catalog duration: 3 hours</p><ol class=\"ds-compose-selected\" aria-label=\"Sessions in delivery order\"><li><strong>Session 01: Introduction to GitHub Copilot</strong><span class=\"ds-compose-badges\"><span class=\"ds-compose-badge ds-compose-module\">M1</span><span class=\"ds-compose-badge ds-compose-beginner\">Beginner</span></span><div class=\"ds-compose-order\"><button class=\"ds-compose-action\" type=\"button\" disabled aria-label=\"Move session 01 up\">Up</button><button class=\"ds-compose-action\" type=\"button\" disabled aria-label=\"Move session 01 down\">Down</button><button class=\"ds-compose-action\" type=\"button\" aria-label=\"Remove session 01\">Remove</button></div></li></ol><div class=\"ds-compose-actions\"><button class=\"ds-compose-action ds-compose-primary\" type=\"button\">Create page</button><button class=\"ds-compose-clear\" type=\"button\">Clear selection</button></div><p class=\"ds-compose-help\">The link contains your title, introduction, and session choices. Anyone with the link can read them. Do not include confidential information.</p></aside>",
+      "css": ".ds-set-composer { padding:20px; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); background:var(--color-surface,#F5F8FE); color:var(--color-charcoal,#47494E); font:400 15px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-set-composer h2 { margin:0 0 20px; color:var(--color-deep-navy,#032254); font:600 22px/1.3 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); letter-spacing:-.015em; } .ds-compose-field { display:flex; flex-direction:column; gap:6px; min-width:0; color:var(--color-deep-navy,#032254); font-size:15px; font-weight:600; } .ds-compose-field + .ds-compose-field { margin-top:16px; } .ds-compose-field input,.ds-compose-field textarea { min-width:0; min-height:44px; padding:10px 12px; border:1px solid var(--color-charcoal,#47494E); border-radius:var(--radius-sm,4px); background:var(--color-white,#FFFFFF); color:var(--color-charcoal,#47494E); font:400 16px/1.5 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-compose-field textarea { resize:vertical; } .ds-compose-field input::placeholder,.ds-compose-field textarea::placeholder,.ds-compose-hint { color:var(--color-charcoal,#47494E); font-weight:400; } .ds-compose-hint { display:contents; } .ds-compose-summary { margin:16px 0; color:var(--color-deep-navy,#032254); font-size:16px; font-weight:600; font-variant-numeric:tabular-nums; } .ds-compose-selected { margin:16px 0; padding:0; list-style:none; counter-reset:ds-selected; } .ds-compose-selected > li { margin:0; padding-block:14px; border-top:1px solid var(--color-light-neutral,#E3E6ED); counter-increment:ds-selected; } .ds-compose-selected strong { display:block; color:var(--color-deep-navy,#032254); font-size:15px; line-height:1.5; } .ds-compose-selected strong::before { content:counter(ds-selected) \". \"; } .ds-compose-badges { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin-top:7px; } .ds-compose-badge { font-size:13px; font-weight:600; padding:2.4px 7px; border-radius:var(--radius-sm,4px); } .ds-compose-module { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-compose-beginner { background:var(--color-category-teal-light,#E0F2F1); color:var(--color-category-teal,#0E6467); } .ds-compose-order { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; } .ds-compose-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-block:16px; } .ds-compose-action { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:9px 16px; border:1px solid var(--color-light-neutral,#E3E6ED); border-radius:var(--radius-md,6px); background:var(--color-white,#FFFFFF); color:var(--color-deep-navy,#032254); font:600 15px/1.4 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); cursor:pointer; transition:background-color .15s,border-color .15s; } .ds-compose-order .ds-compose-action { padding-inline:11px; font-size:14px; } .ds-compose-primary:not(:disabled) { background:var(--color-ms-blue,#0078D4); border-color:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-compose-action:hover { background:var(--color-surface,#F5F8FE); border-color:var(--color-deep-navy,#032254); color:var(--color-deep-navy,#032254); } .ds-compose-primary:not(:disabled):is(:hover,:active) { background:var(--color-deep-navy,#032254); border-color:var(--color-deep-navy,#032254); color:var(--color-white,#FFFFFF); } .ds-compose-action:disabled { background:var(--color-light-neutral,#E3E6ED); border-color:var(--color-light-neutral,#E3E6ED); color:var(--color-charcoal,#47494E); cursor:not-allowed; } .ds-compose-clear { min-height:44px; padding:7px; border:0; background:transparent; color:var(--color-deep-navy,#032254); font:600 14.4px/1.4 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); text-decoration:underline; text-underline-offset:.2em; cursor:pointer; } .ds-compose-clear:hover { background:var(--color-navy-light,#DDE6F7); } .ds-compose-help { margin:16px 0; font-size:14px; line-height:1.6; } .ds-compose-field input:focus-visible,.ds-compose-field textarea:focus-visible,.ds-compose-action:focus-visible,.ds-compose-clear:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(max-width:59.9844em) { .ds-compose-selected { max-height:280px; overflow-y:auto; } } @media(prefers-reduced-motion:reduce) { .ds-compose-action { transition-duration:.01ms; } }"
+    },
+    {
+      "name": "Shared Set Reading Row",
+      "kind": "custom",
+      "refersTo": "shared-set-row",
+      "description": "Ordered reading row for selected sessions, with catalog metadata and material links. No card shadow or selection control; the viewer keeps its preparation reminder above the list.",
+      "html": "<ol class=\"ds-set-delivery\" aria-label=\"Sessions in delivery order\"><li><div><h2>Introduction to GitHub Copilot</h2><p class=\"ds-delivery-meta\">Session 01 / 3 hours</p><span class=\"ds-delivery-badges\"><span class=\"ds-delivery-badge ds-delivery-module\">M1</span><span class=\"ds-delivery-badge ds-delivery-beginner\">Beginner</span></span><p>What Copilot is, how the LLM works, plan tiers, privacy, and getting it running in the IDE for the first time.</p><div class=\"ds-delivery-materials\"><a href=\"/sessions/session-01-intro-to-copilot/\" aria-label=\"Overview for session 01\">Overview</a><a href=\"/sessions/session-01-intro-to-copilot/lab/\" aria-label=\"Lab for session 01\">Lab</a><a href=\"/sessions/session-01-intro-to-copilot/trainer-content/\" aria-label=\"Trainer Guide for session 01\">Trainer Guide</a></div></div></li></ol>",
+      "css": ".ds-set-delivery { list-style:none; margin:32px 0; padding:0; counter-reset:ds-delivery; background:var(--color-white,#FFFFFF); color:var(--color-charcoal,#47494E); font:400 17px/1.7 var(--font-body,\"Aptos\",\"Inter\",\"Segoe UI\",system-ui,sans-serif); } .ds-set-delivery > li { display:grid; grid-template-columns:40px minmax(0,1fr); gap:16px; counter-increment:ds-delivery; border-top:1px solid var(--color-light-neutral,#E3E6ED); padding-block:28px; margin:0; } .ds-set-delivery > li::before { content:counter(ds-delivery); color:var(--color-ms-blue,#0078D4); font:600 26px/1.3 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); } .ds-set-delivery h2 { margin:0 0 12px; color:var(--color-deep-navy,#032254); font:600 24px/1.3 var(--font-display,\"Aptos Display\",\"Outfit\",\"Segoe UI\",system-ui,sans-serif); letter-spacing:-.015em; } .ds-set-delivery p { max-width:65ch; margin:16px 0; } .ds-delivery-meta { font-size:14px; } .ds-delivery-badges { display:flex; flex-wrap:wrap; align-items:center; gap:7px; } .ds-delivery-badge { font-size:13px; font-weight:600; padding:2.4px 7px; border-radius:var(--radius-sm,4px); } .ds-delivery-module { background:var(--color-ms-blue,#0078D4); color:var(--color-white,#FFFFFF); } .ds-delivery-beginner { background:var(--color-category-teal-light,#E0F2F1); color:var(--color-category-teal,#0E6467); } .ds-delivery-materials { display:flex; flex-wrap:wrap; gap:10px 20px; font-size:15px; } .ds-delivery-materials a { color:var(--color-ms-blue,#0078D4); text-decoration:underline; text-underline-offset:.18em; text-decoration-thickness:1px; } .ds-delivery-materials a:hover { color:var(--color-deep-navy,#032254); } .ds-delivery-materials a:focus-visible { outline:2px solid var(--color-deep-navy,#032254); outline-offset:3px; } @media(max-width:40em) { .ds-set-delivery > li { grid-template-columns:24px minmax(0,1fr); gap:10px; } } @media print { .ds-set-delivery > li { break-inside:avoid; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "RVAP Technical Field Guide",
+    "overview": "The compact full RVAP wordmark and blue navigation anchor the shared white header. The home hero uses the brand's navy-to-blue gradient. Labs and trainer guides keep their white reading surfaces and navy headings, with trainer controls inside the document.\n\nThe custom builder and shared viewer inherit this system and the compact logo exception.\n\n**Synthetic tonal ramps are preview aids, not approved palette extensions.**",
+    "keyCharacteristics": [
+      "Shared light reading layout with navy headings.",
+      "Aptos font stacks with Outfit and Inter web fallbacks.",
+      "Compact RVAP identity and blue current-page states.",
+      "Brand-gradient hero with curriculum jump links."
+    ],
+    "rules": [
+      {"name": "The Category Color Rule", "body": "Use distinct colors for difficulty and M1-M5 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.", "section": "colors"},
+      {"name": "The Curriculum Jump Rule", "body": "Module links jump to session groups. Keep all 19 sessions and six tracks visible; selection must not filter content.", "section": "components"},
+      {"name": "The Filter/Selection Rule", "body": "Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.", "section": "components"},
+      {"name": "The URL Set Rule", "body": "Store the ordered subset and user text in the query string; leave the fragment available for heading anchors.", "section": "components"},
+      {"name": "The Logo Rule", "body": "Use the approved compact full RVAP wordmark in the header and drawer. Keep the 600px minimum displayed width for other full-logo placements. Use a white or very light background, preserve proportions and clear space, and never recolor the artwork.", "section": "components"}
+    ],
+    "dos": [
+      "Do keep labs and trainer guides in the same MkDocs reading system.",
+      "Do use Microsoft Blue for small filled actions and ordinary links; use navy for links on tinted reading surfaces.",
+      "Do keep table word wrapping normal and overflow local.",
+      "Do preserve focus cues, visible content without JavaScript, and opt-in trainer shortcuts.",
+      "Do preserve logo proportions and clear space.",
+      "Do keep curriculum jump links usable without JavaScript."
+    ],
+    "donts": [
+      "Don't invent a dark RVAP theme or reintroduce neon reading surfaces.",
+      "Don't assign Build / Innovate / Scale meanings to category badge colors.",
+      "Don't extend the compact header/drawer logo exception to other placements.",
+      "Don't treat generated preview ramps or unused kit recipes as shipped components."
+    ]
+  }
+}

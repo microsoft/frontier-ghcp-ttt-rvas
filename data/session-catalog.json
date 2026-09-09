@@ -1,0 +1,182 @@
+{
+  "modules": [
+    {"id": "1", "title": "Copilot Fundamentals"},
+    {"id": "2", "title": "Copilot in Practice"},
+    {"id": "3", "title": "Agentic Workflows"},
+    {"id": "4", "title": "DevOps & Infrastructure"},
+    {"id": "5", "title": "Advanced Topics & Capstone"}
+  ],
+  "sessions": [
+    {
+      "id": "01",
+      "slug": "session-01-intro-to-copilot",
+      "module": "1",
+      "title": "Introduction to GitHub Copilot",
+      "description": "What Copilot is, how the LLM works, plan tiers, privacy, and getting it running in the IDE for the first time.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "02",
+      "slug": "session-02-chat-and-inline",
+      "module": "1",
+      "title": "Copilot Chat & Inline Suggestions",
+      "description": "Mastering the chat interface, slash commands, inline completions, and Next Edit Suggestions across all IDE surfaces.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "03",
+      "slug": "session-03-prompt-engineering",
+      "module": "1",
+      "title": "Prompt Engineering Fundamentals",
+      "description": "How to construct prompts that reliably produce quality output \u2014 context, specificity, iteration, and custom instructions.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "04",
+      "slug": "session-04-copilot-cli",
+      "module": "2",
+      "title": "GitHub Copilot CLI & App",
+      "description": "Using standalone Copilot CLI for terminal work, with Copilot App positioned alongside the VS Code hands-on baseline.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "05",
+      "slug": "session-05-agent-mode-ide",
+      "module": "2",
+      "title": "Agent Mode in the IDE",
+      "description": "Autonomous multi-step tasks: Copilot reads files, runs commands, and iterates on errors inside VS Code.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "06",
+      "slug": "session-06-spaces-and-context",
+      "module": "2",
+      "title": "Copilot Spaces & Context Management",
+      "description": "Curated context sets, repository indexing, and managing what Copilot knows to improve output quality at scale.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "07",
+      "slug": "session-07-code-review-prs",
+      "module": "2",
+      "title": "Copilot for Code Review & PRs",
+      "description": "AI-powered pull request reviews, automated summaries, issue-to-PR workflows, and Copilot Autofix in action.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "08",
+      "slug": "session-08-copilot-app-canvases",
+      "module": "3",
+      "title": "Copilot App, Plugins & Canvas Extensions",
+      "description": "Use Copilot App customization and build a shared canvas with bounded state, actions, and review evidence.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "09",
+      "slug": "session-09-cloud-agent",
+      "module": "3",
+      "title": "Copilot Cloud Agent",
+      "description": "Assign issues to Copilot's cloud agent \u2014 it creates a branch, writes the code, runs tests, and opens a PR autonomously.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "10",
+      "slug": "session-10-mcp-servers",
+      "module": "3",
+      "title": "MCP Servers & Custom Tool Integration",
+      "description": "Model Context Protocol: giving Copilot access to external tools, APIs, and data sources through standardized server interfaces.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "11",
+      "slug": "session-11-custom-agents",
+      "module": "3",
+      "title": "Custom Agents & Agent Profiles",
+      "description": "Building purpose-built agents with custom instructions, tool restrictions, and persona definitions for specific team workflows.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "12",
+      "slug": "session-12-agent-skills-ecosystem",
+      "module": "3",
+      "title": "Agent Skills & the Copilot Ecosystem",
+      "description": "Packaging reusable domain knowledge as agent skills, discovering community skills, and orchestrating multi-agent workflows.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "13",
+      "slug": "session-13-actions-workflows",
+      "module": "4",
+      "title": "GitHub Actions & Workflow Generation",
+      "description": "Generating, debugging, and optimizing GitHub Actions workflows with Copilot assistance \u2014 from YAML to production CI/CD.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "14",
+      "slug": "session-14-iac-with-copilot",
+      "module": "4",
+      "title": "Infrastructure as Code with Copilot",
+      "description": "Using Copilot to author, explain, and refactor Terraform, Bicep, and ARM templates with AI-assisted validation.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "15",
+      "slug": "session-15-cicd-debugging-autofix",
+      "module": "4",
+      "title": "CI/CD Pipeline Debugging & Agentic Remediation",
+      "description": "Diagnosing flaky pipelines and applying approved agentic remediation workflows for security findings.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "16",
+      "slug": "session-16-squad-orchestration",
+      "module": "5",
+      "title": "Multi-Agent Team Orchestration",
+      "description": "Optional patterns for coordinating specialized AI agents through planning, delegation, review, and iteration loops.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "17",
+      "slug": "session-17-enterprise-governance",
+      "module": "5",
+      "title": "Enterprise Governance, Policies & Analytics",
+      "description": "Content exclusions, policy configuration, seat management, usage analytics, and measuring AI adoption ROI at scale.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "18",
+      "slug": "session-18-spec-kit",
+      "module": "5",
+      "title": "Spec Kit: Enterprise Specification-Driven Development",
+      "description": "A governed specification-to-implementation flow that turns intent into reusable delivery artifacts and Copilot skills.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "19",
+      "slug": "session-19-capstone",
+      "module": "5",
+      "title": "End-to-End Capstone Project",
+      "description": "A bounded integration scenario covering governance, specification, agentic delivery, review, and handover.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="session-set" data-session-set data-builder-url="{{ set_builder_url }}">
+  <h1 id="your-session-set" data-set-title>Your session set</h1>
+  <p class="set-lead set-introduction" data-set-description></p>
+  <p data-set-loading>Loading the session set. Enable JavaScript to open a shared set, or <a href="{{ nav.homepage.url | url }}">browse the full curriculum</a>.</p>
+  <p class="set-message" role="alert" data-set-error hidden></p>
+  <div data-set-empty hidden>
+    <p>This page needs a link with selected sessions.</p>
+    <a class="rvap-action rvap-action--primary" href="{{ set_builder_url }}">Build your set</a>
+  </div>
+  <div data-set-view hidden>
+    <p class="set-summary" data-set-summary></p>
+    <p class="set-help">Review each session's preparation requirements before delivery.</p>
+    <div class="set-actions set-view-actions">
+      <a class="rvap-action rvap-action--primary" data-set-edit>Edit this set</a>
+      <button class="rvap-action" type="button" data-set-copy>Copy link</button>
+      <button class="rvap-action" type="button" data-set-print>Print set</button>
+    </div>
+    <div class="set-share" data-set-share hidden>
+      <label class="set-field">Shareable link
+        <input type="text" readonly data-set-link>
+      </label>
+    </div>
+    <p class="set-status" role="status" aria-live="polite" data-set-status></p>
+    <ol class="set-delivery" data-set-delivery aria-label="Sessions in delivery order"></ol>
+  </div>
+</div>
+<script type="application/json" id="set-catalog-data">{{ session_catalog | tojson }}</script>
+{% endblock %}
