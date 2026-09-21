@@ -1,6 +1,6 @@
 # Session 16 — Brady's Squad — AI Team Orchestration
 
-**Module:** 5 — Advanced Topics & Capstone
+**Module:** 5 — Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 

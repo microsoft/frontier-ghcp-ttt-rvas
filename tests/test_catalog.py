@@ -63,7 +63,7 @@ class CatalogTests(unittest.TestCase):
         return SimpleNamespace(file=file, url=file.url)
 
     def test_catalog_matches_all_nav_session_sources(self):
-        self.assertEqual([m["id"] for m in self.catalog["modules"]], list("12345"))
+        self.assertEqual([m["id"] for m in self.catalog["modules"]], list("123456"))
         self.assertEqual([s["id"] for s in self.catalog["sessions"]], [f"{i:02d}" for i in range(1, 20)])
         sources = [
             f"sessions/{session['slug']}/{directory}README.md"
@@ -291,9 +291,15 @@ class CatalogTests(unittest.TestCase):
             tags = Tags(rendered)
             cards = tags.with_class("ghcp-session-card")
             self.assertEqual(len(cards), 19)
-            self.assertEqual(len(tags.with_class("ghcp-sessions")), 5)
+            self.assertEqual(len(tags.with_class("ghcp-sessions")), 6)
             self.assertEqual(len(tags.with_class("ghcp-track-card")), 6)
-            for card, session in zip(cards, context["session_catalog"]["sessions"]):
+            page_sessions = [
+                session
+                for module in context["session_catalog"]["modules"]
+                for session in context["session_catalog"]["sessions"]
+                if session["module"] == module["id"]
+            ]
+            for card, session in zip(cards, page_sessions):
                 self.assertEqual(card["href"], session["url"])
                 self.assertEqual(card["data-number"], session["id"])
             headings = {

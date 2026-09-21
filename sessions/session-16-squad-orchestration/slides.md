@@ -8,8 +8,8 @@ footer: 'Session 16 — AI Team Orchestration & Coordination Patterns'
 
 <!-- _class: lead -->
 
-# AI Team Orchestration & Coordination Patterns
-## Module 5: Advanced Topics & Capstone | Advanced
+# Brady's Squad: Human-Led AI Teams
+## Module 5: Specification-Driven Frameworks | Advanced
 
 Session 16 of 19 | 3 hours | Optional
 

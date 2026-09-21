@@ -22,7 +22,7 @@ By completing this curriculum, trainers will be able to:
 
 ### Modules & Tracks
 
-The curriculum is organized into **5 modules** that progress from foundations through advanced orchestration. Modules 1–3 form the **core track** — every trainer should complete these. Modules 4–5 are **elective tracks** that can be taken independently based on audience needs.
+The curriculum is organized into **6 modules** that progress from foundations through advanced orchestration. Modules 1–3 form the **core track**. Modules 4–6 are **elective tracks** that trainers can combine for their audience.
 
 ```
 Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
@@ -34,8 +34,11 @@ Module 3: Agentic Workflows ───────────────── 
     ├── Module 4: DevOps & Infrastructure ──── (Intermediate–Advanced, 3 sessions)
     │   └── Requires: Module 1 + Session 05
     │
-    └── Module 5: Advanced Topics & Capstone ─ (Advanced, 4 sessions)
-        └── Requires: Modules 1–3; Session 17 is required before the capstone
+    ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 2 sessions)
+    │   └── Uses Squad and Spec Kit as worked framework examples
+    │
+    └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
+        └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
 ```
 
 ### Delivery Flexibility
@@ -88,13 +91,18 @@ Module 3: Agentic Workflows ───────────────── 
 | 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01–05, 13 | 3 hrs      |
 | 15  | CI/CD Pipeline Debugging & Copilot Autofix | Advanced     | Sessions 01–05, 13 | 3 hrs      |
 
-### Module 5: Advanced Topics & Capstone (Advanced)
+### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| 16  | Multi-Agent Team Orchestration              | Advanced    | Sessions 01–12 | 3 hrs   |
-| 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
+| 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01–12 | 3 hrs   |
 | 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01–12, 17 | 3 hrs |
+
+### Module 6: Advanced Topics & Capstone (Advanced)
+
+| #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
+| --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
+| 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
 | 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01–12, 17–18 | 3 hrs |
 
 ---
@@ -715,14 +723,14 @@ Covers advanced CI/CD debugging with Copilot assistance and an approved, reviewa
 
 ---
 
-### Session 16 — Multi-Agent Team Orchestration
+### Session 16 — Brady's Squad: Human-Led AI Teams
 
 **Difficulty:** Advanced
 **Prerequisites:** Sessions 01–07 and 09–12
-**Module:** Advanced Topics & Capstone
+**Module:** Specification-Driven Frameworks
 
 **Description:**
-An optional advanced session on multi-agent orchestration patterns. [`bradygaster/squad`](https://github.com/bradygaster/squad) is the worked community-tool example, not a required product dependency. Trainers learn to define roles, route work, manage decisions, and decide when a single well-bounded agent is safer than a team.
+An optional advanced session on the [Brady's Squad](https://github.com/bradygaster/squad) framework. Learners use a scoped issue as the work contract, then define roles, route work, and review durable decisions. Squad is a worked example, not a required product dependency.
 
 **Trainer Content Outline (1 hour):**
 
@@ -806,7 +814,7 @@ Covers the enterprise side of Copilot and is the authoritative governance and co
 
 **Difficulty:** Advanced
 **Prerequisites:** Sessions 01–12 and 17
-**Module:** Advanced Topics & Capstone
+**Module:** Specification-Driven Frameworks
 
 **Description:**
 Teaches a repeatable specification-driven development method before implementation begins. Trainees use Spec Kit as the practical example to convert enterprise requirements into a constitution, specification, plan, tasks, and an implementation handoff. The session uses a small, language-agnostic flow rather than a full application build.

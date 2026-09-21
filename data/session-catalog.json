@@ -4,7 +4,8 @@
     {"id": "2", "title": "Copilot in Practice"},
     {"id": "3", "title": "Agentic Workflows"},
     {"id": "4", "title": "DevOps & Infrastructure"},
-    {"id": "5", "title": "Advanced Topics & Capstone"}
+    {"id": "5", "title": "Specification-Driven Frameworks"},
+    {"id": "6", "title": "Advanced Topics & Capstone"}
   ],
   "sessions": [
     {
@@ -146,15 +147,15 @@
       "id": "16",
       "slug": "session-16-squad-orchestration",
       "module": "5",
-      "title": "Multi-Agent Team Orchestration",
-      "description": "Optional patterns for coordinating specialized AI agents through planning, delegation, review, and iteration loops.",
+      "title": "Brady's Squad: Human-Led AI Teams",
+      "description": "Use Brady's Squad to turn scoped work into persistent roles, decision records, and reviewable delivery evidence.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
     {
       "id": "17",
       "slug": "session-17-enterprise-governance",
-      "module": "5",
+      "module": "6",
       "title": "Enterprise Governance, Policies & Analytics",
       "description": "Content exclusions, policy configuration, seat management, usage analytics, and measuring AI adoption ROI at scale.",
       "difficulty": "Advanced",
@@ -172,7 +173,7 @@
     {
       "id": "19",
       "slug": "session-19-capstone",
-      "module": "5",
+      "module": "6",
       "title": "End-to-End Capstone Project",
       "description": "A bounded integration scenario covering governance, specification, agentic delivery, review, and handover.",
       "difficulty": "Advanced",

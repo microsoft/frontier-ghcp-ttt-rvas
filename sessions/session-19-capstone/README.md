@@ -1,6 +1,6 @@
 # Session 19 — End-to-End Capstone Project
 
-**Module:** Advanced Topics & Capstone
+**Module:** Advanced Topics & Capstone (Module 6)
 
 **Difficulty:** Advanced
 

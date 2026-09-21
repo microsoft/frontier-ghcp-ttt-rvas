@@ -13,6 +13,7 @@ colors:
   navy-light: "#DDE6F7"
   category-teal: "#0E6467"
   category-teal-light: "#E0F2F1"
+  specification: "#9E4D00"
   purple: "#504092"
   purple-light: "#EDE9F7"
   text-primary: "#111827"
@@ -130,6 +131,9 @@ components:
     backgroundColor: "{colors.deep-navy}"
     textColor: "{colors.white}"
   badge-module-5:
+    backgroundColor: "{colors.specification}"
+    textColor: "{colors.white}"
+  badge-module-6:
     backgroundColor: "{colors.charcoal}"
     textColor: "{colors.white}"
   badge-beginner:
@@ -328,16 +332,17 @@ The supplied pillar palette remains available as **brand reference**:
 | Innovate | `purple` | `purple-light` | Also used for M3 and Advanced labels |
 | Scale | Teal (`#14868A`) | `#DDE3EF` | Kit only; category badges use a darker teal adaptation |
 
-**The Category Color Rule.** Use distinct colors for difficulty and M1-M5 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.
+**The Category Color Rule.** Use distinct colors for difficulty and M1-M6 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.
 
 The September 7, 2026 approval supersedes neutral-difficulty and no-category-color
 instructions for these badges. Beginner uses `category-teal` on
 `category-teal-light`; Intermediate uses Deep Navy on `navy-light`; Advanced uses
 Purple on `purple-light`. Module labels use white on Microsoft Blue (M1),
-`category-teal` (M2), Purple (M3), Deep Navy (M4), and Charcoal (M5).
+`category-teal` (M2), Purple (M3), Deep Navy (M4), Specification Orange (M5),
+and Charcoal (M6).
 
 `overrides/extra.css` adds `--color-category-teal`,
-`--color-category-teal-light`, and `--color-purple-light`; Purple already exists
+`--color-category-teal-light`, `--color-specification`, and `--color-purple-light`; Purple already exists
 in the kit. Dark teal replaces the kit teal for category labels because white
 on the original teal gives 4.37:1, below 4.5:1. All new badge pairs meet 4.5:1.
 

@@ -1,6 +1,6 @@
 # GitHub Copilot & Agentic Workflows — Train-the-Trainer
 
-A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. 19 sessions across 5 modules covering foundations through enterprise-scale agentic delivery, each with 1 hour of trainer-delivered content and a 2-hour hands-on lab.
+A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. 19 sessions across 6 modules covering foundations through enterprise-scale agentic delivery, each with 1 hour of trainer-delivered content and a 2-hour hands-on lab.
 
 ## Who This Is For
 
@@ -63,13 +63,18 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 | 14  | [Infrastructure as Code with Copilot](sessions/session-14-iac-with-copilot/)              | Advanced     | 3 hrs      | Generates and refactors Terraform and Bicep infrastructure with Copilot agent mode, with a focus on security.      |
 | 15  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-15-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Covers diagnosing pipeline failures and using Copilot’s agentic remediation workflow for security findings. |
 
-### Module 5: Advanced Topics & Capstone (Advanced)
+### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| 16  | [Multi-Agent Team Orchestration](sessions/session-16-squad-orchestration/)                 | Advanced    | 3 hrs      | Optional patterns for coordinating specialized AI agents; Squad is a worked community-tool example, not a prerequisite. |
-| 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration — policies, content exclusions, audit logs, analytics, compliance, rollout. |
+| 16  | [Brady's Squad: Human-Led AI Teams](sessions/session-16-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to turn scoped work into persistent roles, decisions, and reviewable evidence. |
 | 18  | [Spec Kit: Enterprise Specification-Driven Development](sessions/session-18-spec-kit/)   | Advanced    | 3 hrs      | Applies a governed specification-to-implementation flow with reusable Copilot skills and an enterprise delivery guardrail. |
+
+### Module 6: Advanced Topics & Capstone (Advanced)
+
+| #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
+| --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration — policies, content exclusions, audit logs, analytics, compliance, rollout. |
 | 19  | [End-to-End Capstone Project](sessions/session-19-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
 
 **Total track duration:** 57 hours across 19 sessions
@@ -135,8 +140,8 @@ ghcp-ttt/
     ├── session-13-actions-workflows/      # Module 4: DevOps & Infrastructure
     ├── session-14-iac-with-copilot/
     ├── session-15-cicd-debugging-autofix/
-    ├── session-16-squad-orchestration/    # Module 5: Advanced & Capstone
+    ├── session-16-squad-orchestration/    # Module 5: Specification-Driven Frameworks
     ├── session-17-enterprise-governance/
     ├── session-18-spec-kit/
-    └── session-19-capstone/
+    └── session-19-capstone/               # Module 6: Advanced & Capstone
 ```

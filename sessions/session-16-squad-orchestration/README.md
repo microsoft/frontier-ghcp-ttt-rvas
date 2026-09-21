@@ -1,6 +1,6 @@
-# Session 16 — Multi-Agent Team Orchestration
+# Session 16 — Brady's Squad: Human-Led AI Teams
 
-**Module:** Advanced Topics & Capstone
+**Module:** Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 
@@ -9,7 +9,7 @@
 
 ## Overview
 
-This elective session covers bounded roles, routing, durable decisions, and review for several AI agents. It uses Squad as an optional implementation example. The concepts also apply when a customer chooses another tool or a manual workflow.
+This elective session uses Brady's Squad as the worked framework for bounded roles, routing, durable decisions, and review. The lab starts from a scoped issue so learners can trace each team action back to an approved work contract.
 
 ## Learning outcomes
 

@@ -16,7 +16,7 @@
     <em>teaching AI-assisted development</em>
   </h1>
   <p class="ghcp-hero__sub">
-    A structured, repeatable curriculum for trainers. 19 sessions across 5 modules —
+    A structured, repeatable curriculum for trainers. 19 sessions across 6 modules —
     from Copilot fundamentals to enterprise-scale agentic workflows.
   </p>
   <div class="ghcp-hero__actions">
@@ -27,26 +27,12 @@
  <nav class="ghcp-curriculum" aria-labelledby="curriculum-map">
   <h2 id="curriculum-map">Curriculum Map</h2>
   <div class="ghcp-timeline">
-    <a href="#module-1" class="ghcp-module-node">
-      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="1">M1</div>
-      <div class="ghcp-module-node__label">Copilot Fundamentals</div>
+    {% for module in session_catalog.modules %}
+    <a href="#module-{{ module.id }}" class="ghcp-module-node">
+      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="{{ module.id }}">M{{ module.id }}</div>
+      <div class="ghcp-module-node__label">{{ module.title | e }}</div>
     </a>
-    <a href="#module-2" class="ghcp-module-node">
-      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="2">M2</div>
-      <div class="ghcp-module-node__label">Copilot in Practice</div>
-    </a>
-    <a href="#module-3" class="ghcp-module-node">
-      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="3">M3</div>
-      <div class="ghcp-module-node__label">Agentic Workflows</div>
-    </a>
-    <a href="#module-4" class="ghcp-module-node">
-      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="4">M4</div>
-      <div class="ghcp-module-node__label">DevOps &amp; Infrastructure</div>
-    </a>
-    <a href="#module-5" class="ghcp-module-node">
-      <div class="ghcp-module-node__dot ghcp-badge ghcp-badge--module" data-module="5">M5</div>
-      <div class="ghcp-module-node__label">Advanced Topics &amp; Capstone</div>
-    </a>
+    {% endfor %}
   </div>
  </nav>
  </div>

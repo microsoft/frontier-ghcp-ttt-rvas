@@ -58,13 +58,18 @@ The complete GitHub Copilot & Agentic Workflows curriculum — every session, ev
 | 14      | 14          | Infrastructure as Code with Copilot        | Advanced     | 3 hrs      |
 | 15      | 15          | CI/CD Pipeline Debugging & Agentic Remediation | Advanced  | 3 hrs      |
 
-### Module 5: Advanced Topics & Capstone (Advanced)
+### Module 5: Specification-Driven Frameworks (Advanced)
 
 | Order   | Session #   | Title                                       | Difficulty   | Duration   |
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
-| 16      | 16          | Multi-Agent Team Orchestration (optional)  | Advanced     | 3 hrs      |
-| 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
+| 16      | 16          | Brady's Squad: Human-Led AI Teams (optional) | Advanced   | 3 hrs      |
 | 18      | 18          | Spec Kit: Enterprise Specification-Driven Development | Advanced | 3 hrs |
+
+### Module 6: Advanced Topics & Capstone (Advanced)
+
+| Order   | Session #   | Title                                       | Difficulty   | Duration   |
+| ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
+| 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
 | 19      | 19          | End-to-End Capstone Project                 | Advanced     | 3 hrs      |
 
 ## Recommended Delivery Schedule

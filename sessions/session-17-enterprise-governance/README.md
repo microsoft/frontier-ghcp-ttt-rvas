@@ -1,6 +1,6 @@
 # Session 17 — Enterprise Governance, Policy, and Measurement
 
-**Module:** Advanced Topics & Capstone
+**Module:** Advanced Topics & Capstone (Module 6)
 
 **Difficulty:** Advanced
 

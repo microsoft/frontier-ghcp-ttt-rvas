@@ -1,5 +1,5 @@
 site_name: GitHub Copilot Train-the-Trainer
-site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 19 sessions across 5 modules.
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 19 sessions across 6 modules.
 site_author: GitHub Copilot TTT
 docs_dir: .
 site_dir: site
@@ -7,7 +7,6 @@ site_dir: site
 exclude_docs: |
   .git/
   .github/
-  .squad/
   .devcontainer/
   .copilot/
   .agents/
@@ -17,7 +16,6 @@ exclude_docs: |
   .vscode/
   node_modules/
   site/
-  graphify-out/
   hooks/
   tests/
   scripts/
@@ -175,19 +173,20 @@ nav:
         - Overview: sessions/session-15-cicd-debugging-autofix/README.md
         - Lab: sessions/session-15-cicd-debugging-autofix/lab/README.md
         - Trainer Guide: sessions/session-15-cicd-debugging-autofix/trainer-content/README.md
-    - Module 5 — Advanced Topics & Capstone:
-      - "16 — Multi-Agent Team Orchestration":
+    - Module 5 — Specification-Driven Frameworks:
+      - "16 — Brady's Squad":
         - Overview: sessions/session-16-squad-orchestration/README.md
         - Lab: sessions/session-16-squad-orchestration/lab/README.md
         - Trainer Guide: sessions/session-16-squad-orchestration/trainer-content/README.md
-      - "17 — Enterprise Governance":
-        - Overview: sessions/session-17-enterprise-governance/README.md
-        - Lab: sessions/session-17-enterprise-governance/lab/README.md
-        - Trainer Guide: sessions/session-17-enterprise-governance/trainer-content/README.md
       - "18 — Spec Kit":
         - Overview: sessions/session-18-spec-kit/README.md
         - Lab: sessions/session-18-spec-kit/lab/README.md
         - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
+    - Module 6 — Advanced Topics & Capstone:
+      - "17 — Enterprise Governance":
+        - Overview: sessions/session-17-enterprise-governance/README.md
+        - Lab: sessions/session-17-enterprise-governance/lab/README.md
+        - Trainer Guide: sessions/session-17-enterprise-governance/trainer-content/README.md
       - "19 — Capstone":
         - Overview: sessions/session-19-capstone/README.md
         - Lab: sessions/session-19-capstone/lab/README.md

@@ -1,6 +1,6 @@
 # Session 18 — Spec Kit: Enterprise Specification-Driven Development
 
-**Module:** Advanced Topics & Capstone
+**Module:** Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 
