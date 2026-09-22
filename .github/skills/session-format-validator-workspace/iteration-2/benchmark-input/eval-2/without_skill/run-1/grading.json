@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "The report states that the Session 20 directory does not exist.", "passed": true, "evidence": "The report states that the directory and files do not exist."},
+    {"text": "The report stops after the missing-directory finding.", "passed": false, "evidence": "The report continues with catalog, README, curriculum plan, track, count, and duration analysis."},
+    {"text": "The report does not scaffold or edit session files.", "passed": true, "evidence": "The report states that no source files changed."}
+  ],
+  "summary": {"passed": 2, "failed": 1, "total": 3, "pass_rate": 0.6667},
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []}
+}

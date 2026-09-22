@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "template-registration",
+  "prompt": "Please validate the reusable session template as if I were about to promote it to a real training session. I want the exact curriculum and navigation gaps, not a new session scaffold.",
+  "assertions": [
+    "The report identifies that the template directory is not a valid session-NN directory.",
+    "The report identifies missing curriculum registration or navigation.",
+    "The report does not scaffold or edit session files."
+  ]
+}

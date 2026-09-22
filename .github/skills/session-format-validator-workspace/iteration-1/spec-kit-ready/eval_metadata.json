@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "spec-kit-ready",
+  "prompt": "Validate Session 18 before I publish it. I need to know whether its materials, catalog metadata, navigation, and lab readiness follow our repeatable session format.",
+  "assertions": [
+    "The report marks Session 18 as ready and separates passed checks from required work.",
+    "The report covers materials, metadata, navigation, and lab readiness.",
+    "The report does not invent a defect for the published Session 18 materials."
+  ]
+}

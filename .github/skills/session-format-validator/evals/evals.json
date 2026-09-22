@@ -1,0 +1,38 @@
+{
+  "skill_name": "session-format-validator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Validate Session 18 before I publish it. I need to know whether its materials, catalog metadata, navigation, and lab readiness follow our repeatable session format.",
+      "expected_output": "A concise validation report for sessions/session-18-spec-kit with passed checks or exact gaps.",
+      "files": [],
+      "expectations": [
+        "The report marks Session 18 as ready and separates passed checks from required work.",
+        "The report covers materials, metadata, navigation, and lab readiness.",
+        "The report does not invent a defect for the published Session 18 materials."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I added a new Session 20 called session-20-spec-frameworks. Check whether it is ready to add to the curriculum. Do not create or edit anything.",
+      "expected_output": "A validation report that stops at the missing session directory and does not propose edits outside the report.",
+      "files": [],
+      "expectations": [
+        "The report states that the Session 20 directory does not exist.",
+        "The report stops after the missing-directory finding.",
+        "The report does not scaffold or edit session files."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Please validate the reusable session template as if I were about to promote it to a real training session. I want the exact curriculum and navigation gaps, not a new session scaffold.",
+      "expected_output": "A validation report that identifies the template as an invalid publishable session and reports its missing curriculum registration.",
+      "files": [],
+      "expectations": [
+        "The report identifies that the template directory is not a valid session-NN directory.",
+        "The report identifies missing curriculum registration or navigation.",
+        "The report does not scaffold or edit session files."
+      ]
+    }
+  ]
+}

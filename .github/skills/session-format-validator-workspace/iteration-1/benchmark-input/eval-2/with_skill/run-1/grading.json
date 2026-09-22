@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "The report states that the Session 20 directory does not exist.", "passed": true, "evidence": "The report identifies the missing sessions/session-20-spec-frameworks directory."},
+    {"text": "The report stops after the missing-directory finding.", "passed": true, "evidence": "The report contains only the missing-directory blocker and no downstream curriculum findings."},
+    {"text": "The report does not scaffold or edit session files.", "passed": true, "evidence": "No source files were created or changed by the run."}
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []}
+}

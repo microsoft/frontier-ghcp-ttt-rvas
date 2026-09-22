@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "The report identifies that the template directory is not a valid session-NN directory.", "passed": false, "evidence": "The report identifies placeholder identity but does not check or name the required session-NN directory format."},
+    {"text": "The report identifies missing curriculum registration or navigation.", "passed": true, "evidence": "The report identifies missing MkDocs, catalog, curriculum, and track registration."},
+    {"text": "The report does not scaffold or edit session files.", "passed": true, "evidence": "The report states that no repository source files changed."}
+  ],
+  "summary": {"passed": 2, "failed": 1, "total": 3, "pass_rate": 0.6667},
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []}
+}

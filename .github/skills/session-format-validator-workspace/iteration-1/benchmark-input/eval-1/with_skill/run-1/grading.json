@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "The report marks Session 18 as ready and separates passed checks from required work.", "passed": true, "evidence": "The report states 'Status: Ready' and presents a Passed checks section."},
+    {"text": "The report covers materials, metadata, navigation, and lab readiness.", "passed": true, "evidence": "The report includes one passed result for each of the four required areas."},
+    {"text": "The report does not invent a defect for the published Session 18 materials.", "passed": true, "evidence": "The report lists no required work and matches the validator's ready result."}
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []}
+}

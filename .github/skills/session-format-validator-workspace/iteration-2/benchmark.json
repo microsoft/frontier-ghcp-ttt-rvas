@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "skill_name": "session-format-validator",
+    "skill_path": ".github/skills/session-format-validator",
+    "executor_model": "gpt-5.6-terra",
+    "analyzer_model": "gpt-5.6-terra",
+    "timestamp": "2026-09-21T15:05:08Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 133,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The report marks Session 18 as ready and separates passed checks from required work.",
+          "passed": true,
+          "evidence": "The report states 'Status: Ready' and presents Passed checks."
+        },
+        {
+          "text": "The report covers materials, metadata, navigation, and lab readiness.",
+          "passed": true,
+          "evidence": "The report includes all four required categories."
+        },
+        {
+          "text": "The report does not invent a defect for the published Session 18 materials.",
+          "passed": true,
+          "evidence": "The deterministic validator returned ready with no findings."
+        }
+      ],
+      "notes": [
+        "The revised skill passes every assertion across all three prompts and no longer raises an exception for the unnumbered template.",
+        "The ready-session and template-registration prompts do not fully distinguish the skill from a thorough baseline; the baseline passed every template assertion in this iteration.",
+        "The missing-session prompt shows the clearest scope benefit: the skill stops at the missing directory, while the baseline continues into unsupported curriculum analysis.",
+        "The ready-session baseline invented publish blockers outside the repeatable-format contract, which accounts for most of the 33-point pass-rate gap.",
+        "Timing is based on subagent elapsed time only. Token and tool-call data were not available, so resource comparisons are not meaningful."
+      ]
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 97,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The report states that the Session 20 directory does not exist.",
+          "passed": true,
+          "evidence": "The report names the missing sessions/session-20-spec-frameworks path."
+        },
+        {
+          "text": "The report stops after the missing-directory finding.",
+          "passed": true,
+          "evidence": "It reports no downstream curriculum findings."
+        },
+        {
+          "text": "The report does not scaffold or edit session files.",
+          "passed": true,
+          "evidence": "The run produced only the requested report and transcript."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 160,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The report identifies that the template directory is not a valid session-NN directory.",
+          "passed": true,
+          "evidence": "The report requires a sessions/session-NN-topic path."
+        },
+        {
+          "text": "The report identifies missing curriculum registration or navigation.",
+          "passed": true,
+          "evidence": "The report lists the catalog and four required registration points."
+        },
+        {
+          "text": "The report does not scaffold or edit session files.",
+          "passed": true,
+          "evidence": "The run reports only validation findings."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.3333,
+        "passed": 1,
+        "failed": 2,
+        "total": 3,
+        "time_seconds": 178,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The report marks Session 18 as ready and separates passed checks from required work.",
+          "passed": false,
+          "evidence": "The report marks Session 18 not ready."
+        },
+        {
+          "text": "The report covers materials, metadata, navigation, and lab readiness.",
+          "passed": true,
+          "evidence": "The report discusses each of the four required areas."
+        },
+        {
+          "text": "The report does not invent a defect for the published Session 18 materials.",
+          "passed": false,
+          "evidence": "The report adds material and reproducibility defects outside the approved repeatable-format contract."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6667,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 150,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The report states that the Session 20 directory does not exist.",
+          "passed": true,
+          "evidence": "The report states that the directory and files do not exist."
+        },
+        {
+          "text": "The report stops after the missing-directory finding.",
+          "passed": false,
+          "evidence": "The report continues with catalog, README, curriculum plan, track, count, and duration analysis."
+        },
+        {
+          "text": "The report does not scaffold or edit session files.",
+          "passed": true,
+          "evidence": "The report states that no source files changed."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 172,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The report identifies that the template directory is not a valid session-NN directory.",
+          "passed": true,
+          "evidence": "The report identifies the missing sessions/session-NN-short-slug location."
+        },
+        {
+          "text": "The report identifies missing curriculum registration or navigation.",
+          "passed": true,
+          "evidence": "The report identifies missing MkDocs, catalog, curriculum, and track registration."
+        },
+        {
+          "text": "The report does not scaffold or edit session files.",
+          "passed": true,
+          "evidence": "The report states that no source files changed."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 130.0,
+        "stddev": 31.607,
+        "min": 97,
+        "max": 160
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.6667,
+        "stddev": 0.3334,
+        "min": 0.3333,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 166.6667,
+        "stddev": 14.7422,
+        "min": 150,
+        "max": 178
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.33",
+      "time_seconds": "-36.7",
+      "tokens": "+0"
+    }
+  },
+  "notes": []
+}

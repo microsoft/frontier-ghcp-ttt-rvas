@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "The report marks Session 18 as ready and separates passed checks from required work.", "passed": true, "evidence": "The report states 'Status: Ready' and presents Passed checks."},
+    {"text": "The report covers materials, metadata, navigation, and lab readiness.", "passed": true, "evidence": "The report includes all four required categories."},
+    {"text": "The report does not invent a defect for the published Session 18 materials.", "passed": true, "evidence": "The deterministic validator returned ready with no findings."}
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []}
+}

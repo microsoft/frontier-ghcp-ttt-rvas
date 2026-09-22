@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "missing-session",
+  "prompt": "I added a new Session 20 called session-20-spec-frameworks. Check whether it is ready to add to the curriculum. Do not create or edit anything.",
+  "assertions": [
+    "The report states that the Session 20 directory does not exist.",
+    "The report stops after the missing-directory finding.",
+    "The report does not scaffold or edit session files."
+  ]
+}
