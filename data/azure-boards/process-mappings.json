@@ -1,0 +1,116 @@
+{
+    "schemaVersion": 1,
+    "supportedProcesses": [
+        "Agile",
+        "Scrum"
+    ],
+    "logicalTypes": [
+        "Epic",
+        "Feature",
+        "Requirement",
+        "Task",
+        "Bug"
+    ],
+    "processes": {
+        "Agile": {
+            "workItemTypes": {
+                "Epic": "Epic",
+                "Feature": "Feature",
+                "Requirement": "User Story",
+                "Task": "Task",
+                "Bug": "Bug"
+            },
+            "estimateFields": {
+                "Requirement": "Microsoft.VSTS.Scheduling.StoryPoints",
+                "Task": "Microsoft.VSTS.Scheduling.OriginalEstimate",
+                "Bug": "Microsoft.VSTS.Scheduling.StoryPoints"
+            },
+            "states": {
+                "Epic": {
+                    "new": "New",
+                    "active": "Active",
+                    "closed": "Closed"
+                },
+                "Feature": {
+                    "new": "New",
+                    "active": "Active",
+                    "closed": "Closed"
+                },
+                "Requirement": {
+                    "new": "New",
+                    "active": "Active",
+                    "resolved": "Resolved",
+                    "closed": "Closed"
+                },
+                "Task": {
+                    "new": "New",
+                    "active": "Active",
+                    "closed": "Closed"
+                },
+                "Bug": {
+                    "new": "New",
+                    "active": "Active",
+                    "resolved": "Resolved",
+                    "closed": "Closed"
+                }
+            }
+        },
+        "Scrum": {
+            "workItemTypes": {
+                "Epic": "Epic",
+                "Feature": "Feature",
+                "Requirement": "Product Backlog Item",
+                "Task": "Task",
+                "Bug": "Bug"
+            },
+            "estimateFields": {
+                "Requirement": "Microsoft.VSTS.Scheduling.Effort",
+                "Task": "Microsoft.VSTS.Scheduling.RemainingWork",
+                "Bug": "Microsoft.VSTS.Scheduling.Effort"
+            },
+            "states": {
+                "Epic": {
+                    "new": "New",
+                    "active": "In Progress",
+                    "closed": "Done"
+                },
+                "Feature": {
+                    "new": "New",
+                    "active": "In Progress",
+                    "closed": "Done"
+                },
+                "Requirement": {
+                    "new": "New",
+                    "active": "Approved",
+                    "committed": "Committed",
+                    "closed": "Done"
+                },
+                "Task": {
+                    "new": "To Do",
+                    "active": "In Progress",
+                    "closed": "Done"
+                },
+                "Bug": {
+                    "new": "New",
+                    "active": "Approved",
+                    "committed": "Committed",
+                    "closed": "Done"
+                }
+            }
+        }
+    },
+    "fields": {
+        "title": "System.Title",
+        "description": "System.Description",
+        "acceptanceCriteria": "Microsoft.VSTS.Common.AcceptanceCriteria",
+        "priority": "Microsoft.VSTS.Common.Priority",
+        "tags": "System.Tags",
+        "iterationPath": "System.IterationPath"
+    },
+    "relations": {
+        "parentOf": "System.LinkTypes.Hierarchy-Forward",
+        "childOf": "System.LinkTypes.Hierarchy-Reverse",
+        "dependsOn": "System.LinkTypes.Dependency-Reverse",
+        "predecessorOf": "System.LinkTypes.Dependency-Forward"
+    }
+}

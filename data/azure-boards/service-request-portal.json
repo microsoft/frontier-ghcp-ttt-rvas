@@ -1,0 +1,359 @@
+{
+    "schemaVersion": 1,
+    "product": {
+        "key": "service-request-portal",
+        "name": "Service Request Portal",
+        "description": "A fictional internal portal where employees submit requests, track progress, and find answers before opening a ticket."
+    },
+    "iterationAliases": {
+        "current": "current",
+        "future": "future"
+    },
+    "workItems": [
+        {
+            "key": "epic-service-request-portal",
+            "type": "Epic",
+            "title": "Deliver the Service Request Portal",
+            "description": "Create one place for employees to request services and follow each request from submission to closure.",
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "portfolio"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "feature-request-intake",
+            "type": "Feature",
+            "title": "Request intake and guidance",
+            "description": "Help employees describe a request, find useful guidance, and submit complete information.",
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "intake"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "feature-request-fulfillment",
+            "type": "Feature",
+            "title": "Request routing and progress",
+            "description": "Route submitted requests to the right team and keep requesters informed.",
+            "priority": 2,
+            "tags": [
+                "service-request-portal",
+                "fulfillment"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "requirement-guided-form",
+            "type": "Requirement",
+            "title": "Guide requesters through a dynamic form",
+            "description": "As an employee, I want the form to show fields that match my request category so that I can provide complete information.",
+            "acceptanceCriteria": [
+                "The requester selects a category before entering request details.",
+                "The form shows required fields for the selected category.",
+                "The portal blocks submission and identifies each missing required field."
+            ],
+            "estimate": 5,
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "form"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "requirement-knowledge-suggestions",
+            "type": "Requirement",
+            "title": "Suggest answers before submission",
+            "description": "As an employee, I want relevant help articles while I describe my request so that I can solve simple issues without opening a ticket.",
+            "acceptanceCriteria": [
+                "Suggestions update when the requester changes the category or summary.",
+                "Each suggestion shows a title and a short description.",
+                "The requester can continue to submission after reviewing suggestions."
+            ],
+            "estimate": 3,
+            "priority": 2,
+            "tags": [
+                "service-request-portal",
+                "knowledge"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "requirement-attachment-upload",
+            "type": "Requirement",
+            "title": "Attach supporting files",
+            "description": "As an employee, I want to attach supporting files so that the fulfillment team has the evidence it needs.",
+            "acceptanceCriteria": [
+                "The requester can add multiple allowed file types before submission.",
+                "The portal shows the file name and upload status.",
+                "A rejected file explains the size or type restriction."
+            ],
+            "estimate": 3,
+            "priority": 3,
+            "tags": [
+                "service-request-portal",
+                "attachments"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "requirement-category-routing",
+            "type": "Requirement",
+            "title": "Route requests by category",
+            "description": "As a fulfillment lead, I want requests assigned by category so that each request reaches the right team.",
+            "acceptanceCriteria": [
+                "Each active category has one routing destination.",
+                "A submitted request records the selected routing destination.",
+                "Requests without a valid route enter a visible triage queue."
+            ],
+            "estimate": 5,
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "routing"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "requirement-status-timeline",
+            "type": "Requirement",
+            "title": "Show request status history",
+            "description": "As an employee, I want to see the status history of my request so that I know what has happened and what comes next.",
+            "acceptanceCriteria": [
+                "The timeline lists status changes in time order.",
+                "Each entry shows the status and change time.",
+                "The current status is clear without opening timeline details."
+            ],
+            "estimate": 5,
+            "priority": 2,
+            "tags": [
+                "service-request-portal",
+                "tracking"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "requirement-request-notifications",
+            "type": "Requirement",
+            "title": "Notify requesters about changes",
+            "description": "As an employee, I want a notification when my request changes so that I do not need to check the portal repeatedly.",
+            "acceptanceCriteria": [
+                "The portal sends a notification after submission.",
+                "The portal sends a notification when the request status changes.",
+                "Each notification includes the request reference and current status."
+            ],
+            "estimate": 3,
+            "priority": 3,
+            "tags": [
+                "service-request-portal",
+                "notifications"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "task-form-rules",
+            "type": "Task",
+            "title": "Define category field rules",
+            "description": "Define the required and optional fields for each request category.",
+            "estimate": 6,
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "configuration"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "task-knowledge-query",
+            "type": "Task",
+            "title": "Build the article suggestion query",
+            "description": "Return ranked help article suggestions from the request category and summary.",
+            "estimate": 8,
+            "priority": 2,
+            "tags": [
+                "service-request-portal",
+                "knowledge"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "task-upload-policy",
+            "type": "Task",
+            "title": "Configure attachment restrictions",
+            "description": "Set allowed file types, size limits, and rejection messages.",
+            "estimate": 4,
+            "priority": 3,
+            "tags": [
+                "service-request-portal",
+                "attachments"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "task-routing-table",
+            "type": "Task",
+            "title": "Create the category routing table",
+            "description": "Store the destination and fallback queue for each active category.",
+            "estimate": 6,
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "routing"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "task-timeline-api",
+            "type": "Task",
+            "title": "Expose request status events",
+            "description": "Return ordered status events for the request timeline.",
+            "estimate": 6,
+            "priority": 2,
+            "tags": [
+                "service-request-portal",
+                "tracking"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "task-notification-template",
+            "type": "Task",
+            "title": "Create request notification templates",
+            "description": "Create submission and status-change messages with the request reference.",
+            "estimate": 4,
+            "priority": 3,
+            "tags": [
+                "service-request-portal",
+                "notifications"
+            ],
+            "iteration": "future"
+        },
+        {
+            "key": "bug-required-field-reset",
+            "type": "Bug",
+            "title": "Required fields reset after category change",
+            "description": "Changing the category clears values that are still valid for the new category.",
+            "acceptanceCriteria": [
+                "Values remain when the same field exists in the new category.",
+                "The portal clears only fields that do not apply to the new category."
+            ],
+            "estimate": 2,
+            "priority": 1,
+            "tags": [
+                "service-request-portal",
+                "form",
+                "bug"
+            ],
+            "iteration": "current"
+        },
+        {
+            "key": "bug-duplicate-status-notification",
+            "type": "Bug",
+            "title": "Status changes send duplicate notifications",
+            "description": "A single status change can send the same notification more than once.",
+            "acceptanceCriteria": [
+                "One status change sends one notification per configured channel.",
+                "Retrying delivery does not create a second requester notification."
+            ],
+            "estimate": 2,
+            "priority": 2,
+            "tags": [
+                "service-request-portal",
+                "notifications",
+                "bug"
+            ],
+            "iteration": "future"
+        }
+    ],
+    "relations": [
+        {
+            "source": "epic-service-request-portal",
+            "relation": "parentOf",
+            "target": "feature-request-intake"
+        },
+        {
+            "source": "epic-service-request-portal",
+            "relation": "parentOf",
+            "target": "feature-request-fulfillment"
+        },
+        {
+            "source": "feature-request-intake",
+            "relation": "parentOf",
+            "target": "requirement-guided-form"
+        },
+        {
+            "source": "feature-request-intake",
+            "relation": "parentOf",
+            "target": "requirement-knowledge-suggestions"
+        },
+        {
+            "source": "feature-request-intake",
+            "relation": "parentOf",
+            "target": "requirement-attachment-upload"
+        },
+        {
+            "source": "feature-request-fulfillment",
+            "relation": "parentOf",
+            "target": "requirement-category-routing"
+        },
+        {
+            "source": "feature-request-fulfillment",
+            "relation": "parentOf",
+            "target": "requirement-status-timeline"
+        },
+        {
+            "source": "feature-request-fulfillment",
+            "relation": "parentOf",
+            "target": "requirement-request-notifications"
+        },
+        {
+            "source": "requirement-guided-form",
+            "relation": "parentOf",
+            "target": "task-form-rules"
+        },
+        {
+            "source": "requirement-guided-form",
+            "relation": "parentOf",
+            "target": "bug-required-field-reset"
+        },
+        {
+            "source": "requirement-knowledge-suggestions",
+            "relation": "parentOf",
+            "target": "task-knowledge-query"
+        },
+        {
+            "source": "requirement-attachment-upload",
+            "relation": "parentOf",
+            "target": "task-upload-policy"
+        },
+        {
+            "source": "requirement-category-routing",
+            "relation": "parentOf",
+            "target": "task-routing-table"
+        },
+        {
+            "source": "requirement-status-timeline",
+            "relation": "parentOf",
+            "target": "task-timeline-api"
+        },
+        {
+            "source": "requirement-request-notifications",
+            "relation": "parentOf",
+            "target": "task-notification-template"
+        },
+        {
+            "source": "requirement-request-notifications",
+            "relation": "parentOf",
+            "target": "bug-duplicate-status-notification"
+        },
+        {
+            "source": "requirement-category-routing",
+            "relation": "dependsOn",
+            "target": "requirement-guided-form"
+        }
+    ]
+}

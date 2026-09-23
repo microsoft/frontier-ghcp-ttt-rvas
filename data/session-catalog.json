@@ -5,7 +5,8 @@
     {"id": "3", "title": "Agentic Workflows"},
     {"id": "4", "title": "DevOps & Infrastructure"},
     {"id": "5", "title": "Specification-Driven Frameworks"},
-    {"id": "6", "title": "Advanced Topics & Capstone"}
+    {"id": "6", "title": "Advanced Topics & Capstone"},
+    {"id": "7", "title": "Product and Delivery Teams"}
   ],
   "sessions": [
     {
@@ -177,6 +178,51 @@
       "title": "End-to-End Capstone Project",
       "description": "A bounded integration scenario covering governance, specification, agentic delivery, review, and handover.",
       "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "20",
+      "slug": "session-20-understand-technical-work",
+      "module": "7",
+      "title": "Understand Technical Work Without Reading Code",
+      "description": "Question repository, issue, and pull request evidence in business language, then produce a reviewed product impact and risk brief.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "21",
+      "slug": "session-21-interview-and-shape-work",
+      "module": "7",
+      "title": "Interview Ideas and Shape Better Work",
+      "description": "Use a decision-tree interview to turn an unclear request into a decision brief, structured work item, and testable acceptance criteria.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "22",
+      "slug": "session-22-plan-and-steer-with-canvases",
+      "module": "7",
+      "title": "Plan and Steer Work with Canvases",
+      "description": "Use a prepared canvas to keep plans, risks, decisions, gates, and evidence visible to people and agents.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "23",
+      "slug": "session-23-orchestrate-workstreams",
+      "module": "7",
+      "title": "Orchestrate Agents and Workstreams",
+      "description": "Split a parent objective into bounded workstreams, supervise child sessions, and review each result before consolidation.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "24",
+      "slug": "session-24-govern-agentic-work",
+      "module": "7",
+      "title": "Review Outcomes and Govern Automation",
+      "description": "Define evidence, approval, ownership, escalation, and stop conditions for a recurring agentic workflow.",
+      "difficulty": "Intermediate",
       "duration_minutes": 180
     }
   ]

@@ -15,6 +15,8 @@ By completing this curriculum, trainers will be able to:
 9. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
 10. **Facilitate** hands-on labs where trainees build real projects using the full Copilot toolchain
 11. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
+12. **Teach** product and delivery teams to understand technical work, interview unclear requests, and supervise agent work without requiring programming
+13. **Define** evidence, approval, ownership, and stop conditions for role-based agentic workflows
 
 ---
 
@@ -22,7 +24,7 @@ By completing this curriculum, trainers will be able to:
 
 ### Modules & Tracks
 
-The curriculum is organized into **6 modules** that progress from foundations through advanced orchestration. Modules 1–3 form the **core track**. Modules 4–6 are **elective tracks** that trainers can combine for their audience.
+The curriculum is organized into **7 modules**. Modules 1–3 form the technical core. Modules 4–7 are role-based or technical electives that trainers can combine for their audience.
 
 ```
 Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
@@ -39,6 +41,9 @@ Module 3: Agentic Workflows ───────────────── 
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
         └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
+
+Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 5 sessions)
+    └── Standalone role-based path; no programming prerequisite
 ```
 
 ### Delivery Flexibility
@@ -50,7 +55,8 @@ Module 3: Agentic Workflows ───────────────── 
 | **Agentic Developers**    | Modules 1–3                      | 01–12        | 36 hrs     |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
 | **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-| **Full Track**            | All Modules                      | 01–19        | 57 hrs     |
+| **Product and Delivery Teams** | Module 7                    | 20–24        | 15 hrs     |
+| **Full Track**            | All Modules                      | 01–24        | 72 hrs     |
 
 ---
 
@@ -104,6 +110,22 @@ Module 3: Agentic Workflows ───────────────── 
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
 | 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01–12, 17–18 | 3 hrs |
+
+### Module 7: Product and Delivery Teams (Beginner–Intermediate)
+
+| # | Session | Difficulty | Prerequisites | Duration |
+| --- | --- | --- | --- | --- |
+| 20 | Understand Technical Work Without Reading Code | Beginner | GitHub Copilot access | 3 hrs |
+| 21 | Interview Ideas and Shape Better Work | Beginner | GitHub Copilot access; Session 20 | 3 hrs |
+| 22 | Plan and Steer Work with Canvases | Intermediate | GitHub Copilot access; Sessions 20–21 | 3 hrs |
+| 23 | Orchestrate Agents and Workstreams | Intermediate | GitHub Copilot access; Sessions 20–22 | 3 hrs |
+| 24 | Review Outcomes and Govern Automation | Intermediate | GitHub Copilot access; Sessions 20–23 | 3 hrs |
+
+**Access requirement:** GitHub Copilot access is required for Sessions 20–24.
+Learners without access should not start Module 7. Stop and reschedule their
+training after access is available.
+
+**Optional platform route:** Trainers may seed a synthetic Azure Boards backlog with [`scripts/azure-boards/seed.py`](scripts/azure-boards/seed.py), check it with [`verify.py`](scripts/azure-boards/verify.py), and clean it up with [`reset.py`](scripts/azure-boards/reset.py). The route supports Agile and Scrum. Basic, CMMI, and custom processes fail as unsupported. The scripts verify the existing team, area, and iterations instead of creating project-level configuration. Azure Boards is optional. The Session 21 and Session 23 companions still require GitHub Copilot.
 
 ---
 
@@ -872,18 +894,158 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 
 ---
 
+### Session 20 — Understand Technical Work Without Reading Code
+
+**Difficulty:** Beginner
+**Prerequisites:** GitHub Copilot access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners question repository, issue, pull request, and validation evidence in product language. They identify user impact, delivery risk, missing evidence, and the point where an accountable engineer or owner must confirm the answer.
+
+**Trainer Content Outline (1 hour):**
+
+- Technical artifacts as evidence, not background noise
+- Questions that reveal user impact, scope, risk, and uncertainty
+- Generated summaries versus verified facts
+- Safe use of approved and sanitized context
+- Escalation when the evidence does not support a decision
+
+**Lab Outline (2 hours):**
+
+- Review the fictional Service Request Portal evidence pack or approved learner material
+- Produce an initial plain-language summary
+- Trace every material claim back to evidence
+- Record risks, open questions, and required owners
+- **Deliverable:** A reviewed product impact and risk brief
+
+---
+
+### Session 21 — Interview Ideas and Shape Better Work
+
+**Difficulty:** Beginner
+**Prerequisites:** GitHub Copilot access; Session 20
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners use a decision-tree interview to turn a vague idea into work the team can discuss and estimate. The worked `grill-me` pattern asks only questions whose prerequisites are settled and preserves unresolved decisions instead of guessing.
+
+**Trainer Content Outline (1 hour):**
+
+- Why drafting too early hides missing decisions
+- Decision-tree interviews and question frontiers
+- Scope, constraints, success measures, failure cases, ownership, and approval
+- Turning interview results into a brief and structured issue
+
+**Lab Outline (2 hours):**
+
+- Start from an unclear request
+- Run the decision-tree interview with GitHub Copilot
+- Record settled decisions and open branches
+- Write acceptance criteria and a definition of done
+- Peer-review the work item for readiness
+- Optionally review and shape a seeded Azure Boards requirement through the [Session 21 companion route](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
+- **Deliverable:** A decision brief and sprint-ready work item
+
+---
+
+### Session 22 — Plan and Steer Work with Canvases
+
+**Difficulty:** Intermediate
+**Prerequisites:** GitHub Copilot access; Sessions 20–21
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners use a prepared canvas as a shared work surface for plans, risks, decisions, gates, and evidence. They update the same state through visible controls and agent requests, then verify that both routes agree.
+
+**Trainer Content Outline (1 hour):**
+
+- When visible state is better than another chat turn
+- Canvas contracts: state, actions, evidence, owner, and removal
+- Human and agent updates to one bounded artifact
+- Release-readiness and initiative-planning patterns
+
+**Lab Outline (2 hours):**
+
+- Inspect the prepared canvas contract
+- Update work, risk, decision, and gate state
+- Ask the agent to make one bounded change
+- Compare visible state with the agent report
+- Record the owner and retirement conditions
+- **Deliverable:** A reviewed planning or release-readiness canvas record
+
+---
+
+### Session 23 — Orchestrate Agents and Workstreams
+
+**Difficulty:** Intermediate
+**Prerequisites:** GitHub Copilot access; Sessions 20–22
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners split a parent objective into independent workstreams, define outputs and stop conditions, supervise child sessions, and accept or reject each result. The session teaches built-in session supervision, not custom-agent construction or an external orchestration framework.
+
+**Trainer Content Outline (1 hour):**
+
+- When parallel work helps and when it creates coordination cost
+- Parent objectives, bounded workstreams, outputs, and stop conditions
+- Monitoring, redirecting, stopping, and reviewing child sessions
+- Consolidating accepted evidence into a shared artifact
+
+**Lab Outline (2 hours):**
+
+- Plan a release-preparation objective
+- Define independent workstreams and review criteria
+- Run child sessions
+- Review each result and record accept, revise, or reject
+- Consolidate accepted evidence into the shared plan
+- Optionally use the [Session 23 Azure Boards route](sessions/session-23-orchestrate-workstreams/lab/azure-boards/README.md) with seeded work items and GitHub Copilot
+- Delegate repository work only when the work item links to a GitHub repository and the environment supports the approved delegation route
+- **Deliverable:** An orchestration plan and child-session review record
+
+---
+
+### Session 24 — Review Outcomes and Govern Automation
+
+**Difficulty:** Intermediate
+**Prerequisites:** GitHub Copilot access; Sessions 20–23
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners define how much autonomy a recurring workflow receives and what evidence a person needs before approval. They set allowed inputs and outputs, ownership, escalation, stop conditions, and a human-run recovery path.
+
+**Trainer Content Outline (1 hour):**
+
+- Classifying work by autonomy and approval level
+- Evidence required for acceptance
+- Data, policy, meter, owner, reviewer, and stop guard
+- Failure routes and human-run continuity
+- Measuring useful time saved instead of activity volume
+
+**Lab Outline (2 hours):**
+
+- Select a recurring status or reporting workflow
+- Define the automation contract
+- Review a live or simulated evidence packet
+- Record the approval decision and required follow-up
+- Produce a stakeholder-ready update from accepted evidence
+- **Deliverable:** An automation contract, approval record, and stakeholder update
+
+---
+
 ## Delivery Notes
 
-- **Total track duration:** 57 hours (19 sessions × 3 hours each)
+- **Total track duration:** 72 hours (24 sessions × 3 hours each)
 - **Recommended delivery schedules:**
-  - Intensive: 3 sessions/day × 6 days, plus the capstone day
-  - Standard: 2 sessions/day × 9 days, plus the capstone day
-  - Extended: 1 session/day × 19 days, or 3 sessions/week over about 7 weeks
+  - Intensive: 3 sessions/day × 8 days
+  - Standard: 2 sessions/day × 12 days
+  - Extended: 1 session/day × 24 days
 - **Group size:** 8–15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1–3 form the core track (required for full certification)
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 17 (Enterprise) can be delivered standalone with Module 1 for admin audiences and is required before the capstone
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
+  - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

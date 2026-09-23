@@ -1,15 +1,15 @@
 # Track: Full Mastery
 
 **Target Audience:** Trainers delivering the complete curriculum
-**Duration:** 57 hours (19 sessions × 3 hrs)
+**Duration:** 72 hours (24 sessions × 3 hrs)
 **Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 6–9 days (2–3 sessions per day)
+**Recommended Delivery:** 8–12 days (2–3 sessions per day)
 
 ---
 
 ## Description
 
-The complete GitHub Copilot & Agentic Workflows curriculum — every session, every module, every lab. This track is for trainers who want comprehensive mastery of the entire Copilot and agentic toolchain, from first-time setup through multi-agent orchestration, DevOps automation, and enterprise governance. Completing this track qualifies trainers to deliver any of the other tracks or customize delivery for specific audiences.
+The complete GitHub Copilot & Agentic Workflows curriculum: every session, every module, and every lab. This track prepares trainers to teach technical teams and non-developer product or delivery audiences. It covers first-time setup, agentic delivery, DevOps automation, enterprise governance, and role-based supervision of agent work.
 
 ## Prerequisites
 
@@ -20,6 +20,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum — every session, ev
 - Node.js or Python installed (for MCP server and agent development)
 - Comfort with live coding, demos, and facilitating technical workshops
 - Access to a cloud environment (Azure, AWS, or GCP) for infrastructure labs
+- GitHub Copilot app access for canvas and orchestration labs
 
 ## Sessions
 
@@ -72,9 +73,19 @@ The complete GitHub Copilot & Agentic Workflows curriculum — every session, ev
 | 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
 | 19      | 19          | End-to-End Capstone Project                 | Advanced     | 3 hrs      |
 
+### Module 7: Product and Delivery Teams (Beginner–Intermediate)
+
+| Order | Session # | Title | Difficulty | Duration |
+| --- | --- | --- | --- | --- |
+| 20 | 20 | Understand Technical Work Without Reading Code | Beginner | 3 hrs |
+| 21 | 21 | Interview Ideas and Shape Better Work | Beginner | 3 hrs |
+| 22 | 22 | Plan and Steer Work with Canvases | Intermediate | 3 hrs |
+| 23 | 23 | Orchestrate Agents and Workstreams | Intermediate | 3 hrs |
+| 24 | 24 | Review Outcomes and Govern Automation | Intermediate | 3 hrs |
+
 ## Recommended Delivery Schedule
 
-### 7-Day Intensive (up to 3 sessions/day, final day has one session)
+### 8-Day Intensive
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
@@ -84,9 +95,10 @@ The complete GitHub Copilot & Agentic Workflows curriculum — every session, ev
 | Day 4 | Sessions 10, 11, 12 | MCP, agents + skills                 |
 | Day 5 | Sessions 13, 14, 15 | Actions, IaC + CI/CD                 |
 | Day 6 | Sessions 16, 17, 18 | Orchestration, governance + Spec Kit |
-| Day 7 | Session 19 | Bounded capstone |
+| Day 7 | Sessions 19, 20, 21 | Capstone, role-based evidence + interviewing |
+| Day 8 | Sessions 22, 23, 24 | Canvases, workstream supervision + workflow governance |
 
-### 10-Day Standard (up to 2 sessions/day, final day has one session)
+### 12-Day Standard
 
 | Day   | Sessions        | Focus                            |
 | ----- | --------------- | -------------------------------- |
@@ -99,14 +111,16 @@ The complete GitHub Copilot & Agentic Workflows curriculum — every session, ev
 | Day 7 | Sessions 13, 14 | Actions + IaC                    |
 | Day 8 | Sessions 15, 16 | CI/CD + orchestration            |
 | Day 9 | Sessions 17, 18 | Governance + Spec Kit            |
-| Day 10 | Session 19 | Bounded capstone |
+| Day 10 | Sessions 19, 20 | Capstone + role-based evidence |
+| Day 11 | Sessions 21, 22 | Interviewing + visible planning |
+| Day 12 | Sessions 23, 24 | Workstream supervision + workflow governance |
 
 ## Learning Outcomes
 
 By completing this track, trainees will be able to:
 
 1. Deliver any session in the curriculum confidently with full trainer content
-2. Customize delivery for different audiences (beginner, intermediate, advanced, DevOps, enterprise)
+2. Customize delivery for developer, DevOps, enterprise, product, and delivery audiences
 3. Use the complete Copilot toolchain: inline, Chat, CLI, agent mode, Copilot App, canvases, cloud agent, Spaces, custom agents, MCP, skills
 4. Build canvas extensions, custom MCP servers, agent profiles, and agent skills
 5. Generate and manage GitHub Actions, Terraform/Bicep IaC, and CI/CD pipelines with Copilot
@@ -116,12 +130,13 @@ By completing this track, trainees will be able to:
 9. Design and execute end-to-end agentic development workflows
 10. Assess trainee progress and adapt delivery based on audience needs
 11. Create a personal trainer delivery plan for their organization
+12. Teach non-developers to interview work, steer agents, and retain accountable approval
 
 ## Next Steps
 
 You've completed the full curriculum. From here:
 
-- **Deliver** — Start with the track most relevant to your audience
-- **Customize** — Build custom tracks by mixing sessions for specific customer needs
-- **Contribute** — Help improve the curriculum based on your delivery experience
-- **Stay current** — Update materials as Copilot features evolve (check Preview → GA status)
+- **Deliver:** Start with the track most relevant to your audience
+- **Customize:** Build custom tracks by mixing sessions for specific customer needs
+- **Contribute:** Help improve the curriculum based on your delivery experience
+- **Stay current:** Update materials as Copilot features evolve (check Preview → GA status)

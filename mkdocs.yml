@@ -1,5 +1,5 @@
 site_name: GitHub Copilot Train-the-Trainer
-site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 19 sessions across 6 modules.
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 24 sessions across 7 modules.
 site_author: GitHub Copilot TTT
 docs_dir: .
 site_dir: site
@@ -107,6 +107,7 @@ nav:
     - Agentic Development: tracks/agentic-development.md
     - DevOps & Automation: tracks/devops-automation.md
     - Enterprise Rollout: tracks/enterprise-rollout.md
+    - Product & Delivery Teams: tracks/product-and-delivery-teams.md
     - Full Mastery: tracks/full-mastery.md
   - Sessions:
     - Module 1 — Copilot Fundamentals:
@@ -191,3 +192,24 @@ nav:
         - Overview: sessions/session-19-capstone/README.md
         - Lab: sessions/session-19-capstone/lab/README.md
         - Trainer Guide: sessions/session-19-capstone/trainer-content/README.md
+    - Module 7 — Product and Delivery Teams:
+      - "20 — Understand Technical Work":
+        - Overview: sessions/session-20-understand-technical-work/README.md
+        - Lab: sessions/session-20-understand-technical-work/lab/README.md
+        - Trainer Guide: sessions/session-20-understand-technical-work/trainer-content/README.md
+      - "21 — Interview and Shape Work":
+        - Overview: sessions/session-21-interview-and-shape-work/README.md
+        - Lab: sessions/session-21-interview-and-shape-work/lab/README.md
+        - Trainer Guide: sessions/session-21-interview-and-shape-work/trainer-content/README.md
+      - "22 — Plan with Canvases":
+        - Overview: sessions/session-22-plan-and-steer-with-canvases/README.md
+        - Lab: sessions/session-22-plan-and-steer-with-canvases/lab/README.md
+        - Trainer Guide: sessions/session-22-plan-and-steer-with-canvases/trainer-content/README.md
+      - "23 — Orchestrate Workstreams":
+        - Overview: sessions/session-23-orchestrate-workstreams/README.md
+        - Lab: sessions/session-23-orchestrate-workstreams/lab/README.md
+        - Trainer Guide: sessions/session-23-orchestrate-workstreams/trainer-content/README.md
+      - "24 — Govern Agentic Work":
+        - Overview: sessions/session-24-govern-agentic-work/README.md
+        - Lab: sessions/session-24-govern-agentic-work/lab/README.md
+        - Trainer Guide: sessions/session-24-govern-agentic-work/trainer-content/README.md

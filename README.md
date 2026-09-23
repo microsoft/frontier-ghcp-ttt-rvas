@@ -1,6 +1,6 @@
 # GitHub Copilot & Agentic Workflows — Train-the-Trainer
 
-A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. 19 sessions across 6 modules covering foundations through enterprise-scale agentic delivery, each with 1 hour of trainer-delivered content and a 2-hour hands-on lab.
+A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. It contains 24 sessions across 7 modules, including a dedicated path for product and delivery teams. Each session has 1 hour of trainer content and a 2-hour hands-on lab.
 
 ## Who This Is For
 
@@ -8,10 +8,11 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 - **Developer advocates** building Copilot adoption programs
 - **Engineering leads** running internal Copilot skill-building initiatives
 - **DevOps engineers** integrating Copilot into CI/CD and infrastructure workflows
+- **Product and delivery leaders** teaching non-developers to understand, steer, and review agent work
 
 ## Prerequisites
 
-### For Trainers
+### For Technical-Track Trainers
 
 - Strong software development background (any language)
 - Familiarity with GitHub (repos, PRs, issues, Actions)
@@ -19,12 +20,75 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
   session explicitly supports it)
 - Comfort with live coding and demos
 
-### For Trainees
+### For Technical-Track Trainees
 
 - Working knowledge of at least one programming language
 - GitHub account with Copilot access
 - VS Code installed with GitHub Copilot extension
 - Basic Git proficiency
+
+### For Product and Delivery Trainees
+
+- Basic knowledge of their product or delivery process
+- **A GitHub account with GitHub Copilot access**
+- Browser access to the training repository
+- The GitHub Copilot app for canvas and orchestration exercises
+
+Programming experience, Git command-line knowledge, and repository administration are not required.
+
+**GitHub Copilot access is required for Sessions 20–24.** Learners without access
+should not take these sessions. Stop and reschedule their Module 7 training after
+access is available.
+
+## Optional Azure Boards Route for Module 7
+
+Azure Boards is an optional planning surface for Module 7. **Keep the teaching focused on interviewing, orchestration, evidence, and approval.** Do not turn the route into an Azure Boards product tour.
+
+The trainer tools under [`scripts/azure-boards/`](scripts/azure-boards/) seed synthetic Service Request Portal work items. They support the Agile and Scrum processes. They stop with a clear unsupported-process error for Basic, CMMI, or a custom process.
+
+The seed command requires explicit organization, project, team, process, area, and iteration values:
+
+```bash
+python scripts/azure-boards/seed.py \
+  --organization https://dev.azure.com/ORG \
+  --project PROJECT \
+  --team TEAM \
+  --process Agile \
+  --area-path 'PROJECT\AREA' \
+  --current-iteration 'PROJECT\ITERATION_CURRENT' \
+  --future-iteration 'PROJECT\ITERATION_FUTURE' \
+  --state-file .azure-boards-seed-state.json \
+  --yes
+```
+
+Verify the seeded work before a session:
+
+```bash
+python scripts/azure-boards/verify.py \
+  --organization https://dev.azure.com/ORG \
+  --project PROJECT \
+  --state-file .azure-boards-seed-state.json
+```
+
+Preview cleanup, then move the recorded items to the Azure Boards recycle bin:
+
+```bash
+python scripts/azure-boards/reset.py \
+  --organization https://dev.azure.com/ORG \
+  --project PROJECT \
+  --state-file .azure-boards-seed-state.json \
+  --dry-run
+
+python scripts/azure-boards/reset.py \
+  --organization https://dev.azure.com/ORG \
+  --project PROJECT \
+  --state-file .azure-boards-seed-state.json \
+  --yes
+```
+
+The scripts verify the existing project process, team, area path, and iteration paths. They do not create or change project-level configuration. Cleanup checks both the state-recorded IDs and the matching seed tag before it acts. Reset uses the recycle bin and never requests permanent destruction.
+
+Sessions [21](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md) and [23](sessions/session-23-orchestrate-workstreams/lab/azure-boards/README.md) include optional Azure Boards companions. **Both companions still require GitHub Copilot.** Direct work-item delegation in Session 23 also needs a linked GitHub repository and an environment that supports the approved delegation route.
 
 ## Curriculum Overview
 
@@ -77,7 +141,17 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 | 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration — policies, content exclusions, audit logs, analytics, compliance, rollout. |
 | 19  | [End-to-End Capstone Project](sessions/session-19-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
 
-**Total track duration:** 57 hours across 19 sessions
+### Module 7: Product and Delivery Teams (Beginner–Intermediate)
+
+| # | Session | Difficulty | Duration | Summary |
+| --- | --- | --- | --- | --- |
+| 20 | [Understand Technical Work Without Reading Code](sessions/session-20-understand-technical-work/) | Beginner | 3 hrs | Questions repository, issue, and pull request evidence in business language, then produces a reviewed impact and risk brief. |
+| 21 | [Interview Ideas and Shape Better Work](sessions/session-21-interview-and-shape-work/) | Beginner | 3 hrs | Uses a decision-tree interview to turn an unclear request into a decision brief and sprint-ready work item. |
+| 22 | [Plan and Steer Work with Canvases](sessions/session-22-plan-and-steer-with-canvases/) | Intermediate | 3 hrs | Uses a prepared canvas to keep plans, risks, decisions, gates, and evidence visible. |
+| 23 | [Orchestrate Agents and Workstreams](sessions/session-23-orchestrate-workstreams/) | Intermediate | 3 hrs | Splits a parent objective into bounded workstreams and reviews each child-session result. |
+| 24 | [Review Outcomes and Govern Automation](sessions/session-24-govern-agentic-work/) | Intermediate | 3 hrs | Defines evidence, approval, ownership, escalation, and stop conditions for recurring agentic work. |
+
+**Total track duration:** 72 hours across 24 sessions
 
 ## Getting Started
 
@@ -85,7 +159,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 
 2. **Understand the template** — Check [`track-template/`](track-template/) for the standard session structure. Every session follows the same format.
 
-3. **Browse learning tracks** — See [`tracks/`](tracks/) for pre-defined learning paths based on audience maturity (Beginner Essentials, Developer Productivity, Agentic Development, DevOps, Enterprise, Full Mastery).
+3. **Browse learning tracks** — See [`tracks/`](tracks/) for paths based on role, maturity, and goals, including Product and Delivery Teams.
 
 4. **Pick your path:**
 
@@ -96,12 +170,14 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
    | Agentic Developers    | Modules 1–3                      | 01–12        | 36 hrs      |
    | DevOps Engineers      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
    | Enterprise Admins     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-   | Full Track            | All Modules                      | 01–19        | 57 hrs      |
+   | Product and Delivery Teams | Module 7                   | 20–24        | 15 hrs     |
+   | Full Track            | All Modules                      | 01–24        | 72 hrs      |
 
 5. **Prepare your environment:**
    - GitHub Enterprise Cloud organization with Copilot enabled according to customer policy
    - Pre-configured repositories for each lab (see individual session READMEs)
    - VS Code with GitHub Copilot and GitHub Copilot Chat extensions
+   - GitHub Copilot app for sessions that use canvases or orchestration
 
 6. **Deliver and iterate** — Each session has trainer notes. After delivering, update the materials based on what worked.
 
@@ -118,13 +194,14 @@ ghcp-ttt/
 │   ├── agentic-development.md
 │   ├── devops-automation.md
 │   ├── enterprise-rollout.md
+│   ├── product-and-delivery-teams.md
 │   └── full-mastery.md
 ├── track-template/                        # Reusable session template
 │   └── session-template/
 │       ├── README.md
 │       ├── trainer-content/
 │       └── lab/ (starter/ + solution/)
-└── sessions/                              # All 19 sessions
+└── sessions/                              # All 24 sessions
     ├── session-01-intro-to-copilot/       # Module 1: Fundamentals
     ├── session-02-chat-and-inline/
     ├── session-03-prompt-engineering/
@@ -143,5 +220,10 @@ ghcp-ttt/
     ├── session-16-squad-orchestration/    # Module 5: Specification-Driven Frameworks
     ├── session-17-enterprise-governance/
     ├── session-18-spec-kit/
-    └── session-19-capstone/               # Module 6: Advanced & Capstone
+    ├── session-19-capstone/               # Module 6: Advanced & Capstone
+    ├── session-20-understand-technical-work/ # Module 7: Product & Delivery
+    ├── session-21-interview-and-shape-work/
+    ├── session-22-plan-and-steer-with-canvases/
+    ├── session-23-orchestrate-workstreams/
+    └── session-24-govern-agentic-work/
 ```

@@ -11,7 +11,8 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 | [Agentic Development](agentic-development.md)       | Teams adopting agentic workflows                   | 12         | 36 hrs     | Beginner–Advanced     |
 | [DevOps & Automation](devops-automation.md)         | DevOps / Platform engineers                        | 7          | 21 hrs     | Beginner–Advanced     |
 | [Enterprise Rollout](enterprise-rollout.md)         | Engineering managers, IT admins, Copilot champions | 5          | 15 hrs     | Beginner–Advanced     |
-| [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 19         | 57 hrs     | Beginner–Advanced     |
+| [Product and Delivery Teams](product-and-delivery-teams.md) | PMs, POs, BAs, project managers, delivery leads | 5 | 15 hrs | Beginner–Intermediate |
+| [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 24         | 72 hrs     | Beginner–Advanced     |
 
 ## How to Choose
 
@@ -31,8 +32,11 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
                                     ├─ Rolling out to an org?
                                     │   → Enterprise Rollout (15 hrs)
                                     │
+                                    ├─ Product or delivery role?
+                                    │   → Product and Delivery Teams (15 hrs)
+                                    │
                                     └─ Want everything?
-                                        → Full Mastery (57 hrs)
+                                        → Full Mastery (72 hrs)
 ```
 
 ## Progression Path
@@ -44,6 +48,7 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
                                                     ↑
                           DevOps & Automation ──────┘
                           Enterprise Rollout ────────┘
+                 Product and Delivery Teams ─────────┘
 ```
 
 ## Notes for Trainers

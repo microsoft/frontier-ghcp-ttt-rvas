@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "synthetic": true,
+  "run_id": "SRP-WEEKLY-2026-09-18-PREP-01",
+  "contract_id": "SRP-WEEKLY-STATUS",
+  "contract_version": "1.0",
+  "trigger": "prepared evidence packet",
+  "started_at": "2026-09-18T15:00:00Z",
+  "ended_at": "2026-09-18T15:08:00Z",
+  "operator_role": "delivery owner",
+  "inputs": [
+    {
+      "path": "synthetic-service-requests.csv",
+      "classification": "synthetic",
+      "record_count": 8
+    },
+    {
+      "path": "synthetic-change-log.md",
+      "classification": "synthetic",
+      "record_count": 4
+    }
+  ],
+  "record_validation": {
+    "source_records": 8,
+    "accepted_records": 7,
+    "rejected_records": 1,
+    "rejections": [
+      {
+        "record_id": "SR-1048",
+        "reason": "owner_alias is required by the contract"
+      }
+    ]
+  },
+  "accepted_record_summary": {
+    "closed": 5,
+    "in_progress": 1,
+    "blocked": 1
+  },
+  "tools_used": [
+    "bounded automation runner",
+    "evidence exporter"
+  ],
+  "outputs": [
+    {
+      "path": "weekly-status-draft.md",
+      "type": "internal draft"
+    },
+    {
+      "path": "run-evidence.json",
+      "type": "review evidence"
+    }
+  ],
+  "side_effects": {
+    "external_posts": 0,
+    "source_record_edits": 0,
+    "messages_sent": 0,
+    "repository_writes": 0
+  },
+  "usage": {
+    "copilot_surface": "record during live review",
+    "ai_credits": 0,
+    "actions_minutes": 0,
+    "meter_observed": false
+  },
+  "validation": {
+    "counts_reconciled": true,
+    "claims_traced_to_accepted_records": true,
+    "prohibited_actions_observed": false,
+    "unresolved_exceptions": [
+      "SR-1048 needs an owner before a later run may include it"
+    ]
+  }
+}

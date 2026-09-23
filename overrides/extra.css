@@ -42,6 +42,7 @@
   --color-category-teal: #0E6467;
   --color-category-teal-light: #E0F2F1;
   --color-specification: #9E4D00;
+  --color-product-delivery: #6B2F5B;
   --color-purple-light: #EDE9F7;
   --rvap-hero-gradient: linear-gradient(135deg, var(--color-deep-navy) 0%, #0F3A7A 60%, var(--color-rvap-blue) 100%);
 }
@@ -804,6 +805,10 @@ input, textarea {
 
 .ghcp-badge--module[data-module="6"] {
   background: var(--color-charcoal);
+}
+
+.ghcp-badge--module[data-module="7"] {
+  background: var(--color-product-delivery);
 }
 
 .ghcp-badge--beginner {
