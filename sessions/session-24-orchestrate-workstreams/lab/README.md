@@ -1,10 +1,10 @@
-# Session 23 Lab: Orchestrate Agents and Workstreams
+# Session 24 Lab: Orchestrate Agents and Workstreams
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20-22, the Session 23 trainer content, and live GitHub Copilot orchestration access
+**Prerequisites:** Sessions 20-23, the Session 24 trainer content, and live GitHub Copilot orchestration access
 
 **Deliverable:** An orchestration plan, live child-session result packets, signed reviews, and a release-readiness decision
 
@@ -12,7 +12,7 @@
 
 The fictional **Service Request Portal** is approaching a release review. You are the delivery manager. You need evidence for the decision, but you do not want several sessions editing the same record.
 
-You will plan four workstreams and start them through GitHub Copilot orchestration. You will then monitor the child sessions, accept or reject each result, and copy approved evidence into one shared record.
+You will select the parent objective and child issues created in Session 22, confirm their state in the Session 23 canvas, and start four workstreams through GitHub Copilot orchestration. You will then review each result and update the shared plan.
 
 ## Required preflight
 
@@ -21,6 +21,8 @@ Complete every check before Exercise 1.
 - [ ] Use only the supplied fictional data or approved sanitized work.
 - [ ] Confirm who will act as the human release approver.
 - [ ] Confirm the GitHub Copilot app policy, repository permission, and approved model.
+- [ ] Retrieve the approved parent and child issues through GitHub MCP.
+- [ ] Open the Session 23 planning canvas and confirm the selected workstreams.
 - [ ] Type `/` and confirm that `/orchestrate` is available.
 - [ ] If your organization uses an approved equivalent, confirm that it creates and coordinates live child sessions from one parent objective.
 - [ ] Confirm that you can open, steer, and stop the child sessions.
@@ -50,8 +52,8 @@ If the trainer provides a seeded training project, you may use the [Azure Boards
 
 Open `starter/orchestration-plan-template.md`.
 
-1. Read `starter/scenario-source-brief.md`.
-2. Copy the parent objective into the plan.
+1. Read `starter/scenario-source-brief.md` and the approved GitHub parent issue.
+2. Copy the parent objective and relevant issue numbers into the plan.
 3. Define four independent workstreams.
 4. Name each workstream's approved inputs and required packet.
 5. Add exclusions and a stop condition.
@@ -119,12 +121,14 @@ Do not repair unsupported claims inside the final record. Reject them first so t
 
 Open `starter/shared-work-artifact-template.md`.
 
-1. Copy only accepted findings into the shared record.
+1. Copy only accepted findings into the shared record and planning canvas.
 2. Record rejected claims and the reason for each rejection.
 3. Add unresolved gaps with an owner and due date.
 4. Choose **Go**, **Conditional go**, or **No-go**.
 5. Add the human approver's name or training role and the review date.
-6. Compare your structure with the files in `solution/` only after you finish your own work.
+6. Add the accepted result or follow-up need to the relevant GitHub issue through a reviewed MCP update.
+7. Retrieve the updated issue and compare it with the canvas.
+8. Compare your structure with the files in `solution/` only after you finish your own work.
 
 **Expected result:** One release-readiness record that traces each decision to a live, reviewed packet.
 
@@ -135,6 +139,8 @@ Open `starter/shared-work-artifact-template.md`.
 - [ ] Result packets returned by live GitHub Copilot orchestration.
 - [ ] Acceptance or rejection review for each packet.
 - [ ] Shared release-readiness record.
+- [ ] Reviewed GitHub issue update and fresh-read verification.
+- [ ] Planning canvas updated with the accepted result or unresolved gap.
 - [ ] Explicit human approval.
 
 ## Review rubric

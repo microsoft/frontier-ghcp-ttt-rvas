@@ -1,14 +1,14 @@
-# Session 24 Lab: Govern a Weekly Status Workflow
+# Session 25 Lab: Automate a Weekly Delivery Follow-up
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20–23
+**Prerequisites:** Sessions 20-24, GitHub Copilot app Automations access, and GitHub MCP access
 
 ## Objective
 
-Govern one weekly Service Request Portal status workflow from contract through stakeholder communication. Use **GitHub Copilot** to draft, inspect, or review the work. Submit an automation contract, a Copilot-reviewed evidence packet, an approval record, and a stakeholder-ready update.
+Create and run one draft-only weekly Service Request Portal automation. Submit its contract, run evidence, approval record, stakeholder-ready update, and system-of-record decision.
 
 ## Scenario
 
@@ -32,7 +32,8 @@ Complete this before the lab.
 
 | Area | Record |
 | --- | --- |
-| GitHub Copilot | Signed in and able to send a prompt in an approved surface |
+| GitHub Copilot | Signed in to the app with Automations access |
+| GitHub MCP | Able to read the approved training repository and issues |
 | Policy | Approved GitHub Copilot surface and feature |
 | Data | Synthetic or approved sanitized inputs only |
 | Meter | Current AI-credit and compute meter, budget, and observer |
@@ -43,13 +44,11 @@ Complete this before the lab.
 | Recovery procedure | Steps to stop the workflow, preserve evidence, and return control to the owner |
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot access fails.** Resolve the sign-in, entitlement, policy, or approved-surface issue before you continue. Do not complete the lab by drafting or reviewing the artifacts without GitHub Copilot.
+> **Stop if Automations or GitHub MCP access fails.** Resolve the sign-in, entitlement, policy, connection, or repository issue before you continue.
 
 Confirm current eligibility and controls in the official GitHub documentation. The interface and available options may differ from this lab. Use the minimum required tools. Do not place secrets, customer data, or restricted content in prompts or evidence.
 
-**Exercise guard:** Run at most one automation test. Stop the automation if the approved usage meter is unavailable, the data classification is unclear, the workflow requests an unapproved tool, or the run exceeds 12 minutes. Preserve the evidence. Then use GitHub Copilot to review the supplied synthetic evidence while the owner resolves the exception.
-
-The prepared evidence is a review input. It does not replace GitHub Copilot access or the required Copilot work.
+**Exercise guard:** Run one automation test. Stop if the approved usage meter is unavailable, the data classification is unclear, the workflow requests an unapproved tool, or the run exceeds 12 minutes. Preserve the evidence and record **Pause**.
 
 ## Phase 1: Classify the workflow (20 min)
 
@@ -88,7 +87,7 @@ Keep the output factual. Each count or status claim must trace to an accepted so
 
 ## Phase 3: Use GitHub Copilot to draft and inspect (30 min)
 
-Provide the completed contract and synthetic inputs to GitHub Copilot. Ask Copilot to draft the update and return structured run evidence. Do not let it publish or change source records.
+Create the automation in the GitHub Copilot app. Provide the completed contract, approved GitHub issue scope, and synthetic inputs. Grant only the required GitHub read tools. Do not let it publish or change source records.
 
 Suggested work order:
 
@@ -100,9 +99,9 @@ exclusion. Do not post, message, edit source records, call external tools, or in
 missing values. Return a markdown draft and JSON evidence for human review.
 ```
 
-If your approved GitHub Copilot surface supports automations, run one draft-only test after the preflight. Select the minimum tools and keep all outputs reviewable. Stop after one test or 12 minutes. Export or transcribe the evidence required by the contract. Leave the automation unscheduled unless the owner approves another run.
+Run one draft-only test after the preflight. Keep all outputs reviewable. Stop after one test or 12 minutes. Export or transcribe the evidence required by the contract. Leave the automation unscheduled unless the owner approves another run.
 
-If an automation test is blocked by policy, product availability, or a stop condition, open `starter/synthetic-run-evidence.json`. Ask GitHub Copilot to inspect that prepared evidence against your contract and source files. Record the blocked condition in the approval record.
+If policy, product availability, or a stop condition blocks the run, record **Pause** and stop the lab. `starter/synthetic-run-evidence.json` is a comparison aid after the live attempt, not a completion route.
 
 Use `starter/run-evidence-template.json` for the evidence packet. Replace every placeholder with results from your Copilot draft or Copilot review.
 
@@ -150,6 +149,13 @@ Complete `stakeholder-update-template.md`. Include:
 - useful time saved and its calculation;
 - next action and stop status.
 
+Record the authoritative planning system:
+
+- **GitHub**, when the issues and agent work remain authoritative there; or
+- **Azure Boards**, when the delivery backlog remains authoritative there.
+
+If Azure Boards is selected, state how the draft will be reviewed before a person updates the work item or sends approved implementation work to a linked GitHub repository.
+
 Do not include prompts, hidden reasoning, secrets, restricted data, or names from a customer or source organization.
 
 ## Checkpoints
@@ -170,13 +176,14 @@ Submit these four artifacts:
 2. One GitHub Copilot-reviewed run evidence packet.
 3. One approval record with accept, reject, or pause.
 4. One stakeholder-ready update with useful time saved.
+5. One system-of-record decision for GitHub or Azure Boards.
 
 The artifacts must name the owner, reviewer, escalation path, stop condition, and recovery procedure. The evidence must show where GitHub Copilot drafted, inspected, or reviewed the governed work.
 
 ## Final check
 
 - [ ] The workflow uses the lowest useful autonomy level.
-- [ ] GitHub Copilot access and the approved surface are recorded.
+- [ ] GitHub Copilot app Automations and GitHub MCP access are recorded.
 - [ ] Policy, data, and meter checks are recorded.
 - [ ] Inputs, outputs, tools, and side effects are bounded.
 - [ ] Required evidence traces the draft to accepted source records.
@@ -184,6 +191,7 @@ The artifacts must name the owner, reviewer, escalation path, stop condition, an
 - [ ] The reviewer recorded a decision and next action.
 - [ ] Useful time saved subtracts review, rework, and overhead.
 - [ ] The stakeholder update contains no customer or source organization names.
+- [ ] The authoritative planning system and handoff owner are explicit.
 
 ## Solution reference
 

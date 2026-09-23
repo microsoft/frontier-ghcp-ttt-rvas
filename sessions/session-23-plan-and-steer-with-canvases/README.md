@@ -1,60 +1,50 @@
-# Session 22: Plan and Steer Work with Canvases
+# Session 23: Build and Use a Planning Canvas
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20–21, active GitHub Copilot access, and the approved prepared canvas
+**Prerequisites:** Sessions 20-22, GitHub Copilot app access, GitHub MCP access, and canvas creation access
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-Use GitHub Copilot and an approved prepared canvas to plan and review delivery work without building an extension. Learners ask Copilot to inspect the shared state, make bounded changes, and verify the result against the visible canvas.
+Learners use `/create-canvas` to turn the GitHub issue plan from Session 22 into a visible delivery workspace. They review the generated state and actions, remove unnecessary complexity, and keep human and Copilot updates aligned.
 
-This session is role-based. Session 08 covers the technical design and construction of canvas extensions. Session 22 starts with an approved canvas and focuses on product ownership, delivery steering, release evidence, and handoff.
+This is a role-based session. Learners describe and operate the canvas. They do not hand-code the extension.
 
-## Required access
-
-Learners need:
-
-- an active GitHub Copilot entitlement;
-- a supported GitHub Copilot app with the approved canvas available;
-- permission to use the canvas actions in this lab.
-
-**Stop the session for any learner who cannot pass this preflight.** The seed files are not a substitute for live canvas work.
+> [!IMPORTANT]
+> **Live canvas creation is required.** Stop if `/create-canvas`, GitHub MCP, or the approved canvas actions are unavailable.
 
 ## Learning outcomes
 
-- Use GitHub Copilot to inspect a prepared canvas contract and its shared state.
-- Change work and evidence through the approved canvas.
-- Ask Copilot to make bounded changes to that same state.
-- Use Copilot and the visible canvas to verify each material change.
-- Record the owner, reviewer, recovery procedure, removal trigger, and stop conditions.
+By the end of this session, learners can:
 
-## Deliverable
+1. Decide when a canvas is more useful than another chat response.
+2. Describe the state and actions needed for a planning canvas.
+3. Create a canvas from a plain-language request.
+4. Review and simplify the generated capabilities.
+5. Load approved GitHub issues into the canvas.
+6. Compare visible state, GitHub state, and Copilot's report.
+7. Record ownership, recovery, and retirement conditions.
 
-A reviewed planning or release-readiness canvas for the synthetic Service Request Portal, plus an evidence record that another delivery lead can inspect.
+## Session structure
 
-## Session materials
+| Block | Duration | Material |
+| --- | --- | --- |
+| Trainer content | 1 hour | [Trainer guide](trainer-content/README.md) |
+| Lab | 2 hours | [Lab guide](lab/README.md) |
+
+## Materials
 
 | Resource | Location |
 | --- | --- |
-| Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
-| Lab guide | [`lab/README.md`](lab/README.md) |
-| Starter assets | [`lab/starter/`](lab/starter/) |
-| Reference solution | [`lab/solution/`](lab/solution/) |
+| Canvas requirements and review record | [`lab/starter/`](lab/starter/) |
+| Reference result | [`lab/solution/`](lab/solution/) |
+| Optional prepared-canvas exercise | [`lab/optional-prepared-canvas/`](lab/optional-prepared-canvas/) |
 
-## Product note
+## Session 08 distinction
 
-Verified against official GitHub documentation on September 23, 2026. The GitHub Copilot app is generally available on macOS, Windows, and Linux. Current documentation describes canvases as shared surfaces where people and Copilot can update the same state. Access depends on the active Copilot plan, client version, and administrator policy.
-
-The lab avoids fixed button positions and exact screen layouts. GitHub may change labels or placement. Follow the current product documentation. If the required Copilot or canvas access is missing, stop. JSON edits and written reports do not count as completion evidence.
-
-## Official references
-
-- GitHub Copilot app general availability: https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/
-- GitHub Copilot app quickstart: https://docs.github.com/en/copilot/get-started/quickstart-copilot-app
-- Working with canvas extensions: https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions
-- Customize tab general availability: https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/
+Session 08 teaches canvas extension design and implementation. Session 23 teaches product and delivery teams to request, review, and operate a canvas through the GitHub Copilot app.

@@ -1,25 +1,24 @@
-# Session 24 Trainer Guide: Review Outcomes and Govern Automation
+# Session 25 Trainer Guide: Automate Delivery Follow-up and Connect Work Systems
 
 ## Delivery objective
 
-Learners leave with a governed workflow, not an automation demo. They use **GitHub Copilot** to define what the workflow may do, inspect evidence from one run, record a human decision, and communicate the result.
+Learners create one useful GitHub Copilot Automation from the manual delivery workflow. They configure the automation in the app, run it once in draft-only mode, inspect its evidence, and decide whether to keep, revise, or disable it.
 
 Use the fictional **Service Request Portal** weekly status workflow. Do not configure enterprise policies or repeat the Session 17 administration material.
 
 > [!IMPORTANT]
-> Verify GitHub Copilot access before the session. If a learner cannot use an approved Copilot surface, stop and resolve access before the lab starts. Do not offer a manual or no-access substitute.
+> Verify GitHub Copilot app Automations and GitHub MCP access before the session. Stop if either capability is unavailable.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:06 | Accountability stays with the workflow owner |
-| 0:06–0:14 | Copilot access, policy, data, and meter preflight |
-| 0:14–0:24 | Autonomy and approval classification |
-| 0:24–0:35 | Build the automation contract |
-| 0:35–0:47 | Review a synthetic run evidence packet |
-| 0:47–0:55 | Accept, reject, or pause |
-| 0:55–1:00 | Useful time saved, stakeholder update, and lab launch |
+| 0:00–0:08 | Choose the recurring delivery task |
+| 0:08–0:18 | Open Automations and inspect the available controls |
+| 0:18–0:30 | Build the draft-only automation contract |
+| 0:30–0:43 | Configure and run one automation |
+| 0:43–0:53 | Review evidence and decide |
+| 0:53–1:00 | Connect the result to GitHub or Azure Boards |
 
 ## Current product facts to verify before delivery
 
@@ -43,7 +42,7 @@ Official references:
 - [Billing and usage for organizations and enterprises](https://docs.github.com/en/copilot/concepts/billing-and-usage/organizations-and-enterprises)
 - [Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/context/content-exclusion)
 
-Do not promise a fixed feature or click path. If an automation feature is unavailable, use an approved GitHub Copilot surface to review the prepared evidence. GitHub Copilot access remains required.
+Do not promise a fixed click path. The session requires the current Automations area or its documented replacement.
 
 ## Core model
 
@@ -56,7 +55,7 @@ Do not promise a fixed feature or click path. If an automation feature is unavai
 | A2: Bounded action | Take a reversible action in a named system | Human approves the contract and reviews exceptions |
 | A3: Unattended action | Run and act without per-run approval | Owner monitors evidence and can stop it immediately |
 
-The lab selects **A1: Draft**. The workflow may prepare a weekly status update. It may not publish, message stakeholders, change requests, or modify repository content.
+The lab selects **A1: Draft**. The workflow may retrieve approved issue state and prepare a weekly status update. It may not publish, message stakeholders, change work items, or modify repository content.
 
 ### 2. Match approval to consequence
 
@@ -103,14 +102,14 @@ Review in this order:
 Use the starter files and an approved GitHub Copilot surface.
 
 1. Show the incomplete contract template.
-2. Open the synthetic request CSV and change log.
-3. Review `synthetic-run-evidence.json`.
-4. Ask GitHub Copilot to draft or review the weekly update.
-5. Compare it with `lab/solution/run-output.md`.
-6. Record the decision in the approval template.
-7. Calculate useful time saved.
+2. Open the Automations area and create a draft-only automation.
+3. Grant the minimum GitHub read tools.
+4. Run the automation once against the training repository and synthetic inputs.
+5. Export or record the run evidence.
+6. Compare the draft with `lab/solution/run-output.md`.
+7. Record the decision and calculate useful time saved.
 
-Run one automation test only after the access, policy, data, and meter preflight passes. Select the minimum tools. Keep the output in draft form. Stop after 12 minutes. If a stop condition fires, preserve the evidence and have learners use GitHub Copilot to inspect the supplied packet.
+Run one automation test only after the access, policy, data, and meter preflight passes. Stop after 12 minutes. If a stop condition fires, preserve the evidence and record **Pause**.
 
 ## Useful time saved
 
@@ -148,6 +147,16 @@ Do not count generated words, agent activity, or elapsed calendar time as value.
 - Treat a clean-looking update without traceable evidence as a failed run.
 - Avoid fictional customer names. Use roles such as product owner, delivery lead, and reviewer.
 - Let learners substitute sanitized recurring work only when its inputs and outputs can be shared in the room.
+
+## System-of-record decision
+
+End the demonstration by asking where the approved state belongs:
+
+- Keep GitHub authoritative when the issues, repositories, and agent work already live there.
+- Keep Azure Boards authoritative when the delivery organization manages its backlog there.
+- Do not maintain competing status fields in both systems without a named synchronization owner.
+
+The optional Azure Boards route may prepare a draft update or hand approved implementation work to a linked GitHub repository. It must not turn the session into an Azure Boards product tour.
 
 ## Lab handoff
 

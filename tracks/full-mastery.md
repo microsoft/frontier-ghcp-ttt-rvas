@@ -1,9 +1,9 @@
 # Track: Full Mastery
 
 **Target Audience:** Trainers delivering the complete curriculum
-**Duration:** 72 hours (24 sessions × 3 hrs)
+**Duration:** 75 hours (25 sessions × 3 hrs)
 **Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 8–12 days (2–3 sessions per day)
+**Recommended Delivery:** 9–13 days (2–3 sessions per day)
 
 ---
 
@@ -77,15 +77,16 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 
 | Order | Session # | Title | Difficulty | Duration |
 | --- | --- | --- | --- | --- |
-| 20 | 20 | Understand Technical Work Without Reading Code | Beginner | 3 hrs |
+| 20 | 20 | Work Effectively in the GitHub Copilot App | Beginner | 3 hrs |
 | 21 | 21 | Interview Ideas and Shape Better Work | Beginner | 3 hrs |
-| 22 | 22 | Plan and Steer Work with Canvases | Intermediate | 3 hrs |
-| 23 | 23 | Orchestrate Agents and Workstreams | Intermediate | 3 hrs |
-| 24 | 24 | Review Outcomes and Govern Automation | Intermediate | 3 hrs |
+| 22 | 22 | Plan Work with GitHub Issues and MCP | Intermediate | 3 hrs |
+| 23 | 23 | Build and Use a Planning Canvas | Intermediate | 3 hrs |
+| 24 | 24 | Orchestrate Agents and Workstreams | Intermediate | 3 hrs |
+| 25 | 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | 3 hrs |
 
 ## Recommended Delivery Schedule
 
-### 8-Day Intensive
+### 9-Day Intensive
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
@@ -95,10 +96,11 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 4 | Sessions 10, 11, 12 | MCP, agents + skills                 |
 | Day 5 | Sessions 13, 14, 15 | Actions, IaC + CI/CD                 |
 | Day 6 | Sessions 16, 17, 18 | Orchestration, governance + Spec Kit |
-| Day 7 | Sessions 19, 20, 21 | Capstone, role-based evidence + interviewing |
-| Day 8 | Sessions 22, 23, 24 | Canvases, workstream supervision + workflow governance |
+| Day 7 | Sessions 19, 20, 21 | Capstone, app foundations + interviewing |
+| Day 8 | Sessions 22, 23, 24 | GitHub planning, canvases + orchestration |
+| Day 9 | Session 25 | Automation + work-system handoff |
 
-### 12-Day Standard
+### 13-Day Standard
 
 | Day   | Sessions        | Focus                            |
 | ----- | --------------- | -------------------------------- |
@@ -111,9 +113,10 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 7 | Sessions 13, 14 | Actions + IaC                    |
 | Day 8 | Sessions 15, 16 | CI/CD + orchestration            |
 | Day 9 | Sessions 17, 18 | Governance + Spec Kit            |
-| Day 10 | Sessions 19, 20 | Capstone + role-based evidence |
-| Day 11 | Sessions 21, 22 | Interviewing + visible planning |
-| Day 12 | Sessions 23, 24 | Workstream supervision + workflow governance |
+| Day 10 | Sessions 19, 20 | Capstone + Copilot app foundations |
+| Day 11 | Sessions 21, 22 | Interviewing + GitHub issue planning |
+| Day 12 | Sessions 23, 24 | Planning canvas + workstream supervision |
+| Day 13 | Session 25 | Automation + work-system handoff |
 
 ## Learning Outcomes
 
@@ -130,7 +133,7 @@ By completing this track, trainees will be able to:
 9. Design and execute end-to-end agentic development workflows
 10. Assess trainee progress and adapt delivery based on audience needs
 11. Create a personal trainer delivery plan for their organization
-12. Teach non-developers to interview work, steer agents, and retain accountable approval
+12. Teach non-developers to create briefs, issues, canvases, orchestrated work, and bounded Automations with GitHub Copilot
 
 ## Next Steps
 

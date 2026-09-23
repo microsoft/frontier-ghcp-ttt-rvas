@@ -1,4 +1,4 @@
-# Trainer Content: Session 23, Orchestrate Agents and Workstreams
+# Trainer Content: Session 24, Orchestrate Agents and Workstreams
 
 **Duration:** 1 hour
 
@@ -155,7 +155,7 @@ The human approval uses one outcome:
 
 ## 6. Distinguish this session from Session 16 (0:52-0:56)
 
-Session 16 teaches an optional Squad implementation with persistent roles, routing, and shared memory. Session 23 teaches temporary built-in orchestration for one business objective. Do not teach agent definitions, custom-agent files, Squad setup, or autonomous issue queues here.
+Session 16 teaches an optional Squad implementation with persistent roles, routing, and shared memory. Session 24 teaches temporary built-in orchestration for one business objective. Do not teach agent definitions, custom-agent files, Squad setup, or autonomous issue queues here.
 
 ## Lab handoff (0:56-1:00)
 

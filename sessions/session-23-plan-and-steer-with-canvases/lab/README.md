@@ -1,182 +1,121 @@
-# Session 22 Lab: Plan and Steer Work with Canvases
+# Session 23 Lab: Create a Delivery-Planning Canvas
 
 **Duration:** 2 hours
-
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20–21, active GitHub Copilot access, and the approved prepared canvas
+## Objective
 
-## Deliverable
+Create a live planning canvas from the Session 22 GitHub issues, review its capabilities, and use it to steer delivery work.
 
-A reviewed release-readiness canvas for the synthetic Service Request Portal, plus a completed evidence record. The deliverable must come from live work in the approved canvas with GitHub Copilot.
+## Required preflight
 
-## Before you start
+**Access policy:** GitHub Copilot app access, `/create-canvas`, GitHub MCP reads, and the required canvas actions are required.
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use only the synthetic data supplied in this session.
+1. Open the GitHub Copilot app.
+2. Confirm that `/create-canvas` is available.
+3. Confirm that GitHub MCP can retrieve the Session 22 issues.
+4. Name the canvas owner and reviewer.
+5. Set a boundary: the canvas may not close issues, change assignees, or publish updates.
 
-### Required preflight
+> [!IMPORTANT]
+> **Stop if required access is missing.** Resolve the app, canvas creation, GitHub reads, or required action access before continuing.
 
-- Sign in to GitHub Copilot and confirm that prompts run.
-- Open the approved prepared canvas.
-- Confirm that Copilot can read the canvas state and call the required actions.
-- Confirm that policy allows the canvas and its actions.
-- Work in an approved training repository or local folder.
-- Do not install an extension, add dependencies, or connect an external system.
-- Load the supplied seed state through the approved canvas setup.
-- Name a reviewer and a timebox owner.
+## Time plan
 
-**Stop here** if GitHub Copilot, the approved canvas, or a required action is unavailable. The files cannot replace live canvas work. Also stop if policy, data classification, action scope, ownership, or evidence rules are unclear.
-
-## Scenario
-
-The Service Request Portal team is preparing a limited release. The release includes intake category selection, attachment guidance, and a support handoff. Current readiness is `conditional` because work, gate, and risk state still need attention.
-
-| Exercise | Task | Time |
+| Phase | Work | Time |
 | --- | --- | --- |
-| 1 | Use Copilot to inspect the contract and baseline | 20 min |
-| 2 | Change visible state and verify it with Copilot | 30 min |
-| 3 | Ask Copilot to update the same state | 30 min |
-| 4 | Review readiness and record ownership | 30 min |
-| Buffer | Recovery or peer review | 10 min |
+| 1 | Define the canvas | 20 min |
+| 2 | Create and simplify it | 35 min |
+| 3 | Load issues and update state | 30 min |
+| 4 | Verify and review | 25 min |
+| 5 | Record ownership | 10 min |
 
-## Exercise 1: Inspect the contract and baseline with Copilot (20 minutes)
+## Phase 1: define the canvas
 
-**Goal:** Decide whether the prepared artifact is safe and clear enough to use.
+Complete `starter/canvas-requirements.md`.
 
-1. Open the approved prepared canvas with the supplied seed state.
-2. Read `canvas-contract.md`.
-3. Ask GitHub Copilot to read the current canvas state.
-4. Ask Copilot to list the state collections, allowed actions, validation rules, current revision, and readiness reason.
-5. Compare the response with the visible canvas and the contract.
-6. In `evidence-record.md`, record the canvas, reviewer, baseline revision, and preflight result.
+Keep only the fields and actions needed to answer:
 
-Pause if an action can change external systems, use non-synthetic data, or bypass the release owner.
+- What are we trying to deliver?
+- Which issues are active, blocked, or ready for review?
+- Who owns the next action?
+- Which dependency or risk needs attention?
+- Which decision changed the plan?
 
-**Expected result:** The contract is accepted for the lab, or the record states why the learner paused.
+## Phase 2: create and simplify the canvas
 
-## Exercise 2: Change visible state and verify it with Copilot (30 minutes)
+Use `/create-canvas` with the approved requirements.
 
-**Goal:** Make a visible state change and keep the proof with it.
+Review the generated canvas before using it:
 
-Use the canvas controls:
+- remove fields that do not support a decision;
+- remove actions that exceed the lab boundary;
+- confirm that Copilot can read and update the approved state;
+- record the final capabilities in `starter/canvas-review-record.md`.
 
-1. Add evidence `E-003`.
-   - Type: `test`
-   - Summary: `Focused accessibility check passed for attachment guidance.`
-   - Location: `training://checks/accessibility-attachment-guidance`
-   - Reviewer: `Quality reviewer`
-   - Result: `accepted`
-2. Move `W-102` from `in-progress` to `review`.
-3. Link `E-003` to `W-102`.
-4. Increment the revision once.
-5. Keep readiness at `conditional`. Pending work, an open risk, and a pending gate remain.
-6. Add the before-and-after values to `evidence-record.md`.
+Do not accept a complex canvas because it looks impressive.
 
-Ask Copilot to read the resulting state and report only `W-102`, `E-003`, the revision, and readiness. Compare that report with the canvas.
+## Phase 3: load issues and update state
 
-**Expected result:** `W-102` is in review with accepted evidence, and the visible artifact matches the evidence record.
+Ask Copilot to retrieve the Session 22 parent and child issues through GitHub MCP.
 
-## Exercise 3: Ask Copilot to update the same state (30 minutes)
+Load:
 
-**Goal:** Test one refused update and one accepted update.
+- issue number and title;
+- current GitHub state;
+- planning status;
+- owner or ownership gap;
+- dependency;
+- next action.
 
-### 3.1 Test the guardrail
+Then:
 
-Use the prepared canvas action names if they differ from the prompt below.
+1. change one planning status through visible controls;
+2. ask Copilot to update a different planning status;
+3. record one risk;
+4. record one decision with owner and reason;
+5. ask Copilot for a concise current summary.
 
-```text
-Read the current Service Request Portal release state.
-Try to update W-103 to ready.
-Do not invent or reuse unrelated evidence.
-If the contract blocks the change, leave state unchanged.
-Report the item ID, linked evidence, revision, readiness result, and reason.
-```
+## Phase 4: verify and review
 
-The state should not change because `W-103` lacks accepted evidence. Check the visible canvas before recording the refusal.
+Compare:
 
-### 3.2 Add evidence, then request the bounded update
+- the visible canvas;
+- Copilot's summary;
+- a fresh GitHub MCP read.
 
-Add:
+Record each mismatch. A planning status may differ from the GitHub issue state, but the canvas must label that difference clearly.
 
-```text
-ID: E-004
-Type: runbook
-Summary: Support handoff and rollback steps reviewed in the training scenario.
-Location: training://runbooks/service-request-portal-support
-Reviewer: Operations reviewer
-Result: accepted
-```
+A peer records **Approve**, **Revise**, or **Pause**.
 
-Then ask GitHub Copilot:
+## Phase 5: record ownership
 
-```text
-Update only W-103 to ready using evidence E-004.
-Read the resulting state.
-Report W-103, its evidence, the revision, readiness result, and reason.
-Do not change any gate, risk, or decision.
-```
+Complete:
 
-Compare the report with the visible canvas. Record each field as match or mismatch.
+- artifact owner;
+- reviewer;
+- recovery procedure;
+- retirement trigger;
+- next safe action.
 
-**Expected result:** The refused request leaves the revision unchanged. The accepted request changes only `W-103`, links `E-004`, and increments the revision once.
+## Deliverables
 
-## Exercise 4: Review readiness and record ownership (30 minutes)
+1. A live learner-created planning canvas.
+2. A completed canvas review record.
+3. Loaded GitHub issue state.
+4. One visible update and one Copilot-requested update.
+5. A peer decision.
 
-**Goal:** Produce a reviewable release-readiness decision.
+## Completion checklist
 
-1. Review every open work item, risk, decision, gate, and evidence entry.
-2. Update `R-001` to `mitigated` only if the record contains a valid mitigation.
-3. Set the operations gate to `passed` only if `E-004` supports it.
-4. Accept `D-001` only after its owner and rationale are present.
-5. Recalculate readiness from the contract.
-6. Ask Copilot to read the full state and explain the readiness result from the contract.
-7. Complete the ownership section:
-   - artifact owner;
-   - reviewer;
-   - recovery procedure;
-   - removal trigger;
-   - stop conditions;
-   - next safe action.
-8. Ask a peer to choose `approve`, `revise`, or `pause`.
+- [ ] `/create-canvas` was used.
+- [ ] Unnecessary state or actions were removed.
+- [ ] GitHub issues came from a live MCP read.
+- [ ] External writes remain outside the canvas boundary.
+- [ ] Visible state, Copilot's report, and GitHub state were compared.
+- [ ] Mismatches are explained or resolved.
+- [ ] Owner, recovery, and retirement are recorded.
 
-Do not force `go`. A correct `conditional` or `no-go` record is better than an unsupported green status.
+## Optional prepared-canvas exercise
 
-**Expected result:** The final readiness call follows the recorded state and names who owns the next action.
-
-## Review checklist
-
-- [ ] GitHub Copilot and approved canvas access are recorded.
-- [ ] Only synthetic Service Request Portal data is present.
-- [ ] Visible and Copilot-requested changes use the same contract.
-- [ ] The refused update did not mutate state.
-- [ ] The accepted update is visible and bounded.
-- [ ] The Copilot report matches the canvas, or the mismatch is resolved.
-- [ ] Gate and readiness results cite evidence.
-- [ ] Owner, reviewer, recovery procedure, removal trigger, and stop conditions are complete.
-- [ ] The peer decision is recorded.
-
-## Recovery procedure
-
-This procedure handles an interruption after the preflight passed. It does not replace the access requirement.
-
-1. Stop all changes.
-2. Record the last visible revision and the action that was in progress.
-3. Reopen the same approved canvas.
-4. Ask Copilot to read the current state without changing it.
-5. Compare the reported revision and affected records with the visible canvas.
-6. Resume only when the state and report match. Otherwise record `pause` and end the lab.
-
-## Troubleshooting
-
-| Issue | Response |
-| --- | --- |
-| Copilot or canvas access is missing at preflight | Stop. The learner cannot complete this session |
-| Canvas stops responding after preflight | Run the recovery procedure |
-| Required action is missing | Stop and record which prerequisite failed |
-| Copilot invents evidence | Reject the report and leave state unchanged |
-| Report and artifact differ | Treat the artifact as authoritative and pause approval |
-| Policy or ownership is unclear | Stop the exercise and record `pause` |
-
-## Solution reference
-
-The `lab/solution/` directory contains one acceptable reviewed state and evidence record. It is a reference, not the only valid release decision.
+Use [`optional-prepared-canvas/`](optional-prepared-canvas/) for an additional release-readiness and guardrail exercise.

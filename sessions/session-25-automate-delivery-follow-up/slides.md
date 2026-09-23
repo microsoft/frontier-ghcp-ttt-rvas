@@ -3,22 +3,24 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 24: Review Outcomes and Govern Automation'
+footer: 'Session 25: Automate Delivery Follow-up and Connect Work Systems'
 ---
 
 <!-- _class: lead -->
 
-# Review Outcomes and Govern Automation
+# Automate Delivery Follow-up and Connect Work Systems
 
-## Session 24
+## Session 25
 
 Product and Delivery Teams
 
 ---
 
-# Accountability does not transfer
+# Start from a workflow people already understand
 
-An automation can perform work. The product or delivery owner still owns the workflow, its evidence, and the decision to use the result.
+Sessions 20-24 created the brief, issues, canvas, and reviewed work.
+
+Now automate one recurring follow-up.
 
 ---
 
@@ -26,7 +28,8 @@ An automation can perform work. The product or delivery owner still owns the wor
 
 | Check | Required answer |
 | --- | --- |
-| GitHub Copilot | Can each learner use an approved surface now? |
+| GitHub Copilot | Can each learner open Automations now? |
+| GitHub MCP | Can the automation read the approved issues? |
 | Policy | Is this surface and feature approved here? |
 | Data | Which inputs may enter the workflow? |
 | Meter | Which usage and cost signals will we watch? |
@@ -51,14 +54,13 @@ Use the lowest level that still saves useful time.
 
 ---
 
-# The automation contract
+# Create one draft-only automation
 
-- Purpose and cadence
-- Allowed inputs and outputs
-- Prohibited data and actions
-- Required evidence
-- Owner, reviewer, escalation, and stop condition
-- Acceptance, rejection, and recovery
+- Retrieve approved issue state.
+- Read the synthetic delivery inputs.
+- Draft the weekly update.
+- Return run evidence.
+- Do not publish or change work items.
 
 ---
 
@@ -133,6 +135,16 @@ Do not expose prompts, internal reasoning, secrets, or unsupported claims.
 
 ---
 
+# Choose the authoritative work system
+
+Keep **GitHub** authoritative when issues and agent work live there.
+
+Keep **Azure Boards** authoritative when the delivery backlog lives there.
+
+Do not maintain competing status fields without an owner.
+
+---
+
 # Product facts can change
 
 GitHub documents local and cloud automations, supported triggers, tool controls, policy dependencies, visibility, and usage metering.
@@ -148,4 +160,4 @@ Check the current official documentation before delivery. Do not promise access 
 3. Approval record
 4. Stakeholder-ready update
 
-Use GitHub Copilot to draft, inspect, or review the governed work. Prepared evidence supports that review. It does not replace Copilot access.
+Run one live draft-only automation. Review its evidence, then choose **keep**, **revise**, or **disable**.

@@ -25,7 +25,7 @@ You need:
 
 ## Required preflight
 
-1. Open the seeded parent and confirm that it is tagged for Session 23 training.
+1. Open the seeded parent and confirm that it is tagged for Session 24 training.
 2. Record the parent ID, process type, starting state, and selected child IDs.
 3. Type `/` in the GitHub Copilot app and confirm that `/orchestrate` is available.
 4. If your organization uses an approved equivalent, confirm that it coordinates live child sessions from one parent objective.

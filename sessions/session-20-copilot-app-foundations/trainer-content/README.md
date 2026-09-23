@@ -1,153 +1,110 @@
-# Session 20 Trainer Guide: Understand Technical Work Without Reading Code
+# Session 20 Trainer Guide: Work Effectively in the GitHub Copilot App
 
 **Duration:** 1 hour  
-**Audience:** PMs, POs, BAs, project managers, delivery leads, and other non-developers
+**Audience:** Product managers, product owners, business analysts, project managers, and delivery leads
 
 ## Delivery objective
 
-Learners should leave with a repeatable way to question technical work. The goal is not to make them code reviewers. It is to help them make better product and delivery decisions from evidence, state uncertainty clearly, and involve the right owner.
+Learners should leave able to open the GitHub Copilot app, choose useful context, inspect available capabilities, and create a reviewable work artifact. This is the front door to the rest of Module 7.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:06 | Frame the decision problem |
-| 0:06–0:15 | Build the evidence chain |
-| 0:15–0:25 | Ask business-language questions |
-| 0:25–0:35 | Separate generated summaries from verified evidence |
-| 0:35–0:47 | Service Request Portal walkthrough |
-| 0:47–0:55 | Risk and escalation practice |
-| 0:55–1:00 | Lab launch |
+| 0:00-0:08 | Orient learners to the app |
+| 0:08-0:18 | Choose the right context |
+| 0:18-0:28 | Inspect available capabilities |
+| 0:28-0:40 | Ask grounded, role-specific questions |
+| 0:40-0:53 | Create and review a working brief |
+| 0:53-1:00 | Explain boundaries and launch the lab |
 
-## Preflight
+## Required preflight
 
-- Open `slides.md` and every file in `lab/starter/`.
-- Keep the reviewed solution closed until the debrief.
-- **Confirm every learner has working GitHub Copilot Chat access before the session.**
-- Ask learners to sign in, open Chat, submit a prompt, and receive a response.
-- Confirm Copilot can use the supplied Markdown, text, and JSON evidence.
-- Use only the included synthetic scenario. Do not show customer repositories or name a source organization.
+- Confirm that every learner can open the GitHub Copilot app.
+- Confirm that the learner can start a chat and open the training repository as a project.
+- Check that the learner can see the current app navigation and the available Customize items.
+- Open the starter initiative and reference brief.
+- Use only the fictional scenario during the demonstration.
 
 > [!IMPORTANT]
-> **Do not start without GitHub Copilot access.** Stop and resolve account, license, policy, or service issues before the session. Do not replace the Copilot work with an alternate exercise.
+> Stop if the app, repository, or required policy access is unavailable. A generic chatbot does not meet this session's goal.
 
-## Core model: summary, evidence, decision
+## Teach the app as a work environment
 
-Use three columns on a whiteboard:
+Show the current locations for:
 
-| Summary | Evidence | Decision |
-| --- | --- | --- |
-| A generated or human-written explanation | The artifact that supports or contradicts it | Proceed, request changes, or pause |
+- **Chats:** exploratory work and interviews;
+- **Projects:** repository-grounded work;
+- **My work:** issues, pull requests, and active agent sessions;
+- **Search:** finding repository information;
+- **Automations:** recurring or on-demand tasks;
+- **Customize:** skills, agents, MCP servers, plugins, and canvases.
 
-The distinction matters. A polished summary can still omit a skipped test, overstate scope, or treat an inference as fact. Learners should never copy a generated risk rating into a product decision without checking what produced it.
+Labels can move. Teach what each area is for rather than a fixed click path.
 
-## Business-language question pattern
+## Context before prompting
 
-Teach learners to ask five types of question:
+Use a simple rule:
 
-1. **Purpose:** What user or business problem should this work solve?
-2. **Change:** Which visible behavior changes, and for whom?
-3. **Proof:** Which issue criterion, diff fact, test, or check supports that claim?
-4. **Risk:** What failure would users, operations, or the delivery plan notice?
-5. **Boundary:** Which decision needs a specialist or accountable owner?
+> Give Copilot the smallest approved context that can answer the question.
 
-Learners will ask these questions in GitHub Copilot Chat. The questions stay useful across supported Copilot surfaces even when the interface changes.
-
-## Prompt sequence
-
-Use GitHub Copilot with the supplied synthetic evidence. Ask for sources in every answer.
+Demonstrate the difference between:
 
 ```text
-Explain this repository and the current change for a product manager.
-Name the artifacts that support each claim. Mark anything you inferred.
+Explain this project.
 ```
+
+and:
 
 ```text
-Compare the issue acceptance criteria with the pull request evidence and checks.
-Return a table with: criterion, evidence, status, and question for the owner.
-Do not treat the pull request description as proof.
+Use the repository overview and the open initiative notes. Explain the product,
+the affected users, the current decision, and the missing information for a
+product owner. Cite the source for each factual claim.
 ```
+
+Ask learners to identify which sources Copilot used and which statements remain uncertain.
+
+## Capability inspection
+
+Open **Customize** and identify what is available in the learner's environment. Explain:
+
+- a **skill** provides a repeatable procedure;
+- an **agent** carries role-specific instructions and tools;
+- an **MCP server** lets Copilot read or act in another system;
+- a **canvas** provides visible shared state;
+- an **automation** repeats a bounded task.
+
+Do not teach construction in this session. Learners only need to recognize these capabilities and know that availability depends on plan, policy, and installation.
+
+## Demo: create a durable brief
+
+1. Open `lab/starter/initiative-overview.md`.
+2. Ask Copilot to identify the purpose, users, known facts, open questions, and next decision.
+3. Ask for citations to the supplied file.
+4. Ask Copilot to complete `copilot-working-brief-template.md`.
+5. Review the proposed Markdown change.
+6. Reject one unsupported statement and ask Copilot to correct it.
+7. Save the approved brief.
+
+Stress the pattern:
 
 ```text
-Draft a product impact and risk brief. Separate verified facts, inferences,
-unknowns, and generated suggestions. Do not recommend release when a required
-check failed or material evidence is missing.
+Read -> propose -> review -> write -> verify
 ```
 
-If the answer lacks traceable sources, narrow the request to one artifact at a time. Keep learners in GitHub Copilot and ask them to check each answer against the named file.
+The pattern returns in every later session.
 
-## Prepared walkthrough
+## Optional advanced route
 
-Use the Service Request Portal evidence in this order:
-
-1. `repository-overview.md` establishes the product and boundary.
-2. `stakeholder-request.md` explains the desired business outcome.
-3. `issue-142.md` defines intended scope and acceptance criteria.
-4. `pull-request-87.md` provides a generated summary plus author claims.
-5. `diff-evidence.txt` records selected facts from the proposed change.
-6. `checks.json` shows automated results.
-
-Ask the group to find one claim in each evidence state:
-
-- **Verified:** The issue and diff evidence show that coordinators can assign a due date.
-- **Inferred:** Reminder behavior may increase notification volume.
-- **Generated:** The PR summary says the change is ready for release.
-- **Unknown:** Accessibility behavior for the new date control is not proven because the named check was skipped.
-
-Then ask for a decision. The expected answer is **request changes before release**, with accessibility evidence and notification-owner confirmation as the main next actions.
-
-## Review boundaries
-
-Non-developers can:
-
-- test whether the stated user outcome matches the request;
-- trace claims to artifacts;
-- identify missing acceptance evidence;
-- flag product, rollout, support, and communication risk;
-- name the owner needed for the next decision.
-
-They should not:
-
-- approve security, privacy, architecture, or code correctness outside their role;
-- treat a passing check as proof of every behavior;
-- infer production readiness from a generated summary;
-- lower a release gate because the sprint deadline is close.
-
-## Copilot troubleshooting
-
-If Copilot cannot use several files in one request, add one artifact at a time. Ask it to update the same evidence matrix after each file.
-
-If Copilot gives a weak answer, keep it as a teaching artifact. Ask learners to label unsupported claims, cite the missing evidence, and improve the prompt.
-
-If Copilot access fails during the session, pause. Resolve the access problem before continuing the lab.
-
-## Common questions
-
-**Do I need to understand the diff?**  
-No. You need a plain-language record of the changed behavior and a technical owner who can confirm material details. The supplied `diff-evidence.txt` models that bridge.
-
-**Can a generated PR summary count as evidence?**  
-It can point to evidence. The summary itself remains generated text until the relevant diff, check, issue, or owner confirms the claim.
-
-**What if every check passes?**  
-Check whether the right checks ran. Passing configured checks does not prove that omitted, skipped, human, or business validation occurred.
-
-**When should a PM stop and escalate?**  
-Stop when the decision depends on expertise, permissions, or evidence you do not have. State the unresolved question and name the owner.
+The previous technical-evidence exercise remains under `lab/optional-technical-evidence/`. Use it only when the group already understands the app and needs practice questioning issues, pull requests, checks, and release evidence.
 
 ## Product notes verified September 23, 2026
 
-GitHub's current documentation supports these durable workflow statements:
+Before delivery, verify the current GitHub Copilot app navigation, plan requirements, policy controls, and availability of Customize features.
 
-- Copilot Chat on GitHub can answer questions using repository, issue, pull request, commit, and failed-workflow context.
-- A pull request can be summarized or explored through questions about its changes and status.
-- Status checks report whether configured validations such as builds, tests, scans, or deployments completed successfully.
-- Copilot code review can miss problems and make mistakes. GitHub tells users to validate its feedback and add human review.
+Official references:
 
-Availability, billing, policy controls, supported surfaces, review modes, and exact controls can change. Check the official documentation before a live demonstration:
-
-- [Getting started with prompts for Copilot Chat on GitHub](https://docs.github.com/en/copilot/how-tos/copilot-on-github/chat-with-copilot/get-started-with-chat)
-- [Using GitHub Copilot to explore pull requests](https://docs.github.com/en/copilot/tutorials/explore-pull-requests)
-- [Status checks](https://docs.github.com/en/pull-requests/reference/status-checks)
-- [About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review)
-- [Application card: GitHub Copilot Chat](https://docs.github.com/en/copilot/responsible-use/chat)
+- [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
+- [Quickstart for the GitHub Copilot app](https://docs.github.com/en/copilot/get-started/quickstart-copilot-app)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-copilot)
+- [Working with agent sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)

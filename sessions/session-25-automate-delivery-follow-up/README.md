@@ -1,34 +1,37 @@
-# Session 24: Review Outcomes and Govern Automation
+# Session 25: Automate Delivery Follow-up and Connect Work Systems
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20–23 and working GitHub Copilot access
+**Prerequisites:** Sessions 20-24, GitHub Copilot app Automations access, and GitHub MCP access
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-Product and delivery owners remain accountable when recurring work becomes automated. This session uses **GitHub Copilot** to define the work boundary, inspect run evidence, record a human decision, and explain the result to stakeholders.
+Product and delivery owners turn the manual workflow from Sessions 20-24 into one bounded GitHub Copilot Automation. Learners configure a draft-only run, inspect its evidence, record a human decision, and connect the result to the approved work system.
 
-The fictional **Service Request Portal** supplies a weekly status workflow and prepared synthetic evidence. Learners use GitHub Copilot to draft or review the governed work. GitHub Copilot access is required.
+The fictional **Service Request Portal** supplies a weekly status workflow and synthetic inputs. The core route runs in the GitHub Copilot app Automations area and reads approved GitHub work through MCP.
 
 > [!IMPORTANT]
-> Confirm GitHub Copilot access before the session. If access does not work, stop and resolve it before starting the lab. The session has no no-access or manual substitute.
+> Confirm Automations and GitHub MCP access before the session. If either does not work, stop and resolve access before starting the lab.
 
 ## Learning outcomes
 
 - Classify recurring work by autonomy and approval level.
 - Define allowed inputs, allowed outputs, required evidence, and stop conditions.
-- Use GitHub Copilot to inspect a run against acceptance criteria.
+- Create and run one draft-only GitHub Copilot Automation.
+- Use GitHub MCP to retrieve the approved issue state.
+- Inspect the run against acceptance criteria.
 - Record a human approval decision.
 - Measure useful time saved after review and rework.
 - Write a stakeholder update that separates facts, decisions, exceptions, and next actions.
+- Decide whether GitHub or Azure Boards remains the authoritative planning system.
 
 ## Scope
 
-Session 17 covers enterprise access, policy, and administration. Session 24 starts after those decisions. It focuses on the accountable workflow owner and one bounded automation contract.
+Session 17 covers enterprise access, policy, and administration. Session 25 starts after those decisions. It focuses on the accountable workflow owner, one bounded automation, and a clear system-of-record decision.
 
 ## Materials
 
@@ -39,3 +42,7 @@ Session 17 covers enterprise access, policy, and administration. Session 24 star
 | Lab | [`lab/README.md`](lab/README.md) |
 | Starter templates and synthetic evidence | [`lab/starter/`](lab/starter/) |
 | Reference solution | [`lab/solution/`](lab/solution/) |
+
+## Optional Azure Boards route
+
+When Azure Boards is the approved system of record, use the automation to prepare a draft update from approved Boards data or to identify work that should be handed to a linked GitHub repository. Keep publishing and work-item changes behind human approval.

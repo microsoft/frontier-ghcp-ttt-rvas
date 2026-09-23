@@ -1,4 +1,4 @@
-# Work Item: Show Requesters the Current Status of Included Requests
+# GitHub Issue Proposal: Show Requesters the Current Status of Included Requests
 
 ## User and outcome
 

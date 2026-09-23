@@ -3,140 +3,101 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 20: Understand Technical Work Without Reading Code'
+footer: 'Session 20: Work Effectively in the GitHub Copilot App'
 ---
 
 <!-- _class: lead -->
 
-# Understand Technical Work Without Reading Code
+# Work Effectively in the GitHub Copilot App
 
 Session 20 | Product and Delivery Teams | Beginner
 
 ---
 
-# GitHub Copilot is required
+# The app is the classroom
 
-Before the session:
+This track does not use Copilot as a background writing tool.
 
-- sign in with an approved GitHub account;
-- open GitHub Copilot Chat;
-- submit a test prompt;
-- confirm Copilot returns a response.
-
-**Stop if access fails.** Resolve the account, license, policy, or service issue before continuing.
+Learners work in the GitHub Copilot app, with repository context and reviewable artifacts.
 
 ---
 
-# Your job is to make a sound decision
+# Know the main work areas
 
-You do not need to explain the implementation.
-
-Use GitHub Copilot to question the supplied evidence and judge:
-
-- what changes for users;
-- what could go wrong;
-- what remains unknown;
-- who must review the decision.
-
----
-
-# Use an evidence chain
-
-| Artifact | What it can tell you |
+| Area | Use it for |
 | --- | --- |
-| Repository overview | Product purpose and system boundaries |
-| Issue | Intended problem, scope, and acceptance criteria |
-| Pull request | Proposed implementation and stated validation |
-| Diff evidence | Specific behavior changed |
-| Checks | What automated validation ran and its result |
-| Human review | Context, judgment, and approval ownership |
-
-No single artifact tells the whole story.
+| Chats | Exploration and interviews |
+| Projects | Repository-grounded work |
+| My work | Issues, pull requests, and sessions |
+| Search | Finding repository information |
+| Automations | Recurring or on-demand tasks |
+| Customize | Skills, agents, MCP servers, and canvases |
 
 ---
 
-# Ask business questions
+# Context comes before the prompt
 
-- Which user journey changes?
-- What behavior is new, removed, or altered?
-- Which acceptance criteria have evidence?
-- What could block release or create support load?
-- Which claim needs a specialist to confirm?
+Give Copilot the smallest approved context that can answer the question.
 
-Avoid broad prompts such as “Is this safe?”
+Name the files, issues, or repository that should support the answer.
 
 ---
 
-# Separate claims by evidence state
+# Ask for sources
 
-| State | Meaning |
-| --- | --- |
-| Verified | Directly supported by a named artifact |
-| Inferred | Reasonable conclusion, not directly proven |
-| Generated | Suggested by an AI summary and not yet checked |
-| Unknown | Evidence is missing or contradictory |
+```text
+Explain the initiative for a product owner.
+Cite the supplied source for each factual claim.
+Mark missing information as unknown.
+```
 
-Generated does not mean false. It means **check it**.
-
----
-
-# A summary is a map, not proof
-
-GitHub Copilot can answer questions about repository and pull request context.
-
-Use the answer to find likely files, checks, risks, and follow-up questions. Then inspect the cited artifact or ask the accountable owner.
+A confident answer without a source is still unverified.
 
 ---
 
-# Read checks as evidence with limits
+# Inspect what Copilot can use
 
-**Passed** means the configured check completed successfully.
+- Skills provide repeatable procedures.
+- Agents carry role-specific instructions and tools.
+- MCP servers connect Copilot to systems.
+- Canvases provide visible shared state.
+- Automations repeat bounded work.
 
-It does not prove:
-
-- every user path was tested;
-- skipped tests are harmless;
-- rollout and support plans are ready;
-- the business requirement is correct.
-
----
-
-# Escalate when the decision exceeds your evidence
-
-| Signal | Escalate to |
-| --- | --- |
-| Security, identity, or permission behavior | Security or engineering owner |
-| Personal or regulated data | Privacy or compliance owner |
-| Accessibility evidence missing | Accessibility or UX owner |
-| Failed, skipped, or absent release checks | Engineering or release owner |
-| Requirement and implementation disagree | Product owner and engineering lead |
-
-Escalation is a decision, not a failure.
+Availability depends on the plan, policy, and installation.
 
 ---
 
-# Lab deliverable
+# Use one repeatable work pattern
 
-Write a one-page product impact and risk brief for the Service Request Portal change.
+```text
+Read -> propose -> review -> write -> verify
+```
 
-Use GitHub Copilot to analyze and question the synthetic evidence.
-
-Include:
-
-1. decision and confidence;
-2. user and product impact;
-3. verified evidence;
-4. risks and unknowns;
-5. review boundary and next action.
+Every later Module 7 session uses this pattern.
 
 ---
 
-# Review standard
+# Conversation should become an artifact
 
-A strong brief is traceable.
+The lab creates a Markdown working brief with:
 
-Another person can identify:
+- facts and sources;
+- unknowns;
+- useful GitHub artifacts;
+- the next decision;
+- owner and reviewer.
 
-- which artifact supports each material claim;
-- which statements remain uncertain;
-- why the work should proceed, pause, or change.
+The artifact must make sense without the chat history.
+
+---
+
+# Lab
+
+1. Open the repository as a Copilot project.
+2. Inspect the available capabilities.
+3. Question the initiative.
+4. Create the working brief.
+5. Review the proposed change.
+6. Ask Copilot to verify the saved artifact.
+
+**Stop if the app or repository context is unavailable.**

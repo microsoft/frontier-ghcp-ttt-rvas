@@ -1,10 +1,10 @@
-# Session 23: Orchestrate Agents and Workstreams
+# Session 24: Orchestrate Agents and Workstreams
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20-22 and live GitHub Copilot orchestration access
+**Prerequisites:** Sessions 20-23 and live GitHub Copilot orchestration access
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
@@ -12,7 +12,7 @@
 
 ## Overview
 
-This session teaches managers and delivery leads to run live GitHub Copilot orchestration. Learners split one objective into independent workstreams, guide child sessions, review evidence, and make the final decision. The fictional **Service Request Portal** provides the release scenario.
+This session teaches managers and delivery leads to run live GitHub Copilot orchestration. Learners select work from the approved GitHub issue plan and planning canvas, split one objective into independent workstreams, guide child sessions, review evidence, and make the final decision.
 
 **GitHub Copilot orchestration access is required.** Learners need `/orchestrate` or an approved equivalent that creates and coordinates live child sessions. There is no manual, prepared-result, offline, or no-access route.
 
@@ -30,9 +30,9 @@ By the end of this session, learners can:
 
 ## Session 16 distinction
 
-Session 16 uses Brady's Squad as an optional framework for persistent roles, routing rules, shared memory, and monitored issue queues. Session 23 uses built-in GitHub Copilot orchestration for one objective. The manager reviews child-session output and owns the release decision.
+Session 16 uses Brady's Squad as an optional framework for persistent roles, routing rules, shared memory, and monitored issue queues. Session 24 uses built-in GitHub Copilot orchestration for one objective. The manager reviews child-session output and owns the release decision.
 
-| Session 16 | Session 23 |
+| Session 16 | Session 24 |
 | --- | --- |
 | Squad implementation and role charters | Built-in GitHub Copilot orchestration |
 | Persistent team and routing model | Temporary child sessions |
@@ -50,7 +50,7 @@ Session 16 uses Brady's Squad as an optional framework for persistent roles, rou
 | Learner assets | [`lab/starter/`](lab/starter/) |
 | Reference solution | [`lab/solution/`](lab/solution/) |
 
-The Azure Boards companion uses a seeded Service Request Portal Epic or Feature as the planning surface. Learners can use approved MCP tools or the browser for Boards. They must use live GitHub Copilot orchestration for the child workstreams.
+The Azure Boards companion uses a seeded Service Request Portal Epic or Feature as the planning surface. The core route uses the Session 22 GitHub issues and Session 23 canvas. Learners must use live GitHub Copilot orchestration for the child workstreams.
 
 ## Required preflight
 

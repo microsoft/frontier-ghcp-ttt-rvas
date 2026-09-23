@@ -504,7 +504,7 @@ the navy overlay. Hover and selected links use navy on white. The selected label
 is also underlined. Links target focusable `#module-1` through `#module-7` headings;
 the targeted heading receives an RVAP Blue underline.
 
-**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 24 sessions and seven tracks visible; selection must not filter content.
+**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 25 sessions and seven tracks visible; selection must not filter content.
 
 `overrides/session.js` synchronizes `aria-current="location"` with the URL hash
 on initial load and `hashchange`, including deep links. Native anchor navigation
@@ -514,7 +514,7 @@ works without JavaScript; the script adds the current-location state.
 
 **The Filter/Selection Rule.** Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.
 
-The homepage and builder share `data/session-catalog.json`: 24 sessions across
+The homepage and builder share `data/session-catalog.json`: 25 sessions across
 seven modules. `hooks/presentation_embed.py` resolves material links from actual
 MkDocs file URLs. Search matches session ID, title, or description; Module and
 Level narrow the builder catalog. A result count and no-match message explain

@@ -42,8 +42,8 @@ It hides choices about users, scope, data, behavior, ownership, and approval.
 Vague request
   -> GitHub Copilot decision-tree interview
   -> human decisions
-  -> decision brief
-  -> structured work item
+  -> Markdown decision brief
+  -> GitHub issue proposal
   -> acceptance criteria
   -> definition of done
 ```
@@ -129,7 +129,7 @@ Keep it short enough to review in one sitting.
 
 ---
 
-# Move into a structured work item
+# Create a GitHub issue proposal
 
 Ask GitHub Copilot to draft:
 
@@ -141,6 +141,8 @@ Ask GitHub Copilot to draft:
 - definition of done.
 
 Compare the draft with the approved brief.
+
+Session 22 creates the approved issues through GitHub MCP.
 
 ---
 
@@ -188,7 +190,7 @@ There is no static or no-Copilot route.
 # Lab deliverables
 
 1. A **reviewed decision brief**.
-2. A **sprint-ready work item** with acceptance criteria and definition of done.
+2. A **GitHub issue proposal** with acceptance criteria and definition of done.
 3. A **Copilot interview record** that shows the rounds and owner decisions.
 
 The request owner approves the brief. A delivery reviewer checks readiness.

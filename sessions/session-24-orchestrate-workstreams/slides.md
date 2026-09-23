@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 23: Orchestrate Agents and Workstreams'
+footer: 'Session 24: Orchestrate Agents and Workstreams'
 ---
 
 <!-- _class: lead -->
@@ -11,7 +11,7 @@ footer: 'Session 23: Orchestrate Agents and Workstreams'
 # Orchestrate Agents and Workstreams
 ## Product and Delivery Teams | Intermediate
 
-Session 23 | 3 hours
+Session 24 | 3 hours
 
 ---
 
@@ -195,7 +195,7 @@ Copilot coordinates work. It does not receive release authority.
 
 # Session 16 is different
 
-| Session 16 | Session 23 |
+| Session 16 | Session 24 |
 | --- | --- |
 | Optional Squad framework | Built-in app orchestration |
 | Persistent roles and routing | Temporary workstreams |

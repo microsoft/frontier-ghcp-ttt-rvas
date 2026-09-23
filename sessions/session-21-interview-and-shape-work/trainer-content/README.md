@@ -2,7 +2,7 @@
 
 ## Delivery objective
 
-Learners use GitHub Copilot to turn an unclear request into reviewed, sprint-ready work. The session uses the `grill-me` or `grilling` decision-tree pattern. It does not cover creating or editing skills.
+Learners use the GitHub Copilot app to turn an unclear request into a reviewed repository decision brief and GitHub issue proposal. The session uses the `grill-me` or `grilling` decision-tree pattern. Session 22 creates the live issues.
 
 ## One-hour plan
 
@@ -13,14 +13,14 @@ Learners use GitHub Copilot to turn an unclear request into reviewed, sprint-rea
 | 0:15-0:25 | Model strong Copilot questions and recommendations |
 | 0:25-0:42 | Run the Service Request Portal interview with GitHub Copilot |
 | 0:42-0:51 | Review the answers and build a decision brief |
-| 0:51-0:57 | Convert the brief into a structured work item |
+| 0:51-0:57 | Convert the brief into a GitHub issue proposal |
 | 0:57-1:00 | Explain the lab and review roles |
 
 ## Required preflight
 
 Complete this check before learners begin:
 
-- Confirm that every learner can open an approved GitHub Copilot surface.
+- Confirm that every learner can open the GitHub Copilot app and the training repository project.
 - Confirm that GitHub Copilot can run `grill-me`, `grilling`, or the supplied decision-tree prompt.
 - Test one prompt and one follow-up answer.
 - Use only the supplied fictional scenario during the demonstration.
@@ -28,7 +28,7 @@ Complete this check before learners begin:
 - Assign a request owner and delivery reviewer for each pair.
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot is unavailable.** Resolve licensing, sign-in, policy, extension, network, or model access before the session starts. Do not replace the Copilot interview with a partner script or worksheet.
+> **Stop if the GitHub Copilot app or repository project is unavailable.** Resolve licensing, sign-in, policy, client, or repository access before the session starts.
 
 For the Azure Boards companion, confirm that learners can use either an approved MCP connection or the browser. Azure Boards access may change the update method. It never replaces GitHub Copilot.
 
@@ -111,7 +111,7 @@ Recommended direction: the portal product owner owns the work item. The service 
 
 ## Build the decision brief
 
-Ask GitHub Copilot to draft the brief from confirmed answers. Then review:
+Ask GitHub Copilot to create `docs/discovery/request-status-decision-brief.md` from confirmed answers. Then review:
 
 - problem and target outcome;
 - users and scope;
@@ -121,11 +121,11 @@ Ask GitHub Copilot to draft the brief from confirmed answers. Then review:
 - decisions and open questions;
 - owner, reviewers, and approval gate.
 
-Keep it short enough to review in one sitting.
+Keep it short enough to review in one sitting. Review the proposed repository change before accepting it.
 
-## Build the work item
+## Build the issue proposal
 
-Ask GitHub Copilot to convert the approved brief:
+Ask GitHub Copilot to convert the approved brief into an issue proposal:
 
 1. Write one user outcome.
 2. Copy the bounded scope and non-goals.
@@ -134,7 +134,7 @@ Ask GitHub Copilot to convert the approved brief:
 5. Name the owner and reviewer.
 6. Add a definition of done that covers evidence and approval.
 
-The learner checks every field against the approved brief. Copilot drafts the work. People own the decisions.
+The learner checks every field against the approved brief. Copilot drafts the proposal. Session 22 creates the approved issue set through GitHub MCP.
 
 ## Facilitation notes
 
@@ -151,7 +151,7 @@ Learners may use:
 - an approved, sanitized request from their own work; or
 - [`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).
 
-Each pair needs a request owner and delivery reviewer. The request owner approves the decision brief. The delivery reviewer checks the work item against the review checklist.
+Each pair needs a request owner and delivery reviewer. The request owner approves the decision brief. The delivery reviewer checks the issue proposal against the review checklist.
 
 ### Azure Boards companion
 

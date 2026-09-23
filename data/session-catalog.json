@@ -182,10 +182,10 @@
     },
     {
       "id": "20",
-      "slug": "session-20-understand-technical-work",
+      "slug": "session-20-copilot-app-foundations",
       "module": "7",
-      "title": "Understand Technical Work Without Reading Code",
-      "description": "Question repository, issue, and pull request evidence in business language, then produce a reviewed product impact and risk brief.",
+      "title": "Work Effectively in the GitHub Copilot App",
+      "description": "Use repository context, inspect available Copilot capabilities, and create a reviewed working brief.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -200,28 +200,37 @@
     },
     {
       "id": "22",
-      "slug": "session-22-plan-and-steer-with-canvases",
+      "slug": "session-22-plan-work-with-github-issues",
       "module": "7",
-      "title": "Plan and Steer Work with Canvases",
-      "description": "Use a prepared canvas to keep plans, risks, decisions, gates, and evidence visible to people and agents.",
+      "title": "Plan Work with GitHub Issues and MCP",
+      "description": "Turn an approved decision brief into real, reviewed GitHub issues through the GitHub MCP server.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
     {
       "id": "23",
-      "slug": "session-23-orchestrate-workstreams",
+      "slug": "session-23-plan-and-steer-with-canvases",
       "module": "7",
-      "title": "Orchestrate Agents and Workstreams",
-      "description": "Split a parent objective into bounded workstreams, supervise child sessions, and review each result before consolidation.",
+      "title": "Build and Use a Planning Canvas",
+      "description": "Create a planning canvas, load approved GitHub issues, and keep visible state aligned with Copilot and GitHub.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
     {
       "id": "24",
-      "slug": "session-24-govern-agentic-work",
+      "slug": "session-24-orchestrate-workstreams",
       "module": "7",
-      "title": "Review Outcomes and Govern Automation",
-      "description": "Define evidence, approval, ownership, escalation, and stop conditions for a recurring agentic workflow.",
+      "title": "Orchestrate Agents and Workstreams",
+      "description": "Split a parent objective into bounded workstreams, supervise child sessions, and update the approved plan.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "25",
+      "slug": "session-25-automate-delivery-follow-up",
+      "module": "7",
+      "title": "Automate Delivery Follow-up and Connect Work Systems",
+      "description": "Run one draft-only Copilot Automation and decide whether GitHub or Azure Boards remains authoritative.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     }

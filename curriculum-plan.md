@@ -15,8 +15,8 @@ By completing this curriculum, trainers will be able to:
 9. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
 10. **Facilitate** hands-on labs where trainees build real projects using the full Copilot toolchain
 11. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
-12. **Teach** product and delivery teams to understand technical work, interview unclear requests, and supervise agent work without requiring programming
-13. **Define** evidence, approval, ownership, and stop conditions for role-based agentic workflows
+12. **Teach** product and delivery teams to use the GitHub Copilot app, create durable planning artifacts, and supervise agent work without requiring programming
+13. **Use** GitHub MCP, canvases, orchestration, and Automations with explicit review and verification
 
 ---
 
@@ -42,7 +42,7 @@ Module 3: Agentic Workflows ───────────────── 
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
         └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
 
-Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 5 sessions)
+Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 6 sessions)
     └── Standalone role-based path; no programming prerequisite
 ```
 
@@ -55,8 +55,8 @@ Module 7: Product and Delivery Teams ──────────────�
 | **Agentic Developers**    | Modules 1–3                      | 01–12        | 36 hrs     |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
 | **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-| **Product and Delivery Teams** | Module 7                    | 20–24        | 15 hrs     |
-| **Full Track**            | All Modules                      | 01–24        | 72 hrs     |
+| **Product and Delivery Teams** | Module 7                    | 20–25        | 18 hrs     |
+| **Full Track**            | All Modules                      | 01–25        | 75 hrs     |
 
 ---
 
@@ -115,17 +115,18 @@ Module 7: Product and Delivery Teams ──────────────�
 
 | # | Session | Difficulty | Prerequisites | Duration |
 | --- | --- | --- | --- | --- |
-| 20 | Understand Technical Work Without Reading Code | Beginner | GitHub Copilot access | 3 hrs |
-| 21 | Interview Ideas and Shape Better Work | Beginner | GitHub Copilot access; Session 20 | 3 hrs |
-| 22 | Plan and Steer Work with Canvases | Intermediate | GitHub Copilot access; Sessions 20–21 | 3 hrs |
-| 23 | Orchestrate Agents and Workstreams | Intermediate | GitHub Copilot access; Sessions 20–22 | 3 hrs |
-| 24 | Review Outcomes and Govern Automation | Intermediate | GitHub Copilot access; Sessions 20–23 | 3 hrs |
+| 20 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
+| 21 | Interview Ideas and Shape Better Work | Beginner | Session 20 | 3 hrs |
+| 22 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions 20–21; GitHub MCP write access | 3 hrs |
+| 23 | Build and Use a Planning Canvas | Intermediate | Sessions 20–22; canvas creation access | 3 hrs |
+| 24 | Orchestrate Agents and Workstreams | Intermediate | Sessions 20–23; orchestration access | 3 hrs |
+| 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions 20–24; Automations and GitHub MCP access | 3 hrs |
 
-**Access requirement:** GitHub Copilot access is required for Sessions 20–24.
+**Access requirement:** GitHub Copilot access is required for Sessions 20–25.
 Learners without access should not start Module 7. Stop and reschedule their
 training after access is available.
 
-**Optional platform route:** Trainers may seed a synthetic Azure Boards backlog with [`scripts/azure-boards/seed.py`](scripts/azure-boards/seed.py), check it with [`verify.py`](scripts/azure-boards/verify.py), and clean it up with [`reset.py`](scripts/azure-boards/reset.py). The route supports Agile and Scrum. Basic, CMMI, and custom processes fail as unsupported. The scripts verify the existing team, area, and iterations instead of creating project-level configuration. Azure Boards is optional. The Session 21 and Session 23 companions still require GitHub Copilot.
+**Optional platform route:** Trainers may seed a synthetic Azure Boards backlog with [`scripts/azure-boards/seed.py`](scripts/azure-boards/seed.py), check it with [`verify.py`](scripts/azure-boards/verify.py), and clean it up with [`reset.py`](scripts/azure-boards/reset.py). The route supports Agile and Scrum. Basic, CMMI, and custom processes fail as unsupported. The scripts verify the existing team, area, and iterations instead of creating project-level configuration. Azure Boards is optional. The Session 21 and Session 24 companions still require GitHub Copilot.
 
 ---
 
@@ -894,152 +895,174 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 
 ---
 
-### Session 20 — Understand Technical Work Without Reading Code
+### Session 20 — Work Effectively in the GitHub Copilot App
 
 **Difficulty:** Beginner
-**Prerequisites:** GitHub Copilot access
+**Prerequisites:** GitHub Copilot app access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners question repository, issue, pull request, and validation evidence in product language. They identify user impact, delivery risk, missing evidence, and the point where an accountable engineer or owner must confirm the answer.
+Learners open the GitHub Copilot app, choose repository context, inspect the capabilities available in their environment, and create a reviewed working brief.
 
 **Trainer Content Outline (1 hour):**
 
-- Technical artifacts as evidence, not background noise
-- Questions that reveal user impact, scope, risk, and uncertainty
-- Generated summaries versus verified facts
-- Safe use of approved and sanitized context
-- Escalation when the evidence does not support a decision
+- Chats, Projects, My work, Search, Automations, and Customize
+- Choosing the smallest approved context
+- Skills, agents, MCP servers, canvases, and Automations
+- The read, propose, review, write, and verify pattern
 
 **Lab Outline (2 hours):**
 
-- Review the fictional Service Request Portal evidence pack or approved learner material
-- Produce an initial plain-language summary
-- Trace every material claim back to evidence
-- Record risks, open questions, and required owners
-- **Deliverable:** A reviewed product impact and risk brief
+- Open the training repository as a Copilot project
+- Ask grounded questions about the Service Request Portal initiative
+- Inspect available Customize capabilities
+- Create and review a Markdown working brief
+- **Deliverable:** A reviewed Copilot working brief
 
 ---
 
 ### Session 21 — Interview Ideas and Shape Better Work
 
 **Difficulty:** Beginner
-**Prerequisites:** GitHub Copilot access; Session 20
+**Prerequisites:** Session 20
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners use a decision-tree interview to turn a vague idea into work the team can discuss and estimate. The worked `grill-me` pattern asks only questions whose prerequisites are settled and preserves unresolved decisions instead of guessing.
+Learners run a decision-tree interview in the GitHub Copilot app. They turn approved answers into a repository decision brief and issue proposal.
 
 **Trainer Content Outline (1 hour):**
 
-- Why drafting too early hides missing decisions
 - Decision-tree interviews and question frontiers
-- Scope, constraints, success measures, failure cases, ownership, and approval
-- Turning interview results into a brief and structured issue
+- Facts, recommendations, and owner decisions
+- Durable Markdown decision briefs
+- Issue proposals with testable acceptance criteria
 
 **Lab Outline (2 hours):**
 
-- Start from an unclear request
-- Run the decision-tree interview with GitHub Copilot
-- Record settled decisions and open branches
-- Write acceptance criteria and a definition of done
-- Peer-review the work item for readiness
-- Optionally review and shape a seeded Azure Boards requirement through the [Session 21 companion route](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
-- **Deliverable:** A decision brief and sprint-ready work item
+- Run the Copilot interview
+- Create `docs/discovery/request-status-decision-brief.md`
+- Review the proposed file change
+- Draft and peer-review the GitHub issue proposal
+- Optionally shape a seeded Azure Boards requirement through the [Session 21 companion](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
+- **Deliverable:** An approved decision brief and issue proposal
 
 ---
 
-### Session 22 — Plan and Steer Work with Canvases
+### Session 22 — Plan Work with GitHub Issues and MCP
 
 **Difficulty:** Intermediate
-**Prerequisites:** GitHub Copilot access; Sessions 20–21
+**Prerequisites:** Sessions 20-21; GitHub MCP write access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners use a prepared canvas as a shared work surface for plans, risks, decisions, gates, and evidence. They update the same state through visible controls and agent requests, then verify that both routes agree.
+Learners use the GitHub MCP server to inspect existing work, propose an issue hierarchy, create the approved issues, and verify the result through a fresh read.
 
 **Trainer Content Outline (1 hour):**
 
-- When visible state is better than another chat turn
-- Canvas contracts: state, actions, evidence, owner, and removal
-- Human and agent updates to one bounded artifact
-- Release-readiness and initiative-planning patterns
+- MCP from the tool user's point of view
+- Read and write boundaries
+- Outcome-based decomposition
+- Preview, approval, and fresh-read verification
 
 **Lab Outline (2 hours):**
 
-- Inspect the prepared canvas contract
-- Update work, risk, decision, and gate state
-- Ask the agent to make one bounded change
-- Compare visible state with the agent report
-- Record the owner and retirement conditions
-- **Deliverable:** A reviewed planning or release-readiness canvas record
+- Read the approved decision brief
+- Search for duplicate issues and approved labels
+- Plan one parent issue and three to five child issues
+- Review and approve the complete GitHub write
+- Retrieve the issues and correct one defect
+- **Deliverable:** A live, verified GitHub issue plan
 
 ---
 
-### Session 23 — Orchestrate Agents and Workstreams
+### Session 23 — Build and Use a Planning Canvas
 
 **Difficulty:** Intermediate
-**Prerequisites:** GitHub Copilot access; Sessions 20–22
+**Prerequisites:** Sessions 20-22; canvas creation access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners split a parent objective into independent workstreams, define outputs and stop conditions, supervise child sessions, and accept or reject each result. The session teaches built-in session supervision, not custom-agent construction or an external orchestration framework.
+Learners create a planning canvas from a plain-language request, load the Session 22 issues, and keep visible planning state aligned with GitHub and Copilot.
 
 **Trainer Content Outline (1 hour):**
 
-- When parallel work helps and when it creates coordination cost
-- Parent objectives, bounded workstreams, outputs, and stop conditions
-- Monitoring, redirecting, stopping, and reviewing child sessions
-- Consolidating accepted evidence into a shared artifact
+- When visible state is better than another chat
+- `/create-canvas`
+- Reviewing generated state and actions
+- Ownership, recovery, and retirement
 
 **Lab Outline (2 hours):**
 
-- Plan a release-preparation objective
-- Define independent workstreams and review criteria
-- Run child sessions
-- Review each result and record accept, revise, or reject
-- Consolidate accepted evidence into the shared plan
-- Optionally use the [Session 23 Azure Boards route](sessions/session-23-orchestrate-workstreams/lab/azure-boards/README.md) with seeded work items and GitHub Copilot
-- Delegate repository work only when the work item links to a GitHub repository and the environment supports the approved delegation route
-- **Deliverable:** An orchestration plan and child-session review record
+- Define the minimum planning state
+- Create and simplify the canvas
+- Load issues through GitHub MCP
+- Make one visible update and one Copilot-requested update
+- Compare the canvas, Copilot report, and GitHub state
+- **Deliverable:** A learner-created planning canvas and review record
 
 ---
 
-### Session 24 — Review Outcomes and Govern Automation
+### Session 24 — Orchestrate Agents and Workstreams
 
 **Difficulty:** Intermediate
-**Prerequisites:** GitHub Copilot access; Sessions 20–23
+**Prerequisites:** Sessions 20-23; live orchestration access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners define how much autonomy a recurring workflow receives and what evidence a person needs before approval. They set allowed inputs and outputs, ownership, escalation, stop conditions, and a human-run recovery path.
+Learners select independent work from the issue plan and canvas, start child sessions, review each result, and update the approved plan.
 
 **Trainer Content Outline (1 hour):**
 
-- Classifying work by autonomy and approval level
-- Evidence required for acceptance
-- Data, policy, meter, owner, reviewer, and stop guard
-- Failure routes and human-run continuity
-- Measuring useful time saved instead of activity volume
+- Parent objectives and independent workstreams
+- Output packets and stop conditions
+- Monitoring, redirecting, and stopping sessions
+- Consolidating only accepted evidence
 
 **Lab Outline (2 hours):**
 
-- Select a recurring status or reporting workflow
-- Define the automation contract
-- Review a live or simulated evidence packet
-- Record the approval decision and required follow-up
-- Produce a stakeholder-ready update from accepted evidence
-- **Deliverable:** An automation contract, approval record, and stakeholder update
+- Select workstreams from the approved issues
+- Run live GitHub Copilot orchestration
+- Accept, revise, or reject each result
+- Update the canvas and relevant GitHub issue
+- Optionally use the [Session 24 Azure Boards route](sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md)
+- **Deliverable:** An orchestration plan, reviewed results, and verified plan updates
+
+---
+
+### Session 25 — Automate Delivery Follow-up and Connect Work Systems
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 20-24; Automations and GitHub MCP access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Automation. They review one run and decide whether GitHub or Azure Boards remains authoritative.
+
+**Trainer Content Outline (1 hour):**
+
+- Choosing a useful recurring task
+- Draft-only Automation configuration
+- Minimum tools, evidence, and stop conditions
+- GitHub and Azure Boards system-of-record decisions
+
+**Lab Outline (2 hours):**
+
+- Create the automation contract
+- Configure and run one Automation
+- Review the run evidence
+- Record keep, revise, disable, or pause
+- Produce a stakeholder update and work-system handoff
+- **Deliverable:** A reviewed Automation run and system-of-record decision
 
 ---
 
 ## Delivery Notes
 
-- **Total track duration:** 72 hours (24 sessions × 3 hours each)
+- **Total track duration:** 75 hours (25 sessions × 3 hours each)
 - **Recommended delivery schedules:**
-  - Intensive: 3 sessions/day × 8 days
-  - Standard: 2 sessions/day × 12 days
-  - Extended: 1 session/day × 24 days
+  - Intensive: 3 sessions/day across 9 days
+  - Standard: 2 sessions/day across 13 days
+  - Extended: 1 session/day × 25 days
 - **Group size:** 8–15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1–3 form the core track (required for full certification)

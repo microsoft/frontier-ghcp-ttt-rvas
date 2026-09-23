@@ -1,4 +1,6 @@
-# Work Item: <Outcome-Focused Title>
+# GitHub Issue Proposal
+
+> Session 22 creates the live GitHub issue after review and decomposition.: <Outcome-Focused Title>
 
 ## User and outcome
 

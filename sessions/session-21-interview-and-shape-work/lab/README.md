@@ -8,11 +8,11 @@
 
 ## Objective
 
-Use GitHub Copilot to turn one vague request into a reviewed decision brief and a sprint-ready work item.
+Use the GitHub Copilot app to turn one vague request into a reviewed Markdown decision brief and an approved GitHub issue proposal.
 
 ## Required preflight
 
-1. Open an approved GitHub Copilot surface.
+1. Open the GitHub Copilot app and the training repository project.
 2. Run one prompt and one follow-up answer.
 3. Confirm that you can use `grill-me`, `grilling`, or the prompt in Phase 2.
 4. Choose an approved, sanitized request or [`starter/vague-request.md`](starter/vague-request.md).
@@ -23,11 +23,11 @@ Use GitHub Copilot to turn one vague request into a reviewed decision brief and 
 7. Open:
    - [`starter/grilling-reference.md`](starter/grilling-reference.md)
    - [`starter/decision-brief-template.md`](starter/decision-brief-template.md)
-   - [`starter/work-item-template.md`](starter/work-item-template.md)
+   - [`starter/issue-proposal-template.md`](starter/issue-proposal-template.md)
    - [`starter/review-checklist.md`](starter/review-checklist.md)
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot is unavailable.** Resolve licensing, sign-in, policy, extension, network, or model access before starting. A partner-led interview or worksheet does not meet this lab's requirements.
+> **Stop if the GitHub Copilot app or repository project is unavailable.** Resolve licensing, sign-in, policy, client, or repository access before starting.
 
 To use Azure Boards, open [`azure-boards/README.md`](azure-boards/README.md). The companion replaces Phases 4 and 5. The interview still runs with GitHub Copilot.
 
@@ -37,8 +37,8 @@ To use Azure Boards, open [`azure-boards/README.md`](azure-boards/README.md). Th
 | --- | --- | --- |
 | 1 | Select and inspect the request | 10 min |
 | 2 | Run the Copilot decision-tree interview | 45 min |
-| 3 | Draft and review the decision brief | 25 min |
-| 4 | Draft the sprint-ready work item | 25 min |
+| 3 | Create and review the decision brief | 25 min |
+| 4 | Draft the GitHub issue proposal | 25 min |
 | 5 | Validate, assign ownership, and hand over | 15 min |
 
 ## Phase 1: select and inspect the request
@@ -91,7 +91,7 @@ The interview can stop when:
 
 ## Phase 3: draft and review the decision brief
 
-Ask GitHub Copilot to complete [`starter/decision-brief-template.md`](starter/decision-brief-template.md) from the confirmed interview record.
+Ask GitHub Copilot to create `docs/discovery/request-status-decision-brief.md` from [`starter/decision-brief-template.md`](starter/decision-brief-template.md) and the confirmed interview record.
 
 Check that the draft includes:
 
@@ -104,13 +104,13 @@ Check that the draft includes:
 - open questions with owners;
 - approval record.
 
-The request owner marks the brief **approved**, **approved with open questions**, or **needs another interview round**.
+Review the proposed repository change before accepting it. The request owner marks the brief **approved**, **approved with open questions**, or **needs another interview round**.
 
 If it needs another round, give GitHub Copilot only the unresolved branches. Do not restart the interview.
 
-## Phase 4: draft the sprint-ready work item
+## Phase 4: draft the GitHub issue proposal
 
-Ask GitHub Copilot to complete [`starter/work-item-template.md`](starter/work-item-template.md) from the approved brief.
+Ask GitHub Copilot to complete [`starter/issue-proposal-template.md`](starter/issue-proposal-template.md) from the approved brief.
 
 Review each acceptance criterion. Cover:
 
@@ -121,6 +121,8 @@ Review each acceptance criterion. Cover:
 - the evidence needed for review.
 
 Then review the definition of done. It must name the required validation, handoff, owner review, and final approval.
+
+Do not create the GitHub issue yet. Session 22 reviews the proposal, decomposes the work, and performs the approved GitHub write operations.
 
 ## Phase 5: validate and hand over
 
@@ -140,7 +142,7 @@ Submit:
 
 1. A **Copilot interview record** with rounds and request-owner decisions.
 2. A **reviewed decision brief** with the request owner's decision.
-3. A **sprint-ready work item** with acceptance criteria, definition of done, owner, reviewer, and readiness result.
+3. A **GitHub issue proposal** with acceptance criteria, definition of done, owner, reviewer, and readiness result.
 
 Use the completed fictional examples in [`solution/`](solution/) only after your first review.
 
@@ -148,13 +150,14 @@ Use the completed fictional examples in [`solution/`](solution/) only after your
 
 - [ ] GitHub Copilot access passed preflight.
 - [ ] The input is approved and sanitized.
-- [ ] The interview ran with GitHub Copilot.
+- [ ] The interview ran in the GitHub Copilot app with repository context.
 - [ ] Interview questions followed dependency order.
 - [ ] Scope, constraints, success, failure, ownership, and approval are resolved or assigned.
 - [ ] The brief separates facts, decisions, assumptions, and open questions.
 - [ ] Acceptance criteria are observable and include a failure or boundary case.
 - [ ] The definition of done includes evidence and human approval.
-- [ ] The request owner reviewed the brief.
+- [ ] The request owner reviewed the repository Markdown brief.
+- [ ] The proposed file change was reviewed before acceptance.
 - [ ] The delivery reviewer recorded Ready, Revise, or Blocked.
 - [ ] The next action has an owner.
 
