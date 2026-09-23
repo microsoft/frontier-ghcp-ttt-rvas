@@ -1,0 +1,12 @@
+{
+  "name": "agent-lab-project",
+  "version": "1.0.0",
+  "description": "Sample project for the Custom Agents lab — needs tests and documentation",
+  "main": "src/user-service.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

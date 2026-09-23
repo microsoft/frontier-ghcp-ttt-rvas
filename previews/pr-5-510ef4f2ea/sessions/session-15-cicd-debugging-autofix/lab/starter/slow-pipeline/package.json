@@ -1,0 +1,20 @@
+{
+  "name": "slow-pipeline-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint src/",
+    "test": "jest --verbose",
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

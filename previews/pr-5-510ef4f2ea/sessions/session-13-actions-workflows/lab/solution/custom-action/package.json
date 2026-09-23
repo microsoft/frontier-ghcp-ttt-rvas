@@ -1,0 +1,9 @@
+{
+  "name": "code-quality-scanner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Action that calculates a JavaScript quality score",
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  }
+}

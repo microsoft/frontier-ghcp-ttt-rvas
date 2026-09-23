@@ -1,0 +1,12 @@
+{
+  "name": "messy-app",
+  "version": "1.0.0",
+  "description": "A working but poorly structured Express app for refactoring practice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

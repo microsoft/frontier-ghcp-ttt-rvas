@@ -1,0 +1,6848 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 24 sessions across 7 modules.">
+      
+      
+        <meta name="author" content="GitHub Copilot TTT">
+      
+      
+      
+        <link rel="prev" href="../lab/">
+      
+      
+        <link rel="next" href="../../session-02-chat-and-inline/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Trainer Guide - GitHub Copilot Train-the-Trainer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../overrides/rvap-brand.css">
+    
+      <link rel="stylesheet" href="../../../overrides/extra.css">
+    
+      <link rel="stylesheet" href="../../../overrides/set-builder.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#session-01-introduction-to-copilot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <header class="md-header" data-md-component="header">
+  <div class="md-header__inner md-grid">
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Open navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a href="../../.." class="md-header__button md-logo"
+       aria-label="RVAP - GitHub Copilot Train-the-Trainer home" data-md-component="logo">
+      <img src="../../../assets/logos/rvap-full.png" alt="RVAP" width="1058" height="376">
+    </a>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">GitHub Copilot Train-the-Trainer</span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">Trainer Guide</span>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="md-tabs" aria-label="Primary">
+      <ul class="md-tabs__list">
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../build-set/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Build your set
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../curriculum-plan/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Curriculum
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tracks/" class="md-tabs__link">
+          
+  
+  
+  Tracks
+
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Sessions
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+        
+      </ul>
+    </nav>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Open search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+  </div>
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+
+
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GitHub Copilot Train-the-Trainer" class="md-nav__button md-logo" aria-label="GitHub Copilot Train-the-Trainer" data-md-component="logo">
+      <img src="../../../assets/logos/rvap-full.png" alt="RVAP" width="1058" height="376">
+    </a>
+    GitHub Copilot Train-the-Trainer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../build-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build your set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tracks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/beginner-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/developer-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Productivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/agentic-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/devops-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps & Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/enterprise-rollout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise Rollout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/product-and-delivery-teams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product & Delivery Teams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracks/full-mastery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Mastery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Copilot Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 — Copilot Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_1" id="__nav_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 — Intro to Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 — Intro to Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trainer-content-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer content guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trainer content guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delivery-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-and-cost-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access and cost preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-access-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No-access fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainer-talking-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounded-task-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bounded task pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Close
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minute-mapped-delivery-plan-60-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minute-mapped delivery plan (60 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minute-mapped delivery plan (60 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-pressure-cutpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-pressure cutpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-1-welcome-and-mental-model-000005" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 1 — Welcome and mental model (0:00–0:05)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 1 — Welcome and mental model (0:00–0:05)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-talking-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-2-architecture-and-llm-basics-005015" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 2 — Architecture and LLM basics (0:05–0:15)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 2 — Architecture and LLM basics (0:05–0:15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-talking-points_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check for understanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-3-delivery-preflight-015025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 3 — Delivery preflight (0:15–0:25)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 3 — Delivery preflight (0:15–0:25)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-trainer-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact trainer actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-wording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe wording
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observable-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observable outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-4-setup-and-suggestion-controls-025035" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 4 — Setup and suggestion controls (0:25–0:35)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 4 — Setup and suggestion controls (0:25–0:35)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer walkthrough
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripted-demo-normalize-a-fictional-username-035048" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripted demo — Normalize a fictional username (0:35–0:48)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripted demo — Normalize a fictional username (0:35–0:48)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact-trainer-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact trainer prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact-trainer-actions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact trainer actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-output-or-observable-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected output or observable outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-accessmanual-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No-access/manual fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-6-follow-up-edit-proposals-048053" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 6 — Follow-up edit proposals (0:48–0:53)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 6 — Follow-up edit proposals (0:48–0:53)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-talking-points_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro-exercise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-7-strengths-limits-and-decision-practice-053058" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 7 — Strengths, limits, and decision practice (0:53–0:58)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 7 — Strengths, limits, and decision practice (0:53–0:58)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-assistance-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use assistance when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefer-manual-work-or-pause-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefer manual work or pause when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trainer-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-trainee-qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common trainee Q&amp;A
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common trainee Q&amp;A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-generated-code-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Is generated code correct?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-accepting-more-suggestions-make-the-tool-learn-our-private-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Does accepting more suggestions make the tool learn our private code?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-model-plan-or-ide-should-we-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Which model, plan, or IDE should we use?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-this-replace-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Will this replace developers?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-paste-an-error-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Can I paste an error log?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-did-i-receive-a-different-suggestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Why did I receive a different suggestion?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#should-i-accept-a-suggestion-that-passes-one-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Should I accept a suggestion that passes one test?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-access-disappears-during-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “What if access disappears during the lab?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-anti-patterns-and-recoveries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitfalls, anti-patterns, and recoveries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-and-lab-handoff-058100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing and lab handoff (0:58–1:00)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Closing and lab handoff (0:58–1:00)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closing-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab handoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence-to-retain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence to retain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-readiness-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final readiness check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 — Chat & Inline Suggestions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 — Chat & Inline Suggestions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-02-chat-and-inline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-02-chat-and-inline/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-02-chat-and-inline/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 — Prompt Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 — Prompt Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-03-prompt-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-03-prompt-engineering/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-03-prompt-engineering/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Copilot in Practice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 — Copilot in Practice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_1" id="__nav_5_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 — Copilot CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 — Copilot CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-04-copilot-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-04-copilot-cli/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-04-copilot-cli/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 — Agent Mode in the IDE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05 — Agent Mode in the IDE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-05-agent-mode-ide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-05-agent-mode-ide/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-05-agent-mode-ide/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 — Spaces & Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    06 — Spaces & Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-06-spaces-and-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-06-spaces-and-context/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-06-spaces-and-context/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 — Code Review & PRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    07 — Code Review & PRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-07-code-review-prs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-07-code-review-prs/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-07-code-review-prs/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Agentic Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 — Agentic Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 — Copilot App & Canvases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    08 — Copilot App & Canvases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-08-copilot-app-canvases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-08-copilot-app-canvases/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-08-copilot-app-canvases/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 — Cloud Agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    09 — Cloud Agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-09-cloud-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-09-cloud-agent/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-09-cloud-agent/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 — MCP Servers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    10 — MCP Servers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-10-mcp-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-10-mcp-servers/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-10-mcp-servers/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 — Custom Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    11 — Custom Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-11-custom-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-11-custom-agents/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-11-custom-agents/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_5" id="__nav_5_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 — Agent Skills & Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    12 — Agent Skills & Ecosystem
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-12-agent-skills-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-12-agent-skills-ecosystem/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-12-agent-skills-ecosystem/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — DevOps & Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 4 — DevOps & Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1" id="__nav_5_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 — Actions & Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    13 — Actions & Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-13-actions-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-13-actions-workflows/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-13-actions-workflows/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_2" id="__nav_5_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 — IaC with Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    14 — IaC with Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-14-iac-with-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-14-iac-with-copilot/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-14-iac-with-copilot/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_3" id="__nav_5_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 — CI/CD & Debugging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    15 — CI/CD & Debugging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-15-cicd-debugging-autofix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-15-cicd-debugging-autofix/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-15-cicd-debugging-autofix/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Specification-Driven Frameworks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 5 — Specification-Driven Frameworks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5_1" id="__nav_5_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 — Brady's Squad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 — Brady's Squad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-16-squad-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-16-squad-orchestration/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-16-squad-orchestration/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5_2" id="__nav_5_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 — Spec Kit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    18 — Spec Kit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-18-spec-kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-18-spec-kit/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-18-spec-kit/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Advanced Topics & Capstone
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 6 — Advanced Topics & Capstone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_1" id="__nav_5_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 — Enterprise Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    17 — Enterprise Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-17-enterprise-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-17-enterprise-governance/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-17-enterprise-governance/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_2" id="__nav_5_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 — Capstone
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    19 — Capstone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-19-capstone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-19-capstone/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-19-capstone/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 7 — Product and Delivery Teams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 7 — Product and Delivery Teams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7_1" id="__nav_5_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 — Understand Technical Work
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    20 — Understand Technical Work
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-20-understand-technical-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-20-understand-technical-work/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-20-understand-technical-work/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7_2" id="__nav_5_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 — Interview and Shape Work
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    21 — Interview and Shape Work
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-21-interview-and-shape-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-21-interview-and-shape-work/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-21-interview-and-shape-work/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7_3" id="__nav_5_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 — Plan with Canvases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    22 — Plan with Canvases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-22-plan-and-steer-with-canvases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-22-plan-and-steer-with-canvases/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-22-plan-and-steer-with-canvases/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7_4" id="__nav_5_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 — Orchestrate Workstreams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    23 — Orchestrate Workstreams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-23-orchestrate-workstreams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-23-orchestrate-workstreams/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-23-orchestrate-workstreams/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7_5" id="__nav_5_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 — Govern Agentic Work
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    24 — Govern Agentic Work
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-24-govern-agentic-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-24-govern-agentic-work/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../session-24-govern-agentic-work/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trainer-content-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer content guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trainer content guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delivery-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-and-cost-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access and cost preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-access-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No-access fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainer-talking-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounded-task-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bounded task pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Close
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minute-mapped-delivery-plan-60-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minute-mapped delivery plan (60 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minute-mapped delivery plan (60 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-pressure-cutpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-pressure cutpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-1-welcome-and-mental-model-000005" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 1 — Welcome and mental model (0:00–0:05)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 1 — Welcome and mental model (0:00–0:05)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-talking-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-2-architecture-and-llm-basics-005015" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 2 — Architecture and LLM basics (0:05–0:15)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 2 — Architecture and LLM basics (0:05–0:15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-talking-points_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check for understanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-3-delivery-preflight-015025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 3 — Delivery preflight (0:15–0:25)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 3 — Delivery preflight (0:15–0:25)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-trainer-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact trainer actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-wording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe wording
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observable-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observable outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-4-setup-and-suggestion-controls-025035" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 4 — Setup and suggestion controls (0:25–0:35)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 4 — Setup and suggestion controls (0:25–0:35)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer walkthrough
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripted-demo-normalize-a-fictional-username-035048" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripted demo — Normalize a fictional username (0:35–0:48)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripted demo — Normalize a fictional username (0:35–0:48)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact-trainer-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact trainer prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact-trainer-actions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact trainer actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-output-or-observable-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected output or observable outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-accessmanual-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No-access/manual fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-6-follow-up-edit-proposals-048053" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 6 — Follow-up edit proposals (0:48–0:53)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 6 — Follow-up edit proposals (0:48–0:53)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trainer-talking-points_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer talking points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro-exercise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-7-strengths-limits-and-decision-practice-053058" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 7 — Strengths, limits, and decision practice (0:53–0:58)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment 7 — Strengths, limits, and decision practice (0:53–0:58)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-assistance-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use assistance when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefer-manual-work-or-pause-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefer manual work or pause when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trainer-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trainer prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-trainee-qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common trainee Q&amp;A
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common trainee Q&amp;A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-generated-code-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Is generated code correct?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-accepting-more-suggestions-make-the-tool-learn-our-private-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Does accepting more suggestions make the tool learn our private code?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-model-plan-or-ide-should-we-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Which model, plan, or IDE should we use?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-this-replace-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Will this replace developers?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-paste-an-error-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Can I paste an error log?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-did-i-receive-a-different-suggestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Why did I receive a different suggestion?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#should-i-accept-a-suggestion-that-passes-one-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “Should I accept a suggestion that passes one test?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-access-disappears-during-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “What if access disappears during the lab?”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-anti-patterns-and-recoveries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitfalls, anti-patterns, and recoveries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-and-lab-handoff-058100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing and lab handoff (0:58–1:00)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Closing and lab handoff (0:58–1:00)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closing-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab handoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence-to-retain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence to retain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-readiness-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final readiness check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+
+  
+                  
+
+
+
+<nav class="session-nav" aria-label="Session materials">
+  <a href="../../../sessions/session-01-intro-to-copilot/">Overview</a>
+  <a href="../../../sessions/session-01-intro-to-copilot/lab/">Lab</a>
+  <a href="../../../sessions/session-01-intro-to-copilot/trainer-content/" class="trainer-guide-btn" aria-current="page">Trainer Guide</a>
+</nav>
+<h1 id="session-01-introduction-to-copilot">Session 01 — Introduction to Copilot<a class="headerlink" href="#session-01-introduction-to-copilot" title="Permanent link">&para;</a></h1>
+<div class="trainer-controls" role="group" aria-label="Trainer controls" hidden>
+  <span class="trainer-timer" role="timer" aria-label="Elapsed session time"
+    aria-live="off">00:00</span>
+  <button type="button" data-trainer-timer>Start timer</button>
+  <button type="button" data-trainer-reset>Reset timer</button>
+  <button type="button" data-trainer-previous>Previous section</button>
+  <button type="button" data-trainer-next>Next section</button>
+  <button type="button" data-trainer-print>Print guide</button>
+  <label class="trainer-controls__shortcuts">
+    <input type="checkbox" data-trainer-shortcuts>
+    Enable shortcuts (J: next, K: previous, T: timer)
+  </label>
+</div>
+
+<h2 id="trainer-content-guide">Trainer content guide<a class="headerlink" href="#trainer-content-guide" title="Permanent link">&para;</a></h2>
+<h3 id="delivery-baseline">Delivery baseline<a class="headerlink" href="#delivery-baseline" title="Permanent link">&para;</a></h3>
+<p>Use Enterprise Cloud as the governance baseline. Before delivery, verify current official GitHub documentation and the customer administrator policy for the intended environment. Do not teach commercial terms, model catalogs, service status, data terms, or legal commitments as fixed curriculum facts.</p>
+<h3 id="access-and-cost-preflight">Access and cost preflight<a class="headerlink" href="#access-and-cost-preflight" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Confirm participant role, repository scope, and approved data classification.</li>
+<li>Verify the current official documentation and customer policy for the selected workflow.</li>
+<li>Use a non-sensitive, bounded starter task with explicit acceptance criteria.</li>
+<li>For metered work, define the customer-owned meter, threshold, escalation contact, and stop guard.</li>
+<li>Prepare the manual starter exercise.</li>
+</ol>
+<h3 id="no-access-fallback">No-access fallback<a class="headerlink" href="#no-access-fallback" title="Permanent link">&para;</a></h3>
+<p>If access is absent or policy does not permit a live exercise, learners complete the starter task manually, run the same checks, and compare their result with the solution or trainer review. The lab teaches disciplined inspection and validation. Learners do not need access to a product surface.</p>
+<h2 id="session-objective">Session objective<a class="headerlink" href="#session-objective" title="Permanent link">&para;</a></h2>
+<p>Teach that assistant output needs the same discipline as any proposed change: define the task, control scope, test it, and review it.</p>
+<h2 id="suggested-agenda">Suggested agenda<a class="headerlink" href="#suggested-agenda" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framing</td>
+<td>Explain that output is a proposal requiring verification.</td>
+</tr>
+<tr>
+<td>Preflight</td>
+<td>Confirm policy, data, scope, meter, and fallback.</td>
+</tr>
+<tr>
+<td>Task design</td>
+<td>Turn a vague request into acceptance criteria and constraints.</td>
+</tr>
+<tr>
+<td>Inspection</td>
+<td>Read a proposed or manual change against those criteria.</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Run focused checks and conduct peer review.</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>Identify where assistance helps and where human judgment remains essential.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trainer-talking-points">Trainer talking points<a class="headerlink" href="#trainer-talking-points" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“An assistant can accelerate a bounded task, but it does not replace engineering judgment. We define the outcome, inspect the result, validate it, and decide whether to accept it.”</p>
+<p>“Before a live exercise, the customer’s current documentation and policy decide what may be used. If evidence is missing, we use the manual fallback.”</p>
+<p>“For metered work, a customer-defined stop guard is part of the task: know the meter, threshold, escalation owner, and manual alternative.”</p>
+</blockquote>
+<h2 id="bounded-task-pattern">Bounded task pattern<a class="headerlink" href="#bounded-task-pattern" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">## Task</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>State one user-visible change.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gu">## Acceptance criteria</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">- [ ]</span> Expected behavior is testable.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">- [ ]</span> Relevant checks pass.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">- [ ]</span> The change stays in approved files and data.
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">- [ ]</span> A human reviewer can understand the result.
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="gu">## Constraints</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>Follow repository conventions.
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>Do not introduce unapproved dependencies or data.
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>Stop and ask when a requirement is ambiguous.
+</code></pre></div>
+<h2 id="review-rubric">Review rubric<a class="headerlink" href="#review-rubric" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Correctness: does the result meet the acceptance criteria?</li>
+<li>Scope: did the work stay within the intended files and task?</li>
+<li>Validation: are test and review results available?</li>
+<li>Safety: are data, dependencies, and permissions understood?</li>
+<li>Maintainability: can another developer explain and change the result?</li>
+</ul>
+<h2 id="close">Close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h2>
+<p>Ask learners to name one routine task they could make more reviewable by adding acceptance criteria and a manual fallback. Remind them to recheck official documentation and customer policy before their next live use.</p>
+<hr />
+<h2 id="minute-mapped-delivery-plan-60-minutes">Minute-mapped delivery plan (60 minutes)<a class="headerlink" href="#minute-mapped-delivery-plan-60-minutes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Segment</th>
+<th>Trainer outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00–0:05</td>
+<td>Welcome and durable mental model</td>
+<td>Learners describe Copilot output as a proposal.</td>
+</tr>
+<tr>
+<td>0:05–0:15</td>
+<td>Architecture and LLM basics</td>
+<td>Learners trace intent and approved context to reviewed output.</td>
+</tr>
+<tr>
+<td>0:15–0:25</td>
+<td>Access, policy, data, and cost preflight</td>
+<td>The cohort selects the live or manual path.</td>
+</tr>
+<tr>
+<td>0:25–0:35</td>
+<td>Setup and suggestion controls</td>
+<td>Learners can accept, reject, cycle, and edit deliberately.</td>
+</tr>
+<tr>
+<td>0:35–0:48</td>
+<td>Scripted bounded-function demo</td>
+<td>The group evaluates a suggestion against tests.</td>
+</tr>
+<tr>
+<td>0:48–0:53</td>
+<td>Follow-up edit proposals</td>
+<td>Learners treat every related edit as independently reviewable.</td>
+</tr>
+<tr>
+<td>0:53–0:58</td>
+<td>Strengths, limits, and Q&amp;A</td>
+<td>Learners identify where human judgment dominates.</td>
+</tr>
+<tr>
+<td>0:58–1:00</td>
+<td>Lab handoff</td>
+<td>Everyone knows the first task, evidence, and fallback.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="time-pressure-cutpoints">Time-pressure cutpoints<a class="headerlink" href="#time-pressure-cutpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>At 0:15, cut the model explanation before cutting the preflight.</li>
+<li>At 0:25, skip installation clicks and use the prepared editor or screenshots.</li>
+<li>At 0:35, demonstrate only accept, reject, and edit; name cycling verbally.</li>
+<li>At 0:48, omit the follow-up-edit example if the bounded demo ran long.</li>
+<li>At 0:53, take one question and park the rest for the lab.</li>
+<li>Never cut verification, the no-access route, or the lab safety briefing.</li>
+</ul>
+<span id="segment-1--welcome-and-mental-model-000005" aria-hidden="true"></span><h2 id="segment-1-welcome-and-mental-model-000005">Segment 1 — Welcome and mental model (0:00–0:05)<a class="headerlink" href="#segment-1-welcome-and-mental-model-000005" title="Permanent link">&para;</a></h2>
+<h3 id="trainer-talking-points_1">Trainer talking points<a class="headerlink" href="#trainer-talking-points_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Welcome learners and state that this session teaches a workflow, not a promise of perfect output.</li>
+<li>Say: “Copilot proposes. The developer defines intent, inspects the proposal, runs checks, and owns the decision.”</li>
+<li>Ask for one routine coding task and one decision the group would not delegate.</li>
+<li>Distinguish speed from confidence: speed comes from a useful draft; confidence comes from evidence.</li>
+<li>State that product behavior and availability change, so current official documentation and organizational policy govern live use.</li>
+</ol>
+<h3 id="interaction">Interaction<a class="headerlink" href="#interaction" title="Permanent link">&para;</a></h3>
+<p>Ask: “What would you need to see before accepting ten generated lines into a repository?”</p>
+<p>Listen for requirements, repository conventions, tests, diff review, and accountable approval.</p>
+<h3 id="transition">Transition<a class="headerlink" href="#transition" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“To review a proposal well, we need a simple picture of how it was produced.”</p>
+</blockquote>
+<span id="segment-2--architecture-and-llm-basics-005015" aria-hidden="true"></span><h2 id="segment-2-architecture-and-llm-basics-005015">Segment 2 — Architecture and LLM basics (0:05–0:15)<a class="headerlink" href="#segment-2-architecture-and-llm-basics-005015" title="Permanent link">&para;</a></h2>
+<h3 id="trainer-talking-points_2">Trainer talking points<a class="headerlink" href="#trainer-talking-points_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Draw: <code>intent + approved context → product surface → proposal → checks + human review</code>.</li>
+<li>Explain that this is a teaching model, not a fixed implementation or data-flow claim.</li>
+<li>Explain that prompts, nearby code, file type, instructions, and selected context can influence a proposal.</li>
+<li>A fluent answer can still be wrong, incomplete, or outside scope.</li>
+<li>Different runs can differ; reproducible tests matter more than identical wording.</li>
+<li>Avoid claims about training data, retention, telemetry, or model internals.</li>
+<li>Direct those questions to current official documentation and the organization’s approved policy owner.</li>
+</ul>
+<h3 id="check-for-understanding">Check for understanding<a class="headerlink" href="#check-for-understanding" title="Permanent link">&para;</a></h3>
+<p>Ask learners to label each item as intent, context, proposal, or evidence:</p>
+<ol>
+<li>A docstring defining behavior.</li>
+<li>A suggested function body.</li>
+<li>A focused test result.</li>
+<li>A repository coding convention.</li>
+</ol>
+<p>Expected classification: intent/context, proposal, evidence, and context respectively.</p>
+<h3 id="transition_1">Transition<a class="headerlink" href="#transition_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“Before any context is sent or any suggestion requested, we decide whether the live path is permitted.”</p>
+</blockquote>
+<span id="segment-3--delivery-preflight-015025" aria-hidden="true"></span><h2 id="segment-3-delivery-preflight-015025">Segment 3 — Delivery preflight (0:15–0:25)<a class="headerlink" href="#segment-3-delivery-preflight-015025" title="Permanent link">&para;</a></h2>
+<h3 id="exact-trainer-actions">Exact trainer actions<a class="headerlink" href="#exact-trainer-actions" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Display the existing <strong>Delivery baseline</strong>.</li>
+<li>Identify the administrator or policy contact for the training environment.</li>
+<li>Confirm the repository is disposable or approved and contains synthetic material only.</li>
+<li>Confirm the learner’s intended account, role, and repository scope.</li>
+<li>Check current official documentation for supported setup and controls.</li>
+<li>Ask the organization owner whether the exercise is permitted.</li>
+<li>Identify any applicable meter, the organization-owned threshold, and the stop owner.</li>
+<li>Point to the prepared manual files under <code>lab/starter/</code>.</li>
+<li>Announce either “live path” or “manual path” for the cohort.</li>
+</ol>
+<h3 id="safe-wording">Safe wording<a class="headerlink" href="#safe-wording" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“I am not inferring entitlement, cost, data handling, or feature support from a plan name. We use current official evidence and the organization’s policy.”</p>
+<p>“If any approval is unclear, the fallback is the planned exercise, not a degraded exception.”</p>
+</blockquote>
+<h3 id="observable-outcome">Observable outcome<a class="headerlink" href="#observable-outcome" title="Permanent link">&para;</a></h3>
+<p>The cohort can state:</p>
+<ul>
+<li>which repository and data are approved;</li>
+<li>which surface, if any, will be used;</li>
+<li>who owns review and escalation;</li>
+<li>when metered activity stops;</li>
+<li>where the manual exercise begins.</li>
+</ul>
+<h3 id="transition_2">Transition<a class="headerlink" href="#transition_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“Once permission is clear, we can practice the controls that turn a suggestion into a deliberate choice.”</p>
+</blockquote>
+<span id="segment-4--setup-and-suggestion-controls-025035" aria-hidden="true"></span><h2 id="segment-4-setup-and-suggestion-controls-025035">Segment 4 — Setup and suggestion controls (0:25–0:35)<a class="headerlink" href="#segment-4-setup-and-suggestion-controls-025035" title="Permanent link">&para;</a></h2>
+<h3 id="trainer-walkthrough">Trainer walkthrough<a class="headerlink" href="#trainer-walkthrough" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the approved IDE and the training repository.</li>
+<li>Confirm the intended account and current status using the IDE’s supported controls.</li>
+<li>Open <code>lab/starter/utils.py</code>.</li>
+<li>Read the first function name, type hints, and docstring aloud.</li>
+<li>Place the cursor where a body belongs and pause.</li>
+<li>If a suggestion appears, do not accept immediately.</li>
+<li>Read it line by line and compare it with the docstring.</li>
+<li>Demonstrate rejection for an unsuitable proposal.</li>
+<li>Demonstrate acceptance only for a proposal the group has reviewed.</li>
+<li>Use the key bindings shown by the learner’s current IDE rather than asserting fixed shortcuts.</li>
+</ol>
+<h3 id="expected-observations">Expected observations<a class="headerlink" href="#expected-observations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The file name, function name, types, and docstring provide context.</li>
+<li>Suggestions may differ between learners.</li>
+<li>Rejecting or editing a suggestion is normal.</li>
+<li>IDE controls expose a proposal; they do not validate correctness.</li>
+</ul>
+<h3 id="manual-fallback">Manual fallback<a class="headerlink" href="#manual-fallback" title="Permanent link">&para;</a></h3>
+<p>Open <code>lab/solution/utils.py</code> beside the starter.</p>
+<p>Reveal one line at a time as a prepared proposal.</p>
+<p>Ask learners to mark accept, reject, or revise and explain why.</p>
+<p>No product access is required to practice the decision.</p>
+<h3 id="transition_3">Transition<a class="headerlink" href="#transition_3" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“Use one small function to show the inspect-test-review loop.”</p>
+</blockquote>
+<span id="scripted-demo--normalize-a-fictional-username-035048" aria-hidden="true"></span><h2 id="scripted-demo-normalize-a-fictional-username-035048">Scripted demo — Normalize a fictional username (0:35–0:48)<a class="headerlink" href="#scripted-demo-normalize-a-fictional-username-035048" title="Permanent link">&para;</a></h2>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>Demonstrate bounded intent, suggestion review, focused tests, diff inspection, and recovery without sensitive data or dependencies.</p>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>Use a disposable Python file named <code>demo_normalize.py</code>.</p>
+<p>Start with a clean working tree or record that the file is outside a repository.</p>
+<p>Paste:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">normalize_username</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">"""Return a lowercase username with surrounding whitespace removed."""</span>
+</code></pre></div>
+<p>State these acceptance criteria:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">assert</span> <span class="n">normalize_username</span><span class="p">(</span><span class="s2">"  Ada "</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"ada"</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">assert</span> <span class="n">normalize_username</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span> <span class="o">==</span> <span class="s2">""</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">assert</span> <span class="n">normalize_username</span><span class="p">(</span><span class="s2">"RIVER"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"river"</span>
+</code></pre></div>
+<p>State the non-goals:</p>
+<ul>
+<li>no character replacement;</li>
+<li>no uniqueness check;</li>
+<li>no external service;</li>
+<li>no dependency.</li>
+</ul>
+<h3 id="exact-trainer-prompt">Exact trainer prompt<a class="headerlink" href="#exact-trainer-prompt" title="Permanent link">&para;</a></h3>
+<p>If live inline suggestions are approved, type a blank indented line after the docstring.</p>
+<p>If using Chat in an approved surface, use:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Propose only the body of normalize_username.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Meet the three stated examples.
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Do not add dependencies or change the function signature.
+</code></pre></div>
+<h3 id="exact-trainer-actions_1">Exact trainer actions<a class="headerlink" href="#exact-trainer-actions_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Pause when a proposal appears.</li>
+<li>Ask: “Which acceptance criterion does each operation support?”</li>
+<li>Reject any proposal that adds unrequested validation or changes the signature.</li>
+<li>Accept or manually type the smallest valid body:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</code></pre></div>
+<ol>
+<li>Add the three assertions beneath the function.</li>
+<li>Run the file with the available Python command for the environment.</li>
+<li>Show that a successful run produces no assertion failure.</li>
+<li>Deliberately change <code>.lower()</code> to <code>.upper()</code>.</li>
+<li>Run again and show an assertion failure.</li>
+<li>Restore <code>.lower()</code>, rerun, and inspect the final diff or file.</li>
+</ol>
+<h3 id="expected-output-or-observable-outcome">Expected output or observable outcome<a class="headerlink" href="#expected-output-or-observable-outcome" title="Permanent link">&para;</a></h3>
+<ul>
+<li>With <code>.lower()</code>, all three assertions pass.</li>
+<li>With <code>.upper()</code>, at least the first or third assertion fails.</li>
+<li>The final implementation is one return statement.</li>
+<li>The final change contains no dependency, external access, or unrelated behavior.</li>
+</ul>
+<h3 id="verification-questions">Verification questions<a class="headerlink" href="#verification-questions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Does surrounding whitespace disappear?</li>
+<li>Does case normalize as specified?</li>
+<li>Does the empty string remain empty?</li>
+<li>Did the proposal invent behavior?</li>
+<li>Can another developer understand the evidence?</li>
+</ul>
+<h3 id="no-accessmanual-fallback">No-access/manual fallback<a class="headerlink" href="#no-accessmanual-fallback" title="Permanent link">&para;</a></h3>
+<p>Write these candidates on screen:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</code></pre></div>
+<p>Have pairs execute the examples mentally.</p>
+<p>Expected decision: the second candidate meets all criteria without deleting internal spaces.</p>
+<p>Then reveal the prepared solution and perform the same review.</p>
+<h3 id="demo-recovery">Demo recovery<a class="headerlink" href="#demo-recovery" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If no suggestion appears, type the candidate manually and continue.</li>
+<li>If the output differs, compare behavior rather than criticizing the model.</li>
+<li>If Python is unavailable, trace each assertion on paper.</li>
+<li>If the live surface requests unexpected access, stop and switch to manual.</li>
+<li>If discussion runs long, omit the deliberate failing edit but keep one successful verification.</li>
+</ul>
+<h3 id="transition_4">Transition<a class="headerlink" href="#transition_4" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“A passing focused check supports this function; it does not prove that every related caller is correct.”</p>
+</blockquote>
+<span id="segment-6--follow-up-edit-proposals-048053" aria-hidden="true"></span><h2 id="segment-6-follow-up-edit-proposals-048053">Segment 6 — Follow-up edit proposals (0:48–0:53)<a class="headerlink" href="#segment-6-follow-up-edit-proposals-048053" title="Permanent link">&para;</a></h2>
+<h3 id="trainer-talking-points_3">Trainer talking points<a class="headerlink" href="#trainer-talking-points_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A rename or signature change may trigger proposed edits elsewhere.</li>
+<li>Treat every proposed caller update as a new review decision.</li>
+<li>Search for missed callers independently.</li>
+<li>Run the relevant checks after the complete change.</li>
+<li>Do not describe follow-up suggestion availability or controls as guaranteed.</li>
+<li>Verify current official documentation before demonstrating the current surface.</li>
+</ul>
+<h3 id="micro-exercise">Micro-exercise<a class="headerlink" href="#micro-exercise" title="Permanent link">&para;</a></h3>
+<p>Rename a fictional parameter from <code>value</code> to <code>username</code>.</p>
+<p>Ask learners to list the evidence needed:</p>
+<ol>
+<li>search results for old references;</li>
+<li>updated tests;</li>
+<li>diff review;</li>
+<li>focused execution.</li>
+</ol>
+<h3 id="transition_5">Transition<a class="headerlink" href="#transition_5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“Choose a task that is safe to review.”</p>
+</blockquote>
+<span id="segment-7--strengths-limits-and-decision-practice-053058" aria-hidden="true"></span><h2 id="segment-7-strengths-limits-and-decision-practice-053058">Segment 7 — Strengths, limits, and decision practice (0:53–0:58)<a class="headerlink" href="#segment-7-strengths-limits-and-decision-practice-053058" title="Permanent link">&para;</a></h2>
+<h3 id="use-assistance-when">Use assistance when<a class="headerlink" href="#use-assistance-when" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the task is bounded and observable;</li>
+<li>examples or tests make correctness reviewable;</li>
+<li>the data and repository are approved;</li>
+<li>a human owns the result;</li>
+<li>manual completion remains practical.</li>
+</ul>
+<h3 id="prefer-manual-work-or-pause-when">Prefer manual work or pause when<a class="headerlink" href="#prefer-manual-work-or-pause-when" title="Permanent link">&para;</a></h3>
+<ul>
+<li>requirements are ambiguous;</li>
+<li>authorization, privacy, legal, or architecture judgment is unresolved;</li>
+<li>restricted data may be exposed;</li>
+<li>the output cannot be tested or reviewed;</li>
+<li>current documentation or organizational approval is missing.</li>
+</ul>
+<h3 id="trainer-prompt">Trainer prompt<a class="headerlink" href="#trainer-prompt" title="Permanent link">&para;</a></h3>
+<p>Ask: “Is drafting a small string helper a suitable task? Is deciding a retention policy?”</p>
+<p>Expected answer: the helper can be bounded and tested; policy requires accountable organizational decision-making.</p>
+<h2 id="common-trainee-qa">Common trainee Q&amp;A<a class="headerlink" href="#common-trainee-qa" title="Permanent link">&para;</a></h2>
+<h3 id="is-generated-code-correct">“Is generated code correct?”<a class="headerlink" href="#is-generated-code-correct" title="Permanent link">&para;</a></h3>
+<p>Not by default. Treat it as a proposal. Read it, test expected and failure behavior, inspect the complete diff, and obtain the review required by the repository.</p>
+<h3 id="does-accepting-more-suggestions-make-the-tool-learn-our-private-code">“Does accepting more suggestions make the tool learn our private code?”<a class="headerlink" href="#does-accepting-more-suggestions-make-the-tool-learn-our-private-code" title="Permanent link">&para;</a></h3>
+<p>Do not speculate. Demonstrate only visible controls and direct learners to current official product, privacy, and data-handling documentation plus organizational policy.</p>
+<h3 id="which-model-plan-or-ide-should-we-use">“Which model, plan, or IDE should we use?”<a class="headerlink" href="#which-model-plan-or-ide-should-we-use" title="Permanent link">&para;</a></h3>
+<p>There is no timeless course answer. Verify current support, entitlements, organizational enablement, metering, and workload fit before delivery.</p>
+<h3 id="will-this-replace-developers">“Will this replace developers?”<a class="headerlink" href="#will-this-replace-developers" title="Permanent link">&para;</a></h3>
+<p>The session does not predict staffing outcomes. It shows that developers still define intent, resolve ambiguity, validate behavior, and own changes.</p>
+<h3 id="can-i-paste-an-error-log">“Can I paste an error log?”<a class="headerlink" href="#can-i-paste-an-error-log" title="Permanent link">&para;</a></h3>
+<p>Only if its classification and the selected workflow are approved. Remove secrets and sensitive values; use a synthetic reproduction when in doubt.</p>
+<h3 id="why-did-i-receive-a-different-suggestion">“Why did I receive a different suggestion?”<a class="headerlink" href="#why-did-i-receive-a-different-suggestion" title="Permanent link">&para;</a></h3>
+<p>Context and generated output can vary. Compare both proposals against the same acceptance criteria and tests rather than seeking identical text.</p>
+<h3 id="should-i-accept-a-suggestion-that-passes-one-test">“Should I accept a suggestion that passes one test?”<a class="headerlink" href="#should-i-accept-a-suggestion-that-passes-one-test" title="Permanent link">&para;</a></h3>
+<p>One passing test is partial evidence. Check edge cases, scope, maintainability, dependencies, and the repository’s required checks.</p>
+<h3 id="what-if-access-disappears-during-the-lab">“What if access disappears during the lab?”<a class="headerlink" href="#what-if-access-disappears-during-the-lab" title="Permanent link">&para;</a></h3>
+<p>Stop the live workflow, record the point reached, and continue with starter and solution files. The review and validation outcome remains the same.</p>
+<h2 id="pitfalls-anti-patterns-and-recoveries">Pitfalls, anti-patterns, and recoveries<a class="headerlink" href="#pitfalls-anti-patterns-and-recoveries" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Why it fails</th>
+<th>Trainer recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accepting before reading</td>
+<td>Fluent code can hide wrong assumptions.</td>
+<td>Undo, restate criteria, and review line by line.</td>
+</tr>
+<tr>
+<td>Vague “write the function” request</td>
+<td>Missing behavior invites invention.</td>
+<td>Add examples, non-goals, and file scope.</td>
+</tr>
+<tr>
+<td>Real names or production data</td>
+<td>The training task does not need them.</td>
+<td>Replace with fictional values and restart.</td>
+</tr>
+<tr>
+<td>Treating a green check as complete proof</td>
+<td>Coverage may be narrow.</td>
+<td>Add an edge case and inspect the diff.</td>
+</tr>
+<tr>
+<td>Debugging product access live for too long</td>
+<td>It consumes learning time and can encourage bypasses.</td>
+<td>Use the prepared manual path after two minutes.</td>
+</tr>
+<tr>
+<td>Quoting fixed prices or allowances</td>
+<td>Commercial details change.</td>
+<td>Open current official documentation or defer to the owner.</td>
+</tr>
+<tr>
+<td>Claiming fixed data behavior</td>
+<td>Settings and terms may differ.</td>
+<td>Refer to current evidence and organizational policy.</td>
+</tr>
+<tr>
+<td>Measuring success by accepted lines</td>
+<td>Volume does not establish value or quality.</td>
+<td>Measure reviewed outcomes and defects caught.</td>
+</tr>
+<tr>
+<td>Allowing scope drift</td>
+<td>Extra behavior increases risk and review effort.</td>
+<td>Return to explicit non-goals and discard unrelated changes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="closing-and-lab-handoff-058100">Closing and lab handoff (0:58–1:00)<a class="headerlink" href="#closing-and-lab-handoff-058100" title="Permanent link">&para;</a></h2>
+<h3 id="closing-script">Closing script<a class="headerlink" href="#closing-script" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“A useful suggestion saves drafting time. A disciplined developer turns it into trustworthy work by bounding the task, protecting context, inspecting the proposal, running checks, and making the final decision.”</p>
+</blockquote>
+<h3 id="lab-handoff">Lab handoff<a class="headerlink" href="#lab-handoff" title="Permanent link">&para;</a></h3>
+<p>Direct learners to <code>lab/README.md</code>.</p>
+<p>The first live path uses <code>lab/starter/utils.py</code>.</p>
+<p>The first manual path compares that starter with <code>lab/solution/utils.py</code>.</p>
+<p>Learners then explore JavaScript and TypeScript helpers, optional follow-up edits in <code>refactor-me.py</code>, and the effectiveness journal.</p>
+<h3 id="evidence-to-retain">Evidence to retain<a class="headerlink" href="#evidence-to-retain" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the completed utility functions or manual decisions;</li>
+<li>focused command output or paper traces;</li>
+<li>one rejected or revised proposal and rationale;</li>
+<li>the completed journal reflection;</li>
+<li>the selected live or fallback path.</li>
+</ul>
+<h3 id="final-readiness-check">Final readiness check<a class="headerlink" href="#final-readiness-check" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The cohort knows its approved path.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Synthetic starter data is open.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The first acceptance criteria are visible.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Learners know how to stop and ask.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A reviewer is assigned.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The manual solution is available.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lab/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../session-02-chat-and-inline/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.pruning", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../overrides/session.js"></script>
+      
+        <script src="../../../overrides/sets.js"></script>
+      
+    
+  </body>
+</html>

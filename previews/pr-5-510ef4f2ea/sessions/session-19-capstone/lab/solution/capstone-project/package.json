@@ -1,0 +1,19 @@
+{
+  "name": "capstone-bookmark-api",
+  "version": "1.0.0",
+  "description": "Capstone project: Bookmark Manager API — completed solution",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}

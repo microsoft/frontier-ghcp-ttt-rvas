@@ -1,0 +1,130 @@
+# Complete CD workflow with staging → production deployment and rollback
+name: CD Pipeline
+
+permissions:
+  contents: read
+  deployments: write
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install production dependencies
+        run: npm ci --production
+
+      - name: Build application
+        run: |
+          if npm run build --dry-run 2>/dev/null; then
+            npm run build
+          else
+            echo "No build script found, skipping build step"
+          fi
+
+      - name: Package artifact
+        run: tar -czf app-${{ github.sha }}.tar.gz --exclude=node_modules --exclude=.git .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ github.sha }}
+          path: app-${{ github.sha }}.tar.gz
+          retention-days: 14
+
+  deploy-staging:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: app-${{ github.sha }}
+
+      - name: Deploy to staging
+        env:
+          NODE_ENV: staging
+          DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
+          API_KEY: ${{ secrets.STAGING_API_KEY }}
+        run: |
+          echo "Deploying ${{ github.sha }} to staging..."
+          # In a real workflow, this would upload to your hosting provider
+          # Example: aws s3 cp app-${{ github.sha }}.tar.gz s3://staging-bucket/
+          echo "Deployment complete."
+
+      - name: Health check — staging
+        run: |
+          echo "Waiting for staging to become healthy..."
+          sleep 10
+          # In a real workflow: curl -f https://staging.example.com/health || exit 1
+          echo "Staging health check passed."
+
+      - name: Verify health — retry
+        run: |
+          sleep 30
+          # In a real workflow: curl -f https://staging.example.com/health || exit 1
+          echo "Second health check passed."
+
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    environment: production  # Requires manual approval in repo settings
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: app-${{ github.sha }}
+
+      - name: Deploy to production
+        env:
+          NODE_ENV: production
+          DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+          API_KEY: ${{ secrets.PROD_API_KEY }}
+        run: |
+          echo "Deploying ${{ github.sha }} to production..."
+          # In a real workflow, this would upload to your hosting provider
+          echo "Production deployment complete."
+
+      - name: Health check — production
+        id: health-check
+        run: |
+          echo "Waiting for production to become healthy..."
+          sleep 10
+          # In a real workflow: curl -f https://api.example.com/health || exit 1
+          echo "Production health check passed."
+
+  rollback:
+    needs: deploy-production
+    runs-on: ubuntu-latest
+    if: failure()
+    environment: production
+    steps:
+      - name: Notify team of rollback
+        run: echo "⚠️ Production deployment failed. Initiating rollback..."
+
+      - name: Rollback to previous version
+        run: |
+          echo "Rolling back to previous stable version..."
+          # In a real workflow:
+          # 1. Fetch the previous successful deployment artifact
+          # 2. Redeploy it to production
+          # 3. Verify health check
+          echo "Rollback complete."
+
+      - name: Verify rollback health
+        run: |
+          sleep 10
+          # In a real workflow: curl -f https://api.example.com/health || exit 1
+          echo "Rollback health check passed."

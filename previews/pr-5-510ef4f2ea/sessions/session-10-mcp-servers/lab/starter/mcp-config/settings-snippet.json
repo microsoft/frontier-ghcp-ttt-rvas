@@ -1,0 +1,18 @@
+{
+  "// NOTE": "This is a snippet showing how MCP servers can be configured in VS Code settings.",
+  "// USAGE": "Add this to your VS Code user or workspace settings.json under the appropriate key.",
+  
+  "github.copilot.chat.mcpServers": {
+    "github": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-e", "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_TOKEN}"
+      }
+    }
+  }
+}

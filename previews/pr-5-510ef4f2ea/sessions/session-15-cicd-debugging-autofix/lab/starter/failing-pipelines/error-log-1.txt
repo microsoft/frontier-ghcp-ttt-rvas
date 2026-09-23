@@ -1,0 +1,15 @@
+Run actions/setup-node@v4
+  Setting up Node.js 14.x...
+  Node.js 14.21.3 installed
+
+Run npm ci
+npm warn engine copilot-webapp@1.0.0: wanted: {"node":">=20.0.0"} (current: {"node":"14.21.3"})
+npm ERR! code EBADENGINE
+npm ERR! engine Unsupported engine
+npm ERR! engine Not compatible with your version of node/npm
+npm ERR! notsup Required: {"node":">=20.0.0"}
+npm ERR! notsup Actual:   {"node":"14.21.3","npm":"6.14.18"}
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/runner/.npm/_logs/2026-04-15T10_30_00_000Z-debug.log
+Error: Process completed with exit code 1.

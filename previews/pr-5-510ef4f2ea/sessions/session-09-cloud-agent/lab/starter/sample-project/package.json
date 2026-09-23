@@ -1,0 +1,20 @@
+{
+  "name": "copilot-cloud-agent-lab",
+  "version": "1.0.0",
+  "description": "A simple task API for the Copilot cloud agent lab",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

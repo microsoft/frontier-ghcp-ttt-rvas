@@ -1,0 +1,17 @@
+{
+  "name": "vulnerable-app",
+  "version": "1.0.0",
+  "description": "A Node.js app with intentional security vulnerabilities for CodeQL lab",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "better-sqlite3": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

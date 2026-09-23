@@ -1,0 +1,17 @@
+{
+  "name": "review-project",
+  "version": "1.0.0",
+  "description": "Base project for code review exercise",
+  "main": "src/api.js",
+  "scripts": {
+    "start": "node src/api.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}

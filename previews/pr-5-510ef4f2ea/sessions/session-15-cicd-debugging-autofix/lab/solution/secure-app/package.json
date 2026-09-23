@@ -1,0 +1,17 @@
+{
+  "name": "secure-app",
+  "version": "1.0.0",
+  "description": "Secure version of the vulnerable app — all vulnerabilities fixed",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "better-sqlite3": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

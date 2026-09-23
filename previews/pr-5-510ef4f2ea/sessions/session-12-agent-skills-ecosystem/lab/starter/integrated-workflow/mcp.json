@@ -1,0 +1,9 @@
+{
+  "// TODO": "Configure MCP servers for this project",
+  "servers": {
+    "// database": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "TODO: add database path"]
+    }
+  }
+}

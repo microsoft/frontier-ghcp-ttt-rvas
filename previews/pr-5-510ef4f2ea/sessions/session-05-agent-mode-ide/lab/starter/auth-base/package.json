@@ -1,0 +1,12 @@
+{
+  "name": "auth-base",
+  "version": "1.0.0",
+  "description": "Base Express API for authentication exercise",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

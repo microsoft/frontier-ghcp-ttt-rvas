@@ -1,0 +1,12 @@
+{
+  "name": "api-starter",
+  "version": "1.0.0",
+  "description": "Comment-driven API development exercise",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

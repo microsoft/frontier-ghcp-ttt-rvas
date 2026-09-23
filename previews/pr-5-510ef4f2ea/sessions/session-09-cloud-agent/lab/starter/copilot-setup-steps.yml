@@ -1,0 +1,41 @@
+# .github/copilot-setup-steps.yml
+# This file tells the Copilot cloud agent how to set up the development environment.
+# The agent runs these steps before working on any issue.
+#
+# Documentation: https://docs.github.com/en/copilot/customizing-copilot/customizing-the-development-environment-for-copilot-coding-agent
+
+name: "Copilot Setup Steps"
+
+# TODO: Configure the setup steps for your project.
+# Each step runs in sequence in the agent's isolated environment.
+
+steps:
+  # Step 1: Install dependencies
+  # TODO: Replace with your project's install command
+  - name: "Install dependencies"
+    run: |
+      echo "TODO: Add your install command here"
+      # Example: npm ci
+      # Example: pip install -r requirements.txt
+      # Example: bundle install
+
+  # Step 2: Build the project (if needed)
+  # TODO: Add build steps if your project requires compilation
+  # - name: "Build project"
+  #   run: |
+  #     npm run build
+
+  # Step 3: Seed data or run migrations (if needed)
+  # TODO: Add any data setup steps
+  # - name: "Seed database"
+  #   run: |
+  #     npm run db:seed
+
+  # Step 4: Verify the setup works
+  # TODO: Add a smoke test to confirm the environment is ready
+  - name: "Verify setup"
+    run: |
+      echo "TODO: Add a verification command"
+      # Example: npm test
+      # Example: python -m pytest --co
+      # Example: curl http://localhost:3000/health

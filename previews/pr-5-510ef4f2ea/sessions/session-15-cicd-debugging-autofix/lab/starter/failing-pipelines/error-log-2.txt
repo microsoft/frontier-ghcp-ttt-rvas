@@ -1,0 +1,32 @@
+Run actions/cache@v4
+  Cache hit for key: node-modules-cache
+  Restored node_modules from cache
+
+Run npm ci
+npm warn deprecated eslint-config-standard@16.0.3: this config has been superseded
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR!
+npm ERR! While resolving: eslint-plugin-import@2.29.1
+npm ERR! Found: eslint@9.0.0
+npm ERR! node_modules/eslint
+npm ERR!   dev eslint@"^9.0.0" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer eslint@"^7.0.0 || ^8.0.0" from eslint-plugin-import@2.29.1
+npm ERR! node_modules/eslint-plugin-import
+npm ERR!   dev eslint-plugin-import@"^2.29.0" from the root project
+npm ERR!
+npm ERR! Conflicting peer dependency: eslint@8.57.0
+npm ERR! node_modules/eslint
+npm ERR!   peer eslint@"^7.0.0 || ^8.0.0" from eslint-plugin-import@2.29.1
+
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+
+Error: Process completed with exit code 1.
+
+Note: This error persisted across 3 runs because the stale cache kept
+restoring old node_modules before npm ci could clean-install. Deleting
+the cache via gh cache delete resolved the loop.
