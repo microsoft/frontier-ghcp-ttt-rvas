@@ -6,6 +6,12 @@ from urllib.parse import quote
 
 _INLINE_FILE = re.compile(r"`(?P<reference>[^`\n]+?\.[A-Za-z0-9]+)`")
 _FENCE = re.compile(r"^\s{0,3}(?P<marker>`{3,}|~{3,})")
+_FILE_EXTENSIONS = frozenset({
+    ".bicep", ".config", ".cs", ".css", ".env", ".go", ".gz", ".html", ".ini",
+    ".java", ".js", ".json", ".jsx", ".kt", ".kts", ".lock", ".md", ".php",
+    ".ps1", ".py", ".rb", ".rs", ".sh", ".sql", ".swift", ".tf", ".toml",
+    ".ts", ".tsx", ".txt", ".xml", ".yaml", ".yml",
+})
 
 
 def _docs_dir(config) -> Path:
@@ -44,7 +50,14 @@ def _relative_url(page, target_url: str) -> str:
     return "../" * depth + target_url
 
 
+def _is_file_reference(reference: str) -> bool:
+    path = Path(reference)
+    return "*" not in reference and path.suffix.lower() in _FILE_EXTENSIONS
+
+
 def _link_for(reference: str, page, config, files) -> str | None:
+    if not _is_file_reference(reference):
+        return None
     target = _find_target(reference, page, config)
     if target is None:
         return None

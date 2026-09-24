@@ -87,3 +87,15 @@ class FileLinkTests(unittest.TestCase):
             "Read [`src/app.js`](https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/"
             "sessions/session-04-copilot-cli/lab/starter/agent-tasks/src/app.js).\n",
         )
+
+    def test_leaves_missing_and_non_file_references_unlinked(self):
+        result = FILE_LINKS.on_page_markdown(
+            "Read `missing-file.md` and set `github.copilot.enable`.\n",
+            self.page,
+            self.config,
+            self.files,
+        )
+        self.assertEqual(
+            result,
+            "Read `missing-file.md` and set `github.copilot.enable`.\n",
+        )
