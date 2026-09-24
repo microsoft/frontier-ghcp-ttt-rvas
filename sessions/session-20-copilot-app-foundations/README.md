@@ -46,7 +46,6 @@ By the end of this session, learners can:
 | Slides | [`slides.md`](slides.md) |
 | Starter initiative and brief template | [`lab/starter/`](lab/starter/) |
 | Reference brief | [`lab/solution/`](lab/solution/) |
-| Optional technical-evidence exercise | [`lab/optional-technical-evidence/`](lab/optional-technical-evidence/) |
 
 ## Boundaries
 
@@ -54,4 +53,3 @@ By the end of this session, learners can:
 - Treat Copilot output as a proposal until the learner checks its source.
 - Keep write actions reviewable and reversible.
 - Do not require programming, Git command-line work, or extension development.
-- Use the optional technical-evidence exercise only when the audience already understands the app basics.

@@ -99,10 +99,6 @@ Read -> propose -> review -> write -> verify
 
 The pattern returns in every later session.
 
-## Optional advanced route
-
-The previous technical-evidence exercise remains under `lab/optional-technical-evidence/`. Use it only when the group already understands the app and needs practice questioning issues, pull requests, checks, and release evidence.
-
 ## Product notes verified September 24, 2026
 
 Before delivery, verify the current GitHub Copilot app navigation, plan requirements, policy controls, and availability of Customize features.

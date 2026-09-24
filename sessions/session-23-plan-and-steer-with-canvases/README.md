@@ -47,7 +47,6 @@ By the end of this session, learners can:
 | Slides | [`slides.md`](slides.md) |
 | Canvas requirements and review record | [`lab/starter/`](lab/starter/) |
 | Reference result | [`lab/solution/`](lab/solution/) |
-| Optional prepared-canvas exercise | [`lab/optional-prepared-canvas/`](lab/optional-prepared-canvas/) |
 
 ## Session 08 distinction
 

@@ -126,7 +126,9 @@ Module 7: Product and Delivery Teams ──────────────�
 Learners without access should not start Module 7. Stop and reschedule their
 training after access is available.
 
-**Optional platform route:** Trainers may seed a synthetic Azure Boards backlog with [`scripts/azure-boards/seed.py`](scripts/azure-boards/seed.py), check it with [`verify.py`](scripts/azure-boards/verify.py), and clean it up with [`reset.py`](scripts/azure-boards/reset.py). The route supports Agile and Scrum. Basic, CMMI, and custom processes fail as unsupported. The scripts verify the existing team, area, and iterations instead of creating project-level configuration. Azure Boards is optional. The Session 21 and Session 24 companions still require GitHub Copilot.
+**Trainer-only supplement:** A trainer may prepare the Azure Boards route before
+the workshop when the delivery plan requires it. The standard learner path uses
+GitHub issues and does not branch into an alternate platform exercise.
 
 ---
 
@@ -951,7 +953,6 @@ Learners run a decision-tree interview in the GitHub Copilot app. They turn appr
 - Create the decision brief and issue proposal
 - Reopen one decision branch after a late visibility constraint
 - Verify the revised artifacts in a fresh session
-- Optionally shape a seeded Azure Boards requirement through the [Session 21 companion](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
 - **Deliverable:** An installed project skill, revised decision brief, aligned issue proposal, and readiness result
 
 ---
@@ -1033,7 +1034,6 @@ Learners select independent work from the issue plan and canvas, start child ses
 - Run live GitHub Copilot orchestration
 - Wait, redirect, stop, accept, or reject live child-session work
 - Update the canvas and relevant GitHub issue
-- Optionally use the [Session 24 Azure Boards route](sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md)
 - **Deliverable:** An orchestration plan, intervention record, reviewed result packets, and verified plan updates
 
 ---

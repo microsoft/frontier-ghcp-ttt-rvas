@@ -170,7 +170,9 @@ Learners must have working GitHub Copilot orchestration before they start. They 
 3. an acceptance or rejection decision for every result packet;
 4. a release-readiness record with human approval.
 
-Learners with a seeded training project may use the [Azure Boards companion](../lab/azure-boards/README.md). Azure Boards can use MCP or the browser. GitHub Copilot still performs the orchestration.
+For a planned Azure Boards delivery, use the trainer-only
+[Azure Boards supplement](../lab/azure-boards/README.md). Do not introduce this
+route during the standard lab. GitHub Copilot still performs the orchestration.
 
 ## Common questions
 

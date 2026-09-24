@@ -101,10 +101,6 @@ Check:
 7. Show the mismatch and last-refresh time.
 8. Refresh the canvas and verify the blocker and next action.
 
-## Optional prepared route
-
-The previous release-readiness canvas exercise remains in `lab/optional-prepared-canvas/`. Use it when the audience needs deeper guardrail practice after creating the main canvas.
-
 ## Product notes verified September 24, 2026
 
 Check current canvas availability, `/create-canvas`, Customize controls, capability review, and persistence behavior before delivery.

@@ -112,52 +112,6 @@ personal access tokens into prompts or repository files.
 When a required capability is unavailable, stop that lab. Do not replace a live
 capability with role-play or claim that a static artifact proves the workflow ran.
 
-## Optional Azure Boards route
-
-Azure Boards is an optional system-of-record route. **GitHub Copilot remains the learning focus.** Learners use Copilot for interviewing, planning, delegation, review, and automation while Azure Boards retains approved backlog state.
-
-Trainers can seed the synthetic Service Request Portal backlog with [`../scripts/azure-boards/seed.py`](../scripts/azure-boards/seed.py), check it with [`verify.py`](../scripts/azure-boards/verify.py), and clean it up with [`reset.py`](../scripts/azure-boards/reset.py).
-
-```bash
-python scripts/azure-boards/seed.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --team TEAM \
-  --process Scrum \
-  --area-path 'PROJECT\AREA' \
-  --current-iteration 'PROJECT\ITERATION_CURRENT' \
-  --future-iteration 'PROJECT\ITERATION_FUTURE' \
-  --state-file .azure-boards-seed-state.json \
-  --yes
-
-python scripts/azure-boards/verify.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --state-file .azure-boards-seed-state.json
-
-python scripts/azure-boards/reset.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --state-file .azure-boards-seed-state.json \
-  --dry-run
-
-python scripts/azure-boards/reset.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --state-file .azure-boards-seed-state.json \
-  --yes
-```
-
-Pass the real values only at the command line. Do not add accounts, credentials, tokens, or live work data to this repository.
-
-The tools support Agile and Scrum. They stop with a clear error for Basic, CMMI, or custom processes. They also check that the project, team, area path, and both iteration paths already exist and match the command. **They verify project-level configuration. They do not create it.**
-
-Reset reads the local state file, checks every recorded ID for the matching seed tag, and moves only those items to the recycle bin. It never asks Azure Boards to destroy an item permanently. Run the dry run first.
-
-Use the optional [Session 21 companion](../sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md) to shape a seeded requirement. Use the [Session 24 companion](../sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md) to supervise seeded workstreams. **Both companions still require GitHub Copilot.**
-
-Direct work-item delegation in Session 24 requires a linked GitHub repository and an environment that supports the approved delegation flow.
-
 ## What learners should bring
 
 - One unclear initiative or feature request
@@ -200,7 +154,7 @@ By completing this track, learners will be able to:
 4. Create a planning canvas and reconcile it after GitHub state changes.
 5. Use built-in orchestration to supervise, redirect, and review child sessions.
 6. Run and compare two draft-only Automation runs with explicit evidence.
-7. Decide whether GitHub or Azure Boards remains the authoritative planning system.
+7. Decide which approved work system remains authoritative.
 
 ## Trainer guidance
 
@@ -209,6 +163,20 @@ By completing this track, learners will be able to:
 - Teach the product through one continuous delivery workflow. Avoid a disconnected feature tour.
 - Verify current official GitHub documentation and organizational policy before every live delivery.
 - Treat generated output as a proposal. The accountable person accepts, rejects, or revises it.
+
+### Trainer-only Azure Boards supplement
+
+Use Azure Boards only when the delivery plan calls for it before the workshop.
+Do not introduce it as an alternate learner path during the standard labs.
+
+The tools in [`../scripts/azure-boards/`](../scripts/azure-boards/) seed, verify,
+and reset a synthetic backlog for Agile or Scrum projects. They verify existing
+project settings and never create them.
+
+Use the [Session 21 supplement](../sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
+to shape a seeded requirement. Use the
+[Session 24 supplement](../sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md)
+to supervise seeded workstreams. Both still require GitHub Copilot.
 
 ## Next steps
 

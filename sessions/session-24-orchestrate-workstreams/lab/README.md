@@ -48,10 +48,6 @@ Complete every check before Exercise 1.
 > [!NOTE]
 > Product behavior was checked on **September 23, 2026**. **My work** may appear under a renamed session or agent surface. Use the current equivalent.
 
-## Azure Boards companion
-
-If the trainer provides a seeded training project, you may use the [Azure Boards companion](azure-boards/README.md) for planning and status. Azure Boards can use MCP or the browser. GitHub Copilot must orchestrate the child sessions.
-
 ## Lab schedule
 
 | Exercise | Work | Time |

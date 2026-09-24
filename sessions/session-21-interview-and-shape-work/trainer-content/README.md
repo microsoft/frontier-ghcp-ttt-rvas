@@ -36,7 +36,9 @@ Complete this check before learners begin:
 > [!IMPORTANT]
 > **Stop if the GitHub Copilot app or repository project is unavailable.** Resolve licensing, sign-in, policy, client, or repository access before the session starts.
 
-For the Azure Boards companion, confirm that learners can use either an approved MCP connection or the browser. Azure Boards access may change the update method. It never replaces GitHub Copilot.
+For a planned trainer-only Azure Boards delivery, confirm that learners can use
+either an approved MCP connection or the browser. Azure Boards changes the update
+method. It never replaces GitHub Copilot.
 
 ## Core teaching points
 
@@ -170,7 +172,7 @@ Each learner or pair needs a request owner and delivery reviewer. The request ow
 approves the decision brief. The delivery reviewer verifies the brief and proposal
 in a fresh session.
 
-### Azure Boards companion
+### Trainer-only Azure Boards supplement
 
 Use [`../lab/azure-boards/README.md`](../lab/azure-boards/README.md) when learners have a seeded training requirement. The companion replaces work-item drafting in Phases 4 and 5.
 

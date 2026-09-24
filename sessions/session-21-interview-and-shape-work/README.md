@@ -62,11 +62,6 @@ Vague request
 | Marp slides | [`slides.md`](slides.md) |
 | Starter request and repository templates | [`lab/starter/`](lab/starter/) |
 | Completed Copilot-reviewed examples | [`lab/solution/`](lab/solution/) |
-| Azure Boards companion | [`lab/azure-boards/README.md`](lab/azure-boards/README.md) |
-
-## Azure Boards companion
-
-Learners with an approved training project may shape a seeded Azure Boards requirement. They still run the interview in the GitHub Copilot app. They may read and update Azure Boards through an approved MCP connection or the browser.
 
 ## Boundaries
 

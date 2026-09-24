@@ -1,10 +1,14 @@
-# Azure Boards Companion
+# Trainer Supplement: Orchestrate Work Tracked in Azure Boards
 
 **Time:** 45 to 60 minutes inside the existing two-hour lab
 
 **Use:** Use Azure Boards for planning and status during Lab Exercises 1 through 3. Complete Exercise 4 in the main lab guide.
 
 **Deliverable:** Live child-session reviews, updated planning states, and a release-readiness decision
+
+> [!IMPORTANT]
+> The trainer must select and prepare this route before the workshop. It is not
+> part of the standard learner path.
 
 ## Purpose
 

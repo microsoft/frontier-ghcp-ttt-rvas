@@ -41,56 +41,6 @@ Programming experience, Git command-line knowledge, and repository administratio
 should not take these sessions. Stop and reschedule their Module 7 training after
 access is available.
 
-## Optional Azure Boards Route for Module 7
-
-Azure Boards is an optional planning surface for Module 7. **Keep the teaching focused on interviewing, orchestration, evidence, and approval.** Do not turn the route into an Azure Boards product tour.
-
-The trainer tools under [`scripts/azure-boards/`](scripts/azure-boards/) seed synthetic Service Request Portal work items. They support the Agile and Scrum processes. They stop with a clear unsupported-process error for Basic, CMMI, or a custom process.
-
-The seed command requires explicit organization, project, team, process, area, and iteration values:
-
-```bash
-python scripts/azure-boards/seed.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --team TEAM \
-  --process Agile \
-  --area-path 'PROJECT\AREA' \
-  --current-iteration 'PROJECT\ITERATION_CURRENT' \
-  --future-iteration 'PROJECT\ITERATION_FUTURE' \
-  --state-file .azure-boards-seed-state.json \
-  --yes
-```
-
-Verify the seeded work before a session:
-
-```bash
-python scripts/azure-boards/verify.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --state-file .azure-boards-seed-state.json
-```
-
-Preview cleanup, then move the recorded items to the Azure Boards recycle bin:
-
-```bash
-python scripts/azure-boards/reset.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --state-file .azure-boards-seed-state.json \
-  --dry-run
-
-python scripts/azure-boards/reset.py \
-  --organization https://dev.azure.com/ORG \
-  --project PROJECT \
-  --state-file .azure-boards-seed-state.json \
-  --yes
-```
-
-The scripts verify the existing project process, team, area path, and iteration paths. They do not create or change project-level configuration. Cleanup checks both the state-recorded IDs and the matching seed tag before it acts. Reset uses the recycle bin and never requests permanent destruction.
-
-Sessions [21](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md) and [24](sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md) include optional Azure Boards companions. **Both companions still require GitHub Copilot.** Direct work-item delegation in Session 24 also needs a linked GitHub repository and an environment that supports the approved delegation route.
-
 ## Curriculum Overview
 
 ### Module 1: Copilot Fundamentals (Beginner)

@@ -1,8 +1,12 @@
-# Azure Boards Lab: Review and Shape a Requirement
+# Trainer Supplement: Shape a Requirement in Azure Boards
 
 Use GitHub Copilot to interview the request owner, review a seeded Azure Boards requirement, and prepare approved updates.
 
 **Time:** Use the two-hour Session 21 lab plan. This companion replaces Phases 4 and 5.
+
+> [!IMPORTANT]
+> The trainer must select and prepare this route before the workshop. It is not
+> part of the standard learner path.
 
 ## Deliverable
 

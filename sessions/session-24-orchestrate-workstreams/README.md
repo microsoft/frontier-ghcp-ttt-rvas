@@ -48,11 +48,8 @@ Session 16 uses Brady's Squad as an optional framework for persistent roles, rou
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab guide | [`lab/README.md`](lab/README.md) |
-| Azure Boards companion | [`lab/azure-boards/README.md`](lab/azure-boards/README.md) |
 | Learner assets | [`lab/starter/`](lab/starter/) |
 | Reference solution | [`lab/solution/`](lab/solution/) |
-
-The Azure Boards companion uses a seeded Service Request Portal Epic or Feature as the planning surface. The core route uses the Session 22 GitHub issues and Session 23 canvas. Learners must use live GitHub Copilot orchestration for the child workstreams.
 
 ## Required preflight
 
