@@ -29,7 +29,47 @@ An MCP server gives Copilot named tools for reading or changing another system.
 Learners use the tools. They do not build the server.
 
 ---
+# An issue is a contract for the next person
 
+The issue should let a contributor decide whether they can start, what success
+looks like, and who will review it.
+
+| Issue element | What it prevents |
+| --- | --- |
+| Outcome | Work that repeats a vague request |
+| Acceptance evidence | "Done" without a way to prove it |
+| Non-goal | Scope growth during implementation |
+| Dependency | Work that starts before a needed decision |
+| Ownership gap | Silent assumptions about who decides |
+
+Tickets are not busywork when they reduce the handoff cost.
+
+---
+# Parent and child issues answer different questions
+
+The parent issue holds the outcome, shared constraints, and review path. Each child
+issue owns one independently reviewable result.
+
+```text
+Parent: Improve request-status visibility
+  ├─ Child: Define the status data contract
+  ├─ Child: Implement the API response
+  └─ Child: Add the client status view
+```
+
+If two child issues must edit the same behavior at the same time, sequence them or
+clarify the design first.
+
+---
+# Writing through MCP is still an operation
+
+The model can prepare a complete issue plan. A person must approve the requested
+write with the target repository and expected result visible.
+
+After the write, fetch the issue again. This fresh read proves what the system
+stored, rather than what the tool claimed it stored.
+
+---
 # Read before writing
 
 1. Confirm the repository.

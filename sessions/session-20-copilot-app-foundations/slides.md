@@ -21,7 +21,41 @@ This track does not use Copilot as a background writing tool.
 Learners work in the GitHub Copilot app, with repository context and reviewable artifacts.
 
 ---
+# The app is a workspace, not an answer engine
 
+The chat is one place to work. Projects, source references, issues, and saved
+artifacts make the work reviewable after the conversation ends.
+
+```text
+Gather evidence → form a proposal → review it → save the decision → verify it
+```
+
+This keeps the model's helpful narrative separate from facts the team can check.
+
+---
+# Context has a cost
+
+| Context choice | When it helps |
+| --- | --- |
+| One named file | The answer depends on a specific rule or API |
+| A project or repository | The task needs relationships across files |
+| An issue or pull request | The task needs delivery history and discussion |
+| No repository context | The work is general and contains no project facts |
+
+Tell Copilot why each source matters. It should not need to guess.
+
+---
+# Separate facts, assumptions, and decisions
+
+| Type | Example |
+| --- | --- |
+| Fact | "Issue 42 names a response-time problem." |
+| Assumption | "The mobile client uses the documented endpoint." |
+| Decision | "The product owner will confirm the client behavior." |
+
+This makes uncertainty visible. A polished paragraph can hide all three.
+
+---
 # Know the main work areas
 
 | Area | Use it for |

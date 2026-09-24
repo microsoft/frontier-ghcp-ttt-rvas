@@ -33,6 +33,9 @@ metadata unless the user asks for a separate implementation task.
 
 - **Required materials:** overview, trainer guide, lab guide, slides, starter
   assets, and solution assets.
+- **Trainer slides:** a trainer-facing deck that explains the core concepts before
+  the lab, including an agenda, concrete examples or decision criteria, and a lab
+  handoff. Treat a short agenda-only outline as incomplete teaching material.
 - **Metadata:** the directory name, overview heading, shared catalog entry, and
   valid module, difficulty, and duration values.
 - **Navigation:** entries in `mkdocs.yml`, `README.md`, `curriculum-plan.md`, and

@@ -64,7 +64,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Order   | Session #   | Title                                       | Difficulty   | Duration   |
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
 | 16      | 16          | Brady's Squad: Human-Led AI Teams (optional) | Advanced   | 3 hrs      |
-| 18      | 18          | Spec Kit: Enterprise Specification-Driven Development | Advanced | 3 hrs |
+| 18      | 18          | Spec Kit: Specification-Driven Development | Advanced | 3.5 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 

@@ -19,7 +19,48 @@ Session 23 | Product and Delivery Teams | Intermediate
 A canvas helps when work has several records, repeated updates, named actions, and a review view that must survive the conversation.
 
 ---
+# The canvas is a planning projection
 
+GitHub owns issue state. The canvas groups that state with planning information that
+helps people decide what to do next.
+
+| GitHub fact | Canvas planning view |
+| --- | --- |
+| Open issue | Ready for discovery |
+| Assigned issue | Ownership confirmed |
+| Blocked issue | Risk, dependency, and next decision |
+| Closed issue | Planning result recorded |
+
+Label the two kinds of state differently. Otherwise the team cannot tell whether
+they are seeing a decision or a source-system fact.
+
+---
+# A useful field changes a decision
+
+| Field | Keep it when | Remove it when |
+| --- | --- | --- |
+| Risk | It changes sequencing or approval | It only repeats the issue body |
+| Owner | The responsible person is unclear | GitHub already makes it clear |
+| Next action | A team needs a follow-up | It is only a status synonym |
+
+The canvas should make important work easier to see, not create a second backlog.
+
+---
+# Steering needs a review loop
+
+```text
+Observe source state
+      ↓
+Propose canvas update
+      ↓
+Review the affected record
+      ↓
+Accept, revise, or reject
+```
+
+This loop protects against stale data and confident but unsupported updates.
+
+---
 # Start from the GitHub issue plan
 
 The canvas should show:

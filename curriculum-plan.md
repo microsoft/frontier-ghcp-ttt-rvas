@@ -833,37 +833,44 @@ Covers the enterprise side of Copilot and is the authoritative governance and co
 
 ---
 
-### Session 18 — Spec Kit: Enterprise Specification-Driven Development
+### Session 18 — Spec Kit: Specification-Driven Development
 
 **Difficulty:** Advanced
 **Prerequisites:** Sessions 01–12 and 17
 **Module:** Specification-Driven Frameworks
+**Duration:** 3 hours 30 minutes
 
 **Description:**
-Teaches a repeatable specification-driven development method before implementation begins. Trainees use Spec Kit as the practical example to convert enterprise requirements into a constitution, specification, plan, tasks, and an implementation handoff. The session uses a small, language-agnostic flow rather than a full application build.
+Uses Spec Kit to carry one bounded feature from a source request to working code. Trainees convert tasks into GitHub Issues, implement in stages, converge, then evolve the living specification to add restore behavior.
 
 **Trainer Content Outline (1 hour):**
 
-- Why enterprise delivery needs an explicit specification and constitution
+- Why requirements should be reviewed before implementation
 - Specification-driven flow: constitution → specify → clarify → plan → checklist → tasks → analyze → implement → converge
-- Spec Kit as an open-source, pre-1.0 implementation example; pin the customer-approved version
-- Copilot integration with project-shared skills under `.github/skills/`
-- Private catalog, air-gapped, and no-install delivery alternatives
-- How to translate artifacts into a coding-agent-ready issue or task
+- The generated `.specify/`, `specs/`, and Copilot integration files
+- The difference between behavior in `spec.md` and technical choices in `plan.md`
+- How analysis and convergence expose gaps
+- Task-to-issue conversion and staged implementation
+- Living-spec evolution and approved installation paths
 
 **Lab Outline (2 hours):**
 
-- Complete a 45–60 minute small-feature flow from constitution through a reviewed implementation handoff
-- Use the prepared artifacts if the tool is unavailable, blocked by policy, or unsuitable for the customer network
-- Review the deliverables against governance, access, and acceptance criteria
-- **Deliverable:** A constitution, specification, plan, tasks, and implementation handoff for a bounded feature
+- Initialize Spec Kit in a runnable Python starter project
+- Specify and clarify archive behavior
+- Generate a plan, checklist, and dependency-ordered tasks
+- Convert tasks into GitHub Issues
+- Implement in stages, run unit tests, and converge
+- Evolve the specification, plan, tasks, code, and tests for restore behavior
+- **Deliverable:** Working archive and restore behavior with traceable artifacts, issues, passing tests, and a final convergence result
 
 **Expected Learning Outcomes:**
 
 - Apply specification-driven development to a bounded feature
-- Configure or consume a project-shared Copilot skill integration
-- Produce implementation-ready artifacts with acceptance and governance criteria
-- Adapt the method for customer catalog, network, and policy constraints
+- Identify the files that Spec Kit creates and the decisions the team owns
+- Produce requirements, design artifacts, and tasks that trace to tests
+- Use task-to-issue conversion and scoped implementation runs
+- Use analysis before implementation and repeat the implement/converge loop
+- Evolve a living specification without leaving downstream artifacts behind
 
 ---
 

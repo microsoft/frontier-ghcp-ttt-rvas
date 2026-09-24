@@ -1,6 +1,8 @@
 site_name: GitHub Copilot Train-the-Trainer
 site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 25 sessions across 7 modules.
 site_author: GitHub Copilot TTT
+extra:
+  source_repository_url: https://github.com/microsoft/frontier-ghcp-ttt-rvas
 docs_dir: .
 site_dir: site
 
@@ -73,6 +75,7 @@ plugins:
   - search
 
 hooks:
+  - hooks/file_links.py
   - hooks/presentation_embed.py
 
 validation:

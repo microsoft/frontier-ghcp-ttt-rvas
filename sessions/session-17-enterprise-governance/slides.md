@@ -20,7 +20,48 @@ Use Enterprise Cloud as the baseline. Check current GitHub documentation and cus
 A training slide cannot establish feature availability, entitlement, retention, or compliance.
 
 ---
+# Governance turns uncertainty into decisions
 
+Governance decides what can run, under which limits, and what evidence will change
+that decision.
+
+| Question | Record |
+| --- | --- |
+| Can this use case start? | Scope, owner, data boundary, and approval |
+| Is it safe to continue? | Quality, usage, and review evidence |
+| Can it expand? | The approver and the added boundary |
+| Should it pause? | Trigger, recovery, and next review date |
+
+Policy text alone is not a rollout plan. Someone must own the decision.
+
+---
+# A boundary has inputs, actions, and outputs
+
+Classify more than the prompt text:
+
+```text
+Inputs: repository files, issues, tool results
+Actions: read, summarize, write, deploy
+Outputs: chat, commit, pull request, external system
+Evidence: logs, review, approval, metric
+```
+
+For each item, decide what is allowed, who approves exceptions, and what must stay
+out of the workflow. That creates a boundary people can operate.
+
+---
+# Measurements need a decision attached
+
+| Signal | Example decision |
+| --- | --- |
+| Review rework rises | Pause expansion and inspect the workflow |
+| Usage reaches a guard | Stop automated runs until the owner reviews |
+| Acceptance rate is stable | Continue the bounded trial |
+| Restricted data appears | Stop, preserve evidence, and escalate |
+
+An activity count without a threshold and response tells the team very little.
+
+---
 # Preflight
 
 | Confirm | Why it matters |

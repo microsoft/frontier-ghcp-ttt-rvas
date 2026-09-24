@@ -35,6 +35,50 @@ footer: 'Session 13 — GitHub Actions & Workflow Generation'
 | Artifact | Files retained from a job |
 
 ---
+# A workflow is code with an execution boundary
+
+Workflow YAML chooses when automation runs, what it can read, and where it can
+write. Review it like application code, not as deployment plumbing.
+
+| Question | Why it matters |
+| --- | --- |
+| What event starts it? | Untrusted pull-request data changes the threat model |
+| Which runner executes it? | The runner sets available tools and isolation |
+| Which token permissions exist? | Broad tokens turn small mistakes into writes |
+| Which outputs leave the job? | Artifacts and logs can expose data |
+
+The generated YAML is only the first draft.
+
+---
+# Triggers decide who influences execution
+
+`pull_request` runs in the contributor context with restricted permissions.
+`pull_request_target` runs in the base-repository context and needs extra care.
+
+Never combine a privileged trigger with untrusted checkout, scripts, or pull-request
+metadata unless the approved design specifically requires it and the controls are
+reviewed. The safest workflow often separates untrusted validation from privileged
+follow-up work.
+
+---
+# Build feedback in layers
+
+Start with the fastest trustworthy signal, then add slower checks.
+
+```text
+Format and lint
+        ↓
+Focused unit tests
+        ↓
+Build and integration checks
+        ↓
+Deployment approval
+```
+
+Each layer should state what it proves and what it does not prove. A green lint job
+does not prove the build, and a successful build does not approve a deployment.
+
+---
 # Generate from repository facts
 
 ```text

@@ -34,6 +34,52 @@ footer: 'Session 14 — Infrastructure as Code with Copilot'
 | Preview | `terraform plan` | `az deployment what-if` |
 
 ---
+# IaC describes desired resources, not intent
+
+The same configuration can create a secure private service or an exposed one. The
+difference is in the details: identity, network paths, defaults, and dependencies.
+
+Before generating code, establish:
+
+- the architecture boundary and approved regions;
+- the inputs that come from the environment;
+- who owns state and applies changes;
+- the controls that must be visible in review.
+
+Copilot can draft resources. The architecture must come first.
+
+---
+# Modules create contracts
+
+A module is useful when callers should depend on a stable interface rather than
+the resources inside it.
+
+| Module element | Review question |
+| --- | --- |
+| Input | Is this the smallest safe configuration surface? |
+| Output | Does this expose only what callers need? |
+| Resource | Does it meet the architecture and policy constraints? |
+| Documentation | Can another team use it without reading its internals? |
+
+Avoid modules that only hide a single resource without creating a useful boundary.
+
+---
+# State and preview answer different questions
+
+State records what the IaC tool believes it manages. A plan or what-if compares
+the requested configuration with the target environment.
+
+Both need protection:
+
+```text
+State: approved backend, access controls, no secrets in source
+Preview: approved identity, bounded environment, human review before apply
+```
+
+Never use generated IaC as proof that a deployment is safe. Use the preview to
+find changes, then review whether those changes should happen.
+
+---
 # Prompt from facts
 
 ```text

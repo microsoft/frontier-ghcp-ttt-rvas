@@ -41,7 +41,45 @@ A red workflow tells you little. Read the failed step, its output, exit code, wo
 | `143` | Cancellation or timeout |
 
 ---
+# Classify before you repair
 
+The same visible failure can have very different causes.
+
+| Failure class | Evidence to gather | Typical next step |
+| --- | --- | --- |
+| Code regression | Diff, test name, stack trace | Repair the changed behavior |
+| Environment drift | Tool version, image, dependency source | Restore the approved environment |
+| Flaky dependency | Timing, retries, external status | Make the dependency explicit or isolate it |
+| Resource limit | Memory, duration, concurrency | Reduce load or change the approved limit |
+
+Changing the first suspicious line often hides the actual cause.
+
+---
+# A remediation is a hypothesis
+
+The agent's patch should connect a cause to a check:
+
+```text
+Observation: Tests run on Node 18, but the project requires Node 20.
+Hypothesis: The runner version causes the syntax failure.
+Repair: Set the workflow to Node 20.
+Check: Re-run the failed job and the focused test command.
+```
+
+Ask for this chain in every proposal. It gives the reviewer a way to reject a
+plausible patch that does not explain the evidence.
+
+---
+# Security findings need a different review
+
+For a vulnerability remediation, confirm the affected path, exploit condition,
+scope of the change, and evidence that the control now works.
+
+Do not accept a patch because a scanner becomes quiet. The finding may be suppressed,
+misconfigured, or no longer reachable by the scan. Keep the security review focused
+on the reported weakness and its safe regression test.
+
+---
 # Give Copilot relevant evidence
 
 ```text

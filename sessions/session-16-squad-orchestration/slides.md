@@ -37,7 +37,49 @@ Use a team when work has separate owners, clear interfaces, and a durable decisi
 More agents create more state, review work, and cost.
 
 ---
+# Parallelism only helps with real independence
 
+Work can run in parallel when each stream has its own inputs, a clear output, and
+no hidden dependency on another stream's decision.
+
+| Work item | Parallel? | Reason |
+| --- | --- | --- |
+| Review separate test files | Often | Each reviewer can return findings |
+| Choose a shared domain model | No | Every implementation depends on the decision |
+| Update unrelated documentation | Often | Output boundaries are clear |
+
+Splitting an ambiguous task across agents spreads the ambiguity instead of removing it.
+
+---
+# The coordinator owns the integration risk
+
+A coordinator should not merely hand out tasks. It needs to know:
+
+1. Which decision makes the workstreams compatible.
+2. Which files or systems only one role may change.
+3. What evidence each role must return.
+4. When a conflict should stop the workflow rather than be merged automatically.
+
+This is why the coordinator is a human-led role even when agents do the initial work.
+
+---
+# Use a result packet, not a chat transcript
+
+Each workstream should return a small, reviewable artifact:
+
+```text
+Scope completed:
+Evidence:
+Files or records changed:
+Checks run:
+Open questions:
+Recommendation:
+```
+
+The parent can compare packets without reconstructing a long agent conversation.
+Missing evidence is a finding, not an invitation to guess.
+
+---
 # Coordinator pattern
 
 ```text

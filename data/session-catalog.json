@@ -166,10 +166,10 @@
       "id": "18",
       "slug": "session-18-spec-kit",
       "module": "5",
-      "title": "Spec Kit: Enterprise Specification-Driven Development",
-      "description": "A governed specification-to-implementation flow that turns intent into reusable delivery artifacts and Copilot skills.",
+      "title": "Spec Kit: Specification-Driven Development",
+      "description": "An end-to-end Spec Kit lab covering task-to-issue conversion, staged implementation, convergence, and living-spec evolution.",
       "difficulty": "Advanced",
-      "duration_minutes": 180
+      "duration_minutes": 210
     },
     {
       "id": "19",

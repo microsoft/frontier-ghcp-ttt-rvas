@@ -1,40 +1,59 @@
-# Session 18 — Spec Kit: Enterprise Specification-Driven Development
+# Session 18 — Spec Kit: Specification-Driven Development
 
 **Module:** Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions 01–12 and 17
-**Duration:** 3 hours (1 hour trainer content, 2 hours lab)
+**Duration:** 3 hours 30 minutes (1 hour trainer content, 2 hours 30 minutes lab)
 
 ## Overview
 
-Specification-driven delivery lets teams review intent before implementation. Spec Kit is an optional pre-1.0 example that turns a bounded request into a constitution, specification, clarification record, plan, checklist, tasks, analysis, implementation, and convergence review.
+Use Spec Kit to carry one bounded change from a feature request to working, tested
+code. Learners initialize an existing Python project, create the generated Spec Kit
+artifacts, implement an archive operation, and run convergence review. They then
+evolve the living specification to add restore behavior and repeat the workflow.
 
-Use only the customer-approved package source and pinned version.
+The lab uses Spec Kit's real project model:
+
+- `.specify/memory/constitution.md` stores project principles.
+- `specs/<feature>/spec.md` stores requirements and user stories.
+- `plan.md`, supporting design files, and `tasks.md` drive implementation.
+- `/speckit-analyze` checks artifact consistency.
+- `/speckit-converge` compares the implementation with the accepted artifacts.
+- `/speckit-taskstoissues` converts the generated task list into GitHub Issues.
+
+Spec Kit generates its own Copilot skills during `specify init`. This session does
+not ship substitute skills or a `.specify.yml` configuration file.
 
 ## Learning outcomes
 
-- Turn a request into a specification ready for implementation.
-- Follow the sequence from constitution through convergence.
-- Store shared guidance in `.github/skills/`.
-- Apply Session 17 decisions for access, data, metering, and fallback.
+- Initialize Spec Kit in an existing repository and inspect the generated files.
+- Write testable requirements before choosing an implementation.
+- Turn the accepted specification into a plan and dependency-ordered tasks.
+- Convert generated tasks into GitHub Issues.
+- Implement the change in stages and use convergence to find missing work.
+- Evolve a living specification and bring downstream artifacts back into alignment.
+- Explain which files come from Spec Kit and which records belong to the team.
 
-## Delivery preflight
+## Required access
 
-- Confirm Enterprise Cloud access, repository permissions, and enabled policies.
-- Confirm the approved Spec Kit version, source, and network path.
-- Use synthetic requirements in a training repository.
-- Set a stop guard and prepare a manual-artifact fallback.
+Learners need a GitHub training repository with issue permissions, Python 3.10 or
+later, Git, GitHub Copilot in the selected coding environment, and an approved Spec
+Kit source and version. For disconnected environments, prepare the official
+air-gapped package before the session.
 
-## Initialization pattern
+## Approved installation pattern
 
 ```bash
-uv tool install specify-cli
-specify init <project> --integration copilot --integration-options="--skills"
+export SPECKIT_TAG='<approved-release-tag>'
+uv tool install specify-cli --force \
+  --from "git+https://github.com/github/spec-kit.git@${SPECKIT_TAG}"
+specify version
 ```
 
-Replace the install command with the customer-approved pinned reference. Do not treat the version or generated layout as a stable contract.
+Use the approved internal package source instead when policy requires it. Record the
+source, tag, and approval before installation.
 
 ## Materials
 
@@ -43,3 +62,5 @@ Replace the install command with the customer-approved pinned reference. Do not 
 | Trainer guide | [`trainer-content/`](trainer-content/) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/`](lab/) |
+| Starter project | [`lab/starter/archive-task/`](lab/starter/archive-task/) |
+| Reference result | [`lab/solution/archive-task/`](lab/solution/archive-task/) |

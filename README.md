@@ -133,7 +133,7 @@ Sessions [21](sessions/session-21-interview-and-shape-work/lab/azure-boards/READ
 | #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | 16  | [Brady's Squad: Human-Led AI Teams](sessions/session-16-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to turn scoped work into persistent roles, decisions, and reviewable evidence. |
-| 18  | [Spec Kit: Enterprise Specification-Driven Development](sessions/session-18-spec-kit/)   | Advanced    | 3 hrs      | Applies a governed specification-to-implementation flow with reusable Copilot skills and an enterprise delivery guardrail. |
+| 18  | [Spec Kit: Specification-Driven Development](sessions/session-18-spec-kit/)              | Advanced    | 3.5 hrs    | Uses Spec Kit for task-to-issue conversion, staged implementation, convergence, and living-spec evolution. |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 

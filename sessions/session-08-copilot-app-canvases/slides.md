@@ -44,6 +44,49 @@ The agent can read or change the same state through bounded capabilities.
 Use a canvas when work needs visible progress, direct steering, or a handoff artifact.
 
 ---
+# A canvas is not the source system
+
+The canvas helps a team decide and coordinate. It should not quietly replace the
+system that owns the work.
+
+| If the system owns | The canvas should show |
+| --- | --- |
+| Issue state | A labeled planning view |
+| Approval record | A link or reference to the decision |
+| Customer data | Only approved, minimized fields |
+
+When the two views disagree, verify the source system and correct or explain the
+canvas. Do not assume the more convenient view is right.
+
+---
+# Bound agent authority by action
+
+An agent capability should map to one safe, explainable action.
+
+| Capability | Safe example | Boundary |
+| --- | --- | --- |
+| Read | Summarize items waiting for review | Cannot infer missing evidence |
+| Propose | Suggest a status update | Human accepts the change |
+| Update | Mark one named item ready | Evidence is required |
+| Act externally | None in this lab | Excluded by design |
+
+If an action needs a broad verb such as "manage" or "handle," the contract is
+probably too vague for a shared artifact.
+
+---
+# Design for recovery
+
+Trainers should show learners how the canvas fails safely:
+
+1. A user enters a status that is not allowed.
+2. The canvas rejects it and shows the permitted values.
+3. An item has no evidence, so `ready` remains unavailable.
+4. The owner corrects the record or returns it to an earlier status.
+
+A canvas needs an owner, a clear source of truth, and a way to retire it when the
+work ends. Otherwise it becomes another stale dashboard.
+
+---
 # Design the contract
 
 ```text
