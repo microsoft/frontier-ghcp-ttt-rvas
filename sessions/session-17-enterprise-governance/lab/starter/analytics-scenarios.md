@@ -26,9 +26,10 @@ Use the fixed `training-review-sandbox` scenario:
 ## 3. Metered-work guardrail
 
 1. Use the trainer-maintained automated-run counter.
-2. Record the alert at 18 runs and stop at 20 runs.
-3. State the manual fallback when the guard is reached.
-4. Recommend the next step without estimating commercial terms.
+2. Treat it as an exercise stop guard, not a product usage or billing metric.
+3. Record the alert at 18 runs and stop at 20 runs.
+4. State the manual fallback when the guard is reached.
+5. Recommend the next step without estimating commercial terms.
 
 ## 4. Rollout decision
 

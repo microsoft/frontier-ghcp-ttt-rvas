@@ -26,7 +26,7 @@
 | Quality rule | |
 | Safety rule | |
 | Rework rule | |
-| Meter and owner | |
+| Exercise guard and owner | |
 | Alert and escalation | |
 | Stop condition | |
 | Manual fallback | |

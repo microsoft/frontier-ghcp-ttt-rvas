@@ -11,8 +11,7 @@ status: **confirmed in scenario**, **live evidence pending**, or **out of scope*
 | Engineering owner and reviewer | | | |
 | Platform administrator | | | |
 | Data owner | | | |
-| Security and privacy review contacts | | | |
-| Legal and finance contacts | | | |
+| Additional review contacts, if triggered | | | |
 | Final start approver | | | |
 
 ## Access, data, and tools
@@ -35,7 +34,7 @@ status: **confirmed in scenario**, **live evidence pending**, or **out of scope*
 | Acceptance checklist | | | |
 | Human-reviewed baseline | | | |
 | Two-week or 10-task window | | | |
-| Automated-run counter | | | |
+| Exercise run counter | | | |
 | Stop at 20 runs | | | |
 | Manual fallback | | | |
 

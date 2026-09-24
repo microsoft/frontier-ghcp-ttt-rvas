@@ -11,10 +11,10 @@ and reversible rollout plan for one fictional trial
 
 ## Lab overview
 
-Use the fixed scenario in `starter/fictional-scenario-brief.md`. A team proposes a
-two-week code-review trial in `training-review-sandbox`. The repository contains
-synthetic task records. Production repositories, customer data, deployment,
-external MCP servers, and live policy changes are outside scope.
+Use the fixed tabletop scenario in `starter/fictional-scenario-brief.md`. A team
+proposes a two-week code-review trial in `training-review-sandbox`. The repository
+contains synthetic task records. Production repositories, customer data,
+deployment, external MCP servers, and live policy changes are outside scope.
 
 | Exercise | Output | Time |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ comment, or live system.
 | `analytics-scenarios.md` | Measurement prompts |
 | `sample-analytics-data.json` | Synthetic trial observations |
 | `rollout-template.md` | Policy, measurement, and rollout record |
-| `exclusion-config/` | Static content-boundary example |
+| `exclusion-config/` | Static example; verify current surface limitations before live use |
 
 ## Exercise 1: Build the evidence map (35 min)
 
@@ -61,7 +61,7 @@ Record:
 2. administrator, data owner, engineering owner, reviewer, and final approver;
 3. data classification and excluded data;
 4. approved tool boundary and prohibited integrations;
-5. the trainer-maintained run counter and stop rule;
+5. the trainer-maintained exercise run counter and stop rule;
 6. the manual review fallback.
 
 Current entitlement, retention, administrator settings, and commercial terms are
@@ -120,12 +120,13 @@ Use these fictional trial rules:
 | Quality | At least 9 of 10 tasks meet acceptance criteria |
 | Safety | Zero restricted-data events |
 | Rework | No more than 3 tasks need material rewrite |
-| Meter | Trainer-maintained automated-run counter |
+| Exercise guard | Trainer-maintained automated-run counter |
 | Stop guard | Pause at 20 automated runs |
 | Fallback | Human review with the same acceptance checklist |
 
 Map each signal to a decision: continue, gather more evidence, or pause. These are
-fictional exercise values, not product limits or commercial guidance.
+fictional exercise values, not product usage metrics, billing controls, or
+commercial guidance.
 
 Compare with `solution/measurement-guardrail.md`.
 
@@ -159,6 +160,7 @@ Submit:
 - [ ] Every decision has an owner and evidence source.
 - [ ] Live claims are marked pending when current access is unavailable.
 - [ ] The trial uses synthetic data and excludes production actions.
-- [ ] The meter, threshold, escalation, stop condition, and fallback are explicit.
+- [ ] The exercise guard, threshold, escalation, stop condition, and fallback are explicit.
+- [ ] The record identifies the run counter as an exercise stop guard.
 - [ ] Expand requires new evidence and owner approval.
 - [ ] The final decision states the next action and review date.

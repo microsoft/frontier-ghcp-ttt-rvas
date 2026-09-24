@@ -9,7 +9,7 @@ footer: 'Session 17: Enterprise Governance'
 <!-- _class: lead -->
 
 # Enterprise Governance
-## A decision framework for policy and measurement
+## A tabletop framework for policy and measurement
 
 ---
 
@@ -151,23 +151,27 @@ Classify the repository and inputs before using an assistant. Keep restricted co
 
 Review MCP servers, approved package sources, and external tools the same way: owner, purpose, permitted data, permissions, logging, and fallback.
 
----
+Content exclusion is one control. Check current surface support, and keep
+restricted data out of the workflow.
 
+---
 # Measurement guardrail
 
 Activity is not value. Compare bounded work with acceptance criteria, human review, safety evidence, and a known baseline.
 
 | Guardrail item | Required decision |
 | --- | --- |
-| Meter | Customer-owned source and unit |
+| Exercise guard | Trainer-owned counter for the scenario |
 | Window | When observations are collected |
 | Threshold | When an alert fires |
 | Escalation | Who responds |
 | Stop | When automated work pauses |
 | Fallback | Manual work while evidence is pending |
 
----
+The exercise run counter is a stop guard. It is not a product usage or billing
+metric.
 
+---
 # Worked measurement rule
 
 | Item | Fictional value |
@@ -176,7 +180,7 @@ Activity is not value. Compare bounded work with acceptance criteria, human revi
 | Quality | At least 9 tasks meet acceptance criteria |
 | Safety | Zero restricted-data events |
 | Rework | No more than 3 tasks need material rewrite |
-| Meter | Stop at 20 automated runs |
+| Exercise guard | Stop at 20 automated runs |
 | Response | Pause, preserve evidence, and use manual review |
 
 These values support the exercise. They are not product limits or commercial

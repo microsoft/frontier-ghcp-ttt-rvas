@@ -22,7 +22,7 @@ acceptance criteria. An engineering lead makes the final review decision.
 | Workflow | Review one synthetic pull request at a time |
 | Tool boundary | Approved repository assistant only |
 | Reviewer | Engineering lead |
-| Meter | Trainer-maintained automated-run counter |
+| Exercise guard | Trainer-maintained automated-run counter |
 | Stop guard | Pause at 20 automated runs |
 | Fallback | Human review with the same acceptance checklist |
 

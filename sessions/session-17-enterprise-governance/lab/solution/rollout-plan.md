@@ -11,7 +11,7 @@
 
 | Gate | Evidence required | Decision owner | Action |
 | --- | --- | --- | --- |
-| Start | Completed evidence map, synthetic-data boundary, engineering reviewer, run counter, stop guard, and manual fallback | Engineering lead | Start the bounded training trial |
+| Start | Completed evidence map, synthetic-data boundary, engineering reviewer, exercise run counter, stop guard, and manual fallback | Engineering lead | Start the bounded training trial |
 | Continue | At least 9 of 10 tasks meet acceptance criteria, no restricted-data or boundary event, no more than 3 material rewrites, fewer than 20 automated runs | Engineering lead | Continue until the window or guard ends |
 | Expand | Platform administrator confirms current settings; data owner confirms the added repository and data class; required reviewers approve the new boundary | Final approver for added scope | Open a new decision record before expansion |
 | Pause | Restricted data, boundary failure, more than 3 material rewrites, 20 automated runs, missing human review, or changed scope | Any named owner may trigger; engineering lead records | Stop automated work, preserve evidence, and use manual review |

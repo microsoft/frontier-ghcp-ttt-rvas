@@ -31,7 +31,7 @@
       "result": "no event observed in synthetic trial"
     },
     {
-      "signal": "automated-run counter",
+      "signal": "exercise run counter",
       "owner": "trainer",
       "result": "16 of 20 runs used"
     }

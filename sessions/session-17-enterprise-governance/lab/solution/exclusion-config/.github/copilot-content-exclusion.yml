@@ -1,5 +1,7 @@
 # Content Exclusion Configuration — Solution
 # This is the completed exclusion configuration for the lab exercise.
+# Training example only. Confirm current surface support before live use.
+# Content exclusion does not replace data classification or human review.
 
 # Files containing secrets or credentials (by name pattern)
 - "**/*secret*"

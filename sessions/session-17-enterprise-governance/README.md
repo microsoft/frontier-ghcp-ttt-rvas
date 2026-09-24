@@ -11,10 +11,10 @@
 
 ## Overview
 
-Use Enterprise Cloud as the governance baseline. Learners create an evidence-backed
-record for access, data handling, approved tools, measurement, and reversible
-rollout gates. Before delivery, check current GitHub documentation and customer
-policy.
+This is a tabletop governance session, not an administrator configuration lab.
+Learners create an evidence-backed record for access, data handling, approved
+tools, measurement, and reversible rollout gates. Before delivery, check current
+GitHub documentation and customer policy.
 
 The lab uses one fictional case throughout: a two-week code-review trial in
 `training-review-sandbox`. The repository contains synthetic task records. The
@@ -24,9 +24,9 @@ servers, and live policy changes.
 ## Learning outcomes
 
 - Assign owners and evidence for access, data, tool, and change decisions.
-- Define a customer-owned meter, stop guard, and no-access workflow.
+- Define an exercise run guard, stop rule, and no-access workflow.
 - Assess controls against data classification and review requirements.
-- Review canvas state, actions, storage, ownership, and removal before approval.
+- Identify when the scope needs security, privacy, legal, or finance review.
 - Propose a measured rollout that can pause safely.
 
 ## Required access

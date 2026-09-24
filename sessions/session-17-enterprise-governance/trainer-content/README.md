@@ -2,10 +2,11 @@
 
 ## Delivery objective
 
-Learners create an evidence-backed decision record, a metered-work guardrail, and
-reversible rollout gates. Use Enterprise Cloud as the baseline. Check current
-GitHub documentation and customer policy. Training material cannot establish
-entitlement, compliance, retention, or availability.
+Learners create an evidence-backed decision record, an exercise run guard, and
+reversible rollout gates. This is a tabletop decision exercise, not an
+administrator configuration lab. Check current GitHub documentation and customer
+policy. Training material cannot establish entitlement, compliance, retention,
+or availability.
 
 ## One-hour plan
 
@@ -22,11 +23,11 @@ entitlement, compliance, retention, or availability.
 
 - Use the supplied fictional scenario in
   `lab/starter/fictional-scenario-brief.md`.
-- Name the administrator, data owner, human reviewer, and required review contacts.
+- Name the administrator, data owner, engineering reviewer, and final approver.
+- Add security, privacy, legal, or finance reviewers only when the scope requires
+  them.
 - Confirm the approved tools and usage guard. Prepare the static exclusion
   example, but never place its sensitive content into a prompt or live system.
-- For any canvas, identify artifact storage, user actions, agent capabilities,
-  owner, and removal path.
 
 ## Scripted walkthrough
 
@@ -95,8 +96,10 @@ evidence.
 2. Use the fixed window: two weeks or 10 reviewed tasks.
 3. Record the quality rule, zero restricted-data rule, rework threshold, and
    20-run stop guard.
-4. Map each threshold to continue, gather evidence, or pause.
-5. Open `lab/solution/rollout-plan.md` and trace start, continue, expand, and pause.
+4. State that the counter is an exercise stop guard, not a product usage or
+   billing metric.
+5. Map each threshold to continue, gather evidence, or pause.
+6. Open `lab/solution/rollout-plan.md` and trace start, continue, expand, and pause.
 
 ### 0:52–1:00: Lab handoff
 
@@ -117,11 +120,6 @@ policy decision until every required claim has an owner and status.”
 
 ## Facilitation notes
 
-For a canvas proposal, record shared state, data classification, direct user
-actions, agent-callable capabilities, artifact location, owner, reviewer, and
-retirement trigger. Treat each agent action as a permission decision. **A canvas
-does not create new authority.**
-
 At 0:42, complete the policy decision even when live evidence is pending. At 0:55,
 stop discussion and move to the lab handoff.
 
@@ -131,4 +129,6 @@ stop discussion and move to the lab handoff.
 
 **Can analytics prove productivity?** No. They are one input. Compare bounded work with acceptance criteria, review evidence, and a human baseline.
 
-**Does content exclusion make all data safe?** No. Treat it as one control. Keep restricted data out of training prompts and use the customer classification process.
+**Does content exclusion make all data safe?** No. Treat it as one control.
+Check current support for the Copilot surface in use. Keep restricted data out of
+training prompts and follow the customer classification process.

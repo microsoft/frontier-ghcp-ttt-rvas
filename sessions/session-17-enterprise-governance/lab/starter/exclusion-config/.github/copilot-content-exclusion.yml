@@ -1,5 +1,7 @@
 # Content Exclusion Configuration
-# Docs: https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/setting-a-content-exclusion-policy
+# Training example only. Confirm current surface support before live use.
+# Content exclusion does not replace data classification or human review.
+# Docs: https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion
 #
 # TODO: Configure exclusion patterns to prevent Copilot from accessing
 # sensitive files in this project.

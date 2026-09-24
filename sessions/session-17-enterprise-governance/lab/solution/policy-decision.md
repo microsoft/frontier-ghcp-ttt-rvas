@@ -20,7 +20,7 @@ data, deployment, external MCP servers, live setting changes, or wider rollout.
 | --- | --- | --- |
 | Current feature access and administrator settings | Platform administrator | No live feature or setting claim |
 | Live repository classification | Data owner | No scope expansion |
-| Retention or commercial terms, if relevant | Legal and finance reviewers | No conclusion in training material |
+| Retention or commercial terms, if relevant | Appropriate contract or policy owner | No conclusion in training material |
 
 ## Pause triggers
 
