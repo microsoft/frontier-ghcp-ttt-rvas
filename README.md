@@ -149,3 +149,16 @@ ghcp-ttt/
    ├── session-19-capstone/               # Module 6: Advanced & Capstone
    └── session-20-hve-challenge/          # Module 5: Specification-Driven Frameworks
 ```
+
+## Official HVE Core resources
+
+Use the official Microsoft HVE Core repository and documentation for the current
+framework behavior, terminology, and component inventory.
+
+| Resource | What it covers |
+|----------|----------------|
+| [HVE Core repository and framework overview](https://github.com/microsoft/hve-core) | Framework purpose, principles, building blocks, benefits, installation, and documentation entry points |
+| [Why the RPI workflow works](https://github.com/microsoft/hve-core/blob/main/docs/rpi/why-rpi.md) | The Research, Plan, Implement, Review approach, its evidence model, and the quality and traceability benefits |
+| [Context engineering](https://github.com/microsoft/hve-core/blob/main/docs/rpi/context-engineering.md) | Context-window management, recency bias, deliberate resets, and artifact-based resumption |
+| [Agent systems catalog](https://github.com/microsoft/hve-core/blob/main/docs/agents/README.md) | Available agent families and the workflows they support across engineering, planning, review, backlog, security, and other domains |
+| [HVE lifecycle and role guides](https://github.com/microsoft/hve-core/blob/main/docs/hve-guide/README.md) | HVE capabilities mapped to lifecycle stages and personas including engineers, TPMs, architects, security, data, SRE, program management, UX, and new contributors |
