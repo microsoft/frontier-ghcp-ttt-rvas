@@ -1,8 +1,0 @@
-{
-  "servers": {
-    "database": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "./data/app.db"]
-    }
-  }
-}
