@@ -20,6 +20,10 @@
 | --- | --- | --- |
 | | Assumption or unknown | |
 
+## Non-goals
+
+<!-- Outcomes explicitly excluded from this stage -->
+
 ## Relevant GitHub artifacts
 
 <!-- Files, issues, pull requests, or projects that matter -->
@@ -37,3 +41,15 @@
 - **Decision owner:**
 - **Reviewer:**
 - **Review result:** Ready / Revise
+
+## Revision record
+
+| Evidence | Sections changed | Contradiction resolved | Commit |
+| --- | --- | --- | --- |
+| | | | |
+
+## Fresh-session verification
+
+- **Session used only this brief:** Yes / No
+- **Missing or ambiguous state:**
+- **Final result:** Ready / Revise

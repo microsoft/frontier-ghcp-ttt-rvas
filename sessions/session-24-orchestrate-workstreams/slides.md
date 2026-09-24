@@ -32,10 +32,9 @@ Session 24 | 3 hours
 
 # Required access
 
-- `/orchestrate` or an approved equivalent is required.
-- The tool must create and coordinate live child sessions.
+- Confirm the built-in `orchestrate` skill under **Customize** → **Skills**.
+- `/orchestrate` must create and coordinate live child sessions.
 - Confirm that you can open, steer, and stop each child.
-- `/spawn` alone does not meet the lesson goal.
 
 **Stop and resolve access if orchestration is unavailable.**
 
@@ -43,11 +42,9 @@ No role-play, prepared-result, offline, or static completion route is available.
 
 ---
 
-# Product state: September 23, 2026
+# Product state: September 24, 2026
 
 - `/orchestrate` is a documented GitHub Copilot app skill.
-- `/spawn` creates a focused child session.
-- `/usage` opens plan usage and rate-limit details.
 - Commands vary by context.
 - **My work** may appear under a renamed session or work surface.
 
@@ -141,6 +138,8 @@ Stopping weak work is a valid management decision.
 4. Stop a restricted-data request.
 5. Accept evidence-backed work.
 6. Record the human decision.
+
+At least one live redirect must improve scope, evidence, or packet structure.
 
 Do not substitute prepared packets when a live run fails.
 

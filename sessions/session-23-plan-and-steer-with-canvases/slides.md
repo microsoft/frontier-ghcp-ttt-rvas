@@ -131,12 +131,36 @@ Resolve or explain every mismatch.
 
 ---
 
+# Create visible drift
+
+1. Preview and approve a GitHub issue comment through MCP.
+2. Retrieve the changed issue in a fresh request.
+3. Do not refresh the canvas.
+4. Compare the new GitHub state with the visible canvas.
+
+The canvas should show that its last refresh is older than the source change.
+
+---
+
+# Reconcile the projection
+
+Use the approved refresh capability.
+
+Confirm:
+
+- the blocker appears in planning state;
+- the next action names the owner decision;
+- GitHub state and planning state stay distinct;
+- the last-refresh time changes.
+
+---
+
 # Lab result
 
 - Learner-created canvas
 - Reviewed state and actions
 - Live GitHub issue data
-- Human and Copilot updates
-- Owner, recovery, and retirement
+- A detected and reconciled state mismatch
+- Owner, refresh, recovery, and retirement rules
 
 **Stop if live canvas creation is unavailable.**

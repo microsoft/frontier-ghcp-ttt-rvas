@@ -64,3 +64,17 @@ The learner gave GitHub Copilot approved evidence that the portal stores an inte
 ## Shared understanding
 
 The request owner confirmed the Copilot summary. One implementation detail remains: the service operations manager must approve the two-business-day stale threshold before release. It does not block backlog refinement.
+
+## Reopened branch: visibility constraint
+
+Approved late evidence established different visibility for request submitters and
+support staff.
+
+| # | Decision | Recommendation | Owner answer |
+| --- | --- | --- | --- |
+| 1 | Requester visibility | Show only public status, latest update date, and approved public summary. | Accepted. |
+| 2 | Support visibility | Allow support staff to view the detailed status reason through their existing authorized view. | Accepted. |
+| 3 | Protected details | Keep internal notes, queue names, staff identities, and escalation details hidden from requesters. | Accepted. |
+
+The first-release users, request types, notification exclusion, ownership, and
+approval path did not change.

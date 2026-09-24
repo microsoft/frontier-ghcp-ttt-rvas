@@ -40,4 +40,3 @@ Use roles, not real names:
 ## Training data rule
 
 This scenario is synthetic. Do not add customer names, source organization names, personal information, credentials, or production details.
-

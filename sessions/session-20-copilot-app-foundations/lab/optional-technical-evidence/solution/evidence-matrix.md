@@ -10,4 +10,3 @@
 | The new control is accessible | E2 shows a label, but the accessibility check was skipped | Unknown | Some coordinators may be blocked | Accessibility reviewer |
 | All tests pass | AI-generated PR summary | Generated and contradicted | Could lead to an unsafe release recommendation | Use `checks.json` as the source |
 | The change is ready for release | AI-generated PR summary | Generated and contradicted | Release should wait for failed and missing evidence | Release owner after required actions |
-

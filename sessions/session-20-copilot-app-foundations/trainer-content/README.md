@@ -5,7 +5,9 @@
 
 ## Delivery objective
 
-Learners should leave able to open the GitHub Copilot app, choose useful context, inspect available capabilities, and create a reviewable work artifact. This is the front door to the rest of Module 7.
+Learners should leave able to open the GitHub Copilot app, choose useful context,
+compare grounded and ungrounded answers, revise a durable work artifact when
+evidence changes, and verify it in a fresh session.
 
 ## One-hour plan
 
@@ -14,8 +16,8 @@ Learners should leave able to open the GitHub Copilot app, choose useful context
 | 0:00-0:08 | Orient learners to the app |
 | 0:08-0:18 | Choose the right context |
 | 0:18-0:28 | Inspect available capabilities |
-| 0:28-0:40 | Ask grounded, role-specific questions |
-| 0:40-0:53 | Create and review a working brief |
+| 0:28-0:40 | Compare unscoped and grounded answers |
+| 0:40-0:53 | Create, revise, and verify a working brief |
 | 0:53-1:00 | Explain boundaries and launch the lab |
 
 ## Required preflight
@@ -76,15 +78,18 @@ Open **Customize** and identify what is available in the learner's environment. 
 
 Do not teach construction in this session. Learners only need to recognize these capabilities and know that availability depends on plan, policy, and installation.
 
-## Demo: create a durable brief
+## Demo: create and revise a durable brief
 
-1. Open `lab/starter/initiative-overview.md`.
-2. Ask Copilot to identify the purpose, users, known facts, open questions, and next decision.
-3. Ask for citations to the supplied file.
+1. Ask for an initiative summary without attaching the source.
+2. Mark unsupported statements.
+3. Attach `lab/starter/initiative-overview.md` and ask again with source
+   references.
 4. Ask Copilot to complete `copilot-working-brief-template.md`.
-5. Review the proposed Markdown change.
-6. Reject one unsupported statement and ask Copilot to correct it.
-7. Save the approved brief.
+5. Review and commit the brief.
+6. Reveal `lab/starter/late-evidence.md`.
+7. Ask Copilot for a focused update and review the diff.
+8. Start a fresh session with only the saved brief and verify that it can recover
+   the intended state.
 
 Stress the pattern:
 
@@ -98,7 +103,7 @@ The pattern returns in every later session.
 
 The previous technical-evidence exercise remains under `lab/optional-technical-evidence/`. Use it only when the group already understands the app and needs practice questioning issues, pull requests, checks, and release evidence.
 
-## Product notes verified September 23, 2026
+## Product notes verified September 24, 2026
 
 Before delivery, verify the current GitHub Copilot app navigation, plan requirements, policy controls, and availability of Customize features.
 

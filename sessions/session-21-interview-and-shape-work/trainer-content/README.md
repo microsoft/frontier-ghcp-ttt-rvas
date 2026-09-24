@@ -2,7 +2,9 @@
 
 ## Delivery objective
 
-Learners use the GitHub Copilot app to turn an unclear request into a reviewed repository decision brief and GitHub issue proposal. The session uses the `grill-me` or `grilling` decision-tree pattern. Session 22 creates the live issues.
+Learners install the supplied `decision-interview` project skill and use it to turn
+an unclear request into a reviewed decision brief and issue proposal. They then
+reopen one decision branch when a late visibility constraint arrives.
 
 ## One-hour plan
 
@@ -21,7 +23,11 @@ Learners use the GitHub Copilot app to turn an unclear request into a reviewed r
 Complete this check before learners begin:
 
 - Confirm that every learner can open the GitHub Copilot app and the training repository project.
-- Confirm that GitHub Copilot can run `grill-me`, `grilling`, or the supplied decision-tree prompt.
+- Copy the supplied skill to
+  `.github/skills/decision-interview/SKILL.md`.
+- Open a new app session and confirm that `decision-interview` appears under
+  **Customize** → **Skills** → **Installed**.
+- Run `/decision-interview` with the short test request from the lab.
 - Test one prompt and one follow-up answer.
 - Use only the supplied fictional scenario during the demonstration.
 - Open the starter templates and completed solution in separate windows.
@@ -65,6 +71,9 @@ When evidence is unavailable, mark the fact as unverified. Do not disguise it as
 Start with:
 
 > Make request status clearer so people stop asking support.
+
+Run the demonstration through `/decision-interview`. The skill must ask a numbered
+frontier and wait for owner decisions instead of drafting the final artifact.
 
 ### Round 1: define the problem
 
@@ -136,6 +145,12 @@ Ask GitHub Copilot to convert the approved brief into an issue proposal:
 
 The learner checks every field against the approved brief. Copilot drafts the proposal. Session 22 creates the approved issue set through GitHub MCP.
 
+## Reopen an affected branch
+
+Reveal `lab/starter/late-constraint.md`. Ask the skill to reopen only visibility
+decisions. Show that scope, request types, notification exclusion, and ownership
+stay unchanged while role-specific acceptance criteria are revised.
+
 ## Facilitation notes
 
 - Ask no more than four questions in a demonstration round.
@@ -151,7 +166,9 @@ Learners may use:
 - an approved, sanitized request from their own work; or
 - [`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).
 
-Each pair needs a request owner and delivery reviewer. The request owner approves the decision brief. The delivery reviewer checks the issue proposal against the review checklist.
+Each learner or pair needs a request owner and delivery reviewer. The request owner
+approves the decision brief. The delivery reviewer verifies the brief and proposal
+in a fresh session.
 
 ### Azure Boards companion
 

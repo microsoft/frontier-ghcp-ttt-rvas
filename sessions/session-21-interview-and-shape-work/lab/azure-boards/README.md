@@ -20,7 +20,7 @@ Submit one completed [`copilot-work-item-review.md`](copilot-work-item-review.md
 You need:
 
 - working access to an approved GitHub Copilot surface;
-- `grill-me`, `grilling`, or the prompt in the main lab;
+- the supplied `decision-interview` project skill;
 - a request owner and delivery reviewer;
 - the seeded **Show request status in the portal** requirement in an approved training project;
 - either an Azure Boards browser session or an approved MCP connection that can read and update work items.

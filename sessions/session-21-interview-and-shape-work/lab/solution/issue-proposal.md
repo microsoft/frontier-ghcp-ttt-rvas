@@ -15,6 +15,7 @@ The portal currently shows a reference number and title. Internal service states
 - Show an approved public status for facilities and equipment requests.
 - Show the source last updated time.
 - Show a safe summary when one is available.
+- Preserve the detailed status reason for authorized support staff.
 - Apply safe fallback behavior for unmapped or stale states.
 - Enforce requester-only access.
 
@@ -31,6 +32,10 @@ The portal currently shows a reference number and title. Internal service states
 - [ ] A signed-in requester can view the approved public status and last updated time for each facilities or equipment request they submitted.
 - [ ] A request with an approved safe summary shows that summary without internal notes, agent names, or security details.
 - [ ] A user who does not own a request cannot see its status, timestamp, summary, or identifying details.
+- [ ] A requester cannot see the detailed status reason, internal notes, queue
+      names, staff identities, or escalation details.
+- [ ] An authorized support user can view the detailed status reason through the
+      existing support view.
 - [ ] An internal state without an approved public mapping shows `Status unavailable` and the standard contact route.
 - [ ] A request older than the approved freshness threshold shows `Update pending` and does not present the existing state as current.
 - [ ] A request with no safe summary still shows its public status and last updated time without an empty summary panel.
@@ -57,6 +62,7 @@ The portal currently shows a reference number and title. Internal service states
 - [ ] The service operations manager approves the public state mapping and fallback wording.
 - [ ] The privacy reviewer confirms requester-only access and the visible field set.
 - [ ] Supported, unmapped, stale, empty-summary, and unauthorized states are covered.
+- [ ] Requester and support visibility boundaries have focused evidence.
 - [ ] The portal guidance explains the public statuses and contact route.
 - [ ] No notification channel or additional request type entered the change.
 - [ ] The delivery reviewer confirms that the Copilot draft matches the approved brief.

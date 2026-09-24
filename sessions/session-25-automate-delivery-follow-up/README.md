@@ -10,7 +10,10 @@
 
 ## Overview
 
-Product and delivery owners turn the manual workflow from Sessions 20-24 into one bounded GitHub Copilot Automation. Learners configure a draft-only run, inspect its evidence, record a human decision, and connect the result to the approved work system.
+Product and delivery owners turn the manual workflow from Sessions 20–24 into one
+bounded GitHub Copilot Automation. Learners create a manual, draft-only
+automation, review its first run, update an approved input, rerun the same
+automation, and compare the evidence before deciding whether to keep it.
 
 The fictional **Service Request Portal** supplies a weekly status workflow and synthetic inputs. The core route runs in the GitHub Copilot app Automations area and reads approved GitHub work through MCP.
 
@@ -21,9 +24,11 @@ The fictional **Service Request Portal** supplies a weekly status workflow and s
 
 - Classify recurring work by autonomy and approval level.
 - Define allowed inputs, allowed outputs, required evidence, and stop conditions.
-- Create and run one draft-only GitHub Copilot Automation.
+- Create a manual, draft-only GitHub Copilot Automation.
+- Run the same automation twice against two approved input versions.
 - Use GitHub MCP to retrieve the approved issue state.
 - Inspect the run against acceptance criteria.
+- Compare evidence across runs.
 - Record a human approval decision.
 - Measure useful time saved after review and rework.
 - Write a stakeholder update that separates facts, decisions, exceptions, and next actions.

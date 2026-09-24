@@ -8,6 +8,13 @@
 
 **Deliverable:** An orchestration plan, live child-session result packets, signed reviews, and a release-readiness decision
 
+## Final deliverables
+
+- the approved orchestration plan;
+- live result packets from the child sessions;
+- one recorded intervention;
+- signed reviews and a release-readiness decision.
+
 ## Scenario
 
 The fictional **Service Request Portal** is approaching a release review. You are the delivery manager. You need evidence for the decision, but you do not want several sessions editing the same record.
@@ -18,19 +25,25 @@ You will select the parent objective and child issues created in Session 22, con
 
 Complete every check before Exercise 1.
 
+- [ ] Confirm GitHub Copilot access. If access is unavailable, stop and do not
+      continue.
 - [ ] Use only the supplied fictional data or approved sanitized work.
 - [ ] Confirm who will act as the human release approver.
 - [ ] Confirm the GitHub Copilot app policy, repository permission, and approved model.
 - [ ] Retrieve the approved parent and child issues through GitHub MCP.
 - [ ] Open the Session 23 planning canvas and confirm the selected workstreams.
+- [ ] Open **Customize** → **Skills** → **Installed** and confirm the built-in
+      `orchestrate` skill.
 - [ ] Type `/` and confirm that `/orchestrate` is available.
-- [ ] If your organization uses an approved equivalent, confirm that it creates and coordinates live child sessions from one parent objective.
 - [ ] Confirm that you can open, steer, and stop the child sessions.
 - [ ] Set the guard to four child sessions, 30 minutes of live activity, or a lower approved meter.
 - [ ] Stop any task that requests production access, personal data, secrets, external contact, or unapproved changes.
 
 > [!IMPORTANT]
-> **Stop if `/orchestrate` or the approved equivalent is unavailable.** Resolve access before you continue. Do not replace orchestration with manual role-play, separate prompts, prepared outputs, or static files.
+> **Stop if `/orchestrate` is unavailable.** It is a built-in GitHub Copilot app
+> skill. Resolve app version, sign-in, policy, or capability access before you
+> continue. Do not install a look-alike skill or replace orchestration with manual
+> role-play, separate prompts, prepared outputs, or static files.
 
 > [!NOTE]
 > Product behavior was checked on **September 23, 2026**. **My work** may appear under a renamed session or agent surface. Use the current equivalent.
@@ -59,7 +72,7 @@ Open `starter/orchestration-plan-template.md`.
 5. Add exclusions and a stop condition.
 6. Name the human reviewer.
 7. Check that no workstream depends on another child session.
-8. Submit the approved plan through `/orchestrate` or the approved equivalent.
+8. Submit the approved plan through `/orchestrate`.
 
 Use this parent prompt as a starting point:
 
@@ -72,6 +85,9 @@ content, contact people, or change systems.
 ```
 
 Confirm that GitHub Copilot created the expected child sessions. Record their links or identifiers in your plan.
+
+Open every child session once. Confirm its assigned question, approved inputs,
+required packet, and stop condition before allowing it to continue.
 
 **Expected result:** A reviewed plan and live child sessions created by GitHub Copilot orchestration.
 
@@ -86,6 +102,10 @@ For each child session:
 3. Record one action: `wait`, `redirect`, or `stop`.
 4. Send a short instruction when you redirect or stop.
 5. Save the session link and action in the orchestration plan.
+
+At least one child session must receive a focused redirect that improves scope,
+evidence, or packet structure. Do not redirect a session merely to complete the
+exercise.
 
 Use these guards:
 
@@ -159,7 +179,6 @@ Open `starter/shared-work-artifact-template.md`.
 | Issue | Response |
 | --- | --- |
 | `/orchestrate` is missing | **Stop the lab.** Resolve license, policy, client, or command access. |
-| The approved equivalent does not create coordinated child sessions | **Stop the lab.** It does not meet the session requirement. |
 | **My work** is missing | Use the current session or agent surface. |
 | A child requests production data | Stop the child and record the boundary. |
 | Usage details are unavailable | Apply the four-session and 30-minute guards. |

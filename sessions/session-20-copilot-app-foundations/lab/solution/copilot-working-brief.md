@@ -6,7 +6,8 @@ Make Service Request Portal status information understandable without exposing i
 
 ## Affected users
 
-Employees who submitted facilities or equipment requests.
+- Employees who submitted facilities or equipment requests.
+- Support staff who answer status questions.
 
 ## Known facts
 
@@ -16,13 +17,21 @@ Employees who submitted facilities or equipment requests.
 | Requesters contact support because internal status names are unclear. | `initiative-overview.md`, Current problem |
 | Internal notes must remain hidden. | `initiative-overview.md`, Known constraints |
 | The service system remains the source of record. | `initiative-overview.md`, Known constraints |
+| Email and chat notifications are outside the first release. | `late-evidence.md`, approved additions |
+| No approved baseline exists for status-related contacts. | `late-evidence.md`, approved additions |
 
 ## Assumptions and unknowns
 
 | Item | State | Owner |
 | --- | --- | --- |
-| Whether outbound notifications belong in the first release | Unknown | Product owner |
 | Which public status labels users understand | Unknown | Product owner with service operations |
+| Baseline volume for status-related contacts | Unknown | Delivery lead |
+
+## Non-goals
+
+- Email and chat notifications.
+- Changes to the internal service workflow.
+- Exposure of internal notes or staff-only details.
 
 ## Relevant GitHub artifacts
 
@@ -37,10 +46,22 @@ Record the capabilities visible in the learner's approved environment. Do not as
 
 ## Next decision
 
-Decide whether the first release includes outbound notifications.
+Approve the public status vocabulary for the first release.
 
 ## Ownership
 
 - **Decision owner:** Product owner
 - **Reviewer:** Delivery lead
 - **Review result:** Ready
+
+## Revision record
+
+| Evidence | Sections changed | Contradiction resolved | Commit |
+| --- | --- | --- | --- |
+| `late-evidence.md` | Users, facts, unknowns, non-goals, next decision | Notifications are no longer an open decision | `Update working brief with approved evidence` |
+
+## Fresh-session verification
+
+- **Session used only this brief:** Yes
+- **Missing or ambiguous state:** Public status vocabulary remains an owner decision.
+- **Final result:** Ready for the Session 21 decision interview.

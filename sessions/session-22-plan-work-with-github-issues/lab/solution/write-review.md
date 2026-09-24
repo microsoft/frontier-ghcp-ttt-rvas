@@ -31,4 +31,8 @@ Every created issue must be retrieved through a new GitHub MCP read and compared
 
 ## Reviewed correction
 
-Add one missing non-goal to a child issue, approve the update, and retrieve the issue again.
+- **Issue:** One implementation child issue.
+- **Change:** Add `Verification owner: Delivery reviewer` and
+  `Source decision: docs/discovery/request-status-decision-brief.md`.
+- **Approval:** Approved after the full focused update was previewed.
+- **Verification:** A new GitHub MCP read returned both lines in the issue body.

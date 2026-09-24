@@ -2,7 +2,10 @@
 
 ## Delivery objective
 
-Learners create one useful GitHub Copilot Automation from the manual delivery workflow. They configure the automation in the app, run it once in draft-only mode, inspect its evidence, and decide whether to keep, revise, or disable it.
+Learners create one useful GitHub Copilot Automation from the manual delivery
+workflow. They run it twice in draft-only mode with an approved input change
+between runs, compare the evidence, and decide whether to keep, revise, disable,
+or pause it.
 
 Use the fictional **Service Request Portal** weekly status workflow. Do not configure enterprise policies or repeat the Session 17 administration material.
 
@@ -16,13 +19,15 @@ Use the fictional **Service Request Portal** weekly status workflow. Do not conf
 | 0:00–0:08 | Choose the recurring delivery task |
 | 0:08–0:18 | Open Automations and inspect the available controls |
 | 0:18–0:30 | Build the draft-only automation contract |
-| 0:30–0:43 | Configure and run one automation |
-| 0:43–0:53 | Review evidence and decide |
+| 0:30–0:42 | Configure and run the automation |
+| 0:42–0:53 | Change an input, rerun, and compare evidence |
 | 0:53–1:00 | Connect the result to GitHub or Azure Boards |
 
 ## Current product facts to verify before delivery
 
-These notes were checked against official GitHub documentation on **September 23, 2026**. Recheck them before teaching because feature names, eligibility, billing, and controls can change.
+These notes were checked against official GitHub documentation on
+**September 24, 2026**. Recheck them before teaching because feature names,
+eligibility, billing, and controls can change.
 
 - Copilot automations can save recurring agent tasks and run them on demand or from supported triggers. The GitHub Copilot app documentation describes local and cloud automations.
 - Cloud automations depend on Copilot cloud agent access and organization or repository settings. The available controls depend on the learner's plan, account, repository, and administrator decisions.
@@ -102,14 +107,17 @@ Review in this order:
 Use the starter files and an approved GitHub Copilot surface.
 
 1. Show the incomplete contract template.
-2. Open the Automations area and create a draft-only automation.
+2. Open **Automations** and create a manual, local, draft-only automation.
 3. Grant the minimum GitHub read tools.
-4. Run the automation once against the training repository and synthetic inputs.
-5. Export or record the run evidence.
-6. Compare the draft with `lab/solution/run-output.md`.
-7. Record the decision and calculate useful time saved.
+4. Run it against the first input version.
+5. Review the exception for the missing owner.
+6. Apply `lab/starter/approved-input-change.md`.
+7. Run the same automation again.
+8. Compare both evidence packets and record the decision.
 
-Run one automation test only after the access, policy, data, and meter preflight passes. Stop after 12 minutes. If a stop condition fires, preserve the evidence and record **Pause**.
+Run only the two approved manual tests after preflight. Stop either run after
+12 minutes. If a stop condition fires, preserve the evidence and record
+**Pause**.
 
 ## Useful time saved
 
@@ -160,4 +168,5 @@ The optional Azure Boards route may prepare a draft update or hand approved impl
 
 ## Lab handoff
 
-Learners submit one automation contract, one GitHub Copilot-reviewed evidence packet, one approval record, and one stakeholder-ready update. The submission must show how GitHub Copilot drafted, inspected, or reviewed the work.
+Learners submit one automation contract, two run evidence packets, one comparison
+and approval record, and one stakeholder-ready update.

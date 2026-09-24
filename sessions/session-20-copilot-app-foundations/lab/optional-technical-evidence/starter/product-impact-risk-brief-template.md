@@ -12,8 +12,8 @@ Write two or three sentences. State who benefits, what changes in their workflow
 
 ## Verified scope
 
-- 
-- 
+-
+-
 
 ## Evidence
 
@@ -37,4 +37,3 @@ State which decisions this brief does not approve and who must review them.
 ## Recommended next action
 
 Name one immediate action, its owner, and the evidence needed to change the decision.
-

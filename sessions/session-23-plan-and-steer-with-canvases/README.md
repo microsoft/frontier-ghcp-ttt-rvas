@@ -10,7 +10,10 @@
 
 ## Overview
 
-Learners use `/create-canvas` to turn the GitHub issue plan from Session 22 into a visible delivery workspace. They review the generated state and actions, remove unnecessary complexity, and keep human and Copilot updates aligned.
+Learners use the built-in `/create-canvas` skill to turn the Session 22 issue plan
+into a visible delivery workspace. They review the generated extension, remove
+unnecessary capabilities, create a real GitHub state change, detect that the
+canvas is stale, and reconcile it.
 
 This is a role-based session. Learners describe and operate the canvas. They do not hand-code the extension.
 
@@ -26,8 +29,9 @@ By the end of this session, learners can:
 3. Create a canvas from a plain-language request.
 4. Review and simplify the generated capabilities.
 5. Load approved GitHub issues into the canvas.
-6. Compare visible state, GitHub state, and Copilot's report.
-7. Record ownership, recovery, and retirement conditions.
+6. Detect drift between visible canvas state and a fresh GitHub read.
+7. Refresh and reconcile the canvas.
+8. Record ownership, refresh, recovery, and retirement conditions.
 
 ## Session structure
 

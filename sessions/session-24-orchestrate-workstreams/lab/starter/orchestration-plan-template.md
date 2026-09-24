@@ -8,7 +8,8 @@
 
 **Shared artifact:** `shared-work-artifact.md`
 
-**Live-use guard:** Maximum ___ child sessions, ___ minutes, and ___ approved meter units.
+**Live-use guard:** Maximum [number] child sessions, [number] minutes, and
+[number] approved meter units.
 
 ## Workstreams
 

@@ -10,7 +10,8 @@
 
 Use a seeded Azure Boards Epic or Feature as the parent objective for the fictional **Service Request Portal**. Azure Boards holds the plan, ownership, and review record. GitHub holds repository work.
 
-**GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser are planning interfaces. They do not replace `/orchestrate` or an approved equivalent.
+**GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser
+are planning interfaces. They do not replace the built-in `/orchestrate` skill.
 
 ## Prerequisites
 
@@ -20,7 +21,7 @@ You need:
 - permission to read and update the seeded child work items;
 - an approved Azure Boards MCP connection or browser access;
 - the work item IDs or seed tag supplied by the trainer;
-- live GitHub Copilot orchestration through `/orchestrate` or an approved equivalent;
+- live GitHub Copilot orchestration through `/orchestrate`;
 - access to the fictional GitHub repository when a selected item requires repository evidence.
 
 ## Required preflight
@@ -28,7 +29,8 @@ You need:
 1. Open the seeded parent and confirm that it is tagged for Session 24 training.
 2. Record the parent ID, process type, starting state, and selected child IDs.
 3. Type `/` in the GitHub Copilot app and confirm that `/orchestrate` is available.
-4. If your organization uses an approved equivalent, confirm that it coordinates live child sessions from one parent objective.
+4. Open **Customize** → **Skills** → **Installed** and confirm the built-in
+   `orchestrate` skill.
 5. Confirm that you can open, steer, and stop those sessions.
 6. Copy `workstream-review-template.md` once for each selected child item.
 7. Set a 30-minute activity limit or a lower approved usage limit.
@@ -75,7 +77,9 @@ Use the project's existing state mapping. Confirm the item ID before every MCP o
 
 Build the parent instruction from the selected work items. Include each item ID, bounded question, approved inputs, required packet, exclusions, and stop condition.
 
-Start the work through `/orchestrate` or the approved equivalent. Confirm that GitHub Copilot created one live child session for each selected item. Add each session link or identifier to its Azure Boards item.
+Start the work through `/orchestrate`. Confirm that GitHub Copilot created one live
+child session for each selected item. Add each session link or identifier to its
+Azure Boards item.
 
 Repository work must name the allowed repository and path. The child session may return evidence or a draft pull request when the contract allows it. It must not close the Boards item, approve a pull request, merge, deploy, or make the release decision.
 

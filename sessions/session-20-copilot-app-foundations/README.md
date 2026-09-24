@@ -10,7 +10,10 @@
 
 ## Overview
 
-This session gives product and delivery teams a practical foundation in the GitHub Copilot app. Learners work with a repository, inspect the available Copilot capabilities, ask grounded questions, and turn the conversation into a durable working brief.
+This session gives product and delivery teams a practical foundation in the GitHub
+Copilot app. Learners compare unscoped and repository-grounded answers, create a
+durable working brief, revise it when approved evidence changes, and verify it in
+a fresh session.
 
 The fictional **Service Request Portal** provides the shared scenario. Learners may use approved, sanitized work from their own team.
 
@@ -24,9 +27,10 @@ By the end of this session, learners can:
 1. Find and use Chats, Projects, My work, Search, Automations, and Customize.
 2. Choose repository, issue, file, or uploaded-document context for a question.
 3. Inspect the skills, agents, MCP servers, and canvases available in their environment.
-4. Ask Copilot to explain unfamiliar work in role-specific language.
-5. Review a proposed Markdown change before accepting it.
-6. Create a working brief that records facts, questions, and the next decision.
+4. Explain how repository context changes the quality and safety of an answer.
+5. Review and revise a proposed Markdown change.
+6. Update a working brief when approved evidence changes.
+7. Verify that a fresh session can recover the intended state from the brief.
 
 ## Session structure
 

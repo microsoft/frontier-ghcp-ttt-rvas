@@ -28,6 +28,90 @@ Programming experience, Git command-line knowledge, and repository administratio
 should not take this track. Stop and reschedule their training after access is
 available.
 
+## Capability setup
+
+Complete this setup before Session 20. Recheck the relevant capability before each
+later session because organizational policy can change what the app exposes.
+
+### 1. Open the training project
+
+1. Sign in to the GitHub Copilot app.
+2. Add or open the approved training repository under **Projects**.
+3. Start an interactive session.
+4. Ask Copilot to read one known file from the repository.
+5. Stop if it cannot read the approved project.
+
+### 2. Inspect installed customizations
+
+Open **Customize**, then **Installed**. Record the available:
+
+- skills;
+- MCP servers;
+- plugins;
+- canvases.
+
+Use only capabilities approved for the training repository.
+
+### 3. Verify skills
+
+Sessions 23 and 24 use the built-in `/create-canvas` and `/orchestrate` skills.
+Type `/` in a session and confirm that both commands appear before those sessions.
+They are built-in app skills, so do not install look-alike community skills.
+
+Session 21 supplies a project skill under
+`.github/skills/decision-interview/SKILL.md`. After copying it into the training
+repository:
+
+1. commit the skill;
+2. open a new app session for the project;
+3. open **Customize** → **Skills** → **Installed**;
+4. confirm that `decision-interview` appears;
+5. run `/decision-interview` with a short test request.
+
+Copilot CLI users can verify the same project skill with:
+
+```text
+/skills reload
+/skills info decision-interview
+```
+
+### 4. Verify GitHub MCP
+
+Sessions 22–25 require GitHub repository tools.
+
+In the app:
+
+1. open **Customize** → **MCP** → **Installed**;
+2. confirm that the approved GitHub MCP connection is available;
+3. start a session and ask Copilot to list the available GitHub tools;
+4. test one read against the training repository;
+5. do not continue to a write lab until the read succeeds.
+
+GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
+
+```text
+/mcp list
+/mcp show github
+```
+
+If an additional MCP server is required, install it through **Customize** → **MCP**
+or `/mcp add` using the organization-approved server definition. Do not paste
+personal access tokens into prompts or repository files.
+
+### 5. Verify session-specific capabilities
+
+| Session | Required capability |
+| --- | --- |
+| 20 | App project and repository reads |
+| 21 | Project skill `decision-interview` |
+| 22 | GitHub MCP issue reads and writes |
+| 23 | Built-in `/create-canvas` and GitHub MCP reads |
+| 24 | Built-in `/orchestrate`, child-session steering, and GitHub MCP |
+| 25 | Automations and GitHub MCP |
+
+When a required capability is unavailable, stop that lab. Do not replace a live
+capability with role-play or claim that a static artifact proves the workflow ran.
+
 ## Optional Azure Boards route
 
 Azure Boards is an optional system-of-record route. **GitHub Copilot remains the learning focus.** Learners use Copilot for interviewing, planning, delegation, review, and automation while Azure Boards retains approved backlog state.
@@ -110,12 +194,12 @@ The supplied scenario covers every exercise when learners cannot use their own m
 
 By completing this track, learners will be able to:
 
-1. Work confidently in the GitHub Copilot app with repository context.
-2. Turn an interview into a reviewed Markdown decision brief.
-3. Use GitHub MCP to create and verify an approved issue plan.
-4. Create a planning canvas and keep it aligned with GitHub state.
-5. Split a parent objective into bounded workstreams and review each result.
-6. Run one draft-only Automation with explicit evidence and stop conditions.
+1. Compare unscoped and repository-grounded Copilot work.
+2. Install and use a project skill to create and revise a decision brief.
+3. Use GitHub MCP to preview, create, verify, and correct an issue plan.
+4. Create a planning canvas and reconcile it after GitHub state changes.
+5. Use built-in orchestration to supervise, redirect, and review child sessions.
+6. Run and compare two draft-only Automation runs with explicit evidence.
 7. Decide whether GitHub or Azure Boards remains the authoritative planning system.
 
 ## Trainer guidance

@@ -125,13 +125,28 @@ The artifact must make sense without the chat history.
 
 ---
 
+# Evidence changes the brief
+
+```text
+Initial source
+  → first brief
+  → approved late evidence
+  → focused revision
+  → fresh-session verification
+```
+
+The brief is useful only when it stays aligned with approved evidence.
+
+---
+
 # Lab
 
 1. Open the repository as a Copilot project.
 2. Inspect the available capabilities.
-3. Question the initiative.
-4. Create the working brief.
-5. Review the proposed change.
-6. Ask Copilot to verify the saved artifact.
+3. Compare an unscoped answer with a grounded answer.
+4. Create and commit the working brief.
+5. Apply approved late evidence.
+6. Review and commit the focused revision.
+7. Verify the brief in a fresh session.
 
 **Stop if the app or repository context is unavailable.**

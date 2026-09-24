@@ -10,7 +10,10 @@
 
 ## Overview
 
-Learners turn an approved decision brief into a reviewable GitHub issue plan. They use the GitHub MCP server to inspect the repository, propose an issue hierarchy, create approved issues, and verify the result.
+Learners turn an approved decision brief into a GitHub issue hierarchy. They
+verify the GitHub MCP connection, inspect existing repository state, preview the
+complete write, create the approved issues, retrieve them in a fresh request, and
+apply one reviewed correction.
 
 This session teaches safe tool use for non-developers. It does not teach MCP server development.
 
@@ -27,6 +30,7 @@ By the end of this session, learners can:
 4. Review issue titles, descriptions, acceptance criteria, dependencies, and ownership.
 5. Approve a GitHub write operation only after checking its target and arguments.
 6. Retrieve the created issues and compare them with the approved plan.
+7. Preview, apply, and verify a focused correction.
 
 ## Session structure
 

@@ -1,132 +1,175 @@
-# Session 22 Lab: Create and Verify a GitHub Issue Plan
+# Session 22 Lab: Create, Verify, and Correct a GitHub Issue Plan
 
-**Duration:** 2 hours  
+**Duration:** 2 hours
+
 **Difficulty:** Intermediate
 
-## Objective
+**Deliverable:** A live GitHub issue hierarchy created through MCP, verified by a
+fresh read, and corrected through a second approved write
 
-Use the GitHub Copilot app and GitHub MCP to turn an approved decision brief into real, reviewed GitHub issues.
+## Deliverables
 
-## Required preflight
+- the live parent and child issues;
+- two fresh-read verification records;
+- the corrected issue;
+- a completed handoff record.
 
-**Access policy:** GitHub Copilot app access, the approved GitHub MCP connection, and issue-write access to the training repository are required.
+## What you will learn
 
-1. Open the GitHub Copilot app and the training repository project.
-2. Confirm that the approved GitHub MCP server is available.
-3. Confirm read and issue-creation access to the training repository.
-4. Record the repository owner and name in `starter/write-review-template.md`.
-5. Set a limit of one parent issue and no more than five child issues.
-6. Use only the supplied synthetic brief or approved, sanitized work.
+You will verify the GitHub MCP connection, inspect existing repository state,
+preview a complete write, create an issue hierarchy, retrieve it in a fresh
+request, and correct one issue without bypassing review.
 
-> [!IMPORTANT]
-> **Stop if required access is missing.** Resolve GitHub MCP, repository access, write review, or verification before continuing. A Markdown-only issue list does not complete this lab.
-
-## Time plan
-
-| Phase | Work | Time |
+| Part | Work | Time |
 | --- | --- | --- |
-| 1 | Read the brief and inspect GitHub | 25 min |
-| 2 | Propose and review the issue plan | 35 min |
-| 3 | Create the approved issues | 30 min |
-| 4 | Verify and correct the result | 20 min |
-| 5 | Record the handoff | 10 min |
+| 1 | Verify GitHub MCP and write access | 15 min |
+| 2 | Read the source and existing GitHub state | 20 min |
+| 3 | Design and review the issue hierarchy | 30 min |
+| 4 | Preview and create the issues | 30 min |
+| 5 | Verify and correct one issue | 15 min |
+| 6 | Record the handoff | 10 min |
 
-## Phase 1: read the brief and inspect GitHub
+## Preflight
 
-Give Copilot `starter/approved-decision-brief.md`.
+Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Ask it to:
+Confirm GitHub Copilot access before starting. If GitHub Copilot access is
+unavailable, stop and do not continue.
 
-1. summarize the approved outcome and non-goals;
-2. identify acceptance evidence and owners;
-3. inspect the target repository through GitHub MCP;
-4. list relevant existing labels;
-5. search for overlapping open issues.
+## Part 1: Verify GitHub MCP and write access (15 minutes)
 
-Record the read tools used and any duplicate risk.
+In the GitHub Copilot app:
 
-## Phase 2: propose and review the issue plan
+1. open **Customize** → **MCP** → **Installed**;
+2. confirm that the approved GitHub MCP connection is available;
+3. start a session for the training repository;
+4. ask Copilot to list the GitHub tools it can use;
+5. ask it to retrieve the repository name and five open issues;
+6. confirm that you have issue-write permission.
 
-Copy `starter/issue-plan-template.md`.
+GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
+
+```text
+/mcp list
+/mcp show github
+```
+
+If the approved connection is missing from the app, use **Customize** → **MCP** to
+install or configure the organization-approved server. Do not paste a token into a
+prompt or repository file.
+
+Stop if the read test or issue-write check fails.
+
+## Part 2: Read the source and existing GitHub state (20 minutes)
+
+Attach the approved Session 21 decision brief and issue proposal. Use
+`starter/approved-decision-brief.md` when those artifacts are unavailable.
+
+Ask Copilot to:
+
+1. summarize the approved outcome, non-goals, acceptance evidence, and owners;
+2. retrieve available labels and milestones;
+3. search open and closed issues for overlapping work;
+4. report every GitHub MCP read it used;
+5. identify any decision in the proposal that is absent from the brief.
+
+Record the read evidence and duplicate risk in
+`starter/write-review-template.md`.
+
+**Checkpoint:** No issue is proposed until the source and existing repository state
+have both been read.
+
+## Part 3: Design and review the issue hierarchy (30 minutes)
+
+Copy `starter/issue-plan-template.md` into your working folder.
 
 Ask Copilot to propose:
 
 - one parent issue for the approved outcome;
 - three to five child issues with independently reviewable results;
-- dependencies between child issues;
+- dependencies and parallel work;
 - acceptance criteria and non-goals;
-- ownership gaps;
-- a link or path to the decision brief.
+- source links to the decision brief;
+- ownership gaps left unassigned.
 
-Do not create anything yet.
+Review the plan before any write.
 
-Review the plan. Reject any issue that:
+Reject or revise an issue that:
 
-- mixes unrelated outcomes;
-- repeats an existing open issue;
+- combines unrelated outcomes;
+- duplicates existing work;
 - has no observable acceptance evidence;
-- invents an assignee, label, milestone, or due date;
-- includes work excluded by the brief.
+- invents an assignee, label, milestone, or date;
+- includes work excluded by the decision brief.
 
-## Phase 3: create the approved issues
+**Checkpoint:** Every child issue traces to a decision and can be reviewed
+independently.
 
-Complete `starter/write-review-template.md`.
+## Part 4: Preview and create the issues (30 minutes)
 
-Ask Copilot to show the full proposed write:
+Complete the proposed-write section in `starter/write-review-template.md`.
+
+Send:
 
 ```text
-Before using any GitHub write tool, show the repository owner and name, issue
-count, title and body for every issue, labels, milestone, relationships, and
-every field you will leave unset. Wait for my approval.
+Before using a GitHub write tool, show the repository owner and name, issue count,
+full title and body for every issue, labels, milestone, parent-child references,
+dependencies, and every field left unset. Wait for my approval.
 ```
 
-Record **Approve**, **Revise**, or **Reject**.
+Compare the preview with the issue plan. Record **Approve**, **Revise**, or
+**Reject**.
 
-After approval, ask Copilot to create the issues through GitHub MCP. Save the returned issue numbers and URLs in the write review.
+After approval, ask Copilot to create the issues through GitHub MCP. Save each
+returned issue number and URL.
 
-## Phase 4: verify and correct
+**Checkpoint:** The write result contains one parent and no more than five child
+issues in the approved repository.
 
-Start a fresh request. Ask Copilot to retrieve the created issues through GitHub MCP.
+## Part 5: Verify and correct one issue (15 minutes)
 
-Compare the retrieved issues with the approved plan:
+Start a new Copilot request. Do not reuse the create response.
 
-- titles;
-- descriptions;
-- acceptance criteria;
-- non-goals;
-- labels;
-- relationships;
+Ask Copilot to retrieve the created issues through GitHub MCP. Compare the fresh
+state with the approved plan:
+
+- title and body;
+- acceptance criteria and non-goals;
+- labels and milestone;
+- source links and relationships;
 - ownership fields.
 
-Choose one safe correction. Preview and approve the update, then retrieve the issue again.
+Choose one child issue and add a missing verification section:
 
-## Phase 5: record the handoff
+```text
+Verification owner: Delivery reviewer
+Source decision: docs/discovery/request-status-decision-brief.md
+```
+
+Require a full update preview. Approve the focused write, then retrieve the issue
+again and confirm the new section is present.
+
+**Checkpoint:** A fresh read proves that both the original create and the correction
+reached GitHub.
+
+## Part 6: Record the handoff (10 minutes)
 
 Record:
 
 - the parent issue;
 - child issue numbers;
+- dependency order;
 - unresolved ownership;
-- the next planning action;
-- the learner who verified the write.
+- the corrected issue and verification evidence;
+- the issue set that Session 23 must load.
 
-Session 23 uses this issue set in a planning canvas.
+## Verification
 
-## Deliverables
-
-1. One reviewed issue plan.
-2. One completed write-review record.
-3. One parent GitHub issue and three to five child issues.
-4. Fresh-read verification evidence.
-5. One reviewed correction.
-
-## Completion checklist
-
-- [ ] GitHub MCP and repository access passed preflight.
-- [ ] Existing issues were checked before creation.
-- [ ] The complete write was reviewed before approval.
-- [ ] The write stayed within the issue-count guard.
-- [ ] Created issues match the approved brief.
-- [ ] A fresh GitHub read verified the result.
-- [ ] One correction followed the same preview and verification pattern.
+- [ ] GitHub MCP read and write access passed.
+- [ ] Existing issues were searched before creation.
+- [ ] The complete write was previewed before approval.
+- [ ] Created issues match the approved decision brief.
+- [ ] A fresh read verified the created state.
+- [ ] A second preview, write, and fresh read verified the correction.
+- [ ] No invented owner, date, label, or milestone was added.
 - [ ] No customer or source organization names appear.

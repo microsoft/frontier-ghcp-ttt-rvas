@@ -1,121 +1,175 @@
-# Session 23 Lab: Create a Delivery-Planning Canvas
+# Session 23 Lab: Build, Drift, and Reconcile a Planning Canvas
 
 **Duration:** 2 hours
+
 **Difficulty:** Intermediate
 
-## Objective
+**Deliverable:** A project-scoped planning canvas that detects and reconciles a
+real GitHub state change
 
-Create a live planning canvas from the Session 22 GitHub issues, review its capabilities, and use it to steer delivery work.
+## Deliverables
 
-## Required preflight
+- the generated and reviewed canvas extension;
+- the live planning canvas;
+- one controlled GitHub state change;
+- the completed reconciliation record.
 
-**Access policy:** GitHub Copilot app access, `/create-canvas`, GitHub MCP reads, and the required canvas actions are required.
+## What you will learn
 
-1. Open the GitHub Copilot app.
-2. Confirm that `/create-canvas` is available.
-3. Confirm that GitHub MCP can retrieve the Session 22 issues.
-4. Name the canvas owner and reviewer.
-5. Set a boundary: the canvas may not close issues, change assignees, or publish updates.
+You will use the official `/create-canvas` skill, review the generated extension,
+load live issue state through GitHub MCP, create a controlled state change in
+GitHub, detect that the canvas is stale, and reconcile it.
 
-> [!IMPORTANT]
-> **Stop if required access is missing.** Resolve the app, canvas creation, GitHub reads, or required action access before continuing.
-
-## Time plan
-
-| Phase | Work | Time |
+| Part | Work | Time |
 | --- | --- | --- |
-| 1 | Define the canvas | 20 min |
-| 2 | Create and simplify it | 35 min |
-| 3 | Load issues and update state | 30 min |
-| 4 | Verify and review | 25 min |
-| 5 | Record ownership | 10 min |
+| 1 | Verify canvas and MCP capabilities | 15 min |
+| 2 | Define the minimum canvas contract | 20 min |
+| 3 | Create and simplify the canvas | 30 min |
+| 4 | Load and operate live issue state | 25 min |
+| 5 | Create and detect state drift | 15 min |
+| 6 | Reconcile and record ownership | 15 min |
 
-## Phase 1: define the canvas
+## Preflight
+
+Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
+
+Confirm GitHub Copilot access before starting. If GitHub Copilot access is
+unavailable, stop and do not continue.
+
+## Part 1: Verify canvas and MCP capabilities (15 minutes)
+
+1. Open a GitHub Copilot app session for the training repository.
+2. Type `/` and confirm that `/create-canvas` appears.
+3. Open **Customize** → **Canvas** and inspect installed canvases.
+4. Open **Customize** → **MCP** → **Installed** and confirm GitHub MCP.
+5. Ask Copilot to retrieve the Session 22 parent issue and child issues.
+
+`/create-canvas` is a built-in app skill. Do not install a community replacement.
+Stop if the skill or GitHub reads are unavailable.
+
+## Part 2: Define the minimum canvas contract (20 minutes)
 
 Complete `starter/canvas-requirements.md`.
 
-Keep only the fields and actions needed to answer:
+The canvas must answer:
 
-- What are we trying to deliver?
-- Which issues are active, blocked, or ready for review?
+- What outcome are we delivering?
+- Which issues are planned, active, blocked, or ready for review?
 - Who owns the next action?
 - Which dependency or risk needs attention?
-- Which decision changed the plan?
+- When did GitHub state last refresh?
 
-## Phase 2: create and simplify the canvas
+Allow only these actions:
 
-Use `/create-canvas` with the approved requirements.
+- refresh issue state from GitHub;
+- change planning status in the canvas;
+- record a risk or decision;
+- assign the next planning action.
 
-Review the generated canvas before using it:
+The canvas must not close issues, change assignees, or publish comments.
 
-- remove fields that do not support a decision;
-- remove actions that exceed the lab boundary;
-- confirm that Copilot can read and update the approved state;
-- record the final capabilities in `starter/canvas-review-record.md`.
+**Checkpoint:** Every field and action supports a named planning decision.
 
-Do not accept a complex canvas because it looks impressive.
+## Part 3: Create and simplify the canvas (30 minutes)
 
-## Phase 3: load issues and update state
+Run:
 
-Ask Copilot to retrieve the Session 22 parent and child issues through GitHub MCP.
+```text
+/create-canvas
 
-Load:
+Create a project-scoped delivery-planning canvas from
+@starter/canvas-requirements.md. Store it under .github/extensions. It must show
+the parent outcome, child issues, planning status, GitHub state, owner, dependency,
+risk, next action, and last refresh. It may read GitHub state but must not write
+to GitHub.
+```
+
+The agent should create the extension and open it in the side panel.
+
+Review:
+
+- the files created under `.github/extensions`;
+- the visible fields and actions;
+- the capabilities exposed to Copilot;
+- any package or dependency added by the extension.
+
+Ask Copilot to remove generated state or actions that exceed the approved contract.
+Record each keep, change, or remove decision in
+`starter/canvas-review-record.md`.
+
+**Checkpoint:** The canvas is smaller after review and contains no GitHub write
+action.
+
+## Part 4: Load and operate live issue state (25 minutes)
+
+Ask Copilot to retrieve the Session 22 issues through GitHub MCP and load:
 
 - issue number and title;
-- current GitHub state;
+- GitHub state;
 - planning status;
 - owner or ownership gap;
 - dependency;
-- next action.
+- next action;
+- retrieval time.
 
 Then:
 
-1. change one planning status through visible controls;
-2. ask Copilot to update a different planning status;
-3. record one risk;
-4. record one decision with owner and reason;
-5. ask Copilot for a concise current summary.
+1. change one planning status through the visible canvas controls;
+2. ask Copilot to change another planning status through a canvas capability;
+3. add one risk with an owner;
+4. add one decision with a reason;
+5. ask Copilot for a current canvas summary.
 
-## Phase 4: verify and review
+Compare the visible state with Copilot's summary.
 
-Compare:
+## Part 5: Create and detect state drift (15 minutes)
 
-- the visible canvas;
-- Copilot's summary;
-- a fresh GitHub MCP read.
+Choose one child issue. Through GitHub MCP, preview this comment:
 
-Record each mismatch. A planning status may differ from the GitHub issue state, but the canvas must label that difference clearly.
+```text
+Planning update: waiting for a product-owner decision on the public status
+vocabulary. Do not start implementation until the decision brief is updated.
+```
 
-A peer records **Approve**, **Revise**, or **Pause**.
+Approve the comment, then retrieve the issue in a fresh request.
 
-## Phase 5: record ownership
+Do not refresh the canvas yet. Ask Copilot to compare:
 
-Complete:
+- the current visible canvas;
+- the fresh GitHub issue;
+- the canvas's last-refresh time.
+
+Record the mismatch. The canvas should now be visibly stale.
+
+## Part 6: Reconcile and record ownership (15 minutes)
+
+Use the canvas refresh action or ask Copilot to call the approved refresh
+capability.
+
+Confirm that:
+
+- the issue's planning status reflects the new blocker;
+- the next action names the product-owner decision;
+- the GitHub state and planning state remain distinct;
+- the last-refresh time changed.
+
+Complete the ownership section:
 
 - artifact owner;
 - reviewer;
+- refresh procedure;
 - recovery procedure;
 - retirement trigger;
 - next safe action.
 
-## Deliverables
+## Verification
 
-1. A live learner-created planning canvas.
-2. A completed canvas review record.
-3. Loaded GitHub issue state.
-4. One visible update and one Copilot-requested update.
-5. A peer decision.
-
-## Completion checklist
-
-- [ ] `/create-canvas` was used.
-- [ ] Unnecessary state or actions were removed.
-- [ ] GitHub issues came from a live MCP read.
-- [ ] External writes remain outside the canvas boundary.
-- [ ] Visible state, Copilot's report, and GitHub state were compared.
-- [ ] Mismatches are explained or resolved.
-- [ ] Owner, recovery, and retirement are recorded.
-
-## Optional prepared-canvas exercise
-
-Use [`optional-prepared-canvas/`](optional-prepared-canvas/) for an additional release-readiness and guardrail exercise.
+- [ ] `/create-canvas` created a project-scoped extension.
+- [ ] Generated files and capabilities were reviewed.
+- [ ] Unnecessary state and actions were removed.
+- [ ] Live GitHub issues were loaded through MCP.
+- [ ] One visible and one agent-requested canvas update succeeded.
+- [ ] A reviewed GitHub change made the canvas stale.
+- [ ] A fresh read detected the mismatch.
+- [ ] Refresh reconciled the canvas without hiding the source difference.
+- [ ] Owner, recovery, refresh, and retirement rules are recorded.

@@ -920,11 +920,11 @@ Learners open the GitHub Copilot app, choose repository context, inspect the cap
 
 **Lab Outline (2 hours):**
 
-- Open the training repository as a Copilot project
-- Ask grounded questions about the Service Request Portal initiative
-- Inspect available Customize capabilities
-- Create and review a Markdown working brief
-- **Deliverable:** A reviewed Copilot working brief
+- Compare an unscoped answer with a repository-grounded answer
+- Create and commit a sourced working brief
+- Apply approved late evidence through a focused revision
+- Verify the saved brief in a fresh Copilot session
+- **Deliverable:** A revised working brief with context comparison and fresh-session verification
 
 ---
 
@@ -946,12 +946,13 @@ Learners run a decision-tree interview in the GitHub Copilot app. They turn appr
 
 **Lab Outline (2 hours):**
 
-- Run the Copilot interview
-- Create `docs/discovery/request-status-decision-brief.md`
-- Review the proposed file change
-- Draft and peer-review the GitHub issue proposal
+- Install and verify the supplied `decision-interview` project skill
+- Run a dependency-ordered Copilot interview
+- Create the decision brief and issue proposal
+- Reopen one decision branch after a late visibility constraint
+- Verify the revised artifacts in a fresh session
 - Optionally shape a seeded Azure Boards requirement through the [Session 21 companion](sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
-- **Deliverable:** An approved decision brief and issue proposal
+- **Deliverable:** An installed project skill, revised decision brief, aligned issue proposal, and readiness result
 
 ---
 
@@ -977,8 +978,8 @@ Learners use the GitHub MCP server to inspect existing work, propose an issue hi
 - Search for duplicate issues and approved labels
 - Plan one parent issue and three to five child issues
 - Review and approve the complete GitHub write
-- Retrieve the issues and correct one defect
-- **Deliverable:** A live, verified GitHub issue plan
+- Retrieve the issues, apply one reviewed correction, and verify it through another fresh read
+- **Deliverable:** A live issue hierarchy with create and correction evidence
 
 ---
 
@@ -1004,8 +1005,9 @@ Learners create a planning canvas from a plain-language request, load the Sessio
 - Create and simplify the canvas
 - Load issues through GitHub MCP
 - Make one visible update and one Copilot-requested update
-- Compare the canvas, Copilot report, and GitHub state
-- **Deliverable:** A learner-created planning canvas and review record
+- Create a controlled GitHub state change and detect that the canvas is stale
+- Refresh and reconcile the visible planning state
+- **Deliverable:** A planning canvas with drift and reconciliation evidence
 
 ---
 
@@ -1029,10 +1031,10 @@ Learners select independent work from the issue plan and canvas, start child ses
 
 - Select workstreams from the approved issues
 - Run live GitHub Copilot orchestration
-- Accept, revise, or reject each result
+- Wait, redirect, stop, accept, or reject live child-session work
 - Update the canvas and relevant GitHub issue
 - Optionally use the [Session 24 Azure Boards route](sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md)
-- **Deliverable:** An orchestration plan, reviewed results, and verified plan updates
+- **Deliverable:** An orchestration plan, intervention record, reviewed result packets, and verified plan updates
 
 ---
 
@@ -1055,11 +1057,12 @@ Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Aut
 **Lab Outline (2 hours):**
 
 - Create the automation contract
-- Configure and run one Automation
-- Review the run evidence
-- Record keep, revise, disable, or pause
+- Configure a manual, draft-only Automation
+- Run it against the first approved input version
+- Apply an approved source change and run the same Automation again
+- Compare both evidence packets and record keep, revise, disable, or pause
 - Produce a stakeholder update and work-system handoff
-- **Deliverable:** A reviewed Automation run and system-of-record decision
+- **Deliverable:** Two reviewed Automation runs and a system-of-record decision
 
 ---
 

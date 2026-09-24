@@ -14,7 +14,9 @@
 
 This session teaches managers and delivery leads to run live GitHub Copilot orchestration. Learners select work from the approved GitHub issue plan and planning canvas, split one objective into independent workstreams, guide child sessions, review evidence, and make the final decision.
 
-**GitHub Copilot orchestration access is required.** Learners need `/orchestrate` or an approved equivalent that creates and coordinates live child sessions. There is no manual, prepared-result, offline, or no-access route.
+**GitHub Copilot orchestration access is required.** Learners need the built-in
+`/orchestrate` skill, which creates and coordinates child sessions. There is no
+manual, prepared-result, offline, or no-access route.
 
 Azure Boards can hold planning state through MCP or the browser. GitHub Copilot must still perform the orchestration.
 
@@ -54,7 +56,9 @@ The Azure Boards companion uses a seeded Service Request Portal Epic or Feature 
 
 ## Required preflight
 
-Before the session, type `/` in the GitHub Copilot app and confirm that `/orchestrate` is available. An organization may approve an equivalent orchestration entry point if it creates and coordinates live child sessions with the same controls.
+Before the session, open **Customize** → **Skills** → **Installed**, confirm the
+built-in `orchestrate` skill, then type `/` in a session and confirm that
+`/orchestrate` is available.
 
 **Stop if orchestration is unavailable.** Resolve the license, policy, client, repository, or command-access issue before the learner starts the lab. `/spawn` by itself does not meet the requirement because this session teaches parent-led orchestration across workstreams.
 

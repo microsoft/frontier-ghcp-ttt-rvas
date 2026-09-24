@@ -54,13 +54,15 @@ Use the lowest level that still saves useful time.
 
 ---
 
-# Create one draft-only automation
+# Create one manual, draft-only automation
 
 - Retrieve approved issue state.
 - Read the synthetic delivery inputs.
 - Draft the weekly update.
 - Return run evidence.
 - Do not publish or change work items.
+
+Use a **Manual** trigger and keep **Run in cloud** off for the local-file lab.
 
 ---
 
@@ -92,6 +94,34 @@ The lab workflow is **A1: Draft**. It cannot publish or change source records.
 One source record has no owner. The run must exclude it, explain why, and name the escalation path.
 
 Silently repairing or dropping a record fails the contract.
+
+---
+
+# Rerun after an approved input change
+
+```text
+Run 1
+  → exclude SR-1048: missing owner
+  → review evidence
+  → apply approved source update
+  → run the same automation again
+  → compare evidence
+```
+
+The automation boundary stays fixed. Only the approved input changes.
+
+---
+
+# Compare the two runs
+
+| Check | Run 1 | Run 2 |
+| --- | --- | --- |
+| Accepted records | 7 | 8 |
+| Rejected records | 1 | 0 |
+| Blocked records | 1 | 2 |
+| Prohibited writes | 0 | 0 |
+
+The second run must explain why the record changed classification.
 
 ---
 
@@ -156,8 +186,10 @@ Check the current official documentation before delivery. Do not promise access 
 # Lab deliverable
 
 1. Automation contract
-2. GitHub Copilot-reviewed evidence packet
-3. Approval record
+2. Two reviewed evidence packets
+3. Run comparison and approval record
 4. Stakeholder-ready update
+5. System-of-record decision
 
-Run one live draft-only automation. Review its evidence, then choose **keep**, **revise**, or **disable**.
+Run the same draft-only automation twice. Review both results, then choose
+**keep**, **revise**, **disable**, or **pause**.

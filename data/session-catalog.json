@@ -185,7 +185,7 @@
       "slug": "session-20-copilot-app-foundations",
       "module": "7",
       "title": "Work Effectively in the GitHub Copilot App",
-      "description": "Use repository context, inspect available Copilot capabilities, and create a reviewed working brief.",
+      "description": "Compare unscoped and grounded answers, revise a repository working brief when evidence changes, and verify it in a fresh session.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -194,7 +194,7 @@
       "slug": "session-21-interview-and-shape-work",
       "module": "7",
       "title": "Interview Ideas and Shape Better Work",
-      "description": "Use a decision-tree interview to turn an unclear request into a decision brief, structured work item, and testable acceptance criteria.",
+      "description": "Install a project interview skill, shape an unclear request, reopen affected decisions when constraints change, and verify the resulting brief.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -203,7 +203,7 @@
       "slug": "session-22-plan-work-with-github-issues",
       "module": "7",
       "title": "Plan Work with GitHub Issues and MCP",
-      "description": "Turn an approved decision brief into real, reviewed GitHub issues through the GitHub MCP server.",
+      "description": "Use GitHub MCP to inspect existing work, preview and create an issue hierarchy, then verify and correct it through fresh reads.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -212,7 +212,7 @@
       "slug": "session-23-plan-and-steer-with-canvases",
       "module": "7",
       "title": "Build and Use a Planning Canvas",
-      "description": "Create a planning canvas, load approved GitHub issues, and keep visible state aligned with Copilot and GitHub.",
+      "description": "Create and simplify a planning canvas, detect drift from live GitHub state, and reconcile the visible planning projection.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -221,7 +221,7 @@
       "slug": "session-24-orchestrate-workstreams",
       "module": "7",
       "title": "Orchestrate Agents and Workstreams",
-      "description": "Split a parent objective into bounded workstreams, supervise child sessions, and update the approved plan.",
+      "description": "Use the built-in orchestrate skill to supervise child sessions, redirect weak work, and consolidate only accepted evidence.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -230,7 +230,7 @@
       "slug": "session-25-automate-delivery-follow-up",
       "module": "7",
       "title": "Automate Delivery Follow-up and Connect Work Systems",
-      "description": "Run one draft-only Copilot Automation and decide whether GitHub or Azure Boards remains authoritative.",
+      "description": "Create a manual draft-only Automation, compare two runs after an approved input change, and make a system-of-record decision.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     }

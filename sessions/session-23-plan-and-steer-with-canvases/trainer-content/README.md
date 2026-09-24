@@ -4,7 +4,9 @@
 
 ## Delivery objective
 
-Learners create a useful planning canvas from a plain-language request. They should understand the state, actions, and ownership well enough to reject unnecessary or unsafe capabilities.
+Learners create a project-scoped planning canvas, review the generated extension,
+and learn that a canvas is a projection of GitHub state rather than the source of
+record.
 
 ## One-hour plan
 
@@ -14,13 +16,15 @@ Learners create a useful planning canvas from a plain-language request. They sho
 | 0:08-0:18 | Translate the issue plan into canvas requirements |
 | 0:18-0:32 | Create the canvas with `/create-canvas` |
 | 0:32-0:43 | Review state, actions, and boundaries |
-| 0:43-0:53 | Load GitHub issues and verify updates |
+| 0:43-0:53 | Create drift and reconcile the canvas |
 | 0:53-1:00 | Explain ownership and launch the lab |
 
 ## Required preflight
 
 - Confirm that every learner has the GitHub Copilot app.
 - Confirm that `/create-canvas` is available.
+- Open **Customize** → **Skills** → **Installed** and show that `create-canvas` is
+  a built-in skill.
 - Confirm that the learner can read the Session 22 issues through GitHub MCP.
 - Use a training repository and synthetic issue data.
 - Name the canvas owner and reviewer.
@@ -86,20 +90,22 @@ Check:
 5. Can the owner recover after an interrupted update?
 6. Is there a clear reason to retire the canvas?
 
-## Demo update
+## Demo update and drift
 
 1. Ask Copilot to retrieve the Session 22 issues through GitHub MCP.
 2. Load the approved issue fields into the canvas.
 3. Change one status through the visible controls.
 4. Ask Copilot to record one decision.
-5. Read the GitHub issue and canvas state again.
-6. Explain any intentional difference between planning state and repository state.
+5. Add the lab's reviewed blocker comment to one GitHub issue through MCP.
+6. Read the issue again without refreshing the canvas.
+7. Show the mismatch and last-refresh time.
+8. Refresh the canvas and verify the blocker and next action.
 
 ## Optional prepared route
 
 The previous release-readiness canvas exercise remains in `lab/optional-prepared-canvas/`. Use it when the audience needs deeper guardrail practice after creating the main canvas.
 
-## Product notes verified September 23, 2026
+## Product notes verified September 24, 2026
 
 Check current canvas availability, `/create-canvas`, Customize controls, capability review, and persistence behavior before delivery.
 

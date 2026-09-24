@@ -10,7 +10,10 @@
 
 ## Overview
 
-Vague requests hide decisions. Learners use the GitHub Copilot app to run a decision-tree interview, review its recommendations, and turn approved answers into a durable decision brief and issue proposal.
+Vague requests hide decisions. Learners install a supplied project skill, use it
+to run a dependency-ordered decision interview, turn approved answers into a
+decision brief and issue proposal, then reopen one branch when a late constraint
+arrives.
 
 Learners may use an approved, sanitized request from their own work. The fictional Service Request Portal is the supplied training scenario.
 
@@ -21,19 +24,23 @@ Learners may use an approved, sanitized request from their own work. The fiction
 
 By the end of this session, learners will be able to:
 
-- Run the `grill-me` or `grilling` interview pattern with GitHub Copilot.
+- Install and verify the supplied `decision-interview` project skill.
+- Run a dependency-ordered interview with GitHub Copilot.
 - Ask only questions whose prerequisites are settled.
 - Resolve scope, constraints, success, failure, ownership, and approval.
 - Review Copilot recommendations before accepting or revising them.
 - Create a reviewed Markdown decision brief in the repository.
 - Draft an issue proposal with testable acceptance criteria and a practical definition of done.
+- Reopen only the decisions affected by new evidence.
+- Verify that the revised brief and issue proposal remain aligned.
 - Assign an owner and reviewer before work enters a sprint.
 
 ## Session flow
 
 ```text
 Vague request
-  -> GitHub Copilot decision-tree interview
+  -> project skill installation
+  -> GitHub Copilot decision interview
   -> human review and decisions
   -> Markdown decision brief
   -> GitHub issue proposal
@@ -64,6 +71,7 @@ Learners with an approved training project may shape a seeded Azure Boards requi
 ## Boundaries
 
 - Teach the interview pattern, not skill authoring.
+- Use the supplied project skill; learners do not author a new skill in this session.
 - Use only approved, sanitized material.
 - Treat Copilot questions, recommendations, and drafts as proposals.
 - Keep product and approval decisions with named people.

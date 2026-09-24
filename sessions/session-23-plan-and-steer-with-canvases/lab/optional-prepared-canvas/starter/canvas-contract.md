@@ -36,7 +36,7 @@ The live prepared canvas is authoritative during the lab. `release-state.json` s
 4. Record or revise a risk.
 5. Record or revise a decision.
 6. Change a gate after reviewing evidence.
-7. Record ownership and the peer review result.
+7. Record ownership and the review result.
 
 ## Copilot actions
 

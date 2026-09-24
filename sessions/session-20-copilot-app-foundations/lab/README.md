@@ -1,110 +1,178 @@
-# Session 20 Lab: Build a Copilot Working Brief
+# Session 20 Lab: Build and Verify a Grounded Working Brief
 
-**Duration:** 2 hours  
+**Duration:** 2 hours
+
 **Difficulty:** Beginner
 
-## Objective
+**Deliverable:** A repository working brief that a fresh Copilot session can use
+without the original chat
 
-Use the GitHub Copilot app to understand one initiative, inspect the available capabilities, and create a reviewed Markdown working brief.
+## What you will learn
 
-## Required preflight
+You will see how project context changes Copilot's answer, turn sourced information
+into a durable brief, update that brief when new evidence arrives, and verify it in
+a fresh session.
 
-**Access policy:** GitHub Copilot app access and repository project access are required.
-
-1. Sign in to the GitHub Copilot app.
-2. Open the training repository as a project.
-3. Start a chat and confirm that Copilot can read `starter/initiative-overview.md`.
-4. Open **Customize** and note which skills, agents, MCP servers, and canvases are available.
-5. Use only the supplied fictional data or approved, sanitized work.
-
-> [!IMPORTANT]
-> **Stop if required access is missing.** Resolve the GitHub Copilot app or repository project access before continuing. Do not complete the lab in a generic chatbot.
-
-## Time plan
-
-| Phase | Work | Time |
+| Part | Work | Time |
 | --- | --- | --- |
-| 1 | Orient to the app and repository | 20 min |
-| 2 | Ask grounded questions | 30 min |
-| 3 | Create the working brief | 35 min |
-| 4 | Review and verify the artifact | 25 min |
-| 5 | Peer review | 10 min |
+| 1 | Verify the app and project | 15 min |
+| 2 | Compare weak and grounded context | 25 min |
+| 3 | Create the first working brief | 30 min |
+| 4 | Update the brief with new evidence | 25 min |
+| 5 | Verify the brief in a fresh session | 25 min |
 
-## Phase 1: orient to the app and repository
+## Before you start
 
-Find the current app areas for Chats, Projects, My work, Search, Automations, and Customize. Record the available Customize items in the working brief.
+Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Open `starter/initiative-overview.md`. Ask Copilot:
+You need:
+
+- GitHub Copilot app access;
+- read access to the training repository project;
+- permission to create a branch or working copy for the brief.
+
+Confirm GitHub Copilot access before starting. If GitHub Copilot access or project
+access is unavailable, stop and do not continue in a generic chatbot.
+
+## Part 1: Verify the app and project (15 minutes)
+
+1. Open the training repository under **Projects**.
+2. Start an interactive session.
+3. Type `@` and add `lab/starter/initiative-overview.md`.
+4. Ask Copilot to report the file name and its first heading.
+5. Open **Customize** → **Installed** and record the visible skills, MCP servers,
+   plugins, and canvases in `lab-notes.md`.
+
+**Checkpoint:** Copilot can read the supplied file, and you have recorded the
+capabilities actually available in your environment.
+
+## Part 2: Compare weak and grounded context (25 minutes)
+
+Start with a deliberately weak prompt without attaching a file:
 
 ```text
-Use only the supplied initiative overview. Explain the product, affected users,
-requested outcome, known constraints, and next decision for a product owner.
-Cite the section that supports each factual claim. Mark missing information as
-unknown.
+Explain the Service Request Portal initiative, its users, constraints, and next
+decision. Mark anything uncertain.
 ```
 
-Check every claim against the file.
+Save the response under **Unscoped answer** in `lab-notes.md`. Mark every statement
+that has no visible source.
 
-## Phase 2: ask grounded questions
+Now attach `starter/initiative-overview.md` and ask:
 
-Run at least three follow-up prompts:
+```text
+Use only @initiative-overview.md. Explain the requested outcome, affected users,
+known constraints, and next decision. Cite the heading that supports each fact.
+Keep missing information as unknown.
+```
 
-1. Ask which facts are directly supported.
-2. Ask which questions the request owner must answer.
-3. Ask which GitHub artifact should hold the next stage of work.
+Compare the answers:
 
-Then ask Copilot to explain the same initiative for a delivery lead. Compare the two answers. Keep the answer that best supports the next decision.
+| Check | Unscoped answer | Grounded answer |
+| --- | --- | --- |
+| Unsupported facts |  |  |
+| Visible unknowns |  |  |
+| Source references |  |  |
+| Useful next decision |  |  |
 
-## Phase 3: create the working brief
+**Checkpoint:** You can explain which answer is safer to use and why repository
+context changed it.
 
-Copy `starter/copilot-working-brief-template.md` into your working folder or repository branch.
+## Part 3: Create the first working brief (30 minutes)
 
-Ask Copilot to complete it from the approved conversation. The brief must contain:
+Copy the template:
 
-- initiative purpose;
-- affected users;
-- known facts with sources;
-- assumptions and unknowns;
-- useful repository artifacts;
-- available Copilot capabilities;
-- the next decision;
-- owner and reviewer.
+```bash
+cp sessions/session-20-copilot-app-foundations/lab/starter/copilot-working-brief-template.md \
+  docs/discovery/copilot-working-brief.md
+```
 
-## Phase 4: review and verify
+Ask Copilot to complete the brief from `initiative-overview.md`. Require:
 
-Review the proposed Markdown change before accepting it.
+- the requested outcome and affected users;
+- known facts with section references;
+- assumptions separated from unknowns;
+- explicit non-goals;
+- the next decision and decision owner;
+- the reviewer;
+- the relevant capabilities found in Part 1.
 
-Reject or revise any statement that:
+Review the proposed change before accepting it. Reject or revise any statement that
+has no source, invents an owner, or turns an unknown into a fact.
 
-- lacks a source;
-- turns an unknown into a fact;
-- invents an owner;
-- recommends a write action without review;
-- includes restricted information.
+Commit the first version:
 
-Ask Copilot to read the saved brief and report its path, owner, open questions, and next decision. Compare the answer with the file.
+```bash
+git add docs/discovery/copilot-working-brief.md lab-notes.md
+git commit -m "Create grounded initiative working brief"
+```
 
-## Phase 5: peer review
+**Checkpoint:** A reader can distinguish source facts, assumptions, unknowns, and
+the next decision without reading the chat.
 
-A peer records **Ready** or **Revise**.
+## Part 4: Update the brief with new evidence (25 minutes)
 
-The brief is ready when another learner can identify the initiative, find the source for each fact, and understand the next decision without reading the chat history.
+Open `starter/late-evidence.md`. Treat it as newly approved evidence that arrived
+after the first brief was committed.
 
-## Deliverable
+Ask Copilot to:
 
-Submit one reviewed Copilot working brief created through the GitHub Copilot app.
+1. compare the new evidence with the saved brief;
+2. list which sections need to change;
+3. identify any resolved unknown;
+4. identify any statement that is now contradicted;
+5. propose a focused file update.
 
-## Completion checklist
+Review the diff. Do not rewrite unrelated sections.
 
-- [ ] The app and repository preflight passed.
-- [ ] The learner found the main app areas.
-- [ ] Available Customize capabilities are recorded.
-- [ ] Every factual claim names its source.
-- [ ] Unknowns remain visible.
-- [ ] The Markdown change was reviewed before acceptance.
-- [ ] The brief names the next decision, owner, and reviewer.
+Commit the revision:
+
+```bash
+git add docs/discovery/copilot-working-brief.md
+git commit -m "Update working brief with approved evidence"
+```
+
+**Checkpoint:** Git history shows what changed when the evidence changed.
+
+## Part 5: Verify the brief in a fresh session (25 minutes)
+
+Start a new Copilot session. Do not provide the original conversation or source
+files. Attach only `docs/discovery/copilot-working-brief.md`.
+
+Ask:
+
+```text
+Using only this working brief, report:
+1. the requested outcome;
+2. supported facts and their sources;
+3. unresolved decisions;
+4. explicit non-goals;
+5. the next owner action.
+Do not infer missing information.
+```
+
+Compare the answer with the file. Correct the brief if the fresh session cannot
+recover the intended state.
+
+Record **Ready** only when the fresh-session answer is complete and grounded.
+
+## Final deliverable
+
+Submit:
+
+1. `docs/discovery/copilot-working-brief.md`;
+2. `lab-notes.md` with the context comparison;
+3. two commits showing the first brief and the evidence-driven revision;
+4. the fresh-session verification result.
+
+Session 21 uses this brief as the starting source for its decision interview.
+
+## Verification
+
+- [ ] Copilot read the repository project successfully.
+- [ ] The unscoped and grounded answers were compared.
+- [ ] Every fact in the brief points to a source section.
+- [ ] Assumptions and unknowns remain separate.
+- [ ] New evidence produced a focused revision.
+- [ ] A fresh session recovered the intended state from the brief alone.
 - [ ] No customer or source organization names appear.
-
-## Optional technical-evidence exercise
-
-Use [`optional-technical-evidence/`](optional-technical-evidence/) after the main lab when the audience needs practice questioning pull request and validation evidence.

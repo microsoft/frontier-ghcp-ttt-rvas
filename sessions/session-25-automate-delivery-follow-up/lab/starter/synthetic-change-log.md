@@ -6,4 +6,3 @@
 - Added a synthetic troubleshooting article.
 - No production deployment occurred.
 - The integration request remains blocked while its sandbox endpoint approval is pending.
-

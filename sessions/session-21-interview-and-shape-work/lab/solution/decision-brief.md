@@ -30,6 +30,7 @@ A requester can see a plain-language public status, the last updated time, and a
 - A public status mapped from the existing internal state.
 - Last updated time.
 - A short summary approved for requester visibility.
+- A detailed status reason for authorized support staff.
 - Safe fallback behavior for stale or unmapped states.
 
 ### Out of scope
@@ -46,7 +47,7 @@ A requester can see a plain-language public status, the last updated time, and a
 | --- | --- | --- |
 | Existing internal states | Public wording must map to current states without changing the queue | Service operations manager |
 | Existing updated timestamp | The portal can show freshness without a new data source | Portal team |
-| Requester-only access | Every status lookup must enforce the existing ownership rule | Privacy reviewer |
+| Role-based visibility | Requesters see public fields; authorized support staff may see the detailed status reason | Privacy reviewer |
 | Public wording review | State labels and summaries need service approval | Service operations manager |
 
 ## Success
@@ -65,6 +66,7 @@ A requester can see a plain-language public status, the last updated time, and a
 | Internal state has no approved public mapping | Show "Status unavailable" and a contact route | Mapping test |
 | Source timestamp exceeds the approved threshold | Show "Update pending" rather than implying fresh progress | Stale-state test |
 | Safe summary is empty | Show the public status and omit the summary block | Empty-state test |
+| Requester asks for support-only detail | Return no internal reason, notes, queue names, staff identities, or escalation details | Role-boundary test |
 
 ## Decisions
 
@@ -73,6 +75,7 @@ A requester can see a plain-language public status, the last updated time, and a
 | First-release users | Employees who submitted included requests | They create the update contacts | Portal product owner |
 | First-release request types | Facilities and equipment | High contact volume and shared workflow | Portal product owner |
 | Visible fields | Public status, updated time, safe summary | Enough context without exposing internal work | Portal product owner |
+| Support-only detail | Detailed status reason remains limited to the authorized support view | Support needs diagnostic context that requesters must not receive | Portal product owner |
 | Notifications | Excluded | They add channels and delivery rules before the view is proven | Portal product owner |
 | Approval path | Service review, privacy review, product approval | Wording and access need separate checks | Portal product owner |
 
@@ -96,5 +99,7 @@ A requester can see a plain-language public status, the last updated time, and a
 
 **Request owner decision:** Approved with the stale-threshold question assigned.
 **Copilot draft checked against confirmed answers:** Yes.
-**Reviewer notes:** Scope and failure behavior are clear enough for sprint planning.
+**Reviewer notes:** The late visibility constraint was resolved without changing
+the approved first-release scope. Role-specific behavior is clear enough for
+sprint planning.
 **Next action and owner:** Portal product owner creates the work item; service operations manager confirms the threshold before release.

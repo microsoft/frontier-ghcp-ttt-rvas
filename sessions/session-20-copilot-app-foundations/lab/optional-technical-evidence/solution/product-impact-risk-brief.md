@@ -42,4 +42,3 @@ This brief does not approve code correctness, accessibility conformance, notific
 ## Recommended next action
 
 Keep Pull Request 87 open. The portal engineering lead should fix or reconcile the notification event contract first, then rerun the failed check. Release review can resume after that check passes, accessibility evidence is recorded, and the product owner approves the visible wording.
-

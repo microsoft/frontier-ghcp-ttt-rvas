@@ -29,4 +29,3 @@
 ## Reviewer note
 
 The AI-generated summary has not been verified. Use the issue, diff evidence, and check results before making a release recommendation.
-

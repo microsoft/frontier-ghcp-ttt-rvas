@@ -17,4 +17,3 @@ Use one row for each claim that affects the release decision.
 - **Inferred:** A reasonable conclusion that is not directly proven.
 - **Generated:** Suggested by an AI-generated summary and not yet checked.
 - **Unknown:** Missing, unclear, or contradictory evidence.
-

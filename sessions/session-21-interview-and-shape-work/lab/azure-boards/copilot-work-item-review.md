@@ -24,9 +24,7 @@
 
 ### User and problem
 
-
 ### Approved outcome
-
 
 ### Scope and non-goals
 
@@ -60,7 +58,6 @@
 
 ## Proposed description
 
-
 ## Proposed acceptance criteria
 
 - [ ]
@@ -78,7 +75,6 @@ Choose one:
 **Decision date:**
 
 **Approved changes or reason for another round:**
-
 
 No child Task may be created or drafted as approved work until this section is complete.
 

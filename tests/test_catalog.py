@@ -64,7 +64,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_catalog_matches_all_nav_session_sources(self):
         self.assertEqual([m["id"] for m in self.catalog["modules"]], list("1234567"))
-        self.assertEqual([s["id"] for s in self.catalog["sessions"]], [f"{i:02d}" for i in range(1, 25)])
+        self.assertEqual([s["id"] for s in self.catalog["sessions"]], [f"{i:02d}" for i in range(1, 26)])
         sources = [
             f"sessions/{session['slug']}/{directory}README.md"
             for session in self.catalog["sessions"]
@@ -75,7 +75,7 @@ class CatalogTests(unittest.TestCase):
             (ROOT / "mkdocs.yml").read_text(encoding="utf-8"), re.MULTILINE,
         )
         self.assertCountEqual(sources, nav)
-        self.assertEqual(len(set(sources)), 72)
+        self.assertEqual(len(set(sources)), 75)
         for source in sources:
             self.assertTrue((ROOT / source).is_file(), source)
 
@@ -290,7 +290,7 @@ class CatalogTests(unittest.TestCase):
             rendered = env.get_template("main.html").render(context)
             tags = Tags(rendered)
             cards = tags.with_class("ghcp-session-card")
-            self.assertEqual(len(cards), 24)
+            self.assertEqual(len(cards), 25)
             self.assertEqual(len(tags.with_class("ghcp-sessions")), 7)
             self.assertEqual(len(tags.with_class("ghcp-track-card")), 7)
             page_sessions = [

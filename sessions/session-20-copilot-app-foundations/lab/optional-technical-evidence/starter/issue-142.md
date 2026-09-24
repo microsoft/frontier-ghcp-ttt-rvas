@@ -33,4 +33,3 @@ A coordinator can set one due date during triage. The requester and coordinator 
 - Accessibility check for the new control
 - Notification service owner confirmation of the reminder contract
 - Product owner review of visible wording
-

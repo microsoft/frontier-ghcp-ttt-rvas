@@ -8,8 +8,8 @@
 | Version | `1.0` |
 | Effective date | September 18, 2026 |
 | Review date | October 16, 2026 |
-| Cadence | Weekly |
-| Status | Approved for GitHub Copilot review and draft-only tests |
+| Cadence | Weekly after separate scheduling approval |
+| Status | Approved for two manual, draft-only test runs |
 
 ## Purpose
 
@@ -78,13 +78,15 @@ Reject a run with incorrect counts, invented details, hidden exclusions, missing
 | Field | Decision |
 | --- | --- |
 | Meter source | Current approved GitHub Copilot usage and compute view |
-| Budget or run limit | One automation test and 12 minutes |
+| Budget or run limit | Two manual test runs, maximum 12 minutes each |
 | Observer | Delivery lead |
 | Alert condition | Meter unavailable, approved limit reached, or unexpected usage |
 
 ## Stop guard
 
-Stop when an input is outside the allowed list, required data is missing, a tool or side effect exceeds the contract, the meter is unavailable, the run reaches 12 minutes, or the owner cannot review the result.
+Stop when an input is outside the allowed list, required data is missing, a tool
+or side effect exceeds the contract, the meter is unavailable, either run reaches
+12 minutes, or the owner cannot review the result.
 
 ## Recovery procedure
 

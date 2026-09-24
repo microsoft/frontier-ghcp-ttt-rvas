@@ -15,4 +15,3 @@ For the first release:
 Please keep the first release simple. Recurring reminders, service-level calculations, calendar integration, and manager escalation can come later.
 
 The operations team expects the change in the next monthly release, but it should not bypass accessibility or release checks.
-

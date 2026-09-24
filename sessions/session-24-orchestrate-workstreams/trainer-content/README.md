@@ -22,7 +22,10 @@ Teach managers to direct parallel work through live GitHub Copilot orchestration
 ## Product-state note
 
 > [!IMPORTANT]
-> This guide was checked against official GitHub documentation on **September 23, 2026**. GitHub documents `/orchestrate` as a built-in skill that coordinates work across sessions or repositories. GitHub also documents `/spawn` and `/usage`. Command availability depends on context. Confirm the current command picker before the session.
+> This guide was checked against official GitHub documentation on
+> **September 24, 2026**. GitHub documents `/orchestrate` as a built-in skill that
+> coordinates work across sessions or repositories. Confirm the current command
+> picker before the session.
 
 GitHub documents parallel sessions in isolated workspaces. Its rollout guidance names **My work** as an entry point. If the label has changed, show the current session or agent surface.
 
@@ -33,7 +36,8 @@ Before the session:
 - Confirm the GitHub Copilot app policy, license, model policy, and repository access.
 - Use a fictional or sanitized repository.
 - Type `/` and confirm that `/orchestrate` appears in the intended context.
-- If the organization uses an approved equivalent, confirm that it creates and coordinates live child sessions from one parent objective.
+- Open **Customize** → **Skills** → **Installed** and confirm that `orchestrate`
+  is available as a built-in skill.
 - Confirm that the trainer can open, steer, and stop those sessions.
 - Set a guard of four child sessions.
 - Stop any live child session that has not returned useful evidence within eight minutes.

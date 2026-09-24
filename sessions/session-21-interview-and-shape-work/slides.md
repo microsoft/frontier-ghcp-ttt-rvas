@@ -18,9 +18,11 @@ Session 21 | Product and Delivery Teams | 3 hours
 
 Before the session:
 
-- Open an approved GitHub Copilot surface.
-- Run one prompt and one follow-up.
-- Confirm that `grill-me`, `grilling`, or the supplied interview prompt works.
+- Copy the supplied project skill to
+  `.github/skills/decision-interview/SKILL.md`.
+- Start a new project session.
+- Confirm `decision-interview` under **Customize** → **Skills**.
+- Run `/decision-interview` with the short test request.
 
 **Stop and resolve access if any check fails.**
 
@@ -40,7 +42,8 @@ It hides choices about users, scope, data, behavior, ownership, and approval.
 
 ```text
 Vague request
-  -> GitHub Copilot decision-tree interview
+  -> project skill installation
+  -> GitHub Copilot decision interview
   -> human decisions
   -> Markdown decision brief
   -> GitHub issue proposal
@@ -146,6 +149,34 @@ Session 22 creates the approved issues through GitHub MCP.
 
 ---
 
+# Reopen only the affected branch
+
+Late evidence changes requester and support visibility.
+
+```text
+Approved brief
+  + new visibility constraint
+  → reopen visibility decisions
+  → update affected criteria
+  → preserve unrelated decisions
+```
+
+Do not restart the interview or rewrite settled scope without a reason.
+
+---
+
+# Verify in a fresh session
+
+Give a new session only:
+
+- the revised decision brief;
+- the revised issue proposal.
+
+Ask it to find contradictions, unresolved owners, and acceptance criteria with no
+source decision.
+
+---
+
 # Acceptance criteria describe evidence
 
 Weak:
@@ -189,9 +220,11 @@ There is no static or no-Copilot route.
 
 # Lab deliverables
 
-1. A **reviewed decision brief**.
-2. A **GitHub issue proposal** with acceptance criteria and definition of done.
-3. A **Copilot interview record** that shows the rounds and owner decisions.
+1. The installed `decision-interview` project skill.
+2. A **Copilot interview record** with the reopened branch.
+3. A revised **decision brief**.
+4. An aligned **GitHub issue proposal**.
+5. A fresh-session readiness result.
 
 The request owner approves the brief. A delivery reviewer checks readiness.
 

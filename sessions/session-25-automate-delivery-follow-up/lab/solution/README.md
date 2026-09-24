@@ -1,11 +1,15 @@
 # Reference solution
 
-This solution uses **GitHub Copilot** to review the prepared synthetic evidence. It treats the weekly status workflow as **A1: Draft**, excludes one invalid source record, and records a human acceptance decision.
+This solution treats the weekly status workflow as draft only. The first manual run
+excludes one invalid source record. An approved input change fixes the record, and
+the same automation runs again so the reviewer can compare evidence.
 
 | File | Purpose |
 | --- | --- |
 | `automation-contract.md` | Approved workflow boundary |
 | `run-evidence.json` | Completed evidence packet |
 | `run-output.md` | Reviewed status draft |
+| `run-evidence-2.json` | Evidence after the approved input change |
+| `run-output-2.md` | Second reviewed status draft |
 | `approval-record.md` | Human decision |
 | `stakeholder-update.md` | Final communication |

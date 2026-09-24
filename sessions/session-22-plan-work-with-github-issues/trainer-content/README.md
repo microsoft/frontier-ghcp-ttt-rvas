@@ -21,6 +21,9 @@ Learners should leave able to use GitHub MCP as a controlled work interface. The
 
 - Confirm that every learner can open the GitHub Copilot app.
 - Confirm that the approved GitHub MCP server is available.
+- In the app, open **Customize** → **MCP** → **Installed** and inspect the
+  connection.
+- Test one GitHub read before demonstrating a write.
 - Confirm that learners can read the training repository and create issues in it.
 - Use a repository created for training. Do not use a production backlog.
 - Record the repository owner and name before the demonstration.
@@ -86,9 +89,11 @@ Before Copilot calls a write tool, ask it to show:
 
 The learner records **Approve**, **Revise**, or **Reject**.
 
-### 5. Verify
+### 5. Verify and correct
 
-After creation, start a fresh read. Retrieve the issues and compare them with the approved plan. Correct one safe defect, such as a missing acceptance criterion, through another reviewed write.
+After creation, start a fresh read. Retrieve the issues and compare them with the
+approved plan. Add the verification owner and source-decision path to one child
+issue through another preview, approval, write, and fresh read.
 
 ## Common failure modes
 
@@ -101,7 +106,7 @@ After creation, start a fresh read. Retrieve the issues and compare them with th
 | Tool output claims success without a returned issue | Run a fresh repository read |
 | Learner cannot review tool arguments | Stop the lab |
 
-## Product notes verified September 23, 2026
+## Product notes verified September 24, 2026
 
 Check current GitHub MCP availability, authentication, tool names, issue hierarchy support, and write confirmations before delivery.
 
