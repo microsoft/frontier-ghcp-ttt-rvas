@@ -23,7 +23,7 @@
     
     
       
-        <title>Exercise 2: Feature Request — Favorites Feature - GitHub Copilot Train-the-Trainer</title>
+        <title>Convergence Review - GitHub Copilot Train-the-Trainer</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-2-feature-request-favorites-feature" class="md-skip">
+        <a href="#convergence-review" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
           <span class="md-ellipsis">GitHub Copilot Train-the-Trainer</span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">Exercise 2: Feature Request — Favorites Feature</span>
+          <span class="md-ellipsis">Convergence Review</span>
         </div>
       </div>
     </div>
@@ -4761,125 +4761,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#feature-add-favorites-to-user-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Feature: Add Favorites to User API
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Feature: Add Favorites to User API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-story" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Story
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acceptance-criteria" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Acceptance Criteria
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#out-of-scope-v1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Out of Scope (V1)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#technical-constraints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Technical Constraints
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#your-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Your task
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Your task">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hints
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time-30-minutes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Time: 30 minutes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4897,63 +4778,55 @@
 
 
 
-<h1 id="exercise-2-feature-request-favorites-feature">Exercise 2: Feature Request — Favorites Feature<a class="headerlink" href="#exercise-2-feature-request-favorites-feature" title="Permanent link">&para;</a></h1>
-<h2 id="feature-add-favorites-to-user-api">Feature: Add Favorites to User API<a class="headerlink" href="#feature-add-favorites-to-user-api" title="Permanent link">&para;</a></h2>
-<h3 id="user-story">User Story<a class="headerlink" href="#user-story" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>As a user, I want to mark other users as favorites for quick access so that I can build a personal network of key contacts.</p>
-</blockquote>
-<h3 id="acceptance-criteria">Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Users can favorite other users</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Users can unfavorite (remove from favorites)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Users can view their favorites list</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Only authenticated users can manage favorites</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Performance requirement: List my 1,000 favorites in &lt;100ms</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> No duplicate favorites (same user can't be favorited twice)</li>
-</ul>
-<h3 id="out-of-scope-v1">Out of Scope (V1)<a class="headerlink" href="#out-of-scope-v1" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Notifications when someone favorites you</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mutual favorites (friend requests)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Favorite groups or collections</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Analytics on popularity</li>
-</ul>
-<h3 id="technical-constraints">Technical Constraints<a class="headerlink" href="#technical-constraints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Build on the User API from Exercise 1</li>
-<li>Use the same database (add a favorites table)</li>
-<li>Performance: &lt;100ms for 1,000 favorites query</li>
-<li>No N+1 queries allowed</li>
-</ul>
-<h3 id="success-metrics">Success Metrics<a class="headerlink" href="#success-metrics" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All 3 endpoints pass load test</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 99th percentile response time &lt; 100ms</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Code passes specification compliance check</li>
-</ul>
-<hr />
-<h2 id="your-task">Your task<a class="headerlink" href="#your-task" title="Permanent link">&para;</a></h2>
-<p>Specify this feature using all 9 phases:</p>
-<ol>
-<li><strong>Constitution</strong> — Agree on scope and success metrics</li>
-<li><strong>Specify</strong> — Define endpoints, request/response, validation</li>
-<li><strong>Clarify</strong> — Address edge cases (self-favorite, duplicates, permissions)</li>
-<li><strong>Plan</strong> — Estimate effort and identify dependencies</li>
-<li><strong>Checklist</strong> — List deliverables (schema, code, tests, load test)</li>
-<li><strong>Tasks</strong> — Break into work units</li>
-<li><strong>Analyze</strong> — Track progress</li>
-<li><strong>Implement</strong> — Generate code</li>
-<li><strong>Converge</strong> — Verify specification compliance</li>
-</ol>
-<p>Each phase should surface new information. Document how the specification changes.</p>
-<h3 id="hints">Hints<a class="headerlink" href="#hints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Copilot will suggest database indexes for performance.</li>
-<li>In the Clarify phase, decide what happens to favorites when a user is deleted.</li>
-<li>In the performance review, decide how to avoid N+1 queries when listing favorites.</li>
-</ul>
-<h3 id="time-30-minutes">Time: 30 minutes<a class="headerlink" href="#time-30-minutes" title="Permanent link">&para;</a></h3>
+<h1 id="convergence-review">Convergence Review<a class="headerlink" href="#convergence-review" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-001, FR-002</td>
+<td><code>test_archive_hides_task_from_default_list</code></td>
+</tr>
+<tr>
+<td>FR-003</td>
+<td><code>test_archive_is_idempotent</code></td>
+</tr>
+<tr>
+<td>FR-004</td>
+<td><code>test_archive_hides_task_from_default_list</code></td>
+</tr>
+<tr>
+<td>FR-005</td>
+<td><code>test_list_can_include_archived_tasks</code></td>
+</tr>
+<tr>
+<td>FR-006</td>
+<td><code>test_archive_unknown_task_raises_not_found</code></td>
+</tr>
+<tr>
+<td>FR-007</td>
+<td>Existing create and list tests remain in the suite</td>
+</tr>
+<tr>
+<td>FR-008, FR-010</td>
+<td><code>test_restore_returns_task_to_default_list</code></td>
+</tr>
+<tr>
+<td>FR-009</td>
+<td><code>test_restore_returns_task_to_default_list</code>, <code>test_restore_is_idempotent</code></td>
+</tr>
+<tr>
+<td>Restore not found</td>
+<td><code>test_restore_unknown_task_raises_not_found</code></td>
+</tr>
+</tbody>
+</table>
+<p>All nine tests pass. The implementation adds no package and no out-of-scope
+behavior. No remaining task was found during the reference review.</p>
 
 
 

@@ -5037,7 +5037,7 @@
 <strong>Prerequisites:</strong> Sessions 01–07 · <strong>Deliverable:</strong> A custom MCP server with three tools and test evidence</p>
 <h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="../../learning-safety-baseline/">course safety baseline</a>. Check current <a href="https://docs.github.com/copilot/customizing-copilot/extending-copilot-chat-with-mcp">MCP client and server configuration</a>, authentication, and tool approval with the customer. Use synthetic data only. Define a customer-owned meter, threshold, and stop guard before metered work.</p>
-<p>If access is unavailable, build and test the server locally, then trace the scenarios in <code>lab/starter/integration-test.md</code>. Do not connect Copilot or external services.</p>
+<p>If access is unavailable, build and test the server locally, then trace the scenarios in <a href="../../../sessions/session-10-mcp-servers/lab/starter/integration-test/"><code>lab/starter/integration-test.md</code></a>. Do not connect Copilot or external services.</p>
 <table>
 <thead>
 <tr>
@@ -5076,7 +5076,7 @@
 <li><code>gh</code> installed and authenticated, only if an approved training connection uses it</li>
 </ul>
 <h2 id="1-inspect-the-github-mcp-configuration">1. Inspect the GitHub MCP configuration<a class="headerlink" href="#1-inspect-the-github-mcp-configuration" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/mcp-config/mcp.json</code>. It shows a named server configuration with <code>command</code>, <code>args</code>, and optional <code>env</code>. Do not add a token to a tracked file. Use an approved preconfigured connection only with a synthetic or training repository.</p>
+<p>Read <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-10-mcp-servers/lab/starter/mcp-config/mcp.json"><code>lab/starter/mcp-config/mcp.json</code></a>. It shows a named server configuration with <code>command</code>, <code>args</code>, and optional <code>env</code>. Do not add a token to a tracked file. Use an approved preconfigured connection only with a synthetic or training repository.</p>
 <p>In agent mode, inspect the tools panel. Record the exposed tool names, descriptions, inputs, and approval behavior. If allowed, try the supplied repository queries and verify each result before relying on it. Otherwise, continue with Exercise 2.</p>
 <h2 id="2-query-the-synthetic-database">2. Query the synthetic database<a class="headerlink" href="#2-query-the-synthetic-database" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>lab/starter/db-project
@@ -5092,7 +5092,7 @@
 <li>product counts by category;</li>
 <li>orders with customer names and amounts.</li>
 </ul>
-<p>Compare results with <code>lab/solution/db-project/README.md</code>. Fix path and setup errors before changing queries.</p>
+<p>Compare results with <a href="../../../sessions/session-10-mcp-servers/lab/solution/db-project/"><code>lab/solution/db-project/README.md</code></a>. Fix path and setup errors before changing queries.</p>
 <h2 id="3-build-the-weather-server">3. Build the weather server<a class="headerlink" href="#3-build-the-weather-server" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>lab/starter/custom-mcp
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm<span class="w"> </span>install
@@ -5102,7 +5102,7 @@
 <p>In <code>src/index.js</code>, implement <code>get_weather</code>, <code>get_forecast</code>, and <code>convert_temperature</code>. Keep data simulated. Each tool needs a clear name and description, an input schema, a handler, and structured output. <code>get_forecast</code> accepts <code>city</code> and <code>days</code> (1–7, default 3); <code>convert_temperature</code> accepts a number and <code>celsius</code> or <code>fahrenheit</code>.</p>
 <p>Compare only after attempting the implementation: <code>lab/solution/custom-mcp/</code>.</p>
 <h2 id="4-test-integration">4. Test integration<a class="headerlink" href="#4-test-integration" title="Permanent link">&para;</a></h2>
-<p>Add the local server to the approved configuration, restart it, and run the scenarios in <code>lab/starter/integration-test.md</code>. Observe tool selection, chained calls, cross-server results, and error handling. Record inputs, output shape, and failures.</p>
+<p>Add the local server to the approved configuration, restart it, and run the scenarios in <a href="../../../sessions/session-10-mcp-servers/lab/starter/integration-test/"><code>lab/starter/integration-test.md</code></a>. Observe tool selection, chained calls, cross-server results, and error handling. Record inputs, output shape, and failures.</p>
 <h2 id="completion-checklist">Completion checklist<a class="headerlink" href="#completion-checklist" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Approved connection inspected, or local fallback recorded.</li>

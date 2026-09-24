@@ -5162,11 +5162,11 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Identify the root cause, cite the evidence, and make the smallest fix.
 </code></pre></div>
 <h3 id="pipeline-1-wrong-node-version-10-min">Pipeline 1: Wrong Node version (10 min)<a class="headerlink" href="#pipeline-1-wrong-node-version-10-min" title="Permanent link">&para;</a></h3>
-<p>Open <code>lab/starter/failing-pipelines/pipeline-1.yml</code> and <code>error-log-1.txt</code>. The project requires Node.js 20 while the workflow uses Node.js 14. Confirm the <code>package.json</code> <code>engines</code> field, then change <code>node-version: '14'</code> to <code>node-version: '20'</code>.</p>
+<p>Open <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/starter/failing-pipelines/pipeline-1.yml"><code>lab/starter/failing-pipelines/pipeline-1.yml</code></a> and <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/starter/failing-pipelines/error-log-1.txt"><code>error-log-1.txt</code></a>. The project requires Node.js 20 while the workflow uses Node.js 14. Confirm the <code>package.json</code> <code>engines</code> field, then change <code>node-version: '14'</code> to <code>node-version: '20'</code>.</p>
 <h3 id="pipeline-2-dependency-conflict-and-stale-cache-15-min">Pipeline 2: Dependency conflict and stale cache (15 min)<a class="headerlink" href="#pipeline-2-dependency-conflict-and-stale-cache-15-min" title="Permanent link">&para;</a></h3>
-<p>Open Pipeline 2 and <code>error-log-2.txt</code>. Resolve the peer-dependency failure with <code>npm ci --legacy-peer-deps</code> or an appropriate dependency update. Replace the static cache key with one that includes the <code>package-lock.json</code> hash.</p>
+<p>Open Pipeline 2 and <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/starter/failing-pipelines/error-log-2.txt"><code>error-log-2.txt</code></a>. Resolve the peer-dependency failure with <code>npm ci --legacy-peer-deps</code> or an appropriate dependency update. Replace the static cache key with one that includes the <code>package-lock.json</code> hash.</p>
 <h3 id="pipeline-3-matrix-specific-failures-15-min">Pipeline 3: Matrix-specific failures (15 min)<a class="headerlink" href="#pipeline-3-matrix-specific-failures-15-min" title="Permanent link">&para;</a></h3>
-<p>Open Pipeline 3 and <code>error-log-3.txt</code>. Identify why selected matrix legs fail:</p>
+<p>Open Pipeline 3 and <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/starter/failing-pipelines/error-log-3.txt"><code>error-log-3.txt</code></a>. Identify why selected matrix legs fail:</p>
 <ul>
 <li>Node 16 cannot run tests that use modern APIs.</li>
 <li>A Windows path breaks a test assertion.</li>
@@ -5209,9 +5209,9 @@
 <li>path validation for path traversal;</li>
 <li>focused tests and no unrelated changes.</li>
 </ul>
-<p>Compare with <code>lab/solution/secure-app/src/app.js</code>. Do not infer why a route or alert is unavailable. Record the approved manual fallback.</p>
+<p>Compare with <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/solution/secure-app/src/app.js"><code>lab/solution/secure-app/src/app.js</code></a>. Do not infer why a route or alert is unavailable. Record the approved manual fallback.</p>
 <h2 id="exercise-3-improve-pipeline-speed-30-min">Exercise 3: Improve pipeline speed (30 min)<a class="headerlink" href="#exercise-3-improve-pipeline-speed-30-min" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/slow-pipeline/workflow.yml</code>. Its estimated runtime is about 12 minutes.</p>
+<p>Read <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/starter/slow-pipeline/workflow.yml"><code>lab/starter/slow-pipeline/workflow.yml</code></a>. Its estimated runtime is about 12 minutes.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Optimize this GitHub Actions workflow without changing its behavior:
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>- cache npm using the lockfile;
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>- run lint and test independently;
@@ -5219,11 +5219,11 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- deploy only on pushes to main;
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- skip CI for documentation-only changes.
 </code></pre></div>
-<p>Check <code>cache: 'npm'</code>, separate lint and test jobs, a build that depends on both, shallow checkout, the deploy condition, and an appropriate <code>paths-ignore</code> filter. Compare with <code>lab/solution/optimized-pipeline/workflow.yml</code>.</p>
+<p>Check <code>cache: 'npm'</code>, separate lint and test jobs, a build that depends on both, shallow checkout, the deploy condition, and an appropriate <code>paths-ignore</code> filter. Compare with <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/solution/optimized-pipeline/workflow.yml"><code>lab/solution/optimized-pipeline/workflow.yml</code></a>.</p>
 <h2 id="exercise-4-add-security-checks-20-min">Exercise 4: Add security checks (20 min)<a class="headerlink" href="#exercise-4-add-security-checks-20-min" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/security-pipeline-template.yml</code>. Add a separate security job for CodeQL, pull-request dependency review, secret scanning, and SARIF results. Keep existing install, lint, test, and build steps.</p>
+<p>Read <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/starter/security-pipeline-template.yml"><code>lab/starter/security-pipeline-template.yml</code></a>. Add a separate security job for CodeQL, pull-request dependency review, secret scanning, and SARIF results. Keep existing install, lint, test, and build steps.</p>
 <p>Check that dependency review uses <code>actions/dependency-review-action@v4</code> only for pull requests, CodeQL has the required permissions, and the security job does not create a <code>needs:</code> dependency that blocks the build job. Configure merge controls so high-severity findings and new critical dependencies block only where customer policy requires it.</p>
-<p>Compare with <code>lab/solution/security-pipeline.yml</code>.</p>
+<p>Compare with <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-15-cicd-debugging-autofix/lab/solution/security-pipeline.yml"><code>lab/solution/security-pipeline.yml</code></a>.</p>
 <h2 id="deliverable-checklist">Deliverable checklist<a class="headerlink" href="#deliverable-checklist" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All three workflows are fixed and each root cause is explained.</li>

@@ -4791,6 +4791,58 @@
 <p>An MCP server gives Copilot named tools for reading or changing another system.</p>
 <p>Learners use the tools. They do not build the server.</p>
 <hr />
+<h1 id="an-issue-is-a-contract-for-the-next-person">An issue is a contract for the next person<a class="headerlink" href="#an-issue-is-a-contract-for-the-next-person" title="Permanent link">&para;</a></h1>
+<p>The issue should let a contributor decide whether they can start, what success
+looks like, and who will review it.</p>
+<table>
+<thead>
+<tr>
+<th>Issue element</th>
+<th>What it prevents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outcome</td>
+<td>Work that repeats a vague request</td>
+</tr>
+<tr>
+<td>Acceptance evidence</td>
+<td>"Done" without a way to prove it</td>
+</tr>
+<tr>
+<td>Non-goal</td>
+<td>Scope growth during implementation</td>
+</tr>
+<tr>
+<td>Dependency</td>
+<td>Work that starts before a needed decision</td>
+</tr>
+<tr>
+<td>Ownership gap</td>
+<td>Silent assumptions about who decides</td>
+</tr>
+</tbody>
+</table>
+<p>Tickets are not busywork when they reduce the handoff cost.</p>
+<hr />
+<h1 id="parent-and-child-issues-answer-different-questions">Parent and child issues answer different questions<a class="headerlink" href="#parent-and-child-issues-answer-different-questions" title="Permanent link">&para;</a></h1>
+<p>The parent issue holds the outcome, shared constraints, and review path. Each child
+issue owns one independently reviewable result.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Parent: Improve request-status visibility
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├─ Child: Define the status data contract
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ Child: Implement the API response
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  └─ Child: Add the client status view
+</code></pre></div>
+<p>If two child issues must edit the same behavior at the same time, sequence them or
+clarify the design first.</p>
+<hr />
+<h1 id="writing-through-mcp-is-still-an-operation">Writing through MCP is still an operation<a class="headerlink" href="#writing-through-mcp-is-still-an-operation" title="Permanent link">&para;</a></h1>
+<p>The model can prepare a complete issue plan. A person must approve the requested
+write with the target repository and expected result visible.</p>
+<p>After the write, fetch the issue again. This fresh read proves what the system
+stored, rather than what the tool claimed it stored.</p>
+<hr />
 <h1 id="read-before-writing">Read before writing<a class="headerlink" href="#read-before-writing" title="Permanent link">&para;</a></h1>
 <ol>
 <li>Confirm the repository.</li>

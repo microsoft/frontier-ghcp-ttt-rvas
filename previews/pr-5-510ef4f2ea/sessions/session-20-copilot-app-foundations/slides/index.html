@@ -4787,6 +4787,67 @@
 <p>This track does not use Copilot as a background writing tool.</p>
 <p>Learners work in the GitHub Copilot app, with repository context and reviewable artifacts.</p>
 <hr />
+<h1 id="the-app-is-a-workspace-not-an-answer-engine">The app is a workspace, not an answer engine<a class="headerlink" href="#the-app-is-a-workspace-not-an-answer-engine" title="Permanent link">&para;</a></h1>
+<p>The chat is one place to work. Projects, source references, issues, and saved
+artifacts make the work reviewable after the conversation ends.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Gather evidence → form a proposal → review it → save the decision → verify it
+</code></pre></div>
+<p>This keeps the model's helpful narrative separate from facts the team can check.</p>
+<hr />
+<h1 id="context-has-a-cost">Context has a cost<a class="headerlink" href="#context-has-a-cost" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Context choice</th>
+<th>When it helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One named file</td>
+<td>The answer depends on a specific rule or API</td>
+</tr>
+<tr>
+<td>A project or repository</td>
+<td>The task needs relationships across files</td>
+</tr>
+<tr>
+<td>An issue or pull request</td>
+<td>The task needs delivery history and discussion</td>
+</tr>
+<tr>
+<td>No repository context</td>
+<td>The work is general and contains no project facts</td>
+</tr>
+</tbody>
+</table>
+<p>Tell Copilot why each source matters. It should not need to guess.</p>
+<hr />
+<h1 id="separate-facts-assumptions-and-decisions">Separate facts, assumptions, and decisions<a class="headerlink" href="#separate-facts-assumptions-and-decisions" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fact</td>
+<td>"Issue 42 names a response-time problem."</td>
+</tr>
+<tr>
+<td>Assumption</td>
+<td>"The mobile client uses the documented endpoint."</td>
+</tr>
+<tr>
+<td>Decision</td>
+<td>"The product owner will confirm the client behavior."</td>
+</tr>
+</tbody>
+</table>
+<p>This makes uncertainty visible. A polished paragraph can hide all three.</p>
+<hr />
 <h1 id="know-the-main-work-areas">Know the main work areas<a class="headerlink" href="#know-the-main-work-areas" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
@@ -4828,9 +4889,9 @@
 <p>Name the files, issues, or repository that should support the answer.</p>
 <hr />
 <h1 id="ask-for-sources">Ask for sources<a class="headerlink" href="#ask-for-sources" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Explain the initiative for a product owner.
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Cite the supplied source for each factual claim.
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Mark missing information as unknown.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Explain the initiative for a product owner.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Cite the supplied source for each factual claim.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Mark missing information as unknown.
 </code></pre></div>
 <p>A confident answer without a source is still unverified.</p>
 <hr />
@@ -4845,7 +4906,7 @@
 <p>Availability depends on the plan, policy, and installation.</p>
 <hr />
 <h1 id="use-one-repeatable-work-pattern">Use one repeatable work pattern<a class="headerlink" href="#use-one-repeatable-work-pattern" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Read -&gt; propose -&gt; review -&gt; write -&gt; verify
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Read -&gt; propose -&gt; review -&gt; write -&gt; verify
 </code></pre></div>
 <p>Every later Module 7 session uses this pattern.</p>
 <hr />

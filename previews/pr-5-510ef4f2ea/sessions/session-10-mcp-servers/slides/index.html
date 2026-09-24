@@ -4866,6 +4866,72 @@
 </table>
 <p>The client discovers tools, calls one, and returns the result to the model.</p>
 <hr />
+<h1 id="mcp-is-a-protocol-boundary">MCP is a protocol boundary<a class="headerlink" href="#mcp-is-a-protocol-boundary" title="Permanent link">&para;</a></h1>
+<p>MCP gives a model structured ways to discover and call capabilities. It does not
+make a capability safe, accurate, or approved.</p>
+<p>The server owner still decides:</p>
+<ul>
+<li>which tools and resources exist;</li>
+<li>which inputs are accepted;</li>
+<li>what identity and permissions each call uses;</li>
+<li>what the server logs and returns on failure.</li>
+</ul>
+<p>Treat each tool as an API surface with an agent in front of it.</p>
+<hr />
+<h1 id="tool-descriptions-are-part-of-the-interface">Tool descriptions are part of the interface<a class="headerlink" href="#tool-descriptions-are-part-of-the-interface" title="Permanent link">&para;</a></h1>
+<p>Models use names, descriptions, and schemas to decide whether and how to call a
+tool. Vague descriptions create vague requests.</p>
+<table>
+<thead>
+<tr>
+<th>Weak</th>
+<th>Better</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search</code></td>
+<td><code>search_team_members</code></td>
+</tr>
+<tr>
+<td>"Find data"</td>
+<td>"Search synthetic team records by name, role, or team"</td>
+</tr>
+<tr>
+<td><code>query: string</code></td>
+<td><code>query</code> with format, limits, and empty-result behavior</td>
+</tr>
+</tbody>
+</table>
+<p>Return data the model can cite and a clear error for an invalid request. Do not
+hide a failure behind an empty success-shaped response.</p>
+<hr />
+<h1 id="transport-changes-the-risk-profile">Transport changes the risk profile<a class="headerlink" href="#transport-changes-the-risk-profile" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Transport</th>
+<th>Typical boundary to review</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stdio</td>
+<td>Local command, package source, files, and process permissions</td>
+</tr>
+<tr>
+<td>SSE</td>
+<td>Network endpoint, authentication, and session handling</td>
+</tr>
+<tr>
+<td>Streamable HTTP</td>
+<td>Endpoint, identity, authorization, and request limits</td>
+</tr>
+</tbody>
+</table>
+<p>Start with the smallest approved path. A local server can still read sensitive
+files or run unsafe commands, and a remote server can widen the data boundary.</p>
+<hr />
 <h1 id="local-configuration">Local configuration<a class="headerlink" href="#local-configuration" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"servers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

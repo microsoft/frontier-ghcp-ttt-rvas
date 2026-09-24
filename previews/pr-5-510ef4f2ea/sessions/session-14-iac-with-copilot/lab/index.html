@@ -5090,7 +5090,7 @@
 </code></pre></div>
 <p>Compare with <code>lab/solution/bicep/</code>.</p>
 <h2 id="3-secure-the-starter-configuration">3. Secure the starter configuration<a class="headerlink" href="#3-secure-the-starter-configuration" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/insecure-iac/main.tf</code>. Find and fix the six intended issues:</p>
+<p>Read <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-14-iac-with-copilot/lab/starter/insecure-iac/main.tf"><code>lab/starter/insecure-iac/main.tf</code></a>. Find and fix the six intended issues:</p>
 <ol>
 <li>all-port <code>0.0.0.0/0</code> ingress;</li>
 <li>hardcoded database password;</li>
@@ -5099,9 +5099,9 @@
 <li>unencrypted RDS;</li>
 <li>missing ALB access logging.</li>
 </ol>
-<p>Run <code>terraform validate</code>, then compare the result with <code>lab/solution/secure-iac/main.tf</code>. Submit further controls separately for human review.</p>
+<p>Run <code>terraform validate</code>, then compare the result with <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-14-iac-with-copilot/lab/solution/secure-iac/main.tf"><code>lab/solution/secure-iac/main.tf</code></a>. Submit further controls separately for human review.</p>
 <h2 id="4-use-approved-space-context">4. Use approved Space context<a class="headerlink" href="#4-use-approved-space-context" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/spaces-iac-guide.md</code>. If Spaces and its sources are approved, create an IaC reference Space with the project files, approved cloud documentation, and team conventions. Use its instructions to draft a secure versioned S3 bucket with KMS encryption, 90-day Glacier transition, public-access blocking, and separate logging.</p>
+<p>Read <a href="../../../sessions/session-14-iac-with-copilot/lab/starter/spaces-iac-guide/"><code>lab/starter/spaces-iac-guide.md</code></a>. If Spaces and its sources are approved, create an IaC reference Space with the project files, approved cloud documentation, and team conventions. Use its instructions to draft a secure versioned S3 bucket with KMS encryption, 90-day Glacier transition, public-access blocking, and separate logging.</p>
 <p>Compare it with a normal prompt. Record required tags, variable descriptions, API-version verification, and any missing convention. If Spaces are unavailable, review the same source material manually.</p>
 <h2 id="completion-checklist">Completion checklist<a class="headerlink" href="#completion-checklist" title="Permanent link">&para;</a></h2>
 <ul class="task-list">

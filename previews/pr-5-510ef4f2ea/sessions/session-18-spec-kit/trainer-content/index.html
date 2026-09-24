@@ -3552,10 +3552,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delivery-controls" class="md-nav__link">
+  <a href="#teaching-points" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery controls
+        Teaching points
       
     </span>
   </a>
@@ -3567,6 +3567,17 @@
     <span class="md-ellipsis">
       
         Prepared demo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delivery-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery controls
       
     </span>
   </a>
@@ -4954,10 +4965,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delivery-controls" class="md-nav__link">
+  <a href="#teaching-points" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery controls
+        Teaching points
       
     </span>
   </a>
@@ -4969,6 +4980,17 @@
     <span class="md-ellipsis">
       
         Prepared demo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delivery-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery controls
       
     </span>
   </a>
@@ -5026,7 +5048,10 @@
 </div>
 
 <h2 id="delivery-objective">Delivery objective<a class="headerlink" href="#delivery-objective" title="Permanent link">&para;</a></h2>
-<p>Show how to turn a bounded request into a reviewable handoff before implementation. The method matters more than the tool. Because Spec Kit is pre-1.0, verify the customer-approved source, pinned version, integration, network path, and fallback before installing it.</p>
+<p>Show the complete Spec Kit loop on one small change: request, specification, plan,
+tasks, implementation, tests, and convergence. Learners should leave knowing which
+files Spec Kit creates and which decisions the team still owns. The lab then uses
+the documented living-spec workflow to add restore behavior.</p>
 <h2 id="one-hour-plan">One-hour plan<a class="headerlink" href="#one-hour-plan" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5041,24 +5066,28 @@
 <td>Why specify before implementation</td>
 </tr>
 <tr>
-<td>0:08–0:20</td>
-<td>Constitution and observable specification</td>
+<td>0:08–0:18</td>
+<td>Inspect the generated project structure</td>
 </tr>
 <tr>
-<td>0:20–0:32</td>
-<td>Clarifications, plan, and checklist</td>
+<td>0:18–0:30</td>
+<td>Constitution, specification, and clarification</td>
 </tr>
 <tr>
-<td>0:32–0:43</td>
-<td>Tasks, analysis, and implementation handoff</td>
+<td>0:30–0:42</td>
+<td>Plan, checklist, tasks, and analysis</td>
 </tr>
 <tr>
-<td>0:43–0:52</td>
-<td>Delivery controls and manual fallback</td>
+<td>0:42–0:50</td>
+<td>Implementation and convergence</td>
 </tr>
 <tr>
-<td>0:52–0:58</td>
-<td>Prepared convergence demo</td>
+<td>0:50–0:55</td>
+<td>Living specifications and task-to-issue conversion</td>
+</tr>
+<tr>
+<td>0:55–0:58</td>
+<td>Approved and air-gapped installation</td>
 </tr>
 <tr>
 <td>0:58–1:00</td>
@@ -5067,33 +5096,75 @@
 </tbody>
 </table>
 <h2 id="facilitation">Facilitation<a class="headerlink" href="#facilitation" title="Permanent link">&para;</a></h2>
-<p>Use a small feature, such as archiving a task. Start with the constitution: outcome, non-goals, constraints, and owners. Then write observable acceptance criteria before implementation details.</p>
+<p>Use the archive-task starter project from the lab. Run its existing tests first so
+learners see the baseline.</p>
 <p><strong>Preflight</strong></p>
 <ul>
-<li>Open the fictional archive-task artifacts. Place the constitution, specification, plan, tasks, and handoff side by side.</li>
-<li>Confirm the approved package source, pinned version, integration, network path, usage guard, and fallback.</li>
-<li>Keep the manual traceability cards ready. Do not install an unapproved package.</li>
+<li>Confirm the approved Spec Kit source and release tag.</li>
+<li>Prepare an initialized demo copy before the session.</li>
+<li>Confirm that the training repository allows issue creation.</li>
+<li>Do not install an unapproved package during delivery.</li>
 </ul>
-<p>Move through the flow deliberately:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>constitution → specify → clarify → plan → checklist → tasks →
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>analyze → implement → converge
+<p>After <code>specify init</code>, show the generated files before running any agent command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.specify/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  memory/constitution.md
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  scripts/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  templates/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>.github/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  skills/speckit-*/
 </code></pre></div>
-<p>Turn clarifications into accepted decisions or explicit deferrals. The plan identifies implementation units and dependencies. Tasks identify files, expected results, and checks. Analysis removes work without a source requirement or outside the approved path.</p>
-<p>The handoff states the goal, scope, constraints, done conditions, tests, reviewer, data boundary, and pause path. An approved implementation can start from this record. Otherwise, it still records the decisions made.</p>
-<h2 id="delivery-controls">Delivery controls<a class="headerlink" href="#delivery-controls" title="Permanent link">&para;</a></h2>
-<p>Show the approved path only after preflight. Use synthetic requirements in a training repository. Set a customer-owned usage guard. If installation, network access, or Copilot integration is unavailable, learners write the same Markdown artifacts and use peer convergence review instead of <code>specify check</code>.</p>
+<p>Point out that Spec Kit does <strong>not</strong> use a project-level <code>.specify.yml</code> to track
+phase status, models, or exclusions. Those were removed from this session because
+they were invented and taught the wrong mental model.</p>
+<p>Use the GitHub Copilot skill names generated by the current integration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speckit-constitution
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/speckit-specify
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/speckit-clarify
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>/speckit-plan
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/speckit-checklist
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>/speckit-tasks
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>/speckit-analyze
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>/speckit-implement
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>/speckit-converge
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>/speckit-taskstoissues
+</code></pre></div>
+<p>The exact invocation can differ for another integration. Teach the workflow and let
+the generated integration files define the command syntax.</p>
+<h2 id="teaching-points">Teaching points<a class="headerlink" href="#teaching-points" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The constitution is project-wide and lives under <code>.specify/memory/</code>.</li>
+<li>Feature work lives under <code>specs/&lt;feature&gt;/</code>.</li>
+<li><a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a> owns behavior. <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/plan/"><code>plan.md</code></a> owns technical choices.</li>
+<li><code>/speckit-analyze</code> is a read-only review, not a generated lifecycle document.</li>
+<li><code>/speckit-converge</code> checks code against the artifacts and may append work to
+  <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/tasks/"><code>tasks.md</code></a>.</li>
+<li><code>/speckit-taskstoissues</code> converts the generated tasks into GitHub Issues.</li>
+<li>A living specification changes <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a> first, then brings the plan, tasks,
+  implementation, and tests back into agreement.</li>
+<li><code>specify check</code> inspects the local tool environment. It does not prove that code
+  complies with a YAML specification.</li>
+</ul>
 <h2 id="prepared-demo">Prepared demo<a class="headerlink" href="#prepared-demo" title="Permanent link">&para;</a></h2>
-<p>Use the archive-task artifacts and, if an approved assistant is available, enter:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Review only the supplied archive-task artifacts.
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Map each acceptance criterion to its task and test. List any task with no
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>requirement and any requirement with no evidence. Do not invent product, policy,
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>authorization, or data decisions. Stop if a checklist item is unresolved.
-</code></pre></div>
-<p>Show one clarification, remove one out-of-scope task, and trace the final handoff. Learners should produce a criterion-to-task-to-test map, an explicit deferral for each unresolved question, and a <code>converged</code>, <code>revise</code>, or <code>pause</code> decision. At 0:55, stop using tools and finish the traceability review with the manual cards.</p>
+<p>Prepare one mismatch before the session: make the implementation hide archived
+tasks by default, but omit the test for <code>include_archived=True</code>. Run convergence
+and show the appended test task. Then add the test, run the suite, and converge
+again. Then reveal <a href="../../../sessions/session-18-spec-kit/lab/starter/archive-task/change-request/"><code>change-request.md</code></a> and show how restore behavior flows through
+clarification, planning, tasks, analysis, implementation, and convergence.</p>
+<p>This is more useful than showing a static handoff. Learners see the artifacts drive
+real work.</p>
+<h2 id="delivery-controls">Delivery controls<a class="headerlink" href="#delivery-controls" title="Permanent link">&para;</a></h2>
+<p>Use synthetic data and a GitHub training repository. Record the approved source and
+release tag. If the environment is disconnected, use an official air-gapped
+package prepared before delivery. Stop when the approved Spec Kit path or selected
+integration is unavailable.</p>
 <h2 id="common-questions">Common questions<a class="headerlink" href="#common-questions" title="Permanent link">&para;</a></h2>
 <p><strong>Why not ask an agent to build it immediately?</strong> A specification exposes missing decisions while they are still cheap to change.</p>
 <p><strong>Can the tool define the process?</strong> No. The team owns the process and reviews its outputs.</p>
-<p><strong>What if the package is not approved?</strong> Use the manual path and record the missing approval.</p>
+<p><strong>What if the package is not approved?</strong> Stop. Do not replace Spec Kit with
+course-created commands.</p>
+<p><strong>What is <code>.specify.yml</code>?</strong> It is not part of the Spec Kit project model used in
+this session. The meaningful files are the generated <code>.specify/</code> infrastructure and
+the feature artifacts under <code>specs/</code>.</p>
 
 
 

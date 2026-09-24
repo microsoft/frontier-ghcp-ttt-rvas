@@ -4852,6 +4852,81 @@
 <p>The agent can read or change the same state through bounded capabilities.</p>
 <p>Use a canvas when work needs visible progress, direct steering, or a handoff artifact.</p>
 <hr />
+<h1 id="a-canvas-is-not-the-source-system">A canvas is not the source system<a class="headerlink" href="#a-canvas-is-not-the-source-system" title="Permanent link">&para;</a></h1>
+<p>The canvas helps a team decide and coordinate. It should not quietly replace the
+system that owns the work.</p>
+<table>
+<thead>
+<tr>
+<th>If the system owns</th>
+<th>The canvas should show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Issue state</td>
+<td>A labeled planning view</td>
+</tr>
+<tr>
+<td>Approval record</td>
+<td>A link or reference to the decision</td>
+</tr>
+<tr>
+<td>Customer data</td>
+<td>Only approved, minimized fields</td>
+</tr>
+</tbody>
+</table>
+<p>When the two views disagree, verify the source system and correct or explain the
+canvas. Do not assume the more convenient view is right.</p>
+<hr />
+<h1 id="bound-agent-authority-by-action">Bound agent authority by action<a class="headerlink" href="#bound-agent-authority-by-action" title="Permanent link">&para;</a></h1>
+<p>An agent capability should map to one safe, explainable action.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Safe example</th>
+<th>Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td>Summarize items waiting for review</td>
+<td>Cannot infer missing evidence</td>
+</tr>
+<tr>
+<td>Propose</td>
+<td>Suggest a status update</td>
+<td>Human accepts the change</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>Mark one named item ready</td>
+<td>Evidence is required</td>
+</tr>
+<tr>
+<td>Act externally</td>
+<td>None in this lab</td>
+<td>Excluded by design</td>
+</tr>
+</tbody>
+</table>
+<p>If an action needs a broad verb such as "manage" or "handle," the contract is
+probably too vague for a shared artifact.</p>
+<hr />
+<h1 id="design-for-recovery">Design for recovery<a class="headerlink" href="#design-for-recovery" title="Permanent link">&para;</a></h1>
+<p>Trainers should show learners how the canvas fails safely:</p>
+<ol>
+<li>A user enters a status that is not allowed.</li>
+<li>The canvas rejects it and shows the permitted values.</li>
+<li>An item has no evidence, so <code>ready</code> remains unavailable.</li>
+<li>The owner corrects the record or returns it to an earlier status.</li>
+</ol>
+<p>A canvas needs an owner, a clear source of truth, and a way to retire it when the
+work ends. Otherwise it becomes another stale dashboard.</p>
+<hr />
 <h1 id="design-the-contract">Design the contract<a class="headerlink" href="#design-the-contract" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>State: item, status, review flag, evidence
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>User actions: add, update status, flag review

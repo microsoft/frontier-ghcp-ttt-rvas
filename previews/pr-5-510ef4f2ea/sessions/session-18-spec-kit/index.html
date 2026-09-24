@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#session-18-spec-kit-enterprise-specification-driven-development" class="md-skip">
+        <a href="#session-18-spec-kit-specification-driven-development" class="md-skip">
           Skip to content
         </a>
       
@@ -3485,10 +3485,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delivery-preflight" class="md-nav__link">
+  <a href="#required-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery preflight
+        Required access
       
     </span>
   </a>
@@ -3496,10 +3496,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialization-pattern" class="md-nav__link">
+  <a href="#approved-installation-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Initialization pattern
+        Approved installation pattern
       
     </span>
   </a>
@@ -4932,10 +4932,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delivery-preflight" class="md-nav__link">
+  <a href="#required-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery preflight
+        Required access
       
     </span>
   </a>
@@ -4943,10 +4943,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialization-pattern" class="md-nav__link">
+  <a href="#approved-installation-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Initialization pattern
+        Approved installation pattern
       
     </span>
   </a>
@@ -4988,7 +4988,7 @@
   <a href="../../sessions/session-18-spec-kit/lab/">Lab</a>
   <a href="../../sessions/session-18-spec-kit/trainer-content/" class="trainer-guide-btn">Trainer Guide</a>
 </nav>
-<h1 id="session-18-spec-kit-enterprise-specification-driven-development">Session 18 — Spec Kit: Enterprise Specification-Driven Development<a class="headerlink" href="#session-18-spec-kit-enterprise-specification-driven-development" title="Permanent link">&para;</a></h1>
+<h1 id="session-18-spec-kit-specification-driven-development">Session 18 — Spec Kit: Specification-Driven Development<a class="headerlink" href="#session-18-spec-kit-specification-driven-development" title="Permanent link">&para;</a></h1>
 <div class="presentation-launcher">
   <button type="button" class="presentation-launch-btn" data-presentation-open
     aria-haspopup="dialog" aria-controls="pres-modal" hidden>Launch Slides</button>
@@ -5009,29 +5009,46 @@
 <p><strong>Module:</strong> Specification-Driven Frameworks</p>
 <p><strong>Difficulty:</strong> Advanced</p>
 <p><strong>Prerequisites:</strong> Sessions 01–12 and 17
-<strong>Duration:</strong> 3 hours (1 hour trainer content, 2 hours lab)</p>
+<strong>Duration:</strong> 3 hours 30 minutes (1 hour trainer content, 2 hours 30 minutes lab)</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Specification-driven delivery lets teams review intent before implementation. Spec Kit is an optional pre-1.0 example that turns a bounded request into a constitution, specification, clarification record, plan, checklist, tasks, analysis, implementation, and convergence review.</p>
-<p>Use only the customer-approved package source and pinned version.</p>
+<p>Use Spec Kit to carry one bounded change from a feature request to working, tested
+code. Learners initialize an existing Python project, create the generated Spec Kit
+artifacts, implement an archive operation, and run convergence review. They then
+evolve the living specification to add restore behavior and repeat the workflow.</p>
+<p>The lab uses Spec Kit's real project model:</p>
+<ul>
+<li><code>.specify/memory/constitution.md</code> stores project principles.</li>
+<li><code>specs/&lt;feature&gt;/spec.md</code> stores requirements and user stories.</li>
+<li><a href="../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/plan/"><code>plan.md</code></a>, supporting design files, and <a href="../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/tasks/"><code>tasks.md</code></a> drive implementation.</li>
+<li><code>/speckit-analyze</code> checks artifact consistency.</li>
+<li><code>/speckit-converge</code> compares the implementation with the accepted artifacts.</li>
+<li><code>/speckit-taskstoissues</code> converts the generated task list into GitHub Issues.</li>
+</ul>
+<p>Spec Kit generates its own Copilot skills during <code>specify init</code>. This session does
+not ship substitute skills or a <code>.specify.yml</code> configuration file.</p>
 <h2 id="learning-outcomes">Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Turn a request into a specification ready for implementation.</li>
-<li>Follow the sequence from constitution through convergence.</li>
-<li>Store shared guidance in <code>.github/skills/</code>.</li>
-<li>Apply Session 17 decisions for access, data, metering, and fallback.</li>
+<li>Initialize Spec Kit in an existing repository and inspect the generated files.</li>
+<li>Write testable requirements before choosing an implementation.</li>
+<li>Turn the accepted specification into a plan and dependency-ordered tasks.</li>
+<li>Convert generated tasks into GitHub Issues.</li>
+<li>Implement the change in stages and use convergence to find missing work.</li>
+<li>Evolve a living specification and bring downstream artifacts back into alignment.</li>
+<li>Explain which files come from Spec Kit and which records belong to the team.</li>
 </ul>
-<h2 id="delivery-preflight">Delivery preflight<a class="headerlink" href="#delivery-preflight" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Confirm Enterprise Cloud access, repository permissions, and enabled policies.</li>
-<li>Confirm the approved Spec Kit version, source, and network path.</li>
-<li>Use synthetic requirements in a training repository.</li>
-<li>Set a stop guard and prepare a manual-artifact fallback.</li>
-</ul>
-<h2 id="initialization-pattern">Initialization pattern<a class="headerlink" href="#initialization-pattern" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>specify-cli
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>specify<span class="w"> </span>init<span class="w"> </span>&lt;project&gt;<span class="w"> </span>--integration<span class="w"> </span>copilot<span class="w"> </span>--integration-options<span class="o">=</span><span class="s2">"--skills"</span>
+<h2 id="required-access">Required access<a class="headerlink" href="#required-access" title="Permanent link">&para;</a></h2>
+<p>Learners need a GitHub training repository with issue permissions, Python 3.10 or
+later, Git, GitHub Copilot in the selected coding environment, and an approved Spec
+Kit source and version. For disconnected environments, prepare the official
+air-gapped package before the session.</p>
+<h2 id="approved-installation-pattern">Approved installation pattern<a class="headerlink" href="#approved-installation-pattern" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPECKIT_TAG</span><span class="o">=</span><span class="s1">'&lt;approved-release-tag&gt;'</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>specify-cli<span class="w"> </span>--force<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--from<span class="w"> </span><span class="s2">"git+https://github.com/github/spec-kit.git@</span><span class="si">${</span><span class="nv">SPECKIT_TAG</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>specify<span class="w"> </span>version
 </code></pre></div>
-<p>Replace the install command with the customer-approved pinned reference. Do not treat the version or generated layout as a stable contract.</p>
+<p>Use the approved internal package source instead when policy requires it. Record the
+source, tag, and approval before installation.</p>
 <h2 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5052,6 +5069,14 @@
 <tr>
 <td>Lab</td>
 <td><a href="lab/"><code>lab/</code></a></td>
+</tr>
+<tr>
+<td>Starter project</td>
+<td><a href="lab/starter/archive-task/"><code>lab/starter/archive-task/</code></a></td>
+</tr>
+<tr>
+<td>Reference result</td>
+<td><a href="lab/solution/archive-task/"><code>lab/solution/archive-task/</code></a></td>
 </tr>
 </tbody>
 </table>

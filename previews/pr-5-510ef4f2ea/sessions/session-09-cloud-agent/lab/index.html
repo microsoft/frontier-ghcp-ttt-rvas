@@ -5467,12 +5467,12 @@
 <h2 id="no-access-fallback-for-the-whole-lab">No-access fallback for the whole lab<a class="headerlink" href="#no-access-fallback-for-the-whole-lab" title="Permanent link">&para;</a></h2>
 <p>If cloud-agent access is unavailable, complete the lab manually:</p>
 <ol>
-<li>Use <code>lab/starter/issue-templates/good-issue.md</code> as the target issue.</li>
+<li>Use <a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/good-issue/"><code>lab/starter/issue-templates/good-issue.md</code></a> as the target issue.</li>
 <li>Copy <code>lab/starter/sample-project/</code> into a writable sandbox.</li>
 <li>Apply the smallest implementation manually.</li>
 <li>Run or inspect the checks requested in the issue.</li>
-<li>Review the change with <code>lab/starter/pr-review-checklist.md</code>.</li>
-<li>Fill in <code>lab/starter/agent-comparison-template.md</code> by comparing the manual baseline with the expected agent workflow.</li>
+<li>Review the change with <a href="../../../sessions/session-09-cloud-agent/lab/starter/pr-review-checklist/"><code>lab/starter/pr-review-checklist.md</code></a>.</li>
+<li>Fill in <a href="../../../sessions/session-09-cloud-agent/lab/starter/agent-comparison-template/"><code>lab/starter/agent-comparison-template.md</code></a> by comparing the manual baseline with the expected agent workflow.</li>
 </ol>
 <blockquote>
 <p><strong>Check:</strong> You have a bounded issue, a code change or implementation plan, test evidence, and a human review decision.</p>
@@ -5481,16 +5481,16 @@
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>Use these starter assets:</p>
 <ul>
-<li><code>lab/starter/issue-templates/issue-writing-guide.md</code> — how to write agent-ready work</li>
-<li><code>lab/starter/issue-templates/good-issue.md</code> — example of a strong issue</li>
-<li><code>lab/starter/issue-templates/bad-issue.md</code> — example of a weak issue</li>
-<li><code>lab/starter/copilot-instructions.md</code> — repository guidance template</li>
-<li><code>lab/starter/copilot-setup-steps.yml</code> — setup-step example for repeatable environments</li>
-<li><code>lab/starter/sample-project/package.json</code> — project scripts and dependencies</li>
-<li><code>lab/starter/sample-project/src/app.js</code> — application under change</li>
-<li><code>lab/starter/sample-project/tests/app.test.js</code> — test suite for validation</li>
-<li><code>lab/starter/pr-review-checklist.md</code> — review worksheet for agent output</li>
-<li><code>lab/starter/agent-comparison-template.md</code> — comparison worksheet</li>
+<li><a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/issue-writing-guide/"><code>lab/starter/issue-templates/issue-writing-guide.md</code></a> — how to write agent-ready work</li>
+<li><a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/good-issue/"><code>lab/starter/issue-templates/good-issue.md</code></a> — example of a strong issue</li>
+<li><a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/bad-issue/"><code>lab/starter/issue-templates/bad-issue.md</code></a> — example of a weak issue</li>
+<li><a href="../../../sessions/session-09-cloud-agent/lab/starter/copilot-instructions/"><code>lab/starter/copilot-instructions.md</code></a> — repository guidance template</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-09-cloud-agent/lab/starter/copilot-setup-steps.yml"><code>lab/starter/copilot-setup-steps.yml</code></a> — setup-step example for repeatable environments</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-09-cloud-agent/lab/starter/sample-project/package.json"><code>lab/starter/sample-project/package.json</code></a> — project scripts and dependencies</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-09-cloud-agent/lab/starter/sample-project/src/app.js"><code>lab/starter/sample-project/src/app.js</code></a> — application under change</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-09-cloud-agent/lab/starter/sample-project/tests/app.test.js"><code>lab/starter/sample-project/tests/app.test.js</code></a> — test suite for validation</li>
+<li><a href="../../../sessions/session-09-cloud-agent/lab/starter/pr-review-checklist/"><code>lab/starter/pr-review-checklist.md</code></a> — review worksheet for agent output</li>
+<li><a href="../../../sessions/session-09-cloud-agent/lab/starter/agent-comparison-template/"><code>lab/starter/agent-comparison-template.md</code></a> — comparison worksheet</li>
 </ul>
 <p>Set up the sample project locally:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/copilot-labs/session-09
@@ -5508,19 +5508,19 @@
 <p>Write an issue that gives a cloud coding agent enough context for a small task and gives a human reviewer testable criteria.</p>
 <h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Read the guide.</strong> Open <code>lab/starter/issue-templates/issue-writing-guide.md</code>.</li>
+<li><strong>Read the guide.</strong> Open <a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/issue-writing-guide/"><code>lab/starter/issue-templates/issue-writing-guide.md</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>Check:</strong> Strong issues include a specific title, clear description, testable acceptance criteria, file references, and constraints.</p>
 </blockquote>
 <ol>
-<li><strong>Compare example issues.</strong> Read <code>lab/starter/issue-templates/good-issue.md</code> and <code>lab/starter/issue-templates/bad-issue.md</code>.</li>
+<li><strong>Compare example issues.</strong> Read <a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/good-issue/"><code>lab/starter/issue-templates/good-issue.md</code></a> and <a href="../../../sessions/session-09-cloud-agent/lab/starter/issue-templates/bad-issue/"><code>lab/starter/issue-templates/bad-issue.md</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>Expected:</strong> You can explain why the good issue is actionable and the bad issue is ambiguous.</p>
 </blockquote>
 <ol>
-<li><strong>Choose one bounded task.</strong> Use a task that changes one small behavior in <code>lab/starter/sample-project/src/app.js</code> and its test file.</li>
+<li><strong>Choose one bounded task.</strong> Use a task that changes one small behavior in <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-09-cloud-agent/lab/starter/sample-project/src/app.js"><code>lab/starter/sample-project/src/app.js</code></a> and its test file.</li>
 </ol>
 <p>Example scope:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Add validation so POST /api/tasks returns 400 when title is empty.
@@ -5568,7 +5568,7 @@
 <p>Prepare the repository context for the agent and confirm the setup path is repeatable.</p>
 <h3 id="steps_1">Steps<a class="headerlink" href="#steps_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Read the instruction template.</strong> Open <code>lab/starter/copilot-instructions.md</code>.</li>
+<li><strong>Read the instruction template.</strong> Open <a href="../../../sessions/session-09-cloud-agent/lab/starter/copilot-instructions/"><code>lab/starter/copilot-instructions.md</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>Check:</strong> The template defines the project, stack, conventions, tests, file structure, and constraints.</p>
@@ -5580,7 +5580,7 @@
 <p><strong>Success criteria:</strong> Instructions mention Node.js 20, Express, Jest/Supertest, <code>src/app.js</code>, <code>tests/app.test.js</code>, no new dependencies unless approved, and <code>npm test</code> as the completion check.</p>
 </blockquote>
 <ol>
-<li><strong>Review setup steps.</strong> Open <code>lab/starter/copilot-setup-steps.yml</code>.</li>
+<li><strong>Review setup steps.</strong> Open <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-09-cloud-agent/lab/starter/copilot-setup-steps.yml"><code>lab/starter/copilot-setup-steps.yml</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>Expected:</strong> You can explain how the setup installs dependencies and prepares tests for the agent environment.</p>
@@ -5639,7 +5639,7 @@
 <p><strong>Expected output:</strong> The test output is captured in the review record. Passing tests do not replace human inspection.</p>
 </blockquote>
 <ol>
-<li><strong>Complete <code>lab/starter/pr-review-checklist.md</code>.</strong> Review correctness, code quality, security, dependencies, documentation, and agent-specific checks.</li>
+<li><strong>Complete <a href="../../../sessions/session-09-cloud-agent/lab/starter/pr-review-checklist/"><code>lab/starter/pr-review-checklist.md</code></a>.</strong> Review correctness, code quality, security, dependencies, documentation, and agent-specific checks.</li>
 </ol>
 <blockquote>
 <p><strong>Success criteria:</strong> The checklist includes the final decision and at least one concrete evidence item for every relevant category.</p>
@@ -5664,7 +5664,7 @@
 <p>Compare outcomes consistently. Do not assume any specific third-party or cloud agent is enabled.</p>
 <h3 id="steps_3">Steps<a class="headerlink" href="#steps_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Open the comparison template.</strong> Use <code>lab/starter/agent-comparison-template.md</code>.</li>
+<li><strong>Open the comparison template.</strong> Use <a href="../../../sessions/session-09-cloud-agent/lab/starter/agent-comparison-template/"><code>lab/starter/agent-comparison-template.md</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>Check:</strong> The template compares scope control, correctness, tests, review findings, time, and policy fit.</p>
@@ -5712,8 +5712,8 @@
 <li>The repository instructions or setup notes you reviewed.</li>
 <li>The proposed change or manual baseline.</li>
 <li><code>npm test</code> output or a documented static-review fallback.</li>
-<li>The completed <code>pr-review-checklist.md</code>.</li>
-<li>The completed <code>agent-comparison-template.md</code>.</li>
+<li>The completed <a href="../../../sessions/session-09-cloud-agent/lab/starter/pr-review-checklist/"><code>pr-review-checklist.md</code></a>.</li>
+<li>The completed <a href="../../../sessions/session-09-cloud-agent/lab/starter/agent-comparison-template/"><code>agent-comparison-template.md</code></a>.</li>
 <li>A final decision: approve, request changes, or pause.</li>
 </ol>
 <blockquote>
@@ -5727,7 +5727,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A human reviewer assessed the change.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Required checks passed or a no-access/static fallback is documented.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Metered work used a customer-defined stop guard.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Starter files used: issue templates, <code>copilot-instructions.md</code>, <code>copilot-setup-steps.yml</code>, <code>sample-project/</code>, <code>pr-review-checklist.md</code>, and <code>agent-comparison-template.md</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Starter files used: issue templates, <a href="../../../sessions/session-09-cloud-agent/lab/starter/copilot-instructions/"><code>copilot-instructions.md</code></a>, <code>copilot-setup-steps.yml</code>, <code>sample-project/</code>, <a href="../../../sessions/session-09-cloud-agent/lab/starter/pr-review-checklist/"><code>pr-review-checklist.md</code></a>, and <a href="../../../sessions/session-09-cloud-agent/lab/starter/agent-comparison-template/"><code>agent-comparison-template.md</code></a>.</li>
 </ul>
 
 

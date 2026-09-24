@@ -4875,10 +4875,63 @@
 </tbody>
 </table>
 <hr />
+<h1 id="iac-describes-desired-resources-not-intent">IaC describes desired resources, not intent<a class="headerlink" href="#iac-describes-desired-resources-not-intent" title="Permanent link">&para;</a></h1>
+<p>The same configuration can create a secure private service or an exposed one. The
+difference is in the details: identity, network paths, defaults, and dependencies.</p>
+<p>Before generating code, establish:</p>
+<ul>
+<li>the architecture boundary and approved regions;</li>
+<li>the inputs that come from the environment;</li>
+<li>who owns state and applies changes;</li>
+<li>the controls that must be visible in review.</li>
+</ul>
+<p>Copilot can draft resources. The architecture must come first.</p>
+<hr />
+<h1 id="modules-create-contracts">Modules create contracts<a class="headerlink" href="#modules-create-contracts" title="Permanent link">&para;</a></h1>
+<p>A module is useful when callers should depend on a stable interface rather than
+the resources inside it.</p>
+<table>
+<thead>
+<tr>
+<th>Module element</th>
+<th>Review question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input</td>
+<td>Is this the smallest safe configuration surface?</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Does this expose only what callers need?</td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>Does it meet the architecture and policy constraints?</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Can another team use it without reading its internals?</td>
+</tr>
+</tbody>
+</table>
+<p>Avoid modules that only hide a single resource without creating a useful boundary.</p>
+<hr />
+<h1 id="state-and-preview-answer-different-questions">State and preview answer different questions<a class="headerlink" href="#state-and-preview-answer-different-questions" title="Permanent link">&para;</a></h1>
+<p>State records what the IaC tool believes it manages. A plan or what-if compares
+the requested configuration with the target environment.</p>
+<p>Both need protection:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>State: approved backend, access controls, no secrets in source
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Preview: approved identity, bounded environment, human review before apply
+</code></pre></div>
+<p>Never use generated IaC as proof that a deployment is safe. Use the preview to
+find changes, then review whether those changes should happen.</p>
+<hr />
 <h1 id="prompt-from-facts">Prompt from facts<a class="headerlink" href="#prompt-from-facts" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Read this Terraform project. Add a network module for the supplied CIDRs.
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Expose only needed VPC and subnet IDs. Use variables and outputs; do not add
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>credentials, public database access, or a plan/apply command.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Read this Terraform project. Add a network module for the supplied CIDRs.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Expose only needed VPC and subnet IDs. Use variables and outputs; do not add
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>credentials, public database access, or a plan/apply command.
 </code></pre></div>
 <p>Check every resource against the architecture before accepting it.</p>
 <hr />
@@ -4894,9 +4947,9 @@
 <p>Generated IaC is a draft. Human review owns the deployment decision.</p>
 <hr />
 <h1 id="validate-locally">Validate locally<a class="headerlink" href="#validate-locally" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>terraform<span class="w"> </span>fmt
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>terraform<span class="w"> </span>validate
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>az<span class="w"> </span>bicep<span class="w"> </span>build<span class="w"> </span>--file<span class="w"> </span>main.bicep
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>terraform<span class="w"> </span>fmt
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>terraform<span class="w"> </span>validate
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>az<span class="w"> </span>bicep<span class="w"> </span>build<span class="w"> </span>--file<span class="w"> </span>main.bicep
 </code></pre></div>
 <p>A plan or what-if needs an approved environment, credentials, and stop guard.</p>
 <hr />

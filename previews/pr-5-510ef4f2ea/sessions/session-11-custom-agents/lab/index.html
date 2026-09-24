@@ -5052,18 +5052,18 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>npm<span class="w"> </span>install
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>.github/agents
 </code></pre></div>
-<p>Create <code>.github/agents/test-writer.md</code>. Use the solution only after your review: <code>lab/solution/agent-project/.github/agents/test-writer.md</code>.</p>
+<p>Create <code>.github/agents/test-writer.md</code>. Use the solution only after your review: <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-11-custom-agents/lab/solution/agent-project/.github/agents/test-writer.md"><code>lab/solution/agent-project/.github/agents/test-writer.md</code></a>.</p>
 <p>The profile should read the target and nearby tests, edit tests only, map acceptance criteria to success and error cases, run <code>npm test</code>, and ask for review. Test <code>src/user-service.js</code>, then <code>src/order-service.js</code>. Check each exported function and error case, then review the test result. Do not claim coverage that you did not measure.</p>
 <h2 id="2-documentation-profile">2. Documentation profile<a class="headerlink" href="#2-documentation-profile" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/docs-agent-template.md</code>, then create <code>.github/agents/docs-generator.md</code>. It must document only verified code, use runnable examples, and avoid invented interfaces. Draft a README and JSDoc for the supplied services to test it. Review the output against the source, then compare it with <code>lab/solution/docs-agent/</code>.</p>
+<p>Read <a href="../../../sessions/session-11-custom-agents/lab/starter/docs-agent-template/"><code>lab/starter/docs-agent-template.md</code></a>, then create <code>.github/agents/docs-generator.md</code>. It must document only verified code, use runnable examples, and avoid invented interfaces. Draft a README and JSDoc for the supplied services to test it. Review the output against the source, then compare it with <code>lab/solution/docs-agent/</code>.</p>
 <h2 id="3-data-analyst-profile">3. Data-analyst profile<a class="headerlink" href="#3-data-analyst-profile" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/mcp-agent-template.md</code>. Create the profile only after approval for the Session 10 SQLite server and synthetic database. Inspect the schema before querying, use explicit columns, validate relationships before joins, present the query with results, and keep access read-only.</p>
+<p>Read <a href="../../../sessions/session-11-custom-agents/lab/starter/mcp-agent-template/"><code>lab/starter/mcp-agent-template.md</code></a>. Create the profile only after approval for the Session 10 SQLite server and synthetic database. Inspect the schema before querying, use explicit columns, validate relationships before joins, present the query with results, and keep access read-only.</p>
 <p>To copy the synthetic database:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>../../../../session-10-mcp-servers/lab/starter/db-project/data<span class="w"> </span>./data
 </code></pre></div>
 <p>Ask for product-category revenue and inactive-customer analysis. Verify the tool calls and results. If MCP is unavailable, write the profile and trace the intended schema-first procedure manually.</p>
 <h2 id="4-evaluate-behavior">4. Evaluate behavior<a class="headerlink" href="#4-evaluate-behavior" title="Permanent link">&para;</a></h2>
-<p>Test each approved profile on a bounded task. Compare the result with <code>lab/starter/agent-test-scenarios.md</code> and record:</p>
+<p>Test each approved profile on a bounded task. Compare the result with <a href="../../../sessions/session-11-custom-agents/lab/starter/agent-test-scenarios/"><code>lab/starter/agent-test-scenarios.md</code></a> and record:</p>
 <ul>
 <li>whether the profile was available on the tested surface;</li>
 <li>paths and tools used;</li>

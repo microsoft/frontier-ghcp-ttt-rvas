@@ -5089,7 +5089,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@bradygaster/squad-cli
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>squad<span class="w"> </span>--version
 </code></pre></div>
-<p>Read <code>lab/starter/squad-init-guide.md</code>, then initialize the team through the approved path:</p>
+<p>Read <a href="../../../sessions/session-16-squad-orchestration/lab/starter/squad-init-guide/"><code>lab/starter/squad-init-guide.md</code></a>, then initialize the team through the approved path:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Initialize a Squad team for this Node.js Express API. We need bounded roles
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>for feature work, bug fixes, and quality review. Keep a decision record.
 </code></pre></div>
@@ -5127,7 +5127,7 @@
 </table>
 <p>If installation, agent mode, or the coordinator is unavailable, do not guess at a workaround. Use the tabletop route and preserve the same role and review decisions.</p>
 <h2 id="exercise-2-assign-work-to-agents-30-min">Exercise 2: Assign work to agents (30 min)<a class="headerlink" href="#exercise-2-assign-work-to-agents-30-min" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/work-assignments.md</code>. Assign the lead a design decision, the backend role one endpoint, and the tester focused edge-case coverage. Do not give several agents write access to the same files.</p>
+<p>Read <a href="../../../sessions/session-16-squad-orchestration/lab/starter/work-assignments/"><code>lab/starter/work-assignments.md</code></a>. Assign the lead a design decision, the backend role one endpoint, and the tester focused edge-case coverage. Do not give several agents write access to the same files.</p>
 <p>Example endpoint request:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{BackendName}, add GET /api/users/:id. Return a user by ID, return 404 when
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>it does not exist, follow the existing patterns, and add or update focused tests.
@@ -5140,13 +5140,13 @@
 </code></pre></div>
 <p>The reviewer should confirm that the decision, code, test evidence, and history agree. Split a request that is too broad or return it to the lead.</p>
 <h2 id="exercise-3-github-issues-integration-30-min">Exercise 3: GitHub Issues integration (30 min)<a class="headerlink" href="#exercise-3-github-issues-integration-30-min" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/sample-issues.md</code>. Create the general label and labels for the actual team names:</p>
+<p>Read <a href="../../../sessions/session-16-squad-orchestration/lab/starter/sample-issues/"><code>lab/starter/sample-issues.md</code></a>. Create the general label and labels for the actual team names:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gh<span class="w"> </span>label<span class="w"> </span>create<span class="w"> </span><span class="s2">"squad"</span><span class="w"> </span>--color<span class="w"> </span><span class="s2">"6f42c1"</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">"Work for the Squad AI team"</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>gh<span class="w"> </span>label<span class="w"> </span>create<span class="w"> </span><span class="s2">"squad:{backend-name}"</span><span class="w"> </span>--color<span class="w"> </span><span class="s2">"0e8a16"</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">"Assigned to {BackendName}"</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>gh<span class="w"> </span>label<span class="w"> </span>create<span class="w"> </span><span class="s2">"squad:{tester-name}"</span><span class="w"> </span>--color<span class="w"> </span><span class="s2">"d93f0b"</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">"Assigned to {TesterName}"</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>gh<span class="w"> </span>label<span class="w"> </span>create<span class="w"> </span><span class="s2">"squad:{lead-name}"</span><span class="w"> </span>--color<span class="w"> </span><span class="s2">"0075ca"</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">"Assigned to {LeadName}"</span>
 </code></pre></div>
-<p>Create the first three prepared issues from <code>sample-issues.md</code>, then ask the lead to triage only those issues. Each issue needs a bounded scope, acceptance criteria, non-goals, and a reviewer.</p>
+<p>Create the first three prepared issues from <a href="../../../sessions/session-16-squad-orchestration/lab/starter/sample-issues/"><code>sample-issues.md</code></a>, then ask the lead to triage only those issues. Each issue needs a bounded scope, acceptance criteria, non-goals, and a reviewer.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{LeadName}, triage the open Squad issues. Assign each to the appropriate
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>squad:{member} label and record the reason for the assignment.
 </code></pre></div>
@@ -5157,7 +5157,7 @@
 </code></pre></div>
 <p>Do not wait for a queue of autonomous changes. One reviewed issue is enough for the exercise.</p>
 <h2 id="exercise-4-ralph-and-continuous-development-30-min">Exercise 4: Ralph and continuous development (30 min)<a class="headerlink" href="#exercise-4-ralph-and-continuous-development-30-min" title="Permanent link">&para;</a></h2>
-<p>Read <code>lab/starter/ralph-guide.md</code> and <code>lab/starter/backlog-items.md</code>. Add the prepared backlog only if the repository and integration are approved. Review the monitor's status:</p>
+<p>Read <a href="../../../sessions/session-16-squad-orchestration/lab/starter/ralph-guide/"><code>lab/starter/ralph-guide.md</code></a> and <a href="../../../sessions/session-16-squad-orchestration/lab/starter/backlog-items/"><code>lab/starter/backlog-items.md</code></a>. Add the prepared backlog only if the repository and integration are approved. Review the monitor's status:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>squad<span class="w"> </span>watch<span class="w"> </span>--health
 </code></pre></div>
 <p>Use the monitor to surface ready work. A human approves or merges it. For every selected item, confirm the issue scope, assigned role, current meter, required checks, and human reviewer. Stop if ownership overlaps, a check fails, policy changes, or the usage guard is reached.</p>

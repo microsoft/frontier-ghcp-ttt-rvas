@@ -768,10 +768,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#session-18-spec-kit-enterprise-specification-driven-development" class="md-nav__link">
+  <a href="#session-18-spec-kit-specification-driven-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session 18 — Spec Kit: Enterprise Specification-Driven Development
+        Session 18 — Spec Kit: Specification-Driven Development
       
     </span>
   </a>
@@ -5611,10 +5611,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#session-18-spec-kit-enterprise-specification-driven-development" class="md-nav__link">
+  <a href="#session-18-spec-kit-specification-driven-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session 18 — Spec Kit: Enterprise Specification-Driven Development
+        Session 18 — Spec Kit: Specification-Driven Development
       
     </span>
   </a>
@@ -6741,34 +6741,41 @@ Covers the enterprise side of Copilot and is the authoritative governance and co
 <li>Address common enterprise concerns (security, IP, compliance)</li>
 </ul>
 <hr />
-<h3 id="session-18-spec-kit-enterprise-specification-driven-development">Session 18 — Spec Kit: Enterprise Specification-Driven Development<a class="headerlink" href="#session-18-spec-kit-enterprise-specification-driven-development" title="Permanent link">&para;</a></h3>
+<h3 id="session-18-spec-kit-specification-driven-development">Session 18 — Spec Kit: Specification-Driven Development<a class="headerlink" href="#session-18-spec-kit-specification-driven-development" title="Permanent link">&para;</a></h3>
 <p><strong>Difficulty:</strong> Advanced
 <strong>Prerequisites:</strong> Sessions 01–12 and 17
-<strong>Module:</strong> Specification-Driven Frameworks</p>
+<strong>Module:</strong> Specification-Driven Frameworks
+<strong>Duration:</strong> 3 hours 30 minutes</p>
 <p><strong>Description:</strong>
-Teaches a repeatable specification-driven development method before implementation begins. Trainees use Spec Kit as the practical example to convert enterprise requirements into a constitution, specification, plan, tasks, and an implementation handoff. The session uses a small, language-agnostic flow rather than a full application build.</p>
+Uses Spec Kit to carry one bounded feature from a source request to working code. Trainees convert tasks into GitHub Issues, implement in stages, converge, then evolve the living specification to add restore behavior.</p>
 <p><strong>Trainer Content Outline (1 hour):</strong></p>
 <ul>
-<li>Why enterprise delivery needs an explicit specification and constitution</li>
+<li>Why requirements should be reviewed before implementation</li>
 <li>Specification-driven flow: constitution → specify → clarify → plan → checklist → tasks → analyze → implement → converge</li>
-<li>Spec Kit as an open-source, pre-1.0 implementation example; pin the customer-approved version</li>
-<li>Copilot integration with project-shared skills under <code>.github/skills/</code></li>
-<li>Private catalog, air-gapped, and no-install delivery alternatives</li>
-<li>How to translate artifacts into a coding-agent-ready issue or task</li>
+<li>The generated <code>.specify/</code>, <code>specs/</code>, and Copilot integration files</li>
+<li>The difference between behavior in <a href="../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a> and technical choices in <code>plan.md</code></li>
+<li>How analysis and convergence expose gaps</li>
+<li>Task-to-issue conversion and staged implementation</li>
+<li>Living-spec evolution and approved installation paths</li>
 </ul>
 <p><strong>Lab Outline (2 hours):</strong></p>
 <ul>
-<li>Complete a 45–60 minute small-feature flow from constitution through a reviewed implementation handoff</li>
-<li>Use the prepared artifacts if the tool is unavailable, blocked by policy, or unsuitable for the customer network</li>
-<li>Review the deliverables against governance, access, and acceptance criteria</li>
-<li><strong>Deliverable:</strong> A constitution, specification, plan, tasks, and implementation handoff for a bounded feature</li>
+<li>Initialize Spec Kit in a runnable Python starter project</li>
+<li>Specify and clarify archive behavior</li>
+<li>Generate a plan, checklist, and dependency-ordered tasks</li>
+<li>Convert tasks into GitHub Issues</li>
+<li>Implement in stages, run unit tests, and converge</li>
+<li>Evolve the specification, plan, tasks, code, and tests for restore behavior</li>
+<li><strong>Deliverable:</strong> Working archive and restore behavior with traceable artifacts, issues, passing tests, and a final convergence result</li>
 </ul>
 <p><strong>Expected Learning Outcomes:</strong></p>
 <ul>
 <li>Apply specification-driven development to a bounded feature</li>
-<li>Configure or consume a project-shared Copilot skill integration</li>
-<li>Produce implementation-ready artifacts with acceptance and governance criteria</li>
-<li>Adapt the method for customer catalog, network, and policy constraints</li>
+<li>Identify the files that Spec Kit creates and the decisions the team owns</li>
+<li>Produce requirements, design artifacts, and tasks that trace to tests</li>
+<li>Use task-to-issue conversion and scoped implementation runs</li>
+<li>Use analysis before implementation and repeat the implement/converge loop</li>
+<li>Evolve a living specification without leaving downstream artifacts behind</li>
 </ul>
 <hr />
 <h3 id="session-19-end-to-end-capstone-project">Session 19 — End-to-End Capstone Project<a class="headerlink" href="#session-19-end-to-end-capstone-project" title="Permanent link">&para;</a></h3>

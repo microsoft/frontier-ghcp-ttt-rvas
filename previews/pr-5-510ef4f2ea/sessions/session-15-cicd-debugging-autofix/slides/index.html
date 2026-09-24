@@ -4866,13 +4866,65 @@
 </tbody>
 </table>
 <hr />
+<h1 id="classify-before-you-repair">Classify before you repair<a class="headerlink" href="#classify-before-you-repair" title="Permanent link">&para;</a></h1>
+<p>The same visible failure can have very different causes.</p>
+<table>
+<thead>
+<tr>
+<th>Failure class</th>
+<th>Evidence to gather</th>
+<th>Typical next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code regression</td>
+<td>Diff, test name, stack trace</td>
+<td>Repair the changed behavior</td>
+</tr>
+<tr>
+<td>Environment drift</td>
+<td>Tool version, image, dependency source</td>
+<td>Restore the approved environment</td>
+</tr>
+<tr>
+<td>Flaky dependency</td>
+<td>Timing, retries, external status</td>
+<td>Make the dependency explicit or isolate it</td>
+</tr>
+<tr>
+<td>Resource limit</td>
+<td>Memory, duration, concurrency</td>
+<td>Reduce load or change the approved limit</td>
+</tr>
+</tbody>
+</table>
+<p>Changing the first suspicious line often hides the actual cause.</p>
+<hr />
+<h1 id="a-remediation-is-a-hypothesis">A remediation is a hypothesis<a class="headerlink" href="#a-remediation-is-a-hypothesis" title="Permanent link">&para;</a></h1>
+<p>The agent's patch should connect a cause to a check:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Observation: Tests run on Node 18, but the project requires Node 20.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Hypothesis: The runner version causes the syntax failure.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Repair: Set the workflow to Node 20.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Check: Re-run the failed job and the focused test command.
+</code></pre></div>
+<p>Ask for this chain in every proposal. It gives the reviewer a way to reject a
+plausible patch that does not explain the evidence.</p>
+<hr />
+<h1 id="security-findings-need-a-different-review">Security findings need a different review<a class="headerlink" href="#security-findings-need-a-different-review" title="Permanent link">&para;</a></h1>
+<p>For a vulnerability remediation, confirm the affected path, exploit condition,
+scope of the change, and evidence that the control now works.</p>
+<p>Do not accept a patch because a scanner becomes quiet. The finding may be suppressed,
+misconfigured, or no longer reachable by the scan. Keep the security review focused
+on the reported weakness and its safe regression test.</p>
+<hr />
 <h1 id="give-copilot-relevant-evidence">Give Copilot relevant evidence<a class="headerlink" href="#give-copilot-relevant-evidence" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>The CI job failed in [step]. The workflow is #file:.github/workflows/ci.yml.
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>This change added [change].
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[failing-step output]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Identify the root cause, cite evidence, and propose the smallest repair.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>The CI job failed in [step]. The workflow is #file:.github/workflows/ci.yml.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>This change added [change].
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>[failing-step output]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Identify the root cause, cite evidence, and propose the smallest repair.
 </code></pre></div>
 <p>Do not send an entire log, secrets, or unrelated output.</p>
 <hr />

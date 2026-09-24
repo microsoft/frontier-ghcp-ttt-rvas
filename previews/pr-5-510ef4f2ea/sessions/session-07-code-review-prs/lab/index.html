@@ -5490,10 +5490,10 @@
 <p>If Copilot review, GitHub pull requests, or cloud access are unavailable, complete the workflow locally:</p>
 <ol>
 <li>Copy <code>lab/starter/review-project/</code> to a writable sandbox.</li>
-<li>Read <code>lab/starter/code-changes.md</code> and apply the intentionally flawed changes by hand.</li>
-<li>Use <code>lab/starter/partner-review-checklist.md</code> as the review form.</li>
+<li>Read <a href="../../../sessions/session-07-code-review-prs/lab/starter/code-changes/"><code>lab/starter/code-changes.md</code></a> and apply the intentionally flawed changes by hand.</li>
+<li>Use <a href="../../../sessions/session-07-code-review-prs/lab/starter/partner-review-checklist/"><code>lab/starter/partner-review-checklist.md</code></a> as the review form.</li>
 <li>Record each finding as if it were a pull-request comment: file, line or function, severity, evidence, and suggested fix.</li>
-<li>Correct the project manually, run the available checks, and compare the outcome with <code>lab/solution/README.md</code> if a solution reference is available in your delivery environment.</li>
+<li>Correct the project manually, run the available checks, and compare the outcome with <a href="../../../sessions/session-07-code-review-prs/lab/solution/"><code>lab/solution/README.md</code></a> if a solution reference is available in your delivery environment.</li>
 </ol>
 <blockquote>
 <p><strong>Check:</strong> You produce review comments, corrected code, test evidence, and a final human decision without automated review access.</p>
@@ -5502,15 +5502,15 @@
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>Use these starter assets:</p>
 <ul>
-<li><code>lab/starter/review-project/package.json</code> — project scripts and dependencies</li>
-<li><code>lab/starter/review-project/src/api.js</code> — Express API under review</li>
-<li><code>lab/starter/review-project/src/utils.js</code> — utility functions under review</li>
-<li><code>lab/starter/review-project/tests/api.test.js</code> — existing Jest/Supertest checks</li>
-<li><code>lab/starter/code-changes.md</code> — intentionally flawed changes to review</li>
-<li><code>lab/starter/partner-review-checklist.md</code> — structured review worksheet</li>
-<li><code>lab/starter/fix-evaluation-template.md</code> — evidence template for corrected changes</li>
-<li><code>lab/starter/conflict-scenario/README.md</code> — manual merge-conflict scenario</li>
-<li><code>lab/starter/conflict-scenario/utils-with-conflict.js</code> — conflict exercise source file</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-07-code-review-prs/lab/starter/review-project/package.json"><code>lab/starter/review-project/package.json</code></a> — project scripts and dependencies</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-07-code-review-prs/lab/starter/review-project/src/api.js"><code>lab/starter/review-project/src/api.js</code></a> — Express API under review</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-07-code-review-prs/lab/starter/review-project/src/utils.js"><code>lab/starter/review-project/src/utils.js</code></a> — utility functions under review</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-07-code-review-prs/lab/starter/review-project/tests/api.test.js"><code>lab/starter/review-project/tests/api.test.js</code></a> — existing Jest/Supertest checks</li>
+<li><a href="../../../sessions/session-07-code-review-prs/lab/starter/code-changes/"><code>lab/starter/code-changes.md</code></a> — intentionally flawed changes to review</li>
+<li><a href="../../../sessions/session-07-code-review-prs/lab/starter/partner-review-checklist/"><code>lab/starter/partner-review-checklist.md</code></a> — structured review worksheet</li>
+<li><a href="../../../sessions/session-07-code-review-prs/lab/starter/fix-evaluation-template/"><code>lab/starter/fix-evaluation-template.md</code></a> — evidence template for corrected changes</li>
+<li><a href="../../../sessions/session-07-code-review-prs/lab/starter/conflict-scenario/"><code>lab/starter/conflict-scenario/README.md</code></a> — manual merge-conflict scenario</li>
+<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-07-code-review-prs/lab/starter/conflict-scenario/utils-with-conflict.js"><code>lab/starter/conflict-scenario/utils-with-conflict.js</code></a> — conflict exercise source file</li>
 </ul>
 <p>Create a workspace outside the curriculum folder. This keeps the source materials unchanged:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/copilot-labs/session-07
@@ -5529,7 +5529,7 @@
 <p>Review a deliberately flawed change set. Focus on risks you can connect to evidence and acceptance criteria.</p>
 <h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Open the change brief.</strong> Read <code>lab/starter/code-changes.md</code> from start to finish.</li>
+<li><strong>Open the change brief.</strong> Read <a href="../../../sessions/session-07-code-review-prs/lab/starter/code-changes/"><code>lab/starter/code-changes.md</code></a> from start to finish.</li>
 </ol>
 <blockquote>
 <p><strong>Check:</strong> The brief lists changes to <code>src/api.js</code> and <code>src/utils.js</code>. Each has an intended defect.</p>
@@ -5588,7 +5588,7 @@
 <p><strong>Expected output:</strong> Some existing tests may still pass because the defects are not fully covered. Record both pass/fail output and any missing coverage you notice.</p>
 </blockquote>
 <ol>
-<li><strong>Complete the checklist.</strong> Use <code>lab/starter/partner-review-checklist.md</code> to review correctness, security, performance, readability, testing, and final verdict.</li>
+<li><strong>Complete the checklist.</strong> Use <a href="../../../sessions/session-07-code-review-prs/lab/starter/partner-review-checklist/"><code>lab/starter/partner-review-checklist.md</code></a> to review correctness, security, performance, readability, testing, and final verdict.</li>
 </ol>
 <blockquote>
 <p><strong>Success criteria:</strong> At least four findings cite a file or function, severity, and a suggested fix. Include a security concern, a correctness concern, and a testing gap.</p>
@@ -5658,7 +5658,7 @@
 <p><strong>Expected output:</strong> All tests pass. If tests fail, record the failing assertion and correct only the related implementation or test expectation.</p>
 </blockquote>
 <ol>
-<li><strong>Fill in <code>lab/starter/fix-evaluation-template.md</code>.</strong> Use it to summarize the finding, fix, test evidence, reviewer decision, and residual risk.</li>
+<li><strong>Fill in <a href="../../../sessions/session-07-code-review-prs/lab/starter/fix-evaluation-template/"><code>lab/starter/fix-evaluation-template.md</code></a>.</strong> Use it to summarize the finding, fix, test evidence, reviewer decision, and residual risk.</li>
 </ol>
 <blockquote>
 <p><strong>Success criteria:</strong> A reviewer can trace every fix back to an original finding.</p>
@@ -5680,13 +5680,13 @@
 <p>Resolve a merge conflict by preserving intent and adding verification. Do not blindly accept one side.</p>
 <h3 id="steps_2">Steps<a class="headerlink" href="#steps_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Read the scenario.</strong> Open <code>lab/starter/conflict-scenario/README.md</code>.</li>
+<li><strong>Read the scenario.</strong> Open <a href="../../../sessions/session-07-code-review-prs/lab/starter/conflict-scenario/"><code>lab/starter/conflict-scenario/README.md</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>You should observe:</strong> Two branches modify <code>src/utils.js</code>; one adds date formatting and the other changes price formatting.</p>
 </blockquote>
 <ol>
-<li><strong>Open the conflicting source.</strong> Review <code>lab/starter/conflict-scenario/utils-with-conflict.js</code>.</li>
+<li><strong>Open the conflicting source.</strong> Review <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-07-code-review-prs/lab/starter/conflict-scenario/utils-with-conflict.js"><code>lab/starter/conflict-scenario/utils-with-conflict.js</code></a>.</li>
 </ol>
 <blockquote>
 <p><strong>Expected output:</strong> You can identify the conflicting region and state what each side is trying to accomplish.</p>
@@ -5787,7 +5787,7 @@
 <li><strong>Compare automated and human findings if applicable.</strong> Mark which findings were caught by Copilot, by the human reviewer, or by both.</li>
 </ol>
 <blockquote>
-<p><strong>Expected output:</strong> The comparison table in <code>partner-review-checklist.md</code> is complete enough to support a team discussion.</p>
+<p><strong>Expected output:</strong> The comparison table in <a href="../../../sessions/session-07-code-review-prs/lab/starter/partner-review-checklist/"><code>partner-review-checklist.md</code></a> is complete enough to support a team discussion.</p>
 </blockquote>
 <h3 id="exercise-4-no-access-fallback">Exercise 4 no-access fallback<a class="headerlink" href="#exercise-4-no-access-fallback" title="Permanent link">&para;</a></h3>
 <p>If no automated review was used, compare your review with a peer's review. The fallback records the same evidence, decision, and rationale.</p>
@@ -5795,7 +5795,7 @@
 <h2 id="final-submission">Final submission<a class="headerlink" href="#final-submission" title="Permanent link">&para;</a></h2>
 <p>Submit one folder or document containing:</p>
 <ol>
-<li>The completed <code>partner-review-checklist.md</code> or equivalent review notes.</li>
+<li>The completed <a href="../../../sessions/session-07-code-review-prs/lab/starter/partner-review-checklist/"><code>partner-review-checklist.md</code></a> or equivalent review notes.</li>
 <li>A list of blocking findings and the smallest fix for each.</li>
 <li>Test or manual verification evidence for the corrected project.</li>
 <li>The resolved conflict decision and validation evidence.</li>
@@ -5813,7 +5813,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Required checks were run or a manual fallback was documented.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Metered work had a customer-defined stop guard.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The manual fallback is complete and reproducible.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Starter files used: <code>code-changes.md</code>, <code>partner-review-checklist.md</code>, <code>fix-evaluation-template.md</code>, <code>review-project/</code>, and <code>conflict-scenario/</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Starter files used: <a href="../../../sessions/session-07-code-review-prs/lab/starter/code-changes/"><code>code-changes.md</code></a>, <a href="../../../sessions/session-07-code-review-prs/lab/starter/partner-review-checklist/"><code>partner-review-checklist.md</code></a>, <a href="../../../sessions/session-07-code-review-prs/lab/starter/fix-evaluation-template/"><code>fix-evaluation-template.md</code></a>, <code>review-project/</code>, and <code>conflict-scenario/</code>.</li>
 </ul>
 
 

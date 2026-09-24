@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spec-kit-enterprise-specification-driven-development" class="md-skip">
+        <a href="#spec-kit-specification-driven-development" class="md-skip">
           Skip to content
         </a>
       
@@ -4761,6 +4761,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#make-the-work-clear-before-asking-an-agent-to-build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make the work clear before asking an agent to build it
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4780,43 +4799,466 @@
 
 <!-- _class: lead -->
 
-<h1 id="spec-kit-enterprise-specification-driven-development">Spec Kit: Enterprise Specification-Driven Development<a class="headerlink" href="#spec-kit-enterprise-specification-driven-development" title="Permanent link">&para;</a></h1>
-<p>Session 18 of 19 | 3 hours</p>
+<h1 id="spec-kit-specification-driven-development">Spec Kit: Specification-Driven Development<a class="headerlink" href="#spec-kit-specification-driven-development" title="Permanent link">&para;</a></h1>
+<h2 id="make-the-work-clear-before-asking-an-agent-to-build-it">Make the work clear before asking an agent to build it<a class="headerlink" href="#make-the-work-clear-before-asking-an-agent-to-build-it" title="Permanent link">&para;</a></h2>
+<p>Session 18 of 19 | 3 hours 30 minutes</p>
 <hr />
-<h1 id="make-intent-reviewable-before-code-exists">Make intent reviewable before code exists<a class="headerlink" href="#make-intent-reviewable-before-code-exists" title="Permanent link">&para;</a></h1>
-<p>A feature request is rarely ready to implement. Make its scope, constraints, and acceptance criteria explicit first.</p>
+<!-- _class: agenda -->
+
+<h1 id="agenda">Agenda<a class="headerlink" href="#agenda" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Why specification-driven development</td>
+<td>8 min</td>
+</tr>
+<tr>
+<td>Spec Kit project and artifact model</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>Requirements and clarification</td>
+<td>12 min</td>
+</tr>
+<tr>
+<td>Planning, checklists, tasks, and analysis</td>
+<td>12 min</td>
+</tr>
+<tr>
+<td>Implementation and convergence</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>Installation, fallback, and lab handoff</td>
+<td>8 min</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h1 id="the-sequence">The sequence<a class="headerlink" href="#the-sequence" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Constitution → Specify → Clarify → Plan → Checklist → Tasks →
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Analyze → Implement → Converge
+<h1 id="a-feature-request-is-a-starting-point">A feature request is a starting point<a class="headerlink" href="#a-feature-request-is-a-starting-point" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Users need to remove completed tasks from their normal working list without
+deleting task history.</p>
+</blockquote>
+<p>This sounds clear until implementation starts:</p>
+<ul>
+<li>Does "remove" mean hide, archive, or delete?</li>
+<li>What happens when the same task is archived twice?</li>
+<li>Can callers still retrieve archived tasks?</li>
+<li>What result should an unknown task ID produce?</li>
+</ul>
+<p><strong>Code should not be where these decisions first appear.</strong></p>
+<hr />
+<h1 id="specification-changes-when-decisions-happen">Specification changes when decisions happen<a class="headerlink" href="#specification-changes-when-decisions-happen" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Code-first path</th>
+<th>Specification-driven path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The agent fills gaps while coding</td>
+<td>The team resolves gaps before planning</td>
+</tr>
+<tr>
+<td>Tests inherit hidden assumptions</td>
+<td>Acceptance scenarios state expected behavior</td>
+</tr>
+<tr>
+<td>Scope additions appear as code</td>
+<td>Non-goals make additions visible</td>
+</tr>
+<tr>
+<td>Review starts with implementation details</td>
+<td>Review starts with intent and evidence</td>
+</tr>
+</tbody>
+</table>
+<p>The goal is not more documents. The goal is fewer accidental decisions.</p>
+<hr />
+<h1 id="what-spec-kit-provides">What Spec Kit provides<a class="headerlink" href="#what-spec-kit-provides" title="Permanent link">&para;</a></h1>
+<p>Spec Kit combines three things:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLI scaffolding</td>
+<td>Initializes templates, scripts, memory, and an agent integration</td>
+</tr>
+<tr>
+<td>Agent skills</td>
+<td>Guide constitution, specification, planning, implementation, and review</td>
+</tr>
+<tr>
+<td>Feature artifacts</td>
+<td>Keep requirements, design decisions, tasks, and checks reviewable</td>
+</tr>
+</tbody>
+</table>
+<p>The tool supplies a workflow. <strong>The team still owns every product and technical
+decision.</strong></p>
+<hr />
+<h1 id="initialize-an-existing-project">Initialize an existing project<a class="headerlink" href="#initialize-an-existing-project" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>specify<span class="w"> </span>init<span class="w"> </span>--here<span class="w"> </span>--force<span class="w"> </span>--integration<span class="w"> </span>copilot
 </code></pre></div>
-<p>Use the sequence to reason through the work. Spec Kit is an optional implementation example, not the contract.</p>
-<hr />
-<h1 id="constitution">Constitution<a class="headerlink" href="#constitution" title="Permanent link">&para;</a></h1>
-<p>Define the outcome, non-goals, constraints, owners, data boundary, and review gate.</p>
-<p>It stops a small request from becoming a product roadmap.</p>
-<hr />
-<h1 id="specify-behavior">Specify behavior<a class="headerlink" href="#specify-behavior" title="Permanent link">&para;</a></h1>
-<p>Describe endpoint or user behavior with observable criteria:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Given an invalid email, POST /users returns HTTP 400 and creates no user.
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Given an existing email, POST /users returns HTTP 409.
+<p>Review the generated diff before using the workflow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.specify/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── memory/constitution.md
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── scripts/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>└── templates/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>.github/skills/
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>└── speckit-*/
 </code></pre></div>
+<p><code>--force</code> allows initialization in a non-empty directory. It is not permission to
+accept every generated change without review.</p>
 <hr />
-<h1 id="clarify-before-planning">Clarify before planning<a class="headerlink" href="#clarify-before-planning" title="Permanent link">&para;</a></h1>
-<p>Resolve ambiguous behavior, or record an explicit deferral and its owner. Do not bury decisions in implementation tasks.</p>
+<h1 id="two-artifact-scopes">Two artifact scopes<a class="headerlink" href="#two-artifact-scopes" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Project-wide</th>
+<th>Feature-specific</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.specify/memory/constitution.md</code></td>
+<td><code>specs/&lt;feature&gt;/spec.md</code></td>
+</tr>
+<tr>
+<td>Shared scripts and templates</td>
+<td><a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/plan/"><code>plan.md</code></a> and design files</td>
+</tr>
+<tr>
+<td>Agent integration files</td>
+<td><code>checklists/</code> and <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/tasks/"><code>tasks.md</code></a></td>
+</tr>
+</tbody>
+</table>
+<p>The constitution applies across features. Each feature gets its own specification,
+design, tasks, and review trail.</p>
+<p><strong>Do not store feature status in an invented <code>.specify.yml</code>.</strong></p>
 <hr />
-<h1 id="plan-checklist-and-tasks">Plan, checklist, and tasks<a class="headerlink" href="#plan-checklist-and-tasks" title="Permanent link">&para;</a></h1>
-<p>The plan identifies implementation units and dependencies. The checklist covers acceptance and review. Tasks identify files, expected results, and checks.</p>
-<p>Remove tasks without a source requirement.</p>
+<h1 id="the-full-workflow">The full workflow<a class="headerlink" href="#the-full-workflow" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Constitution
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    ↓
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Specify → Clarify
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    ↓
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Plan → Checklist → Tasks
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    ↓
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Analyze
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    ↓
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Implement ⇄ Converge
+</code></pre></div>
+<p>Clarify, checklist, and analyze are quality gates. Use them when ambiguity or risk
+justifies the review.</p>
 <hr />
-<h1 id="convergence-review">Convergence review<a class="headerlink" href="#convergence-review" title="Permanent link">&para;</a></h1>
-<p>Compare the code or handoff, tests, and documentation against the accepted specification. Each criterion is passed, deferred, or returned for changes with evidence.</p>
+<h1 id="constitution-rules-for-how-the-project-works">Constitution: rules for how the project works<a class="headerlink" href="#constitution-rules-for-how-the-project-works" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/speckit-constitution
+</code></pre></div>
+<p>A useful principle is testable:</p>
+<table>
+<thead>
+<tr>
+<th>Weak principle</th>
+<th>Reviewable principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Write high-quality code</td>
+<td>Every accepted behavior has a focused automated test</td>
+</tr>
+<tr>
+<td>Keep things simple</td>
+<td>Use the Python standard library unless the plan records an approved exception</td>
+</tr>
+<tr>
+<td>Avoid regressions</td>
+<td>Existing create and list tests must remain in the suite</td>
+</tr>
+</tbody>
+</table>
+<p>If a principle cannot affect a plan or review, it is probably decoration.</p>
 <hr />
-<h1 id="delivery-controls">Delivery controls<a class="headerlink" href="#delivery-controls" title="Permanent link">&para;</a></h1>
-<p>Before installing a pre-1.0 tool, confirm the customer-approved package source and pinned version, access, integration, synthetic data, usage guard, and manual fallback.</p>
+<h1 id="specify-behavior-not-implementation">Specify behavior, not implementation<a class="headerlink" href="#specify-behavior-not-implementation" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/speckit-specify
+</code></pre></div>
+<p><a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a> should answer:</p>
+<ul>
+<li>Who needs the behavior?</li>
+<li>What outcome do they need?</li>
+<li>Which scenarios prove it works?</li>
+<li>What is explicitly outside scope?</li>
+<li>Which requirements are measurable?</li>
+</ul>
+<p>Avoid class names, database choices, package names, and file paths at this stage.</p>
 <hr />
-<h1 id="lab">Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h1>
-<p>Build a User API specification, carry a favorites request through the nine phases, review tool governance, and produce a peer-reviewed handoff.</p>
+<h1 id="write-scenarios-a-reviewer-can-challenge">Write scenarios a reviewer can challenge<a class="headerlink" href="#write-scenarios-a-reviewer-can-challenge" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Given an active task
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>When the caller archives its ID
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Then the task keeps its ID and title
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>And the default list no longer returns it
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Given an unknown task ID
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>When the caller archives it
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Then the store returns a clear not-found result
+</code></pre></div>
+<p>Good scenarios expose decisions. Vague statements such as "archive works correctly"
+do not.</p>
+<hr />
+<h1 id="clarify-before-choosing-a-design">Clarify before choosing a design<a class="headerlink" href="#clarify-before-choosing-a-design" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/speckit-clarify
+</code></pre></div>
+<p>For the archive feature, clarification must settle:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Accepted decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Archive twice?</td>
+<td>Return the same archived task</td>
+</tr>
+<tr>
+<td>Unknown ID?</td>
+<td>Raise <code>TaskNotFoundError</code></td>
+</tr>
+<tr>
+<td>Default list?</td>
+<td>Exclude archived tasks</td>
+</tr>
+<tr>
+<td>Historical access?</td>
+<td>Support <code>include_archived=True</code></td>
+</tr>
+<tr>
+<td>Title during archive?</td>
+<td>Preserve it unchanged</td>
+</tr>
+</tbody>
+</table>
+<p>Clarification updates the specification. It does not create a separate pile of
+decisions that future readers must reconcile.</p>
+<hr />
+<h1 id="plan-decide-how-the-feature-will-work">Plan: decide how the feature will work<a class="headerlink" href="#plan-decide-how-the-feature-will-work" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/speckit-plan
+</code></pre></div>
+<p>The plan can now choose implementation details:</p>
+<ul>
+<li>Python 3.10 or later;</li>
+<li>standard library only;</li>
+<li>in-memory dictionary storage;</li>
+<li>an <code>archived</code> Boolean on each task;</li>
+<li>changes limited to <code>src/task_store.py</code> and its tests.</li>
+</ul>
+<p><strong>The specification owns behavior. The plan owns the technical approach.</strong></p>
+<hr />
+<h1 id="supporting-design-files-have-a-purpose">Supporting design files have a purpose<a class="headerlink" href="#supporting-design-files-have-a-purpose" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/research/"><code>research.md</code></a></td>
+<td>Which choices were made, and which alternatives were rejected?</td>
+</tr>
+<tr>
+<td><a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/data-model/"><code>data-model.md</code></a></td>
+<td>Which entities, fields, rules, and state transitions exist?</td>
+</tr>
+<tr>
+<td><code>contracts/</code></td>
+<td>Which external interfaces must consumers follow?</td>
+</tr>
+<tr>
+<td><a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/quickstart/"><code>quickstart.md</code></a></td>
+<td>How can a reviewer verify the planned behavior?</td>
+</tr>
+</tbody>
+</table>
+<p>Not every feature needs every optional artifact. Keep the files that help someone
+implement or review the change.</p>
+<hr />
+<h1 id="a-checklist-reviews-requirement-quality">A checklist reviews requirement quality<a class="headerlink" href="#a-checklist-reviews-requirement-quality" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/speckit-checklist
+</code></pre></div>
+<p>A requirements checklist asks questions such as:</p>
+<ul>
+<li>Is repeated archive behavior defined?</li>
+<li>Is the default list behavior explicit?</li>
+<li>Does the specification define an unknown-ID result?</li>
+<li>Are existing behaviors protected?</li>
+</ul>
+<p>Checking an item means a reviewer found the requirement clear. It does <strong>not</strong> mean
+the code has been implemented or tested.</p>
+<hr />
+<h1 id="tasks-turn-design-into-executable-work">Tasks turn design into executable work<a class="headerlink" href="#tasks-turn-design-into-executable-work" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/speckit-tasks
+</code></pre></div>
+<p>Useful tasks are ordered, traceable, and specific:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>T001 [US1] Add archive state to new tasks in src/task_store.py
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>T002 [US1] Implement archive_task(task_id) in src/task_store.py
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>T003 [US1] Test default list filtering in tests/test_task_store.py
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>T004 [US2] Test repeated archive requests in tests/test_task_store.py
+</code></pre></div>
+<p>"Implement the feature" is not a task breakdown.</p>
+<hr />
+<h1 id="analyze-before-code-makes-mistakes-expensive">Analyze before code makes mistakes expensive<a class="headerlink" href="#analyze-before-code-makes-mistakes-expensive" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/speckit-analyze
+</code></pre></div>
+<p>Analysis looks across <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a>, <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/plan/"><code>plan.md</code></a>, and <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/tasks/"><code>tasks.md</code></a> for:</p>
+<ul>
+<li>a requirement with no implementation task;</li>
+<li>a task with no source requirement;</li>
+<li>a plan choice that contradicts accepted behavior;</li>
+<li>ambiguous or inconsistent terminology;</li>
+<li>missing coverage for a user story.</li>
+</ul>
+<p>The command is read-only. Fix each issue in the artifact that owns the decision,
+then analyze again.</p>
+<hr />
+<h1 id="implementation-follows-the-accepted-tasks">Implementation follows the accepted tasks<a class="headerlink" href="#implementation-follows-the-accepted-tasks" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/speckit-implement
+</code></pre></div>
+<p>Before implementation:</p>
+<ol>
+<li>Review and approve the requirements checklist.</li>
+<li>Resolve material analysis findings.</li>
+<li>Commit the accepted artifacts.</li>
+<li>Confirm the implementation scope.</li>
+</ol>
+<p>During implementation, tests and source code should point back to user stories and
+requirements rather than to a vague original prompt.</p>
+<hr />
+<h1 id="convergence-closes-the-loop">Convergence closes the loop<a class="headerlink" href="#convergence-closes-the-loop" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/speckit-converge
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Implementation
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>      ↓
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Compare code, tests, spec, plan, and tasks
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>      ↓
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>Converged ───────────────→ Review or pull request
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>      ↓ gaps found
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>Append tasks → Implement → Test → Converge again
+</code></pre></div>
+<p>Convergence does not rewrite requirements to match the code. It identifies the
+work needed to make the implementation and accepted artifacts agree.</p>
+<hr />
+<h1 id="specify-check-is-not-compliance-validation"><code>specify check</code> is not compliance validation<a class="headerlink" href="#specify-check-is-not-compliance-validation" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>specify<span class="w"> </span>check
+</code></pre></div>
+<p>Use it to inspect the local Spec Kit environment and available tools.</p>
+<p>It does <strong>not</strong>:</p>
+<ul>
+<li>compare source code with a YAML specification;</li>
+<li>enforce content-exclusion patterns;</li>
+<li>verify performance or test coverage;</li>
+<li>approve an implementation.</li>
+</ul>
+<p>Use tests, review, <code>/speckit-analyze</code>, and <code>/speckit-converge</code> for those jobs.</p>
+<hr />
+<h1 id="keep-the-project-model-honest">Keep the project model honest<a class="headerlink" href="#keep-the-project-model-honest" title="Permanent link">&para;</a></h1>
+<p>This session deliberately removes:</p>
+<ul>
+<li><code>.specify.yml</code> phase tracking;</li>
+<li>model-selection and fallback-model YAML;</li>
+<li>fictional <code>--verify-code</code> or <code>--against</code> flags;</li>
+<li>made-up exclusion enforcement;</li>
+<li>custom skills presented as generated Spec Kit files.</li>
+</ul>
+<p>Invented artifacts are worse than missing artifacts. They teach learners to trust
+controls that do not exist.</p>
+<hr />
+<h1 id="living-specifications-evolve-accepted-behavior">Living specifications evolve accepted behavior<a class="headerlink" href="#living-specifications-evolve-accepted-behavior" title="Permanent link">&para;</a></h1>
+<p>When requirements change, update the current feature artifacts in order:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>spec.md
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  ↓
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>plan.md
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>  ↓
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>tasks.md
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  ↓
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>/speckit-analyze
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>  ↓
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>/speckit-implement
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>  ↓
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>/speckit-converge
+</code></pre></div>
+<p>Do not leave a restore requirement only in code or an issue if <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a> remains
+the contract.</p>
+<hr />
+<h1 id="convert-tasks-into-github-issues">Convert tasks into GitHub Issues<a class="headerlink" href="#convert-tasks-into-github-issues" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/speckit-taskstoissues
+</code></pre></div>
+<p>The generated issues should preserve:</p>
+<ul>
+<li>task IDs and user-story references;</li>
+<li>dependencies and parallel markers;</li>
+<li>exact file paths and expected work;</li>
+<li>the boundaries already accepted in <a href="../../../sessions/session-18-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec/"><code>spec.md</code></a>.</li>
+</ul>
+<p>Issues distribute the work. They do not become a second requirements source.</p>
+<hr />
+<h1 id="approved-installation-paths">Approved installation paths<a class="headerlink" href="#approved-installation-paths" title="Permanent link">&para;</a></h1>
+<p>Install only from an approved source and pinned release:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPECKIT_TAG</span><span class="o">=</span><span class="s1">'&lt;approved-release-tag&gt;'</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>specify-cli<span class="w"> </span>--force<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span>--from<span class="w"> </span><span class="s2">"git+https://github.com/github/spec-kit.git@</span><span class="si">${</span><span class="nv">SPECKIT_TAG</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>specify<span class="w"> </span>version
+</code></pre></div>
+<p>Disconnected environments require the official air-gapped package prepared on a
+compatible connected machine. Stop when the approved installation or selected
+integration is unavailable.</p>
+<hr />
+<h1 id="prepared-demonstration">Prepared demonstration<a class="headerlink" href="#prepared-demonstration" title="Permanent link">&para;</a></h1>
+<p>Show one deliberate gap:</p>
+<ol>
+<li>Implement archive filtering.</li>
+<li>Omit the <code>include_archived=True</code> test.</li>
+<li>Run the existing unit tests.</li>
+<li>Run <code>/speckit-converge</code>.</li>
+<li>Inspect the task it appends.</li>
+<li>Add the missing test and converge again.</li>
+</ol>
+<p>This shows why passing tests and satisfying the specification are related but not
+identical.</p>
+<hr />
+<h1 id="lab-handoff">Lab handoff<a class="headerlink" href="#lab-handoff" title="Permanent link">&para;</a></h1>
+<p>You will:</p>
+<ol>
+<li>Run the starter tests.</li>
+<li>Initialize Spec Kit in the Python project.</li>
+<li>Specify and clarify task archiving.</li>
+<li>Create the plan, checklist, and tasks.</li>
+<li>Analyze before implementation.</li>
+<li>Convert tasks into GitHub Issues.</li>
+<li>Implement in stages and run the unit tests.</li>
+<li>Converge until the artifacts and code agree.</li>
+<li>Evolve the living specification to add restore behavior.</li>
+</ol>
+<p><strong>The lab ends with evolved artifacts, working code, passing tests, GitHub Issues,
+and a final convergence result.</strong></p>
 
 
 

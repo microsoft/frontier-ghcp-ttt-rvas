@@ -4812,15 +4812,84 @@
 <p>Verify current documentation and customer policy for the repository, surface, data, tools, meter, and reviewer. Use a non-sensitive sandbox.</p>
 <p>If access is unavailable, create the same artifact and use it as a manual checklist. Do not move the skill or bypass policy.</p>
 <hr />
-<h1 id="a-useful-skill">A useful skill<a class="headerlink" href="#a-useful-skill" title="Permanent link">&para;</a></h1>
+<h1 id="a-skill-is-an-executable-team-agreement">A skill is an executable team agreement<a class="headerlink" href="#a-skill-is-an-executable-team-agreement" title="Permanent link">&para;</a></h1>
+<p>A skill gives an agent a repeatable procedure. The repository gives the team a way
+to review, version, and improve that procedure.</p>
+<p>Use a skill when the work has stable steps and a recognizable outcome. Do not make
+a skill for a one-off prompt, a vague aspiration, or a policy that belongs in
+repository instructions.</p>
+<table>
+<thead>
+<tr>
+<th>Guidance type</th>
+<th>Best home</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Always true for the repository</td>
+<td>Instructions</td>
+</tr>
+<tr>
+<td>Repeatable task procedure</td>
+<td>Skill</td>
+</tr>
+<tr>
+<td>One specialist point of view</td>
+<td>Custom agent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="write-the-trigger-as-carefully-as-the-procedure">Write the trigger as carefully as the procedure<a class="headerlink" href="#write-the-trigger-as-carefully-as-the-procedure" title="Permanent link">&para;</a></h1>
+<p>The trigger decides when the procedure appears. A broad trigger creates noise;
+a narrow trigger lets the model miss relevant work.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">## When to use</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Creating or changing REST routes under <span class="sb">`src/api/`</span>.
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="gu">## Procedure</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">1.</span> Read the route and its tests.
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">2.</span> Validate input at the boundary.
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">3.</span> Add focused success and failure tests.
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">4.</span> Request review before merging.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Use when creating or changing REST routes under <span class="sb">`src/api/`</span>.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Do not use for internal helpers or generated clients.
+</code></pre></div>
+<p>Name the work, its boundary, and any exclusion that protects the workflow. Then
+make each procedure step observable enough for a reviewer to check.</p>
+<hr />
+<h1 id="a-skill-should-fail-visibly">A skill should fail visibly<a class="headerlink" href="#a-skill-should-fail-visibly" title="Permanent link">&para;</a></h1>
+<p>Skills need preconditions and stop conditions, not just happy-path instructions.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Expected behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required tests are absent</td>
+<td>Report the gap and ask for a decision</td>
+</tr>
+<tr>
+<td>Input is outside the named area</td>
+<td>Stop and redirect to the right procedure</td>
+</tr>
+<tr>
+<td>Command fails</td>
+<td>Surface the output and do not claim success</td>
+</tr>
+<tr>
+<td>Access is missing</td>
+<td>Use the documented manual fallback</td>
+</tr>
+</tbody>
+</table>
+<p>That is what turns a prompt into a process someone can trust.</p>
+<hr />
+<h1 id="a-useful-skill">A useful skill<a class="headerlink" href="#a-useful-skill" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## When to use</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Creating or changing REST routes under <span class="sb">`src/api/`</span>.
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="gu">## Procedure</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">1.</span> Read the route and its tests.
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">2.</span> Validate input at the boundary.
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">3.</span> Add focused success and failure tests.
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">4.</span> Request review before merging.
 </code></pre></div>
 <p>Add preconditions, validation, fallback, and an owner.</p>
 <hr />

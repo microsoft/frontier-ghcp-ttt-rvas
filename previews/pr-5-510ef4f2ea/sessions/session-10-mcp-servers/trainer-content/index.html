@@ -5075,14 +5075,14 @@
 <strong>Duration:</strong> 1 hour trainer content + 2 hours lab
 <strong>Last updated:</strong> April 2026</p>
 <h2 id="prepare-and-set-boundaries">Prepare and set boundaries<a class="headerlink" href="#prepare-and-set-boundaries" title="Permanent link">&para;</a></h2>
-<p>Use only the supplied synthetic database and simulated weather service. Before a live connection, check current official GitHub documentation and customer policy. Confirm the approved server, tools, authentication method, data boundary, and customer-defined metered-work stop guard. If approval is unavailable, use the local server and manual scenarios in <code>lab/starter/integration-test.md</code>.</p>
+<p>Use only the supplied synthetic database and simulated weather service. Before a live connection, check current official GitHub documentation and customer policy. Confirm the approved server, tools, authentication method, data boundary, and customer-defined metered-work stop guard. If approval is unavailable, use the local server and manual scenarios in <a href="../../../sessions/session-10-mcp-servers/lab/starter/integration-test/"><code>lab/starter/integration-test.md</code></a>.</p>
 <p>Do not use customer credentials or systems in this session. Session 17 covers organization policy, registry, approval, and rollout.</p>
 <p><strong>Preflight</strong></p>
 <ul>
 <li>Open the synthetic database, weather-server starter, and the manual scenarios.</li>
 <li>Confirm the approved local server, tool list, data boundary, and stop guard.</li>
 <li>Test the MCP tools panel or prepare the schema walkthrough and Inspector command.</li>
-<li>Keep the expected schema in <code>lab/solution/db-project/README.md</code> ready.</li>
+<li>Keep the expected schema in <a href="../../../sessions/session-10-mcp-servers/lab/solution/db-project/"><code>lab/solution/db-project/README.md</code></a> ready.</li>
 </ul>
 <h2 id="one-hour-plan">One-hour plan<a class="headerlink" href="#one-hour-plan" title="Permanent link">&para;</a></h2>
 <table>
@@ -5207,7 +5207,7 @@
 <p>For the demo, show the MCP tools panel, inspect the available tool descriptions, then enter:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>What tables are in the synthetic database? Show the schema.
 </code></pre></div>
-<p>Learners should see the server's table and schema tools, the approved request, and a schema result they can compare with <code>lab/solution/db-project/README.md</code>. If the connection fails, trace the request, input, result, and error path manually with that expected schema.</p>
+<p>Learners should see the server's table and schema tools, the approved request, and a schema result they can compare with <a href="../../../sessions/session-10-mcp-servers/lab/solution/db-project/"><code>lab/solution/db-project/README.md</code></a>. If the connection fails, trace the request, input, result, and error path manually with that expected schema.</p>
 <h2 id="custom-server-walkthrough">Custom server walkthrough<a class="headerlink" href="#custom-server-walkthrough" title="Permanent link">&para;</a></h2>
 <p>Show the smallest useful shape:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">server</span><span class="p">.</span><span class="nx">tool</span><span class="p">(</span>
@@ -5220,7 +5220,7 @@
 <p>Review four parts: the name, description, typed input, and handler result. Use concrete descriptions, state limits, and return structured output. Test the server with MCP Inspector before attaching it to a client:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector
 </code></pre></div>
-<p>The lab server uses only synthetic weather data. Learners implement <code>get_weather</code>, <code>get_forecast</code>, and <code>convert_temperature</code>, then run the scenarios in <code>lab/starter/integration-test.md</code>.</p>
+<p>The lab server uses only synthetic weather data. Learners implement <code>get_weather</code>, <code>get_forecast</code>, and <code>convert_temperature</code>, then run the scenarios in <a href="../../../sessions/session-10-mcp-servers/lab/starter/integration-test/"><code>lab/starter/integration-test.md</code></a>.</p>
 <h2 id="review-checklist">Review checklist<a class="headerlink" href="#review-checklist" title="Permanent link">&para;</a></h2>
 <p>Before accepting a server or a tool call, check:</p>
 <ul>

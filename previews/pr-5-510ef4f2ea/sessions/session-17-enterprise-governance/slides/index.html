@@ -4806,6 +4806,76 @@
 <p>Use Enterprise Cloud as the baseline. Check current GitHub documentation and customer policy before making an access, data, tool, or rollout decision.</p>
 <p>A training slide cannot establish feature availability, entitlement, retention, or compliance.</p>
 <hr />
+<h1 id="governance-turns-uncertainty-into-decisions">Governance turns uncertainty into decisions<a class="headerlink" href="#governance-turns-uncertainty-into-decisions" title="Permanent link">&para;</a></h1>
+<p>Governance decides what can run, under which limits, and what evidence will change
+that decision.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can this use case start?</td>
+<td>Scope, owner, data boundary, and approval</td>
+</tr>
+<tr>
+<td>Is it safe to continue?</td>
+<td>Quality, usage, and review evidence</td>
+</tr>
+<tr>
+<td>Can it expand?</td>
+<td>The approver and the added boundary</td>
+</tr>
+<tr>
+<td>Should it pause?</td>
+<td>Trigger, recovery, and next review date</td>
+</tr>
+</tbody>
+</table>
+<p>Policy text alone is not a rollout plan. Someone must own the decision.</p>
+<hr />
+<h1 id="a-boundary-has-inputs-actions-and-outputs">A boundary has inputs, actions, and outputs<a class="headerlink" href="#a-boundary-has-inputs-actions-and-outputs" title="Permanent link">&para;</a></h1>
+<p>Classify more than the prompt text:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Inputs: repository files, issues, tool results
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Actions: read, summarize, write, deploy
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Outputs: chat, commit, pull request, external system
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Evidence: logs, review, approval, metric
+</code></pre></div>
+<p>For each item, decide what is allowed, who approves exceptions, and what must stay
+out of the workflow. That creates a boundary people can operate.</p>
+<hr />
+<h1 id="measurements-need-a-decision-attached">Measurements need a decision attached<a class="headerlink" href="#measurements-need-a-decision-attached" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Example decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Review rework rises</td>
+<td>Pause expansion and inspect the workflow</td>
+</tr>
+<tr>
+<td>Usage reaches a guard</td>
+<td>Stop automated runs until the owner reviews</td>
+</tr>
+<tr>
+<td>Acceptance rate is stable</td>
+<td>Continue the bounded trial</td>
+</tr>
+<tr>
+<td>Restricted data appears</td>
+<td>Stop, preserve evidence, and escalate</td>
+</tr>
+</tbody>
+</table>
+<p>An activity count without a threshold and response tells the team very little.</p>
+<hr />
 <h1 id="preflight">Preflight<a class="headerlink" href="#preflight" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
@@ -4843,8 +4913,8 @@
 </table>
 <hr />
 <h1 id="policy-decision-sequence">Policy decision sequence<a class="headerlink" href="#policy-decision-sequence" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Evidence map → bounded trial → observed review evidence →
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>continue, expand, gather more evidence, or pause
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Evidence map → bounded trial → observed review evidence →
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>continue, expand, gather more evidence, or pause
 </code></pre></div>
 <p>Unknown is a decision state. Record the owner and evidence needed. Do not treat it as approval.</p>
 <hr />
