@@ -53,7 +53,7 @@ def run():
             page.goto(urljoin(BASE, "build-set/"), wait_until="networkidle")
             expect(page.locator("[data-set-workspace]")).to_be_visible()
             expect(page.locator("[data-set-create]")).to_be_disabled()
-            expect(page.locator(".set-catalog-row:visible")).to_have_count(19)
+            expect(page.locator(".set-catalog-row:visible")).to_have_count(20)
             assert_layout(page)
             assert_category_colors(page)
             page.screenshot(path=str(OUT / f"set-builder-empty-{label}-top.png"))

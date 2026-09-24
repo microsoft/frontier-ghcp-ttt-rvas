@@ -1,5 +1,5 @@
 site_name: GitHub Copilot Train-the-Trainer
-site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 19 sessions across 6 modules.
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 20 sessions across 6 modules.
 site_author: GitHub Copilot TTT
 docs_dir: .
 site_dir: site
@@ -107,6 +107,7 @@ nav:
     - Agentic Development: tracks/agentic-development.md
     - DevOps & Automation: tracks/devops-automation.md
     - Enterprise Rollout: tracks/enterprise-rollout.md
+    - HVE Challenge: tracks/hve-challenge.md
     - Full Mastery: tracks/full-mastery.md
   - Sessions:
     - Module 1 — Copilot Fundamentals:
@@ -182,6 +183,10 @@ nav:
         - Overview: sessions/session-18-spec-kit/README.md
         - Lab: sessions/session-18-spec-kit/lab/README.md
         - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
+      - "20 — HVE Challenge":
+        - Overview: sessions/session-20-hve-challenge/README.md
+        - Lab: sessions/session-20-hve-challenge/lab/README.md
+        - Trainer Guide: sessions/session-20-hve-challenge/trainer-content/README.md
     - Module 6 — Advanced Topics & Capstone:
       - "17 — Enterprise Governance":
         - Overview: sessions/session-17-enterprise-governance/README.md

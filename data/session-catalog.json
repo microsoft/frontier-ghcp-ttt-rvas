@@ -178,6 +178,15 @@
       "description": "A bounded integration scenario covering governance, specification, agentic delivery, review, and handover.",
       "difficulty": "Advanced",
       "duration_minutes": 180
+    },
+    {
+      "id": "20",
+      "slug": "session-20-hve-challenge",
+      "module": "5",
+      "title": "HVE Challenge: Governed Specification-to-Delivery",
+      "description": "Apply a governed HVE workflow to a prepared specification and produce reviewable delivery evidence under fixed constraints.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
     }
   ]
 }

@@ -10,7 +10,7 @@ footer: 'Session 19 — Bounded End-to-End Capstone'
 
 # Bounded End-to-End Capstone
 
-Session 19 of 19 | 3 hours
+Session 19 of 20 | Final capstone | 3 hours
 
 ---
 

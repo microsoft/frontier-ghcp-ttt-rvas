@@ -17,6 +17,12 @@ class SessionValidatorTests(unittest.TestCase):
         self.assertEqual(result["status"], "ready")
         self.assertEqual(result["findings"], [])
 
+    def test_published_hve_challenge_is_ready(self):
+        result = VALIDATOR.validate(ROOT / "sessions/session-20-hve-challenge")
+
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["findings"], [])
+
     def test_missing_session_stops_at_directory(self):
         result = VALIDATOR.validate(ROOT / "sessions/session-20-spec-frameworks")
 

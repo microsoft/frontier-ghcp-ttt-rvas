@@ -396,7 +396,7 @@ The MkDocs grid is capped at `76rem`. Reading content is capped at `72ch`, with
 `1.6rem` side padding. Native navigation and the table of contents surround the
 central column. Paragraphs use `.8rem` block margins; H2 begins after `2.4rem`.
 
-All 19 trainer guides use this layout and the same table/code treatment as labs.
+All 20 trainer guides use this layout and the same table/code treatment as labs.
 The three session-material tabs precede H1; trainer controls follow H1. Legacy
 `output/trainer/` filenames redirect to the MkDocs guide, preserving query
 strings and hashes through JavaScript. A plain link remains without JavaScript.
@@ -409,8 +409,8 @@ drawer and search controls.
 
 The home hero sits outside the article in the full-width hero block. Its inner
 grid is capped at `62rem`, with `1.3fr 1fr` columns, a `3rem` gap, and
-`3.2rem 2.4rem` padding. The right column stacks five module links with `.45rem`
-gaps. Below the hero, the home index retains 19 session cards and six tracks.
+`3.2rem 2.4rem` padding. The right column stacks six module links with `.45rem`
+gaps. Below the hero, the home index retains 20 session cards and seven tracks.
 Session and track grids use three and two columns, with `.8rem` gaps and a
 `62rem` content cap. Content is visible without JavaScript or reveal animation.
 
@@ -494,12 +494,12 @@ Hero actions use a white primary fill with navy text. The secondary action has a
 transparent fill, white text, and a `navy-light` outline. Both turn navy on
 `navy-light` on hover; focus outlines are white against the gradient.
 
-The five module links have medium corners and a translucent white border over
+The six module links have medium corners and a translucent white border over
 the navy overlay. Hover and selected links use navy on white. The selected label
-is also underlined. Links target focusable `#module-1` through `#module-5` headings;
+is also underlined. Links target focusable `#module-1` through `#module-6` headings;
 the targeted heading receives an RVAP Blue underline.
 
-**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 19 sessions and six tracks visible; selection must not filter content.
+**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 20 sessions and seven tracks visible; selection must not filter content.
 
 `overrides/session.js` synchronizes `aria-current="location"` with the URL hash
 on initial load and `hashchange`, including deep links. Native anchor navigation
@@ -509,8 +509,8 @@ works without JavaScript; the script adds the current-location state.
 
 **The Filter/Selection Rule.** Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.
 
-The homepage and builder share `data/session-catalog.json`: 19 sessions across
-five modules. `hooks/presentation_embed.py` resolves material links from actual
+The homepage and builder share `data/session-catalog.json`: 20 sessions across
+six modules. `hooks/presentation_embed.py` resolves material links from actual
 MkDocs file URLs. Search matches session ID, title, or description; Module and
 Level narrow the builder catalog. A result count and no-match message explain
 what remains. Add matching sessions appends unselected matches in catalog order.
@@ -586,7 +586,7 @@ non-interactive and carry no pillar meaning.
 
 Overview pages offer a slide dialog plus direct HTML/PDF links. The dialog loads
 its iframe on demand, closes with Escape or its close button, unloads on close,
-and restores focus. Direct links remain without JavaScript. All 19 slide
+and restores focus. Direct links remain without JavaScript. All 20 slide
 HTML/PDF pairs use `themes/ghcp-ttt.css`: light content slides, with the permitted
 gradient on titles/dividers.
 

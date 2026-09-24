@@ -11,7 +11,7 @@ footer: 'Session 15 — CI/CD Debugging & Security Remediation with Cloud Agent'
 # CI/CD Debugging & Security Remediation with Cloud Agent
 ## Module 4: DevOps & Infrastructure | Advanced
 
-Session 15 of 19 | 3 hours
+Session 15 of 20 | 3 hours
 
 ---
 

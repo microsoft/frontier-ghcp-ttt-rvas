@@ -10,7 +10,7 @@ footer: 'Session 18 — Spec Kit: Enterprise Specification-Driven Development'
 
 # Spec Kit: Enterprise Specification-Driven Development
 
-Session 18 of 19 | 3 hours
+Session 18 of 20 | 3 hours
 
 ---
 

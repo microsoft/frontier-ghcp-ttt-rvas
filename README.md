@@ -1,6 +1,6 @@
 # GitHub Copilot & Agentic Workflows — Train-the-Trainer
 
-A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. 19 sessions across 6 modules covering foundations through enterprise-scale agentic delivery, each with 1 hour of trainer-delivered content and a 2-hour hands-on lab.
+A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. 20 sessions across 6 modules covering foundations through enterprise-scale agentic delivery, each with 1 hour of trainer-delivered content and a 2-hour hands-on lab.
 
 ## Who This Is For
 
@@ -69,6 +69,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | 16  | [Brady's Squad: Human-Led AI Teams](sessions/session-16-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to turn scoped work into persistent roles, decisions, and reviewable evidence. |
 | 18  | [Spec Kit: Enterprise Specification-Driven Development](sessions/session-18-spec-kit/)   | Advanced    | 3 hrs      | Applies a governed specification-to-implementation flow with reusable Copilot skills and an enterprise delivery guardrail. |
+| 20  | [HVE Challenge: Governed Specification-to-Delivery](sessions/session-20-hve-challenge/)  | Advanced    | 3 hrs      | Tests bounded HVE delivery from an approved specification, with reviewable evidence and a manual fallback. |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -77,7 +78,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 | 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration — policies, content exclusions, audit logs, analytics, compliance, rollout. |
 | 19  | [End-to-End Capstone Project](sessions/session-19-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
 
-**Total track duration:** 57 hours across 19 sessions
+**Total track duration:** 60 hours across 20 sessions
 
 ## Getting Started
 
@@ -85,7 +86,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 
 2. **Understand the template** — Check [`track-template/`](track-template/) for the standard session structure. Every session follows the same format.
 
-3. **Browse learning tracks** — See [`tracks/`](tracks/) for pre-defined learning paths based on audience maturity (Beginner Essentials, Developer Productivity, Agentic Development, DevOps, Enterprise, Full Mastery).
+3. **Browse learning tracks** — See [`tracks/`](tracks/) for pre-defined learning paths based on audience maturity (Beginner Essentials, Developer Productivity, Agentic Development, DevOps, Enterprise, HVE Challenge, Full Mastery).
 
 4. **Pick your path:**
 
@@ -96,7 +97,8 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
    | Agentic Developers    | Modules 1–3                      | 01–12        | 36 hrs      |
    | DevOps Engineers      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
    | Enterprise Admins     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-   | Full Track            | All Modules                      | 01–19        | 57 hrs      |
+   | HVE Practitioners     | HVE Challenge                    | 17, 18, 20   | 9 hrs      |
+   | Full Track            | All Modules                      | 01–20        | 60 hrs      |
 
 5. **Prepare your environment:**
    - GitHub Enterprise Cloud organization with Copilot enabled according to customer policy
@@ -118,13 +120,14 @@ ghcp-ttt/
 │   ├── agentic-development.md
 │   ├── devops-automation.md
 │   ├── enterprise-rollout.md
+│   ├── hve-challenge.md
 │   └── full-mastery.md
 ├── track-template/                        # Reusable session template
 │   └── session-template/
 │       ├── README.md
 │       ├── trainer-content/
 │       └── lab/ (starter/ + solution/)
-└── sessions/                              # All 19 sessions
+└── sessions/                              # All 20 sessions
     ├── session-01-intro-to-copilot/       # Module 1: Fundamentals
     ├── session-02-chat-and-inline/
     ├── session-03-prompt-engineering/
@@ -143,5 +146,6 @@ ghcp-ttt/
     ├── session-16-squad-orchestration/    # Module 5: Specification-Driven Frameworks
     ├── session-17-enterprise-governance/
     ├── session-18-spec-kit/
-    └── session-19-capstone/               # Module 6: Advanced & Capstone
+   ├── session-19-capstone/               # Module 6: Advanced & Capstone
+   └── session-20-hve-challenge/          # Module 5: Specification-Driven Frameworks
 ```
