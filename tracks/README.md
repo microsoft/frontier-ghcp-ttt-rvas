@@ -11,7 +11,7 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 | [Agentic Development](agentic-development.md)       | Teams adopting agentic workflows                   | 12         | 36 hrs     | Beginner–Advanced     |
 | [DevOps & Automation](devops-automation.md)         | DevOps / Platform engineers                        | 7          | 21 hrs     | Beginner–Advanced     |
 | [Enterprise Rollout](enterprise-rollout.md)         | Engineering managers, IT admins, Copilot champions | 5          | 15 hrs     | Beginner–Advanced     |
-| [HVE Challenge](hve-challenge.md)                   | Experienced HVE practitioners and trainers         | 3          | 9 hrs      | Advanced              |
+| [HVE Core Challenge](hve-challenge.md)              | HVE developers, product owners, leads, and trainers | 1         | 3 hrs      | Advanced              |
 | [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 20         | 60 hrs     | Beginner–Advanced     |
 
 ## How to Choose
@@ -32,8 +32,8 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
                                     ├─ Rolling out to an org?
                                     │   → Enterprise Rollout (15 hrs)
                                     │
-                                    ├─ Practicing governed HVE delivery?
-                                    │   → HVE Challenge (9 hrs)
+                                    ├─ Learning HVE Core end to end?
+                                    │   → HVE Core Challenge (3 hrs)
                                     │
                                     └─ Want everything?
                                         → Full Mastery (60 hrs)
@@ -48,7 +48,7 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
                                                     ↑
                           DevOps & Automation ──────┘
                           Enterprise Rollout ────────┘
-                          HVE Challenge ──────────────┘
+                          HVE Core Challenge ─────────┘
 ```
 
 ## Notes for Trainers

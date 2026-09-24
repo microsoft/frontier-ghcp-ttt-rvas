@@ -1,74 +1,66 @@
 ---
-description: "HVE Challenge track for governed specification-to-delivery practice"
+description: "Focused HVE Core track from RPI fundamentals through customization and product delivery"
 ---
 
-# Track: HVE Challenge
+# Track: HVE Core Challenge
 
-**Target Audience:** Experienced developers, engineering leads, and trainers
+**Target Audience:** Developers, product owners, engineering leads, and trainers adopting HVE
 
-**Duration:** 9 hours (3 sessions x 3 hrs)
+**Duration:** 3 hours (1 session)
 
 **Difficulty:** Advanced
 
-**Recommended Delivery:** 1 intensive day or 2 standard days
+**Recommended Delivery:** 1 guided workshop
 
 ## Description
 
-This optional specialization connects enterprise governance, specification work,
-and bounded HVE delivery. Learners set the policy boundary in Session 17, prepare
-an implementation-ready handoff in Session 18, then deliver one reviewed feature
-under fixed time and tool constraints in Session 20.
+This track teaches Hypervelocity Engineering directly. Learners first understand
+HVE's agents, prompts, instructions, and file-based evidence model. They run the
+standalone Research, Plan, Implement, and Review phases, then compare that flow
+with the combined `/rpi` orchestrator.
 
-The track grades observable evidence. HVE Core can support the workflow, but the
-manual route produces the same research, plan, implementation, review, and local
-Git handoff.
+The challenge adds repository context, targeted coding practices, and a custom
+review agent before moving upstream to Product Manager Advisor and Agile Coach.
+The resulting product and Agile artifacts feed back into the HVE plan and final
+review.
 
 ## Prerequisites
 
-Complete Sessions 01-12 before starting this track. Trainers may accept equivalent
-experience when learners can already use GitHub Copilot across IDE, agent, review,
-and customization workflows.
+Complete Sessions 01–07 and 11, or demonstrate equivalent experience with Copilot
+Chat, agent mode, code review, and custom agents. HVE Core must be installed and
+visible in Copilot Chat.
 
-Session 17 must run before Session 18. Session 20 consumes both the governance
-boundary and specification handoff.
+Session 18 is useful preparation for teams that want to compare HVE with another
+specification-driven method. It is not part of this focused track.
 
 ## Sessions
 
-| Order | Session # | Title                                                  | Difficulty | Duration |
-|-------|-----------|--------------------------------------------------------|------------|----------|
-| 1     | 17        | Enterprise Governance, Policies & Analytics            | Advanced   | 3 hrs    |
-| 2     | 18        | Spec Kit: Enterprise Specification-Driven Development  | Advanced   | 3 hrs    |
-| 3     | 20        | HVE Challenge: Governed Specification-to-Delivery      | Advanced   | 3 hrs    |
+| Order | Session # | Title                                                   | Difficulty | Duration |
+|-------|-----------|---------------------------------------------------------|------------|----------|
+| 1     | 20        | HVE Core Challenge: From Product Intent to Reviewed Code | Advanced  | 3 hrs    |
 
-## Recommended delivery schedule
+## Gradual ramp
 
-### 1-Day Intensive
-
-| Block     | Session    | Focus                                             |
-|-----------|------------|---------------------------------------------------|
-| Morning   | Session 17 | Set policy, data, cost, and review boundaries      |
-| Midday    | Session 18 | Produce the governed specification handoff         |
-| Afternoon | Session 20 | Deliver and review one bounded feature             |
-
-### 2-Day Standard
-
-| Day   | Sessions           | Focus                                   |
-|-------|--------------------|-----------------------------------------|
-| Day 1 | Sessions 17 and 18 | Governance and specification handoff    |
-| Day 2 | Session 20         | Timed HVE delivery challenge and review |
+| Stage | Focus | Required evidence |
+|-------|-------|-------------------|
+| 1 | HVE architecture and standalone RPI | Research, plan, changes, and review handoffs |
+| 2 | Repository customization | Project context, coding instruction, custom agent |
+| 3 | Product and Agile agents | Value decision, user story, acceptance criteria |
+| 4 | Reviewed delivery | Tested code, container evidence, human decision |
 
 ## Learning outcomes
 
 By completing this track, trainees will be able to:
 
-1. Set a clear governance boundary before implementation starts.
-2. Turn requirements into a reviewable specification and task handoff.
-3. Keep an agent-assisted feature within explicit acceptance criteria and non-goals.
-4. Trace each criterion to changed files, focused checks, and a human decision.
-5. Prepare review, risk, commit, and pull-request evidence without changing remote state.
+1. Explain how HVE agents, prompts, instructions, and tracking artifacts work together.
+2. Run standalone RPI and identify every phase handoff.
+3. Decide when to use standalone phases or the combined `/rpi` orchestrator.
+4. Customize HVE with repository context, coding practices, and a bounded agent.
+5. Use Product Manager Advisor and Agile Coach before engineering execution.
+6. Trace product intent through plan, code, tests, review, and a human decision.
 
 ## Next steps
 
-Take Session 19 last when continuing to the bounded end-to-end capstone. Trainers
-who need the entire curriculum can use the Full Mastery schedule, which delivers
-Session 20 before Session 19.
+Take Session 18 to compare specification-driven frameworks, or continue to Session
+19 for the bounded end-to-end capstone. Full Mastery delivers Session 20 before
+Session 19.

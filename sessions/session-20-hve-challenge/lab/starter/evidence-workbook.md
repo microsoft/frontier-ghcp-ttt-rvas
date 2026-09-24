@@ -1,39 +1,71 @@
 ---
-description: "Learner workbook for governed research, planning, review, and handoff evidence"
+description: "Learner workbook for HVE RPI, customization, product, and review evidence"
 ---
 
-# Challenge evidence workbook
+# HVE challenge evidence workbook
 
-## Delivery boundary
+## HVE preflight
 
-* Selected path:
+* HVE Core version:
+* Confirmed prompts and agents:
 * Human reviewer:
 * Stop condition:
 * Data boundary: synthetic decision records, local memory only
 * Baseline command and result:
-* Container validation path: local, approved remote build, prepared patch, or not run
+* Container validation path: local, approved remote build, or not run
 
-## Research
+## RPI artifact chain
 
-List the files that control routing, validation, state, and tests. Record one
-constraint from each file. Name anything you inspected but rejected as out of
-scope.
+Record what each HVE phase produced and how the next phase used it.
 
-## Plan
+| Phase | HVE entry point | Artifact path | Decision or finding | Consumed by |
+|-------|-----------------|---------------|---------------------|-------------|
+| Research | `/task-research` | | | Plan |
+| Plan | `/task-plan` | | | Implement |
+| Implement | `/task-implement` | | | Review |
+| Review | `/task-review` | | | Human reviewer |
 
-Map each acceptance criterion to a file change and a check. State the non-goals
-again before implementation.
+### Research check
+
+* Selected approach:
+* Rejected alternative:
+* Constraint that shaped the plan:
+
+### Plan check
 
 | Criterion | Planned file | Planned check |
 |-----------|--------------|---------------|
 |           |              |               |
 
-## Changes
+* Human approval before implementation:
+
+## HVE customization
+
+| Layer | File | Activation evidence | Effect on a later phase |
+|-------|------|---------------------|-------------------------|
+| Repository context | `.github/copilot-instructions.md` | | |
+| Coding practice | `.github/instructions/javascript-api.instructions.md` | | |
+| Custom agent | `.github/agents/decision-api-reviewer.agent.md` | | |
+
+## Product Manager Advisor
+
+* Value decision:
+* Target user and outcome:
+* Assumption or risk:
+* Priority and rationale:
+* Question requiring a human answer:
+
+## Agile Coach
+
+* User story:
+* Acceptance criteria:
+* Explicit exclusions:
+* Plan change or confirmation:
+
+## Implement and Review
 
 Record changed files, decisions made, commands run, and any criterion left open.
 Separate offline container-contract checks from an actual image build.
-
-## Review
 
 Use `pass`, `fail`, `deferred`, or `not run` for every criterion. Cite a test,
 response, or source line as evidence.
@@ -42,13 +74,17 @@ response, or source line as evidence.
 |-----------|--------|----------|
 |           |        |          |
 
-## Risk note
+## Standalone and combined RPI
+
+* What the standalone phases exposed:
+* What `/rpi` would orchestrate automatically:
+* What Discover adds after Review:
+
+## Risk and handoff
 
 Address empty or non-string input, malformed JSON, duplicate normalization,
 untrusted error details, the base-image and dependency supply chain, and the limits
 of process-local storage. Record one follow-up risk that is outside this challenge.
-
-## Local Git handoff
 
 Write a conventional commit-message preview and a pull-request summary. Do not
 commit, push, merge, or open a remote pull request during the lab.

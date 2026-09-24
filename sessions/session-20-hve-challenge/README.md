@@ -1,48 +1,50 @@
 ---
-description: "Overview of the governed HVE Engineering Decision API challenge"
+description: "Overview of the HVE Core RPI, customization, and product delivery challenge"
 ---
 
-# Session 20: HVE Challenge: Governed Specification-to-Delivery
+# Session 20: HVE Core Challenge: From Product Intent to Reviewed Code
 
 **Module:** Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–12 and 17–18, or an approved equivalent baseline
+**Prerequisites:** Sessions 01–07 and 11, or equivalent Copilot and custom-agent experience
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 
 ## Overview
 
-This optional specialization asks learners to deliver one small API feature from
-a fixed contract. The work is judged by its evidence: bounded research, a file-level
-plan, tested behavior, a production container, review findings, and a local Git
-handoff.
+This session teaches Hypervelocity Engineering (HVE) as a structured engineering
+framework for GitHub Copilot. Learners use its file-based Research, Plan,
+Implement, Review (RPI) workflow, then extend that workflow with repository
+instructions, targeted coding standards, and a custom review agent.
 
-The application is an Engineering Decision API. The starter already has a passing
-health check. Learners add `POST /api/decisions`; they do not build another Bookmark
-API or a complete service.
+The challenge then moves upstream. Product Manager Advisor tests the value and
+scope of an Engineering Decision API feature. Agile Coach turns the result into
+an outcome-oriented story with acceptance criteria. Those artifacts feed back into
+the HVE plan before implementation and review.
 
 ## Learning outcomes
 
-* Turn acceptance criteria into a short research-plan-implement-review record.
-* Use repository and targeted instructions without letting them expand scope.
-* Prove API validation, conflict handling, generated metadata, and stable errors.
-* Package tested source and production dependencies in a non-root container.
-* Record input and data-boundary risks before a human review decision.
-* Prepare commit and pull-request text without changing remote state.
+* Explain HVE's agents, prompts, instructions, and file-as-interface model.
+* Run standalone HVE Research, Plan, Implement, and Review phases and inspect each
+  `.copilot-tracking/` handoff.
+* Compare standalone RPI with the combined `/rpi` orchestrator and its Discover phase.
+* Add project context, targeted JavaScript/API standards, and a bounded custom agent.
+* Use Product Manager Advisor and Agile Coach to refine value, scope, user story,
+  and acceptance criteria.
+* Deliver and review one containerized API slice through the customized HVE workflow.
 
 ## Delivery boundary
 
-Use synthetic records in a local sandbox. HVE Core is optional. Learners with an
-approved installation may use its current RPI workflow; everyone else writes the
-same artifacts manually. A prepared-patch route is available when local execution
-is blocked. Package downloads must use an approved environment. When local downloads
-are restricted, use the prepared-patch route or an approved remote container build.
+HVE Core is required for the hands-on challenge. Confirm that the extension's RPI,
+planning, and customization agents appear in Copilot Chat before the lab starts.
+If HVE cannot run, learners may inspect trainer-provided HVE artifacts and observe
+the workflow, but that route does not count as challenge completion.
 
-The lab was independently rewritten from workflow facts observed at HVE showcase
-commit `598ba5fbc937abf0dce622b97bcafda63bbc2dd1`. It does not copy source prose,
-prompts, samples, or templates.
+Use synthetic records in an approved sandbox. Package downloads must use an
+approved environment. When local downloads are restricted, use existing
+dependencies and a trainer-managed remote container build.
 
 ## Materials
 
@@ -53,3 +55,4 @@ prompts, samples, or templates.
 | Lab | [`lab/`](lab/) |
 | Starter brief and project | [`lab/starter/`](lab/starter/) |
 | Trainer reference solution | [`lab/solution/`](lab/solution/) |
+| HVE artifact reference | [`lab/solution/hve-artifacts.md`](lab/solution/hve-artifacts.md) |

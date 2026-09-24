@@ -35,7 +35,7 @@ Module 3: Agentic Workflows ───────────────── 
     │   └── Requires: Module 1 + Session 05
     │
     ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
-    │   └── Uses Squad, Spec Kit, and a governed HVE challenge
+    │   └── Uses Squad, Spec Kit, and an HVE Core challenge
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
         └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
@@ -50,7 +50,7 @@ Module 3: Agentic Workflows ───────────────── 
 | **Agentic Developers**    | Modules 1–3                      | 01–12        | 36 hrs     |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
 | **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-| **HVE Practitioners**     | HVE Challenge                    | 17, 18, 20   | 9 hrs      |
+| **HVE Practitioners**     | HVE Core Challenge               | 20           | 3 hrs      |
 | **Full Track**            | All Modules                      | 01–20        | 60 hrs     |
 
 Full Mastery delivers Session 20 after Session 18 and before Session 19. The
@@ -101,7 +101,7 @@ capstone remains the final delivery event.
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01–12 | 3 hrs   |
 | 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01–12, 17 | 3 hrs |
-| 20  | HVE Challenge: Governed Specification-to-Delivery | Advanced | Sessions 01–12, 17–18, or equivalent | 3 hrs |
+| 20  | HVE Core Challenge: From Product Intent to Reviewed Code | Advanced | Sessions 01–07 and 11, or equivalent | 3 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -849,41 +849,42 @@ Teaches a repeatable specification-driven development method before implementati
 
 ---
 
-### Session 20 — HVE Challenge: Governed Specification-to-Delivery
+### Session 20 — HVE Core Challenge: From Product Intent to Reviewed Code
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–12 and 17–18, or an approved equivalent baseline
+**Prerequisites:** Sessions 01–07 and 11, or equivalent experience; HVE Core required
 **Module:** Specification-Driven Frameworks
 
 **Description:**
-This optional specialization tests one bounded Engineering Decision API feature.
-Learners use an approved HVE workflow or the manual route to produce the same
-research, plan, implementation, review, risk, and local Git handoff evidence.
+This session teaches HVE as a structured framework for GitHub Copilot. Learners
+run standalone Research, Plan, Implement, and Review, inspect the tracking
+artifacts between phases, customize HVE for the repository, and use product and
+Agile agents before delivering a bounded Engineering Decision API feature.
 
 **Trainer Content Outline (1 hour):**
 
-- Reading the prepared API contract as observable behavior
-- Keeping research and implementation within explicit non-goals
-- Proving repository and targeted instruction activation
-- Reviewing validation, duplicate handling, generated metadata, and stable errors
-- Choosing an honest human decision when execution is blocked
+- HVE agents, prompts, instructions, and the file-as-interface model
+- Standalone RPI, combined `/rpi`, Discover, and phase handoffs
+- Repository context, targeted coding instructions, and custom agents
+- Product Manager Advisor, Agile Coach, BRD Builder, and PRD Builder
+- Completion gates and trainer-guided phase recovery
 
 **Lab Outline (2 hours):**
 
-- Select the HVE-assisted, manual, or prepared-patch route
-- Map each acceptance criterion to an owning file and focused check
-- Implement and test `POST /api/decisions`, or prepare an exact file-level patch
-- Review input and process-local data risks against the fixed rubric
-- Prepare commit and pull-request text without changing remote Git state
-- **Deliverable:** A reviewed feature or prepared patch with complete delivery evidence
+- Run HVE Research and Plan and inspect their `.copilot-tracking/` artifacts
+- Add repository context, JavaScript/API coding practices, and a custom reviewer
+- Use Product Manager Advisor and Agile Coach to refine intent and acceptance criteria
+- Run HVE Implement and Review on `POST /api/decisions`
+- Compare the standalone flow with combined `/rpi` and Discover
+- **Deliverable:** An HVE artifact chain, customization evidence, product/Agile handoff, and reviewed feature
 
 **Expected Learning Outcomes:**
 
-- Deliver a bounded feature from a governed specification
-- Trace acceptance criteria through research, implementation, and review
-- Prove instruction activation on matching files
-- Record exact test evidence and honest `not run` results
-- Hand work to a human reviewer without changing shared Git state
+- Explain HVE architecture and its durable artifact model
+- Execute and trace every standalone RPI phase
+- Customize HVE at repository, instruction, and agent levels
+- Use product and Agile agents to shape engineering work
+- Deliver a bounded feature and support a human review decision
 
 ---
 
@@ -928,6 +929,6 @@ The capstone is a bounded integration scenario, not a full production build. Tra
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 17 (Enterprise) can be delivered standalone with Module 1 for admin audiences and is required before the capstone
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
-  - The HVE Challenge track uses Sessions 17, 18, and 20; Full Mastery then ends with Session 19
+  - The HVE Core Challenge track uses Session 20; Full Mastery then ends with Session 19
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

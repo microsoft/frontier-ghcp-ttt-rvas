@@ -183,8 +183,8 @@
       "id": "20",
       "slug": "session-20-hve-challenge",
       "module": "5",
-      "title": "HVE Challenge: Governed Specification-to-Delivery",
-      "description": "Apply a governed HVE workflow to a prepared specification and produce reviewable delivery evidence under fixed constraints.",
+      "title": "HVE Core Challenge: From Product Intent to Reviewed Code",
+      "description": "Use HVE RPI, repository customization, Product Manager Advisor, and Agile Coach to deliver and review a bounded API feature.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     }

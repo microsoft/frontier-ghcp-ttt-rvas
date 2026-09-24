@@ -69,7 +69,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | 16  | [Brady's Squad: Human-Led AI Teams](sessions/session-16-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to turn scoped work into persistent roles, decisions, and reviewable evidence. |
 | 18  | [Spec Kit: Enterprise Specification-Driven Development](sessions/session-18-spec-kit/)   | Advanced    | 3 hrs      | Applies a governed specification-to-implementation flow with reusable Copilot skills and an enterprise delivery guardrail. |
-| 20  | [HVE Challenge: Governed Specification-to-Delivery](sessions/session-20-hve-challenge/)  | Advanced    | 3 hrs      | Tests bounded HVE delivery from an approved specification, with reviewable evidence and a manual fallback. |
+| 20  | [HVE Core Challenge: From Product Intent to Reviewed Code](sessions/session-20-hve-challenge/) | Advanced | 3 hrs | Teaches HVE RPI, repository customization, Product Manager Advisor, Agile Coach, and reviewed delivery. |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -86,7 +86,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 
 2. **Understand the template** — Check [`track-template/`](track-template/) for the standard session structure. Every session follows the same format.
 
-3. **Browse learning tracks** — See [`tracks/`](tracks/) for pre-defined learning paths based on audience maturity (Beginner Essentials, Developer Productivity, Agentic Development, DevOps, Enterprise, HVE Challenge, Full Mastery).
+3. **Browse learning tracks** — See [`tracks/`](tracks/) for pre-defined learning paths based on audience maturity (Beginner Essentials, Developer Productivity, Agentic Development, DevOps, Enterprise, HVE Core Challenge, Full Mastery).
 
 4. **Pick your path:**
 
@@ -97,7 +97,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
    | Agentic Developers    | Modules 1–3                      | 01–12        | 36 hrs      |
    | DevOps Engineers      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
    | Enterprise Admins     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-   | HVE Practitioners     | HVE Challenge                    | 17, 18, 20   | 9 hrs      |
+   | HVE Practitioners     | HVE Core Challenge               | 20           | 3 hrs      |
    | Full Track            | All Modules                      | 01–20        | 60 hrs      |
 
 5. **Prepare your environment:**

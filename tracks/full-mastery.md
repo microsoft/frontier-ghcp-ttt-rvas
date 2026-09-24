@@ -64,7 +64,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum includes every publis
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
 | 16      | 16          | Brady's Squad: Human-Led AI Teams (optional) | Advanced   | 3 hrs      |
 | 18      | 18          | Spec Kit: Enterprise Specification-Driven Development | Advanced | 3 hrs |
-| 19      | 20          | HVE Challenge: Governed Specification-to-Delivery | Advanced | 3 hrs |
+| 19      | 20          | HVE Core Challenge: From Product Intent to Reviewed Code | Advanced | 3 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -88,7 +88,7 @@ specialization. Session 19 remains the final capstone.
 | Day 4 | Sessions 10, 11, 12 | MCP, agents + skills                 |
 | Day 5 | Sessions 13, 14, 15 | Actions, IaC + CI/CD                 |
 | Day 6 | Sessions 16, 17, 18 | Orchestration, governance + Spec Kit |
-| Day 7 | Sessions 20, 19 | HVE challenge, then bounded capstone |
+| Day 7 | Sessions 20, 19 | HVE Core challenge, then bounded capstone |
 
 ### 10-Day Standard (up to 2 sessions/day)
 
@@ -103,7 +103,7 @@ specialization. Session 19 remains the final capstone.
 | Day 7 | Sessions 13, 14 | Actions + IaC                    |
 | Day 8 | Sessions 15, 16 | CI/CD + orchestration            |
 | Day 9 | Sessions 17, 18 | Governance + Spec Kit            |
-| Day 10 | Sessions 20, 19 | HVE challenge, then bounded capstone |
+| Day 10 | Sessions 20, 19 | HVE Core challenge, then bounded capstone |
 
 ## Learning Outcomes
 
@@ -117,7 +117,7 @@ By completing this track, trainees will be able to:
 6. Configure enterprise governance: policies, content exclusions, analytics, compliance
 7. Apply a governed specification-driven development flow before implementation
 8. Orchestrate multi-agent teams with optional tools such as Squad
-9. Deliver a bounded HVE challenge from specification through review evidence
+9. Use HVE RPI, customization, product agents, and review evidence on a bounded feature
 10. Design and execute end-to-end agentic development workflows
 11. Assess trainee progress and adapt delivery based on audience needs
 12. Create a personal trainer delivery plan for their organization

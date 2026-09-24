@@ -107,7 +107,7 @@ nav:
     - Agentic Development: tracks/agentic-development.md
     - DevOps & Automation: tracks/devops-automation.md
     - Enterprise Rollout: tracks/enterprise-rollout.md
-    - HVE Challenge: tracks/hve-challenge.md
+    - HVE Core Challenge: tracks/hve-challenge.md
     - Full Mastery: tracks/full-mastery.md
   - Sessions:
     - Module 1 — Copilot Fundamentals:
@@ -183,7 +183,7 @@ nav:
         - Overview: sessions/session-18-spec-kit/README.md
         - Lab: sessions/session-18-spec-kit/lab/README.md
         - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
-      - "20 — HVE Challenge":
+      - "20 — HVE Core Challenge":
         - Overview: sessions/session-20-hve-challenge/README.md
         - Lab: sessions/session-20-hve-challenge/lab/README.md
         - Trainer Guide: sessions/session-20-hve-challenge/trainer-content/README.md

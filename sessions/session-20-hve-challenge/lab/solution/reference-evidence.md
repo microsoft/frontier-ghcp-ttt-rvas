@@ -1,8 +1,28 @@
 ---
-description: "Reference traceability evidence and scoring rubric for the Engineering Decision API"
+description: "Reference HVE traceability and scoring rubric for the Engineering Decision API"
 ---
 
-# Reference evidence and rubric
+# Reference HVE evidence and rubric
+
+## HVE artifact chain
+
+| Phase | Expected artifact | Required handoff |
+|-------|-------------------|------------------|
+| Research | `.copilot-tracking/research/` | Approach, alternatives, constraints |
+| Plan | `.copilot-tracking/plans/`, `details/`, and plan log | Criteria, files, checks, approval |
+| Implement | `.copilot-tracking/changes/` | Changed files and validation results |
+| Review | `.copilot-tracking/reviews/` | Findings, criterion verdicts, human decision |
+
+The reference chain starts in standalone mode so every handoff is visible. The
+combined `/rpi` agent would orchestrate the same phases and add Discover after
+Review.
+
+## Product and Agile handoff
+
+Product Manager Advisor should preserve the create-only experiment, identify
+durability and adoption as unproven assumptions, and keep persistence out of the
+slice. Agile Coach should turn that decision into one story whose acceptance
+criteria match the request, validation, conflict, metadata, and container rules.
 
 ## Criterion map
 
@@ -16,9 +36,10 @@ description: "Reference traceability evidence and scoring rubric for the Enginee
 | Stable errors | Route and error middleware | Exact envelope assertions |
 | Tested production container | `Dockerfile`, `.dockerignore` | `tests/container.test.js`; image build runs `npm test` |
 
-The targeted instruction applies to `Dockerfile`, `src/routes/decisions.js`, and
-the test files. Those path matches are the activation proof. Its checks appear in
-the table above and in the review notes below.
+Repository context applies to every HVE agent. The targeted JavaScript instruction
+applies to `src/routes/decisions.js` and both test files. The custom Decision API
+Reviewer must return findings first and a criterion verdict table. Those observed
+effects are activation evidence.
 
 ## Reference review
 
@@ -42,12 +63,10 @@ tested production container.
 
 | Area | Points | Full-credit evidence |
 |------|-------:|----------------------|
-| Feature and image contract | 35 | Every API rule passes and the container contract is reviewable |
-| Focused tests | 20 | Tests cover success, validation, conflict, and malformed JSON |
-| RPI evidence | 20 | Research, plan, changes, and review trace to the brief |
-| Instruction use | 10 | Repository and targeted guidance exist with activation proof |
-| Risk and handoff | 15 | Data/input risks, decision, commit preview, and PR summary |
+| HVE RPI evidence | 40 | Four phase artifacts form a traceable handoff chain |
+| HVE customization | 25 | Context, coding instruction, custom agent, and activation evidence |
+| Product and Agile agents | 20 | Advisor and coach outputs shape or confirm the plan |
+| Feature validation | 15 | API and container evidence support the review decision |
 
-Score the prepared-patch route against the same 100 points. Award contract and
-test points for precise, reviewable planned evidence. Mark execution claims as
-`not run`; do not treat them as passes.
+Recovery artifacts do not earn execution points for the phase they replace. A
+submission with no HVE execution does not pass the challenge.
