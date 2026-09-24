@@ -28,7 +28,7 @@ By the end of this session, trainees will be able to:
 
 | Block           | Duration   | Content                                                    |
 | --------------- | ---------- | ---------------------------------------------------------- |
-| Trainer Content | 1 hour     | [See trainer-content/README.md](trainer-content/README.md) |
+| Trainer Content | 1 hour     | [Slides](slides.md) and [trainer guide](trainer-content/README.md) |
 | Lab             | 2 hours    | [See lab/README.md](lab/README.md)                         |
 
 ## Materials Needed

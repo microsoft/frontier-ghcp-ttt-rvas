@@ -1,0 +1,13 @@
+{
+  "name": "pipeline-debug-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "lint": "node scripts/lint.js",
+    "build": "node scripts/build.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

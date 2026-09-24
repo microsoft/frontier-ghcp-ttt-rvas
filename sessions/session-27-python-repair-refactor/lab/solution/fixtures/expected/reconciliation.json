@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "total": 6,
+    "match": 1,
+    "short": 3,
+    "over": 2,
+    "urgent": 2
+  },
+  "items": [
+    {
+      "sku": "AX-100",
+      "warehouse_quantity": 10,
+      "ledger_quantity": 10,
+      "variance": 0,
+      "status": "MATCH",
+      "severity": "none"
+    },
+    {
+      "sku": "BX-200",
+      "warehouse_quantity": 4,
+      "ledger_quantity": 9,
+      "variance": -5,
+      "status": "SHORT",
+      "severity": "review"
+    },
+    {
+      "sku": "CX-300",
+      "warehouse_quantity": 0,
+      "ledger_quantity": 8,
+      "variance": -8,
+      "status": "SHORT",
+      "severity": "urgent"
+    },
+    {
+      "sku": "DX-400",
+      "warehouse_quantity": 15,
+      "ledger_quantity": 5,
+      "variance": 10,
+      "status": "OVER",
+      "severity": "urgent"
+    },
+    {
+      "sku": "EX-500",
+      "warehouse_quantity": 2,
+      "ledger_quantity": 0,
+      "variance": 2,
+      "status": "OVER",
+      "severity": "review"
+    },
+    {
+      "sku": "FX-600",
+      "warehouse_quantity": 0,
+      "ledger_quantity": 3,
+      "variance": -3,
+      "status": "SHORT",
+      "severity": "review"
+    }
+  ]
+}

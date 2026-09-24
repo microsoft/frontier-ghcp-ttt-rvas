@@ -1,515 +1,238 @@
-# Session 09 — Cloud-Agent Workflows
+# Session 09: Trainer Guide
 
-## Trainer content guide
+**Teaching time:** 60 minutes
 
-### Delivery baseline
+**Lab handoff:** `../lab/README.md`
 
-Use Enterprise Cloud as the governance baseline. Check current official GitHub documentation and customer administrator policy before demonstrating any cloud-agent workflow. Do not infer access, security controls, data handling, service behavior, or commercial terms from this curriculum.
+## Teaching goal
 
-### Access and cost preflight
+Teach one bounded issue-to-review journey. Learners should be able to stop at each checkpoint, point to evidence, and name the human who decides what happens next.
 
-Before delivery:
+## Required preparation
 
-1. Confirm the attendee role, repository scope, data classification, and human reviewer.
-2. Verify current official documentation and customer policy for the intended workflow.
-3. Choose a non-sensitive, bounded issue with explicit acceptance criteria.
-4. For any metered work, define a customer-owned meter, threshold, escalation contact, and stop guard.
-5. Prepare the manual issue-writing and review exercise.
+Before class:
 
-### No-access fallback
+1. Confirm whether Copilot cloud agent is approved for the training repository.
+2. Use only the synthetic task API in `../lab/starter/sample-project/`.
+3. Name the reviewer and define the stop condition.
+4. Run:
 
-If access is absent, an approval is missing, or the stop guard is reached, learners write the issue, implement the smallest change manually in a repository sandbox, run the required checks, and review it with the supplied checklist. Do not bypass policy or submit unapproved data.
+   ```bash
+   cd sessions/session-09-cloud-agent/lab/starter/sample-project
+   npm install
+   npm test
+   ```
 
-## Session objective
+5. Review `../lab/starter/issue.md`.
+6. Review `../lab/starter/copilot-instructions.md`.
+7. Review `../lab/starter/copilot-setup-steps.yml` as content intended for `.github/workflows/copilot-setup-steps.yml`.
+8. Keep `../lab/solution/issue-journey.md` and `../lab/solution/proposed-change.diff` ready.
 
-Teach an issue-driven, human-reviewed workflow. Learners should be able to define bounded work, collect review evidence, and compare only agents approved for the repository and data classification.
+## Access decision
 
-## Suggested agenda
+The live route requires:
 
-| Segment | Activity |
-| --- | --- |
-| Preflight | Verify current documentation, policy, scope, and fallback. |
-| Issue quality | Turn a vague request into acceptance criteria and constraints. |
-| Setup review | Identify repository instructions, tests, and required permissions. |
-| Review | Use a common quality and safety rubric for proposed changes. |
-| Comparison | Compare approved agents only with the same issue and review rubric. |
-| Fallback | Complete the bounded change manually when access is unavailable. |
+- Copilot cloud agent is enabled for the repository;
+- the repository and synthetic data are approved;
+- the issue and setup are reviewed;
+- a human reviewer is named;
+- the stop condition is visible.
 
-## Issue-writing exercise
+If one condition is missing, use the manual route. **Do not assign the issue, broaden access, or paste credentials into an issue or instruction file.**
 
-Use this structure:
+## One-hour plan
 
-```markdown
-## Problem
-Describe the user-visible issue and bounded scope.
+| Time | Segment | Checkpoint evidence |
+| --- | --- | --- |
+| 0:00–0:05 | Frame and access decision | Live or manual route selected |
+| 0:05–0:16 | Checkpoint 1: issue contract | Approved issue |
+| 0:16–0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
+| 0:27–0:39 | Start or simulate one session | Bounded progress evidence |
+| 0:39–0:47 | Checkpoint 3: proposed change | Scoped diff review |
+| 0:47–0:54 | Checkpoint 4: tests | Recorded test result |
+| 0:54–0:58 | Checkpoint 5: human decision | Approve, request changes, or pause |
+| 0:58–1:00 | Lab handoff | Roles and records ready |
 
-## Acceptance criteria
-- [ ] Expected behavior is testable.
-- [ ] Relevant checks pass.
-- [ ] A human reviewer can verify the result.
+## 0:00–0:05: Frame the journey
 
-## Constraints
-- Only approved repository paths and data
-- Required repository conventions and tests
-- Human review before merge
-```
+Show the five-checkpoint sequence.
 
-### Trainer talking point
+Say:
 
-> “A well-written issue is a work contract. It defines the outcome, the boundaries, and the proof required for review. It is useful whether the task is completed manually or through an approved workflow.”
+> “We will keep one issue fixed from assignment through review. If the work needs a different issue, we stop and write one.”
 
-## Comparative evaluation protocol
+State the selected access route. Ask the reviewer to confirm ownership of the final decision.
 
-Customer policy controls third-party agent availability, workflow, model selection, data handling, and metering. Check current official GitHub documentation and customer policy before demonstrating or comparing an agent. Do not assume a named agent is enabled.
+## 0:05–0:16: Checkpoint 1: issue contract
 
-1. Select a non-sensitive, bounded issue and define a human-reviewed baseline.
-2. Verify the agent is approved for the repository, data class, and task.
-3. Run one approved agent at a time, using the same issue and checks.
-4. Record quality, safety, reviewability, and customer-defined measurement observations.
-5. Do not generalize one trial into a permanent capability claim.
-
-| Dimension | Evidence |
-| --- | --- |
-| Access and policy | Current documentation, administrator approval, and repository scope |
-| Quality | Acceptance criteria, tests, and review findings |
-| Safety | Approved tools, permissions, and data sources |
-| Reviewability | Scope, explanation, and ability to reproduce checks |
-| Measurement | Customer-defined meter and stop guard |
-
-## Review rubric
-
-- Does the result meet the issue acceptance criteria?
-- Did the required checks run and produce reviewable evidence?
-- Is the scope limited to approved files, tools, and data?
-- Are dependency, permission, and security implications understood by the reviewer?
-- Is a human approval required before merge?
-
-## Close
-
-> “When access, policy, data scope, review ownership, or the stop guard is unclear, pause and use the manual fallback. That is disciplined engineering, not a failed exercise.”
-
----
-
-## Minute-mapped delivery plan
-
-| Clock | Segment | Trainer action | Learner evidence |
-| --- | --- | --- | --- |
-| 0:00–0:04 | Frame | State the human-reviewed, issue-driven objective. | Learners name the human decision point. |
-| 0:04–0:09 | Preflight | Verify documentation, policy, data, reviewer, meter, and fallback. | Completed go/pause decision. |
-| 0:09–0:16 | Mental model | Trace bounded issue to proposed change and review. | Lifecycle sketch. |
-| 0:16–0:25 | Issue contract | Improve a vague fictional request. | Testable issue draft. |
-| 0:25–0:32 | Repository setup | Review instructions, setup steps, permissions, and tests. | Boundary checklist. |
-| 0:32–0:44 | Scripted walkthrough | Use one approved live path or the manual simulation below. | Session observations or manual patch plan. |
-| 0:44–0:51 | Review | Apply the common rubric to the proposal. | Evidence-based review comment. |
-| 0:51–0:56 | Comparison | Compare only approved paths against the same baseline. | Qualified comparison record. |
-| 0:56–1:00 | Close | Confirm lab roles, stop guard, and fallback. | Ready-to-start signal. |
-
-> **Timing rule:** Do not wait for a live run after 0:38. Switch to prepared evidence so review and handoff retain at least 16 minutes.
-
-## Segment 1 — Frame the workflow (0:00–0:04)
-
-### Trainer talking points
-
-> “Today we practice handing a bounded task to an approved workflow, then having a human decide what happens next.”
-
-> “A proposed pull request is evidence to inspect, not proof of correctness and never an automatic merge decision.”
-
-Ask:
-
-- What makes a task safe to delegate?
-- What evidence must return with the proposal?
-- Who is accountable for approval?
-
-Expected answers include bounded scope, synthetic or approved data, explicit checks, and a named reviewer.
-
-### Transition
-
-> “First establish whether today’s live path is allowed.”
-
-## Segment 2 — Run the preflight (0:04–0:09)
-
-Display the preflight at the top of this guide.
-
-Read each item aloud and record one of `confirmed`, `pending`, or `not permitted`.
-
-Do not translate `pending` into implied permission.
-
-For feature availability, entitlement, pricing, metering, data handling, security, or legal questions:
-
-1. identify the current official documentation to consult;
-2. identify the customer policy or accountable owner;
-3. record the question without answering from memory;
-4. pause live use until evidence is available.
-
-### Trainer check
-
-Ask the reviewer to say:
-
-> “The training repository contains fictional data, the task is bounded, and I own the review decision.”
-
-If they cannot, select the no-access fallback immediately.
-
-### Transition
-
-> “With a path selected, map what stays the same when implementation is automated or manual.”
-
-## Segment 3 — Explain the lifecycle (0:09–0:16)
-
-Draw this sequence:
-
-```text
-issue → environment/setup → plan → edits → checks → proposed change → human review
-```
-
-Emphasize:
-
-- The issue defines outcome and non-goals.
-- Repository guidance constrains implementation.
-- Setup steps must be reviewable and must not contain credentials.
-- Required checks create evidence but do not replace inspection.
-- Branch rules and required reviewers remain authoritative.
-- A session that loops, drifts, or reaches its stop guard is stopped.
-
-### Check for understanding
-
-Ask, “Where can a human intervene?”
-
-Accept: before assignment, during clarification, at a stop guard, during review, and before merge.
-
-### Transition
-
-> “The earliest and cheapest control is a well-written issue, so we will build one now.”
-
-## Segment 4 — Fully scripted issue exercise (0:16–0:25)
-
-### Setup
-
-Use only the fictional task API described in the session slides.
-
-Show this weak request:
+Start with this weak request:
 
 ```text
 Fix title validation.
 ```
 
-### Exact trainer actions
+Open `../lab/starter/issue.md`. Show how the same request becomes a bounded contract:
 
-1. Ask learners to underline every ambiguous word.
-2. Open a blank issue using the structure already provided in this guide.
-3. Type the following title:
+- blank and whitespace-only titles return HTTP 400;
+- the error body is `{ "error": "title is required" }`;
+- valid creation keeps its response shape;
+- only `src/app.js` and `tests/app.test.js` may change;
+- `npm test` must pass;
+- no dependency or unrelated endpoint change is allowed.
 
-   ```text
-   Reject blank titles when creating a task
-   ```
+Ask a learner to map each criterion to evidence.
 
-4. Type this body:
+**Gate:** Do not assign the issue until a peer can name changed behavior, preserved behavior, allowed files, required checks, and non-goals.
 
-   ```markdown
-   ## Problem
-   `POST /tasks` currently accepts a blank or whitespace-only title.
+## 0:16–0:27: Checkpoint 2: setup
 
-   ## Acceptance criteria
-   - [ ] Blank and whitespace-only titles return HTTP 400.
-   - [ ] The response is `{ "error": "title is required" }`.
-   - [ ] Valid task creation preserves its current response.
-   - [ ] Focused validation tests and the existing test suite pass.
+Open `../lab/starter/copilot-instructions.md`.
 
-   ## Constraints
-   - Change only the task route/helper and focused tests.
-   - Use synthetic examples only.
-   - Add no dependency and perform no unrelated refactor.
-   - A human reviewer must approve the result.
-   ```
+Confirm that it describes:
 
-5. Ask one learner to map each criterion to observable evidence.
-6. Add `npm test` only if that command is verified in the starter project.
+- Node.js and the supplied Express app;
+- file scope;
+- response format;
+- no new dependencies;
+- `npm test`.
 
-### Expected observable outcome
+Open `../lab/starter/copilot-setup-steps.yml`.
 
-Learners should produce an issue that another person can implement without verbal context.
-
-The issue should distinguish scope, non-goals, checks, and human ownership.
-
-### Verification
-
-Ask a peer to answer:
-
-- Which files may change?
-- What response proves the invalid case?
-- What behavior must remain unchanged?
-- What is explicitly prohibited?
-
-If any answer is unclear, revise the issue before proceeding.
-
-### No-access/manual fallback
-
-Write the same issue in a local Markdown note.
-
-Have one learner act as implementer and another as reviewer.
-
-The implementer writes a patch plan; the reviewer checks it against every criterion.
-
-### Recovery
-
-If discussion expands into authentication, databases, deployment, or redesign, say:
-
-> “Those may be valid future issues. They are non-goals for this bounded contract.”
-
-### Transition
-
-> “The issue defines the work. Repository setup defines safe, repeatable working conditions.”
-
-## Segment 5 — Repository boundary review (0:25–0:32)
-
-Show `lab/starter/copilot-instructions.md` and `lab/starter/copilot-setup-steps.yml`.
-
-Ask learners to locate:
-
-- approved file scope;
-- development and test commands;
-- prohibited dependency changes;
-- network assumptions;
-- secrets or credentials that must never appear;
-- the independent review requirement.
-
-Explain that the sample YAML is teaching material. It is not a permanent schema guarantee.
-
-Verify current official documentation before presenting filename, syntax, runner, firewall, or permission behavior as supported.
-
-### Observable outcome
-
-The group produces a short boundary record:
+Explain that the asset is intended for:
 
 ```text
-Allowed: task implementation and focused tests
-Checks: verified starter test command
-Data: synthetic only
-Dependencies: no additions
-Network: none required for the exercise
-Reviewer: named before work starts
+.github/workflows/copilot-setup-steps.yml
 ```
 
-### Transition
+Point out the single job named `copilot-setup-steps`, least required permissions, dependency install, and baseline test.
 
-> “Now observe one bounded implementation path without changing the contract.”
+Run the local baseline:
 
-## Segment 6 — Fully scripted workflow walkthrough (0:32–0:44)
+```bash
+cd sessions/session-09-cloud-agent/lab/starter/sample-project
+npm test
+```
 
-### Live-path setup
+**Gate:** Stop when the baseline fails without an explanation, setup requests a credential, or the reviewer cannot identify the allowed files.
 
-Proceed only when the preflight is confirmed.
+## 0:27–0:39: Start or simulate one session
 
-Use a disposable training repository with the strong issue above.
+### Live route
 
-Keep the meter and stop guard visible.
+Assign only `../lab/starter/issue.md` through a currently supported and approved entry point.
 
-Never paste credentials, confidential data, or customer code into the issue or session.
+Monitor observed facts:
 
-### Exact trainer actions for an approved live path
+- planned files;
+- commands;
+- edits;
+- test reports;
+- questions or scope changes.
 
-1. Reopen the issue and read scope and non-goals aloud.
-2. Use only the currently documented and organization-approved assignment path.
-3. Name the reviewer before submission.
-4. Open the session or progress view available in the approved surface.
-5. Narrate only observed facts: planned files, requested tools, commands, and reported checks.
-6. Pause if a requested action exceeds the issue or approved permissions.
-7. At 0:38, stop waiting and switch to prepared evidence if no reviewable proposal exists.
-8. If a proposal exists, open its diff and test evidence; do not merge.
-
-### Safe trainer prompt or work order
+Use this steering message only if needed:
 
 ```text
-Implement only the attached “Reject blank titles” issue.
-Follow repository instructions, add no dependencies, and change no unrelated files.
-Run the verified focused checks and report their result.
-Stop and request clarification if the task requires broader access or scope.
+Keep the current issue contract. Change only src/app.js and tests/app.test.js.
+Add no dependency. Stop and ask for clarification if broader work is required.
 ```
 
-### Expected observable outcome
+Stop on scope drift. Do not edit the issue during the run.
 
-The audience sees either:
+### Manual route
 
-- a bounded plan and proposed diff with check results; or
-- a clear blocked state that triggers the fallback.
+Have one learner implement the fixed issue in a copy of the starter project. Another learner watches the allowed file list and stop conditions.
 
-Review is still required before either outcome is ready.
+### Time guard
 
-### Verification
+At 0:35, switch to `../lab/solution/proposed-change.diff` if no reviewable proposal exists. Label it prepared evidence.
 
-Compare changed files with the issue.
+## 0:39–0:47: Checkpoint 3: proposed change
 
-Confirm invalid, whitespace, and valid-title evidence.
+Review the live or prepared diff before running tests.
 
-Confirm no dependency, configuration, generated, or unrelated file changed.
+Check:
 
-### Prepared no-access/manual walkthrough
+1. Only `src/app.js` and `tests/app.test.js` changed.
+2. Blank and whitespace-only strings are rejected.
+3. The response body matches the issue.
+4. Valid task creation preserves its response shape.
+5. No dependency, configuration, or unrelated endpoint changed.
 
-Show this proposed implementation:
+Use `../lab/starter/pr-review-checklist.md`.
 
-```js
-export function normalizeTitle(value) {
-  if (typeof value !== "string" || value.trim() === "") {
-    throw new ValidationError("title is required");
-  }
-  return value.trim();
-}
-```
-
-Then show three proposed test cases: `""`, `"   "`, and `" Weekly plan "`.
-
-Ask learners to predict outputs and identify that route-to-HTTP-400 mapping still requires verification.
-
-Have them complete `lab/starter/pr-review-checklist.md` against the snippet and issue.
-
-The manual fallback succeeds when the group records both supported evidence and missing evidence.
-
-### Stop conditions
-
-Stop the live path when:
-
-- policy, access, data, or reviewer ownership becomes unclear;
-- a secret or unapproved data source is requested;
-- the diff expands beyond named paths;
-- an unapproved dependency or network destination is requested;
-- checks loop or fail without bounded recovery;
-- the customer-defined meter reaches its threshold;
-- the 0:38 cutpoint arrives without reviewable evidence.
-
-### Transition
-
-> “We now judge the proposal with the same rubric we would apply to a manual contribution.”
-
-## Segment 7 — Review and feedback (0:44–0:51)
-
-Use the review rubric above in this order:
-
-1. acceptance criteria;
-2. changed-file scope;
-3. test and failure evidence;
-4. dependency, permission, and data implications;
-5. maintainability and repository conventions;
-6. human decision.
-
-Model this review comment:
+Model one bounded review comment:
 
 ```text
-The blank-title case is covered, but the evidence does not show that valid creation
-preserves its existing response. Add or run that focused test. Keep the current file
-scope and report the verified test command and result.
+The blank-title test passes, but the whitespace case is missing.
+Add that focused test in tests/app.test.js. Keep the current file scope,
+then run npm test and report the result.
 ```
 
-Explain why it is actionable: it cites missing evidence, preserves scope, and states how to verify the fix.
+## 0:47–0:54: Checkpoint 4: tests
 
-### Transition
+Run:
 
-> “Apply one rubric before making a fair, qualified comparison.”
+```bash
+npm test
+```
 
-## Segment 8 — Comparison without capability claims (0:51–0:56)
+Require evidence for:
 
-Compare only paths confirmed by current documentation, policy, and approval.
+- empty string;
+- whitespace-only string;
+- valid title with surrounding whitespace;
+- all existing endpoints.
 
-Use identical issue text, starter state, test command, reviewer, and rubric.
+Passing tests are necessary, but they do not replace diff review.
 
-Record observed results, not general claims.
+If a test fails, decide whether the correction fits the issue. Request a bounded change or pause.
 
-Safe language:
+## 0:54–0:58: Checkpoint 5: human decision
 
-- “In this bounded trial, the proposal changed two expected files.”
-- “The manual baseline required one review correction.”
-- “This result applies to this task and approved configuration.”
+The named reviewer chooses:
 
-Unsafe language:
+- **approve** when scope, behavior, and tests match the issue;
+- **request changes** when the required correction stays within the issue;
+- **pause** when access, evidence, policy, or ownership is unresolved.
 
-- “This agent is always safer.”
-- “This workflow is included for everyone.”
-- “Data is always handled in a particular way.”
-- “This costs a fixed amount.”
+Do not turn the decision into a new implementation request.
 
-Route all commercial, legal, compliance, data, and security questions to current official documentation and accountable organizational owners.
+## 0:58–1:00: Lab handoff
 
-## Common trainee Q&A
+Assign:
 
-### “Can we assign a large backlog item?”
+- issue owner;
+- live operator or manual implementer;
+- reviewer;
+- evidence recorder.
 
-Start with work that one reviewer can understand and verify in a small diff. Split larger work into independently testable issues; do not turn an agent into an unmonitored backlog queue.
+Point learners to `../lab/starter/checkpoint-record.md`. The same issue must appear at all five checkpoints.
 
-### “Does a passing test suite mean we can merge?”
+## Demo rejection and recovery
 
-No. Tests support specified behavior; review must also cover scope, security, dependencies, data handling, conventions, and repository protections.
+Use one of these controlled failures:
 
-### “Which agent or model is best?”
+| Failure | Expected review response |
+| --- | --- |
+| Whitespace test is missing | Request one focused test. |
+| `package.json` changes | Reject the unrelated dependency or script change. |
+| Error body differs | Cite the exact acceptance criterion. |
+| Valid response shape changes | Request restoration and a regression test. |
 
-There is no durable universal answer. Compare only approved options on representative bounded tasks, using current documentation, consistent criteria, and customer-owned measurement.
+Recovery succeeds when the proposal returns to the fixed issue and the full suite passes.
 
-### “What data can the workflow use?”
+## Common failures
 
-The curriculum cannot decide that. The data owner, current official documentation, and organizational policy determine permitted data for the repository and workflow.
+| Failure | Recovery |
+| --- | --- |
+| Cloud agent access is unavailable | Use the manual route. |
+| Setup workflow is not on the default branch | Treat the live environment as unprepared and use the manual route. |
+| Baseline tests fail | Diagnose before assignment; do not hide the failure. |
+| Session changes extra files | Stop or request a scoped correction. |
+| Learners rewrite the issue mid-run | Stop and create a separate future issue. |
+| Live work is delayed | Switch to prepared evidence at 0:35. |
+| Tests pass but the diff violates scope | Request changes or pause. |
 
-### “What does a run cost or consume?”
+## Product notes checked September 24, 2026
 
-Do not quote remembered rates, allowances, or meter definitions. Consult current official documentation and the customer’s billing or platform owner, then apply the agreed threshold and stop guard.
-
-### “Can setup steps contain a token?”
-
-No credentials belong in committed setup examples, issues, or comments. Any approved secret mechanism must follow current documentation and organizational secret-handling policy.
-
-### “What if the agent asks for broader scope?”
-
-Do not silently grant it. Clarify within the issue, create a separate reviewed issue, or stop and use the fallback.
-
-### “Is the no-access path a lesser exercise?”
-
-No. It exercises issue quality, repository boundaries, verification, review judgment, and handoff. Those are the durable skills this session teaches.
-
-## Pitfalls, anti-patterns, and recoveries
-
-| Pitfall | Why it fails | Trainer recovery |
-| --- | --- | --- |
-| Vague “fix it” issue | No stable completion test | Rewrite as observable criteria and non-goals. |
-| Waiting silently for a run | Loses teaching and review time | Narrate evidence, then switch at 0:38. |
-| Capability claims from one demo | Behavior and access change | Say what was observed and require current verification. |
-| Comparing different tasks | Produces an unfair result | Reset to one issue, starter state, and rubric. |
-| Treating draft output as approved | Removes accountable review | Reapply checks and require the named reviewer. |
-| Broad tool permissions | Expands risk without need | Reduce to least privilege or use manual fallback. |
-| Hidden metering assumption | Removes the stop decision | Record meter, owner, threshold, and escalation first. |
-| Scope drift during feedback | Converts review into redesign | Restate the issue and defer new work. |
-| Credentials in instructions | Creates disclosure risk | Remove them and follow approved secret handling. |
-| Ranking agents by reputation | Ignores task evidence | Compare observed quality, safety, and review effort. |
-
-## Explicit time-pressure cutpoints
-
-- **At 0:09:** unresolved preflight means manual path.
-- **At 0:25:** freeze the issue; defer extra requirements.
-- **At 0:32:** skip detailed setup discussion if the boundary record is complete.
-- **At 0:38:** switch any pending live run to prepared evidence.
-- **At 0:44:** stop implementation discussion and begin review.
-- **At 0:51:** omit live comparison before omitting review.
-- **At 0:56:** begin lab handoff even if Q&A remains.
-
-Never cut the policy check, named reviewer, review decision, or no-access fallback.
-
-## Closing and lab handoff (0:56–1:00)
-
-Say:
-
-> “The issue is the work contract, setup defines boundaries, and the proposed change remains subject to human review.”
-
-Assign lab roles:
-
-- issue author;
-- implementer or approved workflow operator;
-- independent reviewer;
-- policy and stop-guard observer.
-
-Confirm each group can point to:
-
-- the bounded issue;
-- the approved or manual path;
-- the verified check;
-- the stop condition;
-- the human reviewer;
-- the comparison and review templates.
-
-End with:
-
-> “If access disappears or evidence becomes unclear, continue with the manual baseline. Keep the contract, checks, and review decision.”
+Official GitHub documentation describes Copilot cloud agent as an asynchronous workflow that can work from an issue, use an ephemeral development environment, produce a pull request, expose session logs, and accept human steering. The documented setup workflow path is `.github/workflows/copilot-setup-steps.yml`, with one job named `copilot-setup-steps`. Access, policies, available entry points, and usage controls can differ, so trainers must verify them before delivery.

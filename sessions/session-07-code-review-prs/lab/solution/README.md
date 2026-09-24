@@ -1,10 +1,10 @@
-# Session 07 Lab — Solution Reference
+# Session 07 Lab: Solution Reference
 
 **For trainers only.** This directory contains the fully corrected review project after applying all 6 code changes from `lab/starter/code-changes.md` and fixing every issue Copilot should have flagged.
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the customer administrator policy before a live exercise. For metered work, use a customer-defined stop guard.
+Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. For metered work, use an agreed stop guard.
 
 ## No-access fallback
 
@@ -24,7 +24,7 @@ Use this reference to:
 | --- | ---------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------- |
 | 1   | SQL injection in `/api/users/search`                       | `src/api.js`   | Replaced string interpolation with in-memory filter; comment notes parameterized queries for real DBs |
 | 2   | Password returned in API response                          | `src/api.js`   | Added `sanitizeUser()` helper that strips `passwordHash` before all responses                         |
-| 3   | Off-by-one in `paginate()` — page=1 skipped first items    | `src/utils.js` | Corrected `start = page * pageSize` → `start = (page - 1) * pageSize`                                 |
+| 3   | Off-by-one in `paginate()`: page=1 skipped first items     | `src/utils.js` | Corrected `start = page * pageSize` → `start = (page - 1) * pageSize`                                 |
 | 4   | Missing error handling in `POST /api/users`                | `src/api.js`   | Wrapped in `try/catch`, returns 400 with message on invalid input                                     |
 | 5   | Hardcoded `JWT_SECRET` and `API_KEY`                       | `src/api.js`   | Moved to `process.env.JWT_SECRET` / `process.env.API_KEY` with startup warning                        |
 | 6   | `/api/products` duplicated the items array (DRY violation) | `src/api.js`   | Removed duplicate array; endpoint now references `items` directly                                     |
@@ -37,7 +37,7 @@ Use this reference to:
 
 - All original item CRUD tests (passing before and after fixes)
 - Password field exclusion verification (Fix 2)
-- SQL injection input handling — no raw SQL echoed, sanitized results (Fix 1)
+- SQL injection input handling: no raw SQL echoed, sanitized results (Fix 1)
 - Error handling for invalid `POST /api/users` body (Fix 4)
 - `/api/products` returns same data as `/api/items` (Fix 6)
 - Pagination page-1 starts at index 0, not pageSize (Fix 3)

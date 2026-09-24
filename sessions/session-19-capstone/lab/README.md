@@ -1,57 +1,59 @@
-# Session 19 Lab — Bounded End-to-End Capstone
+# Session 19 Lab: Bounded End-to-End Capstone
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions 01–12 and 17–18; Session 16 is optional
-**Deliverable:** One reviewed, handoff-ready feature change
 
-## Scenario and boundaries
+## Before you start
 
-Use the Bookmark API brief or a customer-safe equivalent. Deliver one coherent slice. Do not build a full application or tour every Copilot feature.
+Confirm an approved training repository or local sandbox, GitHub Copilot access for
+the selected path, Node.js 20 or later, and a human reviewer. Use only synthetic
+bookmark data.
+
+If GitHub Copilot or repository access is unavailable, use the manual local path.
+If Node.js or dependency installation is unavailable, write the patch plan and
+review the supplied tests by inspection. **Do not create a public repository, add
+a package, configure an MCP server, or use production data.**
+
+The only implementation slice is `POST /api/bookmarks`.
 
 | Phase | Work | Time |
 | --- | --- | --- |
-| 1 | Select the handoff | 20 min |
-| 2 | Establish the baseline | 20 min |
-| 3 | Implement one slice | 40 min |
-| 4 | Review and hand over | 40 min |
+| 1 | Govern and accept the specification | 25 min |
+| 2 | Write the issue and establish the baseline | 25 min |
+| 3 | Implement or write the patch plan | 35 min |
+| 4 | Verify, review, and hand off | 35 min |
 
-## Preflight and fallback
+## Phase 1: Govern and accept the specification (25 min)
 
-Confirm Enterprise Cloud access, approved features, repository permissions, Session 17 decisions, a metered-work stop guard, the delivery path, the Session 18 specification, and the human reviewer. Use synthetic data and the starter project unless the instructor approves a different sandbox.
+Complete `starter/governance-record.md`. Name the repository boundary, data
+classification, allowed tools, dependency rule, meter, threshold, stop condition,
+reviewer, and fallback. Ask a partner to challenge one assumption. Resolve it or
+record it as a stop condition.
 
-If live repositories, agents, MCP servers, or approved assistant surfaces are unavailable, copy the starter project into a local sandbox. Write the issue and plan manually, make the smallest local change if practical, and complete the review in writing. Do not create public repositories, install unapproved packages, configure live MCP servers, or wait for several cloud-agent pull requests.
+Read `starter/bookmark-create-spec.md`. Check it against the Session 18 standard:
 
-## What a handoff needs
+- requirements describe observable behavior;
+- acceptance scenarios are testable;
+- implementation choices appear only under constraints;
+- non-goals are explicit;
+- every open question has an owner or a safe default.
 
-1. One bounded requirement from `capstone-brief.md`.
-2. An issue with acceptance criteria, non-goals, constraints, required checks, and a reviewer.
-3. Code or a plan that matches the issue.
-4. Test or manual-verification evidence.
-5. A human review decision, governance notes, and a next action.
+Record the accepted specification IDs in `starter/capstone-handoff.md`. Do not add
+requirements during implementation.
 
-## Phase 1: Select the handoff (20 min)
+## Phase 2: Write the issue and establish the baseline (25 min)
 
-Read `lab/starter/capstone-brief.md`. The recommended slice is:
+Write the issue in `starter/capstone-handoff.md`. Include:
 
-```text
-Implement POST /api/bookmarks with validation for url, title, description, tags,
-duplicate URL, and the documented success and error response format.
-```
-
-Keep authentication, persistent storage, import/export, rate limiting, full search, deployment, and multiple parallel issues out of scope. Write observable criteria:
-
-- valid bookmark returns `201` and `{ "data": { ... } }`;
-- missing or invalid URL returns `400`;
-- missing or too-long title returns `400`;
-- duplicate URL returns `409`;
-- success includes timestamps.
-
-State that storage is in memory, data is synthetic, dependencies need approval, and a human must review the work. A partner must approve or revise the issue before implementation.
-
-## Phase 2: Establish the baseline (20 min)
+- goal and accepted specification IDs;
+- acceptance criteria and non-goals;
+- expected files;
+- required tests;
+- governance stop conditions;
+- human reviewer.
 
 Copy and enter the starter project:
 
@@ -62,52 +64,68 @@ cd ~/copilot-labs/session-19/capstone-project
 npm install
 ```
 
-Run the command in `package.json` or the starter README. If installation or execution is blocked, record the command, inspect `package.json` and `src/index.js`, and define the manual proof for the selected endpoint.
+Run the health-check baseline:
 
-Use `capstone-checklist.md` to record the chosen path, baseline, planned tests, review gate, and fallback. Add repository guidance only when policy permits and it reinforces the selected issue.
+```bash
+npm test -- --runTestsByPath tests/health.test.js
+```
 
-## Phase 3: Implement one slice (40 min)
+Then run `npm test`. The Bookmark tests should fail because the route does not exist.
+Record the baseline without treating the expected failure as an implementation
+defect.
 
-Choose one path:
+## Phase 3: Implement or write the patch plan (35 min)
 
-1. Approved cloud-agent path: assign one issue and await one pull request.
-2. Approved local agent-mode path: work in the sandbox with the issue as context.
-3. Manual path: implement the same issue yourself.
-4. Prepared-change fallback: produce a reviewable patch plan.
+Choose the approved agent path or the manual path. Use the issue as the work order.
+Before editing, list the expected files and map each file to a specification ID.
 
-Start with the issue and constraints. Test the selected acceptance criteria, make the smallest route and storage change, then run:
+Implement only:
+
+- route registration;
+- in-memory creation and duplicate lookup;
+- accepted field validation;
+- documented success and error responses.
+
+Stop if the work needs a new package, sensitive data, another endpoint, or a file
+outside the plan. When blocked or out of time, write the patch plan in
+`starter/capstone-handoff.md`. Name each file, change, test, risk, and open decision.
+
+## Phase 4: Verify, review, and hand off (35 min)
+
+Run:
 
 ```bash
 npm test
 ```
 
-Stop at a time, usage, policy, or scope limit. Keep the changed files, test output, deferred criteria, and known limitations for review.
+Compare the patch with the issue and specification. Confirm that `package.json`
+contains no new dependency. Check the governance record again.
 
-For the prepared-change fallback, name the files and routes to change, validation rules, test cases, expected responses, risks, and open questions.
-
-## Phase 4: Review and hand over (40 min)
-
-For each acceptance criterion, record pass, fail, deferred, or not run, with evidence. Check validation, response shape, duplicate handling, sensitive data, dependencies, and error handling. Confirm the data boundary, allowed tools, absence of unapproved MCP servers or dependencies, meter, and reviewer.
-
-Record one decision: approve, request changes, or pause. The handover must include the issue, implemented and deferred scope, changed or planned files, test or manual evidence, review owner and result, and next safe action.
-
-Complete `trainer-delivery-plan-template.md` as the delivery reflection.
+The reviewer records one decision: **approve**, **request changes**, or **pause**.
+Complete every section in `starter/capstone-handoff.md`, then finish
+`starter/trainer-delivery-plan-template.md`.
 
 ## Checkpoints
 
 | Time | Expected state |
 | --- | --- |
-| 20 min | One scoped issue with non-goals |
-| 40 min | Baseline and checks are known |
-| 70 min | Implementation or tests are in progress; scope remains bounded |
-| 90 min | Change or plan is ready for review |
-| 110 min | Review decision is recorded |
-| 120 min | Handover names the next action |
+| 25 min | Governance record and specification review are complete |
+| 50 min | Issue and executable baseline are recorded |
+| 85 min | Patch or patch plan is ready |
+| 105 min | Tests and specification trace are reviewed |
+| 120 min | Decision and next action are recorded |
 
-## Final verification
+## Final Deliverable
 
-- [ ] One feature slice is selected from `capstone-brief.md`.
-- [ ] The issue includes criteria, non-goals, constraints, tests, and review gate.
-- [ ] Checks ran or the static/manual fallback records why they did not.
-- [ ] The review decision and governance gate are documented.
-- [ ] `capstone-checklist.md` and the delivery reflection are complete.
+Submit one `capstone-handoff.md` containing:
+
+1. The implementation-ready issue with specification trace.
+2. The patch summary or file-level patch plan.
+3. Executable test results, or the blocked command and static evidence.
+4. The human review decision and reviewer.
+5. Deferred scope and known risks.
+6. The completed Session 17 governance record.
+7. One owned next action.
+
+**The deliverable is incomplete** without the governance record, executable proof,
+or review decision.

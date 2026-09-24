@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 16 — AI Team Orchestration & Coordination Patterns'
+footer: 'Session 16: AI Team Orchestration & Coordination Patterns'
 ---
 
 <!-- _class: lead -->
@@ -11,7 +11,9 @@ footer: 'Session 16 — AI Team Orchestration & Coordination Patterns'
 # Brady's Squad: Human-Led AI Teams
 ## Module 5: Specification-Driven Frameworks | Advanced
 
-Session 16 of 19 | 3 hours | Optional
+Session 16 | 3 hours | Optional
+
+Prerequisites: Sessions 01–07 and 09–12
 
 ---
 
@@ -37,7 +39,49 @@ Use a team when work has separate owners, clear interfaces, and a durable decisi
 More agents create more state, review work, and cost.
 
 ---
+# Parallelism only helps with real independence
 
+Work can run in parallel when each stream has its own inputs, a clear output, and
+no hidden dependency on another stream's decision.
+
+| Work item | Parallel? | Reason |
+| --- | --- | --- |
+| Review separate test files | Often | Each reviewer can return findings |
+| Choose a shared domain model | No | Every implementation depends on the decision |
+| Update unrelated documentation | Often | Output boundaries are clear |
+
+Splitting an ambiguous task across agents spreads the ambiguity.
+
+---
+# The coordinator owns the integration risk
+
+A coordinator does more than hand out tasks. It needs to know:
+
+1. Which decision makes the workstreams compatible.
+2. Which files or systems only one role may change.
+3. What evidence each role must return.
+4. When a conflict should stop the workflow rather than be merged automatically.
+
+The coordinator stays human-led even when agents do the initial work.
+
+---
+# Use a result packet, not a chat transcript
+
+Each workstream should return a small, reviewable artifact:
+
+```text
+Scope completed:
+Evidence:
+Files or records changed:
+Checks run:
+Open questions:
+Recommendation:
+```
+
+The parent can compare packets without reconstructing a long agent conversation.
+**Missing evidence is a finding. Do not guess.**
+
+---
 # Coordinator pattern
 
 ```text
@@ -102,8 +146,63 @@ Treat Ralph as a monitored queue. Stop when approval, ownership, policy, test st
 
 ---
 
-# Demonstration and lab
+# One issue, one review trail
 
-Inspect a prepared Squad team or initialize one through an approved path. Show the roster, routing rules, charter, and decision record. Assign one narrow issue and review its outcome.
+The worked issue adds validation to `POST /api/users`.
 
-Initialize a team, assign bounded work, use GitHub Issues, and monitor a small queue. One reviewed issue is sufficient.
+```text
+Issue contract
+  → lead assignment
+  → backend implementation
+  → tester evidence
+  → lead review
+  → durable decision
+```
+
+Keep the same acceptance criteria through every step. A role may add evidence. It
+must not quietly expand the issue.
+
+---
+
+# Reference `.squad/` result
+
+```text
+.squad/
+├── team.md
+├── routing.md
+├── decisions.md
+├── agents/{lead,backend,tester,scribe}/
+├── decisions/inbox/issue-001-proposal.md
+├── orchestration-log/issue-001.md
+└── reviews/issue-001-review.md
+```
+
+The reference project also includes the implemented route and passing tests.
+
+---
+
+# Tabletop route
+
+Use the same issue packet when the live tool path is unavailable:
+
+1. A learner acting as lead assigns the issue.
+2. A backend learner writes the bounded change.
+3. A tester runs the focused checks.
+4. The lead records approve, request changes, or pause.
+
+The tabletop route produces the same evidence as the live route.
+
+---
+
+# Lab handoff
+
+Copy the starter project and choose the approved route before work begins.
+
+Submit:
+
+- one issue assignment;
+- the input-validation implementation;
+- passing focused tests;
+- a lead review and decision record.
+
+Use `lab/solution/squad-project/` to verify the expected result.

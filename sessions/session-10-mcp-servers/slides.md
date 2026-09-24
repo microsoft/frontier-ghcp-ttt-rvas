@@ -3,78 +3,162 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 10 — MCP Servers & Custom Tool Integration'
+footer: 'Session 10: MCP Servers & Custom Tool Integration'
 ---
 
 <!-- _class: lead -->
+
 # MCP Servers & Custom Tool Integration
-## Agentic Workflows | Advanced
+
+## Prove one tool before adding the next
+
+Session 10 | 3 hours
 
 ---
+
+<!-- _class: agenda -->
+
 # Agenda
 
-| Time | Topic |
+| Segment | Time |
 | --- | --- |
-| 0:00–0:16 | MCP model, discovery, and transports |
-| 0:16–0:26 | Local configuration |
-| 0:26–0:34 | Approved local demo |
-| 0:34–0:48 | Custom server walkthrough |
-| 0:48–1:00 | Safety review and lab handoff |
+| MCP request path and boundaries | 8 min |
+| Names, descriptions, and schemas | 10 min |
+| One bounded tool example | 15 min |
+| Bad input and visible errors | 10 min |
+| Evidence and review | 9 min |
+| Lab handoff | 8 min |
 
 ---
-# MCP model
 
-| Part | Meaning |
-| --- | --- |
-| Client | AI surface that requests work |
-| Server | Process or service exposing capabilities |
-| Transport | stdio, SSE, or Streamable HTTP |
-| Tool | Callable capability |
-| Resource | Data available from the server |
+# The MCP request path
 
-The client discovers tools, calls one, and returns the result to the model.
+```text
+Client
+  ↓ tools/list
+Tool catalog
+  ↓ tools/call
+Schema validation
+  ↓
+Handler
+  ↓
+Success or visible error
+```
+
+MCP standardizes discovery and calls. It does not approve the server or make its
+result correct.
 
 ---
-# Local configuration
+
+# Five boundaries to review
+
+| Boundary | Review question |
+| --- | --- |
+| Catalog | Which capabilities can the client discover? |
+| Schema | Which arguments are accepted? |
+| Handler | What work happens after a call? |
+| Result | Can the caller distinguish failure from success? |
+| Transport | Which process or endpoint carries the request? |
+
+Start with stdio and synthetic data. Keep the first review small.
+
+---
+
+# Start with one narrow capability
 
 ```json
 {
-  "servers": {
-    "sqlite": {
-      "command": "uvx",
-      "args": ["mcp-server-sqlite", "--db-path", "./data/app.db"]
-    }
+  "name": "get_weather",
+  "description": "Return deterministic synthetic current weather for one city.",
+  "inputSchema": {
+    "type": "object",
+    "required": ["city"],
+    "additionalProperties": false
   }
 }
 ```
 
-Use `.vscode/mcp.json` for repository-shared configuration. Verify current setting names and supported behavior in official documentation.
+The tool name, description, and schema are part of the interface.
+
+Start with one tool because every exposed capability adds risk and maintenance.
 
 ---
-# A custom typed tool
 
-```typescript
-server.tool(
-  "search_team",
-  "Search team members by name, role, or team. Returns matching results.",
-  { query: z.string().describe("Name, role, or team to search") },
-  async ({ query }) => ({ content: [{ type: "text", text: query }] })
-);
+# Trace the good request
+
+```json
+{
+  "name": "get_weather",
+  "arguments": {
+    "city": "Oslo"
+  }
+}
 ```
 
-Clear descriptions and typed inputs help the model call the tool correctly.
+```json
+{
+  "city": "Oslo",
+  "temperature": 30,
+  "unit": "celsius",
+  "conditions": "rain"
+}
+```
+
+Deterministic synthetic output makes exact tests possible.
 
 ---
-# Safety boundary
 
-- Use supplied synthetic data only.
-- Inspect the server source, tool descriptions, inputs, and outputs.
-- Stop at the customer-defined metered-work guard.
-- Do not connect credentials or customer systems.
-- Session 17 covers organization policy, approval, registry, and rollout.
+# Trace the bad request
+
+```json
+{
+  "name": "get_weather",
+  "arguments": {
+    "city": "   "
+  }
+}
+```
+
+```json
+{
+  "error": "city must be a non-empty string"
+}
+```
+
+The MCP result sets `isError: true`. An invalid request must not look like an empty
+success response.
 
 ---
-<!-- _class: divider -->
-# Lab
 
-Build a weather server with `get_weather`, `get_forecast`, and `convert_temperature`. Test it locally, then use the supplied scenarios.
+# Schema and handler checks work together
+
+| Schema | Handler |
+| --- | --- |
+| Helps clients form valid calls | Protects direct and protocol calls |
+| Documents required fields | Applies business limits |
+| Rejects extra properties | Returns a stable error shape |
+
+Do not assume every caller reaches the handler through the same client-side check.
+
+---
+
+# Each check proves a different claim
+
+| Evidence | Claim |
+| --- | --- |
+| Unit test | Handler behavior is correct for known inputs |
+| `tools/list` | The expected catalog is exposed |
+| `tools/call` | The stdio protocol path reaches the handler |
+| Copilot call | One approved client can discover and choose the tool |
+
+Keep the deterministic tests even when the client integration works.
+
+---
+
+# Lab handoff
+
+Apply the same contract to three tools. Check discovery, valid input, invalid input,
+and visible errors through tests and the MCP Inspector.
+
+**The deliverable is a three-tool server with exact request, response, and failure
+evidence.**

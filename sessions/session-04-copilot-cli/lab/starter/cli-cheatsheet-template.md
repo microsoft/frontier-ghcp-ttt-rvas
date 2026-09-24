@@ -91,7 +91,7 @@ copilot --version
 
 ## Notes from Today's Lab
 
-_Write your key takeaways here:_
+_Write what you will use here:_
 
 1. ---
 2. ---

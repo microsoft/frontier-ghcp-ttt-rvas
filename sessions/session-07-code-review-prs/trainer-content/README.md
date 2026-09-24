@@ -1,17 +1,17 @@
-# Session 07 — Code Review Workflows
+# Session 07: Code Review Workflows
 
 ## Trainer content guide
 
 ### Delivery baseline
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the customer administrator policy before demonstrating any review automation. Treat availability, controls, data handling, and measurement as live customer decisions.
+Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before demonstrating review automation. Treat availability, controls, data handling, and measurement as delivery decisions.
 
 ### Access and cost preflight
 
 1. Confirm repository scope, data classification, reviewer roles, and required checks.
-2. Verify current official documentation and customer policy for the intended review workflow.
+2. Verify current official documentation and the applicable policy for the intended review workflow.
 3. Choose a non-sensitive pull request with explicit acceptance criteria.
-4. For metered work, define a customer-owned meter, threshold, escalation contact, and stop guard.
+4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
 5. Prepare the human-only review exercise.
 
 ### No-access fallback
@@ -37,9 +37,9 @@ Teach automation as review input, not review authority. Learners collect evidenc
 
 > “A review tool can raise questions, but it cannot replace the accountable reviewer. The reviewer owns the decision and needs evidence.”
 
-> “Demonstrate only a current, approved workflow. When customer policy or documentation is incomplete, use the human-only exercise.”
+> “Demonstrate only a current, approved workflow. When policy or documentation is incomplete, use the human-only exercise.”
 
-> “Metered review work requires a customer-defined stop guard. Stop at the boundary and keep the manual review path.”
+> “Metered review work requires an agreed stop guard. Stop at the boundary and keep the manual review path.”
 
 ## Review contract
 
@@ -64,7 +64,7 @@ Describe the user-visible behavior and allowed scope.
 
 ## Conflict-resolution exercise
 
-Have learners read both branch intentions, write the desired merged behavior, resolve the conflict manually, run tests, and review the result. An assisted demonstration is optional and may occur only when current documentation and customer policy permit it.
+Have learners read both branch intentions, write the desired merged behavior, resolve the conflict manually, run tests, and review the result. An assisted demonstration is optional and may occur only when current documentation and policy permit it.
 
 ## Close
 
@@ -94,7 +94,7 @@ Ask learners to name the evidence they need before approving a change. A no-acce
 - At 0:51, run the conflict decision statement without editing code.
 - Never cut accountable review, test evidence, access fallback, or lab roles.
 
-## Segment 1 — Review is an accountable decision (0:00–0:08)
+## Segment 1: Review is an accountable decision (0:00–0:08)
 
 ### Trainer talking points
 
@@ -116,7 +116,7 @@ Expected answer: the accountable author and reviewer, supported by reproducible 
 
 > “Start with a review contract, not generated prose.”
 
-## Segment 2 — Review contract and PR description (0:08–0:18)
+## Segment 2: Review contract and PR description (0:08–0:18)
 
 ### Trainer walkthrough
 
@@ -146,7 +146,7 @@ Authorization behavior changes only for suspended users; revert the bounded comm
 - Name breaking behavior, dependencies, permissions, and data implications.
 - Remove sensitive details from prose as well as code.
 - Keep the PR focused enough for a reviewer to reconstruct intent.
-- Use fictional examples; never use customer or source organization names.
+- Use fictional examples; never use real organization names.
 
 ### Mini-exercise
 
@@ -160,7 +160,7 @@ Expected response: “improves” needs defined behavior; “all tests pass” n
 
 > “Once the contract and evidence are ready, an assisted review can be requested as a first pass when approved.”
 
-## Segment 3 — Review request and quality gates (0:18–0:28)
+## Segment 3: Review request and quality gates (0:18–0:28)
 
 ### Exact preflight actions
 
@@ -190,7 +190,7 @@ Expected response: “improves” needs defined behavior; “all tests pass” n
 
 > “Now we will trace one defect from requirement to finding, test, fix, and decision.”
 
-## Scripted demo — Suspended invoice viewer (0:28–0:43)
+## Scripted demo: Suspended invoice viewer (0:28–0:43)
 
 ### Purpose
 
@@ -309,7 +309,7 @@ A peer makes the final decision.
 
 > “Applying a fix saved typing at most; the requirement, regression test, and human decision made it reviewable.”
 
-## Segment 5 — Suggested fixes and conflict intent (0:43–0:51)
+## Segment 5: Suggested fixes and conflict intent (0:43–0:51)
 
 ### Before applying any suggested fix
 
@@ -347,7 +347,7 @@ Ask for four checks:
 
 > “Review assistance has bounded strengths, so adoption must preserve human gates and an off switch.”
 
-## Segment 6 — Limits and adoption (0:51–0:58)
+## Segment 6: Limits and adoption (0:51–0:58)
 
 ### Talking points
 

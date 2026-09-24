@@ -19,6 +19,41 @@ REQUIRED_PATHS = (
     "lab/solution",
 )
 VALID_DIFFICULTIES = {"Beginner", "Intermediate", "Advanced"}
+FALLBACK_PATTERN = re.compile(
+    r"\b(fallback|no-access|manual route)\b",
+    re.IGNORECASE,
+)
+ACCESS_PREREQUISITE_MARKERS = (
+    "able to",
+    "before",
+    "confirm",
+    "must",
+    "prerequisite",
+    "require",
+    "signed in",
+    "verify",
+)
+MISSING_ACCESS_MARKERS = (
+    "cannot access",
+    "do not have",
+    "fails",
+    "failure",
+    "missing",
+    "not available",
+    "unavailable",
+    "without access",
+)
+STOP_MARKERS = (
+    "do not continue",
+    "do not proceed",
+    "do not start",
+    "must not continue",
+    "must not proceed",
+    "must not start",
+    "reschedule",
+    "stop",
+    "wait until",
+)
 
 
 def finding(category: str, path: Path, message: str) -> dict[str, str]:
@@ -34,6 +69,27 @@ def repository_root(session_path: Path) -> Path:
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
+
+
+def has_required_access_guidance(content: str) -> bool:
+    lines = [line.strip().lower() for line in content.splitlines()]
+    has_prerequisite = any(
+        "copilot" in line
+        and "access" in line
+        and any(marker in line for marker in ACCESS_PREREQUISITE_MARKERS)
+        for line in lines
+    )
+    paragraphs = [
+        " ".join(paragraph.lower().split())
+        for paragraph in re.split(r"\n\s*\n", content)
+    ]
+    has_stop_instruction = any(
+        "access" in paragraph
+        and any(marker in paragraph for marker in MISSING_ACCESS_MARKERS)
+        and any(marker in paragraph for marker in STOP_MARKERS)
+        for paragraph in paragraphs
+    )
+    return has_prerequisite and has_stop_instruction
 
 
 def validate_materials(session_path: Path) -> list[dict[str, str]]:
@@ -177,8 +233,9 @@ def validate_lab_readiness(session_path: Path) -> list[dict[str, str]]:
     findings: list[dict[str, str]] = []
     content = read_text(lab)
     required_patterns = {
-        "setup or preflight guidance": r"^## (Setup|Preflight|Before you start)\b",
-        "fallback guidance": r"\b(fallback|no-access|unavailable|manual route)\b",
+        "setup or preflight guidance": (
+            r"^## (?:Required )?(Setup|Preflight|Before you start)\b"
+        ),
         "learner deliverable": r"^## (Final )?Deliverable(s)?\b",
     }
     for description, pattern in required_patterns.items():
@@ -186,6 +243,15 @@ def validate_lab_readiness(session_path: Path) -> list[dict[str, str]]:
             findings.append(
                 finding("lab readiness", lab, f"Missing {description}.")
             )
+    if not has_required_access_guidance(content) and not FALLBACK_PATTERN.search(content):
+        findings.append(
+            finding(
+                "lab readiness",
+                lab,
+                "Missing access policy. Require access and tell learners to stop "
+                "when it is missing, or provide intentional fallback guidance.",
+            )
+        )
     return findings
 
 

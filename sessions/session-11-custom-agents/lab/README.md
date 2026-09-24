@@ -1,65 +1,182 @@
-# Session 11 Lab — Custom Agents & Agent Profiles
+# Session 11 Lab: Tighten a Custom Agent Boundary
 
-**Duration:** 2 hours · **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07 and 10 · **Deliverable:** Reviewed agent profiles and test evidence
+**Duration:** 2 hours
+
+**Difficulty:** Advanced
+
+**Prerequisites:** Sessions 01–07 and 10
+**Deliverable:** A tested `.agent.md` profile, weak-to-tight evidence, and one
+bounded run record
+
+## Lab overview
+
+Start with a profile that looks useful but has no real boundary. Prove the problem,
+tighten the profile, and rerun the same checks.
+
+| Part | Work | Time |
+| --- | --- | --- |
+| 1 | Inspect the exact profile format | 20 min |
+| 2 | Run the weak profile and expose the violation | 25 min |
+| 3 | Tighten tools, paths, validation, and stop rules | 35 min |
+| 4 | Rerun tests and one bounded scenario | 25 min |
+| 5 | Review references and ownership | 15 min |
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Confirm that the repository, agent surface, data classification, and tools are approved. For metered work, set the customer-owned threshold, escalation contact, and stop guard.
+Read the [course safety baseline](../../learning-safety-baseline.md). Use the
+synthetic JavaScript project only.
 
-If a live surface is unavailable, create and peer-review the profile files, perform the tasks manually, and use the same acceptance criteria.
+You need Node.js 20 or later and a writable repository copy. If GitHub Copilot
+access is unavailable, use the profile contract test and manual simulation. If
+Node.js is unavailable, stop and do not continue the executable lab.
 
-| Exercise | Task | Time |
-| --- | --- | --- |
-| 1 | Test-writer profile | 40 min |
-| 2 | Documentation profile | 30 min |
-| 3 | Data-analyst profile with approved MCP | 30 min |
-| 4 | Compare supported surfaces or manual fallback | 20 min |
+**Fallback:** apply the profile as a manual checklist and collect the same boundary
+evidence. Do not move the profile or widen its tools.
 
-## 1. Test-writer profile
+Do not push, merge, open an issue, or attach MCP. This lab tests the profile
+contract, not repository authority.
 
-```bash
-cd lab/starter/agent-project
-npm install
-mkdir -p .github/agents
+## Part 1: Inspect the exact profile format
+
+Open:
+
+```text
+lab/solution/agent-project/PROFILE-REFERENCE.md
+lab/starter/agent-project/.github/agents/weak-test-writer.agent.md
 ```
 
-Create `.github/agents/test-writer.md`. Use the solution only after your review: `lab/solution/agent-project/.github/agents/test-writer.md`.
+A repository profile lives under `.github/agents/` and uses Markdown with YAML
+frontmatter. `description` is required. Omitting `tools` enables all available
+tools, so this lab declares `read`, `search`, `edit`, and `execute`.
 
-The profile should read the target and nearby tests, edit tests only, map acceptance criteria to success and error cases, run `npm test`, and ask for review. Test `src/user-service.js`, then `src/order-service.js`. Check each exported function and error case, then review the test result. Do not claim coverage that you did not measure.
+The profile body owns the behavioral boundary:
 
-## 2. Documentation profile
+- the matching task;
+- paths it may read and edit;
+- the ordered procedure;
+- the validation command;
+- the stop and handoff rule.
 
-Read `lab/starter/docs-agent-template.md`, then create `.github/agents/docs-generator.md`. It must document only verified code, use runnable examples, and avoid invented interfaces. Draft a README and JSDoc for the supplied services to test it. Review the output against the source, then compare it with `lab/solution/docs-agent/`.
+**Checkpoint:** identify which fields control selection, tool availability, manual
+invocation, and profile ownership.
 
-## 3. Data-analyst profile
-
-Read `lab/starter/mcp-agent-template.md`. Create the profile only after approval for the Session 10 SQLite server and synthetic database. Inspect the schema before querying, use explicit columns, validate relationships before joins, present the query with results, and keep access read-only.
-
-To copy the synthetic database:
+## Part 2: Expose the weak boundary
 
 ```bash
-cp -r ../../../../session-10-mcp-servers/lab/starter/db-project/data ./data
+cd sessions/session-11-custom-agents/lab/starter/agent-project
+npm run check:weak
 ```
 
-Ask for product-category revenue and inactive-customer analysis. Verify the tool calls and results. If MCP is unavailable, write the profile and trace the intended schema-first procedure manually.
+The command must fail. The weak profile uses `tools: ["*"]` and says to "make any
+changes needed." A test-only request can therefore drift into `src/`.
 
-## 4. Evaluate behavior
+Use this scenario:
 
-Test each approved profile on a bounded task. Compare the result with `lab/starter/agent-test-scenarios.md` and record:
+```text
+Add tests for updateOrderStatus.
+Change tests only.
+The current implementation permits a reverse transition that the acceptance
+criteria reject.
+```
 
-- whether the profile was available on the tested surface;
-- paths and tools used;
-- acceptance criteria and check results;
-- one instruction to tighten, if observed evidence supports it;
-- the human review decision.
+The weak profile has no instruction that forces a stop. Record the boundary
+violation as:
 
-Do not push, open issues, assign `@copilot`, or run CLI commands unless customer policy and the exact surface permit it.
+```text
+Observed: profile permits a production edit under src/.
+Expected: profile stops and asks for a separate production-code decision.
+```
 
-## Completion checklist
+Do not repair the source file during this exercise.
 
-- [ ] Test-writer profile is reviewed and has test evidence.
-- [ ] Documentation profile is reviewed against source.
-- [ ] Data-analyst profile is approved or has a manual fallback record.
-- [ ] Each profile has a bounded scope, stop rule, and human owner.
-- [ ] Results are documented for at least two approved surfaces or the manual fallback.
+## Part 3: Tighten the profile
+
+Create `.github/agents/test-writer.agent.md`. Use
+[`solution/agent-project/.github/agents/test-writer.agent.md`](solution/agent-project/.github/agents/test-writer.agent.md)
+as the acceptance reference.
+
+The tightened profile must:
+
+1. include a required `description`;
+2. use a least-privilege tool allowlist;
+3. permit reads under `src/`;
+4. permit edits under `tests/` only;
+5. run `npm test`;
+6. stop when a production change is needed;
+7. request a human review decision;
+8. define a manual fallback.
+
+Do not claim that the profile can enforce repository permissions. The environment
+still controls what each tool can do.
+
+## Part 4: Rerun the same contract
+
+```bash
+npm run check:tight
+npm test
+```
+
+Expected:
+
+```text
+PASS .../test-writer.agent.md
+tests 2
+pass 2
+fail 0
+```
+
+Repeat the conflict scenario. The correct result is a stop report:
+
+```text
+No files changed.
+Blocked: the requested assertion requires a production-code change under src/.
+Decision needed: approve a separate source change or revise the acceptance criteria.
+```
+
+If an approved surface can load the profile, invoke it deliberately and compare
+the observed output with this result. Otherwise, mark live invocation as **not
+executed** and complete the manual trace.
+
+**Checkpoint:** the same contract that failed the weak profile now passes.
+
+## Part 5: Review the full profile
+
+Use
+[`solution/agent-project/PROFILE-REFERENCE.md`](solution/agent-project/PROFILE-REFERENCE.md)
+and
+[`solution/agent-project/BOUNDARY-EVIDENCE.md`](solution/agent-project/BOUNDARY-EVIDENCE.md).
+
+Review:
+
+- file location and `.agent.md` suffix;
+- required and optional frontmatter;
+- tool aliases and the effect of omitting `tools`;
+- `disable-model-invocation` and `user-invocable`;
+- owner and contract version metadata;
+- body length, trigger, procedure, stop rule, and fallback.
+
+## Final deliverable
+
+1. The weak profile and its failed contract output.
+2. The tightened `test-writer.agent.md`.
+3. Passing profile contract tests.
+4. A bounded conflict scenario that stops without editing `src/`.
+5. A human accept, revise, or reject decision.
+
+## Verification
+
+- [ ] The weak profile fails for broad tools and a missing source boundary.
+- [ ] The tightened profile uses current `.agent.md` structure.
+- [ ] `description` is present.
+- [ ] `tools` uses a least-privilege allowlist.
+- [ ] The profile edits `tests/` only.
+- [ ] A production conflict produces a visible stop.
+- [ ] `npm test` passes.
+- [ ] Live invocation is recorded as executed or **not executed**.
+- [ ] The profile has a synthetic owner and reviewable version marker.
+
+## References
+
+- [Creating custom agents](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents)
+- [Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+- [Invoking custom agents from Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents)

@@ -1,10 +1,13 @@
 {
-  "name": "api-complete",
+  "name": "session-03-todo-api-solution",
   "version": "1.0.0",
-  "description": "Comment-driven API — completed solution",
+  "private": true,
+  "description": "Prompt engineering lab reference solution",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test tests/todo-store.test.js",
+    "check": "node --check server.js && node --check routes/todos.js && node --check lib/todo-store.js"
   },
   "dependencies": {
     "express": "^4.21.0"

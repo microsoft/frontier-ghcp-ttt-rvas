@@ -14,6 +14,7 @@ This directory contains the repeatable template structure for the GitHub Copilot
 
 2. **Fill in** each template file with session-specific content:
    - `README.md` — Session overview (title, objectives, prerequisites, difficulty)
+   - `slides.md` — Trainer-facing concept deck that explains the lesson before the lab
    - `trainer-content/README.md` — Trainer presentation outline (1-hour block)
    - `lab/README.md` — Lab exercise outline (2-hour block)
    - `lab/starter/` — Starter files trainees begin with
@@ -27,6 +28,7 @@ This directory contains the repeatable template structure for the GitHub Copilot
 ```
 session-template/
 ├── README.md                  # Session overview
+├── slides.md                  # Trainer concept deck and lab handoff
 ├── trainer-content/
 │   └── README.md              # Trainer presentation outline
 └── lab/
@@ -45,3 +47,6 @@ session-template/
 - **Naming:** Use kebab-case slugs derived from the session title
 - **Enterprise delivery:** Add an access/cost preflight, policy or permission
   assumptions, and a no-access fallback to every lab.
+- **Trainer slides:** Teach the concepts before the lab. Include an agenda, enough
+  explanation for the trainer to introduce each concept, concrete examples or
+  decision tables, a prepared demonstration where relevant, and a clear lab handoff.

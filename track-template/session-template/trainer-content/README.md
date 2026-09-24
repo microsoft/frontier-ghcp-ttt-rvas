@@ -41,7 +41,17 @@
 
 ## Slide Deck
 
-[Link to slide deck once created — or note that this session is demo-driven with minimal slides.]
+[Open the trainer-facing concept deck](../slides.md). Use it to explain the lesson
+before the lab. Do not use a short agenda-only deck as a substitute for the teaching
+content.
+
+The deck should include:
+
+- a timed agenda and the lesson goal;
+- concept slides that explain terms, trade-offs, and decisions;
+- concrete examples, diagrams, or tables a trainer can teach from;
+- a prepared demonstration when it helps learners connect the concept to the lab;
+- a lab handoff that states what learners will build and how it proves the lesson.
 
 ## Talking Points
 

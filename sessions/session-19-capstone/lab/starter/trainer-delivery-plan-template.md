@@ -1,155 +1,55 @@
-# Trainer Delivery Plan Template
+# Trainer Delivery Reflection
 
-Use this template to plan how you will deliver the GitHub Copilot & Agentic Workflows curriculum to your team or organization.
+Use this after the capstone review.
 
----
+## Audience and environment
 
-## Your context
+**Audience:**
 
-**Your name:** ___________________________  
-**Your organization:** ___________________________  
-**Your audience:** ___________________________  
-**Audience size:** ___________________________  
-**Audience skill level:** [ ] Beginner  [ ] Intermediate  [ ] Advanced  [ ] Mixed  
-**Primary languages/stack:** ___________________________
+**Expected experience:**
 
----
+**Approved implementation path:**
 
-## 1. Audience Analysis
+**Fallback path:**
 
-### Who will attend?
+## Boundary
 
-| Question                                 | Answer   |
-| ---------------------------------------- | -------- |
-| What's their current Copilot experience? |          |
-| What languages/frameworks do they use?   |          |
-| Do they work with CI/CD?                 |          |
-| Are they open to AI or skeptical?        |          |
-| Do they have admin/org access?           |          |
-| Any compliance or security constraints?  |          |
+How will you keep the exercise to `POST /api/bookmarks`?
 
-### Adapt for the audience
+**Visible non-goals:**
 
-Based on this analysis, choose the **delivery path** that fits best.
+**Time or usage stop:**
 
-| Path                  | Sessions     | Duration   | Best For                  |
-| --------------------- | ------------ | ---------- | ------------------------- |
-| Copilot Beginners     | 01–03        | 9 hrs      | Teams new to Copilot      |
-| Copilot Practitioners | 01–07        | 21 hrs     | Teams using basic Copilot |
-| Agentic Developers    | 01–11        | 33 hrs     | Teams ready for agents    |
-| DevOps Engineers      | 01–04, 12–14 | 21 hrs     | DevOps / Platform teams   |
-| Enterprise Admins     | 01–03, 16    | 12 hrs     | Managers, IT admins       |
-| Full Track            | 01–17        | 51 hrs     | Trainer certification     |
+**Who can approve a scope change:**
 
-**Your chosen path:** ___________________________
+## Evidence
 
----
+Which artifacts will learners submit?
 
-## 2. Delivery Schedule
+- [ ] Governance record
+- [ ] Accepted specification trace
+- [ ] Implementation-ready issue
+- [ ] Patch or patch plan
+- [ ] Test evidence
+- [ ] Review decision and next action
 
-### Option A: Intensive (3 sessions/day)
+## Adaptation
 
-| Day   | Sessions   | Topics   |
-| ----- | ---------- | -------- |
-| 1     |            |          |
-| 2     |            |          |
-| 3     |            |          |
-| ...   |            |          |
+If your audience uses another stack, name the replacement runtime, test command, and
+response contract. Keep the same behavior and handoff requirements.
 
-### Option B: Standard (2 sessions/day)
+**Stack change:**
 
-| Day   | Sessions   | Topics   |
-| ----- | ---------- | -------- |
-| 1     |            |          |
-| 2     |            |          |
-| ...   |            |          |
+**Executable verification:**
 
-### Option C: Extended (1 session/day or 3/week)
+**Risk introduced by the adaptation:**
 
-| Week   | Sessions   | Topics   |
-| ------ | ---------- | -------- |
-| 1      |            |          |
-| 2      |            |          |
-| ...    |            |          |
+## Delivery change
 
-**Your chosen schedule:** ___________________________
+What will you change before teaching this session again?
 
----
+**Change:**
 
-## 3. Adaptations
+**Evidence for the change:**
 
-### Sessions to skip or shorten
-
-| Session   | Action                | Reason   |
-| --------- | --------------------- | -------- |
-|           | Skip / Shorten / Keep |          |
-|           | Skip / Shorten / Keep |          |
-
-### Sessions to extend or emphasize
-
-| Session   | Extra Time  | Why   |
-| --------- | ----------- | ----- |
-|           |             |       |
-|           |             |       |
-
-### Custom content to add
-
-| Topic   | When   | Why   |
-| ------- | ------ | ----- |
-|         |        |       |
-|         |        |       |
-
----
-
-## 4. Lab Modifications
-
-### Language/stack changes
-
-The labs use Node.js/JavaScript. If your team uses another stack, note the changes:
-
-| Lab   | Change Needed   |
-| ----- | --------------- |
-|       |                 |
-|       |                 |
-
-### Environment setup
-
-What do trainees need before Day 1?
-
-- [ ] VS Code installed
-- [ ] Copilot license assigned
-- [ ] GitHub account with org access
-- [ ] Node.js installed
-- [ ] `gh` CLI installed
-- [ ] Other: ___________________________
-
----
-
-## 5. Evidence of success
-
-How will you know whether the training worked?
-
-| Metric   | How Measured  | Target   |
-| -------- | ------------- | -------- |
-|          |               |          |
-|          |               |          |
-|          |               |          |
-
----
-
-## 6. Follow-Up Plan
-
-After training, how will you sustain adoption?
-
-- [ ] Create a Slack/Teams channel for Copilot tips
-- [ ] Appoint Copilot champions (1 per team)
-- [ ] Schedule monthly office hours
-- [ ] Share custom instructions / agents / skills
-- [ ] Track adoption via analytics
-- [ ] Other: ___________________________
-
----
-
-## 7. Notes and concerns
-
-[Other details about your delivery context: constraints, risks, or opportunities]
+**Owner:**

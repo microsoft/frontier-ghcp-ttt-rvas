@@ -255,17 +255,15 @@ def presentation_launcher(page, session_name: str) -> str:
 
 def trainer_controls() -> str:
     return """
-<div class="trainer-controls" role="group" aria-label="Trainer controls" hidden>
+<div class="trainer-controls" role="group" aria-label="Trainer timer controls" hidden>
   <span class="trainer-timer" role="timer" aria-label="Elapsed session time"
     aria-live="off">00:00</span>
   <button type="button" data-trainer-timer>Start timer</button>
   <button type="button" data-trainer-reset>Reset timer</button>
-  <button type="button" data-trainer-previous>Previous section</button>
-  <button type="button" data-trainer-next>Next section</button>
   <button type="button" data-trainer-print>Print guide</button>
   <label class="trainer-controls__shortcuts">
     <input type="checkbox" data-trainer-shortcuts>
-    Enable shortcuts (J: next, K: previous, T: timer)
+    Enable timer shortcut (T)
   </label>
 </div>
 """

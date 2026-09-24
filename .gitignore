@@ -11,9 +11,12 @@ output/
 node_modules/
 site/
 .impeccable/review/
+.terraform/
+.copilot-tracking/
 
 .venv
 __pycache__/
+.azure-boards-seed-state.json
 
 # Graphify
 graphify-out/

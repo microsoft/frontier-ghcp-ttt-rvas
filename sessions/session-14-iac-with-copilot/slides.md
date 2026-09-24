@@ -3,72 +3,107 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 14 — Infrastructure as Code with Copilot'
+footer: 'Session 14: Infrastructure as Code with Copilot'
 ---
 
 <!-- _class: lead -->
-# Infrastructure as Code with Copilot
+# Terraform from Modules to Security Gate
 ## DevOps & Infrastructure | Advanced
+
+Session 14 | 2 hours 30 minutes
 
 ---
 # Agenda
 
 | Time | Topic |
 | --- | --- |
-| 0:00–0:08 | IaC model |
-| 0:08–0:20 | Terraform module |
-| 0:20–0:30 | Bicep comparison |
-| 0:30–0:42 | Module composition |
-| 0:42–0:52 | Security review |
-| 0:52–1:00 | Validation and lab handoff |
+| 0:00–0:08 | Architecture and project model |
+| 0:08–0:20 | Module contracts |
+| 0:20–0:32 | Root composition |
+| 0:32–0:44 | Staged validation |
+| 0:44–0:54 | Security failure |
+| 0:54–1:00 | Bicep comparison and lab handoff |
 
 ---
-# IaC model
+# One required path
 
-| Concept | Terraform | Bicep |
-| --- | --- | --- |
-| Resource | `resource` block | `resource` declaration |
-| Reusable unit | `module` | `module` |
-| Input | `variable` | `param` |
-| Output | `output` | `output` |
-| Preview | `terraform plan` | `az deployment what-if` |
-
----
-# Prompt from facts
+The learner path is Terraform:
 
 ```text
-Read this Terraform project. Add a network module for the supplied CIDRs.
-Expose only needed VPC and subnet IDs. Use variables and outputs; do not add
-credentials, public database access, or a plan/apply command.
+architecture → modules → root composition → format → init → validate → security gate
 ```
 
-Check every resource against the architecture before accepting it.
+Bicep appears as a prepared comparison. Learners do not build both projects.
 
 ---
-# Security review
+# Modules define contracts
 
-- Block unneeded public access.
-- Restrict ingress by port and source.
-- Keep secrets out of source.
-- Encrypt storage and databases.
-- Limit IAM actions and resources.
-- Add required logging.
+| Module | Consumes | Exposes |
+| --- | --- | --- |
+| Network | CIDR and names | VPC and subnet IDs |
+| Compute | VPC and subnet IDs | Load balancer DNS and app security group |
+| Database | Private subnets and app security group | Database endpoint |
 
-Generated IaC is a draft. Human review owns the deployment decision.
+Keep secrets in sensitive inputs. Do not copy values between layers.
 
 ---
-# Validate locally
+# Prompt from fixed constraints
+
+```text
+Complete the network, compute, and database module contracts. Pass values through
+typed variables and outputs. Keep the database password sensitive. Do not add
+credentials, a backend, plan, or apply command.
+```
+
+The architecture owns the boundaries. Copilot drafts the files.
+
+---
+# Validate in stages
 
 ```bash
-terraform fmt
+terraform fmt -check -recursive
+terraform init -backend=false
 terraform validate
-az bicep build --file main.bicep
 ```
 
-A plan or what-if needs an approved environment, credentials, and stop guard.
+Fix the first failure before moving on. Each stage answers a different question.
+
+---
+# What local validation does not prove
+
+It does not check:
+
+- the current cloud state;
+- organization policy;
+- quota or regional availability;
+- the effect of an apply.
+
+A reviewed plan needs an approved identity and target environment.
+
+---
+# One intentional security failure
+
+```bash
+bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
+```
+
+The gate must fail. Learners investigate the cited lines, repair the file, and
+prove the rerun passes.
+
+---
+# Bicep is a comparison
+
+Show:
+
+- module inputs and outputs;
+- `@secure()` parameters;
+- `az bicep build`;
+- the same human review boundary.
+
+Six minutes. No second required build.
 
 ---
 <!-- _class: divider -->
 # Lab
 
-Generate Terraform and Bicep, secure the supplied Terraform, and compare approved Space context with a normal prompt. Do not provision cloud resources.
+Complete Terraform, validate each stage, and repair the security-gate failure.

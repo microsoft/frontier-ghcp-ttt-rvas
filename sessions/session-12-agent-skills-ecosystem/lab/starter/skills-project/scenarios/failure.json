@@ -1,0 +1,13 @@
+{
+  "request": "Add a POST /api/tasks REST endpoint.",
+  "paths": [
+    "src/api/routes.js",
+    "test/routes.test.js"
+  ],
+  "acceptanceCriteria": [
+    "Return 201 for valid input.",
+    "Return 400 when title is missing."
+  ],
+  "reviewer": "",
+  "testCommand": "npm test"
+}

@@ -1,0 +1,42 @@
+diff --git a/src/app.js b/src/app.js
+--- a/src/app.js
++++ b/src/app.js
+@@ -28,6 +28,10 @@ app.get('/api/tasks/:id', (req, res) => {
+ // POST /api/tasks — Create a new task
+ app.post('/api/tasks', (req, res) => {
+   const { title, priority } = req.body;
++  if (typeof title !== 'string' || title.trim() === '') {
++    return res.status(400).json({ error: 'title is required' });
++  }
++
+   const task = {
+     id: nextId++,
+     title: title || 'Untitled',
+diff --git a/tests/app.test.js b/tests/app.test.js
+--- a/tests/app.test.js
++++ b/tests/app.test.js
+@@ -31,6 +31,28 @@ describe('POST /api/tasks', () => {
+     expect(res.body.id).toBe(1);
+     expect(res.body.completed).toBe(false);
++    expect(res.body.createdAt).toBeDefined();
++  });
++
++  it('should reject a missing title', async () => {
++    const res = await request(app).post('/api/tasks').send({});
++    expect(res.status).toBe(400);
++    expect(res.body).toEqual({ error: 'title is required' });
++  });
++
++  it('should reject an empty title', async () => {
++    const res = await request(app).post('/api/tasks').send({ title: '' });
++    expect(res.status).toBe(400);
++    expect(res.body).toEqual({ error: 'title is required' });
++  });
++
++  it('should reject a whitespace-only title', async () => {
++    const res = await request(app).post('/api/tasks').send({ title: '   ' });
++    expect(res.status).toBe(400);
++    expect(res.body).toEqual({ error: 'title is required' });
+   });
+ 
+   it('should default priority to medium', async () => {

@@ -1,35 +1,46 @@
-# Agent profile template
+# Documentation agent profile template
 
-Use this as a reviewable starting point. Verify current frontmatter and tool names in official documentation before use.
+Create `.github/agents/docs-generator.agent.md`.
 
 ````markdown
 ---
-name: "your-agent-name"
-description: "One specific repository responsibility."
+name: Documentation verifier
+description: Updates repository documentation only after checking the named source and tests.
+target: github-copilot
 tools:
-  - "readFile"
-  - "editFiles"
+  - read
+  - search
+  - edit
+disable-model-invocation: true
+user-invocable: true
+metadata:
+  owner: training-maintainers
+  contract-version: "1"
 ---
 
-# Agent title
+# Documentation verifier
 
 ## Use when
-Name the bounded task and paths.
+
+Use for a bounded documentation change with named source files and examples.
 
 ## Procedure
-1. Read the relevant source and tests.
-2. Make the smallest permitted change.
-3. Run the named check.
-4. Report changed files and results.
-5. Request human review.
 
-## Constraints
-- Do not change files outside the stated scope.
-- Do not add dependencies or use external tools without approval.
-- Stop when requirements or conventions are unclear.
+1. Read the named source and adjacent tests.
+2. List the public behavior supported by that evidence.
+3. Edit the requested Markdown or JSDoc path only.
+4. Check every example against the source.
+5. Report changed files and request human review.
+
+## Boundary
+
+Do not edit production behavior, tests, package manifests, or workflows. Stop when
+the documentation request depends on an interface that the source does not expose.
 
 ## Fallback
-Describe the manual procedure and the same evidence.
+
+Use the same steps as a manual checklist.
 ````
 
-Keep one profile focused on one job. Define positive and negative triggers, a stop rule, validation, and an owner.
+`description` is required. Omitting `tools` enables all available tools, so this
+template declares only the aliases it needs.

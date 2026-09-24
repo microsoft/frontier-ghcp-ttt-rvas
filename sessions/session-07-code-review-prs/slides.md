@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 07 — Code Review'
+footer: 'Session 07: Code Review'
 ---
 
 <!-- _class: lead -->
@@ -17,10 +17,10 @@ footer: 'Session 07 — Code Review'
 
 Use Enterprise Cloud as the governance baseline.
 
-1. Verify current official GitHub documentation and customer administrator policy.
+1. Verify current official GitHub documentation and the applicable administrator policy.
 2. Confirm repository scope, data classification, and review permissions.
 3. Use a non-sensitive pull request with explicit acceptance criteria.
-4. For metered work, define a customer-owned threshold, escalation route, and stop guard.
+4. For metered work, define an approved threshold, escalation route, and stop guard.
 
 ---
 
@@ -56,7 +56,7 @@ Accept, request revision, or implement manually
 2. Write the merged behavior and tests before editing.
 3. Resolve the conflict manually in the repository sandbox.
 4. Run checks and request review.
-5. Demonstrate an approved assisted workflow only after checking current documentation and customer policy.
+5. Demonstrate an approved assisted workflow only after checking current documentation and policy.
 
 ---
 
@@ -293,14 +293,13 @@ Keep a manual path for unavailable features and exceptional repositories.
 
 Learners will:
 
-1. create a branch containing intentional quality issues;
-2. open a PR and improve its summary;
-3. request review and classify every comment;
-4. apply only verified suggestions with tests;
-5. resolve a prepared merge conflict;
-6. add a partner’s human review and reflect on review quality.
+1. follow one pull request from a flawed change brief;
+2. classify human and Copilot findings;
+3. apply only fixes supported by evidence;
+4. resolve the prepared conflict without losing either branch goal;
+5. make an explicit final human decision.
 
-**Deliverable:** A PR with layered evidence and an explicit human decision.
+**Final deliverable:** The review record, corrected project, conflict evidence, and final decision.
 
 ---
 

@@ -1,4 +1,4 @@
-# Suggest Challenges — Expected Answers
+# Suggest Challenges: Expected Answers
 
 Reference commands for the five suggest challenges. Copilot may suggest valid alternatives. Check that the command performs the task correctly and safely.
 
@@ -61,7 +61,7 @@ git log --stat --since="1 week ago" --author="octocat"
 
 ## Challenge 3: Branch, Commit, and Push
 
-**Task:** Create branch `feature/cli-lab`, commit all changes, and push — in one line.
+**Task:** Create branch `feature/cli-lab`, commit all changes, and push in one line.
 
 **Expected command:**
 
@@ -79,7 +79,8 @@ git switch -c feature/cli-lab && git add -A && git commit -m "add CLI lab files"
 git checkout -b feature/cli-lab && git add . && git commit -m "add CLI lab files" && git push --set-upstream origin feature/cli-lab
 ```
 
-**What makes it correct:** Creates branch, stages files, commits with message, pushes with upstream tracking — all chained with `&&` so each step only runs if the previous succeeds.
+**What makes it correct:** Creates the branch, stages files, commits with a
+message, and pushes with upstream tracking. The `&&` chain stops when a step fails.
 
 **Common Copilot mistakes:** Sometimes uses `;` instead of `&&` (which continues even on failure), or forgets `-u` for upstream tracking on the first push.
 
@@ -144,8 +145,8 @@ gh issue list --repo octo-org/octo-repo --assignee @me --state open --limit 50
 
 | Score                  | Meaning                                                                  |
 | ---------------------- | ------------------------------------------------------------------------ |
-| 5/5 first-try accurate | Copilot nailed all 5 without refinement — impressive                     |
-| 4/5                    | Solid — one needed minor adjustment                                      |
-| 3/5                    | Good baseline — some commands needed iteration                           |
-| 2/5                    | Descriptions may have been too vague — practice specificity              |
+| 5/5 first-try accurate | Copilot handled all 5 without refinement                                 |
+| 4/5                    | Solid; one needed a minor adjustment                                     |
+| 3/5                    | Good baseline; some commands needed iteration                            |
+| 2/5                    | Descriptions may have been too vague. Practice specificity               |
 | 1/5                    | Try being more explicit about what you want (constraints, flags, format) |

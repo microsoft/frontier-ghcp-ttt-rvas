@@ -1,17 +1,17 @@
-# Session 05 — IDE Agent Workflows
+# Session 05: IDE Agent Workflows
 
 ## Trainer content guide
 
 ### Delivery baseline
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and customer administrator policy before a live exercise. Treat editor modes, tool permissions, model selection, and product lifecycle as current-state decisions, not static training facts.
+Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. Treat editor modes, tool permissions, model selection, and product lifecycle as current-state decisions, not static training facts.
 
 ### Access and cost preflight
 
 1. Confirm attendee role, repository scope, approved data classification, and human reviewer.
-2. Verify the current documentation and customer policy for the intended workflow and tools.
+2. Verify the current documentation and the applicable policy for the intended workflow and tools.
 3. Choose a non-sensitive, bounded starter task with explicit acceptance criteria.
-4. For metered work, define the customer-owned meter, threshold, escalation contact, and stop guard.
+4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
 5. Prepare the manual version of the task.
 
 ### No-access fallback
@@ -43,9 +43,9 @@ Learners own the task definition and approvals. The assistant proposes work with
 
 > “The agent loop does not delegate judgment. It creates review points: plan before the change, inspect each action, validate the evidence, and stop when the task leaves its approved scope.”
 
-> “Demonstrate only controls permitted by current documentation and customer policy. If a surface is unavailable, the manual workflow still teaches planning, tests, and review.”
+> “Demonstrate only controls permitted by current documentation and policy. If a surface is unavailable, the manual workflow still teaches planning, tests, and review.”
 
-> “Metered work needs a customer-defined stop guard. Before starting, the team needs the meter, threshold, escalation owner, and manual alternative.”
+> “Metered work needs an agreed stop guard. Before starting, the team needs the meter, threshold, escalation owner, and manual alternative.”
 
 ## Task template
 
@@ -71,11 +71,11 @@ Describe one user-visible, testable change.
 - Are commands, dependencies, and data access understood before approval?
 - Do relevant checks pass?
 - Does a reviewer accept the outcome?
-- Did the work remain within the customer-defined guard?
+- Did the work remain within the agreed guard?
 
 ## Close
 
-Ask learners to identify one point in their own workflow where a plan or review checkpoint would reduce risk. Recheck current official documentation and customer policy before the next live demonstration.
+Ask learners to identify one point in their own workflow where a plan or review checkpoint would reduce risk. Recheck current official documentation and the applicable policy before the next live demonstration.
 
 ---
 
@@ -101,7 +101,7 @@ Ask learners to identify one point in their own workflow where a plan or review 
 - At 0:50, run one redirect rather than two.
 - Never cut preflight, independent verification, stop rules, or fallback.
 
-## Segment 1 — From assistant to agent (0:00–0:08)
+## Segment 1: From assistant to agent (0:00–0:08)
 
 ### Trainer talking points
 
@@ -126,7 +126,7 @@ Ask learners to choose Chat, manual edit, or agent workflow and justify the revi
 
 > “A multi-step task is safe to direct only when every loop produces observable evidence.”
 
-## Segment 2 — Plan, act, observe, review (0:08–0:18)
+## Segment 2: Plan, act, observe, review (0:08–0:18)
 
 ### Detailed talking points
 
@@ -151,7 +151,7 @@ After **Review**, ask: “Would an accountable reviewer accept this evidence?”
 
 > “The contract gives the agent and reviewer the same boundary.”
 
-## Segment 3 — Task contract and trust preflight (0:18–0:28)
+## Segment 3: Task contract and trust preflight (0:18–0:28)
 
 ### Exact trainer actions
 
@@ -198,7 +198,7 @@ Done:
 
 > “We will direct one feature and pause at each checkpoint.”
 
-## Scripted demo — Optional task filter (0:28–0:43)
+## Scripted demo: Optional task filter (0:28–0:43)
 
 ### Setup
 
@@ -310,7 +310,7 @@ The same rubric applies; no live agent is needed.
 
 > “Agent mode was suitable because the goal crossed related files and tests could drive the loop; that is not true for every task.”
 
-## Segment 5 — Choose Chat, agent, or manual work (0:43–0:50)
+## Segment 5: Choose Chat, agent, or manual work (0:43–0:50)
 
 ### Decision framework
 
@@ -335,7 +335,7 @@ Pause when permissions, data handling, policy, or a destructive action is unreso
 
 > “Choosing an agent does not lock us into its first direction; intervention is part of the workflow.”
 
-## Scripted exercise — Redirect and stop (0:50–0:57)
+## Scripted exercise: Redirect and stop (0:50–0:57)
 
 ### Setup
 
@@ -428,7 +428,7 @@ Do not quote static figures. Check the current organization-specific meter and t
 
 Open `lab/README.md`.
 
-Learners will practice project scaffolding, multi-file refactoring, Chat-versus-agent comparison, and TODO-driven course correction.
+Learners will keep one Todo API through four stages: scaffold it, compare Ask and Agent mode on one feature, redirect a repository refactor, and make a final human decision.
 
 Before any lab dependency or authentication example, apply current organizational approval and use only synthetic credentials and data.
 

@@ -1,10 +1,10 @@
-# Merge Conflict Scenario — Trainer Setup Guide
+# Merge Conflict Scenario: Trainer Setup Guide
 
 **Used in:** Session 07 conflict-resolution exercise
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the customer administrator policy before a live demonstration. For metered work, define a customer-owned threshold, escalation route, and stop guard.
+Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live demonstration. For metered work, define an approved threshold, escalation route, and stop guard.
 
 ## No-access fallback
 
@@ -31,4 +31,4 @@ Preserve both intended behaviors. Do not choose a branch by default.
 
 ## Optional live demonstration
 
-After verifying current official GitHub documentation and customer policy, a trainer may demonstrate an approved assisted workflow. Compare its proposal with the manual result and tests. A human reviewer makes the final decision.
+After verifying current official GitHub documentation and policy, a trainer may demonstrate an approved assisted workflow. Compare its proposal with the manual result and tests. A human reviewer makes the final decision.

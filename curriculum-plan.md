@@ -15,6 +15,8 @@ By completing this curriculum, trainers will be able to:
 9. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
 10. **Facilitate** hands-on labs where trainees build real projects using the full Copilot toolchain
 11. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
+12. **Teach** product and delivery teams to use the GitHub Copilot app, create durable planning artifacts, and supervise agent work without requiring programming
+13. **Use** GitHub MCP, canvases, orchestration, and Automations with explicit review and verification
 
 ---
 
@@ -22,23 +24,26 @@ By completing this curriculum, trainers will be able to:
 
 ### Modules & Tracks
 
-The curriculum is organized into **6 modules** that progress from foundations through advanced orchestration. Modules 1–3 form the **core track**. Modules 4–6 are **elective tracks** that trainers can combine for their audience.
+The curriculum is organized into **7 modules**. Modules 1–3 form the technical core. Modules 4–7 are role-based or technical electives that trainers can combine for their audience.
 
 ```
 Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
     │
-Module 2: Copilot in Practice ──────────────── (Intermediate, 4 sessions)
+Module 2: Copilot in Practice ──────────────── (Intermediate–Advanced, 6 sessions)
     │
 Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
     │
     ├── Module 4: DevOps & Infrastructure ──── (Intermediate–Advanced, 3 sessions)
     │   └── Requires: Module 1 + Session 05
     │
-    ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 2 sessions)
-    │   └── Uses Squad and Spec Kit as worked framework examples
+    ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
+    │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
         └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
+
+Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 6 sessions)
+    └── Standalone role-based path; no programming prerequisite
 ```
 
 ### Delivery Flexibility
@@ -46,11 +51,13 @@ Module 3: Agentic Workflows ───────────────── 
 | Audience                  | Recommended Path                 | Sessions     | Duration   |
 | ------------------------- | -------------------------------- | ------------ | ---------- |
 | **Copilot Beginners**     | Module 1 only                    | 01–03        | 9 hrs      |
-| **Copilot Practitioners** | Modules 1–2                      | 01–07        | 21 hrs     |
+| **Copilot Practitioners** | Modules 1–2                      | 01–07, 27, 26 | 27 hrs    |
 | **Agentic Developers**    | Modules 1–3                      | 01–12        | 36 hrs     |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
 | **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-| **Full Track**            | All Modules                      | 01–19        | 57 hrs     |
+| **Product and Delivery Teams** | Module 7                    | 20–25        | 18 hrs     |
+| **HVE Practitioners**     | HVE Engineering                  | 01–07, 10–11, 28 | 31 hrs |
+| **Full Track**            | All Modules                      | 01–28        | 85 hrs     |
 
 ---
 
@@ -64,14 +71,16 @@ Module 3: Agentic Workflows ───────────────── 
 | 02  | Copilot Chat & Inline Suggestions | Beginner    | Session 01      | 3 hrs      |
 | 03  | Prompt Engineering Fundamentals   | Beginner    | Sessions 01–02  | 3 hrs      |
 
-### Module 2: Copilot in Practice (Intermediate)
+### Module 2: Copilot in Practice (Intermediate–Advanced)
 
 | #   | Session                                   | Difficulty   | Prerequisites   | Duration   |
 | --- | ----------------------------------------- | ------------ | --------------- | ---------- |
 | 04  | GitHub Copilot in the CLI                 | Intermediate | Sessions 01–03  | 3 hrs      |
-| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01–03  | 3 hrs      |
-| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01–03  | 3 hrs      |
-| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01–03  | 3 hrs      |
+| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01–04  | 3 hrs      |
+| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01–05  | 3 hrs      |
+| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01–06  | 3 hrs      |
+| 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01–07 | 3 hrs |
+| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01–07 | 3 hrs |
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -88,8 +97,8 @@ Module 3: Agentic Workflows ───────────────── 
 | #   | Session                                    | Difficulty   | Prerequisites      | Duration   |
 | --- | ------------------------------------------ | ------------ | ------------------ | ---------- |
 | 13  | GitHub Actions & Workflow Generation       | Intermediate | Sessions 01–05     | 3 hrs      |
-| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01–05, 13 | 3 hrs      |
-| 15  | CI/CD Pipeline Debugging & Copilot Autofix | Advanced     | Sessions 01–05, 13 | 3 hrs      |
+| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01–05, 13 | 2 hrs 30 min |
+| 15  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions 01–05, 13 | 3 hrs      |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
@@ -97,6 +106,7 @@ Module 3: Agentic Workflows ───────────────── 
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01–12 | 3 hrs   |
 | 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01–12, 17 | 3 hrs |
+| 28  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions 01–07, 10–11 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -104,6 +114,25 @@ Module 3: Agentic Workflows ───────────────── 
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
 | 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01–12, 17–18 | 3 hrs |
+
+### Module 7: Product and Delivery Teams (Beginner–Intermediate)
+
+| # | Session | Difficulty | Prerequisites | Duration |
+| --- | --- | --- | --- | --- |
+| 20 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
+| 21 | Interview Ideas and Shape Better Work | Beginner | Session 20 | 3 hrs |
+| 22 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions 20–21; GitHub MCP write access | 3 hrs |
+| 23 | Build and Use a Planning Canvas | Intermediate | Sessions 20–22; canvas creation access | 3 hrs |
+| 24 | Orchestrate Agents and Workstreams | Intermediate | Sessions 20–23; orchestration access | 3 hrs |
+| 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions 20–24; Automations and GitHub MCP access | 3 hrs |
+
+**Access requirement:** GitHub Copilot access is required for Sessions 20–25.
+Learners without access should not start Module 7. Stop and reschedule their
+training after access is available.
+
+**Trainer-only supplement:** A trainer may prepare the Azure Boards route before
+the workshop when the delivery plan requires it. The standard learner path uses
+GitHub issues and does not branch into an alternate platform exercise.
 
 ---
 
@@ -133,7 +162,7 @@ Sets the stage. Trainers learn what GitHub Copilot is, how the underlying LLM wo
 - Setting expectations — what Copilot does well, where it struggles
 - Q&A framework for common objections
 
-**Lab Outline (2 hours):**
+**Lab Outline (2 hours 30 minutes):**
 
 - Install and configure GitHub Copilot in VS Code
 - Accept, reject, and cycle through inline suggestions
@@ -280,7 +309,7 @@ Introduces GitHub Copilot's terminal-native experience via the standalone `copil
 ### Session 05 — Agent Mode in the IDE
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–04
 **Module:** Copilot in Practice
 
 **Description:**
@@ -323,7 +352,7 @@ The pivotal session. Introduces agent mode — Copilot's autonomous multi-step c
 ### Session 06 — Copilot Spaces & Context Management
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–05
 **Module:** Copilot in Practice
 
 **Description:**
@@ -365,7 +394,7 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 ### Session 07 — Copilot for Code Review & Pull Requests
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–06
 **Module:** Copilot in Practice
 
 **Description:**
@@ -651,36 +680,39 @@ Covers using Copilot to generate, explain, and debug GitHub Actions workflows. T
 **Difficulty:** Advanced
 **Prerequisites:** Sessions 01–05, 13
 **Module:** DevOps & Infrastructure with Copilot
+**Duration:** 2 hours 30 minutes
 
 **Description:**
-Covers using Copilot to write, refactor, and manage Infrastructure as Code. Focuses on Terraform and Bicep — the two most common IaC languages — with Copilot agent mode generating, explaining, and iterating on infrastructure definitions.
+Uses Copilot to build and connect one modular Terraform architecture, validate it
+locally, and repair a configuration that fails a deterministic security gate.
+Bicep remains a short trainer comparison and optional extension.
 
 **Trainer Content Outline (1 hour):**
 
-- IaC fundamentals: why infrastructure as code matters
-- Copilot for Terraform: generating modules, variables, state management
-- Copilot for Bicep: ARM template generation, Azure resource definitions
-- Agent mode for IaC: multi-file infrastructure projects
-- Copilot Spaces for IaC: grounding Copilot in cloud documentation
-- Security: avoiding common IaC anti-patterns (open security groups, hardcoded secrets)
-- Demo: generate a complete cloud infrastructure from requirements
-- Validating generated IaC: terraform plan, bicep build, linting
+- Read architecture requirements as module contracts.
+- Separate root inputs, module inputs, and narrow outputs.
+- Generate and review network, compute, and database modules.
+- Run formatting, initialization, and validation in order.
+- Investigate one intentional security-gate failure.
+- Explain what local checks prove and what still needs a reviewed plan.
+- Compare the equivalent Bicep structure without creating a second required build.
 
-**Lab Outline (2 hours):**
+**Lab Outline (1 hour 30 minutes):**
 
-- Generate a Terraform module for a 3-tier web application using agent mode
-- Generate equivalent Bicep templates for the same architecture
-- Refactor an insecure IaC configuration — fix security issues with Copilot
-- Use Copilot Spaces to ground IaC generation in cloud provider docs
-- Validate all generated code: plan, build, lint
-- **Deliverable:** Terraform + Bicep definitions for a 3-tier app, validated and security-reviewed
+- Inspect the supplied architecture and module contracts.
+- Build and connect the Terraform modules.
+- Run `terraform fmt`, `terraform init -backend=false`, and `terraform validate`.
+- Reproduce and investigate the supplied security-gate failure.
+- Repair the security case and record passing evidence.
+- **Deliverable:** Validated Terraform modules, a repaired security case, and command evidence.
 
 **Expected Learning Outcomes:**
 
-- Generate Terraform and Bicep code using Copilot agent mode
-- Use Copilot Spaces to ground IaC in cloud provider documentation
-- Identify and fix security anti-patterns in generated IaC
-- Validate generated infrastructure code using native tools
+- Generate Terraform modules from fixed architecture constraints.
+- Connect module inputs and outputs without copying values between layers.
+- Run local Terraform checks in the correct order.
+- Identify and fix security problems supported by the architecture.
+- Explain why local validation does not approve a deployment.
 
 ---
 
@@ -810,37 +842,85 @@ Covers the enterprise side of Copilot and is the authoritative governance and co
 
 ---
 
-### Session 18 — Spec Kit: Enterprise Specification-Driven Development
+### Session 18 — Spec Kit: Specification-Driven Development
 
 **Difficulty:** Advanced
 **Prerequisites:** Sessions 01–12 and 17
 **Module:** Specification-Driven Frameworks
+**Duration:** 3 hours 30 minutes
 
 **Description:**
-Teaches a repeatable specification-driven development method before implementation begins. Trainees use Spec Kit as the practical example to convert enterprise requirements into a constitution, specification, plan, tasks, and an implementation handoff. The session uses a small, language-agnostic flow rather than a full application build.
+Uses Spec Kit to carry one bounded feature from a source request to working code. Trainees convert tasks into GitHub Issues, implement in stages, converge, then evolve the living specification to add restore behavior.
 
 **Trainer Content Outline (1 hour):**
 
-- Why enterprise delivery needs an explicit specification and constitution
+- Why requirements should be reviewed before implementation
 - Specification-driven flow: constitution → specify → clarify → plan → checklist → tasks → analyze → implement → converge
-- Spec Kit as an open-source, pre-1.0 implementation example; pin the customer-approved version
-- Copilot integration with project-shared skills under `.github/skills/`
-- Private catalog, air-gapped, and no-install delivery alternatives
-- How to translate artifacts into a coding-agent-ready issue or task
+- The generated `.specify/`, `specs/`, and Copilot integration files
+- The difference between behavior in `spec.md` and technical choices in `plan.md`
+- How analysis and convergence expose gaps
+- Task-to-issue conversion and staged implementation
+- Living-spec evolution and approved installation paths
 
 **Lab Outline (2 hours):**
 
-- Complete a 45–60 minute small-feature flow from constitution through a reviewed implementation handoff
-- Use the prepared artifacts if the tool is unavailable, blocked by policy, or unsuitable for the customer network
-- Review the deliverables against governance, access, and acceptance criteria
-- **Deliverable:** A constitution, specification, plan, tasks, and implementation handoff for a bounded feature
+- Initialize Spec Kit in a runnable Python starter project
+- Specify and clarify archive behavior
+- Generate a plan, checklist, and dependency-ordered tasks
+- Convert tasks into GitHub Issues
+- Implement in stages, run unit tests, and converge
+- Evolve the specification, plan, tasks, code, and tests for restore behavior
+- **Deliverable:** Working archive and restore behavior with traceable artifacts, issues, passing tests, and a final convergence result
 
 **Expected Learning Outcomes:**
 
 - Apply specification-driven development to a bounded feature
-- Configure or consume a project-shared Copilot skill integration
-- Produce implementation-ready artifacts with acceptance and governance criteria
-- Adapt the method for customer catalog, network, and policy constraints
+- Identify the files that Spec Kit creates and the decisions the team owns
+- Produce requirements, design artifacts, and tasks that trace to tests
+- Use task-to-issue conversion and scoped implementation runs
+- Use analysis before implementation and repeat the implement/converge loop
+- Evolve a living specification without leaving downstream artifacts behind
+
+---
+
+### Session 28 — HVE Core: Evidence-Led Delivery with RPI
+
+**Difficulty:** Advanced
+**Prerequisites:** Sessions 01–07 and 10–11, or equivalent experience
+**Module:** Specification-Driven Frameworks
+**Duration:** 4 hours
+
+**Description:**
+Learners use HVE Core to move a bounded Engineering Decision API feature from
+product intent through Research, Plan, Implement, Review, Follow-up, and a human
+delivery decision.
+
+**Trainer Content Outline (1 hour):**
+
+- HVE agents, prompts, instructions, and local tracking artifacts
+- Direct RPI phase prompts and combined `/rpi` orchestration
+- Repository context, targeted instructions, and bounded custom agents
+- Product Manager Advisor and Agile Coach handoffs
+- Review evidence, Follow-up routing, and the final human decision
+
+**Lab Outline (3 hours):**
+
+- Run Research and Plan before changing code
+- Add repository context, a targeted JavaScript instruction, and a custom reviewer
+- Refine the supplied intent with Product Manager Advisor and Agile Coach
+- Implement and test the bounded API endpoint and container contract
+- Run Review, inspect the evidence chain, and record the human decision
+- **Deliverable:** A tested API slice with traceable HVE artifacts, customization
+  evidence, product and Agile decisions, and a reviewed handoff
+
+**Expected Learning Outcomes:**
+
+- Explain how HVE components and tracking artifacts support RPI handoffs
+- Run and inspect each direct RPI phase
+- Prove that repository customizations changed a later phase
+- Feed product and Agile decisions back into the implementation plan
+- Use Follow-up to route defects or missing evidence without expanding scope
+- Support a human approval, change request, or pause decision
 
 ---
 
@@ -872,18 +952,237 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 
 ---
 
+### Session 20 — Work Effectively in the GitHub Copilot App
+
+**Difficulty:** Beginner
+**Prerequisites:** GitHub Copilot app access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners open the GitHub Copilot app, choose repository context, inspect the capabilities available in their environment, and create a reviewed working brief.
+
+**Trainer Content Outline (1 hour):**
+
+- Chats, Projects, My work, Search, Automations, and Customize
+- Choosing the smallest approved context
+- Skills, agents, MCP servers, canvases, and Automations
+- The read, propose, review, write, and verify pattern
+
+**Lab Outline (2 hours):**
+
+- Compare an unscoped answer with a repository-grounded answer
+- Create and commit a sourced working brief
+- Apply approved late evidence through a focused revision
+- Verify the saved brief in a fresh Copilot session
+- **Deliverable:** A revised working brief with context comparison and fresh-session verification
+
+---
+
+### Session 21 — Interview Ideas and Shape Better Work
+
+**Difficulty:** Beginner
+**Prerequisites:** Session 20
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners run a decision-tree interview in the GitHub Copilot app. They turn approved answers into a repository decision brief and issue proposal.
+
+**Trainer Content Outline (1 hour):**
+
+- Decision-tree interviews and question frontiers
+- Facts, recommendations, and owner decisions
+- Durable Markdown decision briefs
+- Issue proposals with testable acceptance criteria
+
+**Lab Outline (2 hours):**
+
+- Install and verify the supplied `decision-interview` project skill
+- Run a dependency-ordered Copilot interview
+- Create the decision brief and issue proposal
+- Reopen one decision branch after a late visibility constraint
+- Verify the revised artifacts in a fresh session
+- **Deliverable:** An installed project skill, revised decision brief, aligned issue proposal, and readiness result
+
+---
+
+### Session 22 — Plan Work with GitHub Issues and MCP
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 20-21; GitHub MCP write access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners use the GitHub MCP server to inspect existing work, propose an issue hierarchy, create the approved issues, and verify the result through a fresh read.
+
+**Trainer Content Outline (1 hour):**
+
+- MCP from the tool user's point of view
+- Read and write boundaries
+- Outcome-based decomposition
+- Preview, approval, and fresh-read verification
+
+**Lab Outline (2 hours):**
+
+- Read the approved decision brief
+- Search for duplicate issues and approved labels
+- Plan one parent issue and three to five child issues
+- Review and approve the complete GitHub write
+- Retrieve the issues, apply one reviewed correction, and verify it through another fresh read
+- **Deliverable:** A live issue hierarchy with create and correction evidence
+
+---
+
+### Session 23 — Build and Use a Planning Canvas
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 20-22; canvas creation access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners create a planning canvas from a plain-language request, load the Session 22 issues, and keep visible planning state aligned with GitHub and Copilot.
+
+**Trainer Content Outline (1 hour):**
+
+- When visible state is better than another chat
+- `/create-canvas`
+- Reviewing generated state and actions
+- Ownership, recovery, and retirement
+
+**Lab Outline (2 hours):**
+
+- Define the minimum planning state
+- Create and simplify the canvas
+- Load issues through GitHub MCP
+- Make one visible update and one Copilot-requested update
+- Create a controlled GitHub state change and detect that the canvas is stale
+- Refresh and reconcile the visible planning state
+- **Deliverable:** A planning canvas with drift and reconciliation evidence
+
+---
+
+### Session 24 — Orchestrate Agents and Workstreams
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 20-23; live orchestration access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners select independent work from the issue plan and canvas, start child sessions, review each result, and update the approved plan.
+
+**Trainer Content Outline (1 hour):**
+
+- Parent objectives and independent workstreams
+- Output packets and stop conditions
+- Monitoring, redirecting, and stopping sessions
+- Consolidating only accepted evidence
+
+**Lab Outline (2 hours):**
+
+- Select workstreams from the approved issues
+- Run live GitHub Copilot orchestration
+- Wait, redirect, stop, accept, or reject live child-session work
+- Update the canvas and relevant GitHub issue
+- **Deliverable:** An orchestration plan, intervention record, reviewed result packets, and verified plan updates
+
+---
+
+### Session 25 — Automate Delivery Follow-up and Connect Work Systems
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 20-24; Automations and GitHub MCP access
+**Module:** Product and Delivery Teams
+
+**Description:**
+Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Automation. They review one run and decide whether GitHub or Azure Boards remains authoritative.
+
+**Trainer Content Outline (1 hour):**
+
+- Choosing a useful recurring task
+- Draft-only Automation configuration
+- Minimum tools, evidence, and stop conditions
+- GitHub and Azure Boards system-of-record decisions
+
+**Lab Outline (2 hours):**
+
+- Create the automation contract
+- Configure a manual, draft-only Automation
+- Run it against the first approved input version
+- Apply an approved source change and run the same Automation again
+- Compare both evidence packets and record keep, revise, disable, or pause
+- Produce a stakeholder update and work-system handoff
+- **Deliverable:** Two reviewed Automation runs and a system-of-record decision
+
+---
+
+### Session 26 — Migrate a Legacy Java Service to Modern .NET
+
+**Difficulty:** Advanced
+**Prerequisites:** Sessions 01–07
+**Module:** Copilot in Practice
+**Duration:** 3 hours
+
+**Description:**
+Learners inspect a legacy Java service, capture its required behavior, and migrate it to modern .NET without losing compatibility.
+
+**Trainer Content Outline (1 hour):**
+
+- Define the migration boundary before changing code
+- Map Java structures and dependencies to .NET equivalents
+- Preserve API behavior and error handling
+- Use tests to compare the old and new implementations
+
+**Lab Outline (2 hours):**
+
+- Inspect the legacy service and its tests
+- Build the modern .NET replacement in stages
+- Fix compatibility gaps found by the test suite
+- Record migration decisions and verification evidence
+- **Deliverable:** A working .NET service with passing compatibility tests and a concise migration record
+
+---
+
+### Session 27 — Repair and Refactor a Broken Python Application
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 01–07
+**Module:** Copilot in Practice
+**Duration:** 3 hours
+
+**Description:**
+Learners diagnose a broken Python application, restore its expected behavior, and refactor it behind a stable test suite.
+
+**Trainer Content Outline (1 hour):**
+
+- Separate repair work from structural refactoring
+- Trace failures from symptoms to root causes
+- Strengthen tests before changing design
+- Refactor in small steps with continuous verification
+
+**Lab Outline (2 hours):**
+
+- Reproduce the supplied failures
+- Repair the application until the baseline tests pass
+- Add focused tests for uncovered behavior
+- Refactor the repaired code and rerun the full suite
+- **Deliverable:** A repaired Python application with passing tests and documented refactoring decisions
+
+---
+
 ## Delivery Notes
 
-- **Total track duration:** 57 hours (19 sessions × 3 hours each)
+- **Total track duration:** 85 hours across 28 sessions
 - **Recommended delivery schedules:**
-  - Intensive: 3 sessions/day × 6 days, plus the capstone day
-  - Standard: 2 sessions/day × 9 days, plus the capstone day
-  - Extended: 1 session/day × 19 days, or 3 sessions/week over about 7 weeks
+  - Intensive: Up to 3 sessions/day across 10 days
+  - Standard: 1–2 sessions/day across 15 days
+  - Extended: 1 session/day across 28 days
 - **Group size:** 8–15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1–3 form the core track (required for full certification)
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 17 (Enterprise) can be delivered standalone with Module 1 for admin audiences and is required before the capstone
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
+  - Session 28 is the final session in the HVE Engineering track and should run
+    after Sessions 10–11
+  - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

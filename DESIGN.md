@@ -14,6 +14,7 @@ colors:
   category-teal: "#0E6467"
   category-teal-light: "#E0F2F1"
   specification: "#9E4D00"
+  product-delivery: "#6B2F5B"
   purple: "#504092"
   purple-light: "#EDE9F7"
   text-primary: "#111827"
@@ -135,6 +136,9 @@ components:
     textColor: "{colors.white}"
   badge-module-6:
     backgroundColor: "{colors.charcoal}"
+    textColor: "{colors.white}"
+  badge-module-7:
+    backgroundColor: "{colors.product-delivery}"
     textColor: "{colors.white}"
   badge-beginner:
     backgroundColor: "{colors.category-teal-light}"
@@ -332,17 +336,18 @@ The supplied pillar palette remains available as **brand reference**:
 | Innovate | `purple` | `purple-light` | Also used for M3 and Advanced labels |
 | Scale | Teal (`#14868A`) | `#DDE3EF` | Kit only; category badges use a darker teal adaptation |
 
-**The Category Color Rule.** Use distinct colors for difficulty and M1-M6 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.
+**The Category Color Rule.** Use distinct colors for difficulty and M1-M7 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.
 
 The September 7, 2026 approval supersedes neutral-difficulty and no-category-color
 instructions for these badges. Beginner uses `category-teal` on
 `category-teal-light`; Intermediate uses Deep Navy on `navy-light`; Advanced uses
 Purple on `purple-light`. Module labels use white on Microsoft Blue (M1),
 `category-teal` (M2), Purple (M3), Deep Navy (M4), Specification Orange (M5),
-and Charcoal (M6).
+Charcoal (M6), and Product Delivery Plum (M7).
 
 `overrides/extra.css` adds `--color-category-teal`,
-`--color-category-teal-light`, `--color-specification`, and `--color-purple-light`; Purple already exists
+`--color-category-teal-light`, `--color-specification`, `--color-product-delivery`,
+and `--color-purple-light`; Purple already exists
 in the kit. Dark teal replaces the kit teal for category labels because white
 on the original teal gives 4.37:1, below 4.5:1. All new badge pairs meet 4.5:1.
 
@@ -396,7 +401,7 @@ The MkDocs grid is capped at `76rem`. Reading content is capped at `72ch`, with
 `1.6rem` side padding. Native navigation and the table of contents surround the
 central column. Paragraphs use `.8rem` block margins; H2 begins after `2.4rem`.
 
-All 19 trainer guides use this layout and the same table/code treatment as labs.
+All 24 trainer guides use this layout and the same table/code treatment as labs.
 The three session-material tabs precede H1; trainer controls follow H1. Legacy
 `output/trainer/` filenames redirect to the MkDocs guide, preserving query
 strings and hashes through JavaScript. A plain link remains without JavaScript.
@@ -409,8 +414,8 @@ drawer and search controls.
 
 The home hero sits outside the article in the full-width hero block. Its inner
 grid is capped at `62rem`, with `1.3fr 1fr` columns, a `3rem` gap, and
-`3.2rem 2.4rem` padding. The right column stacks five module links with `.45rem`
-gaps. Below the hero, the home index retains 19 session cards and six tracks.
+`3.2rem 2.4rem` padding. The right column stacks seven module links with `.45rem`
+gaps. Below the hero, the home index retains 28 session cards and eight tracks.
 Session and track grids use three and two columns, with `.8rem` gaps and a
 `62rem` content cap. Content is visible without JavaScript or reveal animation.
 
@@ -480,13 +485,12 @@ hover/focus state. The TOC keeps navy current-page text. Session tabs use
 white fill on hover. Preserve visible focus outlines and native drawer/search
 behavior.
 
-Trainer controls provide start/pause/resume and reset, previous/next H2 navigation,
-and print. Section navigation updates the URL hash and moves focus to the heading.
-The timer uses tabular numerals. J/K/T shortcuts require the visible opt-in
-checkbox and ignore editable fields, interactive controls, and open dialogs.
-Controls are hidden until initialized; the guide and native TOC remain readable.
-Reduced motion removes animated scrolling and shortens CSS transitions.
-Print hides navigation and controls.
+Trainer controls provide start/pause/resume, reset, and print. The compact timer
+panel stays fixed in the bottom-right corner while the trainer scrolls. It respects
+mobile safe areas and wraps within the viewport. The timer uses tabular numerals.
+The T shortcut requires the visible opt-in checkbox and ignores editable fields,
+interactive controls, and open dialogs. Controls are hidden until initialized;
+the guide and native TOC remain readable. Print hides navigation and controls.
 
 ### Home hero and curriculum map
 
@@ -494,12 +498,12 @@ Hero actions use a white primary fill with navy text. The secondary action has a
 transparent fill, white text, and a `navy-light` outline. Both turn navy on
 `navy-light` on hover; focus outlines are white against the gradient.
 
-The five module links have medium corners and a translucent white border over
+The seven module links have medium corners and a translucent white border over
 the navy overlay. Hover and selected links use navy on white. The selected label
-is also underlined. Links target focusable `#module-1` through `#module-5` headings;
+is also underlined. Links target focusable `#module-1` through `#module-7` headings;
 the targeted heading receives an RVAP Blue underline.
 
-**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 19 sessions and six tracks visible; selection must not filter content.
+**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 28 sessions and eight tracks visible; selection must not filter content.
 
 `overrides/session.js` synchronizes `aria-current="location"` with the URL hash
 on initial load and `hashchange`, including deep links. Native anchor navigation
@@ -509,8 +513,8 @@ works without JavaScript; the script adds the current-location state.
 
 **The Filter/Selection Rule.** Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.
 
-The homepage and builder share `data/session-catalog.json`: 19 sessions across
-five modules. `hooks/presentation_embed.py` resolves material links from actual
+The homepage and builder share `data/session-catalog.json`: 28 sessions across
+seven modules. `hooks/presentation_embed.py` resolves material links from actual
 MkDocs file URLs. Search matches session ID, title, or description; Module and
 Level narrow the builder catalog. A result count and no-match message explain
 what remains. Add matching sessions appends unselected matches in catalog order.
@@ -586,7 +590,7 @@ non-interactive and carry no pillar meaning.
 
 Overview pages offer a slide dialog plus direct HTML/PDF links. The dialog loads
 its iframe on demand, closes with Escape or its close button, unloads on close,
-and restores focus. Direct links remain without JavaScript. All 19 slide
+and restores focus. Direct links remain without JavaScript. All 24 slide
 HTML/PDF pairs use `themes/ghcp-ttt.css`: light content slides, with the permitted
 gradient on titles/dividers.
 

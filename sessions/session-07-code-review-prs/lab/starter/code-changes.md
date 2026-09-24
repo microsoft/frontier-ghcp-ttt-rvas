@@ -23,7 +23,7 @@ app.get('/api/users/search', (req, res) => {
 });
 ```
 
-**Issue:** SQL injection — user input is interpolated directly into a query string.
+**Issue:** SQL injection. User input is interpolated directly into a query string.
 
 ---
 
@@ -96,7 +96,8 @@ const JWT_SECRET = 'my-super-secret-key-2026';
 const API_KEY = 'sk-proj-abc123def456ghi789';
 ```
 
-**Issue:** Secrets hardcoded in source code — should be in environment variables.
+**Issue:** Secrets are hardcoded in source code. They should be in environment
+variables.
 
 ---
 
@@ -116,7 +117,7 @@ app.get('/api/products', (req, res) => {
 });
 ```
 
-**Issue:** Duplicated data and logic — the items array already exists.
+**Issue:** Data and logic are duplicated because the items array already exists.
 
 ---
 

@@ -7,7 +7,6 @@ let now = 0;
 const intervals = new Map();
 const listeners = new Map();
 let intervalId = 0;
-let scrollOptions;
 let context;
 
 class Element {
@@ -21,42 +20,23 @@ class Element {
   closest() { return null; }
   getBoundingClientRect() { return { top: this.top, bottom: this.bottom }; }
   focus() { context.document.activeElement = this; }
-  scrollIntoView(options) {
-    scrollOptions = options;
-    const delta = this.top - 120;
-    sections.forEach(section => { section.top -= delta; });
-    controls.bottom -= delta;
-  }
 }
 
 const selectors = [
-  ".trainer-timer", "[data-trainer-timer]", "[data-trainer-previous]",
-  "[data-trainer-next]", "[data-trainer-shortcuts]", "[data-trainer-reset]",
+  ".trainer-timer", "[data-trainer-timer]",
+  "[data-trainer-shortcuts]", "[data-trainer-reset]",
   "[data-trainer-print]"
 ];
 const nodes = Object.fromEntries(selectors.map(selector => [selector, new Element()]));
 const controls = new Element();
-controls.bottom = 300;
 controls.querySelector = selector => nodes[selector];
-const sections = [500, 1200, 1800].map((top, index) => {
-  const section = new Element();
-  section.id = `section-${index}`;
-  section.top = top;
-  return section;
-});
-controls.closest = () => ({ querySelectorAll: selector => {
-  assert.equal(selector, "h2[id]");
-  return sections;
-} });
-const header = new Element();
-header.bottom = 56;
 context = {
   Element, URL, performance: { now: () => now },
   document: {
     readyState: "complete", documentElement: new Element(),
     getElementById: () => null,
     querySelectorAll: () => [],
-    querySelector: selector => selector === ".trainer-controls" ? controls : selector === ".md-header" ? header : null,
+    querySelector: selector => selector === ".trainer-controls" ? controls : null,
     addEventListener: (name, callback) => listeners.set(name, callback)
   },
   window: {
@@ -98,10 +78,6 @@ assert.equal(timer.textContent, "00:00");
 assert.equal(toggle.textContent, "Start timer");
 assert.equal(intervals.size, 0);
 
-assert.equal(nodes["[data-trainer-previous]"].disabled, true);
-click("[data-trainer-next]");
-assert.equal(new URL(context.window.location.href).hash, "#section-0");
-
 const moduleLinks = [1, 2, 3, 4, 5].map(number => ({
   hash: `#module-${number}`,
   attributes: {},
@@ -137,11 +113,6 @@ assert.deepEqual(selectedModules(), [moduleLinks[4]]);
 homeContext.window.location.hash = "#learning-tracks";
 homeEvents.get("hashchange")();
 assert.deepEqual(selectedModules(), []);
-click("[data-trainer-next]");
-assert.equal(new URL(context.window.location.href).hash, "#section-1");
-assert.equal(scrollOptions.behavior, "instant");
-click("[data-trainer-previous]");
-assert.equal(new URL(context.window.location.href).hash, "#section-0");
 
 function key(properties = {}) {
   let prevented = false;
@@ -164,7 +135,5 @@ input.closest = () => input;
 assert.equal(key({ target: input }), false);
 assert.equal(key(), true);
 assert.equal(toggle.textContent, "Pause timer");
-assert.equal(key({ key: "j" }), true);
-assert.equal(new URL(context.window.location.href).hash, "#section-1");
-assert.equal(key({ key: "k" }), true);
-assert.equal(new URL(context.window.location.href).hash, "#section-0");
+assert.equal(key({ key: "j" }), false);
+assert.equal(key({ key: "k" }), false);

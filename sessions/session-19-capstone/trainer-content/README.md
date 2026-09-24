@@ -1,64 +1,98 @@
-# Session 19 Trainer Guide — Bounded End-to-End Capstone
+# Session 19 Trainer Guide: Bounded End-to-End Capstone
 
 ## Delivery objective
 
-The capstone ends with one reviewed, handoff-ready feature change or plan. It links the Session 17 governance decisions to the Session 18 specification. You do not need a finished application, a deployment, or several agents working in parallel.
+The capstone ends with one reviewed `POST /api/bookmarks` change or patch plan. The
+learner must use a Session 17 governance record and Session 18 specification
+standards. Do not let the exercise expand into a full API, deployment, or tool tour.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:05 | Define success and limits |
-| 0:05–0:11 | Run the preflight |
-| 0:11–0:18 | Trace governance and specification inputs |
-| 0:18–0:27 | Write one implementation-ready issue |
-| 0:27–0:33 | Select an approved delivery path |
-| 0:33–0:45 | Prepared implementation walkthrough |
-| 0:45–0:54 | Review gate |
-| 0:54–1:00 | Handover and lab launch |
+| 0:00–0:08 | Define the one-slice capstone |
+| 0:08–0:18 | Apply the governance gate |
+| 0:18–0:30 | Inspect and tighten the specification |
+| 0:30–0:40 | Write the implementation issue |
+| 0:40–0:50 | Walk through the patch and tests |
+| 0:50–1:00 | Make the review decision and hand off |
 
-## Facilitation
+## Teach the boundary
 
-Choose one Bookmark API slice, preferably `POST /api/bookmarks`. Include acceptance criteria, non-goals, constraints, required tests, a reviewer, and stop conditions in the issue. Keep authentication, persistent storage, deployment, and unrelated endpoints out of scope.
+The required slice is `POST /api/bookmarks`. Learners may implement it with an
+approved agent or manually. They may also produce a patch plan when execution is
+blocked. All paths use the same issue, checks, review gate, and handoff.
 
-**Preflight**
+Write these non-goals where everyone can see them:
 
-- Confirm the approved repository and features, data boundary, allowed dependencies and MCP servers, usage guard, delivery path, and reviewer.
-- Open the issue, prepared patch plan, and verified repository checks.
-- If a decision is unclear, choose the prepared-artifact or manual path before work begins.
+- no authentication;
+- no persistent storage;
+- no list, read, update, or delete endpoint;
+- no deployment or CI redesign;
+- no new dependency.
 
-Show one of four paths: approved cloud agent, approved local agent mode, manual implementation, or prepared patch plan. Start from the issue and use this bounded work order:
+## Apply Session 17
+
+Have learners complete `lab/starter/governance-record.md` before they write code.
+Check the repository boundary, synthetic-data rule, allowed tools, dependency rule,
+meter, stop condition, reviewer, and fallback. An unknown owner or tool approval is
+a stop signal.
+
+Do not accept "policy approved" without details. Ask who approved what, which
+evidence they used, and when work must stop.
+
+## Apply Session 18
+
+Use `lab/starter/bookmark-create-spec.md` as the accepted behavior source. Ask
+learners to check that each requirement is observable, technology choices stay in
+the constraints section, and non-goals are explicit. They must map each issue
+criterion to a specification ID and a test.
+
+The issue should name the exact route, response shapes, validation rules, duplicate
+behavior, expected files, required tests, reviewer, and stop conditions. It must not
+invent behavior absent from the specification.
+
+## Implementation walkthrough
+
+Use this work order with the selected approved path:
 
 ```text
-Implement only the attached `POST /api/bookmarks` issue in the training sandbox.
-Use synthetic data, preserve existing response conventions, and add no dependencies.
-Before editing, list the expected files. Run only verified checks. Stop if broader
-files, tools, data, or requirements are needed. Report changed files, check results,
-and unresolved evidence for human review.
+Implement only the accepted POST /api/bookmarks issue in the training sandbox.
+Use synthetic data and the existing dependencies. Before editing, name the expected
+files and map each change to a requirement. Run npm test. Stop if the work needs a
+new dependency, another endpoint, sensitive data, or a file outside the plan. Report
+changed files, test results, deferred scope, and unresolved evidence for review.
 ```
 
-Learners should capture the expected-file plan, a small change with focused test evidence, or an explicit blocked status. At 0:39, move unfinished live work to the prepared patch plan. Do not merge or deploy.
+After 30 minutes of implementation, move unfinished work to a patch plan. The
+learner still reviews tests by inspection and completes the decision and handoff.
 
 ## Review gate
 
-Review the result in this order:
+Review in this order:
 
 1. Specification and acceptance criteria.
-2. Scope and explicit deferrals.
-3. Correctness, validation, tests, error handling, and dependencies.
-4. Governance: data, allowed tools, meter, and reviewer.
-5. Handover: changed files, evidence, decision, owner, and next action.
+2. Scope and deferrals.
+3. Validation, response shape, duplicate handling, and tests.
+4. Governance record and stop conditions.
+5. Handoff owner and next action.
 
-Record one decision: approve, request changes, or pause. Do not approve a serious issue because time ran out.
+Record one decision: approve, request changes, or pause. **Do not approve a serious
+issue because time ran out.**
 
-## Manual fallback
+## Reference assets
 
-If implementation stops, the group produces a patch plan that names files, routes, validation rules, tests, expected responses, risks, and open questions. Review it with the same gate, then hand it to the next owner.
+- `lab/solution/capstone-project/` contains the bounded implementation and tests.
+- `lab/solution/reference-handoff.md` shows the full issue-to-handoff record.
+- `lab/starter/capstone-handoff.md` is the learner template.
 
 ## Common questions
 
-**Demonstrating every session:** Use only the path needed for one bounded delivery.
+**Should learners add the other Bookmark endpoints?** No. Record them under deferred
+scope.
 
-**When live access fails:** Switch to the prepared patch plan or manual path. Keep the review and handoff.
+**What if agent access fails?** Use the manual path or write the patch plan. Keep
+the same tests and review gate.
 
-**When time remains:** Finish the review and handoff. Scope another endpoint as future work.
+**What if the tests cannot run?** Record the command, failure, static evidence, and
+owner for the next action. The decision cannot be approve without executable proof.

@@ -5,7 +5,8 @@
     {"id": "3", "title": "Agentic Workflows"},
     {"id": "4", "title": "DevOps & Infrastructure"},
     {"id": "5", "title": "Specification-Driven Frameworks"},
-    {"id": "6", "title": "Advanced Topics & Capstone"}
+    {"id": "6", "title": "Advanced Topics & Capstone"},
+    {"id": "7", "title": "Product and Delivery Teams"}
   ],
   "sessions": [
     {
@@ -121,7 +122,7 @@
       "slug": "session-13-actions-workflows",
       "module": "4",
       "title": "GitHub Actions & Workflow Generation",
-      "description": "Generating, debugging, and optimizing GitHub Actions workflows with Copilot assistance \u2014 from YAML to production CI/CD.",
+      "description": "Carrying one Node.js application through CI generation, deployment design, workflow repair, and custom-action validation with local evidence.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -130,16 +131,16 @@
       "slug": "session-14-iac-with-copilot",
       "module": "4",
       "title": "Infrastructure as Code with Copilot",
-      "description": "Using Copilot to author, explain, and refactor Terraform, Bicep, and ARM templates with AI-assisted validation.",
+      "description": "Using Copilot to author, connect, validate, and security-review Terraform modules, with Bicep as a trainer comparison and optional extension.",
       "difficulty": "Advanced",
-      "duration_minutes": 180
+      "duration_minutes": 150
     },
     {
       "id": "15",
       "slug": "session-15-cicd-debugging-autofix",
       "module": "4",
       "title": "CI/CD Pipeline Debugging & Agentic Remediation",
-      "description": "Diagnosing flaky pipelines and applying approved agentic remediation workflows for security findings.",
+      "description": "Diagnosing pipeline failures from workflow evidence and local proof, including a staged failure and reviewed security remediation.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -165,10 +166,10 @@
       "id": "18",
       "slug": "session-18-spec-kit",
       "module": "5",
-      "title": "Spec Kit: Enterprise Specification-Driven Development",
-      "description": "A governed specification-to-implementation flow that turns intent into reusable delivery artifacts and Copilot skills.",
+      "title": "Spec Kit: Specification-Driven Development",
+      "description": "An end-to-end Spec Kit lab covering task-to-issue conversion, staged implementation, convergence, and living-spec evolution.",
       "difficulty": "Advanced",
-      "duration_minutes": 180
+      "duration_minutes": 210
     },
     {
       "id": "19",
@@ -178,6 +179,87 @@
       "description": "A bounded integration scenario covering governance, specification, agentic delivery, review, and handover.",
       "difficulty": "Advanced",
       "duration_minutes": 180
+    },
+    {
+      "id": "20",
+      "slug": "session-20-copilot-app-foundations",
+      "module": "7",
+      "title": "Work Effectively in the GitHub Copilot App",
+      "description": "Compare unscoped and grounded answers, revise a repository working brief when evidence changes, and verify it in a fresh session.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "21",
+      "slug": "session-21-interview-and-shape-work",
+      "module": "7",
+      "title": "Interview Ideas and Shape Better Work",
+      "description": "Install a project interview skill, shape an unclear request, reopen affected decisions when constraints change, and verify the resulting brief.",
+      "difficulty": "Beginner",
+      "duration_minutes": 180
+    },
+    {
+      "id": "22",
+      "slug": "session-22-plan-work-with-github-issues",
+      "module": "7",
+      "title": "Plan Work with GitHub Issues and MCP",
+      "description": "Use GitHub MCP to inspect existing work, preview and create an issue hierarchy, then verify and correct it through fresh reads.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "23",
+      "slug": "session-23-plan-and-steer-with-canvases",
+      "module": "7",
+      "title": "Build and Use a Planning Canvas",
+      "description": "Create and simplify a planning canvas, detect drift from live GitHub state, and reconcile the visible planning projection.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "24",
+      "slug": "session-24-orchestrate-workstreams",
+      "module": "7",
+      "title": "Orchestrate Agents and Workstreams",
+      "description": "Use the built-in orchestrate skill to supervise child sessions, redirect weak work, and consolidate only accepted evidence.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "25",
+      "slug": "session-25-automate-delivery-follow-up",
+      "module": "7",
+      "title": "Automate Delivery Follow-up and Connect Work Systems",
+      "description": "Create a manual draft-only Automation, compare two runs after an approved input change, and make a system-of-record decision.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "26",
+      "slug": "session-26-java-to-dotnet-modernization",
+      "module": "2",
+      "title": "Migrate a Legacy Java Service to Modern .NET",
+      "description": "Map the behavior of a legacy Java service, port it to modern .NET, and verify compatibility with focused tests.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "27",
+      "slug": "session-27-python-repair-refactor",
+      "module": "2",
+      "title": "Repair and Refactor a Broken Python Application",
+      "description": "Repair a broken Python application, stabilize its tests, and refactor the code without changing required behavior.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "28",
+      "slug": "session-28-hve-core-challenge",
+      "module": "5",
+      "title": "HVE Core: Evidence-Led Delivery with RPI",
+      "description": "Use HVE Research, Plan, Implement, Review, and Follow-up to move a bounded API feature from product intent to a human delivery decision.",
+      "difficulty": "Advanced",
+      "duration_minutes": 240
     }
   ]
 }

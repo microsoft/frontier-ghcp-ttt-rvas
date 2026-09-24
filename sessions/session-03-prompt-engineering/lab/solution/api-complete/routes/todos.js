@@ -1,77 +1,52 @@
-/**
- * Todo Routes — Solution
- * =======================
- * Complete CRUD implementation.
- */
-
 const express = require("express");
+const { TodoStore } = require("../lib/todo-store");
+
 const router = express.Router();
+const store = new TodoStore([
+  { id: 1, title: "Review a prompt", status: "pending", priority: "normal" },
+]);
 
-let todos = [
-  { id: 1, title: "Learn GitHub Copilot", status: "completed", createdAt: new Date().toISOString() },
-  { id: 2, title: "Practice prompt engineering", status: "pending", createdAt: new Date().toISOString() },
-  { id: 3, title: "Build a REST API", status: "in-progress", createdAt: new Date().toISOString() },
-];
-let nextId = 4;
-
-// GET / — Return all todos, optional ?status= filter
-router.get("/", (req, res) => {
-  const { status } = req.query;
-  if (status) {
-    const filtered = todos.filter((t) => t.status === status);
-    return res.json(filtered);
+router.get("/", (request, response) => {
+  try {
+    response.json(store.list(request.query));
+  } catch (error) {
+    response.status(400).json({ error: error.message });
   }
-  res.json(todos);
 });
 
-// GET /:id — Return a single todo by ID
-router.get("/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const todo = todos.find((t) => t.id === id);
+router.get("/:id", (request, response) => {
+  const todo = store.get(Number(request.params.id));
   if (!todo) {
-    return res.status(404).json({ error: "Todo not found" });
+    return response.status(404).json({ error: "Todo not found" });
   }
-  res.json(todo);
+  return response.json(todo);
 });
 
-// POST / — Create a new todo
-router.post("/", (req, res) => {
-  const { title, status } = req.body;
-  if (!title || !title.trim()) {
-    return res.status(400).json({ error: "Title is required" });
+router.post("/", (request, response) => {
+  try {
+    return response.status(201).json(store.create(request.body));
+  } catch (error) {
+    return response.status(400).json({ error: error.message });
   }
-  const newTodo = {
-    id: nextId++,
-    title: title.trim(),
-    status: status || "pending",
-    createdAt: new Date().toISOString(),
-  };
-  todos.push(newTodo);
-  res.status(201).json(newTodo);
 });
 
-// PUT /:id — Update a todo
-router.put("/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const todo = todos.find((t) => t.id === id);
-  if (!todo) {
-    return res.status(404).json({ error: "Todo not found" });
+router.put("/:id", (request, response) => {
+  try {
+    const todo = store.update(Number(request.params.id), request.body);
+    if (!todo) {
+      return response.status(404).json({ error: "Todo not found" });
+    }
+    return response.json(todo);
+  } catch (error) {
+    return response.status(400).json({ error: error.message });
   }
-  const { title, status } = req.body;
-  if (title !== undefined) todo.title = title.trim();
-  if (status !== undefined) todo.status = status;
-  res.json(todo);
 });
 
-// DELETE /:id — Delete a todo
-router.delete("/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const index = todos.findIndex((t) => t.id === id);
-  if (index === -1) {
-    return res.status(404).json({ error: "Todo not found" });
+router.delete("/:id", (request, response) => {
+  if (!store.remove(Number(request.params.id))) {
+    return response.status(404).json({ error: "Todo not found" });
   }
-  todos.splice(index, 1);
-  res.status(204).send();
+  return response.status(204).send();
 });
 
 module.exports = router;

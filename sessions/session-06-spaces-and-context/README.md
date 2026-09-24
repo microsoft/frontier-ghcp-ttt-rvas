@@ -1,13 +1,13 @@
-# Session 06 — Copilot Spaces & Context Management
+# Session 06: Copilot Spaces & Context Management
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–05
 **Duration:** 3 hours (1 hr trainer content + 2 hr lab)
 
 ## Overview
 
-Give Copilot the context a task needs. This session covers Copilot Spaces, custom instructions, reusable prompt files, Copilot Memory, and VS Code instruction settings.
+Give Copilot the context a task needs. Learners use one Storefront API to select Space sources, add repository instructions, compare context levels, and store reusable prompts.
 
 ## Learning Outcomes
 
@@ -16,6 +16,7 @@ Give Copilot the context a task needs. This session covers Copilot Spaces, custo
 - Create reusable prompt files for team standards
 - Explain how instructions, Spaces, and Memory work together
 - Review and update context as a project changes
+- Choose the smallest source set that supports a task and verify claims against it
 
 ## Session Materials
 
@@ -28,8 +29,8 @@ Give Copilot the context a task needs. This session covers Copilot Spaces, custo
 ## Key Topics
 
 - Copilot Spaces: selected context sources
-- `.github/copilot-instructions.md` — project-level instructions
-- `.github/prompts/*.md` — reusable prompt files
+- `.github/copilot-instructions.md`: project-level instructions
+- `.github/prompts/*.md`: reusable prompt files
 - VS Code instruction settings
 - Context selection as a policy-approved workflow
 - Before/after context comparison

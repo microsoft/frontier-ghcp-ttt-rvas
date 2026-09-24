@@ -1,19 +1,18 @@
-# Canvas Review Record
+# Completed Canvas Peer-Review Record
 
-| Review area | Evidence | Decision |
+| Review area | Evidence inspected | Decision |
 | --- | --- | --- |
-| Artifact and storage location | Approved training sandbox | Approve |
-| Shared state | Item, status, review flag, and evidence | Approve |
-| User actions | Add item, update status, flag review | Approve |
-| Agent capabilities | Read board, update named item, list review items | Approve |
-| Validation rules | Accepted statuses and evidence required for ready | Approve |
-| Data boundary | Synthetic data with no external systems | Approve |
-| Owner and reviewer | Sandbox maintainer and lab partner | Approve |
-| Fallback and retirement trigger | Manual checklist and end-of-session removal | Approve |
+| Access route and artifact location | Approved training sandbox; project or user scope recorded | Approve |
+| Shared state and defaults | Five contract fields and three prepared items | Approve |
+| Human actions | Evidence, status, and review-flag controls | Approve |
+| Agent-callable capabilities | Read board, update named item, list flagged items | Approve |
+| Rejection and unchanged state | `DOC-101` stayed `planned` without evidence | Approve |
+| Recovery evidence | Evidence added before successful retry | Approve |
+| Dependencies and persisted data | No external connection; generated package reviewed | Approve |
+| Owner, fallback, and retirement | Owner, manual harness, and end-of-lab removal recorded | Approve |
 
-## Result
+## Final decision
 
-- Canvas created in approved sandbox: yes
-- Manual fallback completed: no
-- Reviewer: Assigned lab partner
-- Final decision: approve
+- Reviewer: Assigned peer reviewer
+- Decision: approve
+- Next safe action: remove the training canvas after evidence is archived.

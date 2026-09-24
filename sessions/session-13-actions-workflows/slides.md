@@ -3,86 +3,131 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 13 — GitHub Actions & Workflow Generation'
+footer: 'Session 13: GitHub Actions & Workflow Generation'
 ---
 
 <!-- _class: lead -->
-# GitHub Actions & Workflow Generation
+# One Application Through GitHub Actions
 ## DevOps & Infrastructure | Intermediate
+
+Session 13 | 3 hours
 
 ---
 # Agenda
 
 | Time | Topic |
 | --- | --- |
-| 0:00–0:08 | Actions model |
+| 0:00–0:08 | Baseline and Actions model |
 | 0:08–0:18 | Generate CI |
-| 0:18–0:28 | Debug a failed step |
-| 0:28–0:38 | Reusable and custom actions |
-| 0:38–0:50 | Bounded pipeline demo |
-| 0:50–1:00 | Security, `gh-aw`, lab handoff |
+| 0:18–0:28 | Design deployment |
+| 0:28–0:40 | Repair workflow failures |
+| 0:40–0:52 | Validate a JavaScript action |
+| 0:52–1:00 | Review and lab handoff |
 
 ---
-# Actions model
+# Start with repository facts
 
-| Part | Meaning |
-| --- | --- |
-| Workflow | YAML automation in `.github/workflows/` |
-| Event | Trigger such as `push` or `pull_request` |
-| Job | Steps on a runner |
-| Step | An action or command |
-| Secret | Sensitive value outside source |
-| Artifact | Files retained from a job |
-
----
-# Generate from repository facts
-
-```text
-Read package.json and existing tests. Create ci.yml for pull requests and main.
-Use Node.js 20, npm ci, existing lint and test scripts, npm caching, contents: read,
-and a test-results artifact. Do not add dependencies or deployment steps.
-```
-
-Check every assumption against the project.
-
----
-# Debug with useful context
-
-Provide the failed step, error, and workflow file. Ask for the smallest fix and the follow-up check.
-
-```text
-This workflow fails at "Run tests." Here is the step output and ci.yml.
-Identify the cause, propose the smallest fix, and explain what to verify.
-```
-
----
-# Security review
-
-- Set explicit least-privilege `permissions`.
-- Keep values in secrets or use OIDC.
-- Review triggers, especially `pull_request_target`.
-- Pin approved third-party actions to immutable SHAs in production.
-- Check commands, runners, artifacts, concurrency, and deployment gates.
-
-```yaml
-permissions:
-  contents: read
-```
-
----
-# Agentic Workflows
+`copilot-webapp` already defines the contract:
 
 ```bash
-gh extension install github/gh-aw
-gh aw init daily-repo-status
-gh aw compile daily-repo-status
-gh aw logs daily-repo-status
+npm ci
+npm test
+npm run lint
+npm run build
+test -f dist/app.js
 ```
 
-Review Markdown source and compiled `.lock.yml`. Keep permissions read-only unless a reviewed `safe-outputs` write is required.
+The workflow should call these commands. It should not invent another build,
+artifact path, or runtime.
+
+---
+# A workflow is code with an execution boundary
+
+| Review | Question |
+| --- | --- |
+| Trigger | Who can cause this code to run? |
+| Runner | Which tools and trust boundary apply? |
+| Permissions | What can the token read or change? |
+| Commands | Do they exist in the repository? |
+| Artifacts | Which files leave the job? |
+| Environment | Which approval gate applies? |
+
+---
+# Generate CI from the application
+
+```text
+Read package.json, tests, and scripts/build.js. Create ci.yml for pull requests
+and pushes to main. Use Node.js 20, npm ci, existing lint, test, and build scripts,
+npm caching, contents: read, and a seven-day dist artifact.
+```
+
+Then prove both layers:
+
+```bash
+ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' ci.yml
+npm test && npm run lint && npm run build
+```
+
+---
+# Deployment stays a design exercise
+
+The same application moves through:
+
+```text
+build → staging → production
+```
+
+The workflow references environments and secrets. Repository settings own the
+production reviewers. Placeholder commands must not imply that a deployment ran.
+
+---
+# Syntax and behavior fail differently
+
+`broken-ci.yml` does not parse.
+
+`broken-deploy.yml` parses but contains a stale runner, a bad Git ref, a wrong
+secret name, and no checkout.
+
+Ask for the evidence before the repair.
+
+---
+# A repair is a claim plus proof
+
+```text
+Observation: the parser fails near Setup Node.js.
+Change: align the step indentation.
+Proof: parse the file again.
+```
+
+For behavior faults, cite the deployment specification or repository facts.
+
+---
+# Validate both action outcomes
+
+```bash
+env INPUT_THRESHOLD=0 ... node src/main.js
+env INPUT_THRESHOLD=101 ... node src/main.js
+```
+
+The first run must pass and write a summary. The second must exit with code 1.
+
+One successful run does not prove enforcement.
+
+---
+# Access and evidence
+
+GitHub Copilot access is required. Repository access and Actions are optional.
+
+Every checkpoint records:
+
+- command or review;
+- result;
+- changed files;
+- reviewer decision.
 
 ---
 <!-- _class: divider -->
 # Lab
 
-Build CI, design CD, fix supplied broken workflows, and create a JavaScript action. `gh-aw` is optional and requires approval.
+Create CI, design deployment, repair failures, and validate the action against
+`copilot-webapp`.

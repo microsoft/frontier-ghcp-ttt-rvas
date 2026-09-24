@@ -1,4 +1,4 @@
-# Explain Challenges — Expected Answers
+# Explain Challenges: Expected Answers
 
 Reference points for the five explain challenges. Copilot output will vary; use these points to assess whether the explanation is complete and safe.
 
@@ -8,9 +8,9 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 
 **Key points a good explanation should include:**
 
-- `ls` — list directory contents
-- `-l` — use long listing format (permissions, owner, group, size, date, filename)
-- `-a` — include hidden files (entries starting with `.`), including `.` (current dir) and `..` (parent dir)
+- `ls`: list directory contents
+- `-l`: use long listing format (permissions, owner, group, size, date, filename)
+- `-a`: include hidden files (entries starting with `.`), including `.` (current dir) and `..` (parent dir)
 - The combined `-la` means "long format, all files"
 - Permission string format: `drwxr-xr-x` (type, owner, group, other)
 
@@ -24,11 +24,12 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 
 **Key points a good explanation should include:**
 
-- `find .` — search starting from current directory
-- `-name "*.log"` — match files ending in `.log`
-- `-mtime +7` — files whose data was last modified MORE than 7 days ago (not exactly 7, not within 7)
-- `-delete` — **deletes** matching files (this is destructive!)
-- ⚠️ **Safety warning** — a good explanation should note that `-delete` is irreversible and suggest testing with `-print` first
+- `find .`: search starting from current directory
+- `-name "*.log"`: match files ending in `.log`
+- `-mtime +7`: files whose data was last modified MORE than 7 days ago (not exactly 7, not within 7)
+- `-delete`: **deletes** matching files (this is destructive!)
+- ⚠️ **Safety warning:** A good explanation should note that `-delete` is
+  irreversible and suggest testing with `-print` first.
 - Execution order matters: `-delete` must come after other predicates
 
 **Common misses:** Not warning about the destructive nature, getting `-mtime +7` wrong (it means "strictly more than 7 days ago," not "7 or more"), not suggesting `-print` as a dry-run alternative.
@@ -41,11 +42,11 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 
 **Key points a good explanation should include:**
 
-- `git log` — show commit history
-- `--oneline` — condensed format: one line per commit (abbreviated hash + subject line)
-- `--graph` — draw ASCII art graph of branch/merge structure
-- `--all` — show commits from ALL branches and refs, not just the current branch
-- `--decorate` — show ref names (branch names, tags) next to commit hashes
+- `git log`: show commit history
+- `--oneline`: condensed format with one line per commit (abbreviated hash + subject line)
+- `--graph`: draw an ASCII graph of the branch and merge structure
+- `--all`: show commits from all branches and refs, not just the current branch
+- `--decorate`: show ref names (branch names and tags) next to commit hashes
 - The combination creates a visual branch topology view popular for understanding project history
 
 **Common misses:** Not explaining that `--all` changes what you see (without it, only current branch is shown), not describing what the ASCII graph looks like.
@@ -58,15 +59,15 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 
 **Key points a good explanation should include:**
 
-- `tar` — tape archive utility
-- `c` — create a new archive
-- `z` — compress with gzip
-- `f` — the next argument is the filename (`backup.tar.gz`)
-- `backup.tar.gz` — output filename (the `.tar.gz` extension indicates gzipped tar)
-- `--exclude='node_modules'` — skip any path matching `node_modules`
-- `--exclude='.git'` — skip any path matching `.git`
+- `tar`: tape archive utility
+- `c`: create a new archive
+- `z`: compress with gzip
+- `f`: the next argument is the filename (`backup.tar.gz`)
+- `backup.tar.gz`: output filename (the `.tar.gz` extension indicates gzipped tar)
+- `--exclude='node_modules'`: skip any path matching `node_modules`
+- `--exclude='.git'`: skip any path matching `.git`
 - Multiple `--exclude` flags are cumulative (all are applied)
-- `./src` — the directory to archive
+- `./src`: the directory to archive
 - Result: a compressed archive of `./src` without `node_modules` or `.git`
 
 **Common misses:** Not explaining that `czf` is three separate flags combined, not clarifying that `--exclude` uses pattern matching (not just exact directory names).
@@ -79,15 +80,18 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 
 **Key points a good explanation should include:**
 
-- `awk` — pattern scanning and text processing language
-- `-F','` — sets the field separator to comma (treats input as CSV)
-- `$1` — first field (column 1), `$3` — third field (column 3)
-- `sum[$1]+=$3` — associative array `sum` accumulates the value of column 3, keyed by column 1
-- `count[$1]++` — associative array `count` tracks how many rows exist for each column 1 value
-- `END { ... }` — block that runs after ALL input is processed
-- `for (k in sum)` — iterate over all keys in the `sum` array
-- `sum[k]/count[k]` — compute the average of column 3 for each group
-- **Overall purpose:** Computes the per-group average of the third column, grouped by the first column — essentially a GROUP BY with AVG() in SQL terms
+- `awk`: pattern scanning and text processing language
+- `-F','`: sets the field separator to comma (treats input as CSV)
+- `$1`: first field (column 1); `$3`: third field (column 3)
+- `sum[$1]+=$3`: associative array `sum` adds the value of column 3 under the
+  column 1 key
+- `count[$1]++`: associative array `count` tracks the row count for each column 1
+  value
+- `END { ... }`: block that runs after all input is processed
+- `for (k in sum)`: iterate over all keys in the `sum` array
+- `sum[k]/count[k]`: compute the average of column 3 for each group
+- **Overall purpose:** Computes the per-group average of the third column, grouped
+  by the first column. This is equivalent to SQL `GROUP BY` with `AVG()`.
 
 **Common misses:** Not explaining associative arrays (the `$1` as key concept), not explaining that the `END` block runs after all input, not providing a concrete example of input/output.
 

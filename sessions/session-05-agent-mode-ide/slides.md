@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 05 — IDE Agent Workflows'
+footer: 'Session 05: IDE Agent Workflows'
 ---
 
 <!-- _class: lead -->
@@ -17,10 +17,10 @@ footer: 'Session 05 — IDE Agent Workflows'
 
 Use Enterprise Cloud as the governance baseline.
 
-1. Verify current official GitHub documentation and customer administrator policy.
+1. Verify current official GitHub documentation and the applicable administrator policy.
 2. Confirm repository scope, data classification, and permitted tools.
 3. Use a non-sensitive, bounded task with tests.
-4. For metered work, define a customer-owned threshold, escalation route, and stop guard.
+4. For metered work, define an approved threshold, escalation route, and stop guard.
 
 ---
 
@@ -57,7 +57,7 @@ Add one small, testable behavior.
 - Inspect the proposed file changes.
 - Review every command before it is run.
 - Check test results and unexpected side effects.
-- Stop when scope, data, policy, or the customer-defined guard is unclear.
+- Stop when scope, data, policy, or the agreed guard is unclear.
 
 ---
 
@@ -250,7 +250,7 @@ Before delegating:
 - confirm the target repository and branch;
 - remove sensitive context;
 - define tests and reviewer ownership;
-- verify current support and customer policy for the selected handoff.
+- verify current support and policy for the selected handoff.
 
 ---
 
@@ -278,7 +278,9 @@ Learners will scaffold, implement, test, and refactor bounded features while:
 4. trying a TODO delegation only when access is approved;
 5. recording the evidence used to accept or reject output.
 
-**Deliverable:** A tested feature and a reflection on agent decisions.
+**Continuing story:** Build one Todo API, add ownership and due dates, then redirect its repository refactor.
+
+**Final deliverable:** The tested API plus a traceable plan, comparison, course correction, and human decision.
 
 ---
 

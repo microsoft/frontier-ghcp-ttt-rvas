@@ -1,6 +1,6 @@
 ---
 name: session-format-validator
-description: Validate new or changed GitHub Copilot Train-the-Trainer session directories before they are added to the curriculum. Use this skill whenever a user creates, adds, updates, reviews, or asks whether a session under sessions/session-* follows the repository's repeatable format, including required materials, catalog metadata, navigation, and lab safety or fallback guidance. Use it even when the user only asks to check a session README or lab.
+description: Validate new or changed GitHub Copilot Train-the-Trainer session directories before they are added to the curriculum. Use this skill whenever a user creates, adds, updates, reviews, or asks whether a session under sessions/session-* follows the repository's repeatable format, including required materials, catalog metadata, navigation, and lab access or fallback guidance. Use it even when the user only asks to check a session README or lab.
 compatibility: Requires Python 3.11+ and repository access.
 ---
 
@@ -33,12 +33,16 @@ metadata unless the user asks for a separate implementation task.
 
 - **Required materials:** overview, trainer guide, lab guide, slides, starter
   assets, and solution assets.
+- **Trainer slides:** a trainer-facing deck that explains the core concepts before
+  the lab, including an agenda, concrete examples or decision criteria, and a lab
+  handoff. Treat a short agenda-only outline as incomplete teaching material.
 - **Metadata:** the directory name, overview heading, shared catalog entry, and
   valid module, difficulty, and duration values.
 - **Navigation:** entries in `mkdocs.yml`, `README.md`, `curriculum-plan.md`, and
   `tracks/full-mastery.md`.
-- **Lab readiness:** a setup or preflight section, explicit fallback guidance, and
-  a learner deliverable.
+- **Lab readiness:** a setup or preflight section, a learner deliverable, and one
+  clear access policy. The lab must either require access and tell learners to
+  stop when access is missing, or provide an intentional fallback.
 
 The repository's established template is the reference:
 `track-template/session-template/`.
@@ -68,8 +72,9 @@ curriculum navigation are missing.
 ## Scope boundaries
 
 - Keep existing material intact during validation.
-- Treat a lab's manual or no-access route as part of the teaching design, not
-  optional prose.
+- Accept a firm access prerequisite with a stop-if-missing instruction.
+- Accept fallback guidance when an older session still supports a no-access route.
+- Do not require fallback wording when a session requires GitHub Copilot.
 - Do not require a live vendor tool, customer access, or a finished application.
 - Use `scripts/validate-labs.sh` separately when the user also asks to validate
   executable starter or solution files.

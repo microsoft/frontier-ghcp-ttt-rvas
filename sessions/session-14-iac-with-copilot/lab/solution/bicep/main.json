@@ -1,0 +1,603 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.46.1.21595",
+      "templateHash": "11682795839534082049"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Azure region for all resources"
+      }
+    },
+    "projectName": {
+      "type": "string",
+      "defaultValue": "copilot-webapp",
+      "metadata": {
+        "description": "Project name, used in resource naming"
+      }
+    },
+    "environment": {
+      "type": "string",
+      "defaultValue": "dev",
+      "allowedValues": [
+        "dev",
+        "staging",
+        "production"
+      ],
+      "metadata": {
+        "description": "Deployment environment"
+      }
+    },
+    "dbAdminLogin": {
+      "type": "string",
+      "defaultValue": "pgadmin",
+      "metadata": {
+        "description": "Administrator login for PostgreSQL"
+      }
+    },
+    "dbAdminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Administrator password for PostgreSQL"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "network-deployment",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "projectName": {
+            "value": "[parameters('projectName')]"
+          },
+          "environment": {
+            "value": "[parameters('environment')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.46.1.21595",
+              "templateHash": "15197862016417632413"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "metadata": {
+                "description": "Azure region"
+              }
+            },
+            "projectName": {
+              "type": "string",
+              "metadata": {
+                "description": "Project name for resource naming"
+              }
+            },
+            "environment": {
+              "type": "string",
+              "metadata": {
+                "description": "Deployment environment"
+              }
+            }
+          },
+          "variables": {
+            "vnetName": "[format('{0}-{1}-vnet', parameters('projectName'), parameters('environment'))]"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/networkSecurityGroups",
+              "apiVersion": "2023-11-01",
+              "name": "[format('{0}-{1}-web-nsg', parameters('projectName'), parameters('environment'))]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "securityRules": [
+                  {
+                    "name": "AllowHTTP",
+                    "properties": {
+                      "priority": 100,
+                      "direction": "Inbound",
+                      "access": "Allow",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "80",
+                      "sourceAddressPrefix": "*",
+                      "destinationAddressPrefix": "*"
+                    }
+                  },
+                  {
+                    "name": "AllowHTTPS",
+                    "properties": {
+                      "priority": 110,
+                      "direction": "Inbound",
+                      "access": "Allow",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "443",
+                      "sourceAddressPrefix": "*",
+                      "destinationAddressPrefix": "*"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Network/networkSecurityGroups",
+              "apiVersion": "2023-11-01",
+              "name": "[format('{0}-{1}-app-nsg', parameters('projectName'), parameters('environment'))]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "securityRules": [
+                  {
+                    "name": "AllowFromWebSubnet",
+                    "properties": {
+                      "priority": 100,
+                      "direction": "Inbound",
+                      "access": "Allow",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "8080",
+                      "sourceAddressPrefix": "10.0.1.0/24",
+                      "destinationAddressPrefix": "*"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Network/networkSecurityGroups",
+              "apiVersion": "2023-11-01",
+              "name": "[format('{0}-{1}-db-nsg', parameters('projectName'), parameters('environment'))]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "securityRules": [
+                  {
+                    "name": "AllowPostgreSQLFromApp",
+                    "properties": {
+                      "priority": 100,
+                      "direction": "Inbound",
+                      "access": "Allow",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "5432",
+                      "sourceAddressPrefix": "10.0.2.0/24",
+                      "destinationAddressPrefix": "*"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2023-11-01",
+              "name": "[variables('vnetName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "subnets": [
+                  {
+                    "name": "web-subnet",
+                    "properties": {
+                      "addressPrefix": "10.0.1.0/24",
+                      "networkSecurityGroup": {
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-{1}-web-nsg', parameters('projectName'), parameters('environment')))]"
+                      }
+                    }
+                  },
+                  {
+                    "name": "app-subnet",
+                    "properties": {
+                      "addressPrefix": "10.0.2.0/24",
+                      "networkSecurityGroup": {
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-{1}-app-nsg', parameters('projectName'), parameters('environment')))]"
+                      },
+                      "delegations": [
+                        {
+                          "name": "appServiceDelegation",
+                          "properties": {
+                            "serviceName": "Microsoft.Web/serverFarms"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "db-subnet",
+                    "properties": {
+                      "addressPrefix": "10.0.3.0/24",
+                      "networkSecurityGroup": {
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-{1}-db-nsg', parameters('projectName'), parameters('environment')))]"
+                      },
+                      "delegations": [
+                        {
+                          "name": "postgresqlDelegation",
+                          "properties": {
+                            "serviceName": "Microsoft.DBforPostgreSQL/flexibleServers"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-{1}-app-nsg', parameters('projectName'), parameters('environment')))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-{1}-db-nsg', parameters('projectName'), parameters('environment')))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-{1}-web-nsg', parameters('projectName'), parameters('environment')))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateDnsZones",
+              "apiVersion": "2020-06-01",
+              "name": "[format('{0}.private.postgres.database.azure.com', parameters('projectName'))]",
+              "location": "global"
+            },
+            {
+              "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+              "apiVersion": "2020-06-01",
+              "name": "[format('{0}/{1}', format('{0}.private.postgres.database.azure.com', parameters('projectName')), format('{0}-link', variables('vnetName')))]",
+              "location": "global",
+              "properties": {
+                "virtualNetwork": {
+                  "id": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]"
+                },
+                "registrationEnabled": false
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', format('{0}.private.postgres.database.azure.com', parameters('projectName')))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "vnetId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]"
+            },
+            "webSubnetId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vnetName')), '2023-11-01').subnets[0].id]"
+            },
+            "appSubnetId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vnetName')), '2023-11-01').subnets[1].id]"
+            },
+            "dbSubnetId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vnetName')), '2023-11-01').subnets[2].id]"
+            },
+            "privateDnsZoneId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateDnsZones', format('{0}.private.postgres.database.azure.com', parameters('projectName')))]"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "appservice-deployment",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "projectName": {
+            "value": "[parameters('projectName')]"
+          },
+          "environment": {
+            "value": "[parameters('environment')]"
+          },
+          "subnetId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'network-deployment'), '2025-04-01').outputs.appSubnetId.value]"
+          },
+          "databaseFqdn": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'database-deployment'), '2025-04-01').outputs.databaseFqdn.value]"
+          },
+          "dbAdminLogin": {
+            "value": "[parameters('dbAdminLogin')]"
+          },
+          "dbAdminPassword": {
+            "value": "[parameters('dbAdminPassword')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.46.1.21595",
+              "templateHash": "3684452369554242426"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "metadata": {
+                "description": "Azure region"
+              }
+            },
+            "projectName": {
+              "type": "string",
+              "metadata": {
+                "description": "Project name for resource naming"
+              }
+            },
+            "environment": {
+              "type": "string",
+              "metadata": {
+                "description": "Deployment environment"
+              }
+            },
+            "subnetId": {
+              "type": "string",
+              "metadata": {
+                "description": "Subnet ID for VNet integration"
+              }
+            },
+            "databaseFqdn": {
+              "type": "string",
+              "metadata": {
+                "description": "Database FQDN for connection string"
+              }
+            },
+            "dbAdminLogin": {
+              "type": "string",
+              "metadata": {
+                "description": "Database admin login"
+              }
+            },
+            "dbAdminPassword": {
+              "type": "securestring",
+              "metadata": {
+                "description": "Database admin password"
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Web/serverfarms",
+              "apiVersion": "2023-12-01",
+              "name": "[format('{0}-{1}-plan', parameters('projectName'), parameters('environment'))]",
+              "location": "[parameters('location')]",
+              "kind": "linux",
+              "sku": {
+                "name": "B1",
+                "tier": "Basic"
+              },
+              "properties": {
+                "reserved": true
+              }
+            },
+            {
+              "type": "Microsoft.Web/sites",
+              "apiVersion": "2023-12-01",
+              "name": "[format('{0}-{1}-app', parameters('projectName'), parameters('environment'))]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', format('{0}-{1}-plan', parameters('projectName'), parameters('environment')))]",
+                "virtualNetworkSubnetId": "[parameters('subnetId')]",
+                "siteConfig": {
+                  "linuxFxVersion": "NODE|20-lts",
+                  "alwaysOn": true,
+                  "appSettings": [
+                    {
+                      "name": "NODE_ENV",
+                      "value": "[parameters('environment')]"
+                    },
+                    {
+                      "name": "DATABASE_URL",
+                      "value": "[format('postgresql://{0}:{1}@{2}:5432/appdb?sslmode=require', parameters('dbAdminLogin'), parameters('dbAdminPassword'), parameters('databaseFqdn'))]"
+                    }
+                  ]
+                },
+                "httpsOnly": true
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', format('{0}-{1}-plan', parameters('projectName'), parameters('environment')))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "webAppUrl": {
+              "type": "string",
+              "value": "[format('https://{0}', reference(resourceId('Microsoft.Web/sites', format('{0}-{1}-app', parameters('projectName'), parameters('environment'))), '2023-12-01').defaultHostName)]"
+            },
+            "webAppName": {
+              "type": "string",
+              "value": "[format('{0}-{1}-app', parameters('projectName'), parameters('environment'))]"
+            }
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'database-deployment')]",
+        "[resourceId('Microsoft.Resources/deployments', 'network-deployment')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "database-deployment",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "projectName": {
+            "value": "[parameters('projectName')]"
+          },
+          "environment": {
+            "value": "[parameters('environment')]"
+          },
+          "subnetId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'network-deployment'), '2025-04-01').outputs.dbSubnetId.value]"
+          },
+          "privateDnsZoneId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'network-deployment'), '2025-04-01').outputs.privateDnsZoneId.value]"
+          },
+          "dbAdminLogin": {
+            "value": "[parameters('dbAdminLogin')]"
+          },
+          "dbAdminPassword": {
+            "value": "[parameters('dbAdminPassword')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.46.1.21595",
+              "templateHash": "10896350023754239790"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "metadata": {
+                "description": "Azure region"
+              }
+            },
+            "projectName": {
+              "type": "string",
+              "metadata": {
+                "description": "Project name for resource naming"
+              }
+            },
+            "environment": {
+              "type": "string",
+              "metadata": {
+                "description": "Deployment environment"
+              }
+            },
+            "subnetId": {
+              "type": "string",
+              "metadata": {
+                "description": "Subnet ID for private access"
+              }
+            },
+            "privateDnsZoneId": {
+              "type": "string",
+              "metadata": {
+                "description": "Private DNS Zone ID for PostgreSQL"
+              }
+            },
+            "dbAdminLogin": {
+              "type": "string",
+              "metadata": {
+                "description": "Database admin login"
+              }
+            },
+            "dbAdminPassword": {
+              "type": "securestring",
+              "metadata": {
+                "description": "Database admin password"
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.DBforPostgreSQL/flexibleServers",
+              "apiVersion": "2023-12-01-preview",
+              "name": "[format('{0}-{1}-pgserver', parameters('projectName'), parameters('environment'))]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "Standard_B1ms",
+                "tier": "Burstable"
+              },
+              "properties": {
+                "version": "15",
+                "administratorLogin": "[parameters('dbAdminLogin')]",
+                "administratorLoginPassword": "[parameters('dbAdminPassword')]",
+                "storage": {
+                  "storageSizeGB": 32
+                },
+                "backup": {
+                  "backupRetentionDays": 7,
+                  "geoRedundantBackup": "[if(equals(parameters('environment'), 'production'), 'Enabled', 'Disabled')]"
+                },
+                "highAvailability": {
+                  "mode": "[if(equals(parameters('environment'), 'production'), 'ZoneRedundant', 'Disabled')]"
+                },
+                "network": {
+                  "delegatedSubnetResourceId": "[parameters('subnetId')]",
+                  "privateDnsZoneArmResourceId": "[parameters('privateDnsZoneId')]"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.DBforPostgreSQL/flexibleServers/databases",
+              "apiVersion": "2023-12-01-preview",
+              "name": "[format('{0}/{1}', format('{0}-{1}-pgserver', parameters('projectName'), parameters('environment')), 'appdb')]",
+              "properties": {
+                "charset": "UTF8",
+                "collation": "en_US.utf8"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.DBforPostgreSQL/flexibleServers', format('{0}-{1}-pgserver', parameters('projectName'), parameters('environment')))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "databaseFqdn": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.DBforPostgreSQL/flexibleServers', format('{0}-{1}-pgserver', parameters('projectName'), parameters('environment'))), '2023-12-01-preview').fullyQualifiedDomainName]"
+            },
+            "serverName": {
+              "type": "string",
+              "value": "[format('{0}-{1}-pgserver', parameters('projectName'), parameters('environment'))]"
+            }
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'network-deployment')]"
+      ]
+    }
+  ],
+  "outputs": {
+    "webAppUrl": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'appservice-deployment'), '2025-04-01').outputs.webAppUrl.value]"
+    },
+    "databaseFqdn": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'database-deployment'), '2025-04-01').outputs.databaseFqdn.value]"
+    }
+  }
+}

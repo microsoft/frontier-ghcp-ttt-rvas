@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm install --prefix lab/solution/custom-action
+      - run: npm ci --prefix lab/solution/custom-action
       - uses: ./lab/solution/custom-action
+        with:
+          threshold: '0'
+          report-format: markdown

@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest --verbose",
+    "test": "jest --runInBand --verbose",
+    "verify": "npm test",
     "test:coverage": "jest --coverage",
     "dev": "node --watch src/index.js"
   },

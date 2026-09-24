@@ -1,48 +1,44 @@
-# Work Assignments
+# Issue 001 Work Assignment
 
-Use these three Exercise 2 tasks. Assign each to its named role and review the result before assigning dependent work.
+Use this sheet for the live or tabletop route.
 
-## Lead: product-catalog decision
+## Issue
 
-```text
-{LeadName}, review the project structure and write a technical decision for a
-product catalog feature. Cover its data model, endpoints, integration with the
-existing user system, non-goals, and the reviewer.
-```
+**Add input validation to `POST /api/users`.**
 
-The lead should inspect the existing application, put the proposal in `.squad/decisions/inbox/`, and update `history.md`. The decision owner then merges or rejects it in the shared record.
+## Role boundaries
 
-## Backend: user lookup endpoint
+| Role | Owns | Must not do |
+| --- | --- | --- |
+| Lead | Assignment and final review | Edit implementation or test files |
+| Backend | `src/routes/api.js` | Add packages or edit unrelated routes |
+| Tester | `tests/api.test.js` and test evidence | Change source to make a test pass |
+| Scribe | `.squad/decisions.md` or tabletop decision record | Change the lead's decision |
 
-```text
-{BackendName}, add GET /api/users/:id. Return a single user, return 404 for a
-missing user, follow existing patterns, and add or update focused tests.
-```
-
-Review the diff and run:
-
-```bash
-npm test
-```
-
-If a server is started for a manual check, stop it with its specific process ID after testing `/api/users/1` and a missing-user case.
-
-## Tester: edge cases
+## Assignment
 
 ```text
-{TesterName}, review the current tests and add focused user-API coverage for
-invalid input, missing users, and duplicate email handling.
+Assign Issue 001 to the backend role.
+
+Implement validation for POST /api/users in src/routes/api.js.
+Accept a non-empty string name up to 100 characters and a valid email shape.
+Return status 400 with a descriptive error for invalid input.
+Do not add dependencies, change the response envelope, or edit unrelated routes.
+
+The tester owns focused evidence in tests/api.test.js.
+The lead reviews the final packet.
+Stop if ownership overlaps, scope grows, or any test fails.
 ```
 
-Use the existing Jest and Supertest style. Review test names and assertions against the stated cases, then run `npm test`.
+## Evidence fields
 
-## Review notes
-
-Name the role in each request. Mention relevant files and constraints. Inspect the decision inbox and role history after each task:
-
-```bash
-ls .squad/decisions/inbox/
-cat .squad/agents/{name}/history.md
-```
-
-Do not accept output merely because an agent produced it.
+- Assignment owner:
+- Implementation owner:
+- Test owner:
+- Reviewer:
+- Permitted source file:
+- Permitted test file:
+- Non-goals:
+- Test command:
+- Stop conditions:
+- Final decision:

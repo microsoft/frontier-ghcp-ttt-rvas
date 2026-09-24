@@ -1,43 +1,33 @@
-# Feature Spec: Add Authentication to the API
+# Feature Spec: Add Todo Ownership and Due Dates
 
-## Overview
+Extend the Todo API created from `project-brief.md`. Keep all existing routes and response behavior working.
 
-Add JWT authentication to the `auth-base` Express API. Its endpoints are public. Users must register, sign in, and send a JWT to access protected routes.
+## New fields
 
-## Requirements
+- `owner`: optional string, 1–80 characters.
+- `dueDate`: optional ISO date in `YYYY-MM-DD` format.
 
-### New Endpoints
+## Required behavior
 
-| Method   | Route                | Auth Required   | Description                               |
-| -------- | -------------------- | --------------- | ----------------------------------------- |
-| POST     | `/api/auth/register` | No              | Create a user with a username and password |
-| POST     | `/api/auth/login`    | No              | Sign in and receive a JWT token            |
+1. `POST /api/todos` and `PUT /api/todos/:id` accept the new fields.
+2. Invalid owners or dates return `400` with validation details.
+3. `GET /api/todos?owner=<value>` filters by exact owner.
+4. `GET /api/todos?due=overdue` returns incomplete todos with a due date before today.
+5. Existing status and priority filters still work.
+6. Existing records without the new fields remain valid.
 
-### Protect Existing Endpoints
+## Tests
 
-All existing routes under `/api/items` must require a valid JWT token in the `Authorization: Bearer <token>` header.
+Add focused tests for:
 
-### Auth Behavior
+- creating a todo with both fields;
+- rejecting an invalid date;
+- filtering by owner;
+- returning only overdue incomplete todos;
+- preserving existing create and list behavior.
 
-- **Registration:** Accept `username` (string, 3–30 chars) and `password` (string, min 8 chars). Hash the password before storing. Return 201 with user info (no password). Return 409 if username already exists.
-- **Login:** Accept `username` and `password`. Verify credentials. Return 200 with a JWT token (expires in 1 hour). Return 401 if credentials are invalid.
-- **Protected routes:** Check for `Authorization: Bearer <token>` header. Verify the token. Return 401 if missing or invalid. Attach decoded user info to `req.user`.
+## Constraints
 
-### Technical Constraints
-
-- Use `jsonwebtoken` for JWT signing/verification
-- Use `bcryptjs` for password hashing
-- Store users in-memory (no database)
-- JWT secret: read `JWT_SECRET` from the environment (default: `"dev-secret-change-me"`)
-- Token expiration: one hour
-
-### Files to Create/Modify
-
-- `routes/auth.js` — new file for register/login routes
-- `middleware/auth.js` — new file for JWT verification middleware
-- `server.js` — register the authentication routes and middleware
-
-### Do NOT Change
-
-- The existing `/api/items` routes — keep their behavior identical
-- The existing data model for items
+- Add no dependency for date parsing.
+- Keep in-memory storage.
+- Do not add authentication, a database, or a front end.

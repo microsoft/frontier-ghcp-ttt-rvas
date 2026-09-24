@@ -1,10 +1,10 @@
-# Prompt Templates — Starter
+# Prompt Templates: Starter
 
 Create reusable prompt files in this directory.
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the customer administrator policy before a live exercise. For metered work, use a customer-defined stop guard.
+Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. For metered work, use an agreed stop guard.
 
 ## No-access fallback
 
@@ -30,9 +30,9 @@ Use `{{ variable_name }}` for a value the user supplies.
 
 Create **three prompt files** for common team workflows:
 
-1. **Bug investigation** — diagnose a bug in a repeatable way
-2. **API documentation** — write docs from endpoint code
-3. **Migration checklist** — plan a dependency upgrade
+1. **Bug investigation:** diagnose a bug in a repeatable way
+2. **API documentation:** write docs from endpoint code
+3. **Migration checklist:** plan a dependency upgrade
 
 Place them in the project's `.github/prompts/` directory.
 

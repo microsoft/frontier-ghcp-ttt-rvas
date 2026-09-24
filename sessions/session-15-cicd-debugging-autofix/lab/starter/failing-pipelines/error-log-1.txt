@@ -3,7 +3,7 @@ Run actions/setup-node@v4
   Node.js 14.21.3 installed
 
 Run npm ci
-npm warn engine copilot-webapp@1.0.0: wanted: {"node":">=20.0.0"} (current: {"node":"14.21.3"})
+npm warn engine pipeline-debug-app@1.0.0: wanted: {"node":">=20.0.0"} (current: {"node":"14.21.3"})
 npm ERR! code EBADENGINE
 npm ERR! engine Unsupported engine
 npm ERR! engine Not compatible with your version of node/npm

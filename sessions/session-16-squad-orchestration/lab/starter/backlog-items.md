@@ -1,6 +1,10 @@
-# Backlog Items for Ralph
+# Optional Backlog Items for Ralph
 
-Create these five Exercise 4 issues for a monitored backlog.
+Use these issues for discussion after the Issue 001 review. They are outside the
+required lab deliverable.
+
+Create these five issues only if the trainer runs the optional monitored-backlog
+exercise.
 
 > **Important:** Apply only the `squad` label. The lead assigns `squad:{member}` labels during triage.
 
@@ -127,7 +131,7 @@ The list shows five new issues, plus any remaining from Exercise 3.
 
 ## What to Expect from Ralph
 
-When approved, `squad watch --execute` can follow this flow:
+When approved, `squad watch --execute` can use this flow:
 
 1. **Round 1:** Ralph finds all untriaged issues → dispatches Lead to triage
 2. **Round 2:** Lead assigns `squad:{member}` labels → Ralph dispatches agents

@@ -1,6 +1,8 @@
 site_name: GitHub Copilot Train-the-Trainer
-site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 19 sessions across 6 modules.
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 27 sessions across 7 modules.
 site_author: GitHub Copilot TTT
+extra:
+  source_repository_url: https://github.com/microsoft/frontier-ghcp-ttt-rvas
 docs_dir: .
 site_dir: site
 
@@ -22,6 +24,8 @@ exclude_docs: |
   themes/
   data/
   track-template/
+  sessions/session-*/lab/starter/
+  sessions/session-*/lab/solution/
   PRODUCT.md
   DESIGN.md
   AGENTS.md
@@ -73,6 +77,8 @@ plugins:
   - search
 
 hooks:
+  - hooks/github_alerts.py
+  - hooks/file_links.py
   - hooks/presentation_embed.py
 
 validation:
@@ -107,6 +113,8 @@ nav:
     - Agentic Development: tracks/agentic-development.md
     - DevOps & Automation: tracks/devops-automation.md
     - Enterprise Rollout: tracks/enterprise-rollout.md
+    - Product & Delivery Teams: tracks/product-and-delivery-teams.md
+    - HVE Engineering: tracks/hve-engineering.md
     - Full Mastery: tracks/full-mastery.md
   - Sessions:
     - Module 1 — Copilot Fundamentals:
@@ -139,6 +147,14 @@ nav:
         - Overview: sessions/session-07-code-review-prs/README.md
         - Lab: sessions/session-07-code-review-prs/lab/README.md
         - Trainer Guide: sessions/session-07-code-review-prs/trainer-content/README.md
+      - "27 — Python Repair & Refactor":
+        - Overview: sessions/session-27-python-repair-refactor/README.md
+        - Lab: sessions/session-27-python-repair-refactor/lab/README.md
+        - Trainer Guide: sessions/session-27-python-repair-refactor/trainer-content/README.md
+      - "26 — Java to .NET Modernization":
+        - Overview: sessions/session-26-java-to-dotnet-modernization/README.md
+        - Lab: sessions/session-26-java-to-dotnet-modernization/lab/README.md
+        - Trainer Guide: sessions/session-26-java-to-dotnet-modernization/trainer-content/README.md
     - Module 3 — Agentic Workflows:
       - "08 — Copilot App & Canvases":
         - Overview: sessions/session-08-copilot-app-canvases/README.md
@@ -182,6 +198,10 @@ nav:
         - Overview: sessions/session-18-spec-kit/README.md
         - Lab: sessions/session-18-spec-kit/lab/README.md
         - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
+      - "28 — HVE Core":
+        - Overview: sessions/session-28-hve-core-challenge/README.md
+        - Lab: sessions/session-28-hve-core-challenge/lab/README.md
+        - Trainer Guide: sessions/session-28-hve-core-challenge/trainer-content/README.md
     - Module 6 — Advanced Topics & Capstone:
       - "17 — Enterprise Governance":
         - Overview: sessions/session-17-enterprise-governance/README.md
@@ -191,3 +211,28 @@ nav:
         - Overview: sessions/session-19-capstone/README.md
         - Lab: sessions/session-19-capstone/lab/README.md
         - Trainer Guide: sessions/session-19-capstone/trainer-content/README.md
+    - Module 7 — Product and Delivery Teams:
+      - "20 — Copilot App Foundations":
+        - Overview: sessions/session-20-copilot-app-foundations/README.md
+        - Lab: sessions/session-20-copilot-app-foundations/lab/README.md
+        - Trainer Guide: sessions/session-20-copilot-app-foundations/trainer-content/README.md
+      - "21 — Interview and Shape Work":
+        - Overview: sessions/session-21-interview-and-shape-work/README.md
+        - Lab: sessions/session-21-interview-and-shape-work/lab/README.md
+        - Trainer Guide: sessions/session-21-interview-and-shape-work/trainer-content/README.md
+      - "22 — GitHub Issues & MCP":
+        - Overview: sessions/session-22-plan-work-with-github-issues/README.md
+        - Lab: sessions/session-22-plan-work-with-github-issues/lab/README.md
+        - Trainer Guide: sessions/session-22-plan-work-with-github-issues/trainer-content/README.md
+      - "23 — Planning Canvas":
+        - Overview: sessions/session-23-plan-and-steer-with-canvases/README.md
+        - Lab: sessions/session-23-plan-and-steer-with-canvases/lab/README.md
+        - Trainer Guide: sessions/session-23-plan-and-steer-with-canvases/trainer-content/README.md
+      - "24 — Orchestrate Workstreams":
+        - Overview: sessions/session-24-orchestrate-workstreams/README.md
+        - Lab: sessions/session-24-orchestrate-workstreams/lab/README.md
+        - Trainer Guide: sessions/session-24-orchestrate-workstreams/trainer-content/README.md
+      - "25 — Automate Delivery Follow-up":
+        - Overview: sessions/session-25-automate-delivery-follow-up/README.md
+        - Lab: sessions/session-25-automate-delivery-follow-up/lab/README.md
+        - Trainer Guide: sessions/session-25-automate-delivery-follow-up/trainer-content/README.md

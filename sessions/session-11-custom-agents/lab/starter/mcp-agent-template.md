@@ -1,26 +1,40 @@
-# MCP agent integration template
+# Data analyst agent profile template
 
-Use MCP only when a bounded task needs an approved external capability. Review the server owner, tools, permissions, authentication, data flow, and manual fallback first.
+Use MCP only when a bounded task needs an approved external capability. Review the
+server owner, tool list, permissions, authentication, data flow, and fallback first.
 
-```markdown
+````markdown
 ---
-name: "data-analyst"
-description: "Analyzes approved database data with SQL."
+name: Read-only data analyst
+description: Queries the approved synthetic training database after inspecting its schema.
+target: github-copilot
 tools:
-  - "readFile"
+  - read
+  - search
+  - training-db/*
+disable-model-invocation: true
+user-invocable: true
 mcp-servers:
-  database:
-    command: "npx"
-    args: ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "./data/app.db"]
+  training-db:
+    type: local
+    command: node
+    args:
+      - path/to/approved/server.js
+    tools:
+      - "*"
+metadata:
+  owner: training-maintainers
+  contract-version: "1"
 ---
 
-# Data analyst
+# Read-only data analyst
 
 1. Inspect the schema before querying.
 2. Use explicit columns and verify joins.
-3. Keep access read-only.
-4. Show the query, result, and limits.
-5. Stop when data scope is unclear.
-```
+3. Reject write statements.
+4. Show the query, result, and row limit.
+5. Stop when the data scope is unclear.
+````
 
-Paths are normally relative to the workspace root. Verify current support and syntax before a live run.
+Repository paths are normally relative to the workspace root. The Session 10
+server is local and synthetic. Confirm the command and tool names before use.

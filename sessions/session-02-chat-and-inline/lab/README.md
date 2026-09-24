@@ -1,336 +1,192 @@
-# Session 02 Lab — Copilot Chat & Inline Suggestions
+# Session 02 Lab: Diagnose and Extend a Calculator with Chat
 
-**Duration:** 2 hours  
-**Difficulty:** Beginner  
-**Prerequisites:** Session 01 completed (Copilot installed and configured)  
-**Deliverable:** A debugged and tested module, plus documented model comparison observations
+**Duration:** 2 hours
 
----
+**Difficulty:** Beginner
 
-## Lab Overview
+**Prerequisites:** Session 01 and Python 3.10 or later
 
-Use Copilot Chat to explain unfamiliar code, debug broken functions, generate tests, explore workspace-aware features, and compare approved model options.
+**Deliverable:** A corrected and extended calculator, a passing test suite, and a
+completed `chat-notes.md`
 
-| Exercise   | Topic                        | Time   |
-| ---------- | ---------------------------- | ------ |
-| 1          | Code Explanation & Debugging | 40 min |
-| 2          | Test Generation              | 30 min |
-| 3          | Workspace & Terminal Chat    | 30 min |
-| 4          | Model Comparison             | 20 min |
+## Lab overview
+
+You will use different Chat surfaces on one Python calculator project. A focused
+test exposes a weighted-average bug. After fixing it, you will add missing tests,
+answer a workspace question, and handle a change request that requires a judgment
+about zero total weight.
+
+| Part | Work | Time |
+| --- | --- | --- |
+| 1 | Prepare the project and reproduce the failure | 15 min |
+| 2 | Explain and diagnose the defect | 25 min |
+| 3 | Apply the fix and expand tests | 30 min |
+| 4 | Review the project with workspace and terminal context | 20 min |
+| 5 | Decide and implement the change request | 20 min |
+| 6 | Compare, document, and verify | 10 min |
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Confirm that Copilot Chat and model selection are available in your IDE.
+Use synthetic data and an approved training repository.
 
-## If access is unavailable
+For the live path, confirm GitHub Copilot Chat access in the selected editor. If
+access is unavailable or not approved, stop the live interaction and use the
+**manual fallback**: inspect the code and failing output yourself, implement the
+change, compare with `lab/solution/`, and complete `chat-notes.md`.
 
-Complete the debugging, testing, and context exercises against the supplied files. Record the prompt you would have used and peer-review the proposed change.
+If model comparison is allowed, use only choices approved for the exercise and set
+any required metered-work stop condition. If no second choice is available, compare
+the assisted result with the reference solution.
 
----
+## Part 1: Prepare and reproduce (15 minutes)
 
-## Exercise 1: Code Explanation & Debugging (40 min)
+```bash
+cd sessions/session-02-chat-and-inline/lab/starter
+python -m py_compile calculator.py test_calculator.py
+python -m unittest -v
+```
 
-### Objective
+Three tests should pass. The weighted-average test should fail because the result
+is `190` instead of `95`.
 
-Use Copilot Chat to inspect unfamiliar code, then debug three deliberately broken functions.
+Read `calculator.py`, `test_calculator.py`, `change-request.md`, and
+`chat-notes.md`.
 
-### Part A: Code Explanation (15 min)
+**Checkpoint:** You can state the failing input, actual result, and expected result
+without asking Chat to guess them.
 
-1. **Open `lab/starter/mystery-code.py`** in VS Code. This file contains working but complex code that may be unfamiliar to you.
+## Part 2: Explain and diagnose (25 minutes)
 
-2. **Select all the code** in the file (`Ctrl+A` / `Cmd+A`).
+Use inline Chat or the sidebar with the `weighted_average` selection.
 
-3. **Open Copilot Chat** using one of these methods:
-   - Click the Copilot Chat icon in the sidebar
-   - Press `Ctrl+Alt+I` / `Cmd+Alt+I`
-   - Use inline chat: `Ctrl+I` / `Cmd+I`
+Start with an explanation request:
 
-4. **Ask Copilot to explain the code.** Type in the Chat panel:
+```text
+Explain the weighted_average method line by line. State the mathematical formula
+it implements. Do not propose a fix yet.
+```
 
-   ```
-   /explain What does this code do? Break it down function by function.
-   ```
+Compare the response with the failing test. Then ask:
 
-   > **Expected:** A detailed explanation of each function, the data structures used, and the overall purpose of the module.
+```text
+The test expects weighted_average([80, 100], [1, 3]) to equal 95, but the method
+returns 140. Identify the defect. Limit the answer to this method.
+```
 
-5. **Ask follow-up questions** to understand the code better:
-   - `What algorithm is the find_shortest_path function using?`
-   - `What is the time complexity of each function?`
-   - `Are there any edge cases this code doesn't handle?`
+If the surface supports an explain shortcut, try it with the same selection.
+Record the useful context and the diagnosis in `chat-notes.md`.
 
-6. **Try inline chat for a single function.** Select just the `memoize` function, press `Ctrl+I`, and type:
+**Checkpoint:** The diagnosis identifies `sum(weights)` as the denominator.
 
-   ```
-   Explain how this decorator works and when I'd use it.
-   ```
+## Part 3: Fix and expand tests (30 minutes)
 
-   > **Checkpoint:** You should now understand what each function does. Write a one-sentence summary of the module's purpose in your own words.
+Request a narrow fix:
 
-### Part B: Debugging (25 min)
+```text
+Fix only weighted_average so it divides by the total weight. Preserve the public
+method signature and the existing length check. Add no dependency.
+```
 
-1. **Open `lab/starter/buggy-functions.py`.** This file has 3 functions with intentional bugs.
+Review the proposed diff before accepting it. Run:
 
-2. **Try to run the file first** to see the errors:
+```bash
+python -m unittest -v \
+  test_calculator.CalculatorTests.test_weighted_average_uses_total_weight
+```
 
-   ```bash
-   cd sessions/session-02-chat-and-inline/lab/starter
-   python buggy-functions.py
-   ```
+Next, use a tests shortcut or a direct prompt to propose tests for:
 
-   > **Expected:** Errors or incorrect output for one or more functions.
+- mismatched list lengths;
+- empty lists;
+- history recording;
+- a zero total weight.
 
-3. **Debug each function using Copilot Chat.** For each broken function:
+Do not accept tests that invent behavior. The zero-total-weight rule belongs to the
+change request in Part 5.
 
-   **Method 1: /fix command**
-   - Select the function
-   - Type `/fix` in Chat
-   - Review the suggested fix
+**Checkpoint:** The original four tests pass. Proposed new tests are separated from
+the accepted contract.
 
-   **Method 2: Conversational debugging**
-   - Paste the error message into Chat
-   - Ask: `This function is supposed to [expected behavior], but it's [actual behavior]. What's wrong?`
+## Part 4: Use workspace and terminal context (20 minutes)
 
-   **Method 3: Inline fix**
-   - Select the broken function
-   - Press `Ctrl+I` and type: `Fix the bug in this function`
+Ask a workspace-level question:
 
-4. **Fix all 3 bugs.** The bugs are:
-    - `binary_search`: Logic error — returns wrong result
-    - `remove_duplicates`: Mutation error — modifies data unexpectedly
-    - `parse_csv_line`: Edge case — fails with quoted commas
+```text
+@workspace Summarize the Calculator public behavior and identify which methods
+have focused tests. Cite the relevant files.
+```
 
-5. **Verify your fixes:**
+If the current surface uses a different workspace-context mechanism, use its
+documented equivalent.
 
-    ```bash
-    python buggy-functions.py
-    ```
+Run the tests again. Then use terminal context, if available:
 
-    > **Expected output:**
->
-    > ```
-    > binary_search: Found 7 at index 3 ✓
-    > remove_duplicates: [1, 2, 3, 4, 5] (original unchanged) ✓
-    > parse_csv_line: ['John', 'Doe', 'New York, NY', '30'] ✓
-    > ```
+```text
+Explain the most recent test result. Which behavior failed or passed, and which
+file owns the next change?
+```
 
-6. **Compare with `lab/solution/buggy-functions.py`** to see the reference fixes.
+Verify the response yourself. Terminal context can summarize output; it does not
+replace reading the failure.
 
-### Troubleshooting
+**Checkpoint:** Your notes distinguish code behavior, test evidence, and Chat
+interpretation.
 
-| Problem                  | Solution                                                                                          |
-| ------------------------ | ------------------------------------------------------------------------------------------------- |
-| Chat doesn't see my code | Make sure the file is open and active. Use `#file:buggy-functions.py` to reference it explicitly. |
-| /fix doesn't work        | Select the function first, then type `/fix`. The selection provides context.                      |
-| Chat gives a wrong fix   | Give more context: describe the expected vs. actual behavior. Paste the error message.            |
+## Part 5: Decide the change request (20 minutes)
 
----
+Open `change-request.md`.
 
-## Exercise 2: Test Generation (30 min)
+The request requires rejection when the total weight is zero but does not define
+the exception type or message. Choose both. The reference path uses:
 
-### Objective
+```text
+ValueError("Total weight must not be zero")
+```
 
-Use Copilot Chat to draft unit tests for an existing module, then review and improve them.
+Add a focused test first. Then update `weighted_average`. While reviewing the
+method, also decide how empty inputs should behave. Record both decisions in
+`chat-notes.md`.
 
-### Steps
+Run:
 
-1. **Open `lab/starter/calculator.py`** in VS Code. This is a fully working calculator module with no tests.
+```bash
+python -m unittest -v
+```
 
-2. **Generate tests using the /tests command.** Select the entire file, then in Chat:
+**Checkpoint:** The suite covers the original defect, mismatch, empty input, zero
+total weight, and history.
 
-   ```
-   /tests Generate full unit tests for this calculator module using pytest.
-   ```
+## Part 6: Compare and verify (10 minutes)
 
-   > **Expected:** Copilot generating a test file with multiple test functions covering the calculator's operations.
+If two approved model choices are available, send both the same prompt:
 
-3. **Save the generated tests.** Create a new file called `starter/test_calculator.py` and paste the generated tests.
+```text
+Review weighted_average and its tests. List any accepted behavior that lacks a
+test. Do not change code.
+```
 
-4. **Review the generated tests.** Check:
-   - Are edge cases covered (division by zero, empty history)?
-   - Are there both positive and negative test cases?
-   - Do the test names clearly describe what they test?
-   - Is there a test for the `history` feature?
+Compare only observable accuracy and useful citations. Otherwise compare the live
+or manual result with `lab/solution/`.
 
-5. **Ask Chat to add missing tests.** If you see gaps:
+Inspect the final diff:
 
-   ```
-   These tests are missing coverage for:
-   - Division by zero
-   - The history() method
-   - Chaining operations
-   Add those test cases.
-   ```
+```bash
+git --no-pager diff -- calculator.py test_calculator.py chat-notes.md
+python -m py_compile calculator.py test_calculator.py
+python -m unittest -v
+```
 
-6. **Run the tests** (if pytest is installed):
+## Final deliverable
 
-   ```bash
-   cd sessions/session-02-chat-and-inline/lab/starter
-   pip install pytest
-   pytest test_calculator.py -v
-   ```
+1. `calculator.py` uses total weight and rejects invalid weighted-average inputs.
+2. `test_calculator.py` covers the accepted behavior.
+3. `chat-notes.md` records the chosen surfaces, prompts, verification, judgment
+   call, and comparison path.
 
-   > **Expected:** All tests passing with verbose output showing each test name.
+## Verification
 
-7. **Compare with `lab/solution/test_calculator.py`** to see the reference test suite.
-
-### Troubleshooting
-
-| Problem                   | Solution                                                                                                                       |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| pytest not installed      | Run `pip install pytest` first. Or use `python -m pytest`.                                                                     |
-| Tests import fails        | Make sure `test_calculator.py` is in the same directory as `calculator.py`.                                                    |
-| Generated tests are wrong | Fix them and record what Chat missed. Trainers need to see those limits. |
-
----
-
-## Exercise 3: Workspace & Terminal Chat (30 min)
-
-### Objective
-
-Use `@workspace` to answer questions about a multi-file project, and `@terminal` to troubleshoot a failing build.
-
-### Part A: @workspace (15 min)
-
-1. **Open the mini-project folder.** In VS Code, open the folder `lab/starter/mini-project/` (or open the files within it).
-
-2. **Ask @workspace about the project.** In Copilot Chat, try these queries:
-
-   ```
-   @workspace What does this project do? Describe the architecture.
-   ```
-
-   > **Expected:** Chat analyzing all files in the project and describing the Express.js server, its routes, and overall structure.
-
-3. **Ask specific questions:**
-
-   ```
-   @workspace What endpoints are defined in this project?
-   ```
-
-   ```
-   @workspace What npm packages does this project depend on?
-   ```
-
-   ```
-   @workspace Are there any security concerns in this codebase?
-   ```
-
-4. **Notice how @workspace differs from regular Chat.** Without `@workspace`, Chat sees the active file. With it, Chat searches the project.
-
-   > **Checkpoint:** You should be able to describe what the mini-project does, its routes, and dependencies without reading every file manually.
-
-### Part B: @terminal (15 min)
-
-1. **Try to start the mini-project.** Open a terminal and run:
-
-   ```bash
-   cd sessions/session-02-chat-and-inline/lab/starter/mini-project
-   npm install
-   npm start
-   ```
-
-   > **Expected:** An error. The project has an intentional build issue.
-
-2. **Use @terminal to diagnose.** In Copilot Chat:
-
-   ```
-   @terminal The npm start command failed. What's wrong and how do I fix it?
-   ```
-
-   > **Expected:** Chat reading the terminal output and identifying the issue.
-
-3. **Apply the fix** suggested by Chat. Then try `npm start` again.
-
-4. **Test the running server** (if the fix works):
-
-   ```bash
-   curl http://localhost:3000/api/health
-   ```
-
-   > **Expected output:** `{"status":"ok","timestamp":"..."}`
-
-5. **Compare with `lab/solution/mini-project/`** to see the fixed version.
-
-### Troubleshooting
-
-| Problem                       | Solution                                                                                          |
-| ----------------------------- | ------------------------------------------------------------------------------------------------- |
-| @workspace doesn't find files | Make sure the mini-project files are inside your VS Code workspace (not just a single file open). |
-| @terminal not available       | Ensure you have a terminal open with recent output. `@terminal` reads from the active terminal.   |
-| Node.js not installed         | Install Node.js from <https://nodejs.org/>. Or focus on Part A only.                              |
-
----
-
-## Exercise 4: Model Comparison (20 min)
-
-### Objective
-
-Where customer policy permits a comparison choice, compare responses to the same synthetic question; otherwise compare an assisted response with a manual solution.
-
-### Steps
-
-1. **Open `lab/starter/model-comparison-template.md`** to record your observations.
-
-2. **Check the customer-approved options.** Ask the customer administrator which comparison choices, if any, are approved for this exercise. Use current official documentation and customer policy rather than assuming a catalog.
-
-3. **Ask a coding question with Model A.** Use this prompt:
-
-   ```
-   Write a Python function that finds the longest common subsequence of two strings. Include comments explaining the approach.
-   ```
-
-   Copy the response into the template under "Model A".
-
-4. **Use a second approved comparison choice.** If none is approved or shown, use a manual implementation as the comparison baseline.
-
-5. **Ask the exact same question with Model B.** Copy the response into the template under "Model B".
-
-6. **Compare the responses.** Fill in the comparison table in the template:
-   - Which was more concise?
-   - Which had better comments/explanations?
-   - Which code is more readable?
-   - Did they use different algorithms?
-
-7. **Try a non-coding question.** Ask both models:
-
-   ```
-   Explain the difference between concurrency and parallelism. Give a real-world analogy.
-   ```
-
-   Note differences in explanation style.
-
-8. **Document your recommendation.** In the template, write which model you'd recommend for different tasks.
-
-   > **By the end:** A filled-in template comparing two models across multiple dimensions, with a recommendation for which to use when.
-
-### Troubleshooting
-
-| Problem                       | Solution                                                                             |
-| ----------------------------- | ------------------------------------------------------------------------------------ |
-| No comparison choice is shown | Do not infer why. Use the manual baseline and record that the customer policy did not authorize a second comparison. |
-| Can't find the model selector | Look for a dropdown near the chat input. In some versions it's a settings icon.      |
-| Responses look identical      | Try a more specific question: ask for architecture advice or code review feedback.   |
-
----
-
-## Wrap-up
-
-### Deliverables Checklist
-
-- [ ] `mystery-code.py` — Explained (notes in Chat or journal)
-- [ ] `buggy-functions.py` — All 3 bugs fixed and verified
-- [ ] `test_calculator.py` — Generated test suite (saved and reviewed)
-- [ ] `mini-project/` — Build issue diagnosed and fixed
-- [ ] `model-comparison-template.md` — Completed model comparison
-
-### Trainer notes
-
-1. **Chat helps with debugging.** Use `/fix` or a focused question, then verify the result.
-2. **Use `@workspace` for unfamiliar codebases.** It is useful for cross-file questions and onboarding.
-3. **Review generated tests.** They are a draft, not proof of coverage.
-4. **Compare approved model options.** Record the differences you can observe.
-5. **Give Chat relevant context.** A selected function, error message, or workspace search can improve the answer.
-
-### Next session
-
-In **Session 03**, you will practice prompts that state the task, context, and constraints clearly.
+- [ ] Both Python files compile.
+- [ ] All eight reference tests pass.
+- [ ] The zero-total-weight decision is explicit in code, test, and notes.
+- [ ] Chat changes stayed inside the calculator project.
+- [ ] No new dependency was added.

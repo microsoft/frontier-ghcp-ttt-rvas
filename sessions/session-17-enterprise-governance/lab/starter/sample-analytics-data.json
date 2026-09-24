@@ -1,42 +1,39 @@
 {
-  "scenario": "Fictional bounded trial",
-  "purpose": "Practice documenting evidence for a customer-owned governance decision.",
-  "scope": {
-    "repository": "non-sensitive training sandbox",
-    "task": "A bounded, human-reviewed change",
-    "data_classification": "Customer-defined"
+  "scenario": "training-review-sandbox",
+  "synthetic": true,
+  "observation_window": {
+    "start": "2026-09-14",
+    "end": "2026-09-24",
+    "reviewed_tasks": 10,
+    "automated_runs": 16
   },
-  "measurement": {
-    "source": "Customer-defined current measurement source",
-    "observation_window": "Customer-defined bounded period",
-    "stop_guard": {
-      "threshold": "Customer-defined",
-      "escalation": "Customer-designated owner",
-      "fallback": "Manual repository-sandbox workflow"
-    }
+  "thresholds": {
+    "quality_tasks_meeting_acceptance": 9,
+    "restricted_data_events": 0,
+    "maximum_material_rewrites": 3,
+    "maximum_automated_runs": 20
   },
-  "observations": [
+  "observations": {
+    "tasks_meeting_acceptance": 9,
+    "restricted_data_events": 0,
+    "material_rewrites": 2,
+    "boundary_check_failures": 0
+  },
+  "decision_inputs": [
     {
-      "area": "Quality",
-      "evidence": "Acceptance criteria and focused checks",
-      "decision_owner": "Human reviewer"
+      "signal": "quality",
+      "owner": "engineering lead",
+      "result": "threshold met"
     },
     {
-      "area": "Safety",
-      "evidence": "Approved data and tool boundaries",
-      "decision_owner": "Customer-designated security or data owner"
+      "signal": "data boundary",
+      "owner": "data owner",
+      "result": "no event observed in synthetic trial"
     },
     {
-      "area": "Measurement",
-      "evidence": "Current customer-defined meter",
-      "decision_owner": "Customer-designated finance or platform owner"
-    }
-  ],
-  "change_review": [
-    {
-      "change": "Proposed workflow adjustment",
-      "required_evidence": "Current official documentation and customer policy",
-      "decision": "Pending customer owner review"
+      "signal": "exercise run counter",
+      "owner": "trainer",
+      "result": "16 of 20 runs used"
     }
   ]
 }

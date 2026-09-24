@@ -1,4 +1,4 @@
-# Session 07 Lab — Code Review Workflows
+# Session 07 Lab: Code Review Workflows
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
@@ -9,7 +9,10 @@
 
 ## Lab overview
 
-Practice reviewing AI-assisted work with a bounded scope, evidence-based comments, targeted fixes, and a human decision. The starter project includes deliberate defects so you can compare human review, Copilot-assisted review, and the manual path without live access.
+Review AI-assisted work within a bounded scope. Write evidence-based comments,
+apply targeted fixes, and make a human decision. The starter project includes
+deliberate defects for comparing human review, Copilot-assisted review, and the
+manual path.
 
 | Exercise | Topic | Time |
 | --- | --- | --- |
@@ -22,7 +25,11 @@ Practice reviewing AI-assisted work with a bounded scope, evidence-based comment
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Before delivery, verify current official GitHub documentation and customer administrator policy. Confirm repository scope, data classification, reviewer roles, and required checks. For metered work, define a customer-owned meter, threshold, escalation route, and stop guard.
+Use Enterprise Cloud as the governance baseline. Before delivery, verify current
+official GitHub documentation and the applicable administrator policy. Confirm the
+repository scope, data classification, reviewer roles, and required checks. For
+metered work, define the approved meter and threshold. Also name the escalation
+route and stop guard.
 
 Before you start, record these decisions in your notes:
 
@@ -54,15 +61,15 @@ If Copilot review, GitHub pull requests, or cloud access are unavailable, comple
 
 Use these starter assets:
 
-- `lab/starter/review-project/package.json` — project scripts and dependencies
-- `lab/starter/review-project/src/api.js` — Express API under review
-- `lab/starter/review-project/src/utils.js` — utility functions under review
-- `lab/starter/review-project/tests/api.test.js` — existing Jest/Supertest checks
-- `lab/starter/code-changes.md` — intentionally flawed changes to review
-- `lab/starter/partner-review-checklist.md` — structured review worksheet
-- `lab/starter/fix-evaluation-template.md` — evidence template for corrected changes
-- `lab/starter/conflict-scenario/README.md` — manual merge-conflict scenario
-- `lab/starter/conflict-scenario/utils-with-conflict.js` — conflict exercise source file
+- `lab/starter/review-project/package.json`: project scripts and dependencies
+- `lab/starter/review-project/src/api.js`: Express API under review
+- `lab/starter/review-project/src/utils.js`: utility functions under review
+- `lab/starter/review-project/tests/api.test.js`: existing Jest/Supertest checks
+- `lab/starter/code-changes.md`: intentionally flawed changes to review
+- `lab/starter/partner-review-checklist.md`: structured review worksheet
+- `lab/starter/fix-evaluation-template.md`: evidence template for corrected changes
+- `lab/starter/conflict-scenario/README.md`: manual merge-conflict scenario
+- `lab/starter/conflict-scenario/utils-with-conflict.js`: conflict exercise source file
 
 Create a workspace outside the curriculum folder. This keeps the source materials unchanged:
 
@@ -76,7 +83,9 @@ npm test
 
 > **Expected:** `npm install` completes without new dependencies and `npm test` reports that the existing API tests pass.
 >
-> **If install fails:** Read `package.json` to identify the expected test command, note the error, and continue with static review. Do not change package versions unless the instructor explicitly approves that troubleshooting exercise.
+> **If install fails:** Read `package.json` to find the expected test command.
+> Record the error and continue with static review. Do not change package versions
+> unless the instructor approves that troubleshooting exercise.
 
 ---
 
@@ -105,7 +114,9 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
 
    > **Check:** The baseline has a small API, utility functions, and existing tests. Record its behavior so you can separate existing code from introduced defects.
 
-4. **Apply the change brief in a local branch or sandbox.** If you are using a real Git repository, create a branch named `feature/add-user-management`. If you are using a copied folder without Git, keep a written change log instead.
+4. **Apply the change brief in a local branch or sandbox.** In a Git repository,
+   create a branch named `feature/add-user-management`. In a copied folder without
+   Git, keep a written change log instead.
 
    > **Success criteria:** The modified files match the change brief closely enough for review; you have not added unrelated features.
 
@@ -135,7 +146,9 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
 
 ### Exercise 1 no-access fallback
 
-If pull requests or Copilot review are unavailable, review the local diff or copied files. Write comments in the review worksheet instead of a PR. The fallback is complete when another participant can read your worksheet and understand what must change before approval.
+If pull requests or Copilot review are unavailable, review the local diff or copied
+files. Write comments in the review worksheet instead of a PR. The fallback is
+complete when another participant can understand what must change before approval.
 
 ### Checkpoint
 
@@ -199,6 +212,13 @@ If you cannot install dependencies or run tests, do a static validation pass:
 
 > **Fallback success:** The change record states which checks were not run, why they were unavailable, and what evidence was used instead.
 
+### Checkpoint 2: fixes trace to findings
+
+- [ ] Every blocking finding maps to a focused fix.
+- [ ] New tests or manual examples cover the missed behavior.
+- [ ] `npm test` passes, or the fallback record states why it did not run.
+- [ ] The fix evaluation names residual risk.
+
 ---
 
 ## Exercise 3: Resolve a conflict (35 minutes)
@@ -245,7 +265,16 @@ Resolve a merge conflict by preserving intent and adding verification. Do not bl
 
 ### Exercise 3 no-access fallback
 
-If you cannot create branches or run Git commands, use the conflict file as a paper exercise. Copy the final resolved function bodies into your notes and list the tests you would run. The fallback is complete when a peer agrees that conflict intent was preserved.
+If you cannot create branches or run Git commands, use the conflict file as a paper
+exercise. Copy the resolved function bodies into your notes and list the tests you
+would run. Ask a peer to confirm that the resolution preserves both branch goals.
+
+### Checkpoint 3: conflict intent is preserved
+
+- [ ] No conflict markers remain.
+- [ ] Both branch goals appear in the resolved behavior.
+- [ ] Tests or examples cover date and currency formatting.
+- [ ] A peer can explain the merge decision from the record.
 
 ---
 
@@ -287,9 +316,14 @@ Make the final review decision from evidence, not an automated suggestion.
 
 If no automated review was used, compare your review with a peer's review. The fallback records the same evidence, decision, and rationale.
 
----
+### Checkpoint 4: final decision is evidence-based
 
-## Final submission
+- [ ] The decision is approve, request changes, or pause.
+- [ ] The rationale cites findings, fixes, and verification.
+- [ ] Automated findings were accepted only after human review.
+- [ ] Remaining risk and the reviewer are named.
+
+## Final Deliverable
 
 Submit one folder or document containing:
 
@@ -309,6 +343,6 @@ Submit one folder or document containing:
 - [ ] Findings are tied to evidence and acceptance criteria.
 - [ ] A human reviewer made the final decision.
 - [ ] Required checks were run or a manual fallback was documented.
-- [ ] Metered work had a customer-defined stop guard.
+- [ ] Metered work had an agreed stop guard.
 - [ ] The manual fallback is complete and reproducible.
 - [ ] Starter files used: `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`, `review-project/`, and `conflict-scenario/`.
