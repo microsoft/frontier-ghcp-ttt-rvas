@@ -10,16 +10,22 @@ Learners should leave able to explain HVE and use it. The API is the practice
 surface. The assessed skill is moving from product intent to reviewed code through
 HVE agents, prompts, instructions, and durable tracking artifacts.
 
-## One-hour plan
+## Indicative trainer pacing
 
-| Time | Segment |
-|------|---------|
-| 0:00–0:10 | What HVE is and what problem it solves |
-| 0:10–0:27 | Standalone Research, Plan, Implement, Review |
-| 0:27–0:35 | Combined `/rpi`, Discover, and checkpoints |
-| 0:35–0:47 | Additive instructions and custom agents |
-| 0:47–0:56 | Product Manager Advisor, Agile Coach, BRD, and PRD agents |
-| 0:56–1:00 | Challenge gates, recovery, and scoring |
+Model response time and audience questions will change the pace. Use ranges rather
+than fixed clock slots, and shorten demonstrations before cutting artifact review.
+
+| Segment | Indicative range | Exit signal |
+|---------|------------------|-------------|
+| What HVE is and why it exists | 5–10 min | Learners can distinguish agents, prompts, instructions, and tracking artifacts |
+| Standalone RPI and its handoffs | 15–20 min | Each phase has an owner, artifact, and gate |
+| Combined `/rpi`, Discover, and checkpoints | 5–10 min | Learners can choose standalone or combined mode |
+| Additive instructions and custom agents | 8–12 min | Learners can explain activation evidence |
+| Product and Agile agent flow | 8–12 min | Learners can place Advisor, Coach, BRD, and PRD before RPI |
+| Challenge gates, recovery, and scoring | 4–6 min | Learners know what completion requires |
+
+The full trainer segment should remain close to one hour. If an agent response is
+slow, switch to the reference artifact and continue the explanation.
 
 ## Preflight
 

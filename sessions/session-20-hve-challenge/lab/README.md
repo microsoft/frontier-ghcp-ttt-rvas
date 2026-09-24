@@ -1,5 +1,5 @@
 ---
-description: "Two-hour HVE Core challenge covering RPI, customization, product agents, and reviewed delivery"
+description: "HVE Core challenge covering RPI, customization, product agents, and reviewed delivery"
 ---
 
 # Session 20 Lab: HVE From Product Intent to Reviewed Code
@@ -23,7 +23,8 @@ changed the next.
 2. Confirm the HVE Core extension is active and these entries are available:
    `/task-research`, `/task-plan`, `/task-implement`, `/task-review`, `/rpi`,
    `@Product Manager Advisor`, and `@Agile Coach`.
-3. Identify the human reviewer and a hard stop at 115 minutes.
+3. Identify the human reviewer and reserve roughly the final 10–20 minutes for
+   Review, the human decision, and handoff.
 4. Confirm Node.js 20 or later and whether local package downloads are approved.
 5. Run `npm test` when dependencies already exist. Run `npm ci` first only when
    package downloads are approved.
@@ -37,20 +38,26 @@ The expected baseline is one passing health test and no implementation of
 `starter/hve-phase-recovery.md` and continue with the next HVE agent. Do not replace
 the complete HVE workflow with manual artifacts.
 
-## Time plan
+## Indicative effort
 
-| Time | Work | Evidence |
-|------|------|----------|
-| 0–10 min | Verify HVE and inspect the artifact model | Agent availability and tracking paths |
-| 10–35 min | Run HVE Research | Research artifact, alternatives, constraints |
-| 35–50 min | Run HVE Plan | Plan, details, log, human approval |
-| 50–75 min | Customize HVE | Project context, coding instruction, custom agent |
-| 75–95 min | Use product and Agile agents | Value review, user story, acceptance criteria |
-| 95–110 min | Run HVE Implement | Changes log, code, tests, container definition |
-| 110–118 min | Run HVE Review | Findings, criterion verdicts, human decision |
-| 118–120 min | Compare combined RPI | `/rpi` and Discover follow-up map |
+Agent latency varies by model, reasoning level, workspace size, and tool access.
+Use these ranges for pacing, not as deadlines. Move on when the evidence gate is
+met. If one agent stalls, use the phase-recovery guide and protect time for Review.
 
-## Exercise 1: Understand HVE and run Research (35 min)
+| Stage | Indicative range | Evidence gate |
+|-------|------------------|---------------|
+| HVE preflight and artifact model | 5–10 min | Required agents are visible; tracking paths are understood |
+| Research and Plan | 20–30 min | Research, plan, details, log, and human approval exist |
+| HVE customization | 15–20 min | Three customization layers have activation evidence |
+| Product and Agile refinement | 15–20 min | Advisor decision, story, criteria, and exclusions exist |
+| Implement and validate | 20–30 min | Changes log, code, tests, and container evidence exist |
+| Review and combined-RPI comparison | 10–15 min | Review artifact, human decision, and comparison are recorded |
+
+Treat the ranges as planning guidance, not additive deadlines. Faster phases create
+room for deeper artifact review. Slower phases should use recovery rather than
+consume the final review gate.
+
+## Exercise 1: Understand HVE and run Research
 
 Before changing code, identify HVE's four component types:
 
@@ -72,7 +79,7 @@ Clear the chat, attach the research artifact, then run `/task-plan`. Inspect the
 plan, details, and planning log. Approve the plan only when every acceptance
 criterion maps to an owning file and a focused check.
 
-## Exercise 2: Customize HVE for the repository (25 min)
+## Exercise 2: Customize HVE for the repository
 
 Create three repository-owned customization layers:
 
@@ -88,7 +95,7 @@ Record an activation check for each layer. Then ask HVE to review the current pl
 again. Note one concrete change caused by the repository context, coding instruction,
 or custom agent. File creation alone is not activation evidence.
 
-## Exercise 3: Explore HVE product and Agile agents (20 min)
+## Exercise 3: Explore HVE product and Agile agents
 
 Give `starter/product-intent.md` to `@Product Manager Advisor`. Ask it to test the
 feature's value, users, assumptions, priority, and non-goals. Record its decision
@@ -102,7 +109,7 @@ artifact exposes a gap. Do not create live work items in this lab.
 Use the agent picker to locate `@BRD Builder` and `@PRD Builder`. Record when the
 team would start with each agent instead of the supplied product intent.
 
-## Exercise 4: Implement and review with HVE (25 min)
+## Exercise 4: Implement and review with HVE
 
 Attach the approved plan and product/Agile artifact, then run `/task-implement`.
 The finished behavior must:
