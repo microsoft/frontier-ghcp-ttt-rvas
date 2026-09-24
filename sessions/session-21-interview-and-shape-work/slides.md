@@ -53,6 +53,9 @@ Vague request
 
 Do not jump from one sentence to an issue template.
 
+The project skill keeps this method consistent across requests. It does not make
+the decisions.
+
 ---
 
 # Interview as a decision tree
@@ -145,6 +148,7 @@ Ask GitHub Copilot to draft:
 - definition of done.
 
 Compare the draft with the approved brief.
+Each field should trace to an approved answer or an open question.
 
 Session 22 creates the approved issues through GitHub MCP.
 
@@ -175,6 +179,8 @@ Give a new session only:
 
 Ask it to find contradictions, unresolved owners, and acceptance criteria with no
 source decision.
+
+This check exposes assumptions that existed only in the original conversation.
 
 ---
 

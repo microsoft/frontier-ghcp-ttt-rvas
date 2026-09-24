@@ -24,10 +24,10 @@ Session 10 of 19 | 3 hours
 | --- | --- |
 | MCP request path and boundaries | 8 min |
 | Names, descriptions, and schemas | 10 min |
-| Stage-one tool walkthrough | 15 min |
+| One bounded tool example | 15 min |
 | Bad input and visible errors | 10 min |
-| Tests and MCP Inspector | 9 min |
-| Add tools and hand off to the lab | 8 min |
+| Evidence and review | 9 min |
+| Lab handoff | 8 min |
 
 ---
 
@@ -64,7 +64,7 @@ Start with stdio and synthetic data. Keep the first review small.
 
 ---
 
-# Stage one exposes one tool
+# Start with one narrow capability
 
 ```json
 {
@@ -79,6 +79,8 @@ Start with stdio and synthetic data. Keep the first review small.
 ```
 
 The tool name, description, and schema are part of the interface.
+
+Start with one tool because every exposed capability adds risk and maintenance.
 
 ---
 
@@ -140,39 +142,6 @@ Do not assume every caller reaches the handler through the same client-side chec
 
 ---
 
-# Test the handler before the client
-
-```bash
-cd lab/starter/custom-mcp
-npm ci
-npm test
-```
-
-The stage-one suite proves:
-
-- one tool is exposed;
-- good input returns exact data;
-- an empty city returns a tool error.
-
----
-
-# Inspect the protocol path
-
-```bash
-npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
-  node src/index.js --method tools/list
-```
-
-```bash
-npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
-  node src/index.js --method tools/call \
-  --tool-name get_weather --tool-arg city=Oslo
-```
-
-Pin the Inspector version so recorded evidence remains reproducible.
-
----
-
 # Each check proves a different claim
 
 | Evidence | Claim |
@@ -186,47 +155,10 @@ Keep the deterministic tests even when the client integration works.
 
 ---
 
-# Add the remaining tools
-
-| Tool | Contract |
-| --- | --- |
-| `get_forecast` | `city`; `days` defaults to 3 and accepts 1–7 |
-| `convert_temperature` | finite `value`; fixed source-unit enum |
-
-Unknown tools return a visible error. The first tool's tests must stay green.
-
----
-
-# Package the project, not dependencies
-
-Track:
-
-```text
-package.json
-package-lock.json
-src/
-test/
-```
-
-Do not track:
-
-```text
-node_modules/
-```
-
-Use `npm ci` to reproduce the approved dependency tree.
-
----
-
 # Lab handoff
 
-1. Run the one-tool starter tests.
-2. Add one focused `get_weather` case.
-3. Inspect good and bad calls.
-4. Add `get_forecast`.
-5. Add `convert_temperature`.
-6. Run all five solution tests.
-7. Record Inspector output or **not executed**.
+Apply the same contract to three tools. Check discovery, valid input, invalid input,
+and visible errors through tests and the MCP Inspector.
 
 **The deliverable is a three-tool server with exact request, response, and failure
 evidence.**
