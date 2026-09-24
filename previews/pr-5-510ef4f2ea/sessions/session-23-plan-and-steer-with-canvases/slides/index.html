@@ -4905,13 +4905,32 @@ they are seeing a decision or a source-system fact.</p>
 </ul>
 <p>Resolve or explain every mismatch.</p>
 <hr />
+<h1 id="create-visible-drift">Create visible drift<a class="headerlink" href="#create-visible-drift" title="Permanent link">&para;</a></h1>
+<ol>
+<li>Preview and approve a GitHub issue comment through MCP.</li>
+<li>Retrieve the changed issue in a fresh request.</li>
+<li>Do not refresh the canvas.</li>
+<li>Compare the new GitHub state with the visible canvas.</li>
+</ol>
+<p>The canvas should show that its last refresh is older than the source change.</p>
+<hr />
+<h1 id="reconcile-the-projection">Reconcile the projection<a class="headerlink" href="#reconcile-the-projection" title="Permanent link">&para;</a></h1>
+<p>Use the approved refresh capability.</p>
+<p>Confirm:</p>
+<ul>
+<li>the blocker appears in planning state;</li>
+<li>the next action names the owner decision;</li>
+<li>GitHub state and planning state stay distinct;</li>
+<li>the last-refresh time changes.</li>
+</ul>
+<hr />
 <h1 id="lab-result">Lab result<a class="headerlink" href="#lab-result" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Learner-created canvas</li>
 <li>Reviewed state and actions</li>
 <li>Live GitHub issue data</li>
-<li>Human and Copilot updates</li>
-<li>Owner, recovery, and retirement</li>
+<li>A detected and reconciled state mismatch</li>
+<li>Owner, refresh, recovery, and retirement rules</li>
 </ul>
 <p><strong>Stop if live canvas creation is unavailable.</strong></p>
 

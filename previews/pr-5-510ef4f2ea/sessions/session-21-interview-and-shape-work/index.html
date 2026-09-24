@@ -5055,7 +5055,10 @@
 <p><strong>Prerequisites:</strong> Session 20 and working GitHub Copilot access</p>
 <p><strong>Duration:</strong> 3 hours (1 hour trainer content + 2 hours lab)</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Vague requests hide decisions. Learners use the GitHub Copilot app to run a decision-tree interview, review its recommendations, and turn approved answers into a durable decision brief and issue proposal.</p>
+<p>Vague requests hide decisions. Learners install a supplied project skill, use it
+to run a dependency-ordered decision interview, turn approved answers into a
+decision brief and issue proposal, then reopen one branch when a late constraint
+arrives.</p>
 <p>Learners may use an approved, sanitized request from their own work. The fictional Service Request Portal is the supplied training scenario.</p>
 <blockquote>
 <p>[!IMPORTANT]
@@ -5064,22 +5067,26 @@
 <h2 id="learning-outcomes">Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permanent link">&para;</a></h2>
 <p>By the end of this session, learners will be able to:</p>
 <ul>
-<li>Run the <code>grill-me</code> or <code>grilling</code> interview pattern with GitHub Copilot.</li>
+<li>Install and verify the supplied <code>decision-interview</code> project skill.</li>
+<li>Run a dependency-ordered interview with GitHub Copilot.</li>
 <li>Ask only questions whose prerequisites are settled.</li>
 <li>Resolve scope, constraints, success, failure, ownership, and approval.</li>
 <li>Review Copilot recommendations before accepting or revising them.</li>
 <li>Create a reviewed Markdown decision brief in the repository.</li>
 <li>Draft an issue proposal with testable acceptance criteria and a practical definition of done.</li>
+<li>Reopen only the decisions affected by new evidence.</li>
+<li>Verify that the revised brief and issue proposal remain aligned.</li>
 <li>Assign an owner and reviewer before work enters a sprint.</li>
 </ul>
 <h2 id="session-flow">Session flow<a class="headerlink" href="#session-flow" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Vague request
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; GitHub Copilot decision-tree interview
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; human review and decisions
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; Markdown decision brief
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; GitHub issue proposal
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -&gt; acceptance criteria
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -&gt; definition of done
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; project skill installation
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; GitHub Copilot decision interview
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; human review and decisions
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; Markdown decision brief
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -&gt; GitHub issue proposal
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -&gt; acceptance criteria
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  -&gt; definition of done
 </code></pre></div>
 <h2 id="session-structure">Session structure<a class="headerlink" href="#session-structure" title="Permanent link">&para;</a></h2>
 <table>
@@ -5135,6 +5142,7 @@
 <h2 id="boundaries">Boundaries<a class="headerlink" href="#boundaries" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Teach the interview pattern, not skill authoring.</li>
+<li>Use the supplied project skill; learners do not author a new skill in this session.</li>
 <li>Use only approved, sanitized material.</li>
 <li>Treat Copilot questions, recommendations, and drafts as proposals.</li>
 <li>Keep product and approval decisions with named people.</li>

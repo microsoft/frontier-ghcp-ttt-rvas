@@ -5212,7 +5212,10 @@
 </div>
 
 <h2 id="delivery-objective">Delivery objective<a class="headerlink" href="#delivery-objective" title="Permanent link">&para;</a></h2>
-<p>Learners create one useful GitHub Copilot Automation from the manual delivery workflow. They configure the automation in the app, run it once in draft-only mode, inspect its evidence, and decide whether to keep, revise, or disable it.</p>
+<p>Learners create one useful GitHub Copilot Automation from the manual delivery
+workflow. They run it twice in draft-only mode with an approved input change
+between runs, compare the evidence, and decide whether to keep, revise, disable,
+or pause it.</p>
 <p>Use the fictional <strong>Service Request Portal</strong> weekly status workflow. Do not configure enterprise policies or repeat the Session 17 administration material.</p>
 <blockquote>
 <p>[!IMPORTANT]
@@ -5240,12 +5243,12 @@ Verify GitHub Copilot app Automations and GitHub MCP access before the session. 
 <td>Build the draft-only automation contract</td>
 </tr>
 <tr>
-<td>0:30–0:43</td>
-<td>Configure and run one automation</td>
+<td>0:30–0:42</td>
+<td>Configure and run the automation</td>
 </tr>
 <tr>
-<td>0:43–0:53</td>
-<td>Review evidence and decide</td>
+<td>0:42–0:53</td>
+<td>Change an input, rerun, and compare evidence</td>
 </tr>
 <tr>
 <td>0:53–1:00</td>
@@ -5254,7 +5257,9 @@ Verify GitHub Copilot app Automations and GitHub MCP access before the session. 
 </tbody>
 </table>
 <h2 id="current-product-facts-to-verify-before-delivery">Current product facts to verify before delivery<a class="headerlink" href="#current-product-facts-to-verify-before-delivery" title="Permanent link">&para;</a></h2>
-<p>These notes were checked against official GitHub documentation on <strong>September 23, 2026</strong>. Recheck them before teaching because feature names, eligibility, billing, and controls can change.</p>
+<p>These notes were checked against official GitHub documentation on
+<strong>September 24, 2026</strong>. Recheck them before teaching because feature names,
+eligibility, billing, and controls can change.</p>
 <ul>
 <li>Copilot automations can save recurring agent tasks and run them on demand or from supported triggers. The GitHub Copilot app documentation describes local and cloud automations.</li>
 <li>Cloud automations depend on Copilot cloud agent access and organization or repository settings. The available controls depend on the learner's plan, account, repository, and administrator decisions.</li>
@@ -5348,14 +5353,17 @@ Verify GitHub Copilot app Automations and GitHub MCP access before the session. 
 <p>Use the starter files and an approved GitHub Copilot surface.</p>
 <ol>
 <li>Show the incomplete contract template.</li>
-<li>Open the Automations area and create a draft-only automation.</li>
+<li>Open <strong>Automations</strong> and create a manual, local, draft-only automation.</li>
 <li>Grant the minimum GitHub read tools.</li>
-<li>Run the automation once against the training repository and synthetic inputs.</li>
-<li>Export or record the run evidence.</li>
-<li>Compare the draft with <a href="../../../sessions/session-25-automate-delivery-follow-up/lab/solution/run-output/"><code>lab/solution/run-output.md</code></a>.</li>
-<li>Record the decision and calculate useful time saved.</li>
+<li>Run it against the first input version.</li>
+<li>Review the exception for the missing owner.</li>
+<li>Apply <a href="../../../sessions/session-25-automate-delivery-follow-up/lab/starter/approved-input-change/"><code>lab/starter/approved-input-change.md</code></a>.</li>
+<li>Run the same automation again.</li>
+<li>Compare both evidence packets and record the decision.</li>
 </ol>
-<p>Run one automation test only after the access, policy, data, and meter preflight passes. Stop after 12 minutes. If a stop condition fires, preserve the evidence and record <strong>Pause</strong>.</p>
+<p>Run only the two approved manual tests after preflight. Stop either run after
+12 minutes. If a stop condition fires, preserve the evidence and record
+<strong>Pause</strong>.</p>
 <h2 id="useful-time-saved">Useful time saved<a class="headerlink" href="#useful-time-saved" title="Permanent link">&para;</a></h2>
 <p>Use a plain calculation:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>useful time saved =
@@ -5390,7 +5398,8 @@ Verify GitHub Copilot app Automations and GitHub MCP access before the session. 
 </ul>
 <p>The optional Azure Boards route may prepare a draft update or hand approved implementation work to a linked GitHub repository. It must not turn the session into an Azure Boards product tour.</p>
 <h2 id="lab-handoff">Lab handoff<a class="headerlink" href="#lab-handoff" title="Permanent link">&para;</a></h2>
-<p>Learners submit one automation contract, one GitHub Copilot-reviewed evidence packet, one approval record, and one stakeholder-ready update. The submission must show how GitHub Copilot drafted, inspected, or reviewed the work.</p>
+<p>Learners submit one automation contract, two run evidence packets, one comparison
+and approval record, and one stakeholder-ready update.</p>
 
 
 

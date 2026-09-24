@@ -4913,6 +4913,7 @@
 <li>Show an approved public status for facilities and equipment requests.</li>
 <li>Show the source last updated time.</li>
 <li>Show a safe summary when one is available.</li>
+<li>Preserve the detailed status reason for authorized support staff.</li>
 <li>Apply safe fallback behavior for unmapped or stale states.</li>
 <li>Enforce requester-only access.</li>
 </ul>
@@ -4929,6 +4930,10 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A signed-in requester can view the approved public status and last updated time for each facilities or equipment request they submitted.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A request with an approved safe summary shows that summary without internal notes, agent names, or security details.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A user who does not own a request cannot see its status, timestamp, summary, or identifying details.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A requester cannot see the detailed status reason, internal notes, queue
+      names, staff identities, or escalation details.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> An authorized support user can view the detailed status reason through the
+      existing support view.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> An internal state without an approved public mapping shows <code>Status unavailable</code> and the standard contact route.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A request older than the approved freshness threshold shows <code>Update pending</code> and does not present the existing state as current.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A request with no safe summary still shows its public status and last updated time without an empty summary panel.</li>
@@ -4989,6 +4994,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The service operations manager approves the public state mapping and fallback wording.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The privacy reviewer confirms requester-only access and the visible field set.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Supported, unmapped, stale, empty-summary, and unauthorized states are covered.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requester and support visibility boundaries have focused evidence.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The portal guidance explains the public statuses and contact route.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No notification channel or additional request type entered the change.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The delivery reviewer confirms that the Copilot draft matches the approved brief.</li>

@@ -4969,6 +4969,7 @@
 <li>A public status mapped from the existing internal state.</li>
 <li>Last updated time.</li>
 <li>A short summary approved for requester visibility.</li>
+<li>A detailed status reason for authorized support staff.</li>
 <li>Safe fallback behavior for stale or unmapped states.</li>
 </ul>
 <h3 id="out-of-scope">Out of scope<a class="headerlink" href="#out-of-scope" title="Permanent link">&para;</a></h3>
@@ -5000,8 +5001,8 @@
 <td>Portal team</td>
 </tr>
 <tr>
-<td>Requester-only access</td>
-<td>Every status lookup must enforce the existing ownership rule</td>
+<td>Role-based visibility</td>
+<td>Requesters see public fields; authorized support staff may see the detailed status reason</td>
 <td>Privacy reviewer</td>
 </tr>
 <tr>
@@ -5072,6 +5073,11 @@
 <td>Show the public status and omit the summary block</td>
 <td>Empty-state test</td>
 </tr>
+<tr>
+<td>Requester asks for support-only detail</td>
+<td>Return no internal reason, notes, queue names, staff identities, or escalation details</td>
+<td>Role-boundary test</td>
+</tr>
 </tbody>
 </table>
 <h2 id="decisions">Decisions<a class="headerlink" href="#decisions" title="Permanent link">&para;</a></h2>
@@ -5101,6 +5107,12 @@
 <td>Visible fields</td>
 <td>Public status, updated time, safe summary</td>
 <td>Enough context without exposing internal work</td>
+<td>Portal product owner</td>
+</tr>
+<tr>
+<td>Support-only detail</td>
+<td>Detailed status reason remains limited to the authorized support view</td>
+<td>Support needs diagnostic context that requesters must not receive</td>
 <td>Portal product owner</td>
 </tr>
 <tr>
@@ -5170,7 +5182,9 @@
 <h2 id="review-record">Review record<a class="headerlink" href="#review-record" title="Permanent link">&para;</a></h2>
 <p><strong>Request owner decision:</strong> Approved with the stale-threshold question assigned.
 <strong>Copilot draft checked against confirmed answers:</strong> Yes.
-<strong>Reviewer notes:</strong> Scope and failure behavior are clear enough for sprint planning.
+<strong>Reviewer notes:</strong> The late visibility constraint was resolved without changing
+the approved first-release scope. Role-specific behavior is clear enough for
+sprint planning.
 <strong>Next action and owner:</strong> Portal product owner creates the work item; service operations manager confirms the threshold before release.</p>
 
 

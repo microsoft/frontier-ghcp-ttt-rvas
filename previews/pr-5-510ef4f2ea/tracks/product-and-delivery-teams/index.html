@@ -699,6 +699,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#capability-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Capability setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-the-training-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Open the training project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inspect-installed-customizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inspect installed customizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verify-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Verify skills
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verify-github-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Verify GitHub MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verify-session-specific-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Verify session-specific capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-azure-boards-route" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4964,6 +5036,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#capability-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Capability setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-the-training-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Open the training project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inspect-installed-customizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inspect installed customizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verify-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Verify skills
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verify-github-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Verify GitHub MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verify-session-specific-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Verify session-specific capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-azure-boards-route" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5098,36 +5242,128 @@
 <p><strong>GitHub Copilot access is required for Sessions 20–25.</strong> Learners without access
 should not take this track. Stop and reschedule their training after access is
 available.</p>
+<h2 id="capability-setup">Capability setup<a class="headerlink" href="#capability-setup" title="Permanent link">&para;</a></h2>
+<p>Complete this setup before Session 20. Recheck the relevant capability before each
+later session because organizational policy can change what the app exposes.</p>
+<h3 id="1-open-the-training-project">1. Open the training project<a class="headerlink" href="#1-open-the-training-project" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Sign in to the GitHub Copilot app.</li>
+<li>Add or open the approved training repository under <strong>Projects</strong>.</li>
+<li>Start an interactive session.</li>
+<li>Ask Copilot to read one known file from the repository.</li>
+<li>Stop if it cannot read the approved project.</li>
+</ol>
+<h3 id="2-inspect-installed-customizations">2. Inspect installed customizations<a class="headerlink" href="#2-inspect-installed-customizations" title="Permanent link">&para;</a></h3>
+<p>Open <strong>Customize</strong>, then <strong>Installed</strong>. Record the available:</p>
+<ul>
+<li>skills;</li>
+<li>MCP servers;</li>
+<li>plugins;</li>
+<li>canvases.</li>
+</ul>
+<p>Use only capabilities approved for the training repository.</p>
+<h3 id="3-verify-skills">3. Verify skills<a class="headerlink" href="#3-verify-skills" title="Permanent link">&para;</a></h3>
+<p>Sessions 23 and 24 use the built-in <code>/create-canvas</code> and <code>/orchestrate</code> skills.
+Type <code>/</code> in a session and confirm that both commands appear before those sessions.
+They are built-in app skills, so do not install look-alike community skills.</p>
+<p>Session 21 supplies a project skill under
+<code>.github/skills/decision-interview/SKILL.md</code>. After copying it into the training
+repository:</p>
+<ol>
+<li>commit the skill;</li>
+<li>open a new app session for the project;</li>
+<li>open <strong>Customize</strong> → <strong>Skills</strong> → <strong>Installed</strong>;</li>
+<li>confirm that <code>decision-interview</code> appears;</li>
+<li>run <code>/decision-interview</code> with a short test request.</li>
+</ol>
+<p>Copilot CLI users can verify the same project skill with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/skills reload
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/skills info decision-interview
+</code></pre></div>
+<h3 id="4-verify-github-mcp">4. Verify GitHub MCP<a class="headerlink" href="#4-verify-github-mcp" title="Permanent link">&para;</a></h3>
+<p>Sessions 22–25 require GitHub repository tools.</p>
+<p>In the app:</p>
+<ol>
+<li>open <strong>Customize</strong> → <strong>MCP</strong> → <strong>Installed</strong>;</li>
+<li>confirm that the approved GitHub MCP connection is available;</li>
+<li>start a session and ask Copilot to list the available GitHub tools;</li>
+<li>test one read against the training repository;</li>
+<li>do not continue to a write lab until the read succeeds.</li>
+</ol>
+<p>GitHub MCP is built into Copilot CLI. CLI users can inspect it with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/mcp list
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/mcp show github
+</code></pre></div>
+<p>If an additional MCP server is required, install it through <strong>Customize</strong> → <strong>MCP</strong>
+or <code>/mcp add</code> using the organization-approved server definition. Do not paste
+personal access tokens into prompts or repository files.</p>
+<h3 id="5-verify-session-specific-capabilities">5. Verify session-specific capabilities<a class="headerlink" href="#5-verify-session-specific-capabilities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th>Required capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>App project and repository reads</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Project skill <code>decision-interview</code></td>
+</tr>
+<tr>
+<td>22</td>
+<td>GitHub MCP issue reads and writes</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Built-in <code>/create-canvas</code> and GitHub MCP reads</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Built-in <code>/orchestrate</code>, child-session steering, and GitHub MCP</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Automations and GitHub MCP</td>
+</tr>
+</tbody>
+</table>
+<p>When a required capability is unavailable, stop that lab. Do not replace a live
+capability with role-play or claim that a static artifact proves the workflow ran.</p>
 <h2 id="optional-azure-boards-route">Optional Azure Boards route<a class="headerlink" href="#optional-azure-boards-route" title="Permanent link">&para;</a></h2>
 <p>Azure Boards is an optional system-of-record route. <strong>GitHub Copilot remains the learning focus.</strong> Learners use Copilot for interviewing, planning, delegation, review, and automation while Azure Boards retains approved backlog state.</p>
 <p>Trainers can seed the synthetic Service Request Portal backlog with <a href="../../scripts/azure-boards/seed.py"><code>../scripts/azure-boards/seed.py</code></a>, check it with <a href="../../scripts/azure-boards/verify.py"><code>verify.py</code></a>, and clean it up with <a href="../../scripts/azure-boards/reset.py"><code>reset.py</code></a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>scripts/azure-boards/seed.py<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--team<span class="w"> </span>TEAM<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--process<span class="w"> </span>Scrum<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--area-path<span class="w"> </span><span class="s1">'PROJECT\AREA'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--current-iteration<span class="w"> </span><span class="s1">'PROJECT\ITERATION_CURRENT'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>--future-iteration<span class="w"> </span><span class="s1">'PROJECT\ITERATION_FUTURE'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span>--yes
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>python<span class="w"> </span>scripts/azure-boards/verify.py<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>python<span class="w"> </span>scripts/azure-boards/reset.py<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span>--dry-run
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>python<span class="w"> </span>scripts/azure-boards/reset.py<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span>--yes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>scripts/azure-boards/seed.py<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--team<span class="w"> </span>TEAM<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--process<span class="w"> </span>Scrum<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--area-path<span class="w"> </span><span class="s1">'PROJECT\AREA'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--current-iteration<span class="w"> </span><span class="s1">'PROJECT\ITERATION_CURRENT'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>--future-iteration<span class="w"> </span><span class="s1">'PROJECT\ITERATION_FUTURE'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span>--yes
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>python<span class="w"> </span>scripts/azure-boards/verify.py<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>python<span class="w"> </span>scripts/azure-boards/reset.py<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span>--dry-run
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>python<span class="w"> </span>scripts/azure-boards/reset.py<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span>--organization<span class="w"> </span>https://dev.azure.com/ORG<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span>--state-file<span class="w"> </span>.azure-boards-seed-state.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span>--yes
 </code></pre></div>
 <p>Pass the real values only at the command line. Do not add accounts, credentials, tokens, or live work data to this repository.</p>
 <p>The tools support Agile and Scrum. They stop with a clear error for Basic, CMMI, or custom processes. They also check that the project, team, area path, and both iteration paths already exist and match the command. <strong>They verify project-level configuration. They do not create it.</strong></p>
@@ -5231,12 +5467,12 @@ available.</p>
 <h2 id="learning-outcomes">Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permanent link">&para;</a></h2>
 <p>By completing this track, learners will be able to:</p>
 <ol>
-<li>Work confidently in the GitHub Copilot app with repository context.</li>
-<li>Turn an interview into a reviewed Markdown decision brief.</li>
-<li>Use GitHub MCP to create and verify an approved issue plan.</li>
-<li>Create a planning canvas and keep it aligned with GitHub state.</li>
-<li>Split a parent objective into bounded workstreams and review each result.</li>
-<li>Run one draft-only Automation with explicit evidence and stop conditions.</li>
+<li>Compare unscoped and repository-grounded Copilot work.</li>
+<li>Install and use a project skill to create and revise a decision brief.</li>
+<li>Use GitHub MCP to preview, create, verify, and correct an issue plan.</li>
+<li>Create a planning canvas and reconcile it after GitHub state changes.</li>
+<li>Use built-in orchestration to supervise, redirect, and review child sessions.</li>
+<li>Run and compare two draft-only Automation runs with explicit evidence.</li>
 <li>Decide whether GitHub or Azure Boards remains the authoritative planning system.</li>
 </ol>
 <h2 id="trainer-guidance">Trainer guidance<a class="headerlink" href="#trainer-guidance" title="Permanent link">&para;</a></h2>

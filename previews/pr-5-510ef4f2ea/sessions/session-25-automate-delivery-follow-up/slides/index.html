@@ -4886,7 +4886,7 @@
 </table>
 <p>Use the lowest level that still saves useful time.</p>
 <hr />
-<h1 id="create-one-draft-only-automation">Create one draft-only automation<a class="headerlink" href="#create-one-draft-only-automation" title="Permanent link">&para;</a></h1>
+<h1 id="create-one-manual-draft-only-automation">Create one manual, draft-only automation<a class="headerlink" href="#create-one-manual-draft-only-automation" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Retrieve approved issue state.</li>
 <li>Read the synthetic delivery inputs.</li>
@@ -4894,6 +4894,7 @@
 <li>Return run evidence.</li>
 <li>Do not publish or change work items.</li>
 </ul>
+<p>Use a <strong>Manual</strong> trigger and keep <strong>Run in cloud</strong> off for the local-file lab.</p>
 <hr />
 <h1 id="service-request-portal">Service Request Portal<a class="headerlink" href="#service-request-portal" title="Permanent link">&para;</a></h1>
 <p>Every Friday, prepare an internal status draft from:</p>
@@ -4917,6 +4918,50 @@
 <h1 id="exceptions-are-evidence">Exceptions are evidence<a class="headerlink" href="#exceptions-are-evidence" title="Permanent link">&para;</a></h1>
 <p>One source record has no owner. The run must exclude it, explain why, and name the escalation path.</p>
 <p>Silently repairing or dropping a record fails the contract.</p>
+<hr />
+<h1 id="rerun-after-an-approved-input-change">Rerun after an approved input change<a class="headerlink" href="#rerun-after-an-approved-input-change" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Run 1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  → exclude SR-1048: missing owner
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  → review evidence
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  → apply approved source update
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  → run the same automation again
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  → compare evidence
+</code></pre></div>
+<p>The automation boundary stays fixed. Only the approved input changes.</p>
+<hr />
+<h1 id="compare-the-two-runs">Compare the two runs<a class="headerlink" href="#compare-the-two-runs" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Run 1</th>
+<th>Run 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accepted records</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Rejected records</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blocked records</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Prohibited writes</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>The second run must explain why the record changed classification.</p>
 <hr />
 <h1 id="decide">Decide<a class="headerlink" href="#decide" title="Permanent link">&para;</a></h1>
 <table>
@@ -4944,12 +4989,12 @@
 <p>Record the reason, reviewer, time, and next action.</p>
 <hr />
 <h1 id="measure-useful-time-saved">Measure useful time saved<a class="headerlink" href="#measure-useful-time-saved" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>manual baseline
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- run time
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- review time
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- rework
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- allocated overhead
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>= useful time saved
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>manual baseline
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- run time
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- review time
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- rework
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- allocated overhead
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>= useful time saved
 </code></pre></div>
 <p>The reference run: <code>42 - 8 - 12 - 4 - 3 = 15 minutes</code></p>
 <hr />
@@ -4975,11 +5020,13 @@
 <h1 id="lab-deliverable">Lab deliverable<a class="headerlink" href="#lab-deliverable" title="Permanent link">&para;</a></h1>
 <ol>
 <li>Automation contract</li>
-<li>GitHub Copilot-reviewed evidence packet</li>
-<li>Approval record</li>
+<li>Two reviewed evidence packets</li>
+<li>Run comparison and approval record</li>
 <li>Stakeholder-ready update</li>
+<li>System-of-record decision</li>
 </ol>
-<p>Run one live draft-only automation. Review its evidence, then choose <strong>keep</strong>, <strong>revise</strong>, or <strong>disable</strong>.</p>
+<p>Run the same draft-only automation twice. Review both results, then choose
+<strong>keep</strong>, <strong>revise</strong>, <strong>disable</strong>, or <strong>pause</strong>.</p>
 
 
 

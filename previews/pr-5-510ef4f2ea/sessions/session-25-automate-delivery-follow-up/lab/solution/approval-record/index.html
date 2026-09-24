@@ -4779,10 +4779,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decision-reason" class="md-nav__link">
+  <a href="#run-comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decision reason
+        Run comparison
       
     </span>
   </a>
@@ -4840,8 +4840,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Run ID</td>
-<td><code>SRP-WEEKLY-2026-09-18-COPILOT-01</code></td>
+<td>Run IDs</td>
+<td><code>SRP-WEEKLY-2026-09-18-COPILOT-01</code>, <code>SRP-WEEKLY-2026-09-18-COPILOT-02</code></td>
 </tr>
 <tr>
 <td>Contract version</td>
@@ -4857,7 +4857,7 @@
 </tr>
 <tr>
 <td>Decision</td>
-<td>Accept</td>
+<td>Keep as manual, draft-only automation</td>
 </tr>
 </tbody>
 </table>
@@ -4871,10 +4871,14 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The GitHub Copilot surface and observed usage are recorded.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The exception has an owner and next action.</li>
 </ul>
-<h2 id="decision-reason">Decision reason<a class="headerlink" href="#decision-reason" title="Permanent link">&para;</a></h2>
-<p>The packet accounts for all eight source records, excludes the record that lacks an owner, and derives each status count from the seven accepted records. GitHub Copilot reviewed the prepared evidence and produced no external side effect.</p>
+<h2 id="run-comparison">Run comparison<a class="headerlink" href="#run-comparison" title="Permanent link">&para;</a></h2>
+<p>The first run accepted seven records and excluded <code>SR-1048</code> because it had no
+owner. After the approved source update, the second run accepted all eight records,
+classified <code>SR-1048</code> as blocked, and produced no exception.</p>
+<p>Both runs stayed inside the same project, tool, output, and publication boundary.</p>
 <h2 id="required-correction-or-condition">Required correction or condition<a class="headerlink" href="#required-correction-or-condition" title="Permanent link">&para;</a></h2>
-<p>Keep the draft internal. The operations lead must assign an owner to <code>SR-1048</code> before the record can enter a later run.</p>
+<p>Keep every output internal until a person approves stakeholder preparation. Do not
+schedule the automation until the owner approves the cadence and operating budget.</p>
 <h2 id="next-action">Next action<a class="headerlink" href="#next-action" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -4894,7 +4898,7 @@
 </tr>
 <tr>
 <td>Stop status</td>
-<td>Review complete; automation scheduling remains stopped</td>
+<td>Two manual tests complete; scheduling remains stopped</td>
 </tr>
 </tbody>
 </table>

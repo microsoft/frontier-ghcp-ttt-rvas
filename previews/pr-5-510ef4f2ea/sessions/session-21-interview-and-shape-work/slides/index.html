@@ -4786,9 +4786,11 @@
 <h1 id="github-copilot-is-required">GitHub Copilot is required<a class="headerlink" href="#github-copilot-is-required" title="Permanent link">&para;</a></h1>
 <p>Before the session:</p>
 <ul>
-<li>Open an approved GitHub Copilot surface.</li>
-<li>Run one prompt and one follow-up.</li>
-<li>Confirm that <code>grill-me</code>, <code>grilling</code>, or the supplied interview prompt works.</li>
+<li>Copy the supplied project skill to
+  <code>.github/skills/decision-interview/SKILL.md</code>.</li>
+<li>Start a new project session.</li>
+<li>Confirm <code>decision-interview</code> under <strong>Customize</strong> → <strong>Skills</strong>.</li>
+<li>Run <code>/decision-interview</code> with the short test request.</li>
 </ul>
 <p><strong>Stop and resolve access if any check fails.</strong></p>
 <hr />
@@ -4801,12 +4803,13 @@
 <hr />
 <h1 id="the-shaping-flow">The shaping flow<a class="headerlink" href="#the-shaping-flow" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Vague request
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; GitHub Copilot decision-tree interview
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; human decisions
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; Markdown decision brief
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; GitHub issue proposal
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -&gt; acceptance criteria
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -&gt; definition of done
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; project skill installation
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; GitHub Copilot decision interview
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; human decisions
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; Markdown decision brief
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -&gt; GitHub issue proposal
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -&gt; acceptance criteria
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  -&gt; definition of done
 </code></pre></div>
 <p>Do not jump from one sentence to an issue template.</p>
 <hr />
@@ -4898,6 +4901,25 @@
 <p>Compare the draft with the approved brief.</p>
 <p>Session 22 creates the approved issues through GitHub MCP.</p>
 <hr />
+<h1 id="reopen-only-the-affected-branch">Reopen only the affected branch<a class="headerlink" href="#reopen-only-the-affected-branch" title="Permanent link">&para;</a></h1>
+<p>Late evidence changes requester and support visibility.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Approved brief
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  + new visibility constraint
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  → reopen visibility decisions
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  → update affected criteria
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  → preserve unrelated decisions
+</code></pre></div>
+<p>Do not restart the interview or rewrite settled scope without a reason.</p>
+<hr />
+<h1 id="verify-in-a-fresh-session">Verify in a fresh session<a class="headerlink" href="#verify-in-a-fresh-session" title="Permanent link">&para;</a></h1>
+<p>Give a new session only:</p>
+<ul>
+<li>the revised decision brief;</li>
+<li>the revised issue proposal.</li>
+</ul>
+<p>Ask it to find contradictions, unresolved owners, and acceptance criteria with no
+source decision.</p>
+<hr />
 <h1 id="acceptance-criteria-describe-evidence">Acceptance criteria describe evidence<a class="headerlink" href="#acceptance-criteria-describe-evidence" title="Permanent link">&para;</a></h1>
 <p>Weak:</p>
 <blockquote>
@@ -4944,9 +4966,11 @@
 <hr />
 <h1 id="lab-deliverables">Lab deliverables<a class="headerlink" href="#lab-deliverables" title="Permanent link">&para;</a></h1>
 <ol>
-<li>A <strong>reviewed decision brief</strong>.</li>
-<li>A <strong>GitHub issue proposal</strong> with acceptance criteria and definition of done.</li>
-<li>A <strong>Copilot interview record</strong> that shows the rounds and owner decisions.</li>
+<li>The installed <code>decision-interview</code> project skill.</li>
+<li>A <strong>Copilot interview record</strong> with the reopened branch.</li>
+<li>A revised <strong>decision brief</strong>.</li>
+<li>An aligned <strong>GitHub issue proposal</strong>.</li>
+<li>A fresh-session readiness result.</li>
 </ol>
 <p>The request owner approves the brief. A delivery reviewer checks readiness.</p>
 <hr />

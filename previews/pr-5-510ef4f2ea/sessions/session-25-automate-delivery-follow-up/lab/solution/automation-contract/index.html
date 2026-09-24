@@ -4979,11 +4979,11 @@
 </tr>
 <tr>
 <td>Cadence</td>
-<td>Weekly</td>
+<td>Weekly after separate scheduling approval</td>
 </tr>
 <tr>
 <td>Status</td>
-<td>Approved for GitHub Copilot review and draft-only tests</td>
+<td>Approved for two manual, draft-only test runs</td>
 </tr>
 </tbody>
 </table>
@@ -5045,7 +5045,7 @@
 </table>
 <h2 id="allowed-inputs">Allowed inputs<a class="headerlink" href="#allowed-inputs" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-25-automate-delivery-follow-up/lab/starter/synthetic-service-requests.csv"><code>synthetic-service-requests.csv</code></a>, classified as synthetic. Each accepted record must contain request ID, category, state, owner alias, due date, and summary.</li>
+<li><code>synthetic-service-requests.csv</code>, classified as synthetic. Each accepted record must contain request ID, category, state, owner alias, due date, and summary.</li>
 <li><a href="../../../../../sessions/session-25-automate-delivery-follow-up/lab/starter/synthetic-change-log/"><code>synthetic-change-log.md</code></a>, classified as synthetic and limited to the reporting period.</li>
 <li>This contract.</li>
 </ol>
@@ -5090,7 +5090,7 @@
 </tr>
 <tr>
 <td>Budget or run limit</td>
-<td>One automation test and 12 minutes</td>
+<td>Two manual test runs, maximum 12 minutes each</td>
 </tr>
 <tr>
 <td>Observer</td>
@@ -5103,7 +5103,9 @@
 </tbody>
 </table>
 <h2 id="stop-guard">Stop guard<a class="headerlink" href="#stop-guard" title="Permanent link">&para;</a></h2>
-<p>Stop when an input is outside the allowed list, required data is missing, a tool or side effect exceeds the contract, the meter is unavailable, the run reaches 12 minutes, or the owner cannot review the result.</p>
+<p>Stop when an input is outside the allowed list, required data is missing, a tool
+or side effect exceeds the contract, the meter is unavailable, either run reaches
+12 minutes, or the owner cannot review the result.</p>
 <h2 id="recovery-procedure">Recovery procedure<a class="headerlink" href="#recovery-procedure" title="Permanent link">&para;</a></h2>
 <p>Stop the automation and preserve its prompt, output, and evidence packet. The product owner assigns the exception, keeps stakeholder distribution on hold, and returns to the last approved operating method for urgent work. The delivery lead approves any restart.</p>
 <h2 id="change-control">Change control<a class="headerlink" href="#change-control" title="Permanent link">&para;</a></h2>

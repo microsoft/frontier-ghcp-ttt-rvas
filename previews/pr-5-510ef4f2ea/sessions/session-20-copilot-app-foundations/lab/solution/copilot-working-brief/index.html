@@ -4812,6 +4812,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#relevant-github-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4855,6 +4866,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#revision-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fresh-session-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fresh-session verification
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4878,7 +4911,10 @@
 <h2 id="initiative">Initiative<a class="headerlink" href="#initiative" title="Permanent link">&para;</a></h2>
 <p>Make Service Request Portal status information understandable without exposing internal service details.</p>
 <h2 id="affected-users">Affected users<a class="headerlink" href="#affected-users" title="Permanent link">&para;</a></h2>
-<p>Employees who submitted facilities or equipment requests.</p>
+<ul>
+<li>Employees who submitted facilities or equipment requests.</li>
+<li>Support staff who answer status questions.</li>
+</ul>
 <h2 id="known-facts">Known facts<a class="headerlink" href="#known-facts" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -4904,6 +4940,14 @@
 <td>The service system remains the source of record.</td>
 <td><a href="../../../../../sessions/session-20-copilot-app-foundations/lab/starter/initiative-overview/"><code>initiative-overview.md</code></a>, Known constraints</td>
 </tr>
+<tr>
+<td>Email and chat notifications are outside the first release.</td>
+<td><a href="../../../../../sessions/session-20-copilot-app-foundations/lab/starter/late-evidence/"><code>late-evidence.md</code></a>, approved additions</td>
+</tr>
+<tr>
+<td>No approved baseline exists for status-related contacts.</td>
+<td><a href="../../../../../sessions/session-20-copilot-app-foundations/lab/starter/late-evidence/"><code>late-evidence.md</code></a>, approved additions</td>
+</tr>
 </tbody>
 </table>
 <h2 id="assumptions-and-unknowns">Assumptions and unknowns<a class="headerlink" href="#assumptions-and-unknowns" title="Permanent link">&para;</a></h2>
@@ -4917,17 +4961,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Whether outbound notifications belong in the first release</td>
-<td>Unknown</td>
-<td>Product owner</td>
-</tr>
-<tr>
 <td>Which public status labels users understand</td>
 <td>Unknown</td>
 <td>Product owner with service operations</td>
 </tr>
+<tr>
+<td>Baseline volume for status-related contacts</td>
+<td>Unknown</td>
+<td>Delivery lead</td>
+</tr>
 </tbody>
 </table>
+<h2 id="non-goals">Non-goals<a class="headerlink" href="#non-goals" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Email and chat notifications.</li>
+<li>Changes to the internal service workflow.</li>
+<li>Exposure of internal notes or staff-only details.</li>
+</ul>
 <h2 id="relevant-github-artifacts">Relevant GitHub artifacts<a class="headerlink" href="#relevant-github-artifacts" title="Permanent link">&para;</a></h2>
 <ul>
 <li>This working brief</li>
@@ -4938,12 +4988,37 @@
 <h2 id="available-copilot-capabilities">Available Copilot capabilities<a class="headerlink" href="#available-copilot-capabilities" title="Permanent link">&para;</a></h2>
 <p>Record the capabilities visible in the learner's approved environment. Do not assume that every installation exposes the same skills, agents, MCP servers, canvases, or automations.</p>
 <h2 id="next-decision">Next decision<a class="headerlink" href="#next-decision" title="Permanent link">&para;</a></h2>
-<p>Decide whether the first release includes outbound notifications.</p>
+<p>Approve the public status vocabulary for the first release.</p>
 <h2 id="ownership">Ownership<a class="headerlink" href="#ownership" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Decision owner:</strong> Product owner</li>
 <li><strong>Reviewer:</strong> Delivery lead</li>
 <li><strong>Review result:</strong> Ready</li>
+</ul>
+<h2 id="revision-record">Revision record<a class="headerlink" href="#revision-record" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Sections changed</th>
+<th>Contradiction resolved</th>
+<th>Commit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../../../sessions/session-20-copilot-app-foundations/lab/starter/late-evidence/"><code>late-evidence.md</code></a></td>
+<td>Users, facts, unknowns, non-goals, next decision</td>
+<td>Notifications are no longer an open decision</td>
+<td><code>Update working brief with approved evidence</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fresh-session-verification">Fresh-session verification<a class="headerlink" href="#fresh-session-verification" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Session used only this brief:</strong> Yes</li>
+<li><strong>Missing or ambiguous state:</strong> Public status vocabulary remains an owner decision.</li>
+<li><strong>Final result:</strong> Ready for the Session 21 decision interview.</li>
 </ul>
 
 

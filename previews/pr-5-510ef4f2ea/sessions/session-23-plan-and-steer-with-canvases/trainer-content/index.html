@@ -4586,10 +4586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-update" class="md-nav__link">
+  <a href="#demo-update-and-drift" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Demo update
+        Demo update and drift
       
     </span>
   </a>
@@ -4608,10 +4608,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#product-notes-verified-september-23-2026" class="md-nav__link">
+  <a href="#product-notes-verified-september-24-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Product notes verified September 23, 2026
+        Product notes verified September 24, 2026
       
     </span>
   </a>
@@ -5042,10 +5042,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-update" class="md-nav__link">
+  <a href="#demo-update-and-drift" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Demo update
+        Demo update and drift
       
     </span>
   </a>
@@ -5064,10 +5064,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#product-notes-verified-september-23-2026" class="md-nav__link">
+  <a href="#product-notes-verified-september-24-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Product notes verified September 23, 2026
+        Product notes verified September 24, 2026
       
     </span>
   </a>
@@ -5115,7 +5115,9 @@
 
 <p><strong>Duration:</strong> 1 hour</p>
 <h2 id="delivery-objective">Delivery objective<a class="headerlink" href="#delivery-objective" title="Permanent link">&para;</a></h2>
-<p>Learners create a useful planning canvas from a plain-language request. They should understand the state, actions, and ownership well enough to reject unnecessary or unsafe capabilities.</p>
+<p>Learners create a project-scoped planning canvas, review the generated extension,
+and learn that a canvas is a projection of GitHub state rather than the source of
+record.</p>
 <h2 id="one-hour-plan">One-hour plan<a class="headerlink" href="#one-hour-plan" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5143,7 +5145,7 @@
 </tr>
 <tr>
 <td>0:43-0:53</td>
-<td>Load GitHub issues and verify updates</td>
+<td>Create drift and reconcile the canvas</td>
 </tr>
 <tr>
 <td>0:53-1:00</td>
@@ -5155,6 +5157,8 @@
 <ul>
 <li>Confirm that every learner has the GitHub Copilot app.</li>
 <li>Confirm that <code>/create-canvas</code> is available.</li>
+<li>Open <strong>Customize</strong> → <strong>Skills</strong> → <strong>Installed</strong> and show that <code>create-canvas</code> is
+  a built-in skill.</li>
 <li>Confirm that the learner can read the Session 22 issues through GitHub MCP.</li>
 <li>Use a training repository and synthetic issue data.</li>
 <li>Name the canvas owner and reviewer.</li>
@@ -5212,18 +5216,20 @@ Stop if canvas creation, GitHub reads, or the required canvas actions are unavai
 <li>Can the owner recover after an interrupted update?</li>
 <li>Is there a clear reason to retire the canvas?</li>
 </ol>
-<h2 id="demo-update">Demo update<a class="headerlink" href="#demo-update" title="Permanent link">&para;</a></h2>
+<h2 id="demo-update-and-drift">Demo update and drift<a class="headerlink" href="#demo-update-and-drift" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Ask Copilot to retrieve the Session 22 issues through GitHub MCP.</li>
 <li>Load the approved issue fields into the canvas.</li>
 <li>Change one status through the visible controls.</li>
 <li>Ask Copilot to record one decision.</li>
-<li>Read the GitHub issue and canvas state again.</li>
-<li>Explain any intentional difference between planning state and repository state.</li>
+<li>Add the lab's reviewed blocker comment to one GitHub issue through MCP.</li>
+<li>Read the issue again without refreshing the canvas.</li>
+<li>Show the mismatch and last-refresh time.</li>
+<li>Refresh the canvas and verify the blocker and next action.</li>
 </ol>
 <h2 id="optional-prepared-route">Optional prepared route<a class="headerlink" href="#optional-prepared-route" title="Permanent link">&para;</a></h2>
 <p>The previous release-readiness canvas exercise remains in <code>lab/optional-prepared-canvas/</code>. Use it when the audience needs deeper guardrail practice after creating the main canvas.</p>
-<h2 id="product-notes-verified-september-23-2026">Product notes verified September 23, 2026<a class="headerlink" href="#product-notes-verified-september-23-2026" title="Permanent link">&para;</a></h2>
+<h2 id="product-notes-verified-september-24-2026">Product notes verified September 24, 2026<a class="headerlink" href="#product-notes-verified-september-24-2026" title="Permanent link">&para;</a></h2>
 <p>Check current canvas availability, <code>/create-canvas</code>, Customize controls, capability review, and persistence behavior before delivery.</p>
 <p>Official references:</p>
 <ul>

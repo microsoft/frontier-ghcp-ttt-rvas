@@ -4779,7 +4779,9 @@
 
 
 <h1 id="reference-solution">Reference solution<a class="headerlink" href="#reference-solution" title="Permanent link">&para;</a></h1>
-<p>This solution uses <strong>GitHub Copilot</strong> to review the prepared synthetic evidence. It treats the weekly status workflow as <strong>A1: Draft</strong>, excludes one invalid source record, and records a human acceptance decision.</p>
+<p>This solution treats the weekly status workflow as draft only. The first manual run
+excludes one invalid source record. An approved input change fixes the record, and
+the same automation runs again so the reviewer can compare evidence.</p>
 <table>
 <thead>
 <tr>
@@ -4799,6 +4801,14 @@
 <tr>
 <td><a href="../../../../sessions/session-25-automate-delivery-follow-up/lab/solution/run-output/"><code>run-output.md</code></a></td>
 <td>Reviewed status draft</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-25-automate-delivery-follow-up/lab/solution/run-evidence-2.json"><code>run-evidence-2.json</code></a></td>
+<td>Evidence after the approved input change</td>
+</tr>
+<tr>
+<td><a href="../../../../sessions/session-25-automate-delivery-follow-up/lab/solution/run-output-2/"><code>run-output-2.md</code></a></td>
+<td>Second reviewed status draft</td>
 </tr>
 <tr>
 <td><a href="../../../../sessions/session-25-automate-delivery-follow-up/lab/solution/approval-record/"><code>approval-record.md</code></a></td>

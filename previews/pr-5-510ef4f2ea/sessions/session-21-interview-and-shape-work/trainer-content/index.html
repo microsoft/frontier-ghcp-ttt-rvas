@@ -4387,6 +4387,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reopen-an-affected-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reopen an affected branch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#facilitation-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5226,6 +5237,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reopen-an-affected-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reopen an affected branch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#facilitation-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5304,7 +5326,9 @@
 </div>
 
 <h2 id="delivery-objective">Delivery objective<a class="headerlink" href="#delivery-objective" title="Permanent link">&para;</a></h2>
-<p>Learners use the GitHub Copilot app to turn an unclear request into a reviewed repository decision brief and GitHub issue proposal. The session uses the <code>grill-me</code> or <code>grilling</code> decision-tree pattern. Session 22 creates the live issues.</p>
+<p>Learners install the supplied <code>decision-interview</code> project skill and use it to turn
+an unclear request into a reviewed decision brief and issue proposal. They then
+reopen one decision branch when a late visibility constraint arrives.</p>
 <h2 id="one-hour-plan">One-hour plan<a class="headerlink" href="#one-hour-plan" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5348,7 +5372,11 @@
 <p>Complete this check before learners begin:</p>
 <ul>
 <li>Confirm that every learner can open the GitHub Copilot app and the training repository project.</li>
-<li>Confirm that GitHub Copilot can run <code>grill-me</code>, <code>grilling</code>, or the supplied decision-tree prompt.</li>
+<li>Copy the supplied skill to
+  <code>.github/skills/decision-interview/SKILL.md</code>.</li>
+<li>Open a new app session and confirm that <code>decision-interview</code> appears under
+  <strong>Customize</strong> → <strong>Skills</strong> → <strong>Installed</strong>.</li>
+<li>Run <code>/decision-interview</code> with the short test request from the lab.</li>
 <li>Test one prompt and one follow-up answer.</li>
 <li>Use only the supplied fictional scenario during the demonstration.</li>
 <li>Open the starter templates and completed solution in separate windows.</li>
@@ -5380,6 +5408,8 @@
 <blockquote>
 <p>Make request status clearer so people stop asking support.</p>
 </blockquote>
+<p>Run the demonstration through <code>/decision-interview</code>. The skill must ask a numbered
+frontier and wait for owner decisions instead of drafting the final artifact.</p>
 <h3 id="round-1-define-the-problem">Round 1: define the problem<a class="headerlink" href="#round-1-define-the-problem" title="Permanent link">&para;</a></h3>
 <p>Ask GitHub Copilot to cover:</p>
 <ol>
@@ -5438,6 +5468,10 @@
 <li>Add a definition of done that covers evidence and approval.</li>
 </ol>
 <p>The learner checks every field against the approved brief. Copilot drafts the proposal. Session 22 creates the approved issue set through GitHub MCP.</p>
+<h2 id="reopen-an-affected-branch">Reopen an affected branch<a class="headerlink" href="#reopen-an-affected-branch" title="Permanent link">&para;</a></h2>
+<p>Reveal <a href="../../../sessions/session-21-interview-and-shape-work/lab/starter/late-constraint/"><code>lab/starter/late-constraint.md</code></a>. Ask the skill to reopen only visibility
+decisions. Show that scope, request types, notification exclusion, and ownership
+stay unchanged while role-specific acceptance criteria are revised.</p>
 <h2 id="facilitation-notes">Facilitation notes<a class="headerlink" href="#facilitation-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Ask no more than four questions in a demonstration round.</li>
@@ -5452,7 +5486,9 @@
 <li>an approved, sanitized request from their own work; or</li>
 <li><a href="../lab/starter/vague-request/"><code>../lab/starter/vague-request.md</code></a>.</li>
 </ul>
-<p>Each pair needs a request owner and delivery reviewer. The request owner approves the decision brief. The delivery reviewer checks the issue proposal against the review checklist.</p>
+<p>Each learner or pair needs a request owner and delivery reviewer. The request owner
+approves the decision brief. The delivery reviewer verifies the brief and proposal
+in a fresh session.</p>
 <h3 id="azure-boards-companion">Azure Boards companion<a class="headerlink" href="#azure-boards-companion" title="Permanent link">&para;</a></h3>
 <p>Use <a href="../lab/azure-boards/"><code>../lab/azure-boards/README.md</code></a> when learners have a seeded training requirement. The companion replaces work-item drafting in Phases 4 and 5.</p>
 <p>Before the lab, confirm the field labels used for priority and readiness. Learners may use MCP or the browser to apply approved changes. They must use GitHub Copilot for the interview and draft review.</p>

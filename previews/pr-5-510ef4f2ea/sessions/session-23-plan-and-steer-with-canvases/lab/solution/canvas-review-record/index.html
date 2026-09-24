@@ -4812,10 +4812,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#peer-decision" class="md-nav__link">
+  <a href="#review-decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Peer decision
+        Review decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drift-and-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drift and reconciliation
       
     </span>
   </a>
@@ -4856,7 +4867,7 @@
 <h2 id="generated-canvas">Generated canvas<a class="headerlink" href="#generated-canvas" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Name:</strong> Service Request Portal delivery plan</li>
-<li><strong>Location:</strong> Learner's approved Copilot app canvas</li>
+<li><strong>Location:</strong> Project extension under <code>.github/extensions</code></li>
 <li><strong>Created with <code>/create-canvas</code>:</strong> Yes</li>
 </ul>
 <h2 id="state-review">State review<a class="headerlink" href="#state-review" title="Permanent link">&para;</a></h2>
@@ -4865,15 +4876,30 @@
 <p>Keep refresh, planning-status update, risk update, decision record, and summary. Remove direct issue closure, reassignment, and publication actions.</p>
 <h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
 <p>The learner records live issue values. The visible canvas and Copilot report must match. Any difference between planning status and GitHub state must be explicit.</p>
-<h2 id="peer-decision">Peer decision<a class="headerlink" href="#peer-decision" title="Permanent link">&para;</a></h2>
+<h2 id="review-decision">Review decision<a class="headerlink" href="#review-decision" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Approve / Revise / Pause:</strong> Approve</li>
 <li><strong>Reviewer:</strong> Delivery reviewer</li>
 <li><strong>Reason:</strong> The canvas provides a useful planning view without hidden external writes.</li>
 </ul>
+<h2 id="drift-and-reconciliation">Drift and reconciliation<a class="headerlink" href="#drift-and-reconciliation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>GitHub change:</strong> A reviewed issue comment recorded that implementation waits
+  for the public status vocabulary decision.</li>
+<li><strong>Canvas state before refresh:</strong> The child issue remained ready to start.</li>
+<li><strong>Mismatch detected:</strong> The fresh GitHub read showed a blocker newer than the
+  canvas's last refresh.</li>
+<li><strong>Refresh action:</strong> Copilot called the approved canvas refresh capability.</li>
+<li><strong>Canvas state after refresh:</strong> Planning status changed to blocked and the next
+  action named the product-owner decision.</li>
+<li><strong>Fresh-read evidence:</strong> The visible issue number, comment, blocker, and refresh
+  time matched the GitHub read.</li>
+</ul>
 <h2 id="ownership">Ownership<a class="headerlink" href="#ownership" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Owner:</strong> Delivery lead</li>
+<li><strong>Refresh procedure:</strong> Retrieve current issue state through GitHub MCP, then call
+  the canvas refresh capability and compare the refresh time.</li>
 <li><strong>Recovery procedure:</strong> Stop updates, refresh GitHub state, compare the last visible records, and resume only after the views match.</li>
 <li><strong>Retirement trigger:</strong> The initiative closes or the team moves the required planning state into an authoritative system.</li>
 <li><strong>Next safe action:</strong> Use the canvas to select independent workstreams for Session 24.</li>

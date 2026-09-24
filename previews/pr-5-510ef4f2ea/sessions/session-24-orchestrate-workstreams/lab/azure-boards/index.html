@@ -4913,7 +4913,8 @@
 <p><strong>Deliverable:</strong> Live child-session reviews, updated planning states, and a release-readiness decision</p>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>Use a seeded Azure Boards Epic or Feature as the parent objective for the fictional <strong>Service Request Portal</strong>. Azure Boards holds the plan, ownership, and review record. GitHub holds repository work.</p>
-<p><strong>GitHub Copilot must perform the orchestration.</strong> Azure Boards MCP and the browser are planning interfaces. They do not replace <code>/orchestrate</code> or an approved equivalent.</p>
+<p><strong>GitHub Copilot must perform the orchestration.</strong> Azure Boards MCP and the browser
+are planning interfaces. They do not replace the built-in <code>/orchestrate</code> skill.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>You need:</p>
 <ul>
@@ -4921,7 +4922,7 @@
 <li>permission to read and update the seeded child work items;</li>
 <li>an approved Azure Boards MCP connection or browser access;</li>
 <li>the work item IDs or seed tag supplied by the trainer;</li>
-<li>live GitHub Copilot orchestration through <code>/orchestrate</code> or an approved equivalent;</li>
+<li>live GitHub Copilot orchestration through <code>/orchestrate</code>;</li>
 <li>access to the fictional GitHub repository when a selected item requires repository evidence.</li>
 </ul>
 <h2 id="required-preflight">Required preflight<a class="headerlink" href="#required-preflight" title="Permanent link">&para;</a></h2>
@@ -4929,7 +4930,8 @@
 <li>Open the seeded parent and confirm that it is tagged for Session 24 training.</li>
 <li>Record the parent ID, process type, starting state, and selected child IDs.</li>
 <li>Type <code>/</code> in the GitHub Copilot app and confirm that <code>/orchestrate</code> is available.</li>
-<li>If your organization uses an approved equivalent, confirm that it coordinates live child sessions from one parent objective.</li>
+<li>Open <strong>Customize</strong> → <strong>Skills</strong> → <strong>Installed</strong> and confirm the built-in
+   <code>orchestrate</code> skill.</li>
 <li>Confirm that you can open, steer, and stop those sessions.</li>
 <li>Copy <a href="../../../../sessions/session-24-orchestrate-workstreams/lab/azure-boards/workstream-review-template/"><code>workstream-review-template.md</code></a> once for each selected child item.</li>
 <li>Set a 30-minute activity limit or a lower approved usage limit.</li>
@@ -4968,7 +4970,9 @@
 <p>Use the project's existing state mapping. Confirm the item ID before every MCP or browser write.</p>
 <h2 id="step-3-start-github-copilot-orchestration">Step 3: Start GitHub Copilot orchestration<a class="headerlink" href="#step-3-start-github-copilot-orchestration" title="Permanent link">&para;</a></h2>
 <p>Build the parent instruction from the selected work items. Include each item ID, bounded question, approved inputs, required packet, exclusions, and stop condition.</p>
-<p>Start the work through <code>/orchestrate</code> or the approved equivalent. Confirm that GitHub Copilot created one live child session for each selected item. Add each session link or identifier to its Azure Boards item.</p>
+<p>Start the work through <code>/orchestrate</code>. Confirm that GitHub Copilot created one live
+child session for each selected item. Add each session link or identifier to its
+Azure Boards item.</p>
 <p>Repository work must name the allowed repository and path. The child session may return evidence or a draft pull request when the contract allows it. It must not close the Boards item, approve a pull request, merge, deploy, or make the release decision.</p>
 <h2 id="step-4-inspect-and-control-the-work">Step 4: Inspect and control the work<a class="headerlink" href="#step-4-inspect-and-control-the-work" title="Permanent link">&para;</a></h2>
 <p>Inspect the live child sessions in GitHub Copilot. Use Azure Boards MCP or the browser to record progress.</p>
