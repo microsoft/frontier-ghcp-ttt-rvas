@@ -3,352 +3,226 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 09 — Cloud Agent'
+footer: 'Session 09: Cloud Agent'
 ---
 
 <!-- _class: lead -->
-
-# Cloud-Agent Workflows
-## Bounded issues, human review, and policy-approved comparison
-
-Use Enterprise Cloud as the governance baseline. Check current official GitHub documentation and customer administrator policy before delivery.
+# One Issue, One Review Decision
+## A bounded Copilot cloud agent workflow
 
 ---
-
-# Access and cost preflight
-
-1. Confirm the repository, data classification, participant role, and approved task.
-2. Verify current official documentation and customer policy for the selected workflow.
-3. Use a non-sensitive, bounded issue with explicit acceptance criteria.
-4. For metered work, define a customer-owned threshold, escalation route, and stop guard.
-5. Prepare the issue-writing and review exercise as the no-access fallback.
-
----
-
-# An issue is the work contract
-
-```markdown
-## Problem
-State the user-visible problem and the bounded scope.
-
-## Acceptance criteria
-- [ ] Expected behavior is testable.
-- [ ] Relevant tests pass.
-- [ ] A reviewer can verify the change.
-
-## Constraints
-- Approved files and data only
-- Required checks
-- Human review before merge
-```
-
----
-
-# Review before merge
-
-Use the same review rubric for each proposed change:
-
-- correctness and test evidence;
-- repository conventions;
-- data, permissions, and dependency changes;
-- scope against the issue;
-- required human approval.
-
-Do not treat an automated proposal as proof that the change is ready.
-
----
-
-# Comparing approved agents
-
-Customer policy controls third-party agent availability, workflow, model selection, data handling, and metering. Check current official GitHub documentation and customer policy. Do not assume a named agent is enabled.
-
-| Compare | Evidence |
-| --- | --- |
-| Access | Is this agent approved for this repository and data class? |
-| Quality | Does it meet the same acceptance criteria and tests? |
-| Safety | What tools, permissions, and data are involved? |
-| Reviewability | Is the change understandable and suitable for human review? |
-| Measurement | What does the customer-defined meter show? |
-
----
-
-# No-access fallback
-
-If no approved agent is available:
-
-1. Write the issue and acceptance criteria.
-2. Perform the change manually in the repository sandbox.
-3. Use the PR review checklist.
-4. Compare the manual baseline with recorded, approved evidence if available.
-
----
-
-# When to pause
-
-Pause when policy, data scope, access, review ownership, or the stop guard is unresolved. Use the fallback.
-
----
-
-# Agenda and time plan
-
-| Time | Topic | Trainer move |
-| --- | --- | --- |
-| 0:00 | Async agent mental model | Trace issue to draft PR |
-| 0:08 | Repository configuration | Explain setup boundaries |
-| 0:18 | Issue contracts | Improve a weak issue |
-| 0:28 | Live or recorded assignment | Observe progress evidence |
-| 0:42 | Security and session management | Apply stop conditions |
-| 0:50 | Agent comparison and team workflow | Use one rubric |
-| 0:58 | Lab handoff | Confirm reviewer ownership |
-
----
-
-# What makes the cloud agent different
-
-The cloud agent works asynchronously from an issue in an isolated environment.
-
-- Work starts from an assigned GitHub issue.
-- The agent creates a branch and proposes repository changes.
-- It can run configured setup, builds, and tests.
-- Progress is visible through an agent session.
-- The result is a draft pull request for human review.
-
-**Say:** “Async changes location and timing. Accountability stays the same.”
-
----
-
-# Issue-to-PR lifecycle
+# Today’s journey
 
 ```text
-Bounded issue assigned
-        ↓
-Environment prepared
-        ↓
-Agent plans, edits, and validates
-        ↓
-Progress reported in session
-        ↓
-Draft pull request opened
-        ↓
-Human feedback, revision, approval, or close
+issue contract
+    ↓
+repository setup
+    ↓
+proposed change
+    ↓
+test evidence
+    ↓
+human decision
 ```
 
-Branch protection and required reviewers remain authoritative.
+Keep the same issue and acceptance criteria at every step.
 
 ---
+# Access policy
 
-# Repository setup responsibilities
+The live route requires:
 
-Use current official documentation when configuring the selected repository:
+- approved Copilot cloud agent access;
+- a training repository with synthetic data;
+- a named reviewer;
+- a bounded issue and stop condition.
 
-- setup steps and required development tools;
-- runner or environment assumptions;
-- firewall and network allowlists;
-- secrets and permission boundaries;
-- repository instructions and validation commands;
-- branch protection and review requirements.
-
-Start with least privilege and a disposable training repository.
+If one requirement is missing, use the manual route. Do not bypass policy.
 
 ---
+# The fixed issue
 
-# Setup steps example
-
-```yaml
-name: Copilot setup steps
-steps:
-  - name: Install dependencies
-    run: npm ci
-  - name: Verify baseline
-    run: npm test
+```text
+Reject blank task titles
 ```
 
-This is a teaching example, not a complete schema reference. Verify the current
-filename, syntax, environment, and permitted commands before use.
+Allowed files:
+
+- `src/app.js`
+- `tests/app.test.js`
+
+Required command:
+
+```bash
+npm test
+```
+
+No dependency changes. No unrelated refactor.
 
 ---
+# Checkpoint 1: Issue contract
 
-# Instructions guide repeatable behavior
+The reviewer must answer:
 
-```markdown
+- Which behavior changes?
+- Which behavior stays the same?
+- Which files may change?
+- What proves completion?
+- What is out of scope?
+
+Assignment waits until every answer is clear.
+
+---
 # Repository instructions
 
-- Make the smallest change that satisfies the issue.
-- Do not add dependencies without explicit approval.
-- Follow patterns in `src/` and update focused tests.
-- Run `npm test` and report failures accurately.
-- Never modify generated or deployment files unless the issue names them.
-```
+Repository instructions help the agent work efficiently:
 
-Instructions support an issue. They cannot clarify vague acceptance criteria.
+- project shape;
+- coding conventions;
+- allowed file scope;
+- test command;
+- prohibited changes.
+
+Instructions support the issue. They do not repair a vague issue.
 
 ---
+# Copilot setup steps
 
-# Weak issue, strong issue
-
-**Weak**
+The workflow file belongs at:
 
 ```text
-Fix validation.
+.github/workflows/copilot-setup-steps.yml
 ```
 
-**Strong**
+It uses one job named:
 
-```markdown
-Reject blank task titles in `POST /tasks`.
-
-- Return HTTP 400 with `{ "error": "title is required" }`.
-- Preserve valid creation behavior.
-- Add focused tests for blank, whitespace, and valid titles.
-- Do not add dependencies or change other endpoints.
+```text
+copilot-setup-steps
 ```
+
+Review permissions, commands, and secrets before merging it to the default branch.
 
 ---
+# Checkpoint 2: Setup
 
-# Concrete target change
+Record:
+
+- baseline test result;
+- repository instructions location;
+- setup workflow location;
+- allowed files;
+- reviewer and stop condition.
+
+Stop when the baseline is unexplained or setup requires unapproved access.
+
+---
+# Start or simulate the session
+
+Live route:
+
+- assign the fixed issue through an approved entry point;
+- watch the session log;
+- steer only within the issue;
+- stop on scope drift.
+
+Manual route:
+
+- implement the same issue locally;
+- preserve the same file scope and tests.
+
+---
+# Checkpoint 3: Proposed change
+
+Inspect before running tests:
+
+- changed files;
+- validation behavior;
+- response shape;
+- valid request behavior;
+- dependency and configuration changes.
+
+A small diff can still be wrong.
+
+---
+# The expected behavior
 
 ```js
-export function normalizeTitle(value) {
-  if (typeof value !== "string" || value.trim() === "") {
-    throw new ValidationError("title is required");
-  }
-  return value.trim();
+if (typeof title !== "string" || title.trim() === "") {
+  return res.status(400).json({ error: "title is required" });
 }
 ```
 
-The reviewer checks error mapping, existing conventions, focused tests, and unexpected files in the diff.
+The exact code may differ. The observable behavior and constraints may not.
 
 ---
+# Checkpoint 4: Tests
 
-# Live assignment narrative
+Required cases:
 
-1. Show a clean issue with explicit non-goals.
-2. Confirm repository, access, metering guard, and reviewer.
-3. Assign through the currently supported workflow.
-4. Open the agent session and identify plan, tool use, and checks.
-5. Do not wait silently; explain the prepared fallback.
-6. Open the draft PR, compare it with the issue, and inspect tests.
-7. Leave bounded feedback rather than rewriting the task.
+| Case | Expected |
+| --- | --- |
+| `""` | HTTP 400 |
+| `"   "` | HTTP 400 |
+| `" Weekly plan "` | HTTP 201 with preserved response shape |
+
+Run the full supplied suite and record the command output.
 
 ---
+# Review feedback stays bounded
 
-# Feedback that agents can act on
+Good:
 
 ```text
-The whitespace test passes, but the valid-title test now changes the response
-schema. Restore the existing response shape. Keep the validation helper and tests.
-Run the focused suite and report the result.
+The whitespace case is missing. Add a focused test in tests/app.test.js.
+Keep the current response shape and do not change other endpoints.
+Run npm test and report the result.
 ```
 
-Good feedback cites evidence, restates the constraint, and stays in scope.
+Bad:
+
+```text
+Clean up the API while you are there.
+```
 
 ---
+# Checkpoint 5: Human decision
 
-# Agent session management
+Choose:
 
-Track:
+- **approve** when criteria, scope, and tests pass;
+- **request changes** when a bounded correction remains;
+- **pause** when access, evidence, or ownership is unresolved.
 
-- repository, issue, branch, and session owner;
-- current phase and last useful evidence;
-- commands, failures, and revisions;
-- metered-work observation and stop guard;
-- feedback awaiting response;
-- final PR, close, or fallback decision.
-
-Stop stale or looping sessions instead of leaving them to consume resources.
+The agent does not make this decision.
 
 ---
+# Stop conditions
 
-# Security boundaries
+Stop the live route when:
 
-| Boundary | Safe default |
-| --- | --- |
-| Network | Allow only required destinations |
-| Tools | Minimum approved toolset |
-| Shell | Review setup and avoid destructive commands |
-| Secrets | Provide only task-required, scoped credentials |
-| Data | Synthetic or approved repository data |
-| Merge | Human review plus repository protections |
-
-Never place credentials in issues, instructions, or comments.
+- the requested files expand;
+- a new dependency appears;
+- credentials or unapproved data are requested;
+- tests loop without a bounded recovery;
+- the issue changes during implementation;
+- the reviewer is no longer available.
 
 ---
+# Prepared fallback
 
-# Comparing approved agents
+The solution folder contains:
 
-Assign the same bounded issue only when policy and metering permit it.
+- the final issue contract;
+- reviewed setup workflow;
+- proposed diff;
+- runnable solution project;
+- test evidence;
+- completed human decision.
 
-Compare:
-
-1. correctness against identical acceptance criteria;
-2. scope and diff clarity;
-3. tests and failure reporting;
-4. tool, network, and data exposure;
-5. review effort and required rework;
-6. measured usage under the customer-defined method.
-
-Named third-party agents are examples. Their availability is not assumed.
+Use it when a live session is delayed. Label it as prepared evidence.
 
 ---
-
-# A junior-developer workflow
-
-Treat an agent contribution like work from a junior teammate:
-
-- assign a suitable, bounded task;
-- provide repository conventions;
-- expect questions or course correction;
-- inspect implementation and evidence;
-- give specific review feedback;
-- retain accountable human approval.
-
-Do not use an agent as an unmonitored backlog queue.
-
----
-
-# Demo fallback and debrief
-
-If live execution is delayed or unavailable:
-
-- review a prepared issue, session timeline, and draft diff;
-- identify the earliest point to intervene;
-- write one actionable PR comment;
-- apply the same review rubric to a manual implementation;
-- list checks required before a future live assignment.
-
-Ask: “What evidence increased or reduced your confidence?”
-
----
-
+<!-- _class: divider -->
 # Lab handoff
 
-Learners will:
-
-1. review repository setup and security boundaries;
-2. write three issues of increasing but bounded complexity;
-3. assign work only through approved agents;
-4. monitor sessions and stop one simulated scope drift;
-5. review draft PRs and provide evidence-based feedback;
-6. compare results under one rubric.
-
-**Deliverable:** Reviewed agent PRs or equivalent fallback evidence.
-
----
-
-# Key takeaways
-
-1. The issue is the cloud agent’s work contract.
-2. Setup, network, tools, and instructions define boundaries.
-3. Agent sessions require active ownership and stop conditions.
-4. Draft PRs require the same tests and human review as any contribution.
-5. Compare agents by evidence, never reputation alone.
-
----
-
-<!-- _class: qa -->
-
-# Questions and lab readiness
-
-- Which issue is safe to assign?
-- Who reviews the resulting draft PR?
-- What event triggers the stop guard?
+One issue. Five checkpoints. One accountable decision.

@@ -65,7 +65,7 @@ describe('slugify', () => {
 describe('truncate', () => {
   it('should truncate long strings with ellipsis', () => {
     assert.strictEqual(truncate('Hello, World!', 8), 'Hello...');
-    assert.strictEqual(truncate('A very long string', 10), 'A very...');
+    assert.strictEqual(truncate('A very long string', 10), 'A very ...');
   });
 
   it('should not truncate strings shorter than maxLength', () => {

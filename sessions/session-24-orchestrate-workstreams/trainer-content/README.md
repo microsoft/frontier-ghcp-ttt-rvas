@@ -6,7 +6,9 @@
 
 ## Delivery goal
 
-Teach managers to direct parallel work through live GitHub Copilot orchestration. The parent session coordinates bounded child sessions. A person reviews the evidence and decides what enters the release record.
+Teach managers to direct parallel work through live GitHub Copilot orchestration.
+The parent coordinates bounded child sessions. A person reviews the evidence and
+decides what enters the release record.
 
 ## One-hour plan
 
@@ -22,7 +24,7 @@ Teach managers to direct parallel work through live GitHub Copilot orchestration
 ## Product-state note
 
 > [!IMPORTANT]
-> This guide was checked against official GitHub documentation on
+> Checked against official GitHub documentation on
 > **September 24, 2026**. GitHub documents `/orchestrate` as a built-in skill that
 > coordinates work across sessions or repositories. Confirm the current command
 > picker before the session.
@@ -91,7 +93,8 @@ The packet is the deliverable. The transcript is supporting context.
 
 ## 3. Monitor and intervene (0:18-0:28)
 
-Use **My work**, the sessions list, the agents panel, or the current equivalent. Look for progress, usage, evidence, and scope drift.
+Use **My work**, the sessions list, the agents panel, or the current session
+management surface. Look for progress, usage, evidence, and scope drift.
 
 | Signal | Manager action |
 | --- | --- |
@@ -113,7 +116,8 @@ Stop when a boundary breaks. Do not spend more usage trying to rescue unsafe wor
 
 ## 4. Live demonstration (0:28-0:40)
 
-Open `lab/starter/orchestration-plan-template.md` and the completed plan in `lab/solution/orchestration-plan.md`.
+Open `lab/starter/orchestration-plan-template.md` and the reference plan in
+`lab/solution/orchestration-plan.md`.
 
 Submit the approved plan:
 
@@ -135,7 +139,9 @@ Demonstrate these controls on the live sessions:
 4. Reject a completed packet that still lacks evidence.
 5. Escalate a release or access decision to the human owner.
 
-If a child session reaches the eight-minute guard, stop it and record the timeout. The trainer must not replace it with a prepared result. Use another live child session to show review behavior, then resolve the failed run before learners start the lab.
+If a child session reaches the eight-minute guard, stop it and record the timeout.
+Do not replace it with a prepared result. Use another live child session to show
+review behavior, then resolve the failed run before the lab starts.
 
 ## 5. Review and consolidate (0:40-0:52)
 
@@ -163,7 +169,7 @@ Session 16 teaches an optional Squad implementation with persistent roles, routi
 
 ## Lab handoff (0:56-1:00)
 
-Learners must have working GitHub Copilot orchestration before they start. They submit:
+Learners need working GitHub Copilot orchestration before they start. They submit:
 
 1. an orchestration plan with live child-session identifiers;
 2. management actions for the live sessions;

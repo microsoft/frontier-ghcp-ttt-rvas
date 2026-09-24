@@ -9,9 +9,9 @@ without the original chat
 
 ## What you will learn
 
-You will see how project context changes Copilot's answer, turn sourced information
-into a durable brief, update that brief when new evidence arrives, and verify it in
-a fresh session.
+See how project context changes Copilot's answer. Then turn sourced information
+into a durable brief, update it when new evidence arrives, and verify it in a fresh
+session.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ You need:
 - permission to create a branch or working copy for the brief.
 
 Confirm GitHub Copilot access before starting. If GitHub Copilot access or project
-access is unavailable, stop and do not continue in a generic chatbot.
+access is unavailable, **stop**. Do not continue in a generic chatbot.
 
 ## Part 1: Verify the app and project (15 minutes)
 
@@ -75,8 +75,8 @@ Compare the answers:
 | Source references |  |  |
 | Useful next decision |  |  |
 
-**Checkpoint:** You can explain which answer is safer to use and why repository
-context changed it.
+**Checkpoint:** Explain which answer is safer and how repository context changed
+it.
 
 ## Part 3: Create the first working brief (30 minutes)
 
@@ -97,8 +97,8 @@ Ask Copilot to complete the brief from `initiative-overview.md`. Require:
 - the reviewer;
 - the relevant capabilities found in Part 1.
 
-Review the proposed change before accepting it. Reject or revise any statement that
-has no source, invents an owner, or turns an unknown into a fact.
+Review the proposed change before accepting it. Reject any statement that has no
+source, invents an owner, or turns an unknown into a fact.
 
 Commit the first version:
 

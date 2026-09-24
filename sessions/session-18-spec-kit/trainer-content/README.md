@@ -1,11 +1,11 @@
-# Session 18 Trainer Guide — Spec Kit
+# Session 18 Trainer Guide: Spec Kit
 
 ## Delivery objective
 
 Show the complete Spec Kit loop on one small change: request, specification, plan,
-tasks, implementation, tests, and convergence. Learners should leave knowing which
-files Spec Kit creates and which decisions the team still owns. The lab then uses
-the documented living-spec workflow to add restore behavior.
+tasks, implementation, tests, and convergence. Learners should know which files
+Spec Kit creates and which decisions the team still owns. The lab then uses the
+documented living-spec workflow to add restore behavior.
 
 ## One-hour plan
 
@@ -24,27 +24,24 @@ eight minutes.
 
 ## Slide-by-slide delivery map
 
-### 0:00–0:08 — Why specification-driven development
+### 0:00–0:08: Why specification-driven development
 
 **Slides:** *Spec Kit: Specification-Driven Development*, *Agenda*, *A feature
 request is a starting point*, and *Specification changes when decisions happen*
 
-1. **Open with the lesson goal.** The session is about deciding what the feature
-   means before asking an agent to implement it. Spec Kit is the workflow used to
-   make those decisions visible.
+1. **Open with the lesson goal.** Decide what the feature means before asking an
+   agent to implement it. Spec Kit makes those decisions visible.
 2. **Set the pace from the agenda.** Explain that the trainer content establishes
    the model. Learners will run the complete workflow in the 2-hour 30-minute lab.
 3. **Read the archive request aloud.** Ask learners to notice how many decisions
    hide inside the word "remove." Use the four questions on the slide. Do not answer
    them yet.
-4. **Compare the two development paths.** Emphasize that specification-driven
-   development moves decisions earlier. It does not add documents for their own
-   sake.
+4. **Compare the two development paths.** Specification-driven development moves
+   decisions earlier. It does not add documents for their own sake.
 
-**Transition:** The problem is hidden decision-making. The next slides show how
-Spec Kit stores those decisions.
+The next slides show where Spec Kit stores those decisions.
 
-### 0:08–0:18 — Spec Kit project and artifact model
+### 0:08–0:18: Spec Kit project and artifact model
 
 **Slides:** *What Spec Kit provides*, *Initialize an existing project*, *Two
 artifact scopes*, and *The full workflow*
@@ -66,7 +63,7 @@ artifact scopes*, and *The full workflow*
 **Trainer check:** Learners should be able to say where project principles live
 and where feature behavior lives before you continue.
 
-### 0:18–0:30 — Requirements and clarification
+### 0:18–0:30: Requirements and clarification
 
 **Slides:** *Constitution: rules for how the project works*, *Specify behavior, not
 implementation*, *Write scenarios a reviewer can challenge*, and *Clarify before
@@ -85,10 +82,9 @@ choosing a design*
    learners have seen the ambiguity. Clarification updates `spec.md`; it does not
    create a competing decision log.
 
-**Transition:** The behavior is now agreed. The technical design can begin without
-silently redefining the feature.
+The agreed behavior now gives the technical design a stable boundary.
 
-### 0:30–0:42 — Planning, checklists, tasks, and analysis
+### 0:30–0:42: Planning, checklists, tasks, and analysis
 
 **Slides:** *Plan: decide how the feature will work*, *Supporting design files have
 a purpose*, *A checklist reviews requirement quality*, *Tasks turn design into
@@ -114,7 +110,7 @@ executable work*, and *Analyze before code makes mistakes expensive*
 and a missing implementation step. The expected answers are `spec.md`, `plan.md`,
 and `tasks.md`.
 
-### 0:42–0:52 — Implementation and convergence
+### 0:42–0:52: Implementation and convergence
 
 **Slides:** *Implementation follows the accepted tasks*, *Convergence closes the
 loop*, *`specify check` is not compliance validation*, *Keep the project model
@@ -140,10 +136,10 @@ GitHub Issues*
    accepted task IDs, dependencies, parallel markers, file paths, and scope. They
    do not become a second requirements source.
 
-**Transition:** The workflow is clear. The final slides establish the approved
-installation path, show one real gap, and hand control to the lab.
+The final slides set the approved installation path, show one real gap, and hand
+control to the lab.
 
-### 0:52–1:00 — Installation, fallback, demonstration, and lab handoff
+### 0:52–1:00: Installation, fallback, demonstration, and lab handoff
 
 **Slides:** *Approved installation paths*, *Prepared demonstration*, and *Lab
 handoff*
@@ -229,8 +225,7 @@ and show the appended test task. Then add the test, run the suite, and converge
 again. Then reveal `change-request.md` and show how restore behavior flows through
 clarification, planning, tasks, analysis, implementation, and convergence.
 
-This is more useful than showing a static handoff. Learners see the artifacts drive
-real work.
+Learners see the artifacts drive real work instead of watching a static handoff.
 
 ## Delivery controls
 

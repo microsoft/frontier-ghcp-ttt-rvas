@@ -10,7 +10,7 @@
 - **Parent issue:**
 - **Child issues:**
 
-## Required state
+## Required fields
 
 | Field | Why it is needed |
 | --- | --- |

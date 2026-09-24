@@ -1,6 +1,6 @@
-# GitHub Issue Proposal
+# GitHub Issue Proposal: <Outcome-Focused Title>
 
-> Session 22 creates the live GitHub issue after review and decomposition.: <Outcome-Focused Title>
+> Session 22 creates the live GitHub issue after review and decomposition.
 
 ## User and outcome
 
@@ -8,7 +8,9 @@ As a `<user>`, I want `<capability>` so that `<outcome>`.
 
 ## Context
 
-Link or summarize the approved decision brief. State the current behavior and reason for the change. Record that a person checked the GitHub Copilot draft against the brief.
+Link or summarize the approved decision brief. State the current behavior and
+reason for the change. Record that a person checked the GitHub Copilot draft
+against the brief.
 
 ## Scope
 

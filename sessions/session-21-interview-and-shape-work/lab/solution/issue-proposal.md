@@ -2,11 +2,16 @@
 
 ## User and outcome
 
-As an employee who submitted a facilities or equipment request, I want to see its current public status and last updated time so that I can understand progress without contacting the service desk.
+As an employee who submitted a facilities or equipment request, I want to see its
+current public status and last updated time so that I can understand progress
+without contacting the service desk.
 
 ## Context
 
-The portal currently shows a reference number and title. Internal service states and timestamps exist, but requesters cannot see them. GitHub Copilot drafted this item from the approved decision brief. The request owner and delivery reviewer checked the draft before marking it ready.
+The portal currently shows a reference number and title. Internal service states
+and timestamps exist, but requesters cannot see them. GitHub Copilot drafted this
+item from the approved decision brief. The request owner and delivery reviewer
+checked the draft before marking it ready.
 
 ## Scope
 

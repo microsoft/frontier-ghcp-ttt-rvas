@@ -1,48 +1,26 @@
-# Governance Decision Scenarios
+# Policy Decision Prompts
 
-Complete a decision record for each fictional organization. Use current GitHub documentation and customer policy as evidence. A scenario does not establish compliance or availability.
+Use the fixed scenario in `fictional-scenario-brief.md`.
 
-## Scenario 1: Small product team
+## Required decision
 
-A small team wants to evaluate an approved workflow on a non-sensitive repository.
+Choose one:
 
-- What is the least-privileged bounded task?
-- Who owns access, data classification, review, and measurement?
-- What must be verified before the trial?
-- What is the manual fallback?
+- proceed;
+- proceed in the repository sandbox only;
+- defer to named owners;
+- pause.
 
-## Scenario 2: Regulated workload
+## Questions
 
-A team maintains a repository with heightened legal, privacy, and security obligations.
+1. Which scenario facts support the decision?
+2. Which current feature, setting, classification, retention, or commercial claims
+   still need live evidence?
+3. What may start now?
+4. What remains blocked?
+5. Who owns each pending evidence request?
+6. Which event forces an immediate pause?
+7. When must the decision be reviewed again?
 
-- Which customer owners must decide whether a trial is permitted?
-- What repository sandbox could demonstrate the exercise without restricted data?
-- What evidence must be collected before any expansion?
-- What condition causes the trial to pause?
-
-## Scenario 3: Segmented environment
-
-An organization separates workloads by data sensitivity and network constraints.
-
-- Which repositories or data classes may support a bounded trial?
-- Which assumptions require current documentation and customer-policy review?
-- How will the team prevent unapproved data from entering the trial?
-- What manual workflow remains available?
-
-## Scenario 4: Multi-team rollout
-
-Several teams want to use different workflows and tools.
-
-- What evidence is needed to select the first representative team?
-- How will each team use the same review rubric?
-- What customer-defined meter and stop guard apply?
-- Which result would justify pausing rather than expanding?
-
-## Scenario 5: Public collaboration
-
-A project has maintainers and external contributors with different roles.
-
-- Which roles and repositories are in scope?
-- How will contributors receive the same manual review standards?
-- Which policy questions must the customer administrator answer?
-- What is the no-access fallback for a contributor?
+The reference result proceeds in the repository sandbox only. Learners may choose
+another decision when their evidence map supports it.

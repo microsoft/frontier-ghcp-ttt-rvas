@@ -1,14 +1,6 @@
-# Acme E-Commerce API
+# Storefront Product API
 
 An Express.js REST API for an e-commerce product catalog with a modular architecture.
-
-## Access and cost preflight
-
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the customer administrator policy before a live exercise. For metered work, use a customer-defined stop guard.
-
-## No-access fallback
-
-Run the repository locally. Complete the API exercise and review manually.
 
 ## Quick Start
 

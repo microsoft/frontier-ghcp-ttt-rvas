@@ -53,8 +53,8 @@ resource "aws_db_instance" "main" {
   vpc_security_group_ids = [aws_security_group.db.id]
 
   # Maintenance
-  backup_retention_period = 7
-  skip_final_snapshot     = var.environment != "production"
+  backup_retention_period   = 7
+  skip_final_snapshot       = var.environment != "production"
   final_snapshot_identifier = var.environment == "production" ? "${var.project_name}-final-snapshot" : null
 
   tags = {

@@ -39,7 +39,7 @@ Module 3: Agentic Workflows ───────────────── 
     ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 2 sessions)
     │   └── Uses Squad and Spec Kit as worked framework examples
     │
-    └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
+    └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 4 sessions)
         └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
 
 Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 6 sessions)
@@ -56,7 +56,7 @@ Module 7: Product and Delivery Teams ──────────────�
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
 | **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
 | **Product and Delivery Teams** | Module 7                    | 20–25        | 18 hrs     |
-| **Full Track**            | All Modules                      | 01–25        | 75 hrs     |
+| **Full Track**            | All Modules                      | 01–27        | 81 hrs     |
 
 ---
 
@@ -75,9 +75,9 @@ Module 7: Product and Delivery Teams ──────────────�
 | #   | Session                                   | Difficulty   | Prerequisites   | Duration   |
 | --- | ----------------------------------------- | ------------ | --------------- | ---------- |
 | 04  | GitHub Copilot in the CLI                 | Intermediate | Sessions 01–03  | 3 hrs      |
-| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01–03  | 3 hrs      |
-| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01–03  | 3 hrs      |
-| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01–03  | 3 hrs      |
+| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01–04  | 3 hrs      |
+| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01–05  | 3 hrs      |
+| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01–06  | 3 hrs      |
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -94,8 +94,8 @@ Module 7: Product and Delivery Teams ──────────────�
 | #   | Session                                    | Difficulty   | Prerequisites      | Duration   |
 | --- | ------------------------------------------ | ------------ | ------------------ | ---------- |
 | 13  | GitHub Actions & Workflow Generation       | Intermediate | Sessions 01–05     | 3 hrs      |
-| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01–05, 13 | 3 hrs      |
-| 15  | CI/CD Pipeline Debugging & Copilot Autofix | Advanced     | Sessions 01–05, 13 | 3 hrs      |
+| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01–05, 13 | 2 hrs 30 min |
+| 15  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions 01–05, 13 | 3 hrs      |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
@@ -110,6 +110,8 @@ Module 7: Product and Delivery Teams ──────────────�
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
 | 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01–12, 17–18 | 3 hrs |
+| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced   | Modules 1–4        | 3 hrs      |
+| 27  | Repair and Refactor a Broken Python Application | Advanced | Modules 1–4        | 3 hrs      |
 
 ### Module 7: Product and Delivery Teams (Beginner–Intermediate)
 
@@ -305,7 +307,7 @@ Introduces GitHub Copilot's terminal-native experience via the standalone `copil
 ### Session 05 — Agent Mode in the IDE
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–04
 **Module:** Copilot in Practice
 
 **Description:**
@@ -348,7 +350,7 @@ The pivotal session. Introduces agent mode — Copilot's autonomous multi-step c
 ### Session 06 — Copilot Spaces & Context Management
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–05
 **Module:** Copilot in Practice
 
 **Description:**
@@ -390,7 +392,7 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 ### Session 07 — Copilot for Code Review & Pull Requests
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–06
 **Module:** Copilot in Practice
 
 **Description:**
@@ -676,36 +678,39 @@ Covers using Copilot to generate, explain, and debug GitHub Actions workflows. T
 **Difficulty:** Advanced
 **Prerequisites:** Sessions 01–05, 13
 **Module:** DevOps & Infrastructure with Copilot
+**Duration:** 2 hours 30 minutes
 
 **Description:**
-Covers using Copilot to write, refactor, and manage Infrastructure as Code. Focuses on Terraform and Bicep — the two most common IaC languages — with Copilot agent mode generating, explaining, and iterating on infrastructure definitions.
+Uses Copilot to build and connect one modular Terraform architecture, validate it
+locally, and repair a configuration that fails a deterministic security gate.
+Bicep remains a short trainer comparison and optional extension.
 
 **Trainer Content Outline (1 hour):**
 
-- IaC fundamentals: why infrastructure as code matters
-- Copilot for Terraform: generating modules, variables, state management
-- Copilot for Bicep: ARM template generation, Azure resource definitions
-- Agent mode for IaC: multi-file infrastructure projects
-- Copilot Spaces for IaC: grounding Copilot in cloud documentation
-- Security: avoiding common IaC anti-patterns (open security groups, hardcoded secrets)
-- Demo: generate a complete cloud infrastructure from requirements
-- Validating generated IaC: terraform plan, bicep build, linting
+- Read architecture requirements as module contracts.
+- Separate root inputs, module inputs, and narrow outputs.
+- Generate and review network, compute, and database modules.
+- Run formatting, initialization, and validation in order.
+- Investigate one intentional security-gate failure.
+- Explain what local checks prove and what still needs a reviewed plan.
+- Compare the equivalent Bicep structure without creating a second required build.
 
-**Lab Outline (2 hours):**
+**Lab Outline (1 hour 30 minutes):**
 
-- Generate a Terraform module for a 3-tier web application using agent mode
-- Generate equivalent Bicep templates for the same architecture
-- Refactor an insecure IaC configuration — fix security issues with Copilot
-- Use Copilot Spaces to ground IaC generation in cloud provider docs
-- Validate all generated code: plan, build, lint
-- **Deliverable:** Terraform + Bicep definitions for a 3-tier app, validated and security-reviewed
+- Inspect the supplied architecture and module contracts.
+- Build and connect the Terraform modules.
+- Run `terraform fmt`, `terraform init -backend=false`, and `terraform validate`.
+- Reproduce and investigate the supplied security-gate failure.
+- Repair the security case and record passing evidence.
+- **Deliverable:** Validated Terraform modules, a repaired security case, and command evidence.
 
 **Expected Learning Outcomes:**
 
-- Generate Terraform and Bicep code using Copilot agent mode
-- Use Copilot Spaces to ground IaC in cloud provider documentation
-- Identify and fix security anti-patterns in generated IaC
-- Validate generated infrastructure code using native tools
+- Generate Terraform modules from fixed architecture constraints.
+- Connect module inputs and outputs without copying values between layers.
+- Run local Terraform checks in the correct order.
+- Identify and fix security problems supported by the architecture.
+- Explain why local validation does not approve a deployment.
 
 ---
 
@@ -1066,13 +1071,67 @@ Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Aut
 
 ---
 
+### Session 26 — Migrate a Legacy Java Service to Modern .NET
+
+**Difficulty:** Advanced
+**Prerequisites:** Modules 1–4
+**Module:** Advanced Topics & Capstone
+**Duration:** 3 hours
+
+**Description:**
+Learners inspect a legacy Java service, capture its required behavior, and migrate it to modern .NET without losing compatibility.
+
+**Trainer Content Outline (1 hour):**
+
+- Define the migration boundary before changing code
+- Map Java structures and dependencies to .NET equivalents
+- Preserve API behavior and error handling
+- Use tests to compare the old and new implementations
+
+**Lab Outline (2 hours):**
+
+- Inspect the legacy service and its tests
+- Build the modern .NET replacement in stages
+- Fix compatibility gaps found by the test suite
+- Record migration decisions and verification evidence
+- **Deliverable:** A working .NET service with passing compatibility tests and a concise migration record
+
+---
+
+### Session 27 — Repair and Refactor a Broken Python Application
+
+**Difficulty:** Advanced
+**Prerequisites:** Modules 1–4
+**Module:** Advanced Topics & Capstone
+**Duration:** 3 hours
+
+**Description:**
+Learners diagnose a broken Python application, restore its expected behavior, and refactor it behind a stable test suite.
+
+**Trainer Content Outline (1 hour):**
+
+- Separate repair work from structural refactoring
+- Trace failures from symptoms to root causes
+- Strengthen tests before changing design
+- Refactor in small steps with continuous verification
+
+**Lab Outline (2 hours):**
+
+- Reproduce the supplied failures
+- Repair the application until the baseline tests pass
+- Add focused tests for uncovered behavior
+- Refactor the repaired code and rerun the full suite
+- **Deliverable:** A repaired Python application with passing tests and documented refactoring decisions
+
+---
+
 ## Delivery Notes
 
-- **Total track duration:** 75 hours (25 sessions × 3 hours each)
+- **Total track duration:** 81 hours across 27 sessions
 - **Recommended delivery schedules:**
   - Intensive: 3 sessions/day across 9 days
-  - Standard: 2 sessions/day across 13 days
-  - Extended: 1 session/day × 25 days
+  - Standard: 1–2 sessions/day across 14 days
+  - Extended: 1 session/day across 27 days
 - **Group size:** 8–15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1–3 form the core track (required for full certification)

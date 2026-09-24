@@ -10,9 +10,9 @@
 > The trainer must select and prepare this route before the workshop. It is not
 > part of the standard learner path.
 
-## Purpose
-
-Use a seeded Azure Boards Epic or Feature as the parent objective for the fictional **Service Request Portal**. Azure Boards holds the plan, ownership, and review record. GitHub holds repository work.
+Use a seeded Azure Boards Epic or Feature as the parent objective for the fictional
+**Service Request Portal**. Azure Boards holds the plan, ownership, and review
+record. GitHub holds repository work.
 
 **GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser
 are planning interfaces. They do not replace the built-in `/orchestrate` skill.

@@ -1,4 +1,4 @@
-# Session 04 — GitHub Copilot in the CLI — Trainer Content
+# Session 04: GitHub Copilot in the CLI Trainer Content
 
 > **Duration:** 1 hour | **Difficulty:** Intermediate | **Module:** Copilot in Practice
 
@@ -6,9 +6,12 @@
 
 ## Session Overview
 
-This session covers GitHub Copilot's standalone, terminal-native CLI. Trainers learn its terminal workflows, when the CLI fits better than an IDE, and how to teach those choices without overstating product behavior.
+This session covers GitHub Copilot's standalone CLI. Trainers learn its terminal
+workflows and when it fits better than an IDE. They also learn how to teach those
+choices without overstating product behavior.
 
-**Session focus:** The CLI supports terminal-first, scriptable workflows in headless environments. It is especially relevant for DevOps engineers, SREs, and other terminal-focused developers.
+**Session focus:** The CLI supports scriptable workflows in headless environments.
+It fits DevOps engineers, SREs, and other terminal-focused developers.
 
 ---
 
@@ -16,11 +19,11 @@ This session covers GitHub Copilot's standalone, terminal-native CLI. Trainers l
 
 - [ ] Install the Copilot CLI: `npm install -g @github/copilot` (requires Node.js 22+)
 - [ ] Authenticate: run `copilot` and use `/login`
-- [ ] Have a sample project cloned locally for demos
+- [ ] Use `lab/starter/agent-tasks/` for the demo and lab handoff
 - [ ] Terminal with good font size for projection (24pt+)
-- [ ] Test all demo commands beforehand — CLI versions change rapidly
+- [ ] Test all demo commands beforehand because CLI versions change rapidly
 - [ ] Have backup screenshots/recordings in case of auth issues
-- [ ] Review the CLI-exclusive features table (Section 5) so you can answer questions confidently
+- [ ] Review the CLI-exclusive features table in Section 5
 
 ---
 
@@ -41,7 +44,7 @@ Walk through three reasons the CLI matters:
 
 **2. It includes terminal-oriented features**
 
-- Autopilot mode (fully autonomous, no approval prompts)
+- Autopilot mode (no approval prompts)
 - Programmatic mode for scripting (`-p` flag)
 - Custom model providers (Ollama, Azure OpenAI, Anthropic)
 - 6 built-in specialized agents
@@ -116,7 +119,7 @@ The interactive CLI has three modes, cycled with `Shift+Tab`:
 
 | Mode          | Behavior                                                                                  | When to Use                                                   |
 | ------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| **Standard**  | Ask/execute — Copilot responds, asks permission before acting                             | Default. Most conversations.                                  |
+| **Standard**  | Ask or execute; Copilot responds and asks permission before acting                       | Default. Most conversations.                                  |
 | **Plan**      | Copilot analyzes, asks clarifying questions, builds a structured plan BEFORE writing code | Complex tasks where you want to review the approach first.    |
 | **Autopilot** | Copilot works autonomously without asking for input at each step                          | Trusted tasks, batch operations, when you know what you want. |
 
@@ -130,29 +133,29 @@ The CLI has **40+ slash commands** that control every aspect of behavior. Here a
 
 **Session Management:**
 
-- `/clear` or `/new` — start fresh conversation
-- `/resume` — resume a previous session (sessions persist!)
-- `/compact` — compress conversation to free up context window
-- `/context` — visualize token usage
-- `/usage` — inspect session information when the customer-approved CLI exposes it
+- `/clear` or `/new`: start a fresh conversation
+- `/resume`: resume a previous session (sessions persist!)
+- `/compact`: compress conversation to free up context window
+- `/context`: visualize token usage
+- `/usage`: inspect session information when the approved CLI exposes it
 
 **Agentic Commands:**
 
-- `/agent` — browse and select from available agents
-- `/delegate` — send work to the cloud agent on GitHub
-- `/fleet` — enable parallel subagent execution
-- `/plan` — create implementation plan before coding
-- `/research` — deep research using GitHub search + web
-- `/review` — run code review agent
-- `/pr` — PR operations (view, create, fix, auto)
-- `/diff` — review changes
+- `/agent`: browse and select from available agents
+- `/delegate`: send work to the cloud agent on GitHub
+- `/fleet`: enable parallel subagent execution
+- `/plan`: create an implementation plan before coding
+- `/research`: deep research using GitHub search and the web
+- `/review`: run the code review agent
+- `/pr`: PR operations (view, create, fix, auto)
+- `/diff`: review changes
 
 **Configuration:**
 
-- `/model` — select AI model
-- `/mcp` — manage MCP servers inline
-- `/skills` — manage skills inline
-- `/init` — auto-generate `copilot-instructions.md` for your project
+- `/model`: select an AI model
+- `/mcp`: manage MCP servers inline
+- `/skills`: manage skills inline
+- `/init`: generate `copilot-instructions.md` for your project
 
 > **Slide suggestion:** A categorized slash command reference card. Highlight the ones marked "CLI-exclusive."
 
@@ -177,7 +180,8 @@ copilot
 # Watch it cycle through files autonomously
 ```
 
-> **Trainer tip:** Have a project with linting errors ready. Autopilot on lint fixes is a safe, impressive demo. Avoid autopilot on destructive operations during a live demo.
+> **Trainer tip:** Have a project with linting errors ready. Autopilot can fix them
+> without a risky demo. Do not use it for destructive operations.
 
 ### Transition
 
@@ -185,7 +189,7 @@ copilot
 
 ---
 
-## Section 4: Programmatic Mode — Scriptable AI (10 min)
+## Section 4: Programmatic Mode and Scriptable AI (10 min)
 
 ### Talking Points
 
@@ -212,7 +216,7 @@ copilot -p "PROMPT" [OPTIONS]
 | `--max-autopilot-continues=10` | Cap autonomous iterations                 |
 | `--no-ask-user`                | Disable all user prompts (fully headless) |
 
-### Real-World Scripting Examples
+### Scripting examples
 
 **1. Generate a changelog from git history:**
 
@@ -312,15 +316,15 @@ The CLI has a full orchestration system:
 - Up to 32 subagents can run concurrently
 - `/fleet` enables parallel execution of task parts
 
-**`/delegate`** — Send work to the Copilot cloud agent on GitHub:
+**`/delegate`:** Send work to the Copilot cloud agent on GitHub:
 
 ```
 /delegate Create a PR that fixes issue #42
 ```
 
-This creates a branch, writes code, and opens a draft PR — all from your terminal.
+This creates a branch, writes code, and opens a draft PR from your terminal.
 
-**`/fleet`** — Parallel subagent execution:
+**`/fleet`:** Run subagents in parallel:
 
 ```
 /fleet Refactor all 5 service modules to use the new logging library
@@ -328,7 +332,7 @@ This creates a branch, writes code, and opens a draft PR — all from your termi
 
 The CLI spawns multiple subagents to work on different modules simultaneously.
 
-**`/research`** — Deep research mode:
+**`/research`:** Start deep research mode:
 
 ```
 /research What are the best practices for rate limiting in Express.js?
@@ -336,7 +340,7 @@ The CLI spawns multiple subagents to work on different modules simultaneously.
 
 Uses the research agent (Sonnet 4.6) to search GitHub repos, read documentation, and produce a report.
 
-**`/tasks`** — Monitor background subagents:
+**`/tasks`:** Monitor background subagents:
 
 ```
 /tasks
@@ -379,19 +383,21 @@ You can connect alternative AI providers:
 | **Azure OpenAI**     | Configure via environment variables       |
 | **Anthropic Direct** | `copilot --model anthropic:claude-opus-4` |
 
-> "If your organization can't send code to GitHub's servers — maybe for compliance reasons — you can point the CLI at a local Ollama instance running an open-source model. All the CLI's agentic capabilities work with local models."
+> "If policy prevents sending code to GitHub's servers, point the CLI at a local
+> Ollama instance that runs an open-source model. The CLI agent can then use that
+> local model."
 
-### Hooks System — CI/CD Automation
+### Hooks System for CI/CD Automation
 
 Hooks are external commands that fire at lifecycle points. Configured in `.github/hooks/*.json`:
 
 | Event               | When                             | Can Block?                       |
 | ------------------- | -------------------------------- | -------------------------------- |
-| `preToolUse`        | Before each tool executes        | **Yes** — can allow/deny/modify  |
-| `postToolUse`       | After tool completes             | **Yes** — can replace result     |
-| `permissionRequest` | Before showing permission dialog | **Yes** — auto-approve/deny      |
+| `preToolUse`        | Before each tool executes        | **Yes:** can allow/deny/modify   |
+| `postToolUse`       | After tool completes             | **Yes:** can replace result      |
+| `permissionRequest` | Before showing permission dialog | **Yes:** auto-approve/deny       |
 | `sessionStart`      | Session begins                   | No                               |
-| `agentStop`         | Agent finishes a turn            | **Yes** — can force continuation |
+| `agentStop`         | Agent finishes a turn            | **Yes:** can force continuation  |
 | + 8 more events     | Various lifecycle points         | Various                          |
 
 **Use cases:**
@@ -423,7 +429,8 @@ The CLI can function as an **AI backend** for any ACP-compatible tool:
 copilot --acp --transport=sse --port=8080
 ```
 
-This turns Copilot into a server that other tools can send requests to — enabling custom IDE integrations, web UIs, or automation tools.
+This turns Copilot into a server for requests from custom IDE integrations, web
+interfaces, or automation tools.
 
 ### OpenTelemetry Monitoring
 
@@ -433,7 +440,9 @@ Enterprise observability for AI agent usage:
 copilot --otel-endpoint=http://localhost:4318
 ```
 
-Produces full traces, spans, and metrics for every agent action — tool calls, model requests, token usage. Feed into Grafana, Datadog, or any OTLP-compatible backend.
+This produces traces, spans, and metrics for agent actions such as tool calls,
+model requests, and token use. Send them to Grafana, Datadog, or another
+OTLP-compatible backend.
 
 > **Trainer tip:** This matters most for enterprise audiences. Pair with Session 17 (Enterprise Governance) for organizations that need to monitor AI agent behavior.
 
@@ -446,7 +455,7 @@ Produces full traces, spans, and metrics for every agent action — tool calls, 
 
 ### Transition
 
-> "With all these capabilities, the natural question is: when do I use the CLI vs the IDE?"
+> "Choose the CLI or IDE based on the work."
 
 ---
 
@@ -476,11 +485,15 @@ Present this decision framework for CLI, IDE Chat, IDE Agent Mode, and Copilot A
 
 **CLI** supports automation, scripting, and headless environments. It offers programmatic control and parallel subagents. It fits operators, SREs, and CI/CD pipelines.
 
-**IDE Chat** — Quick questions and refinements without leaving your editor. Light weight, fast, context-aware because Copilot sees your open files. Best for daily development.
+**IDE Chat:** Use it for quick questions and refinements without leaving the
+editor. It can use open-file context.
 
-**IDE Agent Mode** — Multi-step coding tasks with visual control. You see diffs before accepting. Inline suggestions while you type. Best for complex edits and refactoring.
+**IDE Agent Mode:** Use it for multi-step coding tasks that need visual control.
+Review diffs before accepting complex edits or refactors.
 
-**Copilot App** — A dedicated Copilot surface for agent sessions and customization. Use it when the work needs an app-managed session or a shared canvas. Session 08 covers the Customize area, plugins, and canvas extensions.
+**Copilot App:** Use this dedicated surface for app-managed agent sessions or a
+shared canvas. Session 08 covers the Customize area, plugins, and canvas
+extensions.
 
 > "Use the IDE for daily coding, the CLI for terminal automation, Chat for short questions, and the App when shared state helps people steer the work."
 
@@ -490,10 +503,10 @@ The Copilot App gives teams a dedicated place to run agent sessions and manage c
 
 **Key capabilities:**
 
-- **Agent sessions** — work in an app-managed session when the approved surface fits the task
-- **Customize area** — discover plugins, skills, MCP servers, and canvases
-- **Shared canvases** — work with an agent on visible state, such as a plan, board, or checklist
-- **Approved access** — confirm the enabled plan, features, data boundary, and policy
+- **Agent sessions:** Work in an app-managed session when that surface fits the task.
+- **Customize area:** Discover plugins, skills, MCP servers, and canvases.
+- **Shared canvases:** Work with an agent on a visible plan, board, or checklist.
+- **Approved access:** Confirm the enabled plan, features, data boundary, and policy.
 
 **When to use:**
 
@@ -522,7 +535,9 @@ Copilot works across multiple IDEs, though the IDE environment affects which fea
 
 **Trainer talking point:**
 
-> "This curriculum uses **VS Code as our baseline IDE** because it has the most complete Copilot support and is the most widely used. But Copilot works across everything from heavy IDEs (Visual Studio, IntelliJ) to lightweight editors (Vim, Sublime). If your team uses a different IDE, Copilot Chat and completions still work — you just won't get agent mode in preview IDEs like Eclipse or Xcode yet."
+> "This curriculum uses **VS Code as the baseline IDE**. Copilot also works in
+> Visual Studio, IntelliJ, Vim, Sublime, and other editors. Check the current
+> feature matrix before teaching a different IDE because support varies."
 
 ### CLI vs IDE: The Complementary Approach
 
@@ -533,7 +548,8 @@ Copilot works across multiple IDEs, though the IDE environment affects which fea
 - **Use Copilot App** when a shared canvas or app-managed session fits the work
 - **Use IDE Chat** for rapid Q&A without leaving your editor
 
-> "A typical week: Monday morning you use VS Code (IDE) to write features, Tuesday afternoon you use CLI to automate your deployment pipeline, Wednesday you review a PR on GitHub.com and use Copilot App to understand the changes, Thursday you use IDE Agent Mode to refactor a module, Friday you use CLI in a cron job to generate weekly reports. Each surface solves a different problem."
+> "A team may use the IDE for feature work, the CLI for deployment automation, and
+> Copilot App for an app-managed review session. Pick the surface for the task."
 
 ### CLI-Native Workflow Patterns
 
@@ -574,7 +590,7 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 
 ## Section 8: Wrap-up & Transition to Session 05 (5 min)
 
-### Key Takeaways
+### What to remember
 
 1. **The CLI is a standalone agentic system**
 2. **Programmatic mode (`-p`)** makes AI scriptable for CI/CD and automation
@@ -585,20 +601,23 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 
 ### Connection to Next Session
 
-> "In Session 05, we'll dive deep into agent mode in the IDE — which shares the agentic philosophy but has a very different user experience. You'll see how IDE agent mode gives you visual diffs, inline code changes, and a tighter edit-review loop. The CLI gives you power and automation; the IDE gives you visual control."
+> "Session 05 covers agent mode in the IDE. It uses visual diffs and inline changes
+> for a tighter edit-and-review loop. The CLI remains the terminal automation
+> surface."
 
 ---
 
 ## Common Q&A
 
 **Q: Do I need both the CLI and the IDE extension?**
-A: Use the surface that fits the task and is approved by the customer. Confirm current entitlement and metering behavior in official documentation and customer policy.
+A: Use the surface that fits the task and is approved for the environment. Confirm current entitlement and metering behavior in official documentation and the applicable policy.
 
 **Q: How is CLI use metered?**
-A: Do not teach a fixed rule. Check the current official billing documentation with the customer administrator and honor the agreed metered-work stop guard.
+A: Do not teach a fixed rule. Check the current official billing documentation with the administrator and honor the agreed metered-work stop guard.
 
 **Q: Can I use the CLI in GitHub Actions?**
-A: Yes — that's one of its primary use cases. Use programmatic mode with `--yolo` or specific `--allow-tool` flags. Authenticate via `GITHUB_TOKEN`.
+A: Yes. Use programmatic mode with `--yolo` or specific `--allow-tool` flags.
+Authenticate through `GITHUB_TOKEN`.
 
 **Q: Is the CLI safe for production servers?**
 A: With proper permission controls (`--available-tools`, `--deny-tool`), yes. The fine-grained permission system lets you lock down exactly what the CLI can do. Never use `--yolo` on production.
@@ -610,7 +629,8 @@ A: Only with custom model providers pointing to a local model (e.g., Ollama). Gi
 A: Auto-compaction keeps conversations going virtually forever. The `/context` command shows token usage. The explore agent uses fast Haiku models for efficient codebase scanning.
 
 **Q: Can I share sessions with my team?**
-A: Yes — `/share gist` creates a secret GitHub gist, or `/share file PATH` exports to Markdown. Sessions can also be resumed cross-device.
+A: Yes. `/share gist` creates a secret GitHub gist, and `/share file PATH` exports
+to Markdown. Sessions can also be resumed across devices.
 
 ---
 
@@ -626,7 +646,7 @@ A: Yes — `/share gist` creates a secret GitHub gist, or `/share file PATH` exp
 8. **Hooks System:** Lifecycle event diagram
 9. **Decision Framework:** When to use CLI vs IDE table
 10. **CLI Workflow Patterns:** 4 patterns (Ops, CI/CD, Automation, Data)
-11. **Key Takeaways:** 6 bullet points
+11. **What to remember:** 6 bullet points
 
 ---
 

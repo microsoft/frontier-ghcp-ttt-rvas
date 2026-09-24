@@ -1,15 +1,18 @@
-# Session 04 Lab — GitHub Copilot in the CLI
+# Session 04 Lab: GitHub Copilot in the CLI
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
 **Prerequisites:** Sessions 01–03 completed, GitHub CLI (`gh`) installed  
-**Deliverable:** A CLI workflow cheat sheet + a fixed Node.js project + a completed pipeline script
+**Deliverable:** A reviewed `agent-tasks` project, a project health script, and a CLI workflow cheat sheet
 
 ---
 
 ## Lab Overview
 
-Use the standalone CLI from the terminal. Explain and generate commands, work through agent tasks, try programmatic mode and `/research`, then compare CLI and IDE workflows. Record the commands and workflow choices you would use.
+You are taking over the `agent-tasks` Node.js project. Use the standalone CLI to
+inspect its commands, repair it, and automate a health report. Then decide whether
+the CLI or IDE fits each task. Keep all notes and generated artifacts tied to this
+project.
 
 | Exercise   | Topic                                     | Time   |
 | ---------- | ----------------------------------------- | ------ |
@@ -22,21 +25,21 @@ Use the standalone CLI from the terminal. Explain and generate commands, work th
 
 Read the [course safety baseline](../../learning-safety-baseline.md). Confirm that the [Copilot CLI](https://docs.github.com/en/copilot/get-started/cli-quickstart), its authentication method, and terminal access are approved.
 
-## If access is unavailable
+### Required access
 
-Complete the command-analysis and workflow exercises with shell documentation and peer review. Keep the prompts in the cheat sheet, but do not run them against customer repositories.
+- [ ] Confirmed GitHub Copilot access for the standalone CLI
+- [ ] Approval to use the local `agent-tasks` training project
+- [ ] GitHub CLI (`gh`) installed
+- [ ] Node.js 22 or later
+- [ ] Terminal access
+- [ ] VS Code for the final comparison
 
----
+### No-access fallback
 
-## Before You Start
-
-### Prerequisites Checklist
-
-- [ ] Customer administrator confirmation that standalone CLI access is permitted (see the preflight).
-- [ ] GitHub CLI (`gh`) installed — [Install guide](https://cli.github.com/)
-- [ ] Node.js 22+ installed (for `npm` installation method)
-- [ ] Terminal access (macOS Terminal, Windows Terminal/WSL, or Linux terminal)
-- [ ] VS Code installed (for Exercise 4 comparison)
+If Copilot CLI access is unavailable, **do not run the CLI steps**. Use the manual
+route instead. Inspect the supplied commands, repair the project with normal editor
+and shell tools, complete the script from its TODOs, and record the prompts you
+would have used. Do not use real repositories or restricted data.
 
 ### Verify Your Setup
 
@@ -94,7 +97,7 @@ Install the GitHub Copilot standalone CLI, verify it's working, and use it to ex
    /login
    ```
 
-   This triggers an OAuth device flow — follow the browser prompts.
+   This starts an OAuth device flow. Follow the browser prompts.
 
 4. **Verify you can start a session:**
 
@@ -123,7 +126,7 @@ Open `lab/starter/explain-challenges.md`. The file has five commands, from simpl
 
 1. Launch the CLI with `copilot` and ask it to explain the command (e.g., "Explain what this command does: `<command>`")
 2. Read the explanation Copilot provides
-3. Rate the explanation quality (1–5) — Was it accurate? Did it cover edge cases?
+3. Rate the explanation from 1–5. Check its accuracy and coverage of edge cases.
 4. Note anything the explanation missed or got wrong
 
 **Work through all 5 challenges:**
@@ -144,8 +147,9 @@ Open `lab/starter/explain-challenges.md`. The file has five commands, from simpl
 
 Open `lab/starter/suggest-challenges.md`. The file has five tasks written in plain language. For each one:
 
-1. In the Copilot CLI session, describe the task and ask for a command (e.g., "Give me a command to find all Python files larger than 1MB")
-2. Review the suggested command — does it do what you asked?
+1. In the Copilot CLI session, describe the task and ask for a command. For
+   example: "Give me a command to find all Python files larger than 1MB."
+2. Review the suggested command. Check that it does what you asked.
 3. Try running the suggested command (or note what it would do)
 4. If the suggestion isn't quite right, refine your description and try again
 
@@ -161,7 +165,7 @@ Open `lab/starter/suggest-challenges.md`. The file has five tasks written in pla
 
 **After completing all 5, compare with `lab/solution/suggest-answers.md`.**
 
-### Exercise 2 check
+### Checkpoint 1: CLI ready and project understood
 
 By the end of Exercise 1:
 
@@ -169,6 +173,7 @@ By the end of Exercise 1:
 - [ ] You can start an interactive session with `copilot`
 - [ ] You've explained 5 commands and understand what Copilot covers well vs. misses
 - [ ] You've generated commands for 5 tasks and verified they work
+- [ ] Your notes connect each command to the `agent-tasks` takeover story
 
 ---
 
@@ -176,7 +181,8 @@ By the end of Exercise 1:
 
 ### Objective
 
-Use the Copilot CLI's full agent mode to solve multi-step development tasks from the terminal. You'll fix bugs, add tests, and refactor code — all without opening an IDE.
+Use the Copilot CLI's full agent mode for multi-step development tasks in the
+terminal. Fix bugs, add tests, and refactor code without opening an IDE.
 
 ### Setup
 
@@ -198,7 +204,7 @@ Use the Copilot CLI's full agent mode to solve multi-step development tasks from
    npm test
    ```
 
-   **Expected:** Multiple test failures — the project has intentional bugs.
+   **Expected:** Multiple test failures because the project has intentional bugs.
 
 4. **Review the project structure:**
 
@@ -213,7 +219,7 @@ Use the Copilot CLI's full agent mode to solve multi-step development tasks from
    └── task-list.md          # Your 3 tasks for agent mode
    ```
 
-5. **Read `task-list.md`** — it contains 3 tasks of increasing complexity.
+5. **Read `task-list.md`.** It contains 3 tasks of increasing complexity.
 
 ---
 
@@ -296,7 +302,8 @@ Refactor src/utils.js:
 - [ ] Does it handle the coordination between changing utils.js and updating tests?
 - [ ] Does it use the `!` prefix to run shell commands directly?
 
-**Expected:** Validated, documented utility functions with updated tests — all passing.
+**Expected:** Validated, documented utility functions with updated tests. All tests
+pass.
 
 **Exit the CLI:**
 
@@ -316,7 +323,7 @@ Refactor src/utils.js:
 | Agent gets stuck in a loop         | Press `Esc` to interrupt, then give clearer instructions                |
 | "Permission denied" on tool use    | Type `y` to allow, or `!` to allow all similar requests for the session |
 
-### You Should See
+### Checkpoint 2: project repaired
 
 By the end of Exercise 2:
 
@@ -331,7 +338,7 @@ By the end of Exercise 2:
 
 ### Objective
 
-Explore CLI features for terminal-first workflows. Check current GitHub documentation and customer policy before using a feature.
+Build terminal-first automation for the same project. Check current GitHub documentation and local policy before using a feature.
 
 ### Part A: Programmatic Mode (15 min)
 
@@ -377,7 +384,7 @@ Programmatic mode (`-p`) lets you use Copilot in automated pipelines. Review its
    ./pipeline-script.sh
    ```
 
-   **Expected:** A generated summary report combining git history analysis, a code health assessment, and a TODO scan — all produced by Copilot in programmatic mode.
+   **Expected:** A generated `agent-tasks` health report combining git history analysis, a code assessment, and a TODO scan.
 
 7. **Compare with `lab/solution/cli-exclusive/pipeline-script.sh`** for the completed version.
 
@@ -402,7 +409,7 @@ The `/research` command launches a specialized research agent that searches your
    ```
 
 3. **While it researches, observe:**
-   - [ ] Does it search GitHub repositories for real-world examples?
+   - [ ] Does it search GitHub repositories for relevant examples?
    - [ ] Does it cite sources?
    - [ ] How long does the research take vs. a regular prompt?
    - [ ] Is the output more thorough than a standard chat response?
@@ -431,7 +438,8 @@ The CLI can delegate work to specialized subagents and even push tasks to the cl
    /delegate Review the README.md in the agent-tasks project and suggest improvements for clarity, structure, and completeness
    ```
 
-   **What happens:** The cloud agent (on GitHub.com) picks up the task, creates a branch, makes changes, and opens a draft PR. You'll get a link to the PR.
+   **What happens:** The cloud agent on GitHub.com picks up the task. It creates a
+   branch, makes changes, and opens a draft PR. You'll get a link to the PR.
 
    > **Note:** `/delegate` requires your repo to be pushed to GitHub. If you're working locally without a remote, observe the command's behavior and note what it attempts.
 
@@ -461,12 +469,12 @@ The CLI can delegate work to specialized subagents and even push tasks to the cl
 
 | Problem                 | Solution                                                                      |
 | ----------------------- | ----------------------------------------------------------------------------- |
-| `/research` seems slow  | Research agents do more work — 1-3 minutes is normal for thorough results     |
+| `/research` seems slow  | Research agents do more work. 1-3 minutes is normal for thorough results      |
 | `/delegate` fails       | Ensure your repo is pushed to a GitHub remote and you have cloud agent access |
 | `/fleet` not recognized | Ensure you have the latest CLI version: `npm update -g @github/copilot`       |
 | Programmatic mode hangs | Add `--max-autopilot-continues=5` to cap iterations                           |
 
-### Exercise 3 check
+### Checkpoint 3: automation evidence captured
 
 By the end of Exercise 3:
 
@@ -488,8 +496,8 @@ Complete the same tasks in the CLI and IDE, then record which surface fits each 
 
 Open `lab/starter/comparison-tasks.md`. It contains 3 tasks. For each one:
 
-1. **Do it in the CLI first** — time yourself
-2. **Do it in VS Code (IDE) second** — time yourself
+1. **Do it in the CLI first.** Time yourself.
+2. **Do it in VS Code (IDE) second.** Time yourself.
 3. **Record your observations** in the comparison table
 
 **The 3 comparison tasks:**
@@ -513,7 +521,8 @@ Open `lab/starter/comparison-tasks.md`. It contains 3 tasks. For each one:
 
 ### Part B: Workflow Scenarios (10 min)
 
-Open `lab/starter/workflow-scenarios.md`. For each of the 5 real-world scenarios, decide: **CLI or IDE?** Write your reasoning.
+Open `lab/starter/workflow-scenarios.md`. For each of the 5 practical scenarios,
+choose **CLI or IDE** and write your reasoning.
 
 The scenarios span common developer situations:
 
@@ -538,32 +547,30 @@ Customize the sheet for how you work.
 
 **See `lab/solution/cli-cheatsheet-example.md`** for an example of a completed cheat sheet.
 
-### Exercise 4 check
+### Checkpoint 4: surface decision recorded
 
 By the end of Exercise 4:
 
 - [ ] You've completed the same task in CLI and IDE and documented the tradeoffs
-- [ ] You've made CLI vs. IDE decisions for 5 real-world scenarios
+- [ ] You've made CLI vs. IDE decisions for 5 practical scenarios
 - [ ] You have a personalized CLI workflow cheat sheet
 
 ---
 
-## Deliverable Checklist
+## Final Deliverable
 
-Before you wrap up, verify you've completed:
+Submit one folder containing:
 
-- [ ] **Exercise 1:** standalone `copilot` installed, 5 explanation + 5 command-generation challenges completed
-- [ ] **Exercise 2:** All bugs fixed in `agent-tasks/src/app.js`, `tests/utils.test.js` created, utils refactored with validation
-- [ ] **Exercise 3:** `pipeline-script.sh` completed and executed, `/research` used, `/delegate` or `/fleet` tried
-- [ ] **Exercise 4:** 3 CLI vs IDE comparisons documented, 5 workflow scenarios evaluated, personal cheat sheet created
-- [ ] **Deliverables collected:**
-  - Your completed CLI cheat sheet
-  - The fixed `agent-tasks/` project
-  - The completed `pipeline-script.sh`
+1. The fixed `agent-tasks/` project with passing `npm test` output.
+2. The completed `pipeline-script.sh` and one generated project health report.
+3. Research or delegation notes tied to the `agent-tasks` project, or the manual fallback record.
+4. The completed CLI-versus-IDE comparison and workflow cheat sheet.
+
+**Done:** Another learner can run the tests, run the script, and understand why you chose each Copilot surface.
 
 ---
 
-## Key Takeaways for Trainers
+## Trainer notes
 
 1. **Treat the CLI as a terminal workflow.** Confirm the current supported commands and controls in official documentation before teaching or automating them.
 
@@ -573,4 +580,4 @@ Before you wrap up, verify you've completed:
 
 4. **Choose between the CLI and IDE based on the work.** SSH, CI/CD, and automation favor the CLI. Visual development and code navigation favor the IDE.
 
-5. **Choose the surface deliberately.** Use current official documentation and customer policy to decide whether CLI, IDE, or web workflows are appropriate for the task.
+5. **Choose the surface deliberately.** Use current official documentation and the applicable policy to decide whether CLI, IDE, or web workflows fit the task.

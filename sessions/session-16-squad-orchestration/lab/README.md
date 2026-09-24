@@ -1,141 +1,181 @@
-# Session 16 Lab — Brady's Squad — AI Team Orchestration
+# Session 16 Lab: Carry One Issue Through a Squad
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions 01–07 and 09–12
-**Deliverable:** A configured team, reviewed work items, and a decision record
+
+**Deliverable:** One input-validation issue carried through assignment,
+implementation, tests, review, and a durable decision record
 
 ## Before you start
 
-This is an optional, vendor-neutral lab. Read the [course safety baseline](../../learning-safety-baseline.md). Confirm that the orchestration tool, repository access, external integrations, and metered-work limit are approved.
+Read the [course safety baseline](../../learning-safety-baseline.md). Use synthetic
+data only.
 
-If the live path is unavailable, assign the sample issues to human roles, maintain the decision and shared-memory files manually, and review the coordination plan with a trainer.
+Choose one route:
+
+- **Live route:** Learners must confirm GitHub Copilot access, the approved
+  orchestration tool, the GitHub training repository, integrations, and the
+  metered-work limit.
+- **Tabletop route:** Use the same issue and role packet without the live tool.
+  Learners act as lead, backend implementer, tester, and scribe.
+
+If GitHub Copilot access or the approved live path is unavailable, stop live setup
+and use the tabletop route. Do not improvise installation commands or connect an
+unapproved repository.
 
 | Exercise | Work | Time |
-| --- | --- | ---|
-| 1 | Initialize a team | 30 min |
-| 2 | Assign bounded work | 30 min |
-| 3 | Use GitHub Issues | 30 min |
-| 4 | Monitor approved work | 30 min |
+| --- | --- | --- |
+| 1 | Prepare the project and team | 25 min |
+| 2 | Assign Issue 001 | 20 min |
+| 3 | Implement and test | 45 min |
+| 4 | Review, decide, and monitor | 30 min |
 
 ## Setup
 
 - Node.js 20 or later
-- Authenticated `gh` CLI
-- Copilot CLI and an approved editor workflow
-- A repository that you may push to, if using the live path
+- Git
+- For the live route: authenticated `gh`, GitHub Copilot, an approved Squad
+  installation, and a training repository that you may push to
+- For the tabletop route: the supplied starter and solution assets
 
-## Exercise 1: Initialize a Squad team (30 min)
+## Exercise 1: Prepare the project and team (25 min)
 
-Copy `lab/starter/squad-project/` into a training repository. Run the baseline before changing it:
+Copy `lab/starter/squad-project/` into a training repository. Run the baseline:
 
 ```bash
 npm install
-npm start
-curl http://localhost:3000/api/health
 npm test
 ```
 
-If the approved setup permits it, install and verify the CLI:
+The starter suite should pass. Issue 001's validation cases do not exist yet.
+
+For the live route, verify the already approved installation:
 
 ```bash
-npm install -g @bradygaster/squad-cli
 squad --version
 ```
 
-Read `lab/starter/squad-init-guide.md`, then initialize the team through the approved path:
+Read `lab/starter/squad-init-guide.md`, then initialize or inspect the team:
 
 ```text
 Initialize a Squad team for this Node.js Express API. We need bounded roles
-for feature work, bug fixes, and quality review. Keep a decision record.
+for lead review, backend implementation, test evidence, and decision recording.
+Keep one owner for the shared decision record.
 ```
 
-Review the proposed team before confirming it. Names are cosmetic. Check the role boundaries in `.squad/team.md`, the routing in `.squad/routing.md`, the shared record in `.squad/decisions.md`, and one agent charter. Commit the generated team only after this review.
+Review `.squad/team.md`, `.squad/routing.md`, `.squad/decisions.md`, and every
+charter. The backend role may edit `src/routes/api.js`. The tester may edit
+`tests/api.test.js`. The lead reviews the result. The scribe is the only role that
+updates the shared decision record.
 
 ```bash
-tree .squad/ -L 2
-git add .
-git commit -m "Initialize Squad team"
-git push origin main
+tree .squad/ -L 3
 ```
 
 | Check | Expected result |
 | --- | --- |
-| Team | Active roles have charters and history files. |
-| Routing | Each work type maps to a bounded owner. |
-| Decisions | The shared record exists and has one owner for updates. |
-| Repository | The reviewed setup is committed. |
+| Team | Lead, backend, tester, and scribe have charters and history files. |
+| Routing | Implementation, test evidence, review, and decision updates have one owner each. |
+| Decisions | The shared record names the scribe as its editor. |
+| Stop rule | Overlapping ownership, failed tests, scope growth, or an unclear data boundary pauses work. |
 
-If installation, agent mode, or the coordinator is unavailable, do not guess at a workaround. Use the tabletop route and preserve the same role and review decisions.
+**Checkpoint:** The trainer signs off on the team boundary before Issue 001 is
+assigned. Tabletop learners record the same roles in
+`lab/starter/work-assignments.md`.
 
-## Exercise 2: Assign work to agents (30 min)
+## Exercise 2: Assign Issue 001 (20 min)
 
-Read `lab/starter/work-assignments.md`. Assign the lead a design decision, the backend role one endpoint, and the tester focused edge-case coverage. Do not give several agents write access to the same files.
+Open Issue 001 in `lab/starter/sample-issues.md`. This is the only implementation
+issue used in the required lab path.
 
-Example endpoint request:
+The lead assigns it with this work order:
 
 ```text
-{BackendName}, add GET /api/users/:id. Return a user by ID, return 404 when
-it does not exist, follow the existing patterns, and add or update focused tests.
+Assign Issue 001 to the backend role.
+
+Implement validation for POST /api/users in src/routes/api.js.
+Accept a non-empty string name up to 100 characters and a valid email shape.
+Return status 400 with a descriptive error for invalid input.
+Do not add dependencies, change the response envelope, or edit unrelated routes.
+The tester owns focused evidence in tests/api.test.js.
+The lead reviews the final packet.
 ```
 
-Inspect each result before passing work on:
+Record the assignment in the live `.squad/` log or the tabletop worksheet. It must
+include the issue, owner, permitted files, non-goals, tests, reviewer, and stop
+conditions.
+
+**Checkpoint:** A partner compares the assignment with Issue 001. Fix any added
+scope before implementation starts.
+
+## Exercise 3: Implement and test (45 min)
+
+The backend role updates `src/routes/api.js`. Keep validation inline and add no
+package.
+
+The tester adds focused cases to `tests/api.test.js` for:
+
+- a trimmed non-empty name;
+- an empty or non-string name;
+- a name longer than 100 characters;
+- a malformed email;
+- a valid request that still returns `201`.
+
+Run:
 
 ```bash
-ls .squad/decisions/inbox/
-cat .squad/decisions.md
-cat .squad/agents/{backend-name}/history.md
 npm test
 ```
 
-The reviewer should confirm that the decision, code, test evidence, and history agree. Split a request that is too broad or return it to the lead.
+Record the command, result, and changed files. If a test fails, return the packet
+to the owning role. Do not weaken the issue or delete a failing case to get a green
+run.
 
-## Exercise 3: GitHub Issues integration (30 min)
+**Checkpoint:** All focused and existing tests pass. Compare the result with
+`lab/solution/squad-project/src/routes/api.js` and
+`lab/solution/squad-project/tests/api.test.js`.
 
-Read `lab/starter/sample-issues.md`. Create the general label and labels for the actual team names:
+## Exercise 4: Review, decide, and monitor (30 min)
 
-```bash
-gh label create "squad" --color "6f42c1" --description "Work for the Squad AI team"
-gh label create "squad:{backend-name}" --color "0e8a16" --description "Assigned to {BackendName}"
-gh label create "squad:{tester-name}" --color "d93f0b" --description "Assigned to {TesterName}"
-gh label create "squad:{lead-name}" --color "0075ca" --description "Assigned to {LeadName}"
-```
+The lead checks the implementation against every acceptance criterion and records
+one outcome: **approve**, **request changes**, or **pause**.
 
-Create the first three prepared issues from `sample-issues.md`, then ask the lead to triage only those issues. Each issue needs a bounded scope, acceptance criteria, non-goals, and a reviewer.
+The review packet must include:
 
-```text
-{LeadName}, triage the open Squad issues. Assign each to the appropriate
-squad:{member} label and record the reason for the assignment.
-```
+- issue and assignment;
+- changed files;
+- test command and result;
+- acceptance-criteria checks;
+- lead decision;
+- durable decision-record entry.
 
-Verify labels and inspect one resulting branch or draft pull request:
+Use `lab/starter/ralph-guide.md` to simulate the monitor after review. The monitor
+may surface Issue 001 as ready for closure only after the lead approves it. A human
+still closes or merges the work.
 
-```bash
-gh issue list --label "squad" --json number,title,labels
-gh pr list --state open
-gh pr view <PR_NUMBER>
-```
+The items in `lab/starter/backlog-items.md` are optional discussion prompts.
+**Do not implement them during the required lab.**
 
-Do not wait for a queue of autonomous changes. One reviewed issue is enough for the exercise.
+## Final deliverable
 
-## Exercise 4: Ralph and continuous development (30 min)
+Submit one folder or pull request containing:
 
-Read `lab/starter/ralph-guide.md` and `lab/starter/backlog-items.md`. Add the prepared backlog only if the repository and integration are approved. Review the monitor's status:
+1. the reviewed team structure or tabletop role sheet;
+2. the Issue 001 assignment;
+3. the bounded code and test changes;
+4. passing `npm test` evidence;
+5. the lead review and durable decision.
 
-```bash
-squad watch --health
-```
+## Verification
 
-Use the monitor to surface ready work. A human approves or merges it. For every selected item, confirm the issue scope, assigned role, current meter, required checks, and human reviewer. Stop if ownership overlaps, a check fails, policy changes, or the usage guard is reached.
-
-The fallback is a manual board: triage the same backlog, assign one owner per item, simulate the monitor's next choice, and record the review decision.
-
-## Deliverables
-
-- [ ] A reviewed team structure or tabletop equivalent.
-- [ ] Three role-bounded assignments with decision and test evidence.
-- [ ] At least one triaged issue and reviewable result, if the live path is approved.
-- [ ] A monitor or manual-board record with stop conditions.
-- [ ] A documented manual fallback.
+- [ ] Local prerequisites match Sessions 01–07 and 09–12.
+- [ ] The selected route was approved before work began.
+- [ ] One role owned each write boundary.
+- [ ] Issue 001 kept the same acceptance criteria through review.
+- [ ] No dependency or unrelated route was changed.
+- [ ] Existing and focused tests pass.
+- [ ] The lead decision cites test evidence.
+- [ ] The live and tabletop routes produce the same review packet.

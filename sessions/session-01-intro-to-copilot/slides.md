@@ -3,332 +3,222 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 01 — Introduction to Copilot'
+footer: 'Session 01: Introduction to GitHub Copilot'
 ---
 
 <!-- _class: lead -->
 
-# Introduction to Copilot
-## Responsible AI-assisted development
+# Introduction to GitHub Copilot
+
+## Define, inspect, test, decide
+
+Session 01 of 19 | 3 hours
+
+---
+
+<!-- _class: agenda -->
+
+# Agenda
+
+| Segment | Time |
+| --- | --- |
+| Proposal-and-evidence model | 7 min |
+| How context shapes a suggestion | 10 min |
+| Access and data preflight | 10 min |
+| Inline suggestion controls | 11 min |
+| Prepared utility demonstration | 12 min |
+| Follow-up edits | 6 min |
+| Fallback and lab handoff | 4 min |
 
 ---
 
 # The durable workflow
 
 ```text
-Define a bounded task
-        ↓
-Check access, data, and policy
-        ↓
+Define observable behavior
+          ↓
+Check access, data, and scope
+          ↓
 Inspect the proposed change
-        ↓
-Run tests and human review
-        ↓
-Accept, revise, or implement manually
+          ↓
+Run focused checks
+          ↓
+Accept, revise, or reject
 ```
 
----
-
-# Access and cost preflight
-
-Use Enterprise Cloud as the governance baseline.
-
-1. Verify current official GitHub documentation and customer administrator policy.
-2. Confirm repository scope, participant access, and data classification.
-3. Use a non-sensitive task with explicit acceptance criteria.
-4. For metered work, set a customer-defined threshold, escalation route, and stop guard.
+**The developer owns the result.**
 
 ---
 
-# Good task descriptions
+# Proposal is not proof
 
-```text
-Add validation to the account-creation form.
-
-Acceptance criteria:
-- Name and email have clear validation errors.
-- Existing tests pass and focused tests cover failures.
-- No sensitive data is introduced.
-- A human reviewer can reproduce the checks.
-```
-
-Clear scope gives reviewers something concrete to check.
-
----
-
-# Inspect, test, review
-
-Ask:
-
-- Does the change meet the acceptance criteria?
-- Is the code understandable and within the approved scope?
-- Did required tests and checks run?
-- Does a reviewer understand data, dependency, and security implications?
-
-Treat assistant output as a proposal. Approval still belongs to the reviewer.
-
----
-
-# No-access fallback
-
-When access is absent or policy does not permit a live exercise:
-
-1. Complete the starter task manually.
-2. Use the same acceptance criteria and tests.
-3. Note where an assistant might have helped.
-4. Compare the result with the solution or trainer review.
-
----
-
-<!-- _class: qa -->
-
-# Agenda and time plan
-
-| Time | Topic | Trainer move |
-| --- | --- | --- |
-| 0:00 | Outcomes and mental model | Set expectations |
-| 0:05 | Architecture and data flow | Draw the request path |
-| 0:15 | Access, policy, and usage | Run the preflight |
-| 0:25 | Setup and core controls | Walk through the IDE |
-| 0:35 | Live coding demo | Narrate accept/reject decisions |
-| 0:48 | Next Edit Suggestions | Show the follow-up loop |
-| 0:53 | Strengths, limits, objections | Invite discussion |
-| 0:58 | Lab handoff | Confirm readiness |
-
-**Transition:** “Start with a simple system model.”
-
----
-
-# What GitHub Copilot is
-
-Copilot is an AI coding assistant available through development surfaces such as
-the IDE, GitHub, and the command line.
-
-- It predicts or proposes code from the context available to the selected surface.
-- It can explain, transform, test, and review code when asked.
-- It does not know your intent unless the task and context make that intent clear.
-- It does not replace compilation, tests, security checks, or accountable review.
-
-**Trainer cue:** Ask learners to name one decision they would never delegate.
-
----
-
-# A useful architecture model
-
-```text
-Developer intent + approved context
-                ↓
-        Copilot product surface
-                ↓
-      selected model and service
-                ↓
-           proposed output
-                ↓
-      local checks + human review
-```
-
-This is a conceptual model, not a promise about a fixed implementation.
-Verify current product and data-flow details in official documentation.
-
----
-
-# LLM basics without the mythology
-
-- A large language model estimates useful continuations from patterns in data.
-- The prompt includes instructions plus context exposed by the active surface.
-- The same request can produce different outputs as context or models change.
-- Fluent output can still be incomplete, insecure, or incorrect.
-- Feedback comes from accepting, rejecting, editing, testing, and refining.
-
-**Say:** “Probability produces a proposal; engineering evidence produces confidence.”
-
----
-
-# Privacy, context, and telemetry
-
-Before a demonstration, distinguish these questions:
-
-| Question | Evidence source |
+| Proposal | Evidence |
 | --- | --- |
-| What context may be sent? | Current product documentation and surface behavior |
-| What repositories or paths are allowed? | Administrator policy and content exclusions |
-| What telemetry is retained? | Current plan, policy, and privacy documentation |
-| May this task use real data? | Data owner and classification policy |
+| Looks plausible | A focused test passes |
+| Uses familiar syntax | The diff stays in scope |
+| Explains its reasoning | A reviewer can reproduce the result |
+| Matches one example | Edge and failure behavior are checked |
 
-Never paste secrets, credentials, personal data, or restricted source into a prompt.
-
----
-
-# Usage and billing: teach a method
-
-Do not memorize prices, allowances, or model tables for delivery.
-
-1. Open the current official billing and model documentation.
-2. Identify the participant’s plan and enabled features.
-3. Determine whether the planned activity is metered.
-4. Agree on a threshold, owner, alert, and stop condition.
-5. Record what was checked and when.
-
-**Transition:** “Once permission is clear, configure the working surface.”
+Fluent output can still be incomplete or wrong.
 
 ---
 
-# Supported environments
+# A practical system model
 
-Availability changes, so demonstrate a verification workflow:
+```text
+Task + approved context
+          ↓
+Selected Copilot surface
+          ↓
+Proposed output
+          ↓
+Local checks + human review
+```
 
-- Check the current supported IDE and platform documentation.
-- Confirm the extension or integration comes from the approved publisher.
-- Confirm the learner is signed into the intended account.
-- Confirm the organization has granted the required seat and policy access.
-- Use the language learners already know; coverage quality varies by task and context.
-
-The lab uses VS Code, but the review habits transfer to other approved surfaces.
-
----
-
-# Installation and activation walkthrough
-
-1. Open the Extensions view and locate the approved GitHub Copilot extension.
-2. Install it and follow the sign-in flow.
-3. Confirm the intended GitHub account and organization.
-4. Open Copilot status and verify that suggestions are enabled.
-5. Open the training repository and a non-sensitive utility file.
-6. Type a small comment and pause for a suggestion.
-
-**Demo check:** Have a screenshot or manual implementation ready if access fails.
+Use this as a review model, not a fixed service diagram.
 
 ---
 
-# Inline suggestion controls
+# Context changes the proposal
 
-Use the key bindings displayed by the learner’s current IDE:
+Useful context includes:
 
-- **Accept** only after reading the complete suggestion.
-- **Reject** when scope, behavior, or style is wrong.
-- **Cycle** when alternatives may better fit the task.
-- **Accept partially** when only a bounded portion is useful.
-- **Undo and revise the prompt** when the direction is wrong.
+- function names and type hints;
+- docstrings and examples;
+- selected code and nearby files;
+- tests and repository instructions.
 
-Read the proposal, then decide whether the evidence supports accepting it.
+More context is useful only when it is relevant and approved.
 
 ---
 
-# Live demo: bounded function
+# Preflight before use
 
-Start with intent and edge cases:
+1. Confirm the account and surface.
+2. Confirm the repository and data classification.
+3. Limit the task to named files.
+4. Name any metered-work owner and stop condition.
+5. Prepare the manual route.
+
+If approval is unclear, use the fallback.
+
+---
+
+# Access policy
+
+The live lab requires GitHub Copilot in an approved editor.
+
+The manual fallback uses the same:
+
+- starter code;
+- acceptance tests;
+- review decisions;
+- final verification.
+
+**Access changes the tool path, not the learning objective.**
+
+---
+
+# Accept, revise, reject
+
+**Accept** when the proposal meets the contract and fits the repository.
+
+**Revise** when the direction is useful but a detail is wrong.
+
+**Reject** when it changes scope, invents behavior, or is hard to verify.
+
+Undo is a normal review action.
+
+---
+
+# Review one suggestion
+
+Before accepting, ask:
+
+- Which requirement does each line support?
+- What happens on empty or unusual input?
+- Did it add a dependency?
+- Did it change a caller or public name?
+- Which check will fail if the logic is wrong?
+
+---
+
+# Demo contract
 
 ```python
 def normalize_username(value: str) -> str:
-    """Return a lowercase username with surrounding whitespace removed."""
+    """Trim outer whitespace, lowercase the value,
+    and join words with hyphens."""
 ```
-
-Ask Copilot to suggest the body, then inspect it against:
 
 ```python
-assert normalize_username("  Ada ") == "ada"
-assert normalize_username("") == ""
+assert normalize_username("  River Team  ") == "river-team"
 ```
 
-Narrate every acceptance, rejection, edit, and test.
+The test makes repeated whitespace observable.
 
 ---
 
-# Demo narrative and recovery
+# Demo: inspect before accepting
 
-**Before typing:** State the behavior and non-goals.
+Review the proposed implementation against three rules:
 
-**While suggesting:** Ask, “What context appears to influence this output?”
+1. Outer whitespace disappears.
+2. Case becomes lowercase.
+3. Each run of internal whitespace becomes one hyphen.
 
-**Before accepting:** Read the code aloud and predict each test result.
-
-**After accepting:** Run the focused tests and inspect the diff.
-
-**If no suggestion appears:** Implement the two-line body manually and compare the
-same review process. The learning objective is judgment, not a particular output.
+Then run the focused test.
 
 ---
 
-# Next Edit Suggestions
+# A failing check is useful
 
-Next Edit Suggestions can propose likely follow-up edits after a change.
+This version looks reasonable but mishandles repeated spaces:
+
+```python
+return value.strip().lower().replace(" ", "-")
+```
+
+The failure exposes a hidden assumption while the change is still small.
+
+---
+
+# Predicted follow-up edits still need review
 
 ```text
-Change a function signature
+Rename username to handle
           ↓
-Inspect a proposed caller update
+Inspect each proposed caller update
           ↓
-Accept, reject, or refine
+Search for the old name
           ↓
-Run tests and search for missed callers
+Run the focused test
 ```
 
-Review each follow-up separately. A predicted edit can still miss a caller.
+A predicted edit can miss a reference.
 
 ---
 
-# Where Copilot helps
+# Manual fallback
 
-- Repetitive, well-specified transformations
-- Familiar language and framework patterns
-- Test case brainstorming
-- Explaining unfamiliar code as a starting point
-- Drafting documentation and examples
+When live access is unavailable:
 
-# Where judgment dominates
-
-- Ambiguous product requirements
-- Security, privacy, legal, and architecture decisions
-- Novel domain rules and hidden dependencies
-- Correctness claims without executable evidence
-
----
-
-# Common objections: a Q&A framework
-
-| Concern | Productive trainer response |
-| --- | --- |
-| “Will it replace developers?” | Focus on changed tasks, review, and accountability. |
-| “Is the output always correct?” | No; demonstrate tests and rejection. |
-| “What happens to our code?” | Use current official docs and customer policy. |
-| “Does it work in every language?” | Verify support and test the actual workload. |
-| “How much does it cost?” | Use live plan and billing evidence, never static claims. |
-
-Invite concerns; do not improvise policy answers.
+1. Implement the function manually.
+2. Compare it with one prepared candidate.
+3. Mark accept, revise, or reject.
+4. Run the same tests.
+5. Record the same evidence.
 
 ---
 
 # Lab handoff
 
-In the lab, learners will:
+You will evolve one Python utility module:
 
-1. verify installation, sign-in, and policy access;
-2. accept, reject, cycle, and partially accept suggestions;
-3. experiment with Next Edit Suggestions;
-4. implement small functions in multiple languages;
-5. compare assisted and manual results with the same tests;
-6. record where suggestions helped and where review caught issues.
+1. complete `normalize_username` and `is_palindrome`;
+2. decide how apostrophes count in `word_frequency`;
+3. add `profile_summary`;
+4. rename `username` to `handle`;
+5. run the full test suite and review the diff.
 
-**Deliverable:** A reviewed utility file plus an evidence-based reflection.
-
----
-
-# What to remember
-
-1. Copilot proposes; developers remain accountable.
-2. Context, instructions, and task boundaries shape suggestions.
-3. Access, data, policy, and metering are preflight decisions.
-4. Accept/reject controls and tests are core skills.
-5. Current official documentation beats memorized product claims.
-
----
-
-<!-- _class: qa -->
-
-# Questions and lab readiness
-
-What would make a proposed change safe and reviewable in your repository?
-
-- Which context is safe to use?
-- Which check proves the demo function works?
-- Who needs help confirming installation or access?
+**Deliverable:** completed code, five passing tests, and a decision record.

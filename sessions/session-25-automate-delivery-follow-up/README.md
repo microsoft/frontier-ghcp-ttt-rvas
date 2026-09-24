@@ -11,9 +11,9 @@
 ## Overview
 
 Product and delivery owners turn the manual workflow from Sessions 20–24 into one
-bounded GitHub Copilot Automation. Learners create a manual, draft-only
-automation, review its first run, update an approved input, rerun the same
-automation, and compare the evidence before deciding whether to keep it.
+bounded GitHub Copilot Automation. Create a manual, draft-only automation, review
+its first run, update an approved input, rerun it, and compare the evidence before
+deciding whether to keep it.
 
 The fictional **Service Request Portal** supplies a weekly status workflow and synthetic inputs. The core route runs in the GitHub Copilot app Automations area and reads approved GitHub work through MCP.
 
@@ -36,7 +36,9 @@ The fictional **Service Request Portal** supplies a weekly status workflow and s
 
 ## Scope
 
-Session 17 covers enterprise access, policy, and administration. Session 25 starts after those decisions. It focuses on the accountable workflow owner, one bounded automation, and a clear system-of-record decision.
+Session 17 covers enterprise access, policy, and administration. Session 25 starts
+after those decisions and focuses on the accountable workflow owner, one bounded
+automation, and a system-of-record decision.
 
 ## Materials
 

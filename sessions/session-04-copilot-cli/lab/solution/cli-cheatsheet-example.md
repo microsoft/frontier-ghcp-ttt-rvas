@@ -1,4 +1,4 @@
-# GitHub Copilot CLI Cheat Sheet — Example
+# GitHub Copilot CLI Cheat Sheet: Example
 
 > Example completed cheat sheet. Make yours reflect your preferences and workflow.
 
@@ -34,7 +34,7 @@ copilot --version
 
 | Mode         | How to Activate       | When to Use                                         |
 | ------------ | --------------------- | --------------------------------------------------- |
-| Interactive  | `copilot`             | General work — conversations, multi-step tasks      |
+| Interactive  | `copilot`             | General work: conversations and multi-step tasks    |
 | Plan         | `Shift+Tab` to cycle  | When I want to review the approach before execution |
 | Autopilot    | `Shift+Tab` to cycle  | Trusted tasks I know are safe to run autonomously   |
 | Programmatic | `copilot -p "prompt"` | Scripts, CI/CD, automation, one-shot tasks          |
@@ -62,7 +62,7 @@ copilot --version
 | Script generation   | CLI         | Programmatic mode + immediate testing            |
 | Debugging           | IDE         | Visual context is essential for debugging        |
 | CI/CD automation    | CLI         | `-p` mode is scriptable, IDE isn't               |
-| SSH / remote server | CLI         | Only option — no GUI available                   |
+| SSH / remote server | CLI         | Only option because no GUI is available           |
 | Code review         | Either      | CLI `/review` for diffs, IDE for inline comments |
 
 ---
@@ -123,4 +123,5 @@ alias cr='copilot -p "Review my staged git changes. Focus on bugs, security issu
 2. **Autopilot can make several changes without stopping.** Set `--max-autopilot-continues` until you understand its behavior for a task.
 3. **The CLI sees ~40% more features than the IDE.** `/research`, `/delegate`, `/fleet`, custom model providers, hooks, and OTel are all CLI-only.
 4. **Use the IDE to debug and the CLI to automate.** That is the rule I will start with.
-5. **`/research` produces significantly deeper output than regular chat** — worth the extra wait time for important decisions.
+5. **`/research` produces more detailed output than regular chat.** Use the extra
+   time when the decision needs that depth.

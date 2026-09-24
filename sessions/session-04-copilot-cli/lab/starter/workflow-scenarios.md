@@ -6,7 +6,9 @@ For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice 
 
 ## Scenario 1: SSH into a Production Server
 
-**Situation:** A Node.js service on a Linux server is crashing intermittently. You've SSH'd in to investigate. There's no GUI — just a terminal. You need to read logs, check process status, analyze memory usage, and potentially hot-fix a config file.
+**Situation:** A Node.js service on a Linux server is crashing intermittently.
+You've connected through SSH and have only a terminal. You need to read logs, check
+process status, inspect memory use, and possibly fix a configuration file.
 
 **Your choice:** CLI / IDE / Both  
 **Why:** ___
@@ -17,7 +19,9 @@ For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice 
 
 ## Scenario 2: Setting Up CI/CD Pipeline
 
-**Situation:** You're creating a GitHub Actions workflow for a new repository. You need to write a `.github/workflows/ci.yml` file with build, test, and deploy stages. The workflow needs matrix builds for Node 20 and 22, caching, and conditional deployment.
+**Situation:** You're creating a GitHub Actions workflow for a new repository.
+Write `.github/workflows/ci.yml` with build, test, and deploy stages. It needs
+matrix builds for Node 20 and 22, caching, and conditional deployment.
 
 **Your choice:** CLI / IDE / Both  
 **Why:** ___
@@ -28,7 +32,9 @@ For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice 
 
 ## Scenario 3: Analyzing a 500-Line Error Log
 
-**Situation:** A deployment failed and the CI log is 500+ lines of npm output, build errors, and test failures. You need to find the root cause. The log is saved as `deploy-failure.log` on your machine.
+**Situation:** A deployment failed. The CI log contains more than 500 lines of npm
+output, build errors, and test failures. Find the root cause in
+`deploy-failure.log`.
 
 **Your choice:** CLI / IDE / Both  
 **Why:** ___
@@ -39,7 +45,9 @@ For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice 
 
 ## Scenario 4: Writing a New React Component
 
-**Situation:** You need to create a new dashboard component with multiple sub-components, styled-components, hooks for data fetching, and unit tests. It'll span 5+ files in your existing React project.
+**Situation:** Create a dashboard component in an existing React project. It needs
+subcomponents, styled-components, data-fetching hooks, and unit tests across more
+than 5 files.
 
 **Your choice:** CLI / IDE / Both  
 **Why:** ___
@@ -50,7 +58,9 @@ For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice 
 
 ## Scenario 5: Automating a Weekly Report Script
 
-**Situation:** Every Friday, you manually gather data from 3 sources (Git commits, Jira API, deployment logs), combine them into a summary, and post it to Slack. You want to automate this as a bash script that runs via cron.
+**Situation:** Every Friday, you gather Git commits, Jira API data, and deployment
+logs. You combine them into a summary and post it to Slack. Automate the work with
+a Bash script that runs through cron.
 
 **Your choice:** CLI / IDE / Both  
 **Why:** ___

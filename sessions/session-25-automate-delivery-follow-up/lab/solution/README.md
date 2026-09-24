@@ -1,6 +1,6 @@
 # Reference solution
 
-This solution treats the weekly status workflow as draft only. The first manual run
+This reference keeps the weekly status workflow draft only. The first manual run
 excludes one invalid source record. An approved input change fixes the record, and
 the same automation runs again so the reviewer can compare evidence.
 

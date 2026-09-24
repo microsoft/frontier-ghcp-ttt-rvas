@@ -1,6 +1,7 @@
 # Trainer Supplement: Shape a Requirement in Azure Boards
 
-Use GitHub Copilot to interview the request owner, review a seeded Azure Boards requirement, and prepare approved updates.
+Use GitHub Copilot to interview the request owner, review a seeded Azure Boards
+requirement, and prepare approved updates.
 
 **Time:** Use the two-hour Session 21 lab plan. This companion replaces Phases 4 and 5.
 
@@ -41,7 +42,9 @@ Before starting:
 8. Confirm the trainer's reset method.
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot access fails.** Resolve access before the exercise starts. If Azure Boards MCP is unavailable, use the browser. If neither Azure Boards path works, stop and resolve project access.
+> **Stop if GitHub Copilot access fails.** Resolve access before the exercise
+> starts. If Azure Boards MCP is unavailable, use the browser. If neither Azure
+> Boards path works, stop and resolve project access.
 
 Do not configure a new organization, process, field, or MCP server during the lab.
 
@@ -68,7 +71,8 @@ The request owner must confirm shared understanding before the Azure Boards revi
 
 ## Phase 2: compare the findings with the requirement
 
-Read the seeded item without changing it. Ask GitHub Copilot to compare the current fields with the approved interview findings.
+Read the seeded item without changing it. Ask GitHub Copilot to compare the current
+fields with the approved interview findings.
 
 | Field | Review question |
 | --- | --- |
@@ -113,7 +117,8 @@ The request owner records:
 - **Approved with changes:** revise the proposal, record the changes, then update.
 - **Needs another interview round:** return to the open branches. Do not update the item.
 
-Silence is not approval. The delivery reviewer cannot approve for the request owner.
+**Silence is not approval.** The delivery reviewer cannot approve for the request
+owner.
 
 ## Phase 5: apply the approved update
 
@@ -173,4 +178,5 @@ Use the trainer's reset method. If the trainer directs cleanup in the browser or
 3. Read the item again.
 4. Confirm the seeded title, tags, field values, and empty child-link list.
 
-If you cannot prove that your pair created a child Task, leave it in place and tell the trainer.
+If you cannot prove that your pair created a child Task, leave it in place and tell
+the trainer.

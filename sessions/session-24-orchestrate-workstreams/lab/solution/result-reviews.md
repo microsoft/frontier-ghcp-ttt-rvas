@@ -1,6 +1,7 @@
 # Live Child-Session Result Reviews
 
-These examples show the review format. Learners must base their decisions on packets returned by their own live child sessions.
+These references show the review format. Base each decision on a packet returned
+by a live child session.
 
 ## WS-01
 

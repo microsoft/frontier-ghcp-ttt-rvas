@@ -10,19 +10,19 @@
 
 ## Overview
 
-Learners use the built-in `/create-canvas` skill to turn the Session 22 issue plan
-into a visible delivery workspace. They review the generated extension, remove
-unnecessary capabilities, create a real GitHub state change, detect that the
-canvas is stale, and reconcile it.
+Use the built-in `/create-canvas` skill to turn the Session 22 issue plan into a
+visible delivery workspace. Review the generated extension, remove unnecessary
+capabilities, create a real GitHub state change, detect stale canvas data, and
+reconcile it.
 
-This is a role-based session. Learners describe and operate the canvas. They do not hand-code the extension.
+Learners describe and operate the canvas. They do not hand-code the extension.
 
 > [!IMPORTANT]
 > **Live canvas creation is required.** Stop if `/create-canvas`, GitHub MCP, or the approved canvas actions are unavailable.
 
 ## Learning outcomes
 
-By the end of this session, learners can:
+Learners practice how to:
 
 1. Decide when a canvas is more useful than another chat response.
 2. Describe the state and actions needed for a planning canvas.

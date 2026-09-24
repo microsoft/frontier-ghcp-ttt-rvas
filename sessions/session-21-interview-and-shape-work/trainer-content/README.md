@@ -44,13 +44,15 @@ method. It never replaces GitHub Copilot.
 
 ### The frontier controls question order
 
-The frontier contains decisions whose prerequisites are settled. Ask the whole frontier in one round. Hold any question that depends on an answer still open in that round.
+The frontier contains decisions with settled prerequisites. Ask the whole frontier
+in one round. Hold questions that depend on an answer still open in that round.
 
 For example, do not ask for notification wording before the group decides whether the first release includes notifications. Do not ask for a success target before the group agrees on the problem and affected user.
 
 ### Recommendations make choices easier to review
 
-Each Copilot question should include a recommended answer. The recommendation shows its reasoning and gives the request owner something concrete to accept or revise.
+Each Copilot question should include a recommended answer. The recommendation shows
+its reasoning and gives the request owner something concrete to accept or revise.
 
 Use this format:
 
@@ -64,7 +66,9 @@ out of the first release because they already have an internal queue.
 
 ### Facts do not belong in the decision queue
 
-GitHub Copilot should use approved evidence for facts such as current status values, portal fields, or published retention rules. The request owner decides product behavior, tradeoffs, ownership, and approval.
+GitHub Copilot should use approved evidence for facts such as current status
+values, portal fields, or published retention rules. The request owner decides
+product behavior, tradeoffs, ownership, and approval.
 
 When evidence is unavailable, mark the fact as unverified. Do not disguise it as a decision.
 
@@ -145,7 +149,8 @@ Ask GitHub Copilot to convert the approved brief into an issue proposal:
 5. Name the owner and reviewer.
 6. Add a definition of done that covers evidence and approval.
 
-The learner checks every field against the approved brief. Copilot drafts the proposal. Session 22 creates the approved issue set through GitHub MCP.
+The learner checks every field against the approved brief. Copilot drafts the
+proposal. Session 22 creates the approved issue set through GitHub MCP.
 
 ## Reopen an affected branch
 
@@ -156,7 +161,8 @@ stay unchanged while role-specific acceptance criteria are revised.
 ## Facilitation notes
 
 - Ask no more than four questions in a demonstration round.
-- Let the request owner reject recommendations. A visible correction is useful teaching material.
+- Let the request owner reject recommendations. A visible correction helps the
+  class see who owns the decision.
 - Keep unresolved items in an open-questions table with an owner and due point.
 - Push back when criteria use words such as "easy," "fast," or "clear" without observable evidence.
 - Keep estimation outside the exercise. The goal is readiness.
@@ -176,4 +182,6 @@ in a fresh session.
 
 Use [`../lab/azure-boards/README.md`](../lab/azure-boards/README.md) when learners have a seeded training requirement. The companion replaces work-item drafting in Phases 4 and 5.
 
-Before the lab, confirm the field labels used for priority and readiness. Learners may use MCP or the browser to apply approved changes. They must use GitHub Copilot for the interview and draft review.
+Before the lab, confirm the field labels used for priority and readiness. Learners
+may use MCP or the browser to apply approved changes. They must use GitHub Copilot
+for the interview and draft review.

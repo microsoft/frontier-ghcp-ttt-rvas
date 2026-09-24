@@ -122,7 +122,7 @@
       "slug": "session-13-actions-workflows",
       "module": "4",
       "title": "GitHub Actions & Workflow Generation",
-      "description": "Generating, debugging, and optimizing GitHub Actions workflows with Copilot assistance \u2014 from YAML to production CI/CD.",
+      "description": "Carrying one Node.js application through CI generation, deployment design, workflow repair, and custom-action validation with local evidence.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -131,16 +131,16 @@
       "slug": "session-14-iac-with-copilot",
       "module": "4",
       "title": "Infrastructure as Code with Copilot",
-      "description": "Using Copilot to author, explain, and refactor Terraform, Bicep, and ARM templates with AI-assisted validation.",
+      "description": "Using Copilot to author, connect, validate, and security-review Terraform modules, with Bicep as a trainer comparison and optional extension.",
       "difficulty": "Advanced",
-      "duration_minutes": 180
+      "duration_minutes": 150
     },
     {
       "id": "15",
       "slug": "session-15-cicd-debugging-autofix",
       "module": "4",
       "title": "CI/CD Pipeline Debugging & Agentic Remediation",
-      "description": "Diagnosing flaky pipelines and applying approved agentic remediation workflows for security findings.",
+      "description": "Diagnosing pipeline failures from workflow evidence and local proof, including a staged failure and reviewed security remediation.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -232,6 +232,24 @@
       "title": "Automate Delivery Follow-up and Connect Work Systems",
       "description": "Create a manual draft-only Automation, compare two runs after an approved input change, and make a system-of-record decision.",
       "difficulty": "Intermediate",
+      "duration_minutes": 180
+    },
+    {
+      "id": "26",
+      "slug": "session-26-java-to-dotnet-modernization",
+      "module": "6",
+      "title": "Migrate a Legacy Java Service to Modern .NET",
+      "description": "Map the behavior of a legacy Java service, port it to modern .NET, and verify compatibility with focused tests.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
+      "id": "27",
+      "slug": "session-27-python-repair-refactor",
+      "module": "6",
+      "title": "Repair and Refactor a Broken Python Application",
+      "description": "Repair a broken Python application, stabilize its tests, and refactor the code without changing required behavior.",
+      "difficulty": "Advanced",
       "duration_minutes": 180
     }
   ]

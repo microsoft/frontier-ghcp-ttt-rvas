@@ -1,4 +1,4 @@
-# Session 18 Lab — Implement and Evolve a Feature with Spec Kit
+# Session 18 Lab: Implement and Evolve a Feature with Spec Kit
 
 **Duration:** 2 hours 30 minutes
 
@@ -10,9 +10,9 @@ artifacts, GitHub Issues, tests, and convergence evidence
 
 ## Lab overview
 
-You will add task archiving to a small Python project, implement it in stages, and
-run convergence review. You will then receive a restore requirement and use Spec
-Kit's living-spec workflow to update the accepted artifacts and implementation.
+Add task archiving to a small Python project, implement it in stages, and run
+convergence review. Then use Spec Kit's living-spec workflow to add a restore
+requirement and update the accepted artifacts and implementation.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ You need:
 - `uv` and an approved Spec Kit release;
 - a GitHub training repository where you can create issues.
 
-If GitHub Copilot access is unavailable, stop and do not continue the lab. If the
+If GitHub Copilot access is unavailable, **stop the lab**. If the
 environment cannot run Spec Kit or the selected integration, stop and fix the
 approved installation. For a disconnected environment, the instructor must prepare
 the official Spec Kit air-gapped package before the session.
@@ -145,8 +145,8 @@ Use Python 3.10+ and the standard library. Extend src/task_store.py and
 tests/test_task_store.py. Keep storage in memory. Do not add packages.
 ```
 
-Review `plan.md`, `research.md`, `data-model.md`, and `quickstart.md`. Remove any
-dependency, service, or infrastructure that the accepted feature does not need.
+Review `plan.md`, `research.md`, `data-model.md`, and `quickstart.md`. Remove any dependency, service, or infrastructure that the accepted feature does
+not need.
 
 Generate and review a requirements-quality checklist:
 
@@ -201,8 +201,8 @@ Open the created issues and verify:
 
 ## Part 5: Implement in stages and run tests (25 minutes)
 
-Use Spec Kit's scoped implementation support rather than implementing everything
-in one agent run.
+Use Spec Kit's scoped implementation support. Do not implement everything in one
+agent run.
 
 First implement the primary archive behavior:
 
@@ -245,8 +245,8 @@ If convergence appends a new phase to `tasks.md`:
 3. rerun the unit tests;
 4. run `/speckit-converge` again.
 
-Repeat until Spec Kit reports **Converged**. A clean result leaves `tasks.md`
-unchanged.
+Repeat until Spec Kit reports **Converged**. A clean result does not change
+`tasks.md`.
 
 ## Part 7: Evolve the living specification (30 minutes)
 

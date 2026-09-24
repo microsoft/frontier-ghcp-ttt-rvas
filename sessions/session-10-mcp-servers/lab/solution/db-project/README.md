@@ -1,4 +1,4 @@
-# Database MCP Server — Solution Notes
+# Database MCP Server: Solution Notes
 
 ## Access and cost preflight
 

@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 17 — Enterprise Governance'
+footer: 'Session 17: Enterprise Governance'
 ---
 
 <!-- _class: lead -->
@@ -13,9 +13,23 @@ footer: 'Session 17 — Enterprise Governance'
 
 ---
 
+# Agenda
+
+| Segment | Time |
+| --- | --- |
+| Decision owners and evidence | 8 min |
+| Access, data, and tool boundary | 10 min |
+| Worked evidence map | 12 min |
+| Policy decision and checkpoint | 12 min |
+| Measurement and rollout gates | 10 min |
+| Lab handoff | 8 min |
+
+---
+
 # Start with evidence
 
-Use Enterprise Cloud as the baseline. Check current GitHub documentation and customer policy before making an access, data, tool, or rollout decision.
+Use Enterprise Cloud as the baseline. Check current GitHub documentation and
+customer policy before making an access, data, tool, or rollout decision.
 
 A training slide cannot establish feature availability, entitlement, retention, or compliance.
 
@@ -32,7 +46,7 @@ that decision.
 | Can it expand? | The approver and the added boundary |
 | Should it pause? | Trigger, recovery, and next review date |
 
-Policy text alone is not a rollout plan. Someone must own the decision.
+**Policy text alone is not a rollout plan.** Someone must own the decision.
 
 ---
 # A boundary has inputs, actions, and outputs
@@ -47,7 +61,7 @@ Evidence: logs, review, approval, metric
 ```
 
 For each item, decide what is allowed, who approves exceptions, and what must stay
-out of the workflow. That creates a boundary people can operate.
+out of the workflow. This gives the team a working boundary.
 
 ---
 # Measurements need a decision attached
@@ -59,7 +73,7 @@ out of the workflow. That creates a boundary people can operate.
 | Acceptance rate is stable | Continue the bounded trial |
 | Restricted data appears | Stop, preserve evidence, and escalate |
 
-An activity count without a threshold and response tells the team very little.
+An activity count without a threshold and response tells the team little.
 
 ---
 # Preflight
@@ -82,7 +96,52 @@ Evidence map → bounded trial → observed review evidence →
 continue, expand, gather more evidence, or pause
 ```
 
-Unknown is a decision state. Record the owner and evidence needed. Do not treat it as approval.
+Unknown is a decision state. Record the owner and needed evidence. **Unknown does
+not mean approved.**
+
+---
+
+# Worked scenario
+
+The fictional team proposes a two-week trial:
+
+| Field | Decision |
+| --- | --- |
+| Repository | `training-review-sandbox` |
+| Workflow | Review one synthetic pull request at a time |
+| Data | Synthetic task records only |
+| Tools | Approved repository assistant; no external MCP server |
+| Excluded | Production, deployment, customer data, live policy changes |
+| Reviewer | Engineering lead |
+| Stop | Restricted data, failed boundary check, or 20 automated runs |
+
+The scenario gives the class fixed facts. Current product and policy claims still
+need live evidence from the proper owner.
+
+---
+
+# Evidence-map checkpoint
+
+Record each claim as:
+
+- **confirmed in scenario**;
+- **live evidence pending**;
+- **out of scope**.
+
+The learner may continue only when the repository, workflow, data class, tool
+boundary, reviewer, meter, and fallback have an owner and status.
+
+---
+
+# Policy decision checkpoint
+
+**Reference decision:** Proceed in the repository sandbox only.
+
+The trial may start with synthetic data and human review. Expansion remains blocked
+until the administrator and data owner confirm current policy evidence.
+
+If a learner cannot state the approved and blocked scope in one sentence,
+the decision record is not ready.
 
 ---
 
@@ -109,6 +168,22 @@ Activity is not value. Compare bounded work with acceptance criteria, human revi
 
 ---
 
+# Worked measurement rule
+
+| Item | Fictional value |
+| --- | --- |
+| Window | Two weeks or 10 reviewed tasks |
+| Quality | At least 9 tasks meet acceptance criteria |
+| Safety | Zero restricted-data events |
+| Rework | No more than 3 tasks need material rewrite |
+| Meter | Stop at 20 automated runs |
+| Response | Pause, preserve evidence, and use manual review |
+
+These values support the exercise. They are not product limits or commercial
+guidance.
+
+---
+
 # Rollout gates
 
 | Gate | Evidence |
@@ -122,6 +197,12 @@ Activity is not value. Compare bounded work with acceptance criteria, human revi
 
 # Lab handoff
 
-Create an evidence map, choose a fictional policy scenario, define a measurement guardrail, then propose reversible gates.
+Use the fixed `training-review-sandbox` scenario.
 
-The final record names owners, evidence, and the next action.
+1. Complete the evidence map and pass Checkpoint 1.
+2. Record the sandbox-only policy decision and pass Checkpoint 2.
+3. Define the measurement guardrail.
+4. Complete start, continue, expand, and pause gates.
+
+Submit four completed artifacts. Compare them with `lab/solution/` after the final
+decision, not before.

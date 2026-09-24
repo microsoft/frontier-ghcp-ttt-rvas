@@ -1,5 +1,5 @@
 site_name: GitHub Copilot Train-the-Trainer
-site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 25 sessions across 7 modules.
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 27 sessions across 7 modules.
 site_author: GitHub Copilot TTT
 extra:
   source_repository_url: https://github.com/microsoft/frontier-ghcp-ttt-rvas
@@ -24,6 +24,8 @@ exclude_docs: |
   themes/
   data/
   track-template/
+  sessions/session-*/lab/starter/
+  sessions/session-*/lab/solution/
   PRODUCT.md
   DESIGN.md
   AGENTS.md
@@ -75,6 +77,7 @@ plugins:
   - search
 
 hooks:
+  - hooks/github_alerts.py
   - hooks/file_links.py
   - hooks/presentation_embed.py
 
@@ -195,6 +198,14 @@ nav:
         - Overview: sessions/session-19-capstone/README.md
         - Lab: sessions/session-19-capstone/lab/README.md
         - Trainer Guide: sessions/session-19-capstone/trainer-content/README.md
+      - "26 — Java to .NET Modernization":
+        - Overview: sessions/session-26-java-to-dotnet-modernization/README.md
+        - Lab: sessions/session-26-java-to-dotnet-modernization/lab/README.md
+        - Trainer Guide: sessions/session-26-java-to-dotnet-modernization/trainer-content/README.md
+      - "27 — Python Repair & Refactor":
+        - Overview: sessions/session-27-python-repair-refactor/README.md
+        - Lab: sessions/session-27-python-repair-refactor/lab/README.md
+        - Trainer Guide: sessions/session-27-python-repair-refactor/trainer-content/README.md
     - Module 7 — Product and Delivery Teams:
       - "20 — Copilot App Foundations":
         - Overview: sessions/session-20-copilot-app-foundations/README.md

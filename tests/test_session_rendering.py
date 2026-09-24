@@ -190,8 +190,8 @@ class SessionRenderingTests(unittest.TestCase):
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         sources = re.findall(r"^\s+- (Overview|Lab|Trainer Guide): (sessions/\S+)$", config, re.MULTILINE)
         trainer_sources = sorted(ROOT.glob("sessions/session-*/trainer-content/README.md"))
-        self.assertEqual(len(trainer_sources), 24)
-        self.assertEqual(len(sources), 24 * 3)
+        self.assertEqual(len(trainer_sources), 27)
+        self.assertEqual(len(sources), 27 * 3)
         for trainer in trainer_sources:
             directory = trainer.parent.parent.relative_to(ROOT).as_posix()
             for label, suffix in (("Overview", "README.md"), ("Lab", "lab/README.md"), ("Trainer Guide", "trainer-content/README.md")):
@@ -202,10 +202,22 @@ class SessionRenderingTests(unittest.TestCase):
     def test_internal_docs_excluded_without_hiding_training(self):
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         excludes = config.split("exclude_docs: |\n", 1)[1].split("\ntheme:", 1)[0]
-        for path in ("PRODUCT.md", "DESIGN.md", "AGENTS.md", ".impeccable/", ".agents/", "hooks/", "tests/", "scripts/", "overrides/partials/"):
+        for path in (
+            "PRODUCT.md",
+            "DESIGN.md",
+            "AGENTS.md",
+            ".impeccable/",
+            ".agents/",
+            "hooks/",
+            "tests/",
+            "scripts/",
+            "overrides/partials/",
+            "sessions/session-*/lab/starter/",
+            "sessions/session-*/lab/solution/",
+        ):
             self.assertIn(f"  {path}\n", excludes)
         self.assertNotIn("trainer-content", excludes)
-        self.assertNotIn("sessions/", excludes)
+        self.assertNotIn("  sessions/\n", excludes)
         self.assertIn("  - overrides/session.js", config)
         self.assertNotIn("scheme: slate", config)
         self.assertNotIn("toggle:", config)
@@ -233,7 +245,7 @@ class SessionRenderingTests(unittest.TestCase):
         )
 
     @unittest.skipUnless(shutil.which("node"), "Node is needed to execute trainer controls")
-    def test_trainer_controls_timer_shortcuts_and_scroll_margin(self):
+    def test_trainer_timer_controls_and_shortcut(self):
         subprocess.run(
             ["node", str(ROOT / "tests/session_controls.js")],
             check=True, capture_output=True, text=True,

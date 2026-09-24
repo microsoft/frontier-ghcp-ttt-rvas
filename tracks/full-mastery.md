@@ -1,9 +1,9 @@
 # Track: Full Mastery
 
 **Target Audience:** Trainers delivering the complete curriculum
-**Duration:** 75 hours (25 sessions × 3 hrs)
+**Duration:** 81 hours across 27 sessions
 **Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 9–13 days (2–3 sessions per day)
+**Recommended Delivery:** 9-day intensive or 14-day standard
 
 ---
 
@@ -56,7 +56,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Order   | Session #   | Title                                      | Difficulty   | Duration   |
 | ------- | ----------- | ------------------------------------------ | ------------ | ---------- |
 | 13      | 13          | GitHub Actions & Workflow Generation       | Intermediate | 3 hrs      |
-| 14      | 14          | Infrastructure as Code with Copilot        | Advanced     | 3 hrs      |
+| 14      | 14          | Infrastructure as Code with Copilot        | Advanced     | 2 hrs 30 min |
 | 15      | 15          | CI/CD Pipeline Debugging & Agentic Remediation | Advanced  | 3 hrs      |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
@@ -72,6 +72,8 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
 | 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
 | 19      | 19          | End-to-End Capstone Project                 | Advanced     | 3 hrs      |
+| 26      | 26          | Migrate a Legacy Java Service to Modern .NET | Advanced    | 3 hrs      |
+| 27      | 27          | Repair and Refactor a Broken Python Application | Advanced | 3 hrs      |
 
 ### Module 7: Product and Delivery Teams (Beginner–Intermediate)
 
@@ -98,9 +100,9 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 6 | Sessions 16, 17, 18 | Orchestration, governance + Spec Kit |
 | Day 7 | Sessions 19, 20, 21 | Capstone, app foundations + interviewing |
 | Day 8 | Sessions 22, 23, 24 | GitHub planning, canvases + orchestration |
-| Day 9 | Session 25 | Automation + work-system handoff |
+| Day 9 | Sessions 25, 26, 27 | Automation, service migration + Python repair |
 
-### 13-Day Standard
+### 14-Day Standard
 
 | Day   | Sessions        | Focus                            |
 | ----- | --------------- | -------------------------------- |
@@ -116,7 +118,8 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 10 | Sessions 19, 20 | Capstone + Copilot app foundations |
 | Day 11 | Sessions 21, 22 | Interviewing + GitHub issue planning |
 | Day 12 | Sessions 23, 24 | Planning canvas + workstream supervision |
-| Day 13 | Session 25 | Automation + work-system handoff |
+| Day 13 | Sessions 25, 26 | Automation + service migration |
+| Day 14 | Session 27 | Python repair + refactoring |
 
 ## Learning Outcomes
 

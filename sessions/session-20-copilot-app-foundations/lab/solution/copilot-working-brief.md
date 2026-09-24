@@ -42,7 +42,9 @@ Make Service Request Portal status information understandable without exposing i
 
 ## Available Copilot capabilities
 
-Record the capabilities visible in the learner's approved environment. Do not assume that every installation exposes the same skills, agents, MCP servers, canvases, or automations.
+Record the capabilities visible in the learner's approved environment. Do not
+assume every installation exposes the same skills, agents, MCP servers, canvases,
+or automations.
 
 ## Next decision
 

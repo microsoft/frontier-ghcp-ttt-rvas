@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Acme E-Commerce API uses a **layered architecture**.
+The Storefront Product API uses a **layered architecture**.
 
 ## Architecture Layers
 

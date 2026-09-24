@@ -4,7 +4,8 @@
 
 ## Delivery objective
 
-Learners should leave able to use GitHub MCP as a controlled work interface. They plan first, approve the write, and verify the result.
+Teach learners to use GitHub MCP as a controlled work interface: plan first,
+approve the write, then verify the stored result.
 
 ## One-hour plan
 
@@ -37,7 +38,7 @@ Use this definition:
 
 > An MCP server gives Copilot a set of named tools for reading or changing another system.
 
-Learners need to understand:
+Make these points explicit:
 
 - the tool runs with the permissions available to the connection;
 - a read operation can still expose restricted information;
@@ -87,7 +88,7 @@ Before Copilot calls a write tool, ask it to show:
 - parent-child relationship method;
 - fields that remain unset.
 
-The learner records **Approve**, **Revise**, or **Reject**.
+The learner records **Approve**, **Revise**, or **Reject** before the write.
 
 ### 5. Verify and correct
 

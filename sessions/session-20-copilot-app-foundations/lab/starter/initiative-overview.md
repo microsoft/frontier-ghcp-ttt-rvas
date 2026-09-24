@@ -2,11 +2,13 @@
 
 ## Product
 
-The Service Request Portal lets employees submit internal service requests and track their progress. Service coordinators route each request to the responsible team.
+The Service Request Portal lets employees submit internal service requests and
+track progress. Service coordinators route each request to the responsible team.
 
 ## Current problem
 
-Requesters often contact support because the portal shows internal status names that do not explain what happens next.
+Requesters often contact support because the portal shows internal status names
+that do not explain what happens next.
 
 ## Proposed outcome
 

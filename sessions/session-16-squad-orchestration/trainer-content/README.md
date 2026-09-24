@@ -1,6 +1,6 @@
-# Session 16 — Brady's Squad — AI Team Orchestration
+# Session 16 Trainer Guide: Brady's Squad
 
-**Module:** 5 — Specification-Driven Frameworks
+**Module:** 5: Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 
@@ -11,9 +11,13 @@
 
 ## Delivery goal
 
-Squad is an optional open-source example: [`bradygaster/squad`](https://github.com/bradygaster/squad). Use it to teach coordination, bounded roles, shared decisions, and review. Verify current availability, requirements, and customer approval before any live demonstration.
+Squad is an optional open-source example:
+[`bradygaster/squad`](https://github.com/bradygaster/squad). Use it to teach
+coordination, bounded roles, shared decisions, and review. Before a live
+demonstration, verify current availability, requirements, and customer approval.
 
-Learners learn when a team of agents helps, how to define ownership that prevents conflicting changes, and how to fall back to a manual workflow when the tool path is unavailable.
+Learners decide when an agent team helps, set ownership that prevents conflicting
+changes, and use a manual workflow when the tool path is unavailable.
 
 ## One-hour plan
 
@@ -27,7 +31,8 @@ Learners learn when a team of agents helps, how to define ownership that prevent
 | 0:47–0:55 | Decision framework | Learners select individual, team, or manual delivery. |
 | 0:55–1:00 | Lab handoff | Confirm the approved path and fallback. |
 
-The original guide budgeted 85 minutes. This version keeps the architectural content and the demonstration within the stated hour.
+The original guide budgeted 85 minutes. This version fits the architecture and
+demonstration into one hour.
 
 ## Prepare
 
@@ -83,7 +88,7 @@ The “drop-box” pattern prevents conflicting writes:
 3. One owner updates the shared decision record.
 4. Git history provides the audit trail.
 
-This is less magical than a shared brain. It is also more reliable.
+This is less magical than a shared brain. It is more reliable.
 
 ## 4. Ralph, issues, and review (0:27–0:35)
 
@@ -100,14 +105,27 @@ Set clear stop conditions: missing policy approval, unclear ownership, a meter t
 
 ## 5. Prepared demonstration (0:35–0:47)
 
-Use a small project and one narrow issue, such as input validation or a focused API endpoint.
+Use Issue 001, **Add input validation to `POST /api/users`**, from
+`lab/starter/sample-issues.md`. Keep this issue on screen for the full
+demonstration.
 
-1. Show the issue, its non-goals, and its reviewer.
-2. Initialize the approved tool path or open the prepared `.squad/` example.
-3. Inspect the team roster, routing rules, and one charter.
-4. Assign the issue to one role. Explain why no other role needs to edit the same files.
-5. Show where the proposal, test evidence, and decision are recorded.
-6. Review the result against the issue. Decide whether to approve, request changes, or stop.
+1. **0:35–0:37: Read the contract.** Point to the acceptance criteria, non-goals,
+   permitted files, required tests, and reviewer.
+2. **0:37–0:39: Show the team.** Open the reference `.squad/team.md`,
+   `.squad/routing.md`, and the backend charter. Explain why the backend role owns
+   the implementation while the tester returns evidence without editing source.
+3. **0:39–0:41: Assign the issue.** Open
+   `.squad/decisions/inbox/issue-001-proposal.md` and
+   `.squad/orchestration-log/issue-001.md`. The assignment must preserve the issue
+   limits.
+4. **0:41–0:44: Inspect implementation and tests.** Compare the starter and
+   solution versions of `src/routes/api.js` and `tests/api.test.js`. Run `npm test`
+   from the prepared solution.
+5. **0:44–0:46: Review the result.** Open
+   `.squad/reviews/issue-001-review.md`. Check each acceptance criterion against
+   code and test evidence.
+6. **0:46–0:47: Record the decision.** Open `.squad/decisions.md`. Show the
+   approved decision, evidence, owner, and date.
 
 If the tool is unavailable, do not improvise commands. Walk through the prepared files and use the manual assignment and review process.
 
@@ -120,7 +138,10 @@ Record the proposal, focused-check evidence, and a lead review decision.
 Stop if ownership or the data boundary is unclear.
 ```
 
-Learners should see one charter, one assignment, a proposal or result in its own location, focused-check evidence, and the lead's decision. At 0:43, switch to the exported `.squad/` example or tabletop process if the live path has not produced that evidence.
+Learners should see one charter, one assignment, a bounded change, focused test
+evidence, and the lead's decision. At 0:41, switch to the reference `.squad/`
+example if the live path has not produced the assignment. At 0:44, switch to the
+tabletop packet if implementation or tests are still blocked.
 
 ## 6. When a team helps (0:47–0:55)
 
@@ -134,11 +155,21 @@ Choose the lightest path that can produce a reviewable result.
 | Restricted access, unclear data boundary, or unapproved tool | Manual workflow with prepared artifacts |
 | Repeated operational work with stable acceptance checks | A monitored team may be useful |
 
-Success is a smaller queue of clear, reviewed changes. It is not the largest possible number of agents.
+Success means a smaller queue of clear, reviewed changes. Agent count does not
+measure success.
 
 ## Lab handoff (0:55–1:00)
 
-Point learners to `lab/README.md`. The lab covers team initialization, assignments, GitHub Issues, and a monitored work loop. Require them to choose the approved path first. The no-access route uses the same issue contracts, role boundaries, and review evidence.
+Point learners to `lab/README.md`.
+
+1. Learners run the starter tests.
+2. They choose the live or tabletop route.
+3. They carry Issue 001 through assignment, implementation, tests, and review.
+4. They compare their packet with `lab/solution/squad-project/`.
+
+State the deliverable aloud: **one reviewed issue with a matching durable decision
+record**. The live and tabletop routes use the same issue contract and verification
+checks.
 
 ## Common questions
 

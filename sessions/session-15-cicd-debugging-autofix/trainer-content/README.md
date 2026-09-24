@@ -1,147 +1,106 @@
-# Session 15 — CI/CD Pipeline Debugging & Agentic Remediation
+# Session 15 Trainer Guide: Evidence Before Repair
 
-**Module:** 4 — DevOps & Infrastructure with Copilot
+## Delivery objective
 
-**Difficulty:** Advanced
-
-**Prerequisites:** Sessions 01–05, 13
-
-**Duration:** 1 hour trainer content + 2 hours lab
-**Last updated:** April 2026
-
-## Delivery goal
-
-By the end, learners can diagnose a CI failure from evidence, assess a proposed remediation, and stop when the approved path is unavailable. The lab supplies synthetic logs and an intentionally vulnerable app. It does not claim that any customer feature or route is enabled.
+Teach a repeatable debugging sequence: observe, reproduce, form a hypothesis,
+repair, then prove. Keep the reference answer hidden until learners record their
+investigation. Case 3 adds a second failure after the first repair.
 
 ## One-hour plan
 
-| Time | Segment | Outcome |
-| --- | --- | --- |
-| 0:00–0:05 | Failure triage | Learners can isolate a failing step and its evidence. |
-| 0:05–0:15 | Copilot-assisted diagnosis | Learners can give an assistant the relevant log, workflow, and recent change. |
-| 0:15–0:25 | Remediation safety | Learners know the review and approval gate for security fixes. |
-| 0:25–0:32 | Pipeline speed | Learners can identify safe caching and parallelism changes. |
-| 0:32–0:45 | Debugging demo | Show one evidence-led diagnosis and a small fix. |
-| 0:45–0:55 | Security-review walkthrough | Review a prepared CodeQL finding and proposed patch. |
-| 0:55–1:00 | Lab handoff | Set the scope, safety boundary, and fallback. |
-
-Cut examples before cutting the review gate. The original material exceeded the stated hour; this plan fits it.
+| Time | Segment |
+| --- | --- |
+| 0:00–0:08 | Observation, hypothesis, and proof |
+| 0:08–0:18 | Local application baseline |
+| 0:18–0:34 | Prepared pipeline investigation |
+| 0:34–0:44 | Multi-stage failure |
+| 0:44–0:54 | Security remediation review |
+| 0:54–1:00 | Lab handoff |
 
 ## Prepare
 
-- Use only the supplied synthetic logs and training app.
-- Confirm workflow runs, security products, and any remediation route with the customer administrator.
-- Set a customer-owned usage limit and stop condition for metered work.
-- Prepare a broken workflow, its failing-step log, and a prepared security finding or screenshot.
-- Have a manual-review fallback ready. A recording is useful when a live run is slow.
+- Run the pipeline application tests, lint, and build.
+- Keep the solution directory closed during the first investigation.
+- Hold `error-log-3-stage-2.txt` until the first Case 3 repair.
+- Prepare the vulnerable and secure source side by side.
+- Do not depend on a remote workflow run or security product.
 
-## 1. Triage the failure (0:00–0:05)
+## Debugging sequence
 
-Start with the practical problem. A failing job may have thousands of log lines, but one step usually holds the useful evidence.
-
-Use this sequence:
-
-1. Find the failed job and step.
-2. Copy the complete output for that step, including the exit code.
-3. Check the triggering commit and relevant workflow file.
-4. Reproduce the command locally when that is safe and useful.
-5. Compare with a recent successful run if the failure looks intermittent.
-
-| Exit code | Likely meaning |
-| --- | --- |
-| `1` | General command, test, lint, or build failure |
-| `2` | Command syntax or missing arguments |
-| `126` | Permission denied |
-| `127` | Command missing on the runner |
-| `137` | Process killed, often for memory use |
-| `143` | Job cancelled or timed out |
-
-Classify the failure before proposing a change: configuration, dependency, build, test, deployment, or environment. The category does not solve the issue. It keeps the investigation focused.
-
-## 2. Diagnose with Copilot (0:05–0:15)
-
-Give the assistant the failing-step output, the workflow, and the change that preceded the failure. Do not paste a full log that includes secrets or irrelevant noise.
+Use this record:
 
 ```text
-The CI job fails in the “Run tests” step. The workflow is
-#file:.github/workflows/ci.yml. This change added a Docker build.
-
-[paste the relevant failing output]
-
-Identify the likely root cause, cite the evidence, and propose the smallest
-workflow or code change. Do not change unrelated jobs.
+Observation:
+Local proof:
+Hypothesis:
+Smallest repair:
+Proof after repair:
 ```
 
-Ask learners to check every claim against the log and repository. The assistant may find the issue quickly; the engineer still decides whether the explanation and patch are sound.
+An observation quotes a file, command, or log. A hypothesis explains those facts.
+Do not let learners write the root cause before they have evidence.
 
-Use one short example. A project that requires Node 20 and builds from `node:18-alpine` has a clear mismatch. Change the base image only after confirming the engine requirement in `package.json`.
+## Prepared investigation
 
-When the first fix exposes another failure, retain the conversation context and add the new evidence. Do not stack speculative fixes.
+Start with Case 2 because the tempting dependency fix is wrong. Show the failed
+`npm ci` step and workflow. Run `npm ci` from the session root, then run the same
+operation with `--prefix lab/starter/pipeline-app`.
 
-## 3. Review remediation safely (0:15–0:25)
+Pause for learner hypotheses. Reveal the reference fix only after the room explains
+why the project location matters.
 
-Use **Assign to Copilot** only when the customer environment presents that route and policy approves it. Otherwise review the synthetic finding and prepare the patch manually.
+## Multi-stage failure
 
-For each finding:
+For Case 3:
 
-1. Identify the affected code and the evidence for the finding.
-2. State the expected protection, such as parameterized queries, output encoding, or path validation.
-3. Limit the request to that finding and its required tests.
-4. Review the proposed diff for scope, behavior, dependencies, and sensitive data.
-5. Run focused tests and the approved scan when available.
-6. Require human approval before merge.
+1. Show `error-log-3.txt`.
+2. Record the first observation and local package metadata.
+3. Apply only the first repair.
+4. Announce that the next run reached another stage.
+5. Reveal `error-log-3-stage-2.txt`.
+6. Repeat the evidence sequence.
+7. Compare with the solution after both proofs pass.
 
-The CodeQL exercise contains SQL injection, reflected XSS, and path traversal. Treat additional findings as out of scope unless the trainer explicitly expands the exercise.
+The first failure can hide another fault. New evidence should update the diagnosis,
+not trigger a broad rewrite.
 
-If a remote scan or remediation route is unavailable, trainees inspect the supplied source and finding locally, write the smallest patch, and complete the same peer review. Record why the live path was not used.
+## Security review
 
-## 4. Improve the pipeline without hiding risk (0:25–0:32)
+Open one vulnerable route at a time. Ask learners to identify the source, sink,
+and expected protection before showing the secure file.
 
-Show changes that reduce repeated work without weakening checks:
+Use local syntax checks as the minimum executable proof. If an approved scan is
+available, add it as evidence. A clean scan alone does not prove that the repair
+preserves behavior or covers the intended path.
 
-- cache npm packages using the lockfile;
-- run independent lint and test jobs in parallel;
-- use `fetch-depth: 1` when full history is unnecessary;
-- run deploy only for pushes to `main`;
-- exclude documentation-only changes only when that fits repository policy.
+## Access policy
 
-Measure before and after. Keep security work independent from build feedback where possible, then use branch protection or the customer approval process to block merges for serious findings.
+GitHub Copilot and Node.js 20.x are required. Stop if either is unavailable.
+Actions, code scanning, and remote remediation are optional. Use the supplied
+files and local commands when those routes are unavailable.
 
-## 5. Debugging demonstration (0:32–0:45)
+## Lab handoff
 
-Use the provided matrix workflow and error log.
+Learners must keep solutions closed until each checkpoint. Case 3 requires two
+evidence records in sequence. The deliverable is the investigation trail plus the
+fixed files, not a list of answers.
 
-1. Point out the failed matrix legs.
-2. Copy the failed output and open the workflow beside it.
-3. Ask for a diagnosis that ties each proposed change to evidence.
-4. Review the result: Node 16 is end of life for the modern API, Windows paths affect an assertion, and some legs lack `CI=true`.
-5. Show the smallest workflow changes, then compare with `lab/solution/fixed-pipelines/`.
+## Facilitator answer key
 
-If the tool is unavailable, narrate the same evidence-to-patch review with the prepared files. The teaching point is the reasoning, not a live response.
+Reveal this section only after the matching investigation:
 
-At 0:45, stop debugging and begin the prepared security-review walkthrough, even if a live run remains pending. Learners should have the failed matrix legs, relevant log evidence, the smallest proposed workflow changes, and a comparison with `lab/solution/fixed-pipelines/`.
-
-## 6. Security-review walkthrough (0:45–0:55)
-
-Open the training app and the CodeQL workflow template. Show the expected JavaScript/TypeScript initialization and analysis steps. Then review a prepared finding or patch.
-
-Ask the room:
-
-- Does the patch address the reported sink and source?
-- Are input validation and output handling covered by focused tests?
-- Did it alter unrelated behavior or add an unapproved dependency?
-- Does the environment permit this scan and remediation route?
-
-Do not merge during the demonstration. The review decision may be approve, request changes, or pause.
-
-## Lab handoff (0:55–1:00)
-
-Point learners to `lab/README.md`. They will fix three synthetic workflows, review a security remediation, optimize a slow workflow, and add security checks. Remind them to use the supplied material only and to switch to manual review if an approved live route is missing.
+- Case 1 uses a runtime below the application's declared engine.
+- Case 2 runs npm from the wrong directory.
+- Case 3 first includes an unsupported runtime, then reaches a build job that runs
+  outside the application directory.
 
 ## Common questions
 
-**Should learners still learn to read logs?** Yes. Copilot speeds up triage, but they need enough context to judge its answer.
+**Can Copilot name the cause first?** Ask it to separate observations from
+hypotheses. Learners still need local proof before changing the workflow.
 
-**Can logs contain secrets?** They can. Remove or avoid sensitive material, and follow the customer incident process if a secret appears.
+**Why keep the second log hidden?** The first failed job prevents the later stage
+from running. Showing both logs early gives away the sequence.
 
-**What if the customer cannot use the tools?** Use the logs, source, and prepared findings locally. The evidence and review standard stay the same.
+**What if a different repair works?** Accept it when it explains the evidence,
+keeps scope small, and passes the same proof.

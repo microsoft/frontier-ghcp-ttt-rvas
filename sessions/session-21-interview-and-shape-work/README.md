@@ -10,12 +10,12 @@
 
 ## Overview
 
-Vague requests hide decisions. Learners install a supplied project skill, use it
-to run a dependency-ordered decision interview, turn approved answers into a
-decision brief and issue proposal, then reopen one branch when a late constraint
-arrives.
+Vague requests hide decisions. Learners install a supplied project skill and run a
+dependency-ordered interview. They turn approved answers into a decision brief and
+issue proposal, then reopen one branch when a late constraint arrives.
 
-Learners may use an approved, sanitized request from their own work. The fictional Service Request Portal is the supplied training scenario.
+Learners may use an approved, sanitized request from their own work. The fictional
+Service Request Portal is the supplied training scenario.
 
 > [!IMPORTANT]
 > **GitHub Copilot is required.** Learners must confirm access before the session. If GitHub Copilot cannot run the interview, stop and resolve access before starting.
@@ -30,7 +30,8 @@ By the end of this session, learners will be able to:
 - Resolve scope, constraints, success, failure, ownership, and approval.
 - Review Copilot recommendations before accepting or revising them.
 - Create a reviewed Markdown decision brief in the repository.
-- Draft an issue proposal with testable acceptance criteria and a practical definition of done.
+- Draft an issue proposal with testable acceptance criteria and a practical
+  definition of done.
 - Reopen only the decisions affected by new evidence.
 - Verify that the revised brief and issue proposal remain aligned.
 - Assign an owner and reviewer before work enters a sprint.
@@ -71,4 +72,5 @@ Vague request
 - Treat Copilot questions, recommendations, and drafts as proposals.
 - Keep product and approval decisions with named people.
 - Do not create or update a live work item until the request owner approves the brief.
-- Session 22 creates the approved GitHub issues. Session 21 prepares the source artifact and issue proposal.
+- Session 22 creates the approved GitHub issues. Session 21 prepares the source
+  artifact and issue proposal.

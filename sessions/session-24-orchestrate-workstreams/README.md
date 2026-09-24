@@ -12,7 +12,9 @@
 
 ## Overview
 
-This session teaches managers and delivery leads to run live GitHub Copilot orchestration. Learners select work from the approved GitHub issue plan and planning canvas, split one objective into independent workstreams, guide child sessions, review evidence, and make the final decision.
+Managers and delivery leads run live GitHub Copilot orchestration. They select
+approved work, split one objective into independent workstreams, guide child
+sessions, review evidence, and make the final decision.
 
 **GitHub Copilot orchestration access is required.** Learners need the built-in
 `/orchestrate` skill, which creates and coordinates child sessions. There is no
@@ -22,7 +24,7 @@ Azure Boards can hold planning state through MCP or the browser. GitHub Copilot 
 
 ## Learning objectives
 
-By the end of this session, learners can:
+Learners practice how to:
 
 1. Turn a release objective into independent workstreams with clear boundaries.
 2. Define the output packet and stop condition for each child session.

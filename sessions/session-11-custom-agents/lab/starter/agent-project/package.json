@@ -1,12 +1,15 @@
 {
   "name": "agent-lab-project",
   "version": "1.0.0",
-  "description": "Sample project for the Custom Agents lab — needs tests and documentation",
+  "description": "Synthetic project for custom-agent boundary testing",
+  "private": true,
   "main": "src/user-service.js",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "node --test test/*.test.js",
+    "check:weak": "node scripts/check-profile.js .github/agents/weak-test-writer.agent.md",
+    "check:tight": "node scripts/check-profile.js ../../solution/agent-project/.github/agents/test-writer.agent.md"
   },
-  "devDependencies": {
-    "jest": "^29.7.0"
+  "engines": {
+    "node": ">=20"
   }
 }

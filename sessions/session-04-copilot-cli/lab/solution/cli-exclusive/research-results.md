@@ -1,4 +1,4 @@
-# Research Results — Expected Format
+# Research Results: Expected Format
 
 This example shows a useful `/research` result. Your result will depend on the topic and sources, so verify its claims before you use them.
 
@@ -33,7 +33,8 @@ A thorough `/research` result for this topic should include:
 **3. Depth indicators (research vs. regular chat):**
 
 - Regular chat: Generic advice, ~500 words, no sources
-- `/research`: Specific package versions, real-world examples from GitHub repos, 1500+ words, cited sources, current best practices
+- `/research`: Specific package versions, examples from GitHub repositories, 1500+
+  words, cited sources, current best practices
 
 ### Sample Research Output Structure
 

@@ -103,7 +103,7 @@ Confirm that GitHub Copilot created the expected child sessions.
 
 # Monitor the work
 
-Use **My work**, sessions, agents, or the current equivalent.
+Use **My work**, sessions, agents, or the current session management surface.
 
 Check:
 

@@ -1,35 +1,45 @@
-# Session 02 — Copilot Chat & Inline Suggestions
+# Session 02: Copilot Chat & Inline Suggestions
 
 **Module:** Copilot Fundamentals
+
 **Difficulty:** Beginner
+
 **Prerequisites:** Session 01
-**Duration:** 3 hours (1 hr trainer content + 2 hr lab)
+
+**Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 
 ## Overview
 
-Build on the daily development workflow with Copilot Chat in the sidebar, inline chat, quick chat, the IDE, and GitHub.com. Learners use slash commands, chat participants (`@workspace`, `@terminal`, and `@vscode`), model selection, and practical patterns for routine work. The session also introduces Copilot CLI and Copilot App access patterns.
+Use Copilot Chat to understand, diagnose, fix, test, and review one calculator
+module. Learners move between sidebar Chat, inline Chat, terminal context, and
+workspace context without losing the engineering contract established in Session
+01.
 
-## Learning Outcomes
+The project contains a weighted-average defect and a later zero-total-weight change
+request. Learners record the context and prompts that helped, then verify every
+change with standard-library tests.
 
-- Choose the Copilot Chat surface that fits the task.
-- Use slash commands for explanation, fixes, tests, and documentation.
-- Reference files and selections explicitly in Chat.
-- Compare approved model options for a task.
-- Recognize terminal-based workflows that fit Copilot CLI.
+## Learning outcomes
 
-## Session Materials
+- Choose a Chat surface that matches the task.
+- Use selected code, files, terminal output, and workspace search as context.
+- Use task shortcuts such as explain, fix, tests, and documentation when the
+  current surface offers them.
+- Refine a conversation without broadening the requested change.
+- Compare approved model choices against the same tests, or use the manual
+  reference when comparison is unavailable.
 
-| Resource                | Location                               |
-| ----------------------- | -------------------------------------- |
-| Lab exercises           | [`lab/`](lab/)                         |
-| Lab starter files       | `lab/starter/`         |
-| Lab solution files      | `lab/solution/`       |
+## Required access
 
-## Key Topics
+The live path requires GitHub Copilot Chat in an approved editor. The manual
+fallback requires Python 3.10 or later.
 
-- Chat UI surfaces: sidebar, inline, quick chat, terminal
-- Chat participants: @workspace, @terminal, @vscode
-- Slash commands: /explain, /fix, /tests, /doc, /new
-- Context management: #file, #selection, #editor
-- Model selection and auto model selection
-- Copilot CLI: standalone `copilot` CLI is covered in Session 04
+## Materials
+
+| Resource | Location |
+| --- | --- |
+| Trainer guide | [`trainer-content/`](trainer-content/) |
+| Slides | [`slides.md`](slides.md) |
+| Lab | [`lab/`](lab/) |
+| Starter project | [`lab/starter/`](lab/starter/) |
+| Reference result | [`lab/solution/`](lab/solution/) |

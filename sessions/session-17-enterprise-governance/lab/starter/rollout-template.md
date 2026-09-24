@@ -1,49 +1,49 @@
-# Reversible Governance Rollout Template
+# Reversible Governance Decision Record
 
-Use Enterprise Cloud as the governance baseline. Complete this template with current GitHub documentation and customer administrator policy.
+## Policy decision
 
-## Scope and owners
+- Decision:
+- Allowed scope:
+- Blocked scope:
+- Evidence used:
+- Pending evidence and owner:
+- Immediate pause triggers:
+- Review date:
 
-| Item | Customer-specific decision |
+## Checkpoint 2
+
+- Reviewer:
+- Date:
+- Does the decision cite the evidence map? yes / no
+- Are allowed and blocked scope explicit? yes / no
+- Result: pass / revise
+
+## Measurement guardrail
+
+| Item | Decision |
 | --- | --- |
-| Repository or sandbox | |
-| Bounded task | |
-| Engineering owner | |
-| Administrator | |
-| Data owner | |
-| Security, privacy, legal, and finance contacts | |
-
-## Start gate
-
-- Required documentation and policy evidence:
-- Data classification:
-- Approved tools and permissions:
-- Acceptance criteria:
-- Human review:
-- No-access fallback:
-
-## Metered-work guardrail
-
-| Item | Customer-defined value |
-| --- | --- |
-| Meter | |
 | Observation window | |
-| Threshold | |
+| Quality rule | |
+| Safety rule | |
+| Rework rule | |
+| Meter and owner | |
 | Alert and escalation | |
 | Stop condition | |
 | Manual fallback | |
 
-## Continue and expand gates
+## Rollout gates
 
-| Gate | Evidence required | Decision owner |
-| --- | --- | --- |
-| Continue | Quality, safety, review, and usage observations | |
-| Expand | Required customer owners accept the evidence | |
-| Pause | Policy, data, quality, or measurement concern | |
+| Gate | Evidence required | Decision owner | Action |
+| --- | --- | --- | --- |
+| Start | | | |
+| Continue | | | |
+| Expand | | | |
+| Pause | | | |
 
-## Decision record
+## Final record
 
 - Evidence observed:
 - What remains uncertain:
+- Final decision:
 - Next action:
-- Date to recheck current documentation and policy:
+- Next review date:

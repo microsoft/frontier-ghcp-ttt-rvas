@@ -12,16 +12,16 @@ and a system-of-record decision
 
 ## Deliverables
 
-- the saved manual, draft-only Automation;
-- two run outputs and evidence packets;
-- the completed approval record;
-- the final Keep, Revise, Disable, or Pause decision.
+- The saved manual, draft-only Automation
+- Two run outputs and evidence packets
+- The completed approval record
+- The final Keep, Revise, Disable, or Pause decision
 
-## What you will learn
+## Lab outcome
 
-You will create an Automation through the app, restrict its tools and outputs, run
-it on demand, reject or revise the first result, change an approved input, rerun
-the same automation, and compare the evidence.
+Create an Automation through the app, restrict its tools and outputs, run it on
+demand, review the first result, change an approved input, rerun the same
+automation, and compare the evidence.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -36,8 +36,7 @@ the same automation, and compare the evidence.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot access before starting. If GitHub Copilot access is
-unavailable, stop and do not continue.
+Confirm GitHub Copilot access. **Stop if access is unavailable.**
 
 ## Part 1: Verify Automations and prepare inputs (15 minutes)
 
@@ -192,7 +191,7 @@ Name the authoritative planning system:
 - **GitHub**, when issues and agent work remain authoritative there; or
 - **Azure Boards**, when the delivery backlog remains authoritative there.
 
-Distribution remains a human action outside the automation.
+**Distribution remains a human action outside the automation.**
 
 ## Verification
 

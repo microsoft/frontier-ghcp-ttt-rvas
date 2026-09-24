@@ -1,4 +1,4 @@
-# Session 18 — Spec Kit: Specification-Driven Development
+# Session 18: Spec Kit: Specification-Driven Development
 
 **Module:** Specification-Driven Frameworks
 
@@ -9,10 +9,10 @@
 
 ## Overview
 
-Use Spec Kit to carry one bounded change from a feature request to working, tested
-code. Learners initialize an existing Python project, create the generated Spec Kit
-artifacts, implement an archive operation, and run convergence review. They then
-evolve the living specification to add restore behavior and repeat the workflow.
+Use Spec Kit to carry one bounded change from a feature request to tested code.
+Learners initialize an existing Python project, create the Spec Kit artifacts,
+implement an archive operation, and run convergence review. They then update the
+living specification to add restore behavior and repeat the workflow.
 
 The lab uses Spec Kit's real project model:
 
@@ -23,8 +23,8 @@ The lab uses Spec Kit's real project model:
 - `/speckit-converge` compares the implementation with the accepted artifacts.
 - `/speckit-taskstoissues` converts the generated task list into GitHub Issues.
 
-Spec Kit generates its own Copilot skills during `specify init`. This session does
-not ship substitute skills or a `.specify.yml` configuration file.
+Spec Kit generates its own Copilot skills during `specify init`. **This session
+does not ship substitute skills or a `.specify.yml` configuration file.**
 
 ## Learning outcomes
 
@@ -52,8 +52,8 @@ uv tool install specify-cli --force \
 specify version
 ```
 
-Use the approved internal package source instead when policy requires it. Record the
-source, tag, and approval before installation.
+Use the approved internal package source when policy requires it. Before
+installation, record the source, tag, and approval.
 
 ## Materials
 

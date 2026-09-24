@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 18 — Spec Kit: Specification-Driven Development'
+footer: 'Session 18: Spec Kit: Specification-Driven Development'
 ---
 
 <!-- _class: lead -->
@@ -56,7 +56,7 @@ This sounds clear until implementation starts:
 | Scope additions appear as code | Non-goals make additions visible |
 | Review starts with implementation details | Review starts with intent and evidence |
 
-The goal is not more documents. The goal is fewer accidental decisions.
+The goal is fewer accidental decisions, not more documents.
 
 ---
 
@@ -70,7 +70,7 @@ Spec Kit combines three things:
 | Agent skills | Guide constitution, specification, planning, implementation, and review |
 | Feature artifacts | Keep requirements, design decisions, tasks, and checks reviewable |
 
-The tool supplies a workflow. **The team still owns every product and technical
+The tool supplies a workflow. **The team still owns each product and technical
 decision.**
 
 ---
@@ -127,7 +127,7 @@ Analyze
 Implement ⇄ Converge
 ```
 
-Clarify, checklist, and analyze are quality gates. Use them when ambiguity or risk
+Clarify, checklist, and analyze are review gates. Use them when ambiguity or risk
 justifies the review.
 
 ---
@@ -146,7 +146,7 @@ A useful principle is testable:
 | Keep things simple | Use the Python standard library unless the plan records an approved exception |
 | Avoid regressions | Existing create and list tests must remain in the suite |
 
-If a principle cannot affect a plan or review, it is probably decoration.
+If a principle cannot affect a plan or review, delete it.
 
 ---
 
@@ -183,8 +183,7 @@ When the caller archives it
 Then the store returns a clear not-found result
 ```
 
-Good scenarios expose decisions. Vague statements such as "archive works correctly"
-do not.
+Good scenarios expose decisions. "Archive works correctly" does not.
 
 ---
 
@@ -365,8 +364,7 @@ This session deliberately removes:
 - made-up exclusion enforcement;
 - custom skills presented as generated Spec Kit files.
 
-Invented artifacts are worse than missing artifacts. They teach learners to trust
-controls that do not exist.
+Invented artifacts teach learners to trust controls that do not exist.
 
 ---
 
@@ -406,7 +404,7 @@ The generated issues should preserve:
 - exact file paths and expected work;
 - the boundaries already accepted in `spec.md`.
 
-Issues distribute the work. They do not become a second requirements source.
+Issues distribute the work. **They are not a second requirements source.**
 
 ---
 
@@ -438,8 +436,8 @@ Show one deliberate gap:
 5. Inspect the task it appends.
 6. Add the missing test and converge again.
 
-This shows why passing tests and satisfying the specification are related but not
-identical.
+This shows that passing tests and satisfying the specification are different
+claims.
 
 ---
 

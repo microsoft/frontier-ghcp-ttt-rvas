@@ -1,6 +1,8 @@
 # Suggest Challenges
 
-Use the standalone `copilot` CLI for each task below. Ask in interactive mode or with `copilot -p "Suggest a command to ..."`, review the suggestion before running it, and record whether it meets the requirements.
+Use the standalone `copilot` CLI for each task below. Ask in interactive mode or
+with `copilot -p "Suggest a command to ..."`. Review the suggestion before running
+it, then record whether it meets the requirements.
 
 ---
 
@@ -46,7 +48,8 @@ Tell Copilot this should be a **git** command.
 
 ## Challenge 3: Branch, Commit, and Push
 
-**Task:** Create a new branch called `feature/cli-lab`, make a commit with message "add CLI lab files", and push the branch — all in one line.
+**Task:** Create a new branch called `feature/cli-lab`, make a commit with message
+"add CLI lab files", and push the branch in one line.
 
 **Run:**
 

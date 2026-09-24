@@ -1,19 +1,20 @@
-# Canvas Review Record
+# Canvas Peer-Review Record
 
-| Review area | Evidence | Decision |
+| Review area | Evidence inspected | Decision |
 | --- | --- | --- |
-| Artifact and storage location |  | Approve / revise / pause |
-| Shared state |  | Approve / revise / pause |
-| User actions |  | Approve / revise / pause |
-| Agent capabilities |  | Approve / revise / pause |
-| Validation rules |  | Approve / revise / pause |
-| Data boundary |  | Approve / revise / pause |
-| Owner and reviewer |  | Approve / revise / pause |
-| Fallback and retirement trigger |  | Approve / revise / pause |
+| Access route and artifact location |  | Approve / revise / pause |
+| Shared state and defaults |  | Approve / revise / pause |
+| Human actions |  | Approve / revise / pause |
+| Agent-callable capabilities |  | Approve / revise / pause |
+| Rejection and unchanged state |  | Approve / revise / pause |
+| Recovery evidence |  | Approve / revise / pause |
+| Dependencies and persisted data |  | Approve / revise / pause |
+| Owner, fallback, and retirement |  | Approve / revise / pause |
 
-## Result
+## Final decision
 
-- Canvas created in approved sandbox: yes / no
-- Manual fallback completed: yes / no
 - Reviewer: ____________________
-- Final decision: approve / revise / pause
+- Decision: approve / revise / pause
+- Required correction or next safe action:
+
+  ______________________________

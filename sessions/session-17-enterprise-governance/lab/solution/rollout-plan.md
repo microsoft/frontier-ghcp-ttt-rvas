@@ -1,45 +1,34 @@
-# Reversible Governance Rollout — Example
+# Completed Reversible Rollout Plan
 
-This example decision record does not determine commercial terms, entitlement, legal, security, privacy, or compliance status. Before delivery, the customer checks current GitHub documentation and administrator policy.
+## Scope
 
-## Scope and owners
+- **Repository:** `training-review-sandbox`
+- **Workflow:** Review one synthetic pull request at a time
+- **Data:** Synthetic task records only
+- **Decision:** Proceed in the repository sandbox only
 
-| Item | Example decision |
-| --- | --- |
-| Repository | A non-sensitive repository sandbox |
-| Bounded task | Add tests for an existing utility with explicit acceptance criteria |
-| Engineering owner | Team lead |
-| Administrator | Customer-designated administrator |
-| Data owner | Repository owner |
-| Other reviewers | Customer-designated security, privacy, legal, and finance contacts |
+## Rollout gates
 
-## Start gate
+| Gate | Evidence required | Decision owner | Action |
+| --- | --- | --- | --- |
+| Start | Completed evidence map, synthetic-data boundary, engineering reviewer, run counter, stop guard, and manual fallback | Engineering lead | Start the bounded training trial |
+| Continue | At least 9 of 10 tasks meet acceptance criteria, no restricted-data or boundary event, no more than 3 material rewrites, fewer than 20 automated runs | Engineering lead | Continue until the window or guard ends |
+| Expand | Platform administrator confirms current settings; data owner confirms the added repository and data class; required reviewers approve the new boundary | Final approver for added scope | Open a new decision record before expansion |
+| Pause | Restricted data, boundary failure, more than 3 material rewrites, 20 automated runs, missing human review, or changed scope | Any named owner may trigger; engineering lead records | Stop automated work, preserve evidence, and use manual review |
 
-- The team records its current documentation and customer-policy checks.
-- The repository owner confirms the sandbox classification.
-- The administrator confirms the approved workflow and permissions.
-- A reviewer defines acceptance criteria and a manual baseline.
-- The training lead records a manual fallback before the trial begins.
+## Observed evidence
 
-## Metered-work guardrail
+- 9 of 10 tasks met acceptance criteria.
+- 2 tasks needed material rewrite.
+- No restricted-data event or boundary failure was observed.
+- 16 of 20 automated runs were used.
 
-| Item | Example decision |
-| --- | --- |
-| Meter | The customer-selected current measurement source |
-| Observation window | A bounded trial period |
-| Threshold | Customer-defined |
-| Escalation | Training lead to the designated customer owner |
-| Stop condition | Pause automated work and begin the manual fallback |
-| Manual fallback | Implement and review the same test change without the automated workflow |
+## Final decision
 
-## Continue, expand, or pause
+Continue the bounded sandbox trial until the two-week or 10-task window closes.
+**Do not expand.** The platform administrator and data owner still own the live
+evidence needed for any added scope.
 
-| Gate | Example evidence |
-| --- | --- |
-| Continue | The task meets acceptance criteria and the reviewer accepts the change. |
-| Expand | Required customer owners accept quality, safety, review, and usage evidence. |
-| Pause | Policy, data, quality, or measurement uncertainty remains. |
-
-## Decision record
-
-Record the evidence, trial limits, and next customer-owned decision. Check current GitHub documentation and administrator policy again before changing scope.
+- **Next action:** Complete the remaining review window with the manual fallback
+  ready.
+- **Next review date:** 2026-10-08

@@ -1,34 +1,43 @@
-# Session 03 — Prompt Engineering Fundamentals
+# Session 03: Prompt Engineering Fundamentals
 
 **Module:** Copilot Fundamentals
+
 **Difficulty:** Beginner
+
 **Prerequisites:** Sessions 01–02
-**Duration:** 3 hours (1 hr trainer content + 2 hr lab)
+
+**Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 
 ## Overview
 
-Show learners how to write prompts that give Copilot enough direction to produce useful work. Cover prompt structure, context, iterative refinement, and common mistakes. These habits carry into later sessions.
+Build one todo API by improving prompts as the project evolves. Learners use intent,
+context, constraints, and examples to implement a store and Express routes. They
+then change the accepted behavior to add priority filtering and record how context
+affected the proposal.
 
-## Learning Outcomes
+The lab keeps prompting tied to executable evidence. A useful prompt produces work
+that still has to pass the project tests and API checks.
 
-- Write clear, structured prompts for Copilot.
-- Use relevant context, including open files, comments, and naming conventions.
-- Spot and fix common prompting mistakes.
-- Create reusable prompt templates for repeated tasks.
+## Learning outcomes
 
-## Session Materials
+- Write prompts that state the task, relevant context, boundaries, and examples.
+- Refine a useful result without mixing unrelated concerns.
+- Use comments and neighboring files as deliberate context.
+- Recognize vague, overloaded, and untrusted instructions.
+- Turn a successful project prompt into a reusable pattern.
 
-| Resource                | Location                               |
-| ----------------------- | -------------------------------------- |
-| Lab exercises           | [`lab/`](lab/)                         |
-| Lab starter files       | `lab/starter/`         |
-| Lab solution files      | `lab/solution/`       |
+## Required access
 
-## Key Topics
+The live path requires GitHub Copilot Chat and inline suggestions in an approved
+editor. The manual fallback requires Node.js 20 or later. Running the Express server
+also requires the declared npm dependency.
 
-- Anatomy of a good prompt: intent, context, constraints, examples
-- The "neighboring tabs" effect
-- Comment-driven development
-- Iterative prompting and refinement
-- Anti-patterns: vague, over-specified, prompt injection risks
-- Prompt libraries and team patterns
+## Materials
+
+| Resource | Location |
+| --- | --- |
+| Trainer guide | [`trainer-content/`](trainer-content/) |
+| Slides | [`slides.md`](slides.md) |
+| Lab | [`lab/`](lab/) |
+| Starter project | [`lab/starter/api-starter/`](lab/starter/api-starter/) |
+| Reference result | [`lab/solution/api-complete/`](lab/solution/api-complete/) |

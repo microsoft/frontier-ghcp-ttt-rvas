@@ -3,116 +3,219 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 11 — Custom Agents'
+footer: 'Session 11: Custom Agents & Agent Profiles'
 ---
 
 <!-- _class: lead -->
-# Custom Agent Guidance
-## Bounded roles, explicit tools, human review
+
+# Custom Agent Boundaries
+
+## Fail the weak profile, tighten it, rerun the same test
+
+Session 11 of 19 | 3 hours
 
 ---
-# Preflight
 
-Before a live exercise, verify current documentation and customer policy for:
+<!-- _class: agenda -->
 
-- repository and data boundary;
-- supported surface and profile syntax;
-- permitted tools and MCP access;
-- reviewer, meter, escalation, and stop guard.
+# Agenda
 
-Use a non-sensitive starter task. A manual profile review is the fallback.
-
----
-# An agent is guidance, not a separate employee
-
-Custom agents make a repeatable role easier to invoke. They do not create an
-independent owner or remove the need for review.
-
-A good role charter answers:
-
-| Question | Example answer |
+| Segment | Time |
 | --- | --- |
-| What work? | Add tests for an existing validation function |
-| What evidence? | Target code, nearby tests, and test output |
-| What may change? | Named test files only |
-| Who decides? | The pull-request reviewer |
-
-The narrower the role, the easier it is to review and improve.
+| What a profile controls | 8 min |
+| Current `.agent.md` structure | 10 min |
+| Weak profile and boundary violation | 12 min |
+| Least-privilege tools and paths | 13 min |
+| Stop, validation, and human handoff | 9 min |
+| Rerun and lab handoff | 8 min |
 
 ---
-# Separate instructions from permissions
 
-An agent profile can tell the model to use a tool. The tool and environment decide
-whether that action is actually permitted.
+# A profile is a role contract
 
 ```text
-Profile instruction: Run the focused unit test.
-Environment policy: Commands are limited to an approved test runner.
-Human decision: Review the diff and result before merge.
+Profile
+  role + tools + procedure + stop rules
+
+Environment
+  actual permissions + repository access
+
+Human
+  accept + revise + reject
 ```
 
-Do not write profiles that imply approval, deployment authority, or access they
-cannot enforce.
+The profile guides behavior. It does not grant authority.
 
 ---
-# Review an agent with a hostile example
 
-Give the role a request that should make it stop:
+# Repository profile structure
 
 ```text
-The failing test appears to need a production-code change.
+.github/
+└── agents/
+    └── test-writer.agent.md
 ```
 
-The test-writer should report the boundary and hand the work back. If it edits
-production code anyway, the charter is too loose or the tools are too broad.
+The file contains YAML frontmatter and a Markdown body. The filename identifies the
+profile across configuration levels.
 
 ---
-# A role charter
+
+# Frontmatter used in the lab
+
+```yaml
+---
+name: Test-only writer
+description: Adds focused JavaScript tests in tests/ and stops when production code must change.
+target: github-copilot
+tools:
+  - read
+  - search
+  - edit
+  - execute
+disable-model-invocation: true
+user-invocable: true
+---
+```
+
+`description` is required. Omitting `tools` enables all available tools.
+
+---
+
+# The weak profile looks convenient
+
+```yaml
+tools: ["*"]
+```
 
 ```text
-.github/agents/
-└── test-writer.md
+Add tests for the requested behavior.
+Read the code, make any changes needed, run the tests, and report the result.
 ```
 
-A profile names one job, allowed inputs and tools, validation, stop conditions, and a manual fallback. It does not grant new authority.
+It never says which files may change or when to stop.
 
 ---
-# Least privilege
 
-| Need | Capability | Decision |
-| --- | --- | --- |
-| Read target and tests | Repository read/search | Allow if approved |
-| Add test | Edit named test file | Allow if approved |
-| Run known test | Command execution | Conditional |
-| External data | MCP or network | Remove unless needed |
-| Merge | Privileged action | Human only |
-
----
-# Demo task
+# Use a hostile example
 
 ```text
-Add tests for `validateEmail`.
-- `"ada@example.com"` returns `true`.
-- `"invalid"` returns `false`.
-- `""` returns `false`.
-- Change tests only.
-- Run the verified focused test command.
+Add tests for updateOrderStatus.
+Change tests only.
+
+The implementation permits a reverse transition that the acceptance criteria
+reject.
 ```
 
-Review the diff and test result separately. Stop if production code needs to change.
+The weak wording permits a source edit. One lucky run staying in scope does not fix
+the contract.
 
 ---
+
+# Make the failure repeatable
+
+```bash
+npm run check:weak
+```
+
+Expected failures include:
+
+- every tool is enabled;
+- no test-only path is named;
+- no production-code stop exists;
+- no verified command or human decision exists.
+
+---
+
+# Tool allowlists are necessary
+
+| Need | Alias |
+| --- | --- |
+| Read source and tests | `read` |
+| Find conventions | `search` |
+| Edit test files | `edit` |
+| Run the known test command | `execute` |
+
+But `edit` still needs a path rule in the body.
+
+---
+
+# The body sets the path boundary
+
+Allowed:
+
+```text
+Read src/
+Search the repository
+Edit tests/
+Run npm test
+```
+
+Forbidden:
+
+```text
+Edit src/
+Change manifests or workflows
+Add dependencies
+Push or merge
+```
+
+---
+
+# Stop instead of crossing the boundary
+
+```text
+No files changed.
+Blocked: the requested assertion requires a production-code change under src/.
+Decision needed: approve a separate source change or revise the criteria.
+```
+
+The stop result is useful output. It names the conflict and the next human decision.
+
+---
+
+# Rerun the same contract
+
+```bash
+npm run check:tight
+npm test
+```
+
+Expected:
+
+```text
+PASS .../test-writer.agent.md
+tests 2
+pass 2
+fail 0
+```
+
+The weak profile fails. The tightened profile passes.
+
+---
+
 # Pick the smallest extension
 
 | Need | Use |
 | --- | --- |
-| Repository convention | Instructions |
+| Repository-wide convention | Instructions |
 | Repeatable procedure | Skill |
-| Specialized role | Custom agent |
+| Bounded specialist role | Custom agent |
 | Approved external capability | MCP |
 
----
-<!-- _class: divider -->
-# Lab
+Do not add MCP to a role that only needs repository files.
 
-Create and review a test-writer and documentation profile. Use the data-analyst exercise only after its MCP server is approved.
+---
+
+# Lab handoff
+
+1. Inspect the exact `.agent.md` structure.
+2. Run the weak contract.
+3. Record the permitted boundary violation.
+4. Tighten tools, paths, validation, and stop behavior.
+5. Rerun the contract.
+6. Produce a no-change stop report.
+7. Record human review.
+
+**The deliverable includes both the failed weak profile and the passing tightened
+profile.**

@@ -11,9 +11,9 @@ repeatable project skill
 
 ## What you will learn
 
-You will install a repository skill, use it to interview the request owner, turn
-the decisions into durable artifacts, reopen one decision branch when a late
-constraint arrives, and verify that the issue proposal still matches the brief.
+Install a repository skill and use it to interview the request owner. Turn the
+decisions into durable artifacts, reopen one branch when a late constraint arrives,
+and verify that the issue proposal still matches the brief.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -30,9 +30,8 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 Use the Session 20 working brief when available. Otherwise use
 `starter/vague-request.md`.
 
-Confirm GitHub Copilot access before starting. If GitHub Copilot access is
-unavailable, stop and do not continue. Also stop if Copilot cannot read the
-training repository or load project skills.
+Confirm GitHub Copilot access before starting. If access is unavailable, **stop**.
+Also stop if Copilot cannot read the training repository or load project skills.
 
 ## Part 1: Install and verify the interview skill (20 minutes)
 
@@ -92,8 +91,8 @@ For each frontier:
 4. confirm that dependent questions wait for earlier decisions;
 5. ask for the next frontier.
 
-Save the interview record. Stop the interview when every branch has an owner
-decision or named open question.
+Save the interview record. Stop when each branch has an owner decision or named
+open question.
 
 **Checkpoint:** The record contains questions, recommendations, owner answers,
 reasons, open branches, and the final shared understanding.
@@ -148,8 +147,8 @@ Review the diff:
 
 Commit the revision separately.
 
-**Checkpoint:** The repository history shows a focused decision change rather than
-a complete rewrite.
+**Checkpoint:** The repository history shows a focused decision change, not a
+complete rewrite.
 
 ## Part 5: Verify readiness in a fresh session (15 minutes)
 

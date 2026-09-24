@@ -46,7 +46,7 @@ resource "aws_db_instance" "main" {
   db_name           = "appdb"
 
   username = "admin"
-  password = "SuperSecret123!"  # Hardcoded password!
+  password = "SuperSecret123!" # Hardcoded password!
 
   # ISSUE 5: Storage is NOT encrypted
   # storage_encrypted = true  # This line is commented out
@@ -62,7 +62,7 @@ resource "aws_s3_bucket" "data" {
 
 resource "aws_s3_bucket_acl" "data_acl" {
   bucket = aws_s3_bucket.data.id
-  acl    = "public-read"  # Public access!
+  acl    = "public-read" # Public access!
 }
 
 # No public access block — bucket is open to the internet
@@ -77,8 +77,8 @@ resource "aws_iam_policy" "app_policy" {
     Statement = [
       {
         Effect   = "Allow"
-        Action   = "*"        # Full admin access!
-        Resource = "*"        # All resources!
+        Action   = "*" # Full admin access!
+        Resource = "*" # All resources!
       }
     ]
   })

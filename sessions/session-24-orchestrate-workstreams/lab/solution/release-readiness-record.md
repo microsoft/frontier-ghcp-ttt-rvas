@@ -1,6 +1,7 @@
 # Service Request Portal: Release Readiness Record
 
-This example shows the final record structure. It does not replace live orchestration or learner review.
+This reference shows the final record structure. It cannot replace live
+orchestration or learner review.
 
 **Review date:** September 23, 2026
 

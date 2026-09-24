@@ -15,7 +15,9 @@
 
 ## Problem
 
-Employees who submit facilities or equipment requests can see a reference number but cannot tell what is happening. They contact the service desk for updates, and service agents repeat information already present in the internal queue.
+Employees who submit facilities or equipment requests can see a reference number
+but cannot tell what is happening. They contact the service desk for updates.
+Service agents then repeat information already present in the internal queue.
 
 ## Target outcome
 
@@ -102,4 +104,5 @@ A requester can see a plain-language public status, the last updated time, and a
 **Reviewer notes:** The late visibility constraint was resolved without changing
 the approved first-release scope. Role-specific behavior is clear enough for
 sprint planning.
-**Next action and owner:** Portal product owner creates the work item; service operations manager confirms the threshold before release.
+**Next action and owner:** The portal product owner creates the work item. The
+service operations manager confirms the threshold before release.

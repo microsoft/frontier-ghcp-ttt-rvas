@@ -20,13 +20,13 @@ Build an Express.js REST API for a simple task list.
 
 Each todo has:
 
-- `id` — auto-incrementing integer
-- `title` — required string, 1–200 characters
-- `description` — optional string
-- `status` — `"pending"` or `"completed"`; defaults to `"pending"`
-- `priority` — `"low"`, `"medium"`, or `"high"`; defaults to `"medium"`
-- `createdAt` — automatically generated ISO timestamp
-- `updatedAt` — automatically updated ISO timestamp
+- `id`: auto-incrementing integer
+- `title`: required string, 1–200 characters
+- `description`: optional string
+- `status`: `"pending"` or `"completed"`; defaults to `"pending"`
+- `priority`: `"low"`, `"medium"`, or `"high"`; defaults to `"medium"`
+- `createdAt`: automatically generated ISO timestamp
+- `updatedAt`: automatically updated ISO timestamp
 
 ### Technical Requirements
 

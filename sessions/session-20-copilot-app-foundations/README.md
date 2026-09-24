@@ -10,12 +10,13 @@
 
 ## Overview
 
-This session gives product and delivery teams a practical foundation in the GitHub
-Copilot app. Learners compare unscoped and repository-grounded answers, create a
-durable working brief, revise it when approved evidence changes, and verify it in
-a fresh session.
+Product and delivery teams learn the GitHub Copilot app through one practical
+workflow. They compare unscoped and repository-grounded answers, create a durable
+working brief, revise it when approved evidence changes, then verify it in a fresh
+session.
 
-The fictional **Service Request Portal** provides the shared scenario. Learners may use approved, sanitized work from their own team.
+The fictional **Service Request Portal** provides the shared scenario. Learners
+may use approved, sanitized work from their own team.
 
 > [!IMPORTANT]
 > **The GitHub Copilot app is required.** Stop and resolve access, policy, or client issues before the learner starts.
@@ -26,8 +27,9 @@ By the end of this session, learners can:
 
 1. Find and use Chats, Projects, My work, Search, Automations, and Customize.
 2. Choose repository, issue, file, or uploaded-document context for a question.
-3. Inspect the skills, agents, MCP servers, and canvases available in their environment.
-4. Explain how repository context changes the quality and safety of an answer.
+3. Inspect the skills, agents, MCP servers, and canvases available in their
+   environment.
+4. Explain how repository context changes an answer's quality and safety.
 5. Review and revise a proposed Markdown change.
 6. Update a working brief when approved evidence changes.
 7. Verify that a fresh session can recover the intended state from the brief.

@@ -1,89 +1,205 @@
-# Session 13 Lab — GitHub Actions & Workflow Generation
+# Session 13 Lab: One Application, Four Workflow Tasks
 
-**Duration:** 2 hours · **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05 · **Deliverable:** Reviewed workflows, fixes, and a tested custom JavaScript action
+**Duration:** 2 hours
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 01–05
+**Deliverable:** A reviewed workflow set and evidence record for `copilot-webapp`
+
+## Lab overview
+
+Use the same application for every part of the lab.
+
+| Part | Work | Time |
+| --- | --- | --- |
+| 1 | Prove the application baseline and create CI | 30 min |
+| 2 | Design staged deployment jobs | 25 min |
+| 3 | Repair two supplied workflow failures | 30 min |
+| 4 | Validate a JavaScript action | 25 min |
+| 5 | Package the evidence | 10 min |
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Confirm GitHub Actions, repository pushes, external actions, and deployment targets with the customer. If access is unavailable, draft workflows locally, validate the application tests and YAML, and peer-review against the acceptance criteria.
+Read the [course safety baseline](../../learning-safety-baseline.md). You must have GitHub Copilot access in the selected coding environment and Node.js 20 or later.
 
-| Exercise | Task | Time |
-| --- | --- | --- |
-| 1 | Generate CI | 30 min |
-| 2 | Design CD from the specification | 30 min |
-| 3 | Fix two broken workflows | 30 min |
-| 4 | Create a JavaScript action | 30 min |
-| Optional | Agentic Workflows with `gh-aw` | 35 min |
+GitHub repository access is optional. Do not push, run Actions, install an external
+action, or use a deployment target unless the instructor confirms that route.
+When repository access or Actions is unavailable, complete the full local path
+below. If GitHub Copilot access is unavailable, stop and do not continue the lab.
+
+Do not use real credentials or deployment endpoints. The supplied deployment work
+is a reviewed design exercise.
 
 ## Setup
 
-Use VS Code with Copilot, Node.js 20+, a repository you may use under policy, and authenticated `gh` only when needed. Open `lab/starter/webapp/`:
+Run all commands from this session directory unless a command changes directory.
+
+```bash
+node --version
+cd lab/starter/webapp
+npm ci
+npm test
+npm run lint
+npm run build
+test -f dist/app.js
+cd ../../..
+```
+
+Expected result: Node reports version 20 or later, seven tests pass, lint succeeds,
+the build succeeds, and `dist/app.js` exists.
+
+Create `lab/evidence.md` from this table:
+
+| Checkpoint | Command or review | Result | Changed files | Reviewer |
+| --- | --- | --- | --- | --- |
+| Baseline | | | | |
+| CI | | | | |
+| Deployment design | | | | |
+| Workflow repair | | | | |
+| Custom action | | | | |
+
+## Part 1: Create CI
+
+Ask Copilot to read `lab/starter/webapp/package.json`, the tests, and the build
+script. Create `lab/starter/webapp/.github/workflows/ci.yml` with:
+
+- pushes to `main` and pull requests;
+- `ubuntu-latest` and Node.js 20;
+- `npm ci`, lint, tests, and build;
+- npm caching;
+- `permissions: contents: read`;
+- the `dist/` build artifact with seven-day retention.
+
+Validate the application again:
 
 ```bash
 cd lab/starter/webapp
-npm install
+npm ci
 npm test
 npm run lint
+npm run build
+test -f dist/app.js
+cd ../../..
 ```
 
-## 1. Generate CI
+Validate the workflow syntax:
 
-Ask agent mode to read the project and create `.github/workflows/ci.yml`. Require pushes to `main` and pull requests, `ubuntu-latest`, Node.js 20, `npm ci`, the existing lint and test scripts, an artifact, npm caching, and least-privilege permissions.
+```bash
+ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
+  lab/starter/webapp/.github/workflows/ci.yml
+```
 
-Before running the workflow, check:
+Review the generated commands against `package.json`. Compare the result with
+`lab/solution/webapp/.github/workflows/ci.yml`.
 
-- [ ] correct triggers and runner;
-- [ ] `actions/checkout@v4` and `actions/setup-node@v4`;
-- [ ] `npm ci`, lint, and test commands match `package.json`;
-- [ ] `actions/upload-artifact@v4` has a real output path;
-- [ ] `permissions: contents: read` is sufficient.
+**Checkpoint:** Record both command results and explain why the workflow uploads
+`dist/` rather than a path invented by the assistant.
 
-Compare with `lab/solution/webapp/.github/workflows/ci.yml`.
+## Part 2: Design deployment
 
-## 2. Design CD
+Read `lab/starter/deployment-spec.md`. Create
+`lab/starter/webapp/.github/workflows/cd.yml`. It must build the same application,
+deploy to staging before production, reference GitHub Environments and secrets,
+run two health checks, and describe rollback without calling a real endpoint.
 
-Read `lab/starter/deployment-spec.md`. Ask Copilot to create `cd.yml` with a build job, staging after build, production after staging, environment references, secret references, health checks, and a rollback path. It must trigger only from `main`, not pull requests.
+Run:
 
-Review every command and secret name against the specification. Environment protection rules belong in repository settings; YAML references them with `environment:`.
+```bash
+ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
+  lab/starter/webapp/.github/workflows/cd.yml
+grep -nE 'environment: (staging|production)|needs:|permissions:' \
+  lab/starter/webapp/.github/workflows/cd.yml
+```
 
-## 3. Fix the supplied workflows
+Expected result: YAML parsing succeeds. The output shows both environments, job
+ordering, and an explicit permissions block.
 
-For `broken-ci.yml`, find and fix the indentation error, deprecated `actions/checkout@v2`, missing permissions, and incorrect npm command.
+Compare with `lab/solution/workflows/cd.yml`. Repository settings own production
+reviewers. The workflow only references the `production` environment.
 
-For `broken-deploy.yml`, fix the secret name to `${{ secrets.DEPLOY_TOKEN }}`, update `ubuntu-18.04`, add `actions/checkout@v4`, and correct `refs/head/main` to `refs/heads/main`.
+**Checkpoint:** Record the secret names, the production gate, the health-check
+behavior, and the rollback evidence. Do not claim that a deployment occurred.
 
-Ask Copilot to explain each fix. Then compare with `lab/solution/fixed-workflows/`.
+## Part 3: Repair workflow failures
 
-## 4. Build a JavaScript action
+The two broken workflows both target `copilot-webapp`.
 
-Read `lab/starter/custom-action/action.yml` and `src/main.js`. Complete a Node.js action that scans JavaScript files, counts lines and TODO comments, estimates complexity, returns a 0–100 score and pass/fail output, and emits a Markdown report when requested.
+First prove the CI file has a syntax failure:
 
-Review inputs, outputs, file handling, and the scoring calculation. Add graceful handling for unreadable files and a failure result when the score is below the threshold. Compare with `lab/solution/custom-action/`.
+```bash
+ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
+  lab/starter/broken-workflows/broken-ci.yml
+```
 
-Use `act` only when it is already installed and policy allows local runner execution:
+Expected failure: the parser reports an indentation error near `Setup Node.js`.
+Fix the indentation, update the checkout action, add least-privilege permissions,
+and use the package command intended for CI. Run the parser again and compare with
+`lab/solution/fixed-workflows/fixed-ci.yml`.
+
+The deployment workflow parses, but its behavior is wrong:
+
+```bash
+ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
+  lab/starter/broken-workflows/broken-deploy.yml
+grep -nE 'ubuntu-18.04|refs/head/main|DEPLOY_KEY|checkout' \
+  lab/starter/broken-workflows/broken-deploy.yml
+```
+
+Expected result: parsing succeeds. The second command exposes the stale runner,
+bad ref, wrong secret name, and missing checkout step. Repair those items, parse
+the file again, and compare with the solution.
+
+**Checkpoint:** For each change, cite the observed failure or repository fact.
+Do not accept a broad rewrite that cannot explain its evidence.
+
+## Part 4: Validate the custom action
+
+Complete the metadata and implementation in `lab/starter/custom-action/`. The
+action scans the same application used by the workflows.
+
+Use the reference implementation to prove both outcomes:
+
+```bash
+npm ci --prefix lab/solution/custom-action
+cd lab/starter/webapp
+env INPUT_THRESHOLD=0 'INPUT_REPORT-FORMAT=markdown' \
+  GITHUB_STEP_SUMMARY=/tmp/session-13-summary.md \
+  node ../../solution/custom-action/src/main.js
+test -s /tmp/session-13-summary.md
+cd ../../..
+```
+
+Expected result: the action reports `passed: true`, exits with code 0, and writes
+the summary.
+
+Now run the intentional failure:
+
+```bash
+cd lab/starter/webapp
+env INPUT_THRESHOLD=101 'INPUT_REPORT-FORMAT=json' \
+  node ../../solution/custom-action/src/main.js
+cd ../../..
+```
+
+Expected failure: the action reports a score below 101 and exits with code 1.
+This proves that the threshold changes the job result.
+
+If `act` is already installed and local runner use is approved, you may also run:
 
 ```bash
 act -W lab/solution/custom-action/.github/workflows/quality-check.yml -j quality-check
 ```
 
-## Optional: Agentic Workflows
+**Checkpoint:** Record the pass and fail exit codes, score, scanned path, outputs,
+and summary location.
 
-Run this only with approved repository access, Actions, and an approved AI engine:
+## Final deliverable
 
-```bash
-gh extension install github/gh-aw
-gh aw init daily-repo-status
-gh aw compile daily-repo-status
-gh workflow run daily-repo-status.lock.yml
-gh aw logs daily-repo-status
-```
+Submit:
 
-Start from `lab/starter/agentic-workflows/custom-status-report.md` or `stale-issue-reviewer.md`. Review the `.md` source and `.lock.yml` artifact. Keep permissions read-only by default and add `safe-outputs` only for a reviewed write.
+1. CI and deployment workflow files for `copilot-webapp`.
+2. Both repaired workflow files with evidence-linked explanations.
+3. The completed JavaScript action.
+4. `lab/evidence.md` with commands, results, changed files, and reviewer decisions.
 
-## Completion checklist
-
-- [ ] `ci.yml` uses caching and least privilege.
-- [ ] `cd.yml` follows the supplied staging, production, and rollback requirements.
-- [ ] Both broken workflows have explained fixes.
-- [ ] The custom action has reviewed inputs, outputs, and error handling.
-- [ ] Any `gh-aw` artifact has a reviewed `.md` and `.lock.yml` pair.
+The deliverable must not contain credentials, real deployment endpoints, or a
+claim that local syntax checks prove a production deployment is safe.

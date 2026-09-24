@@ -1,375 +1,247 @@
-# Session 06 Lab — Copilot Spaces & Context Management
+# Session 06 Lab: Spaces and Context Management
 
-**Duration:** 2 hours  
-**Difficulty:** Intermediate  
-**Prerequisites:** Sessions 01–03 completed  
-**Deliverable:** A Copilot Space, custom instructions, and a before-and-after comparison
-
----
-
-## Before you start
-
-Read the [course safety baseline](../../learning-safety-baseline.md). Confirm that Spaces and the selected repository or context sources are approved.
-
-## If access is unavailable
-
-Use the provided project files as a context packet. Answer the comparison questions with and without it, then record how source selection and instructions changed the result.
-
----
+**Duration:** 2 hours
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 01–05 completed
+**Deliverable:** A context package for one Storefront API, with comparison evidence
 
 ## Lab overview
 
-This lab compares answers with different context. Use Spaces, custom instructions, and prompt files to give Copilot the evidence a task needs.
+Use one Storefront API for the full lab. First select the sources for a Copilot
+Space. Then add repository instructions and compare the same task across context
+levels. Store reusable prompt files beside the project.
 
-| Exercise   | Topic                         | Time   |
-| ---------- | ----------------------------- | ------ |
-| 1          | Creating a Copilot Space      | 30 min |
-| 2          | Custom Instructions           | 30 min |
-| 3          | Context Comparison Experiment | 30 min |
-| 4          | Prompt Files Library          | 30 min |
+| Stage | Work | Time |
+| --- | --- | --- |
+| 1 | Prepare the project and select Space sources | 30 min |
+| 2 | Add repository instructions | 30 min |
+| 3 | Compare one task across context levels | 30 min |
+| 4 | Build and test a prompt library | 30 min |
 
----
+## Before you start
 
-## Exercise 1: Creating a Copilot Space (30 min)
+Read the [course safety baseline](../../learning-safety-baseline.md). Use only the synthetic Storefront API files supplied with this lab.
 
-### Objective
+You need:
 
-Create a Copilot Space for an e-commerce project. Add relevant files and documentation, then assess how they affect Copilot's answers.
+- GitHub Copilot access in the approved editor;
+- Copilot Spaces access if you will use the live Space path;
+- a repository or approved sandbox that can hold the Storefront API;
+- Node.js and npm;
+- permission to add repository instructions and prompt files.
 
-### Steps
+If Copilot Spaces is unavailable, use the **local context-packet fallback** in each
+stage. If all Copilot access is unavailable, **do not start the live Copilot
+steps**. Draft the same context artifacts and run the project locally. Complete the
+comparison through peer review.
 
-1. **Review the starter project.** Open `lab/starter/ecommerce-project/`:
+Create a writable copy:
 
-   | File                     | Purpose                                 |
-   | ------------------------ | --------------------------------------- |
-   | `README.md`              | Project overview and setup instructions |
-   | `package.json`           | Dependencies and scripts                |
-   | `src/models/product.js`  | Product data model with validation      |
-   | `src/routes/products.js` | Product API routes                      |
-   | `docs/api-spec.md`       | Full API specification with endpoints   |
-   | `docs/architecture.md`   | Architecture decisions and patterns     |
+```bash
+mkdir -p ~/copilot-labs/session-06
+cp -R sessions/session-06-spaces-and-context/lab/starter/ecommerce-project \
+  ~/copilot-labs/session-06/storefront-api
+cp sessions/session-06-spaces-and-context/lab/starter/context-comparison.md \
+  ~/copilot-labs/session-06/storefront-api/
+cd ~/copilot-labs/session-06/storefront-api
+npm install
+npm start
+```
 
-2. **Open Copilot Spaces.** In a browser, go to:
+Open `http://localhost:3000/api/products`. The response should contain the seeded products.
 
-   ```
-   https://github.com/copilot/spaces
-   ```
+## Stage 1: Prepare the project and select Space sources (30 minutes)
 
-3. **Create a new Space:**
-   - Click **"Create space"**
-   - Name: `Ecommerce API Lab`
-   - Owner: your personal account
-   - Description: `Context for the e-commerce product API training exercise`
+### Inspect the context before adding it
 
-4. **Add Space sources.** Add:
-   - `docs/api-spec.md` — the API specification
-   - `docs/architecture.md` — architecture decisions
-   - `src/models/product.js` — the data model
-   - `src/routes/products.js` — the route handlers
-   - `README.md` — project overview
+Read these files:
 
-   > **Check:** Each selected file appears as a Space source.
+| Source | Decision it supports |
+| --- | --- |
+| `README.md` | Project purpose, setup, and endpoints |
+| `docs/api-spec.md` | Required HTTP behavior |
+| `docs/architecture.md` | Layers, response envelopes, and naming |
+| `src/models/product.js` | Product fields and validation |
+| `src/routes/products.js` | Current route patterns |
 
-5. **Add Space instructions.** In the Space settings, add:
+Write `context-notes.md`:
 
-   ```
-   You are an expert on this e-commerce API. When answering:
-   - Reference the API spec in docs/api-spec.md for endpoint details
-   - Follow the architecture patterns described in docs/architecture.md
-   - Use the validation patterns from src/models/product.js
-   - Always suggest error handling following the project's conventions
-   ```
+```markdown
+# Storefront API Context Notes
 
-6. **Test the Space.** Ask these questions in the Space chat and evaluate the quality:
+## Task
+Add a low-stock report endpoint.
 
-   | Question                                              | What to evaluate                                            |
-   | ----------------------------------------------------- | ----------------------------------------------------------- |
-   | "How do I add a new endpoint for product categories?" | Does it reference the API spec and existing route patterns? |
-   | "What validation should I add for the price field?"   | Does it reference the product model's existing validation?  |
-   | "Write a new route for product search with filtering" | Does it follow the architecture patterns?                   |
+## Required sources
+## Excluded sources
+## Conflicts or stale statements
+## Acceptance criteria
+```
 
-   > **Check:** Responses cite or follow the selected code, documents, and conventions. Verify claims against the sources.
+For this task, keep the source set small. Do not add unrelated repositories, private discussions, or production data.
 
-7. **Share the Space** (optional). If working with a partner, share the Space with them and have them ask a question.
+### Live Space path
 
-### Observe
+Create a Space named `Storefront API Lab`. Add the five reviewed files and these instructions:
 
-- How did the Space change the response compared with generic Chat?
-- Did Copilot cite sources from the Space?
-- Did suggestions match the project's existing patterns?
+```text
+Answer from the selected Storefront API sources. Follow docs/api-spec.md and
+docs/architecture.md. Use the Product validation and response patterns already in
+the project. State when a requested behavior is not defined by the sources.
+```
 
-### Troubleshooting
+Ask:
 
-| Problem                                     | Solution                                                                                                        |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Can't find Copilot Spaces                   | Spaces is at `github.com/copilot/spaces`. Requires a Copilot license.                                           |
-| Files don't appear as sources               | Make sure the files are in a GitHub repository (not just local). Push the starter project to a repo first.      |
-| Copilot gives generic answers despite Space | Check that your custom instructions are saved. Try more specific questions that reference the project's domain. |
-
----
-
-## Exercise 2: Custom Instructions (30 min)
-
-### Objective
+```text
+What files and acceptance criteria should guide a low-stock report endpoint?
+Do not write code yet.
+```
 
-Create `copilot-instructions.md` and reusable prompt files that state your team's coding standards.
+Verify every claim against the selected sources.
 
-### Steps
+### Local context-packet fallback
 
-1. **Open `lab/starter/instructions-lab/`** in VS Code. Review the project:
-   - `src/app.js` — a basic Express app
-   - `src/utils.js` — utility functions
-   - `package.json` — dependencies
-   - `.github/` — empty directory (ready for your instructions)
-
-2. **Test without instructions first.** Open Copilot Chat and ask:
-
-   ```
-   Add a new endpoint to this Express app that returns a list of users.
-   ```
-
-   **Record**:
-   - What coding style did Copilot use?
-   - Did it add error handling?
-   - Did it use any specific patterns?
-
-3. **Create `copilot-instructions.md`.** Create the file at `.github/copilot-instructions.md`:
+If Spaces is unavailable, create `context-packet.md`. Link the same five files, copy only the task-relevant rules, and answer the question manually or with approved local Chat attachments.
 
-   ```markdown
-   # Project Coding Standards
-
-   ## Language & Style
-   - Use CommonJS syntax (require/module.exports) to match the existing project
-   - Use async/await for all asynchronous operations. Do not use `.then()` chains.
-   - Use const by default, let only when reassignment is needed, never var
-
-   ## Express Patterns
-   - All route handlers must use async/await with try/catch
-   - Return structured error responses: { "error": { "code": "ERROR_CODE", "message": "..." } }
-   - Always validate request body with a dedicated validation function
-   - Use HTTP status codes correctly: 200, 201, 400, 404, 500
-
-   ## Naming Conventions
-   - Files: kebab-case (user-routes.js)
-   - Functions: camelCase (getUserById)
-   - Constants: SCREAMING_SNAKE_CASE (MAX_PAGE_SIZE)
-
-   ## Testing
-   - Use Node.js's built-in test runner
-   - Test files go in test/ with a .test.js extension
-   - Every endpoint needs at least: success case, validation error, not-found case
-   ```
+### Checkpoint 1: context scope is visible
 
-4. **Test with instructions.** Ask the same question again:
-
-   ```
-   Add a new endpoint to this Express app that returns a list of users.
-   ```
+- [ ] `context-notes.md` names the task and acceptance criteria.
+- [ ] Every selected source has a reason to be present.
+- [ ] Unrelated or restricted sources are excluded.
+- [ ] Claims in the first answer trace to a selected file.
+- [ ] The live Space or local context packet is ready for reuse.
 
-   > **Check:** The response uses CommonJS, `async`/`await`, structured errors, and the requested naming conventions. Instructions guide output; they do not enforce it.
+## Stage 2: Add repository instructions (30 minutes)
 
-5. **Create a prompt file.** Create `.github/prompts/new-endpoint.prompt.md`:
+Create `.github/copilot-instructions.md` in the Storefront API:
 
-   ```markdown
-   ---
-   description: "Generate a new REST endpoint following team standards"
-   ---
-   
-   Create a new REST endpoint with the following:
-   
-   1. Route handler with async/await and try/catch
-   2. Input validation middleware
-   3. Proper HTTP status codes
-   4. Structured error responses matching the project format
-   5. At least 3 test cases (success, validation error, not-found)
-   
-   The endpoint should be for: {{ user_description }}
-   ```
+```markdown
+# Storefront API Instructions
 
-6. **Create a second prompt file.** Create `.github/prompts/code-review.prompt.md`:
+- Use ES modules.
+- Keep route handlers under `src/routes/`.
+- Follow the `{ data: ... }` success envelope.
+- Return errors as `{ error: { code, message, details? } }`.
+- Use `Product.validate()` before product data changes.
+- Add no dependency unless the task requires it and a reviewer approves it.
+- Keep examples and tests on synthetic data.
+```
 
-   ```markdown
-   ---
-   description: "Review code against team standards"
-   ---
-   
-   Review the selected code for:
-   
-   1. Does it follow our naming conventions (kebab-case files, camelCase functions)?
-   2. Are all async operations using await with try/catch?
-   3. Are error responses structured as { error: { code, message } }?
-   4. Is input validation present for all user-provided data?
-   5. Are there any security concerns (injection, XSS, missing auth)?
-   
-   Flag issues as: 🔴 Critical, 🟡 Warning, 🟢 Suggestion
-   ```
+Ask Copilot to plan the low-stock endpoint:
 
-7. **Test the prompt file.** In Copilot Chat, use the prompt:
-   - Type `/` and look for your custom prompts
-   - Select `new-endpoint` and describe: "A product categories endpoint with CRUD operations"
+```text
+Plan a GET /api/products/reports/low-stock endpoint for this project. It should
+accept an optional non-negative integer threshold and default to 10. Return only
+products whose stock is at or below the threshold. Follow repository instructions.
+Do not edit files.
+```
 
-   > **You should see:** The generated code follows all your team standards from the instructions file.
+Review the plan against the API spec, architecture, model, and existing route order. A static route must not be hidden behind `/:id`.
 
-8. **Compare with `lab/solution/instructions-lab/`** to see the reference setup.
+Then ask for a minimal implementation and verification:
 
-### Troubleshooting
+```text
+Implement the accepted low-stock endpoint plan. Keep the current API behavior.
+Run the smallest useful check and show the result.
+```
 
-| Problem                         | Solution                                                                                                         |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Copilot ignores instructions    | Make sure the file is at exactly `.github/copilot-instructions.md` (not `.github/copilot/instructions.md`).      |
-| Prompt files don't appear       | Prompt files must be at `.github/prompts/*.prompt.md`. Check the file extension.                                 |
-| Instructions partially followed | Instructions are guidance, not enforcement. Copilot may not follow every rule perfectly. Iterate on the wording. |
+Manually verify:
 
----
+```bash
+curl "http://localhost:3000/api/products/reports/low-stock?threshold=80"
+curl "http://localhost:3000/api/products/reports/low-stock?threshold=-1"
+```
 
-## Exercise 3: Context Comparison Experiment (30 min)
+Compare your instruction file with `lab/solution/ecommerce-project/.github/copilot-instructions.md`.
 
-### Objective
+### Checkpoint 2: instructions changed observable behavior
 
-Compare Copilot's output at different context levels. Record the differences.
+- [ ] The plan uses ES modules and existing response envelopes.
+- [ ] The route is placed before `/:id`.
+- [ ] Invalid thresholds produce a structured `400` response.
+- [ ] Existing product routes still work.
+- [ ] `context-notes.md` records one instruction Copilot followed and one item you still had to review.
 
-### Steps
+### Manual fallback
 
-1. **Open `lab/starter/context-comparison.md`.** This is your experiment template.
+Apply the instructions as a review checklist. Implement or describe the endpoint manually and run the same curl checks.
 
-2. **Choose a prompt.** Use this standard prompt for all experiments:
+## Stage 3: Compare one task across context levels (30 minutes)
 
-   ```
-   Write an Express middleware function that logs all incoming requests 
-   with timestamp, method, URL, response time, and status code. 
-   It should support different log levels based on status code 
-   (info for 2xx, warn for 4xx, error for 5xx).
-   ```
+Open `context-comparison.md`. Use the same task in every experiment:
 
-3. **Experiment A: No context.** Open a new, empty file. Paste the prompt into Copilot Chat with no project open.
+```text
+Add request-logging middleware to the Storefront API. Record timestamp, method,
+URL, response time, and status code. Use info for 2xx, warn for 4xx, and error for
+5xx. Add no logging package.
+```
 
-   **Record in your template:**
-   - What assumptions did Copilot make?
-   - What logging library did it use (or roll its own)?
-   - How complete was the response?
+Run four experiments without changing the task:
 
-4. **Experiment B: With project context.** Open the `instructions-lab` project (with your `copilot-instructions.md` from Exercise 2). Ask the same prompt.
+1. **No project context:** Ask from an empty window.
+2. **Repository context:** Open the Storefront API with `copilot-instructions.md`.
+3. **Space or context packet:** Ask with the selected project sources.
+4. **Prompt file:** Use a structured repository prompt for the task.
 
-   **Record:**
-   - Did it follow your custom instructions?
-   - Did it use the same logging patterns as the existing code?
-   - Was the response more tailored?
+Record:
 
-5. **Experiment C: With Space context.** Go to the Copilot Space from Exercise 1. Ask the same prompt there.
+- import style;
+- file placement;
+- response and error conventions;
+- added assumptions;
+- number of corrections;
+- claims that cite or clearly follow a source.
 
-   **Record:**
-   - Did it reference the existing project architecture?
-   - Were conventions matched more precisely?
-   - Did it cite any Space sources?
+Score usefulness against the project, not fluency. More context is only better when it removes wrong assumptions.
 
-6. **Experiment D: With prompt file.** Create a one-off prompt file for this task and use it instead of raw Chat.
+### Checkpoint 3: comparison uses evidence
 
-   **Record:**
-   - How did structuring the request as a prompt file change the output?
-   - Was the result more consistent and repeatable?
+- [ ] All four experiments use the same task text.
+- [ ] Each score cites a concrete output difference.
+- [ ] The comparison identifies one useful source and one source that added no value.
+- [ ] The final choice states the smallest context set that supports the task.
 
-7. **Fill in the comparison table** in `context-comparison.md`:
+## Stage 4: Build and test a prompt library (30 minutes)
 
-   | Dimension               | No Context  | Instructions  | Space   | Prompt File   |
-   | ----------------------- | ----------- | ------------- | ------- | ------------- |
-   | Followed project style? |             |               |         |               |
-   | Used correct patterns?  |             |               |         |               |
-   | Assumed correct stack?  |             |               |         |               |
-   | Required iterations?    |             |               |         |               |
-   | Quality score (1–5)     |             |               |         |               |
+Create these files in `storefront-api/.github/prompts/`:
 
-8. **Write your findings.** Which context produced the most useful result? When would you use each method?
+1. `investigate-bug.prompt.md`
+2. `generate-api-docs.prompt.md`
+3. `migration-checklist.prompt.md`
 
-### What to retain
+Each prompt needs front matter with a short description, a bounded input, expected output sections, and a verification step.
 
-**Context changes the available evidence.** Start with the smallest approved set that supports the task, then review the result against those sources.
+### Test the prompts on the same project
 
-### Troubleshooting
+- Run `investigate-bug` against an invalid `minPrice` query scenario.
+- Run `generate-api-docs` against the low-stock endpoint.
+- Run `migration-checklist` for a proposed Express major-version update. Do not install it.
 
-| Problem               | Solution                                                                                                                               |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Results look the same | Try a more complex prompt that requires project-specific knowledge. Simple prompts may not show much difference.                       |
-| Hard to be objective  | Use specific criteria: import style, error format, and naming conventions. Measure the difference. |
+Review each result:
 
----
+- Did it stay inside the selected Storefront API sources?
+- Did it separate known facts from assumptions?
+- Did it name a check another engineer can run?
+- Did it avoid changing code when the prompt only requested analysis?
 
-## Exercise 4: Prompt Files Library (30 min)
+Compare with `lab/solution/ecommerce-project/.github/prompts/`.
 
-### Objective
+### Checkpoint 4: prompts are reusable and bounded
 
-Build three reusable prompt files for common workflows.
+- [ ] All three prompt files appear in `.github/prompts/`.
+- [ ] Each prompt was tested on the Storefront API.
+- [ ] Each output includes verification.
+- [ ] The migration prompt stops before package changes.
+- [ ] Stale or duplicate instructions were removed.
 
-### Steps
+## Final Deliverable
 
-1. **Open `lab/starter/prompt-templates/`** and review the example structure. The directory shows how prompt files are organized.
+Submit the `storefront-api/` workspace with:
 
-2. **Build Prompt File 1: Bug Report Investigation.** Create `.github/prompts/investigate-bug.prompt.md`:
+1. `context-notes.md` and either the Space source list or `context-packet.md`.
+2. `.github/copilot-instructions.md`.
+3. The completed `context-comparison.md`.
+4. Three tested prompt files under `.github/prompts/`.
+5. Low-stock endpoint verification and the final context choice.
 
-   Include what a developer needs to investigate a bug:
-   - Steps to reproduce
-   - Root cause analysis
-   - Suggested fix
-   - Test case to prevent regression
-
-   Write a prompt file that structures this investigation. Include placeholders for the bug description.
-
-3. **Build Prompt File 2: API Documentation Generator.** Create `.github/prompts/generate-api-docs.prompt.md`:
-
-   Include:
-   - Endpoint description
-   - Request/response examples
-   - Error codes
-   - Authentication requirements
-
-   Write a prompt file that generates documentation from code.
-
-4. **Build Prompt File 3: Migration Checklist.** Create `.github/prompts/migration-checklist.prompt.md`:
-
-   Include:
-   - Breaking changes
-   - Code modifications required
-   - Testing strategy
-   - Rollback plan
-
-   Write a prompt file that creates a migration checklist for any dependency upgrade.
-
-5. **Test each prompt file.** Use each one in Copilot Chat to verify it produces useful output:
-   - `investigate-bug` — use it on a sample bug scenario
-   - `generate-api-docs` — use it on one of the API routes from earlier exercises
-   - `migration-checklist` — use it for upgrading Express from v4 to v5
-
-   > **Check:** Each prompt produces output that follows its template. Improve unclear instructions and try again.
-
-6. **Compare with `lab/solution/prompt-templates/`** for reference implementations.
-
-### Troubleshooting
-
-| Problem                            | Solution                                                                              |
-| ---------------------------------- | ------------------------------------------------------------------------------------- |
-| Prompt files not appearing in Chat | Check path: `.github/prompts/name.prompt.md`. The `.prompt.md` extension is required. |
-| Output is too generic              | Add more specific instructions. Include examples of the output format you want.       |
-| Prompt file variables not replaced | Use `{{ variable_name }}` syntax for template variables (double curly braces).        |
-
----
-
-## Lab Wrap-Up
-
-### Deliverables Checklist
-
-- [ ] A Copilot Space created and configured with the e-commerce project
-- [ ] `.github/copilot-instructions.md` — project-level custom instructions
-- [ ] `.github/prompts/` — at least 2 prompt files (new-endpoint, code-review)
-- [ ] `context-comparison.md` — completed comparison template with observations
-- [ ] 3 reusable prompt files tested and working
-
-### Key Takeaways for Trainers
-
-1. **Spaces collect shared task evidence.** Add only sources the audience may use.
-2. **Custom instructions state repository conventions.** Review them like other repository changes.
-3. **Prompt files capture repeatable tasks.** Keep each one specific.
-4. **Compare context against the same task.** More context can add noise.
-5. **Maintain the sources.** Replace stale documents and remove unused material.
-
-### Next session
-
-In **Session 07**, you will use Copilot in code review for PR summaries, review comments, and suggested fixes.
+**Done:** Another engineer can see which sources were selected, how each context layer changed the result, and how to verify the project-specific output.

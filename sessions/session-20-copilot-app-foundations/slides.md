@@ -18,7 +18,8 @@ Session 20 | Product and Delivery Teams | Beginner
 
 This track does not use Copilot as a background writing tool.
 
-Learners work in the GitHub Copilot app, with repository context and reviewable artifacts.
+Learners work in the GitHub Copilot app with repository context and reviewable
+artifacts.
 
 ---
 # The app is a workspace, not an answer engine
@@ -30,7 +31,7 @@ artifacts make the work reviewable after the conversation ends.
 Gather evidence → form a proposal → review it → save the decision → verify it
 ```
 
-This keeps the model's helpful narrative separate from facts the team can check.
+This separates the model's narrative from facts the team can check.
 
 ---
 # Context has a cost
@@ -42,7 +43,7 @@ This keeps the model's helpful narrative separate from facts the team can check.
 | An issue or pull request | The task needs delivery history and discussion |
 | No repository context | The work is general and contains no project facts |
 
-Tell Copilot why each source matters. It should not need to guess.
+Tell Copilot why each source matters. **Do not make it guess.**
 
 ---
 # Separate facts, assumptions, and decisions
@@ -85,7 +86,7 @@ Cite the supplied source for each factual claim.
 Mark missing information as unknown.
 ```
 
-A confident answer without a source is still unverified.
+**A confident answer without a source is still unverified.**
 
 ---
 
@@ -135,7 +136,7 @@ Initial source
   → fresh-session verification
 ```
 
-The brief is useful only when it stays aligned with approved evidence.
+The brief works only while it matches approved evidence.
 
 ---
 

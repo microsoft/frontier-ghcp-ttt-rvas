@@ -1,10 +1,12 @@
 # Explain Challenges
 
-Use the standalone `copilot` CLI for each command below. Ask in interactive mode or with `copilot -p "Explain what this command does: ..."`. Rate the explanation and record what it covered or missed.
+Use the standalone `copilot` CLI for each command below. Ask in interactive mode
+or with `copilot -p "Explain what this command does: ..."`. Rate the explanation.
+Record what it covered or missed.
 
 ---
 
-## Challenge 1: Simple — File Listing
+## Challenge 1: Simple File Listing
 
 ```bash
 ls -la
@@ -24,13 +26,15 @@ copilot -p "Explain what this command does: ls -la"
 
 ---
 
-## Challenge 2: Moderate — Find and Delete
+## Challenge 2: Moderate Find and Delete
 
 ```bash
 find . -name "*.log" -mtime +7 -delete
 ```
 
-**Your task:** Explain this command. Does Copilot warn about the destructive nature of `-delete`? Does it explain `-mtime +7` correctly (files modified MORE than 7 days ago)?
+**Your task:** Explain this command. Check whether Copilot warns that `-delete` is
+destructive. It should explain that `-mtime +7` means files modified MORE than 7
+days ago.
 
 **Run:**
 
@@ -44,7 +48,7 @@ copilot -p 'Explain what this command does and call out safety risks: find . -na
 
 ---
 
-## Challenge 3: Git-Specific — Visual Log
+## Challenge 3: Git-Specific Visual Log
 
 ```bash
 git log --oneline --graph --all --decorate
@@ -64,13 +68,15 @@ copilot -p "Explain what this command does: git log --oneline --graph --all --de
 
 ---
 
-## Challenge 4: Multi-Flag — Archive with Exclusions
+## Challenge 4: Multi-Flag Archive with Exclusions
 
 ```bash
 tar czf backup.tar.gz --exclude='node_modules' --exclude='.git' ./src
 ```
 
-**Your task:** Explain this command. Does Copilot explain the `czf` flags individually (`c` = create, `z` = gzip, `f` = filename)? Does it explain that multiple `--exclude` flags are cumulative?
+**Your task:** Explain this command. Check that Copilot explains each `czf` flag
+(`c` = create, `z` = gzip, `f` = filename). It should also state that multiple
+`--exclude` flags are cumulative.
 
 **Run:**
 
@@ -84,7 +90,7 @@ copilot -p "Explain what this command does: tar czf backup.tar.gz --exclude='nod
 
 ---
 
-## Challenge 5: Complex — AWK Data Processing
+## Challenge 5: Complex AWK Data Processing
 
 ```bash
 awk -F',' '{sum[$1]+=$3; count[$1]++} END {for (k in sum) print k, sum[k]/count[k]}'

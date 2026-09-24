@@ -1,4 +1,4 @@
-# Session 04 — GitHub Copilot in the CLI
+# Session 04: GitHub Copilot in the CLI
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
@@ -7,7 +7,10 @@
 
 ## Overview
 
-Cover GitHub Copilot's terminal-native experience through the standalone `copilot` CLI. Learners explain commands, generate shell scripts, troubleshoot errors, and run multi-step agent tasks from the terminal. The session compares CLI and IDE workflows so trainers can help teams choose a suitable surface.
+Use the standalone `copilot` CLI to take over one small Node.js project. Learners
+inspect commands, fix the project, and automate a project health report. They also
+compare terminal and IDE workflows. The `agent-tasks` project ties the lab together
+from the first command through the final handoff.
 
 ## Learning Outcomes
 
@@ -17,6 +20,7 @@ Cover GitHub Copilot's terminal-native experience through the standalone `copilo
 - Compare CLI, IDE Chat, IDE Agent Mode, and Copilot App workflows.
 - Identify CLI-specific features and when the CLI fits better than the IDE.
 - Check Copilot App and cross-IDE support for the approved environment.
+- Produce test output, an automation artifact, and a surface-choice record at clear review checkpoints.
 
 ## Session Materials
 
@@ -29,8 +33,8 @@ Cover GitHub Copilot's terminal-native experience through the standalone `copilo
 ## Key Topics
 
 - Standalone `copilot` binary: installation, authentication, configuration
-- Interactive `copilot` prompts — natural language command explanations
-- `copilot -p "..."` — command generation from intent descriptions
+- Interactive `copilot` prompts for natural-language command explanations
+- `copilot -p "..."` for command generation from intent descriptions
 - Shell integrations: aliases, shell completion, inline invocation
 - CLI agent mode: autonomous multi-step terminal tasks
 - CLI-exclusive features: piping output to Copilot, log analysis, environment debugging

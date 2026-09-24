@@ -1,22 +1,26 @@
-# Capstone: Bookmark Manager API
+# Capstone Starter: Bookmark Creation
 
-A Node.js Express API that manages bookmarks. It is the capstone project for the GitHub Copilot Train-the-Trainer curriculum.
+This starter exposes a health check. The issue adds only `POST /api/bookmarks`.
 
-## Start the project
+## Install
 
 ```bash
 npm install
-npm start
 ```
 
-## API Endpoints
+## Establish the baseline
 
-- `GET /api/health`: Health check
+The health check passes before implementation:
 
-_More endpoints to be added during the capstone exercise._
+```bash
+npm test -- --runTestsByPath tests/health.test.js
+```
 
-## Testing
+The full suite starts red because the Bookmark route is missing:
 
 ```bash
 npm test
 ```
+
+Implement the accepted specification without adding a dependency or endpoint.
+The full suite is the completion check.

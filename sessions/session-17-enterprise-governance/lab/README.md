@@ -1,106 +1,164 @@
-# Session 17 Lab — Enterprise Governance, Policy, and Measurement
+# Session 17 Lab: Decide a Bounded Governance Trial
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions 01–03
-**Deliverable:** A governance decision record and reversible rollout proposal
+
+**Deliverable:** A completed evidence map, policy decision, measurement guardrail,
+and reversible rollout plan for one fictional trial
 
 ## Lab overview
 
-This tabletop exercise helps learners plan safe, measurable adoption of Copilot and agentic workflows. Do not change live settings unless current GitHub documentation and customer policy explicitly allow it. Produce evidence for a decision owner to review.
+Use the fixed scenario in `starter/fictional-scenario-brief.md`. A team proposes a
+two-week code-review trial in `training-review-sandbox`. The repository contains
+synthetic task records. Production repositories, customer data, deployment,
+external MCP servers, and live policy changes are outside scope.
 
 | Exercise | Output | Time |
 | --- | --- | --- |
-| 1 | Evidence map | 30 min |
-| 2 | Policy decision | 30 min |
-| 3 | Measurement guardrail | 30 min |
-| 4 | Rollout gates | 30 min |
+| 1 | Evidence map and Checkpoint 1 | 35 min |
+| 2 | Policy decision and Checkpoint 2 | 30 min |
+| 3 | Measurement guardrail | 25 min |
+| 4 | Rollout gates and final review | 30 min |
 
-## Preflight and fallback
+## Preflight and access rule
 
-Use Enterprise Cloud as the baseline. Before Exercise 1, confirm the repository or sandbox, participant role, data classification, permitted features, reviewer, and current policy evidence. For metered work, name the customer-owned meter, threshold, escalation contact, and stop condition.
+The tabletop route needs only the supplied files. Use it when live policy pages,
+administrator settings, or analytics are unavailable.
 
-If live policy pages, settings, or analytics are unavailable, choose a fictional scenario from `lab/starter/org-policy-scenarios.md`. Use the supplied worksheets and fictional analytics data. Mark each live claim that needs current documentation or administrator confirmation. Do not submit sensitive data or make live changes.
+For a live review, confirm approved access to current GitHub documentation and the
+relevant administrator settings. If access is missing, **stop the live claim or
+setting change**. Mark the evidence request as pending and continue with the
+fictional scenario.
+
+Use synthetic data only. Never copy the exclusion examples into a prompt, issue,
+comment, or live system.
 
 | Starter file | Use |
 | --- | --- |
-| `policy-checklist.md` | Evidence map and decision record |
-| `org-policy-scenarios.md` | Fictional scenario selection |
+| `fictional-scenario-brief.md` | Fixed scenario facts and exclusions |
+| `policy-checklist.md` | Evidence map and checkpoint record |
 | `analytics-scenarios.md` | Measurement prompts |
-| `sample-analytics-data.json` | Fictional measurement input |
-| `rollout-template.md` | Reversible rollout proposal |
-| `exclusion-config/` | Static content-boundary examples |
+| `sample-analytics-data.json` | Synthetic trial observations |
+| `rollout-template.md` | Policy, measurement, and rollout record |
+| `exclusion-config/` | Static content-boundary example |
 
-Treat the exclusion files as training artifacts. Do not copy sensitive examples into prompts, issues, comments, or live tools.
+## Exercise 1: Build the evidence map (35 min)
 
-## Exercise 1: Build an evidence map (30 min)
+Read `fictional-scenario-brief.md`, then complete `policy-checklist.md`.
 
-Choose a non-sensitive scenario, then complete `policy-checklist.md`.
+For every claim, choose one status:
 
-1. Name the sandbox or repository and one bounded workflow.
-2. Assign an administrator, data owner, security/privacy/legal/finance contacts, reviewer, and final approver. Write **owner required** if a role is unknown.
-3. Record the current documentation and administrator policy that must be checked.
-4. Record the participant role, repository boundary, data classification, allowed tools, and sensitive paths. For a canvas, also record shared state, storage, user actions, agent capabilities, owner, and retirement trigger.
-5. Describe a manual fallback that needs no new permissions or unapproved data.
-6. Ask a partner to identify an unsupported assumption and convert it into an evidence request or stop condition.
+- **confirmed in scenario**;
+- **live evidence pending**;
+- **out of scope**.
 
-| Field | Example |
+Record:
+
+1. repository and bounded workflow;
+2. administrator, data owner, engineering owner, reviewer, and final approver;
+3. data classification and excluded data;
+4. approved tool boundary and prohibited integrations;
+5. the trainer-maintained run counter and stop rule;
+6. the manual review fallback.
+
+Current entitlement, retention, administrator settings, and commercial terms are
+not scenario facts. Assign an owner and mark each relevant claim pending.
+
+### Checkpoint 1: Evidence map
+
+A partner or trainer must verify:
+
+- [ ] Every required claim has an owner and status.
+- [ ] Scenario facts are separate from live claims.
+- [ ] Production, customer data, deployment, external MCP servers, and live policy
+  changes are outside scope.
+- [ ] The manual fallback produces the same review evidence.
+
+Do not continue until the checkpoint is signed. Compare with
+`solution/evidence-map.md` only after peer review.
+
+## Exercise 2: Make the policy decision (30 min)
+
+Choose one decision: proceed, proceed in the repository sandbox only, defer, or
+pause.
+
+The reference scenario supports work **in the repository sandbox only**. It does
+not support production use or wider rollout.
+
+Record:
+
+- what may start now;
+- what remains blocked;
+- the owner of each pending evidence request;
+- the immediate pause triggers;
+- the next review date.
+
+### Checkpoint 2: Policy decision
+
+A partner or trainer must verify:
+
+- [ ] The decision cites the evidence map.
+- [ ] Allowed and blocked scope are explicit.
+- [ ] Pending evidence has an owner.
+- [ ] The record states when the decision expires or must be reviewed.
+
+Do not begin measurement design until the checkpoint is signed. Compare with
+`solution/policy-decision.md` after review.
+
+## Exercise 3: Define the measurement guardrail (25 min)
+
+Use `analytics-scenarios.md` and `sample-analytics-data.json`.
+
+Use these fictional trial rules:
+
+| Item | Rule |
 | --- | --- |
-| Repository | Training sandbox only |
-| Task | Review one synthetic pull request |
-| Data | Synthetic examples only |
-| Evidence | Current docs and administrator approval |
-| Fallback | Local sandbox and human review checklist |
+| Window | Two weeks or 10 reviewed tasks, whichever comes first |
+| Quality | At least 9 of 10 tasks meet acceptance criteria |
+| Safety | Zero restricted-data events |
+| Rework | No more than 3 tasks need material rewrite |
+| Meter | Trainer-maintained automated-run counter |
+| Stop guard | Pause at 20 automated runs |
+| Fallback | Human review with the same acceptance checklist |
 
-## Exercise 2: Choose a policy approach (30 min)
+Map each signal to a decision: continue, gather more evidence, or pause. These are
+fictional exercise values, not product limits or commercial guidance.
 
-Read `org-policy-scenarios.md`, choose the scenario that fits the audience, and make one explicit decision: proceed, proceed only in a repository sandbox, defer to owners, or pause.
+Compare with `solution/measurement-guardrail.md`.
 
-State what cannot be assumed, including feature availability, retention, legal approval, permissions, and commercial terms. Define the smallest trial: one repository or sandbox, one workflow, synthetic data, one reviewer, and an easy stop. Then record the manual alternative and approvals needed before expansion.
+## Exercise 4: Complete reversible rollout gates (30 min)
 
-## Exercise 3: Define the measurement guardrail (30 min)
+Complete `rollout-template.md`.
 
-Use `analytics-scenarios.md` and the fictional `sample-analytics-data.json`. Select one or two bounded tasks with acceptance criteria and a human-reviewed baseline.
-
-Define:
-
-- the meter and its owner;
-- observation window, threshold, alert, escalation contact, and stop condition;
-- quality and safety evidence, such as tests, review comments, defects, dependency review, or data-boundary checks;
-- the rule for continue, expand, gather more evidence, or pause.
-
-Sample data supports discussion. It is not live analytics or commercial guidance. Exclude metrics whose source or interpretation lacks approval.
-
-## Exercise 4: Propose reversible rollout gates (30 min)
-
-Complete `rollout-template.md` from the evidence map.
-
-| Gate | Decision support |
+| Gate | Required decision |
 | --- | --- |
-| Start | Documentation, policy, data classification, approved tools, reviewer, and fallback are known. |
-| Continue | The bounded trial has sufficient quality, safety, review, and meter evidence. |
-| Expand | Required owners approve the next scope and safeguards. |
-| Pause | Policy is unclear, a data boundary is in doubt, a defect is unresolved, a meter is exceeded, or an unapproved tool is required. |
+| Start | Sandbox facts, owners, tool boundary, reviewer, meter, and fallback are recorded. |
+| Continue | Quality, safety, rework, and run-count rules pass. |
+| Expand | Administrator and data owner confirm current evidence for the added scope. |
+| Pause | Restricted data appears, a boundary check fails, rework exceeds 3 tasks, or the run counter reaches 20. |
 
-Use `lab/solution/rollout-plan.md` to compare structure. Keep the decision specific to the selected scenario.
+Record the final decision and next action. Compare the full set with
+`solution/rollout-plan.md`.
 
 ## Final deliverable
 
 Submit:
 
-1. The completed evidence map and selected scenario.
-2. The policy decision and unresolved evidence requests.
-3. The measurement guardrail with meter, threshold, owner, escalation, stop condition, and fallback.
-4. The rollout proposal with start, continue, expand, and pause gates.
-5. A final decision: start, continue in sandbox, gather more evidence, or pause.
+1. completed evidence map;
+2. sandbox-only policy decision;
+3. measurement guardrail;
+4. reversible rollout plan.
 
 ## Verification
 
+- [ ] Checkpoint 1 is signed after the evidence map.
+- [ ] Checkpoint 2 is signed after the policy decision.
 - [ ] Every decision has an owner and evidence source.
-- [ ] Unverified policy or live-setting claims are visible.
-- [ ] The trial is bounded, uses non-sensitive work, and has human review.
-- [ ] Each approved canvas has scoped actions, storage, ownership, and a removal path.
-- [ ] Metered work has a customer-owned stop guard.
-- [ ] The manual route produces the same review evidence.
+- [ ] Live claims are marked pending when current access is unavailable.
+- [ ] The trial uses synthetic data and excludes production actions.
+- [ ] The meter, threshold, escalation, stop condition, and fallback are explicit.
+- [ ] Expand requires new evidence and owner approval.
+- [ ] The final decision states the next action and review date.

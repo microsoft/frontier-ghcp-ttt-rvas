@@ -52,12 +52,8 @@
   function setupTrainer() {
     const controls = document.querySelector(".trainer-controls");
     if (!controls) return;
-    const article = controls.closest("article") || controls.parentElement;
-    const sections = Array.from(article.querySelectorAll("h2[id]"));
     const timer = controls.querySelector(".trainer-timer");
     const toggle = controls.querySelector("[data-trainer-timer]");
-    const previous = controls.querySelector("[data-trainer-previous]");
-    const next = controls.querySelector("[data-trainer-next]");
     const shortcuts = controls.querySelector("[data-trainer-shortcuts]");
     let elapsed = 0;
     let startedAt = null;
@@ -93,51 +89,6 @@
     });
     controls.querySelector("[data-trainer-print]").addEventListener("click", () => window.print());
 
-    function currentSection() {
-      // Include the header and any sticky controls in the reading position.
-      const header = document.querySelector(".md-header");
-      const top = Math.max(
-        header ? header.getBoundingClientRect().bottom : 0,
-        controls.getBoundingClientRect().bottom,
-        0
-      ) + 16;
-      const scrollPadding = Number.parseFloat(
-        window.getComputedStyle(document.documentElement).scrollPaddingTop
-      ) || 0;
-      let index = -1;
-      sections.forEach((section, position) => {
-        const scrollMargin = Number.parseFloat(window.getComputedStyle(section).scrollMarginTop) || 0;
-        if (section.getBoundingClientRect().top <= Math.max(top, scrollMargin + scrollPadding + 2)) {
-          index = position;
-        }
-      });
-      return index;
-    }
-
-    function updateNavigation() {
-      const index = currentSection();
-      previous.disabled = index <= 0;
-      next.disabled = index >= sections.length - 1;
-    }
-
-    function moveSection(direction) {
-      if (!sections.length) return;
-      const index = Math.max(0, Math.min(currentSection() + direction, sections.length - 1));
-      const section = sections[index];
-      const url = new URL(window.location.href);
-      url.hash = section.id;
-      window.history.replaceState(null, "", url);
-      section.tabIndex = -1;
-      section.focus({ preventScroll: true });
-      section.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-        block: "start"
-      });
-      updateNavigation();
-    }
-
-    previous.addEventListener("click", () => moveSection(-1));
-    next.addEventListener("click", () => moveSection(1));
     document.addEventListener("keydown", (event) => {
       if (!shortcuts.checked || event.defaultPrevented || event.repeat ||
           event.isComposing || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
@@ -146,21 +97,10 @@
           target.closest("input, textarea, select, button, a, [role='textbox'], [contenteditable]:not([contenteditable='false'])"))) return;
       if (document.querySelector("dialog[open]")) return;
       const key = event.key.toLowerCase();
-      if (!["j", "k", "t"].includes(key)) return;
+      if (key !== "t") return;
       event.preventDefault();
-      if (key === "t") toggleTimer();
-      else moveSection(key === "j" ? 1 : -1);
+      toggleTimer();
     });
-    let scrollPending = false;
-    window.addEventListener("scroll", () => {
-      if (scrollPending) return;
-      scrollPending = true;
-      window.requestAnimationFrame(() => {
-        scrollPending = false;
-        updateNavigation();
-      });
-    }, { passive: true });
-    window.addEventListener("resize", updateNavigation);
     window.addEventListener("pagehide", () => window.clearInterval(interval));
     window.addEventListener("pageshow", (event) => {
       if (event.persisted && startedAt !== null) {
@@ -169,7 +109,6 @@
       }
     });
     controls.hidden = false;
-    updateNavigation();
   }
 
   function setupCurriculum() {

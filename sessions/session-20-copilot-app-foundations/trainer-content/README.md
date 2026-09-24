@@ -5,9 +5,9 @@
 
 ## Delivery objective
 
-Learners should leave able to open the GitHub Copilot app, choose useful context,
-compare grounded and ungrounded answers, revise a durable work artifact when
-evidence changes, and verify it in a fresh session.
+Learners open the GitHub Copilot app, choose useful context, compare grounded and
+ungrounded answers, revise a durable artifact when evidence changes, and verify it
+in a fresh session.
 
 ## One-hour plan
 
@@ -24,7 +24,8 @@ evidence changes, and verify it in a fresh session.
 
 - Confirm that every learner can open the GitHub Copilot app.
 - Confirm that the learner can start a chat and open the training repository as a project.
-- Check that the learner can see the current app navigation and the available Customize items.
+- Check that the learner can see the current app navigation and available
+  Customize items.
 - Open the starter initiative and reference brief.
 - Use only the fictional scenario during the demonstration.
 
@@ -64,7 +65,7 @@ the affected users, the current decision, and the missing information for a
 product owner. Cite the source for each factual claim.
 ```
 
-Ask learners to identify which sources Copilot used and which statements remain uncertain.
+Ask learners which sources Copilot used and which statements remain uncertain.
 
 ## Capability inspection
 
@@ -76,7 +77,8 @@ Open **Customize** and identify what is available in the learner's environment. 
 - a **canvas** provides visible shared state;
 - an **automation** repeats a bounded task.
 
-Do not teach construction in this session. Learners only need to recognize these capabilities and know that availability depends on plan, policy, and installation.
+Do not teach construction in this session. Learners only need to recognize these
+capabilities and know that availability depends on plan, policy, and installation.
 
 ## Demo: create and revise a durable brief
 
@@ -101,7 +103,8 @@ The pattern returns in every later session.
 
 ## Product notes verified September 24, 2026
 
-Before delivery, verify the current GitHub Copilot app navigation, plan requirements, policy controls, and availability of Customize features.
+Before delivery, verify the current GitHub Copilot app navigation, plan
+requirements, policy controls, and Customize feature availability.
 
 Official references:
 

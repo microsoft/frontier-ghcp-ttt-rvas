@@ -1,0 +1,13 @@
+{
+  "request": "Review the GET /api/tasks/:id REST route.",
+  "paths": [
+    "src/api/routes.js",
+    "test/routes.test.js"
+  ],
+  "acceptanceCriteria": [
+    "Reject a non-numeric identifier.",
+    "Preserve the existing not-found response shape."
+  ],
+  "reviewer": "repo-reviewer",
+  "testCommand": "npm test"
+}

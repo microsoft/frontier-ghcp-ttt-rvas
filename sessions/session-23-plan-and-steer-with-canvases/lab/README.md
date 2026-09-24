@@ -9,16 +9,16 @@ real GitHub state change
 
 ## Deliverables
 
-- the generated and reviewed canvas extension;
-- the live planning canvas;
-- one controlled GitHub state change;
-- the completed reconciliation record.
+- The generated and reviewed canvas extension
+- The live planning canvas
+- One controlled GitHub state change
+- The completed reconciliation record
 
-## What you will learn
+## Lab outcome
 
-You will use the official `/create-canvas` skill, review the generated extension,
-load live issue state through GitHub MCP, create a controlled state change in
-GitHub, detect that the canvas is stale, and reconcile it.
+Create and review a planning canvas with the official `/create-canvas` skill.
+Load live issue state through GitHub MCP, create a controlled state change, detect
+stale canvas data, and reconcile it.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -33,8 +33,7 @@ GitHub, detect that the canvas is stale, and reconcile it.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot access before starting. If GitHub Copilot access is
-unavailable, stop and do not continue.
+Confirm GitHub Copilot access. **Stop if access is unavailable.**
 
 ## Part 1: Verify canvas and MCP capabilities (15 minutes)
 

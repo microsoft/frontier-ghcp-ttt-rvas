@@ -1,35 +1,59 @@
-# Session 09 — Copilot Cloud Agent
+# Session 09: Copilot Cloud Agent
 
 **Module:** Agentic Workflows
+
 **Difficulty:** Advanced
+
 **Prerequisites:** Sessions 01–07
-**Duration:** 3 hours (1 hr trainer content + 2 hr lab)
+
+**Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-This session shows how to use the GitHub Copilot cloud agent when policy and availability permit it. It covers issue preparation, human review, session management, and a shared protocol for comparing approved third-party agents.
+This session follows one synthetic issue from contract through human decision. Learners prepare the repository, start an approved Copilot cloud agent session or use the manual route, inspect the proposed change, run the required tests, and decide whether to approve, request changes, or pause.
 
-## Learning Outcomes
+The issue stays fixed throughout the journey: reject blank or whitespace-only task titles while preserving valid task creation.
 
-- Prepare a repository for the Copilot cloud agent
-- Write issues the cloud agent can complete
-- Compare approved third-party agents using a shared evaluation rubric
-- Manage agent sessions and track progress
-- Review agent-generated PRs and request changes
+## Learning outcomes
 
-## Session Materials
+- Write a bounded issue with testable acceptance criteria and explicit non-goals.
+- Review repository instructions and Copilot setup steps before assignment.
+- Monitor an approved agent session without expanding the issue.
+- Compare a proposed change with the issue and allowed file scope.
+- Run and record focused tests.
+- Make an accountable human review decision.
 
-| Resource                | Location                               |
-| ----------------------- | -------------------------------------- |
-| Lab exercises           | [`lab/`](lab/)                         |
-| Lab starter files       | `lab/starter/`         |
-| Lab solution files      | `lab/solution/`       |
+## Deliverables
 
-## Key Topics
+Learners submit one issue evidence packet containing:
 
-- Cloud agent: issue-driven and asynchronous
-- Configuration: `copilot-setup-steps.yml`, firewall, runners
-- Writing effective agent issues
-- Third-party agent comparison: access, policy, quality, safety, reviewability, and metering
-- Agent session management
-- Security: network firewall, toolset restrictions
+1. the approved issue contract;
+2. the setup checkpoint;
+3. the proposed change or manual patch;
+4. test output;
+5. the final human decision.
+
+## Access policy
+
+The live route requires Copilot cloud agent access for the training repository, an approved data classification, and a named human reviewer.
+
+If access or approval is missing, **do not assign the issue**. Use the manual route with the supplied sample project. The issue, file scope, tests, checkpoints, and review decision remain the same.
+
+## Session materials
+
+| Resource | Purpose |
+| --- | --- |
+| [`trainer-content/README.md`](trainer-content/README.md) | Minute-mapped teaching and demo plan |
+| [`slides.md`](slides.md) | Trainer-facing teaching deck |
+| [`lab/README.md`](lab/README.md) | Two-hour issue-to-review lab |
+| [`lab/starter/`](lab/starter/) | Issue, setup, sample project, and checkpoint records |
+| [`lab/solution/`](lab/solution/) | Completed issue journey and runnable solution |
+
+## Current product references
+
+Product notes were checked against official GitHub documentation on September 24, 2026. Trainers must recheck access and policy before delivery:
+
+- Get started with Copilot agents on GitHub
+- Managing agent sessions
+- Configure the development environment
+- Adding repository custom instructions for GitHub Copilot

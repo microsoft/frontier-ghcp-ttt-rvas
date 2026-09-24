@@ -1,6 +1,6 @@
 # GitHub Copilot & Agentic Workflows — Train-the-Trainer
 
-A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. It contains 25 sessions across 7 modules, including a dedicated GitHub Copilot adoption path for product and delivery teams. Each session has 1 hour of trainer content and a 2-hour hands-on lab.
+A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. It contains 27 sessions across 7 modules, including a dedicated GitHub Copilot adoption path for product and delivery teams. Most sessions have 1 hour of trainer content and a 2-hour hands-on lab. Session 14 uses a 90-minute lab, and Session 18 uses a 2-hour 30-minute lab.
 
 ## Who This Is For
 
@@ -74,9 +74,9 @@ access is available.
 
 | #   | Session                                                                                   | Difficulty   | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| 13  | [GitHub Actions & Workflow Generation](sessions/session-13-actions-workflows/)            | Intermediate | 3 hrs      | Uses Copilot to generate, explain, and debug GitHub Actions workflows and build complete CI/CD pipelines.          |
-| 14  | [Infrastructure as Code with Copilot](sessions/session-14-iac-with-copilot/)              | Advanced     | 3 hrs      | Generates and refactors Terraform and Bicep infrastructure with Copilot agent mode, with a focus on security.      |
-| 15  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-15-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Covers diagnosing pipeline failures and using Copilot’s agentic remediation workflow for security findings. |
+| 13  | [GitHub Actions & Workflow Generation](sessions/session-13-actions-workflows/)            | Intermediate | 3 hrs      | Carries one Node.js application through CI generation, deployment design, workflow repair, and custom-action validation. |
+| 14  | [Infrastructure as Code with Copilot](sessions/session-14-iac-with-copilot/)              | Advanced     | 2 hrs 30 min | Builds, connects, validates, and security-reviews Terraform modules. Bicep is an optional comparison. |
+| 15  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-15-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Diagnoses pipeline failures from workflow evidence and local proof, including a staged failure and reviewed security remediation. |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
@@ -91,6 +91,8 @@ access is available.
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration — policies, content exclusions, audit logs, analytics, compliance, rollout. |
 | 19  | [End-to-End Capstone Project](sessions/session-19-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
+| 26  | [Migrate a Legacy Java Service to Modern .NET](sessions/session-26-java-to-dotnet-modernization/) | Advanced | 3 hrs | Ports a legacy Java service to modern .NET while preserving behavior through focused tests. |
+| 27  | [Repair and Refactor a Broken Python Application](sessions/session-27-python-repair-refactor/) | Advanced | 3 hrs | Repairs a broken Python application, stabilizes its tests, and refactors it without changing required behavior. |
 
 ### Module 7: Product and Delivery Teams (Beginner–Intermediate)
 
@@ -103,7 +105,7 @@ access is available.
 | 24 | [Orchestrate Agents and Workstreams](sessions/session-24-orchestrate-workstreams/) | Intermediate | 3 hrs | Runs bounded child sessions and updates the approved plan with reviewed results. |
 | 25 | [Automate Delivery Follow-up and Connect Work Systems](sessions/session-25-automate-delivery-follow-up/) | Intermediate | 3 hrs | Runs one draft-only Automation and records whether GitHub or Azure Boards remains authoritative. |
 
-**Total track duration:** 75 hours across 25 sessions
+**Total track duration:** 81 hours across 27 sessions
 
 ## Getting Started
 
@@ -123,7 +125,7 @@ access is available.
    | DevOps Engineers      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
    | Enterprise Admins     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
    | Product and Delivery Teams | Module 7                   | 20–25        | 18 hrs     |
-   | Full Track            | All Modules                      | 01–25        | 75 hrs      |
+   | Full Track            | All Modules                      | 01–27        | 81 hrs      |
 
 5. **Prepare your environment:**
    - GitHub Enterprise Cloud organization with Copilot enabled according to customer policy
@@ -153,7 +155,7 @@ ghcp-ttt/
 │       ├── README.md
 │       ├── trainer-content/
 │       └── lab/ (starter/ + solution/)
-└── sessions/                              # All 25 sessions
+└── sessions/                              # All 27 sessions
     ├── session-01-intro-to-copilot/       # Module 1: Fundamentals
     ├── session-02-chat-and-inline/
     ├── session-03-prompt-engineering/
@@ -178,5 +180,7 @@ ghcp-ttt/
     ├── session-22-plan-work-with-github-issues/
     ├── session-23-plan-and-steer-with-canvases/
     ├── session-24-orchestrate-workstreams/
-    └── session-25-automate-delivery-follow-up/
+    ├── session-25-automate-delivery-follow-up/
+    ├── session-26-java-to-dotnet-modernization/ # Module 6: Advanced & Capstone
+    └── session-27-python-repair-refactor/       # Module 6: Advanced & Capstone
 ```

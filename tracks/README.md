@@ -12,7 +12,7 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 | [DevOps & Automation](devops-automation.md)         | DevOps / Platform engineers                        | 7          | 21 hrs     | Beginner–Advanced     |
 | [Enterprise Rollout](enterprise-rollout.md)         | Engineering managers, IT admins, Copilot champions | 5          | 15 hrs     | Beginner–Advanced     |
 | [Product and Delivery Teams](product-and-delivery-teams.md) | PMs, POs, BAs, project managers, delivery leads | 6 | 18 hrs | Beginner–Intermediate |
-| [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 25         | 75 hrs     | Beginner–Advanced     |
+| [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 27         | 81 hrs     | Beginner–Advanced     |
 
 ## How to Choose
 
@@ -36,7 +36,7 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
                                     │   → Product and Delivery Teams (15 hrs)
                                     │
                                     └─ Want everything?
-                                        → Full Mastery (75 hrs)
+                                        → Full Mastery (81 hrs)
 ```
 
 ## Progression Path

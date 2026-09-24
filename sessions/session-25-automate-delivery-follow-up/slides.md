@@ -16,7 +16,7 @@ Product and Delivery Teams
 
 ---
 
-# Start from a workflow people already understand
+# Start with a known workflow
 
 Sessions 20-24 created the brief, issues, canvas, and reviewed work.
 
@@ -24,7 +24,7 @@ Now automate one recurring follow-up.
 
 ---
 
-# Start with the preflight
+# Check access and boundaries first
 
 | Check | Required answer |
 | --- | --- |
@@ -175,7 +175,7 @@ Do not maintain competing status fields without an owner.
 
 ---
 
-# Product facts can change
+# Recheck product facts before delivery
 
 GitHub documents local and cloud automations, supported triggers, tool controls, policy dependencies, visibility, and usage metering.
 

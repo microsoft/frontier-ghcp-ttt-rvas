@@ -28,9 +28,18 @@ jobs:
         with:
           node-version: '22'
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: '3.14'
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
 
       - uses: hashicorp/setup-terraform@v4.0.1
         with:
@@ -38,6 +47,9 @@ jobs:
 
       - name: Install Bicep CLI
         run: az bicep install --version v0.46.1
+
+      - name: Install Python lab dependencies
+        run: python -m pip install -r sessions/session-27-python-repair-refactor/lab/solution/requirements-dev.txt
 
       - name: Validate lab files
         run: bash scripts/validate-labs.sh

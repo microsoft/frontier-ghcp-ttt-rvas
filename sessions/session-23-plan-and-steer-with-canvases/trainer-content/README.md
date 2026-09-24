@@ -4,8 +4,8 @@
 
 ## Delivery objective
 
-Learners create a project-scoped planning canvas, review the generated extension,
-and learn that a canvas is a projection of GitHub state rather than the source of
+Teach learners to create and review a project-scoped planning canvas. Keep the
+distinction clear: the canvas projects GitHub state; GitHub remains the source of
 record.
 
 ## One-hour plan
@@ -34,7 +34,7 @@ record.
 
 ## When to use a canvas
 
-Use a canvas when the work needs:
+Use a canvas when work needs:
 
 - visible shared state;
 - repeated updates;
@@ -77,7 +77,8 @@ decisions. Copilot can summarize the canvas and propose updates. Do not close
 issues, change assignees, or publish content without a separate confirmation.
 ```
 
-After generation, ask learners what they would remove. Simpler is better.
+After generation, ask learners what they would remove. **Keep only what supports a
+decision or action.**
 
 ## Review the generated canvas
 

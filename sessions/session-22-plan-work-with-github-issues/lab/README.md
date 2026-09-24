@@ -9,16 +9,15 @@ fresh read, and corrected through a second approved write
 
 ## Deliverables
 
-- the live parent and child issues;
-- two fresh-read verification records;
-- the corrected issue;
-- a completed handoff record.
+- Live parent and child issues
+- Two fresh-read verification records
+- The corrected issue
+- A completed handoff record
 
-## What you will learn
+## Lab outcome
 
-You will verify the GitHub MCP connection, inspect existing repository state,
-preview a complete write, create an issue hierarchy, retrieve it in a fresh
-request, and correct one issue without bypassing review.
+Create a reviewed GitHub issue hierarchy through MCP. Verify it with a fresh read,
+then make and verify one focused correction.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -33,8 +32,7 @@ request, and correct one issue without bypassing review.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot access before starting. If GitHub Copilot access is
-unavailable, stop and do not continue.
+Confirm GitHub Copilot access. **Stop if access is unavailable.**
 
 ## Part 1: Verify GitHub MCP and write access (15 minutes)
 
@@ -54,9 +52,9 @@ GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
 /mcp show github
 ```
 
-If the approved connection is missing from the app, use **Customize** → **MCP** to
-install or configure the organization-approved server. Do not paste a token into a
-prompt or repository file.
+If the approved connection is missing, use **Customize** → **MCP** to install or
+configure the organization-approved server. **Never paste a token into a prompt
+or repository file.**
 
 Stop if the read test or issue-write check fails.
 

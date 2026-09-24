@@ -12,5 +12,5 @@
 | FR-009 | `test_restore_returns_task_to_default_list`, `test_restore_is_idempotent` |
 | Restore not found | `test_restore_unknown_task_raises_not_found` |
 
-All nine tests pass. The implementation adds no package and no out-of-scope
-behavior. No remaining task was found during the reference review.
+All nine tests pass. The implementation adds no package or out-of-scope behavior.
+The reference review found no remaining task.

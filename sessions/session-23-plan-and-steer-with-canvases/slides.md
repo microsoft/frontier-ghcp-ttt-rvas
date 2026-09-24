@@ -35,7 +35,7 @@ Label the two kinds of state differently. Otherwise the team cannot tell whether
 they are seeing a decision or a source-system fact.
 
 ---
-# A useful field changes a decision
+# Keep fields that change a decision
 
 | Field | Keep it when | Remove it when |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ they are seeing a decision or a source-system fact.
 | Owner | The responsible person is unclear | GitHub already makes it clear |
 | Next action | A team needs a follow-up | It is only a status synonym |
 
-The canvas should make important work easier to see, not create a second backlog.
+The canvas should expose important work without becoming a second backlog.
 
 ---
 # Steering needs a review loop

@@ -1,103 +1,182 @@
-# Session 11 — Custom Agent Guidance
+# Session 11 Trainer Guide: Custom Agent Boundaries
 
-## Trainer content guide
+## Delivery objective
 
-Use Enterprise Cloud as the governance baseline. Before a live demonstration, verify current official GitHub documentation and customer policy for the repository, surface, metadata, available tools, activation behavior, data handling, and metering. This session uses a bounded artifact under `.github/agents/`.
-
-If live access is unavailable, learners create and peer-review the artifact, complete the task manually, and collect the same evidence. Do not bypass policy or move the artifact.
-
-**Preflight**
-
-- Open the disposable repository, `lab/starter/docs-agent-template.md`, and the focused test command.
-- Confirm the permitted repository paths, tool boundary, reviewer, usage guard, and fallback.
-- Verify current profile metadata and invocation support only if a live surface is approved.
+Make the boundary failure visible. Start with a profile that enables every tool and
+permits any needed change. Run the contract, show why a test-only task can drift
+into production code, tighten the profile, and rerun the same test.
 
 ## One-hour plan
 
-| Time | Topic | Learner evidence |
-| --- | --- | --- |
-| 0:00–0:10 | Preflight and role choice | Approved scope or manual fallback |
-| 0:10–0:20 | Profile anatomy | Annotated role charter |
-| 0:20–0:32 | Tool boundaries | Least-privilege decision table |
-| 0:32–0:47 | Test-writer demo | Focused profile and reviewed output |
-| 0:47–0:54 | Evaluate and revise | One evidence-based instruction change |
-| 0:54–1:00 | Extension choice and lab | Agent, instruction, skill, or MCP decision |
+| Time | Segment |
+| --- | --- |
+| 0:00–0:08 | What a custom agent profile controls |
+| 0:08–0:18 | Current `.agent.md` structure |
+| 0:18–0:30 | Weak profile and boundary violation |
+| 0:30–0:43 | Least-privilege tools and path rules |
+| 0:43–0:52 | Stop, validation, and human handoff |
+| 0:52–1:00 | Rerun evidence and lab handoff |
 
-At 0:42, stop troubleshooting live activation. Continue with the manual simulation.
+## Preflight
 
-## Role charter
+- Open the weak and tightened profiles side by side.
+- Run `npm test` from `lab/starter/agent-project`.
+- Keep `PROFILE-REFERENCE.md` and `BOUNDARY-EVIDENCE.md` open.
+- Confirm current profile support only when a live surface is approved.
+- Use the manual scenario when live profile loading is unavailable.
 
-A custom agent is a **narrow, reviewable role contract**. It should state:
+Do not push, merge, open issues, or attach MCP during the core demonstration.
 
-1. the task that triggers it and tasks it must reject;
-2. permitted inputs, paths, data, and tools;
-3. an ordered procedure;
-4. validation evidence and a human decision;
-5. stop conditions and a manual fallback.
+## Teaching sequence
 
-Show a profile from `lab/starter/docs-agent-template.md`. Confirm current frontmatter and tool syntax before invoking it. Course examples teach the pattern; they do not define a permanent platform schema.
+### 0:00–0:08: What the profile controls
 
-Use `validateEmail` for the demo:
+A profile supplies instructions and filters the tools presented to the agent. It
+does not create repository authority.
 
 ```text
-Add focused tests for `validateEmail`.
-
-Acceptance criteria:
-- `"ada@example.com"` returns `true`.
-- `"invalid"` returns `false`.
-- `""` returns `false`.
-- Change tests only.
-- Run the repository’s verified focused test command.
-- Stop if production code appears inconsistent with these criteria.
+Profile: role, available tools, procedure, stop rules
+Environment: actual tool permissions and repository access
+Human: accepts, revises, or rejects the result
 ```
 
-The profile should read the function and adjacent tests, edit only the named test file, run the focused check, report the result, and request review. If it needs a production-code edit, it stops and requests a separate decision.
+The profile must not imply that a tool call is approved simply because the tool is
+listed.
 
-Learners should be able to point to the named test file, three assertions, the focused-check result or an explicit unrun status, and a human review decision. At 0:42, stop activation troubleshooting and have them draft and review the same test manually.
+### 0:08–0:18: Exact structure
 
-## Tool and MCP review
+Show:
 
-| Need | Capability | Decision |
-| --- | --- | --- |
-| Read target and nearby tests | Repository read/search | Allow when approved |
-| Add a focused test | Edit named test path | Allow when approved |
-| Run the known check | Approved command execution | Conditional |
-| External data | MCP or network | Remove unless the task requires it |
-| Merge or accept risk | Privileged action | Human only |
+```text
+.github/
+└── agents/
+    └── test-writer.agent.md
+```
 
-MCP access does not widen the role’s authority. Before adding it, review the server owner, tool catalog, permissions, authentication, data flow, and fallback.
+Read the frontmatter from `PROFILE-REFERENCE.md`.
 
-## Evaluate the profile
+Explain:
 
-Review the output against the task:
+- `description` is required;
+- `name` is optional but useful;
+- `target` can limit the environment;
+- omitting `tools` enables all available tools;
+- `disable-model-invocation` requires deliberate use;
+- `user-invocable` keeps the profile selectable;
+- `metadata` can record a synthetic owner and contract version.
 
-- Does every assertion map to an acceptance criterion?
-- Did only permitted files change?
-- Did the named check run, or is it clearly marked unrun?
-- Did the role stop on a scope conflict?
-- Can a human follow the same procedure without a live surface?
+The Markdown body carries the operational boundary.
 
-Revise the single instruction tied to an observed failure. Do not grow a short role into a policy manual.
+### 0:18–0:30: Weak profile
 
-## Choose the smallest extension
+Open `weak-test-writer.agent.md`:
+
+```yaml
+tools: ["*"]
+```
+
+Its body says to make any changes needed. Run:
+
+```bash
+npm run check:weak
+```
+
+Use this conflict:
+
+```text
+Add tests for updateOrderStatus. Change tests only.
+The implementation permits a reverse transition that the criteria reject.
+```
+
+The profile has no reason to stop before editing `src/`. The failure is in the
+contract, even if one model run happens to stay inside the boundary.
+
+### 0:30–0:43: Tighten tools and paths
+
+Open `test-writer.agent.md`.
+
+The profile uses:
+
+```yaml
+tools:
+  - read
+  - search
+  - edit
+  - execute
+```
+
+This allowlist is necessary but insufficient. `edit` can still affect the wrong
+file. The body therefore permits edits under `tests/` only and names forbidden
+paths.
+
+Ask learners to distinguish:
+
+| Rule | Where it lives |
+| --- | --- |
+| Tool is available | Frontmatter |
+| Only tests may change | Profile body |
+| Repository blocks a write | Environment or repository policy |
+| Change is accepted | Human review |
+
+### 0:43–0:52: Stop and handoff
+
+Read the production-conflict rule aloud. The correct output names:
+
+- no files changed;
+- the behavior that conflicts with the criteria;
+- the forbidden production path;
+- the decision a human must make.
+
+Then show `npm test` as the verified command. If the command does not run, the
+profile reports **not run**. It must not fill the gap with a success claim.
+
+### 0:52–1:00: Rerun
+
+Run:
+
+```bash
+npm run check:tight
+npm test
+```
+
+The same contract now passes. If a supported surface is available, invoke the
+profile deliberately with the conflict scenario. Otherwise, trace it manually.
+
+Finish with the extension choice:
 
 | Need | Use |
 | --- | --- |
-| Repository-wide convention | Repository instructions |
+| Repository-wide rule | Instructions |
 | Repeatable procedure | Skill |
-| Specialized bounded role | Custom agent |
-| Approved external capability | MCP server |
+| Bounded role | Custom agent |
+| Approved external capability | MCP |
 
-For shared profiles, define an owner, versioning, representative tests, review triggers, and a retirement condition.
+## Prepared demonstration
+
+1. Show the weak profile.
+2. Run `check:weak` and read the failed checks.
+3. Trace the production edit the weak wording permits.
+4. Show the tightened frontmatter and body.
+5. Run `check:tight` and the full tests.
+6. Produce the stop report for the same conflict.
+
+## Common mistakes
+
+- Treating `tools: ["*"]` as harmless convenience.
+- Naming a role without naming paths.
+- Writing "do not edit source" without a stop and handoff result.
+- Claiming validation passed when the command did not run.
+- Assuming the profile grants permission.
+- Adding MCP to a role that does not need external data.
 
 ## Lab handoff
 
-Learners create a test-writer and documentation profile, then review their procedures against bounded tasks. They add the data-analyst exercise only when the Session 10 server and its data boundary are approved. The deliverable is reviewed profile files, observed or manual test evidence, a human decision, and a fallback path.
+Learners inspect the current structure, fail the weak profile, tighten it, rerun the
+contract, and record a bounded stop result. They then review the documentation and
+read-only data analyst examples with the same structure.
 
-## Likely questions
+## References
 
-**Why must the profile stop for a production-code conflict?** The task authorizes tests only. A different change needs a separate review decision.
-
-**Can the role use an MCP server?** Only when the bounded task requires an approved server and its data, permissions, and fallback have been reviewed.
-
-**What if the profile will not activate?** Use the manual simulation. Do not move the artifact or broaden its permissions.
+- [Creating custom agents](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents)
+- [Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+- [Invoking custom agents from Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents)

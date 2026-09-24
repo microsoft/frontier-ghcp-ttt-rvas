@@ -23,6 +23,6 @@ pass before convergence review.
 
 ## Governance
 
-Review the specification before planning and the plan before task generation.
+Review the specification before planning. Review the plan before task generation.
 Resolve high-severity analysis findings at the source artifact. Merge only after
 tests pass and convergence reports no remaining gap.

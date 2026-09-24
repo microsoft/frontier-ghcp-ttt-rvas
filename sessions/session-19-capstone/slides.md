@@ -3,101 +3,113 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 19 — Bounded End-to-End Capstone'
+footer: 'Session 19: Bounded End-to-End Capstone'
 ---
 
 <!-- _class: lead -->
 
 # Bounded End-to-End Capstone
 
-Session 19 of 19 | 3 hours
+Session 19 | 3 hours
 
 ---
 
-# The capstone is a delivery decision
+# One slice
 
-Success is one reviewed feature change or plan that another person can continue safely.
+Implement and review:
 
-Do not build a complete application, deploy, or demonstrate tools.
+```http
+POST /api/bookmarks
+```
 
----
-# The capstone measures judgment
-
-Learners should make a small delivery decision that another person can inspect and
-continue. More code is not a better result.
-
-The trainer evaluates whether the team:
-
-- reduced a broad request to a bounded slice;
-- used the prior decision and specification artifacts;
-- gathered enough evidence to approve, revise, or pause;
-- left a usable handover record.
+**Everything else is deferred.**
 
 ---
-# Start with a deliberately narrow slice
+# The result is a handoff
 
-| Too broad | Capstone-sized |
+- implementation-ready issue;
+- patch or patch plan;
+- executable test evidence;
+- review decision;
+- governance record;
+- deferred scope and next action.
+
+---
+
+# Session 17 is an input
+
+Before implementation, record:
+
+- repository and data boundary;
+- allowed tools and dependencies;
+- meter, threshold, and stop condition;
+- reviewer and fallback.
+
+**Unknown approval means stop.**
+
+---
+
+# Session 18 is an input
+
+The accepted specification must separate:
+
+| Behavior | Implementation constraint |
 | --- | --- |
-| "Build bookmark management" | "Create one bookmark with validation" |
-| "Improve the release process" | "Add a reviewed CI check for one path" |
-| "Automate triage" | "Produce a draft-only triage recommendation" |
-
-One slice should have a clear acceptance result and a natural stopping point. Reduce
-the scope again if it needs many owners or a long design debate.
+| Observable request and response rules | Node.js, Express, in-memory storage |
+| Validation and duplicate behavior | Existing dependencies only |
+| Acceptance scenarios | Exact files and test command |
 
 ---
-# The handover should survive the session
+
+# Issue trace
+
+Every acceptance criterion maps to:
 
 ```text
-Decision: approve, request changes, or pause
-Scope: what this change covers and excludes
-Evidence: checks, review, and open risks
-Owner: who takes the next action and by when
+specification ID -> planned file -> executable test
 ```
 
-Chat history is useful context. It is not the delivery artifact.
-
----
-# Required inputs
-
-- Session 17 decision record: allowed path, data boundary, meter, reviewer, and fallback.
-- Session 18 handoff: goal, scope, constraints, acceptance criteria, tasks, and checks.
+If the issue adds behavior missing from the specification, revise the issue before
+implementation.
 
 ---
 
-# One implementation-ready issue
+# Scope guard
 
-```text
-Goal: Implement POST /api/bookmarks.
-Scope: Validate the documented Bookmark fields and response format.
-Constraints: In-memory storage, synthetic data, approved dependencies only.
-Done: Focused tests cover valid create, validation errors, and duplicate URLs.
-```
+In scope:
+
+- create one bookmark;
+- validate the accepted fields;
+- reject a duplicate URL;
+- return the documented envelope and status.
+
+Out of scope: authentication, persistence, other endpoints, deployment, and new
+packages.
 
 ---
-
-# Delivery paths
 
 | Path | Use |
 | --- | --- |
-| Approved cloud agent | One scoped issue and one reviewable pull request |
-| Approved local agent mode | Work in the approved sandbox |
-| Manual | Implement the same issue |
-| Prepared change | Produce a reviewable patch plan |
+| Approved agent | Implement the single issue |
+| Manual | Implement the same files and tests |
+| Blocked | Produce a reviewable patch plan |
 
 ---
 
-# Governance gate
+# Executable proof
 
-Before implementation, confirm the repository, data, tools, dependencies, MCP servers, meter, stop condition, and reviewer.
+```bash
+npm test
+```
 
-Stop when a boundary is unclear.
+The suite checks success, defaults, field validation, and duplicate URLs.
 
 ---
 
 # Review and handover
 
-Check the acceptance criteria, scope, validation, tests, dependencies, and governance.
+Check the specification trace, diff, test output, dependency change, and governance
+record.
 
 Record one decision: approve, request changes, or pause.
 
@@ -107,7 +119,7 @@ Record one decision: approve, request changes, or pause.
 
 | Phase | Time |
 | --- | --- |
-| Select and review the issue | 20 min |
-| Establish baseline and checks | 20 min |
-| Implement one slice | 40 min |
-| Review and hand over | 40 min |
+| Govern and accept the specification | 25 min |
+| Write the issue and establish the baseline | 25 min |
+| Implement or write the patch plan | 35 min |
+| Verify, review, and hand off | 35 min |

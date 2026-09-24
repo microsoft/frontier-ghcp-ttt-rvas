@@ -77,14 +77,14 @@ resource "aws_db_instance" "main" {
   db_name           = "appdb"
 
   username = "admin"
-  password = var.db_password  # FIX 2: From variable, not hardcoded
+  password = var.db_password # FIX 2: From variable, not hardcoded
 
-  storage_encrypted   = true  # FIX 5: Encryption at rest enabled
+  storage_encrypted   = true # FIX 5: Encryption at rest enabled
   multi_az            = true
   publicly_accessible = false
 
-  vpc_security_group_ids = [aws_security_group.web.id]
-  skip_final_snapshot    = false
+  vpc_security_group_ids    = [aws_security_group.web.id]
+  skip_final_snapshot       = false
   final_snapshot_identifier = "production-db-final"
   backup_retention_period   = 7
 

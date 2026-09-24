@@ -13,7 +13,9 @@
 
 ## Purpose
 
-Prepare an internal weekly status draft from approved Service Request Portal training records. The draft helps the product owner review throughput, active work, blocked work, and data exceptions.
+Prepare an internal weekly status draft from approved Service Request Portal
+training records. The product owner uses it to review throughput, active work,
+blocked work, and data exceptions.
 
 ## Accountability
 

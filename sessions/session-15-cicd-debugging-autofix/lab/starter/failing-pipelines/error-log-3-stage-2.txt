@@ -1,0 +1,16 @@
+Results after the first repair
+==============================
+
+test (20)  passed
+build      failed
+
+Failed step: build / Install dependencies
+
+Run npm ci
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /home/runner/work/training/training/package.json
+npm ERR! errno -2
+npm ERR! enoent Could not read package.json: ENOENT: no such file or directory
+
+Error: Process completed with exit code 254.

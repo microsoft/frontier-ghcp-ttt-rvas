@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 04 — GitHub Copilot in the CLI'
+footer: 'Session 04: GitHub Copilot in the CLI'
 ---
 
 <!-- _class: lead -->
@@ -30,8 +30,8 @@ Session 04 of 18 | Duration: 3 hours (1hr content + 2hr lab)
 | 0:57   | Security Considerations           | 3 min      |
 | 1:00   | Wrap-Up & Lab Preview             | 3 min      |
 | 1:03   | ☕ Break                           | 10 min     |
-| 1:13   | Lab Start                         | —          |
-| 3:00   | Wrap-up                           | —          |
+| 1:13   | Lab Start                         | n/a        |
+| 3:00   | Wrap-up                           | n/a        |
 
 > 💡 **Breaks:** 10-minute break between trainer content and lab. Additional 5-minute breaks at trainer's discretion.
 
@@ -74,9 +74,9 @@ Cycle between modes with `Shift+Tab`:
 
 | Mode          | Behavior                                                       | When to Use                          |
 | ------------- | -------------------------------------------------------------- | ------------------------------------ |
-| **Standard**  | Ask/execute — asks permission before acting                    | Default for most work                |
+| **Standard**  | Ask or execute; asks permission before acting                  | Default for most work                |
 | **Plan**      | Analyzes, asks questions, builds structured plan BEFORE coding | Complex tasks; review approach first |
-| **Autopilot** | Fully autonomous — no approval prompts                         | Trusted tasks, batch operations      |
+| **Autopilot** | Fully autonomous; no approval prompts                          | Trusted tasks, batch operations      |
 
 > 💡 **Plan mode** is what a lot of users wish IDE agent mode had. It asks questions and shows the plan before touching anything.
 
@@ -159,7 +159,7 @@ The CLI includes verified built-in agents:
 
 ---
 
-# Copilot App — Orientation
+# Copilot App: Orientation
 
 Copilot App is a dedicated surface for agent sessions and customizations.
 
@@ -190,7 +190,7 @@ Copilot works across multiple IDEs. Which features are available depends on the 
 | **Xcode** | ✅ | ✅ | ⚠️ Preview | Apple dev; agent mode in preview |
 | **Vim/Neovim** | ✅ | ❌ | ❌ | Minimal overhead |
 
-**For this curriculum:** VS Code is the teaching baseline. Verify the currently supported experience for any other IDE in the [official Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) and customer policy.
+**For this curriculum:** VS Code is the teaching baseline. Verify the currently supported experience for any other IDE in the [official Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) and the applicable policy.
 
 > 💡 IDEs vary in feature completeness. VS Code is the reference. Check the [Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) for the latest.
 
@@ -227,13 +227,14 @@ You'll use all four in a normal week. Each solves a different problem.
 # Security Considerations
 
 - CLI sends **file contents and terminal output** to the Copilot service
-- Autopilot mode can execute commands **without approval** — use carefully
+- Autopilot mode can execute commands **without approval**. Use it carefully.
 - In CI/CD, scope the `GH_TOKEN` to minimum required permissions
 - Tool use is permissioned: approve once, approve similar for the session, or deny
 - Pre-approve or limit tools with `--allow-tool`, `--deny-tool`, and `--available-tools`
 - Never pipe secrets or credentials to Copilot
 
-> 💡 Same privacy story as IDE Copilot — encrypted in transit, never used for training.
+> 💡 Apply the same privacy review used for IDE Copilot: encrypted in transit and
+> never used for training.
 
 ---
 
@@ -253,17 +254,19 @@ You'll use all four in a normal week. Each solves a different problem.
 | 3          | CLI-Exclusive Features                    | 35 min     |
 | 4          | CLI vs IDE Comparison & Workflow Patterns | 30 min     |
 
-**Deliverable:** A CLI workflow cheat sheet + a fixed Node.js project + a completed pipeline script.
+**Continuing story:** Take over the `agent-tasks` project, repair it, automate its health report, and choose the right Copilot surface.
+
+**Final deliverable:** Passing tests, the completed health script and report, and a CLI workflow cheat sheet.
 
 ---
 
 # What to remember
 
 1. The CLI is a **standalone tool** for terminal-first agent workflows.
-2. **Three modes**: Standard (safe), Plan (review first), Autopilot (fully autonomous)
+2. **Three modes**: Standard, Plan, and Autopilot
 3. **Programmatic mode** (`-p`) supports CI/CD and automation
 4. **Built-in agents** (Explore, Task, Code Review, Plan, Rubber Duck) provide specialized capabilities
-5. CLI works where IDEs don't — **SSH, containers, headless environments**
+5. CLI works in **SSH, containers, and headless environments**
 6. Use the CLI and IDE for the work each surface fits
 
 ---

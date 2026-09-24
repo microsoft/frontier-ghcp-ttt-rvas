@@ -1,0 +1,10 @@
+SKU | Warehouse | Ledger | Variance | Status | Severity
+--- | ---: | ---: | ---: | --- | ---
+AX-100 | 10 | 10 | 0 | MATCH | none
+BX-200 | 4 | 9 | -5 | SHORT | review
+CX-300 | 0 | 8 | -8 | SHORT | urgent
+DX-400 | 15 | 5 | 10 | OVER | urgent
+EX-500 | 2 | 0 | 2 | OVER | review
+FX-600 | 0 | 3 | -3 | SHORT | review
+
+Summary: 6 SKUs; 1 match; 3 short; 2 over; 2 urgent.

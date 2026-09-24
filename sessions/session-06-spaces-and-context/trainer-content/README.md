@@ -1,22 +1,22 @@
-# Session 06 — Context Workflows
+# Session 06: Context Workflows
 
 ## Trainer content guide
 
 ### Delivery baseline
 
-Use Enterprise Cloud as the governance baseline. Before delivery, verify current official GitHub documentation and the customer administrator policy for the intended context workflow. Do not present a changing surface, automatic behavior, storage behavior, or availability state as a curriculum guarantee.
+Use Enterprise Cloud as the governance baseline. Before delivery, verify current official GitHub documentation and the applicable administrator policy for the intended context workflow. Do not present a changing surface, automatic behavior, storage behavior, or availability state as a curriculum guarantee.
 
 ### Access and cost preflight
 
 1. Confirm the repository, attendee role, approved data classification, and task owner.
-2. Verify current documentation and customer policy for the intended workflow.
+2. Verify current documentation and the applicable policy for the intended workflow.
 3. Choose a non-sensitive, bounded question and approved repository sources.
-4. For metered work, define the customer-owned meter, threshold, escalation contact, and stop guard.
+4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
 5. Prepare a manual context-packet exercise.
 
 ### No-access fallback
 
-Learners assemble the context packet manually, use it to plan and review the starter change, and compare the result with the acceptance criteria. Do not add a source or live surface that the customer policy has not approved.
+Learners assemble the context packet manually, use it to plan and review the Storefront API change, and compare the result with the acceptance criteria. Do not add a source or live surface that policy has not approved.
 
 ## Session objective
 
@@ -56,7 +56,7 @@ Exclude:
 
 > “If source eligibility or product behavior is unclear, stop and use the manual context packet. It teaches the same lesson without a policy exception.”
 
-> “Metered work has a customer-defined stop guard. Narrow the context or use the manual fallback when the guard is reached.”
+> “Metered work has an agreed stop guard. Narrow the context or use the manual fallback when the guard is reached.”
 
 ## Review rubric
 
@@ -68,7 +68,7 @@ Exclude:
 
 ## Close
 
-Ask learners to identify a common task where less context would improve clarity and reviewability. Recheck official documentation and customer policy before a live exercise.
+Ask learners to identify a common task where less context would improve clarity and reviewability. Recheck official documentation and the applicable policy before a live exercise.
 
 ---
 
@@ -94,7 +94,7 @@ Ask learners to identify a common task where less context would improve clarity 
 - At 0:55, compare plans rather than waiting for generated code.
 - Never cut source approval, maintenance ownership, fallback, or lab boundaries.
 
-## Segment 1 — Diagnose context quality (0:00–0:08)
+## Segment 1: Diagnose context quality (0:00–0:08)
 
 ### Trainer talking points
 
@@ -125,7 +125,7 @@ Expected answers include unrelated repositories, production records, secrets, an
 
 > “We can organize those choices as a hierarchy, starting with the task itself.”
 
-## Segment 2 — Context hierarchy (0:08–0:18)
+## Segment 2: Context hierarchy (0:08–0:18)
 
 ### Detailed talking points
 
@@ -156,7 +156,7 @@ Exclude the unrelated roadmap and production log.
 
 > “A useful curated workflow makes that source decision explicit and maintainable.”
 
-## Segment 3 — Curated context workflow (0:18–0:30)
+## Segment 3: Curated context workflow (0:18–0:30)
 
 ### Access and governance check
 
@@ -206,7 +206,7 @@ Learners can explain why every included source is necessary and why every exclud
 
 > “Curated evidence answers what the project says; repository instructions state how work should proceed.”
 
-## Segment 4 — Instructions and reusable prompts (0:30–0:42)
+## Segment 4: Instructions and reusable prompts (0:30–0:42)
 
 ### Repository instruction example
 
@@ -233,7 +233,7 @@ Learners can explain why every included source is necessary and why every exclud
 
 ```markdown
 ---
-description: Review a checkout validation change
+description: Review a low-stock endpoint change
 ---
 
 Read the selected contract, route, service, tests, and repository guidance.
@@ -257,7 +257,7 @@ Debrief disagreements and move feature-specific behavior out of repository-wide 
 
 > “Context is useful only while its source, scope, and freshness remain trustworthy.”
 
-## Segment 5 — Source governance and maintenance (0:42–0:50)
+## Segment 5: Source governance and maintenance (0:42–0:50)
 
 ### Three-question check
 
@@ -286,7 +286,7 @@ For every source or remembered fact, ask:
 
 > “We will now test whether a smaller grounded packet produces a more reviewable plan.”
 
-## Scripted demo — Quantity validation with and without grounding (0:50–0:58)
+## Scripted demo: Low-stock reporting with and without grounding (0:50–0:58)
 
 ### Purpose
 
@@ -294,67 +294,63 @@ Compare response quality using explicit criteria while avoiding claims that a su
 
 ### Setup
 
-Prepare four fictional excerpts:
+Use four excerpts from the Storefront API lab:
 
-`docs/api-contract.md`:
+`docs/api-spec.md`:
 
 ```text
-quantity must be a JSON integer from 1 through 99.
-Invalid quantity uses the existing VALIDATION_ERROR response.
-Numeric strings are not accepted.
+Product list responses use the existing data envelope.
+Invalid query values use the existing VALIDATION_ERROR response.
 ```
 
-`src/routes/checkout.ts`:
+`src/routes/products.js`:
 
-```ts
-const quantity = parseQuantity(req.body.quantity);
+```js
+router.get('/:id', async (req, res) => {
+  // Existing dynamic route.
+});
 ```
 
-`src/services/quantity.ts`:
+`src/models/product.js` defines product stock as a non-negative integer.
 
-```ts
-export function parseQuantity(value: unknown): number {
-  return Number(value);
-}
-```
-
-`tests/checkout.test.ts` lists valid `1`, valid `99`, invalid `0`, invalid `100`, and invalid `"2"`.
+The lab task requires `GET /api/products/reports/low-stock`, an optional
+non-negative integer threshold, and a default threshold of `10`.
 
 Use synthetic data only.
 
-### Pass A — Minimal prompt
+### Pass A: Minimal prompt
 
 Exact prompt:
 
 ```text
-Add validation to the checkout endpoint.
+Add a low-stock report endpoint.
 ```
 
 ### Trainer actions for Pass A
 
 1. If approved access exists, submit the prompt without project context.
 2. Otherwise reveal a prepared generic proposal.
-3. Record assumptions about range, numeric strings, error shape, and test command.
+3. Record assumptions about the route, threshold, error shape, and test command.
 4. Do not score writing style or confidence.
 
 ### Expected observation for Pass A
 
-The response may lack the range, accept numeric strings, invent an error, or omit tests.
+The response may place the route after `/:id`, accept invalid thresholds, invent an error, or omit verification.
 
 Variation is acceptable; the teaching point is that the request lacks evidence.
 
-### Pass B — Grounded prompt
+### Pass B: Grounded prompt
 
 #### Exact trainer prompt
 
 Exact prompt:
 
 ```text
-Using only the approved API contract, route, quantity service, focused tests,
-and repository instructions, propose the smallest quantity-validation change.
+Using only the approved API specification, product route, product model, and
+repository instructions, propose the smallest low-stock endpoint change.
 First list acceptance criteria and assumptions.
-Do not add dependencies or accept numeric strings.
-End with the evidence used and the focused test command.
+Do not add dependencies. Reject negative or non-integer thresholds.
+End with the evidence used and two verification requests.
 ```
 
 ### Exact trainer actions for Pass B
@@ -362,21 +358,22 @@ End with the evidence used and the focused test command.
 1. Confirm each source is approved and current.
 2. Submit through the approved context workflow or use the printed packet.
 3. Require acceptance criteria before code.
-4. Compare the plan with the contract and test list.
-5. Ask whether `Number.isInteger(value)` rejects the string `"2"`.
-6. Check both lower and upper boundaries.
+4. Compare the plan with the API specification and route order.
+5. Ask whether `Number.isInteger(Number(value))` would wrongly accept `"2"`.
+6. Check the default and invalid threshold paths.
 7. Record any unsupported assumption.
 
 ### Expected outcome
 
-The grounded response should state the integer and boundary criteria, reject numeric strings, avoid new dependencies, and identify the focused tests and source evidence.
+The grounded response should state the threshold rules, place the static route before `/:id`, avoid new dependencies, and identify source evidence and verification requests.
 
 It may then include a code proposal such as:
 
-```ts
-export function parseQuantity(value: unknown): number {
-  if (!Number.isInteger(value) || Number(value) < 1 || Number(value) > 99) {
-    throw new ValidationError("quantity must be an integer from 1 through 99");
+```js
+function parseThreshold(value) {
+  if (value === undefined) return 10;
+  if (!/^\d+$/.test(value)) {
+    throw new Error('threshold must be a non-negative integer');
   }
   return Number(value);
 }
@@ -388,7 +385,7 @@ The existing project’s error type and message remain subject to source verific
 
 | Dimension | Pass question |
 | --- | --- |
-| Correctness | Are integer type and both boundaries represented? |
+| Correctness | Are the default, valid, and invalid threshold paths represented? |
 | Scope | Is the proposal limited to the selected feature? |
 | Assumptions | Are unresolved decisions named? |
 | Evidence | Can each behavior be traced to a source? |
@@ -474,7 +471,7 @@ Check current official metering information for the organization and selected wo
 
 Open `lab/README.md`.
 
-The live path may curate the fictional e-commerce sources, create repository instructions, compare context levels, and build reusable prompts.
+The live path keeps one Storefront API through source selection, repository instructions, a context comparison, and reusable prompts.
 
 The no-access path assembles the same files as a manual packet and completes the comparison in `lab/starter/context-comparison.md`.
 

@@ -10,19 +10,18 @@
 
 ## Overview
 
-Learners turn an approved decision brief into a GitHub issue hierarchy. They
-verify the GitHub MCP connection, inspect existing repository state, preview the
-complete write, create the approved issues, retrieve them in a fresh request, and
-apply one reviewed correction.
+Turn an approved decision brief into a GitHub issue hierarchy. Verify the GitHub
+MCP connection, inspect the repository, preview the full write, create the
+approved issues, then verify and correct them through fresh reads.
 
-This session teaches safe tool use for non-developers. It does not teach MCP server development.
+The focus is safe tool use, not MCP server development.
 
 > [!IMPORTANT]
 > **The GitHub MCP connection and write access to the training repository are required.** Stop if the learner cannot inspect tools, preview the write, or verify the created issues.
 
 ## Learning outcomes
 
-By the end of this session, learners can:
+Learners practice how to:
 
 1. Explain what an MCP server lets Copilot do.
 2. Inspect the GitHub tools available to the current session.

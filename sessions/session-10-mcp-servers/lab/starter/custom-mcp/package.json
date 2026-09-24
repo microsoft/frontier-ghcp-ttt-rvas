@@ -1,12 +1,17 @@
 {
   "name": "weather-mcp-server",
   "version": "1.0.0",
-  "description": "Custom MCP server for the MCP lab — exposes weather tools",
+  "description": "Staged MCP weather server for the Session 10 lab",
+  "private": true,
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.0"
+    "@modelcontextprotocol/sdk": "1.12.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

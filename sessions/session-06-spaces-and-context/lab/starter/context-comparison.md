@@ -1,8 +1,8 @@
 # Context Comparison Experiment
 
-## Prompt Used
+## Task used in every experiment
 
-> Write an Express middleware function that logs all incoming requests with timestamp, method, URL, response time, and status code. It should support different log levels based on status code (info for 2xx, warn for 4xx, error for 5xx).
+> Add request-logging middleware to the Storefront API. Record timestamp, method, URL, response time, and status code. Use info for 2xx, warn for 4xx, and error for 5xx. Add no logging package.
 
 ---
 
@@ -26,7 +26,7 @@ _(paste the response here)_
 
 ## Experiment B: With Custom Instructions
 
-**Setup:** The `instructions-lab` project is open and includes `copilot-instructions.md`.
+**Setup:** The Storefront API is open and includes `.github/copilot-instructions.md`.
 
 **Copilot's response:**
 _(paste the response here)_
@@ -89,6 +89,6 @@ _(paste the response here)_
 
 ## Findings
 
-Which context produced the most useful result, and why?
+Which smallest context set produced a project-correct result, and why?
 
 _(Write your findings here.)_

@@ -13,7 +13,7 @@
 
 ## Purpose
 
-Describe the recurring work and the decision this output supports.
+Name the recurring work and the decision this output supports.
 
 ## Accountability
 
@@ -84,7 +84,8 @@ List the conditions that stop the current run or disable future runs.
 
 ## Recovery procedure
 
-Describe how the owner stops the workflow, preserves evidence, handles urgent work, and decides when the workflow may resume.
+State how the owner stops the workflow, preserves evidence, handles urgent work,
+and decides when it may resume.
 
 ## Change control
 

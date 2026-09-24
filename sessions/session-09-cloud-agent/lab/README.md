@@ -1,289 +1,226 @@
-# Session 09 Lab — Cloud-Agent Workflows
+# Session 09 Lab: One Issue from Contract to Review
 
-**Duration:** 2 hours  
-**Difficulty:** Intermediate  
-**Prerequisites:** Sessions 01–07 completed  
-**Deliverable:** A bounded issue, review record, and policy-aware comparison or manual baseline.
+**Duration:** 2 hours
 
----
+**Difficulty:** Advanced
 
-## Lab overview
+**Prerequisites:** Sessions 01–07
 
-Prepare a task for a cloud coding agent, review the resulting change, and compare the live workflow with a manual baseline. You will use issue templates, repository instructions, setup steps, a sample project, and a review checklist.
+**Deliverable:** One completed issue evidence packet
 
-| Exercise | Topic | Time |
-| --- | --- | --- |
-| 1 | Prepare a bounded issue | 30 min |
-| 2 | Review repository guidance and setup | 25 min |
-| 3 | Review a proposed cloud-agent change | 40 min |
-| 4 | Compare approved agents or manual baseline | 25 min |
+## Objective
 
----
+Carry one synthetic issue through five checkpoints: issue contract, setup, proposed change, tests, and human decision. Use Copilot cloud agent only when access is approved. Otherwise complete the same journey manually.
 
-## Access and cost preflight
+## Deliverables
 
-Use Enterprise Cloud as the governance baseline. Check current official GitHub documentation and customer administrator policy before delivery. Confirm the repository scope, participant role, data classification, permitted workflow, and human reviewer. For metered work, set a customer-defined meter, threshold, escalation route, and stop guard.
+Submit:
 
-Before you begin, write down:
+1. the approved `issue.md`;
+2. the completed `checkpoint-record.md`;
+3. the proposed diff or pull request reference;
+4. test output;
+5. the completed `pr-review-checklist.md`;
+6. a final decision: approve, request changes, or pause.
 
-1. The sandbox repository or local folder you will use.
-2. Whether assigning issues to a cloud coding agent is approved.
-3. Which files may be edited by the agent.
-4. Which tests must pass before a human review.
-5. What condition stops automated work.
+## Access policy
 
-> **Success criteria:** You can describe the approved and no-access paths before assigning an issue.
+The live route requires approved Copilot cloud agent access for the training repository, synthetic data, and a named reviewer.
 
----
+If access, policy approval, or reviewer ownership is missing, **do not assign the issue**. Use the manual route with the supplied sample project. Do not add credentials to issues, instructions, setup workflows, or comments.
 
-## No-access fallback for the whole lab
+## The one issue
 
-If cloud-agent access is unavailable, complete the lab manually:
+Use `starter/issue.md` for the entire lab.
 
-1. Use `lab/starter/issue-templates/good-issue.md` as the target issue.
-2. Copy `lab/starter/sample-project/` into a writable sandbox.
-3. Apply the smallest implementation manually.
-4. Run or inspect the checks requested in the issue.
-5. Review the change with `lab/starter/pr-review-checklist.md`.
-6. Fill in `lab/starter/agent-comparison-template.md` by comparing the manual baseline with the expected agent workflow.
+The request is:
 
-> **Check:** You have a bounded issue, a code change or implementation plan, test evidence, and a human review decision.
+```text
+Reject blank or whitespace-only task titles.
+```
 
----
+Do not replace it with another issue, add another endpoint, or expand it into API cleanup.
 
 ## Setup
 
-Use these starter assets:
-
-- `lab/starter/issue-templates/issue-writing-guide.md` — how to write agent-ready work
-- `lab/starter/issue-templates/good-issue.md` — example of a strong issue
-- `lab/starter/issue-templates/bad-issue.md` — example of a weak issue
-- `lab/starter/copilot-instructions.md` — repository guidance template
-- `lab/starter/copilot-setup-steps.yml` — setup-step example for repeatable environments
-- `lab/starter/sample-project/package.json` — project scripts and dependencies
-- `lab/starter/sample-project/src/app.js` — application under change
-- `lab/starter/sample-project/tests/app.test.js` — test suite for validation
-- `lab/starter/pr-review-checklist.md` — review worksheet for agent output
-- `lab/starter/agent-comparison-template.md` — comparison worksheet
-
-Set up the sample project locally:
+From the repository root:
 
 ```bash
-mkdir -p ~/copilot-labs/session-09
-cp -R lab/starter/sample-project ~/copilot-labs/session-09/sample-project
-cd ~/copilot-labs/session-09/sample-project
-npm install
+cd sessions/session-09-cloud-agent/lab
+npm --prefix starter/sample-project install
+npm --prefix starter/sample-project test
+```
+
+Expected result: the starter suite passes before the new validation is added.
+
+Open:
+
+- `../issue.md`
+- `../copilot-instructions.md`
+- `../copilot-setup-steps.yml`
+- `../checkpoint-record.md`
+- `../pr-review-checklist.md`
+
+The setup workflow asset is intended for `.github/workflows/copilot-setup-steps.yml` in a live training repository.
+
+## Time plan
+
+| Checkpoint | Work | Time |
+| --- | --- | --- |
+| 1 | Approve the issue contract | 20 min |
+| 2 | Verify repository setup | 20 min |
+| 3 | Produce and inspect the proposed change | 35 min |
+| 4 | Run and review tests | 25 min |
+| 5 | Make the human decision | 20 min |
+
+## Checkpoint 1: Issue contract (20 minutes)
+
+Read `starter/issue.md`.
+
+Have a peer answer:
+
+- Which request is invalid?
+- What exact response is required?
+- Which valid behavior must remain?
+- Which files may change?
+- Which command proves completion?
+- What is out of scope?
+
+Record the answers in `checkpoint-record.md`.
+
+The issue is approved only when the answers come from the text rather than verbal context.
+
+**Visible evidence:** The issue has a reviewer, fixed acceptance criteria, allowed files, non-goals, and a stop condition.
+
+## Checkpoint 2: Setup (20 minutes)
+
+1. Review `starter/copilot-instructions.md`.
+2. Review `starter/copilot-setup-steps.yml`.
+3. Confirm that the workflow content targets `.github/workflows/copilot-setup-steps.yml`.
+4. Confirm the single job is named `copilot-setup-steps`.
+5. Run the starter baseline:
+
+   ```bash
+   npm --prefix starter/sample-project test
+   ```
+
+6. Record the command and result.
+7. Record the allowed file list: `src/app.js` and `tests/app.test.js`.
+
+Stop if the baseline failure is unexplained, setup needs a credential, or any required command is not approved.
+
+**Visible evidence:** Passing baseline, reviewed setup files, named reviewer, and stop condition.
+
+## Checkpoint 3: Proposed change (35 minutes)
+
+### Live route
+
+Place the sample project in an approved training repository. Add the reviewed instructions and setup workflow if policy permits.
+Copy the contents of `starter/sample-project/` to the repository root. The setup
+workflow expects `package.json`, `package-lock.json`, `src/`, and `tests/` at that
+root.
+
+Create or reuse the one issue from `starter/issue.md`. Assign it through a currently supported and approved Copilot cloud agent entry point.
+
+Monitor the session. Record:
+
+- files the agent plans to change;
+- commands it reports;
+- questions or steering;
+- the final proposed files.
+
+Use this message only if the work drifts:
+
+```text
+Keep the existing issue contract. Change only src/app.js and tests/app.test.js.
+Add no dependency. Stop and ask for clarification if broader work is required.
+```
+
+### Manual route
+
+Copy the starter project to a writable folder:
+
+```bash
+cp -R starter/sample-project working-project
+cd working-project
+```
+
+Implement only the fixed issue.
+
+### Review the proposal
+
+Before tests, inspect the diff with `starter/pr-review-checklist.md`.
+
+Confirm:
+
+- only the two allowed files changed;
+- blank and whitespace-only titles return HTTP 400;
+- the error body is `{ "error": "title is required" }`;
+- valid task creation keeps its existing response shape;
+- no dependency or unrelated endpoint changed.
+
+If no live proposal is ready after 25 minutes, use `solution/proposed-change.diff` as prepared evidence and continue the review.
+
+**Visible evidence:** A pull request, local diff, or prepared diff tied to the same issue.
+
+## Checkpoint 4: Tests (25 minutes)
+
+Run:
+
+```bash
 npm test
 ```
 
-> **Expected output:** Dependencies install and the starter tests pass. If the install is blocked, continue with static review and record the blocked command in your fallback notes.
+The evidence must cover:
 
----
+| Case | Expected result |
+| --- | --- |
+| Empty title `""` | HTTP 400 and required error body |
+| Whitespace title `"   "` | HTTP 400 and required error body |
+| Valid title `" Weekly plan "` | HTTP 201 with the existing response fields |
+| Existing endpoints | Existing tests still pass |
 
-## Exercise 1: Prepare a bounded issue (30 minutes)
+Record the command, pass count, failure count, and any review comment.
 
-### Objective
+If a required case is missing, request that focused change. Do not add a new issue or unrelated cleanup.
 
-Write an issue that gives a cloud coding agent enough context for a small task and gives a human reviewer testable criteria.
+**Visible evidence:** Test output linked to the reviewed proposal.
 
-### Steps
+## Checkpoint 5: Human decision (20 minutes)
 
-1. **Read the guide.** Open `lab/starter/issue-templates/issue-writing-guide.md`.
+The named reviewer completes `starter/pr-review-checklist.md`.
 
-   > **Check:** Strong issues include a specific title, clear description, testable acceptance criteria, file references, and constraints.
+Choose:
 
-2. **Compare example issues.** Read `lab/starter/issue-templates/good-issue.md` and `lab/starter/issue-templates/bad-issue.md`.
+- **approve** when the issue, diff, and tests agree;
+- **request changes** when a bounded correction remains;
+- **pause** when access, evidence, policy, or ownership is unresolved.
 
-   > **Expected:** You can explain why the good issue is actionable and the bad issue is ambiguous.
+Record the reason and next safe action in `checkpoint-record.md`.
 
-3. **Choose one bounded task.** Use a task that changes one small behavior in `lab/starter/sample-project/src/app.js` and its test file.
+Compare your packet with `solution/issue-journey.md` only after the decision.
 
-   Example scope:
-
-   ```text
-   Add validation so POST /api/tasks returns 400 when title is empty.
-   Do not change unrelated endpoints or add dependencies.
-   ```
-
-   > **Success criteria:** The task fits in one short pull request and is easy to review.
-
-4. **Write the issue body.** Include these sections:
-
-   - Problem statement
-   - Current behavior
-   - Desired behavior
-   - Acceptance criteria as checkboxes
-   - Files in scope
-   - Files out of scope
-   - Required checks
-   - Human review requirement
-   - No-access fallback
-
-   > **Expected:** A peer can read the issue and know what to build.
-
-5. **Add explicit constraints.** State that synthetic data only is permitted, unapproved dependencies are not allowed, and any broader refactor must be deferred.
-
-   > **Success criteria:** The issue limits scope and does not rely on implicit project knowledge.
-
-6. **Peer-review the issue before assignment.** Ask a partner to find missing acceptance criteria or ambiguous language.
-
-   > **Expected output:** The issue is either approved for use or updated with clearer constraints.
-
-### Exercise 1 no-access fallback
-
-If you cannot create a GitHub issue, write the issue in a local Markdown file or shared notes. The fallback is complete when the issue includes the same scope, acceptance criteria, constraints, and review requirement.
-
----
-
-## Exercise 2: Review repository guidance and setup (25 minutes)
-
-### Objective
-
-Prepare the repository context for the agent and confirm the setup path is repeatable.
-
-### Steps
-
-1. **Read the instruction template.** Open `lab/starter/copilot-instructions.md`.
-
-   > **Check:** The template defines the project, stack, conventions, tests, file structure, and constraints.
-
-2. **Customize the instructions for the sample project.** In your sandbox, place the content at `.github/copilot-instructions.md` if policy permits repository instructions.
-
-   > **Success criteria:** Instructions mention Node.js 20, Express, Jest/Supertest, `src/app.js`, `tests/app.test.js`, no new dependencies unless approved, and `npm test` as the completion check.
-
-3. **Review setup steps.** Open `lab/starter/copilot-setup-steps.yml`.
-
-   > **Expected:** You can explain how the setup installs dependencies and prepares tests for the agent environment.
-
-4. **Decide whether setup steps are needed.** If the sample project needs only `npm install`, record it. If your sandbox requires additional approved commands, document them without adding secrets.
-
-   > **Success criteria:** The setup record lists only commands. It contains no credentials or environment-specific secrets.
-
-5. **Run the local baseline.**
-
-   ```bash
-   npm test
-   ```
-
-   > **Expected:** Tests pass before work starts. If they fail, understand the baseline failure before assigning the issue.
-
-6. **Write the implementation plan.** List the files the agent may edit and the tests it must change.
-
-   > **Success criteria:** The plan matches the issue and the repository instructions. Anything outside the bounded task is marked out of scope.
-
-### Exercise 2 no-access fallback
-
-If repository instructions or setup-step files cannot be used in a live repository, keep them as reviewed local artifacts. The fallback is complete when a human implementer can follow the same instructions and reproduce the baseline test result.
-
----
-
-## Exercise 3: Review a proposed change (40 minutes)
-
-### Objective
-
-Assess a cloud-agent pull request or manual implementation against the issue, repository guidance, and checklist.
-
-### Steps
-
-1. **Start only from an approved workflow.** If policy allows, assign the issue to the approved agent or use the approved cloud-agent entry point. If not, use your manual implementation from the fallback path.
-
-   > **Success criteria:** The work item is bounded, and a human reviewer is named before any generated change is accepted.
-
-2. **Wait for a proposed change or create the manual baseline.** Do not expand the issue while you wait. If the agent asks for clarification, answer only within the approved scope.
-
-   > **Expected:** You have a pull request, patch, or local diff that claims to satisfy the issue.
-
-3. **Inspect changed files.** Compare the diff with the files named in the issue.
-
-   > **Success criteria:** All changes are necessary for the task. Any unrelated edits are called out as review findings.
-
-4. **Run required checks.** Use the same command from the issue:
-
-   ```bash
-   npm test
-   ```
-
-   > **Expected output:** The test output is captured in the review record. Passing tests do not replace human inspection.
-
-5. **Complete `lab/starter/pr-review-checklist.md`.** Review correctness, code quality, security, dependencies, documentation, and agent-specific checks.
-
-   > **Success criteria:** The checklist includes the final decision and at least one concrete evidence item for every relevant category.
-
-6. **Request changes when evidence is missing.** If tests were not added, acceptance criteria are unmet, or unrelated files changed, write specific comments.
-
-   > **Expected output:** Comments include file/function, problem, expected behavior, and how to verify the fix.
-
-7. **Re-review after changes.** Confirm that new commits address the comments and do not add scope.
-
-   > **Success criteria:** The final diff satisfies the issue and the reviewer can approve or explicitly pause.
-
-### Exercise 3 no-access fallback
-
-If no PR exists, review the local diff with the same checklist. If no code change is possible, review a proposed implementation plan and mark which acceptance criteria still need execution evidence.
-
----
-
-## Exercise 4: Compare approved agents or use the manual baseline (25 minutes)
-
-### Objective
-
-Compare outcomes consistently. Do not assume any specific third-party or cloud agent is enabled.
-
-### Steps
-
-1. **Open the comparison template.** Use `lab/starter/agent-comparison-template.md`.
-
-   > **Check:** The template compares scope control, correctness, tests, review findings, time, and policy fit.
-
-2. **Define comparison inputs.** Use the same issue, starter project, required checks, and review rubric for every path.
-
-   > **Success criteria:** The comparison is fair because each path works from the same acceptance criteria.
-
-3. **Record the live path if approved.** For each approved agent or tool, note the output type, changed files, tests run, review findings, and any required iteration.
-
-   > **Expected output:** You can describe what the agent did and what the human reviewer accepted or rejected.
-
-4. **Record the manual baseline.** If no agent path is approved, compare the manual implementation against the same rubric.
-
-   > **Success criteria:** The lab still demonstrates how to evaluate an implementation even without live automation.
-
-5. **Make a decision.** Answer:
-
-   - Was the issue sufficiently bounded?
-   - Did the implementation match the acceptance criteria?
-   - Did the checks prove the intended behavior?
-   - Did policy or access constraints change the workflow?
-   - What would you improve before using this process with a real team?
-
-   > **Expected:** A concise recommendation to continue, revise the issue-writing standard, or pause for policy clarification.
-
-### Exercise 4 no-access fallback
-
-The manual baseline is the fallback. If no approved agent is available, complete the comparison by contrasting the expected automated path with the manual implementation and review evidence.
-
----
+**Visible evidence:** A signed review decision. Do not merge as part of this lab unless the training repository policy explicitly requires it.
 
 ## Final deliverable
 
-Submit a compact review packet containing:
+The packet is complete when another reviewer can trace:
 
-1. The bounded issue you wrote.
-2. The repository instructions or setup notes you reviewed.
-3. The proposed change or manual baseline.
-4. `npm test` output or a documented static-review fallback.
-5. The completed `pr-review-checklist.md`.
-6. The completed `agent-comparison-template.md`.
-7. A final decision: approve, request changes, or pause.
+```text
+same issue → reviewed setup → proposed change → test evidence → human decision
+```
 
-> **Done means:** The reviewer can identify the request, change, checks, approval, and fallback used when cloud-agent access was unavailable.
+## Troubleshooting
 
----
+| Issue | Response |
+| --- | --- |
+| Copilot cloud agent access is missing | Use the manual route. |
+| Setup workflow is not active on the default branch | Use the local baseline and record the setup gap. |
+| Session edits extra files | Stop or request a scoped correction. |
+| Test output is missing | Run the verified command before deciding. |
+| A test passes but response shape changed | Request changes and cite the preserved-behavior criterion. |
+| Review suggests a second feature | Record it as future work, outside this issue. |
 
-## Verification checklist
+## Solution reference
 
-- [ ] The issue has explicit acceptance criteria and constraints.
-- [ ] Current documentation and customer policy were checked.
-- [ ] A human reviewer assessed the change.
-- [ ] Required checks passed or a no-access/static fallback is documented.
-- [ ] Metered work used a customer-defined stop guard.
-- [ ] Starter files used: issue templates, `copilot-instructions.md`, `copilot-setup-steps.yml`, `sample-project/`, `pr-review-checklist.md`, and `agent-comparison-template.md`.
+`solution/` contains the completed issue journey, prepared diff, setup workflow, runnable solution project, test evidence, and final review decision.

@@ -25,4 +25,5 @@ The request does not say:
 - who owns the public wording;
 - who approves release.
 
-Give this request and the approved context to GitHub Copilot. Use the decision-tree interview to resolve the gaps. Do not treat this list as the answer.
+Give this request and the approved context to GitHub Copilot. Use the decision-tree
+interview to resolve the gaps. Do not treat this list as the answer.

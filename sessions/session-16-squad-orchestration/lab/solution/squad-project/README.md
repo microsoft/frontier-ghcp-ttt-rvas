@@ -1,56 +1,28 @@
-# Solution: Squad Project — Fully Initialized
+# Session 16 Reference Result
 
-This reference shows the project after all 4 exercises.
+This project shows the completed Issue 001 workflow: assignment, implementation,
+tests, lead review, and decision record.
 
-## Access and cost preflight
+## Verify the code
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the customer administrator policy before a live exercise. For metered work, use a customer-defined stop guard.
+```bash
+npm install
+npm test
+```
 
-## No-access fallback
+The suite should pass all baseline and input-validation tests.
 
-Review the project as a human-coordination example and complete the same work with the documented roles and decision log.
+## Inspect the evidence
 
-## Reviewed changes
+| Evidence | Path |
+| --- | --- |
+| Team and write boundaries | `.squad/team.md` |
+| Routing rules | `.squad/routing.md` |
+| Assignment proposal | `.squad/decisions/inbox/issue-001-proposal.md` |
+| Work log | `.squad/orchestration-log/issue-001.md` |
+| Test evidence and lead review | `.squad/reviews/issue-001-review.md` |
+| Durable decision | `.squad/decisions.md` |
+| Tabletop equivalent | `tabletop/issue-001-review-packet.md` |
 
-### .squad/ directory
-
-After `squad init`, the `.squad/` directory contains:
-
-- `team.md` — Team roster with 4 agents + Scribe + Ralph
-- `routing.md` — Work routing rules
-- `decisions.md` — Shared decisions (populated after agent work)
-- `agents/` — One folder per agent with `charter.md` and `history.md`
-- `orchestration-log/` — Entries from each agent dispatch
-- `log/` — Session logs
-
-### Code Changes (from agent work)
-
-After exercises 2–4, agents may make changes such as:
-
-- `src/routes/api.js` — New endpoints (GET by ID, PATCH, search, pagination)
-- `src/models/user.js` — New methods (update, search, paginate)
-- `tests/api.test.js` — Additional test cases for edge cases
-- `README.md` — Expanded with full API documentation
-- Possibly new files: `src/middleware/logger.js`, `src/middleware/rate-limit.js`, `src/utils/errors.js`
-
-### GitHub State
-
-- Multiple branches created by agents (`squad/{issue-number}-{slug}`)
-- Draft PRs opened by agents
-- Issues triaged with `squad:{member}` labels
-- Issues closed via PR merges
-
-## Using this reference
-
-The exact output varies because:
-
-1. Agent names differ per initialization (themed from different fictional universes)
-2. Agent code style varies by model and session
-3. Issue processing order depends on Ralph's triage sequence
-
-Verify:
-
-- `.squad/` structure is complete
-- `decisions.md` has entries
-- Agent `history.md` files show accumulated knowledge
-- Issues were processed (labels assigned, branches created, PRs opened)
+The live and tabletop routes produce the same facts. Only the coordination
+mechanism changes.

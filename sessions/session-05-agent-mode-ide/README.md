@@ -1,13 +1,15 @@
-# Session 05 — Agent Mode in the IDE
+# Session 05: Agent Mode in the IDE
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01–04
 **Duration:** 3 hours (1 hr trainer content + 2 hr lab)
 
 ## Overview
 
-Use agent mode for bounded, multi-step work in VS Code and JetBrains. It can plan changes, edit related files, run approved commands, respond to failures, and use configured MCP servers. This session focuses on defining a clear task boundary and reviewing the resulting work.
+Use agent mode for bounded, multi-step work in an IDE. Learners build and evolve
+one Todo API. They compare Ask and Agent mode on the same feature, redirect a
+multi-file change, and decide whether to accept, revise, or stop.
 
 ## Learning Outcomes
 
@@ -16,6 +18,7 @@ Use agent mode for bounded, multi-step work in VS Code and JetBrains. It can pla
 - Use the agent loop: plan, act, observe, review, and revise
 - Know when to use agent mode, Chat, or inline suggestions
 - Use TODO code actions to bridge IDE and cloud agent workflows
+- Review plans, diffs, commands, and test evidence at explicit checkpoints
 
 ## Session Materials
 

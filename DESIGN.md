@@ -485,13 +485,12 @@ hover/focus state. The TOC keeps navy current-page text. Session tabs use
 white fill on hover. Preserve visible focus outlines and native drawer/search
 behavior.
 
-Trainer controls provide start/pause/resume and reset, previous/next H2 navigation,
-and print. Section navigation updates the URL hash and moves focus to the heading.
-The timer uses tabular numerals. J/K/T shortcuts require the visible opt-in
-checkbox and ignore editable fields, interactive controls, and open dialogs.
-Controls are hidden until initialized; the guide and native TOC remain readable.
-Reduced motion removes animated scrolling and shortens CSS transitions.
-Print hides navigation and controls.
+Trainer controls provide start/pause/resume, reset, and print. The compact timer
+panel stays fixed in the bottom-right corner while the trainer scrolls. It respects
+mobile safe areas and wraps within the viewport. The timer uses tabular numerals.
+The T shortcut requires the visible opt-in checkbox and ignores editable fields,
+interactive controls, and open dialogs. Controls are hidden until initialized;
+the guide and native TOC remain readable. Print hides navigation and controls.
 
 ### Home hero and curriculum map
 
@@ -504,7 +503,7 @@ the navy overlay. Hover and selected links use navy on white. The selected label
 is also underlined. Links target focusable `#module-1` through `#module-7` headings;
 the targeted heading receives an RVAP Blue underline.
 
-**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 25 sessions and seven tracks visible; selection must not filter content.
+**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 27 sessions and seven tracks visible; selection must not filter content.
 
 `overrides/session.js` synchronizes `aria-current="location"` with the URL hash
 on initial load and `hashchange`, including deep links. Native anchor navigation
@@ -514,7 +513,7 @@ works without JavaScript; the script adds the current-location state.
 
 **The Filter/Selection Rule.** Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.
 
-The homepage and builder share `data/session-catalog.json`: 25 sessions across
+The homepage and builder share `data/session-catalog.json`: 27 sessions across
 seven modules. `hooks/presentation_embed.py` resolves material links from actual
 MkDocs file URLs. Search matches session ID, title, or description; Module and
 Level narrow the builder catalog. A result count and no-match message explain

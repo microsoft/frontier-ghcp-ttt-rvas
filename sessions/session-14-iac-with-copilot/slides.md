@@ -3,118 +3,107 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 14 — Infrastructure as Code with Copilot'
+footer: 'Session 14: Infrastructure as Code with Copilot'
 ---
 
 <!-- _class: lead -->
-# Infrastructure as Code with Copilot
+# Terraform from Modules to Security Gate
 ## DevOps & Infrastructure | Advanced
+
+Session 14 of 19 | 2 hours 30 minutes
 
 ---
 # Agenda
 
 | Time | Topic |
 | --- | --- |
-| 0:00–0:08 | IaC model |
-| 0:08–0:20 | Terraform module |
-| 0:20–0:30 | Bicep comparison |
-| 0:30–0:42 | Module composition |
-| 0:42–0:52 | Security review |
-| 0:52–1:00 | Validation and lab handoff |
+| 0:00–0:08 | Architecture and project model |
+| 0:08–0:20 | Module contracts |
+| 0:20–0:32 | Root composition |
+| 0:32–0:44 | Staged validation |
+| 0:44–0:54 | Security failure |
+| 0:54–1:00 | Bicep comparison and lab handoff |
 
 ---
-# IaC model
+# One required path
 
-| Concept | Terraform | Bicep |
+The learner path is Terraform:
+
+```text
+architecture → modules → root composition → format → init → validate → security gate
+```
+
+Bicep appears as a prepared comparison. Learners do not build both projects.
+
+---
+# Modules define contracts
+
+| Module | Consumes | Exposes |
 | --- | --- | --- |
-| Resource | `resource` block | `resource` declaration |
-| Reusable unit | `module` | `module` |
-| Input | `variable` | `param` |
-| Output | `output` | `output` |
-| Preview | `terraform plan` | `az deployment what-if` |
+| Network | CIDR and names | VPC and subnet IDs |
+| Compute | VPC and subnet IDs | Load balancer DNS and app security group |
+| Database | Private subnets and app security group | Database endpoint |
+
+Keep secrets in sensitive inputs. Do not copy values between layers.
 
 ---
-# IaC describes desired resources, not intent
-
-The same configuration can create a secure private service or an exposed one. The
-difference is in the details: identity, network paths, defaults, and dependencies.
-
-Before generating code, establish:
-
-- the architecture boundary and approved regions;
-- the inputs that come from the environment;
-- who owns state and applies changes;
-- the controls that must be visible in review.
-
-Copilot can draft resources. The architecture must come first.
-
----
-# Modules create contracts
-
-A module is useful when callers should depend on a stable interface rather than
-the resources inside it.
-
-| Module element | Review question |
-| --- | --- |
-| Input | Is this the smallest safe configuration surface? |
-| Output | Does this expose only what callers need? |
-| Resource | Does it meet the architecture and policy constraints? |
-| Documentation | Can another team use it without reading its internals? |
-
-Avoid modules that only hide a single resource without creating a useful boundary.
-
----
-# State and preview answer different questions
-
-State records what the IaC tool believes it manages. A plan or what-if compares
-the requested configuration with the target environment.
-
-Both need protection:
+# Prompt from fixed constraints
 
 ```text
-State: approved backend, access controls, no secrets in source
-Preview: approved identity, bounded environment, human review before apply
+Complete the network, compute, and database module contracts. Pass values through
+typed variables and outputs. Keep the database password sensitive. Do not add
+credentials, a backend, plan, or apply command.
 ```
 
-Never use generated IaC as proof that a deployment is safe. Use the preview to
-find changes, then review whether those changes should happen.
+The architecture owns the boundaries. Copilot drafts the files.
 
 ---
-# Prompt from facts
-
-```text
-Read this Terraform project. Add a network module for the supplied CIDRs.
-Expose only needed VPC and subnet IDs. Use variables and outputs; do not add
-credentials, public database access, or a plan/apply command.
-```
-
-Check every resource against the architecture before accepting it.
-
----
-# Security review
-
-- Block unneeded public access.
-- Restrict ingress by port and source.
-- Keep secrets out of source.
-- Encrypt storage and databases.
-- Limit IAM actions and resources.
-- Add required logging.
-
-Generated IaC is a draft. Human review owns the deployment decision.
-
----
-# Validate locally
+# Validate in stages
 
 ```bash
-terraform fmt
+terraform fmt -check -recursive
+terraform init -backend=false
 terraform validate
-az bicep build --file main.bicep
 ```
 
-A plan or what-if needs an approved environment, credentials, and stop guard.
+Fix the first failure before moving on. Each stage answers a different question.
+
+---
+# What local validation does not prove
+
+It does not check:
+
+- the current cloud state;
+- organization policy;
+- quota or regional availability;
+- the effect of an apply.
+
+A reviewed plan needs an approved identity and target environment.
+
+---
+# One intentional security failure
+
+```bash
+bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
+```
+
+The gate must fail. Learners investigate the cited lines, repair the file, and
+prove the rerun passes.
+
+---
+# Bicep is a comparison
+
+Show:
+
+- module inputs and outputs;
+- `@secure()` parameters;
+- `az bicep build`;
+- the same human review boundary.
+
+Six minutes. No second required build.
 
 ---
 <!-- _class: divider -->
 # Lab
 
-Generate Terraform and Bicep, secure the supplied Terraform, and compare approved Space context with a normal prompt. Do not provision cloud resources.
+Complete Terraform, validate each stage, and repair the security-gate failure.

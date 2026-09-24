@@ -1,0 +1,23 @@
+[
+  {
+    "id": "DOC-101",
+    "item": "Draft operator guide",
+    "status": "ready",
+    "reviewFlag": true,
+    "evidence": "docs://operator-guide-review"
+  },
+  {
+    "id": "API-204",
+    "item": "Add retry metric",
+    "status": "review",
+    "reviewFlag": false,
+    "evidence": "tests://retry-metric"
+  },
+  {
+    "id": "WEB-318",
+    "item": "Check empty state",
+    "status": "ready",
+    "reviewFlag": true,
+    "evidence": "preview://empty-state"
+  }
+]

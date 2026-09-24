@@ -5,8 +5,8 @@ description: Interview a request owner in dependency-ordered rounds before draft
 
 # Decision interview
 
-Use this skill when a request is unclear and the accountable owner must make
-product or delivery decisions before planning.
+Use this skill when a request is unclear and the accountable owner must decide
+product or delivery questions before planning.
 
 ## Method
 
@@ -32,5 +32,5 @@ Cover:
 
 ## Stop condition
 
-Stop when every branch has an accepted decision or a named open question with an
+Stop when each branch has an accepted decision or a named open question with an
 owner. Do not invent decisions, owners, dates, or evidence.

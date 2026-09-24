@@ -6,7 +6,8 @@
 
 **Interview record:** [`copilot-interview-record.md`](copilot-interview-record.md)
 
-**Draft review:** The request owner and delivery lead checked the decision brief and work item against the confirmed interview answers.
+**Draft review:** The request owner and delivery lead checked the decision brief
+and work item against the confirmed interview answers.
 
 ## Decision brief result
 

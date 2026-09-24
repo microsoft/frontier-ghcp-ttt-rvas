@@ -63,8 +63,8 @@ clarify the design first.
 ---
 # Writing through MCP is still an operation
 
-The model can prepare a complete issue plan. A person must approve the requested
-write with the target repository and expected result visible.
+Copilot can prepare the issue plan. A person approves the write only after seeing
+the target repository and expected result.
 
 After the write, fetch the issue again. This fresh read proves what the system
 stored, rather than what the tool claimed it stored.
@@ -111,7 +111,7 @@ Before approval, show:
 
 Copilot proposes the action.
 
-The learner records **Approve**, **Revise**, or **Reject**.
+Record **Approve**, **Revise**, or **Reject** before the write.
 
 No silent batch creation.
 

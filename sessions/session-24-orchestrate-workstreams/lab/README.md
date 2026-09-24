@@ -10,16 +10,18 @@
 
 ## Final deliverables
 
-- the approved orchestration plan;
-- live result packets from the child sessions;
-- one recorded intervention;
-- signed reviews and a release-readiness decision.
+- The approved orchestration plan
+- Live result packets from the child sessions
+- One recorded intervention
+- Signed reviews and a release-readiness decision
 
 ## Scenario
 
 The fictional **Service Request Portal** is approaching a release review. You are the delivery manager. You need evidence for the decision, but you do not want several sessions editing the same record.
 
-You will select the parent objective and child issues created in Session 22, confirm their state in the Session 23 canvas, and start four workstreams through GitHub Copilot orchestration. You will then review each result and update the shared plan.
+Select the parent objective and child issues from Session 22, confirm their state
+in the Session 23 canvas, and start four workstreams through GitHub Copilot
+orchestration. Review each result, then update the shared plan.
 
 ## Required preflight
 
@@ -89,7 +91,8 @@ required packet, and stop condition before allowing it to continue.
 
 ## Exercise 2: Monitor and intervene (30 min)
 
-Use **My work**, the session list, the agents panel, or the current equivalent.
+Use **My work**, the session list, the agents panel, or the current session
+management surface.
 
 For each child session:
 
@@ -99,9 +102,8 @@ For each child session:
 4. Send a short instruction when you redirect or stop.
 5. Save the session link and action in the orchestration plan.
 
-At least one child session must receive a focused redirect that improves scope,
-evidence, or packet structure. Do not redirect a session merely to complete the
-exercise.
+Redirect at least one child session when a real scope, evidence, or packet problem
+needs correction. **Do not invent a reason to redirect.**
 
 Use these guards:
 
@@ -148,7 +150,7 @@ Open `starter/shared-work-artifact-template.md`.
 
 **Expected result:** One release-readiness record that traces each decision to a live, reviewed packet.
 
-## Deliverables
+## Completion check
 
 - [ ] Completed orchestration plan with live child-session identifiers.
 - [ ] Management action for each child session.

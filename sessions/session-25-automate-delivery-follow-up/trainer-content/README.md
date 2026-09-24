@@ -2,10 +2,10 @@
 
 ## Delivery objective
 
-Learners create one useful GitHub Copilot Automation from the manual delivery
-workflow. They run it twice in draft-only mode with an approved input change
-between runs, compare the evidence, and decide whether to keep, revise, disable,
-or pause it.
+Teach learners to turn the manual delivery workflow into one bounded GitHub
+Copilot Automation. They run it twice in draft-only mode with an approved input
+change between runs, compare the evidence, and decide whether to keep, revise,
+disable, or pause it.
 
 Use the fictional **Service Request Portal** weekly status workflow. Do not configure enterprise policies or repeat the Session 17 administration material.
 
@@ -64,7 +64,7 @@ The lab selects **A1: Draft**. The workflow may retrieve approved issue state an
 
 ### 2. Match approval to consequence
 
-Approval is not a label added after the run. Define it before the run:
+Define approval before the run:
 
 - what the reviewer checks;
 - which evidence must exist;
@@ -76,7 +76,7 @@ Higher autonomy needs a smaller action boundary, stronger evidence, and a faster
 
 ### 3. Write the contract
 
-Use `lab/starter/automation-contract-template.md`. A useful contract names:
+Use `lab/starter/automation-contract-template.md`. The contract names:
 
 - purpose and cadence;
 - owner, reviewer, and escalation contact;
@@ -138,7 +138,8 @@ The reference run saves 15 minutes:
 42 - 8 - 12 - 4 - 3 = 15 minutes
 ```
 
-Do not count generated words, agent activity, or elapsed calendar time as value. A rejected run can save no useful time even when it finishes quickly.
+Do not count generated words, agent activity, or elapsed calendar time as value.
+A rejected run may save no useful time, even when it finishes quickly.
 
 ## Decision language
 

@@ -32,7 +32,7 @@ Before the session:
 
 > "Make request status clearer so people stop asking support."
 
-This is an idea, not sprint-ready work.
+This is an idea. It is not sprint-ready work.
 
 It hides choices about users, scope, data, behavior, ownership, and approval.
 
@@ -57,9 +57,10 @@ Do not jump from one sentence to an issue template.
 
 # Interview as a decision tree
 
-Each answer can unlock new questions.
+Each answer can raise new questions.
 
-Ask the current **frontier**: every decision that can be made now without guessing about an unsettled decision.
+Ask the current **frontier**: every decision the owner can make now without
+guessing about an unsettled decision.
 
 Questions that depend on this round wait for the next round.
 
@@ -87,7 +88,7 @@ For each question:
 3. Recommend an answer and explain the tradeoff.
 4. Wait for the request owner to decide.
 
-GitHub Copilot frames the choice. It does not own the choice.
+GitHub Copilot frames the choice. **A person owns the choice.**
 
 ---
 
@@ -100,7 +101,7 @@ GitHub Copilot frames the choice. It does not own the choice.
 | Known technical limits | Which tradeoff to accept |
 | Policy and data rules | Who approves release |
 
-Mark an unverified fact. Never turn it into an assumption.
+Mark a fact as unverified. Do not present it as settled.
 
 ---
 
@@ -161,7 +162,7 @@ Approved brief
   → preserve unrelated decisions
 ```
 
-Do not restart the interview or rewrite settled scope without a reason.
+Do not restart the interview or rewrite settled scope without evidence.
 
 ---
 
@@ -214,7 +215,7 @@ The interview always runs with **GitHub Copilot**.
 | MCP | Copilot prepares and reviews the approved update before the MCP tool sends it |
 | Browser | Copilot prepares the exact values, then the learner enters and verifies them |
 
-There is no static or no-Copilot route.
+**There is no static or no-Copilot route.**
 
 ---
 

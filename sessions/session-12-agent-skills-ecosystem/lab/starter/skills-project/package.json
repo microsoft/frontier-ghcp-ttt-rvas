@@ -1,17 +1,19 @@
 {
   "name": "skills-lab-project",
   "version": "1.0.0",
-  "description": "Sample API project for the Agent Skills lab",
+  "description": "Synthetic project for agent-skill trigger and precondition tests",
+  "private": true,
   "main": "src/api/routes.js",
   "scripts": {
     "start": "node src/api/routes.js",
-    "test": "jest --verbose"
+    "test": "node --test test/*.test.js",
+    "validate:skill": "node scripts/validate-skill.js ../../solution/skills-project/.github/skills/api-design",
+    "demo": "node scripts/demo.js"
   },
   "dependencies": {
     "express": "^4.21.0"
   },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "supertest": "^6.3.4"
+  "engines": {
+    "node": ">=20"
   }
 }

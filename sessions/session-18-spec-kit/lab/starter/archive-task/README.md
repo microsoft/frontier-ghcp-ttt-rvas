@@ -1,7 +1,7 @@
 # Archive Task Starter
 
-This small Python project stores tasks in memory. It already creates and lists
-active tasks. The lab adds archive behavior through the Spec Kit workflow.
+This small Python project stores tasks in memory. It creates and lists active
+tasks. The lab adds archive behavior through the Spec Kit workflow.
 
 ## Run the baseline
 

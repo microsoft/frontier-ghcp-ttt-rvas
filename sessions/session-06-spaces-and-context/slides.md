@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session 06 — Context Workflows'
+footer: 'Session 06: Context Workflows'
 ---
 
 <!-- _class: lead -->
@@ -17,10 +17,10 @@ footer: 'Session 06 — Context Workflows'
 
 Use Enterprise Cloud as the governance baseline.
 
-1. Verify current official GitHub documentation and customer administrator policy.
+1. Verify current official GitHub documentation and the applicable administrator policy.
 2. Confirm repository scope and approved data sources.
 3. Use a non-sensitive, bounded question.
-4. For metered work, define a customer-owned threshold, escalation route, and stop guard.
+4. For metered work, define an approved threshold, escalation route, and stop guard.
 
 ---
 
@@ -140,12 +140,12 @@ Do not use a Space to collect restricted information without approval.
 # Curate for a purpose
 
 ```text
-Space: Checkout API
-├── API contract
-├── checkout route and service
-├── focused tests
+Space: Storefront API
+├── API specification
+├── product route and model
+├── architecture note
 ├── error-handling conventions
-└── approved migration notes
+└── repository instructions
 ```
 
 Exclude unrelated services, production data, secrets, abandoned proposals, and
@@ -245,7 +245,7 @@ Never store secrets, restricted data, or guesses. Verify current availability an
 Prompt:
 
 ```text
-Add validation to the checkout endpoint.
+Add a low-stock report endpoint.
 ```
 
 Expected discussion:
@@ -263,11 +263,11 @@ Do not score the response by confidence or length.
 # Demo: with a context packet
 
 ```text
-Using the checkout API contract, route, service, focused tests, and repository
-instructions in this Space, propose the smallest validation change.
+Using the Storefront API specification, product route, product model, architecture
+note, and repository instructions, propose the smallest low-stock endpoint change.
 
 First list acceptance criteria and assumptions. Do not add dependencies.
-End with the focused test command and cite the evidence used.
+End with two verification requests and cite the evidence used.
 ```
 
 Compare outputs for correctness, scope, assumptions, evidence, and testability.
@@ -276,17 +276,18 @@ Compare outputs for correctness, scope, assumptions, evidence, and testability.
 
 # Concrete code target
 
-```ts
-export function parseQuantity(value: unknown): number {
-  if (!Number.isInteger(value) || Number(value) < 1) {
-    throw new ValidationError("quantity must be a positive integer");
+```js
+function parseThreshold(value) {
+  if (value === undefined) return 10;
+  if (!/^\d+$/.test(value)) {
+    throw new Error("threshold must be a non-negative integer");
   }
   return Number(value);
 }
 ```
 
-Ask whether the API contract permits numeric strings. The correct next action may be
-clarification rather than code generation.
+Ask where the static report route must appear relative to `/:id`. The correct next
+action may be clarification rather than code generation.
 
 ---
 
@@ -308,13 +309,13 @@ Schedule reviews; do not wait for failures.
 
 Learners will:
 
-1. curate a Space for the provided project;
-2. add code, documentation, and specifications intentionally;
-3. write repository instructions and three prompt files;
-4. compare no-context, instructions-only, and Space-grounded responses;
-5. document source ownership and a maintenance trigger.
+1. keep one Storefront API for the full lab;
+2. select the smallest approved source set;
+3. add repository instructions and a low-stock endpoint;
+4. compare one logging task across context levels;
+5. store and test three reusable prompt files.
 
-**Deliverable:** A reviewable context setup with a before/after comparison.
+**Final deliverable:** A reviewable Storefront API context package with comparison and verification evidence.
 
 ---
 

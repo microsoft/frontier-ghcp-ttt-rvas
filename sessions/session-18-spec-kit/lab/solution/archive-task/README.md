@@ -1,9 +1,9 @@
 # Archive Task Reference Result
 
-This directory shows one valid final result after the archive feature converged and
-the living specification evolved to include restore behavior. Spec Kit output can
-vary with the approved release and accepted clarifications, so compare behavior
-and traceability rather than wording.
+This directory shows one valid result after the archive feature converged and the
+living specification added restore behavior. Spec Kit output can vary with the
+approved release and accepted clarifications. Compare behavior and traceability,
+not wording.
 
 Run the reference tests:
 
@@ -26,5 +26,5 @@ Release-specific scripts, templates, and Copilot integration skills are omitted
 from this reference. Learners generate those files with their approved Spec Kit
 release.
 
-`review.md` is a training review record. It is not a generated Spec Kit
-configuration file.
+`review.md` is a training review record, not a generated Spec Kit configuration
+file.

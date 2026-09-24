@@ -1,0 +1,11 @@
+{
+  "request": "Rewrite the installation section in README.md.",
+  "paths": [
+    "README.md"
+  ],
+  "acceptanceCriteria": [
+    "Keep the existing command examples."
+  ],
+  "reviewer": "docs-reviewer",
+  "testCommand": "not required"
+}

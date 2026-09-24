@@ -63,7 +63,9 @@ The learner gave GitHub Copilot approved evidence that the portal stores an inte
 
 ## Shared understanding
 
-The request owner confirmed the Copilot summary. One implementation detail remains: the service operations manager must approve the two-business-day stale threshold before release. It does not block backlog refinement.
+The request owner confirmed the Copilot summary. One implementation detail remains:
+the service operations manager must approve the two-business-day stale threshold
+before release. It does not block backlog refinement.
 
 ## Reopened branch: visibility constraint
 

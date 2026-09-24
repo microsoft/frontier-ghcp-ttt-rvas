@@ -16,13 +16,14 @@ Keep refresh, planning-status update, risk update, decision record, and summary.
 
 ## Verification
 
-The learner records live issue values. The visible canvas and Copilot report must match. Any difference between planning status and GitHub state must be explicit.
+Record live issue values. The visible canvas and Copilot report must match. Label
+any difference between planning status and GitHub state.
 
 ## Review decision
 
 - **Approve / Revise / Pause:** Approve
 - **Reviewer:** Delivery reviewer
-- **Reason:** The canvas provides a useful planning view without hidden external writes.
+- **Reason:** The canvas supports planning without hidden external writes.
 
 ## Drift and reconciliation
 

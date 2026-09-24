@@ -1,58 +1,180 @@
-# Session 12 Lab — Repository Skills
+# Session 12 Lab: Test Skill Selection and Failure Behavior
 
-**Duration:** 2 hours · **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07 and 11 · **Deliverable:** Two reviewed skills and a repository-sandbox run record
+**Duration:** 2 hours
+
+**Difficulty:** Advanced
+
+**Prerequisites:** Sessions 01–07 and 11
+**Deliverable:** A valid repository skill with trigger, non-trigger, failure, and
+bounded-run evidence
+
+## Lab overview
+
+The procedure is only half the skill. The description must select the right work,
+and missing preconditions must stop the run.
+
+| Part | Work | Time |
+| --- | --- | --- |
+| 1 | Build and validate the skill directory | 30 min |
+| 2 | Test a matching task | 25 min |
+| 3 | Test a non-matching task | 20 min |
+| 4 | Test visible precondition failure | 20 min |
+| 5 | Run the bounded demonstration and review | 25 min |
 
 ## Before you start
 
-Use Enterprise Cloud as the governance baseline. Verify current documentation and customer policy for the selected repository and surface. Create, review, and share skills only through `.github/skills/`. Set a customer-owned meter, threshold, escalation path, and stop guard for metered work.
+Read the [course safety baseline](../../learning-safety-baseline.md). Use the
+synthetic repository sandbox.
 
-If no approved surface can load a skill, create and review the artifacts, use them as manual checklists, and record the same evidence.
+You need Node.js 20 or later and a writable repository copy. An approved GitHub
+Copilot surface is optional. If Node.js is unavailable, stop and do not continue
+the executable lab.
 
-| Exercise | Task | Time |
-| --- | --- | --- |
-| 1 | API-design skill | 30 min |
-| 2 | Development-workflow skill | 30 min |
-| 3 | Candidate review | 30 min |
-| 4 | Bounded integrated workflow | 30 min |
+**Fallback:** use `SKILL.md` as a manual checklist and run the local contract
+runner. Record live loading as **not executed**.
 
-## Setup
+Do not connect the static MCP configuration in `integrated-workflow/`. Do not run
+unreviewed community scripts.
 
-Use the starter template, sandbox guide, community catalog, skills project, and static integrated-workflow assets. In a writable sandbox:
+## Part 1: Build and validate the skill directory
 
-```bash
-mkdir -p ~/copilot-labs/session-12
-cp -R lab/starter/skills-project ~/copilot-labs/session-12/skills-project
-cd ~/copilot-labs/session-12/skills-project
-mkdir -p .github/skills
-npm install
+Create this exact structure:
+
+```text
+.github/
+└── skills/
+    └── api-design/
+        └── SKILL.md
 ```
 
-## 1. API-design skill
+`SKILL.md` must start with:
 
-Read `lab/starter/skill-template/SKILL.md` and `src/api/routes.js`. Create `.github/skills/api-design/SKILL.md`. Define the `src/api/` trigger, required data and review conditions, the procedure, focused validation, a manual fallback, and the maintenance owner. Include tasks it must not cover.
+```yaml
+---
+name: api-design
+description: Use for creating or reviewing REST routes under src/api/ when acceptance criteria, a reviewer, and a verified focused test command are available. Do not use for documentation, UI, deployment, or generated clients.
+---
+```
 
-Have a peer explain when it applies and name a behavior it prevents. Apply the procedure manually to one small route review.
+The body must define preconditions, procedure, validation, failure behavior, and
+maintenance.
 
-## 2. Development-workflow skill
+Run:
 
-Read `lab/starter/repository-sandbox-guide.md`. Create `.github/skills/development-workflow/SKILL.md` for one bounded workflow, such as a bug fix or API test. Name the repository state, paths, approval requirement, tests or manual evidence, recovery step, fallback, and owner.
+```bash
+cd sessions/session-12-agent-skills-ecosystem/lab/starter/skills-project
+npm install
+npm run validate:skill
+```
 
-Keep the procedure reusable. Do not turn one issue into a universal procedure.
+The validator checks the directory name, exact `SKILL.md` file name, required
+frontmatter, and body sections.
 
-## 3. Candidate review
+**Checkpoint:** the validator passes. A mismatched directory and frontmatter name
+fails visibly in the automated suite.
 
-Read `lab/starter/community-skills-catalog.md`. Select one example, then inspect its trigger, scope, tools, data, external services, validation, provenance, and license. Mark it accept for adaptation, revise, or reject. Adapt it only after review, with repository-specific examples and a manual fallback. Never execute a bundled script during evaluation.
+## Part 2: Test the trigger
 
-## 4. Bounded integrated workflow
+Open `scenarios/trigger.json`. It names a REST route under `src/api/`, acceptance
+criteria, a reviewer, and `npm test`.
 
-Review the static files in `lab/starter/integrated-workflow/`, including the incomplete deployment skill and `mcp.json`. Complete a documentation-only checklist or add validation guidance. Do not connect MCP or other tools until exact approval exists. Run the skill manually and record one improvement and one validation result.
+Run all contract tests:
 
-## Completion checklist
+```bash
+npm test
+```
 
-- [ ] `.github/skills/api-design/SKILL.md` is reviewed.
-- [ ] `.github/skills/development-workflow/SKILL.md` is reviewed.
-- [ ] One candidate has an accept, revise, or reject decision.
-- [ ] One skill has been applied manually to a bounded task.
-- [ ] Tool configuration remains static unless explicitly approved.
-- [ ] Each skill has scope, validation, fallback, and an owner.
+The matching scenario must return:
+
+```json
+{
+  "status": "applied",
+  "skill": "api-design"
+}
+```
+
+The full result also lists the bounded paths and ordered checks. The skill may not
+expand the task to deployment, documentation, or unrelated refactoring.
+
+## Part 3: Test the non-trigger
+
+Open `scenarios/non-trigger.json`. The request changes `README.md`.
+
+Expected result:
+
+```json
+{
+  "status": "not_applicable",
+  "skill": "api-design",
+  "reason": "Task is outside REST route work under src/api/."
+}
+```
+
+A useful skill stays quiet outside its boundary. Do not rewrite the description to
+match every software task.
+
+**Checkpoint:** the documentation scenario does not apply the API procedure.
+
+## Part 4: Test a missing precondition
+
+Open `scenarios/failure.json`. The task matches the API trigger but has no reviewer.
+
+Expected result:
+
+```json
+{
+  "status": "blocked",
+  "skill": "api-design",
+  "reason": "Missing precondition: human reviewer."
+}
+```
+
+This is a successful test of failure behavior. Do not replace the missing reviewer,
+skip the condition, or return an applied result.
+
+## Part 5: Run the bounded demonstration
+
+```bash
+npm run demo
+```
+
+The command runs two scenarios:
+
+1. a matching route review that applies the skill to named files;
+2. the same class of work without a reviewer, which stops.
+
+Compare the output with
+[`solution/skills-project/RUN-EVIDENCE.md`](solution/skills-project/RUN-EVIDENCE.md).
+
+If an approved surface can load the skill, submit the same two prompts without
+changing the files. Record whether the surface selected the skill and whether it
+stopped on the missing reviewer. Otherwise, mark live loading as **not executed**.
+
+Review one candidate from `starter/community-skills-catalog.md`. Record its source,
+license, scripts, network use, data flow, and repository fit. Do not execute it.
+
+## Final deliverable
+
+1. `.github/skills/api-design/SKILL.md`.
+2. Passing directory and file validation.
+3. Trigger and non-trigger results.
+4. A visible missing-precondition result.
+5. One bounded run record and a human review decision.
+
+## Verification
+
+- [ ] The directory is lowercase and uses hyphens.
+- [ ] The file is named exactly `SKILL.md`.
+- [ ] `name` matches the directory.
+- [ ] `description` states when to use and when not to use the skill.
+- [ ] The trigger scenario applies the skill.
+- [ ] The documentation scenario does not apply it.
+- [ ] The missing-reviewer scenario returns `blocked`.
+- [ ] Invalid skill structure fails validation.
+- [ ] `npm test` passes.
+- [ ] The bounded run shows both correct application and visible failure.
+- [ ] Live loading is recorded as executed or **not executed**.
+
+## References
+
+- [Adding agent skills for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills)

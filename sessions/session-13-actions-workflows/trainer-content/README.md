@@ -1,120 +1,119 @@
-# Session 13 — GitHub Actions & Workflow Generation
+# Session 13 Trainer Guide: One Application Through GitHub Actions
 
-**Module:** 4 — DevOps & Infrastructure with Copilot  
-**Difficulty:** Intermediate  
-**Prerequisites:** Sessions 01–05  
-**Duration:** 1 hour trainer content + 2 hours lab
-**Last updated:** April 2026
+## Delivery objective
 
-## Prepare safely
-
-Read the [course safety baseline](../../learning-safety-baseline.md). Before any push, workflow run, external action, or deployment, confirm repository access, customer policy, and the target environment. Use the starter project and synthetic values. Learners can draft and peer-review workflows locally when access is unavailable.
-
-Generated workflows need human review. Check triggers, permissions, secrets, action references, commands, artifact retention, and deployment gates before committing.
-
-**Preflight**
-
-- Open the starter Node.js project with its existing `lint` and `test` scripts.
-- Confirm repository access, approved action sources, target environment, reviewer, and fallback.
-- Prepare a reviewed `ci.yml` and one failed-step excerpt. Do not plan a live deployment.
+Use `copilot-webapp` from start to finish. Learners first prove the application
+works locally. They then create CI, design deployment, repair workflow failures,
+and validate a JavaScript action against that same codebase.
 
 ## One-hour plan
 
-| Time | Topic | Trainer move |
-| --- | --- | --- |
-| 0:00–0:08 | Actions model | Review workflow, event, job, step, runner, secret, and artifact. |
-| 0:08–0:18 | Generate CI | Turn a small Node.js requirement into `ci.yml`. |
-| 0:18–0:28 | Debug safely | Use one failing step and the relevant YAML. |
-| 0:28–0:38 | Reuse and custom actions | Compare a reusable workflow, composite action, and JavaScript action. |
-| 0:38–0:50 | Demo | Generate and review a bounded CI pipeline. |
-| 0:50–0:56 | Security review | Apply least privilege and action pinning. |
-| 0:56–1:00 | `gh-aw` and lab handoff | Explain the source/compiled pair and guardrails. |
-
-Keep the demo to CI and a plan-level deployment design. If it stalls, review a prepared workflow. Do not consume lab time troubleshooting a live run.
-
-## Actions model and prompting
-
-A workflow is YAML under `.github/workflows/`. Events start workflows; jobs run on runners; steps run actions or commands. Give Copilot the project context, trigger, commands that already exist, expected artifacts, and security constraints.
-
-```text
-Read package.json and existing tests. Create .github/workflows/ci.yml.
-Run on pull requests and pushes to main. Use Node.js 20, npm ci, the existing
-lint and test scripts, npm caching, contents: read, and an artifact for test results.
-Do not add dependencies or deployment steps.
-```
-
-Review the result against the repository. Copilot can produce valid-looking YAML that calls a missing script or assumes an artifact path.
-
-Use this as the bounded demo request:
-
-```text
-Read package.json and existing tests. Create .github/workflows/ci.yml.
-Run on pull requests and pushes to main. Use Node.js 20, npm ci, the existing
-lint and test scripts, npm caching, contents: read, and an artifact for test results.
-Do not add dependencies or deployment steps.
-```
-
-Learners should identify the workflow file, trigger, existing commands, explicit `contents: read` permission, and any artifact path that needs verification. At 0:44, stop a stalled generation or run and review the prepared workflow instead.
-
-For failures, provide the workflow and the failed step, not an entire run log:
-
-```text
-This workflow fails at "Run tests." Here is the step output and ci.yml.
-Identify the likely cause, propose the smallest fix, and explain what to verify.
-```
-
-## Reuse choices
-
-| Need | Use |
+| Time | Segment |
 | --- | --- |
-| Full job or pipeline shared between repositories | Reusable workflow with `workflow_call` |
-| Repeated steps inside one job | Composite action |
-| Logic, inputs, and outputs beyond YAML | JavaScript or Docker action |
+| 0:00–0:08 | Application baseline and Actions model |
+| 0:08–0:18 | Generate CI from repository facts |
+| 0:18–0:28 | Design staging and production jobs |
+| 0:28–0:40 | Diagnose workflow failures |
+| 0:40–0:52 | Validate a JavaScript action |
+| 0:52–1:00 | Security review and lab handoff |
 
-Start with the smallest form that fits. A custom action still needs metadata, tests where practical, versioning, and code review.
+The timings match [`slides.md`](../slides.md). Stop a live tool response at the end
+of its segment and use the prepared solution.
 
-## Workflow review
+## Prepare
 
-Use this checklist before commit:
+- Run the application tests, lint, and build before delivery.
+- Keep the supplied broken workflows unchanged for the investigation.
+- Install the solution action dependencies.
+- Prepare one passing threshold and the intentional threshold-101 failure.
+- Do not configure a live deployment target.
 
-- Set an explicit `permissions` block with the minimum access.
-- Keep real values in secrets or use OIDC. Never put credentials in YAML.
-- Use `pull_request` for untrusted code; scrutinize `pull_request_target`.
-- Pin third-party actions to an approved immutable SHA in production.
-- Keep deployment environments and required reviewers outside the workflow where platform policy requires them.
-- Restrict artifacts and set retention to match policy.
-- Review runner choice, concurrency, and every command that handles untrusted input.
+## 0:00–0:08: Baseline and model
 
-```yaml
-permissions:
-  contents: read
-```
-
-## Cloud agent and Actions
-
-The cloud agent can work in an Actions-backed environment. Its setup and repository workflows remain code that must be reviewed. Do not assume it can view logs, retry jobs, or use permissions beyond what the approved configuration provides.
-
-## Agentic Workflows with `gh-aw`
-
-`gh-aw` stores agentic-workflow intent in Markdown and compiles it to a `.lock.yml` GitHub Actions artifact:
+Run:
 
 ```bash
-gh extension install github/gh-aw
-gh aw init daily-repo-status
-gh aw compile daily-repo-status
-gh aw logs daily-repo-status
+cd lab/starter/webapp
+npm ci
+npm test
+npm run lint
+npm run build
+test -f dist/app.js
 ```
 
-Review the Markdown source first, then inspect the compiled file. Keep permissions read-only unless a reviewed `safe-outputs` write is needed, use the tool allow-list, and audit runs. Do not install or run the optional lab extension without approval.
+Tie each workflow step to a repository fact. `npm test`, `npm run lint`, and
+`npm run build` exist because `package.json` defines them. `dist/` is valid because
+the build command creates it.
 
-## Lab handoff
+## 0:08–0:18: Generate CI
 
-Learners build a CI workflow, design CD from the supplied specification, fix the two broken workflows, and complete a bounded JavaScript action. They review every output against the checklist. The optional `gh-aw` exercise adds a reviewed `.md` and `.lock.yml` pair only when access and policy permit it.
+Use this bounded request:
 
-## Likely questions
+```text
+Read package.json, tests, and scripts/build.js in copilot-webapp. Create ci.yml
+for pull requests and pushes to main. Use Node.js 20, npm ci, the existing lint,
+test, and build scripts, npm caching, contents: read, and a seven-day dist artifact.
+Do not add dependencies or deployment steps.
+```
 
-**Can a generated workflow be committed immediately?** No. Review its triggers, permissions, action references, commands, secrets, and deployment gates first.
+Parse the YAML, then rerun the local application checks. A valid workflow can
+still call a missing script or upload a path that never exists.
 
-**Why pin third-party actions?** An approved immutable SHA fixes the reviewed action version for production use.
+## 0:18–0:28: Deployment design
 
-**What if a live workflow run is unavailable?** Review the starter YAML and failed-step excerpt locally. The same review evidence is required.
+Open `lab/starter/deployment-spec.md`. Ask learners to find the required trigger,
+environments, secret names, health checks, and rollback rule before generating
+YAML.
+
+Keep this at design level. Repository settings enforce production reviewers, and
+the supplied endpoints are placeholders. No live deployment occurs.
+
+## 0:28–0:40: Diagnose failures
+
+Run the YAML parser against `broken-ci.yml` and let the parser reveal the first
+fault. After learners repair it, inspect action versions, permissions, and package
+commands.
+
+For `broken-deploy.yml`, parsing succeeds. Use the grep command from the lab to
+separate syntax from behavior. Each repair needs a source: platform support,
+the deployment specification, the Git ref format, or the application checkout
+requirement.
+
+## 0:40–0:52: Validate the action
+
+Explain why custom action validation needs two outcomes. A passing run proves the
+action can scan the application and emit outputs. The threshold-101 run proves the
+action can fail the job.
+
+Run the exact commands in the lab. Show the generated step summary and exit code.
+Do not use a repository workflow run as the only proof.
+
+## 0:52–1:00: Review and handoff
+
+Review:
+
+- triggers and token permissions;
+- approved action references;
+- secret references and environment gates;
+- artifact contents and retention;
+- exact local proof for each claim.
+
+Point learners to `lab/evidence.md`. The lab is complete when the workflow files,
+action, command results, and reviewer decisions agree.
+
+## Access policy
+
+GitHub Copilot access is required. Stop if it is unavailable. Repository access,
+Actions, and `act` are optional. The local path remains the required path and uses
+no credentials or deployment target.
+
+## Common questions
+
+**Does valid YAML prove the workflow works?** No. It proves only that the file
+parses. Run the application commands and review the workflow semantics.
+
+**Why use one application?** The same facts support every decision. Learners do
+not waste time reconstructing a new project for each exercise.
+
+**Why force an action failure?** A custom action that always exits successfully
+has not proved its enforcement behavior.

@@ -1,74 +1,215 @@
-# Session 10 Lab — MCP Servers & Custom Tool Integration
+# Session 10 Lab: Build and Test an MCP Server
 
-**Duration:** 2 hours · **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07 · **Deliverable:** A custom MCP server with three tools and test evidence
+**Duration:** 2 hours
+
+**Difficulty:** Advanced
+
+**Prerequisites:** Sessions 01–07
+**Deliverable:** A three-tool local MCP server with automated tests, Inspector
+evidence, and recorded good and bad requests
+
+## Lab overview
+
+Build one tool completely before adding the next two. This keeps the protocol
+surface small enough to review.
+
+| Part | Work | Time |
+| --- | --- | --- |
+| 1 | Preflight and inspect the staged server | 15 min |
+| 2 | Prove `get_weather` from schema through handler | 30 min |
+| 3 | Inspect good and bad protocol calls | 25 min |
+| 4 | Add `get_forecast` and `convert_temperature` | 35 min |
+| 5 | Run the full verification and record evidence | 15 min |
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Check current [MCP client and server configuration](https://docs.github.com/copilot/customizing-copilot/extending-copilot-chat-with-mcp), authentication, and tool approval with the customer. Use synthetic data only. Define a customer-owned meter, threshold, and stop guard before metered work.
+Read the [course safety baseline](../../learning-safety-baseline.md). Use only the
+supplied synthetic data.
 
-If access is unavailable, build and test the server locally, then trace the scenarios in `lab/starter/integration-test.md`. Do not connect Copilot or external services.
+You need:
 
-| Exercise | Task | Time |
-| --- | --- | --- |
-| 1 | Inspect an approved GitHub MCP connection | 30 min |
-| 2 | Query the synthetic SQLite database | 30 min |
-| 3 | Build the weather MCP server | 40 min |
-| 4 | Run integration scenarios | 20 min |
+- Node.js 20 or later;
+- npm access to the approved package registry;
+- a writable copy of this repository;
+- MCP Inspector 2.5.0 through the approved npm source.
 
-## Setup
+GitHub Copilot access is optional. If it is unavailable, use the local tests and
+Inspector commands. If Node.js or approved package access is unavailable, stop and
+do not continue the executable lab.
 
-- VS Code with GitHub Copilot
-- Node.js 20+ (`node --version`)
-- `gh` installed and authenticated, only if an approved training connection uses it
+**Fallback:** the local tests and Inspector route are the intentional no-Copilot
+path. Record any command that cannot run as **not executed**.
 
-## 1. Inspect the GitHub MCP configuration
+Do not copy or commit `node_modules`. Each project has a package manifest and lockfile.
 
-Read `lab/starter/mcp-config/mcp.json`. It shows a named server configuration with `command`, `args`, and optional `env`. Do not add a token to a tracked file. Use an approved preconfigured connection only with a synthetic or training repository.
-
-In agent mode, inspect the tools panel. Record the exposed tool names, descriptions, inputs, and approval behavior. If allowed, try the supplied repository queries and verify each result before relying on it. Otherwise, continue with Exercise 2.
-
-## 2. Query the synthetic database
+## Part 1: Preflight and inspect the staged server
 
 ```bash
-cd lab/starter/db-project
-npm install
-node setup-db.js
-node seed-data.js
-npm run query -- "SELECT COUNT(*) FROM products"
-npm run query -- "SELECT * FROM products LIMIT 3"
+cd sessions/session-10-mcp-servers/lab/starter/custom-mcp
+npm ci
+npm test
 ```
 
-Configure the approved local SQLite MCP server with the supplied database path. Restart the server, inspect its tool catalog, and ask for the schema before requesting:
+Read:
 
-- the five most expensive products;
-- product counts by category;
-- orders with customer names and amounts.
+```text
+package.json
+src/index.js
+test/get-weather.test.js
+```
 
-Compare results with `lab/solution/db-project/README.md`. Fix path and setup errors before changing queries.
+The staged server exposes one tool. Find these four parts:
 
-## 3. Build the weather server
+1. the `get_weather` tool definition;
+2. its JSON Schema;
+3. `invokeTool`, which validates and handles the call;
+4. the protocol handlers that connect MCP requests to the catalog and handler.
+
+**Checkpoint:** `npm test` reports three passing tests. The tool catalog contains
+only `get_weather`.
+
+## Part 2: Prove `get_weather` from schema through handler
+
+Trace this request:
+
+```json
+{
+  "name": "get_weather",
+  "arguments": {
+    "city": "Oslo"
+  }
+}
+```
+
+The schema requires a non-empty `city` and rejects extra properties. The handler
+returns deterministic data:
+
+```json
+{
+  "city": "Oslo",
+  "temperature": 30,
+  "unit": "celsius",
+  "conditions": "rain"
+}
+```
+
+Now trace bad input:
+
+```json
+{
+  "name": "get_weather",
+  "arguments": {
+    "city": "   "
+  }
+}
+```
+
+Expected tool response:
+
+```json
+{
+  "error": "city must be a non-empty string"
+}
+```
+
+The MCP result sets `isError: true`. An invalid request must not look like an empty
+successful result.
+
+Add one focused test for a second city. Do not add another tool yet.
+
+**Checkpoint:** the new test passes and no production data or network call appears
+in the implementation.
+
+## Part 3: Inspect good and bad protocol calls
+
+List the staged tool:
 
 ```bash
-cd lab/starter/custom-mcp
-npm install
-node --check src/index.js
-node src/index.js
+npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
+  node src/index.js --method tools/list
 ```
 
-In `src/index.js`, implement `get_weather`, `get_forecast`, and `convert_temperature`. Keep data simulated. Each tool needs a clear name and description, an input schema, a handler, and structured output. `get_forecast` accepts `city` and `days` (1–7, default 3); `convert_temperature` accepts a number and `celsius` or `fahrenheit`.
+Call it:
 
-Compare only after attempting the implementation: `lab/solution/custom-mcp/`.
+```bash
+npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
+  node src/index.js --method tools/call \
+  --tool-name get_weather --tool-arg city=Oslo
+```
 
-## 4. Test integration
+Use the Inspector web client when a browser is available:
 
-Add the local server to the approved configuration, restart it, and run the scenarios in `lab/starter/integration-test.md`. Observe tool selection, chained calls, cross-server results, and error handling. Record inputs, output shape, and failures.
+```bash
+npx --yes @modelcontextprotocol/inspector@2.5.0 node src/index.js
+```
 
-## Completion checklist
+Record the tool name, description, input schema, request, response, and error
+shape. If Inspector cannot run but `npm test` passes, record Inspector as **not
+executed**. Do not invent output.
 
-- [ ] Approved connection inspected, or local fallback recorded.
-- [ ] Synthetic SQLite database queried through the local server.
-- [ ] Weather server exposes all three tools.
-- [ ] Local startup and syntax check completed.
-- [ ] Integration scenarios have observations and results.
-- [ ] No credentials or customer data were used.
+## Part 4: Add the remaining tools
+
+Add these definitions and handlers:
+
+| Tool | Required behavior |
+| --- | --- |
+| `get_forecast` | `city` is required; `days` defaults to 3 and accepts integers from 1 to 7 |
+| `convert_temperature` | `value` is finite; `from` is `celsius` or `fahrenheit` |
+
+Keep the output deterministic so the tests can assert exact values. Add focused
+tests before broad integration prompts.
+
+Compare your result with
+[`lab/solution/custom-mcp/`](solution/custom-mcp/) only after the staged tests pass.
+
+Run the completed suite:
+
+```bash
+cd ../../solution/custom-mcp
+npm ci
+npm test
+```
+
+**Checkpoint:** five tests pass. Bad forecast ranges, bad units, and unknown tools
+return visible errors.
+
+## Part 5: Record request and response evidence
+
+Run the commands in
+[`solution/custom-mcp/EVIDENCE.md`](solution/custom-mcp/EVIDENCE.md). Record actual
+output for:
+
+1. `tools/list`;
+2. a good `get_weather` call;
+3. a bad `get_forecast` call;
+4. `npm test`.
+
+If an approved Copilot surface is available, attach the local server and ask for a
+three-day forecast in Fahrenheit. Verify each tool call against the recorded
+contract. The local evidence remains the acceptance source.
+
+## Final deliverable
+
+1. A staged commit or diff showing `get_weather` before the other tools.
+2. A completed server with three tool schemas and handlers.
+3. Passing automated tests.
+4. Inspector output or an explicit **not executed** record.
+5. One good request and one bad request with expected and actual responses.
+
+## Verification
+
+- [ ] No `node_modules` directory is tracked.
+- [ ] Package manifests and lockfiles are present.
+- [ ] `get_weather` was tested before the other tools were added.
+- [ ] Good input returns deterministic synthetic data.
+- [ ] Bad input and unknown tools return `isError: true`.
+- [ ] The completed tool catalog contains exactly three tools.
+- [ ] `npm test` passes in the starter and solution projects.
+- [ ] Inspector evidence is captured or marked **not executed**.
+- [ ] No credential, network service, or source-system data was used.
+
+## References
+
+- [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector)
+- [MCP Inspector CLI](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md)
+- [Extending GitHub Copilot Chat with MCP](https://docs.github.com/copilot/customizing-copilot/extending-copilot-chat-with-mcp)

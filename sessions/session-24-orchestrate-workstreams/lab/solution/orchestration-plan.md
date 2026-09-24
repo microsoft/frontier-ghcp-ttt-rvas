@@ -30,7 +30,8 @@
 
 ## Live child sessions
 
-The learner records real links or identifiers here. These placeholders show the required shape and cannot replace live sessions.
+Record real links or identifiers here. These placeholders show the format and
+cannot replace live sessions.
 
 | Workstream | Session link or identifier | Started at | Current action |
 | --- | --- | --- | --- |

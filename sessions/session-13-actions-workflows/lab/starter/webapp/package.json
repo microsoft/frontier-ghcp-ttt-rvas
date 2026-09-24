@@ -5,8 +5,9 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "test": "jest --verbose",
-    "lint": "eslint src/ --ext .js"
+    "test": "jest --runInBand --verbose",
+    "lint": "eslint src/ tests/ scripts/",
+    "build": "node scripts/build.js"
   },
   "dependencies": {
     "express": "^4.21.0"
