@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours
 
-**Difficulty:** Advanced
+**Difficulty:** Intermediate
 
 **Prerequisites:** Sessions 01-07, Python 3.11 or later, and GitHub Copilot access
 

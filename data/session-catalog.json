@@ -237,7 +237,7 @@
     {
       "id": "26",
       "slug": "session-26-java-to-dotnet-modernization",
-      "module": "6",
+      "module": "2",
       "title": "Migrate a Legacy Java Service to Modern .NET",
       "description": "Map the behavior of a legacy Java service, port it to modern .NET, and verify compatibility with focused tests.",
       "difficulty": "Advanced",
@@ -246,11 +246,20 @@
     {
       "id": "27",
       "slug": "session-27-python-repair-refactor",
-      "module": "6",
+      "module": "2",
       "title": "Repair and Refactor a Broken Python Application",
       "description": "Repair a broken Python application, stabilize its tests, and refactor the code without changing required behavior.",
-      "difficulty": "Advanced",
+      "difficulty": "Intermediate",
       "duration_minutes": 180
+    },
+    {
+      "id": "28",
+      "slug": "session-28-hve-core-challenge",
+      "module": "5",
+      "title": "HVE Core: Evidence-Led Delivery with RPI",
+      "description": "Use HVE Research, Plan, Implement, Review, and Follow-up to move a bounded API feature from product intent to a human delivery decision.",
+      "difficulty": "Advanced",
+      "duration_minutes": 240
     }
   ]
 }

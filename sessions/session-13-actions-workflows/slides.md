@@ -10,7 +10,7 @@ footer: 'Session 13: GitHub Actions & Workflow Generation'
 # One Application Through GitHub Actions
 ## DevOps & Infrastructure | Intermediate
 
-Session 13 of 19 | 3 hours
+Session 13 | 3 hours
 
 ---
 # Agenda

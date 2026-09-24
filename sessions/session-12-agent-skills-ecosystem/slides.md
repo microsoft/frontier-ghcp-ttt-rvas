@@ -12,7 +12,7 @@ footer: 'Session 12: Agent Skills Ecosystem'
 
 ## Test selection, non-selection, and visible failure
 
-Session 12 of 19 | 3 hours
+Session 12 | 3 hours
 
 ---
 

@@ -12,7 +12,7 @@ footer: 'Session 26: Migrate a Legacy Java Service to Modern .NET'
 
 ## Preserve behavior one vertical slice at a time
 
-Session 26 | Advanced Module 6 | 3 hours
+Session 26 | Copilot in Practice | Advanced | 3 hours
 
 ---
 

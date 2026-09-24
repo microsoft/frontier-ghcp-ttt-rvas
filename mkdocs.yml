@@ -114,6 +114,7 @@ nav:
     - DevOps & Automation: tracks/devops-automation.md
     - Enterprise Rollout: tracks/enterprise-rollout.md
     - Product & Delivery Teams: tracks/product-and-delivery-teams.md
+    - HVE Engineering: tracks/hve-engineering.md
     - Full Mastery: tracks/full-mastery.md
   - Sessions:
     - Module 1 — Copilot Fundamentals:
@@ -146,6 +147,14 @@ nav:
         - Overview: sessions/session-07-code-review-prs/README.md
         - Lab: sessions/session-07-code-review-prs/lab/README.md
         - Trainer Guide: sessions/session-07-code-review-prs/trainer-content/README.md
+      - "27 — Python Repair & Refactor":
+        - Overview: sessions/session-27-python-repair-refactor/README.md
+        - Lab: sessions/session-27-python-repair-refactor/lab/README.md
+        - Trainer Guide: sessions/session-27-python-repair-refactor/trainer-content/README.md
+      - "26 — Java to .NET Modernization":
+        - Overview: sessions/session-26-java-to-dotnet-modernization/README.md
+        - Lab: sessions/session-26-java-to-dotnet-modernization/lab/README.md
+        - Trainer Guide: sessions/session-26-java-to-dotnet-modernization/trainer-content/README.md
     - Module 3 — Agentic Workflows:
       - "08 — Copilot App & Canvases":
         - Overview: sessions/session-08-copilot-app-canvases/README.md
@@ -189,6 +198,10 @@ nav:
         - Overview: sessions/session-18-spec-kit/README.md
         - Lab: sessions/session-18-spec-kit/lab/README.md
         - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
+      - "28 — HVE Core":
+        - Overview: sessions/session-28-hve-core-challenge/README.md
+        - Lab: sessions/session-28-hve-core-challenge/lab/README.md
+        - Trainer Guide: sessions/session-28-hve-core-challenge/trainer-content/README.md
     - Module 6 — Advanced Topics & Capstone:
       - "17 — Enterprise Governance":
         - Overview: sessions/session-17-enterprise-governance/README.md
@@ -198,14 +211,6 @@ nav:
         - Overview: sessions/session-19-capstone/README.md
         - Lab: sessions/session-19-capstone/lab/README.md
         - Trainer Guide: sessions/session-19-capstone/trainer-content/README.md
-      - "26 — Java to .NET Modernization":
-        - Overview: sessions/session-26-java-to-dotnet-modernization/README.md
-        - Lab: sessions/session-26-java-to-dotnet-modernization/lab/README.md
-        - Trainer Guide: sessions/session-26-java-to-dotnet-modernization/trainer-content/README.md
-      - "27 — Python Repair & Refactor":
-        - Overview: sessions/session-27-python-repair-refactor/README.md
-        - Lab: sessions/session-27-python-repair-refactor/lab/README.md
-        - Trainer Guide: sessions/session-27-python-repair-refactor/trainer-content/README.md
     - Module 7 — Product and Delivery Teams:
       - "20 — Copilot App Foundations":
         - Overview: sessions/session-20-copilot-app-foundations/README.md

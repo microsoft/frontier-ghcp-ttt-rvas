@@ -1,6 +1,6 @@
 # Session 26: Migrate a Legacy Java Service to Modern .NET
 
-**Module:** Advanced Module 6: Advanced Topics & Capstone
+**Module:** Module 2: Copilot in Practice
 
 **Difficulty:** Advanced
 

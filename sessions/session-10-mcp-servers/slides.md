@@ -12,7 +12,7 @@ footer: 'Session 10: MCP Servers & Custom Tool Integration'
 
 ## Prove one tool before adding the next
 
-Session 10 of 19 | 3 hours
+Session 10 | 3 hours
 
 ---
 

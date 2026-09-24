@@ -10,9 +10,9 @@ footer: 'Session 27: Repair and Refactor a Broken Python Application'
 
 # Repair and Refactor a Broken Python Application
 
-## Advanced Module 6
+## Copilot in Practice
 
-Session 27 | Advanced | 3 hours
+Session 27 | Intermediate | 3 hours
 
 ---
 

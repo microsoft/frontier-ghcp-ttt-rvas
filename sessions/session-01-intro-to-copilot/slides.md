@@ -12,7 +12,7 @@ footer: 'Session 01: Introduction to GitHub Copilot'
 
 ## Define, inspect, test, decide
 
-Session 01 of 19 | 3 hours
+Session 01 | 3 hours
 
 ---
 

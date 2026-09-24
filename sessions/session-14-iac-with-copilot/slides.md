@@ -10,7 +10,7 @@ footer: 'Session 14: Infrastructure as Code with Copilot'
 # Terraform from Modules to Security Gate
 ## DevOps & Infrastructure | Advanced
 
-Session 14 of 19 | 2 hours 30 minutes
+Session 14 | 2 hours 30 minutes
 
 ---
 # Agenda

@@ -1,8 +1,8 @@
 # Session 27: Repair and Refactor a Broken Python Application
 
-**Module:** 6 - Advanced Topics & Capstone
+**Module:** Module 2: Copilot in Practice
 
-**Difficulty:** Advanced
+**Difficulty:** Intermediate
 
 **Prerequisites:** Sessions 01-07
 

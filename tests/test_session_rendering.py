@@ -190,8 +190,8 @@ class SessionRenderingTests(unittest.TestCase):
         config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
         sources = re.findall(r"^\s+- (Overview|Lab|Trainer Guide): (sessions/\S+)$", config, re.MULTILINE)
         trainer_sources = sorted(ROOT.glob("sessions/session-*/trainer-content/README.md"))
-        self.assertEqual(len(trainer_sources), 27)
-        self.assertEqual(len(sources), 27 * 3)
+        self.assertEqual(len(trainer_sources), 28)
+        self.assertEqual(len(sources), 28 * 3)
         for trainer in trainer_sources:
             directory = trainer.parent.parent.relative_to(ROOT).as_posix()
             for label, suffix in (("Overview", "README.md"), ("Lab", "lab/README.md"), ("Trainer Guide", "trainer-content/README.md")):

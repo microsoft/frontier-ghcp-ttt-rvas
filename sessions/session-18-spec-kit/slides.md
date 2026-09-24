@@ -12,7 +12,7 @@ footer: 'Session 18: Spec Kit: Specification-Driven Development'
 
 ## Make the work clear before asking an agent to build it
 
-Session 18 of 19 | 3 hours 30 minutes
+Session 18 | 3 hours 30 minutes
 
 ---
 

@@ -12,6 +12,7 @@ node_modules/
 site/
 .impeccable/review/
 .terraform/
+.copilot-tracking/
 
 .venv
 __pycache__/

@@ -12,7 +12,7 @@ footer: 'Session 02: Copilot Chat & Inline Suggestions'
 
 ## Use the right context, then verify the change
 
-Session 02 of 19 | 3 hours
+Session 02 | 3 hours
 
 ---
 

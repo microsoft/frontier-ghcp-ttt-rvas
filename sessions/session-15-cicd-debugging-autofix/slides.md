@@ -10,7 +10,7 @@ footer: 'Session 15: CI/CD Debugging & Agentic Remediation'
 # Evidence Before Repair
 ## DevOps & Infrastructure | Advanced
 
-Session 15 of 19 | 3 hours
+Session 15 | 3 hours
 
 ---
 # Agenda

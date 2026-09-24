@@ -1,6 +1,6 @@
 # GitHub Copilot & Agentic Workflows — Train-the-Trainer
 
-A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. It contains 27 sessions across 7 modules, including a dedicated GitHub Copilot adoption path for product and delivery teams. Most sessions have 1 hour of trainer content and a 2-hour hands-on lab. Session 14 uses a 90-minute lab, and Session 18 uses a 2-hour 30-minute lab.
+A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. It contains 28 sessions across 7 modules, including dedicated paths for product and delivery teams and HVE engineering. Most sessions have 1 hour of trainer content and a 2-hour hands-on lab. Session 14 uses a 90-minute lab, Session 18 uses a 2-hour 30-minute lab, and Session 28 uses a 3-hour lab.
 
 ## Who This Is For
 
@@ -51,7 +51,7 @@ access is available.
 | 02  | [Copilot Chat & Inline Suggestions](sessions/session-02-chat-and-inline/)  | Beginner    | 3 hrs      | Covers Copilot Chat surfaces, slash commands, chat participants, model selection, and the CLI for daily development. |
 | 03  | [Prompt Engineering Fundamentals](sessions/session-03-prompt-engineering/) | Beginner    | 3 hrs      | Teaches how to write effective prompts — intent, context, constraints, examples — plus refinement and anti-patterns. |
 
-### Module 2: Copilot in Practice (Intermediate)
+### Module 2: Copilot in Practice (Intermediate–Advanced)
 
 | #   | Session                                                                        | Difficulty   | Duration   | Summary                                                                                                              |
 | --- | ------------------------------------------------------------------------------ | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -59,6 +59,8 @@ access is available.
 | 05  | [Agent Mode in the IDE](sessions/session-05-agent-mode-ide/)                   | Intermediate | 3 hrs      | Introduces agent mode — Copilot's autonomous plan-act-observe loop for multi-step, multi-file coding tasks in the IDE. |
 | 06  | [Copilot Spaces & Context Management](sessions/session-06-spaces-and-context/) | Intermediate | 3 hrs      | Covers grounding Copilot with the right context: Spaces, custom instructions, reusable prompt files, and Memory.   |
 | 07  | [Copilot for Code Review & PRs](sessions/session-07-code-review-prs/)          | Intermediate | 3 hrs      | Uses Copilot across the PR workflow — summaries, AI review comments, suggested fixes, and merge conflict resolution. |
+| 27  | [Repair and Refactor a Broken Python Application](sessions/session-27-python-repair-refactor/) | Intermediate | 3 hrs | Repairs a broken Python application, stabilizes its tests, and refactors it without changing required behavior. |
+| 26  | [Migrate a Legacy Java Service to Modern .NET](sessions/session-26-java-to-dotnet-modernization/) | Advanced | 3 hrs | Ports a legacy Java service to modern .NET while preserving behavior through focused tests. |
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -84,6 +86,7 @@ access is available.
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | 16  | [Brady's Squad: Human-Led AI Teams](sessions/session-16-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to turn scoped work into persistent roles, decisions, and reviewable evidence. |
 | 18  | [Spec Kit: Specification-Driven Development](sessions/session-18-spec-kit/)              | Advanced    | 3.5 hrs    | Uses Spec Kit for task-to-issue conversion, staged implementation, convergence, and living-spec evolution. |
+| 28  | [HVE Core: Evidence-Led Delivery with RPI](sessions/session-28-hve-core-challenge/)       | Advanced    | 4 hrs      | Uses HVE Research, Plan, Implement, Review, and Follow-up to move a bounded API feature from product intent to a human decision. |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -91,8 +94,6 @@ access is available.
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration — policies, content exclusions, audit logs, analytics, compliance, rollout. |
 | 19  | [End-to-End Capstone Project](sessions/session-19-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
-| 26  | [Migrate a Legacy Java Service to Modern .NET](sessions/session-26-java-to-dotnet-modernization/) | Advanced | 3 hrs | Ports a legacy Java service to modern .NET while preserving behavior through focused tests. |
-| 27  | [Repair and Refactor a Broken Python Application](sessions/session-27-python-repair-refactor/) | Advanced | 3 hrs | Repairs a broken Python application, stabilizes its tests, and refactors it without changing required behavior. |
 
 ### Module 7: Product and Delivery Teams (Beginner–Intermediate)
 
@@ -105,7 +106,7 @@ access is available.
 | 24 | [Orchestrate Agents and Workstreams](sessions/session-24-orchestrate-workstreams/) | Intermediate | 3 hrs | Runs bounded child sessions and updates the approved plan with reviewed results. |
 | 25 | [Automate Delivery Follow-up and Connect Work Systems](sessions/session-25-automate-delivery-follow-up/) | Intermediate | 3 hrs | Runs one draft-only Automation and records whether GitHub or Azure Boards remains authoritative. |
 
-**Total track duration:** 81 hours across 27 sessions
+**Total track duration:** 85 hours across 28 sessions
 
 ## Getting Started
 
@@ -113,19 +114,21 @@ access is available.
 
 2. **Understand the template** — Check [`track-template/`](track-template/) for the standard session structure. Every session follows the same format.
 
-3. **Browse learning tracks** — See [`tracks/`](tracks/) for paths based on role, maturity, and goals, including Product and Delivery Teams.
+3. **Browse learning tracks** — See [`tracks/`](tracks/) for paths based on role,
+   maturity, and goals, including Product and Delivery Teams and HVE Engineering.
 
 4. **Pick your path:**
 
    | Audience              | Recommended Path                 | Sessions     | Duration   |
    | --------------------- | -------------------------------- | ------------ | ---------- |
    | Copilot Beginners     | Module 1                         | 01–03        | 9 hrs      |
-   | Copilot Practitioners | Modules 1–2                      | 01–07        | 21 hrs     |
+   | Copilot Practitioners | Modules 1–2                      | 01–07, 27, 26 | 27 hrs    |
    | Agentic Developers    | Modules 1–3                      | 01–12        | 36 hrs      |
    | DevOps Engineers      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
    | Enterprise Admins     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
    | Product and Delivery Teams | Module 7                   | 20–25        | 18 hrs     |
-   | Full Track            | All Modules                      | 01–27        | 81 hrs      |
+   | HVE Practitioners     | HVE Engineering                  | 01–07, 10–11, 28 | 31 hrs |
+   | Full Track            | All Modules                      | 01–28        | 85 hrs     |
 
 5. **Prepare your environment:**
    - GitHub Enterprise Cloud organization with Copilot enabled according to customer policy
@@ -149,13 +152,14 @@ ghcp-ttt/
 │   ├── devops-automation.md
 │   ├── enterprise-rollout.md
 │   ├── product-and-delivery-teams.md
+│   ├── hve-engineering.md
 │   └── full-mastery.md
 ├── track-template/                        # Reusable session template
 │   └── session-template/
 │       ├── README.md
 │       ├── trainer-content/
 │       └── lab/ (starter/ + solution/)
-└── sessions/                              # All 27 sessions
+└── sessions/                              # All 28 sessions
     ├── session-01-intro-to-copilot/       # Module 1: Fundamentals
     ├── session-02-chat-and-inline/
     ├── session-03-prompt-engineering/
@@ -181,6 +185,7 @@ ghcp-ttt/
     ├── session-23-plan-and-steer-with-canvases/
     ├── session-24-orchestrate-workstreams/
     ├── session-25-automate-delivery-follow-up/
-    ├── session-26-java-to-dotnet-modernization/ # Module 6: Advanced & Capstone
-    └── session-27-python-repair-refactor/       # Module 6: Advanced & Capstone
+    ├── session-26-java-to-dotnet-modernization/ # Module 2: In Practice
+    ├── session-27-python-repair-refactor/       # Module 2: In Practice
+    └── session-28-hve-core-challenge/           # Module 5: Specification-Driven Frameworks
 ```

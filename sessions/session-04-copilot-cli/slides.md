@@ -12,7 +12,7 @@ footer: 'Session 04: GitHub Copilot in the CLI'
 
 ## Choose the surface that fits the work
 
-Session 04 of 18 | 3 hours
+Session 04 | 3 hours
 
 ---
 

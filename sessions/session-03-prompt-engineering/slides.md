@@ -12,7 +12,7 @@ footer: 'Session 03: Prompt Engineering Fundamentals'
 
 ## Make the work reviewable before asking for code
 
-Session 03 of 19 | 3 hours
+Session 03 | 3 hours
 
 ---
 

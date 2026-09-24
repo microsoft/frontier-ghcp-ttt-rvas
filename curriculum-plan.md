@@ -29,17 +29,17 @@ The curriculum is organized into **7 modules**. Modules 1–3 form the technical
 ```
 Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
     │
-Module 2: Copilot in Practice ──────────────── (Intermediate, 4 sessions)
+Module 2: Copilot in Practice ──────────────── (Intermediate–Advanced, 6 sessions)
     │
 Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
     │
     ├── Module 4: DevOps & Infrastructure ──── (Intermediate–Advanced, 3 sessions)
     │   └── Requires: Module 1 + Session 05
     │
-    ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 2 sessions)
-    │   └── Uses Squad and Spec Kit as worked framework examples
+    ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
+    │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
     │
-    └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 4 sessions)
+    └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
         └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
 
 Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 6 sessions)
@@ -51,12 +51,13 @@ Module 7: Product and Delivery Teams ──────────────�
 | Audience                  | Recommended Path                 | Sessions     | Duration   |
 | ------------------------- | -------------------------------- | ------------ | ---------- |
 | **Copilot Beginners**     | Module 1 only                    | 01–03        | 9 hrs      |
-| **Copilot Practitioners** | Modules 1–2                      | 01–07        | 21 hrs     |
+| **Copilot Practitioners** | Modules 1–2                      | 01–07, 27, 26 | 27 hrs    |
 | **Agentic Developers**    | Modules 1–3                      | 01–12        | 36 hrs     |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
 | **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
 | **Product and Delivery Teams** | Module 7                    | 20–25        | 18 hrs     |
-| **Full Track**            | All Modules                      | 01–27        | 81 hrs     |
+| **HVE Practitioners**     | HVE Engineering                  | 01–07, 10–11, 28 | 31 hrs |
+| **Full Track**            | All Modules                      | 01–28        | 85 hrs     |
 
 ---
 
@@ -70,7 +71,7 @@ Module 7: Product and Delivery Teams ──────────────�
 | 02  | Copilot Chat & Inline Suggestions | Beginner    | Session 01      | 3 hrs      |
 | 03  | Prompt Engineering Fundamentals   | Beginner    | Sessions 01–02  | 3 hrs      |
 
-### Module 2: Copilot in Practice (Intermediate)
+### Module 2: Copilot in Practice (Intermediate–Advanced)
 
 | #   | Session                                   | Difficulty   | Prerequisites   | Duration   |
 | --- | ----------------------------------------- | ------------ | --------------- | ---------- |
@@ -78,6 +79,8 @@ Module 7: Product and Delivery Teams ──────────────�
 | 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01–04  | 3 hrs      |
 | 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01–05  | 3 hrs      |
 | 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01–06  | 3 hrs      |
+| 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01–07 | 3 hrs |
+| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01–07 | 3 hrs |
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -103,6 +106,7 @@ Module 7: Product and Delivery Teams ──────────────�
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01–12 | 3 hrs   |
 | 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01–12, 17 | 3 hrs |
+| 28  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions 01–07, 10–11 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -110,8 +114,6 @@ Module 7: Product and Delivery Teams ──────────────�
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
 | 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01–12, 17–18 | 3 hrs |
-| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced   | Modules 1–4        | 3 hrs      |
-| 27  | Repair and Refactor a Broken Python Application | Advanced | Modules 1–4        | 3 hrs      |
 
 ### Module 7: Product and Delivery Teams (Beginner–Intermediate)
 
@@ -160,7 +162,7 @@ Sets the stage. Trainers learn what GitHub Copilot is, how the underlying LLM wo
 - Setting expectations — what Copilot does well, where it struggles
 - Q&A framework for common objections
 
-**Lab Outline (2 hours):**
+**Lab Outline (2 hours 30 minutes):**
 
 - Install and configure GitHub Copilot in VS Code
 - Accept, reject, and cycle through inline suggestions
@@ -881,6 +883,47 @@ Uses Spec Kit to carry one bounded feature from a source request to working code
 
 ---
 
+### Session 28 — HVE Core: Evidence-Led Delivery with RPI
+
+**Difficulty:** Advanced
+**Prerequisites:** Sessions 01–07 and 10–11, or equivalent experience
+**Module:** Specification-Driven Frameworks
+**Duration:** 4 hours
+
+**Description:**
+Learners use HVE Core to move a bounded Engineering Decision API feature from
+product intent through Research, Plan, Implement, Review, Follow-up, and a human
+delivery decision.
+
+**Trainer Content Outline (1 hour):**
+
+- HVE agents, prompts, instructions, and local tracking artifacts
+- Direct RPI phase prompts and combined `/rpi` orchestration
+- Repository context, targeted instructions, and bounded custom agents
+- Product Manager Advisor and Agile Coach handoffs
+- Review evidence, Follow-up routing, and the final human decision
+
+**Lab Outline (3 hours):**
+
+- Run Research and Plan before changing code
+- Add repository context, a targeted JavaScript instruction, and a custom reviewer
+- Refine the supplied intent with Product Manager Advisor and Agile Coach
+- Implement and test the bounded API endpoint and container contract
+- Run Review, inspect the evidence chain, and record the human decision
+- **Deliverable:** A tested API slice with traceable HVE artifacts, customization
+  evidence, product and Agile decisions, and a reviewed handoff
+
+**Expected Learning Outcomes:**
+
+- Explain how HVE components and tracking artifacts support RPI handoffs
+- Run and inspect each direct RPI phase
+- Prove that repository customizations changed a later phase
+- Feed product and Agile decisions back into the implementation plan
+- Use Follow-up to route defects or missing evidence without expanding scope
+- Support a human approval, change request, or pause decision
+
+---
+
 ### Session 19 — End-to-End Capstone Project
 
 **Difficulty:** Advanced
@@ -1074,8 +1117,8 @@ Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Aut
 ### Session 26 — Migrate a Legacy Java Service to Modern .NET
 
 **Difficulty:** Advanced
-**Prerequisites:** Modules 1–4
-**Module:** Advanced Topics & Capstone
+**Prerequisites:** Sessions 01–07
+**Module:** Copilot in Practice
 **Duration:** 3 hours
 
 **Description:**
@@ -1100,9 +1143,9 @@ Learners inspect a legacy Java service, capture its required behavior, and migra
 
 ### Session 27 — Repair and Refactor a Broken Python Application
 
-**Difficulty:** Advanced
-**Prerequisites:** Modules 1–4
-**Module:** Advanced Topics & Capstone
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 01–07
+**Module:** Copilot in Practice
 **Duration:** 3 hours
 
 **Description:**
@@ -1127,17 +1170,19 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 
 ## Delivery Notes
 
-- **Total track duration:** 81 hours across 27 sessions
+- **Total track duration:** 85 hours across 28 sessions
 - **Recommended delivery schedules:**
-  - Intensive: 3 sessions/day across 9 days
-  - Standard: 1–2 sessions/day across 14 days
-  - Extended: 1 session/day across 27 days
+  - Intensive: Up to 3 sessions/day across 10 days
+  - Standard: 1–2 sessions/day across 15 days
+  - Extended: 1 session/day across 28 days
 - **Group size:** 8–15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1–3 form the core track (required for full certification)
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 17 (Enterprise) can be delivered standalone with Module 1 for admin audiences and is required before the capstone
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
+  - Session 28 is the final session in the HVE Engineering track and should run
+    after Sessions 10–11
   - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

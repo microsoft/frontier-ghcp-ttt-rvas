@@ -12,7 +12,7 @@ footer: 'Session 11: Custom Agents & Agent Profiles'
 
 ## Fail the weak profile, tighten it, rerun the same test
 
-Session 11 of 19 | 3 hours
+Session 11 | 3 hours
 
 ---
 

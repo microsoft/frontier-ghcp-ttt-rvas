@@ -12,7 +12,8 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 | [DevOps & Automation](devops-automation.md)         | DevOps / Platform engineers                        | 7          | 21 hrs     | Beginner–Advanced     |
 | [Enterprise Rollout](enterprise-rollout.md)         | Engineering managers, IT admins, Copilot champions | 5          | 15 hrs     | Beginner–Advanced     |
 | [Product and Delivery Teams](product-and-delivery-teams.md) | PMs, POs, BAs, project managers, delivery leads | 6 | 18 hrs | Beginner–Intermediate |
-| [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 27         | 81 hrs     | Beginner–Advanced     |
+| [HVE Engineering](hve-engineering.md)               | Developers, engineering leads, and HVE trainers     | 10         | 31 hrs     | Beginner–Advanced     |
+| [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 28         | 85 hrs     | Beginner–Advanced     |
 
 ## How to Choose
 
@@ -33,10 +34,13 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
                                     │   → Enterprise Rollout (15 hrs)
                                     │
                                     ├─ Product or delivery role?
-                                    │   → Product and Delivery Teams (15 hrs)
+                                    │   → Product and Delivery Teams (18 hrs)
+                                    │
+                                    ├─ Adopting HVE Core?
+                                    │   → HVE Engineering (31 hrs)
                                     │
                                     └─ Want everything?
-                                        → Full Mastery (81 hrs)
+                                        → Full Mastery (85 hrs)
 ```
 
 ## Progression Path
@@ -49,6 +53,7 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
                           DevOps & Automation ──────┘
                           Enterprise Rollout ────────┘
                  Product and Delivery Teams ─────────┘
+                            HVE Engineering ──────────┘
 ```
 
 ## Notes for Trainers
@@ -56,5 +61,6 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
 - Each track lists exact session numbers and titles — cross-reference with [`curriculum-plan.md`](../curriculum-plan.md) for full session details
 - All tracks assume trainees meet the stated prerequisites
 - Tracks can be customized by adding or removing sessions based on specific customer needs
-- Duration estimates assume the standard 3-hour format (1 hr trainer content + 2 hr lab) per session
+- Most sessions use the standard 3-hour format. Session 28 uses a 1-hour trainer
+  segment and a 3-hour lab.
 - See the individual session folders in [`sessions/`](../sessions/) for detailed materials

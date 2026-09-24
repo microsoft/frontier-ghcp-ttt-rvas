@@ -1,9 +1,9 @@
 # Track: Full Mastery
 
 **Target Audience:** Trainers delivering the complete curriculum
-**Duration:** 81 hours across 27 sessions
+**Duration:** 85 hours across 28 sessions
 **Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 9-day intensive or 14-day standard
+**Recommended Delivery:** 10-day intensive or 15-day standard
 
 ---
 
@@ -32,7 +32,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 2       | 02          | Copilot Chat & Inline Suggestions | Beginner     | 3 hrs      |
 | 3       | 03          | Prompt Engineering Fundamentals   | Beginner     | 3 hrs      |
 
-### Module 2: Copilot in Practice (Intermediate)
+### Module 2: Copilot in Practice (Intermediate–Advanced)
 
 | Order   | Session #   | Title                                     | Difficulty   | Duration   |
 | ------- | ----------- | ----------------------------------------- | ------------ | ---------- |
@@ -40,6 +40,8 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 5       | 05          | Agent Mode in the IDE                     | Intermediate | 3 hrs      |
 | 6       | 06          | Copilot Spaces & Context Management       | Intermediate | 3 hrs      |
 | 7       | 07          | Copilot for Code Review & Pull Requests   | Intermediate | 3 hrs      |
+| 27      | 27          | Repair and Refactor a Broken Python Application | Intermediate | 3 hrs |
+| 26      | 26          | Migrate a Legacy Java Service to Modern .NET | Advanced | 3 hrs |
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -65,6 +67,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
 | 16      | 16          | Brady's Squad: Human-Led AI Teams (optional) | Advanced   | 3 hrs      |
 | 18      | 18          | Spec Kit: Specification-Driven Development | Advanced | 3.5 hrs |
+| 28      | 28          | HVE Core: Evidence-Led Delivery with RPI | Advanced | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
@@ -72,8 +75,6 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
 | 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
 | 19      | 19          | End-to-End Capstone Project                 | Advanced     | 3 hrs      |
-| 26      | 26          | Migrate a Legacy Java Service to Modern .NET | Advanced    | 3 hrs      |
-| 27      | 27          | Repair and Refactor a Broken Python Application | Advanced | 3 hrs      |
 
 ### Module 7: Product and Delivery Teams (Beginner–Intermediate)
 
@@ -88,7 +89,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 
 ## Recommended Delivery Schedule
 
-### 9-Day Intensive
+### 10-Day Intensive
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
@@ -98,11 +99,12 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 4 | Sessions 10, 11, 12 | MCP, agents + skills                 |
 | Day 5 | Sessions 13, 14, 15 | Actions, IaC + CI/CD                 |
 | Day 6 | Sessions 16, 17, 18 | Orchestration, governance + Spec Kit |
-| Day 7 | Sessions 19, 20, 21 | Capstone, app foundations + interviewing |
-| Day 8 | Sessions 22, 23, 24 | GitHub planning, canvases + orchestration |
-| Day 9 | Sessions 25, 26, 27 | Automation, service migration + Python repair |
+| Day 7 | Sessions 28, 19 | HVE delivery + capstone |
+| Day 8 | Sessions 20, 21, 22 | App foundations, interviewing + GitHub planning |
+| Day 9 | Sessions 23, 24, 25 | Canvases, orchestration + automation |
+| Day 10 | Sessions 27, 26 | Python repair + service migration |
 
-### 14-Day Standard
+### 15-Day Standard
 
 | Day   | Sessions        | Focus                            |
 | ----- | --------------- | -------------------------------- |
@@ -115,11 +117,12 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 7 | Sessions 13, 14 | Actions + IaC                    |
 | Day 8 | Sessions 15, 16 | CI/CD + orchestration            |
 | Day 9 | Sessions 17, 18 | Governance + Spec Kit            |
-| Day 10 | Sessions 19, 20 | Capstone + Copilot app foundations |
-| Day 11 | Sessions 21, 22 | Interviewing + GitHub issue planning |
-| Day 12 | Sessions 23, 24 | Planning canvas + workstream supervision |
-| Day 13 | Sessions 25, 26 | Automation + service migration |
-| Day 14 | Session 27 | Python repair + refactoring |
+| Day 10 | Session 28 | HVE evidence-led delivery |
+| Day 11 | Sessions 19, 20 | Capstone + Copilot app foundations |
+| Day 12 | Sessions 21, 22 | Interviewing + GitHub issue planning |
+| Day 13 | Sessions 23, 24 | Planning canvas + workstream supervision |
+| Day 14 | Sessions 25, 27 | Automation + Python repair |
+| Day 15 | Session 26 | Service migration |
 
 ## Learning Outcomes
 
@@ -137,6 +140,7 @@ By completing this track, trainees will be able to:
 10. Assess trainee progress and adapt delivery based on audience needs
 11. Create a personal trainer delivery plan for their organization
 12. Teach non-developers to create briefs, issues, canvases, orchestrated work, and bounded Automations with GitHub Copilot
+13. Teach HVE Research, Plan, Implement, Review, and Follow-up through a complete evidence chain
 
 ## Next Steps
 

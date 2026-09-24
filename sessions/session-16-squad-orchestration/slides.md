@@ -11,7 +11,7 @@ footer: 'Session 16: AI Team Orchestration & Coordination Patterns'
 # Brady's Squad: Human-Led AI Teams
 ## Module 5: Specification-Driven Frameworks | Advanced
 
-Session 16 of 19 | 3 hours | Optional
+Session 16 | 3 hours | Optional
 
 Prerequisites: Sessions 01–07 and 09–12
 
