@@ -1,0 +1,83 @@
+{
+  "issue": {
+    "number": 184,
+    "title": "Stop false READY verdicts",
+    "acceptance_criteria": [
+      {
+        "id": "AC1",
+        "text": "Failed required checks return NOT_READY"
+      },
+      {
+        "id": "AC2",
+        "text": "Unresolved blocking reviews return NOT_READY"
+      },
+      {
+        "id": "AC3",
+        "text": "Missing required evidence returns UNKNOWN"
+      }
+    ]
+  },
+  "pull_request": {
+    "number": 212,
+    "title": "Fix readiness evidence handling",
+    "head_sha": "71f5cba",
+    "changed_files": [
+      {
+        "path": "readiness_guard/readiness.py",
+        "criteria": [
+          "AC1",
+          "AC2",
+          "AC3"
+        ]
+      },
+      {
+        "path": "tests/test_readiness.py",
+        "criteria": [
+          "AC1",
+          "AC2",
+          "AC3"
+        ]
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "unit-tests",
+      "required": true,
+      "status": "success",
+      "head_sha": "71f5cba",
+      "completed_at": "2026-10-05T10:18:00Z"
+    },
+    {
+      "name": "integration-tests",
+      "required": true,
+      "status": "failure",
+      "head_sha": "71f5cba",
+      "completed_at": "2026-10-05T10:21:00Z"
+    },
+    {
+      "name": "style",
+      "required": false,
+      "status": "success",
+      "head_sha": "71f5cba",
+      "completed_at": "2026-10-05T10:17:00Z"
+    }
+  ],
+  "review_threads": [
+    {
+      "id": "R1",
+      "blocking": true,
+      "resolved": false,
+      "file": "readiness_guard/readiness.py",
+      "summary": "Clarify how absent review evidence differs from an empty list."
+    },
+    {
+      "id": "R2",
+      "blocking": false,
+      "resolved": false,
+      "file": "tests/test_readiness.py",
+      "summary": "Consider a table-driven test in later cleanup."
+    }
+  ]
+}
+

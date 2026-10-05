@@ -6,7 +6,7 @@
 
 **Approved sources:**  
 
-**Shared artifact:** `shared-work-artifact.md`
+**Shared artifact:** `delivery-status-record.md`
 
 **Live-use guard:** Maximum [number] child sessions, [number] minutes, and
 [number] approved meter units.
@@ -19,6 +19,9 @@
 | WS-02 |  |  |  |  |  |  |
 | WS-03 |  |  |  |  |  |  |
 | WS-04 |  |  |  |  |  |  |
+
+Use the four Session 22 issue roles: public status mapping, requester status view,
+empty and stale states, and access-boundary verification.
 
 ## Live child sessions
 

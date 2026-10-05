@@ -6,22 +6,26 @@
 
 **Prerequisites:** Sessions 20-23, the Session 24 trainer content, and live GitHub Copilot orchestration access
 
-**Deliverable:** An orchestration plan, live child-session result packets, signed reviews, and a release-readiness decision
+**Deliverable:** An orchestration plan, live child-session results, and
+`delivery-status-record.md`
 
 ## Final deliverables
 
 - The approved orchestration plan
-- Live result packets from the child sessions
-- One recorded intervention
-- Signed reviews and a release-readiness decision
+- Live results from the child sessions
+- Any redirect or stop needed during the run
+- A delivery-status decision
 
 ## Scenario
 
-The fictional **Service Request Portal** is approaching a release review. You are the delivery manager. You need evidence for the decision, but you do not want several sessions editing the same record.
+The fictional **Service Request Portal** has four status-visibility issue roles:
+public mapping, requester view, empty and stale states, and access-boundary
+verification. You need evidence for a delivery-status decision without several
+sessions editing the same record.
 
-Select the parent objective and child issues from Session 22, confirm their state
-in the Session 23 canvas, and start four workstreams through GitHub Copilot
-orchestration. Review each result, then update the shared plan.
+Use the Session 22 `issue-handoff.md` and Session 23 `canvas-handoff.md`. Start one
+workstream per issue role through GitHub Copilot orchestration. Review each result,
+then update the shared delivery-status record.
 
 ## Required preflight
 
@@ -30,7 +34,6 @@ Complete every check before Exercise 1.
 - [ ] Confirm GitHub Copilot access. If access is unavailable, stop and do not
       continue.
 - [ ] Use only the supplied fictional data or approved sanitized work.
-- [ ] Confirm who will act as the human release approver.
 - [ ] Confirm the GitHub Copilot app policy, repository permission, and approved model.
 - [ ] Retrieve the approved parent and child issues through GitHub MCP.
 - [ ] Open the Session 23 planning canvas and confirm the selected workstreams.
@@ -48,7 +51,8 @@ Complete every check before Exercise 1.
 > role-play, separate prompts, prepared outputs, or static files.
 
 > [!NOTE]
-> Product behavior was checked on **September 23, 2026**. **My work** may appear under a renamed session or agent surface. Use the current equivalent.
+> Product behavior was checked on **October 5, 2026**. **My work** may appear
+> under a renamed session or agent surface. Use the current equivalent.
 
 ## Lab schedule
 
@@ -56,7 +60,7 @@ Complete every check before Exercise 1.
 | --- | --- | --- |
 | 1 | Plan and start the orchestration | 30 min |
 | 2 | Monitor and intervene | 30 min |
-| 3 | Review live result packets | 30 min |
+| 3 | Review live results | 30 min |
 | 4 | Consolidate evidence and approve | 30 min |
 
 ## Exercise 1: Plan and start the orchestration (30 min)
@@ -68,9 +72,8 @@ Open `starter/orchestration-plan-template.md`.
 3. Define four independent workstreams.
 4. Name each workstream's approved inputs and required packet.
 5. Add exclusions and a stop condition.
-6. Name the human reviewer.
-7. Check that no workstream depends on another child session.
-8. Submit the approved plan through `/orchestrate`.
+6. Check that no workstream depends on another child session.
+7. Submit the plan through `/orchestrate`.
 
 Use this parent prompt as a starting point:
 
@@ -98,12 +101,11 @@ For each child session:
 
 1. Check its status, elapsed time, and usage.
 2. Compare its current work with the approved contract.
-3. Record one action: `wait`, `redirect`, or `stop`.
+3. Wait, redirect, or stop based on what the session is doing.
 4. Send a short instruction when you redirect or stop.
-5. Save the session link and action in the orchestration plan.
 
-Redirect at least one child session when a real scope, evidence, or packet problem
-needs correction. **Do not invent a reason to redirect.**
+Redirect a child session only when a real scope, evidence, or packet problem needs
+correction.
 
 Use these guards:
 
@@ -115,11 +117,10 @@ Use these guards:
 
 **Stop conditions are part of the lesson.** They do not provide an alternate completion route.
 
-**Expected result:** Every live workstream has a recorded management action and reason.
+**Expected result:** The child sessions remain within scope and stop when a hard
+boundary is reached.
 
-## Exercise 3: Review the live result packets (30 min)
-
-Open `starter/review-template.md`. Copy the final packet from each child session into your working folder or link to the session output.
+## Exercise 3: Review the live results (30 min)
 
 Review each packet for:
 
@@ -129,48 +130,48 @@ Review each packet for:
 - open questions;
 - a supported recommendation.
 
-Record **accept** or **reject** for every packet. If a safe correction can repair the result, redirect the live child session and review the new packet. If the session crossed a hard boundary, stop it and record the reason.
+Accept useful findings and reject unsupported claims. If a safe correction can
+repair the result, redirect the live child session and review the new packet. If
+the session crossed a hard boundary, stop it.
 
-Do not repair unsupported claims inside the final record. Reject them first so the decision trail stays clear.
+Add accepted findings and rejected claims directly to the delivery-status record.
 
-**Expected result:** Four signed reviews tied to live child-session output.
+**Expected result:** The delivery-status record separates supported findings from
+rejected claims.
 
 ## Exercise 4: Consolidate and approve (30 min)
 
-Open `starter/shared-work-artifact-template.md`.
+Open `starter/delivery-status-record-template.md`.
 
 1. Copy only accepted findings into the shared record and planning canvas.
 2. Record rejected claims and the reason for each rejection.
 3. Add unresolved gaps with an owner and due date.
-4. Choose **Go**, **Conditional go**, or **No-go**.
-5. Add the human approver's name or training role and the review date.
-6. Add the accepted result or follow-up need to the relevant GitHub issue through a reviewed MCP update.
-7. Retrieve the updated issue and compare it with the canvas.
-8. Compare your structure with the files in `solution/` only after you finish your own work.
+4. Choose **Ready**, **Ready with conditions**, or **Not ready**.
+5. Add the accepted result or follow-up need to the relevant GitHub issue through a reviewed MCP update.
+6. Retrieve the updated issue and compare it with the canvas.
+7. Compare your structure with the files in `solution/` only after you finish your own work.
 
-**Expected result:** One release-readiness record that traces each decision to a live, reviewed packet.
+**Expected result:** One delivery-status record that traces each decision to a
+live, reviewed packet and gives Session 25 an approved input version.
 
 ## Completion check
 
 - [ ] Completed orchestration plan with live child-session identifiers.
-- [ ] Management action for each child session.
-- [ ] Result packets returned by live GitHub Copilot orchestration.
-- [ ] Acceptance or rejection review for each packet.
-- [ ] Shared release-readiness record.
+- [ ] Results returned by live GitHub Copilot orchestration.
+- [ ] `delivery-status-record.md`.
 - [ ] Reviewed GitHub issue update and fresh-read verification.
 - [ ] Planning canvas updated with the accepted result or unresolved gap.
-- [ ] Explicit human approval.
 
-## Review rubric
+## Quality check
 
 | Area | Meets the requirement |
 | --- | --- |
 | Access | GitHub Copilot created and coordinated live child sessions. |
-| Plan | Workstreams are independent and have outputs, exclusions, stop conditions, and reviewers. |
+| Plan | Workstreams are independent and have outputs, exclusions, and stop conditions. |
 | Control | The learner uses meter, time, access, and scope guards. |
-| Review | Every live packet receives an accept or reject decision with a reason. |
-| Evidence | Accepted claims point to approved evidence. |
-| Approval | A person owns the final decision. |
+| Review | Supported findings and rejected claims are separated. |
+| Sources | Accepted claims point to their source artifacts. |
+| Handoff | Session 25 receives a clear delivery-status input. |
 
 ## Troubleshooting
 

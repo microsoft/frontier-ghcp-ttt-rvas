@@ -636,7 +636,7 @@ to Markdown. Sessions can also be resumed across devices.
 
 ## Slide Suggestions
 
-1. **Title slide:** "GitHub Copilot in the CLI — Your Terminal's AI Agent"
+1. **Title slide:** "GitHub Copilot in the CLI. Your Terminal's AI Agent"
 2. **Three Modes:** Standard / Plan / Autopilot with descriptions
 3. **Programmatic Mode:** Code examples showing CI/CD integration
 4. **Built-in Agents:** Table of 5 verified agents and purposes

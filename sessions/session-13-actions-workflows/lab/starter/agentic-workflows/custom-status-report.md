@@ -10,7 +10,7 @@ Report PRs that have been open for more than three days, failed CI runs from the
 
 ## Output and guardrails
 
-Create `Daily Status Report — {date}` as a Markdown GitHub Issue. Use tables when useful; state “All clear ✓” for an empty section.
+Create `Daily Status Report: {date}` as a Markdown GitHub Issue. Use tables when useful; state "All clear ✓" for an empty section.
 
 - Read repository content and metadata only.
 - Use `safe-outputs` only to create the status issue.

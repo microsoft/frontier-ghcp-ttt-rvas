@@ -203,8 +203,8 @@ guidance.
 
 Use the fixed `training-review-sandbox` scenario.
 
-1. Complete the evidence map and pass Checkpoint 1.
-2. Record the sandbox-only policy decision and pass Checkpoint 2.
+1. Complete the evidence map and resolve missing owners or statuses.
+2. Record the sandbox-only policy decision and confirm its scope and review timing.
 3. Define the measurement guardrail.
 4. Complete start, continue, expand, and pause gates.
 

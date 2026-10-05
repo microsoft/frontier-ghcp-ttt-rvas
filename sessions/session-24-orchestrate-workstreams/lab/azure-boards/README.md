@@ -4,15 +4,17 @@
 
 **Use:** Use Azure Boards for planning and status during Lab Exercises 1 through 3. Complete Exercise 4 in the main lab guide.
 
-**Deliverable:** Live child-session reviews, updated planning states, and a release-readiness decision
+**Deliverable:** Live child-session results, updated planning states, and a
+delivery-status decision
 
 > [!IMPORTANT]
 > The trainer must select and prepare this route before the workshop. It is not
 > part of the standard learner path.
 
-Use a seeded Azure Boards Epic or Feature as the parent objective for the fictional
-**Service Request Portal**. Azure Boards holds the plan, ownership, and review
-record. GitHub holds repository work.
+Use a seeded Azure Boards Epic or Feature for the same four Session 22
+status-visibility roles: public mapping, requester view, empty and stale states,
+and requester access verification. Azure Boards holds the plan, ownership, and
+delivery status. GitHub holds repository work.
 
 **GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser
 are planning interfaces. They do not replace the built-in `/orchestrate` skill.
@@ -36,7 +38,7 @@ You need:
 4. Open **Customize** → **Skills** → **Installed** and confirm the built-in
    `orchestrate` skill.
 5. Confirm that you can open, steer, and stop those sessions.
-6. Copy `workstream-review-template.md` once for each selected child item.
+6. Copy `workstream-result-template.md` once for each selected child item.
 7. Set a 30-minute activity limit or a lower approved usage limit.
 8. Confirm who owns the final release-readiness decision.
 
@@ -47,22 +49,33 @@ Use only the seeded fictional items. Do not open production work items, add real
 
 ## Parent objective
 
-Use the seeded Epic or Feature named **Service Request Portal release-review evidence**.
+Use the seeded Epic or Feature named **Service Request Portal status visibility**.
 
-> Decide whether the Service Request Portal release is ready for review. Produce an evidence record. Do not change production systems or publish release claims.
+> Decide whether the status-visibility work is ready for delivery follow-up.
+> Produce a delivery-status record. Do not change production systems or publish
+> claims.
 
 ## Step 1: Select independent child work items
 
 Open the parent item through approved MCP tools or the browser. Select up to four children with separate questions and approved inputs.
 
+Mirror the standard lab wording:
+
+| Session 22 issue role | Azure Boards child wording |
+| --- | --- |
+| Public status mapping | Public status mapping approval |
+| Requester status view | Requester view field review |
+| Empty and stale states | Empty and stale state validation |
+| Requester access verification | Requester-only access evidence |
+
 For each selected item, record:
 
 - the bounded question;
-- the required result packet;
+- the required result;
 - approved evidence;
 - exclusions;
 - a hard stop condition;
-- the human reviewer.
+- the role that will use the result.
 
 No selected child should wait for another child result. Keep shared dependencies with the parent or run dependent work in sequence.
 
@@ -71,9 +84,8 @@ No selected child should wait for another child result. Keep shared dependencies
 For each selected child:
 
 1. Move the item to the mapped active state.
-2. Add the result packet, exclusions, and stop condition to the description or a review comment.
-3. Record the human reviewer.
-4. Keep the parent item as the owner of the shared release-readiness record.
+2. Add the required result, exclusions, and stop condition to the description or a comment.
+3. Keep the parent item as the owner of the shared delivery-status record.
 
 Use the project's existing state mapping. Confirm the item ID before every MCP or browser write.
 
@@ -103,7 +115,7 @@ Preserve genuine control decisions. Stop unsafe work. Reject unsupported claims.
 
 ## Step 5: Review and update Boards
 
-Complete `workstream-review-template.md` for each live child session.
+Complete `workstream-result-template.md` for each live child session.
 
 1. Add the decision and reason to the child item.
 2. Move accepted items to the project's reviewed or completed state.
@@ -111,7 +123,10 @@ Complete `workstream-review-template.md` for each live child session.
 4. Move rejected items to the agreed closed state without approving their content.
 5. Stop unsafe work and record the boundary that ended it.
 
-Return to Exercise 4 in `../README.md`. Copy only accepted evidence into the shared release-readiness record.
+The parent decision uses **Ready**, **Ready with conditions**, or **Not ready**.
+
+Return to Exercise 4 in `../README.md`. Copy only accepted evidence into
+`delivery-status-record.md`.
 
 ## Safety boundaries
 

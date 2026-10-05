@@ -10,12 +10,13 @@
 
 ## Overview
 
-Product and delivery owners turn the manual workflow from Sessions 20–24 into one
-bounded GitHub Copilot Automation. Create a manual, draft-only automation, review
-its first run, update an approved input, rerun it, and compare the evidence before
-deciding whether to keep it.
+Session 25 closes the **Delivery Decision Studio** path. Product and delivery
+owners consume Session 24 `delivery-status-record.md` and create one manual,
+draft-only GitHub Copilot Automation. They review the first run, update one
+approved input, rerun the same automation, and compare evidence.
 
-The fictional **Service Request Portal** supplies a weekly status workflow and synthetic inputs. The core route runs in the GitHub Copilot app Automations area and reads approved GitHub work through MCP.
+The Service Request Portal remains the initiative. The core route is manual and
+draft only. Scheduling is an optional stretch after separate approval.
 
 > [!IMPORTANT]
 > Confirm Automations and GitHub MCP access before the session. If either does not work, stop and resolve access before starting the lab.
@@ -33,6 +34,7 @@ The fictional **Service Request Portal** supplies a weekly status workflow and s
 - Measure useful time saved after review and rework.
 - Write a stakeholder update that separates facts, decisions, exceptions, and next actions.
 - Decide whether GitHub or Azure Boards remains the authoritative planning system.
+- Explain why scheduling and higher autonomy require stronger controls.
 
 ## Scope
 
@@ -53,3 +55,11 @@ automation, and a system-of-record decision.
 ## Optional Azure Boards route
 
 When Azure Boards is the approved system of record, use the automation to prepare a draft update from approved Boards data or to identify work that should be handed to a linked GitHub repository. Keep publishing and work-item changes behind human approval.
+
+## Boundaries
+
+- No customer or source organization names.
+- No publishing, messaging, issue edits, or external writes in the core lab.
+- No learner move beyond A1 draft autonomy.
+- Trainer-only maturity guidance covers A2 and A3.
+- Optional scheduling does not change the draft-only output boundary.

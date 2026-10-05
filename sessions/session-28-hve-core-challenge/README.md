@@ -8,7 +8,7 @@ description: "Overview of the HVE Core RPI, customization, and product delivery 
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07 and 11, or equivalent Copilot and custom-agent experience
+**Prerequisites:** Sessions 01 to 07 and 11, or equivalent Copilot and custom-agent experience
 
 **Duration:** 4 hours (1 hour trainer content, 3 hours lab)
 
@@ -40,8 +40,8 @@ the HVE plan before implementation and review.
 
 HVE Core is required for the hands-on challenge. Confirm that the approved HVE
 Core extension or Copilot CLI plugin exposes the RPI prompts, agents, and
-customizations before the lab starts. Record the tested HVE version or channel in
-the evidence workbook.
+customizations before the lab starts. Add the tested HVE version or channel to the
+challenge handoff.
 If HVE cannot run, learners may inspect trainer-provided HVE artifacts and observe
 the workflow, but that route does not count as challenge completion.
 
@@ -57,11 +57,11 @@ during the workflow, then record the required evidence in the workbook.
 This session was last checked against HVE Core documentation on **September 24,
 2026**. HVE commands and generated artifacts can change between versions.
 
-- [HVE Core repository and framework overview](https://github.com/microsoft/hve-core)
-- [Install HVE Core](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
-- [RPI workflow overview](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
-- [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
-- [Why RPI works](https://github.com/microsoft/hve-core/blob/main/docs/rpi/why-rpi.md)
+* [HVE Core repository and framework overview](https://github.com/microsoft/hve-core)
+* [Install HVE Core](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
+* [RPI workflow overview](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
+* [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
+* [Why RPI works](https://github.com/microsoft/hve-core/blob/main/docs/rpi/why-rpi.md)
 
 ## Materials
 

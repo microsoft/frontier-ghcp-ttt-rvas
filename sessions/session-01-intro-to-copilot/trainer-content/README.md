@@ -9,13 +9,13 @@ able to review an inline suggestion without treating fluency as correctness.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:07 | The proposal-and-evidence model |
-| 0:07–0:17 | How context shapes a suggestion |
-| 0:17–0:27 | Access, data, repository, and metering preflight |
-| 0:27–0:38 | Inline suggestion controls |
-| 0:38–0:50 | Prepared utility-function demonstration |
-| 0:50–0:56 | Follow-up edits and Next Edit Suggestions |
-| 0:56–1:00 | Manual fallback and lab handoff |
+| 0:00 to 0:07 | The proposal-and-evidence model |
+| 0:07 to 0:17 | How context shapes a suggestion |
+| 0:17 to 0:27 | Access, data, repository, and metering preflight |
+| 0:27 to 0:38 | Inline suggestion controls |
+| 0:38 to 0:50 | Prepared utility-function demonstration |
+| 0:50 to 0:56 | Follow-up edits and Next Edit Suggestions |
+| 0:56 to 1:00 | Manual fallback and lab handoff |
 
 The timings match [`slides.md`](../slides.md).
 
@@ -35,7 +35,7 @@ controls available in the approved environment.
 
 ## Slide delivery map
 
-### 0:00–0:07: Proposal and evidence
+### 0:00 to 0:07: Proposal and evidence
 
 **Slides:** *Introduction to GitHub Copilot*, *The durable workflow*, *Proposal is
 not proof*
@@ -48,7 +48,7 @@ State the session rule:
 Ask what evidence learners require before merging ten generated lines. Listen for
 tests, review, scope, and repository conventions.
 
-### 0:07–0:17: Context shapes suggestions
+### 0:07 to 0:17: Context shapes suggestions
 
 **Slides:** *A practical system model*, *Context changes the proposal*
 
@@ -64,7 +64,7 @@ instructions can influence a proposal. Avoid claims about hidden service interna
 Use two versions of `normalize_username`: one with only the function name, then one
 with the docstring and test. The second version gives reviewers a clear contract.
 
-### 0:17–0:27: Preflight
+### 0:17 to 0:27: Preflight
 
 **Slides:** *Preflight before use*, *Access policy*
 
@@ -78,7 +78,7 @@ Confirm four boundaries:
 If any answer is missing, switch to the manual route. Do not troubleshoot policy
 by trial and error.
 
-### 0:27–0:38: Inline controls
+### 0:27 to 0:38: Inline controls
 
 **Slides:** *Accept, revise, reject*, *Review one suggestion*
 
@@ -91,7 +91,7 @@ Use the key bindings shown by the editor. Demonstrate:
 
 The control names matter less than the review loop.
 
-### 0:38–0:50: Prepared demonstration
+### 0:38 to 0:50: Prepared demonstration
 
 **Slides:** *Demo contract*, *Demo: inspect before accepting*, *A failing check is
 useful*
@@ -109,7 +109,7 @@ Open `lab/starter/utils.py` and `test_utils.py`.
 
 This demo shows why a failing check is useful evidence rather than a bad outcome.
 
-### 0:50–0:56: Follow-up edits
+### 0:50 to 0:56: Follow-up edits
 
 **Slides:** *Predicted follow-up edits still need review*
 
@@ -118,7 +118,7 @@ Show the `profile_summary` rename from `username` to `handle`.
 If Next Edit Suggestions are available, inspect each proposed caller update. Then
 run an independent search for the old name. A prediction can miss a reference.
 
-### 0:56–1:00: Fallback and handoff
+### 0:56 to 1:00: Fallback and handoff
 
 **Slides:** *Manual fallback*, *Lab handoff*
 

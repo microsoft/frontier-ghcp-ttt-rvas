@@ -6,9 +6,9 @@
 
 ## Delivery goal
 
-Teach managers to direct parallel work through live GitHub Copilot orchestration.
-The parent coordinates bounded child sessions. A person reviews the evidence and
-decides what enters the release record.
+Teach managers to direct the four Session 22 status-visibility issue roles through
+live GitHub Copilot orchestration. A person reviews the evidence and decides what
+enters `delivery-status-record.md`.
 
 ## One-hour plan
 
@@ -17,7 +17,7 @@ decides what enters the release record.
 | 0:00-0:08 | Parent objective and workstream boundaries | Learners can split work without hidden dependencies. |
 | 0:08-0:18 | Child-session contracts | Learners can set inputs, outputs, limits, and stop conditions. |
 | 0:18-0:28 | Monitor and intervene | Learners can wait, redirect, stop, and escalate. |
-| 0:28-0:40 | Live Service Request Portal demonstration | Learners see GitHub Copilot create and coordinate child sessions. |
+| 0:28-0:40 | Live status-visibility demonstration | Learners see GitHub Copilot create and coordinate child sessions. |
 | 0:40-0:52 | Accept, reject, and consolidate | Learners review evidence before updating the shared record. |
 | 0:52-1:00 | Session 16 contrast and lab handoff | Learners know the scope and required access. |
 
@@ -25,7 +25,7 @@ decides what enters the release record.
 
 > [!IMPORTANT]
 > Checked against official GitHub documentation on
-> **September 24, 2026**. GitHub documents `/orchestrate` as a built-in skill that
+> **October 5, 2026**. GitHub documents `/orchestrate` as a built-in skill that
 > coordinates work across sessions or repositories. Confirm the current command
 > picker before the session.
 
@@ -52,7 +52,9 @@ Before the session:
 
 Use this objective:
 
-> Decide whether the Service Request Portal release is ready for the release-review meeting. Produce a short evidence record. Do not change production systems or publish release claims.
+> Decide whether the Service Request Portal status-visibility issue set is ready
+> for delivery follow-up. Produce `delivery-status-record.md`. Do not change
+> production systems or publish claims.
 
 A strong parent objective names the decision, artifact, and boundary. Avoid vague requests for help with release readiness.
 
@@ -60,10 +62,10 @@ Split work only when the streams can proceed independently:
 
 | Workstream | Question | Output |
 | --- | --- | --- |
-| WS-01 Release notes | What user-visible changes are supported by approved sources? | Draft notes with evidence references |
-| WS-02 Support readiness | What must support staff know before launch? | Checklist with owners and open gaps |
-| WS-03 Release risk | What could block or delay release? | Risk register with go/no-go conditions |
-| WS-04 Stakeholder FAQ | Which approved answers can be prepared? | FAQ with source references |
+| WS-01 Public mapping | Is the public status vocabulary ready for owner approval? | Mapping packet with evidence and open decisions |
+| WS-02 Requester view | Is issue `#241` ready for implementation review? | Field checklist and ownership gaps |
+| WS-03 Empty and stale states | Are fallback states observable and testable? | Scenario checklist and open gaps |
+| WS-04 Access boundary | Is requester-only access evidence ready? | Access checklist and recommendation |
 
 Keep one owner for the shared readiness record. Child sessions return packets. They do not edit the final decision at the same time.
 
@@ -81,12 +83,11 @@ Every workstream needs:
 Use this contract:
 
 ```text
-Workstream: WS-03 Release risk
-Goal: Identify release risks supported by the supplied sanitized evidence.
-Return: Findings, evidence references, open questions, and a recommendation.
-Do not: Access production, contact people, change files, or invent likelihood.
-Stop when: Evidence is missing, the task requires restricted data, or the
-work overlaps another workstream.
+Workstream: WS-03 Empty and stale states
+Goal: Check that fallback criteria are observable and supported.
+Return: Scenario checklist, evidence references, open questions, and a recommendation.
+Do not: Add response-time promises, access production, or change systems.
+Stop when: A criterion needs an unsupported commitment or restricted data.
 ```
 
 The packet is the deliverable. The transcript is supporting context.
@@ -122,9 +123,9 @@ Open `lab/starter/orchestration-plan-template.md` and the reference plan in
 Submit the approved plan:
 
 ```text
-/orchestrate Prepare the Service Request Portal release-review evidence.
+/orchestrate Review the Service Request Portal status-visibility issue set.
 Use the four workstreams in the approved orchestration plan. Keep each
-workstream independent. Require a result packet and obey every stop condition.
+workstream independent. Require a clear result and obey every stop condition.
 Use only the supplied sanitized sources. Do not access production, publish
 content, contact people, or change systems.
 ```
@@ -153,15 +154,16 @@ Review each live packet against its contract.
 | Evidence | Material claims point to supplied sources. |
 | Boundaries | The child used no restricted access or unapproved action. |
 | Completeness | The packet contains findings, evidence, gaps, and a recommendation. |
-| Decision | The reviewer records accept, reject, redirect, stop, or escalate. |
+| Decision | The parent keeps supported findings and rejects unsupported claims. |
 
-Only accepted content enters the shared record. Keep rejected packets and reasons in the decision trail.
+Only accepted content enters the shared record. Add rejected claims and reasons
+there as well.
 
-The human approval uses one outcome:
+The delivery decision uses one outcome:
 
-- **Go:** Evidence meets every release gate.
-- **Conditional go:** Named owners must close listed gaps.
-- **No-go:** One or more release gates remain unresolved.
+- **Ready:** Evidence meets every delivery-status gate.
+- **Ready with conditions:** Named owners must close listed gaps.
+- **Not ready:** One or more gates remain unresolved.
 
 ## 6. Distinguish this session from Session 16 (0:52-0:56)
 
@@ -172,9 +174,8 @@ Session 16 teaches an optional Squad implementation with persistent roles, routi
 Learners need working GitHub Copilot orchestration before they start. They submit:
 
 1. an orchestration plan with live child-session identifiers;
-2. management actions for the live sessions;
-3. an acceptance or rejection decision for every result packet;
-4. a release-readiness record with human approval.
+2. live results;
+3. `delivery-status-record.md` with the decision and Session 25 handoff.
 
 For a planned Azure Boards delivery, use the trainer-only
 [Azure Boards supplement](../lab/azure-boards/README.md). Do not introduce this

@@ -8,7 +8,7 @@ description: "HVE Core challenge covering RPI, customization, product agents, an
 
 **Difficulty:** Advanced
 
-**Prerequisites:** HVE Core installed; Sessions 01–07 and 11 or equivalent experience
+**Prerequisites:** HVE Core installed; Sessions 01 to 07 and 11 or equivalent experience
 
 ## Objective
 
@@ -25,13 +25,13 @@ changed the next.
    `/rpi-implement`, `/rpi-review`, `/rpi`, `@Product Manager Advisor`, and
    `@Agile Coach` are available.
 3. Confirm that `.copilot-tracking/` is ignored by Git.
-4. Identify the human reviewer and reserve roughly the final 20–30 minutes for
+4. Identify the human reviewer and reserve roughly the final 20 to 30 minutes for
    Review, the human decision, and handoff.
 5. Confirm Node.js 20 or later and whether local package downloads are approved.
 6. Run `npm test` when dependencies already exist. Run `npm ci` first only when
    package downloads are approved.
 7. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and
-   `starter/evidence-workbook.md`.
+   `starter/challenge-handoff.md`.
 8. Confirm whether container validation will use an approved local engine or a
    trainer-managed remote build.
 
@@ -48,12 +48,12 @@ met. If one agent stalls, use the phase-recovery guide and protect time for Revi
 
 | Stage | Indicative range | Evidence gate |
 |-------|------------------|---------------|
-| HVE preflight and artifact model | 10–15 min | Required agents are visible; tracking paths are understood |
-| Research and Plan | 30–40 min | Research, plan, critique, and human approval exist |
-| HVE customization | 20–25 min | Three customization layers have activation evidence |
-| Product and Agile refinement | 20–25 min | Advisor decision, story, criteria, and exclusions exist |
-| Implement and validate | 35–45 min | Changes log, code, tests, and container evidence exist |
-| Review and combined-RPI comparison | 20–30 min | Review artifact, human decision, and comparison are recorded |
+| HVE preflight and artifact model | 10 to 15 min | Required agents are visible; tracking paths are understood |
+| Research and Plan | 30 to 40 min | Research, plan, critique, and human approval exist |
+| HVE customization | 20 to 25 min | Three customization layers have activation evidence |
+| Product and Agile refinement | 20 to 25 min | Advisor decision, story, criteria, and exclusions exist |
+| Implement and validate | 35 to 45 min | Changes log, code, tests, and container evidence exist |
+| Review and combined-RPI comparison | 20 to 30 min | Review artifact, human decision, and comparison are recorded |
 
 Treat the ranges as planning guidance, not additive deadlines. Faster phases create
 room for deeper artifact review. Slower phases should use recovery rather than
@@ -158,12 +158,12 @@ handoff evidence.
 
 Submit or demonstrate:
 
-* A completed `evidence-workbook.md` with an HVE artifact chain
+* `challenge-handoff.md` with the HVE artifact chain and open risks
 * Research, plan, changes, and review artifacts from HVE
 * Repository context, a targeted JavaScript/API instruction, and a custom reviewer agent
 * Product Manager Advisor and Agile Coach outputs
 * The implemented endpoint, focused tests, and production container definition
-* Exact test evidence, a human review decision, and local Git handoff text
+* Exact test results, a human review decision, and local Git handoff text
 
 ## Scoring rubric
 
@@ -180,9 +180,9 @@ this HVE challenge.
 
 ## Official references
 
-- [HVE Core installation](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
-- [RPI workflow](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
-- [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
+* [HVE Core installation](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
+* [RPI workflow](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
+* [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
 
 ## Solution reference
 

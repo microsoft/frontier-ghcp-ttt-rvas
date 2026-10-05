@@ -6,7 +6,7 @@
 
 ## Teaching goal
 
-Learners should leave the teaching hour able to define a canvas contract, explain each action, show a safe rejection, and name the human decision that controls sharing.
+Learners should leave the teaching hour able to define a canvas contract, explain each action, show a safe rejection, and check whether the final state is safe to share.
 
 ## Required preparation
 
@@ -26,6 +26,18 @@ Before class:
 6. Name the demo owner and reviewer.
 7. Keep `../lab/solution/demo-evidence.md` ready for a delayed or unavailable live run.
 
+The delivery-readiness board is the default. For an early-finisher, follow-up, or
+CI-focused audience, prepare the optional Feature Workbench files:
+
+- `../lab/starter/feature-workbench-contract.md`
+- `../lab/starter/feature-workbench-sample.json`
+- `../lab/solution/feature-workbench-solution.md`
+- `../lab/solution/feature-workbench-final-state.json`
+
+Do not replace the main demo or change the one-hour plan. The variant reuses the
+same contract-first method with a narrower decision: whether synthetic feature
+work may pass a test gate.
+
 ## Access decision
 
 The live demo requires all of these:
@@ -42,26 +54,26 @@ If one condition fails, use the prepared manual demo. **Do not bypass a policy, 
 
 | Time | Segment | Learner evidence |
 | --- | --- | --- |
-| 0:00–0:05 | Outcome and access gate | Live or manual route selected |
-| 0:05–0:13 | Choose the right customization | Canvas decision explained |
-| 0:13–0:23 | Build the contract | State, actions, capabilities, validation |
-| 0:23–0:30 | Inspect prepared inputs and harness | Passing local contract tests |
-| 0:30–0:43 | Prepared or live canvas demo | Two visible state changes |
-| 0:43–0:50 | Rejection and recovery | Rule preserved through recovery |
-| 0:50–0:56 | Generated extension review | Keep, revise, or remove decisions |
-| 0:56–1:00 | Lab handoff | Roles, deliverables, and checkpoints clear |
+| 0:00 to 0:05 | Outcome and access gate | Live or manual route selected |
+| 0:05 to 0:13 | Choose the right customization | Canvas decision explained |
+| 0:13 to 0:23 | Build the contract | State, actions, capabilities, validation |
+| 0:23 to 0:30 | Inspect prepared inputs and harness | Passing local contract tests |
+| 0:30 to 0:43 | Prepared or live canvas demo | Two visible state changes |
+| 0:43 to 0:50 | Rejection and recovery | Rule preserved through recovery |
+| 0:50 to 0:56 | Generated extension review | Keep, revise, or remove decisions |
+| 0:56 to 1:00 | Lab handoff | Roles, deliverables, and checkpoints clear |
 
-## 0:00–0:05: Set the outcome and access gate
+## 0:00 to 0:05: Set the outcome and access gate
 
 Say:
 
-> “We are designing one shared artifact. The proof is visible state plus a review record, not a polished chat response.”
+> "We are designing one shared artifact. Judge it by its visible behavior, not by a polished chat response."
 
 Show the required deliverables. Then state which route the class will use.
 
-Ask one learner to name the final human decision. Accept `approve`, `revise`, or `pause`.
+Ask one learner to name a condition that should stop the canvas from being shared.
 
-## 0:05–0:13: Choose the right customization
+## 0:05 to 0:13: Choose the right customization
 
 Use the decision table from the slides.
 
@@ -76,9 +88,9 @@ Make the distinction concrete:
 
 Use a canvas when the state must stay visible across several actions or a handoff. Stay in chat for a short answer or one draft.
 
-**Checkpoint:** Ask, “What breaks if this remains only in chat?” A valid answer names lost visibility, direct steering, or durable handoff state.
+**Checkpoint:** Ask, "What breaks if this remains only in chat?" A valid answer names lost visibility, direct steering, or durable handoff state.
 
-## 0:13–0:23: Build the worked contract
+## 0:13 to 0:23: Build the worked contract
 
 Open `../lab/starter/canvas-contract.md`.
 
@@ -90,11 +102,11 @@ Walk through each section:
 4. **Validation:** reject unknown IDs, unknown statuses, and `ready` without evidence.
 5. **Boundary:** synthetic data and no external systems.
 
-Ask who can retire the artifact. Record an owner rather than saying “the team.”
+Ask who can retire the artifact. Record an owner rather than saying "the team."
 
-**Teaching test:** Every action must fit in one sentence. A broad verb such as “manage” needs a smaller action.
+**Teaching test:** Every action must fit in one sentence. A broad verb such as "manage" needs a smaller action.
 
-## 0:23–0:30: Inspect prepared inputs and contract harness
+## 0:23 to 0:30: Inspect prepared inputs and contract harness
 
 Open `prepared-items.json`. Point out the three starting states and which item lacks evidence.
 
@@ -114,7 +126,7 @@ Show these results:
 - `DOC-101` cannot move to `ready` without evidence;
 - adding evidence allows the retry.
 
-## 0:30–0:43: Prepared or live demo
+## 0:30 to 0:43: Prepared or live demo
 
 ### Live route
 
@@ -151,7 +163,7 @@ Trace the same two changes. Mark each statement as observed evidence or prepared
 
 If the canvas is not reviewable by 0:38, switch to prepared evidence. Keep the rejection, recovery, and review segments.
 
-## 0:43–0:50: Show rejection and recovery
+## 0:43 to 0:50: Show rejection and recovery
 
 Request:
 
@@ -175,9 +187,7 @@ Expected behavior:
 
 If the generated canvas accepts the first request, pause the demo. Restore the rule before continuing. A successful unsafe update is a failed demo.
 
-## 0:50–0:56: Review the extension
-
-Use `../lab/starter/canvas-review.md`.
+## 0:50 to 0:56: Inspect the extension
 
 Inspect:
 
@@ -186,24 +196,25 @@ Inspect:
 - visible human actions;
 - agent-callable capabilities;
 - validation messages;
-- owner, reviewer, fallback, and retirement trigger.
+- owner, fallback, and retirement trigger.
 
-For each item, record `approve`, `revise`, or `pause`. Remove generated features that the contract did not request.
+Remove generated features that the contract did not request. Pause if the canvas
+still violates the contract.
 
-## 0:56–1:00: Hand off to the lab
+## 0:56 to 1:00: Hand off to the lab
 
 Assign four roles. One person may hold two roles in a small group:
 
 - contract owner;
 - app operator or manual simulator;
-- independent reviewer;
-- evidence recorder.
+- contract tester;
+- handoff owner.
 
 Point learners to the six lab checkpoints. Remind them that the same three prepared items stay in use for the full lab.
 
 End with:
 
-> “Keep the contract fixed while you test the implementation. If the implementation needs broader authority, stop and review the contract first.”
+> "Keep the contract fixed while you test the implementation. If the implementation needs broader authority, stop and review the contract first."
 
 ## Common failures and recovery
 
@@ -217,6 +228,23 @@ End with:
 | `ready` succeeds without evidence | Treat it as a failed rule, fix it, and rerun the rejection. |
 | A learner proposes real work data | Replace it with the supplied synthetic input. |
 
-## Product notes checked September 24, 2026
+## Optional Feature Workbench guidance
+
+Use this variant after the default flow or as a separate practice task. Learners
+review three synthetic CI checks, reject a gate decision when a required check
+fails, then record the evidence that allows a retry.
+
+Keep the authority narrow:
+
+- people may acknowledge a result and request a gate evaluation;
+- the agent may read checks and propose `pass`, `hold`, or `rerun`;
+- only a named human reviewer records the final gate decision;
+- the workbench must not trigger deployment, merge a pull request, or call a live
+  CI service.
+
+The worked solution holds `FEAT-204` because `integration-tests` failed. A retry is
+valid only after the sample state contains a passing required check.
+
+## Product notes checked October 5, 2026
 
 Official GitHub documentation describes canvas extensions as shared interactive surfaces in the GitHub Copilot app. It documents `/create-canvas`, project scope at `.github/extensions`, user scope at `~/.copilot/extensions`, visible canvas controls, and agent-callable capabilities. Availability and policy can still differ, so the preflight remains mandatory.

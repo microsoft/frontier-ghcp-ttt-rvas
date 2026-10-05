@@ -4,7 +4,7 @@ Extend the Todo API created from `project-brief.md`. Keep all existing routes an
 
 ## New fields
 
-- `owner`: optional string, 1–80 characters.
+- `owner`: optional string, 1 to 80 characters.
 - `dueDate`: optional ISO date in `YYYY-MM-DD` format.
 
 ## Required behavior

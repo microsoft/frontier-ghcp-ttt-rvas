@@ -28,7 +28,7 @@ copilot -p "Explain this regex: ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A
 | Aspect                           | CLI     | IDE     |
 | -------------------------------- | ------- | ------- |
 | Time to get answer               | ___ sec | ___ sec |
-| Explanation quality (1–5)        | ___     | ___     |
+| Explanation quality (1 to 5)        | ___     | ___     |
 | Could you ask follow-ups easily? | ___     | ___     |
 | Which felt more natural?         | ___     | ___     |
 
@@ -63,7 +63,7 @@ copilot -p "Write a bash script that finds all .log files in /var/log modified i
 | Aspect                         | CLI     | IDE     |
 | ------------------------------ | ------- | ------- |
 | Time to working script         | ___ sec | ___ sec |
-| Script quality (1–5)           | ___     | ___     |
+| Script quality (1 to 5)           | ___     | ___     |
 | Could you test it immediately? | ___     | ___     |
 | Iteration workflow             | ___     | ___     |
 
@@ -81,7 +81,7 @@ copilot -p "Write a bash script that finds all .log files in /var/log modified i
 
 ```bash
 copilot
-# Then: "Run npm test in the agent-tasks directory. One test is failing — find and fix the bug."
+# Then: "Run npm test in the agent-tasks directory. One test is failing: find and fix the bug."
 ```
 
 **IDE approach:**

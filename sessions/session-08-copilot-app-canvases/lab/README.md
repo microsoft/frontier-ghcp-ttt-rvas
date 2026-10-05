@@ -2,12 +2,12 @@
 
 **Duration:** 2 hours  
 **Difficulty:** Advanced  
-**Prerequisites:** Sessions 01–07  
-**Deliverable:** A completed canvas evidence packet
+**Prerequisites:** Sessions 01 to 07
+**Deliverable:** A tested canvas and its final state
 
 ## Objective
 
-Use one synthetic delivery-readiness contract from setup through peer review. You will test the contract locally, create or simulate the canvas, make visible and agent-requested changes, prove that an invalid change is rejected, recover, and record a human decision.
+Use one synthetic delivery-readiness contract from setup through handoff. You will test the contract locally, create or simulate the canvas, make visible and agent-requested changes, verify that an invalid change is rejected, and recover safely.
 
 ## Deliverables
 
@@ -15,9 +15,7 @@ Submit:
 
 1. your completed `canvas-contract.md`;
 2. the generated extension location, or a note that you used the manual route;
-3. a completed `checkpoint-record.md`;
-4. a completed `canvas-review.md`;
-5. final state that matches the accepted transitions.
+3. final state that matches the accepted transitions.
 
 ## Access policy
 
@@ -47,8 +45,6 @@ Open these files:
 - `canvas-contract.md`
 - `prepared-items.json`
 - `demo-runbook.md`
-- `checkpoint-record.md`
-- `canvas-review.md`
 
 Copy the record files to a writable working folder if you do not want to edit the starter assets.
 
@@ -60,12 +56,12 @@ Copy the record files to a writable working folder if you do not want to edit th
 | 2 | Run the prepared contract tests | 15 min |
 | 3 | Create or simulate the canvas | 25 min |
 | 4 | Make two visible state changes | 20 min |
-| 5 | Prove rejection and recovery | 20 min |
-| 6 | Peer review and handoff | 20 min |
+| 5 | Verify rejection and recovery | 20 min |
+| 6 | Inspect and hand off | 20 min |
 
 ## Part 1: Confirm access and contract (20 minutes)
 
-1. Record the selected route in `checkpoint-record.md`: project scope, user scope, or manual.
+1. Select the project scope, user scope, or manual route.
 2. Confirm that all data comes from `prepared-items.json`.
 3. Review every state field, human action, agent capability, and validation rule in `canvas-contract.md`.
 4. Replace the owner and reviewer placeholders.
@@ -165,11 +161,11 @@ Verify:
 - `DOC-101` is still `planned`;
 - the visible state and response agree.
 
-Record before and after values in `checkpoint-record.md`.
+Confirm the before and after values in the canvas state.
 
 **Checkpoint 4:** One human action and one agent-requested capability changed the same bounded state model.
 
-## Part 5: Prove rejection and recovery (20 minutes)
+## Part 5: Verify rejection and recovery (20 minutes)
 
 Request:
 
@@ -204,11 +200,9 @@ If the first request succeeds, stop. Restore the validation rule and repeat the 
 
 **Checkpoint 5:** Recovery corrected the data and kept the rule.
 
-## Part 6: Peer review and handoff (20 minutes)
+## Part 6: Inspect and hand off (20 minutes)
 
-Exchange evidence packets with another group.
-
-Complete `canvas-review.md`. The reviewer must inspect:
+Exchange canvases with another group. Inspect:
 
 - artifact location and scope;
 - state and defaults;
@@ -218,26 +212,20 @@ Complete `canvas-review.md`. The reviewer must inspect:
 - dependencies and persisted data;
 - owner, fallback, and retirement trigger.
 
-Choose one final decision:
+Fix contract mismatches. Pause if access, behavior, data, or ownership remains
+unresolved. Then compare the final state with `../solution/final-state.json`.
 
-- **approve** when the implementation matches the contract;
-- **revise** when a bounded correction is named;
-- **pause** when access, behavior, data, or ownership is unresolved.
-
-Compare your final state with `../solution/final-state.json` only after the review.
-
-**Checkpoint 6:** A named reviewer records a decision and the next safe action.
+**Checkpoint 6:** The canvas matches the contract and is safe to hand off.
 
 ## Final deliverable
 
-The evidence packet is complete when another person can identify:
+The work is complete when another person can identify:
 
 - the selected access route;
 - the fixed canvas contract;
 - the prepared starting state;
 - both accepted changes;
-- the rejected change and recovery;
-- the final human decision.
+- the rejected change and recovery.
 
 ## Troubleshooting
 
@@ -252,4 +240,20 @@ The evidence packet is complete when another person can identify:
 
 ## Solution reference
 
-`../solution/` contains the worked contract, completed evidence, and final state. Review it after your peer decision.
+`../solution/` contains the worked contract and final state.
+
+## Optional variant: Feature Workbench
+
+Use this variant only after the default delivery-readiness lab, or when the
+trainer assigns it as follow-up practice. It does not replace the required
+deliverable.
+
+1. Open `starter/feature-workbench-contract.md`.
+2. Load the synthetic checks from `starter/feature-workbench-sample.json`.
+3. Decide whether `FEAT-204` should pass the test gate.
+4. Record the required check that blocks the decision.
+5. Compare your review with `solution/feature-workbench-solution.md` and
+   `solution/feature-workbench-final-state.json`.
+
+The canvas may propose `pass`, `hold`, or `rerun`. A named human reviewer owns the
+final decision. Do not connect a live CI system, merge code, or trigger deployment.

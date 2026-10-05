@@ -106,9 +106,9 @@ Content-Type: application/json
 
 | Field         | Type    | Required   | Constraints                    |
 | ------------- | ------- | ---------- | ------------------------------ |
-| `name`        | string  | Yes        | 1–200 chars                    |
+| `name`        | string  | Yes        | 1 to 200 chars                    |
 | `description` | string  | No         |                                |
-| `price`       | number  | Yes        | 0–999999.99                    |
+| `price`       | number  | Yes        | 0 to 999999.99                    |
 | `category`    | string  | No         | Must be valid category         |
 | `stock`       | integer | No         | >= 0, default 0                |
 | `status`      | string  | No         | active, inactive, discontinued |

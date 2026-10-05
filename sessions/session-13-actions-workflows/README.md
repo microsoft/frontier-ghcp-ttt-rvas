@@ -2,7 +2,7 @@
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05
+**Prerequisites:** Sessions 01 to 05
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview

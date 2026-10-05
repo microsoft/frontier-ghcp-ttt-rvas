@@ -2,7 +2,7 @@
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07 and 11
+**Prerequisites:** Sessions 01 to 07 and 11
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
@@ -33,4 +33,4 @@ the same skill remains usable as a manual checklist.
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
 | Completed skill | [`lab/solution/skills-project/.github/skills/api-design/SKILL.md`](lab/solution/skills-project/.github/skills/api-design/SKILL.md) |
-| Run evidence | [`lab/solution/skills-project/RUN-EVIDENCE.md`](lab/solution/skills-project/RUN-EVIDENCE.md) |
+| Expected output | [`lab/solution/skills-project/EXPECTED-OUTPUT.md`](lab/solution/skills-project/EXPECTED-OUTPUT.md) |

@@ -2,7 +2,7 @@
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–05, 13
+**Prerequisites:** Sessions 01 to 05, 13
 **Duration:** 2 hours 30 minutes (1 hour trainer content + 1 hour 30 minutes lab)
 
 ## Overview

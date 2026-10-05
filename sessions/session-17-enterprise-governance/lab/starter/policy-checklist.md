@@ -38,10 +38,7 @@ status: **confirmed in scenario**, **live evidence pending**, or **out of scope*
 | Stop at 20 runs | | | |
 | Manual fallback | | | |
 
-## Checkpoint 1
+## Open gaps
 
-- Reviewer:
-- Date:
-- Unsupported assumption found:
-- Correction:
-- Result: pass / revise
+- Unsupported assumption:
+- Required correction:

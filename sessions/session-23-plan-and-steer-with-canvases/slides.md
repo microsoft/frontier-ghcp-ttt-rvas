@@ -18,7 +18,10 @@ Session 23 | Product and Delivery Teams | Intermediate
 
 A canvas helps when work has several records, repeated updates, named actions, and a review view that must survive the conversation.
 
+The source is the Session 22 `issue-handoff.md`, not the previous chat.
+
 ---
+
 # The canvas is a planning projection
 
 GitHub owns issue state. The canvas groups that state with planning information that
@@ -35,6 +38,7 @@ Label the two kinds of state differently. Otherwise the team cannot tell whether
 they are seeing a decision or a source-system fact.
 
 ---
+
 # Keep fields that change a decision
 
 | Field | Keep it when | Remove it when |
@@ -46,6 +50,7 @@ they are seeing a decision or a source-system fact.
 The canvas should expose important work without becoming a second backlog.
 
 ---
+
 # Steering needs a review loop
 
 ```text
@@ -61,6 +66,7 @@ Accept, revise, or reject
 This loop protects against stale data and confident but unsupported updates.
 
 ---
+
 # Start from the GitHub issue plan
 
 The canvas should show:
@@ -80,6 +86,9 @@ The canvas should show:
 People can update planning status and record decisions. Copilot can summarize
 and propose updates. Do not close issues, change assignees, or publish content.
 ```
+
+This is a no-code review. Inspect generated files and capabilities, then ask
+Copilot for bounded changes.
 
 ---
 
@@ -155,6 +164,17 @@ Confirm:
 
 ---
 
+# Critique the handoff
+
+Run `/context`, then use a fresh session when needed.
+
+Ask `/rubber-duck` to find stale claims, mixed state labels, unsafe actions, and
+missing owners.
+
+Save `canvas-handoff.md` for Session 24.
+
+---
+
 # Lab result
 
 - Learner-created canvas
@@ -162,5 +182,6 @@ Confirm:
 - Live GitHub issue data
 - A detected and reconciled state mismatch
 - Owner, refresh, recovery, and retirement rules
+- Four status-visibility workstream candidates
 
 **Stop if live canvas creation is unavailable.**

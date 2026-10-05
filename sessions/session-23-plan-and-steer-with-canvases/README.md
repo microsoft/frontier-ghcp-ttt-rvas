@@ -10,12 +10,17 @@
 
 ## Overview
 
-Use the built-in `/create-canvas` skill to turn the Session 22 issue plan into a
+Continue the **Delivery Decision Studio** path. Use the built-in
+`/create-canvas` skill to turn the Session 22 issue handoff into a
 visible delivery workspace. Review the generated extension, remove unnecessary
 capabilities, create a real GitHub state change, detect stale canvas data, and
 reconcile it.
 
 Learners describe and operate the canvas. They do not hand-code the extension.
+
+The GitHub MCP connection supplies issue tools. A plugin may package MCP and
+canvas capabilities, but it does not replace connection or capability review.
+Keep the lab no-code and free of customer or source organization names.
 
 > [!IMPORTANT]
 > **Live canvas creation is required.** Stop if `/create-canvas`, GitHub MCP, or the approved canvas actions are unavailable.
@@ -32,6 +37,7 @@ Learners practice how to:
 6. Detect drift between visible canvas state and a fresh GitHub read.
 7. Refresh and reconcile the canvas.
 8. Record ownership, refresh, recovery, and retirement conditions.
+9. Produce `canvas-handoff.md` for the Session 24 status-visibility workstreams.
 
 ## Session structure
 
@@ -45,7 +51,7 @@ Learners practice how to:
 | Resource | Location |
 | --- | --- |
 | Slides | [`slides.md`](slides.md) |
-| Canvas requirements and review record | [`lab/starter/`](lab/starter/) |
+| Canvas requirements and handoff | [`lab/starter/`](lab/starter/) |
 | Reference result | [`lab/solution/`](lab/solution/) |
 
 ## Session 08 distinction

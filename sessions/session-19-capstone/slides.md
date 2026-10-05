@@ -96,7 +96,7 @@ packages.
 
 ---
 
-# Executable proof
+# Executable verification
 
 ```bash
 npm test

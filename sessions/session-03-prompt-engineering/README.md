@@ -4,7 +4,7 @@
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Sessions 01–02
+**Prerequisites:** Sessions 01 to 02
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 

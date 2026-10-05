@@ -44,26 +44,26 @@ If one condition is missing, use the manual route. **Do not assign the issue, br
 
 | Time | Segment | Checkpoint evidence |
 | --- | --- | --- |
-| 0:00–0:05 | Frame and access decision | Live or manual route selected |
-| 0:05–0:16 | Checkpoint 1: issue contract | Approved issue |
-| 0:16–0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
-| 0:27–0:39 | Start or simulate one session | Bounded progress evidence |
-| 0:39–0:47 | Checkpoint 3: proposed change | Scoped diff review |
-| 0:47–0:54 | Checkpoint 4: tests | Recorded test result |
-| 0:54–0:58 | Checkpoint 5: human decision | Approve, request changes, or pause |
-| 0:58–1:00 | Lab handoff | Roles and records ready |
+| 0:00 to 0:05 | Frame and access decision | Live or manual route selected |
+| 0:05 to 0:16 | Checkpoint 1: issue contract | Approved issue |
+| 0:16 to 0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
+| 0:27 to 0:39 | Start or simulate one session | Bounded progress evidence |
+| 0:39 to 0:47 | Checkpoint 3: proposed change | Scoped diff review |
+| 0:47 to 0:54 | Checkpoint 4: tests | Recorded test result |
+| 0:54 to 0:58 | Checkpoint 5: human decision | Approve, request changes, or pause |
+| 0:58 to 1:00 | Lab handoff | Roles and records ready |
 
-## 0:00–0:05: Frame the journey
+## 0:00 to 0:05: Frame the journey
 
 Show the five-checkpoint sequence.
 
 Say:
 
-> “We will keep one issue fixed from assignment through review. If the work needs a different issue, we stop and write one.”
+> "We will keep one issue fixed from assignment through review. If the work needs a different issue, we stop and write one."
 
 State the selected access route. Ask the reviewer to confirm ownership of the final decision.
 
-## 0:05–0:16: Checkpoint 1: issue contract
+## 0:05 to 0:16: Checkpoint 1: issue contract
 
 Start with this weak request:
 
@@ -84,7 +84,7 @@ Ask a learner to map each criterion to evidence.
 
 **Gate:** Do not assign the issue until a peer can name changed behavior, preserved behavior, allowed files, required checks, and non-goals.
 
-## 0:16–0:27: Checkpoint 2: setup
+## 0:16 to 0:27: Checkpoint 2: setup
 
 Open `../lab/starter/copilot-instructions.md`.
 
@@ -115,7 +115,7 @@ npm test
 
 **Gate:** Stop when the baseline fails without an explanation, setup requests a credential, or the reviewer cannot identify the allowed files.
 
-## 0:27–0:39: Start or simulate one session
+## 0:27 to 0:39: Start or simulate one session
 
 ### Live route
 
@@ -146,7 +146,7 @@ Have one learner implement the fixed issue in a copy of the starter project. Ano
 
 At 0:35, switch to `../lab/solution/proposed-change.diff` if no reviewable proposal exists. Label it prepared evidence.
 
-## 0:39–0:47: Checkpoint 3: proposed change
+## 0:39 to 0:47: Checkpoint 3: proposed change
 
 Review the live or prepared diff before running tests.
 
@@ -168,7 +168,7 @@ Add that focused test in tests/app.test.js. Keep the current file scope,
 then run npm test and report the result.
 ```
 
-## 0:47–0:54: Checkpoint 4: tests
+## 0:47 to 0:54: Checkpoint 4: tests
 
 Run:
 
@@ -187,7 +187,7 @@ Passing tests are necessary, but they do not replace diff review.
 
 If a test fails, decide whether the correction fits the issue. Request a bounded change or pause.
 
-## 0:54–0:58: Checkpoint 5: human decision
+## 0:54 to 0:58: Checkpoint 5: human decision
 
 The named reviewer chooses:
 
@@ -197,16 +197,16 @@ The named reviewer chooses:
 
 Do not turn the decision into a new implementation request.
 
-## 0:58–1:00: Lab handoff
+## 0:58 to 1:00: Lab handoff
 
 Assign:
 
 - issue owner;
 - live operator or manual implementer;
 - reviewer;
-- evidence recorder.
+- test runner.
 
-Point learners to `../lab/starter/checkpoint-record.md`. The same issue must appear at all five checkpoints.
+The same issue must stay in scope from setup through review.
 
 ## Demo rejection and recovery
 

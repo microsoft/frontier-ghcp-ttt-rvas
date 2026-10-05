@@ -1,0 +1,38 @@
+{
+  "repository": "training/service-request-portal",
+  "synthetic": true,
+  "issues": [
+    {
+      "number": 241,
+      "state": "OPEN",
+      "title": "Show the last public update time on request details",
+      "labels": ["status-visibility", "frontend"],
+      "body": "Add the latest requester-safe update time to the request details view. Public status wording and stale-state behavior are not covered.",
+      "relationship": "partial overlap"
+    },
+    {
+      "number": 256,
+      "state": "OPEN",
+      "title": "Email requesters after every internal status change",
+      "labels": ["notification"],
+      "body": "Send an email whenever the internal workflow state changes.",
+      "relationship": "out of scope"
+    },
+    {
+      "number": 263,
+      "state": "OPEN",
+      "title": "Display internal queue and agent name to requesters",
+      "labels": ["status-visibility"],
+      "body": "Show the internal queue name and assigned service agent on the requester page.",
+      "relationship": "conflicts with approved visibility boundary"
+    },
+    {
+      "number": 278,
+      "state": "CLOSED",
+      "title": "Clarify request status in the portal",
+      "labels": ["status-visibility"],
+      "body": "Earlier discovery issue. Closed after the team found that it lacked an approved public status mapping and access rules.",
+      "relationship": "historical duplicate"
+    }
+  ]
+}

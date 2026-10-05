@@ -6,7 +6,7 @@ An approved issue with acceptance criteria and a named source boundary.
 
 ## Outputs
 
-A bounded source diff and result packet.
+A bounded source diff and result summary.
 
 ## Limits
 

@@ -10,12 +10,12 @@ a short trainer comparison or optional extension.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Architecture and Terraform project model |
-| 0:08–0:20 | Module contracts |
-| 0:20–0:32 | Root composition |
-| 0:32–0:44 | Staged validation |
-| 0:44–0:54 | Intentional security failure |
-| 0:54–1:00 | Bicep comparison and lab handoff |
+| 0:00 to 0:08 | Architecture and Terraform project model |
+| 0:08 to 0:20 | Module contracts |
+| 0:20 to 0:32 | Root composition |
+| 0:32 to 0:44 | Staged validation |
+| 0:44 to 0:54 | Intentional security failure |
+| 0:54 to 1:00 | Bicep comparison and lab handoff |
 
 ## Prepare
 

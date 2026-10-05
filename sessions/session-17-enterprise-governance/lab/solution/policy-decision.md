@@ -33,5 +33,3 @@ data, deployment, external MCP servers, live setting changes, or wider rollout.
 ## Review
 
 - **Review date:** 2026-10-08
-- **Checkpoint reviewer:** Peer reviewer
-- **Checkpoint result:** Pass

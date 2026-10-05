@@ -258,7 +258,7 @@ expected outputs, and tests. Call out any unproved assumption.
 | Wrong turn | Coaching response |
 | --- | --- |
 | Rewrite the application from scratch | Return to the first failing command and preserve the supplied interface |
-| Ask Copilot to “fix everything” | Narrow the prompt to one failure and one file |
+| Ask Copilot to "fix everything" | Narrow the prompt to one failure and one file |
 | Change fixtures to match broken output | Restate that fixtures are the contract |
 | Refactor while imports still fail | Restore startup first |
 | Remove the repeated-run test | Explain that global state often passes once and fails in a process |

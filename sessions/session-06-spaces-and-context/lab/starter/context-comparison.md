@@ -20,7 +20,7 @@ _(paste the response here)_
 - Error handling present:
 - Assumptions made:
 
-**Quality score (1–5):** ___
+**Quality score (1 to 5):** ___
 
 ---
 
@@ -38,7 +38,7 @@ _(paste the response here)_
 - Did its error format match the instructions?
 - Other differences from Experiment A:
 
-**Quality score (1–5):** ___
+**Quality score (1 to 5):** ___
 
 ---
 
@@ -56,7 +56,7 @@ _(paste the response here)_
 - Consistency with project codebase:
 - Cited files:
 
-**Quality score (1–5):** ___
+**Quality score (1 to 5):** ___
 
 ---
 
@@ -73,7 +73,7 @@ _(paste the response here)_
 - Was it more consistent than raw Chat?
 - Missing elements:
 
-**Quality score (1–5):** ___
+**Quality score (1 to 5):** ___
 
 ---
 
@@ -85,7 +85,7 @@ _(paste the response here)_
 | Used correct patterns?  |             |               |         |               |
 | Assumed correct stack?  |             |               |         |               |
 | Required iterations?    |             |               |         |               |
-| Quality score (1–5)     |             |               |         |               |
+| Quality score (1 to 5)     |             |               |         |               |
 
 ## Findings
 

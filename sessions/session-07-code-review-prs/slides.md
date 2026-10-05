@@ -80,7 +80,7 @@ Use the intentional defects and conflict scenario for a human-only review. Recor
 | 0:51 | Limits and adoption | Design human gates |
 | 0:58 | Lab handoff and Q&A | Assign reviewer roles |
 
-**Transition:** “Copilot can increase review coverage; it cannot own the decision.”
+**Transition:** "Copilot can increase review coverage; it cannot own the decision."
 
 ---
 
@@ -259,7 +259,7 @@ Base behavior + branch A intent + branch B intent
                  run tests and human review
 ```
 
-If an approved cloud-agent workflow is available, compare its proposal with the manual resolution. Do not blindly choose “ours” or “theirs.”
+If an approved cloud-agent workflow is available, compare its proposal with the manual resolution. Do not blindly choose "ours" or "theirs."
 
 ---
 
@@ -285,7 +285,7 @@ Keep a manual path for unavailable features and exceptional repositories.
 - Which repositories should not use automatic review?
 - How will the team detect over-reliance?
 
-**Transition:** “Now apply the workflow as both author and reviewer.”
+**Transition:** "Now apply the workflow as both author and reviewer."
 
 ---
 
@@ -299,7 +299,8 @@ Learners will:
 4. resolve the prepared conflict without losing either branch goal;
 5. make an explicit final human decision.
 
-**Final deliverable:** The review record, corrected project, conflict evidence, and final decision.
+**Final deliverable:** Review notes, the corrected project, conflict results, and
+the final decision.
 
 ---
 

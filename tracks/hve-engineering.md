@@ -30,9 +30,9 @@ those skills together through HVE Research, Plan, Implement, Review, and Follow-
 
 | Phase | Sessions | Focus | Duration |
 |---|---|---|---:|
-| 1. Copilot foundations | 01–03 | Chat, prompting, context, and verification | 9 hrs |
-| 2. Guided engineering | 04–07 | CLI, agent mode, shared context, and review | 12 hrs |
-| 3. Agent integration | 10–11 | MCP tools and bounded custom agents | 6 hrs |
+| 1. Copilot foundations | 01 to 03 | Chat, prompting, context, and verification | 9 hrs |
+| 2. Guided engineering | 04 to 07 | CLI, agent mode, shared context, and review | 12 hrs |
+| 3. Agent integration | 10 to 11 | MCP tools and bounded custom agents | 6 hrs |
 | 4. HVE delivery | 28 | Evidence-led RPI challenge and human decision | 4 hrs |
 
 ## Sessions

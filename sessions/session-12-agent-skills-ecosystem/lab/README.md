@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07 and 11
+**Prerequisites:** Sessions 01 to 07 and 11
 **Deliverable:** A valid repository skill with trigger, non-trigger, failure, and
 bounded-run evidence
 
@@ -144,7 +144,7 @@ The command runs two scenarios:
 2. the same class of work without a reviewer, which stops.
 
 Compare the output with
-[`solution/skills-project/RUN-EVIDENCE.md`](solution/skills-project/RUN-EVIDENCE.md).
+[`solution/skills-project/EXPECTED-OUTPUT.md`](solution/skills-project/EXPECTED-OUTPUT.md).
 
 If an approved surface can load the skill, submit the same two prompts without
 changing the files. Record whether the surface selected the skill and whether it

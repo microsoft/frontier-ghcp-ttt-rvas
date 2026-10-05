@@ -110,7 +110,7 @@ Error responses are inconsistent. Standardize with machine-readable codes.
 ## Technical Notes
 - Create a shared error utility in src/utils/ or similar
 - Update routes/api.js to use the new format
-- This touches multiple files — coordinate carefully" --label "squad"
+- This touches multiple files: coordinate carefully" --label "squad"
 ```
 
 ---
@@ -135,7 +135,7 @@ When approved, `squad watch --execute` can use this flow:
 
 1. **Round 1:** Ralph finds all untriaged issues → dispatches Lead to triage
 2. **Round 2:** Lead assigns `squad:{member}` labels → Ralph dispatches agents
-3. **Rounds 3–5:** Agents work on issues → create branches → open PRs
+3. **Rounds 3 to 5:** Agents work on issues → create branches → open PRs
 4. **Rounds 6+:** Ralph checks PR status → merges approved PRs → closes issues
 5. **Then:** the queue can be empty and the monitor idles.
 

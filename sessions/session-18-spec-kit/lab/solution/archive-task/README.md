@@ -26,5 +26,5 @@ Release-specific scripts, templates, and Copilot integration skills are omitted
 from this reference. Learners generate those files with their approved Spec Kit
 release.
 
-`review.md` is a training review record, not a generated Spec Kit configuration
+`review.md` contains the review notes. It is not a generated Spec Kit configuration
 file.

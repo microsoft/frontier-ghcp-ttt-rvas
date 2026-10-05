@@ -10,12 +10,12 @@ that stops because a precondition is missing.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Skill directory and loading model |
-| 0:08–0:18 | Required frontmatter and description |
-| 0:18–0:30 | Trigger and non-trigger design |
-| 0:30–0:42 | Preconditions and visible failure |
-| 0:42–0:52 | Directory validation and bounded runner |
-| 0:52–1:00 | Candidate review and lab handoff |
+| 0:00 to 0:08 | Skill directory and loading model |
+| 0:08 to 0:18 | Required frontmatter and description |
+| 0:18 to 0:30 | Trigger and non-trigger design |
+| 0:30 to 0:42 | Preconditions and visible failure |
+| 0:42 to 0:52 | Directory validation and bounded runner |
+| 0:52 to 1:00 | Candidate review and lab handoff |
 
 ## Preflight
 
@@ -30,7 +30,7 @@ selection and stop behavior without claiming to reproduce every product detail.
 
 ## Teaching sequence
 
-### 0:00–0:08: Directory model
+### 0:00 to 0:08: Directory model
 
 Show:
 
@@ -45,7 +45,7 @@ The directory name is lowercase with hyphens. The instruction file is named
 exactly `SKILL.md`. Supporting scripts or references may sit beside it when they
 are reviewed and necessary.
 
-### 0:08–0:18: Frontmatter
+### 0:08 to 0:18: Frontmatter
 
 The minimum frontmatter has `name` and `description`.
 
@@ -59,7 +59,7 @@ description: Use for creating or reviewing REST routes under src/api/ when accep
 The name matches the directory. The description does more than summarize the body:
 it tells Copilot when to select the skill.
 
-### 0:18–0:30: Positive and negative selection
+### 0:18 to 0:30: Positive and negative selection
 
 Compare:
 
@@ -79,7 +79,7 @@ for both is noisy and unsafe.
 Open `trigger.json` and `non-trigger.json`. Ask learners which fields make the
 decision observable.
 
-### 0:30–0:42: Preconditions and visible failure
+### 0:30 to 0:42: Preconditions and visible failure
 
 The API skill requires:
 
@@ -101,7 +101,7 @@ result is:
 This is correct application. The skill selected itself, checked its preconditions,
 and stopped.
 
-### 0:42–0:52: Validate and run
+### 0:42 to 0:52: Validate and run
 
 Run:
 
@@ -123,7 +123,7 @@ Separate the claims:
 The local runner is intentionally bounded. It is a teaching harness, not a new
 skill platform.
 
-### 0:52–1:00: Candidate review and handoff
+### 0:52 to 1:00: Candidate review and handoff
 
 Use `community-skills-catalog.md`. Review a candidate before adaptation:
 
@@ -143,7 +143,7 @@ Do not run an unfamiliar script to learn what it does.
 3. Run the trigger scenario and point to the bounded paths.
 4. Run the documentation non-trigger.
 5. Run the missing-reviewer failure.
-6. Show the same outputs in `RUN-EVIDENCE.md`.
+6. Show the same outputs in `EXPECTED-OUTPUT.md`.
 
 ## Common mistakes
 

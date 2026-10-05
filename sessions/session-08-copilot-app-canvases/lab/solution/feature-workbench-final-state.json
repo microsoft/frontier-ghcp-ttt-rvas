@@ -1,0 +1,16 @@
+{
+  "featureId": "FEAT-204",
+  "proposal": "hold",
+  "reviewerDecision": "hold",
+  "reviewer": "Morgan Lee",
+  "blockingChecks": [
+    "integration-tests"
+  ],
+  "evidence": [
+    "unit-tests: passed",
+    "integration-tests: failed - preset owner isolation",
+    "lint: passed"
+  ],
+  "nextAction": "Correct the owner-isolation defect and rerun integration-tests",
+  "externalActionsTaken": []
+}

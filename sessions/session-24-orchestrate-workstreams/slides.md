@@ -9,6 +9,7 @@ footer: 'Session 24: Orchestrate Agents and Workstreams'
 <!-- _class: lead -->
 
 # Orchestrate Agents and Workstreams
+
 ## Product and Delivery Teams | Intermediate
 
 Session 24 | 3 hours
@@ -42,7 +43,7 @@ No role-play, prepared-result, offline, or static completion route is available.
 
 ---
 
-# Product state: September 24, 2026
+# Product state: October 5, 2026
 
 - `/orchestrate` is a documented GitHub Copilot app skill.
 - Commands vary by context.
@@ -54,8 +55,8 @@ Confirm the current command picker before the session.
 
 # One parent objective
 
-> Decide whether the Service Request Portal release is ready for review.
-> Produce a short evidence record. Do not change production or publish claims.
+> Decide whether the Service Request Portal status-visibility issue set is ready
+> for delivery follow-up. Produce `delivery-status-record.md`.
 
 The parent owns scope, routing, review, and the final decision.
 
@@ -65,10 +66,10 @@ The parent owns scope, routing, review, and the final decision.
 
 | ID | Question | Packet |
 | --- | --- | --- |
-| WS-01 | Which user-visible changes are supported? | Release notes |
-| WS-02 | What does support need before launch? | Readiness checklist |
-| WS-03 | What could block release? | Risk register |
-| WS-04 | Which approved answers can we prepare? | Stakeholder FAQ |
+| WS-01 | Is public status mapping ready? | Mapping packet |
+| WS-02 | Is requester view issue `#241` ready? | Field checklist |
+| WS-03 | Are empty and stale states testable? | Scenario checklist |
+| WS-04 | Is requester-only access evidence ready? | Access checklist |
 
 Parallel work needs clean boundaries. Sequence hidden dependencies.
 
@@ -82,19 +83,19 @@ Inputs: Approved, sanitized sources
 Return: Findings, evidence, gaps, recommendation
 Do not: Change systems or invent facts
 Stop when: Access, scope, usage, or evidence becomes unsafe
-Reviewer: Named human owner
+Decision owner: Named human role
 ```
 
-The result packet is the deliverable.
+The workstream result is the deliverable.
 
 ---
 
 # Start live orchestration
 
 ```text
-/orchestrate Prepare release-review evidence for the Service Request Portal.
+/orchestrate Review the Service Request Portal status-visibility issue set.
 Use the four workstreams in the approved plan. Keep them independent.
-Require one result packet per workstream. Obey every stop condition.
+Require one result per workstream. Obey every stop condition.
 ```
 
 Confirm that GitHub Copilot created the expected child sessions.
@@ -172,21 +173,21 @@ Parent objective
           |
       Human review
           |
-  Release-readiness record
+  Delivery-status record
 ```
 
 One owner edits the final record.
 
 ---
 
-# Human approval remains the gate
+# The human still makes the decision
 
 Record:
 
 - accepted evidence;
 - rejected claims and reasons;
 - unresolved owners and dates;
-- **Go**, **Conditional go**, or **No-go**.
+- **Ready**, **Ready with conditions**, or **Not ready**.
 
 Copilot coordinates work. It does not receive release authority.
 
@@ -198,7 +199,7 @@ Copilot coordinates work. It does not receive release authority.
 | --- | --- |
 | Optional Squad framework | Built-in app orchestration |
 | Persistent roles and routing | Temporary workstreams |
-| Team setup and shared memory | Result packets and review |
+| Team setup and shared memory | Results and review |
 | Advanced implementation | Manager-led delivery practice |
 
 No custom-agent construction or Squad implementation in this session.
@@ -208,9 +209,7 @@ No custom-agent construction or Squad implementation in this session.
 # Lab deliverable
 
 - Orchestration plan with live child-session identifiers
-- Management action for each child session
-- Live result packets
-- Acceptance or rejection for every result
-- Release-readiness record with human approval
+- Live results
+- Delivery-status record with the decision and Session 25 handoff
 
 Azure Boards may use MCP or the browser. GitHub Copilot must perform the orchestration.

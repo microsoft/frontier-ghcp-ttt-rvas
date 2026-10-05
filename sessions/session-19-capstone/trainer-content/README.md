@@ -10,12 +10,12 @@ standards. Do not let the exercise expand into a full API, deployment, or tool t
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Define the one-slice capstone |
-| 0:08–0:18 | Apply the governance gate |
-| 0:18–0:30 | Inspect and tighten the specification |
-| 0:30–0:40 | Write the implementation issue |
-| 0:40–0:50 | Walk through the patch and tests |
-| 0:50–1:00 | Make the review decision and hand off |
+| 0:00 to 0:08 | Define the one-slice capstone |
+| 0:08 to 0:18 | Apply the governance gate |
+| 0:18 to 0:30 | Inspect and tighten the specification |
+| 0:30 to 0:40 | Write the implementation issue |
+| 0:40 to 0:50 | Walk through the patch and tests |
+| 0:50 to 1:00 | Make the review decision and hand off |
 
 ## Teach the boundary
 
@@ -95,4 +95,5 @@ scope.
 the same tests and review gate.
 
 **What if the tests cannot run?** Record the command, failure, static evidence, and
-owner for the next action. The decision cannot be approve without executable proof.
+owner for the next action. The decision cannot be approve without executable
+verification.

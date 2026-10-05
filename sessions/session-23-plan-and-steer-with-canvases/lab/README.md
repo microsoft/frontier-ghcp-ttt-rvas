@@ -12,7 +12,7 @@ real GitHub state change
 - The generated and reviewed canvas extension
 - The live planning canvas
 - One controlled GitHub state change
-- The completed reconciliation record
+- `canvas-handoff.md`
 
 ## Lab outcome
 
@@ -45,6 +45,9 @@ Confirm GitHub Copilot access. **Stop if access is unavailable.**
 
 `/create-canvas` is a built-in app skill. Do not install a community replacement.
 Stop if the skill or GitHub reads are unavailable.
+
+Use `issue-handoff.md` as the authoritative issue list. Do not ask Copilot to
+reconstruct the set from chat history.
 
 ## Part 2: Define the minimum canvas contract (20 minutes)
 
@@ -92,9 +95,10 @@ Review:
 - the capabilities exposed to Copilot;
 - any package or dependency added by the extension.
 
+This review is no-code. Learners inspect generated files and request bounded
+changes through Copilot. They do not hand-edit extension code.
+
 Ask Copilot to remove generated state or actions that exceed the approved contract.
-Record each keep, change, or remove decision in
-`starter/canvas-review-record.md`.
 
 **Checkpoint:** The canvas is smaller after review and contains no GitHub write
 action.
@@ -138,7 +142,7 @@ Do not refresh the canvas yet. Ask Copilot to compare:
 - the fresh GitHub issue;
 - the canvas's last-refresh time.
 
-Record the mismatch. The canvas should now be visibly stale.
+The canvas should now be visibly stale.
 
 ## Part 6: Reconcile and record ownership (15 minutes)
 
@@ -152,14 +156,19 @@ Confirm that:
 - the GitHub state and planning state remain distinct;
 - the last-refresh time changed.
 
-Complete the ownership section:
+Copy `starter/canvas-handoff-template.md` to `canvas-handoff.md`. Add the owner,
+refresh procedure, recovery procedure, retirement trigger, next safe action, and
+the four status-visibility issue roles for Session 24.
 
-- artifact owner;
-- reviewer;
-- refresh procedure;
-- recovery procedure;
-- retirement trigger;
-- next safe action.
+Run `/context`. If the creation thread is crowded, start a fresh session and
+attach `canvas-handoff.md` plus `issue-handoff.md`. Then run:
+
+```text
+/rubber-duck Critique the canvas handoff. Find stale source claims, mixed GitHub
+and planning states, unsafe actions, and missing ownership.
+```
+
+Apply useful findings directly to the canvas or handoff.
 
 ## Verification
 
@@ -171,4 +180,6 @@ Complete the ownership section:
 - [ ] A reviewed GitHub change made the canvas stale.
 - [ ] A fresh read detected the mismatch.
 - [ ] Refresh reconciled the canvas without hiding the source difference.
-- [ ] Owner, recovery, refresh, and retirement rules are recorded.
+- [ ] `canvas-handoff.md` contains the owner, recovery, refresh, and retirement rules.
+- [ ] `canvas-handoff.md` names the four Session 24 issue roles.
+- [ ] No customer or source organization names appear.

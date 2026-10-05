@@ -35,12 +35,9 @@
 | Stop at 20 runs | Engineering lead | Scenario brief | confirmed in scenario |
 | Manual fallback | Engineering lead | Human review with the same checklist | confirmed in scenario |
 
-## Checkpoint 1
+## Open gap resolved
 
-- **Reviewer:** Peer reviewer
-- **Date:** 2026-09-24
-- **Unsupported assumption found:** The scenario did not prove current feature
+- **Unsupported assumption:** The scenario did not establish current feature
   access or repository classification for a live environment.
 - **Correction:** Assigned those claims to the platform administrator and data
   owner with status **live evidence pending**.
-- **Result:** Pass

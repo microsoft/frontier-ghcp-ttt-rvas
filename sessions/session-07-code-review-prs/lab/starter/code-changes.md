@@ -16,7 +16,7 @@ Add this code to `src/api.js` (after the items routes):
 // User search endpoint
 app.get('/api/users/search', (req, res) => {
   const query = req.query.q;
-  // WARNING: This is intentionally vulnerable — for lab purposes only
+  // WARNING: This is intentionally vulnerable. For lab purposes only
   const searchQuery = `SELECT * FROM users WHERE name LIKE '%${query}%'`;
   // Simulate: in a real app this would execute against a database
   res.json({ query: searchQuery, results: [] });
@@ -75,7 +75,7 @@ Add this endpoint to `src/api.js`:
 
 ```javascript
 app.post('/api/users', async (req, res) => {
-  // WARNING: No try/catch — unhandled promise rejection
+  // WARNING: No try/catch. Unhandled promise rejection
   const userData = JSON.parse(req.body.data);
   const user = { id: users.length + 1, ...userData };
   users.push(user);
@@ -107,7 +107,7 @@ Add this endpoint to `src/api.js` (duplicates the items list logic):
 
 ```javascript
 app.get('/api/products', (req, res) => {
-  // This is nearly identical to GET /api/items — violates DRY
+  // This is nearly identical to GET /api/items. Violates DRY
   const products = [
     { id: 1, name: 'Widget', price: 9.99 },
     { id: 2, name: 'Gadget', price: 24.99 },

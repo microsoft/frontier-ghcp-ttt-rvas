@@ -1,0 +1,13 @@
+$ python -m unittest discover -s tests -v
+test_failed_required_check_blocks_readiness ... ok
+test_missing_checks_are_unknown ... ok
+test_missing_review_evidence_is_unknown ... ok
+test_ready_when_required_checks_pass_and_blockers_are_resolved ... ok
+test_reason_codes_are_sorted ... ok
+test_unresolved_blocking_thread_blocks_readiness ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+

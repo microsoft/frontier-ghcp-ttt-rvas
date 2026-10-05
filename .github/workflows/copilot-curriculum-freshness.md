@@ -62,6 +62,16 @@ implementable finding. Do not edit repository files, create a pull request,
 post a summary issue, or create an issue when there are no qualifying
 findings.
 
+## Automation boundary
+
+This workflow judges whether curriculum claims, exercises, and delivery guidance
+still match the product. It does not report broken links by itself.
+
+`.github/workflows/link-check.yml` runs Lychee on a schedule and on manual
+request. That workflow reports link reachability without blocking other work.
+A reachable page can still describe the wrong behavior, so this freshness audit
+must read and assess the source.
+
 ## Research standards
 
 1. Establish today's date in UTC and record it in each created issue.
@@ -125,7 +135,7 @@ it as exactly one of:
 - **Update** — existing material is factually stale, incomplete in a way that
   misleads delivery, or needs a material revision to remain accurate.
 - **New session** — a durable, teachable, publicly available capability or
-  workflow is significant enough that the current 28-session arc cannot
+  workflow is significant enough that the current 29-session arc cannot
   reasonably cover it through a bounded update to an existing session.
 - **Retirement proposal** — an existing session's central learning outcome is
   no longer deliverable because its product or capability was officially

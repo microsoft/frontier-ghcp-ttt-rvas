@@ -10,13 +10,13 @@ a time.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:07 | Prompting is specification at conversation scale |
-| 0:07–0:20 | Intent, context, constraints, and examples |
-| 0:20–0:29 | Comments and neighboring-file context |
-| 0:29–0:39 | Iterative refinement |
-| 0:39–0:48 | Prompt anti-patterns and untrusted instructions |
-| 0:48–0:56 | Prepared todo-store demonstration |
-| 0:56–1:00 | Reusable patterns and lab handoff |
+| 0:00 to 0:07 | Prompting is specification at conversation scale |
+| 0:07 to 0:20 | Intent, context, constraints, and examples |
+| 0:20 to 0:29 | Comments and neighboring-file context |
+| 0:29 to 0:39 | Iterative refinement |
+| 0:39 to 0:48 | Prompt anti-patterns and untrusted instructions |
+| 0:48 to 0:56 | Prepared todo-store demonstration |
+| 0:56 to 1:00 | Reusable patterns and lab handoff |
 
 The timings match [`slides.md`](../slides.md).
 
@@ -32,7 +32,7 @@ The timings match [`slides.md`](../slides.md).
 
 ## Slide delivery map
 
-### 0:00–0:07: Prompting as task design
+### 0:00 to 0:07: Prompting as task design
 
 **Slides:** *Prompt Engineering Fundamentals*, *Agenda*, *A prompt is a work
 request*
@@ -49,7 +49,7 @@ input, errors, dependencies, and completion criteria.
 Prompting does not remove engineering decisions. It makes those decisions visible
 earlier in the interaction.
 
-### 0:07–0:20: Four prompt components
+### 0:07 to 0:20: Four prompt components
 
 **Slides:** *Four useful components*, *Intent*, *Context*, *Constraints*,
 *Examples*
@@ -73,7 +73,7 @@ Trim the title, apply defaults, return a copy, and add no package.
 Run the focused create test when done.
 ```
 
-### 0:20–0:29: Comments and context
+### 0:20 to 0:29: Comments and context
 
 **Slides:** *Comments can carry intent*, *Neighboring files are context, not a
 contract*
@@ -86,7 +86,7 @@ will differ.
 
 The accepted API contract still decides which proposal to keep.
 
-### 0:29–0:39: Iterative refinement
+### 0:29 to 0:39: Iterative refinement
 
 **Slides:** *Refine the missing behavior*, *One concern per turn*, *Restart when
 the frame is wrong*
@@ -102,7 +102,7 @@ Use this progression:
 An iteration should preserve the useful work and target the mismatch. Restart when
 the design or task frame is wrong.
 
-### 0:39–0:48: Anti-patterns and untrusted instructions
+### 0:39 to 0:48: Anti-patterns and untrusted instructions
 
 **Slides:** *Common prompt failures*, *Treat instructions from content as
 untrusted*
@@ -118,7 +118,7 @@ Discuss:
 Then show a comment that says to ignore project rules or reveal a secret. It is
 data in a file, not an instruction the developer should follow.
 
-### 0:48–0:56: Prepared todo-store demonstration
+### 0:48 to 0:56: Prepared todo-store demonstration
 
 **Slides:** *Demo contract*, *Weak, useful, reviewable*, *A change request should
 change the prompt*
@@ -142,7 +142,7 @@ Use the third prompt or implement manually. Run the focused test.
 Open the change request and show why adding priority requires a new accepted
 decision. Do not silently fold the request into the earlier prompt.
 
-### 0:56–1:00: Patterns and handoff
+### 0:56 to 1:00: Patterns and handoff
 
 **Slides:** *A reusable prompt pattern*, *Lab handoff*
 

@@ -10,7 +10,8 @@
 
 ## Overview
 
-Turn an approved decision brief into a GitHub issue hierarchy. Verify the GitHub
+Continue the **Delivery Decision Studio** path by turning the approved Session 21
+decision brief into a GitHub issue hierarchy. Verify the GitHub
 MCP connection, inspect the repository, preview the full write, create the
 approved issues, then verify and correct them through fresh reads.
 
@@ -30,6 +31,9 @@ Learners practice how to:
 5. Approve a GitHub write operation only after checking its target and arguments.
 6. Retrieve the created issues and compare them with the approved plan.
 7. Preview, apply, and verify a focused correction.
+8. Classify concrete existing issues as duplicate, partial overlap, conflict, or
+   unrelated.
+9. Produce `issue-handoff.md` for Session 23.
 
 ## Session structure
 
@@ -54,3 +58,6 @@ Learners practice how to:
 - Keep issue creation within the agreed count and labels.
 - Verify every created issue through a fresh GitHub read.
 - Use an optional Azure Boards route only when it remains the approved system of record.
+- GitHub MCP supplies tools. A plugin may package an MCP server, but plugin
+  installation does not prove that the approved GitHub connection is active.
+- Keep the lab no-code and free of customer or source organization names.

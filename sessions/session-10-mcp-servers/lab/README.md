@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Deliverable:** A three-tool local MCP server with automated tests, Inspector
 evidence, and recorded good and bad requests
 

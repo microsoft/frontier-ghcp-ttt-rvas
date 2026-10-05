@@ -10,9 +10,8 @@ fresh read, and corrected through a second approved write
 ## Deliverables
 
 - Live parent and child issues
-- Two fresh-read verification records
 - The corrected issue
-- A completed handoff record
+- `issue-handoff.md`
 
 ## Lab outcome
 
@@ -58,6 +57,10 @@ or repository file.**
 
 Stop if the read test or issue-write check fails.
 
+GitHub MCP is the tool connection used in this lab. A plugin can bundle an MCP
+server with other customizations, but the learner must still verify the active
+connection and its tools.
+
 ## Part 2: Read the source and existing GitHub state (20 minutes)
 
 Attach the approved Session 21 decision brief and issue proposal. Use
@@ -67,12 +70,13 @@ Ask Copilot to:
 
 1. summarize the approved outcome, non-goals, acceptance evidence, and owners;
 2. retrieve available labels and milestones;
-3. search open and closed issues for overlapping work;
+3. read `starter/existing-issues.json`, then search open and closed issues for
+   matching live work;
 4. report every GitHub MCP read it used;
 5. identify any decision in the proposal that is absent from the brief.
 
-Record the read evidence and duplicate risk in
-`starter/write-review-template.md`.
+Classify each concrete candidate as **duplicate**, **partial overlap**,
+**conflict**, or **unrelated**. Add the disposition and reason to the issue plan.
 
 **Checkpoint:** No issue is proposed until the source and existing repository state
 have both been read.
@@ -92,6 +96,9 @@ Ask Copilot to propose:
 
 Review the plan before any write.
 
+Reuse or update an existing issue when it owns part of the approved outcome. Link
+a closed duplicate for context. Do not merge conflicting or out-of-scope work.
+
 Reject or revise an issue that:
 
 - combines unrelated outcomes;
@@ -105,8 +112,6 @@ independently.
 
 ## Part 4: Preview and create the issues (30 minutes)
 
-Complete the proposed-write section in `starter/write-review-template.md`.
-
 Send:
 
 ```text
@@ -115,8 +120,7 @@ full title and body for every issue, labels, milestone, parent-child references,
 dependencies, and every field left unset. Wait for my approval.
 ```
 
-Compare the preview with the issue plan. Record **Approve**, **Revise**, or
-**Reject**.
+Compare the preview with the issue plan. Revise it until it is safe to approve.
 
 After approval, ask Copilot to create the issues through GitHub MCP. Save each
 returned issue number and URL.
@@ -141,18 +145,19 @@ Choose one child issue and add a missing verification section:
 
 ```text
 Verification owner: Delivery reviewer
-Source decision: docs/discovery/request-status-decision-brief.md
+Source decision: docs/discovery/decision-brief.md
 ```
 
 Require a full update preview. Approve the focused write, then retrieve the issue
-again and confirm the new section is present.
+again and confirm the new section is present. No separate verification document
+is needed.
 
 **Checkpoint:** A fresh read proves that both the original create and the correction
 reached GitHub.
 
 ## Part 6: Record the handoff (10 minutes)
 
-Record:
+Copy `starter/issue-handoff-template.md` to `issue-handoff.md`. Record:
 
 - the parent issue;
 - child issue numbers;
@@ -160,11 +165,14 @@ Record:
 - unresolved ownership;
 - the corrected issue and verification evidence;
 - the issue set that Session 23 must load.
+- the decision for issues `#241`, `#256`, `#263`, and `#278`;
+- the decision owner, delivery reviewer, and work-system steward.
 
 ## Verification
 
 - [ ] GitHub MCP read and write access passed.
 - [ ] Existing issues were searched before creation.
+- [ ] Concrete duplicate and partial-overlap candidates received a disposition.
 - [ ] The complete write was previewed before approval.
 - [ ] Created issues match the approved decision brief.
 - [ ] A fresh read verified the created state.

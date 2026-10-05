@@ -1,4 +1,4 @@
-# Trainer Content — Session NN: [Session Title]
+# Trainer Content: Session NN: [Session Title]
 
 **Duration:** 1 hour  
 **Format:** Presentation + live demo

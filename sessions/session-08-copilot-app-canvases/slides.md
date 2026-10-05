@@ -11,7 +11,7 @@ footer: 'Session 08: Copilot App & Canvases'
 ## Contract first, visible state, bounded actions
 
 ---
-# Today’s outcome
+# Today's outcome
 
 Build or simulate one delivery-readiness canvas.
 
@@ -86,7 +86,7 @@ Out of scope:
 - external writes;
 - credentials;
 - hidden data imports;
-- broad actions such as “manage the project.”
+- broad actions such as "manage the project."
 
 ---
 # Prepared demo inputs
@@ -162,7 +162,7 @@ A safe canvas keeps the state unchanged and explains the rule.
 3. Confirm `ready` is now accepted.
 4. Record before, rejection, correction, and after state.
 
-Do not “fix” the demo by removing validation.
+Do not "fix" the demo by removing validation.
 
 ---
 # Review the generated extension

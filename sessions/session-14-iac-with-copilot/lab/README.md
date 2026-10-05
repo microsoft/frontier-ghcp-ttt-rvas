@@ -2,7 +2,7 @@
 
 **Duration:** 1 hour 30 minutes
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–05 and 13
+**Prerequisites:** Sessions 01 to 05 and 13
 **Deliverable:** Validated Terraform modules, a repaired security case, and command evidence
 
 ## Lab overview

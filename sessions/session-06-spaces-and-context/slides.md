@@ -82,7 +82,7 @@ Assemble the same context packet manually. Use it to plan and review the change 
 | 0:50 | Before/after demo | Compare with a rubric |
 | 0:58 | Lab handoff | Assign context packet |
 
-**Transition:** “Better output begins with better evidence, not a longer prompt.”
+**Transition:** "Better output begins with better evidence, not a longer prompt."
 
 ---
 
@@ -184,7 +184,7 @@ Create `.github/copilot-instructions.md` for durable project guidance:
 - Do not add dependencies without reviewer approval.
 ```
 
-Write rules that can be observed. Avoid vague goals such as “produce high-quality code.”
+Write rules that can be observed. Avoid vague goals such as "produce high-quality code."
 
 ---
 
@@ -219,7 +219,7 @@ The curriculum references:
 
 Treat settings as version-sensitive:
 
-- verify current documentation and the learner’s IDE version;
+- verify current documentation and the learner's IDE version;
 - show where workspace settings are reviewed;
 - do not claim an instruction loaded without observing the result;
 - retain the instructions as a useful manual checklist.

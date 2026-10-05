@@ -11,12 +11,12 @@ documented living-spec workflow to add restore behavior.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Why specification-driven development |
-| 0:08–0:18 | Spec Kit project and artifact model |
-| 0:18–0:30 | Requirements and clarification |
-| 0:30–0:42 | Planning, checklists, tasks, and analysis |
-| 0:42–0:52 | Implementation and convergence |
-| 0:52–1:00 | Installation, fallback, demonstration, and lab handoff |
+| 0:00 to 0:08 | Why specification-driven development |
+| 0:08 to 0:18 | Spec Kit project and artifact model |
+| 0:18 to 0:30 | Requirements and clarification |
+| 0:30 to 0:42 | Planning, checklists, tasks, and analysis |
+| 0:42 to 0:52 | Implementation and convergence |
+| 0:52 to 1:00 | Installation, fallback, demonstration, and lab handoff |
 
 The timings match the agenda in [`slides.md`](../slides.md). Keep the first five
 segments moving so the prepared demonstration and lab handoff receive the final
@@ -24,7 +24,7 @@ eight minutes.
 
 ## Slide-by-slide delivery map
 
-### 0:00–0:08: Why specification-driven development
+### 0:00 to 0:08: Why specification-driven development
 
 **Slides:** *Spec Kit: Specification-Driven Development*, *Agenda*, *A feature
 request is a starting point*, and *Specification changes when decisions happen*
@@ -41,7 +41,7 @@ request is a starting point*, and *Specification changes when decisions happen*
 
 The next slides show where Spec Kit stores those decisions.
 
-### 0:08–0:18: Spec Kit project and artifact model
+### 0:08 to 0:18: Spec Kit project and artifact model
 
 **Slides:** *What Spec Kit provides*, *Initialize an existing project*, *Two
 artifact scopes*, and *The full workflow*
@@ -63,7 +63,7 @@ artifact scopes*, and *The full workflow*
 **Trainer check:** Learners should be able to say where project principles live
 and where feature behavior lives before you continue.
 
-### 0:18–0:30: Requirements and clarification
+### 0:18 to 0:30: Requirements and clarification
 
 **Slides:** *Constitution: rules for how the project works*, *Specify behavior, not
 implementation*, *Write scenarios a reviewer can challenge*, and *Clarify before
@@ -84,7 +84,7 @@ choosing a design*
 
 The agreed behavior now gives the technical design a stable boundary.
 
-### 0:30–0:42: Planning, checklists, tasks, and analysis
+### 0:30 to 0:42: Planning, checklists, tasks, and analysis
 
 **Slides:** *Plan: decide how the feature will work*, *Supporting design files have
 a purpose*, *A checklist reviews requirement quality*, *Tasks turn design into
@@ -110,7 +110,7 @@ executable work*, and *Analyze before code makes mistakes expensive*
 and a missing implementation step. The expected answers are `spec.md`, `plan.md`,
 and `tasks.md`.
 
-### 0:42–0:52: Implementation and convergence
+### 0:42 to 0:52: Implementation and convergence
 
 **Slides:** *Implementation follows the accepted tasks*, *Convergence closes the
 loop*, *`specify check` is not compliance validation*, *Keep the project model
@@ -139,7 +139,7 @@ GitHub Issues*
 The final slides set the approved installation path, show one real gap, and hand
 control to the lab.
 
-### 0:52–1:00: Installation, fallback, demonstration, and lab handoff
+### 0:52 to 1:00: Installation, fallback, demonstration, and lab handoff
 
 **Slides:** *Approved installation paths*, *Prepared demonstration*, and *Lab
 handoff*

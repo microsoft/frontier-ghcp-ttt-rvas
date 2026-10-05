@@ -1,4 +1,4 @@
-# Peer Review Checklist (with Copilot assistance)
+# Peer Review Checklist
 
 ## Review Information
 
@@ -6,6 +6,17 @@
 - **Author:**
 - **Reviewer:**
 - **Date:**
+
+---
+
+## Review Before Assistance
+
+Complete this short section before opening an assisted review.
+
+- **Change intent in one sentence:**
+- **Initial verdict:** Approve / Request changes / Pause
+- **Most important finding:**
+- **Second finding or missing evidence:**
 
 ---
 
@@ -71,34 +82,25 @@ _(Add more as needed)_
 
 ---
 
-## Copilot vs. Human Review Comparison
+## Assisted Review Notes
 
-| Dimension                | Copilot Review  | Your Review   |
-| ------------------------ | --------------- | ------------- |
-| Issues found             |                 |               |
-| Security issues caught   |                 |               |
-| Logic bugs caught        |                 |               |
-| Style/readability issues |                 |               |
-| Architecture concerns    |                 |               |
-| False positives          |                 |               |
-| Time spent               |                 |               |
+- **Tool or review surface:**
+- **Prompt or review scope:**
+
+## What Changed After the Assisted Review?
+
+- **Useful new finding, after verification:**
+- **Unsupported or irrelevant finding rejected:**
+- **Did the final verdict change? Why or why not?**
 
 ## Verdict
 
 - [ ] **Approve**: ready to merge
 - [ ] **Request changes**: blocking issues need correction
-- [ ] **Comment**: non-blocking observations
+- [ ] **Pause**: evidence, access, or scope remains unresolved
 
-## Reflection
+## Short Reflection
 
-**What did Copilot catch that you missed?**
+**What, if anything, did the assisted review add to your decision?**
 
-_(Write here)_
-
-**What did you catch that Copilot missed?**
-
-_(Write here)_
-
-**How would you use Copilot review on your team?**
-
-_(Write here)_
+_(Write one or two sentences.)_

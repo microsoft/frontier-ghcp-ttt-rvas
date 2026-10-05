@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "synthetic": true,
+  "run_id": "DDS-WEEKLY-2026-10-05-COPILOT-02",
+  "contract_id": "DDS-WEEKLY-STATUS",
+  "contract_version": "1.0",
+  "trigger": "manual automation run",
+  "inputs": [
+    {
+      "path": "working-delivery-status.csv",
+      "classification": "synthetic",
+      "record_count": 4,
+      "change": "SV-04 synthetic access evidence approved"
+    },
+    {
+      "path": "working-session-24-handoff.md",
+      "classification": "synthetic",
+      "record_count": 5
+    }
+  ],
+  "record_validation": {
+    "source_records": 4,
+    "accepted_records": 4,
+    "rejected_records": 0,
+    "rejections": []
+  },
+  "accepted_record_summary": {
+    "ready_for_review": 3,
+    "blocked": 1
+  },
+  "side_effects": {
+    "external_posts": 0,
+    "source_record_edits": 0,
+    "messages_sent": 0,
+    "repository_writes": 0
+  },
+  "validation": {
+    "counts_reconciled": true,
+    "claims_traced_to_accepted_records": true,
+    "prohibited_actions_observed": false,
+    "unresolved_exceptions": []
+  }
+}

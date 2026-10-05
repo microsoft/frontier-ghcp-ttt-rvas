@@ -27,8 +27,8 @@ and verify that the issue proposal still matches the brief.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Use the Session 20 working brief when available. Otherwise use
-`starter/vague-request.md`.
+Use the Session 20 `initiative-context-brief.md`. If the trainer is delivering
+Session 21 alone, use `starter/vague-request.md`.
 
 Confirm GitHub Copilot access before starting. If access is unavailable, **stop**.
 Also stop if Copilot cannot read the training repository or load project skills.
@@ -48,6 +48,10 @@ git commit -m "Add decision interview skill"
 Open a new GitHub Copilot app session for the project. Open
 **Customize** → **Skills** → **Installed** and confirm that
 `decision-interview` appears.
+
+Select **Interactive** mode for the interview. Use **Plan** only when Copilot
+proposes the artifact changes. Do not use **Autopilot** because the request owner
+must answer each frontier.
 
 Run a short test:
 
@@ -94,6 +98,11 @@ For each frontier:
 Save the interview record. Stop when each branch has an owner decision or named
 open question.
 
+After each round, run `/context`. Use `/compact` only if the interview must remain
+in the same session and context pressure is high. If the interview has drifted,
+use `/clear` or `/reset`, attach the saved interview record and approved context
+brief, then continue. Record the choice in the interview record.
+
 **Checkpoint:** The record contains questions, recommendations, owner answers,
 reasons, open branches, and the final shared understanding.
 
@@ -101,9 +110,9 @@ reasons, open branches, and the final shared understanding.
 
 Ask Copilot to create:
 
-- `docs/discovery/request-status-decision-brief.md` from
+- `docs/discovery/decision-brief.md` from
   `starter/decision-brief-template.md`;
-- `docs/discovery/request-status-issue-proposal.md` from
+- `docs/discovery/issue-proposal.md` from
   `starter/issue-proposal-template.md`.
 
 Review both changes before accepting them.
@@ -152,7 +161,8 @@ complete rewrite.
 
 ## Part 5: Verify readiness in a fresh session (15 minutes)
 
-Start a new session and attach only the decision brief and issue proposal.
+Start a new session with `/clear` or `/reset`. Attach only the decision brief and
+issue proposal.
 
 Ask Copilot to report:
 
@@ -164,6 +174,16 @@ Ask Copilot to report:
 
 Fix any contradiction and rerun the check.
 
+Then request independent critique:
+
+```text
+/rubber-duck Challenge the decision brief and issue proposal. Find unsupported
+criteria, hidden scope, missing owners, and conflicts with the late constraint.
+```
+
+If the command is unavailable, stop this step and follow a trainer-verified
+documented critique route. Do not invent a command.
+
 ## Final deliverable
 
 Submit:
@@ -172,7 +192,7 @@ Submit:
 2. the interview record with the reopened branch;
 3. the approved decision brief;
 4. the aligned issue proposal;
-5. the fresh-session readiness result.
+5. any fixes made after the fresh-session check.
 
 Session 22 uses the approved brief and issue proposal to create live GitHub issues.
 
@@ -184,4 +204,5 @@ Session 22 uses the approved brief and issue proposal to create live GitHub issu
 - [ ] A late constraint reopened only affected branches.
 - [ ] The brief and issue proposal were revised together.
 - [ ] A fresh session found no contradiction.
+- [ ] Any useful critique was applied to the brief or proposal.
 - [ ] No customer or source organization names appear.

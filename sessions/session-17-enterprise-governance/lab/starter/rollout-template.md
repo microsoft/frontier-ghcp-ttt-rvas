@@ -10,14 +10,6 @@
 - Immediate pause triggers:
 - Review date:
 
-## Checkpoint 2
-
-- Reviewer:
-- Date:
-- Does the decision cite the evidence map? yes / no
-- Are allowed and blocked scope explicit? yes / no
-- Result: pass / revise
-
 ## Measurement guardrail
 
 | Item | Decision |

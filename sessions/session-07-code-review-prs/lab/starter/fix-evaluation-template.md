@@ -69,7 +69,7 @@ _(Copy this block for additional comments)_
 
 ## Overall Assessment
 
-**Copilot as a first-pass reviewer (1–5):** ___
+**Copilot as a first-pass reviewer (1 to 5):** ___
 
 **Would you recommend automated Copilot review for your team?** (Yes / With limits / No)
 

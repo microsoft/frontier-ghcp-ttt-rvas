@@ -9,6 +9,7 @@
 - **Repository:**
 - **Parent issue:**
 - **Child issues:**
+- **Issue handoff:** `issue-handoff.md`
 
 ## Required fields
 
@@ -42,6 +43,6 @@
 ## Ownership
 
 - **Canvas owner:**
-- **Reviewer:**
 - **Recovery procedure:**
 - **Retirement trigger:**
+- **Session 24 handoff owner:**

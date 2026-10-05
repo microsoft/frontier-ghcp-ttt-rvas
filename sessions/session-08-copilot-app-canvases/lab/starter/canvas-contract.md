@@ -40,6 +40,5 @@ Track synthetic work items until a reviewer can inspect the evidence and decide 
 - External writes: none.
 - Dependencies: review any generated package before use.
 - Owner: ____________________
-- Reviewer: ____________________
 - Manual fallback: use the local contract harness and JSON state.
 - Retirement trigger: remove the training canvas after the lab or when no owner remains.

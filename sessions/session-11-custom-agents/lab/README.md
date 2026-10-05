@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07 and 10
+**Prerequisites:** Sessions 01 to 07 and 10
 **Deliverable:** A tested `.agent.md` profile, weak-to-tight evidence, and one
 bounded run record
 

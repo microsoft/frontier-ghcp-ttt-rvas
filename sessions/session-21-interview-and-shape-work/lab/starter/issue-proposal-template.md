@@ -47,12 +47,15 @@ against the brief.
 - [ ] Permission and data-boundary checks pass.
 - [ ] Supported states and fallback behavior are documented.
 - [ ] No non-goal entered the implementation.
-- [ ] A reviewer compared the Copilot draft with the approved decision brief.
 - [ ] The work item owner reviewed the result.
-- [ ] The named approver accepted release or recorded required changes.
 
 ## Ownership
 
 **Work item owner:**
-**Delivery reviewer:**
-**Release approver:**
+
+## Session 22 handoff
+
+- **Decision brief path:** `decision-brief.md`
+- **Proposal status:** Approved / Revise / Blocked
+- **Duplicate search terms:**
+- **Fields that must remain unset:**

@@ -7,9 +7,8 @@ the same automation runs again so the reviewer can compare evidence.
 | File | Purpose |
 | --- | --- |
 | `automation-contract.md` | Approved workflow boundary |
-| `run-evidence.json` | Completed evidence packet |
-| `run-output.md` | Reviewed status draft |
-| `run-evidence-2.json` | Evidence after the approved input change |
-| `run-output-2.md` | Second reviewed status draft |
-| `approval-record.md` | Human decision |
+| `run-record-01.json` | First completed run record |
+| `run-output-01.md` | First reviewed status draft |
+| `run-record-02.json` | Run record after the approved input change |
+| `run-output-02.md` | Second reviewed status draft |
 | `stakeholder-update.md` | Final communication |

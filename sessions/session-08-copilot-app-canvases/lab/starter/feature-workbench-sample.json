@@ -1,0 +1,27 @@
+{
+  "featureId": "FEAT-204",
+  "title": "Add saved filter presets",
+  "commit": "synthetic-a17c9e2",
+  "checks": [
+    {
+      "name": "unit-tests",
+      "required": true,
+      "status": "passed",
+      "evidence": "128 tests passed"
+    },
+    {
+      "name": "integration-tests",
+      "required": true,
+      "status": "failed",
+      "evidence": "1 of 24 scenarios failed: preset owner isolation"
+    },
+    {
+      "name": "lint",
+      "required": true,
+      "status": "passed",
+      "evidence": "0 errors"
+    }
+  ],
+  "proposal": null,
+  "reviewerDecision": null
+}

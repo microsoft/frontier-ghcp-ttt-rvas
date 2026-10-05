@@ -5,7 +5,6 @@
 **Decision:** Approved with one open implementation question
 
 **Request owner:** Portal product owner
-**Reviewer:** Delivery lead
 **Input:** Fictional Service Request Portal scenario
 **Copilot interview record:** [`copilot-interview-record.md`](copilot-interview-record.md)
 
@@ -28,7 +27,7 @@ A requester can see a plain-language public status, the last updated time, and a
 ### In scope
 
 - Facilities and equipment requests.
-- The signed-in requester’s web view.
+- The signed-in requester's web view.
 - A public status mapped from the existing internal state.
 - Last updated time.
 - A short summary approved for requester visibility.
@@ -38,9 +37,9 @@ A requester can see a plain-language public status, the last updated time, and a
 ### Out of scope
 
 - Email, chat, push, or mobile notifications.
-- Changes to the service team’s internal workflow.
+- Changes to the service team's internal workflow.
 - New request types.
-- Internal notes, assigned agent names, security details, or other requesters’ data.
+- Internal notes, assigned agent names, security details, or other requesters' data.
 - Service-level commitments or promised completion dates.
 
 ## Constraints and dependencies
@@ -97,12 +96,8 @@ A requester can see a plain-language public status, the last updated time, and a
 | Delivery review | Delivery lead |
 | Release approval | Portal product owner |
 
-## Review record
+## Handoff
 
-**Request owner decision:** Approved with the stale-threshold question assigned.
-**Copilot draft checked against confirmed answers:** Yes.
-**Reviewer notes:** The late visibility constraint was resolved without changing
-the approved first-release scope. Role-specific behavior is clear enough for
-sprint planning.
-**Next action and owner:** The portal product owner creates the work item. The
-service operations manager confirms the threshold before release.
+- **Next action and owner:** The portal product owner creates the work item.
+- **Open questions carried to Session 22:** Service operations confirms the stale
+  threshold before release approval.

@@ -4,8 +4,8 @@
 
 **Difficulty:** Beginner
 
-**Deliverable:** A repository working brief that a fresh Copilot session can use
-without the original chat
+**Deliverable:** `initiative-context-brief.md`, ready for Session 21 without the
+original chat
 
 ## What you will learn
 
@@ -15,7 +15,7 @@ session.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Verify the app and project | 15 min |
+| 1 | Verify the app, mode, and project | 15 min |
 | 2 | Compare weak and grounded context | 25 min |
 | 3 | Create the first working brief | 30 min |
 | 4 | Update the brief with new evidence | 25 min |
@@ -38,13 +38,23 @@ access is unavailable, **stop**. Do not continue in a generic chatbot.
 
 1. Open the training repository under **Projects**.
 2. Start an interactive session.
-3. Type `@` and add `lab/starter/initiative-overview.md`.
+3. Select **Interactive** mode. Type `@` and add
+   `lab/starter/initiative-overview.md`.
 4. Ask Copilot to report the file name and its first heading.
-5. Open **Customize** → **Installed** and record the visible skills, MCP servers,
-   plugins, and canvases in `lab-notes.md`.
+5. Open **Customize** → **Installed** and inspect the visible skills, MCP servers,
+   plugins, and canvases.
+6. Run `/context`.
 
-**Checkpoint:** Copilot can read the supplied file, and you have recorded the
-capabilities actually available in your environment.
+Use **Interactive** for the comparison. Switch to **Plan** before asking Copilot
+to propose repository changes. Do not use **Autopilot** for this lab because each
+write needs a learner review.
+
+`@` adds files, `#` references issues, and `/` opens commands in the app. Type the
+character and select the item from the picker. A typed file token alone does not
+confirm that the app attached the source.
+
+**Checkpoint:** Copilot can read the supplied file and the learner knows which
+capabilities are available.
 
 ## Part 2: Compare weak and grounded context (25 minutes)
 
@@ -55,8 +65,7 @@ Explain the Service Request Portal initiative, its users, constraints, and next
 decision. Mark anything uncertain.
 ```
 
-Save the response under **Unscoped answer** in `lab-notes.md`. Mark every statement
-that has no visible source.
+Identify statements that have no visible source.
 
 Now attach `starter/initiative-overview.md` and ask:
 
@@ -80,11 +89,11 @@ it.
 
 ## Part 3: Create the first working brief (30 minutes)
 
-Copy the template:
+Copy the templates:
 
 ```bash
-cp sessions/session-20-copilot-app-foundations/lab/starter/copilot-working-brief-template.md \
-  docs/discovery/copilot-working-brief.md
+cp sessions/session-20-copilot-app-foundations/lab/starter/initiative-context-brief-template.md \
+  docs/discovery/initiative-context-brief.md
 ```
 
 Ask Copilot to complete the brief from `initiative-overview.md`. Require:
@@ -94,7 +103,6 @@ Ask Copilot to complete the brief from `initiative-overview.md`. Require:
 - assumptions separated from unknowns;
 - explicit non-goals;
 - the next decision and decision owner;
-- the reviewer;
 - the relevant capabilities found in Part 1.
 
 Review the proposed change before accepting it. Reject any statement that has no
@@ -103,7 +111,7 @@ source, invents an owner, or turns an unknown into a fact.
 Commit the first version:
 
 ```bash
-git add docs/discovery/copilot-working-brief.md lab-notes.md
+git add docs/discovery/initiative-context-brief.md
 git commit -m "Create grounded initiative working brief"
 ```
 
@@ -128,7 +136,7 @@ Review the diff. Do not rewrite unrelated sections.
 Commit the revision:
 
 ```bash
-git add docs/discovery/copilot-working-brief.md
+git add docs/discovery/initiative-context-brief.md
 git commit -m "Update working brief with approved evidence"
 ```
 
@@ -136,8 +144,10 @@ git commit -m "Update working brief with approved evidence"
 
 ## Part 5: Verify the brief in a fresh session (25 minutes)
 
-Start a new Copilot session. Do not provide the original conversation or source
-files. Attach only `docs/discovery/copilot-working-brief.md`.
+Before starting fresh, run `/context`. If the current session is crowded but the
+thread still matters, use `/compact`. For the handoff check, use
+`/clear` or `/reset`, then attach only
+`docs/discovery/initiative-context-brief.md`.
 
 Ask:
 
@@ -154,16 +164,23 @@ Do not infer missing information.
 Compare the answer with the file. Correct the brief if the fresh session cannot
 recover the intended state.
 
-Record **Ready** only when the fresh-session answer is complete and grounded.
+Run an independent critique:
+
+```text
+/rubber-duck Review the initiative context brief for unsupported claims,
+ambiguous ownership, hidden customer references, and decisions presented as facts.
+```
+
+If `/rubber-duck` is unavailable, stop this step. The trainer must verify the
+current documented critique option before delivery rather than inventing a
+replacement command.
 
 ## Final deliverable
 
 Submit:
 
-1. `docs/discovery/copilot-working-brief.md`;
-2. `lab-notes.md` with the context comparison;
-3. two commits showing the first brief and the evidence-driven revision;
-4. the fresh-session verification result.
+1. `docs/discovery/initiative-context-brief.md`;
+2. two commits showing the first brief and the evidence-driven revision.
 
 Session 21 uses this brief as the starting source for its decision interview.
 

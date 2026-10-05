@@ -17,12 +17,12 @@ Session 14 | 2 hours 30 minutes
 
 | Time | Topic |
 | --- | --- |
-| 0:00–0:08 | Architecture and project model |
-| 0:08–0:20 | Module contracts |
-| 0:20–0:32 | Root composition |
-| 0:32–0:44 | Staged validation |
-| 0:44–0:54 | Security failure |
-| 0:54–1:00 | Bicep comparison and lab handoff |
+| 0:00 to 0:08 | Architecture and project model |
+| 0:08 to 0:20 | Module contracts |
+| 0:20 to 0:32 | Root composition |
+| 0:32 to 0:44 | Staged validation |
+| 0:44 to 0:54 | Security failure |
+| 0:54 to 1:00 | Bicep comparison and lab handoff |
 
 ---
 # One required path

@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–12 and 17–18; Session 16 is optional
+**Prerequisites:** Sessions 01 to 12 and 17 to 18; Session 16 is optional
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 

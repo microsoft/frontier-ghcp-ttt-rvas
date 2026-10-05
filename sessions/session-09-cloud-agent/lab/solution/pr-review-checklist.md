@@ -25,4 +25,4 @@
 - Reviewer: Assigned human reviewer
 - Decision: approve
 - Reason: scope, behavior, and test evidence match the fixed issue.
-- Next safe action: follow the repository’s normal merge controls.
+- Next safe action: follow the repository's normal merge controls.

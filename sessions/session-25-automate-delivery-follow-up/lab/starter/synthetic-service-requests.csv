@@ -1,9 +1,0 @@
-request_id,category,state,owner_alias,due_date,summary
-SR-1041,Access,Closed,owner-a,2026-09-14,Restored portal access after identity check
-SR-1042,Form,Closed,owner-b,2026-09-15,Corrected required-field guidance
-SR-1043,Mobile,In progress,owner-c,2026-09-25,Testing small-screen attachment flow
-SR-1044,Integration,Blocked,owner-d,2026-09-29,Waiting for sandbox endpoint approval
-SR-1045,Knowledge,Closed,owner-e,2026-09-16,Published synthetic troubleshooting article
-SR-1046,Routing,Closed,owner-b,2026-09-17,Updated assignment rule in training sandbox
-SR-1047,Duplicate,Closed,owner-a,2026-09-18,Closed duplicate request after review
-SR-1048,Notification,In progress,,2026-09-30,Reviewing delayed notification report

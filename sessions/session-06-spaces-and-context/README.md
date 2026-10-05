@@ -2,7 +2,7 @@
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05
+**Prerequisites:** Sessions 01 to 05
 **Duration:** 3 hours (1 hr trainer content + 2 hr lab)
 
 ## Overview

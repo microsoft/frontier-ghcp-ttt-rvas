@@ -20,7 +20,7 @@ ls -la
 copilot -p "Explain what this command does: ls -la"
 ```
 
-**Your rating (1–5):** ___  
+**Your rating (1 to 5):** ___
 **What it covered well:**___  
 **What it missed:** ___
 
@@ -42,7 +42,7 @@ days ago.
 copilot -p 'Explain what this command does and call out safety risks: find . -name "*.log" -mtime +7 -delete'
 ```
 
-**Your rating (1–5):** ___  
+**Your rating (1 to 5):** ___
 **What it covered well:**___  
 **What it missed:** ___
 
@@ -62,7 +62,7 @@ git log --oneline --graph --all --decorate
 copilot -p "Explain what this command does: git log --oneline --graph --all --decorate"
 ```
 
-**Your rating (1–5):** ___  
+**Your rating (1 to 5):** ___
 **What it covered well:**___  
 **What it missed:** ___
 
@@ -84,7 +84,7 @@ tar czf backup.tar.gz --exclude='node_modules' --exclude='.git' ./src
 copilot -p "Explain what this command does: tar czf backup.tar.gz --exclude='node_modules' --exclude='.git' ./src"
 ```
 
-**Your rating (1–5):** ___  
+**Your rating (1 to 5):** ___
 **What it covered well:**___  
 **What it missed:** ___
 
@@ -111,7 +111,7 @@ copilot -p "Explain this awk command: awk -F',' '{sum[\$1]+=\$3; count[\$1]++} E
 
 > **Note:** You may need to escape the `$` characters depending on your shell. If you get unexpected results, wrap the command in single quotes or use different escaping.
 
-**Your rating (1–5):** ___  
+**Your rating (1 to 5):** ___
 **What it covered well:**___  
 **What it missed:** ___
 

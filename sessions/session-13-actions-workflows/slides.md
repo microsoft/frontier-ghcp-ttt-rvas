@@ -17,12 +17,12 @@ Session 13 | 3 hours
 
 | Time | Topic |
 | --- | --- |
-| 0:00–0:08 | Baseline and Actions model |
-| 0:08–0:18 | Generate CI |
-| 0:18–0:28 | Design deployment |
-| 0:28–0:40 | Repair workflow failures |
-| 0:40–0:52 | Validate a JavaScript action |
-| 0:52–1:00 | Review and lab handoff |
+| 0:00 to 0:08 | Baseline and Actions model |
+| 0:08 to 0:18 | Generate CI |
+| 0:18 to 0:28 | Design deployment |
+| 0:28 to 0:40 | Repair workflow failures |
+| 0:40 to 0:52 | Validate a JavaScript action |
+| 0:52 to 1:00 | Review and lab handoff |
 
 ---
 # Start with repository facts
@@ -111,19 +111,19 @@ env INPUT_THRESHOLD=101 ... node src/main.js
 
 The first run must pass and write a summary. The second must exit with code 1.
 
-One successful run does not prove enforcement.
+One successful run does not confirm enforcement.
 
 ---
-# Access and evidence
+# Access and checks
 
 GitHub Copilot access is required. Repository access and Actions are optional.
 
-Every checkpoint records:
+For each case, inspect:
 
 - command or review;
 - result;
 - changed files;
-- reviewer decision.
+- the next action.
 
 ---
 <!-- _class: divider -->

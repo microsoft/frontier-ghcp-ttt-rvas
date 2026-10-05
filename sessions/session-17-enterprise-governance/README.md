@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01 to 03
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 **Audience:** Engineering leaders, administrators, and security, privacy, legal, and finance partners

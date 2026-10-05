@@ -4,7 +4,8 @@
 
 ## Delivery objective
 
-Teach learners to create and review a project-scoped planning canvas. Keep the
+Teach learners to create and review a project-scoped planning canvas in the
+Delivery Decision Studio path. Keep the
 distinction clear: the canvas projects GitHub state; GitHub remains the source of
 record.
 
@@ -28,6 +29,8 @@ record.
 - Confirm that the learner can read the Session 22 issues through GitHub MCP.
 - Use a training repository and synthetic issue data.
 - Name the canvas owner and reviewer.
+- Open the Session 22 `issue-handoff.md`.
+- Confirm `/context`, `/clear` or `/reset`, and `/rubber-duck`.
 
 > [!IMPORTANT]
 > Stop if canvas creation, GitHub reads, or the required canvas actions are unavailable. A static JSON edit does not meet this session's outcome.
@@ -56,6 +59,9 @@ Start from `lab/starter/canvas-requirements.md`. The minimum planning state is:
 - risk;
 - decision;
 - next action.
+
+The source set is fixed: public status mapping, requester status view, empty and
+stale states, and access-boundary verification.
 
 The minimum actions are:
 
@@ -102,7 +108,7 @@ Check:
 7. Show the mismatch and last-refresh time.
 8. Refresh the canvas and verify the blocker and next action.
 
-## Product notes verified September 24, 2026
+## Product notes verified October 5, 2026
 
 Check current canvas availability, `/create-canvas`, Customize controls, capability review, and persistence behavior before delivery.
 

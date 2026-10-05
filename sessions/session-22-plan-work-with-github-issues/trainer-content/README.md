@@ -4,7 +4,8 @@
 
 ## Delivery objective
 
-Teach learners to use GitHub MCP as a controlled work interface: plan first,
+Teach learners to use GitHub MCP as a controlled work interface in the Delivery
+Decision Studio path: plan first,
 approve the write, then verify the stored result.
 
 ## One-hour plan
@@ -63,6 +64,15 @@ Ask Copilot to:
 - search for duplicate or overlapping open issues;
 - report any permission or context uncertainty.
 
+Use `lab/starter/existing-issues.json` when the training repository does not
+already contain the seeded records. Learners must make a real disposition:
+
+- reuse `#241` because it partially overlaps the requester view;
+- leave `#256` unchanged because notifications are out of scope;
+- reject `#263` as implementation work because it conflicts with the visibility
+  boundary;
+- link `#278` only as historical context.
+
 ### 3. Propose the issue set
 
 Use one parent issue and three to five child issues. Each issue should have:
@@ -102,12 +112,13 @@ issue through another preview, approval, write, and fresh read.
 | --- | --- |
 | Copilot targets the wrong repository | Reject the operation and restate the repository |
 | Duplicate issue exists | Link or update the existing issue instead of creating another |
+| Partial overlap exists | Reuse the owned slice and create only the missing outcomes |
 | Child issue is too broad | Split it before the write |
 | Labels do not exist | Use approved existing labels or leave the field unset |
 | Tool output claims success without a returned issue | Run a fresh repository read |
 | Learner cannot review tool arguments | Stop the lab |
 
-## Product notes verified September 24, 2026
+## Product notes verified October 5, 2026
 
 Check current GitHub MCP availability, authentication, tool names, issue hierarchy support, and write confirmations before delivery.
 

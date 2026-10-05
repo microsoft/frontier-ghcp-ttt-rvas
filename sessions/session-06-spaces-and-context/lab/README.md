@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05 completed
+**Prerequisites:** Sessions 01 to 05 completed
 **Deliverable:** A context package for one Storefront API, with comparison evidence
 
 ## Lab overview

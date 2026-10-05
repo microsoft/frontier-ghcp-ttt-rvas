@@ -86,7 +86,7 @@ Complete the same brief manually:
 | 0:50 | Intervention and TODO delegation | Show safe handoff |
 | 0:57 | Lab handoff and Q&A | Confirm stop rules |
 
-**Transition:** “Autocomplete predicts text; an agent pursues a goal through tools.”
+**Transition:** "Autocomplete predicts text; an agent pursues a goal through tools."
 
 ---
 
@@ -205,7 +205,7 @@ Ask the agent to implement and test the smallest valid change, then explain it.
 5. When a test fails, ask the agent to explain before revising.
 6. Inspect the final diff and run tests independently.
 
-**Transition:** “A passing test is evidence. It does not complete the review.”
+**Transition:** "A passing test is evidence. It does not complete the review."
 
 ---
 
@@ -298,7 +298,7 @@ Learners will scaffold, implement, test, and refactor bounded features while:
 
 # Questions and lab readiness
 
-Where should a reviewer intervene in your team’s workflow?
+Where should a reviewer intervene in your team's workflow?
 
 - What is your stop condition?
 - Which test will you run independently?

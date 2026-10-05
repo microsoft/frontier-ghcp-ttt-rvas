@@ -5,8 +5,6 @@
 **Decision:** Draft / Approved / Approved with open questions / Needs another interview round
 
 **Request owner:**
-**Reviewer:**
-**Date:**
 **Copilot interview record:**
 
 ## Request as received
@@ -70,9 +68,7 @@ State the observable change for the user or service.
 | Privacy or policy reviewer | |
 | Release approver | |
 
-## Review record
+## Handoff
 
-**Request owner decision:**
-**Copilot draft checked against confirmed answers:** Yes / No
-**Reviewer notes:**
-**Next action and owner:**
+- **Next action and owner:**
+- **Open questions carried to Session 22:**

@@ -10,12 +10,12 @@ to three tools.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | MCP request path and boundaries |
-| 0:08–0:18 | Tool names, descriptions, and JSON Schema |
-| 0:18–0:33 | Stage-one `get_weather` walkthrough |
-| 0:33–0:43 | Bad input and visible errors |
-| 0:43–0:52 | Tests and MCP Inspector |
-| 0:52–1:00 | Add tools without weakening the contract; lab handoff |
+| 0:00 to 0:08 | MCP request path and boundaries |
+| 0:08 to 0:18 | Tool names, descriptions, and JSON Schema |
+| 0:18 to 0:33 | Stage-one `get_weather` walkthrough |
+| 0:33 to 0:43 | Bad input and visible errors |
+| 0:43 to 0:52 | Tests and MCP Inspector |
+| 0:52 to 1:00 | Add tools without weakening the contract; lab handoff |
 
 The timings match [`slides.md`](../slides.md). Stop live Inspector troubleshooting
 at 0:50. Use the recorded expected output and protect the lab handoff.
@@ -36,7 +36,7 @@ executed**.
 
 ## Teaching sequence
 
-### 0:00–0:08: MCP request path
+### 0:00 to 0:08: MCP request path
 
 Use this path:
 
@@ -46,6 +46,11 @@ Client → tools/list → tool selection → tools/call → handler → result
 
 The protocol standardizes discovery and calls. It does not approve the server,
 grant permissions, or make a result correct.
+
+Keep the packaging distinction short: an MCP server provides protocol tools and
+context. A plugin distributes a versioned set of Copilot customizations and may
+include MCP server configuration. Installing a plugin is not the same as running
+or approving the server it references.
 
 Separate the boundaries:
 
@@ -57,7 +62,7 @@ Separate the boundaries:
 | Result | How does success or failure appear? |
 | Transport | Which process or endpoint carries the request? |
 
-### 0:08–0:18: The tool contract
+### 0:08 to 0:18: The tool contract
 
 Open `lab/starter/custom-mcp/src/index.js`. Read the `get_weather` definition before
 the handler.
@@ -73,7 +78,7 @@ The schema helps clients form a request. The handler still validates arguments
 because direct tests and future transports may reach it outside a client-side
 validator.
 
-### 0:18–0:33: One tool end to end
+### 0:18 to 0:33: One tool end to end
 
 Trace:
 
@@ -96,7 +101,7 @@ npm test
 The deterministic response makes exact assertions useful. Random output would turn
 a small contract test into a flaky one.
 
-### 0:33–0:43: Failure is part of the interface
+### 0:33 to 0:43: Failure is part of the interface
 
 Trace an empty city. The response sets `isError: true` and carries:
 
@@ -113,7 +118,7 @@ Compare this with two weak patterns:
 
 The caller needs a visible, bounded failure it can report.
 
-### 0:43–0:52: Inspector and test evidence
+### 0:43 to 0:52: Inspector and test evidence
 
 Run:
 
@@ -134,7 +139,7 @@ Then call `get_weather`. Keep tests and Inspector evidence separate:
 A Copilot prompt is useful integration evidence, but it is not a replacement for
 the deterministic tests.
 
-### 0:52–1:00: Add the remaining tools
+### 0:52 to 1:00: Add the remaining tools
 
 Open the completed server. Show that `get_forecast` and
 `convert_temperature` follow the same shape instead of creating special cases.

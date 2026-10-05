@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–12 and 17–18; Session 16 is optional
+**Prerequisites:** Sessions 01 to 12 and 17 to 18; Session 16 is optional
 
 ## Before you start
 
@@ -127,5 +127,6 @@ Submit one `capstone-handoff.md` containing:
 6. The completed Session 17 governance record.
 7. One owned next action.
 
-**The deliverable is incomplete** without the governance record, executable proof,
+**The deliverable is incomplete** without the governance record, executable
+verification,
 or review decision.

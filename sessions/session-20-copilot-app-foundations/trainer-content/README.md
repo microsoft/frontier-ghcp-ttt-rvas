@@ -5,17 +5,17 @@
 
 ## Delivery objective
 
-Learners open the GitHub Copilot app, choose useful context, compare grounded and
-ungrounded answers, revise a durable artifact when evidence changes, and verify it
-in a fresh session.
+Learners open the GitHub Copilot app, choose a session mode, attach approved
+context, compare grounded and ungrounded answers, and create the first Delivery
+Decision Studio handoff.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
 | 0:00-0:08 | Orient learners to the app |
-| 0:08-0:18 | Choose the right context |
-| 0:18-0:28 | Inspect available capabilities |
+| 0:08-0:18 | Choose mode and context |
+| 0:18-0:28 | Inspect capabilities and context health |
 | 0:28-0:40 | Compare unscoped and grounded answers |
 | 0:40-0:53 | Create, revise, and verify a working brief |
 | 0:53-1:00 | Explain boundaries and launch the lab |
@@ -44,6 +44,18 @@ Show the current locations for:
 - **Customize:** skills, agents, MCP servers, plugins, and canvases.
 
 Labels can move. Teach what each area is for rather than a fixed click path.
+
+## Modes and verified context syntax
+
+- **Interactive:** use for interviews, source checks, and reviewed drafts.
+- **Plan:** use before a multi-step change so the learner can approve the plan.
+- **Autopilot:** reserve for bounded work with approved autonomy. It is not used
+  for the Session 20 write.
+
+GitHub documents `@` for files, `#` for issues, and `/` for commands. Confirm the
+picker in the current app. Run `/context` before the first draft. Use `/compact`
+only when the learner needs to keep a long thread. Use `/clear` or `/reset` for
+the handoff test.
 
 ## Context before prompting
 
@@ -74,6 +86,8 @@ Open **Customize** and identify what is available in the learner's environment. 
 - a **skill** provides a repeatable procedure;
 - an **agent** carries role-specific instructions and tools;
 - an **MCP server** lets Copilot read or act in another system;
+- a **plugin** is an installable package that can bundle skills, agents, hooks,
+  MCP servers, or canvases;
 - a **canvas** provides visible shared state;
 - an **automation** repeats a bounded task.
 
@@ -86,11 +100,12 @@ capabilities and know that availability depends on plan, policy, and installatio
 2. Mark unsupported statements.
 3. Attach `lab/starter/initiative-overview.md` and ask again with source
    references.
-4. Ask Copilot to complete `copilot-working-brief-template.md`.
+4. Ask Copilot to complete `initiative-context-brief-template.md`.
 5. Review and commit the brief.
 6. Reveal `lab/starter/late-evidence.md`.
 7. Ask Copilot for a focused update and review the diff.
-8. Start a fresh session with only the saved brief and verify that it can recover
+8. Run `/rubber-duck` for an independent critique.
+9. Start a fresh session with only the saved brief and verify that it can recover
    the intended state.
 
 Stress the pattern:
@@ -101,7 +116,7 @@ Read -> propose -> review -> write -> verify
 
 The pattern returns in every later session.
 
-## Product notes verified September 24, 2026
+## Product notes verified October 5, 2026
 
 Before delivery, verify the current GitHub Copilot app navigation, plan
 requirements, policy controls, and Customize feature availability.
@@ -110,5 +125,6 @@ Official references:
 
 - [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
 - [Quickstart for the GitHub Copilot app](https://docs.github.com/en/copilot/get-started/quickstart-copilot-app)
-- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-copilot)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
 - [Working with agent sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
+- [Slash commands for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)

@@ -76,5 +76,12 @@ checked the draft before marking it ready.
 ## Ownership
 
 **Work item owner:** Portal product owner
-**Delivery reviewer:** Delivery lead
-**Release approver:** Portal product owner
+
+## Session 22 handoff
+
+- **Decision brief path:** `decision-brief.md`
+- **Proposal status:** Approved with one owned release question
+- **Duplicate search terms:** `request status`, `public status`, `last update`,
+  `stale status`, `requester access`
+- **Fields that must remain unset:** Unconfirmed assignees, dates, labels, and
+  milestones

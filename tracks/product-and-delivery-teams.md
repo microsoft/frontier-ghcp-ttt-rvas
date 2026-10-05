@@ -9,9 +9,16 @@
 
 ## Description
 
-This track teaches product and delivery teams to use the GitHub Copilot app as a working environment. Learners create repository briefs, interview unclear ideas, build GitHub issues through MCP, create planning canvases, supervise parallel sessions, and automate one recurring follow-up.
+This track teaches product and delivery teams to use the GitHub Copilot app as a
+working environment. The six sessions form one path called **Delivery Decision
+Studio**. That name is a curriculum wrapper, not a GitHub product or app mode.
 
-The sessions use one fictional Service Request Portal scenario. Learners can replace it with sanitized work from their own team.
+Learners carry one initiative through context gathering, decision shaping, issue
+planning, a planning canvas, parallel review, and a bounded follow-up draft.
+
+The initiative is the fictional **Service Request Portal**. Do not replace it
+with customer work in the standard path. Trainer-approved substitutions must be
+synthetic, sanitized, and free of customer or source organization names.
 
 ## Prerequisites
 
@@ -24,7 +31,7 @@ The sessions use one fictional Service Request Portal scenario. Learners can rep
 
 Programming experience, Git command-line knowledge, and repository administration are not required.
 
-**GitHub Copilot access is required for Sessions 20–25.** Learners without access
+**GitHub Copilot access is required for Sessions 20 to 25.** Learners without access
 should not take this track. Stop and reschedule their training after access is
 available.
 
@@ -52,6 +59,14 @@ Open **Customize**, then **Installed**. Record the available:
 
 Use only capabilities approved for the training repository.
 
+Keep these terms separate:
+
+- **MCP server:** exposes named tools and data sources to Copilot.
+- **Plugin:** installs a reusable package that may include skills, agents, hooks,
+  MCP servers, or canvases.
+
+Installing a plugin is not the same as verifying the GitHub MCP connection.
+
 ### 3. Verify skills
 
 Sessions 23 and 24 use the built-in `/create-canvas` and `/orchestrate` skills.
@@ -77,7 +92,7 @@ Copilot CLI users can verify the same project skill with:
 
 ### 4. Verify GitHub MCP
 
-Sessions 22–25 require GitHub repository tools.
+Sessions 22 to 25 require GitHub repository tools.
 
 In the app:
 
@@ -112,16 +127,56 @@ personal access tokens into prompts or repository files.
 When a required capability is unavailable, stop that lab. Do not replace a live
 capability with role-play or claim that a static artifact proves the workflow ran.
 
+### 6. Verify session controls and context syntax
+
+Before Session 20, confirm these controls in the current app:
+
+- session modes: **Interactive**, **Plan**, and **Autopilot**;
+- `@` for adding files, `#` for referencing issues, and `/` for commands;
+- `/context` for current context usage;
+- `/compact` for summarizing an active session under token pressure;
+- `/clear` or `/reset` for a fresh session;
+- `/rubber-duck` for an independent critique from a different model.
+
+GitHub notes that command availability depends on context. Type `/` in the app
+before delivery. If a command is missing, use a trainer verification note rather
+than teaching an unverified substitute.
+
+## Delivery Decision Studio continuity
+
+Use these roles throughout the path:
+
+| Role | Responsibility |
+| --- | --- |
+| Decision owner | Makes product and scope decisions |
+| Delivery reviewer | Checks evidence, readiness, and handoffs |
+| Work-system steward | Confirms the authoritative GitHub or Azure Boards state |
+| Trainer | Verifies access and teaches optional maturity guidance |
+
+Use these artifact names and handoffs:
+
+| Session | Primary artifacts | Handoff |
+| --- | --- | --- |
+| 20 | `initiative-context-brief.md` | Grounded context for Session 21 |
+| 21 | `copilot-interview-record.md`, `decision-brief.md`, `issue-proposal.md` | Product decisions for Session 22 |
+| 22 | `issue-plan.md`, live issues, `issue-handoff.md` | Status-visibility issues for Session 23 |
+| 23 | `canvas-requirements.md`, working canvas, `canvas-handoff.md` | Reconciled issue view for Session 24 |
+| 24 | `orchestration-plan.md`, workstream packets, `delivery-status-record.md` | Delivery status for Session 25 |
+| 25 | `automation-contract.md`, run output, `stakeholder-update.md` | Human-owned operating decision |
+
+At each handoff, carry the decision owner, source paths, open questions, and the
+next action.
+
 ## What learners should bring
 
-- One unclear initiative or feature request
-- Five to ten sanitized backlog items
-- One recent status report, release update, or sprint summary
-- One recurring workflow they may want an agent to support
+- The supplied Service Request Portal initiative
+- The supplied synthetic issue and status data
+- The supplied delivery-status records
+- One recurring workflow pattern they want to evaluate
 - Their team's definition of ready or done
 - One decision that must remain with a named person
 
-The supplied scenario covers every exercise when learners cannot use their own material.
+The supplied scenario covers every exercise and is the default learner path.
 
 ## Sessions
 
@@ -140,9 +195,9 @@ The supplied scenario covers every exercise when learners cannot use their own m
 
 | Day | Sessions | Focus |
 | --- | --- | --- |
-| Day 1 | Sessions 20–21 | App fluency, context, and interviewing |
-| Day 2 | Sessions 22–23 | GitHub issues, MCP, and planning canvases |
-| Day 3 | Sessions 24–25 | Orchestration, automation, and work-system handoff |
+| Day 1 | Sessions 20 to 21 | App fluency, context, and interviewing |
+| Day 2 | Sessions 22 to 23 | GitHub issues, MCP, and planning canvases |
+| Day 3 | Sessions 24 to 25 | Orchestration, automation, and work-system handoff |
 
 ## Learning outcomes
 
@@ -158,11 +213,14 @@ By completing this track, learners will be able to:
 
 ## Trainer guidance
 
-- Start with the learner's work when it is approved and sanitized.
-- Use the supplied scenario when learner data is not approved or sanitized.
+- Use the supplied Service Request Portal path in standard delivery.
+- Keep customer and source organization names out of prompts, artifacts, issues,
+  screenshots, and demonstrations.
 - Teach the product through one continuous delivery workflow. Avoid a disconnected feature tour.
 - Verify current official GitHub documentation and organizational policy before every live delivery.
 - Treat generated output as a proposal. The accountable person accepts, rejects, or revises it.
+- Keep the path no-code. Learners review generated extensions and tool calls but
+  do not write application code, MCP servers, plugins, or canvas extensions.
 
 ### Trainer-only Azure Boards supplement
 

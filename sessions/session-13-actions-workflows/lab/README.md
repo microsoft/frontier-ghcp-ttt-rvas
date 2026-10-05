@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05
+**Prerequisites:** Sessions 01 to 05
 **Deliverable:** A reviewed workflow set and evidence record for `copilot-webapp`
 
 ## Lab overview

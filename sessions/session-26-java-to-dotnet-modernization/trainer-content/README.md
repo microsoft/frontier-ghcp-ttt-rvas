@@ -19,12 +19,12 @@ assumptions.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Define the migration boundary |
-| 0:08–0:18 | Read the Java request path |
-| 0:18–0:30 | Extract behavior and contract cases |
-| 0:30–0:42 | Map the slice to .NET 10 |
-| 0:42–0:52 | Use Copilot without surrendering decisions |
-| 0:52–1:00 | Prepared demo and lab handoff |
+| 0:00 to 0:08 | Define the migration boundary |
+| 0:08 to 0:18 | Read the Java request path |
+| 0:18 to 0:30 | Extract behavior and contract cases |
+| 0:30 to 0:42 | Map the slice to .NET 10 |
+| 0:42 to 0:52 | Use Copilot without surrendering decisions |
+| 0:52 to 1:00 | Prepared demo and lab handoff |
 
 ## Trainer preflight
 

@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–12 and 17
+**Prerequisites:** Sessions 01 to 12 and 17
 **Deliverable:** An implemented and evolved feature with traceable Spec Kit
 artifacts, GitHub Issues, tests, and convergence evidence
 

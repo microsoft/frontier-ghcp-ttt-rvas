@@ -1,7 +1,7 @@
 # Track: Full Mastery
 
 **Target Audience:** Trainers delivering the complete curriculum
-**Duration:** 85 hours across 28 sessions
+**Duration:** 88 hours across 29 sessions
 **Difficulty:** Beginner → Advanced
 **Recommended Delivery:** 10-day intensive or 15-day standard
 
@@ -18,7 +18,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 - GitHub Copilot Enterprise Cloud access
 - Experience with CI/CD and at least one IaC tool (Terraform or Bicep)
 - Node.js or Python installed (for MCP server and agent development)
-- Comfort with live coding, demos, and facilitating technical workshops
+- Comfort with live coding, demos, and running technical workshops
 - Access to a cloud environment (Azure, AWS, or GCP) for infrastructure labs
 - GitHub Copilot app access for canvas and orchestration labs
 
@@ -32,7 +32,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 2       | 02          | Copilot Chat & Inline Suggestions | Beginner     | 3 hrs      |
 | 3       | 03          | Prompt Engineering Fundamentals   | Beginner     | 3 hrs      |
 
-### Module 2: Copilot in Practice (Intermediate–Advanced)
+### Module 2: Copilot in Practice (Intermediate to Advanced)
 
 | Order   | Session #   | Title                                     | Difficulty   | Duration   |
 | ------- | ----------- | ----------------------------------------- | ------------ | ---------- |
@@ -40,6 +40,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 5       | 05          | Agent Mode in the IDE                     | Intermediate | 3 hrs      |
 | 6       | 06          | Copilot Spaces & Context Management       | Intermediate | 3 hrs      |
 | 7       | 07          | Copilot for Code Review & Pull Requests   | Intermediate | 3 hrs      |
+| 29      | 29          | GitHub Copilot App for Developers (optional specialization) | Intermediate | 3 hrs |
 | 27      | 27          | Repair and Refactor a Broken Python Application | Intermediate | 3 hrs |
 | 26      | 26          | Migrate a Legacy Java Service to Modern .NET | Advanced | 3 hrs |
 
@@ -53,7 +54,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 11      | 11          | Custom Agents & Agent Profiles        | Advanced     | 3 hrs      |
 | 12      | 12          | Agent Skills & the Copilot Ecosystem  | Advanced     | 3 hrs      |
 
-### Module 4: DevOps & Infrastructure (Intermediate–Advanced)
+### Module 4: DevOps & Infrastructure (Intermediate to Advanced)
 
 | Order   | Session #   | Title                                      | Difficulty   | Duration   |
 | ------- | ----------- | ------------------------------------------ | ------------ | ---------- |
@@ -76,7 +77,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
 | 19      | 19          | End-to-End Capstone Project                 | Advanced     | 3 hrs      |
 
-### Module 7: Product and Delivery Teams (Beginner–Intermediate)
+### Module 7: Product and Delivery Teams (Beginner to Intermediate)
 
 | Order | Session # | Title | Difficulty | Duration |
 | --- | --- | --- | --- | --- |
@@ -102,7 +103,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 7 | Sessions 28, 19 | HVE delivery + capstone |
 | Day 8 | Sessions 20, 21, 22 | App foundations, interviewing + GitHub planning |
 | Day 9 | Sessions 23, 24, 25 | Canvases, orchestration + automation |
-| Day 10 | Sessions 27, 26 | Python repair + service migration |
+| Day 10 | Sessions 29, 27, 26 | Developer app + repair + migration |
 
 ### 15-Day Standard
 
@@ -122,7 +123,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 12 | Sessions 21, 22 | Interviewing + GitHub issue planning |
 | Day 13 | Sessions 23, 24 | Planning canvas + workstream supervision |
 | Day 14 | Sessions 25, 27 | Automation + Python repair |
-| Day 15 | Session 26 | Service migration |
+| Day 15 | Sessions 26, 29 | Service migration + developer app specialization |
 
 ## Learning Outcomes
 
@@ -141,6 +142,11 @@ By completing this track, trainees will be able to:
 11. Create a personal trainer delivery plan for their organization
 12. Teach non-developers to create briefs, issues, canvases, orchestrated work, and bounded Automations with GitHub Copilot
 13. Teach HVE Research, Plan, Implement, Review, and Follow-up through a complete evidence chain
+14. Teach developers to use isolated Copilot App sessions, independent critique, and pull-request readiness evidence
+
+> **Optional specialization:** Session 29 requires GitHub Copilot app access for
+> the live route. A supplied evidence fallback preserves the workflow and
+> learner deliverables when app access is unavailable.
 
 ## Next Steps
 

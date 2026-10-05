@@ -11,7 +11,7 @@ footer: 'Session 09: Cloud Agent'
 ## A bounded Copilot cloud agent workflow
 
 ---
-# Today’s journey
+# Today's journey
 
 ```text
 issue contract

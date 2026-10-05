@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01 to 03
 
 **Deliverable:** A completed evidence map, policy decision, measurement guardrail,
 and reversible rollout plan for one fictional trial
@@ -18,8 +18,8 @@ deployment, external MCP servers, and live policy changes are outside scope.
 
 | Exercise | Output | Time |
 | --- | --- | --- |
-| 1 | Evidence map and Checkpoint 1 | 35 min |
-| 2 | Policy decision and Checkpoint 2 | 30 min |
+| 1 | Build the evidence map | 35 min |
+| 2 | Make the policy decision | 30 min |
 | 3 | Measurement guardrail | 25 min |
 | 4 | Rollout gates and final review | 30 min |
 
@@ -39,7 +39,7 @@ comment, or live system.
 | Starter file | Use |
 | --- | --- |
 | `fictional-scenario-brief.md` | Fixed scenario facts and exclusions |
-| `policy-checklist.md` | Evidence map and checkpoint record |
+| `policy-checklist.md` | Evidence map and open gaps |
 | `analytics-scenarios.md` | Measurement prompts |
 | `sample-analytics-data.json` | Synthetic trial observations |
 | `rollout-template.md` | Policy, measurement, and rollout record |
@@ -67,9 +67,7 @@ Record:
 Current entitlement, retention, administrator settings, and commercial terms are
 not scenario facts. Assign an owner and mark each relevant claim pending.
 
-### Checkpoint 1: Evidence map
-
-A partner or trainer must verify:
+Before continuing, check:
 
 - [ ] Every required claim has an owner and status.
 - [ ] Scenario facts are separate from live claims.
@@ -77,8 +75,8 @@ A partner or trainer must verify:
   changes are outside scope.
 - [ ] The manual fallback produces the same review evidence.
 
-Do not continue until the checkpoint is signed. Compare with
-`solution/evidence-map.md` only after peer review.
+Resolve any missing owner, status, or boundary. Then compare with
+`solution/evidence-map.md`.
 
 ## Exercise 2: Make the policy decision (30 min)
 
@@ -96,17 +94,15 @@ Record:
 - the immediate pause triggers;
 - the next review date.
 
-### Checkpoint 2: Policy decision
-
-A partner or trainer must verify:
+Before continuing, check:
 
 - [ ] The decision cites the evidence map.
 - [ ] Allowed and blocked scope are explicit.
 - [ ] Pending evidence has an owner.
 - [ ] The record states when the decision expires or must be reviewed.
 
-Do not begin measurement design until the checkpoint is signed. Compare with
-`solution/policy-decision.md` after review.
+Resolve any gap in scope, ownership, or review timing. Then compare with
+`solution/policy-decision.md`.
 
 ## Exercise 3: Define the measurement guardrail (25 min)
 
@@ -155,8 +151,8 @@ Submit:
 
 ## Verification
 
-- [ ] Checkpoint 1 is signed after the evidence map.
-- [ ] Checkpoint 2 is signed after the policy decision.
+- [ ] The evidence map has no missing owner, status, or boundary.
+- [ ] The policy decision states allowed scope, blocked scope, and review timing.
 - [ ] Every decision has an owner and evidence source.
 - [ ] Live claims are marked pending when current access is unavailable.
 - [ ] The trial uses synthetic data and excludes production actions.

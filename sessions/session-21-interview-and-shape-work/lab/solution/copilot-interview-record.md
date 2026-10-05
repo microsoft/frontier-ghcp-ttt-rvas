@@ -80,3 +80,11 @@ support staff.
 
 The first-release users, request types, notification exclusion, ownership, and
 approval path did not change.
+
+## Context health
+
+| Point | Decision |
+| --- | --- |
+| After Round 2 | `/context` checked; no compaction needed |
+| After Round 4 | Saved the record and started a fresh review session |
+| Final critique | `/rubber-duck` challenged unsupported criteria and ownership |

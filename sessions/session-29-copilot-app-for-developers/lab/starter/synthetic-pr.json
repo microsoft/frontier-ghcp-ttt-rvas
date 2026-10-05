@@ -1,0 +1,34 @@
+{
+  "issue": {
+    "number": 184,
+    "title": "Stop false READY verdicts",
+    "acceptance_criteria": [
+      "Failed required checks return NOT_READY",
+      "Unresolved blocking reviews return NOT_READY",
+      "Missing required evidence returns UNKNOWN"
+    ]
+  },
+  "pull_request": {
+    "number": 212,
+    "changed_files": [
+      "readiness_guard/readiness.py",
+      "tests/test_readiness.py"
+    ]
+  },
+  "checks": [
+    {
+      "name": "unit",
+      "required": true,
+      "status": "success"
+    }
+  ],
+  "review_threads": [
+    {
+      "id": "R1",
+      "blocking": true,
+      "resolved": false,
+      "summary": "Missing evidence must not produce READY."
+    }
+  ]
+}
+

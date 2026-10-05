@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Track three synthetic work items until the assigned reviewer can inspect their evidence and make a readiness decision.
+Track three synthetic work items until their state supports a readiness decision.
 
 ## Shared state
 
@@ -38,6 +38,5 @@ Track three synthetic work items until the assigned reviewer can inspect their e
 - Data: supplied synthetic items only.
 - External systems and writes: none.
 - Owner: Training canvas owner.
-- Reviewer: Assigned peer reviewer.
 - Manual fallback: local contract harness and JSON state.
 - Retirement trigger: end of lab or loss of an accountable owner.

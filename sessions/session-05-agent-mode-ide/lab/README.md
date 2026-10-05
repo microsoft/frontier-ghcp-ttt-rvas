@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–04 completed
+**Prerequisites:** Sessions 01 to 04 completed
 **Deliverable:** A tested Todo API built and evolved with visible human review points
 
 ## Lab overview

@@ -1,26 +1,26 @@
 # Weekly Service Request Portal Update
 
-**Reporting period:** September 14–18, 2026  
-**Workflow:** Weekly status draft, contract `SRP-WEEKLY-STATUS` version 1.0  
+**Input version:** `DDS-S24-STATUS-02`
+
+**Workflow:** Weekly status draft, contract `DDS-WEEKLY-STATUS` version 1.0
+
 **Approval status:** Second manual run accepted for stakeholder preparation
 
 ## Status
 
-Five requests closed during the week. One mobile request remains in progress. Two
-requests are blocked: one awaits sandbox endpoint approval, and one awaits an
-approved notification service test window.
-
-The team updated required-field guidance in the training sandbox and added a synthetic troubleshooting article. No production deployment occurred.
+Three status-visibility workstreams are ready for review: requester view, empty
+and stale states, and requester access verification. Public status mapping remains
+blocked on product-owner approval.
 
 ## Run comparison
 
-The first run excluded one notification record because it had no owner. The second
-run used the approved source update, accepted all eight records, and removed that
-exception.
+The first run excluded requester access verification because its evidence
+reference was missing. The second run used the approved synthetic reference,
+accepted all four workstreams, and removed that exception.
 
 ## Review decision
 
-The delivery lead accepted the second draft after comparing both evidence packets
+The delivery lead accepted the second draft after comparing both run records
 and confirming that neither run made an external change. Live scheduling remains
 stopped.
 

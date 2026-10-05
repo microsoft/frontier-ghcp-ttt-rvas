@@ -11,14 +11,14 @@ requirement, and prepare approved updates.
 
 ## Deliverable
 
-Submit one completed [`copilot-work-item-review.md`](copilot-work-item-review.md) with:
+Use [`work-item-update-plan.md`](work-item-update-plan.md) to carry:
 
 - the Copilot interview findings;
-- a before-and-after field review;
-- the request owner's approval decision;
+- planned field changes;
+- the request owner's decisions;
 - the saved field values;
-- the final readiness result;
-- the IDs of child Tasks created after approval.
+- open gaps and next action;
+- the IDs of child Tasks created after the parent update.
 
 ## Required preflight
 
@@ -34,7 +34,7 @@ Before starting:
 
 1. Run one prompt and one follow-up in GitHub Copilot.
 2. Open [`../starter/vague-request.md`](../starter/vague-request.md).
-3. Open [`copilot-work-item-review.md`](copilot-work-item-review.md).
+3. Open [`work-item-update-plan.md`](work-item-update-plan.md).
 4. Open the seeded requirement.
 5. Confirm the title and the `session-21` and `service-request-portal` tags.
 6. Record the current description, acceptance criteria, priority, state, board column, and readiness value.
@@ -128,8 +128,8 @@ Use the approved Azure Boards MCP connection to:
 
 1. read the seeded requirement;
 2. prepare an update request without sending it;
-3. compare the request with the approval record;
-4. update only approved fields;
+3. compare the request with the update plan;
+4. update only accepted fields;
 5. read the item again and record the saved values;
 6. create child Tasks after the parent matches the approval;
 7. read the parent links and record the Task IDs.
@@ -138,9 +138,9 @@ If MCP cannot show the pending update or read back the saved result, use the bro
 
 ### Browser path
 
-1. Use the Copilot draft as the source for each approved value.
-2. Edit only the approved description, acceptance criteria, priority, state, board column, and readiness field or tag.
-3. Compare the form with the approval record.
+1. Use the Copilot draft as the source for each accepted value.
+2. Edit only the accepted description, acceptance criteria, priority, state, board column, and readiness field or tag.
+3. Compare the form with the update plan.
 4. Save the requirement.
 5. Reopen it and record the saved values.
 6. Create only the approved child Tasks.
@@ -150,24 +150,25 @@ Do not use bulk edit.
 
 ## Child Task gate
 
-Create child Tasks only after approval. The supplied scenario normally needs two:
+Create child Tasks only after the request owner accepts the parent changes. The supplied scenario normally needs two:
 
 - implement the requester status view and safe application fallback behavior;
 - validate state mapping, freshness behavior, and requester-only access.
 
-Each Task needs a clear result, owner role, and evidence note. If the parent is **Revise** or **Blocked**, leave the child Task table empty.
+Each Task needs a clear result and owner role. If a blocking decision remains open,
+leave the child Task table empty.
 
 ## Review and deliver
 
-The delivery reviewer checks:
+Before handoff, check:
 
-- saved fields match the approval record;
+- saved fields match the update plan;
 - acceptance criteria include positive and failure behavior;
 - readiness did not move while a blocking decision remained open;
 - every created Task links to the parent;
 - the next action has an owner.
 
-Record **Ready**, **Revise**, or **Blocked**.
+Fix mismatches and list unresolved gaps with an owner and next action.
 
 ## Reset and cleanup
 

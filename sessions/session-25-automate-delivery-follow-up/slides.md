@@ -20,7 +20,7 @@ Product and Delivery Teams
 
 Sessions 20-24 created the brief, issues, canvas, and reviewed work.
 
-Now automate one recurring follow-up.
+Session 24 produced `delivery-status-record.md`. Now automate one recurring draft.
 
 ---
 
@@ -63,15 +63,16 @@ Use the lowest level that still saves useful time.
 - Do not publish or change work items.
 
 Use a **Manual** trigger and keep **Run in cloud** off for the local-file lab.
+Scheduling stays off in the core lab.
 
 ---
 
 # Service Request Portal
 
-Every Friday, prepare an internal status draft from:
+Prepare an internal status draft from:
 
-- synthetic service request records;
-- a short change log;
+- Session 24 delivery-status records;
+- the Session 24 handoff;
 - the approved contract.
 
 The lab workflow is **A1: Draft**. It cannot publish or change source records.
@@ -91,7 +92,8 @@ The lab workflow is **A1: Draft**. It cannot publish or change source records.
 
 # Exceptions are evidence
 
-One source record has no owner. The run must exclude it, explain why, and name the escalation path.
+One workstream record has no evidence reference. The run must exclude it, explain
+why, and name the escalation path.
 
 Silently repairing or dropping a record fails the contract.
 
@@ -101,7 +103,7 @@ Silently repairing or dropping a record fails the contract.
 
 ```text
 Run 1
-  → exclude SR-1048: missing owner
+  → exclude SV-04: missing evidence reference
   → review evidence
   → apply approved source update
   → run the same automation again
@@ -116,9 +118,10 @@ The automation boundary stays fixed. Only the approved input changes.
 
 | Check | Run 1 | Run 2 |
 | --- | --- | --- |
-| Accepted records | 7 | 8 |
+| Accepted records | 3 | 4 |
 | Rejected records | 1 | 0 |
-| Blocked records | 1 | 2 |
+| Ready for review | 2 | 3 |
+| Blocked records | 1 | 1 |
 | Prohibited writes | 0 | 0 |
 
 The second run must explain why the record changed classification.
@@ -133,7 +136,7 @@ The second run must explain why the record changed classification.
 | Reject | The result is wrong, unsupported, incomplete, or out of bounds |
 | Pause | Policy, data, meter, owner, or evidence is unresolved |
 
-Record the reason, reviewer, time, and next action.
+Update the contract status and next action.
 
 ---
 
@@ -175,6 +178,17 @@ Do not maintain competing status fields without an owner.
 
 ---
 
+# Scheduling is a stretch
+
+Keep the output draft only.
+
+Before enabling a weekly trigger, confirm the time zone, owner, budget, failure
+signal, and disable path.
+
+Higher autonomy is trainer-only and needs stronger controls.
+
+---
+
 # Recheck product facts before delivery
 
 GitHub documents local and cloud automations, supported triggers, tool controls, policy dependencies, visibility, and usage metering.
@@ -186,10 +200,9 @@ Check the current official documentation before delivery. Do not promise access 
 # Lab deliverable
 
 1. Automation contract
-2. Two reviewed evidence packets
-3. Run comparison and approval record
-4. Stakeholder-ready update
-5. System-of-record decision
+2. Two reviewed run records
+3. Stakeholder-ready update
+4. System-of-record decision
 
 Run the same draft-only automation twice. Review both results, then choose
 **keep**, **revise**, **disable**, or **pause**.

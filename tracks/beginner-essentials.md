@@ -3,13 +3,13 @@
 **Target Audience:** Teams just starting with GitHub Copilot
 **Duration:** 15 hours (5 sessions × 3 hrs)
 **Difficulty:** Beginner → Intermediate
-**Recommended Delivery:** 2 days (2–3 sessions per day)
+**Recommended Delivery:** 2 days (2 to 3 sessions per day)
 
 ---
 
 ## Description
 
-The minimum viable path to Copilot productivity. This track covers everything a team needs to go from zero to confidently using Copilot in their daily workflow — installation, core features, prompt engineering, and the CLI experience. Trainees leave ready to use Copilot effectively across IDE and terminal surfaces.
+The minimum viable path to Copilot productivity. This track covers installation, core features, prompt engineering, and the CLI. Trainees leave ready to use Copilot in the IDE and terminal.
 
 ## Prerequisites
 
@@ -58,6 +58,6 @@ By completing this track, trainees will be able to:
 
 ## Next Steps
 
-- **Developer Productivity** — Add code review and Spaces to maximize daily output
-- **Agentic Development** — Go deep into autonomous agents, MCP, and custom agents
-- **DevOps & Automation** — Apply Copilot to CI/CD, Actions, and infrastructure
+- **Developer Productivity**. Add code review and Spaces to maximize daily output
+- **Agentic Development**. Go deep into autonomous agents, MCP, and custom agents
+- **DevOps & Automation**. Apply Copilot to CI/CD, Actions, and infrastructure

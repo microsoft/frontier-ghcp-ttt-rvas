@@ -17,12 +17,12 @@ than fixed clock slots, and shorten demonstrations before cutting artifact revie
 
 | Segment | Indicative range | Exit signal |
 |---------|------------------|-------------|
-| What HVE is and why it exists | 5–10 min | Learners can distinguish agents, prompts, instructions, and tracking artifacts |
-| Direct RPI phases and their handoffs | 15–20 min | Each phase has an owner, artifact, and gate |
-| Combined `/rpi`, Follow-up, and checkpoints | 5–10 min | Learners can choose direct prompts or combined mode |
-| Additive instructions and custom agents | 8–12 min | Learners can explain activation evidence |
-| Product and Agile agent flow | 8–12 min | Learners can place Advisor, Coach, BRD, and PRD before RPI |
-| Challenge gates, recovery, and scoring | 4–6 min | Learners know what completion requires |
+| What HVE is and why it exists | 5 to 10 min | Learners can distinguish agents, prompts, instructions, and tracking artifacts |
+| Direct RPI phases and their handoffs | 15 to 20 min | Each phase has an owner, artifact, and gate |
+| Combined `/rpi`, Follow-up, and checkpoints | 5 to 10 min | Learners can choose direct prompts or combined mode |
+| Additive instructions and custom agents | 8 to 12 min | Learners can explain activation evidence |
+| Product and Agile agent flow | 8 to 12 min | Learners can place Advisor, Coach, BRD, and PRD before RPI |
+| Challenge gates, recovery, and scoring | 4 to 6 min | Learners know what completion requires |
 
 The full trainer segment should remain close to one hour. If an agent response is
 slow, switch to the reference artifact and continue the explanation.
@@ -160,7 +160,7 @@ execution credit for the replaced phase.
 
 Check these sources during trainer preparation:
 
-- [HVE Core installation](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
-- [RPI workflow](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
-- [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
-- [HVE agent catalog](https://github.com/microsoft/hve-core/blob/main/docs/agents/README.md)
+* [HVE Core installation](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
+* [RPI workflow](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
+* [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
+* [HVE agent catalog](https://github.com/microsoft/hve-core/blob/main/docs/agents/README.md)

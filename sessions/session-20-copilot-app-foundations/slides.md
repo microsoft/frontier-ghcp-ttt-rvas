@@ -21,7 +21,11 @@ This track does not use Copilot as a background writing tool.
 Learners work in the GitHub Copilot app with repository context and reviewable
 artifacts.
 
+**Delivery Decision Studio** is the six-session path. **Service Request Portal**
+is the initiative.
+
 ---
+
 # The app is a workspace, not an answer engine
 
 The chat is one place to work. Projects, source references, issues, and saved
@@ -34,6 +38,7 @@ Gather evidence → form a proposal → review it → save the decision → veri
 This separates the model's narrative from facts the team can check.
 
 ---
+
 # Context has a cost
 
 | Context choice | When it helps |
@@ -46,6 +51,7 @@ This separates the model's narrative from facts the team can check.
 Tell Copilot why each source matters. **Do not make it guess.**
 
 ---
+
 # Separate facts, assumptions, and decisions
 
 | Type | Example |
@@ -57,6 +63,7 @@ Tell Copilot why each source matters. **Do not make it guess.**
 This makes uncertainty visible. A polished paragraph can hide all three.
 
 ---
+
 # Know the main work areas
 
 | Area | Use it for |
@@ -78,6 +85,29 @@ Name the files, issues, or repository that should support the answer.
 
 ---
 
+# Choose the session mode
+
+| Mode | Use in this path |
+| --- | --- |
+| Interactive | Questions, interviews, and reviewed drafts |
+| Plan | Review a multi-step approach before changes |
+| Autopilot | Bounded work with approved autonomy |
+
+Session 20 uses Interactive, then Plan. The learner reviews every write.
+
+---
+
+# Use verified context controls
+
+- `@` adds a file.
+- `#` references an issue.
+- `/` opens commands.
+- `/context` shows current context usage.
+- `/compact` summarizes a long active session.
+- `/clear` or `/reset` starts fresh.
+
+---
+
 # Ask for sources
 
 ```text
@@ -95,6 +125,8 @@ Mark missing information as unknown.
 - Skills provide repeatable procedures.
 - Agents carry role-specific instructions and tools.
 - MCP servers connect Copilot to systems.
+- Plugins install reusable packages that can include MCP servers and other
+  customizations.
 - Canvases provide visible shared state.
 - Automations repeat bounded work.
 
@@ -114,7 +146,7 @@ Every later Module 7 session uses this pattern.
 
 # Conversation should become an artifact
 
-The lab creates a Markdown working brief with:
+The lab creates `initiative-context-brief.md` with:
 
 - facts and sources;
 - unknowns;
@@ -145,9 +177,10 @@ The brief works only while it matches approved evidence.
 1. Open the repository as a Copilot project.
 2. Inspect the available capabilities.
 3. Compare an unscoped answer with a grounded answer.
-4. Create and commit the working brief.
+4. Create and commit the initiative context brief.
 5. Apply approved late evidence.
 6. Review and commit the focused revision.
-7. Verify the brief in a fresh session.
+7. Ask `/rubber-duck` for independent critique.
+8. Verify the brief in a fresh session.
 
 **Stop if the app or repository context is unavailable.**

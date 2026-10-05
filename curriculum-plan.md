@@ -1,19 +1,19 @@
-# GitHub Copilot & Agentic Workflows — Train-the-Trainer Curriculum Plan
+# GitHub Copilot & Agentic Workflows: Train-the-Trainer Curriculum Plan
 
 ## Overall Learning Objectives
 
 By completing this curriculum, trainers will be able to:
 
 1. **Explain** GitHub Copilot's architecture, capabilities, model ecosystem, and limitations to technical audiences
-2. **Demonstrate** daily Copilot workflows — inline suggestions, Chat, agent mode, and Spaces — in live coding sessions
+2. **Demonstrate** daily Copilot workflows. Inline suggestions, Chat, agent mode, and Spaces. In live coding sessions
 3. **Teach** prompt engineering techniques that maximize Copilot's effectiveness across all surfaces
 4. **Guide** teams through agentic workflows: IDE agent mode, canvases, cloud agent, custom agents, and MCP integration
 5. **Build** custom agents (`.github/agents/`), agent skills (`.github/skills/`), canvas extensions, and MCP server integrations
-6. **Automate** DevOps workflows — GitHub Actions, IaC (Terraform/Bicep), CI/CD pipelines — with Copilot assistance
+6. **Automate** GitHub Actions, IaC (Terraform/Bicep), and CI/CD workflows with Copilot assistance
 7. **Design** enterprise rollout plans covering governance, policies, analytics, and security
 8. **Orchestrate** multi-agent teams using optional tools such as Squad for advanced agentic automation
 9. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
-10. **Facilitate** hands-on labs where trainees build real projects using the full Copilot toolchain
+10. **Run** hands-on labs where trainees build real projects using the full Copilot toolchain
 11. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
 12. **Teach** product and delivery teams to use the GitHub Copilot app, create durable planning artifacts, and supervise agent work without requiring programming
 13. **Use** GitHub MCP, canvases, orchestration, and Automations with explicit review and verification
@@ -24,25 +24,25 @@ By completing this curriculum, trainers will be able to:
 
 ### Modules & Tracks
 
-The curriculum is organized into **7 modules**. Modules 1–3 form the technical core. Modules 4–7 are role-based or technical electives that trainers can combine for their audience.
+The curriculum is organized into **7 modules**. Modules 1 to 3 form the technical core. Modules 4 to 7 are role-based or technical electives that trainers can combine for their audience.
 
 ```
 Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
     │
-Module 2: Copilot in Practice ──────────────── (Intermediate–Advanced, 6 sessions)
+Module 2: Copilot in Practice ──────────────── (Intermediate to Advanced, 7 sessions)
     │
 Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
     │
-    ├── Module 4: DevOps & Infrastructure ──── (Intermediate–Advanced, 3 sessions)
+    ├── Module 4: DevOps & Infrastructure ──── (Intermediate to Advanced, 3 sessions)
     │   └── Requires: Module 1 + Session 05
     │
     ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
     │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
-        └── Requires: Modules 1–3; Sessions 17–18 are required before the capstone
+        └── Requires: Modules 1 to 3; Sessions 17 to 18 are required before the capstone
 
-Module 7: Product and Delivery Teams ─────────────── (Beginner–Intermediate, 6 sessions)
+Module 7: Product and Delivery Teams ─────────────── (Beginner to Intermediate, 6 sessions)
     └── Standalone role-based path; no programming prerequisite
 ```
 
@@ -50,14 +50,14 @@ Module 7: Product and Delivery Teams ──────────────�
 
 | Audience                  | Recommended Path                 | Sessions     | Duration   |
 | ------------------------- | -------------------------------- | ------------ | ---------- |
-| **Copilot Beginners**     | Module 1 only                    | 01–03        | 9 hrs      |
-| **Copilot Practitioners** | Modules 1–2                      | 01–07, 27, 26 | 27 hrs    |
-| **Agentic Developers**    | Modules 1–3                      | 01–12        | 36 hrs     |
-| **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01–05, 13–15 | 21 hrs     |
-| **Enterprise Admins**     | Module 1 + Session 17            | 01–03, 17    | 12 hrs     |
-| **Product and Delivery Teams** | Module 7                    | 20–25        | 18 hrs     |
-| **HVE Practitioners**     | HVE Engineering                  | 01–07, 10–11, 28 | 31 hrs |
-| **Full Track**            | All Modules                      | 01–28        | 85 hrs     |
+| **Copilot Beginners**     | Module 1 only                    | 01 to 03        | 9 hrs      |
+| **Copilot Practitioners** | Modules 1 to 2                      | 01 to 07, 29, 27, 26 | 30 hrs |
+| **Agentic Developers**    | Modules 1 to 3                      | 01 to 12, 29    | 39 hrs     |
+| **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01 to 05, 13 to 15 | 21 hrs     |
+| **Enterprise Admins**     | Module 1 + Session 17            | 01 to 03, 17    | 12 hrs     |
+| **Product and Delivery Teams** | Module 7                    | 20 to 25        | 18 hrs     |
+| **HVE Practitioners**     | HVE Engineering                  | 01 to 07, 10 to 11, 28 | 31 hrs |
+| **Full Track**            | All Modules                      | 01 to 29        | 88 hrs     |
 
 ---
 
@@ -69,64 +69,69 @@ Module 7: Product and Delivery Teams ──────────────�
 | --- | --------------------------------- | ----------- | --------------- | ---------- |
 | 01  | Introduction to GitHub Copilot    | Beginner    | None            | 3 hrs      |
 | 02  | Copilot Chat & Inline Suggestions | Beginner    | Session 01      | 3 hrs      |
-| 03  | Prompt Engineering Fundamentals   | Beginner    | Sessions 01–02  | 3 hrs      |
+| 03  | Prompt Engineering Fundamentals   | Beginner    | Sessions 01 to 02  | 3 hrs      |
 
-### Module 2: Copilot in Practice (Intermediate–Advanced)
+### Module 2: Copilot in Practice (Intermediate to Advanced)
 
 | #   | Session                                   | Difficulty   | Prerequisites   | Duration   |
 | --- | ----------------------------------------- | ------------ | --------------- | ---------- |
-| 04  | GitHub Copilot in the CLI                 | Intermediate | Sessions 01–03  | 3 hrs      |
-| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01–04  | 3 hrs      |
-| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01–05  | 3 hrs      |
-| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01–06  | 3 hrs      |
-| 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01–07 | 3 hrs |
-| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01–07 | 3 hrs |
+| 04  | GitHub Copilot in the CLI                 | Intermediate | Sessions 01 to 03  | 3 hrs      |
+| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01 to 04  | 3 hrs      |
+| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01 to 05  | 3 hrs      |
+| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01 to 06  | 3 hrs      |
+| 29  | GitHub Copilot App for Developers         | Intermediate | Sessions 01 to 07  | 3 hrs      |
+| 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01 to 07 | 3 hrs |
+| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01 to 07 | 3 hrs |
+
+**Optional specialization:** Session 29 requires GitHub Copilot app access for
+the live route. A supplied evidence fallback preserves the workflow and learner
+deliverables when app access is unavailable.
 
 ### Module 3: Agentic Workflows (Advanced)
 
 | #   | Session                               | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------- | ----------- | ------------------ | ---------- |
-| 08  | Copilot App, Plugins & Canvas Extensions | Advanced  | Sessions 01–07     | 3 hrs      |
-| 09  | Copilot Cloud Agent                   | Advanced    | Sessions 01–07     | 3 hrs      |
-| 10  | MCP Servers & Custom Tool Integration | Advanced    | Sessions 01–07     | 3 hrs      |
-| 11  | Custom Agents & Agent Profiles        | Advanced    | Sessions 01–07, 10 | 3 hrs      |
-| 12  | Agent Skills & the Copilot Ecosystem  | Advanced    | Sessions 01–07, 11 | 3 hrs      |
+| 08  | Copilot App, Plugins & Canvas Extensions | Advanced  | Sessions 01 to 07     | 3 hrs      |
+| 09  | Copilot Cloud Agent                   | Advanced    | Sessions 01 to 07     | 3 hrs      |
+| 10  | MCP Servers & Custom Tool Integration | Advanced    | Sessions 01 to 07     | 3 hrs      |
+| 11  | Custom Agents & Agent Profiles        | Advanced    | Sessions 01 to 07, 10 | 3 hrs      |
+| 12  | Agent Skills & the Copilot Ecosystem  | Advanced    | Sessions 01 to 07, 11 | 3 hrs      |
 
-### Module 4: DevOps & Infrastructure with Copilot (Intermediate–Advanced)
+### Module 4: DevOps & Infrastructure with Copilot (Intermediate to Advanced)
 
 | #   | Session                                    | Difficulty   | Prerequisites      | Duration   |
 | --- | ------------------------------------------ | ------------ | ------------------ | ---------- |
-| 13  | GitHub Actions & Workflow Generation       | Intermediate | Sessions 01–05     | 3 hrs      |
-| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01–05, 13 | 2 hrs 30 min |
-| 15  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions 01–05, 13 | 3 hrs      |
+| 13  | GitHub Actions & Workflow Generation       | Intermediate | Sessions 01 to 05     | 3 hrs      |
+| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01 to 05, 13 | 2 hrs 30 min |
+| 15  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions 01 to 05, 13 | 3 hrs      |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01–12 | 3 hrs   |
-| 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01–12, 17 | 3 hrs |
-| 28  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions 01–07, 10–11 | 4 hrs |
+| 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01 to 12 | 3 hrs   |
+| 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01 to 12, 17 | 3 hrs |
+| 28  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions 01 to 07, 10 to 11 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01–03     | 3 hrs      |
-| 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01–12, 17–18 | 3 hrs |
+| 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01 to 03     | 3 hrs      |
+| 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01 to 12, 17 to 18 | 3 hrs |
 
-### Module 7: Product and Delivery Teams (Beginner–Intermediate)
+### Module 7: Product and Delivery Teams (Beginner to Intermediate)
 
 | # | Session | Difficulty | Prerequisites | Duration |
 | --- | --- | --- | --- | --- |
 | 20 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
 | 21 | Interview Ideas and Shape Better Work | Beginner | Session 20 | 3 hrs |
-| 22 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions 20–21; GitHub MCP write access | 3 hrs |
-| 23 | Build and Use a Planning Canvas | Intermediate | Sessions 20–22; canvas creation access | 3 hrs |
-| 24 | Orchestrate Agents and Workstreams | Intermediate | Sessions 20–23; orchestration access | 3 hrs |
-| 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions 20–24; Automations and GitHub MCP access | 3 hrs |
+| 22 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions 20 to 21; GitHub MCP write access | 3 hrs |
+| 23 | Build and Use a Planning Canvas | Intermediate | Sessions 20 to 22; canvas creation access | 3 hrs |
+| 24 | Orchestrate Agents and Workstreams | Intermediate | Sessions 20 to 23; orchestration access | 3 hrs |
+| 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions 20 to 24; Automations and GitHub MCP access | 3 hrs |
 
-**Access requirement:** GitHub Copilot access is required for Sessions 20–25.
+**Access requirement:** GitHub Copilot access is required for Sessions 20 to 25.
 Learners without access should not start Module 7. Stop and reschedule their
 training after access is available.
 
@@ -140,7 +145,7 @@ GitHub issues and does not branch into an alternate platform exercise.
 
 ---
 
-### Session 01 — Introduction to GitHub Copilot
+### Session 01: Introduction to GitHub Copilot
 
 **Difficulty:** Beginner
 **Prerequisites:** None
@@ -154,12 +159,12 @@ Sets the stage. Trainers learn what GitHub Copilot is, how the underlying LLM wo
 - What is GitHub Copilot? Architecture overview, LLM basics
 - Enterprise Cloud access, policy controls, and the delivery preflight
 - Usage and billing fundamentals using live official GitHub documentation, not static prices, allowances, or model tables
-- Privacy, data handling, and telemetry — what code is sent, what isn't
+- Privacy, data handling, and telemetry: what code is sent, what isn't
 - Supported IDEs and language coverage
 - Installation and activation walkthrough
 - First demo: writing a function with Copilot suggestions
-- Next Edit Suggestions (NES) — predictive follow-up edits
-- Setting expectations — what Copilot does well, where it struggles
+- Next Edit Suggestions (NES): predictive follow-up edits
+- Setting expectations: what Copilot does well, where it struggles
 - Q&A framework for common objections
 
 **Lab Outline (2 hours 30 minutes):**
@@ -167,7 +172,7 @@ Sets the stage. Trainers learn what GitHub Copilot is, how the underlying LLM wo
 - Install and configure GitHub Copilot in VS Code
 - Accept, reject, and cycle through inline suggestions
 - Enable and experiment with Next Edit Suggestions
-- Write 3–5 functions across different languages (Python, JavaScript, TypeScript)
+- Write 3 to 5 functions across different languages (Python, JavaScript, TypeScript)
 - Compare Copilot output with manually written code
 - Document observations: where was Copilot helpful? Where did it miss?
 - **Deliverable:** A small multi-function utility file generated with Copilot assistance
@@ -182,7 +187,7 @@ Sets the stage. Trainers learn what GitHub Copilot is, how the underlying LLM wo
 
 ---
 
-### Session 02 — Copilot Chat & Inline Suggestions
+### Session 02: Copilot Chat & Inline Suggestions
 
 **Difficulty:** Beginner
 **Prerequisites:** Session 01
@@ -194,7 +199,7 @@ Deepens the daily developer workflow. Covers Copilot Chat (sidebar, inline, quic
 **Trainer Content Outline (1 hour):**
 
 - Copilot Chat UI surfaces: sidebar, inline, quick chat, terminal
-- Chat participants: @workspace, @terminal, @vscode — when to use each
+- Chat participants: @workspace, @terminal, @vscode: when to use each
 - Slash commands: /explain, /fix, /tests, /doc, /new
 - Context management: #file, #selection, #editor references
 - Model selection: a task, quality, governance, and cost framework backed by the current official model reference
@@ -209,7 +214,7 @@ Deepens the daily developer workflow. Covers Copilot Chat (sidebar, inline, quic
 - Generate unit tests with /tests for an existing module
 - Use @workspace to answer questions about a multi-file project
 - Use @terminal to troubleshoot a failing build command
-- Compare available models only when the customer’s policy and current official reference allow them
+- Compare available models only when the customer's policy and current official reference allow them
 - **Deliverable:** A debugged and tested module with Chat conversation history documented
 
 **Expected Learning Outcomes:**
@@ -221,24 +226,24 @@ Deepens the daily developer workflow. Covers Copilot Chat (sidebar, inline, quic
 
 ---
 
-### Session 03 — Prompt Engineering Fundamentals
+### Session 03: Prompt Engineering Fundamentals
 
 **Difficulty:** Beginner
-**Prerequisites:** Sessions 01–02
+**Prerequisites:** Sessions 01 to 02
 **Module:** Copilot Fundamentals
 
 **Description:**
-Teaches the art and science of writing effective prompts for Copilot. Covers the structure of good prompts, context provision strategies, iterative refinement, and common anti-patterns. This is the foundation session that makes all subsequent sessions more effective.
+Teaches trainees to write effective prompts for Copilot. Covers prompt structure, context selection, revision, and common mistakes. Later sessions use these methods.
 
 **Trainer Content Outline (1 hour):**
 
 - Why prompts matter: garbage in, garbage out
 - Anatomy of a good prompt: intent, context, constraints, examples
-- The "neighboring tabs" effect — how open files influence suggestions
+- The "neighboring tabs" effect: how open files influence suggestions
 - Comment-driven development: using comments as prompts
 - Iterative prompting: refining output through follow-up instructions
 - Anti-patterns: vague prompts, over-specified prompts, prompt injection risks
-- Demo: same task, three prompt strategies — compare results
+- Demo: same task, three prompt strategies: compare results
 - Prompt libraries and team-shared prompt patterns
 
 **Lab Outline (2 hours):**
@@ -259,21 +264,21 @@ Teaches the art and science of writing effective prompts for Copilot. Covers the
 
 ---
 
-### Session 04 — GitHub Copilot in the CLI
+### Session 04: GitHub Copilot in the CLI
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01 to 03
 **Module:** Copilot in Practice
 
 **Description:**
-Introduces GitHub Copilot's terminal-native experience via the standalone `copilot` CLI and CLI agent mode. Trainees learn to use Copilot directly from the command line — interactive chat, non-interactive prompts, shell script generation, troubleshooting, and autonomous agent tasks without leaving the terminal. This session bridges the gap between the foundational Copilot skills (Sessions 01–03) and the full IDE agent mode (Session 05), showing that Copilot is a multi-surface tool. Covers CLI-exclusive capabilities like piping command output to Copilot, remote/SSH workflows, and environments where the IDE isn't available.
+Introduces GitHub Copilot's terminal experience through the standalone `copilot` CLI and CLI agent mode. Trainees use interactive chat, non-interactive prompts, generated shell scripts, and autonomous agent tasks without leaving the terminal. This session connects the foundational Copilot skills in Sessions 01 to 03 with IDE agent mode in Session 05. It also covers piping command output to Copilot, remote and SSH workflows, and environments where an IDE is unavailable.
 
 **Trainer Content Outline (1 hour):**
 
-- The Copilot surface spectrum: IDE ↔ Chat ↔ CLI — three ways to work
+- The Copilot surface spectrum: IDE ↔ Chat ↔ CLI: three ways to work
 - Installing standalone `copilot` (`npm install -g @github/copilot`): prerequisites, authentication, terminal setup
-- Interactive `copilot` mode — conversational terminal assistance for commands, code, and errors
-- Non-interactive `copilot -p "<prompt>"` — generating answers, commands, and scripts from prompts
+- Interactive `copilot` mode: conversational terminal assistance for commands, code, and errors
+- Non-interactive `copilot -p "<prompt>"`: generating answers, commands, and scripts from prompts
 - Slash commands: `/plan`, `/agent`, `/skills`, `/mcp`, `/model`, and when to use each
 - Plan and Autopilot modes: autonomous multi-step terminal tasks with planning and iteration
 - CLI-exclusive capabilities: piping output to Copilot, log analysis, environment debugging
@@ -306,14 +311,14 @@ Introduces GitHub Copilot's terminal-native experience via the standalone `copil
 
 ---
 
-### Session 05 — Agent Mode in the IDE
+### Session 05: Agent Mode in the IDE
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–04
+**Prerequisites:** Sessions 01 to 04
 **Module:** Copilot in Practice
 
 **Description:**
-The pivotal session. Introduces agent mode — Copilot's autonomous multi-step coding experience in VS Code and JetBrains. Agent mode plans, executes, runs terminal commands, iterates on errors, and integrates with MCP servers. This session establishes the mental model shift from "assistant" to "agent" and covers multi-file editing as a natural capability of agent mode. All subsequent sessions build on agent mode fluency.
+This session introduces agent mode, Copilot's autonomous multi-step coding experience in VS Code and JetBrains. Agent mode plans work, edits files, runs terminal commands, responds to errors, and connects to MCP servers. The session explains the shift from "assistant" to "agent" and shows how agent mode handles related changes across files. Later sessions assume this knowledge.
 
 **Trainer Content Outline (1 hour):**
 
@@ -332,11 +337,11 @@ The pivotal session. Introduces agent mode — Copilot's autonomous multi-step c
 
 - Use agent mode to scaffold a new project from a description
 - Have the agent create, test, and debug a feature end-to-end
-- Refactor a module across 4–5 files using agent mode (multi-file editing)
+- Refactor a module across 4 to 5 files using agent mode (multi-file editing)
 - Observe the agent's tool use: terminal commands, file edits, iterations
 - Intervene mid-task: redirect the agent, add constraints, correct course
 - Use TODO code actions to delegate a task to the cloud agent
-- Compare: complete the same task manually vs. with agent mode — document differences
+- Compare: complete the same task manually vs. with agent mode: document differences
 - **Deliverable:** A feature built entirely via agent mode, with a reflection on the agent's decision-making
 
 **Expected Learning Outcomes:**
@@ -349,14 +354,14 @@ The pivotal session. Introduces agent mode — Copilot's autonomous multi-step c
 
 ---
 
-### Session 06 — Copilot Spaces & Context Management
+### Session 06: Copilot Spaces & Context Management
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05
+**Prerequisites:** Sessions 01 to 05
 **Module:** Copilot in Practice
 
 **Description:**
-Covers how to give Copilot the right context for better results. Introduces Copilot Spaces — curated context sets that ground Copilot in the right code, docs, and specs. Also covers custom instructions (`.github/copilot-instructions.md`), reusable prompt files (`.github/prompts/`), Copilot Memory, and VS Code-level instruction configuration.
+Covers how to give Copilot the right context for better results. Introduces Copilot Spaces. Curated context sets that ground Copilot in the right code, docs, and specs. Also covers custom instructions (`.github/copilot-instructions.md`), reusable prompt files (`.github/prompts/`), Copilot Memory, and VS Code-level instruction configuration.
 
 **Trainer Content Outline (1 hour):**
 
@@ -364,11 +369,11 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 - Copilot Spaces: organizing code, docs, issues, and specs into curated sets
 - Creating and sharing Spaces across teams
 - Custom instructions per Space for specialized workflows
-- `.github/copilot-instructions.md` — project-level instructions
-- `.github/prompts/*.md` — reusable prompt files for team tasks
+- `.github/copilot-instructions.md`: project-level instructions
+- `.github/prompts/*.md`: reusable prompt files for team tasks
 - VS Code settings: `github.copilot.chat.codeGeneration.useInstructionFiles`
 - Copilot Memory: how the agent remembers and validates knowledge (Preview)
-- Demo: before/after — same prompt with and without Space context
+- Demo: before/after: same prompt with and without Space context
 - Maintenance: keeping Spaces and instructions current as projects evolve
 
 **Lab Outline (2 hours):**
@@ -391,10 +396,10 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 
 ---
 
-### Session 07 — Copilot for Code Review & Pull Requests
+### Session 07: Copilot for Code Review & Pull Requests
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–06
+**Prerequisites:** Sessions 01 to 06
 **Module:** Copilot in Practice
 
 **Description:**
@@ -416,7 +421,7 @@ Focuses on using Copilot in the code review process. Covers Copilot-generated PR
 
 - Create a feature branch with intentional code quality issues
 - Open a PR and request Copilot review
-- Analyze Copilot's review comments — which are valid? Which are noise?
+- Analyze Copilot's review comments: which are valid? Which are noise?
 - Apply Copilot's suggested fixes with one-click
 - Use Copilot to generate a PR summary and improve commit messages
 - Create a merge conflict and resolve it via the cloud agent
@@ -433,10 +438,54 @@ Focuses on using Copilot in the code review process. Covers Copilot-generated PR
 
 ---
 
-### Session 08 — Copilot App, Plugins & Canvas Extensions
+### Session 29: GitHub Copilot App for Developers
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions 01 to 07
+**Module:** Copilot in Practice
+**Duration:** 3 hours
+
+**Description:**
+Learners use the GitHub Copilot app to move a bounded engineering change from
+chat and isolated project sessions through evidence-backed implementation,
+independent critique, pull-request readiness, and a manual read-only automation.
+
+**Trainer Content Outline (1 hour):**
+
+- Choose between chat, project sessions, and the repository workflow
+- Keep parallel work isolated and give each session a clear stop condition
+- Separate implementation from independent critique
+- Gather test and review evidence before a pull request decision
+- Use a manual read-only automation without expanding repository access
+
+**Lab Outline (2 hours):**
+
+- Start from a bounded engineering change and explicit acceptance criteria
+- Run the implementation in an isolated project session
+- Ask a separate session to critique the change and its evidence
+- Resolve findings and prepare a pull-request readiness record
+- Run the supplied manual read-only automation
+- **Deliverable:** A tested change, independent critique, pull-request readiness
+  record, and automation evidence
+
+**Expected Learning Outcomes:**
+
+- Select the right Copilot App surface for a development task
+- Isolate parallel sessions and define useful stop conditions
+- Use independent critique to find gaps in code or evidence
+- Make a pull-request readiness decision from recorded proof
+- Run and review a manual read-only automation
+
+> **Optional specialization:** GitHub Copilot app access is required for the live
+> route. A supplied evidence fallback preserves the same workflow and learner
+> deliverables when app access is unavailable.
+
+---
+
+### Session 08: Copilot App, Plugins & Canvas Extensions
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Module:** Agentic Workflows
 
 **Description:**
@@ -472,14 +521,14 @@ Introduces the GitHub Copilot App as a customizable work surface. Trainers use t
 
 ---
 
-### Session 09 — Copilot Cloud Agent
+### Session 09: Copilot Cloud Agent
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Module:** Agentic Workflows
 
 **Description:**
-Covers the GitHub Copilot cloud agent — assigning GitHub issues directly to Copilot for autonomous resolution. Copilot creates a branch, writes code, runs builds and tests in an isolated environment, and opens a draft PR. Includes third-party coding agents (Claude, Codex) and agent session management.
+Covers the GitHub Copilot cloud agent and how to assign GitHub issues to it. Copilot creates a branch, writes code, runs builds and tests in an isolated environment, and opens a draft PR. The session also covers third-party coding agents such as Claude and Codex, plus agent session management.
 
 **Trainer Content Outline (1 hour):**
 
@@ -488,7 +537,7 @@ Covers the GitHub Copilot cloud agent — assigning GitHub issues directly to Co
 - Configuring the cloud agent: `copilot-setup-steps.yml`, firewall rules, runner config
 - Writing good issues for the cloud agent (specificity, acceptance criteria)
 - The `copilot-instructions.md` role in guiding agent behavior
-- Third-party agents: Claude (@claude) and Codex (@codex) — assigning and comparing
+- Third-party agents: Claude (@claude) and Codex (@codex): assigning and comparing
 - Agent session management: tracking progress across sessions
 - Demo: assign an issue, watch the agent work, review the PR
 - Security: network firewall, toolset restrictions, shell controls
@@ -498,7 +547,7 @@ Covers the GitHub Copilot cloud agent — assigning GitHub issues directly to Co
 
 - Configure a repository for the Copilot cloud agent (`copilot-setup-steps.yml`)
 - Write 3 issues of varying complexity and assign them to Copilot
-- Assign the same issue to Copilot and a third-party agent — compare results
+- Assign the same issue to Copilot and a third-party agent: compare results
 - Monitor agent progress via the Agent Sessions view
 - Review the draft PRs: quality, correctness, test coverage
 - Iterate: provide feedback via PR comments, watch the agent respond
@@ -514,18 +563,18 @@ Covers the GitHub Copilot cloud agent — assigning GitHub issues directly to Co
 
 ---
 
-### Session 10 — MCP Servers & Custom Tool Integration
+### Session 10: MCP Servers & Custom Tool Integration
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Module:** Agentic Workflows
 
 **Description:**
-Introduces the Model Context Protocol (MCP) — an open standard for connecting AI models to external tools and data sources. Covers MCP server architecture, configuration in VS Code and GitHub, and building custom MCP servers to extend Copilot's capabilities. Enterprise registry, allowlist, data-handling, and approval decisions are handled authoritatively in Session 17.
+Introduces the Model Context Protocol (MCP). An open standard for connecting AI models to external tools and data sources. Covers MCP server architecture, configuration in VS Code and GitHub, and building custom MCP servers to extend Copilot's capabilities. Enterprise registry, allowlist, data-handling, and approval decisions are handled authoritatively in Session 17.
 
 **Trainer Content Outline (1 hour):**
 
-- What is MCP? The "USB-C for AI" — standardized tool integration
+- What is MCP? The "USB-C for AI": standardized tool integration
 - MCP architecture: clients, servers, transports (stdio, SSE, streamable HTTP)
 - Built-in MCP support in VS Code, GitHub.com, and cloud agent
 - Configuring MCP servers: `mcp.json`, workspace vs. user settings
@@ -542,7 +591,7 @@ Introduces the Model Context Protocol (MCP) — an open standard for connecting 
 - Build a simple custom MCP server that exposes a REST API as tools
 - Test the custom server in VS Code with Copilot agent mode
 - Add tool descriptions and parameter schemas for better Copilot interaction
-- **Deliverable:** A working custom MCP server with 2–3 tools, integrated into VS Code
+- **Deliverable:** A working custom MCP server with 2 to 3 tools, integrated into VS Code
 
 **Expected Learning Outcomes:**
 
@@ -553,14 +602,14 @@ Introduces the Model Context Protocol (MCP) — an open standard for connecting 
 
 ---
 
-### Session 11 — Custom Agents & Agent Profiles
+### Session 11: Custom Agents & Agent Profiles
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07, 10
+**Prerequisites:** Sessions 01 to 07, 10
 **Module:** Agentic Workflows
 
 **Description:**
-Covers building custom GitHub agents — specialized AI teammates defined via Markdown files with YAML frontmatter. Custom agents live in `.github/agents/`, specify their own instructions, tools, and MCP servers, and can be invoked by name in Copilot Chat, cloud agent, and CLI. This is the modern extensibility model.
+Covers custom GitHub agents, which are defined in Markdown files with YAML frontmatter. Custom agents live in `.github/agents/`, specify their own instructions, tools, and MCP servers, and can be invoked by name in Copilot Chat, cloud agent, and CLI.
 
 **Trainer Content Outline (1 hour):**
 
@@ -570,7 +619,7 @@ Covers building custom GitHub agents — specialized AI teammates defined via Ma
 - Creating agents for specific domains: test-writer, readme-creator, security-reviewer
 - Agent tool configuration: which tools and MCP servers each agent can use
 - Invoking custom agents: Chat, cloud agent, CLI
-- Comparison: custom agents vs. MCP servers vs. custom instructions — when to use each
+- Comparison: custom agents vs. MCP servers vs. custom instructions: when to use each
 - Demo: build a custom agent and assign it work
 - Enterprise distribution: sharing agents across an organization
 
@@ -594,20 +643,20 @@ Covers building custom GitHub agents — specialized AI teammates defined via Ma
 
 ---
 
-### Session 12 — Agent Skills & the Copilot Ecosystem
+### Session 12: Agent Skills & the Copilot Ecosystem
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07, 11
+**Prerequisites:** Sessions 01 to 07, 11
 **Module:** Agentic Workflows
 
 **Description:**
-Introduces agent skills — folders of instructions, scripts, and resources that Copilot loads to improve performance on specialized tasks. Covers creating skills, the open Agent Skills specification, personal vs. project skills, and notable community contributions. Showcases real-world custom agents and skills from the GitHub community.
+Introduces agent skills, which are folders of instructions, scripts, and resources that Copilot loads for specialized tasks. Covers skill creation, the open Agent Skills specification, personal and project skills, and examples from the GitHub community.
 
 **Trainer Content Outline (1 hour):**
 
 - What are agent skills? Specialized knowledge packs for Copilot
 - Skills specification: `.github/skills/` for versioned team delivery
-- Project-shared skills: `.github/skills/` — versioned team guidance
+- Project-shared skills: `.github/skills/`: versioned team guidance
 - Skill anatomy: SKILL.md format, when skills are loaded, confidence levels
 - Creating skills for common workflows: deployment, testing, code review
 - Community ecosystem: `github/awesome-copilot`, `anthropics/skills`
@@ -635,14 +684,14 @@ Introduces agent skills — folders of instructions, scripts, and resources that
 
 ---
 
-### Session 13 — GitHub Actions & Workflow Generation
+### Session 13: GitHub Actions & Workflow Generation
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–05
+**Prerequisites:** Sessions 01 to 05
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
-Covers using Copilot to generate, explain, and debug GitHub Actions workflows. Trainers learn to leverage agent mode for creating CI/CD pipelines, custom Actions, and workflow automation from natural language descriptions.
+Covers using Copilot to generate, explain, and debug GitHub Actions workflows. Trainers use agent mode to create CI/CD pipelines, custom Actions, and workflow automation from natural-language descriptions.
 
 **Trainer Content Outline (1 hour):**
 
@@ -675,10 +724,10 @@ Covers using Copilot to generate, explain, and debug GitHub Actions workflows. T
 
 ---
 
-### Session 14 — Infrastructure as Code with Copilot
+### Session 14: Infrastructure as Code with Copilot
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–05, 13
+**Prerequisites:** Sessions 01 to 05, 13
 **Module:** DevOps & Infrastructure with Copilot
 **Duration:** 2 hours 30 minutes
 
@@ -716,14 +765,14 @@ Bicep remains a short trainer comparison and optional extension.
 
 ---
 
-### Session 15 — CI/CD Pipeline Debugging & Agentic Remediation
+### Session 15: CI/CD Pipeline Debugging & Agentic Remediation
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–05, 13
+**Prerequisites:** Sessions 01 to 05, 13
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
-Covers advanced CI/CD debugging with Copilot assistance and an approved, reviewable agentic remediation workflow for security findings. Trainers learn to diagnose pipeline failures, optimize build times, and safely route remediation work through the organization’s controls.
+Covers advanced CI/CD debugging with Copilot assistance and an approved, reviewable agentic remediation workflow for security findings. Trainers learn to diagnose pipeline failures, optimize build times, and safely route remediation work through the organization's controls.
 
 **Trainer Content Outline (1 hour):**
 
@@ -755,10 +804,10 @@ Covers advanced CI/CD debugging with Copilot assistance and an approved, reviewa
 
 ---
 
-### Session 16 — Brady's Squad: Human-Led AI Teams
+### Session 16: Brady's Squad: Human-Led AI Teams
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07 and 09–12
+**Prerequisites:** Sessions 01 to 07 and 09 to 12
 **Module:** Specification-Driven Frameworks
 
 **Description:**
@@ -771,7 +820,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 - Team composition: casting agents, assigning roles, defining charters
 - The coordinator pattern: routing work to the right agent
 - Shared memory: decisions, history, skills, orchestration logs
-- Ralph — the work monitor: continuous development loops
+- Ralph: the work monitor: continuous development loops
 - GitHub Issues integration: issue-driven agent development
 - MCP integration with Squad: extending agent capabilities
 - Demo: initialize a Squad team, assign work, observe agent collaboration
@@ -783,7 +832,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 - Use the provided Squad example or a no-install role-play fallback
 - Cast a team: lead, frontend, backend, tester, scribe
 - Assign work to individual agents and observe output
-- Set up GitHub Issues integration — watch agents pick up and complete issues
+- Set up GitHub Issues integration: watch agents pick up and complete issues
 - Configure custom ceremonies (design meetings, retros)
 - Run Ralph's work-check loop on a backlog of issues
 - **Deliverable:** A fully configured Squad team with completed issues, decision log, and agent memories
@@ -798,10 +847,10 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 
 ---
 
-### Session 17 — Enterprise Governance, Policies & Analytics
+### Session 17: Enterprise Governance, Policies & Analytics
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–03
+**Prerequisites:** Sessions 01 to 03
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -815,7 +864,7 @@ Covers the enterprise side of Copilot and is the authoritative governance and co
 - MCP registry and server access policies
 - Audit logs: tracking Copilot usage and events
 - Usage analytics: adoption metrics, acceptance rates, cloud agent activity
-- Data, retention, residency, compliance, and legal questions: how to use live official documentation and the customer’s approved policy sources
+- Data, retention, residency, compliance, and legal questions: how to use live official documentation and the customer's approved policy sources
 - Metered usage, budgets, stop guards, and lab-cost controls
 - Model-selection governance: task fit, quality, approved availability, and cost
 - Rollout strategies: pilot → team → org → enterprise
@@ -842,10 +891,10 @@ Covers the enterprise side of Copilot and is the authoritative governance and co
 
 ---
 
-### Session 18 — Spec Kit: Specification-Driven Development
+### Session 18: Spec Kit: Specification-Driven Development
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–12 and 17
+**Prerequisites:** Sessions 01 to 12 and 17
 **Module:** Specification-Driven Frameworks
 **Duration:** 3 hours 30 minutes
 
@@ -883,10 +932,10 @@ Uses Spec Kit to carry one bounded feature from a source request to working code
 
 ---
 
-### Session 28 — HVE Core: Evidence-Led Delivery with RPI
+### Session 28: HVE Core: Evidence-Led Delivery with RPI
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07 and 10–11, or equivalent experience
+**Prerequisites:** Sessions 01 to 07 and 10 to 11, or equivalent experience
 **Module:** Specification-Driven Frameworks
 **Duration:** 4 hours
 
@@ -924,10 +973,10 @@ delivery decision.
 
 ---
 
-### Session 19 — End-to-End Capstone Project
+### Session 19: End-to-End Capstone Project
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–12 and 17–18; Session 16 is optional
+**Prerequisites:** Sessions 01 to 12 and 17 to 18; Session 16 is optional
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -952,7 +1001,7 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 
 ---
 
-### Session 20 — Work Effectively in the GitHub Copilot App
+### Session 20: Work Effectively in the GitHub Copilot App
 
 **Difficulty:** Beginner
 **Prerequisites:** GitHub Copilot app access
@@ -978,7 +1027,7 @@ Learners open the GitHub Copilot app, choose repository context, inspect the cap
 
 ---
 
-### Session 21 — Interview Ideas and Shape Better Work
+### Session 21: Interview Ideas and Shape Better Work
 
 **Difficulty:** Beginner
 **Prerequisites:** Session 20
@@ -1005,7 +1054,7 @@ Learners run a decision-tree interview in the GitHub Copilot app. They turn appr
 
 ---
 
-### Session 22 — Plan Work with GitHub Issues and MCP
+### Session 22: Plan Work with GitHub Issues and MCP
 
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions 20-21; GitHub MCP write access
@@ -1032,7 +1081,7 @@ Learners use the GitHub MCP server to inspect existing work, propose an issue hi
 
 ---
 
-### Session 23 — Build and Use a Planning Canvas
+### Session 23: Build and Use a Planning Canvas
 
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions 20-22; canvas creation access
@@ -1060,7 +1109,7 @@ Learners create a planning canvas from a plain-language request, load the Sessio
 
 ---
 
-### Session 24 — Orchestrate Agents and Workstreams
+### Session 24: Orchestrate Agents and Workstreams
 
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions 20-23; live orchestration access
@@ -1086,7 +1135,7 @@ Learners select independent work from the issue plan and canvas, start child ses
 
 ---
 
-### Session 25 — Automate Delivery Follow-up and Connect Work Systems
+### Session 25: Automate Delivery Follow-up and Connect Work Systems
 
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions 20-24; Automations and GitHub MCP access
@@ -1114,10 +1163,10 @@ Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Aut
 
 ---
 
-### Session 26 — Migrate a Legacy Java Service to Modern .NET
+### Session 26: Migrate a Legacy Java Service to Modern .NET
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Module:** Copilot in Practice
 **Duration:** 3 hours
 
@@ -1141,10 +1190,10 @@ Learners inspect a legacy Java service, capture its required behavior, and migra
 
 ---
 
-### Session 27 — Repair and Refactor a Broken Python Application
+### Session 27: Repair and Refactor a Broken Python Application
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Module:** Copilot in Practice
 **Duration:** 3 hours
 
@@ -1170,19 +1219,21 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 
 ## Delivery Notes
 
-- **Total track duration:** 85 hours across 28 sessions
+- **Total track duration:** 88 hours across 29 sessions
 - **Recommended delivery schedules:**
   - Intensive: Up to 3 sessions/day across 10 days
-  - Standard: 1–2 sessions/day across 15 days
-  - Extended: 1 session/day across 28 days
-- **Group size:** 8–15 trainees per cohort for optimal lab support
+  - Standard: 1 to 2 sessions/day across 15 days
+  - Extended: 1 session/day across 29 days
+- **Group size:** 8 to 15 trainees per cohort for optimal lab support
 - **Module independence:**
-  - Modules 1–3 form the core track (required for full certification)
+  - Modules 1 to 3 form the core track (required for full certification)
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 17 (Enterprise) can be delivered standalone with Module 1 for admin audiences and is required before the capstone
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
+  - Session 29 is an optional developer specialization. Use the supplied
+    evidence fallback when GitHub Copilot app access is unavailable
   - Session 28 is the final session in the HVE Engineering track and should run
-    after Sessions 10–11
+    after Sessions 10 to 11
   - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

@@ -106,4 +106,4 @@ The challenge is complete when:
   invalid fields, duplicate title, generated metadata, and stable errors;
 * the container contract is implemented and validated in an approved environment;
 * the HVE review maps every criterion to evidence and supports a human decision;
-* the evidence workbook records exact commands, results, gaps, and handoffs.
+* the challenge handoff captures exact commands, results, gaps, and next steps.

@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
-**Prerequisites:** Sessions 01–06 completed  
+**Prerequisites:** Sessions 01 to 06 completed
 **Deliverable:** A human-reviewed change record, corrected starter project, and conflict review
 
 ---
@@ -128,11 +128,16 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
 
    > **Expected output:** Some existing tests may still pass because the defects are not fully covered. Record both pass/fail output and any missing coverage you notice.
 
-6. **Complete the checklist.** Use `lab/starter/partner-review-checklist.md` to review correctness, security, performance, readability, testing, and final verdict.
+6. **Review the change yourself first.** Use
+   `lab/starter/partner-review-checklist.md` to record your initial verdict and
+   the two findings that matter most before opening an assisted review.
 
-   > **Success criteria:** At least four findings cite a file or function, severity, and a suggested fix. Include a security concern, a correctness concern, and a testing gap.
+   > **Success criteria:** Your initial review cites the relevant file or
+   > function and explains what evidence supports the verdict.
 
-7. **Optional assisted review.** If policy allows Copilot review or an approved local agent, ask it to review only the bounded change.
+7. **Optional assisted review.** After recording your own review,
+   use Copilot review or an approved local agent when policy permits it. Ask it
+   to review only the bounded change.
 
    Suggested prompt:
 
@@ -142,7 +147,9 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
    Return file-specific findings with evidence. Do not propose unrelated rewrites.
    ```
 
-   > **Expected output:** The assistant should produce specific findings. Compare each finding with your human review before accepting it.
+   > **Expected output:** The assistant should produce specific findings. Note
+   > anything useful that you missed, reject unsupported findings, and record
+   > whether the new information changes your final decision.
 
 ### Exercise 1 no-access fallback
 
@@ -158,6 +165,7 @@ You are ready to continue when you can answer:
 - Which findings are suggestions only?
 - Which defects were not covered by the existing tests?
 - What evidence would convince you that the fixes are complete?
+- What changed after the assisted review, if anything?
 
 ---
 
@@ -257,7 +265,7 @@ Resolve a merge conflict by preserving intent and adding verification. Do not bl
 
 6. **Run the relevant check.** Use the project test command when available, or run a direct Node.js invocation for the utility functions.
 
-   > **Expected output:** The check passes and produces output you can paste into the review record.
+   > **Expected output:** The check passes and produces output you can use in the review.
 
 7. **Peer review the resolution.** Ask a partner to review only the conflict resolution and tests.
 
@@ -308,9 +316,13 @@ Make the final review decision from evidence, not an automated suggestion.
 
    > **Success criteria:** The decision is understandable without seeing the entire lab conversation.
 
-5. **Compare automated and human findings if applicable.** Mark which findings were caught by Copilot, by the human reviewer, or by both.
+5. **Compare the locked independent critique with the assisted findings when
+   applicable.** Complete all comparison fields. Preserve the original critique,
+   record which source raised each finding, and state why the final human
+   assessment accepted, revised, or rejected it.
 
-   > **Expected output:** The comparison table in `partner-review-checklist.md` is complete enough to support a team discussion.
+   > **Expected output:** The comparison table identifies differences, false
+   positives, added evidence, and any finding that changed the final verdict.
 
 ### Exercise 4 no-access fallback
 

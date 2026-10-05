@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07 and 09–12
+**Prerequisites:** Sessions 01 to 07 and 09 to 12
 
 **Deliverable:** One input-validation issue carried through assignment,
 implementation, tests, review, and a durable decision record
@@ -171,7 +171,7 @@ Submit one folder or pull request containing:
 
 ## Verification
 
-- [ ] Local prerequisites match Sessions 01–07 and 09–12.
+- [ ] Local prerequisites match Sessions 01 to 07 and 09 to 12.
 - [ ] The selected route was approved before work began.
 - [ ] One role owned each write boundary.
 - [ ] Issue 001 kept the same acceptance criteria through review.

@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07 and the Session 26 trainer content
+**Prerequisites:** Sessions 01 to 07 and the Session 26 trainer content
 
 **Deliverable:** A working .NET 10 order-pricing endpoint, shared contract-test
 evidence, architecture notes, an HTTP parity check, and a reviewed migration

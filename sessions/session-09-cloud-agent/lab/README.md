@@ -4,24 +4,24 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 
-**Deliverable:** One completed issue evidence packet
+**Deliverable:** One reviewed change with passing focused tests
 
 ## Objective
 
-Carry one synthetic issue through five checkpoints: issue contract, setup, proposed change, tests, and human decision. Use Copilot cloud agent only when access is approved. Otherwise complete the same journey manually.
+Carry one synthetic issue from its fixed contract through setup, implementation,
+tests, and review. Use Copilot cloud agent only when access is approved. Otherwise
+complete the same work manually.
 
 ## Deliverables
 
 Submit:
 
-1. the approved `issue.md`;
-2. the completed `checkpoint-record.md`;
-3. the proposed diff or pull request reference;
-4. test output;
-5. the completed `pr-review-checklist.md`;
-6. a final decision: approve, request changes, or pause.
+1. the fixed `issue.md`;
+2. the proposed diff or pull request reference;
+3. test output;
+4. the review outcome in the pull request or local review.
 
 ## Access policy
 
@@ -58,7 +58,6 @@ Open:
 - `../issue.md`
 - `../copilot-instructions.md`
 - `../copilot-setup-steps.yml`
-- `../checkpoint-record.md`
 - `../pr-review-checklist.md`
 
 The setup workflow asset is intended for `.github/workflows/copilot-setup-steps.yml` in a live training repository.
@@ -86,11 +85,10 @@ Have a peer answer:
 - Which command proves completion?
 - What is out of scope?
 
-Record the answers in `checkpoint-record.md`.
+Resolve any ambiguity in the issue text before implementation.
 
-The issue is approved only when the answers come from the text rather than verbal context.
-
-**Visible evidence:** The issue has a reviewer, fixed acceptance criteria, allowed files, non-goals, and a stop condition.
+**Result:** The issue has fixed acceptance criteria, allowed files, non-goals, and
+a stop condition.
 
 ## Checkpoint 2: Setup (20 minutes)
 
@@ -180,15 +178,13 @@ The evidence must cover:
 | Valid title `" Weekly plan "` | HTTP 201 with the existing response fields |
 | Existing endpoints | Existing tests still pass |
 
-Record the command, pass count, failure count, and any review comment.
-
 If a required case is missing, request that focused change. Do not add a new issue or unrelated cleanup.
 
-**Visible evidence:** Test output linked to the reviewed proposal.
+**Result:** The reviewed proposal has focused test output.
 
 ## Checkpoint 5: Human decision (20 minutes)
 
-The named reviewer completes `starter/pr-review-checklist.md`.
+Use `starter/pr-review-checklist.md` to inspect the change.
 
 Choose:
 
@@ -196,18 +192,17 @@ Choose:
 - **request changes** when a bounded correction remains;
 - **pause** when access, evidence, policy, or ownership is unresolved.
 
-Record the reason and next safe action in `checkpoint-record.md`.
+Compare the result with `solution/issue-journey.md` after the review.
 
-Compare your packet with `solution/issue-journey.md` only after the decision.
-
-**Visible evidence:** A signed review decision. Do not merge as part of this lab unless the training repository policy explicitly requires it.
+**Result:** The pull request or local review shows the outcome. Do not merge as
+part of this lab unless the training repository policy explicitly requires it.
 
 ## Final deliverable
 
-The packet is complete when another reviewer can trace:
+The work is complete when another reviewer can trace:
 
 ```text
-same issue → reviewed setup → proposed change → test evidence → human decision
+same issue → reviewed setup → proposed change → tests → review outcome
 ```
 
 ## Troubleshooting

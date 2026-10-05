@@ -4,7 +4,7 @@
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Sessions 01–02 and Node.js 20 or later
+**Prerequisites:** Sessions 01 to 02 and Node.js 20 or later
 
 **Deliverable:** A working todo store and REST routes, passing tests, and a completed
 `prompt-log.md`

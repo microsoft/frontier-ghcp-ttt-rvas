@@ -6,7 +6,9 @@
 
 ## Existing-work check
 
-<!-- Search performed and possible duplicates -->
+| Existing issue | Classification | Reuse, link, leave, or reject | Reason |
+| --- | --- | --- | --- |
+| | | | |
 
 ## Parent issue
 
@@ -27,9 +29,3 @@
 ## Proposed labels and milestone
 
 <!-- Use existing approved values only -->
-
-## Review decision
-
-- **Decision:** Approve / Revise / Reject
-- **Reviewer:**
-- **Reason:**

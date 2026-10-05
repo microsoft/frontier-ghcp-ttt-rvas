@@ -17,12 +17,12 @@ Session 15 | 3 hours
 
 | Time | Topic |
 | --- | --- |
-| 0:00–0:08 | Observation, hypothesis, proof |
-| 0:08–0:18 | Local baseline |
-| 0:18–0:34 | Pipeline investigation |
-| 0:34–0:44 | Multi-stage failure |
-| 0:44–0:54 | Security remediation |
-| 0:54–1:00 | Lab handoff |
+| 0:00 to 0:08 | Observation, hypothesis, proof |
+| 0:08 to 0:18 | Local baseline |
+| 0:18 to 0:34 | Pipeline investigation |
+| 0:34 to 0:44 | Multi-stage failure |
+| 0:44 to 0:54 | Security remediation |
+| 0:54 to 1:00 | Lab handoff |
 
 ---
 # Start with evidence

@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
@@ -25,13 +25,12 @@ The issue stays fixed throughout the journey: reject blank or whitespace-only ta
 
 ## Deliverables
 
-Learners submit one issue evidence packet containing:
+Learners finish with:
 
-1. the approved issue contract;
-2. the setup checkpoint;
-3. the proposed change or manual patch;
-4. test output;
-5. the final human decision.
+1. the fixed issue contract;
+2. the proposed change or manual patch;
+3. focused test output;
+4. the review outcome.
 
 ## Access policy
 
@@ -46,14 +45,15 @@ If access or approval is missing, **do not assign the issue**. Use the manual ro
 | [`trainer-content/README.md`](trainer-content/README.md) | Minute-mapped teaching and demo plan |
 | [`slides.md`](slides.md) | Trainer-facing teaching deck |
 | [`lab/README.md`](lab/README.md) | Two-hour issue-to-review lab |
-| [`lab/starter/`](lab/starter/) | Issue, setup, sample project, and checkpoint records |
+| [`lab/starter/`](lab/starter/) | Issue, setup, sample project, and review guide |
 | [`lab/solution/`](lab/solution/) | Completed issue journey and runnable solution |
 
 ## Current product references
 
-Product notes were checked against official GitHub documentation on September 24, 2026. Trainers must recheck access and policy before delivery:
+Product notes were checked against official GitHub documentation on October 5,
+2026. Trainers must recheck access and policy before delivery:
 
-- Get started with Copilot agents on GitHub
-- Managing agent sessions
-- Configure the development environment
-- Adding repository custom instructions for GitHub Copilot
+- [Get started with Copilot agents on GitHub](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/overview)
+- [Managing agent sessions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents)
+- [Configure the development environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)
+- [Add repository custom instructions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions)

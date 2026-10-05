@@ -71,7 +71,7 @@ copilot --version
 
 ```bash
 # Flags I use regularly:
---silent            # Clean output for scripting — no stats, no formatting
+--silent            # Clean output for scripting: no stats, no formatting
 --allow-tool='shell(git)'  # Pre-approve specific tools to avoid prompts
 --yolo              # Skip ALL approval prompts (only for trusted tasks!)
 --output-format=json # Machine-readable output for piping to jq

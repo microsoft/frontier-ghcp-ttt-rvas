@@ -10,12 +10,13 @@
 
 ## Overview
 
-Vague requests hide decisions. Learners install a supplied project skill and run a
-dependency-ordered interview. They turn approved answers into a decision brief and
-issue proposal, then reopen one branch when a late constraint arrives.
+Session 21 continues the **Delivery Decision Studio** path. Learners use the
+Session 20 context brief, install a supplied project skill, and run a
+dependency-ordered interview. They turn approved answers into a decision brief
+and issue proposal, then reopen one branch when a late constraint arrives.
 
-Learners may use an approved, sanitized request from their own work. The fictional
-Service Request Portal is the supplied training scenario.
+The fictional Service Request Portal remains the initiative. Do not use customer
+requests or source organization names in the standard lab.
 
 > [!IMPORTANT]
 > **GitHub Copilot is required.** Learners must confirm access before the session. If GitHub Copilot cannot run the interview, stop and resolve access before starting.
@@ -34,6 +35,9 @@ By the end of this session, learners will be able to:
   definition of done.
 - Reopen only the decisions affected by new evidence.
 - Verify that the revised brief and issue proposal remain aligned.
+- Check context health before each interview round and start fresh for the final
+  review.
+- Request an independent critique before approving the handoff.
 - Assign an owner and reviewer before work enters a sprint.
 
 ## Session flow
@@ -72,5 +76,7 @@ Vague request
 - Treat Copilot questions, recommendations, and drafts as proposals.
 - Keep product and approval decisions with named people.
 - Do not create or update a live work item until the request owner approves the brief.
+- Keep the lab no-code. Learners install and use the supplied skill; they do not
+  author or edit it.
 - Session 22 creates the approved GitHub issues. Session 21 prepares the source
   artifact and issue proposal.

@@ -4,11 +4,11 @@
 
 | Field | Value |
 | --- | --- |
-| Contract ID | `SRP-WEEKLY-STATUS` |
+| Contract ID | `DDS-WEEKLY-STATUS` |
 | Version | |
 | Effective date | |
 | Review date | |
-| Cadence | Weekly |
+| Cadence | Manual core run; weekly scheduling requires separate approval |
 | Status | Draft / Approved / Paused / Retired |
 
 ## Purpose
@@ -36,6 +36,10 @@ Name the recurring work and the decision this output supports.
 ## Allowed inputs
 
 List each source, required field, data classification, and freshness rule.
+
+The core lab uses `working-delivery-status.csv`,
+`working-session-24-handoff.md`, `working-delivery-status-record.md`, and approved
+GitHub issue reads.
 
 ## Prohibited inputs
 
@@ -90,3 +94,9 @@ and decides when it may resume.
 ## Change control
 
 State who may change the contract and who approves a higher autonomy level.
+
+## Current disposition
+
+- **Keep / Revise / Disable / Pause:**
+- **Reason:**
+- **Next change or action:**

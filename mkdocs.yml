@@ -1,5 +1,5 @@
 site_name: GitHub Copilot Train-the-Trainer
-site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 28 sessions across 7 modules.
+site_description: A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows — 29 sessions across 7 modules.
 site_author: GitHub Copilot TTT
 extra:
   source_repository_url: https://github.com/microsoft/frontier-ghcp-ttt-rvas
@@ -106,6 +106,7 @@ nav:
   - Home: README.md
   - Build your set: build-set.md
   - Curriculum: curriculum-plan.md
+  - Glossary: sessions/glossary.md
   - Tracks:
     - Overview: tracks/README.md
     - Copilot Essentials: tracks/beginner-essentials.md
@@ -147,6 +148,10 @@ nav:
         - Overview: sessions/session-07-code-review-prs/README.md
         - Lab: sessions/session-07-code-review-prs/lab/README.md
         - Trainer Guide: sessions/session-07-code-review-prs/trainer-content/README.md
+      - "29 — Copilot App for Developers":
+        - Overview: sessions/session-29-copilot-app-for-developers/README.md
+        - Lab: sessions/session-29-copilot-app-for-developers/lab/README.md
+        - Trainer Guide: sessions/session-29-copilot-app-for-developers/trainer-content/README.md
       - "27 — Python Repair & Refactor":
         - Overview: sessions/session-27-python-repair-refactor/README.md
         - Lab: sessions/session-27-python-repair-refactor/lab/README.md

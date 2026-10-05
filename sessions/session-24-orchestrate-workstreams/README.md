@@ -8,13 +8,14 @@
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
-**Last updated:** September 23, 2026
+**Last updated:** October 5, 2026
 
 ## Overview
 
-Managers and delivery leads run live GitHub Copilot orchestration. They select
-approved work, split one objective into independent workstreams, guide child
-sessions, review evidence, and make the final decision.
+Session 24 continues the **Delivery Decision Studio** path. Managers and delivery
+leads orchestrate the four status-visibility issue roles created in Session 22 and
+reconciled in Session 23. They guide child sessions, review evidence, and create
+the delivery-status record that Session 25 consumes.
 
 **GitHub Copilot orchestration access is required.** Learners need the built-in
 `/orchestrate` skill, which creates and coordinates child sessions. There is no
@@ -30,7 +31,8 @@ Learners practice how to:
 2. Define the output packet and stop condition for each child session.
 3. Start and monitor live child sessions through GitHub Copilot orchestration.
 4. Redirect or stop weak work and accept or reject completed results.
-5. Consolidate approved evidence in a shared release-readiness record.
+5. Consolidate approved evidence in `delivery-status-record.md` with a
+   release-readiness decision.
 
 ## Session 16 distinction
 
@@ -63,7 +65,7 @@ built-in `orchestrate` skill, then type `/` in a session and confirm that
 
 ## Product-state note
 
-**Verified against official GitHub documentation on September 23, 2026.** GitHub documents `/orchestrate` as a built-in GitHub Copilot app skill for coordinating work across sessions or repositories. GitHub also documents `/spawn`, parallel isolated sessions, steering, stopping, usage details, and the **My work** entry point.
+**Verified against official GitHub documentation on October 5, 2026.** GitHub documents `/orchestrate` as a built-in GitHub Copilot app skill for coordinating work across sessions or repositories. GitHub also documents `/spawn`, parallel isolated sessions, steering, stopping, usage details, and the **My work** entry point.
 
 Interface labels can change by context, plan, policy, and app version. If **My work** has moved, use the current session or agent surface. The orchestration requirement does not change.
 

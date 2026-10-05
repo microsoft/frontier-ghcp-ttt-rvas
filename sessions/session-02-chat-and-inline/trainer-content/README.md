@@ -9,13 +9,13 @@ Use one calculator defect from explanation through final verification.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:06 | Inline suggestions and Chat |
-| 0:06–0:16 | Choose a Chat surface |
-| 0:16–0:27 | Select context deliberately |
-| 0:27–0:37 | Explain, fix, test, and document |
-| 0:37–0:45 | Conversational refinement |
-| 0:45–0:52 | Model and metering decisions |
-| 0:52–1:00 | Prepared debugging demo and lab handoff |
+| 0:00 to 0:06 | Inline suggestions and Chat |
+| 0:06 to 0:16 | Choose a Chat surface |
+| 0:16 to 0:27 | Select context deliberately |
+| 0:27 to 0:37 | Explain, fix, test, and document |
+| 0:37 to 0:45 | Conversational refinement |
+| 0:45 to 0:52 | Model and metering decisions |
+| 0:52 to 1:00 | Prepared debugging demo and lab handoff |
 
 The timings match [`slides.md`](../slides.md).
 
@@ -33,14 +33,14 @@ always sees a particular context source.
 
 ## Slide delivery map
 
-### 0:00–0:06: Inline suggestions and Chat
+### 0:00 to 0:06: Inline suggestions and Chat
 
 **Slides:** *Copilot Chat & Inline Suggestions*, *Agenda*, *Two interaction modes*
 
 Session 01 used suggestions at the cursor. This session adds explicit
 conversation. Both paths still require a task, review, and checks.
 
-### 0:06–0:16: Choose a surface
+### 0:06 to 0:16: Choose a surface
 
 **Slides:** *Choose the surface by the work*, *Sidebar and inline Chat*, *Quick and
 terminal context*
@@ -54,7 +54,7 @@ Use the current editor to show the available surfaces. Teach the decision:
 
 Do not make the shortcut the lesson. Product controls change.
 
-### 0:16–0:27: Select context
+### 0:16 to 0:27: Select context
 
 **Slides:** *Context should be explicit*, *Workspace, file, selection, terminal*
 
@@ -80,7 +80,7 @@ Explain the role of:
 - workspace search for architecture or usage;
 - terminal output for a recent failure.
 
-### 0:27–0:37: Common task actions
+### 0:27 to 0:37: Common task actions
 
 **Slides:** *Explain before changing*, *Fix narrowly*, *Generated tests need review*
 
@@ -94,7 +94,7 @@ For generated tests, ask:
 - Did it add a package or invent a requirement?
 - Is the expected value independently correct?
 
-### 0:37–0:45: Conversational refinement
+### 0:37 to 0:45: Conversational refinement
 
 **Slides:** *Refine one concern at a time*, *Know when to restart*
 
@@ -109,7 +109,7 @@ Use this sequence:
 Continue a thread while the task and assumptions remain stable. Start a new thread
 when stale context is steering the answer.
 
-### 0:45–0:52: Model and metering decisions
+### 0:45 to 0:52: Model and metering decisions
 
 **Slides:** *Compare against the task*, *Access policy*
 
@@ -119,7 +119,7 @@ same tests. If it is not allowed, compare with the manual reference.
 
 Do not infer access, cost, or data behavior from a label.
 
-### 0:52–1:00: Prepared debugging demo
+### 0:52 to 1:00: Prepared debugging demo
 
 **Slides:** *Demo: weighted average*, *Failure to fix*, *Lab handoff*
 

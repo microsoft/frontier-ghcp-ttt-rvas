@@ -12,12 +12,12 @@ or availability.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Governance decisions need owners and evidence |
-| 0:08–0:18 | Access, data, and tool preflight |
-| 0:18–0:30 | Evidence-map exercise |
-| 0:30–0:42 | Scenario-based policy decision |
-| 0:42–0:52 | Measurement guardrail |
-| 0:52–1:00 | Rollout gates and lab handoff |
+| 0:00 to 0:08 | Governance decisions need owners and evidence |
+| 0:08 to 0:18 | Access, data, and tool preflight |
+| 0:18 to 0:30 | Evidence-map exercise |
+| 0:30 to 0:42 | Scenario-based policy decision |
+| 0:42 to 0:52 | Measurement guardrail |
+| 0:52 to 1:00 | Rollout gates and lab handoff |
 
 ## Prepare
 
@@ -31,20 +31,20 @@ or availability.
 
 ## Scripted walkthrough
 
-### 0:00–0:08: Decision owners and evidence
+### 0:00 to 0:08: Decision owners and evidence
 
 **Slides:** *Enterprise Governance*, *Agenda*, *Start with evidence*, and
 *Governance turns uncertainty into decisions*
 
-1. Say: “The team wants one workflow in one sandbox. The decision is smaller than
-   an enterprise rollout.”
+1. Say: "The team wants one workflow in one sandbox. The decision is smaller than
+   an enterprise rollout."
 2. Ask who owns access, data classification, review, and the final start decision.
 3. Reject answers that cite only a slide or training statement. Evidence must come
    from a named owner or current approved source.
 4. Open `lab/solution/evidence-map.md` and show the status vocabulary:
    **confirmed in scenario**, **live evidence pending**, and **out of scope**.
 
-### 0:08–0:18: Access, data, and tool boundary
+### 0:08 to 0:18: Access, data, and tool boundary
 
 **Slides:** *A boundary has inputs, actions, and outputs* and *Preflight*
 
@@ -56,7 +56,7 @@ or availability.
 5. Name the manual fallback: use the same acceptance checklist and human review
    without automated assistance.
 
-### 0:18–0:30: Build the evidence map
+### 0:18 to 0:30: Build the evidence map
 
 **Slides:** *Policy decision sequence*, *Worked scenario*, and
 *Evidence-map checkpoint*
@@ -69,10 +69,10 @@ or availability.
    pending.
 5. Ask one learner to find an unsupported assumption.
 
-**Checkpoint 1:** Compare the map with `lab/solution/evidence-map.md`. Do not move
-to policy choice until every required field has an owner and status.
+Compare the map with `lab/solution/evidence-map.md`. Resolve missing owners or
+statuses before moving to the policy choice.
 
-### 0:30–0:42: Make the policy decision
+### 0:30 to 0:42: Make the policy decision
 
 **Slides:** *Policy decision checkpoint* and *Data and tool boundaries*
 
@@ -83,11 +83,10 @@ to policy choice until every required field has an owner and status.
    owner evidence.
 5. Record the next review date and the event that would force an immediate pause.
 
-**Checkpoint 2:** Compare with `lab/solution/policy-decision.md`. A complete record
-must state what may start now, what remains blocked, and who owns the missing
-evidence.
+Compare with `lab/solution/policy-decision.md`. The record must state what may
+start now, what remains blocked, and who owns the missing evidence.
 
-### 0:42–0:52: Measurement and rollout gates
+### 0:42 to 0:52: Measurement and rollout gates
 
 **Slides:** *Measurements need a decision attached*, *Measurement guardrail*,
 *Worked measurement rule*, and *Rollout gates*
@@ -101,13 +100,12 @@ evidence.
 5. Map each threshold to continue, gather evidence, or pause.
 6. Open `lab/solution/rollout-plan.md` and trace start, continue, expand, and pause.
 
-### 0:52–1:00: Lab handoff
+### 0:52 to 1:00: Lab handoff
 
 **Slides:** *Lab handoff*
 
 1. Point learners to `lab/README.md` and the fixed scenario brief.
-2. State that Checkpoint 1 follows the evidence map and Checkpoint 2 follows the
-   policy decision.
+2. Explain the checks that follow the evidence map and policy decision.
 3. Name the four deliverables: evidence map, policy decision, measurement
    guardrail, and rollout plan.
 4. Explain the access rule. Missing live evidence does not block the tabletop. It
@@ -115,8 +113,8 @@ evidence.
 5. Tell learners to compare with `lab/solution/` only after recording their final
    decision.
 
-**Handoff line:** “Start with the evidence map. The trainer will not approve the
-policy decision until every required claim has an owner and status.”
+**Handoff line:** "Start with the evidence map. The trainer will not approve the
+policy decision until every required claim has an owner and status."
 
 ## Facilitation notes
 

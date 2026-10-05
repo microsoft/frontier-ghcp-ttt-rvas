@@ -3,21 +3,21 @@
 **Target Audience:** DevOps engineers, Platform engineers, SRE teams
 **Duration:** 21 hours (7 sessions × 3 hrs)
 **Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 3 days (2–3 sessions per day)
+**Recommended Delivery:** 3 days (2 to 3 sessions per day)
 
 ---
 
 ## Description
 
-Copilot for the DevOps workflow. This track gives platform and DevOps engineers the Copilot fundamentals they need, introduces agent mode as the primary power tool, then dives deep into GitHub Actions generation, Infrastructure as Code (Terraform/Bicep), and CI/CD pipeline debugging with agentic security remediation. Designed for engineers who spend their days in pipelines, infrastructure, and operational tooling.
+Copilot for DevOps work. This track gives platform and DevOps engineers the Copilot fundamentals they need, then covers agent mode, GitHub Actions generation, Infrastructure as Code (Terraform/Bicep), and CI/CD debugging with reviewed security remediation. It is for engineers who work with pipelines, infrastructure, and operations.
 
 ## Prerequisites
 
 - Experience with CI/CD concepts and GitHub Actions (basic familiarity)
-- Familiarity with at least one IaC tool (Terraform, Bicep, CloudFormation) — helpful but not required
+- Familiarity with at least one IaC tool (Terraform, Bicep, CloudFormation): helpful but not required
 - GitHub account with Copilot access
 - VS Code installed with GitHub Copilot extension
-- Access to a cloud environment for IaC testing (Azure, AWS, or GCP) — optional for labs
+- Access to a cloud environment for IaC testing (Azure, AWS, or GCP): optional for labs
 
 ## Sessions
 
@@ -67,6 +67,6 @@ By completing this track, trainees will be able to:
 
 ## Next Steps
 
-- **Agentic Development** — Learn to build custom agents and MCP servers that automate infrastructure workflows
-- **Enterprise Rollout** — Understand governance policies and rollout strategies for scaling Copilot across teams
-- **Developer Productivity** — Fill in the intermediate sessions (Spaces and Code Review) for broader Copilot fluency
+- **Agentic Development**. Learn to build custom agents and MCP servers that automate infrastructure workflows
+- **Enterprise Rollout**. Understand governance policies and rollout strategies for scaling Copilot across teams
+- **Developer Productivity**. Fill in the intermediate sessions (Spaces and Code Review) for broader Copilot fluency

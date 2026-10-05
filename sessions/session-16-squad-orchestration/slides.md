@@ -13,7 +13,7 @@ footer: 'Session 16: AI Team Orchestration & Coordination Patterns'
 
 Session 16 | 3 hours | Optional
 
-Prerequisites: Sessions 01–07 and 09–12
+Prerequisites: Sessions 01 to 07 and 09 to 12
 
 ---
 
@@ -65,7 +65,7 @@ A coordinator does more than hand out tasks. It needs to know:
 The coordinator stays human-led even when agents do the initial work.
 
 ---
-# Use a result packet, not a chat transcript
+# Return a result summary, not a chat transcript
 
 Each workstream should return a small, reviewable artifact:
 

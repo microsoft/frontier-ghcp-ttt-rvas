@@ -260,6 +260,15 @@
       "description": "Use HVE Research, Plan, Implement, Review, and Follow-up to move a bounded API feature from product intent to a human delivery decision.",
       "difficulty": "Advanced",
       "duration_minutes": 240
+    },
+    {
+      "id": "29",
+      "slug": "session-29-copilot-app-for-developers",
+      "module": "2",
+      "title": "GitHub Copilot App for Developers",
+      "description": "Move a bounded engineering change from chat and isolated project sessions through evidence-backed implementation, independent critique, pull-request readiness, and a manual read-only automation.",
+      "difficulty": "Intermediate",
+      "duration_minutes": 180
     }
   ]
 }

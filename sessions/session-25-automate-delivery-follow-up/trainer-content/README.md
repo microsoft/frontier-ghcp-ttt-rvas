@@ -2,10 +2,10 @@
 
 ## Delivery objective
 
-Teach learners to turn the manual delivery workflow into one bounded GitHub
-Copilot Automation. They run it twice in draft-only mode with an approved input
-change between runs, compare the evidence, and decide whether to keep, revise,
-disable, or pause it.
+Teach learners to turn the Session 24 delivery-status handoff into one bounded
+GitHub Copilot Automation. They run it twice with a manual trigger and draft-only
+output, compare the evidence, and decide whether to keep, revise, disable, or
+pause it.
 
 Use the fictional **Service Request Portal** weekly status workflow. Do not configure enterprise policies or repeat the Session 17 administration material.
 
@@ -16,17 +16,17 @@ Use the fictional **Service Request Portal** weekly status workflow. Do not conf
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Choose the recurring delivery task |
-| 0:08–0:18 | Open Automations and inspect the available controls |
-| 0:18–0:30 | Build the draft-only automation contract |
-| 0:30–0:42 | Configure and run the automation |
-| 0:42–0:53 | Change an input, rerun, and compare evidence |
-| 0:53–1:00 | Connect the result to GitHub or Azure Boards |
+| 0:00 to 0:08 | Choose the recurring delivery task |
+| 0:08 to 0:18 | Open Automations and inspect the available controls |
+| 0:18 to 0:30 | Build the draft-only automation contract |
+| 0:30 to 0:42 | Configure and run the automation |
+| 0:42 to 0:53 | Change an input, rerun, and compare evidence |
+| 0:53 to 1:00 | Decide the work system and explain the scheduling stretch |
 
 ## Current product facts to verify before delivery
 
 These notes were checked against official GitHub documentation on
-**September 24, 2026**. Recheck them before teaching because feature names,
+**October 5, 2026**. Recheck them before teaching because feature names,
 eligibility, billing, and controls can change.
 
 - Copilot automations can save recurring agent tasks and run them on demand or from supported triggers. The GitHub Copilot app documentation describes local and cloud automations.
@@ -62,6 +62,17 @@ Do not promise a fixed click path. The session requires the current Automations 
 
 The lab selects **A1: Draft**. The workflow may retrieve approved issue state and prepare a weekly status update. It may not publish, message stakeholders, change work items, or modify repository content.
 
+### Trainer-only automation maturity
+
+Do not ask learners to configure A2 or A3.
+
+- **A2** needs one named reversible action, scoped credentials, contract approval,
+  exception handling, fresh-read verification, and an immediate stop path.
+- **A3** also needs monitoring ownership, incident response, a tested disable
+  control, budget alerts, and confirmation that unattended execution is allowed.
+
+If any control is missing, keep the workflow at A1.
+
 ### 2. Match approval to consequence
 
 Define approval before the run:
@@ -84,13 +95,15 @@ Use `lab/starter/automation-contract-template.md`. The contract names:
 - allowed and prohibited inputs;
 - allowed and prohibited outputs;
 - acceptance and rejection rules;
-- evidence packet;
+- run record;
 - meter and stop guard;
 - recovery procedure.
 
 ### 4. Review the run, not the prose
 
-Open `lab/starter/synthetic-run-evidence.json`. Ask learners to trace every status claim to an accepted source record. One record lacks an owner and is excluded. That exclusion is part of the evidence, not a hidden cleanup step.
+Open `lab/starter/prepared-run-record-01.json`. Ask learners to trace every
+status claim to an accepted Session 24 record. `SV-04` lacks an evidence reference
+and is excluded. That exclusion is part of the evidence.
 
 Review in this order:
 
@@ -110,14 +123,21 @@ Use the starter files and an approved GitHub Copilot surface.
 2. Open **Automations** and create a manual, local, draft-only automation.
 3. Grant the minimum GitHub read tools.
 4. Run it against the first input version.
-5. Review the exception for the missing owner.
-6. Apply `lab/starter/approved-input-change.md`.
+5. Review the exception for the missing access-evidence reference.
+6. Apply `lab/starter/approved-input-change.md` to the Session 24 status data.
 7. Run the same automation again.
-8. Compare both evidence packets and record the decision.
+8. Compare both run records and make the decision.
 
 Run only the two approved manual tests after preflight. Stop either run after
 12 minutes. If a stop condition fires, preserve the evidence and record
 **Pause**.
+
+### Optional scheduling stretch
+
+After the two manual runs, demonstrate the scheduling decision without enabling
+it by default. Confirm the current trigger controls, time zone, owner, budget,
+failure signal, and disable path. A weekly trigger may be enabled only when the
+trainer approves those controls and the output remains draft only.
 
 ## Useful time saved
 
@@ -151,7 +171,7 @@ A rejected run may save no useful time, even when it finishes quickly.
 
 ## Facilitation notes
 
-- Ask “Who owns this claim?” whenever a learner points to the automation.
+- Ask "Who owns this claim?" whenever a learner points to the automation.
 - Keep workflow approval separate from enterprise policy approval.
 - Treat a clean-looking update without traceable evidence as a failed run.
 - Avoid fictional customer names. Use roles such as product owner, delivery lead, and reviewer.
@@ -169,5 +189,5 @@ The optional Azure Boards route may prepare a draft update or hand approved impl
 
 ## Lab handoff
 
-Learners submit one automation contract, two run evidence packets, one comparison
-and approval record, and one stakeholder-ready update.
+Learners submit one automation contract with its current disposition, two run
+run records, and one stakeholder-ready update.

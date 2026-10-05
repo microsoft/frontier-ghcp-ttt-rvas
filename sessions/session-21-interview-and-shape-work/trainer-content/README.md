@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Learners install the supplied `decision-interview` project skill and use it to turn
-an unclear request into a reviewed decision brief and issue proposal. They then
-reopen one decision branch when a late visibility constraint arrives.
+Learners use the Session 20 context handoff and the supplied
+`decision-interview` project skill to turn an unclear request into a reviewed
+decision brief and issue proposal.
 
 ## One-hour plan
 
@@ -29,6 +29,10 @@ Complete this check before learners begin:
   **Customize** → **Skills** → **Installed**.
 - Run `/decision-interview` with the short test request from the lab.
 - Test one prompt and one follow-up answer.
+- Confirm Interactive, Plan, and Autopilot modes are visible. The interview uses
+  Interactive; artifact changes use Plan.
+- Confirm `/context`, `/compact`, `/clear` or `/reset`, and `/rubber-duck` in the
+  current command picker.
 - Use only the supplied fictional scenario during the demonstration.
 - Open the starter templates and completed solution in separate windows.
 - Assign a request owner and delivery reviewer for each pair.
@@ -71,6 +75,18 @@ values, portal fields, or published retention rules. The request owner decides
 product behavior, tradeoffs, ownership, and approval.
 
 When evidence is unavailable, mark the fact as unverified. Do not disguise it as a decision.
+
+### Keep context healthy
+
+Run `/context` after each interview round. Compact only when the same thread must
+continue. Start fresh when old recommendations begin to leak into new decisions.
+The saved interview record, not chat memory, carries the state.
+
+### Use an independent critic
+
+Before approval, run `/rubber-duck` against the brief and issue proposal. The
+critic should look for unsupported criteria, missing owners, hidden scope, and
+visibility-rule conflicts. The request owner decides which feedback to apply.
 
 ## Demonstration scenario
 
@@ -126,7 +142,8 @@ Recommended direction: the portal product owner owns the work item. The service 
 
 ## Build the decision brief
 
-Ask GitHub Copilot to create `docs/discovery/request-status-decision-brief.md` from confirmed answers. Then review:
+Ask GitHub Copilot to create `docs/discovery/decision-brief.md` from confirmed
+answers. Then review:
 
 - problem and target outcome;
 - users and scope;
@@ -169,10 +186,8 @@ stay unchanged while role-specific acceptance criteria are revised.
 
 ## Lab handoff
 
-Learners may use:
-
-- an approved, sanitized request from their own work; or
-- [`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).
+Learners use the Service Request Portal context from Session 20 or
+[`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).
 
 Each learner or pair needs a request owner and delivery reviewer. The request owner
 approves the decision brief. The delivery reviewer verifies the brief and proposal
@@ -185,3 +200,5 @@ Use [`../lab/azure-boards/README.md`](../lab/azure-boards/README.md) when learne
 Before the lab, confirm the field labels used for priority and readiness. Learners
 may use MCP or the browser to apply approved changes. They must use GitHub Copilot
 for the interview and draft review.
+
+Azure Boards is trainer-only. Keep the standard learner path in GitHub.

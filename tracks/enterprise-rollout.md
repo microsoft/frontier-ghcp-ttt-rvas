@@ -9,7 +9,7 @@
 
 ## Description
 
-Everything you need to plan, govern, and scale a Copilot rollout across an organization. This track covers Copilot fundamentals (so champions can demo and support), agent mode (the most impactful feature), and enterprise governance — policies, content exclusions, analytics, compliance, and rollout strategy. Designed for the people who make adoption happen: engineering leaders, IT administrators, and internal Copilot champions.
+This track covers the work needed to plan, govern, and scale a Copilot rollout. It includes Copilot fundamentals, agent mode, governance policies, content exclusions, analytics, compliance, and rollout planning. It is for engineering leaders, IT administrators, and internal Copilot champions.
 
 ## Prerequisites
 
@@ -62,6 +62,6 @@ By completing this track, trainees will be able to:
 
 ## Next Steps
 
-- **Developer Productivity** — Deepen your own Copilot skills to be a more credible champion
-- **Agentic Development** — Understand the full agentic stack to plan for advanced adoption
-- **DevOps & Automation** — Extend Copilot into CI/CD and infrastructure for platform teams
+- **Developer Productivity**. Deepen your own Copilot skills to be a more credible champion
+- **Agentic Development**. Understand the full agentic stack to plan for advanced adoption
+- **DevOps & Automation**. Extend Copilot into CI/CD and infrastructure for platform teams

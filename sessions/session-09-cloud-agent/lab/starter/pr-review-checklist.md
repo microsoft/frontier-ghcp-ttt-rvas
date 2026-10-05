@@ -31,11 +31,10 @@
 
 - [ ] No credential or non-synthetic data appears.
 - [ ] The diff is small enough to review against the issue.
-- [ ] Session or manual evidence is linked in the checkpoint record.
+- [ ] Test output is available with the reviewed diff.
 
 ## Decision
 
-- Reviewer:
 - Decision: approve / request changes / pause
 - Reason:
 - Required correction or next safe action:

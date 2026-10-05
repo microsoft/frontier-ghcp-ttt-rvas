@@ -4,18 +4,18 @@
 
 | Field | Value |
 | --- | --- |
-| Contract ID | `SRP-WEEKLY-STATUS` |
+| Contract ID | `DDS-WEEKLY-STATUS` |
 | Version | `1.0` |
-| Effective date | September 18, 2026 |
-| Review date | October 16, 2026 |
+| Effective date | October 5, 2026 |
+| Review date | November 2, 2026 |
 | Cadence | Weekly after separate scheduling approval |
 | Status | Approved for two manual, draft-only test runs |
 
 ## Purpose
 
-Prepare an internal weekly status draft from approved Service Request Portal
-training records. The product owner uses it to review throughput, active work,
-blocked work, and data exceptions.
+Prepare an internal weekly status draft from the approved Session 24
+delivery-status handoff. The product owner uses it to review ready work, blocked
+work, and evidence exceptions.
 
 ## Accountability
 
@@ -37,9 +37,13 @@ blocked work, and data exceptions.
 
 ## Allowed inputs
 
-1. `synthetic-service-requests.csv`, classified as synthetic. Each accepted record must contain request ID, category, state, owner alias, due date, and summary.
-2. `synthetic-change-log.md`, classified as synthetic and limited to the reporting period.
-3. This contract.
+1. `working-delivery-status.csv`, classified as synthetic. Each accepted record
+   must contain workstream ID, issue role, planning state, owner role, evidence
+   reference, and next action.
+2. `working-session-24-handoff.md`, classified as synthetic.
+3. `working-delivery-status-record.md`, copied from the approved Session 24
+   handoff.
+4. This contract.
 
 ## Prohibited inputs
 
@@ -48,7 +52,7 @@ Customer records, production exports, secrets, personal data, private messages, 
 ## Allowed outputs
 
 1. One local markdown status draft.
-2. One local JSON run evidence packet.
+2. One local JSON run record.
 3. One local exception list inside those artifacts.
 
 ## Prohibited outputs and side effects
@@ -92,8 +96,16 @@ or side effect exceeds the contract, the meter is unavailable, either run reache
 
 ## Recovery procedure
 
-Stop the automation and preserve its prompt, output, and evidence packet. The product owner assigns the exception, keeps stakeholder distribution on hold, and returns to the last approved operating method for urgent work. The delivery lead approves any restart.
+Stop the automation and preserve its prompt, output, and run record. The product owner assigns the exception, keeps stakeholder distribution on hold, and returns to the last approved operating method for urgent work. The delivery lead decides whether to restart.
 
 ## Change control
 
 The product owner may propose contract changes. The delivery lead approves changes. A2 or A3 autonomy also needs the roles responsible for the affected system and data to approve the new boundary.
+
+## Current disposition
+
+- **Keep / Revise / Disable / Pause:** Keep
+- **Reason:** The two manual runs stayed read-only, reconciled their counts, and
+  showed the expected input change.
+- **Next change or action:** Keep the automation manual until the owner decides a
+  weekly schedule is useful.

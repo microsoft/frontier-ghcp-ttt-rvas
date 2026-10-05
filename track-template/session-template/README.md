@@ -1,4 +1,4 @@
-# Session NN — [Session Title]
+# Session NN: [Session Title]
 
 ## Overview
 
@@ -9,11 +9,11 @@
 | **Difficulty**    | [Beginner / Intermediate / Advanced]         |
 | **Topic Area**    | [e.g., Foundations, Daily Workflow, Agentic] |
 | **Duration**      | 3 hours (1 hr trainer content + 2 hr lab)    |
-| **Prerequisites** | [e.g., Sessions 01–03, or None]              |
+| **Prerequisites** | [e.g., Sessions 01 to 03, or None]              |
 
 ## Description
 
-[2–3 sentence description of what this session covers and why it matters in the learning arc.]
+[2 to 3 sentence description of what this session covers and why it matters in the learning arc.]
 
 ## Learning Objectives
 
@@ -37,6 +37,15 @@ By the end of this session, trainees will be able to:
 - [ ] VS Code with GitHub Copilot extension
 - [ ] [Additional materials specific to this session]
 
+## Current Product References
+
+Product notes were checked against official GitHub sources on YYYY-MM-DD.
+Trainers must recheck access, policy, and feature status before delivery:
+
+- [GitHub Copilot documentation](https://docs.github.com/en/copilot)
+- [GitHub Copilot changelog](https://github.com/changelog?label=github-copilot)
+- [Add a direct official source for each product claim]
+
 ## Trainer Notes
 
-[Any special guidance for delivering this session — pacing tips, common questions, areas where trainees typically struggle.]
+[Any special guidance for delivering this session. Pacing tips, common questions, areas where trainees typically struggle.]

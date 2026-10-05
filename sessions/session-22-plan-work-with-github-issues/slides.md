@@ -20,6 +20,8 @@ Session 21 produced an approved decision brief.
 
 Session 22 turns it into real GitHub issues.
 
+This is the third step in **Delivery Decision Studio**.
+
 ---
 
 # MCP in one sentence
@@ -28,7 +30,11 @@ An MCP server gives Copilot named tools for reading or changing another system.
 
 Learners use the tools. They do not build the server.
 
+A plugin may bundle an MCP server with skills or other customizations. Verify the
+active GitHub MCP connection itself before reading or writing issues.
+
 ---
+
 # An issue is a contract for the next person
 
 The issue should let a contributor decide whether they can start, what success
@@ -45,6 +51,7 @@ looks like, and who will review it.
 Tickets are not busywork when they reduce the handoff cost.
 
 ---
+
 # Parent and child issues answer different questions
 
 The parent issue holds the outcome, shared constraints, and review path. Each child
@@ -61,6 +68,7 @@ If two child issues must edit the same behavior at the same time, sequence them 
 clarify the design first.
 
 ---
+
 # Writing through MCP is still an operation
 
 Copilot can prepare the issue plan. A person approves the write only after seeing
@@ -70,6 +78,7 @@ After the write, fetch the issue again. This fresh read proves what the system
 stored, rather than what the tool claimed it stored.
 
 ---
+
 # Read before writing
 
 1. Confirm the repository.
@@ -77,6 +86,19 @@ stored, rather than what the tool claimed it stored.
 3. Search for duplicate issues.
 4. Read the approved brief.
 5. Report permission or context uncertainty.
+
+---
+
+# Existing work needs a disposition
+
+| Candidate | Decision |
+| --- | --- |
+| Exact duplicate | Reuse or close according to repository policy |
+| Partial overlap | Extend the existing issue and create only the missing work |
+| Conflict | Keep separate and record why |
+| Unrelated | Leave unchanged |
+
+The lab includes open, closed, overlapping, and conflicting status issues.
 
 ---
 
@@ -132,9 +154,10 @@ After the write:
 # Lab result
 
 - Reviewed issue plan
-- Completed write-review record
+- Live issue set and handoff
 - One parent issue
 - Three to five child issues
 - Fresh-read verification
+- `issue-handoff.md` for Session 23
 
 **Stop if tool review or verification is unavailable.**

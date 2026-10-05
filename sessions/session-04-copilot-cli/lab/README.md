@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
-**Prerequisites:** Sessions 01–03 completed, GitHub CLI (`gh`) installed  
+**Prerequisites:** Sessions 01 to 03 completed, GitHub CLI (`gh`) installed
 **Deliverable:** A reviewed `agent-tasks` project, a project health script, and a CLI workflow cheat sheet
 
 ---
@@ -72,7 +72,7 @@ Install the GitHub Copilot standalone CLI, verify it's working, and use it to ex
 1. **Install the Copilot CLI** (choose one method):
 
    ```bash
-   # Via npm (recommended — requires Node.js 22+)
+   # Via npm (recommended: requires Node.js 22+)
    npm install -g @github/copilot
 
    # Via Homebrew (macOS)
@@ -126,7 +126,7 @@ Open `lab/starter/explain-challenges.md`. The file has five commands, from simpl
 
 1. Launch the CLI with `copilot` and ask it to explain the command (e.g., "Explain what this command does: `<command>`")
 2. Read the explanation Copilot provides
-3. Rate the explanation from 1–5. Check its accuracy and coverage of edge cases.
+3. Rate the explanation from 1 to 5. Check its accuracy and coverage of edge cases.
 4. Note anything the explanation missed or got wrong
 
 **Work through all 5 challenges:**

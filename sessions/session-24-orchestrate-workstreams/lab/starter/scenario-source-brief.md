@@ -1,43 +1,43 @@
-# Service Request Portal: Sanitized Source Brief
+# Service Request Portal: Status-Visibility Source Brief
 
-Use this fictional source brief for the lab. It contains no production data or source organization names.
+Use this fictional source brief with the Session 22 `issue-handoff.md` and Session
+23 `canvas-handoff.md`. It contains no production data or source organization
+names.
 
 ## Parent objective
 
-Decide whether the Service Request Portal release is ready for the release-review meeting. Produce a short evidence record. Do not change production systems or publish release claims.
+Decide whether the Service Request Portal status-visibility issue set is ready for
+delivery follow-up. Produce one reviewed delivery-status record. Do not change
+production systems or publish claims.
 
-## Approved source extracts
+## Approved issue roles
 
-### CS-14: Change summary
+### SV-01: Public status mapping
 
-- The request list now supports category filters.
-- The submission flow now displays a confirmation message.
-- No approved source describes adoption, user volume, or performance improvement.
+- The first release needs a requester-safe public status vocabulary.
+- The product owner must approve the mapping.
+- Internal queue names and staff-only reasons stay hidden.
 
-### TR-08: Test report
+### SV-02: Requester status view
 
-- Category-filter tests passed.
-- Submission-confirmation tests passed.
-- The report does not assess support response times.
+- Session 22 reuses issue `#241`.
+- The view may show public status, last public update time, and expected next step.
+- No approved source supports a completion forecast.
 
-### SC-03: Support checklist
+### SV-03: Empty and stale states
 
-- A draft troubleshooting path covers request-status questions.
-- The support coverage owner is blank.
-- No response-time commitment is approved.
+- Missing status must appear as unavailable, not as a guessed state.
+- Stale data must show its last update time and a safe next action.
+- No response-time promise is approved.
 
-### TT-02: Rollback tabletop record
+### SV-04: Requester access verification
 
-- The team walked through the rollback steps.
-- Every step had a named operator in the exercise.
-- The tabletop did not approve the deployment window.
+- A requester may see only their own requests.
+- The review must use supplied synthetic evidence.
+- Production requests, support transcripts, identities, and secrets are restricted.
 
-### AL-05: Approval log
+## Open ownership
 
-- Product review: approved.
-- Test review: approved.
-- Deployment window: awaiting rollout-owner approval.
-
-## Restricted sources
-
-Do not access production requests, support transcripts, user identities, secrets, unpublished metrics, or external contacts.
+- Implementation owners remain unset.
+- The privacy reviewer owns requester-access evidence.
+- The product owner owns public status vocabulary approval.

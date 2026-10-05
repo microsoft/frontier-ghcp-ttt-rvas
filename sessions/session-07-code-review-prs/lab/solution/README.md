@@ -62,5 +62,5 @@ Often four or five. It may catch SQL injection, password exposure, and hardcoded
 **"What if Copilot's suggested fix for the SQL injection is wrong?"**  
 Copilot may suggest `.escape()` from a MySQL library or parameterized-query syntax. The solution uses an in-memory filter because there is no database. Accept an approach that prevents string interpolation of user input.
 
-**"Trainee applied a fix but tests still fail — why?"**  
+**"Trainee applied a fix but tests still fail: why?"**
 The `paginate` off-by-one is a likely cause. The fix may change only one number. Run `npm test` and read the failing test name to identify the wrong page.

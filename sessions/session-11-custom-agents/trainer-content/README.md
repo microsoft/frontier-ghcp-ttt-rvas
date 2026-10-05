@@ -10,12 +10,12 @@ into production code, tighten the profile, and rerun the same test.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | What a custom agent profile controls |
-| 0:08–0:18 | Current `.agent.md` structure |
-| 0:18–0:30 | Weak profile and boundary violation |
-| 0:30–0:43 | Least-privilege tools and path rules |
-| 0:43–0:52 | Stop, validation, and human handoff |
-| 0:52–1:00 | Rerun evidence and lab handoff |
+| 0:00 to 0:08 | What a custom agent profile controls |
+| 0:08 to 0:18 | Current `.agent.md` structure |
+| 0:18 to 0:30 | Weak profile and boundary violation |
+| 0:30 to 0:43 | Least-privilege tools and path rules |
+| 0:43 to 0:52 | Stop, validation, and human handoff |
+| 0:52 to 1:00 | Rerun evidence and lab handoff |
 
 ## Preflight
 
@@ -29,7 +29,7 @@ Do not push, merge, open issues, or attach MCP during the core demonstration.
 
 ## Teaching sequence
 
-### 0:00–0:08: What the profile controls
+### 0:00 to 0:08: What the profile controls
 
 A profile supplies instructions and filters the tools presented to the agent. It
 does not create repository authority.
@@ -43,7 +43,7 @@ Human: accepts, revises, or rejects the result
 The profile must not imply that a tool call is approved simply because the tool is
 listed.
 
-### 0:08–0:18: Exact structure
+### 0:08 to 0:18: Exact structure
 
 Show:
 
@@ -67,7 +67,7 @@ Explain:
 
 The Markdown body carries the operational boundary.
 
-### 0:18–0:30: Weak profile
+### 0:18 to 0:30: Weak profile
 
 Open `weak-test-writer.agent.md`:
 
@@ -91,7 +91,7 @@ The implementation permits a reverse transition that the criteria reject.
 The profile has no reason to stop before editing `src/`. The failure is in the
 contract, even if one model run happens to stay inside the boundary.
 
-### 0:30–0:43: Tighten tools and paths
+### 0:30 to 0:43: Tighten tools and paths
 
 Open `test-writer.agent.md`.
 
@@ -118,7 +118,7 @@ Ask learners to distinguish:
 | Repository blocks a write | Environment or repository policy |
 | Change is accepted | Human review |
 
-### 0:43–0:52: Stop and handoff
+### 0:43 to 0:52: Stop and handoff
 
 Read the production-conflict rule aloud. The correct output names:
 
@@ -130,7 +130,7 @@ Read the production-conflict rule aloud. The correct output names:
 Then show `npm test` as the verified command. If the command does not run, the
 profile reports **not run**. It must not fill the gap with a success claim.
 
-### 0:52–1:00: Rerun
+### 0:52 to 1:00: Rerun
 
 Run:
 

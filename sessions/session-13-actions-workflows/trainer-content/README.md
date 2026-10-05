@@ -10,12 +10,12 @@ and validate a JavaScript action against that same codebase.
 
 | Time | Segment |
 | --- | --- |
-| 0:00–0:08 | Application baseline and Actions model |
-| 0:08–0:18 | Generate CI from repository facts |
-| 0:18–0:28 | Design staging and production jobs |
-| 0:28–0:40 | Diagnose workflow failures |
-| 0:40–0:52 | Validate a JavaScript action |
-| 0:52–1:00 | Security review and lab handoff |
+| 0:00 to 0:08 | Application baseline and Actions model |
+| 0:08 to 0:18 | Generate CI from repository facts |
+| 0:18 to 0:28 | Design staging and production jobs |
+| 0:28 to 0:40 | Diagnose workflow failures |
+| 0:40 to 0:52 | Validate a JavaScript action |
+| 0:52 to 1:00 | Security review and lab handoff |
 
 The timings match [`slides.md`](../slides.md). Stop a live tool response at the end
 of its segment and use the prepared solution.
@@ -28,7 +28,7 @@ of its segment and use the prepared solution.
 - Prepare one passing threshold and the intentional threshold-101 failure.
 - Do not configure a live deployment target.
 
-## 0:00–0:08: Baseline and model
+## 0:00 to 0:08: Baseline and model
 
 Run:
 
@@ -45,7 +45,7 @@ Tie each workflow step to a repository fact. `npm test`, `npm run lint`, and
 `npm run build` exist because `package.json` defines them. `dist/` is valid because
 the build command creates it.
 
-## 0:08–0:18: Generate CI
+## 0:08 to 0:18: Generate CI
 
 Use this bounded request:
 
@@ -59,7 +59,7 @@ Do not add dependencies or deployment steps.
 Parse the YAML, then rerun the local application checks. A valid workflow can
 still call a missing script or upload a path that never exists.
 
-## 0:18–0:28: Deployment design
+## 0:18 to 0:28: Deployment design
 
 Open `lab/starter/deployment-spec.md`. Ask learners to find the required trigger,
 environments, secret names, health checks, and rollback rule before generating
@@ -68,7 +68,7 @@ YAML.
 Keep this at design level. Repository settings enforce production reviewers, and
 the supplied endpoints are placeholders. No live deployment occurs.
 
-## 0:28–0:40: Diagnose failures
+## 0:28 to 0:40: Diagnose failures
 
 Run the YAML parser against `broken-ci.yml` and let the parser reveal the first
 fault. After learners repair it, inspect action versions, permissions, and package
@@ -79,7 +79,7 @@ separate syntax from behavior. Each repair needs a source: platform support,
 the deployment specification, the Git ref format, or the application checkout
 requirement.
 
-## 0:40–0:52: Validate the action
+## 0:40 to 0:52: Validate the action
 
 Explain why custom action validation needs two outcomes. A passing run proves the
 action can scan the application and emit outputs. The threshold-101 run proves the
@@ -88,7 +88,7 @@ action can fail the job.
 Run the exact commands in the lab. Show the generated step summary and exit code.
 Do not use a repository workflow run as the only proof.
 
-## 0:52–1:00: Review and handoff
+## 0:52 to 1:00: Review and handoff
 
 Review:
 

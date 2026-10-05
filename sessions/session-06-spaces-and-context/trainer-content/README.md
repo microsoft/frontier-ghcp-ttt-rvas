@@ -52,11 +52,11 @@ Exclude:
 
 ## Trainer talking points
 
-> “Context is an engineering input. Select the smallest set of approved sources that lets a reviewer explain the result.”
+> "Context is an engineering input. Select the smallest set of approved sources that lets a reviewer explain the result."
 
-> “If source eligibility or product behavior is unclear, stop and use the manual context packet. It teaches the same lesson without a policy exception.”
+> "If source eligibility or product behavior is unclear, stop and use the manual context packet. It teaches the same lesson without a policy exception."
 
-> “Metered work has an agreed stop guard. Narrow the context or use the manual fallback when the guard is reached.”
+> "Metered work has an agreed stop guard. Narrow the context or use the manual fallback when the guard is reached."
 
 ## Review rubric
 
@@ -76,13 +76,13 @@ Ask learners to identify a common task where less context would improve clarity 
 
 | Time | Segment | Trainer outcome |
 | --- | --- | --- |
-| 0:00–0:08 | Diagnose the context problem | Learners distinguish missing evidence from excess noise. |
-| 0:08–0:18 | Context hierarchy | Learners rank task, instructions, curated sources, and local references. |
-| 0:18–0:30 | Curated context workflows | The group creates a purpose, audience, source list, and owner. |
-| 0:30–0:42 | Instructions and reusable prompts | Learners separate durable rules from repeatable tasks. |
-| 0:42–0:50 | Source governance and maintenance | Each source receives scope and freshness checks. |
-| 0:50–0:58 | Scripted before/after demo | Two responses are compared using evidence, not fluency. |
-| 0:58–1:00 | Close and lab handoff | Learners begin with an approved context packet. |
+| 0:00 to 0:08 | Diagnose the context problem | Learners distinguish missing evidence from excess noise. |
+| 0:08 to 0:18 | Context hierarchy | Learners rank task, instructions, curated sources, and local references. |
+| 0:18 to 0:30 | Curated context workflows | The group creates a purpose, audience, source list, and owner. |
+| 0:30 to 0:42 | Instructions and reusable prompts | Learners separate durable rules from repeatable tasks. |
+| 0:42 to 0:50 | Source governance and maintenance | Each source receives scope and freshness checks. |
+| 0:50 to 0:58 | Scripted before/after demo | Two responses are compared using evidence, not fluency. |
+| 0:58 to 1:00 | Close and lab handoff | Learners begin with an approved context packet. |
 
 ### Time-pressure cutpoints
 
@@ -94,7 +94,7 @@ Ask learners to identify a common task where less context would improve clarity 
 - At 0:55, compare plans rather than waiting for generated code.
 - Never cut source approval, maintenance ownership, fallback, or lab boundaries.
 
-## Segment 1: Diagnose context quality (0:00–0:08)
+## Segment 1: Diagnose context quality (0:00 to 0:08)
 
 ### Trainer talking points
 
@@ -123,9 +123,9 @@ Expected answers include unrelated repositories, production records, secrets, an
 
 ### Transition
 
-> “We can organize those choices as a hierarchy, starting with the task itself.”
+> "We can organize those choices as a hierarchy, starting with the task itself."
 
-## Segment 2: Context hierarchy (0:08–0:18)
+## Segment 2: Context hierarchy (0:08 to 0:18)
 
 ### Detailed talking points
 
@@ -154,9 +154,9 @@ Exclude the unrelated roadmap and production log.
 
 ### Transition
 
-> “A useful curated workflow makes that source decision explicit and maintainable.”
+> "A useful curated workflow makes that source decision explicit and maintainable."
 
-## Segment 3: Curated context workflow (0:18–0:30)
+## Segment 3: Curated context workflow (0:18 to 0:30)
 
 ### Access and governance check
 
@@ -204,9 +204,9 @@ Learners can explain why every included source is necessary and why every exclud
 
 ### Transition
 
-> “Curated evidence answers what the project says; repository instructions state how work should proceed.”
+> "Curated evidence answers what the project says; repository instructions state how work should proceed."
 
-## Segment 4: Instructions and reusable prompts (0:30–0:42)
+## Segment 4: Instructions and reusable prompts (0:30 to 0:42)
 
 ### Repository instruction example
 
@@ -222,9 +222,9 @@ Learners can explain why every included source is necessary and why every exclud
 
 ### Trainer talking points
 
-- Use observable instructions rather than “write high-quality code.”
-- Keep durable conventions separate from one feature’s requirements.
-- Review instruction files through the repository’s normal process.
+- Use observable instructions rather than "write high-quality code."
+- Keep durable conventions separate from one feature's requirements.
+- Review instruction files through the repository's normal process.
 - Instructions guide proposals; they are not enforcement or proof.
 - Verify current supported paths, names, and settings before demonstrating.
 - Retain the text as a manual checklist if loading behavior is unavailable.
@@ -255,9 +255,9 @@ Debrief disagreements and move feature-specific behavior out of repository-wide 
 
 ### Transition
 
-> “Context is useful only while its source, scope, and freshness remain trustworthy.”
+> "Context is useful only while its source, scope, and freshness remain trustworthy."
 
-## Segment 5: Source governance and maintenance (0:42–0:50)
+## Segment 5: Source governance and maintenance (0:42 to 0:50)
 
 ### Three-question check
 
@@ -280,13 +280,13 @@ For every source or remembered fact, ask:
 
 ### Safe delivery wording
 
-> “Availability-dependent memory or context features must be verified before use. Never store secrets, restricted material, or guesses. The manual source log remains authoritative for this exercise.”
+> "Availability-dependent memory or context features must be verified before use. Never store secrets, restricted material, or guesses. The manual source log remains authoritative for this exercise."
 
 ### Transition
 
-> “We will now test whether a smaller grounded packet produces a more reviewable plan.”
+> "We will now test whether a smaller grounded packet produces a more reviewable plan."
 
-## Scripted demo: Low-stock reporting with and without grounding (0:50–0:58)
+## Scripted demo: Low-stock reporting with and without grounding (0:50 to 0:58)
 
 ### Purpose
 
@@ -379,7 +379,7 @@ function parseThreshold(value) {
 }
 ```
 
-The existing project’s error type and message remain subject to source verification.
+The existing project's error type and message remain subject to source verification.
 
 ### Verification rubric
 
@@ -414,35 +414,35 @@ Reveal the code proposal only during debrief.
 
 ## Common trainee Q&A
 
-### “Should we add the whole repository?”
+### "Should we add the whole repository?"
 
 No. Start with the smallest approved set that supports the task, then add a source only when a specific evidence gap remains.
 
-### “Do instructions guarantee compliance?”
+### "Do instructions guarantee compliance?"
 
 No. They guide output. Tests, policy controls, repository checks, and human review provide enforcement and evidence.
 
-### “Which source wins when docs and code disagree?”
+### "Which source wins when docs and code disagree?"
 
 Do not guess. Identify the accountable source owner, record the conflict, and clarify before implementation.
 
-### “Can we include issue comments or meeting notes?”
+### "Can we include issue comments or meeting notes?"
 
 Only when approved, relevant, owned, and current. Separate decisions from unverified discussion.
 
-### “Does a Space change repository permissions?”
+### "Does a Space change repository permissions?"
 
 Do not infer access behavior. Verify current official documentation and organizational policy before adding or sharing any source.
 
-### “Can we store team conventions in memory?”
+### "Can we store team conventions in memory?"
 
 Use repository-reviewed artifacts for durable team rules. Any memory feature requires current support, policy, source, scope, freshness, and data checks.
 
-### “Why did the grounded response still miss a rule?”
+### "Why did the grounded response still miss a rule?"
 
 Context makes more evidence available. It does not guarantee correct use. Make the rule explicit, test it, and review the result.
 
-### “What does this cost?”
+### "What does this cost?"
 
 Check current official metering information for the organization and selected workflow. Use the organization-defined threshold and manual stop path.
 
@@ -450,7 +450,7 @@ Check current official metering information for the organization and selected wo
 
 | Anti-pattern | Recovery |
 | --- | --- |
-| “More context is always better” | Remove sources that do not affect a criterion. |
+| "More context is always better" | Remove sources that do not affect a criterion. |
 | Adding restricted records | Stop, remove them, notify the appropriate owner, and use synthetic data. |
 | Mixing stale and current contracts | Identify authority and update or exclude the stale source. |
 | Vague instructions | Rewrite as observable repository behavior. |
@@ -461,11 +461,11 @@ Check current official metering information for the organization and selected wo
 | Teaching fixed paths or UI | Verify current official documentation at delivery. |
 | Context changes without review | Manage shared artifacts through normal repository review. |
 
-## Closing and lab handoff (0:58–1:00)
+## Closing and lab handoff (0:58 to 1:00)
 
 ### Closing script
 
-> “Good context is small enough to explain, approved for the audience, tied to evidence, and maintained by an owner. Better output starts with better source decisions.”
+> "Good context is small enough to explain, approved for the audience, tied to evidence, and maintained by an owner. Better output starts with better source decisions."
 
 ### Lab handoff
 

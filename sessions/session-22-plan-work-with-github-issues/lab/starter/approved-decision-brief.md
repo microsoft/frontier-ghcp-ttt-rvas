@@ -31,9 +31,6 @@ Employees who submitted a facilities or equipment request can understand its cur
 ## Ownership
 
 - **Decision owner:** Product owner
-- **Delivery reviewer:** Delivery lead
-- **Service reviewer:** Service operations manager
-- **Access reviewer:** Privacy or security owner
 
 ## Approval
 

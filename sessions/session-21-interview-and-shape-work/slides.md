@@ -36,6 +36,9 @@ This is an idea. It is not sprint-ready work.
 
 It hides choices about users, scope, data, behavior, ownership, and approval.
 
+The **Delivery Decision Studio** path carries the Session 20 context brief into
+this interview. Service Request Portal remains the initiative.
+
 ---
 
 # The shaping flow
@@ -79,6 +82,18 @@ Round 4: owner, reviewer, approval, rollout
 ```
 
 Ask GitHub Copilot to recompute the next frontier from the confirmed answers.
+
+Use **Interactive** mode for each frontier. Switch to **Plan** before proposed
+file changes. Autopilot is outside this interview.
+
+---
+
+# Check context between rounds
+
+- Run `/context`.
+- Use `/compact` only when the same thread must continue.
+- Use `/clear` or `/reset` when old assumptions are polluting the interview.
+- Resume from saved artifacts, not memory.
 
 ---
 
@@ -182,6 +197,9 @@ source decision.
 
 This check exposes assumptions that existed only in the original conversation.
 
+Then use `/rubber-duck` to challenge unsupported criteria, hidden scope, and
+missing owners.
+
 ---
 
 # Acceptance criteria describe evidence
@@ -231,9 +249,9 @@ The interview always runs with **GitHub Copilot**.
 2. A **Copilot interview record** with the reopened branch.
 3. A revised **decision brief**.
 4. An aligned **GitHub issue proposal**.
-5. A fresh-session readiness result.
+5. Any fixes made after the fresh-session check.
 
-The request owner approves the brief. A delivery reviewer checks readiness.
+The request owner decides whether the brief is ready for issue planning.
 
 ---
 

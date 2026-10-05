@@ -2,7 +2,7 @@
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–07
+**Prerequisites:** Sessions 01 to 07
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
@@ -15,6 +15,18 @@ and MCP Inspector. Only then do they add `get_forecast` and
 
 The server uses deterministic synthetic weather data. No network service,
 credential, or source-system data is needed.
+
+### MCP server or plugin?
+
+An **MCP server** exposes tools and context through a protocol. A **plugin** is an
+installable package that can bundle MCP server configuration with skills, agents,
+hooks, or other components. Build the server when you need a protocol endpoint.
+Use a plugin when you need to distribute and version a set of Copilot
+customizations. A plugin may include an MCP server, but the two terms are not
+interchangeable.
+
+See the [curriculum glossary](../glossary.md) for MCP server, tool, transport, and
+plugin terminology.
 
 ## Learning outcomes
 

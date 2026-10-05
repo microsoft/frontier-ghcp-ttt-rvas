@@ -2,7 +2,7 @@
 
 **Duration:** 2 hours
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01–05 and 13
+**Prerequisites:** Sessions 01 to 05 and 13
 **Deliverable:** Three evidence records, fixed workflows, and a reviewed security patch
 
 ## Lab overview
