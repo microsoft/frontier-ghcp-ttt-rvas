@@ -53,7 +53,7 @@ against the brief.
 
 **Work item owner:**
 
-## Session 22 handoff
+## Session 22 input
 
 - **Decision brief path:** `decision-brief.md`
 - **Proposal status:** Approved / Revise / Blocked

@@ -6,7 +6,6 @@
 
 **Request owner:** Portal product owner
 **Input:** Fictional Service Request Portal scenario
-**Copilot interview record:** [`copilot-interview-record.md`](copilot-interview-record.md)
 
 ## Request as received
 
@@ -96,7 +95,7 @@ A requester can see a plain-language public status, the last updated time, and a
 | Delivery review | Delivery lead |
 | Release approval | Portal product owner |
 
-## Handoff
+## Next step
 
 - **Next action and owner:** The portal product owner creates the work item.
 - **Open questions carried to Session 22:** Service operations confirms the stale

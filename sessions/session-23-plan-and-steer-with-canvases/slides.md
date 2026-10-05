@@ -18,7 +18,8 @@ Session 23 | Product and Delivery Teams | Intermediate
 
 A canvas helps when work has several records, repeated updates, named actions, and a review view that must survive the conversation.
 
-The source is the Session 22 `issue-handoff.md`, not the previous chat.
+The source is the live Session 22 parent issue and its linked child issues, not
+the previous chat.
 
 ---
 
@@ -67,7 +68,7 @@ This loop protects against stale data and confident but unsupported updates.
 
 ---
 
-# Start from the GitHub issue plan
+# Start from live GitHub issues
 
 The canvas should show:
 
@@ -164,14 +165,14 @@ Confirm:
 
 ---
 
-# Critique the handoff
+# Critique the live state
 
 Run `/context`, then use a fresh session when needed.
 
 Ask `/rubber-duck` to find stale claims, mixed state labels, unsafe actions, and
 missing owners.
 
-Save `canvas-handoff.md` for Session 24.
+The live canvas and linked issues are authoritative for Session 24.
 
 ---
 
@@ -182,6 +183,6 @@ Save `canvas-handoff.md` for Session 24.
 - Live GitHub issue data
 - A detected and reconciled state mismatch
 - Owner, refresh, recovery, and retirement rules
-- Four status-visibility workstream candidates
+- Four linked status-visibility workstream candidates
 
 **Stop if live canvas creation is unavailable.**

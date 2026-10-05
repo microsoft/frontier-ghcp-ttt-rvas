@@ -102,8 +102,7 @@ contains no new dependency. Record any deviation from the accepted issue in the
 handoff.
 
 The reviewer records one decision: **approve**, **request changes**, or **pause**.
-Complete every section in `starter/capstone-handoff.md`, then finish
-`starter/trainer-delivery-plan-template.md`.
+Complete every section in `starter/capstone-handoff.md`.
 
 ## Checkpoints
 

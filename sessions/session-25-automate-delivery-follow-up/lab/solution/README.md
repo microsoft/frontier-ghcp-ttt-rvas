@@ -1,14 +1,11 @@
 # Reference solution
 
-This reference keeps the weekly status workflow draft only. The first manual run
-excludes one invalid source record. An approved input change fixes the record, and
-the same automation runs again so the reviewer can compare evidence.
+These files show one completed draft-only automation.
 
 | File | Purpose |
 | --- | --- |
-| `automation-contract.md` | Approved workflow boundary |
-| `run-record-01.json` | First completed run record |
-| `run-output-01.md` | First reviewed status draft |
-| `run-record-02.json` | Run record after the approved input change |
-| `run-output-02.md` | Second reviewed status draft |
-| `stakeholder-update.md` | Final communication |
+| `automation-definition.md` | Approved automation boundary and current state |
+| `stakeholder-update.md` | Final stakeholder-ready update |
+
+Use these files only after completing the live runs. The Automations surface is
+the source for run status and evidence.

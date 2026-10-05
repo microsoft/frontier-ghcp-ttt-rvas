@@ -1,6 +1,8 @@
 # Trainer Delivery Reflection
 
-Use this after the capstone review.
+**Optional trainer aid. Learners do not submit this file.**
+
+Use it after delivery to record one change for the next run.
 
 ## Audience and environment
 

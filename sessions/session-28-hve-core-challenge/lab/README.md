@@ -14,8 +14,8 @@ description: "HVE Core challenge covering RPI, customization, product agents, an
 
 Use HVE Core to take one Engineering Decision API feature through direct RPI phases,
 repository customization, product and Agile refinement, implementation, and review.
-The completed evidence must show what each HVE agent produced and how one phase
-changed the next.
+The HVE artifacts must show what each agent produced and how one phase changed the
+next. The handoff only indexes those artifacts and records the final decision.
 
 ## Preflight
 
@@ -30,8 +30,8 @@ changed the next.
 5. Confirm Node.js 20 or later and whether local package downloads are approved.
 6. Run `npm test` when dependencies already exist. Run `npm ci` first only when
    package downloads are approved.
-7. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and
-   `starter/challenge-handoff.md`.
+7. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and the thin
+   artifact index in `starter/challenge-handoff.md`.
 8. Confirm whether container validation will use an approved local engine or a
    trainer-managed remote build.
 
@@ -74,8 +74,8 @@ Run:
 /rpi-research "Add POST /api/decisions to the starter API using the supplied product intent and feature contract"
 ```
 
-Open the research artifact under `.copilot-tracking/research/`. Record the scope,
-one rejected alternative, one constraint, and the next agent that consumes it.
+Open the research artifact under `.copilot-tracking/research/`. Confirm that it
+records the scope, a rejected alternative, a constraint, and the next phase.
 
 Clear the chat, attach the research artifact, then run `/rpi-plan`. Inspect the
 plan and critique. Approve the plan only when every acceptance
@@ -100,13 +100,14 @@ or custom agent. File creation alone is not activation evidence.
 ## Exercise 3: Explore HVE product and Agile agents
 
 Give `starter/product-intent.md` to `@Product Manager Advisor`. Ask it to test the
-feature's value, users, assumptions, priority, and non-goals. Record its decision
-and one question that still needs a human answer.
+feature's value, users, assumptions, priority, and non-goals. Keep its output in
+the platform record and cite it from the Plan artifact.
 
 Give the advisor output and challenge brief to `@Agile Coach`. Ask it to produce
 one outcome-oriented user story, acceptance criteria, and explicit exclusions.
 Compare those criteria with the HVE plan. Update the plan when the product or Agile
-artifact exposes a gap. Do not create live work items in this lab.
+artifact exposes a gap, and record that effect in the Plan artifact. Do not copy
+the agent outputs into the handoff. Do not create live work items in this lab.
 
 Use the agent picker to locate `@BRD Builder` and `@PRD Builder`. Record when the
 team would start with each agent instead of the supplied product intent.
@@ -132,8 +133,9 @@ criterion as `pass`, `fail`, `deferred`, or `not run`. Check that errors reveal 
 stack traces, app instances do not share records, and the runtime image excludes
 development dependencies and root execution.
 
-Write a conventional commit-message preview and pull-request summary. Keep Git
-local and unchanged: do not commit, push, merge, or create a remote pull request.
+If the platform produces commit or pull-request text, leave it in the platform
+output. Keep Git local and unchanged: do not commit, push, merge, or create a
+remote pull request.
 
 Finally, explain how `/rpi task="..."` would orchestrate the same phases and use
 Follow-up to route defects or missing evidence back to the responsible phase. Do
@@ -158,25 +160,27 @@ handoff evidence.
 
 Submit or demonstrate:
 
-* `challenge-handoff.md` with the HVE artifact chain and open risks
-* Research, plan, changes, and review artifacts from HVE
+* Research, Plan, Implement, and Review artifacts from HVE
+* `challenge-handoff.md` with links or paths to those four artifacts, the final
+  human decision, unresolved risks, and the next action
 * Repository context, a targeted JavaScript/API instruction, and a custom reviewer agent
 * Product Manager Advisor and Agile Coach outputs
 * The implemented endpoint, focused tests, and production container definition
-* Exact test results, a human review decision, and local Git handoff text
+* Exact test and container results in the HVE artifacts or platform output
 
 ## Scoring rubric
 
-| Area | Points | Full-credit evidence |
-|------|-------:|----------------------|
-| HVE RPI evidence | 40 | Research, plan, changes, and review artifacts form a traceable chain |
-| HVE customization | 25 | Repository context, targeted instruction, custom agent, and activation proof |
-| Product and Agile agents | 20 | Advisor decision and Agile story change or confirm the plan |
-| Feature validation | 15 | API tests and container evidence support the review decision |
+| Area | Points | Authoritative evidence |
+|------|-------:|------------------------|
+| HVE RPI evidence | 40 | Research, Plan, Implement, and Review artifacts |
+| HVE customization | 25 | Repository files plus activation evidence in the HVE artifacts |
+| Product and Agile agents | 20 | Platform outputs cited by the Plan artifact |
+| Feature validation | 15 | Test and container output cited by Implement or Review |
 
 Trainer-provided recovery artifacts can unblock one failed phase. They do not earn
 the execution points for that phase, and a fully manual submission does not pass
-this HVE challenge.
+this HVE challenge. The thin handoff is required for review, but it does not replace
+missing phase evidence.
 
 ## Official references
 

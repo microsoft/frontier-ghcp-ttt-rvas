@@ -1,12 +1,10 @@
-# Approved input change
+# Approved Issue Change
 
-Apply this change only after reviewing the first automation run.
+After the first run, update the approved requester-access training issue:
 
-Update `SV-04` in `working-delivery-status.csv`:
+- add the synthetic evidence reference supplied by the trainer;
+- keep the issue blocked until the privacy reviewer accepts the evidence;
+- name the privacy reviewer as the next owner.
 
-- `planning_state`: `Ready for review`
-- `owner_role`: `Privacy reviewer`
-- `evidence_reference`: `SYN-ACCESS-07`
-- `next_action`: `Review requester-only access evidence`
-
-No other record changes. The automation contract and tool boundary remain the same.
+Use a reviewed GitHub MCP write, then retrieve the issue again. Change no other
+issue. The automation definition stays the same.

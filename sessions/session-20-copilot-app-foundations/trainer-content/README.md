@@ -7,7 +7,7 @@
 
 Learners open the GitHub Copilot app, choose a session mode, attach approved
 context, compare grounded and ungrounded answers, and create the first Delivery
-Decision Studio handoff.
+Decision Studio brief.
 
 ## One-hour plan
 
@@ -55,7 +55,7 @@ Labels can move. Teach what each area is for rather than a fixed click path.
 GitHub documents `@` for files, `#` for issues, and `/` for commands. Confirm the
 picker in the current app. Run `/context` before the first draft. Use `/compact`
 only when the learner needs to keep a long thread. Use `/clear` or `/reset` for
-the handoff test.
+the fresh-session test.
 
 ## Context before prompting
 

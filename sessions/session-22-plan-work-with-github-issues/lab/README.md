@@ -11,7 +11,6 @@ fresh read, and corrected through a second approved write
 
 - Live parent and child issues
 - The corrected issue
-- `issue-handoff.md`
 
 ## Lab outcome
 
@@ -23,9 +22,8 @@ then make and verify one focused correction.
 | 1 | Verify GitHub MCP and write access | 15 min |
 | 2 | Read the source and existing GitHub state | 20 min |
 | 3 | Design and review the issue hierarchy | 30 min |
-| 4 | Preview and create the issues | 30 min |
-| 5 | Verify and correct one issue | 15 min |
-| 6 | Record the handoff | 10 min |
+| 4 | Preview and create the issues | 35 min |
+| 5 | Verify and correct one issue | 20 min |
 
 ## Preflight
 
@@ -85,6 +83,10 @@ have both been read.
 
 Copy `starter/issue-plan-template.md` into your working folder.
 
+Use this Markdown file only as a temporary preview. Do not submit or commit it.
+Once GitHub creates the issues, the live parent and child issues replace the
+preview.
+
 Ask Copilot to propose:
 
 - one parent issue for the approved outcome;
@@ -123,7 +125,7 @@ dependencies, and every field left unset. Wait for my approval.
 Compare the preview with the issue plan. Revise it until it is safe to approve.
 
 After approval, ask Copilot to create the issues through GitHub MCP. Save each
-returned issue number and URL.
+returned issue number and URL in the parent issue or its linked child issues.
 
 **Checkpoint:** The write result contains one parent and no more than five child
 issues in the approved repository.
@@ -155,18 +157,9 @@ is needed.
 **Checkpoint:** A fresh read proves that both the original create and the correction
 reached GitHub.
 
-## Part 6: Record the handoff (10 minutes)
-
-Copy `starter/issue-handoff-template.md` to `issue-handoff.md`. Record:
-
-- the parent issue;
-- child issue numbers;
-- dependency order;
-- unresolved ownership;
-- the corrected issue and verification evidence;
-- the issue set that Session 23 must load.
-- the decision for issues `#241`, `#256`, `#263`, and `#278`;
-- the decision owner, delivery reviewer, and work-system steward.
+The parent issue must link every child issue and record dependency order,
+unresolved ownership, the existing-work decisions, and the verified correction.
+Session 23 reads this live issue set through GitHub MCP.
 
 ## Verification
 
@@ -177,5 +170,6 @@ Copy `starter/issue-handoff-template.md` to `issue-handoff.md`. Record:
 - [ ] Created issues match the approved decision brief.
 - [ ] A fresh read verified the created state.
 - [ ] A second preview, write, and fresh read verified the correction.
+- [ ] The parent issue links the child issues and records the planning decisions.
 - [ ] No invented owner, date, label, or milestone was added.
 - [ ] No customer or source organization names appear.

@@ -12,8 +12,8 @@ repeatable project skill
 ## What you will learn
 
 Install a repository skill and use it to interview the request owner. Turn the
-decisions into durable artifacts, reopen one branch when a late constraint arrives,
-and verify that the issue proposal still matches the brief.
+decisions into a brief and issue proposal, revise the affected decisions when a
+late constraint arrives, and verify that both files still agree.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -91,20 +91,19 @@ For each frontier:
 
 1. answer as the request owner;
 2. accept, reject, or revise each recommendation;
-3. require Copilot to record the decision and reason;
+3. require Copilot to restate the decision and reason;
 4. confirm that dependent questions wait for earlier decisions;
 5. ask for the next frontier.
 
-Save the interview record. Stop when each branch has an owner decision or named
-open question.
+Stop when each branch has a decision or a named open question.
 
 After each round, run `/context`. Use `/compact` only if the interview must remain
 in the same session and context pressure is high. If the interview has drifted,
-use `/clear` or `/reset`, attach the saved interview record and approved context
-brief, then continue. Record the choice in the interview record.
+use `/clear` or `/reset`, attach the approved context brief, and provide only the
+confirmed decisions and open questions needed to continue.
 
-**Checkpoint:** The record contains questions, recommendations, owner answers,
-reasons, open branches, and the final shared understanding.
+**Checkpoint:** The request owner can state the confirmed decisions, reasons, and
+open questions without relying on the chat transcript.
 
 ## Part 3: Create the decision brief and issue proposal (25 minutes)
 
@@ -144,8 +143,8 @@ Use the approved decision brief and @late-constraint.md. Reopen only the branche
 affected by the new constraint. Show which prior decisions remain unchanged.
 ```
 
-Answer the new frontier as the request owner. Update the interview record,
-decision brief, and issue proposal.
+Answer the new frontier as the request owner. Update the decision brief and issue
+proposal.
 
 Review the diff:
 
@@ -189,10 +188,9 @@ documented critique route. Do not invent a command.
 Submit:
 
 1. the installed `decision-interview` project skill;
-2. the interview record with the reopened branch;
-3. the approved decision brief;
-4. the aligned issue proposal;
-5. any fixes made after the fresh-session check.
+2. the approved decision brief;
+3. the aligned issue proposal;
+4. any fixes made after the fresh-session check.
 
 Session 22 uses the approved brief and issue proposal to create live GitHub issues.
 

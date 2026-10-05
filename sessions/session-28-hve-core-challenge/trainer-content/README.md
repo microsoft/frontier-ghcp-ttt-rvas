@@ -123,7 +123,8 @@ Business idea
 For this challenge, learners start with supplied intent, use Product Manager
 Advisor to test value and assumptions, then use Agile Coach to produce one story
 and acceptance criteria. They should update the HVE plan when those outputs expose
-a gap. No live backlog writes are needed.
+a gap. The Plan artifact should cite the platform outputs. Learners should not copy
+those outputs into the handoff. No live backlog writes are needed.
 
 ## Reference demonstration
 
@@ -147,14 +148,15 @@ Use short questions that force a decision:
 
 ## Review standard
 
-Use the 100-point rubric in `lab/solution/reference-evidence.md`. Forty points are
-reserved for the HVE RPI chain, 25 for customization, and 20 for product and Agile
-agents. A correct endpoint without those artifacts does not pass.
+Use the 100-point rubric in `lab/solution/reference-evidence.md`. Grade Research,
+Plan, Implement, and Review at their generated paths. Use platform output only
+when an HVE artifact cites it. Grade the handoff as an index and final human
+decision, not as a duplicate evidence record.
 
 Require a human decision at the end: approve, request changes, or pause. Missing
 evidence should reduce the score even when the endpoint appears to work. One
 trainer-provided recovery artifact can keep the lab moving, but it earns no
-execution credit for the replaced phase.
+execution credit for the replaced phase. Do not infer a pass from the thin handoff.
 
 ## Official references
 

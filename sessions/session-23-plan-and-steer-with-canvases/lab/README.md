@@ -12,7 +12,7 @@ real GitHub state change
 - The generated and reviewed canvas extension
 - The live planning canvas
 - One controlled GitHub state change
-- `canvas-handoff.md`
+- Links from the canvas to the live GitHub issues
 
 ## Lab outcome
 
@@ -46,8 +46,9 @@ Confirm GitHub Copilot access. **Stop if access is unavailable.**
 `/create-canvas` is a built-in app skill. Do not install a community replacement.
 Stop if the skill or GitHub reads are unavailable.
 
-Use `issue-handoff.md` as the authoritative issue list. Do not ask Copilot to
-reconstruct the set from chat history.
+Use a fresh GitHub MCP read as the authoritative issue list. Start from the live
+Session 22 parent issue and follow its child links. Do not reconstruct the set
+from chat history or a separate Markdown file.
 
 ## Part 2: Define the minimum canvas contract (20 minutes)
 
@@ -156,19 +157,20 @@ Confirm that:
 - the GitHub state and planning state remain distinct;
 - the last-refresh time changed.
 
-Copy `starter/canvas-handoff-template.md` to `canvas-handoff.md`. Add the owner,
-refresh procedure, recovery procedure, retirement trigger, next safe action, and
-the four status-visibility issue roles for Session 24.
+Record the owner, refresh procedure, recovery procedure, retirement trigger, and
+next safe action in the live canvas. Confirm that the canvas links the four
+status-visibility issues for Session 24.
 
 Run `/context`. If the creation thread is crowded, start a fresh session and
-attach `canvas-handoff.md` plus `issue-handoff.md`. Then run:
+retrieve the live GitHub issues and open the canvas. Then run:
 
 ```text
-/rubber-duck Critique the canvas handoff. Find stale source claims, mixed GitHub
-and planning states, unsafe actions, and missing ownership.
+/rubber-duck Critique the live planning canvas against the linked GitHub issues.
+Find stale source claims, mixed GitHub and planning states, unsafe actions, and
+missing ownership.
 ```
 
-Apply useful findings directly to the canvas or handoff.
+Apply useful findings directly to the canvas.
 
 ## Verification
 
@@ -180,6 +182,6 @@ Apply useful findings directly to the canvas or handoff.
 - [ ] A reviewed GitHub change made the canvas stale.
 - [ ] A fresh read detected the mismatch.
 - [ ] Refresh reconciled the canvas without hiding the source difference.
-- [ ] `canvas-handoff.md` contains the owner, recovery, refresh, and retirement rules.
-- [ ] `canvas-handoff.md` names the four Session 24 issue roles.
+- [ ] The live canvas contains the owner, recovery, refresh, and retirement rules.
+- [ ] The live canvas links the four Session 24 issue roles.
 - [ ] No customer or source organization names appear.

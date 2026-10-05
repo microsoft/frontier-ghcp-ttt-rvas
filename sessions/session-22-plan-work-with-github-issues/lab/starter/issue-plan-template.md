@@ -1,5 +1,7 @@
 # GitHub Issue Plan
 
+> Temporary preview only. The created GitHub issues become authoritative.
+
 ## Source brief
 
 <!-- Repository path or approved source -->

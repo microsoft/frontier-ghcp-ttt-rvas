@@ -39,9 +39,4 @@
 
 <!-- One decision that should happen next -->
 
-## Handoff to Session 21
-
-- **Source path:** `docs/discovery/initiative-context-brief.md`
-- **Decision owner:**
-- **Open decisions:**
-- **Next action:** Run the decision interview.
+**Next action:** Run the Session 21 decision interview with this brief.

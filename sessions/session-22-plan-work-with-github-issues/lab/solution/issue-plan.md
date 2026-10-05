@@ -1,5 +1,7 @@
 # GitHub Issue Plan
 
+> Temporary preview only. The created GitHub issues become authoritative.
+
 ## Source brief
 
 `docs/discovery/decision-brief.md`
@@ -46,8 +48,3 @@ The parent closes only after the public mapping, requester view, empty and stale
 ## Proposed labels and milestone
 
 Use only labels and milestones that already exist in the training repository.
-
-## Handoff roles
-
-- **Decision owner:** Product owner
-- **Work-system steward:** Training repository owner

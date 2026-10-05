@@ -13,9 +13,8 @@ requirement, and prepare approved updates.
 
 Use [`work-item-update-plan.md`](work-item-update-plan.md) to carry:
 
-- the Copilot interview findings;
+- the approved decisions;
 - planned field changes;
-- the request owner's decisions;
 - the saved field values;
 - open gaps and next action;
 - the IDs of child Tasks created after the parent update.
@@ -65,14 +64,15 @@ Run the decision-tree interview against:
 
 > Make request status clearer so people stop asking support.
 
-Close or assign the branches for scope, constraints, success, failure, ownership, and approval. Save the interview record.
+Close or assign the branches for scope, constraints, success, failure, ownership,
+and approval. Record the approved decisions in the update plan.
 
 The request owner must confirm shared understanding before the Azure Boards review.
 
 ## Phase 2: compare the findings with the requirement
 
 Read the seeded item without changing it. Ask GitHub Copilot to compare the current
-fields with the approved interview findings.
+fields with the approved decisions.
 
 | Field | Review question |
 | --- | --- |
@@ -87,7 +87,7 @@ Record the current value, Copilot proposal, reason, and owner decision. A field 
 
 ## Phase 3: prepare the update
 
-Ask GitHub Copilot to draft exact field values from the approved interview record.
+Ask GitHub Copilot to draft exact field values from the approved decisions.
 
 For the supplied scenario, expect this direction:
 
@@ -106,7 +106,7 @@ Do not save yet.
 
 Show the request owner:
 
-1. the Copilot interview summary;
+1. the approved decisions;
 2. the field comparison;
 3. the exact proposed values;
 4. the proposed child Tasks.
@@ -160,7 +160,7 @@ leave the child Task table empty.
 
 ## Review and deliver
 
-Before handoff, check:
+Before delivery, check:
 
 - saved fields match the update plan;
 - acceptance criteria include positive and failure behavior;

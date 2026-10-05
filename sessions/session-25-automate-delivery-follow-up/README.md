@@ -10,37 +10,23 @@
 
 ## Overview
 
-Session 25 closes the **Delivery Decision Studio** path. Product and delivery
-owners consume Session 24 `delivery-status-record.md` and create one manual,
-draft-only GitHub Copilot Automation. They review the first run, update one
-approved input, rerun the same automation, and compare evidence.
+Session 25 turns the reviewed Session 24 result into one bounded automation. The
+automation reads live GitHub issues and the parent orchestration result, then
+drafts a stakeholder update for human review.
 
-The Service Request Portal remains the initiative. The core route is manual and
-draft only. Scheduling is an optional stretch after separate approval.
-
-> [!IMPORTANT]
-> Confirm Automations and GitHub MCP access before the session. If either does not work, stop and resolve access before starting the lab.
+Learners run the automation, update one approved issue, rerun it, and compare the
+platform results. The stakeholder update is the real output. Scheduling remains
+disabled unless the trainer approves it.
 
 ## Learning outcomes
 
-- Classify recurring work by autonomy and approval level.
-- Define allowed inputs, allowed outputs, required evidence, and stop conditions.
-- Create a manual, draft-only GitHub Copilot Automation.
-- Run the same automation twice against two approved input versions.
-- Use GitHub MCP to retrieve the approved issue state.
-- Inspect the run against acceptance criteria.
-- Compare evidence across runs.
-- Record a human approval decision.
-- Measure useful time saved after review and rework.
-- Write a stakeholder update that separates facts, decisions, exceptions, and next actions.
-- Decide whether GitHub or Azure Boards remains the authoritative planning system.
-- Explain why scheduling and higher autonomy require stronger controls.
-
-## Scope
-
-This session does not configure enterprise access, policy, or administration. It
-focuses on the accountable workflow owner, one bounded automation, and a
-system-of-record decision.
+- Define a bounded automation in a few operational fields.
+- Use live GitHub issues and the parent orchestration result as authoritative inputs.
+- Restrict the automation to one draft stakeholder update.
+- Review platform run evidence instead of copying it into a separate form.
+- Rerun after an approved issue change.
+- Decide whether to keep, revise, disable, or pause the automation.
+- Name the authoritative planning system.
 
 ## Materials
 
@@ -49,17 +35,19 @@ system-of-record decision.
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
-| Starter templates and synthetic evidence | [`lab/starter/`](lab/starter/) |
+| Starter assets | [`lab/starter/`](lab/starter/) |
 | Reference solution | [`lab/solution/`](lab/solution/) |
-
-## Optional Azure Boards route
-
-When Azure Boards is the approved system of record, use the automation to prepare a draft update from approved Boards data or to identify work that should be handed to a linked GitHub repository. Keep publishing and work-item changes behind human approval.
 
 ## Boundaries
 
-- No customer or source organization names.
-- No publishing, messaging, issue edits, or external writes in the core lab.
-- No learner move beyond A1 draft autonomy.
-- Trainer-only maturity guidance covers A2 and A3.
-- Optional scheduling does not change the draft-only output boundary.
+- The automation may read only approved GitHub issues and the Session 24 parent result.
+- Its only permitted output is a draft stakeholder update.
+- It may not publish, message people, edit issues, change labels, or write to external systems.
+- A person reviews every draft.
+- The enabled or disabled state must match the definition.
+
+## Optional Azure Boards route
+
+When Azure Boards is authoritative, use approved Boards items and the Session 24
+parent result as inputs. Keep the output draft only. Do not maintain competing
+status fields in GitHub and Azure Boards.

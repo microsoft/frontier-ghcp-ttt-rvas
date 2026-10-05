@@ -1,72 +1,36 @@
 ---
-description: "Reference HVE traceability and scoring rubric for the Engineering Decision API"
+description: "Scoring guide for authoritative HVE evidence and the final handoff"
 ---
 
-# Reference HVE evidence and rubric
+# HVE evidence scoring guide
 
-## HVE artifact chain
+Grade evidence where HVE or the platform created it. Do not require learners to
+copy evidence into `challenge-handoff.md`.
 
-| Phase | Expected artifact | Required handoff |
-|-------|-------------------|------------------|
-| Research | `.copilot-tracking/research/` | Approach, alternatives, constraints |
-| Plan | `.copilot-tracking/plans/` | Plan, critique, criteria, files, checks, approval |
-| Implement | `.copilot-tracking/changes/` | Changed files and validation results |
-| Review | `.copilot-tracking/reviews/` | Findings, criterion verdicts, human decision |
+## Evidence sources
 
-The reference chain starts with direct phase prompts so every handoff is visible.
-The combined `/rpi` agent would orchestrate the same phases and use Follow-up
-after Review.
-
-## Product and Agile handoff
-
-Product Manager Advisor should preserve the create-only experiment, identify
-durability and adoption as unproven assumptions, and keep persistence out of the
-slice. Agile Coach should turn that decision into one story whose acceptance
-criteria match the request, validation, conflict, metadata, and container rules.
-
-## Criterion map
-
-| Criterion | Implementation | Test evidence |
-|-----------|----------------|---------------|
-| Health route remains green | `src/index.js` | `tests/health.test.js` |
-| Required strings and status | `validateDecision` | Invalid-field and status cases |
-| Proposed default and accepted states | Decision creation | Create and status cases |
-| Case-insensitive duplicate conflict | Route-local decision store | Duplicate-title case |
-| Generated ID and UTC time | `crypto.randomUUID`, `toISOString` | Create metadata assertions |
-| Stable errors | Route and error middleware | Exact envelope assertions |
-| Tested production container | `Dockerfile`, `.dockerignore` | `tests/container.test.js`; image build runs `npm test` |
-
-Repository context applies to every HVE agent. The targeted JavaScript instruction
-applies to `src/routes/decisions.js` and both test files. The custom Decision API
-Reviewer must return findings first and a criterion verdict table. Those observed
-effects are activation evidence.
-
-## Reference review
-
-All required behavior is present. State is isolated per app instance, so tests do
-not leak records. The implementation ignores unknown fields and returns no stack
-trace. The image build runs the tests, then copies tested source and production-only
-dependencies into a non-root runtime stage with a health check. Process-local
-storage remains a known limit and is outside the brief.
-
-Suggested commit preview:
-
-```text
-feat(api): add engineering decision creation
-```
-
-Suggested pull-request summary: add the bounded decision-create route, stable
-validation and conflict responses, generated metadata, focused HTTP tests, and a
-tested production container.
+| Evidence | Authoritative source |
+|----------|----------------------|
+| Research decisions and constraints | `.copilot-tracking/research/` |
+| Approved scope, criteria, and checks | `.copilot-tracking/plans/` |
+| Changed files and validation runs | `.copilot-tracking/changes/` |
+| Findings, verdicts, and review basis | `.copilot-tracking/reviews/` |
+| Advisor and coach output | Platform output cited by the Plan artifact |
+| Test and container results | Platform output cited by Implement or Review |
+| Final decision, open risks, next action | `challenge-handoff.md` |
 
 ## Scoring rubric
 
-| Area | Points | Full-credit evidence |
+| Area | Points | Full-credit standard |
 |------|-------:|----------------------|
-| HVE RPI evidence | 40 | Four phase artifacts form a traceable handoff chain |
-| HVE customization | 25 | Context, coding instruction, custom agent, and activation evidence |
-| Product and Agile agents | 20 | Advisor and coach outputs shape or confirm the plan |
-| Feature validation | 15 | API and container evidence support the review decision |
+| HVE RPI evidence | 40 | Award 10 points per phase. Each generated artifact names its inputs, decisions, and next handoff. |
+| HVE customization | 25 | The three repository-owned customizations exist, and later HVE artifacts show that each one activated and affected the work. |
+| Product and Agile agents | 20 | The platform outputs exist, the Plan cites them, and the Plan records whether they changed or confirmed scope and criteria. |
+| Feature validation | 15 | Implement or Review cites exact API test and container results, including `not run` where access was unavailable. |
+
+The handoff must link the four phase artifacts and record the final human decision,
+unresolved risks, and next action. Deduct missing evidence from its scoring area;
+do not award points for copied summaries in the handoff.
 
 Recovery artifacts do not earn execution points for the phase they replace. A
 submission with no HVE execution does not pass the challenge.

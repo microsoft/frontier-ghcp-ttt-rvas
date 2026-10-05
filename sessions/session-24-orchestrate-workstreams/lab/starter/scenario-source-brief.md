@@ -1,14 +1,12 @@
-# Service Request Portal: Status-Visibility Source Brief
+# Status-Visibility Source Brief
 
-Use this fictional source brief with the Session 22 `issue-handoff.md` and Session
-23 `canvas-handoff.md`. It contains no production data or source organization
-names.
+Use this fictional source brief with the live Session 22 GitHub issues and Session
+23 planning canvas. It contains no production data or source organization names.
 
 ## Parent objective
 
-Decide whether the Service Request Portal status-visibility issue set is ready for
-delivery follow-up. Produce one reviewed delivery-status record. Do not change
-production systems or publish claims.
+Review the four approved status-visibility issues and return one reviewed result
+for each. Do not change production systems or publish claims.
 
 ## Approved issue roles
 

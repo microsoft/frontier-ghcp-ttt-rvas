@@ -1,5 +1,0 @@
-workstream_id,issue_role,planning_state,owner_role,evidence_reference,next_action
-SV-01,Public status mapping,Blocked,Product owner,S24-WS-01,Approve public vocabulary
-SV-02,Requester status view,Ready for review,Delivery reviewer,S24-WS-02,Confirm issue 241 field checklist
-SV-03,Empty and stale states,Ready for review,Service reviewer,S24-WS-03,Attach fallback scenario review
-SV-04,Requester access verification,Blocked,Privacy reviewer,,Attach synthetic requester-only access evidence

@@ -93,7 +93,7 @@ file changes. Autopilot is outside this interview.
 - Run `/context`.
 - Use `/compact` only when the same thread must continue.
 - Use `/clear` or `/reset` when old assumptions are polluting the interview.
-- Resume from saved artifacts, not memory.
+- Resume with the approved context and confirmed decisions, not a transcript.
 
 ---
 
@@ -246,10 +246,9 @@ The interview always runs with **GitHub Copilot**.
 # Lab deliverables
 
 1. The installed `decision-interview` project skill.
-2. A **Copilot interview record** with the reopened branch.
-3. A revised **decision brief**.
-4. An aligned **GitHub issue proposal**.
-5. Any fixes made after the fresh-session check.
+2. A revised **decision brief**.
+3. An aligned **GitHub issue proposal**.
+4. Any fixes made after the fresh-session check.
 
 The request owner decides whether the brief is ready for issue planning.
 

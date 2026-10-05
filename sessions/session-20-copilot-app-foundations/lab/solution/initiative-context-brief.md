@@ -53,9 +53,4 @@ or automations.
 
 Approve the public status vocabulary for the first release.
 
-## Handoff to Session 21
-
-- **Source path:** `docs/discovery/initiative-context-brief.md`
-- **Decision owner:** Product owner
-- **Open decisions:** Public status vocabulary and supported stale-state wording
-- **Next action:** Run the `decision-interview` skill.
+**Next action:** Run the Session 21 `decision-interview` skill with this brief.

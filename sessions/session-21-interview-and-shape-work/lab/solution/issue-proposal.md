@@ -77,7 +77,7 @@ checked the draft before marking it ready.
 
 **Work item owner:** Portal product owner
 
-## Session 22 handoff
+## Session 22 input
 
 - **Decision brief path:** `decision-brief.md`
 - **Proposal status:** Approved with one owned release question

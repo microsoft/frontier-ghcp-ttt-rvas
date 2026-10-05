@@ -13,7 +13,7 @@
 Session 20 opens the **Delivery Decision Studio** path. Learners compare
 unscoped and repository-grounded answers, create a durable initiative context
 brief, check context health, request an independent critique, and verify the
-handoff in a fresh session.
+brief in a fresh session.
 
 The fictional **Service Request Portal** provides the shared scenario. Learners
 may use approved, sanitized work from their own team.
@@ -35,7 +35,7 @@ By the end of this session, learners can:
 7. Check context usage and decide whether to compact or start fresh.
 8. Review and revise a proposed Markdown change.
 9. Update a context brief when approved evidence changes.
-10. Use independent critique before the handoff.
+10. Use independent critique before sharing the brief.
 
 ## Session structure
 

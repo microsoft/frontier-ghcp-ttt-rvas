@@ -14,7 +14,7 @@ record.
 | Time | Segment |
 | --- | --- |
 | 0:00-0:08 | Decide when visible state helps |
-| 0:08-0:18 | Translate the issue plan into canvas requirements |
+| 0:08-0:18 | Translate live issues into canvas requirements |
 | 0:18-0:32 | Create the canvas with `/create-canvas` |
 | 0:32-0:43 | Review state, actions, and boundaries |
 | 0:43-0:53 | Create drift and reconcile the canvas |
@@ -29,7 +29,7 @@ record.
 - Confirm that the learner can read the Session 22 issues through GitHub MCP.
 - Use a training repository and synthetic issue data.
 - Name the canvas owner and reviewer.
-- Open the Session 22 `issue-handoff.md`.
+- Retrieve the Session 22 parent issue and linked child issues.
 - Confirm `/context`, `/clear` or `/reset`, and `/rubber-duck`.
 
 > [!IMPORTANT]
@@ -107,6 +107,9 @@ Check:
 6. Read the issue again without refreshing the canvas.
 7. Show the mismatch and last-refresh time.
 8. Refresh the canvas and verify the blocker and next action.
+
+The live canvas and linked GitHub issues are the durable result. Do not create a
+separate transfer file.
 
 ## Product notes verified October 5, 2026
 

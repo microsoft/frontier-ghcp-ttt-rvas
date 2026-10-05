@@ -1,32 +1,24 @@
-# Weekly Service Request Portal Update
+# Stakeholder Update
 
-**Reporting period:**  
-**Workflow:**  
-**Approval status:**  
+**Reporting scope:** `<scope>`
+
+**Authoritative planning system:** `<GitHub or Azure Boards>`
+
+**Review status:** `<accepted, rejected, or paused>`
 
 ## Status
 
-Write the accepted counts and material changes.
+State the supported status changes from the live issues.
 
-## Exception
+## Exceptions
 
-State the unresolved exception, owner, and next action.
+State each unresolved exception, owner, and next action.
 
 ## Review decision
 
-State what the reviewer accepted, rejected, or paused. Do not imply that the automation approved its own work.
-
-## Useful time saved
-
-```text
-manual baseline:
-Copilot draft or review:
-review:
-rework:
-allocated overhead:
-useful time saved:
-```
+State what the reviewer accepted, rejected, or paused.
 
 ## Next step
 
-Name the next action, owner, and stop status.
+Name the next action and owner. State whether the automation remains enabled or
+disabled.

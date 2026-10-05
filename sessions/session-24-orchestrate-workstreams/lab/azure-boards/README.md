@@ -2,19 +2,18 @@
 
 **Time:** 45 to 60 minutes inside the existing two-hour lab
 
-**Use:** Use Azure Boards for planning and status during Lab Exercises 1 through 3. Complete Exercise 4 in the main lab guide.
+**Use:** Use Azure Boards as the approved issue source for the main lab.
 
-**Deliverable:** Live child-session results, updated planning states, and a
-delivery-status decision
+**Deliverable:** Live child-session results, reviewed parent result, and verified
+planning updates
 
 > [!IMPORTANT]
 > The trainer must select and prepare this route before the workshop. It is not
 > part of the standard learner path.
 
-Use a seeded Azure Boards Epic or Feature for the same four Session 22
-status-visibility roles: public mapping, requester view, empty and stale states,
-and requester access verification. Azure Boards holds the plan, ownership, and
-delivery status. GitHub holds repository work.
+Use a seeded Azure Boards Epic or Feature for the same four Session 22 issue
+roles. Azure Boards holds the authoritative plan and status. GitHub holds
+repository work.
 
 **GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser
 are planning interfaces. They do not replace the built-in `/orchestrate` skill.
@@ -23,7 +22,7 @@ are planning interfaces. They do not replace the built-in `/orchestrate` skill.
 
 You need:
 
-- access to a training Azure DevOps project with the seeded Service Request Portal Epic or Feature;
+- access to a training Azure DevOps project with the seeded status-visibility Epic or Feature;
 - permission to read and update the seeded child work items;
 - an approved Azure Boards MCP connection or browser access;
 - the work item IDs or seed tag supplied by the trainer;
@@ -38,9 +37,7 @@ You need:
 4. Open **Customize** → **Skills** → **Installed** and confirm the built-in
    `orchestrate` skill.
 5. Confirm that you can open, steer, and stop those sessions.
-6. Copy `workstream-result-template.md` once for each selected child item.
-7. Set a 30-minute activity limit or a lower approved usage limit.
-8. Confirm who owns the final release-readiness decision.
+6. Confirm who reviews the parent result and who may approve Boards updates.
 
 > [!IMPORTANT]
 > **Stop if GitHub Copilot orchestration is unavailable.** Resolve access before you continue. Do not use separate prompts, role-play, exports, or prepared results as a substitute.
@@ -49,11 +46,10 @@ Use only the seeded fictional items. Do not open production work items, add real
 
 ## Parent objective
 
-Use the seeded Epic or Feature named **Service Request Portal status visibility**.
+Use the seeded status-visibility Epic or Feature.
 
-> Decide whether the status-visibility work is ready for delivery follow-up.
-> Produce a delivery-status record. Do not change production systems or publish
-> claims.
+> Review the four approved status-visibility items and return one reviewed result
+> for each. Do not change production systems or publish claims.
 
 ## Step 1: Select independent child work items
 
@@ -68,14 +64,8 @@ Mirror the standard lab wording:
 | Empty and stale states | Empty and stale state validation |
 | Requester access verification | Requester-only access evidence |
 
-For each selected item, record:
-
-- the bounded question;
-- the required result;
-- approved evidence;
-- exclusions;
-- a hard stop condition;
-- the role that will use the result.
+For each selected item, record the bounded question, approved inputs, hard stop
+condition, and reviewer.
 
 No selected child should wait for another child result. Keep shared dependencies with the parent or run dependent work in sequence.
 
@@ -84,18 +74,19 @@ No selected child should wait for another child result. Keep shared dependencies
 For each selected child:
 
 1. Move the item to the mapped active state.
-2. Add the required result, exclusions, and stop condition to the description or a comment.
-3. Keep the parent item as the owner of the shared delivery-status record.
+2. Add the bounded question and stop condition to the description or a comment.
+3. Keep the parent item as the owner of shared decisions.
 
 Use the project's existing state mapping. Confirm the item ID before every MCP or browser write.
 
 ## Step 3: Start GitHub Copilot orchestration
 
-Build the parent instruction from the selected work items. Include each item ID, bounded question, approved inputs, required packet, exclusions, and stop condition.
+Build the parent instruction from the selected work items. Include each item ID,
+bounded question, approved inputs, stop condition, and reviewer.
 
 Start the work through `/orchestrate`. Confirm that GitHub Copilot created one live
-child session for each selected item. Add each session link or identifier to its
-Azure Boards item.
+child session for each selected item. Use the orchestration surface to track the
+sessions. Do not copy live session identifiers into Boards.
 
 Repository work must name the allowed repository and path. The child session may return evidence or a draft pull request when the contract allows it. It must not close the Boards item, approve a pull request, merge, deploy, or make the release decision.
 
@@ -115,27 +106,25 @@ Preserve genuine control decisions. Stop unsafe work. Reject unsupported claims.
 
 ## Step 5: Review and update Boards
 
-Complete `workstream-result-template.md` for each live child session.
-
 1. Add the decision and reason to the child item.
 2. Move accepted items to the project's reviewed or completed state.
 3. Keep revised items active with one clear correction.
 4. Move rejected items to the agreed closed state without approving their content.
 5. Stop unsafe work and record the boundary that ended it.
 
-The parent decision uses **Ready**, **Ready with conditions**, or **Not ready**.
-
-Return to Exercise 4 in `../README.md`. Copy only accepted evidence into
-`delivery-status-record.md`.
+Return to Exercise 4 in `../README.md`. Use the reviewed parent result to update
+the parent item only when that write is approved. Retrieve the item again to
+verify the change.
 
 ## Safety boundaries
 
-- Work only with the seeded Service Request Portal hierarchy.
+- Work only with the seeded training hierarchy.
 - Do not change project process settings, team configuration, area paths, or iteration paths.
 - Do not create service commitments or release claims without evidence.
 - Do not place secrets, personal data, production records, or real organization names in work items.
 - Do not let an agent approve, merge, deploy, contact people, or close the parent decision.
-- Stop when an item requests restricted data, exceeds the agreed limit, or needs authority the learner does not have.
+- Stop when an item requests restricted data or needs authority the learner does
+  not have.
 
 ## Reset and cleanup
 

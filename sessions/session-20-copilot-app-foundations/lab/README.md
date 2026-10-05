@@ -102,7 +102,7 @@ Ask Copilot to complete the brief from `initiative-overview.md`. Require:
 - known facts with section references;
 - assumptions separated from unknowns;
 - explicit non-goals;
-- the next decision and decision owner;
+- the next decision and its owner;
 - the relevant capabilities found in Part 1.
 
 Review the proposed change before accepting it. Reject any statement that has no
@@ -145,7 +145,7 @@ git commit -m "Update working brief with approved evidence"
 ## Part 5: Verify the brief in a fresh session (25 minutes)
 
 Before starting fresh, run `/context`. If the current session is crowded but the
-thread still matters, use `/compact`. For the handoff check, use
+thread still matters, use `/compact`. For the fresh-session check, use
 `/clear` or `/reset`, then attach only
 `docs/discovery/initiative-context-brief.md`.
 
@@ -182,7 +182,7 @@ Submit:
 1. `docs/discovery/initiative-context-brief.md`;
 2. two commits showing the first brief and the evidence-driven revision.
 
-Session 21 uses this brief as the starting source for its decision interview.
+Session 21 uses this brief as the source for its decision interview.
 
 ## Verification
 

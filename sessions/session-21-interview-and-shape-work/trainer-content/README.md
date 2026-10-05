@@ -2,7 +2,7 @@
 
 ## Delivery objective
 
-Learners use the Session 20 context handoff and the supplied
+Learners use the Session 20 context brief and the supplied
 `decision-interview` project skill to turn an unclear request into a reviewed
 decision brief and issue proposal.
 
@@ -80,7 +80,8 @@ When evidence is unavailable, mark the fact as unverified. Do not disguise it as
 
 Run `/context` after each interview round. Compact only when the same thread must
 continue. Start fresh when old recommendations begin to leak into new decisions.
-The saved interview record, not chat memory, carries the state.
+When starting fresh, carry only confirmed decisions and open questions. The
+decision brief becomes the durable record.
 
 ### Use an independent critic
 
@@ -184,7 +185,7 @@ stay unchanged while role-specific acceptance criteria are revised.
 - Push back when criteria use words such as "easy," "fast," or "clear" without observable evidence.
 - Keep estimation outside the exercise. The goal is readiness.
 
-## Lab handoff
+## Lab launch
 
 Learners use the Service Request Portal context from Session 20 or
 [`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).

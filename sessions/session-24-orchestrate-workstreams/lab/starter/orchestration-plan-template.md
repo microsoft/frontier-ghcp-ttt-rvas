@@ -1,50 +1,25 @@
-# Service Request Portal: Orchestration Plan
+# Orchestration Plan
 
-**Parent objective:**  
-
-**Human decision owner:**  
-
-**Approved sources:**  
-
-**Shared artifact:** `delivery-status-record.md`
-
-**Live-use guard:** Maximum [number] child sessions, [number] minutes, and
-[number] approved meter units.
+**Parent objective:** Review the four approved status-visibility issues and return
+one reviewed result for each.
 
 ## Workstreams
 
-| ID | Bounded question | Approved inputs | Required packet | Exclusions | Stop condition | Reviewer |
-| --- | --- | --- | --- | --- | --- | --- |
-| WS-01 |  |  |  |  |  |  |
-| WS-02 |  |  |  |  |  |  |
-| WS-03 |  |  |  |  |  |  |
-| WS-04 |  |  |  |  |  |  |
+| ID | Bounded question | Approved inputs | Stop condition | Reviewer |
+| --- | --- | --- | --- | --- |
+| WS-01 |  |  |  |  |
+| WS-02 |  |  |  |  |
+| WS-03 |  |  |  |  |
+| WS-04 |  |  |  |  |
 
 Use the four Session 22 issue roles: public status mapping, requester status view,
 empty and stale states, and access-boundary verification.
 
-## Live child sessions
-
-Complete this table after GitHub Copilot starts the workstreams.
-
-| Workstream | Session link or identifier | Started at | Current action |
-| --- | --- | --- | --- |
-| WS-01 |  |  |  |
-| WS-02 |  |  |  |
-| WS-03 |  |  |  |
-| WS-04 |  |  |  |
-
-## Independence check
-
-- [ ] Each workstream can start from the approved inputs.
-- [ ] No child session must wait for another child session.
-- [ ] Only the parent owner edits the shared artifact.
-- [ ] Every workstream has a hard stop condition.
-- [ ] A person reviews every result.
-- [ ] GitHub Copilot created and coordinates every child session.
-
 ## Parent instructions
 
 ```text
-[Write the parent orchestration instruction here.]
+Use the four workstreams in this plan. Keep them independent. Each result must
+answer its bounded question, cite its approved inputs, state unresolved gaps,
+and give a recommendation. Obey each stop condition. Do not publish, contact
+people, access restricted data, or change systems.
 ```

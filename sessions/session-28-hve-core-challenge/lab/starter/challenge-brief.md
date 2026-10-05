@@ -34,7 +34,7 @@ use Follow-up to route new work. Do not start another implementation cycle.
 Your submission must include:
 
 * Research, plan, changes, and review artifacts produced through HVE
-* A clear handoff from each RPI phase to the next
+* A clear handoff from each RPI phase to the next in the generated artifacts
 * `.github/copilot-instructions.md` with project context and boundaries
 * `.github/instructions/javascript-api.instructions.md` with targeted practices
 * `.github/agents/decision-api-reviewer.agent.md` with a narrow review contract
@@ -106,4 +106,5 @@ The challenge is complete when:
   invalid fields, duplicate title, generated metadata, and stable errors;
 * the container contract is implemented and validated in an approved environment;
 * the HVE review maps every criterion to evidence and supports a human decision;
-* the challenge handoff captures exact commands, results, gaps, and next steps.
+* the challenge handoff links the four HVE artifacts and records the final human
+  decision, unresolved risks, and next action.

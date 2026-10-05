@@ -4,182 +4,131 @@
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20-23, the Session 24 trainer content, and live GitHub Copilot orchestration access
+**Prerequisites:** Sessions 20-23, trainer content, live orchestration access, and
+GitHub MCP read access
 
-**Deliverable:** An orchestration plan, live child-session results, and
-`delivery-status-record.md`
+**Deliverable:** An approved orchestration plan and a reviewed parent result from
+live child sessions
 
-## Final deliverables
+## Deliverables
 
-- The approved orchestration plan
-- Live results from the child sessions
-- Any redirect or stop needed during the run
-- A delivery-status decision
+- An approved orchestration plan
+- A reviewed parent result backed by live GitHub issues
 
 ## Scenario
 
-The fictional **Service Request Portal** has four status-visibility issue roles:
-public mapping, requester view, empty and stale states, and access-boundary
-verification. You need evidence for a delivery-status decision without several
-sessions editing the same record.
+Four live GitHub issues cover public status mapping, requester status, empty and
+stale states, and requester access. Orchestrate one workstream per issue. The
+parent result will become an authoritative input to Session 25.
 
-Use the Session 22 `issue-handoff.md` and Session 23 `canvas-handoff.md`. Start one
-workstream per issue role through GitHub Copilot orchestration. Review each result,
-then update the shared delivery-status record.
+## Preflight
 
-## Required preflight
-
-Complete every check before Exercise 1.
-
-- [ ] Confirm GitHub Copilot access. If access is unavailable, stop and do not
-      continue.
-- [ ] Use only the supplied fictional data or approved sanitized work.
-- [ ] Confirm the GitHub Copilot app policy, repository permission, and approved model.
-- [ ] Retrieve the approved parent and child issues through GitHub MCP.
-- [ ] Open the Session 23 planning canvas and confirm the selected workstreams.
-- [ ] Open **Customize** → **Skills** → **Installed** and confirm the built-in
-      `orchestrate` skill.
-- [ ] Type `/` and confirm that `/orchestrate` is available.
-- [ ] Confirm that you can open, steer, and stop the child sessions.
-- [ ] Set the guard to four child sessions, 30 minutes of live activity, or a lower approved meter.
-- [ ] Stop any task that requests production access, personal data, secrets, external contact, or unapproved changes.
+- Confirm GitHub Copilot access before the lab.
+- Confirm `/orchestrate` is available.
+- Confirm GitHub MCP can retrieve the approved parent and child issues.
+- Confirm that you can open, redirect, and stop child sessions.
+- Use only supplied synthetic material or approved sanitized work.
+- Stop any work that requests production data, personal data, secrets, external
+  contact, publication, or unapproved changes.
 
 > [!IMPORTANT]
-> **Stop if `/orchestrate` is unavailable.** It is a built-in GitHub Copilot app
-> skill. Resolve app version, sign-in, policy, or capability access before you
-> continue. Do not install a look-alike skill or replace orchestration with manual
-> role-play, separate prompts, prepared outputs, or static files.
+> **Stop if GitHub Copilot access, orchestration, or issue access is unavailable.**
+> Do not replace the live run with separate prompts, role-play, or prepared
+> outputs.
 
-> [!NOTE]
-> Product behavior was checked on **October 5, 2026**. **My work** may appear
-> under a renamed session or agent surface. Use the current equivalent.
-
-## Lab schedule
+## Schedule
 
 | Exercise | Work | Time |
 | --- | --- | --- |
-| 1 | Plan and start the orchestration | 30 min |
-| 2 | Monitor and intervene | 30 min |
-| 3 | Review live results | 30 min |
-| 4 | Consolidate evidence and approve | 30 min |
+| 1 | Approve and start the plan | 30 min |
+| 2 | Monitor and intervene | 35 min |
+| 3 | Review results | 35 min |
+| 4 | Return the parent result | 20 min |
 
-## Exercise 1: Plan and start the orchestration (30 min)
+## Exercise 1: Approve and start the plan
 
 Open `starter/orchestration-plan-template.md`.
 
-1. Read `starter/scenario-source-brief.md` and the approved GitHub parent issue.
-2. Copy the parent objective and relevant issue numbers into the plan.
-3. Define four independent workstreams.
-4. Name each workstream's approved inputs and required packet.
-5. Add exclusions and a stop condition.
-6. Check that no workstream depends on another child session.
-7. Submit the plan through `/orchestrate`.
+1. Retrieve the approved parent and child issues through GitHub MCP.
+2. Define one bounded question for each child issue.
+3. Name the approved issue and linked evidence for each workstream.
+4. Add a hard stop condition and reviewer.
+5. Confirm that no child depends on another child result.
+6. Submit the plan through `/orchestrate`.
 
-Use this parent prompt as a starting point:
+Use this prompt:
 
 ```text
-/orchestrate Prepare release-review evidence for the fictional Service Request
-Portal. Use the four workstreams in my approved plan. Keep them independent.
-Each child session must return the required packet and obey its stop condition.
-Use only the supplied sanitized sources. Do not access production, publish
-content, contact people, or change systems.
+/orchestrate Use the four workstreams in my approved plan. Keep them independent.
+Each result must answer its bounded question, cite its approved inputs, state
+unresolved gaps, and give a recommendation. Obey each stop condition. Do not
+publish, contact people, access restricted data, or change systems.
 ```
 
-Confirm that GitHub Copilot created the expected child sessions. Record their links or identifiers in your plan.
+Open each child session from the orchestration surface. Confirm its question,
+inputs, stop condition, and reviewer.
 
-Open every child session once. Confirm its assigned question, approved inputs,
-required packet, and stop condition before allowing it to continue.
+## Exercise 2: Monitor and intervene
 
-**Expected result:** A reviewed plan and live child sessions created by GitHub Copilot orchestration.
+Use the orchestration surface as the live record. Do not copy session identifiers,
+status, timing, or usage into the plan.
 
-## Exercise 2: Monitor and intervene (30 min)
+| Signal | Action |
+| --- | --- |
+| Safe and on scope | Wait |
+| A safe result needs a precise correction | Redirect |
+| A boundary is crossed | Stop |
+| The result answers the question with evidence | Accept |
+| The result is unsupported or outside scope | Reject |
+| Human authority is required | Escalate |
 
-Use **My work**, the session list, the agents panel, or the current session
-management surface.
+Redirect only when a specific scope or evidence problem can be fixed safely.
 
-For each child session:
+## Exercise 3: Review results
 
-1. Check its status, elapsed time, and usage.
-2. Compare its current work with the approved contract.
-3. Wait, redirect, or stop based on what the session is doing.
-4. Send a short instruction when you redirect or stop.
+Review each child result against its workstream:
 
-Redirect a child session only when a real scope, evidence, or packet problem needs
-correction.
+- Does it answer the bounded question?
+- Does it use only the approved issue and linked evidence?
+- Did it obey the stop condition?
+- Are unresolved gaps explicit?
+- Is the recommendation supported?
 
-Use these guards:
+Reject unsupported claims. Redirect a safe, repairable result. Stop work that
+crosses a hard boundary.
 
-- stop at four child sessions;
-- stop when the agreed meter is reached;
-- stop a child that requests restricted data;
-- stop or redirect work that overlaps another workstream;
-- escalate when a decision needs authority that the child session does not have.
+## Exercise 4: Return the parent result
 
-**Stop conditions are part of the lesson.** They do not provide an alternate completion route.
+Ask the parent orchestration to summarize only the reviewed child results.
 
-**Expected result:** The child sessions remain within scope and stop when a hard
-boundary is reached.
+The parent result must:
 
-## Exercise 3: Review the live results (30 min)
+- link each finding to its GitHub issue;
+- separate accepted findings from rejected claims;
+- name unresolved gaps and their owners;
+- state which issues are ready for follow-up;
+- avoid publication or source-system changes.
 
-Review each packet for:
+Add the reviewed result to the approved parent GitHub issue if the trainer has
+approved that write. Retrieve the issue again to verify the update.
 
-- the assigned question;
-- evidence references;
-- compliance with exclusions;
-- open questions;
-- a supported recommendation.
-
-Accept useful findings and reject unsupported claims. If a safe correction can
-repair the result, redirect the live child session and review the new packet. If
-the session crossed a hard boundary, stop it.
-
-Add accepted findings and rejected claims directly to the delivery-status record.
-
-**Expected result:** The delivery-status record separates supported findings from
-rejected claims.
-
-## Exercise 4: Consolidate and approve (30 min)
-
-Open `starter/delivery-status-record-template.md`.
-
-1. Copy only accepted findings into the shared record and planning canvas.
-2. Record rejected claims and the reason for each rejection.
-3. Add unresolved gaps with an owner and due date.
-4. Choose **Ready**, **Ready with conditions**, or **Not ready**.
-5. Add the accepted result or follow-up need to the relevant GitHub issue through a reviewed MCP update.
-6. Retrieve the updated issue and compare it with the canvas.
-7. Compare your structure with the files in `solution/` only after you finish your own work.
-
-**Expected result:** One delivery-status record that traces each decision to a
-live, reviewed packet and gives Session 25 an approved input version.
+Session 25 uses the live GitHub issues and this parent result. Do not create a
+separate handoff form.
 
 ## Completion check
 
-- [ ] Completed orchestration plan with live child-session identifiers.
-- [ ] Results returned by live GitHub Copilot orchestration.
-- [ ] `delivery-status-record.md`.
-- [ ] Reviewed GitHub issue update and fresh-read verification.
-- [ ] Planning canvas updated with the accepted result or unresolved gap.
-
-## Quality check
-
-| Area | Meets the requirement |
-| --- | --- |
-| Access | GitHub Copilot created and coordinated live child sessions. |
-| Plan | Workstreams are independent and have outputs, exclusions, and stop conditions. |
-| Control | The learner uses meter, time, access, and scope guards. |
-| Review | Supported findings and rejected claims are separated. |
-| Sources | Accepted claims point to their source artifacts. |
-| Handoff | Session 25 receives a clear delivery-status input. |
+- [ ] Approved plan with four bounded workstreams.
+- [ ] Live child results on the orchestration surface.
+- [ ] At least one deliberate wait, redirect, stop, accept, or reject decision.
+- [ ] Reviewed parent result linked to the live GitHub issues.
+- [ ] Fresh-read verification after any approved issue update.
 
 ## Troubleshooting
 
 | Issue | Response |
 | --- | --- |
-| `/orchestrate` is missing | **Stop the lab.** Resolve license, policy, client, or command access. |
-| **My work** is missing | Use the current session or agent surface. |
-| A child requests production data | Stop the child and record the boundary. |
-| Usage details are unavailable | Apply the four-session and 30-minute guards. |
-| A packet cites no evidence | Reject it or redirect the live child session. |
-| Two workstreams overlap | Pause one and move the shared question back to the parent. |
+| `/orchestrate` is missing | Stop and resolve license, policy, client, or command access. |
+| A child requests restricted data | Stop the child and record the boundary in the parent result. |
+| A result cites no issue evidence | Reject it or redirect the child. |
+| Two workstreams overlap | Pause one and move the shared question to the parent. |
+| An issue cannot be retrieved | Stop that workstream until approved issue access is restored. |

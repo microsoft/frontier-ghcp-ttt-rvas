@@ -1,44 +1,31 @@
-# Weekly Service Request Portal Update
+# Stakeholder Update
 
-**Input version:** `DDS-S24-STATUS-02`
+**Reporting scope:** Status-visibility workstreams after the approved issue update
 
-**Workflow:** Weekly status draft, contract `DDS-WEEKLY-STATUS` version 1.0
+**Authoritative planning system:** GitHub
 
-**Approval status:** Second manual run accepted for stakeholder preparation
+**Review status:** Second supervised draft accepted for stakeholder preparation
 
 ## Status
 
-Three status-visibility workstreams are ready for review: requester view, empty
-and stale states, and requester access verification. Public status mapping remains
-blocked on product-owner approval.
+The requester-status and fallback-state issues are ready for review. The
+requester-access issue now links to the approved synthetic evidence, but it stays
+blocked until the privacy reviewer accepts that evidence. Public status mapping
+also remains blocked on owner approval.
 
-## Run comparison
+## Exceptions
 
-The first run excluded requester access verification because its evidence
-reference was missing. The second run used the approved synthetic reference,
-accepted all four workstreams, and removed that exception.
+The product owner still needs to approve the public mapping. The privacy reviewer
+still needs to accept the requester-access evidence.
 
 ## Review decision
 
-The delivery lead accepted the second draft after comparing both run records
-and confirming that neither run made an external change. Live scheduling remains
-stopped.
-
-## Useful time saved
-
-The run saved 15 minutes against the 42-minute manual baseline:
-
-```text
-42 minutes baseline
-- 8 minutes Copilot review
-- 12 minutes review
-- 4 minutes rework
-- 3 minutes allocated overhead
-= 15 minutes useful time saved
-```
+The delivery lead accepted this draft after comparing both platform runs and
+confirming that the issue change explains the new access status. Neither run made
+an external change.
 
 ## Next step
 
-The product owner will prepare the approved update for normal stakeholder
-distribution. Automation scheduling stays stopped until the owner approves a
-cadence and the next preflight passes.
+The product owner will review the public mapping issue. The privacy reviewer will
+review the synthetic access evidence. The automation remains enabled for
+supervised manual runs, with scheduling disabled.

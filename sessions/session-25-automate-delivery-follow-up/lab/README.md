@@ -1,232 +1,139 @@
-# Session 25 Lab: Create, Review, and Rerun a Delivery Automation
+# Session 25 Lab: Create and Review a Delivery Automation
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20 to 24, GitHub Copilot app Automations access, and
-GitHub MCP access
+**Prerequisites:** Sessions 20-24, Automations access, and GitHub MCP access
 
-**Deliverable:** A manual, draft-only automation with two reviewed runs, evidence,
-and a system-of-record decision
+**Deliverable:** One reviewed stakeholder update from a bounded automation
 
 ## Deliverables
 
-- The saved manual, draft-only Automation
-- Two run outputs and run records
-- The final Keep, Revise, Disable, or Pause decision
+- A concise automation definition
+- One reviewed stakeholder update
 
-## Lab outcome
+## Outcome
 
-Create an Automation through the app, restrict its tools and outputs, run it on
-demand, review the first result, change an approved input, rerun the same
-automation, and compare the evidence.
+Create one automation that reads the live GitHub issues and the reviewed Session
+24 parent result. Run it, review the draft, apply one approved issue change, and
+run it again.
 
-The core lab remains **manual trigger + draft-only output**. Do not schedule it.
+The core lab uses a manual trigger and draft-only output. Scheduling stays
+disabled.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Verify Automations and prepare inputs | 15 min |
-| 2 | Write the automation contract | 25 min |
-| 3 | Create the manual automation | 25 min |
-| 4 | Run and review the first draft | 20 min |
-| 5 | Update the input and rerun | 20 min |
-| 6 | Decide, measure, and hand over | 15 min |
+| 1 | Verify access and retrieve inputs | 20 min |
+| 2 | Complete the automation definition | 20 min |
+| 3 | Create and run the automation | 30 min |
+| 4 | Review the draft | 20 min |
+| 5 | Update one issue and rerun | 20 min |
+| 6 | Finalize the stakeholder update | 10 min |
 
 ## Preflight
 
-Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
+Complete the track
+[capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot access. **Stop if access is unavailable.**
+Confirm GitHub Copilot Automations access and GitHub MCP access before the lab.
 
-## Part 1: Verify Automations and prepare inputs (15 minutes)
+**Stop if GitHub Copilot access, Automations, or GitHub MCP access is
+unavailable.** Resolve access before continuing.
+
+## Part 1: Verify access and retrieve inputs
 
 1. Open **Automations** in the GitHub Copilot app.
 2. Confirm that **New automation** is available.
-3. Confirm that GitHub MCP can read the approved training repository and issues.
-4. Copy the starter data into a working folder:
+3. Retrieve the approved parent and child GitHub issues through GitHub MCP.
+4. Open the reviewed Session 24 parent orchestration result.
+5. Confirm that issue state and the parent result agree on the four workstreams.
 
-   ```bash
-   cp sessions/session-25-automate-delivery-follow-up/lab/starter/session-24-delivery-status.csv \
-     working-delivery-status.csv
-   cp sessions/session-25-automate-delivery-follow-up/lab/starter/session-24-handoff.md \
-     working-session-24-handoff.md
-   ```
+Do not copy platform state into local handoff files.
 
-5. Add the learner's Session 24 `delivery-status-record.md` to the working folder.
-   For a standalone delivery, copy the reference:
+## Part 2: Complete the automation definition
 
-   ```bash
-   cp sessions/session-24-orchestrate-workstreams/lab/solution/delivery-status-record.md \
-     working-delivery-status-record.md
-   ```
+Copy `starter/automation-definition-template.md` into your working folder.
 
-6. Record the owner, reviewer, usage guard, and stop condition.
+Complete only these fields:
 
-Stop if Automations, the project, or the approved GitHub read tools are
-unavailable.
+- trigger and cadence;
+- authoritative inputs;
+- permitted output;
+- prohibited side effects;
+- reviewer;
+- stop conditions;
+- current enabled or disabled state.
 
-## Part 2: Write the automation contract (25 minutes)
+The core definition uses a manual trigger, one draft stakeholder update, and an
+enabled state for supervised lab runs only.
 
-Copy `starter/automation-contract-template.md` into your working folder.
+## Part 3: Create and run the automation
 
-Set the autonomy level to **draft only**. The automation may:
-
-- read `working-delivery-status.csv`;
-- read `working-session-24-handoff.md`;
-- read `working-delivery-status-record.md`;
-- read approved GitHub issue state;
-- create a Markdown status draft;
-- create a JSON run record.
-
-It may not publish, comment, edit issues, change labels, contact people, or write
-to an external system.
-
-Define:
-
-- manual trigger;
-- approved project;
-- allowed tools;
-- input validation rules;
-- required evidence;
-- owner and reviewer;
-- one-run or time limit;
-- rejection and recovery procedure.
-
-**Checkpoint:** Every output and side effect is either explicitly allowed or
-prohibited.
-
-## Part 3: Create the manual automation (25 minutes)
-
-In **Automations**, click **New automation**.
-
-Configure:
-
-| Setting | Value |
-| --- | --- |
-| Name | `Draft weekly delivery update` |
-| Trigger | Manual |
-| Run in cloud | Off for this local-file exercise |
-| Project | Training repository |
-| Tools | Minimum GitHub read tools only |
-| Model | Organization-approved model or Auto |
-| Schedule | None |
+Create a local automation with the minimum GitHub read tools.
 
 Use this prompt:
 
 ```text
-Prepare one internal weekly status draft for the fictional Service Request Portal.
-Follow @automation-contract-template.md. Use only
-@working-delivery-status.csv, @working-session-24-handoff.md,
-@working-delivery-status-record.md, and approved GitHub issue reads. Exclude any record
-that fails the contract's input rules and explain the
-exclusion. Do not post, message, edit source records, call unapproved tools, or
-invent missing values. Return a Markdown draft and JSON evidence for review.
+Read the approved status-visibility GitHub issues and the reviewed Session 24
+parent orchestration result. Follow @automation-definition-template.md. Draft one
+stakeholder update from supported issue state. Name unresolved exceptions and
+owners. Do not publish, message people, edit issues, change labels, call
+unapproved tools, or invent missing values.
 ```
 
-Review the selected project, trigger, tools, and prompt. Create the automation but
-do not schedule it.
+Review the trigger, tools, prompt, and enabled state before the run. Keep any
+schedule disabled.
 
-## Part 4: Run and review the first draft (20 minutes)
+## Part 4: Review the draft
 
-Run the automation on demand.
+Inspect the run on the Automations surface.
 
-Save:
+Check that:
 
-- the Markdown draft;
-- the JSON evidence;
-- the run status and duration;
-- the tools used;
-- accepted and rejected record counts.
-
-Compare the result with the source files and contract.
-
-The first run should exclude `SV-04` because it has no evidence reference. Confirm that:
-
-- accepted and rejected counts reconcile;
-- every number matches an accepted source record;
-- the missing-owner record is named in the exception list;
+- each status claim traces to a live issue or the reviewed parent result;
+- unresolved evidence remains visible;
 - no unsupported cause or forecast appears;
-- no prohibited write occurred.
+- no prohibited side effect occurred;
+- the output is one draft stakeholder update.
 
-Record **Accept**, **Reject**, or **Pause** for the first run. Do not publish the
-draft.
+Choose **Keep**, **Revise**, **Disable**, or **Pause**. Update the definition's
+current state to match that decision. Do not create a second status artifact.
 
-## Part 5: Update the input and rerun (20 minutes)
+## Part 5: Update one issue and rerun
 
-Open `starter/approved-input-change.md`. Apply the approved update to
-`working-delivery-status.csv`.
+Open `starter/approved-input-change.md`.
 
-Run the same automation again on demand. Do not create a second automation.
+1. Apply the approved synthetic evidence update to the named training issue
+   through a reviewed GitHub MCP write.
+2. Retrieve the issue again and verify the new state.
+3. Run the same automation. Do not create a second automation.
+4. Compare the two runs on the Automations surface.
+5. Confirm that only the approved issue change explains the draft change.
 
-Compare the two runs:
+## Part 6: Finalize the stakeholder update
 
-| Check | First run | Second run |
-| --- | --- | --- |
-| Input version |  |  |
-| Accepted records |  |  |
-| Rejected records |  |  |
-| Blocked records |  |  |
-| Exception list |  |  |
-| Tool boundary |  |  |
+Complete `starter/stakeholder-update-template.md` from the second reviewed draft.
 
-The second run record must identify the updated input and show why `SV-04`
-changed classification.
+The update must state:
 
-**Checkpoint:** The automation responds to an approved source change without
-changing its tool or publication boundary.
+- the reporting scope;
+- supported status changes;
+- unresolved exceptions and owners;
+- the review decision;
+- the next action.
 
-## Part 6: Decide, measure, and hand over (15 minutes)
-
-Complete:
-
-- the **Current disposition** section in `automation-contract-template.md`;
-- `stakeholder-update-template.md`.
-
-Choose **Keep**, **Revise**, **Disable**, or **Pause** for the automation.
-
-Calculate useful time saved:
-
-```text
-manual baseline
-- automation run time
-- review time
-- rework time
-- allocated setup and operating overhead
-```
-
-Record zero or a negative value when the workflow did not save useful time.
-
-Name the authoritative planning system:
-
-- **GitHub**, when issues and agent work remain authoritative there; or
-- **Azure Boards**, when the delivery backlog remains authoritative there.
-
-**Distribution remains a human action outside the automation.**
-
-## Optional scheduling stretch
-
-Complete this only after the core lab and trainer approval.
-
-1. Keep autonomy at A1 and outputs draft only.
-2. Select a weekly trigger.
-3. Confirm time zone, owner, usage budget, failure notification, and disable path.
-4. Do not enable the schedule unless the trainer confirms current product controls
-   and repository policy.
-5. Update the contract only if the schedule is actually enabled. The core
-   deliverable may remain unscheduled.
+Name GitHub or Azure Boards as the authoritative planning system. Distribution is
+a human action outside the automation.
 
 ## Verification
 
-- [ ] A manual Automation was created in the app.
-- [ ] The project, trigger, tools, and prompt were reviewed.
-- [ ] The automation remained draft only.
-- [ ] The first run excluded the invalid record and explained why.
-- [ ] An approved input change was applied.
-- [ ] The same automation ran a second time.
-- [ ] The two run records were compared.
-- [ ] A person recorded Keep, Revise, Disable, or Pause.
-- [ ] Useful time saved includes review, rework, and overhead.
-- [ ] The system of record and handoff owner are explicit.
-- [ ] Scheduling remained off in the core lab.
-- [ ] No customer or source organization names appear.
+- [ ] Live issues and the Session 24 parent result were the only status inputs.
+- [ ] The concise automation definition is complete.
+- [ ] The automation produced one draft stakeholder update.
+- [ ] The platform holds run status and evidence.
+- [ ] One approved issue change was verified with a fresh read.
+- [ ] The same automation ran again.
+- [ ] A person chose Keep, Revise, Disable, or Pause.
+- [ ] Scheduling remains disabled.
+- [ ] No prohibited side effect occurred.

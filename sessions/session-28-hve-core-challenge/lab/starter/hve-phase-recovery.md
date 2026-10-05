@@ -14,7 +14,8 @@ cannot complete the challenge.
 ## Recovery protocol
 
 1. Record the failed HVE entry point, exact error, and time spent.
-2. Mark that phase `not run` or `incomplete` in the challenge handoff.
+2. Record the failed execution in the next HVE artifact. Add it to unresolved risks
+   in the challenge handoff if it remains open.
 3. Inspect the trainer-provided artifact for that phase.
 4. Name the decisions and constraints the next phase must consume.
 5. Continue with the next HVE agent and cite the supplied artifact path.

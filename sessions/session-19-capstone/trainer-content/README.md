@@ -83,6 +83,8 @@ issue because time ran out.**
 - `lab/solution/capstone-project/` contains the bounded implementation and tests.
 - `lab/solution/reference-handoff.md` shows the full issue-to-handoff record.
 - `lab/starter/capstone-handoff.md` is the learner template.
+- `lab/starter/trainer-delivery-plan-template.md` is an optional trainer
+  reflection. It is not a learner deliverable.
 
 ## Common questions
 

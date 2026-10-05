@@ -181,11 +181,24 @@ These checks test the boundary, not the happy path.
 
 # Completion evidence
 
-| Area | Weight |
-|------|-------:|
-| HVE RPI artifact chain | 40% |
-| HVE customization and activation | 25% |
-| Product and Agile agent handoff | 20% |
-| Feature and container validation | 15% |
+| Area | Weight | Grade from |
+|------|-------:|------------|
+| HVE RPI artifact chain | 40% | Four HVE phase artifacts |
+| HVE customization and activation | 25% | Repository files and cited activation |
+| Product and Agile agent handoff | 20% | Platform output cited by Plan |
+| Feature and container validation | 15% | Output cited by Implement or Review |
 
 A manual implementation does not complete an HVE challenge.
+
+---
+
+# Keep the handoff thin
+
+`challenge-handoff.md` contains only:
+
+* links or paths to the four HVE artifacts;
+* the final human decision;
+* unresolved risks and the next action.
+
+Do not copy phase narratives, criteria, command output, or proposed Git text into
+the handoff.

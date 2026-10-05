@@ -11,8 +11,8 @@
 ## Overview
 
 Continue the **Delivery Decision Studio** path. Use the built-in
-`/create-canvas` skill to turn the Session 22 issue handoff into a
-visible delivery workspace. Review the generated extension, remove unnecessary
+`/create-canvas` skill to turn the live Session 22 issues into a visible delivery
+workspace. Review the generated extension, remove unnecessary
 capabilities, create a real GitHub state change, detect stale canvas data, and
 reconcile it.
 
@@ -37,7 +37,7 @@ Learners practice how to:
 6. Detect drift between visible canvas state and a fresh GitHub read.
 7. Refresh and reconcile the canvas.
 8. Record ownership, refresh, recovery, and retirement conditions.
-9. Produce `canvas-handoff.md` for the Session 24 status-visibility workstreams.
+9. Leave a live canvas linked to the GitHub issues for Session 24.
 
 ## Session structure
 
@@ -51,8 +51,7 @@ Learners practice how to:
 | Resource | Location |
 | --- | --- |
 | Slides | [`slides.md`](slides.md) |
-| Canvas requirements and handoff | [`lab/starter/`](lab/starter/) |
-| Reference result | [`lab/solution/`](lab/solution/) |
+| Canvas requirements | [`lab/starter/`](lab/starter/) |
 
 ## Session 08 distinction
 

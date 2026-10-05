@@ -77,6 +77,9 @@ the target repository and expected result.
 After the write, fetch the issue again. This fresh read proves what the system
 stored, rather than what the tool claimed it stored.
 
+The Markdown plan is a temporary preview. **The created GitHub issues are
+authoritative.**
+
 ---
 
 # Read before writing
@@ -153,11 +156,11 @@ After the write:
 
 # Lab result
 
-- Reviewed issue plan
-- Live issue set and handoff
+- Temporary reviewed issue preview
+- Authoritative live issue set
 - One parent issue
 - Three to five child issues
 - Fresh-read verification
-- `issue-handoff.md` for Session 23
+- Parent-to-child links that Session 23 reads directly
 
 **Stop if tool review or verification is unavailable.**

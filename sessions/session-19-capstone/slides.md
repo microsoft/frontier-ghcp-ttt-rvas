@@ -115,7 +115,7 @@ Record one decision: approve, request changes, or pause.
 
 | Phase | Time |
 | --- | --- |
-| Govern and accept the specification | 25 min |
+| Accept the specification and scope | 25 min |
 | Write the issue and establish the baseline | 25 min |
 | Implement or write the patch plan | 35 min |
 | Verify, review, and hand off | 35 min |

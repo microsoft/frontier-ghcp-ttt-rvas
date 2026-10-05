@@ -7,9 +7,7 @@
 - **Request owner:**
 - **Azure Boards path:** MCP / Browser
 
-## Interview findings
-
-**Copilot interview record:**
+## Approved decisions
 
 ### User and problem
 

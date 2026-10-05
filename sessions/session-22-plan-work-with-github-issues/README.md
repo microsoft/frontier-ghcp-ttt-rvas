@@ -12,8 +12,9 @@
 
 Continue the **Delivery Decision Studio** path by turning the approved Session 21
 decision brief into a GitHub issue hierarchy. Verify the GitHub
-MCP connection, inspect the repository, preview the full write, create the
-approved issues, then verify and correct them through fresh reads.
+MCP connection, inspect the repository, use Markdown to preview the full write,
+create the approved issues, then verify and correct them through fresh reads.
+The created GitHub issues are authoritative.
 
 The focus is safe tool use, not MCP server development.
 
@@ -33,7 +34,7 @@ Learners practice how to:
 7. Preview, apply, and verify a focused correction.
 8. Classify concrete existing issues as duplicate, partial overlap, conflict, or
    unrelated.
-9. Produce `issue-handoff.md` for Session 23.
+9. Leave a verified live issue set that Session 23 can read directly.
 
 ## Session structure
 
@@ -48,13 +49,15 @@ Learners practice how to:
 | --- | --- |
 | Slides | [`slides.md`](slides.md) |
 | Approved brief and templates | [`lab/starter/`](lab/starter/) |
-| Reference plan and review | [`lab/solution/`](lab/solution/) |
+| Reference preview | [`lab/solution/`](lab/solution/) |
 
 ## Boundaries
 
 - Use only the approved training repository.
 - Read before writing.
 - Ask Copilot to show the complete proposed issue set before creation.
+- Treat issue-plan Markdown as a temporary preview. Do not use it as the source
+  of record after creation.
 - Keep issue creation within the agreed count and labels.
 - Verify every created issue through a fresh GitHub read.
 - Use an optional Azure Boards route only when it remains the approved system of record.

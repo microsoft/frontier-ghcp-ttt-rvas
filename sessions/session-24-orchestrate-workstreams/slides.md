@@ -22,174 +22,113 @@ Session 24 | 3 hours
 
 | Segment | Time |
 | --- | --- |
-| Parent objective and workstreams | 8 min |
-| Child-session contracts | 10 min |
-| Monitor and intervene | 10 min |
-| Live orchestration demonstration | 12 min |
-| Review and consolidate | 12 min |
-| Lab handoff | 8 min |
+| Parent objective and boundaries | 10 min |
+| Minimal workstream plan | 10 min |
+| Monitor and intervene | 12 min |
+| Live demonstration | 13 min |
+| Review and lab handoff | 15 min |
 
 ---
 
 # Required access
 
-- Confirm the built-in `orchestrate` skill under **Customize** → **Skills**.
 - `/orchestrate` must create and coordinate live child sessions.
-- Confirm that you can open, steer, and stop each child.
+- GitHub MCP must read the approved issues.
+- You must be able to open, redirect, and stop child sessions.
 
-**Stop and resolve access if orchestration is unavailable.**
-
-No role-play, prepared-result, offline, or static completion route is available.
-
----
-
-# Product state: October 5, 2026
-
-- `/orchestrate` is a documented GitHub Copilot app skill.
-- Commands vary by context.
-- **My work** may appear under a renamed session or work surface.
-
-Confirm the current command picker before the session.
+**Stop if orchestration or issue access is unavailable.**
 
 ---
 
 # One parent objective
 
-> Decide whether the Service Request Portal status-visibility issue set is ready
-> for delivery follow-up. Produce `delivery-status-record.md`.
+> Review the four approved status-visibility issues and return one reviewed
+> result for each.
 
-The parent owns scope, routing, review, and the final decision.
-
----
-
-# Independent workstreams
-
-| ID | Question | Packet |
-| --- | --- | --- |
-| WS-01 | Is public status mapping ready? | Mapping packet |
-| WS-02 | Is requester view issue `#241` ready? | Field checklist |
-| WS-03 | Are empty and stale states testable? | Scenario checklist |
-| WS-04 | Is requester-only access evidence ready? | Access checklist |
-
-Parallel work needs clean boundaries. Sequence hidden dependencies.
+The parent owns scope and review.
 
 ---
 
-# Child-session contract
+# Keep the plan small
 
-```text
-Goal: One bounded question
-Inputs: Approved, sanitized sources
-Return: Findings, evidence, gaps, recommendation
-Do not: Change systems or invent facts
-Stop when: Access, scope, usage, or evidence becomes unsafe
-Decision owner: Named human role
-```
+Each workstream needs:
 
-The workstream result is the deliverable.
+- a bounded question;
+- approved inputs;
+- a stop condition;
+- a reviewer.
+
+The orchestration surface already holds session links, status, timing, and usage.
+
+---
+
+# Four independent workstreams
+
+| Workstream | Question |
+| --- | --- |
+| Public mapping | Is the mapping ready for approval? |
+| Requester status | Is the issue ready for implementation review? |
+| Empty and stale states | Are fallback states testable? |
+| Access boundary | Is the approved evidence ready? |
+
+Move shared questions back to the parent.
 
 ---
 
 # Start live orchestration
 
 ```text
-/orchestrate Review the Service Request Portal status-visibility issue set.
-Use the four workstreams in the approved plan. Keep them independent.
-Require one result per workstream. Obey every stop condition.
+/orchestrate Use the four workstreams in my approved plan. Keep them independent.
+Each result must answer its question, cite approved inputs, state unresolved
+gaps, and give a recommendation. Obey each stop condition.
 ```
 
-Confirm that GitHub Copilot created the expected child sessions.
-
 ---
 
-# Monitor the work
-
-Use **My work**, sessions, agents, or the current session management surface.
-
-Check:
-
-- status and elapsed time;
-- evidence gathered;
-- usage against the guard;
-- scope drift or blocked access;
-- whether the packet is ready.
-
----
-
-# Intervene deliberately
+# Monitor on the platform
 
 | Signal | Action |
 | --- | --- |
 | Safe and on scope | Wait |
 | Safe work needs correction | Redirect |
-| Restricted data, excess usage, or broken boundary | Stop |
-| Contract met | Accept |
-| Unsupported or unsafe result | Reject |
-| Human authority required | Escalate |
+| A boundary is crossed | Stop |
+| The result meets the plan | Accept |
+| The result lacks support | Reject |
+| Human authority is required | Escalate |
 
-Stopping weak work is a valid management decision.
-
----
-
-# Live demonstration
-
-1. Start four child sessions through GitHub Copilot orchestration.
-2. Open the live session list.
-3. Redirect an unsupported claim.
-4. Stop a restricted-data request.
-5. Accept evidence-backed work.
-6. Record the human decision.
-
-At least one live redirect must improve scope, evidence, or packet structure.
-
-Do not substitute prepared packets when a live run fails.
+Do not maintain a second status log.
 
 ---
 
-# Evidence before fluency
+# Review each result
 
-Review each packet for:
+- Does it answer the bounded question?
+- Does it use only approved issue evidence?
+- Did it obey the stop condition?
+- Are gaps explicit?
+- Is the recommendation supported?
 
-- scope;
-- source references;
-- boundary compliance;
-- open questions;
-- a usable recommendation.
-
-A polished answer with no evidence is still a rejection.
+A fluent answer without evidence is still a rejection.
 
 ---
 
-# One shared record
+# The parent result is the handoff
 
-Child sessions return packets to the parent.
+The reviewed result:
 
-```text
-Parent objective
-  |-- WS-01 packet
-  |-- WS-02 packet
-  |-- WS-03 packet
-  `-- WS-04 packet
-          |
-      Human review
-          |
-  Delivery-status record
-```
+- links findings to live GitHub issues;
+- shows rejected claims;
+- names gaps and owners;
+- recommends the next follow-up.
 
-One owner edits the final record.
+Session 25 reads this result and the live issues.
 
 ---
 
-# The human still makes the decision
+# The human keeps authority
 
-Record:
-
-- accepted evidence;
-- rejected claims and reasons;
-- unresolved owners and dates;
-- **Ready**, **Ready with conditions**, or **Not ready**.
-
-Copilot coordinates work. It does not receive release authority.
+Copilot coordinates work. A person reviews results and approves any issue update,
+publication, or release statement.
 
 ---
 
@@ -197,19 +136,16 @@ Copilot coordinates work. It does not receive release authority.
 
 | Session 16 | Session 24 |
 | --- | --- |
-| Optional Squad framework | Built-in app orchestration |
 | Persistent roles and routing | Temporary workstreams |
-| Team setup and shared memory | Results and review |
-| Advanced implementation | Manager-led delivery practice |
-
-No custom-agent construction or Squad implementation in this session.
+| Optional framework setup | Built-in orchestration |
+| Shared memory | Live issue evidence |
 
 ---
 
 # Lab deliverable
 
-- Orchestration plan with live child-session identifiers
-- Live results
-- Delivery-status record with the decision and Session 25 handoff
+1. Approved orchestration plan
+2. Live child-session results
+3. Reviewed parent result linked to live issues
 
-Azure Boards may use MCP or the browser. GitHub Copilot must perform the orchestration.
+No manual delivery-status form. No copied session identifiers.

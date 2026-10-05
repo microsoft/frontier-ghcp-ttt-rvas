@@ -13,7 +13,8 @@
 Session 21 continues the **Delivery Decision Studio** path. Learners use the
 Session 20 context brief, install a supplied project skill, and run a
 dependency-ordered interview. They turn approved answers into a decision brief
-and issue proposal, then reopen one branch when a late constraint arrives.
+and issue proposal, then revise the affected decisions when a late constraint
+arrives.
 
 The fictional Service Request Portal remains the initiative. Do not use customer
 requests or source organization names in the standard lab.
@@ -37,7 +38,7 @@ By the end of this session, learners will be able to:
 - Verify that the revised brief and issue proposal remain aligned.
 - Check context health before each interview round and start fresh for the final
   review.
-- Request an independent critique before approving the handoff.
+- Request an independent critique before approving the brief and proposal.
 - Assign an owner and reviewer before work enters a sprint.
 
 ## Session flow
@@ -79,4 +80,4 @@ Vague request
 - Keep the lab no-code. Learners install and use the supplied skill; they do not
   author or edit it.
 - Session 22 creates the approved GitHub issues. Session 21 prepares the source
-  artifact and issue proposal.
+  brief and issue proposal.

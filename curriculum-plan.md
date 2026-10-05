@@ -1111,22 +1111,23 @@ Learners create a planning canvas from a plain-language request, load the Sessio
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners select independent work from the issue plan and canvas, start child sessions, review each result, and update the approved plan.
+Learners select independent work from live issues, start child sessions, review
+each result, and return one parent result backed by issue evidence.
 
 **Trainer Content Outline (1 hour):**
 
 - Parent objectives and independent workstreams
-- Output packets and stop conditions
+- Bounded questions, approved inputs, stop conditions, and reviewers
 - Monitoring, redirecting, and stopping sessions
-- Consolidating only accepted evidence
+- Reviewing the parent result against live issues
 
 **Lab Outline (2 hours):**
 
 - Select workstreams from the approved issues
 - Run live GitHub Copilot orchestration
 - Wait, redirect, stop, accept, or reject live child-session work
-- Update the canvas and relevant GitHub issue
-- **Deliverable:** An orchestration plan, intervention record, reviewed result packets, and verified plan updates
+- Review the parent result and verify any approved GitHub issue update
+- **Deliverable:** An orchestration plan and reviewed parent result backed by live issues
 
 ---
 
@@ -1137,24 +1138,26 @@ Learners select independent work from the issue plan and canvas, start child ses
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners turn one manual delivery follow-up into a draft-only GitHub Copilot Automation. They review one run and decide whether GitHub or Azure Boards remains authoritative.
+Learners turn the Session 24 parent result and live issues into a draft-only
+GitHub Copilot Automation. They review two runs and decide whether GitHub or Azure
+Boards remains authoritative.
 
 **Trainer Content Outline (1 hour):**
 
 - Choosing a useful recurring task
-- Draft-only Automation configuration
-- Minimum tools, evidence, and stop conditions
+- Concise Automation definition
+- Authoritative inputs, side-effect boundaries, and stop conditions
 - GitHub and Azure Boards system-of-record decisions
 
 **Lab Outline (2 hours):**
 
-- Create the automation contract
+- Create the concise automation definition
 - Configure a manual, draft-only Automation
-- Run it against the first approved input version
-- Apply an approved source change and run the same Automation again
-- Compare both evidence packets and record keep, revise, disable, or pause
-- Produce a stakeholder update and work-system handoff
-- **Deliverable:** Two reviewed Automation runs and a system-of-record decision
+- Run it against live issues and the Session 24 parent result
+- Apply one approved issue change and run the same Automation again
+- Compare both runs on the platform and record keep, revise, disable, or pause
+- Produce a stakeholder update
+- **Deliverable:** A concise automation definition and reviewed stakeholder update
 
 ---
 

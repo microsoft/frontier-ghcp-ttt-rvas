@@ -153,25 +153,25 @@ Use these roles throughout the path:
 | Work-system steward | Confirms the authoritative GitHub or Azure Boards state |
 | Trainer | Verifies access and teaches optional maturity guidance |
 
-Use these artifact names and handoffs:
+Use these durable artifacts:
 
-| Session | Primary artifacts | Handoff |
+| Session | Authoritative result | Used next |
 | --- | --- | --- |
 | 20 | `initiative-context-brief.md` | Grounded context for Session 21 |
-| 21 | `copilot-interview-record.md`, `decision-brief.md`, `issue-proposal.md` | Product decisions for Session 22 |
-| 22 | `issue-plan.md`, live issues, `issue-handoff.md` | Status-visibility issues for Session 23 |
-| 23 | `canvas-requirements.md`, working canvas, `canvas-handoff.md` | Reconciled issue view for Session 24 |
-| 24 | `orchestration-plan.md`, workstream packets, `delivery-status-record.md` | Delivery status for Session 25 |
-| 25 | `automation-contract.md`, run output, `stakeholder-update.md` | Human-owned operating decision |
+| 21 | `decision-brief.md`, `issue-proposal.md` | Product decisions for Session 22 |
+| 22 | Live parent and child GitHub issues | Issue state for Session 23 |
+| 23 | Live canvas linked to GitHub issues | Reconciled planning view for Session 24 |
+| 24 | `orchestration-plan.md`, live issues, reviewed parent result | Authoritative inputs for Session 25 |
+| 25 | `automation-definition.md`, `stakeholder-update.md` | Human-owned operating decision |
 
-At each handoff, carry the decision owner, source paths, open questions, and the
-next action.
+At each step, keep the next action and open questions in the authoritative
+artifact.
 
 ## What learners should bring
 
 - The supplied Service Request Portal initiative
 - The supplied synthetic issue and status data
-- The supplied delivery-status records
+- The approved live issue state from the training repository
 - One recurring workflow pattern they want to evaluate
 - Their team's definition of ready or done
 - One decision that must remain with a named person

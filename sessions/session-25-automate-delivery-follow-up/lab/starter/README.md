@@ -1,16 +1,16 @@
 # Starter files
 
-Use these files for the Service Request Portal weekly status workflow.
+Use these files with the live GitHub issues and the reviewed Session 24 parent
+result.
 
 | File | Purpose |
 | --- | --- |
-| `automation-contract-template.md` | Defines the workflow boundary and accountability |
-| `session-24-delivery-status.csv` | Structured Session 24 handoff records |
-| `session-24-handoff.md` | Session 24 status and boundary summary |
-| `prepared-run-record-01.json` | Prepared record for a live GitHub Copilot review |
-| `run-record-template.json` | Run record to complete |
-| `stakeholder-update-template.md` | Final communication |
+| `automation-definition-template.md` | Defines the bounded automation |
+| `approved-input-change.md` | Describes the reviewed issue update between runs |
+| `stakeholder-update-template.md` | Holds the stakeholder-ready draft |
 
-All records are synthetic. Do not replace them with restricted or identifiable data.
+Do not copy platform run state into new forms. Use the Automations surface for run
+status and evidence.
 
-**GitHub Copilot access is required.** Stop and resolve access before using these files.
+**GitHub Copilot and GitHub MCP access are required.** Stop and resolve access
+before using these files.

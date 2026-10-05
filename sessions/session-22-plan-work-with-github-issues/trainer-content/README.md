@@ -6,7 +6,8 @@
 
 Teach learners to use GitHub MCP as a controlled work interface in the Delivery
 Decision Studio path: plan first,
-approve the write, then verify the stored result.
+approve the write, then verify the stored result. The live issues become the
+source of record.
 
 ## One-hour plan
 
@@ -86,6 +87,8 @@ Use one parent issue and three to five child issues. Each issue should have:
 - link to the decision brief.
 
 Reject technical subtasks that have no independent outcome or review point.
+The Markdown issue plan is a temporary preview. Do not commit or hand it to the
+next session.
 
 ### 4. Preview the write
 
@@ -105,6 +108,9 @@ The learner records **Approve**, **Revise**, or **Reject** before the write.
 After creation, start a fresh read. Retrieve the issues and compare them with the
 approved plan. Add the verification owner and source-decision path to one child
 issue through another preview, approval, write, and fresh read.
+
+Confirm that the live parent issue links the complete child set. Session 23 reads
+those issues directly.
 
 ## Common failure modes
 
