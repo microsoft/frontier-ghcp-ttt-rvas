@@ -59,7 +59,8 @@ while IFS= read -r -d '' file; do
 
   case "$file" in
     *.py) validate "$file" python -m py_compile "$file" ;;
-    *.js | *.mjs | *.cjs | *.ts | *.tsx) validate "$file" node --check "$file" ;;
+    *.js | *.mjs | *.cjs) validate "$file" node --check "$file" ;;
+    *.ts | *.tsx) ;;
     *.sh | *.bash) validate "$file" bash -n "$file" ;;
     *.json) validate "$file" python -m json.tool "$file" ;;
     *.yml | *.yaml) validate "$file" ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' "$file" ;;
@@ -107,6 +108,19 @@ if [[ -d "$session_26" ]]; then
     "$dotnet_solution/OrderPricing.Api/obj" \
     "$dotnet_solution/OrderPricing.ContractTests/bin" \
     "$dotnet_solution/OrderPricing.ContractTests/obj"
+fi
+
+session_17="$labs_root/session-17-copilot-sdk/lab"
+if [[ -d "$session_17" ]]; then
+  starter_project="$session_17/starter/sdk-readiness-assistant"
+  solution_project="$session_17/solution/sdk-readiness-assistant"
+
+  validate \
+    "$starter_project" \
+    bash -c "cd '$starter_project' && npm ci --quiet && npm run check"
+  validate \
+    "$solution_project" \
+    bash -c "cd '$solution_project' && npm ci --quiet && npm run check && npm test"
 fi
 
 session_27="$labs_root/session-27-python-repair-refactor/lab"

@@ -9,7 +9,7 @@
 
 ## Description
 
-The complete GitHub Copilot & Agentic Workflows curriculum: every session, every module, and every lab. This track prepares trainers to teach technical teams and non-developer product or delivery audiences. It covers first-time setup, agentic delivery, DevOps automation, enterprise governance, and role-based supervision of agent work.
+The complete GitHub Copilot & Agentic Workflows curriculum: every session, every module, and every lab. This track prepares trainers to teach technical teams and non-developer product or delivery audiences. It covers first-time setup, agentic delivery, DevOps automation, and role-based supervision of agent work.
 
 ## Prerequisites
 
@@ -18,6 +18,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 - GitHub Copilot Enterprise Cloud access
 - Experience with CI/CD and at least one IaC tool (Terraform or Bicep)
 - Node.js or Python installed (for MCP server and agent development)
+- Docker for the Copilot SDK observability lab
 - Comfort with live coding, demos, and running technical workshops
 - Access to a cloud environment (Azure, AWS, or GCP) for infrastructure labs
 - GitHub Copilot app access for canvas and orchestration labs
@@ -74,7 +75,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 
 | Order   | Session #   | Title                                       | Difficulty   | Duration   |
 | ------- | ----------- | ------------------------------------------- | ------------ | ---------- |
-| 17      | 17          | Enterprise Governance, Policies & Analytics | Advanced     | 3 hrs      |
+| 17      | 17          | Build Reliable Agent Applications with the GitHub Copilot SDK | Advanced | 3 hrs |
 | 19      | 19          | End-to-End Capstone Project                 | Advanced     | 3 hrs      |
 
 ### Module 7: Product and Delivery Teams (Beginner to Intermediate)
@@ -99,7 +100,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 3 | Sessions 07, 08, 09 | Module 2b + app + cloud agent       |
 | Day 4 | Sessions 10, 11, 12 | MCP, agents + skills                 |
 | Day 5 | Sessions 13, 14, 15 | Actions, IaC + CI/CD                 |
-| Day 6 | Sessions 16, 17, 18 | Orchestration, governance + Spec Kit |
+| Day 6 | Sessions 16, 17, 18 | Orchestration, Copilot SDK + Spec Kit |
 | Day 7 | Sessions 28, 19 | HVE delivery + capstone |
 | Day 8 | Sessions 20, 21, 22 | App foundations, interviewing + GitHub planning |
 | Day 9 | Sessions 23, 24, 25 | Canvases, orchestration + automation |
@@ -117,7 +118,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 6 | Sessions 11, 12 | Custom agents + skills           |
 | Day 7 | Sessions 13, 14 | Actions + IaC                    |
 | Day 8 | Sessions 15, 16 | CI/CD + orchestration            |
-| Day 9 | Sessions 17, 18 | Governance + Spec Kit            |
+| Day 9 | Sessions 17, 18 | Copilot SDK + Spec Kit        |
 | Day 10 | Session 28 | HVE evidence-led delivery |
 | Day 11 | Sessions 19, 20 | Capstone + Copilot app foundations |
 | Day 12 | Sessions 21, 22 | Interviewing + GitHub issue planning |
@@ -133,8 +134,8 @@ By completing this track, trainees will be able to:
 2. Customize delivery for developer, DevOps, enterprise, product, and delivery audiences
 3. Use the complete Copilot toolchain: inline, Chat, CLI, agent mode, Copilot App, canvases, cloud agent, Spaces, custom agents, MCP, skills
 4. Build canvas extensions, custom MCP servers, agent profiles, and agent skills
-5. Generate and manage GitHub Actions, Terraform/Bicep IaC, and CI/CD pipelines with Copilot
-6. Configure enterprise governance: policies, content exclusions, analytics, compliance
+5. Build a reliable TypeScript agent application with the GitHub Copilot SDK
+6. Generate and manage GitHub Actions, Terraform/Bicep IaC, and CI/CD pipelines with Copilot
 7. Apply a governed specification-driven development flow before implementation
 8. Orchestrate multi-agent teams with optional tools such as Squad
 9. Design and execute end-to-end agentic development workflows

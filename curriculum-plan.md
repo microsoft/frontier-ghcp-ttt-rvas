@@ -10,13 +10,12 @@ By completing this curriculum, trainers will be able to:
 4. **Guide** teams through agentic workflows: IDE agent mode, canvases, cloud agent, custom agents, and MCP integration
 5. **Build** custom agents (`.github/agents/`), agent skills (`.github/skills/`), canvas extensions, and MCP server integrations
 6. **Automate** GitHub Actions, IaC (Terraform/Bicep), and CI/CD workflows with Copilot assistance
-7. **Design** enterprise rollout plans covering governance, policies, analytics, and security
-8. **Orchestrate** multi-agent teams using optional tools such as Squad for advanced agentic automation
-9. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
-10. **Run** hands-on labs where trainees build real projects using the full Copilot toolchain
-11. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
-12. **Teach** product and delivery teams to use the GitHub Copilot app, create durable planning artifacts, and supervise agent work without requiring programming
-13. **Use** GitHub MCP, canvases, orchestration, and Automations with explicit review and verification
+7. **Orchestrate** multi-agent teams using optional tools such as Squad for advanced agentic automation
+8. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
+9. **Run** hands-on labs where trainees build real projects using the full Copilot toolchain
+10. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
+11. **Teach** product and delivery teams to use the GitHub Copilot app, create durable planning artifacts, and supervise agent work without requiring programming
+12. **Use** GitHub MCP, canvases, orchestration, and Automations with explicit review and verification
 
 ---
 
@@ -40,7 +39,7 @@ Module 3: Agentic Workflows ───────────────── 
     │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
-        └── Requires: Modules 1 to 3; Sessions 17 to 18 are required before the capstone
+        └── Session 17 is independent; Session 18 is required before the capstone
 
 Module 7: Product and Delivery Teams ─────────────── (Beginner to Intermediate, 6 sessions)
     └── Standalone role-based path; no programming prerequisite
@@ -54,10 +53,10 @@ Module 7: Product and Delivery Teams ──────────────�
 | **Copilot Practitioners** | Modules 1 to 2                      | 01 to 07, 29, 27, 26 | 30 hrs |
 | **Agentic Developers**    | Modules 1 to 3                      | 01 to 12, 29    | 39 hrs     |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01 to 05, 13 to 15 | 21 hrs     |
-| **Enterprise Admins**     | Module 1 + Session 17            | 01 to 03, 17    | 12 hrs     |
+| **SDK Application Developers** | Modules 1 to 3 + Session 17 | 01 to 12, 17 | 39 hrs |
 | **Product and Delivery Teams** | Module 7                    | 20 to 25        | 18 hrs     |
 | **HVE Practitioners**     | HVE Engineering                  | 01 to 07, 10 to 11, 28 | 31 hrs |
-| **Full Track**            | All Modules                      | 01 to 29        | 88 hrs     |
+| **Full Track**            | All Modules                      | All available sessions | 88 hrs |
 
 ---
 
@@ -110,15 +109,15 @@ deliverables when app access is unavailable.
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01 to 12 | 3 hrs   |
-| 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01 to 12, 17 | 3 hrs |
+| 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01 to 12 | 3 hrs |
 | 28  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions 01 to 07, 10 to 11 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| 17  | Enterprise Governance, Policies & Analytics | Advanced    | Sessions 01 to 03     | 3 hrs      |
-| 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01 to 12, 17 to 18 | 3 hrs |
+| 17  | Build Reliable Agent Applications with the GitHub Copilot SDK | Advanced | Sessions 01 to 12 | 3 hrs |
+| 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01 to 12 and 18 | 3 hrs |
 
 ### Module 7: Product and Delivery Teams (Beginner to Intermediate)
 
@@ -570,7 +569,7 @@ Covers the GitHub Copilot cloud agent and how to assign GitHub issues to it. Cop
 **Module:** Agentic Workflows
 
 **Description:**
-Introduces the Model Context Protocol (MCP). An open standard for connecting AI models to external tools and data sources. Covers MCP server architecture, configuration in VS Code and GitHub, and building custom MCP servers to extend Copilot's capabilities. Enterprise registry, allowlist, data-handling, and approval decisions are handled authoritatively in Session 17.
+Introduces the Model Context Protocol (MCP), an open standard for connecting AI models to external tools and data sources. Covers MCP server architecture, configuration in VS Code and GitHub, and building custom MCP servers to extend Copilot's capabilities. Trainers must verify enterprise registry, allowlist, data-handling, and approval requirements against current documentation and customer policy.
 
 **Trainer Content Outline (1 hour):**
 
@@ -847,54 +846,10 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 
 ---
 
-### Session 17: Enterprise Governance, Policies & Analytics
-
-**Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 03
-**Module:** Advanced Topics & Capstone
-
-**Description:**
-Covers the enterprise side of Copilot and is the authoritative governance and cost-control session for capstone and administrator delivery paths. It is also accessible after Module 1 for managers and IT leadership. Trainers learn to validate customer-specific access rather than teaching static commercial or model facts.
-
-**Trainer Content Outline (1 hour):**
-
-- Enterprise Cloud as the delivery baseline; Business only when it materially changes feasibility
-- Organization policies: enabling/disabling features, seat management
-- Content exclusions: preventing Copilot from accessing sensitive repos/paths
-- MCP registry and server access policies
-- Audit logs: tracking Copilot usage and events
-- Usage analytics: adoption metrics, acceptance rates, cloud agent activity
-- Data, retention, residency, compliance, and legal questions: how to use live official documentation and the customer's approved policy sources
-- Metered usage, budgets, stop guards, and lab-cost controls
-- Model-selection governance: task fit, quality, approved availability, and cost
-- Rollout strategies: pilot → team → org → enterprise
-- Demo: walking through the GitHub admin panels for Copilot management
-- Change management: addressing developer concerns and resistance
-
-**Lab Outline (2 hours):**
-
-- Configure organization-level Copilot policies (simulated environment)
-- Set up content exclusions for sensitive directories
-- Configure MCP registry and server access policies in the simulated environment
-- Review audit logs and identify usage patterns
-- Build a rollout plan for a fictional 500-person engineering org
-- Create a "Copilot Champion" program outline for grassroots adoption
-- **Deliverable:** A complete enterprise rollout plan document with policies, exclusions, and adoption metrics
-
-**Expected Learning Outcomes:**
-
-- Configure organization-level Copilot policies, content exclusions, and MCP registries
-- Read and interpret Copilot usage analytics
-- Create a delivery preflight covering access, policy, data handling, metering, and no-access fallback
-- Design an enterprise rollout strategy with measurable milestones
-- Address common enterprise concerns (security, IP, compliance)
-
----
-
 ### Session 18: Spec Kit: Specification-Driven Development
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 12 and 17
+**Prerequisites:** Sessions 01 to 12
 **Module:** Specification-Driven Frameworks
 **Duration:** 3 hours 30 minutes
 
@@ -973,10 +928,50 @@ delivery decision.
 
 ---
 
+### Session 17: Build Reliable Agent Applications with the GitHub Copilot SDK
+
+**Difficulty:** Advanced
+**Prerequisites:** Sessions 01 to 12
+**Module:** Advanced Topics & Capstone
+
+**Description:**
+Learners build a TypeScript command-line application on the GitHub Copilot SDK. The application streams session events, calls one deterministic custom tool, applies explicit permission and hook decisions, records visible failures, and exports OpenTelemetry traces to a local collector and Jaeger.
+
+**Trainer Content Outline (1 hour):**
+
+- SDK architecture: application, SDK client, Copilot CLI server, and agent session
+- Session lifecycle and streaming events
+- Custom tools with bounded schemas and deterministic handlers
+- Permission requests and pre-tool decisions
+- Failure, error, and session-end hooks
+- OpenTelemetry trace propagation through the SDK and CLI
+- Demo: accept one read-only request and deny one out-of-bound action
+
+**Lab Outline (2 hours):**
+
+- Inspect the staged TypeScript assistant and synthetic change data
+- Complete and test the custom readiness tool
+- Add explicit permission handling and blocking hooks
+- Run one accepted request and one denied request
+- Start the local OpenTelemetry Collector and Jaeger stack
+- Capture test, audit, and trace evidence
+- **Deliverable:** A tested TypeScript SDK application with a custom tool, permission and hook controls, live accepted and denied runs, and visible trace evidence
+
+**Expected Learning Outcomes:**
+
+- Create and close a Copilot SDK client and bounded session
+- Consume streaming events without treating partial output as a final result
+- Define and test a deterministic custom tool
+- Enforce tool and argument boundaries through permissions and hooks
+- Return visible errors for invalid input and failed tool execution
+- Trace one session from application request through tool decision and completion
+
+---
+
 ### Session 19: End-to-End Capstone Project
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 12 and 17 to 18; Session 16 is optional
+**Prerequisites:** Sessions 01 to 12 and 18; Session 16 is optional
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -984,7 +979,7 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 
 **Trainer Content Outline (1 hour):**
 
-- Recap: governance and specification before implementation
+- Recap: work boundaries and specification before implementation
 - Selecting the smallest safe toolchain for a customer scenario
 - Issue → agent → review → handover, with required human gates
 - How to adapt the scenario for customer access and policy limits
@@ -1228,8 +1223,8 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 - **Module independence:**
   - Modules 1 to 3 form the core track (required for full certification)
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
-  - Session 17 (Enterprise) can be delivered standalone with Module 1 for admin audiences and is required before the capstone
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
+  - Session 17 is an independent SDK specialization and is not a prerequisite for Session 19
   - Session 29 is an optional developer specialization. Use the supplied
     evidence fallback when GitHub Copilot app access is unavailable
   - Session 28 is the final session in the HVE Engineering track and should run

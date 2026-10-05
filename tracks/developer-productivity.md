@@ -76,4 +76,3 @@ By completing this track, trainees will be able to:
 
 - **Agentic Development**. Move into Copilot App canvases, autonomous agents, MCP servers, and custom agents
 - **DevOps & Automation**. Apply Copilot to CI/CD pipelines, GitHub Actions, and Infrastructure as Code
-- **Enterprise Rollout**. Learn governance, policies, and rollout strategies for your organization

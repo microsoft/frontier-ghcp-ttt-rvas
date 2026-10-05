@@ -38,9 +38,9 @@ draft only. Scheduling is an optional stretch after separate approval.
 
 ## Scope
 
-Session 17 covers enterprise access, policy, and administration. Session 25 starts
-after those decisions and focuses on the accountable workflow owner, one bounded
-automation, and a system-of-record decision.
+This session does not configure enterprise access, policy, or administration. It
+focuses on the accountable workflow owner, one bounded automation, and a
+system-of-record decision.
 
 ## Materials
 

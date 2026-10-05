@@ -16,6 +16,9 @@ Use this after the capstone review.
 
 How will you keep the exercise to `POST /api/bookmarks`?
 
+Use synthetic data and the existing dependencies. Stop if the work requires another
+endpoint, live data, deployment, tool configuration, or a new dependency.
+
 **Visible non-goals:**
 
 **Time or usage stop:**
@@ -26,7 +29,6 @@ How will you keep the exercise to `POST /api/bookmarks`?
 
 Which artifacts will learners submit?
 
-- [ ] Governance record
 - [ ] Accepted specification trace
 - [ ] Implementation-ready issue
 - [ ] Patch or patch plan

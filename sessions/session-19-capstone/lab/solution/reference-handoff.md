@@ -12,6 +12,9 @@
 **Non-goals:** Authentication, persistence, other Bookmark endpoints, filtering,
 deployment, CI changes, new dependencies, and tool configuration.
 
+**Constraints:** Implement only the accepted endpoint with synthetic data and the
+existing dependencies.
+
 **Expected files:**
 
 - `src/index.js`
@@ -23,8 +26,8 @@ deployment, CI changes, new dependencies, and tool configuration.
 
 **Reviewer:** Training peer acting as the human reviewer.
 
-**Stop conditions:** Pause if the change needs a new dependency, sensitive data,
-another endpoint, or a file outside the plan.
+**Stop conditions:** Pause if the work requires another endpoint, live data,
+deployment, tool configuration, or a new dependency.
 
 ### Acceptance criteria and trace
 
@@ -77,21 +80,7 @@ configuration, and custom-agent work remain deferred.
 The in-memory store resets when the process restarts. The training slice accepts
 this behavior. **Do not present it as production persistence.**
 
-## Governance record
-
-| Field | Decision |
-| --- | --- |
-| Repository boundary | Training sandbox only |
-| Workflow | Implement and review one Bookmark creation issue |
-| Data | Synthetic `.test` URLs and invented titles only |
-| Allowed tools | Approved coding assistant or manual editor, local Node.js test runner |
-| Dependencies | Existing `package.json` only |
-| Meter | One implementation run plus one correction run |
-| Threshold and stop | Stop after the correction run or any scope, data, tool, or dependency breach |
-| Meter owner | Learner |
-| Reviewer | Training peer |
-| Fallback | Manual patch or file-level patch plan |
-| Evidence request | None unresolved |
+**Deviation from the accepted issue:** None.
 
 ## Next action
 
@@ -100,5 +89,4 @@ this behavior. **Do not present it as production persistence.**
 
 **Owner:** Repository reviewer.
 
-**Trigger:** The reviewer has the patch, governance record, and passing local test
-output.
+**Trigger:** The reviewer has the patch and passing local test output.

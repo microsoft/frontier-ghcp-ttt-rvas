@@ -19,6 +19,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 - GitHub Copilot Enterprise Cloud access (Business is a fallback only where a
   session explicitly supports it)
 - Comfort with live coding and demos
+- Docker for the Session 17 observability lab
 
 ### For Technical-Track Trainees
 
@@ -97,7 +98,7 @@ access is available.
 
 | #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| 17  | [Enterprise Governance, Policies & Analytics](sessions/session-17-enterprise-governance/) | Advanced    | 3 hrs      | Covers enterprise Copilot administration, policies, content exclusions, audit logs, analytics, compliance, rollout. |
+| 17  | [Build Reliable Agent Applications with the GitHub Copilot SDK](sessions/session-17-copilot-sdk/) | Advanced | 3 hrs | Builds a TypeScript agent application with streaming, a custom tool, explicit permissions, blocking hooks, tests, and OpenTelemetry traces. |
 | 19  | [End-to-End Capstone Project](sessions/session-19-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
 
 ### Module 7: Product and Delivery Teams (Beginner to Intermediate)
@@ -130,10 +131,10 @@ access is available.
    | Copilot Practitioners | Modules 1 to 2                      | 01 to 07, 29, 27, 26 | 30 hrs |
    | Agentic Developers    | Modules 1 to 3                      | 01 to 12, 29    | 39 hrs      |
    | DevOps Engineers      | Module 1 + Session 05 + Module 4 | 01 to 05, 13 to 15 | 21 hrs     |
-   | Enterprise Admins     | Module 1 + Session 17            | 01 to 03, 17    | 12 hrs     |
+   | SDK Application Developers | Modules 1 to 3 + Session 17 | 01 to 12, 17 | 39 hrs |
    | Product and Delivery Teams | Module 7                   | 20 to 25        | 18 hrs     |
    | HVE Practitioners     | HVE Engineering                  | 01 to 07, 10 to 11, 28 | 31 hrs |
-   | Full Track            | All Modules                      | 01 to 29        | 88 hrs     |
+   | Full Track            | All Modules                      | All available sessions | 88 hrs |
 
 5. **Prepare your environment:**
    - GitHub Enterprise Cloud organization with Copilot enabled according to customer policy
@@ -155,7 +156,6 @@ ghcp-ttt/
 │   ├── developer-productivity.md
 │   ├── agentic-development.md
 │   ├── devops-automation.md
-│   ├── enterprise-rollout.md
 │   ├── product-and-delivery-teams.md
 │   ├── hve-engineering.md
 │   └── full-mastery.md
@@ -182,7 +182,7 @@ ghcp-ttt/
     ├── session-14-iac-with-copilot/
     ├── session-15-cicd-debugging-autofix/
     ├── session-16-squad-orchestration/    # Module 5: Specification-Driven Frameworks
-    ├── session-17-enterprise-governance/
+    ├── session-17-copilot-sdk/            # Module 6: Advanced & Capstone
     ├── session-18-spec-kit/
     ├── session-19-capstone/               # Module 6: Advanced & Capstone
     ├── session-20-copilot-app-foundations/ # Module 7: Product & Delivery

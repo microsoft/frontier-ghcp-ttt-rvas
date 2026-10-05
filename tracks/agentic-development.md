@@ -86,5 +86,4 @@ By completing this track, trainees will be able to:
 ## Next Steps
 
 - **DevOps & Automation**. Apply Copilot and agent mode to CI/CD pipelines and infrastructure
-- **Enterprise Rollout**. Govern and scale agentic workflows across the organization
-- **Full Mastery**. Add DevOps, Squad orchestration, enterprise governance, and capstone
+- **Full Mastery**. Add DevOps, Squad orchestration, and the capstone

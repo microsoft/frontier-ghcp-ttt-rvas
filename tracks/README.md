@@ -10,7 +10,6 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 | [Developer Productivity](developer-productivity.md) | Individual developers maximizing daily output      | 8          | 24 hrs     | Beginner to Intermediate |
 | [Agentic Development](agentic-development.md)       | Teams adopting agentic workflows                   | 13         | 39 hrs     | Beginner to Advanced     |
 | [DevOps & Automation](devops-automation.md)         | DevOps / Platform engineers                        | 7          | 21 hrs     | Beginner to Advanced     |
-| [Enterprise Rollout](enterprise-rollout.md)         | Engineering managers, IT admins, Copilot champions | 5          | 15 hrs     | Beginner to Advanced     |
 | [Product and Delivery Teams](product-and-delivery-teams.md) | PMs, POs, BAs, project managers, delivery leads | 6 | 18 hrs | Beginner to Intermediate |
 | [HVE Engineering](hve-engineering.md)               | Developers, engineering leads, and HVE trainers     | 10         | 31 hrs     | Beginner to Advanced     |
 | [Full Mastery](full-mastery.md)                     | Trainers delivering the complete curriculum        | 29         | 88 hrs     | Beginner to Advanced     |
@@ -30,9 +29,6 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
                                     ├─ DevOps / Platform focus?
                                     │   → DevOps & Automation (21 hrs)
                                     │
-                                    ├─ Rolling out to an org?
-                                    │   → Enterprise Rollout (15 hrs)
-                                    │
                                     ├─ Product or delivery role?
                                     │   → Product and Delivery Teams (18 hrs)
                                     │
@@ -51,7 +47,6 @@ Tracks are designed to stack. After completing one track, the natural next step 
 Copilot Essentials → Developer Productivity → Agentic Development → Full Mastery
                                                     ↑
                           DevOps & Automation ──────┘
-                          Enterprise Rollout ────────┘
                  Product and Delivery Teams ─────────┘
                             HVE Engineering ──────────┘
 ```

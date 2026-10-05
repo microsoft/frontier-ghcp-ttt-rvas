@@ -2,16 +2,17 @@
 
 ## Delivery objective
 
-The capstone ends with one reviewed `POST /api/bookmarks` change or patch plan. The
-learner must use a Session 17 governance record and Session 18 specification
-standards. Do not let the exercise expand into a full API, deployment, or tool tour.
+The capstone ends with one reviewed `POST /api/bookmarks` change or patch plan.
+The accepted GitHub issue holds the scope decisions. The learner must use Session 18
+specification standards. Do not let the exercise expand into a full API, deployment,
+or tool tour.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
 | 0:00 to 0:08 | Define the one-slice capstone |
-| 0:08 to 0:18 | Apply the governance gate |
+| 0:08 to 0:18 | Set the issue boundary |
 | 0:18 to 0:30 | Inspect and tighten the specification |
 | 0:30 to 0:40 | Write the implementation issue |
 | 0:40 to 0:50 | Walk through the patch and tests |
@@ -31,15 +32,12 @@ Write these non-goals where everyone can see them:
 - no deployment or CI redesign;
 - no new dependency.
 
-## Apply Session 17
+## Keep the boundary in the issue
 
-Have learners complete `lab/starter/governance-record.md` before they write code.
-Check the repository boundary, synthetic-data rule, allowed tools, dependency rule,
-meter, stop condition, reviewer, and fallback. An unknown owner or tool approval is
-a stop signal.
-
-Do not accept "policy approved" without details. Ask who approved what, which
-evidence they used, and when work must stop.
+Have learners put every scope decision in the accepted GitHub issue. Do not create a
+separate form. They must implement only `POST /api/bookmarks`, use synthetic data,
+and keep the existing dependencies. They must stop if the work requires another
+endpoint, live data, deployment, tool configuration, or a new dependency.
 
 ## Apply Session 18
 
@@ -59,9 +57,9 @@ Use this work order with the selected approved path:
 ```text
 Implement only the accepted POST /api/bookmarks issue in the training sandbox.
 Use synthetic data and the existing dependencies. Before editing, name the expected
-files and map each change to a requirement. Run npm test. Stop if the work needs a
-new dependency, another endpoint, sensitive data, or a file outside the plan. Report
-changed files, test results, deferred scope, and unresolved evidence for review.
+files and map each change to a requirement. Run npm test. Stop if the work requires
+another endpoint, live data, deployment, tool configuration, or a new dependency.
+Report changed files, test results, deviations, and deferred scope for review.
 ```
 
 After 30 minutes of implementation, move unfinished work to a patch plan. The
@@ -74,7 +72,7 @@ Review in this order:
 1. Specification and acceptance criteria.
 2. Scope and deferrals.
 3. Validation, response shape, duplicate handling, and tests.
-4. Governance record and stop conditions.
+4. Stop conditions and deviations from the accepted issue.
 5. Handoff owner and next action.
 
 Record one decision: approve, request changes, or pause. **Do not approve a serious

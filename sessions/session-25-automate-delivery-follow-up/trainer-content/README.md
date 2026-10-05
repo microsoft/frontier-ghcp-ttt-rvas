@@ -7,7 +7,7 @@ GitHub Copilot Automation. They run it twice with a manual trigger and draft-onl
 output, compare the evidence, and decide whether to keep, revise, disable, or
 pause it.
 
-Use the fictional **Service Request Portal** weekly status workflow. Do not configure enterprise policies or repeat the Session 17 administration material.
+Use the fictional **Service Request Portal** weekly status workflow. Do not configure enterprise policies.
 
 > [!IMPORTANT]
 > Verify GitHub Copilot app Automations and GitHub MCP access before the session. Stop if either capability is unavailable.

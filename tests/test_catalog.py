@@ -64,7 +64,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_catalog_matches_all_nav_session_sources(self):
         self.assertEqual([m["id"] for m in self.catalog["modules"]], list("1234567"))
-        self.assertEqual([s["id"] for s in self.catalog["sessions"]], [f"{i:02d}" for i in range(1, 30)])
+        expected_ids = [f"{i:02d}" for i in range(1, 30)]
+        self.assertEqual([s["id"] for s in self.catalog["sessions"]], expected_ids)
         sources = [
             f"sessions/{session['slug']}/{directory}README.md"
             for session in self.catalog["sessions"]
@@ -292,7 +293,7 @@ class CatalogTests(unittest.TestCase):
             cards = tags.with_class("ghcp-session-card")
             self.assertEqual(len(cards), 29)
             self.assertEqual(len(tags.with_class("ghcp-sessions")), 7)
-            self.assertEqual(len(tags.with_class("ghcp-track-card")), 8)
+            self.assertEqual(len(tags.with_class("ghcp-track-card")), 7)
             page_sessions = [
                 session
                 for module in context["session_catalog"]["modules"]

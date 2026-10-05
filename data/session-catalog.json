@@ -155,10 +155,10 @@
     },
     {
       "id": "17",
-      "slug": "session-17-enterprise-governance",
+      "slug": "session-17-copilot-sdk",
       "module": "6",
-      "title": "Enterprise Governance, Policies & Analytics",
-      "description": "Content exclusions, policy configuration, seat management, usage analytics, and measuring AI adoption ROI at scale.",
+      "title": "Build Reliable Agent Applications with the GitHub Copilot SDK",
+      "description": "Build a TypeScript agent application with streaming, a deterministic custom tool, explicit permissions, blocking hooks, tests, and OpenTelemetry traces.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },

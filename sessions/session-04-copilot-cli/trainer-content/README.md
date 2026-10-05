@@ -444,7 +444,7 @@ This produces traces, spans, and metrics for agent actions such as tool calls,
 model requests, and token use. Send them to Grafana, Datadog, or another
 OTLP-compatible backend.
 
-> **Trainer tip:** This matters most for enterprise audiences. Pair with Session 17 (Enterprise Governance) for organizations that need to monitor AI agent behavior.
+> **Trainer tip:** This matters most for enterprise audiences that need to monitor AI agent behavior.
 
 ### Session Management & Remote Access
 

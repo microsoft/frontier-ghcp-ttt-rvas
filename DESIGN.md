@@ -415,7 +415,7 @@ drawer and search controls.
 The home hero sits outside the article in the full-width hero block. Its inner
 grid is capped at `62rem`, with `1.3fr 1fr` columns, a `3rem` gap, and
 `3.2rem 2.4rem` padding. The right column stacks seven module links with `.45rem`
-gaps. Below the hero, the home index retains 29 session cards and eight tracks.
+gaps. Below the hero, the home index retains 29 session cards and seven tracks.
 Session and track grids use three and two columns, with `.8rem` gaps and a
 `62rem` content cap. Content is visible without JavaScript or reveal animation.
 
@@ -503,7 +503,7 @@ the navy overlay. Hover and selected links use navy on white. The selected label
 is also underlined. Links target focusable `#module-1` through `#module-7` headings;
 the targeted heading receives an RVAP Blue underline.
 
-**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 29 sessions and eight tracks visible; selection must not filter content.
+**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 29 sessions and seven tracks visible; selection must not filter content.
 
 `overrides/session.js` synchronizes `aria-current="location"` with the URL hash
 on initial load and `hashchange`, including deep links. Native anchor navigation

@@ -44,10 +44,9 @@
 **Deferred behavior:**  
 **Known risks:**  
 **Why it is deferred:**  
+**Deviation from the accepted issue:**
 
-## Governance record
-
-Attach or copy the completed `governance-record.md`.
+**Reason for the deviation:**
 
 ## Next action
 

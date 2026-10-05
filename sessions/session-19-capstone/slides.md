@@ -31,21 +31,17 @@ POST /api/bookmarks
 - patch or patch plan;
 - executable test evidence;
 - review decision;
-- governance record;
 - deferred scope and next action.
 
 ---
 
-# Session 17 is an input
+# Keep the boundary in the issue
 
-Before implementation, record:
+The accepted GitHub issue holds every scope decision. Implement only
+`POST /api/bookmarks`, use synthetic data, and keep the existing dependencies.
 
-- repository and data boundary;
-- allowed tools and dependencies;
-- meter, threshold, and stop condition;
-- reviewer and fallback.
-
-**Unknown approval means stop.**
+**Stop if the work requires another endpoint, live data, deployment, tool
+configuration, or a new dependency.**
 
 ---
 
@@ -108,8 +104,8 @@ The suite checks success, defaults, field validation, and duplicate URLs.
 
 # Review and handover
 
-Check the specification trace, diff, test output, dependency change, and governance
-record.
+Check the specification trace, diff, test output, dependency change, and scope
+decisions in the issue. Record any deviation in the handoff.
 
 Record one decision: approve, request changes, or pause.
 

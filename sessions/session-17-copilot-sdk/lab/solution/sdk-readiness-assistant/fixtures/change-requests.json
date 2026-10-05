@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CR-1042",
+    "service": "catalog-api",
+    "owner": "platform-team",
+    "plannedWindow": "2026-10-08T20:00:00Z",
+    "risk": "medium",
+    "rollbackPlan": "Restore the prior container image and verify the health endpoint.",
+    "approvals": ["service-owner", "change-manager"],
+    "checks": {
+      "testsPassing": true,
+      "monitoringReady": true,
+      "rollbackRehearsed": true
+    }
+  },
+  {
+    "id": "CR-2087",
+    "service": "notification-worker",
+    "owner": "application-team",
+    "plannedWindow": "2026-10-09T18:30:00Z",
+    "risk": "high",
+    "rollbackPlan": "Redeploy the previous worker release.",
+    "approvals": [],
+    "checks": {
+      "testsPassing": true,
+      "monitoringReady": false,
+      "rollbackRehearsed": false
+    }
+  }
+]

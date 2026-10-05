@@ -4,7 +4,7 @@
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions 01 to 12 and 17
+**Prerequisites:** Sessions 01 to 12
 **Duration:** 3 hours 30 minutes (1 hour trainer content, 2 hours 30 minutes lab)
 
 ## Overview

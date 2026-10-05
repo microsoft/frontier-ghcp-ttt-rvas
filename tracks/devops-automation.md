@@ -68,5 +68,4 @@ By completing this track, trainees will be able to:
 ## Next Steps
 
 - **Agentic Development**. Learn to build custom agents and MCP servers that automate infrastructure workflows
-- **Enterprise Rollout**. Understand governance policies and rollout strategies for scaling Copilot across teams
 - **Developer Productivity**. Fill in the intermediate sessions (Spaces and Code Review) for broader Copilot fluency

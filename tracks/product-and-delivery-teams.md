@@ -238,6 +238,5 @@ to supervise seeded workstreams. Both still require GitHub Copilot.
 
 ## Next steps
 
-- **Enterprise Rollout** adds organization-level policies, analytics, and adoption planning.
 - **Agentic Development** teaches technical teams how to build the agents, skills, and integrations used behind these workflows.
 - **Full Mastery** prepares trainers to deliver every technical and role-based session.
