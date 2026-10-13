@@ -26,12 +26,9 @@ tighten the profile, and rerun the same checks.
 Read the [course safety baseline](../../learning-safety-baseline.md). Use the
 synthetic JavaScript project only.
 
-You need Node.js 20 or later and a writable repository copy. If GitHub Copilot
-access is unavailable, use the profile contract test and manual simulation. If
-Node.js is unavailable, stop and do not continue the executable lab.
-
-**Fallback:** apply the profile as a manual checklist and collect the same boundary
-evidence. Do not move the profile or widen its tools.
+You need Node.js 20 or later, a writable repository copy, and GitHub Copilot with
+custom-agent support. If Copilot or Node.js is unavailable, stop the lab. Contract
+tests do not replace the bounded agent run.
 
 Do not push, merge, open an issue, or attach MCP. This lab tests the profile
 contract, not repository authority.
@@ -104,7 +101,7 @@ The tightened profile must:
 5. run `npm test`;
 6. stop when a production change is needed;
 7. request a human review decision;
-8. define a manual fallback.
+8. define a stop condition for missing access or approval.
 
 Do not claim that the profile can enforce repository permissions. The environment
 still controls what each tool can do.
@@ -153,7 +150,7 @@ Review:
 - tool aliases and the effect of omitting `tools`;
 - `disable-model-invocation` and `user-invocable`;
 - owner and contract version metadata;
-- body length, trigger, procedure, stop rule, and fallback.
+- body length, trigger, procedure, and stop rule.
 
 ## Final deliverable
 

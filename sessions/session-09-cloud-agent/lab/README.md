@@ -25,9 +25,12 @@ Submit:
 
 ## Access policy
 
-The live route requires approved Copilot cloud agent access for the training repository, synthetic data, and a named reviewer.
+Learners need Copilot cloud agent access to the training repository, synthetic
+data, and a reviewer.
 
-If access, policy approval, or reviewer ownership is missing, **do not assign the issue**. Use the manual route with the supplied sample project. Do not add credentials to issues, instructions, setup workflows, or comments.
+If access, policy approval, or reviewer ownership is missing, do not assign the
+issue. Stop the lab. Do not add credentials to issues, instructions,
+setup workflows, or comments.
 
 ## The one issue
 
@@ -111,8 +114,6 @@ Stop if the baseline failure is unexplained, setup needs a credential, or any re
 
 ## Checkpoint 3: Proposed change (35 minutes)
 
-### Live route
-
 Place the sample project in an approved training repository. Add the reviewed instructions and setup workflow if policy permits.
 Copy the contents of `starter/sample-project/` to the repository root. The setup
 workflow expects `package.json`, `package-lock.json`, `src/`, and `tests/` at that
@@ -134,17 +135,6 @@ Keep the existing issue contract. Change only src/app.js and tests/app.test.js.
 Add no dependency. Stop and ask for clarification if broader work is required.
 ```
 
-### Manual route
-
-Copy the starter project to a writable folder:
-
-```bash
-cp -R starter/sample-project working-project
-cd working-project
-```
-
-Implement only the fixed issue.
-
 ### Review the proposal
 
 Before tests, inspect the diff with `starter/pr-review-checklist.md`.
@@ -157,9 +147,9 @@ Confirm:
 - valid task creation keeps its existing response shape;
 - no dependency or unrelated endpoint changed.
 
-If no live proposal is ready after 25 minutes, use `solution/proposed-change.diff` as prepared evidence and continue the review.
+If no proposal is ready after 25 minutes, stop the run.
 
-**Visible evidence:** A pull request, local diff, or prepared diff tied to the same issue.
+**Visible evidence:** A pull request or agent-produced diff tied to the same issue.
 
 ## Checkpoint 4: Tests (25 minutes)
 
@@ -209,8 +199,8 @@ same issue → reviewed setup → proposed change → tests → review outcome
 
 | Issue | Response |
 | --- | --- |
-| Copilot cloud agent access is missing | Use the manual route. |
-| Setup workflow is not active on the default branch | Use the local baseline and record the setup gap. |
+| Copilot cloud agent access is missing | Stop the lab. |
+| Setup workflow is not active on the default branch | Stop the lab. |
 | Session edits extra files | Stop or request a scoped correction. |
 | Test output is missing | Run the verified command before deciding. |
 | A test passes but response shape changed | Request changes and cite the preserved-behavior criterion. |

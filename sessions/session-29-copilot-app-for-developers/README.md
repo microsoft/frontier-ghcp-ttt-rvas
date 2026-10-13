@@ -40,14 +40,12 @@ By the end of this session, learners can:
 
 ## Access policy
 
-**GitHub Copilot app access is required for the live route.** Before the session,
+**GitHub Copilot app access is required.** Before the session,
 confirm that each learner can install or open the app, sign in, connect the local
 training project, and start a working-tree session.
 
 If app access is unavailable, learners must not improvise with customer repositories
-or paste protected code into another service. They use the supplied fallback evidence
-pack instead. That route keeps the same decisions and deliverables, but it does not
-count as hands-on app execution.
+or paste protected code into another service. Stop the lab.
 
 ## Session structure
 

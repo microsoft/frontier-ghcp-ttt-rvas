@@ -29,10 +29,8 @@ reviewed change.
 Use only synthetic data. Confirm the repository and editor are approved for the
 exercise.
 
-For the live path, confirm GitHub Copilot access in the selected editor. If access
-is unavailable or not approved, use the **manual fallback**: write the code
-yourself, compare it with `lab/solution/`, and record the same accept, revise, or
-reject decisions in `lab-notes.md`.
+Confirm GitHub Copilot access in your editor. If it does not work, stop the lab.
+Manual implementation does not replace the inline-suggestion practice.
 
 You need:
 
@@ -55,7 +53,7 @@ The syntax check should pass. The five tests should fail because the functions d
 not return results yet.
 
 Read `utils.py`, `test_utils.py`, `change-request.md`, and `lab-notes.md`. Do not
-open the solution until you need the fallback or final comparison.
+open the solution until the final comparison.
 
 **Checkpoint:** You can name the expected result for every test before requesting
 a suggestion.

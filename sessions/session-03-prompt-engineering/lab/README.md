@@ -29,11 +29,9 @@ decision open.
 
 Use synthetic data and an approved training repository.
 
-For the live path, confirm GitHub Copilot Chat and inline suggestions are available
-in the selected editor. If access is unavailable or not approved, stop the live
-interaction and use the **manual fallback**: implement the same contract yourself,
-write the prompts you would have used in `prompt-log.md`, and compare with
-`lab/solution/api-complete/`.
+Confirm GitHub Copilot Chat access and inline suggestions in your editor. If they
+do not work, stop the lab. Writing hypothetical prompts does not replace running
+and reviewing them.
 
 You need:
 

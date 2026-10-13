@@ -91,8 +91,8 @@ issue because time ran out.**
 **Should learners add the other Bookmark endpoints?** No. Record them under deferred
 scope.
 
-**What if agent access fails?** Use the manual path or write the patch plan. Keep
-the same tests and review gate.
+**What if agent access fails?** Stop the lab. Do not count a
+patch plan as capstone completion.
 
 **What if the tests cannot run?** Record the command, failure, static evidence, and
 owner for the next action. The decision cannot be approve without executable

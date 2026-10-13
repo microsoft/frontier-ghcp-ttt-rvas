@@ -54,7 +54,7 @@ result and keeps decision authority.
 Confirm the built-in `orchestrate` skill and `/orchestrate` command in the GitHub
 Copilot app. Confirm that GitHub MCP can read the approved parent and child issues.
 
-**Stop if orchestration or issue access is unavailable.** Resolve access before the
+**Stop if orchestration or issue access is unavailable.** Fix access before the
 lab.
 
 ## Product-state note

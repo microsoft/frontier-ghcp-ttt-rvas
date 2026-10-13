@@ -15,7 +15,7 @@ able to review an inline suggestion without treating fluency as correctness.
 | 0:27 to 0:38 | Inline suggestion controls |
 | 0:38 to 0:50 | Prepared utility-function demonstration |
 | 0:50 to 0:56 | Follow-up edits and Next Edit Suggestions |
-| 0:56 to 1:00 | Manual fallback and lab handoff |
+| 0:56 to 1:00 | Access decision and lab handoff |
 
 The timings match [`slides.md`](../slides.md).
 
@@ -27,11 +27,11 @@ The timings match [`slides.md`](../slides.md).
 - Confirm the selected editor and account are approved.
 - If the exercise can create metered use, name the owner, threshold, and stop
   condition.
-- Prepare both the live path and the manual fallback.
+- Confirm access before delivery and prepare screenshots only for demo recovery.
 - Run the starter syntax check and the solution tests.
 
 Do not teach fixed prices, model lists, shortcuts, or data-handling claims. Show the
-controls available in the approved environment.
+controls available in the training environment.
 
 ## Slide delivery map
 
@@ -75,8 +75,8 @@ Confirm four boundaries:
 3. **Scope:** Which repository and files may change?
 4. **Metering:** Who owns any limit and stop decision?
 
-If any answer is missing, switch to the manual route. Do not troubleshoot policy
-by trial and error.
+If any answer is missing, stop the lab handoff and resolve the gap. Do not
+troubleshoot policy by trial and error.
 
 ### 0:27 to 0:38: Inline controls
 
@@ -118,12 +118,12 @@ Show the `profile_summary` rename from `username` to `handle`.
 If Next Edit Suggestions are available, inspect each proposed caller update. Then
 run an independent search for the old name. A prediction can miss a reference.
 
-### 0:56 to 1:00: Fallback and handoff
+### 0:56 to 1:00: Access decision and handoff
 
-**Slides:** *Manual fallback*, *Lab handoff*
+**Slides:** *Access check*, *Lab handoff*
 
-For the fallback, reveal one candidate implementation at a time from the solution.
-Learners mark accept, revise, or reject and run the same tests.
+Confirm that learners can request an inline suggestion. If they cannot, fix access
+before starting the lab.
 
 The lab continues in one module. Learners complete two simple functions, settle
 the apostrophe rule, add the summary, and review the rename.
@@ -142,7 +142,7 @@ python -m unittest -v test_utils.UtilityTests.test_normalize_username
 - A passing test supports a stated behavior. It does not prove every behavior.
 - Ambiguity belongs in a decision and a test, not in an unreviewed guess.
 - Predicted follow-up edits are proposals.
-- The manual path teaches the same engineering judgment.
+- Learners need the live surface to practice suggestion review.
 
 ## Common questions
 
@@ -162,12 +162,12 @@ verification.
 
 **Which editor shortcut should I teach?**
 
-Use the shortcut displayed by the current approved editor.
+Use the shortcut displayed by the editor.
 
 ## Lab readiness check
 
 - [ ] The starter files are open.
 - [ ] The five expected baseline failures are understood.
-- [ ] The live or manual path is declared.
+- [ ] Required Copilot access is confirmed.
 - [ ] Learners know where to record decisions.
 - [ ] The solution is available but closed.

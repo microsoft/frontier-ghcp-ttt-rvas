@@ -27,7 +27,7 @@ at 0:50. Use the recorded expected output and protect the lab handoff.
 - Confirm that no `node_modules` directory is tracked.
 - Pin MCP Inspector 2.5.0 for the demonstration.
 - Keep [`lab/solution/custom-mcp/EVIDENCE.md`](../lab/solution/custom-mcp/EVIDENCE.md)
-  open as the fallback.
+  open for trainer demo recovery.
 - Do not attach a credential, network service, or source-system data.
 
 If approved package access is unavailable, stop the executable demonstration. A

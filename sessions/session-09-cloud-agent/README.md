@@ -10,7 +10,10 @@
 
 ## Overview
 
-This session follows one synthetic issue from contract through human decision. Learners prepare the repository, start an approved Copilot cloud agent session or use the manual route, inspect the proposed change, run the required tests, and decide whether to approve, request changes, or pause.
+This session follows one synthetic issue from contract through human decision.
+Learners prepare the repository, start a Copilot cloud agent session,
+inspect the proposed change, run the required tests, and decide whether to approve,
+request changes, or pause.
 
 The issue stays fixed throughout the journey: reject blank or whitespace-only task titles while preserving valid task creation.
 
@@ -28,15 +31,16 @@ The issue stays fixed throughout the journey: reject blank or whitespace-only ta
 Learners finish with:
 
 1. the fixed issue contract;
-2. the proposed change or manual patch;
+2. the proposed change;
 3. focused test output;
 4. the review outcome.
 
 ## Access policy
 
-The live route requires Copilot cloud agent access for the training repository, an approved data classification, and a named human reviewer.
+Learners need Copilot cloud agent access to the training repository, synthetic
+data, and a human reviewer.
 
-If access or approval is missing, **do not assign the issue**. Use the manual route with the supplied sample project. The issue, file scope, tests, checkpoints, and review decision remain the same.
+If anything is missing, **do not assign the issue**. Stop the lab.
 
 ## Session materials
 

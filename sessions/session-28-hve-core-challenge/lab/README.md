@@ -36,9 +36,10 @@ next. The handoff only indexes those artifacts and records the final decision.
    trainer-managed remote build.
 
 The expected baseline is one passing health test and no implementation of
-`POST /api/decisions`. If an HVE invocation fails, use the HVE phase fallback in
-`starter/hve-phase-recovery.md` and continue with the next HVE agent. Do not replace
-the complete HVE workflow with manual artifacts.
+`POST /api/decisions`. GitHub Copilot and HVE access are required. If either is
+unavailable, stop the lab. If one HVE invocation fails after
+preflight, use `starter/hve-phase-recovery.md` and continue with the next HVE
+agent. Do not replace the complete HVE workflow with manual artifacts.
 
 ## Indicative effort
 

@@ -11,9 +11,8 @@ Use Enterprise Cloud as the governance baseline. Before a live exercise, verify
 current GitHub documentation and customer policy. Set a customer-owned stop guard
 for metered work.
 
-## No-access fallback
-
-Use the task brief and decision log to complete the API changes and review them manually.
+GitHub Copilot and Squad are required for the lab. If either is unavailable, stop
+the lab.
 
 ## Start the project
 

@@ -22,8 +22,8 @@ into production code, tighten the profile, and rerun the same test.
 - Open the weak and tightened profiles side by side.
 - Run `npm test` from `lab/starter/agent-project`.
 - Keep `PROFILE-REFERENCE.md` and `BOUNDARY-EVIDENCE.md` open.
-- Confirm current profile support only when a live surface is approved.
-- Use the manual scenario when live profile loading is unavailable.
+- Confirm profile support in the Copilot surface.
+- Stop the learner lab if live profile loading is unavailable.
 
 Do not push, merge, open issues, or attach MCP during the core demonstration.
 

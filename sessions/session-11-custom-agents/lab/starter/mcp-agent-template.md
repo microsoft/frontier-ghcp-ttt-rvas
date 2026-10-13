@@ -1,7 +1,8 @@
 # Data analyst agent profile template
 
 Use MCP only when a bounded task needs an approved external capability. Review the
-server owner, tool list, permissions, authentication, data flow, and fallback first.
+server owner, tool list, permissions, authentication, data flow, and failure
+behavior first.
 
 ````markdown
 ---

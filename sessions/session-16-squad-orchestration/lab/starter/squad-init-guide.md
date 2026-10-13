@@ -16,7 +16,8 @@ instructions. Do not rely on a training example.
 
 ## Open the project
 
-Open `squad-project/` in VS Code, run `npm install && npm start`, and open Copilot Chat. Select the approved Squad agent mode, if it is available.
+Open `squad-project/` in VS Code, run `npm install && npm start`, and open Copilot
+Chat. Select the Squad agent mode if it is available.
 
 Describe the project and the required Issue 001 boundaries:
 

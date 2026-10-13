@@ -30,10 +30,9 @@ You need:
 - permission to run the project test command;
 - `lab/starter/project-brief.md`, `feature-spec.md`, and `course-correction.md`.
 
-If Copilot Agent mode access is unavailable, **do not start the agent steps**. Use
-the manual fallback in each stage. Write the plan, make the same changes with normal
-editor tools, and run the same checks. Record where an agent would have needed
-approval.
+If Copilot Agent mode is unavailable, stop the lab. Manual
+editing does not replace planning, tool approval, steering, and review in Agent
+mode.
 
 Create a workspace outside the curriculum folder:
 
@@ -124,10 +123,6 @@ Compare the shape of your project with `lab/solution/todo-api/`. The reference i
 - [ ] `npm test` passes.
 - [ ] `lab-notes.md` contains the accepted plan and any corrections.
 
-### Manual fallback
-
-Build the project from `project-brief.md` with normal editor tools. Record the file plan and commands before running them. The checkpoint does not change.
-
 ## Stage 2: Compare Ask and Agent mode on one feature (35 minutes)
 
 `feature-spec.md` adds ownership and due-date behavior to the same Todo API.
@@ -195,10 +190,6 @@ Add the comparison to `lab-notes.md`:
 - [ ] The Ask-versus-Agent table uses observed counts or examples.
 - [ ] You can explain why Agent mode did or did not help.
 
-### Manual fallback
-
-Compare two manual approaches: a chat-style file-by-file plan and a repository-wide implementation plan. Apply the repository-wide plan, run the tests, and record the difference.
-
 ## Stage 3: Redirect a multi-file change (35 minutes)
 
 Open `course-correction.md`. Do not give it to the agent yet.
@@ -248,10 +239,6 @@ If the agent requests an unexpected dependency, network access, or broader file 
 - [ ] Tests prove the changed behavior.
 - [ ] `lab-notes.md` records whether you accepted, revised, or stopped the run and why.
 
-### Manual fallback
-
-Make the initial repository-module change, pause, then revise your own plan from `course-correction.md`. Keep a before-and-after plan in `lab-notes.md`.
-
 ## Stage 4: Review evidence and finish the handoff (20 minutes)
 
 Review the final project as if another engineer submitted it.
@@ -291,6 +278,6 @@ Submit the `session-05` workspace with:
 1. The completed `todo-api/` project.
 2. Passing test output and two manual API checks.
 3. `lab-notes.md` with the task contract, plan, tool and file review, comparison, course correction, and final decision.
-4. A clear record of any manual fallback or stopped action.
+4. A clear record of any stopped or rejected action.
 
 **Done:** A reviewer can trace the final code to the approved plan, see where you redirected the agent, and reproduce the checks.

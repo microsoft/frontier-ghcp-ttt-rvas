@@ -26,7 +26,7 @@ The timings match [`slides.md`](../slides.md).
 - Run starter syntax checks.
 - Run the solution tests.
 - Prepare a demo copy of the todo store.
-- Confirm the live or manual path.
+- Confirm GitHub Copilot Chat and inline-suggestion access.
 - Verify current context controls in official product documentation.
 - Keep `change-request.md` closed until the lab evolution stage.
 
@@ -193,6 +193,6 @@ repeat obvious code.
 
 - [ ] Starter syntax checks pass.
 - [ ] The expected starter test failures are understood.
-- [ ] The live or manual path is declared.
+- [ ] Required Copilot access is confirmed.
 - [ ] Learners know the baseline and change tests are separate.
 - [ ] The reference solution is available but closed.

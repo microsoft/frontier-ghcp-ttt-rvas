@@ -16,8 +16,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 
 - Strong software development background (any language)
 - Familiarity with GitHub (repos, PRs, issues, Actions)
-- GitHub Copilot Enterprise Cloud access (Business is a fallback only where a
-  session explicitly supports it)
+- GitHub Copilot Enterprise Cloud access
 - Comfort with live coding and demos
 - Docker for the Session 17 observability lab
 
@@ -64,9 +63,8 @@ access is available.
 | 27  | [Repair and Refactor a Broken Python Application](sessions/session-27-python-repair-refactor/) | Intermediate | 3 hrs | Repairs a broken Python application, stabilizes its tests, and refactors it without changing required behavior. |
 | 26  | [Migrate a Legacy Java Service to Modern .NET](sessions/session-26-java-to-dotnet-modernization/) | Advanced | 3 hrs | Ports a legacy Java service to modern .NET while preserving behavior through focused tests. |
 
-> **Optional specialization:** Session 29 requires GitHub Copilot app access for
-> the live route. A supplied evidence fallback preserves the workflow and
-> deliverables when app access is unavailable.
+> **Optional specialization:** Session 29 requires GitHub Copilot app access.
+> Confirm access before scheduling the session.
 
 ### Module 3: Agentic Workflows (Advanced)
 

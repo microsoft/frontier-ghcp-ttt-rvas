@@ -15,8 +15,8 @@ inspect a proposal, run focused checks, and decide whether to accept the change.
 Learners complete a small Python utility module, handle an ambiguous text rule, and
 review a follow-up rename.
 
-The session uses synthetic data and standard-library tests. Product access is
-optional because the lab includes a complete manual route.
+The session uses synthetic data and standard-library tests. Learners need GitHub
+Copilot and Python 3.10 or later.
 
 ## Learning outcomes
 
@@ -24,12 +24,10 @@ optional because the lab includes a complete manual route.
 - Confirm access, data, repository scope, and any metered-work guard before use.
 - Accept, revise, or reject an inline suggestion against explicit tests.
 - Review a predicted follow-up edit and search for missed references.
-- Complete the same workflow without product access.
 
 ## Required access
 
-For the live path, learners need GitHub Copilot enabled in an approved editor and
-Python 3.10 or later. The manual fallback needs only Python 3.10 or later.
+If GitHub Copilot or Python is unavailable, stop the lab.
 
 ## Materials
 

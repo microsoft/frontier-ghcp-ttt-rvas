@@ -39,7 +39,7 @@ Complete the track
 Confirm GitHub Copilot Automations access and GitHub MCP access before the lab.
 
 **Stop if GitHub Copilot access, Automations, or GitHub MCP access is
-unavailable.** Resolve access before continuing.
+unavailable.** Fix access before continuing.
 
 ## Part 1: Verify access and retrieve inputs
 

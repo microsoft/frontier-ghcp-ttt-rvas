@@ -30,4 +30,4 @@ Name the exact test, manual check, and evidence needed for success.
 
 ## Maintenance
 
-Name the owner, fallback, and events that require review.
+Name the owner, failure behavior, and events that require review.

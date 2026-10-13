@@ -44,7 +44,7 @@ decision.
 
 Do not add dependencies, use network tools, open a pull request, or merge.
 
-## Fallback
+## Failure behavior
 
 If the selected surface cannot load this profile, follow the same steps as a manual
 checklist. Mark the test command as **not run** when it cannot execute.

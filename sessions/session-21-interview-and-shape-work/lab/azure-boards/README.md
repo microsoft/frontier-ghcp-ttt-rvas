@@ -23,7 +23,7 @@ Use [`work-item-update-plan.md`](work-item-update-plan.md) to carry:
 
 You need:
 
-- working access to an approved GitHub Copilot surface;
+- GitHub Copilot access;
 - the supplied `decision-interview` project skill;
 - a request owner and delivery reviewer;
 - the seeded **Show request status in the portal** requirement in an approved training project;
@@ -41,8 +41,8 @@ Before starting:
 8. Confirm the trainer's reset method.
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot access fails.** Resolve access before the exercise
-> starts. If Azure Boards MCP is unavailable, use the browser. If neither Azure
+> **Stop if GitHub Copilot access fails.** Fix access before the exercise starts.
+> If Azure Boards MCP is unavailable, use the browser. If neither Azure
 > Boards path works, stop and resolve project access.
 
 Do not configure a new organization, process, field, or MCP server during the lab.

@@ -181,16 +181,11 @@ The reference project also includes the implemented route and passing tests.
 
 ---
 
-# Tabletop route
+# Required access
 
-Use the same issue packet when the live tool path is unavailable:
-
-1. A learner acting as lead assigns the issue.
-2. A backend learner writes the bounded change.
-3. A tester runs the focused checks.
-4. The lead records approve, request changes, or pause.
-
-The tabletop route produces the same evidence as the live route.
+Confirm GitHub Copilot, Squad, repository integration,
+and the network path before the lab. If a requirement is unavailable, stop and
+resolve it. A tabletop simulation does not demonstrate orchestration.
 
 ---
 

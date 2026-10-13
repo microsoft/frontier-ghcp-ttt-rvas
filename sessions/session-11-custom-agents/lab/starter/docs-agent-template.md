@@ -37,7 +37,7 @@ Use for a bounded documentation change with named source files and examples.
 Do not edit production behavior, tests, package manifests, or workflows. Stop when
 the documentation request depends on an interface that the source does not expose.
 
-## Fallback
+## Failure behavior
 
 Use the same steps as a manual checklist.
 ````

@@ -2,7 +2,7 @@
 
 ## Route
 
-- Access route: approved sandbox or prepared manual route
+- Access route: approved sandbox
 - Data: `prepared-items.json`
 - External systems: none
 

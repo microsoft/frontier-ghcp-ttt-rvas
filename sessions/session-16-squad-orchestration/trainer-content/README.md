@@ -28,8 +28,8 @@ changes, and use a manual workflow when the tool path is unavailable.
 | 0:17 to 0:27 | Shared memory | Learners can separate durable decisions from temporary work. |
 | 0:27 to 0:35 | Work monitoring and issues | Learners can map an issue to assignment, review, and closure. |
 | 0:35 to 0:47 | Prepared demo | Initialize or inspect a small team and assign one bounded issue. |
-| 0:47 to 0:55 | Decision framework | Learners select individual, team, or manual delivery. |
-| 0:55 to 1:00 | Lab handoff | Confirm the approved path and fallback. |
+| 0:47 to 0:55 | Decision framework | Learners select individual or team delivery. |
+| 0:55 to 1:00 | Lab handoff | Confirm the approved path and required access. |
 
 The original guide budgeted 85 minutes. This version fits the architecture and
 demonstration into one hour.
@@ -101,7 +101,9 @@ Issue with acceptance criteria → assignment → bounded change →
 focused checks → human review → merge or follow-up issue
 ```
 
-Set clear stop conditions: missing policy approval, unclear ownership, a meter threshold, a failing test, an unexpected dependency, or a task that expands beyond its issue. The manual fallback is a human triage and review of the same issues.
+Set clear stop conditions: missing policy approval, unclear ownership, a meter
+threshold, a failing test, an unexpected dependency, or a task that expands beyond
+its issue.
 
 ## 5. Prepared demonstration (0:35 to 0:47)
 
@@ -127,7 +129,8 @@ demonstration.
 6. **0:46 to 0:47: Record the decision.** Open `.squad/decisions.md`. Show the
    approved decision, evidence, owner, and date.
 
-If the tool is unavailable, do not improvise commands. Walk through the prepared files and use the manual assignment and review process.
+If the tool is unavailable during the trainer demonstration, walk through the
+prepared files. Fix access before the learner lab.
 
 Use one bounded work order:
 
@@ -163,13 +166,12 @@ measure success.
 Point learners to `lab/README.md`.
 
 1. Learners run the starter tests.
-2. They choose the live or tabletop route.
+2. They confirm the Squad route.
 3. They carry Issue 001 through assignment, implementation, tests, and review.
 4. They compare their packet with `lab/solution/squad-project/`.
 
 State the deliverable aloud: **one reviewed issue with a matching durable decision
-record**. The live and tabletop routes use the same issue contract and verification
-checks.
+record**.
 
 ## Common questions
 

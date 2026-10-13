@@ -82,9 +82,8 @@ Module 7: Product and Delivery Teams ──────────────�
 | 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01 to 07 | 3 hrs |
 | 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01 to 07 | 3 hrs |
 
-**Optional specialization:** Session 29 requires GitHub Copilot app access for
-the live route. A supplied evidence fallback preserves the workflow and learner
-deliverables when app access is unavailable.
+**Optional specialization:** Session 29 requires GitHub Copilot app access.
+Confirm access before scheduling the session.
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -475,9 +474,8 @@ independent critique, pull-request readiness, and a manual read-only automation.
 - Make a pull-request readiness decision from recorded proof
 - Run and review a manual read-only automation
 
-> **Optional specialization:** GitHub Copilot app access is required for the live
-> route. A supplied evidence fallback preserves the same workflow and learner
-> deliverables when app access is unavailable.
+> **Optional specialization:** GitHub Copilot app access is required. Confirm
+> access before scheduling the session.
 
 ---
 
@@ -488,7 +486,7 @@ independent critique, pull-request readiness, and a manual read-only automation.
 **Module:** Agentic Workflows
 
 **Description:**
-Introduces the GitHub Copilot App as a customizable work surface. Trainers use the Customize area to explain plugins, skills, MCP servers, and canvases. Learners create a small canvas for a synthetic workflow, then review its state, actions, data boundary, ownership, and fallback.
+Introduces the GitHub Copilot App as a customizable work surface. Trainers use the Customize area to explain plugins, skills, MCP servers, and canvases. Learners create a small canvas for a synthetic workflow, then review its state, actions, data boundary, ownership, and failure handling.
 
 **Trainer Content Outline (1 hour):**
 
@@ -498,8 +496,8 @@ Introduces the GitHub Copilot App as a customizable work surface. Trainers use t
 - Choosing a canvas for visible state, steering, or a handoff artifact
 - Project scope (`.github/extensions/`) and personal scope (`~/.copilot/extensions/`)
 - Demo: create a delivery-readiness canvas with `/create-canvas`
-- Design review: state, user actions, agent capabilities, validation, ownership, and fallback
-- Security: synthetic data, approved actions, least privilege, and no-access fallback
+- Design review: state, user actions, agent capabilities, validation, and ownership
+- Security: synthetic data, approved actions, least privilege, and access checks
 
 **Lab Outline (2 hours):**
 
@@ -508,15 +506,15 @@ Introduces the GitHub Copilot App as a customizable work surface. Trainers use t
 - Create the canvas with `/create-canvas` on an approved Copilot App surface
 - Add one bounded user action and one agent-callable capability
 - Test direct edits and agent updates against the same shared artifact
-- Complete a peer review of scope, data, actions, owner, and fallback
-- **Deliverable:** A reviewed canvas brief and a canvas created in an approved sandbox, or the manual fallback record
+- Complete a peer review of scope, data, actions, and owner
+- **Deliverable:** A reviewed canvas brief and a canvas created in an approved sandbox
 
 **Expected Learning Outcomes:**
 
 - Explain how a canvas differs from instructions, skills, custom agents, and MCP servers
 - Build a bounded canvas in the Copilot App
 - Define user actions and agent capabilities around shared state
-- Review canvas scope, data handling, ownership, and fallback before use
+- Review canvas scope, data handling, ownership, and failure handling before use
 
 ---
 
@@ -828,7 +826,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 
 **Lab Outline (2 hours):**
 
-- Use the provided Squad example or a no-install role-play fallback
+- Use the approved Squad installation and provided example
 - Cast a team: lead, frontend, backend, tester, scribe
 - Assign work to individual agents and observe output
 - Set up GitHub Issues integration: watch agents pick up and complete issues
@@ -1228,8 +1226,8 @@ Learners diagnose a broken Python application, restore its expected behavior, an
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
   - Session 17 is an independent SDK specialization and is not a prerequisite for Session 19
-  - Session 29 is an optional developer specialization. Use the supplied
-    evidence fallback when GitHub Copilot app access is unavailable
+  - Session 29 is an optional developer specialization. Confirm GitHub Copilot
+    app access before scheduling it
   - Session 28 is the final session in the HVE Engineering track and should run
     after Sessions 10 to 11
   - Module 7 is a standalone role-based path and does not require programming experience

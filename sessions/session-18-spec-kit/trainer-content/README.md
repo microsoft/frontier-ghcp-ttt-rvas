@@ -16,7 +16,7 @@ documented living-spec workflow to add restore behavior.
 | 0:18 to 0:30 | Requirements and clarification |
 | 0:30 to 0:42 | Planning, checklists, tasks, and analysis |
 | 0:42 to 0:52 | Implementation and convergence |
-| 0:52 to 1:00 | Installation, fallback, demonstration, and lab handoff |
+| 0:52 to 1:00 | Installation, demonstration, and lab handoff |
 
 The timings match the agenda in [`slides.md`](../slides.md). Keep the first five
 segments moving so the prepared demonstration and lab handoff receive the final
@@ -139,7 +139,7 @@ GitHub Issues*
 The final slides set the approved installation path, show one real gap, and hand
 control to the lab.
 
-### 0:52 to 1:00: Installation, fallback, demonstration, and lab handoff
+### 0:52 to 1:00: Installation, demonstration, and lab handoff
 
 **Slides:** *Approved installation paths*, *Prepared demonstration*, and *Lab
 handoff*

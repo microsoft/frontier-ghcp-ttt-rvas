@@ -2,8 +2,7 @@
 
 ## Access path
 
-- [ ] Live Copilot path
-- [ ] Manual fallback
+- [ ] Required Copilot access confirmed
 
 ## Suggestion decisions
 

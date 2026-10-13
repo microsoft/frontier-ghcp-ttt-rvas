@@ -11,8 +11,7 @@
 
 Review AI-assisted work within a bounded scope. Write evidence-based comments,
 apply targeted fixes, and make a human decision. The starter project includes
-deliberate defects for comparing human review, Copilot-assisted review, and the
-manual path.
+deliberate defects for comparing human review and Copilot-assisted review.
 
 | Exercise | Topic | Time |
 | --- | --- | --- |
@@ -35,25 +34,16 @@ Before you start, record these decisions in your notes:
 
 1. **Repository scope:** Are you using only `lab/starter/review-project/`, a private training fork, or an approved internal sandbox?
 2. **Data boundary:** Are all examples synthetic and allowed for review tooling?
-3. **Review surface:** Is Copilot review, local agent mode, or a human-only review permitted?
+3. **Review surface:** Is Copilot review available?
 4. **Required checks:** Which command proves the starter project still works?
 5. **Stop guard:** What time, usage, or policy condition requires you to stop automated work?
 
-> **Success criteria:** You can explain what is allowed, what is out of scope, who reviews the work, and which check or manual inspection validates the change.
+> **Success criteria:** You can explain what is allowed, what is out of scope, who
+> reviews the work, and which check validates the change.
 
----
-
-## No-access fallback for the whole lab
-
-If Copilot review, GitHub pull requests, or cloud access are unavailable, complete the workflow locally:
-
-1. Copy `lab/starter/review-project/` to a writable sandbox.
-2. Read `lab/starter/code-changes.md` and apply the intentionally flawed changes by hand.
-3. Use `lab/starter/partner-review-checklist.md` as the review form.
-4. Record each finding as if it were a pull-request comment: file, line or function, severity, evidence, and suggested fix.
-5. Correct the project manually, run the available checks, and compare the outcome with `lab/solution/README.md` if a solution reference is available in your delivery environment.
-
-> **Check:** You produce review comments, corrected code, test evidence, and a final human decision without automated review access.
+Learners need GitHub Copilot review, pull-request access, Git, Node.js, and npm. If
+any of these are unavailable, stop the lab. A local
+worksheet does not replace the pull-request and assisted-review practice.
 
 ---
 
@@ -151,12 +141,6 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
    > anything useful that you missed, reject unsupported findings, and record
    > whether the new information changes your final decision.
 
-### Exercise 1 no-access fallback
-
-If pull requests or Copilot review are unavailable, review the local diff or copied
-files. Write comments in the review worksheet instead of a PR. The fallback is
-complete when another participant can understand what must change before approval.
-
 ### Checkpoint
 
 You are ready to continue when you can answer:
@@ -195,7 +179,7 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
 5. **Add or update focused tests in `tests/api.test.js`.** Cover the behavior that was missing from the original test suite.
 
-   > **Success criteria:** New tests fail before the fix and pass after the fix, or your notes explain why a manual verification is being used instead.
+   > **Success criteria:** New tests fail before the fix and pass after the fix.
 
 6. **Run checks again.**
 
@@ -209,22 +193,11 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
    > **Success criteria:** A reviewer can trace every fix back to an original finding.
 
-### Exercise 2 no-access fallback
-
-If you cannot install dependencies or run tests, do a static validation pass:
-
-1. Read the changed functions line by line.
-2. Create manual input/output examples for each endpoint or helper.
-3. Ask a peer to execute the same examples mentally or in another environment.
-4. Mark each fix as verified only when the expected output is explicit.
-
-> **Fallback success:** The change record states which checks were not run, why they were unavailable, and what evidence was used instead.
-
 ### Checkpoint 2: fixes trace to findings
 
 - [ ] Every blocking finding maps to a focused fix.
-- [ ] New tests or manual examples cover the missed behavior.
-- [ ] `npm test` passes, or the fallback record states why it did not run.
+- [ ] New tests cover the missed behavior.
+- [ ] `npm test` passes.
 - [ ] The fix evaluation names residual risk.
 
 ---
@@ -259,11 +232,11 @@ Resolve a merge conflict by preserving intent and adding verification. Do not bl
 
    > **Expected output:** The file contains no `<<<<<<<`, `=======`, or `>>>>>>>` markers.
 
-5. **Add focused tests or examples.** Verify date formatting, default currency behavior, explicit currency behavior, and any unchanged helper behavior.
+5. **Add focused tests.** Verify date formatting, default currency behavior, explicit currency behavior, and any unchanged helper behavior.
 
-   > **Success criteria:** Tests or examples show that neither branch's intended behavior was lost.
+   > **Success criteria:** Tests show that neither branch's intended behavior was lost.
 
-6. **Run the relevant check.** Use the project test command when available, or run a direct Node.js invocation for the utility functions.
+6. **Run the project test command.**
 
    > **Expected output:** The check passes and produces output you can use in the review.
 
@@ -271,17 +244,11 @@ Resolve a merge conflict by preserving intent and adding verification. Do not bl
 
    > **Success criteria:** The reviewer can explain why both original branch goals are represented in the merged result.
 
-### Exercise 3 no-access fallback
-
-If you cannot create branches or run Git commands, use the conflict file as a paper
-exercise. Copy the resolved function bodies into your notes and list the tests you
-would run. Ask a peer to confirm that the resolution preserves both branch goals.
-
 ### Checkpoint 3: conflict intent is preserved
 
 - [ ] No conflict markers remain.
 - [ ] Both branch goals appear in the resolved behavior.
-- [ ] Tests or examples cover date and currency formatting.
+- [ ] Tests cover date and currency formatting.
 - [ ] A peer can explain the merge decision from the record.
 
 ---
@@ -300,7 +267,7 @@ Make the final review decision from evidence, not an automated suggestion.
 
 2. **Record the fix evidence.** Include before/after behavior, test names, and command output.
 
-   > **Expected output:** A reviewer can reproduce the result or understand the manual fallback evidence.
+   > **Expected output:** A reviewer can reproduce the result from the recorded evidence.
 
 3. **Classify remaining risk.** Use these categories:
 
@@ -324,10 +291,6 @@ Make the final review decision from evidence, not an automated suggestion.
    > **Expected output:** The comparison table identifies differences, false
    positives, added evidence, and any finding that changed the final verdict.
 
-### Exercise 4 no-access fallback
-
-If no automated review was used, compare your review with a peer's review. The fallback records the same evidence, decision, and rationale.
-
 ### Checkpoint 4: final decision is evidence-based
 
 - [ ] The decision is approve, request changes, or pause.
@@ -341,10 +304,9 @@ Submit one folder or document containing:
 
 1. The completed `partner-review-checklist.md` or equivalent review notes.
 2. A list of blocking findings and the smallest fix for each.
-3. Test or manual verification evidence for the corrected project.
+3. Test evidence for the corrected project.
 4. The resolved conflict decision and validation evidence.
 5. A final human review decision: approve, request changes, or pause.
-6. The no-access fallback record, even if you did not need to use it.
 
 > **Done:** A reviewer can reconstruct the original risk, fix, validation, and final decision without undocumented tool behavior.
 
@@ -354,7 +316,6 @@ Submit one folder or document containing:
 
 - [ ] Findings are tied to evidence and acceptance criteria.
 - [ ] A human reviewer made the final decision.
-- [ ] Required checks were run or a manual fallback was documented.
+- [ ] Required checks were run.
 - [ ] Metered work had an agreed stop guard.
-- [ ] The manual fallback is complete and reproducible.
 - [ ] Starter files used: `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`, `review-project/`, and `conflict-scenario/`.

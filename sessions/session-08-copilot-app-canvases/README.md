@@ -21,22 +21,25 @@ A canvas is a shared interactive surface. People use visible controls while an a
 - Write validation rules that reject unsafe or incomplete state changes.
 - Create and review a project-scoped or user-scoped canvas.
 - Recover from a rejected action without weakening the contract.
-- Record ownership, review, fallback, and retirement decisions.
+- Record ownership, review, failure handling, and retirement decisions.
 
 ## Deliverables
 
 Learners submit:
 
 1. a completed canvas contract;
-2. a canvas created in an approved sandbox, or the manual simulation record;
+2. a canvas created in an approved sandbox;
 3. checkpoint evidence for direct, agent-requested, rejected, and recovered changes;
 4. a final state that matches the contract.
 
 ## Access policy
 
-The live route requires GitHub Copilot app access and the built-in `/create-canvas` skill. Project scope also requires approval to create files under `.github/extensions`.
+The lab requires GitHub Copilot app access and the built-in `/create-canvas` skill.
+Project scope also requires approval to create files under `.github/extensions`.
 
-If app access, `/create-canvas`, or the requested scope is unavailable, **do not bypass policy or install a replacement**. Use the manual route in the lab. It uses the same contract, prepared inputs, state transitions, rejection, recovery, and review gate.
+If app access or `/create-canvas` is unavailable, stop the lab. If project scope
+is unavailable, use user scope. **Do not bypass policy
+or install a replacement.**
 
 ## Session materials
 

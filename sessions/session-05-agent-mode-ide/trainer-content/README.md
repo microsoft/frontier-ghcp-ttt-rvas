@@ -12,11 +12,12 @@ Use Enterprise Cloud as the governance baseline. Verify current official GitHub 
 2. Verify the current documentation and the applicable policy for the intended workflow and tools.
 3. Choose a non-sensitive, bounded starter task with explicit acceptance criteria.
 4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
-5. Prepare the manual version of the task.
+5. Confirm Agent mode access for every learner before the lab starts.
 
-### No-access fallback
+### Access failure
 
-Learners write the same plan, make the smallest change manually, run the required tests, and review it against the stated criteria. A trainer may use only an approved recorded example. Do not bypass policy.
+Stop the learner lab and fix access. A prepared recording may preserve the
+trainer demonstration, but it does not count as learner completion.
 
 ## Session objective
 
@@ -32,12 +33,12 @@ Learners own the task definition and approvals. The assistant proposes work with
 
 | Segment | Activity |
 | --- | --- |
-| Preflight | Confirm scope, policy, data, tools, measurement, and fallback. |
+| Preflight | Confirm scope, policy, data, tools, measurement, and access. |
 | Plan | Write a bounded goal, constraints, and acceptance criteria. |
 | Act | Inspect proposed changes and commands before approval. |
 | Observe | Read test output, diffs, and unexpected effects. |
 | Review | Validate correctness, safety, scope, and maintainability. |
-| Fallback | Complete the same task manually. |
+| Access gate | Stop when required Agent mode access is missing. |
 
 ## Trainer talking points
 
@@ -89,7 +90,7 @@ Ask learners to identify one point in their own workflow where a plan or review 
 | 0:28 to 0:43 | Scripted multi-file demo | Plan, tool decisions, diff, and test evidence are reviewed. |
 | 0:43 to 0:50 | Chat, agent, or manual decision | Learners select a workflow from task characteristics. |
 | 0:50 to 0:57 | Intervention exercise | Learners redirect or stop without expanding scope. |
-| 0:57 to 1:00 | Close and lab handoff | Live and fallback paths are assigned. |
+| 0:57 to 1:00 | Close and lab handoff | Required access is confirmed. |
 
 ### Time-pressure cutpoints
 
@@ -99,7 +100,7 @@ Ask learners to identify one point in their own workflow where a plan or review 
 - At 0:38, stop after route and test review; describe the service edit.
 - At 0:43, skip the mode table and state the decision rule.
 - At 0:50, run one redirect rather than two.
-- Never cut preflight, independent verification, stop rules, or fallback.
+- Never cut preflight, independent verification, or stop rules.
 
 ## Segment 1: From assistant to agent (0:00 to 0:08)
 
@@ -281,7 +282,7 @@ Ask learners:
 - Does the diff match the approved file graph?
 - Which result was independently reproduced?
 
-### No-access/manual fallback
+### Prepared demonstration
 
 Distribute the prepared contract and code shape.
 
@@ -295,16 +296,19 @@ Pairs write:
 
 Reveal the illustrative code only after plans are complete.
 
-The same rubric applies; no live agent is needed.
+Use this only to recover the trainer demonstration. Learners still need Agent mode
+for the lab.
 
 ### Demo recovery
 
-- If agent mode is unavailable, switch immediately to the manual plan.
+- If Agent mode is unavailable during the demonstration, use the prepared example
+  and fix access before the lab.
 - If the plan is too broad, say: "Stop. Use only the three named files and show a revised plan."
 - If a dependency is proposed, reject it and restate the no-dependency constraint.
 - If tests fail, ask for an explanation tied to one failing assertion before allowing revision.
-- If repeated revisions add no evidence, stop and complete the smallest fix manually.
-- If metering reaches the defined guard, record progress and use the prepared diff.
+- If repeated revisions add no evidence, stop the run and explain the smallest
+  acceptable correction.
+- If metering reaches the defined guard, stop and record progress.
 
 ### Transition
 
@@ -436,7 +440,7 @@ If that live path is not approved, learners plan the same tasks, make the smalle
 
 ### Lab readiness checklist
 
-- [ ] Approved live or manual path is assigned.
+- [ ] Required Agent mode access is confirmed.
 - [ ] Repository copy contains no sensitive data.
 - [ ] Goal, constraints, tests, and stop rules are written.
 - [ ] Human reviewer is named.

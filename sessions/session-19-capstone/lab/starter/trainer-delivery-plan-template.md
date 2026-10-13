@@ -12,7 +12,7 @@ Use it after delivery to record one change for the next run.
 
 **Approved implementation path:**
 
-**Fallback path:**
+**Demo recovery:**
 
 ## Boundary
 

@@ -31,6 +31,6 @@ Do not edit production code, tests, manifests, or workflows. Do not invent
 interfaces, parameters, examples, or test results. Stop when the requested text
 depends on behavior that cannot be verified.
 
-## Fallback
+## Failure behavior
 
 Apply the same steps manually and mark checks that were not executed.

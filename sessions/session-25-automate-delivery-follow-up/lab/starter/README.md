@@ -12,5 +12,5 @@ result.
 Do not copy platform run state into new forms. Use the Automations surface for run
 status and evidence.
 
-**GitHub Copilot and GitHub MCP access are required.** Stop and resolve access
-before using these files.
+**GitHub Copilot and GitHub MCP access are required.** Fix access before using
+these files.

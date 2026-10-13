@@ -25,8 +25,8 @@ without changing the reports.
 
 Use the repository Dev Container or GitHub Codespaces.
 
-Confirm GitHub Copilot access before starting. If Copilot access is missing, unavailable, or blocked in the approved environment,
-**stop the lab**. Resolve access first.
+Confirm GitHub Copilot access before starting. If Copilot access is missing, unavailable, or blocked in the training environment,
+**stop the lab**. Fix access first.
 
 Run:
 
@@ -59,7 +59,7 @@ On Windows PowerShell, activate with:
 .\.venv\Scripts\Activate.ps1
 ```
 
-### Native setup fallback
+### Native setup alternative
 
 If you cannot use the Dev Container or Codespaces, install Python 3.11 or later,
 copy `lab/starter/` to a writable folder, then run the same virtual-environment

@@ -28,7 +28,7 @@ Session 01 | 3 hours
 | Inline suggestion controls | 11 min |
 | Prepared utility demonstration | 12 min |
 | Follow-up edits | 6 min |
-| Fallback and lab handoff | 4 min |
+| Access decision and lab handoff | 4 min |
 
 ---
 
@@ -98,24 +98,17 @@ More context is useful only when it is relevant and approved.
 2. Confirm the repository and data classification.
 3. Limit the task to named files.
 4. Name any metered-work owner and stop condition.
-5. Prepare the manual route.
 
-If approval is unclear, use the fallback.
+If access is unclear, stop the lab.
 
 ---
 
 # Access policy
 
-The live lab requires GitHub Copilot in an approved editor.
+The lab requires GitHub Copilot.
 
-The manual fallback uses the same:
-
-- starter code;
-- acceptance tests;
-- review decisions;
-- final verification.
-
-**Access changes the tool path, not the learning objective.**
+If access is unavailable, stop. Manual implementation does not demonstrate how to
+inspect, accept, revise, or reject an inline suggestion.
 
 ---
 
@@ -199,15 +192,10 @@ A predicted edit can miss a reference.
 
 ---
 
-# Manual fallback
+# Access check
 
-When live access is unavailable:
-
-1. Implement the function manually.
-2. Compare it with one prepared candidate.
-3. Mark accept, revise, or reject.
-4. Run the same tests.
-5. Record the same evidence.
+Confirm that every learner can request and review an inline suggestion before the
+lab starts. Fix access problems before handing off the exercise.
 
 ---
 

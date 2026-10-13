@@ -62,9 +62,11 @@ Ask learners to explain why each source is needed and what is excluded.
 
 ---
 
-# No-access fallback
+# Required access
 
-Assemble the same context packet manually. Use it to plan and review the change without a live surface, then compare the result with the stated acceptance criteria.
+Confirm Spaces and GitHub Copilot access before the lab. If either is unavailable,
+stop the lab. A manually assembled packet does not demonstrate Space
+creation, reuse, or behavior.
 
 ---
 

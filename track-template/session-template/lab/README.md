@@ -13,6 +13,13 @@
 - [Any prior sessions required]
 - [Any tools or accounts needed]
 
+## Required access
+
+Confirm that [required Copilot tool] is available and that you are signed in.
+
+If the required tool is unavailable, stop the lab. Do not
+replace it with another assistant or a manual simulation.
+
 ## Setup
 
 1. [Setup step 1]

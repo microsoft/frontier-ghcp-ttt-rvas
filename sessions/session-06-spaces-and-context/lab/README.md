@@ -24,16 +24,15 @@ Read the [course safety baseline](../../learning-safety-baseline.md). Use only t
 
 You need:
 
-- GitHub Copilot access in the approved editor;
+- required GitHub Copilot access in the editor;
 - Copilot Spaces access if you will use the live Space path;
 - a repository or approved sandbox that can hold the Storefront API;
 - Node.js and npm;
 - permission to add repository instructions and prompt files.
 
-If Copilot Spaces is unavailable, use the **local context-packet fallback** in each
-stage. If all Copilot access is unavailable, **do not start the live Copilot
-steps**. Draft the same context artifacts and run the project locally. Complete the
-comparison through peer review.
+If Copilot Spaces or GitHub Copilot is unavailable, stop the lab. A local context
+packet can support later review, but it does not replace creating and testing a
+Space.
 
 Create a writable copy:
 
@@ -99,10 +98,6 @@ Do not write code yet.
 
 Verify every claim against the selected sources.
 
-### Local context-packet fallback
-
-If Spaces is unavailable, create `context-packet.md`. Link the same five files, copy only the task-relevant rules, and answer the question manually or with approved local Chat attachments.
-
 ### Checkpoint 1: context scope is visible
 
 - [ ] `context-notes.md` names the task and acceptance criteria.
@@ -161,10 +156,6 @@ Compare your instruction file with `lab/solution/ecommerce-project/.github/copil
 - [ ] Invalid thresholds produce a structured `400` response.
 - [ ] Existing product routes still work.
 - [ ] `context-notes.md` records one instruction Copilot followed and one item you still had to review.
-
-### Manual fallback
-
-Apply the instructions as a review checklist. Implement or describe the endpoint manually and run the same curl checks.
 
 ## Stage 3: Compare one task across context levels (30 minutes)
 

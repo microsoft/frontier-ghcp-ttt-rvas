@@ -67,7 +67,7 @@ Submit the reviewed result.
 
         self.assertEqual(findings, [])
 
-    def test_unavailable_without_an_access_stop_or_fallback_is_rejected(self):
+    def test_unavailable_without_an_access_stop_is_rejected(self):
         findings = self.validate_lab_text(
             """# Lab
 
@@ -84,7 +84,7 @@ Submit the reviewed result.
         self.assertEqual(len(findings), 1)
         self.assertIn("Missing access policy", findings[0]["message"])
 
-    def test_lab_accepts_intentional_fallback_guidance(self):
+    def test_lab_rejects_manual_fallback_without_required_access(self):
         findings = self.validate_lab_text(
             """# Lab
 
@@ -100,7 +100,8 @@ Submit the reviewed result.
 """
         )
 
-        self.assertEqual(findings, [])
+        self.assertEqual(len(findings), 1)
+        self.assertIn("Missing access policy", findings[0]["message"])
 
     def test_lab_rejects_missing_access_policy(self):
         findings = self.validate_lab_text(

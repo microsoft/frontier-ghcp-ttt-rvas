@@ -13,7 +13,8 @@ Learners should leave the teaching hour able to define a canvas contract, explai
 Before class:
 
 1. Confirm GitHub Copilot app access and the built-in `/create-canvas` skill.
-2. Decide whether project scope under `.github/extensions` is approved. Use user scope or the manual route when it is not.
+2. Decide whether project scope under `.github/extensions` is allowed. Use user
+   scope when it is not.
 3. Use only the synthetic files in `../lab/starter/`.
 4. Run:
 
@@ -54,7 +55,7 @@ If one condition fails, use the prepared manual demo. **Do not bypass a policy, 
 
 | Time | Segment | Learner evidence |
 | --- | --- | --- |
-| 0:00 to 0:05 | Outcome and access gate | Live or manual route selected |
+| 0:00 to 0:05 | Outcome and access gate | Required access confirmed |
 | 0:05 to 0:13 | Choose the right customization | Canvas decision explained |
 | 0:13 to 0:23 | Build the contract | State, actions, capabilities, validation |
 | 0:23 to 0:30 | Inspect prepared inputs and harness | Passing local contract tests |
@@ -196,7 +197,7 @@ Inspect:
 - visible human actions;
 - agent-callable capabilities;
 - validation messages;
-- owner, fallback, and retirement trigger.
+- owner, failure handling, and retirement trigger.
 
 Remove generated features that the contract did not request. Pause if the canvas
 still violates the contract.
@@ -220,9 +221,9 @@ End with:
 
 | Failure | Recovery |
 | --- | --- |
-| `/create-canvas` is missing | Use the manual route. Do not install a replacement. |
-| Project scope is not approved | Use user scope or the manual route. |
-| Generation takes too long | Switch to prepared evidence at 0:38. |
+| `/create-canvas` is missing | Stop the lab. Do not install a replacement. |
+| Project scope is not allowed | Use user scope. |
+| Generation takes too long | Stop the run and show prepared demo evidence. |
 | Extra capabilities appear | Remove them and record the review decision. |
 | Agent response and visible state differ | Stop, inspect the artifact, and record the mismatch. |
 | `ready` succeeds without evidence | Treat it as a failed rule, fix it, and rerun the rejection. |

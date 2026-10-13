@@ -7,7 +7,7 @@ Run:
 
 ```bash
 python -m unittest discover -s tests -v
-python readiness_report.py ../starter/fallback-evidence/05-pr-snapshot.json
+python readiness_report.py ../starter/prepared-evidence/05-pr-snapshot.json
 ```
 
 Expected report verdict: `NOT_READY`.

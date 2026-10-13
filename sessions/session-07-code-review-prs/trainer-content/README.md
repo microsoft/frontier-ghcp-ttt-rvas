@@ -12,12 +12,14 @@ Use Enterprise Cloud as the governance baseline. Verify current official GitHub 
 2. Verify current official documentation and the applicable policy for the intended review workflow.
 3. Choose a non-sensitive pull request with explicit acceptance criteria.
 4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
-5. Prepare the human-only review exercise.
+5. Confirm pull-request and Copilot review access for every learner.
 6. Ask learners to write their first verdict before assisted review.
 
-### No-access fallback
+### Access failure
 
-Learners conduct a human-only review using the intentional defects and checklists. They record findings as pull-request comments, implement corrections manually, run checks, and compare with the solution reference.
+Stop the learner lab. The intentional defects can recover a
+trainer demonstration, but they do not replace pull-request and Copilot review
+practice.
 
 ## Session objective
 
@@ -27,12 +29,12 @@ Teach automation as review input, not review authority. Learners collect evidenc
 
 | Segment | Activity |
 | --- | --- |
-| Preflight | Confirm policy, data, roles, measurement, and fallback. |
+| Preflight | Confirm policy, data, roles, measurement, and access. |
 | Review contract | Define acceptance criteria and required checks. |
 | Findings | Separate observed evidence from assumptions. |
 | Human decision | Accept, request changes, or reject with rationale. |
 | Conflict exercise | Resolve intent and tests manually before editing. |
-| Fallback | Complete the same review without a live surface. |
+| Access gate | Stop when the required review surface is missing. |
 
 ## Trainer talking points
 
@@ -83,7 +85,7 @@ Ask learners to name the evidence they need before approving a change. A no-acce
 | 0:28 to 0:43 | Scripted intentional-defect demo | Finding, regression test, fix, and human decision are traced. |
 | 0:43 to 0:51 | Suggested fixes and conflicts | Learners preserve intent before editing. |
 | 0:51 to 0:58 | Limits, adoption, and Q&A | Learners design reversible human gates. |
-| 0:58 to 1:00 | Close and lab handoff | Reviewer roles and fallback artifacts are assigned. |
+| 0:58 to 1:00 | Close and lab handoff | Reviewer roles and access are confirmed. |
 
 ### Time-pressure cutpoints
 
@@ -93,7 +95,7 @@ Ask learners to name the evidence they need before approving a change. A no-acce
 - At 0:38, use the prepared fix and focus on verification.
 - At 0:43, omit optional assisted fix application.
 - At 0:51, run the conflict decision statement without editing code.
-- Never cut accountable review, test evidence, access fallback, or lab roles.
+- Never cut accountable review, test evidence, access checks, or lab roles.
 
 ## Segment 1: Review is an accountable decision (0:00 to 0:08)
 
@@ -172,7 +174,7 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 5. Identify any applicable meter, threshold, escalation owner, and stop guard.
 6. Prepare the human-only review worksheet.
 7. Use a synthetic, bounded diff.
-8. Select live or fallback mode before opening a review surface.
+8. Confirm the approved review surface before opening it.
 
 ### Quality gates
 
@@ -286,7 +288,7 @@ Do not propose unrelated refactoring.
 - Which test failed before and passed after?
 - Does the review comment distinguish observation from assumption?
 
-### No-access/manual fallback
+### Prepared demonstration
 
 Give learners the requirement, original function, and truth-table rows.
 
@@ -303,11 +305,14 @@ Learners write a review comment, minimal patch, and test names on the worksheet.
 
 A peer makes the final decision.
 
+Use this only to recover the trainer demonstration. Learners still need the
+required review surfaces for the lab.
+
 ### Demo recovery
 
 - If the assisted review misses the defect, treat that as evidence of limits and continue manually.
 - If it invents broader policy, mark the comment uncertain or out of scope.
-- If tests cannot run, execute the truth table line by line.
+- If tests cannot run, stop the learner lab and fix the environment.
 - If a suggested fix rewrites unrelated code, reject it and use the guard only.
 - If review access is unavailable, move to the worksheet without attempting a bypass.
 - If the meter reaches its guard, stop assisted activity and retain manual evidence.
@@ -370,7 +375,7 @@ Assign an owner for triage and escalation.
 
 Expand only when the organization's quality and risk criteria are met.
 
-Keep the manual path and a documented disable or pause decision.
+Keep a documented disable or pause decision.
 
 ## Common trainee Q&A
 
@@ -437,7 +442,8 @@ Learners use `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-t
 
 The live path may request an approved assisted first pass.
 
-The fallback performs the same review from local files and records comments in the worksheet.
+The worksheet supports the prepared trainer demonstration. It does not replace
+the learner pull-request workflow.
 
 ### Readiness checklist
 

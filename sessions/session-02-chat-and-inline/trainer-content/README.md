@@ -26,7 +26,7 @@ The timings match [`slides.md`](../slides.md).
 - Confirm the approved Chat surfaces in the selected editor.
 - Verify current context-reference and shortcut syntax in official documentation.
 - Confirm whether a model comparison is permitted.
-- Prepare screenshots or the manual fallback.
+- Prepare screenshots for demo recovery. They do not replace learner access.
 
 Avoid fixed model catalogs, prices, keyboard shortcuts, or claims that a surface
 always sees a particular context source.
@@ -172,7 +172,7 @@ Use a direct prompt with the same task and context.
 ## Lab readiness check
 
 - [ ] The starter failure is reproducible.
-- [ ] The live or manual route is declared.
+- [ ] Required Copilot Chat access is confirmed.
 - [ ] The permitted comparison path is known.
 - [ ] Learners know where to record prompts and verification.
 - [ ] The change request remains closed until Part 5.

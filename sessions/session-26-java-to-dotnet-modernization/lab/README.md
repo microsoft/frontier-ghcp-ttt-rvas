@@ -62,7 +62,7 @@ Expected:
 The Maven Wrapper downloads the pinned Maven version on first use. You do not need
 a global Maven installation.
 
-### Native setup fallback
+### Native setup alternative
 
 Use this route only when the repository container is unavailable.
 

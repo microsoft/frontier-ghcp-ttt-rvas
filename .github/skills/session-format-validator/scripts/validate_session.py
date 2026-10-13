@@ -19,15 +19,12 @@ REQUIRED_PATHS = (
     "lab/solution",
 )
 VALID_DIFFICULTIES = {"Beginner", "Intermediate", "Advanced"}
-FALLBACK_PATTERN = re.compile(
-    r"\b(fallback|no-access|manual route)\b",
-    re.IGNORECASE,
-)
 ACCESS_PREREQUISITE_MARKERS = (
     "able to",
     "before",
     "confirm",
     "must",
+    "need",
     "prerequisite",
     "require",
     "signed in",
@@ -36,6 +33,8 @@ ACCESS_PREREQUISITE_MARKERS = (
 MISSING_ACCESS_MARKERS = (
     "cannot access",
     "do not have",
+    "do not work",
+    "does not work",
     "fails",
     "failure",
     "missing",
@@ -72,20 +71,19 @@ def read_text(path: Path) -> str:
 
 
 def has_required_access_guidance(content: str) -> bool:
-    lines = [line.strip().lower() for line in content.splitlines()]
-    has_prerequisite = any(
-        "copilot" in line
-        and "access" in line
-        and any(marker in line for marker in ACCESS_PREREQUISITE_MARKERS)
-        for line in lines
-    )
     paragraphs = [
         " ".join(paragraph.lower().split())
         for paragraph in re.split(r"\n\s*\n", content)
     ]
-    has_stop_instruction = any(
+    has_prerequisite = bool(
+        re.search(r"^## (?:required )?access\b", content, re.IGNORECASE | re.MULTILINE)
+    ) or any(
         "access" in paragraph
-        and any(marker in paragraph for marker in MISSING_ACCESS_MARKERS)
+        and any(marker in paragraph for marker in ACCESS_PREREQUISITE_MARKERS)
+        for paragraph in paragraphs
+    )
+    has_stop_instruction = any(
+        any(marker in paragraph for marker in MISSING_ACCESS_MARKERS)
         and any(marker in paragraph for marker in STOP_MARKERS)
         for paragraph in paragraphs
     )
@@ -243,13 +241,13 @@ def validate_lab_readiness(session_path: Path) -> list[dict[str, str]]:
             findings.append(
                 finding("lab readiness", lab, f"Missing {description}.")
             )
-    if not has_required_access_guidance(content) and not FALLBACK_PATTERN.search(content):
+    if not has_required_access_guidance(content):
         findings.append(
             finding(
                 "lab readiness",
                 lab,
-                "Missing access policy. Require access and tell learners to stop "
-                "when it is missing, or provide intentional fallback guidance.",
+                "Missing access policy. Require the named tool access and tell "
+                "learners to stop when it is missing.",
             )
         )
     return findings

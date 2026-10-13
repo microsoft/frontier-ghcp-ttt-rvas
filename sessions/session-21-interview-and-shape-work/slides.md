@@ -24,7 +24,7 @@ Before the session:
 - Confirm `decision-interview` under **Customize** → **Skills**.
 - Run `/decision-interview` with the short test request.
 
-**Stop and resolve access if any check fails.**
+**Stop the lab if any check fails.**
 
 ---
 

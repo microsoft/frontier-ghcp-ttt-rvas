@@ -1,6 +1,6 @@
 # Issue 001 Work Assignment
 
-Use this sheet for the live or tabletop route.
+Use this sheet for the Squad run.
 
 ## Issue
 

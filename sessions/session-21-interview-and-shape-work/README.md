@@ -20,7 +20,8 @@ The fictional Service Request Portal remains the initiative. Do not use customer
 requests or source organization names in the standard lab.
 
 > [!IMPORTANT]
-> **GitHub Copilot is required.** Learners must confirm access before the session. If GitHub Copilot cannot run the interview, stop and resolve access before starting.
+> **GitHub Copilot is required.** Confirm access before the session. If Copilot
+> cannot run the interview, stop the lab.
 
 ## Learning outcomes
 

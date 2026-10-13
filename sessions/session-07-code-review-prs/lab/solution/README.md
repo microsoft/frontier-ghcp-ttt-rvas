@@ -6,9 +6,8 @@
 
 Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. For metered work, use an agreed stop guard.
 
-## No-access fallback
-
-Use this reference for a human-only review and compare the result with the documented fixes.
+Use this reference after the assisted review and required checks. Compare the
+learner decision with the documented fixes.
 
 Use this reference to:
 

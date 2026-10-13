@@ -39,7 +39,7 @@ plugin terminology.
 
 ## Required access
 
-Learners need Node.js 20 or later and npm. An approved GitHub Copilot surface is
+Learners need Node.js 20 or later and npm. GitHub Copilot is
 useful for the final integration check but is not required. The local tests and
 Inspector route prove the server contract.
 

@@ -29,10 +29,8 @@ about zero total weight.
 
 Use synthetic data and an approved training repository.
 
-For the live path, confirm GitHub Copilot Chat access in the selected editor. If
-access is unavailable or not approved, stop the live interaction and use the
-**manual fallback**: inspect the code and failing output yourself, implement the
-change, compare with `lab/solution/`, and complete `chat-notes.md`.
+Confirm GitHub Copilot Chat access in your editor. If Chat does not work, stop the
+lab. Manual implementation does not replace the Chat and inline-suggestion practice.
 
 If model comparison is allowed, use only choices approved for the exercise and set
 any required metered-work stop condition. If no second choice is available, compare

@@ -45,8 +45,8 @@ Prepare the delivery machine before learners arrive:
    and trace data.
 8. Keep the solution project open at the files used in the demo.
 
-**Stop if any required access or local tool is unavailable.** This session has no
-fallback. Do not replace authenticated Copilot access with another model provider.
+**Stop if any required access or local tool is unavailable.** Do not replace
+authenticated Copilot access with another model provider.
 
 ## Teaching notes
 

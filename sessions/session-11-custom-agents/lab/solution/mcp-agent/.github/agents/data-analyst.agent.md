@@ -36,6 +36,6 @@ metadata:
 Reject `INSERT`, `UPDATE`, `DELETE`, schema changes, and queries outside the
 synthetic database. Stop when the data scope or relationship is unclear.
 
-## Fallback
+## Failure behavior
 
 Write the intended schema-first query and review it without executing the MCP tool.

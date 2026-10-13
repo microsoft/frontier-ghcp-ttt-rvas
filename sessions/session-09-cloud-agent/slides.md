@@ -37,7 +37,7 @@ The live route requires:
 - a named reviewer;
 - a bounded issue and stop condition.
 
-If one requirement is missing, use the manual route. Do not bypass policy.
+If one requirement is missing, stop the lab. Do not bypass policy.
 
 ---
 # The fixed issue
@@ -116,19 +116,12 @@ Record:
 Stop when the baseline is unexplained or setup requires unapproved access.
 
 ---
-# Start or simulate the session
-
-Live route:
+# Start the session
 
 - assign the fixed issue through an approved entry point;
 - watch the session log;
 - steer only within the issue;
 - stop on scope drift.
-
-Manual route:
-
-- implement the same issue locally;
-- preserve the same file scope and tests.
 
 ---
 # Checkpoint 3: Proposed change
@@ -208,7 +201,7 @@ Stop the live route when:
 - the reviewer is no longer available.
 
 ---
-# Prepared fallback
+# Trainer demo recovery
 
 The solution folder contains:
 
@@ -219,7 +212,8 @@ The solution folder contains:
 - test evidence;
 - completed human decision.
 
-Use it when a live session is delayed. Label it as prepared evidence.
+Use it only when the trainer demonstration is delayed. Learners still need a live
+cloud-agent run for lab completion.
 
 ---
 <!-- _class: divider -->

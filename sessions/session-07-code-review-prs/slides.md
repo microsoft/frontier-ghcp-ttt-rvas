@@ -60,9 +60,11 @@ Accept, request revision, or implement manually
 
 ---
 
-# No-access fallback
+# Required access
 
-Use the intentional defects and conflict scenario for a human-only review. Record findings as pull-request comments, complete the fixes manually, and compare with the solution reference.
+Confirm Copilot review, pull-request access, Git, Node.js, and npm before the lab.
+If a requirement is missing, stop and resolve it. A worksheet-only review does not
+replace the pull-request workflow.
 
 ---
 
@@ -273,7 +275,8 @@ If an approved cloud-agent workflow is available, compare its proposal with the 
 
 **Expand:** Only when quality, security, and developer experience meet team criteria.
 
-Keep a manual path for unavailable features and exceptional repositories.
+Keep a documented pause or disable path for unavailable features and exceptional
+repositories.
 
 ---
 

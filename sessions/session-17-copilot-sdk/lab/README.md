@@ -58,7 +58,7 @@ You must have:
 - Docker Compose;
 - permission to bind the local ports declared in the Compose file.
 
-**Stop if any item is unavailable. There is no fallback route.** Do not switch to
+**Stop if any item is unavailable.** Do not switch to
 BYOK, another model provider, a remote session, or a different language.
 
 Run the local checks:

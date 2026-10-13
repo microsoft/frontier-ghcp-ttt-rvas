@@ -45,8 +45,10 @@ session-template/
 - **Duration:** Each session is 3 hours total (1 hr trainer content + 2 hr lab)
 - **Prerequisites:** Always reference prior session numbers (e.g., "Sessions 01 to 03")
 - **Naming:** Use kebab-case slugs derived from the session title
-- **Enterprise delivery:** Add an access/cost preflight, policy or permission
-  assumptions, and a no-access fallback to every lab.
+- **Enterprise delivery:** Add an access and cost preflight, state the required
+  tools and permissions, and tell learners to stop when a required tool is
+  missing. Put demo recovery in the trainer guide. Add another learner setup only
+  when it preserves the same objective and completion evidence.
 - **Trainer slides:** Teach the concepts before the lab. Include an agenda, enough
   explanation for the trainer to introduce each concept, concrete examples or
   decision tables, a prepared demonstration where relevant, and a clear lab handoff.

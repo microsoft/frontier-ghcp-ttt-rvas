@@ -61,14 +61,11 @@ Add one small, testable behavior.
 
 ---
 
-# No-access fallback
+# Required access
 
-Complete the same brief manually:
-
-1. Write the plan.
-2. Make the smallest change.
-3. Run the same tests.
-4. Review against the same acceptance criteria.
+Confirm that Agent mode works before the lab starts. If it does not, stop the lab.
+Manual editing does not demonstrate
+tool approval, steering, or agent review.
 
 ---
 

@@ -32,7 +32,9 @@ The live route requires:
 - the built-in `/create-canvas` skill;
 - approval for the chosen extension scope.
 
-If any requirement is missing, use the manual route. Do not install a replacement or move data to an unapproved surface.
+If app access or the skill is missing, stop the lab. If project scope is
+unavailable, use user scope. Do not install a replacement or
+move data to an unapproved surface.
 
 ---
 # Pick the smallest fit
@@ -123,7 +125,8 @@ Reject unknown items or statuses. Require evidence before ready.
 Do not connect external systems.
 ```
 
-Choose project scope only when `.github/extensions` is approved. Otherwise choose user scope or use the manual route.
+Choose project scope only when `.github/extensions` is allowed. Otherwise use user
+scope.
 
 ---
 # Visible and agent-requested changes
@@ -174,7 +177,7 @@ Check:
 - agent-callable capabilities;
 - dependencies and persisted data;
 - owner and reviewer;
-- fallback and retirement trigger.
+- retirement trigger.
 
 Remove anything the contract did not request.
 

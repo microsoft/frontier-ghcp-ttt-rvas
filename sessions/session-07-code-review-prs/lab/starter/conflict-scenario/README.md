@@ -6,9 +6,8 @@
 
 Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live demonstration. For metered work, define an approved threshold, escalation route, and stop guard.
 
-## No-access fallback
-
-Use this scenario for manual conflict resolution and peer review in the repository sandbox.
+GitHub pull-request and Copilot review access are required for the lab. Use this
+scenario for the planned conflict-resolution exercise.
 
 ## Scenario
 

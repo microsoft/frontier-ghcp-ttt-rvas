@@ -12,11 +12,12 @@ Use Enterprise Cloud as the governance baseline. Before delivery, verify current
 2. Verify current documentation and the applicable policy for the intended workflow.
 3. Choose a non-sensitive, bounded question and approved repository sources.
 4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
-5. Prepare a manual context-packet exercise.
+5. Confirm Spaces and GitHub Copilot access for every learner.
 
-### No-access fallback
+### Access failure
 
-Learners assemble the context packet manually, use it to plan and review the Storefront API change, and compare the result with the acceptance criteria. Do not add a source or live surface that policy has not approved.
+Stop the learner lab. A printed context packet may support the
+trainer demonstration, but it does not count as learner completion.
 
 ## Session objective
 
@@ -26,12 +27,12 @@ Teach learners to curate minimal, relevant, reviewable context for a task. The l
 
 | Segment | Activity |
 | --- | --- |
-| Preflight | Confirm policy, data, task, measurement, and fallback. |
+| Preflight | Confirm policy, data, task, measurement, and access. |
 | Source selection | Select only relevant repository instructions, code, tests, and docs. |
 | Context packet | Explain why every included source is necessary. |
 | Bounded task | Use the packet to plan a small change. |
 | Review | Check that output follows evidence and tests. |
-| Fallback | Repeat the exercise manually. |
+| Access gate | Stop when required Spaces or Copilot access is missing. |
 
 ## Context packet pattern
 
@@ -54,9 +55,10 @@ Exclude:
 
 > "Context is an engineering input. Select the smallest set of approved sources that lets a reviewer explain the result."
 
-> "If source eligibility or product behavior is unclear, stop and use the manual context packet. It teaches the same lesson without a policy exception."
+> "If source eligibility or product behavior is unclear, stop and resolve the
+> access or policy question before the lab."
 
-> "Metered work has an agreed stop guard. Narrow the context or use the manual fallback when the guard is reached."
+> "Metered work has an agreed stop guard. Stop the run when the guard is reached."
 
 ## Review rubric
 
@@ -92,7 +94,7 @@ Ask learners to identify a common task where less context would improve clarity 
 - At 0:42, create one instruction excerpt and one prompt file, not a library.
 - At 0:50, mention memory only as an availability-dependent concept requiring verification.
 - At 0:55, compare plans rather than waiting for generated code.
-- Never cut source approval, maintenance ownership, fallback, or lab boundaries.
+- Never cut source approval, maintenance ownership, access checks, or lab boundaries.
 
 ## Segment 1: Diagnose context quality (0:00 to 0:08)
 
@@ -392,7 +394,7 @@ The existing project's error type and message remain subject to source verificat
 | Testability | Are valid and invalid cases explicit? |
 | Data | Was only synthetic approved context used? |
 
-### No-access/manual fallback
+### Prepared demonstration
 
 Give half the room only the minimal request.
 
@@ -402,11 +404,13 @@ Each group writes a plan, not code.
 
 Swap plans and score them with the rubric.
 
-Reveal the code proposal only during debrief.
+Reveal the code proposal only during debrief. Use this to recover the trainer
+demonstration, not as a learner substitute.
 
 ### Demo recovery
 
-- If the surface is unavailable, use the printed responses.
+- If the surface is unavailable during the demonstration, use the printed
+  responses and fix access before the lab.
 - If it ignores an instruction, mark the mismatch; do not claim enforcement.
 - If sources conflict, stop and assign clarification to the source owner.
 - If the packet is noisy, remove one source and explain the decision.
@@ -484,5 +488,5 @@ Verify current support and policy before using any changing UI, path, setting, s
 - [ ] Exclusions are explicit.
 - [ ] One known-answer question is ready.
 - [ ] Maintenance triggers are assigned.
-- [ ] Live or manual path is selected.
+- [ ] Required Spaces and GitHub Copilot access is confirmed.
 - [ ] Meter and stop guard are recorded when they apply.

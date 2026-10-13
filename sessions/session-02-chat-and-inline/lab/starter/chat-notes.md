@@ -2,8 +2,7 @@
 
 ## Access path
 
-- [ ] Live Copilot Chat path
-- [ ] Manual fallback
+- [ ] Required Copilot Chat access confirmed
 
 ## Conversation record
 

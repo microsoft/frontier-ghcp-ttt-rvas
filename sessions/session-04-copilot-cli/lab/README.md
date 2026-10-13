@@ -34,12 +34,9 @@ Read the [course safety baseline](../../learning-safety-baseline.md). Confirm th
 - [ ] Terminal access
 - [ ] VS Code for the final comparison
 
-### No-access fallback
-
-If Copilot CLI access is unavailable, **do not run the CLI steps**. Use the manual
-route instead. Inspect the supplied commands, repair the project with normal editor
-and shell tools, complete the script from its TODOs, and record the prompts you
-would have used. Do not use real repositories or restricted data.
+If Copilot CLI access is unavailable, stop the lab. Do not replace
+the CLI work with normal editor or shell work. That would not demonstrate the
+surface, research, delegation, or CLI-to-IDE comparison taught here.
 
 ### Verify Your Setup
 
@@ -563,7 +560,7 @@ Submit one folder containing:
 
 1. The fixed `agent-tasks/` project with passing `npm test` output.
 2. The completed `pipeline-script.sh` and one generated project health report.
-3. Research or delegation notes tied to the `agent-tasks` project, or the manual fallback record.
+3. Research or delegation notes tied to the `agent-tasks` project.
 4. The completed CLI-versus-IDE comparison and workflow cheat sheet.
 
 **Done:** Another learner can run the tests, run the script, and understand why you chose each Copilot surface.

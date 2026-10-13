@@ -11,8 +11,8 @@ Adding a regression test for a repository utility.
 2. Make the smallest change that meets the criteria.
 3. Run the targeted test command.
 4. Request repository review.
-## Fallback
-Follow the same steps manually.
+## Access failure
+Stop the lab.
 ```
 
 ```markdown
@@ -23,8 +23,8 @@ A repository API contract changes.
 1. Compare implementation, tests, and documentation.
 2. Update examples and error cases.
 3. Ask a reviewer to confirm the public contract.
-## Fallback
-Use the repository review checklist manually.
+## Access failure
+Stop the lab.
 ```
 
 Review scope, tools, data, validation, owner, maintenance, source, and license before adapting either example.

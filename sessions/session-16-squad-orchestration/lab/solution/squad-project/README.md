@@ -22,7 +22,7 @@ The suite should pass all baseline and input-validation tests.
 | Work log | `.squad/orchestration-log/issue-001.md` |
 | Test evidence and lead review | `.squad/reviews/issue-001-review.md` |
 | Durable decision | `.squad/decisions.md` |
-| Tabletop equivalent | `tabletop/issue-001-review-packet.md` |
+| Prepared trainer example | `tabletop/issue-001-review-packet.md` |
 
-The live and tabletop routes produce the same facts. Only the coordination
-mechanism changes.
+The prepared packet supports trainer demonstration recovery. It does not replace a
+learner Squad run.

@@ -11,8 +11,7 @@
 
 This elective uses Brady's Squad to teach bounded roles, routing, durable
 decisions, and review. The lab carries one input-validation issue from assignment
-through tests and lead review. Learners can use the approved live path or the
-supplied tabletop route.
+through tests and lead review using Squad.
 
 ## Learning outcomes
 
@@ -24,10 +23,9 @@ supplied tabletop route.
 
 ## Required access
 
-For the live route, learners need **Node.js 20 or later**, Git, a GitHub training
-repository, GitHub Copilot in the selected coding environment, and an approved
-Squad installation. The lab includes a tabletop route when the orchestration tool,
-repository integration, or network path is unavailable.
+Learners need **Node.js 20 or later**, Git, a GitHub training repository, GitHub
+Copilot, and Squad.
+If a requirement is unavailable, stop and resolve it before the lab.
 
 ## Deliverable
 

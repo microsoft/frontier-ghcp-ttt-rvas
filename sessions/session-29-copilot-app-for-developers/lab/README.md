@@ -17,8 +17,6 @@ readiness report without modifying GitHub.
 
 ## Required setup
 
-### Live route
-
 You must have:
 
 - access to the GitHub Copilot app;
@@ -31,17 +29,8 @@ Before starting, open the app and confirm that you can create a project session.
 Verify that Interactive, Plan, and Autopilot appear in the mode picker.
 
 **If GitHub Copilot app access is missing or unavailable, stop the live route.**
-Do not continue by pasting the files into another assistant. Use the intentional
-no-access fallback below.
-
-### No-access fallback
-
-Use `starter/fallback-evidence/` in numbered order. The pack contains a captured
-chat analysis, session plan, implementation result, independent critique, PR
-snapshot, and check output. Complete the same readiness report.
-
-The fallback teaches the workflow from supplied evidence. It does not claim live
-app experience.
+Do not continue by pasting the files into another assistant or
+by treating supplied evidence as hands-on app work.
 
 ### Workspace
 
@@ -69,8 +58,6 @@ repository links, email addresses, secrets, tenant identifiers, or production lo
 Use chat for discovery, then start a project session with an explicit workspace
 and mode.
 
-### Live steps
-
 1. Open a new Chat in the app.
 2. Attach `issue-brief.md` and ask:
 
@@ -90,12 +77,6 @@ and mode.
    edit anything.
    ```
 
-### Fallback steps
-
-Read `fallback-evidence/01-chat-discovery.md` and
-`fallback-evidence/02-plan-session.md`. Decide whether the chosen surface, mode,
-and workspace fit the task.
-
 ### Checkpoint
 
 - The chat produced understanding, not edits.
@@ -107,8 +88,6 @@ and workspace fit the task.
 ### Goal
 
 Repair the evaluator with a bounded plan and exact test evidence.
-
-### Live steps
 
 1. Attach `issue-brief.md`, `readiness_guard/readiness.py`, and
    `tests/test_readiness.py`.
@@ -135,13 +114,6 @@ Repair the evaluator with a bounded plan and exact test evidence.
 - return `READY` only when required checks pass and blocking threads are resolved;
 - return stable, sorted reason codes.
 
-### Fallback steps
-
-Read `fallback-evidence/03-implementation-session.md` and
-`fallback-evidence/06-checks.txt`. Compare the captured change with the issue
-criteria. Run the tests locally if Python is available. Otherwise, mark them
-`not run` and cite the supplied output.
-
 ### Checkpoint
 
 The tests, diff, and command output support the behavior claims.
@@ -151,8 +123,6 @@ The tests, diff, and command output support the behavior claims.
 ### Goal
 
 Check that a fresh session can continue from a concise handoff.
-
-### Live steps
 
 1. Ask the current session to write a handoff using
    `session-handoff-template.md`.
@@ -177,12 +147,6 @@ Check that a fresh session can continue from a concise handoff.
 7. Apply useful findings to the implementation or handoff. Ignore unsupported
    suggestions.
 
-### Fallback steps
-
-Complete `session-handoff-template.md` from the captured implementation result.
-Then read `fallback-evidence/04-independent-critique.md` and apply any useful
-finding.
-
 ### Checkpoint
 
 A fresh reader can identify the goal, changed files, checks, remaining risk, and
@@ -194,9 +158,9 @@ next decision without the original conversation.
 
 Connect issue intent to PR evidence and create a safe repeatable readiness report.
 
-### Steps for both routes
+### Steps
 
-1. Open `fallback-evidence/05-pr-snapshot.json`.
+1. Open `prepared-evidence/05-pr-snapshot.json`.
 2. Trace each issue criterion to changed files and checks.
 3. Inspect review threads. Separate blocking comments from non-blocking notes.
 4. Inspect required check results and their timestamps.
@@ -226,7 +190,7 @@ The automation gathers evidence but cannot change repository state.
 Submit or demonstrate:
 
 - the repaired `readiness_guard/readiness.py`;
-- passing focused test output, or clearly marked supplied evidence;
+- passing focused test output;
 - `session-handoff-template.md` completed as a handoff;
 - `pr-readiness-report.md`;
 - a completed `automation-prompt-template.md`;
@@ -243,10 +207,10 @@ Submit or demonstrate:
 
 | Problem | Response |
 | --- | --- |
-| App access is missing | Stop the live route and use the numbered fallback pack |
+| App access is missing | Stop the lab |
 | Working-tree option is unavailable | Use a clean copied workspace |
 | Rubber duck is unavailable | Use a fresh read-only critique session |
-| Python is unavailable | Use supplied check output and mark execution as not run |
+| Python is unavailable | Stop the lab |
 | Automation is unavailable by policy | Complete the specification and permission review |
 | Agent proposes GitHub writes | Remove write tools and restate the read-only contract |
 

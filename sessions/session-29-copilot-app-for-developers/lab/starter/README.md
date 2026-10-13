@@ -22,6 +22,6 @@ missing required evidence.
 - `session-handoff-template.md`: fresh-session handoff
 - `pr-readiness-report.md`: outer-loop report template
 - `automation-prompt-template.md`: manual read-only automation contract
-- `fallback-evidence/`: no-access route
+- `prepared-evidence/`: synthetic PR and trainer demonstration evidence
 
 Keep the project dependency-free. Use only Python's standard library.

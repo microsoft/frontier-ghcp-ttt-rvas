@@ -255,7 +255,8 @@ Learners submit:
 
 # Lab handoff
 
-Use the live app route if access is confirmed. Otherwise, use the supplied
-fallback evidence and make the same decisions.
+Confirm live app access before the lab. If access is unavailable, stop the lab.
+Supplied evidence may recover the trainer demonstration, but it does
+not replace learner app practice.
 
 The work is synthetic. Keep it that way.

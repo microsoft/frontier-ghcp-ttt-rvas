@@ -53,7 +53,7 @@ Both produce proposals that need review.
 | Ask one short question | Lightweight or quick surface |
 | Explain recent command output | Terminal context |
 
-Use the controls available in the approved editor.
+Use the controls available in the editor.
 
 ---
 

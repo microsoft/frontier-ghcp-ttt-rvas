@@ -26,13 +26,13 @@ change with standard-library tests.
 - Use task shortcuts such as explain, fix, tests, and documentation when the
   current surface offers them.
 - Refine a conversation without broadening the requested change.
-- Compare approved model choices against the same tests, or use the manual
-  reference when comparison is unavailable.
+- Compare approved model choices against the same tests when more than one choice
+  is available.
 
 ## Required access
 
-The live path requires GitHub Copilot Chat in an approved editor. The manual
-fallback requires Python 3.10 or later.
+Learners need GitHub Copilot Chat and Python 3.10 or later. If either is
+unavailable, stop the lab.
 
 ## Materials
 

@@ -30,7 +30,7 @@ metadata:
 ```
 
 The Markdown body defines the trigger, allowed work, ordered procedure, validation,
-stop conditions, and fallback.
+stop conditions, and failure behavior.
 
 ## Frontmatter used here
 

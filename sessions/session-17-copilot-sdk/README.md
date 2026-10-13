@@ -46,8 +46,8 @@ Learners need all of the following:
 - Docker with Docker Compose;
 - a terminal that can run the supplied TypeScript project.
 
-**There is no fallback route.** If GitHub Copilot access, Node.js, npm, Docker, or
-Docker Compose is unavailable, stop before the lab. Fix the approved environment
+If GitHub Copilot access, Node.js, npm, Docker, or Docker Compose is unavailable,
+stop before the lab. Fix the environment
 or reschedule the hands-on work.
 
 ## Scenario

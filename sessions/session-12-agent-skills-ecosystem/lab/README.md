@@ -26,12 +26,9 @@ and missing preconditions must stop the run.
 Read the [course safety baseline](../../learning-safety-baseline.md). Use the
 synthetic repository sandbox.
 
-You need Node.js 20 or later and a writable repository copy. An approved GitHub
-Copilot surface is optional. If Node.js is unavailable, stop and do not continue
-the executable lab.
-
-**Fallback:** use `SKILL.md` as a manual checklist and run the local contract
-runner. Record live loading as **not executed**.
+You need Node.js 20 or later, a writable repository copy, and the local contract
+runner. GitHub Copilot may also load the skill for the bounded demonstration. If
+Node.js or package access is unavailable, stop the lab.
 
 Do not connect the static MCP configuration in `integrated-workflow/`. Do not run
 unreviewed community scripts.

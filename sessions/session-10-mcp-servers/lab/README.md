@@ -33,12 +33,9 @@ You need:
 - a writable copy of this repository;
 - MCP Inspector 2.5.0 through the approved npm source.
 
-GitHub Copilot access is optional. If it is unavailable, use the local tests and
-Inspector commands. If Node.js or approved package access is unavailable, stop and
-do not continue the executable lab.
-
-**Fallback:** the local tests and Inspector route are the intentional no-Copilot
-path. Record any command that cannot run as **not executed**.
+The required lab route uses local tests and MCP Inspector. GitHub Copilot is
+optional and may assist with review. If Node.js, MCP Inspector, or package registry
+access is unavailable, stop the lab.
 
 Do not copy or commit `node_modules`. Each project has a package manifest and lockfile.
 

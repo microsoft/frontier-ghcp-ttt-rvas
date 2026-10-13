@@ -28,9 +28,8 @@ that still has to pass the project tests and API checks.
 
 ## Required access
 
-The live path requires GitHub Copilot Chat and inline suggestions in an approved
-editor. The manual fallback requires Node.js 20 or later. Running the Express server
-also requires the declared npm dependency.
+Learners need GitHub Copilot Chat, inline suggestions, Node.js 20 or later, and
+the declared npm dependency. If a requirement is unavailable, stop the lab.
 
 ## Materials
 

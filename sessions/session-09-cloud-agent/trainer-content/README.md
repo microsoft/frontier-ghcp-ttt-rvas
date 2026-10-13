@@ -38,13 +38,14 @@ The live route requires:
 - a human reviewer is named;
 - the stop condition is visible.
 
-If one condition is missing, use the manual route. **Do not assign the issue, broaden access, or paste credentials into an issue or instruction file.**
+If one condition is missing, stop and resolve it. **Do not assign the issue,
+broaden access, or paste credentials into an issue or instruction file.**
 
 ## One-hour plan
 
 | Time | Segment | Checkpoint evidence |
 | --- | --- | --- |
-| 0:00 to 0:05 | Frame and access decision | Live or manual route selected |
+| 0:00 to 0:05 | Frame and access decision | Live route confirmed |
 | 0:05 to 0:16 | Checkpoint 1: issue contract | Approved issue |
 | 0:16 to 0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
 | 0:27 to 0:39 | Start or simulate one session | Bounded progress evidence |
@@ -138,13 +139,11 @@ Add no dependency. Stop and ask for clarification if broader work is required.
 
 Stop on scope drift. Do not edit the issue during the run.
 
-### Manual route
-
-Have one learner implement the fixed issue in a copy of the starter project. Another learner watches the allowed file list and stop conditions.
-
 ### Time guard
 
-At 0:35, switch to `../lab/solution/proposed-change.diff` if no reviewable proposal exists. Label it prepared evidence.
+At 0:35, use `../lab/solution/proposed-change.diff` only to finish the trainer
+demonstration if no reviewable proposal exists. Fix access or runtime problems
+before the learner lab.
 
 ## 0:39 to 0:47: Checkpoint 3: proposed change
 
@@ -225,12 +224,12 @@ Recovery succeeds when the proposal returns to the fixed issue and the full suit
 
 | Failure | Recovery |
 | --- | --- |
-| Cloud agent access is unavailable | Use the manual route. |
-| Setup workflow is not on the default branch | Treat the live environment as unprepared and use the manual route. |
+| Cloud agent access is unavailable | Stop the lab. |
+| Setup workflow is not on the default branch | Stop and prepare the repository. |
 | Baseline tests fail | Diagnose before assignment; do not hide the failure. |
 | Session changes extra files | Stop or request a scoped correction. |
 | Learners rewrite the issue mid-run | Stop and create a separate future issue. |
-| Live work is delayed | Switch to prepared evidence at 0:35. |
+| Trainer demo work is delayed | Show prepared evidence at 0:35. |
 | Tests pass but the diff violates scope | Request changes or pause. |
 
 ## Product notes checked September 24, 2026

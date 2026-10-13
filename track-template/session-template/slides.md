@@ -62,7 +62,7 @@ Use one concept per slide when the ideas need separate discussion.
 | --- | --- | --- |
 | [Situation A] | [Path A] | [Reason] |
 | [Situation B] | [Path B] | [Reason] |
-| [Boundary or stop condition] | [Pause or fallback] | [Reason] |
+| [Boundary or stop condition] | [Pause or recovery] | [Reason] |
 
 The trainer should be able to explain why a path is chosen, not only how to run it.
 

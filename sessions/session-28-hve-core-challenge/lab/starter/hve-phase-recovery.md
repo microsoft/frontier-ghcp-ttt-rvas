@@ -4,7 +4,7 @@ description: "Trainer-guided recovery when one HVE challenge phase cannot comple
 
 # HVE phase recovery
 
-Use this fallback when one HVE agent invocation or one validation command cannot
+Use this recovery guide when one HVE agent invocation or one validation command cannot
 complete. The trainer supplies the missing phase artifact so the learner can
 inspect its handoff and continue with the next HVE agent.
 

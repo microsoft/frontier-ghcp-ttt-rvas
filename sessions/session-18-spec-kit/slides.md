@@ -27,7 +27,7 @@ Session 18 | 3 hours 30 minutes
 | Requirements and clarification | 12 min |
 | Planning, checklists, tasks, and analysis | 12 min |
 | Implementation and convergence | 10 min |
-| Installation, fallback, and lab handoff | 8 min |
+| Installation, demonstration, and lab handoff | 8 min |
 
 ---
 

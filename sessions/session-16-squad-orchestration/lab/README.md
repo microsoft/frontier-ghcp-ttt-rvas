@@ -14,17 +14,10 @@ implementation, tests, review, and a durable decision record
 Read the [course safety baseline](../../learning-safety-baseline.md). Use synthetic
 data only.
 
-Choose one route:
-
-- **Live route:** Learners must confirm GitHub Copilot access, the approved
-  orchestration tool, the GitHub training repository, integrations, and the
-  metered-work limit.
-- **Tabletop route:** Use the same issue and role packet without the live tool.
-  Learners act as lead, backend implementer, tester, and scribe.
-
-If GitHub Copilot access or the approved live path is unavailable, stop live setup
-and use the tabletop route. Do not improvise installation commands or connect an
-unapproved repository.
+Confirm GitHub Copilot access, the orchestration tool, the GitHub training
+repository, integrations, and the metered-work limit. If any requirement is
+unavailable, stop the lab. Do not improvise installation commands
+or replace orchestration with a tabletop simulation.
 
 | Exercise | Work | Time |
 | --- | --- | --- |
@@ -37,9 +30,8 @@ unapproved repository.
 
 - Node.js 20 or later
 - Git
-- For the live route: authenticated `gh`, GitHub Copilot, an approved Squad
-  installation, and a training repository that you may push to
-- For the tabletop route: the supplied starter and solution assets
+- Authenticated `gh`, GitHub Copilot, Squad, and a
+  training repository that you may push to
 
 ## Exercise 1: Prepare the project and team (25 min)
 
@@ -52,7 +44,7 @@ npm test
 
 The starter suite should pass. Issue 001's validation cases do not exist yet.
 
-For the live route, verify the already approved installation:
+Verify the installation:
 
 ```bash
 squad --version
@@ -178,4 +170,4 @@ Submit one folder or pull request containing:
 - [ ] No dependency or unrelated route was changed.
 - [ ] Existing and focused tests pass.
 - [ ] The lead decision cites test evidence.
-- [ ] The live and tabletop routes produce the same review packet.
+- [ ] The Squad run produces a complete review packet.

@@ -19,7 +19,8 @@ The fictional **Service Request Portal** provides the shared scenario. Learners
 may use approved, sanitized work from their own team.
 
 > [!IMPORTANT]
-> **The GitHub Copilot app is required.** Stop and resolve access, policy, or client issues before the learner starts.
+> **The GitHub Copilot app is required.** Fix access, policy, or client problems
+> before the lab.
 
 ## Learning outcomes
 

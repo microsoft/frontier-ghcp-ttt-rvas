@@ -14,14 +14,17 @@ Use one synthetic delivery-readiness contract from setup through handoff. You wi
 Submit:
 
 1. your completed `canvas-contract.md`;
-2. the generated extension location, or a note that you used the manual route;
+2. the generated extension location;
 3. final state that matches the accepted transitions.
 
 ## Access policy
 
-The live route requires GitHub Copilot app access and the built-in `/create-canvas` skill. Project scope requires approval to create files under `.github/extensions`.
+The lab requires GitHub Copilot app access and the built-in `/create-canvas` skill.
+Project scope requires approval to create files under `.github/extensions`.
 
-If access, the skill, or the requested scope is unavailable, **stop the live route**. Use the manual route in each exercise. Do not bypass policy, install a replacement, or copy the synthetic workflow into another external service.
+If app access or the skill is unavailable, stop the lab. If project scope is not
+available, use user scope. Do not install a replacement or
+copy the synthetic workflow into another external service.
 
 ## Setup
 
@@ -54,14 +57,14 @@ Copy the record files to a writable working folder if you do not want to edit th
 | --- | --- | --- |
 | 1 | Confirm access and contract | 20 min |
 | 2 | Run the prepared contract tests | 15 min |
-| 3 | Create or simulate the canvas | 25 min |
+| 3 | Create the canvas | 25 min |
 | 4 | Make two visible state changes | 20 min |
 | 5 | Verify rejection and recovery | 20 min |
 | 6 | Inspect and hand off | 20 min |
 
 ## Part 1: Confirm access and contract (20 minutes)
 
-1. Select the project scope, user scope, or manual route.
+1. Select project or user scope.
 2. Confirm that all data comes from `prepared-items.json`.
 3. Review every state field, human action, agent capability, and validation rule in `canvas-contract.md`.
 4. Replace the owner and reviewer placeholders.
@@ -98,9 +101,7 @@ Do not continue with a failing harness. Fix only a mismatch caused by your edits
 
 **Checkpoint 2:** The local harness passes and the group can identify the planned rejection.
 
-## Part 3: Create or simulate the canvas (25 minutes)
-
-### Live route
+## Part 3: Create the canvas (25 minutes)
 
 Open an approved GitHub Copilot app session. Run:
 
@@ -122,17 +123,7 @@ Choose:
 
 Inspect the generated directory, metadata, dependencies, state, visible controls, and agent-callable capabilities. Ask Copilot to remove anything outside the contract.
 
-### Manual route
-
-Initialize `working-state.json`:
-
-```bash
-node src/demo.mjs init
-```
-
-Treat that file as the visible canvas state. Use the commands in `demo-runbook.md` to apply each transition through the local harness.
-
-**Checkpoint 3:** The canvas or manual state shows all three prepared items and no extra capability.
+**Checkpoint 3:** The canvas shows all three prepared items and no extra capability.
 
 ## Part 4: Make two visible state changes (20 minutes)
 
@@ -151,8 +142,6 @@ Ask Copilot:
 ```text
 Move API-204 from in-progress to review. Change only that item.
 ```
-
-On the manual route, run the matching command from `demo-runbook.md`.
 
 Verify:
 
@@ -210,7 +199,7 @@ Exchange canvases with another group. Inspect:
 - agent-callable capabilities;
 - rejection and recovery evidence;
 - dependencies and persisted data;
-- owner, fallback, and retirement trigger.
+- owner and retirement trigger.
 
 Fix contract mismatches. Pause if access, behavior, data, or ownership remains
 unresolved. Then compare the final state with `../solution/final-state.json`.
@@ -231,8 +220,8 @@ The work is complete when another person can identify:
 
 | Issue | Response |
 | --- | --- |
-| `/create-canvas` is unavailable | Stop the live route and use the manual path. |
-| Project scope is blocked | Use approved user scope or the manual path. |
+| `/create-canvas` is unavailable | Stop the lab. |
+| Project scope is blocked | Use user scope. |
 | Generated actions exceed the contract | Remove them before testing. |
 | State and agent response disagree | Stop and inspect the shared artifact. |
 | Local tests fail before edits | Record the failure and restore the supplied starter files. |

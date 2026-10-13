@@ -403,7 +403,7 @@ Keep Java behavior until its replacement has evidence.
 - Maven 3.9.9 through `mvnw`
 - .NET 10 SDK
 
-**Native fallback:** JDK 17 or 21, .NET 10 SDK, Git, and `curl`.
+**Native setup alternative:** JDK 17 or 21, .NET 10 SDK, Git, and `curl`.
 
 ---
 

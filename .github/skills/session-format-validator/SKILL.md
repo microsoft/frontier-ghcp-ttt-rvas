@@ -41,8 +41,8 @@ metadata unless the user asks for a separate implementation task.
 - **Navigation:** entries in `mkdocs.yml`, `README.md`, `curriculum-plan.md`, and
   `tracks/full-mastery.md`.
 - **Lab readiness:** a setup or preflight section, a learner deliverable, and one
-  clear access policy. The lab must either require access and tell learners to
-  stop when access is missing, or provide an intentional fallback.
+  clear access policy. The lab must require access to the named tools and tell
+  learners to stop when access is missing.
 
 The repository's established template is the reference:
 `track-template/session-template/`.
@@ -72,9 +72,10 @@ curriculum navigation are missing.
 ## Scope boundaries
 
 - Keep existing material intact during validation.
-- Accept a firm access prerequisite with a stop-if-missing instruction.
-- Accept fallback guidance when an older session still supports a no-access route.
-- Do not require fallback wording when a session requires GitHub Copilot.
+- Require a firm access prerequisite with a stop-if-missing instruction.
+- Do not accept a manual simulation as a replacement for required Copilot access.
+- Accept another setup only when it uses the same required Copilot capability and
+  preserves the same completion evidence.
 - Do not require a live vendor tool, customer access, or a finished application.
 - Use `scripts/validate-labs.sh` separately when the user also asks to validate
   executable starter or solution files.

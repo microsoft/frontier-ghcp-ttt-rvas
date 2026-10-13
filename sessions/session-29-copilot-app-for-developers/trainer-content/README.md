@@ -21,7 +21,7 @@ work, and require evidence before moving from code to pull-request readiness.
 | Chats, sessions, modes, and worktrees | 15 min | Learners can justify a surface, mode, and workspace |
 | Context, handoffs, and inner-loop evidence | 12 min | A fresh session could continue from the written handoff |
 | Issue, PR, review, checks, and critique | 13 min | Learners can state why local success is not PR readiness |
-| Demo close and lab route | 10 min | Each learner has a live or fallback route |
+| Demo close and lab route | 10 min | Each learner has confirmed app access |
 
 ## Trainer preflight
 
@@ -37,11 +37,11 @@ Complete this check on the delivery machine:
 7. Confirm whether `/rubber-duck` is available. If not, use a separate
    read-only critique prompt in a fresh session.
 8. Open My work and Automations only in a synthetic or approved training repository.
-9. Keep `lab/starter/fallback-evidence/` open as the recovery route.
+9. Keep `lab/starter/prepared-evidence/` open for trainer demo recovery.
 
-**Access is firm for the live route.** A learner who cannot open and use the app
-must switch to the fallback pack. Do not spend lab time bypassing policy or moving
-code to an unapproved assistant.
+**Access is required for the lab.** A learner who cannot open and use the app must
+stop the lab. Do not spend lab time bypassing policy or moving code
+to an unapproved assistant.
 
 ## Teach the app layout as an engineering map
 
@@ -159,7 +159,7 @@ the same prompt. Apply useful findings and reject unsupported suggestions.
 
 ## Teach the outer loop
 
-Open `fallback-evidence/05-pr-snapshot.json` even during the live route. It gives
+Open `prepared-evidence/05-pr-snapshot.json` during the live route. It gives
 every learner the same issue, diff, review, and check state.
 
 Ask these questions in order:
@@ -194,13 +194,11 @@ not act as a reviewer of record.
 | Accepts critique without checking it | Ask what evidence supports the critique |
 | Gives the automation write tools | Remove every tool that is not needed for the report |
 
-## Fallback delivery
+## Trainer demo recovery
 
-The fallback route is intentional. Learners inspect captured session evidence in
-sequence and make the same decisions.
-
-Do not call the fallback hands-on app practice. It teaches the workflow and preserves
-the learning outcome without pretending the tool ran.
+If the trainer demonstration fails, use the captured session evidence to explain
+the remaining decisions. Do not use this pack as the learner lab or count it as
+hands-on app practice.
 
 ## Official references
 

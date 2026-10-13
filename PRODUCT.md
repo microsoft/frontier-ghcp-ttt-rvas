@@ -31,7 +31,9 @@ materials; preserve their structure and working resource links.
 - Keep the curriculum organized into learning tracks and sessions with reusable
   trainer guidance and hands-on labs.
 - Use **Enterprise Cloud as the governance baseline** and follow customer policy.
-- Retain manual fallbacks when access is unavailable.
+- Verify required tools, permissions, and accounts before each learner lab.
+- Stop the lab when a required tool is unavailable. Keep demo recovery in
+  trainer guidance rather than replacing the learner exercise.
 - Keep human review in the learning workflow.
 
 ## Brand Commitments
@@ -65,7 +67,9 @@ outcomes or invent adoption claims.
 
 - Help trainers reuse materials without rebuilding a session.
 - Keep each exercise bounded and subject to human review.
-- Make access requirements explicit and preserve a manual path.
+- Make access requirements explicit and stop before the lab when they are not met.
+- Offer another setup only when it preserves the same learning objective and
+  completion evidence.
 - Keep linked learning resources easy to find as the curriculum changes.
 
 ## Custom Session Sets
