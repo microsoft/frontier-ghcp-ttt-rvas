@@ -4,15 +4,17 @@
 
 ### Delivery baseline
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. Treat editor modes, tool permissions, model selection, and product lifecycle as current-state decisions, not static training facts.
+Read the [course safety baseline](../../learning-safety-baseline.md). Before the
+demo, check the current GitHub docs and your organization's rules. Editor modes,
+permissions, and model choices can change.
 
 ### Access and cost preflight
 
-1. Confirm attendee role, repository scope, approved data classification, and human reviewer.
-2. Verify the current documentation and the applicable policy for the intended workflow and tools.
-3. Choose a non-sensitive, bounded starter task with explicit acceptance criteria.
-4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
-5. Confirm Agent mode access for every learner before the lab starts.
+1. Choose the training repository and synthetic data.
+2. Check which tools and commands learners may use.
+3. Choose a small task with clear acceptance criteria.
+4. Set a usage limit if the work is metered.
+5. Check Agent mode access before the lab.
 
 ### Access failure
 
@@ -33,8 +35,8 @@ Learners own the task definition and approvals. The assistant proposes work with
 
 | Segment | Activity |
 | --- | --- |
-| Preflight | Confirm scope, policy, data, tools, measurement, and access. |
-| Plan | Write a bounded goal, constraints, and acceptance criteria. |
+| Preflight | Check scope, data, tools, usage limits, and access. |
+| Plan | Write the goal, constraints, and acceptance criteria. |
 | Act | Inspect proposed changes and commands before approval. |
 | Observe | Read test output, diffs, and unexpected effects. |
 | Review | Validate correctness, safety, scope, and maintainability. |
@@ -42,11 +44,12 @@ Learners own the task definition and approvals. The assistant proposes work with
 
 ## Trainer talking points
 
-> "The agent loop does not delegate judgment. It creates review points: plan before the change, inspect each action, validate the evidence, and stop when the task leaves its approved scope."
+> "The agent loop does not delegate judgment. Plan before the change, inspect each
+> action, check the result, and stop when the task leaves its stated scope."
 
-> "Demonstrate only controls permitted by current documentation and policy. If a surface is unavailable, the manual workflow still teaches planning, tests, and review."
+> "Use only the tools allowed for the training repository."
 
-> "Metered work needs an agreed stop guard. Before starting, the team needs the meter, threshold, escalation owner, and manual alternative."
+> "For metered work, set a usage limit and name who can approve more."
 
 ## Task template
 
@@ -55,39 +58,40 @@ Learners own the task definition and approvals. The assistant proposes work with
 Describe one user-visible, testable change.
 
 ## Constraints
-- Approved repository paths and data only
+- Named repository paths and synthetic data only
 - Required checks and repository conventions
-- No unapproved dependencies or external access
+- No new dependencies or external access
 
 ## Completion
 - Acceptance criteria are satisfied
-- Test evidence is recorded
+- Test output is recorded
 - A human reviewer approves the result
 ```
 
 ## Review rubric
 
 - Is the plan small enough to verify?
-- Does each proposed change stay within the approved scope?
+- Does each proposed change stay within the planned files?
 - Are commands, dependencies, and data access understood before approval?
 - Do relevant checks pass?
 - Does a reviewer accept the outcome?
-- Did the work remain within the agreed guard?
+- Did the work stay within the usage limit?
 
 ## Close
 
-Ask learners to identify one point in their own workflow where a plan or review checkpoint would reduce risk. Recheck current official documentation and the applicable policy before the next live demonstration.
+Ask learners to identify one point in their workflow where a plan or review check
+would reduce risk.
 
 ---
 
 ## Minute-mapped delivery plan (60 minutes)
 
-| Time | Segment | Evidence produced |
+| Time | Segment | Result |
 | --- | --- | --- |
 | 0:00 to 0:08 | Assistant-to-agent shift | Learners distinguish a continuation, answer, and goal-driven task. |
 | 0:08 to 0:18 | Agent loop and tools | The group identifies evidence at every loop stage. |
-| 0:18 to 0:28 | Task contracts and trust | A bounded contract and stop rules are visible. |
-| 0:28 to 0:43 | Scripted multi-file demo | Plan, tool decisions, diff, and test evidence are reviewed. |
+| 0:18 to 0:28 | Task contracts and trust | The contract and stop rules are visible. |
+| 0:28 to 0:43 | Scripted multi-file demo | The group reviews the plan, tool decisions, diff, and test output. |
 | 0:43 to 0:50 | Chat, agent, or manual decision | Learners select a workflow from task characteristics. |
 | 0:50 to 0:57 | Intervention exercise | Learners redirect or stop without expanding scope. |
 | 0:57 to 1:00 | Close and lab handoff | Required access is confirmed. |
@@ -107,11 +111,11 @@ Ask learners to identify one point in their own workflow where a plan or review 
 ### Trainer talking points
 
 1. Inline assistance proposes a local continuation.
-2. Chat commonly answers or proposes a bounded edit.
-3. An agent can pursue a defined goal through multiple approved actions.
+2. Chat commonly answers or proposes a small edit.
+3. An agent can pursue a defined goal through multiple actions.
 4. More actions create more review points, not less accountability.
 5. Capability is not authorization; current documentation and organizational policy decide what may run.
-6. Product modes, controls, models, and availability are current-state facts to verify before delivery.
+6. Check current product modes, controls, models, and availability before delivery.
 
 ### Trainer interaction
 
@@ -125,7 +129,8 @@ Ask learners to choose Chat, manual edit, or agent workflow and justify the revi
 
 ### Transition
 
-> "A multi-step task is safe to direct only when every loop produces observable evidence."
+> "A multi-step task is safe to direct only when every loop produces output the
+> learner can check."
 
 ## Segment 2: Plan, act, observe, review (0:08 to 0:18)
 
@@ -135,18 +140,18 @@ Ask learners to choose Chat, manual edit, or agent workflow and justify the revi
 - **Act:** approve only the required read, edit, or command.
 - **Observe:** inspect command output and changed files.
 - **Review:** compare behavior and scope with the task contract.
-- **Revise:** change one assumption at a time and gather evidence.
+- **Revise:** change one assumption at a time and check the new result.
 - **Stop:** end the task when scope, data, permissions, or repeated failures cross a boundary.
 
-### Evidence prompts
+### Review prompts
 
 After **Plan**, ask: "Does every step support an acceptance criterion?"
 
-After **Act**, ask: "Was this file or command approved and necessary?"
+After **Act**, ask: "Was this file or command necessary?"
 
 After **Observe**, ask: "What changed, and what does the output actually prove?"
 
-After **Review**, ask: "Would an accountable reviewer accept this evidence?"
+After **Review**, ask: "Would the reviewer accept this result?"
 
 ### Transition
 
@@ -157,12 +162,12 @@ After **Review**, ask: "Would an accountable reviewer accept this evidence?"
 ### Exact trainer actions
 
 1. Re-display the Delivery baseline and Access and cost preflight.
-2. Confirm synthetic repository data and the approved attendee role.
-3. Verify current official documentation for the intended IDE workflow.
-4. Confirm organizational policy for file access, commands, network use, and tools.
+2. Check that the repository contains only synthetic data.
+3. Check the current GitHub docs for Agent mode.
+4. Check the rules for file access, commands, network use, and tools.
 5. Identify the human reviewer.
-6. Record the applicable organization-owned meter, threshold, escalation owner, and stop guard.
-7. Open the manual starter task before any live request.
+6. Set a usage limit and name who can approve more.
+7. Open the starter task before the first request.
 8. Write this contract:
 
 ```markdown
@@ -306,9 +311,9 @@ for the lab.
 - If the plan is too broad, say: "Stop. Use only the three named files and show a revised plan."
 - If a dependency is proposed, reject it and restate the no-dependency constraint.
 - If tests fail, ask for an explanation tied to one failing assertion before allowing revision.
-- If repeated revisions add no evidence, stop the run and explain the smallest
+- If repeated revisions add no useful result, stop the run and explain the smallest
   acceptable correction.
-- If metering reaches the defined guard, stop and record progress.
+- If the run reaches its usage limit, stop and record progress.
 
 ### Transition
 
@@ -320,7 +325,7 @@ for the lab.
 
 Use Chat for explanation, option generation, or one surgical proposal.
 
-Use an agent workflow for explicit multi-file outcomes with bounded tools and executable evidence.
+Use an agent workflow for clear multi-file outcomes with named tools and tests.
 
 Use manual work when the change is tiny, requirements remain unclear, or autonomy adds review burden.
 
@@ -332,7 +337,7 @@ Pause when permissions, data handling, policy, or a destructive action is unreso
 | --- | --- | --- |
 | Explain a failing assertion | Chat or human inspection | No multi-file action is required. |
 | Rename a local variable | Manual or inline | The edit is small and directly observable. |
-| Add a route plus service tests | Agent when approved | Related files and tests form a bounded graph. |
+| Add a route plus service tests | Agent | The files and tests are closely related. |
 | Decide an authorization policy | Human owners | This is an accountable policy decision. |
 
 ### Transition
@@ -364,14 +369,15 @@ The dependency and schema changes disappear from the proposed diff.
 
 Then say an unexpected command requests network access.
 
-Learners must choose **stop**, record the unresolved permission, and switch to manual completion.
+Learners must choose **stop** and record the unresolved permission. Do not
+continue until the permission is resolved.
 
 ### Verification
 
 - The revised file list matches the contract.
 - No unrelated action remains queued.
 - The stop rationale names the boundary crossed.
-- Manual continuation instructions are clear.
+- The reason for stopping is clear.
 
 ## Common trainee Q&A
 
@@ -389,23 +395,28 @@ Only through the organization's normal dependency approval and review process. T
 
 ### "What if it keeps fixing its own failures?"
 
-Iteration helps only when each cycle adds evidence. Stop repeated, broad, or unexplained changes and diagnose manually.
+Iteration helps only when each cycle improves the result. Stop repeated, broad,
+or unexplained changes and inspect the problem.
 
 ### "Can I let it run without watching?"
 
-Use only modes and approval controls permitted by current documentation and organizational policy. Regardless of surface, review the resulting actions, diff, and evidence.
+Use only the modes and controls allowed for the repository. Review the actions,
+diff, and test output.
 
 ### "How do we know which files it read?"
 
-Use observable surface information and repository tooling where available; do not infer. Keep approved scope narrow and stop if evidence is insufficient.
+Use the product's file list and repository tools; do not guess. Keep the file
+list small and stop if you cannot tell what the agent read.
 
 ### "What about MCP or external tools?"
 
-Verify the current product documentation, server identity, permissions, data path, and organizational approval. The base demo requires none.
+Check the current product docs, server identity, permissions, and data path. The
+base demo does not need external tools.
 
 ### "How much will a run cost?"
 
-Do not quote static figures. Check the current organization-specific meter and terms, set a threshold and owner, and retain the manual alternative.
+Do not quote static figures. Check the current terms, set a usage limit, and name
+who can approve more.
 
 ## Pitfalls, anti-patterns, and recoveries
 
@@ -413,20 +424,21 @@ Do not quote static figures. Check the current organization-specific meter and t
 | --- | --- |
 | "Fix the project" with no criteria | Write one user-visible goal, non-goals, files, and tests. |
 | Approving commands by habit | Pause and connect each command to a criterion. |
-| Counting changed files as progress | Evaluate behavior and evidence instead. |
+| Counting changed files as progress | Check behavior and test output instead. |
 | Allowing a surprise dependency | Reject, restore the manifest, and use existing APIs. |
 | Trusting the agent's test summary | Run the focused check independently. |
 | Reviewing only the final message | Inspect complete diff and command output. |
-| Endless self-correction | Stop after repeated cycles without new evidence. |
-| Treating intervention as failure | Normalize redirect, rollback, and manual completion. |
+| Endless self-correction | Stop after repeated cycles without a better result. |
+| Treating intervention as failure | Normalize redirect, rollback, and stopping. |
 | Using sensitive examples | Replace with synthetic fictional tasks. |
-| Teaching fixed UI or entitlement | Verify current official docs and policy at delivery. |
+| Teaching fixed UI or entitlement | Check current docs before delivery. |
 
 ## Closing and lab handoff (0:57 to 1:00)
 
 ### Closing script
 
-> "A well-directed agent task is a chain of reviewable decisions. The contract bounds the goal, tool approvals bound actions, tests provide evidence, and a human closes the loop."
+> "A well-directed agent task is a chain of reviewable decisions. The task
+> contract limits the goal, tests check the result, and a human closes the loop."
 
 ### Lab handoff
 
@@ -434,9 +446,8 @@ Open `lab/README.md`.
 
 Learners will keep one Todo API through four stages: scaffold it, compare Ask and Agent mode on one feature, redirect a repository refactor, and make a final human decision.
 
-Before any lab dependency or authentication example, apply current organizational approval and use only synthetic credentials and data.
-
-If that live path is not approved, learners plan the same tasks, make the smallest manual edits, and compare against the stated criteria.
+Use only synthetic credentials and data. Stop the lab if Agent mode or the
+required repository permissions are unavailable.
 
 ### Lab readiness checklist
 
@@ -444,5 +455,5 @@ If that live path is not approved, learners plan the same tasks, make the smalle
 - [ ] Repository copy contains no sensitive data.
 - [ ] Goal, constraints, tests, and stop rules are written.
 - [ ] Human reviewer is named.
-- [ ] Meter and stop guard are recorded when they apply.
-- [ ] Learners know how to cancel and continue manually.
+- [ ] A usage limit is recorded when it applies.
+- [ ] Learners know how to cancel and stop the lab.

@@ -4,15 +4,17 @@
 
 ### Delivery baseline
 
-Use Enterprise Cloud as the governance baseline. Before delivery, verify current official GitHub documentation and the applicable administrator policy for the intended context workflow. Do not present a changing surface, automatic behavior, storage behavior, or availability state as a curriculum guarantee.
+Read the [course safety baseline](../../learning-safety-baseline.md). Before the
+demo, check the current GitHub docs and your organization's rules. Product
+behavior and availability can change.
 
 ### Access and cost preflight
 
-1. Confirm the repository, attendee role, approved data classification, and task owner.
-2. Verify current documentation and the applicable policy for the intended workflow.
-3. Choose a non-sensitive, bounded question and approved repository sources.
-4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
-5. Confirm Spaces and GitHub Copilot access for every learner.
+1. Choose the training repository and synthetic data.
+2. Check which sources learners may add or share.
+3. Choose a small question and the files needed to answer it.
+4. Set a usage limit if the work is metered.
+5. Check Spaces and GitHub Copilot access before the lab.
 
 ### Access failure
 
@@ -21,17 +23,18 @@ trainer demonstration, but it does not count as learner completion.
 
 ## Session objective
 
-Teach learners to curate minimal, relevant, reviewable context for a task. The lasting skill is source selection and evidence-based review, not reliance on a particular product surface.
+Teach learners to select the few files needed for a task and check the answer
+against those files.
 
 ## Suggested agenda
 
 | Segment | Activity |
 | --- | --- |
-| Preflight | Confirm policy, data, task, measurement, and access. |
+| Preflight | Check data, sources, usage limits, and access. |
 | Source selection | Select only relevant repository instructions, code, tests, and docs. |
 | Context packet | Explain why every included source is necessary. |
-| Bounded task | Use the packet to plan a small change. |
-| Review | Check that output follows evidence and tests. |
+| Small task | Use the packet to plan a small change. |
+| Review | Check the output against the source files and tests. |
 | Access gate | Stop when required Spaces or Copilot access is missing. |
 
 ## Context packet pattern
@@ -53,24 +56,24 @@ Exclude:
 
 ## Trainer talking points
 
-> "Context is an engineering input. Select the smallest set of approved sources that lets a reviewer explain the result."
+> "Select the fewest files needed to explain and check the result."
 
 > "If source eligibility or product behavior is unclear, stop and resolve the
 > access or policy question before the lab."
 
-> "Metered work has an agreed stop guard. Stop the run when the guard is reached."
+> "For metered work, stop at the usage limit."
 
 ## Review rubric
 
 - Does every source have a clear relationship to the task?
-- Is all included data approved for the workflow?
-- Does the result follow repository evidence and acceptance criteria?
+- Is all included data allowed for the lab?
+- Does the result follow the source files and acceptance criteria?
 - Are assumptions identified for human review?
 - Can the task be completed manually from the packet?
 
 ## Close
 
-Ask learners to identify a common task where less context would improve clarity and reviewability. Recheck official documentation and the applicable policy before a live exercise.
+Ask learners to identify a task that would be easier to review with fewer files.
 
 ---
 
@@ -78,13 +81,13 @@ Ask learners to identify a common task where less context would improve clarity 
 
 | Time | Segment | Trainer outcome |
 | --- | --- | --- |
-| 0:00 to 0:08 | Diagnose the context problem | Learners distinguish missing evidence from excess noise. |
+| 0:00 to 0:08 | Diagnose the context problem | Learners distinguish missing information from excess noise. |
 | 0:08 to 0:18 | Context hierarchy | Learners rank task, instructions, curated sources, and local references. |
 | 0:18 to 0:30 | Curated context workflows | The group creates a purpose, audience, source list, and owner. |
 | 0:30 to 0:42 | Instructions and reusable prompts | Learners separate durable rules from repeatable tasks. |
 | 0:42 to 0:50 | Source governance and maintenance | Each source receives scope and freshness checks. |
-| 0:50 to 0:58 | Scripted before/after demo | Two responses are compared using evidence, not fluency. |
-| 0:58 to 1:00 | Close and lab handoff | Learners begin with an approved context packet. |
+| 0:50 to 0:58 | Scripted before/after demo | The group compares two responses with the source files. |
+| 0:58 to 1:00 | Close and lab handoff | Learners begin with the context packet. |
 
 ### Time-pressure cutpoints
 
@@ -105,7 +108,7 @@ Ask learners to identify a common task where less context would improve clarity 
 - Broad, stale, or conflicting sources can obscure the decisive rule.
 - Restricted data must not be added merely because it seems relevant.
 - A confident answer is not evidence that the right source was used.
-- The lasting skill is selecting the smallest approved packet that supports review.
+- The lasting skill is selecting the fewest files needed for review.
 
 ### Opening exercise
 
@@ -134,9 +137,9 @@ Expected answers include unrelated repositories, production records, secrets, an
 1. Task intent and acceptance criteria define the immediate outcome.
 2. Repository instructions provide durable, reviewed conventions.
 3. Reusable prompt files encode repeatable workflows.
-4. Curated collections can bring approved code, docs, issues, and specifications together for a purpose.
-5. Current files and explicit references supply local evidence.
-6. Any retained memory, when supported and approved, needs source, scope, and freshness.
+4. Curated collections can bring code, docs, issues, and specifications together.
+5. Current files and named references supply local context.
+6. Retained memory needs a source, scope, and review date.
 7. Specific task requirements override generic guidance.
 8. Conflicts require clarification; they are not resolved by adding more context.
 
@@ -163,11 +166,11 @@ Exclude the unrelated roadmap and production log.
 ### Access and governance check
 
 1. Revisit the Delivery baseline.
-2. Confirm current official documentation for the intended context surface.
-3. Confirm attendee role, repository access, and approved data classification.
-4. Verify organizational policy for adding and sharing sources.
-5. Identify any applicable meter, threshold, escalation owner, and stop guard.
-6. Select the manual packet if any evidence is incomplete.
+2. Check the current GitHub docs for Spaces.
+3. Check repository access and use only synthetic data.
+4. Check the rules for adding and sharing sources.
+5. Set a usage limit and name who can approve more.
+6. Stop if the required sources are missing.
 
 ### Trainer-created context card
 
@@ -292,7 +295,8 @@ For every source or remembered fact, ask:
 
 ### Purpose
 
-Compare response quality using explicit criteria while avoiding claims that a surface always cites or follows context.
+Compare the responses against clear criteria. Do not claim that a product surface
+always cites or follows context.
 
 ### Setup
 
@@ -348,17 +352,17 @@ Variation is acceptable; the teaching point is that the request lacks evidence.
 Exact prompt:
 
 ```text
-Using only the approved API specification, product route, product model, and
+Using only the API specification, product route, product model, and
 repository instructions, propose the smallest low-stock endpoint change.
 First list acceptance criteria and assumptions.
 Do not add dependencies. Reject negative or non-integer thresholds.
-End with the evidence used and two verification requests.
+End with the source files used and two checks to run.
 ```
 
 ### Exact trainer actions for Pass B
 
-1. Confirm each source is approved and current.
-2. Submit through the approved context workflow or use the printed packet.
+1. Check that each source is current and allowed for the lab.
+2. Submit through the context workflow.
 3. Require acceptance criteria before code.
 4. Compare the plan with the API specification and route order.
 5. Ask whether `Number.isInteger(Number(value))` would wrongly accept `"2"`.
@@ -367,7 +371,8 @@ End with the evidence used and two verification requests.
 
 ### Expected outcome
 
-The grounded response should state the threshold rules, place the static route before `/:id`, avoid new dependencies, and identify source evidence and verification requests.
+The grounded response should state the threshold rules, place the static route
+before `/:id`, avoid new dependencies, name its source files, and list two checks.
 
 It may then include a code proposal such as:
 
@@ -381,7 +386,7 @@ function parseThreshold(value) {
 }
 ```
 
-The existing project's error type and message remain subject to source verification.
+Check the existing project before choosing the error type and message.
 
 ### Verification rubric
 
@@ -390,9 +395,9 @@ The existing project's error type and message remain subject to source verificat
 | Correctness | Are the default, valid, and invalid threshold paths represented? |
 | Scope | Is the proposal limited to the selected feature? |
 | Assumptions | Are unresolved decisions named? |
-| Evidence | Can each behavior be traced to a source? |
-| Testability | Are valid and invalid cases explicit? |
-| Data | Was only synthetic approved context used? |
+| Sources | Can each behavior be traced to a source file? |
+| Testability | Are valid and invalid cases clear? |
+| Data | Was only synthetic data used? |
 
 ### Prepared demonstration
 
@@ -420,11 +425,13 @@ demonstration, not as a learner substitute.
 
 ### "Should we add the whole repository?"
 
-No. Start with the smallest approved set that supports the task, then add a source only when a specific evidence gap remains.
+No. Start with the fewest files that support the task, then add a file only when
+the answer is missing specific information.
 
 ### "Do instructions guarantee compliance?"
 
-No. They guide output. Tests, policy controls, repository checks, and human review provide enforcement and evidence.
+No. They guide output. Tests, repository checks, and human review enforce the
+rules.
 
 ### "Which source wins when docs and code disagree?"
 
@@ -432,23 +439,27 @@ Do not guess. Identify the accountable source owner, record the conflict, and cl
 
 ### "Can we include issue comments or meeting notes?"
 
-Only when approved, relevant, owned, and current. Separate decisions from unverified discussion.
+Only when the lab permits them and they are relevant, owned, and current.
+Separate decisions from unverified discussion.
 
 ### "Does a Space change repository permissions?"
 
-Do not infer access behavior. Verify current official documentation and organizational policy before adding or sharing any source.
+Do not guess how access works. Check the current docs and organization rules
+before adding or sharing a source.
 
 ### "Can we store team conventions in memory?"
 
-Use repository-reviewed artifacts for durable team rules. Any memory feature requires current support, policy, source, scope, freshness, and data checks.
+Keep long-lived team rules in reviewed repository files. Before using a memory
+feature, check current support, data rules, sources, scope, and review dates.
 
 ### "Why did the grounded response still miss a rule?"
 
-Context makes more evidence available. It does not guarantee correct use. Make the rule explicit, test it, and review the result.
+Context supplies more information. It does not guarantee correct use. State the
+rule, test it, and review the result.
 
 ### "What does this cost?"
 
-Check current official metering information for the organization and selected workflow. Use the organization-defined threshold and manual stop path.
+Check current metering information and use the organization's usage limit.
 
 ## Pitfalls, anti-patterns, and recoveries
 
@@ -457,36 +468,37 @@ Check current official metering information for the organization and selected wo
 | "More context is always better" | Remove sources that do not affect a criterion. |
 | Adding restricted records | Stop, remove them, notify the appropriate owner, and use synthetic data. |
 | Mixing stale and current contracts | Identify authority and update or exclude the stale source. |
-| Vague instructions | Rewrite as observable repository behavior. |
-| Treating citations as correctness | Open the source and verify the claim. |
+| Vague instructions | Rewrite them as behavior a test or reviewer can check. |
+| Treating citations as correctness | Open the source and check the claim. |
 | No source owner | Assign one or do not share the packet. |
 | No review date | Add event-based and scheduled maintenance triggers. |
-| Assuming instructions loaded | Test observable behavior and retain a manual checklist. |
-| Teaching fixed paths or UI | Verify current official documentation at delivery. |
+| Assuming instructions loaded | Test the expected behavior. |
+| Teaching fixed paths or UI | Check current docs before delivery. |
 | Context changes without review | Manage shared artifacts through normal repository review. |
 
 ## Closing and lab handoff (0:58 to 1:00)
 
 ### Closing script
 
-> "Good context is small enough to explain, approved for the audience, tied to evidence, and maintained by an owner. Better output starts with better source decisions."
+> "Good context is small enough to explain, safe to share, tied to source files,
+> and maintained by an owner. Better output starts with better source decisions."
 
 ### Lab handoff
 
 Open `lab/README.md`.
 
-The live path keeps one Storefront API through source selection, repository instructions, a context comparison, and reusable prompts.
+Learners keep one Storefront API through source selection, repository
+instructions, a context comparison, and reusable prompts.
 
-The no-access path assembles the same files as a manual packet and completes the comparison in `lab/starter/context-comparison.md`.
-
-Verify current support and policy before using any changing UI, path, setting, sharing control, or memory feature.
+Check current support before using a changing UI, path, setting, sharing control,
+or memory feature.
 
 ### Readiness checklist
 
 - [ ] Purpose, audience, and owner are written.
-- [ ] Every source is approved and synthetic.
-- [ ] Exclusions are explicit.
+- [ ] Every source is allowed for the lab and uses synthetic data.
+- [ ] Exclusions are clear.
 - [ ] One known-answer question is ready.
 - [ ] Maintenance triggers are assigned.
 - [ ] Required Spaces and GitHub Copilot access is confirmed.
-- [ ] Meter and stop guard are recorded when they apply.
+- [ ] A usage limit is recorded when it applies.

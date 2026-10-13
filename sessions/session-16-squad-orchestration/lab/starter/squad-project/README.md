@@ -2,14 +2,13 @@
 
 This small Node.js Express API supports the Squad orchestration lab.
 
-The required issue adds bounded validation to `POST /api/users`. The starter has
+The required issue adds input validation to `POST /api/users`. The starter has
 the baseline route and tests. It does not contain the validation result.
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Before a live exercise, verify
-current GitHub documentation and customer policy. Set a customer-owned stop guard
-for metered work.
+Follow the [course safety baseline](../../../../learning-safety-baseline.md). Set a
+usage limit if the work is metered.
 
 GitHub Copilot and Squad are required for the lab. If either is unavailable, stop
 the lab.

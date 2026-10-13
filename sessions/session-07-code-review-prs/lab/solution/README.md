@@ -4,7 +4,8 @@
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. For metered work, use an agreed stop guard.
+Follow the [course safety baseline](../../../learning-safety-baseline.md). Set a
+usage limit if the work is metered.
 
 Use this reference after the assisted review and required checks. Compare the
 learner decision with the documented fixes.

@@ -77,6 +77,43 @@ Avoid vague institutional phrases such as:
 
 Use them only when they carry necessary technical meaning.
 
+### Curriculum wording
+
+Write instructions as actions, not policy summaries.
+
+Prefer:
+- "Learners need GitHub Copilot and Python 3.10 or later."
+- "Check the current GitHub docs before the demo."
+- "If Agent mode is unavailable, stop the lab."
+- "Run `npm test` and save the output."
+
+Avoid:
+- "approved editor," "approved path," or "approved environment" when no person
+  makes an approval decision;
+- "live route," "access gate," "delivery baseline," and "required capability"
+  when "lab," "before the lab," or the tool name is enough;
+- repeating the shared safety policy in every session;
+- abstract labels such as "evidence," "bounded," "explicit," "durable," or
+  "observable" when the exact file, command, result, or limit can be named.
+
+Use **approved** only when an approval is real and relevant. Name what is approved:
+repository access, data use, package installation, or a production action.
+
+Name the proof. Write "test output," "diff," "review comment," or "decision log"
+instead of "evidence" when one of those is what you mean.
+
+Use one checking verb. Prefer **check**. Use **verify** or **confirm** only when
+they describe a different action.
+
+Session files should link to `sessions/learning-safety-baseline.md` instead of
+copying its policy text. Add session-specific rules only when that session needs
+them.
+
+Before finishing curriculum prose, search the changed text for these words:
+`approved`, `applicable`, `bounded`, `durable`, `evidence`, `explicit`, `verify`,
+and `confirm`. Keep each use only when a simpler, more concrete phrase would lose
+meaning.
+
 ### Do not over-explain
 
 State the point, explain why it matters when necessary, and move on.
@@ -92,12 +129,8 @@ Do not add:
 Do not make a sentence more formal simply because it is documentation.
 
 > [!IMPORTANT]
-> Optimize for sufficient completeness, not maximal completeness. Stop adding detail when the next addition would not materially change the reader's understanding,
-> decision, or ability to act, and stop when additional work has low marginal value.
-> When writing, you need to consider strong simplification. Simplification is beauty.
-> Fix your attitude at overcomplicating things, considering that the greatest and finest minds
-> transfer knowledge by being clear and understandable.
-> Always consider incremental utility value when trying to add things: if there is not, no need to add text or details.
+> Include enough detail for the reader to act. Stop when more text would not
+> improve understanding or change a decision. Simpler is better.
 
 Add some strategic bold text.
 
@@ -118,4 +151,3 @@ Rewrite or delete sentences that fail this test.
 Then apply the `/humanize-writing` AI-pattern dictionary.
 
 Preserve technical facts, Microsoft product names, dates, citations, and governance terminology exactly.
-

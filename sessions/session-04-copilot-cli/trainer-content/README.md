@@ -610,10 +610,12 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 ## Common Q&A
 
 **Q: Do I need both the CLI and the IDE extension?**
-A: Use the surface that fits the task and is approved for the environment. Confirm current entitlement and metering behavior in official documentation and the applicable policy.
+A: Use the surface that fits the task. Check current access and metering in the
+official docs and your organization's rules.
 
 **Q: How is CLI use metered?**
-A: Do not teach a fixed rule. Check the current official billing documentation with the administrator and honor the agreed metered-work stop guard.
+A: Do not teach a fixed rule. Check the current billing docs and stop at the
+agreed usage limit.
 
 **Q: Can I use the CLI in GitHub Actions?**
 A: Yes. Use programmatic mode with `--yolo` or specific `--allow-tool` flags.

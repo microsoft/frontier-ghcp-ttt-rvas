@@ -104,8 +104,8 @@ against **GitHub Enterprise Cloud** first:
    lack a live official-source reference. Prefer durable Enterprise/Business
    capability and governance guidance linked to current GitHub documentation.
 5. Require a practical delivery preflight for each affected lab: licensed
-   roles, required admin policies, budget/stop guard, metered services,
-   retention or data-handling constraints, and a no-access fallback.
+   roles, admin policies, usage limits, metered services, data-handling rules,
+   and a stop instruction when required access is missing.
 
 ## Curriculum scope
 
@@ -198,20 +198,20 @@ State the intended learner and trainer outcome.
 
 - Files/sessions to update, create, or evaluate
 - Specific slide, lab, trainer-guide, track, prerequisite, template, or navigation effects
-- Explicit out-of-scope items
+- Clear out-of-scope items
 
 ## Acceptance criteria
 
-- [ ] Observable, implementation-ready criterion
-- [ ] Observable, implementation-ready criterion
+- [ ] Clear, implementation-ready criterion
+- [ ] Clear, implementation-ready criterion
 
 ## Delivery considerations
 
 - Enterprise licenses, administrator policies, model/data restrictions, and
   retention or compliance implications
-- Metered services, budget/stop guard, and lab cost risks
+- Metered services, usage limits, and lab cost risks
 - Business fallback impact, or `Not material`
-- No-access fallback and migration risks
+- Access requirements and migration risks
 - Dependencies and related issues, or `None found`
 ```
 

@@ -2,9 +2,11 @@
 
 ## Access and cost preflight
 
-The database contains synthetic data. Before connecting a client, the customer administrator must approve local MCP use and the client configuration. Set a customer-defined metered-work stop guard. Check current official GitHub documentation and customer policy for access and metering details.
+The database contains synthetic data. Before connecting a client, check that
+local MCP use and the client configuration are allowed. Set a usage limit for
+metered work and check current access details in the official docs.
 
-If MCP is unavailable, run the listed queries locally with SQLite and compare them with this schema.
+Run the listed queries locally with SQLite and compare them with this schema.
 
 ## Expected schema
 

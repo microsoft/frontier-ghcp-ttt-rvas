@@ -15,12 +15,12 @@ footer: 'Session 06: Context Workflows'
 
 # Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline.
+Follow the course safety baseline.
 
-1. Verify current official GitHub documentation and the applicable administrator policy.
-2. Confirm repository scope and approved data sources.
-3. Use a non-sensitive, bounded question.
-4. For metered work, define an approved threshold, escalation route, and stop guard.
+1. Check the current GitHub docs and your organization's rules.
+2. Check the repository and data sources.
+3. Use a small question and synthetic data.
+4. Set a usage limit for metered work.
 
 ---
 

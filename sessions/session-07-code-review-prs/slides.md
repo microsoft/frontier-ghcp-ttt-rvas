@@ -15,12 +15,12 @@ footer: 'Session 07: Code Review'
 
 # Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline.
+Follow the course safety baseline.
 
-1. Verify current official GitHub documentation and the applicable administrator policy.
-2. Confirm repository scope, data classification, and review permissions.
-3. Use a non-sensitive pull request with explicit acceptance criteria.
-4. For metered work, define an approved threshold, escalation route, and stop guard.
+1. Check the current GitHub docs and your organization's rules.
+2. Check the repository, data, and review permissions.
+3. Use a small pull request with clear acceptance criteria.
+4. Set a usage limit for metered work.
 
 ---
 

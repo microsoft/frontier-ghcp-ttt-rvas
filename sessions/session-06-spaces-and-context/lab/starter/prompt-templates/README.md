@@ -4,7 +4,8 @@ Create reusable prompt files in this directory.
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live exercise. For metered work, use an agreed stop guard.
+Follow the [course safety baseline](../../../../learning-safety-baseline.md). Set a
+usage limit if the work is metered.
 
 GitHub Copilot and Spaces access are required for the lab. If either is
 unavailable, stop the lab.

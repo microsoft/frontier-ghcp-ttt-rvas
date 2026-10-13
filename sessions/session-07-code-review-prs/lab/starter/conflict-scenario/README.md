@@ -4,7 +4,8 @@
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before a live demonstration. For metered work, define an approved threshold, escalation route, and stop guard.
+Follow the [course safety baseline](../../../../learning-safety-baseline.md). Set a
+usage limit if the demonstration is metered.
 
 GitHub pull-request and Copilot review access are required for the lab. Use this
 scenario for the planned conflict-resolution exercise.
@@ -30,4 +31,6 @@ Preserve both intended behaviors. Do not choose a branch by default.
 
 ## Optional live demonstration
 
-After verifying current official GitHub documentation and policy, a trainer may demonstrate an approved assisted workflow. Compare its proposal with the manual result and tests. A human reviewer makes the final decision.
+After checking the current GitHub docs, a trainer may demonstrate the assisted
+workflow. Compare its proposal with the manual result and tests. A human reviewer
+makes the final decision.

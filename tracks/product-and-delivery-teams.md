@@ -113,9 +113,9 @@ If an additional MCP server is required, install it through **Customize** → **
 or `/mcp add` using the organization-approved server definition. Do not paste
 personal access tokens into prompts or repository files.
 
-### 5. Verify session-specific capabilities
+### 5. Check session-specific tools
 
-| Session | Required capability |
+| Session | Required tool or access |
 | --- | --- |
 | 20 | App project and repository reads |
 | 21 | Project skill `decision-interview` |
@@ -124,8 +124,8 @@ personal access tokens into prompts or repository files.
 | 24 | Built-in `/orchestrate`, child-session steering, and GitHub MCP |
 | 25 | Automations and GitHub MCP |
 
-When a required capability is unavailable, stop that lab. Do not replace a live
-capability with role-play or claim that a static artifact proves the workflow ran.
+When a required tool is unavailable, stop that lab. Do not replace hands-on work
+with role-play or claim that a static artifact proves the workflow ran.
 
 ### 6. Verify session controls and context syntax
 

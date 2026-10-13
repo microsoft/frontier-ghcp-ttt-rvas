@@ -24,11 +24,9 @@ deliberate defects for comparing human review and Copilot-assisted review.
 
 ## Access and cost preflight
 
-Use Enterprise Cloud as the governance baseline. Before delivery, verify current
-official GitHub documentation and the applicable administrator policy. Confirm the
-repository scope, data classification, reviewer roles, and required checks. For
-metered work, define the approved meter and threshold. Also name the escalation
-route and stop guard.
+Read the [course safety baseline](../../learning-safety-baseline.md). Before the
+lab, check the repository, synthetic data, reviewer, test command, and any usage
+limit.
 
 Before you start, record these decisions in your notes:
 
@@ -36,7 +34,7 @@ Before you start, record these decisions in your notes:
 2. **Data boundary:** Are all examples synthetic and allowed for review tooling?
 3. **Review surface:** Is Copilot review available?
 4. **Required checks:** Which command proves the starter project still works?
-5. **Stop guard:** What time, usage, or policy condition requires you to stop automated work?
+5. **Stop condition:** What requires you to stop automated work?
 
 > **Success criteria:** You can explain what is allowed, what is out of scope, who
 > reviews the work, and which check validates the change.
@@ -317,5 +315,5 @@ Submit one folder or document containing:
 - [ ] Findings are tied to evidence and acceptance criteria.
 - [ ] A human reviewer made the final decision.
 - [ ] Required checks were run.
-- [ ] Metered work had an agreed stop guard.
+- [ ] Metered work stayed within the usage limit.
 - [ ] Starter files used: `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`, `review-project/`, and `conflict-scenario/`.

@@ -4,15 +4,17 @@
 
 ### Delivery baseline
 
-Use Enterprise Cloud as the governance baseline. Verify current official GitHub documentation and the applicable administrator policy before demonstrating review automation. Treat availability, controls, data handling, and measurement as delivery decisions.
+Read the [course safety baseline](../../learning-safety-baseline.md). Before the
+demo, check the current GitHub docs and your organization's rules. Review controls
+and availability can change.
 
 ### Access and cost preflight
 
-1. Confirm repository scope, data classification, reviewer roles, and required checks.
-2. Verify current official documentation and the applicable policy for the intended review workflow.
-3. Choose a non-sensitive pull request with explicit acceptance criteria.
-4. For metered work, define the approved meter, threshold, escalation contact, and stop guard.
-5. Confirm pull-request and Copilot review access for every learner.
+1. Choose the training repository, synthetic data, reviewer, and test command.
+2. Check the current docs for the review tools.
+3. Choose a small pull request with clear acceptance criteria.
+4. Set a usage limit if the work is metered.
+5. Check pull-request and Copilot review access before the lab.
 6. Ask learners to write their first verdict before assisted review.
 
 ### Access failure
@@ -23,26 +25,28 @@ practice.
 
 ## Session objective
 
-Teach automation as review input, not review authority. Learners collect evidence and make a human decision on correctness, safety, scope, and maintainability.
+Teach automation as review input, not review authority. Learners check the diff,
+tests, and comments before making the decision.
 
 ## Suggested agenda
 
 | Segment | Activity |
 | --- | --- |
-| Preflight | Confirm policy, data, roles, measurement, and access. |
+| Preflight | Check data, roles, usage limits, and access. |
 | Review contract | Define acceptance criteria and required checks. |
-| Findings | Separate observed evidence from assumptions. |
+| Findings | Separate facts from assumptions. |
 | Human decision | Accept, request changes, or reject with rationale. |
 | Conflict exercise | Resolve intent and tests manually before editing. |
 | Access gate | Stop when the required review surface is missing. |
 
 ## Trainer talking points
 
-> "A review tool can raise questions, but it cannot replace the accountable reviewer. The reviewer owns the decision and needs evidence."
+> "A review tool can raise questions, but it cannot replace the reviewer. The
+> reviewer owns the decision and needs the diff and test results."
 
-> "Demonstrate only a current, approved workflow. When policy or documentation is incomplete, use the human-only exercise."
+> "Check the current workflow before the demo."
 
-> "Metered review work requires an agreed stop guard. Stop at the boundary and keep the manual review path."
+> "For metered work, stop at the usage limit."
 
 ## Review contract
 
@@ -60,9 +64,9 @@ Describe the user-visible behavior and allowed scope.
 ## Review rubric
 
 - Does the implementation meet the stated intent?
-- Are tests relevant and reproducible?
+- Do the tests cover the change?
 - Did the change introduce data, dependency, security, or permission questions?
-- Is the diff within the approved scope?
+- Does the diff stay within the planned files?
 - Can the reviewer explain the decision to accept or request revision?
 
 ## Conflict-resolution exercise
@@ -71,18 +75,18 @@ Have learners read both branch intentions, write the desired merged behavior, re
 
 ## Close
 
-Ask learners to name the evidence they need before approving a change. A no-access manual review is still a complete, valid exercise.
+Ask learners what they need to see before approving a change.
 
 ---
 
 ## Minute-mapped delivery plan (60 minutes)
 
-| Time | Segment | Evidence produced |
+| Time | Segment | Result |
 | --- | --- | --- |
 | 0:00 to 0:08 | Review roles and accountability | Author, automation, checks, and reviewer roles are named. |
 | 0:08 to 0:18 | PR summaries and review contracts | Learners separate generated prose from diff evidence. |
 | 0:18 to 0:28 | Review requests and quality gates | A policy-aware first-pass workflow is defined. |
-| 0:28 to 0:43 | Scripted intentional-defect demo | Finding, regression test, fix, and human decision are traced. |
+| 0:28 to 0:43 | Scripted intentional-defect demo | The group traces the finding, test, fix, and decision. |
 | 0:43 to 0:51 | Suggested fixes and conflicts | Learners preserve intent before editing. |
 | 0:51 to 0:58 | Limits, adoption, and Q&A | Learners design reversible human gates. |
 | 0:58 to 1:00 | Close and lab handoff | Reviewer roles and access are confirmed. |
@@ -95,25 +99,25 @@ Ask learners to name the evidence they need before approving a change. A no-acce
 - At 0:38, use the prepared fix and focus on verification.
 - At 0:43, omit optional assisted fix application.
 - At 0:51, run the conflict decision statement without editing code.
-- Never cut accountable review, test evidence, access checks, or lab roles.
+- Never cut human review, test output, access checks, or lab roles.
 
 ## Segment 1: Review is an accountable decision (0:00 to 0:08)
 
 ### Trainer talking points
 
-1. The author explains intent and supplies evidence.
+1. The author explains intent and supplies the diff and test output.
 2. Automated checks report configured results.
 3. An assisted review can surface hypotheses.
-4. A human reviewer evaluates intent, evidence, and risk.
-5. Required approval and branch controls remain authoritative.
+4. A human reviewer evaluates intent, results, and risk.
+5. Branch rules and required approvals still apply.
 6. A generated summary, comment, or suggested fix is never proof by itself.
-7. Availability, controls, data handling, and metering must be verified in current official documentation and organizational policy.
+7. Check current docs and organization rules before the demo.
 
 ### Opening prompt
 
 Ask: "Who can explain why this change should merge?"
 
-Expected answer: the accountable author and reviewer, supported by reproducible evidence.
+Expected answer: the author and reviewer, supported by the diff and test output.
 
 ### Transition
 
@@ -170,17 +174,17 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 1. Revisit the Delivery baseline.
 2. Confirm repository, data classification, author, reviewer, and required checks.
 3. Verify current official documentation for the selected review workflow.
-4. Confirm organization and repository policy.
-5. Identify any applicable meter, threshold, escalation owner, and stop guard.
+4. Check organization and repository rules.
+5. Set a usage limit and name who can approve more.
 6. Prepare the human-only review worksheet.
-7. Use a synthetic, bounded diff.
-8. Confirm the approved review surface before opening it.
+7. Use a small synthetic diff.
+8. Check the review tool before opening it.
 
 ### Quality gates
 
-| Gate | Required evidence |
+| Gate | Required result |
 | --- | --- |
-| Ready for independent critique | Clear intent, bounded diff, and focused checks available. |
+| Ready for independent critique | Clear intent, a small diff, and focused checks. |
 | Ready for assisted review | The learner has written an initial verdict and the findings that matter most. |
 | Ready for human review | Assisted comments, if any, are classified and checks reported. |
 | Ready for approval | Acceptance criteria and risks are reviewed by an accountable human. |
@@ -310,12 +314,14 @@ required review surfaces for the lab.
 
 ### Demo recovery
 
-- If the assisted review misses the defect, treat that as evidence of limits and continue manually.
+- If the assisted review misses the defect, use the worksheet to finish the
+  trainer explanation.
 - If it invents broader policy, mark the comment uncertain or out of scope.
 - If tests cannot run, stop the learner lab and fix the environment.
 - If a suggested fix rewrites unrelated code, reject it and use the guard only.
-- If review access is unavailable, move to the worksheet without attempting a bypass.
-- If the meter reaches its guard, stop assisted activity and retain manual evidence.
+- If review access fails during the demo, use the worksheet and fix access before
+  the lab.
+- If the run reaches its usage limit, stop assisted activity and record progress.
 
 ### Transition
 
@@ -357,7 +363,7 @@ Ask for four checks:
 
 ### Transition
 
-> "Review assistance has bounded strengths, so adoption must preserve human gates and an off switch."
+> "Review assistance has limits, so keep human review and an off switch."
 
 ## Segment 6: Limits and adoption (0:51 to 0:58)
 
@@ -367,7 +373,7 @@ Assisted review may help surface localized correctness, missing tests, error han
 
 It may miss unstated product intent, cross-system behavior, subtle authorization issues, operational risk, or misleading but plausible changes.
 
-Start with a bounded repository set.
+Start with a small repository set.
 
 Measure actionable findings, noise, rework, delays, and escaped defects.
 
@@ -385,19 +391,23 @@ Do not treat an assisted response as accountable approval. Follow current reposi
 
 ### "Should we apply every suggested fix?"
 
-No. Reproduce the issue, inspect the complete patch, add evidence, and accept only the smallest correct change.
+No. Reproduce the issue, inspect the complete patch, add a focused test, and
+accept only the smallest correct change.
 
 ### "What if human and assisted reviews disagree?"
 
-Return to requirements and reproducible evidence. The accountable human records the final rationale or escalates domain uncertainty.
+Return to the requirements, diff, and test output. The reviewer records the
+decision or asks a domain owner.
 
 ### "Can automatic review replace branch protection?"
 
-No course material should suggest bypassing required controls. Verify current supported configuration and preserve mandated human gates.
+Do not bypass required controls. Check the current configuration and keep the
+required human review.
 
 ### "Why review a generated PR description?"
 
-It can invent results, omit risk, or misread intent. Compare every claim with the diff and command evidence.
+It can invent results, omit risk, or misread intent. Compare every claim with the
+diff and command output.
 
 ### "Is security review covered by this feature?"
 
@@ -405,18 +415,20 @@ An assisted general review is not a substitute for the organization's required s
 
 ### "Which repositories should enable automatic review?"
 
-That is an organizational risk decision. Start with approved, bounded candidates and define exclusions, owners, measures, and reversal criteria.
+That is an organization decision. Start with a few low-risk repositories and
+define exclusions, owners, measures, and a way to disable the feature.
 
 ### "How is review activity priced or metered?"
 
-Verify current official documentation and organization-specific terms. Do not teach static prices or allowances.
+Check current docs and organization terms. Do not teach static prices or
+allowances.
 
 ## Pitfalls, anti-patterns, and recoveries
 
 | Anti-pattern | Recovery |
 | --- | --- |
 | Reviewing the summary before the diff | Read intent, diff, and checks first. |
-| Treating comments as findings without evidence | Reproduce or tie each comment to a criterion. |
+| Treating comments as findings without proof | Reproduce the issue or tie the comment to a criterion. |
 | Applying a patch from the highlighted lines only | Inspect the entire proposed patch. |
 | Approving because checks are green | Review coverage, intent, risk, and scope. |
 | Blindly choosing "ours" in a conflict | Write merged behavior before editing. |
@@ -424,13 +436,15 @@ Verify current official documentation and organization-specific terms. Do not te
 | Claiming tests passed without output | Name and rerun the relevant command. |
 | Using restricted PR data in an unapproved flow | Stop and use the synthetic local exercise. |
 | Removing required human review | Restore repository gates and escalate. |
-| Assuming fixed UI or availability | Verify current official docs and policy. |
+| Assuming fixed UI or availability | Check current docs before delivery. |
 
 ## Closing and lab handoff (0:58 to 1:00)
 
 ### Closing script
 
-> "Automation can broaden a first pass, but the reviewer owns the decision. A useful review connects intent, observed evidence, the smallest correction, validation, and a human rationale."
+> "Automation can broaden a first pass, but the reviewer owns the decision. A
+> useful review connects intent, the diff, test output, the smallest correction,
+> and the reviewer's rationale."
 
 ### Lab handoff
 
@@ -440,17 +454,15 @@ Assign author and reviewer roles.
 
 Learners use `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`, the local review project, and the conflict scenario.
 
-The live path may request an approved assisted first pass.
-
 The worksheet supports the prepared trainer demonstration. It does not replace
 the learner pull-request workflow.
 
 ### Readiness checklist
 
-- [ ] Synthetic bounded change is selected.
+- [ ] A small synthetic change is selected.
 - [ ] Required checks and reviewer are named.
-- [ ] Live or human-only path is selected.
-- [ ] Findings will include file/function evidence.
+- [ ] Pull-request and Copilot review access is available.
+- [ ] Findings will name the file and function.
 - [ ] The conflict intent statement is ready.
-- [ ] Meter and stop guard are recorded when they apply.
+- [ ] A usage limit is recorded when it applies.
 - [ ] Final approval remains a human decision.
