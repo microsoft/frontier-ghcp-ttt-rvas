@@ -23,8 +23,6 @@ This directory contains the repeatable template structure for the GitHub Copilot
 
 3. **Register** the session in `data/session-catalog.json`, in module-local order.
    Set `id` to `m2-08`, `module` to `2`, and `slug` to the directory name.
-   New sessions do not need `legacy_id`; that field preserves links from the
-   former global numbering.
 
 4. **Link** the session in the top-level `README.md` session table, `curriculum-plan.md`,
    `mkdocs.yml`, and the relevant tracks. Home-page cards come from the catalog.

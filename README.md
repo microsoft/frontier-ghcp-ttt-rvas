@@ -49,9 +49,8 @@ access is available.
 Numbers restart at `01` in each module. Directories use the same ID, such as
 `sessions/session-m2-01-copilot-cli/`.
 
-The catalog in `data/session-catalog.json` records the teaching order and maps
-former global numbers through `legacy_id`. Old saved-set links and published
-session-page links still resolve to the same material.
+The catalog in `data/session-catalog.json` records the teaching order.
+**Use the full module-local ID** in saved sets and session links.
 
 ### Module 1: Copilot Fundamentals (Beginner)
 

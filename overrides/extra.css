@@ -773,11 +773,16 @@ input, textarea {
   border-color: var(--color-rvap-blue);
 }
 
-.ghcp-session-card__badges {
+.ghcp-session-card__badges,
+.ghcp-track-modules {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: .35rem;
+}
+
+.md-typeset table .ghcp-track-modules {
+  min-width: 7rem;
 }
 
 .ghcp-badge {

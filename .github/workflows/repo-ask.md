@@ -61,4 +61,4 @@ Answer the question or research that the user has requested and provide a respon
 
 This repository is a GitHub Copilot and Agentic Workflows train-the-trainer curriculum. Core content lives in `README.md`, `curriculum-plan.md`, `tracks/`, and `sessions/session-*`. The site is built with MkDocs Material (`mkdocs.yml`), slide decks are Marp Markdown files (`sessions/*/slides.md`), and trainer guides are rendered from `sessions/*/trainer-content/README.md`.
 
-When answering questions, prefer citing exact files and sections. If the question is about build or publishing behavior, inspect `.github/workflows/build-deploy.yml`, `scripts/build-slides.sh`, `scripts/render-trainer-guides.py`, and `mkdocs.yml`.
+When answering questions, prefer citing exact files and sections. If the question is about build or publishing behavior, inspect `.github/workflows/build-deploy.yml`, `scripts/build-slides.sh`, `hooks/presentation_embed.py`, and `mkdocs.yml`.

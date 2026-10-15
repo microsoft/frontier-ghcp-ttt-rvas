@@ -37,8 +37,7 @@
       "title": "Introduction to GitHub Copilot",
       "description": "What Copilot is, how the LLM works, plan tiers, privacy, and getting it running in the IDE for the first time.",
       "difficulty": "Beginner",
-      "duration_minutes": 180,
-      "legacy_id": "01"
+      "duration_minutes": 180
     },
     {
       "id": "m1-02",
@@ -47,8 +46,7 @@
       "title": "Copilot Chat & Inline Suggestions",
       "description": "Mastering the chat interface, slash commands, inline completions, and Next Edit Suggestions across all IDE surfaces.",
       "difficulty": "Beginner",
-      "duration_minutes": 180,
-      "legacy_id": "02"
+      "duration_minutes": 180
     },
     {
       "id": "m1-03",
@@ -57,8 +55,7 @@
       "title": "Prompt Engineering Fundamentals",
       "description": "Build a todo API with focused prompts, check a CLI /refine rewrite, and compare context before accepting changes.",
       "difficulty": "Beginner",
-      "duration_minutes": 180,
-      "legacy_id": "03"
+      "duration_minutes": 180
     },
     {
       "id": "m2-01",
@@ -67,8 +64,7 @@
       "title": "GitHub Copilot CLI & App",
       "description": "Critique a repair plan, inspect controls and fleet results, practise queueing and recovery, and check terminal automation.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "04"
+      "duration_minutes": 180
     },
     {
       "id": "m2-02",
@@ -77,8 +73,7 @@
       "title": "Agent Mode in the IDE",
       "description": "Autonomous multi-step tasks: Copilot reads files, runs commands, and iterates on errors inside VS Code.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "05"
+      "duration_minutes": 180
     },
     {
       "id": "m2-03",
@@ -87,8 +82,7 @@
       "title": "Copilot Spaces & Context Management",
       "description": "Curate Storefront context, inspect loaded CLI instructions, correct a stale rule, and compare resulting behavior.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "06"
+      "duration_minutes": 180
     },
     {
       "id": "m2-04",
@@ -97,8 +91,7 @@
       "title": "Copilot for Code Review & PRs",
       "description": "Compare human review, local /review and /security-review, and Copilot PR review; triage findings and check focused fixes.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "07"
+      "duration_minutes": 180
     },
     {
       "id": "m2-05",
@@ -107,8 +100,7 @@
       "title": "GitHub Copilot App for Developers",
       "description": "Compare rubber-duck and spar critiques in checked app workspaces, return a forked plan note, review the repair, and assess PR readiness.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "29"
+      "duration_minutes": 180
     },
     {
       "id": "m2-06",
@@ -117,8 +109,7 @@
       "title": "Repair and Refactor a Broken Python Application",
       "description": "Repair Python in failure order, check LSP references against inline rules, and refactor from an accepted plan without changing reports.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "27"
+      "duration_minutes": 180
     },
     {
       "id": "m2-07",
@@ -127,8 +118,7 @@
       "title": "Migrate a Legacy Java Service to Modern .NET",
       "description": "Map the behavior of a legacy Java service, port it to modern .NET, and verify compatibility with focused tests.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "26"
+      "duration_minutes": 180
     },
     {
       "id": "m3-01",
@@ -137,8 +127,7 @@
       "title": "Copilot App, Plugins & Canvas Extensions",
       "description": "Use Copilot App customization and build a shared canvas with bounded state, actions, and review evidence.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "08"
+      "duration_minutes": 180
     },
     {
       "id": "m3-02",
@@ -147,8 +136,7 @@
       "title": "Copilot Cloud Agent",
       "description": "Assign issues to Copilot's cloud agent \u2014 it creates a branch, writes the code, runs tests, and opens a PR autonomously.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "09"
+      "duration_minutes": 180
     },
     {
       "id": "m3-03",
@@ -157,8 +145,7 @@
       "title": "MCP Servers & Custom Tool Integration",
       "description": "Model Context Protocol: giving Copilot access to external tools, APIs, and data sources through standardized server interfaces.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "10"
+      "duration_minutes": 180
     },
     {
       "id": "m3-04",
@@ -167,8 +154,7 @@
       "title": "Custom Agents & Agent Profiles",
       "description": "Check a JavaScript LSP lookup, tighten a custom-agent profile, and require a live stop before an out-of-scope source change.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "11"
+      "duration_minutes": 180
     },
     {
       "id": "m3-05",
@@ -177,8 +163,7 @@
       "title": "Agent Skills & the Copilot Ecosystem",
       "description": "Test live repository skills, compare pinned interviews before planning, and review scoped Chronicle suggestions without auto-applying them.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "12"
+      "duration_minutes": 180
     },
     {
       "id": "m4-01",
@@ -187,8 +172,7 @@
       "title": "GitHub Actions & Workflow Generation",
       "description": "Carrying one Node.js application through CI generation, deployment design, workflow repair, and custom-action validation with local evidence.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "13"
+      "duration_minutes": 180
     },
     {
       "id": "m4-02",
@@ -197,8 +181,7 @@
       "title": "Infrastructure as Code with Copilot",
       "description": "Using Copilot to author, connect, validate, and security-review Terraform modules, with Bicep as a trainer comparison and optional extension.",
       "difficulty": "Advanced",
-      "duration_minutes": 150,
-      "legacy_id": "14"
+      "duration_minutes": 150
     },
     {
       "id": "m4-03",
@@ -207,8 +190,7 @@
       "title": "CI/CD Pipeline Debugging & Agentic Remediation",
       "description": "Diagnosing pipeline failures from workflow evidence and local proof, including a staged failure and reviewed security remediation.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "15"
+      "duration_minutes": 180
     },
     {
       "id": "m5-01",
@@ -217,8 +199,7 @@
       "title": "Brady's Squad: Human-Led AI Teams",
       "description": "Use Brady's Squad to turn scoped work into persistent roles, decision records, and reviewable delivery evidence.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "16"
+      "duration_minutes": 180
     },
     {
       "id": "m5-02",
@@ -227,8 +208,7 @@
       "title": "Spec Kit: Specification-Driven Development",
       "description": "An end-to-end Spec Kit lab covering task-to-issue conversion, staged implementation, convergence, and living-spec evolution.",
       "difficulty": "Advanced",
-      "duration_minutes": 210,
-      "legacy_id": "18"
+      "duration_minutes": 210
     },
     {
       "id": "m5-03",
@@ -237,8 +217,7 @@
       "title": "HVE Core: Evidence-Led Delivery with RPI",
       "description": "Use HVE Research, Plan, Implement, Review, and Follow-up to move a bounded API feature from product intent to a human delivery decision.",
       "difficulty": "Advanced",
-      "duration_minutes": 240,
-      "legacy_id": "28"
+      "duration_minutes": 240
     },
     {
       "id": "m6-01",
@@ -247,8 +226,7 @@
       "title": "Build Reliable Agent Applications with the GitHub Copilot SDK",
       "description": "Build a TypeScript agent application with streaming, a deterministic custom tool, explicit permissions, blocking hooks, tests, and OpenTelemetry traces.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "17"
+      "duration_minutes": 180
     },
     {
       "id": "m6-02",
@@ -257,8 +235,7 @@
       "title": "End-to-End Capstone Project",
       "description": "A bounded integration scenario covering governance, specification, agentic delivery, review, and handover.",
       "difficulty": "Advanced",
-      "duration_minutes": 180,
-      "legacy_id": "19"
+      "duration_minutes": 180
     },
     {
       "id": "m7-01",
@@ -267,8 +244,7 @@
       "title": "Work Effectively in the GitHub Copilot App",
       "description": "Compare unscoped and grounded answers, revise a repository working brief when evidence changes, and verify it in a fresh session.",
       "difficulty": "Beginner",
-      "duration_minutes": 180,
-      "legacy_id": "20"
+      "duration_minutes": 180
     },
     {
       "id": "m7-02",
@@ -277,8 +253,7 @@
       "title": "Interview Ideas and Shape Better Work",
       "description": "Install a project interview skill, shape an unclear request, reopen affected decisions when constraints change, and verify the resulting brief.",
       "difficulty": "Beginner",
-      "duration_minutes": 180,
-      "legacy_id": "21"
+      "duration_minutes": 180
     },
     {
       "id": "m7-03",
@@ -287,8 +262,7 @@
       "title": "Plan Work with GitHub Issues and MCP",
       "description": "Use GitHub MCP to inspect existing work, preview and create an issue hierarchy, then verify and correct it through fresh reads.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "22"
+      "duration_minutes": 180
     },
     {
       "id": "m7-04",
@@ -297,8 +271,7 @@
       "title": "Build and Use a Planning Canvas",
       "description": "Create and simplify a planning canvas, detect drift from live GitHub state, and reconcile the visible planning projection.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "23"
+      "duration_minutes": 180
     },
     {
       "id": "m7-05",
@@ -307,8 +280,7 @@
       "title": "Orchestrate Agents and Workstreams",
       "description": "Supervise live child sessions over GitHub issues or local developer inputs; redirect work and reconcile checked findings.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "24"
+      "duration_minutes": 180
     },
     {
       "id": "m7-06",
@@ -317,8 +289,7 @@
       "title": "Automate Delivery Follow-up and Connect Work Systems",
       "description": "Create a manual draft-only Automation, compare two runs after an approved input change, and make a system-of-record decision.",
       "difficulty": "Intermediate",
-      "duration_minutes": 180,
-      "legacy_id": "25"
+      "duration_minutes": 180
     }
   ]
 }

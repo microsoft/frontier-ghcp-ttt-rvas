@@ -13,6 +13,7 @@ from unittest.mock import patch
 from urllib.parse import urljoin
 
 from jinja2 import ChoiceLoader, DictLoader, Environment, FileSystemLoader, StrictUndefined
+from markdown import markdown
 from mkdocs.structure.files import File, Files, InclusionLevel
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +63,30 @@ class CatalogTests(unittest.TestCase):
         file = File(source, str(ROOT), str(ROOT / "site"), directory_urls)
         return SimpleNamespace(file=file, url=file.url)
 
+    def assert_track_modules(self, slug, html):
+        source = (ROOT / "tracks" / f"{slug}.md").read_text(encoding="utf-8")
+        session_ids = re.findall(r"^\|\s*\d+\s*\|\s*(m[1-7]-\d{2})\s*\|", source, re.MULTILINE)
+        self.assertTrue(session_ids, slug)
+        expected = [
+            module["id"] for module in self.catalog["modules"]
+            if any(session_id.startswith(f"m{module['id']}-") for session_id in session_ids)
+        ]
+        badges = Tags(html).with_class("ghcp-badge--module")
+        self.assertEqual([badge["data-module"] for badge in badges], expected, slug)
+        self.assertEqual(re.findall(r">m([1-7])</span>", html), expected, slug)
+        for badge in badges:
+            module = next(module for module in self.catalog["modules"] if module["id"] == badge["data-module"])
+            self.assertEqual(badge["title"], module["title"])
+
+    def test_track_comparison_badges_match_session_modules(self):
+        source = (ROOT / "tracks/README.md").read_text(encoding="utf-8")
+        rows = re.findall(r"<tr>(.*?)</tr>", markdown(source, extensions=["tables"]), re.DOTALL)[1:]
+        self.assertEqual(len(rows), 7)
+        for row in rows:
+            slug = re.search(r'href="([^"]+)\.md"', row)[1]
+            self.assertIn('class="ghcp-track-modules"', row)
+            self.assert_track_modules(slug, row)
+
     def test_catalog_matches_all_nav_session_sources(self):
         self.assertEqual([m["id"] for m in self.catalog["modules"]], list("1234567"))
         expected_ids = [
@@ -70,7 +95,6 @@ class CatalogTests(unittest.TestCase):
             for index in range(1, count + 1)
         ]
         self.assertEqual([s["id"] for s in self.catalog["sessions"]], expected_ids)
-        self.assertCountEqual([s["legacy_id"] for s in self.catalog["sessions"]], [f"{i:02d}" for i in range(1, 30)])
         sources = [
             f"sessions/{session['slug']}/{directory}README.md"
             for session in self.catalog["sessions"]
@@ -126,7 +150,6 @@ class CatalogTests(unittest.TestCase):
             ("modules", "id", "duplicate module id"),
             ("sessions", "id", "duplicate session id"),
             ("sessions", "slug", "duplicate session slug"),
-            ("sessions", "legacy_id", "duplicate legacy id"),
         ):
             catalog = deepcopy(self.catalog)
             catalog[collection][1][key] = catalog[collection][0][key]
@@ -143,7 +166,6 @@ class CatalogTests(unittest.TestCase):
             ("id", "m1-100", "two-digit"),
             ("module", "99", "unknown module"),
             ("module", "2", "match its module"),
-            ("legacy_id", "m1-01", "legacy_id"),
             ("difficulty", "beginner", "difficulty"),
             ("difficulty", "Expert", "difficulty"),
             ("slug", "../session-m1-01-test", "session path"),
@@ -175,49 +197,17 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "ordered by module with consecutive"):
                 HOOK.validate_catalog(catalog)
 
-    def test_new_sessions_do_not_need_a_global_legacy_number(self):
+    def test_new_sessions_append_within_their_module(self):
         catalog = deepcopy(self.catalog)
         session = dict(catalog["sessions"][3], id="m2-08", slug="session-m2-08-new-topic")
-        session.pop("legacy_id")
         catalog["sessions"].insert(10, session)
         self.assertEqual(HOOK.validate_catalog(catalog), catalog)
 
-    def test_published_legacy_urls_redirect_in_both_directory_modes(self):
-        for directory_urls in (True, False):
-            with self.subTest(directory_urls=directory_urls), tempfile.TemporaryDirectory() as tmp:
-                config, files, _ = self.fixture(directory_urls)
-                config["site_dir"] = tmp
-                pdf = Path(tmp) / f"output/pdf/{self.catalog['sessions'][0]['slug']}.pdf"
-                pdf.parent.mkdir(parents=True)
-                pdf.write_bytes(b"%PDF-test")
-                HOOK.on_post_build(config)
-                for session in self.catalog["sessions"]:
-                    old_slug = session["slug"].replace(f"session-{session['id']}-", f"session-{session['legacy_id']}-", 1)
-                    for directory in ("", "lab/", "trainer-content/"):
-                        old_path = f"sessions/{old_slug}/{directory}index.html"
-                        redirect = (Path(tmp) / old_path).read_text()
-                        target = files.get_file_from_path(f"sessions/{session['slug']}/{directory}README.md")
-                        link = next(attrs["href"] for tag, attrs in Tags(redirect).tags if tag == "a")
-                        for prefix in ("/", "/org/training/"):
-                            self.assertEqual(
-                                urljoin(f"https://example.test{prefix}{old_path}", link),
-                                f"https://example.test{prefix}{target.url}",
-                            )
-                        self.assertIn("target.search = window.location.search", redirect)
-                        self.assertIn("target.hash = window.location.hash", redirect)
-                    for source in (
-                        f"output/html/{old_slug}.html",
-                        f"output/trainer/{old_slug}-trainer.html",
-                    ):
-                        self.assertTrue((Path(tmp) / source).is_file(), source)
-                self.assertEqual((Path(tmp) / "output/pdf/session-01-intro-to-copilot.pdf").read_bytes(), b"%PDF-test")
-
-    def test_renumbered_heading_aliases_keep_existing_fragments(self):
-        html = '<h2 id="session-m2-05-developer-app">Session m2-05: Developer app</h2>'
-        result = HOOK.preserve_session_anchors(html, self.catalog["sessions"])
-        self.assertIn('<span id="session-29-developer-app"', result)
-        self.assertTrue(result.endswith(html))
-        self.assertEqual(HOOK.preserve_session_anchors(result, self.catalog["sessions"]), result)
+    def test_catalog_rejects_legacy_id_metadata(self):
+        catalog = deepcopy(self.catalog)
+        catalog["sessions"][0]["legacy_id"] = "01"
+        with self.assertRaisesRegex(ValueError, "must contain required fields"):
+            HOOK.validate_catalog(catalog)
 
     def test_missing_or_malformed_catalog_fails_clearly(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -358,6 +348,14 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(len(cards), 29)
             self.assertEqual(len(tags.with_class("ghcp-sessions")), 7)
             self.assertEqual(len(tags.with_class("ghcp-track-card")), 7)
+            track_cards = re.findall(
+                r'<a href="tracks/([^/]+)/" class="ghcp-track-card">(.*?)</a>',
+                rendered, re.DOTALL,
+            )
+            self.assertEqual(len(track_cards), 7)
+            for slug, card in track_cards:
+                self.assertIn('class="ghcp-track-modules"', card)
+                self.assert_track_modules(slug, card)
             page_sessions = [
                 session
                 for module in context["session_catalog"]["modules"]

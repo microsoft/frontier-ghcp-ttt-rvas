@@ -402,10 +402,8 @@ The MkDocs grid is capped at `76rem`. Reading content is capped at `72ch`, with
 central column. Paragraphs use `.8rem` block margins; H2 begins after `2.4rem`.
 
 All 29 trainer guides use this layout and the same table/code treatment as labs.
-The three session-material tabs precede H1; trainer controls follow H1. Legacy
-`output/trainer/` filenames redirect to the MkDocs guide, preserving query
-strings and hashes through JavaScript. A plain link remains without JavaScript.
-These redirects have no separate visual system.
+The three session-material tabs precede H1; trainer controls follow H1.
+Trainer guides use their MkDocs session URLs.
 
 The shared header fits the wordmark and title beside desktop navigation and
 native Material search in one row. Its inner width is capped at `62rem`, with a
@@ -581,6 +579,8 @@ Hover adds a light fill and RVAP Blue border. The action label uses Microsoft
 Blue on white, then navy on hover. Track cards start on `surface` and change to
 `navy-light` on hover/focus. Duration labels remain neutral. Difficulty and module
 labels use the category palette above; `badge-module` is the M1 default.
+The tracks comparison and home-page track cards show `m1`–`m7` badges for
+the modules each track includes. They use the same module colors as the map.
 The hero map and home cards share module classes with the builder catalog,
 selected composer, and shared reader. Difficulty classes are shared wherever
 levels appear. Keep the visible labels: color is an extra cue. Badges are

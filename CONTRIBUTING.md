@@ -12,9 +12,7 @@ choose a different teaching order without changing session IDs.
 
 Follow the session template in `track-template/README.md` and update the catalog,
 curriculum plan, navigation, relevant tracks, and prerequisites together.
-Keep existing IDs stable once published. The catalog's optional `legacy_id`
-maps former global numbers to current IDs for old saved sets and site links;
-new sessions do not need one.
+Keep existing IDs stable once published.
 
 ## Contribution agreement
 

@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% macro track_modules(ids) %}
+<div class="ghcp-track-modules">
+  {% for module in session_catalog.modules if module.id in ids %}
+  <span class="ghcp-badge ghcp-badge--module" data-module="{{ module.id }}" title="{{ module.title | e }}">m{{ module.id }}</span>
+  {% endfor %}
+</div>
+{% endmacro %}
+
 {% block header %}
   {% include "partials/rvap-header.html" %}
 {% endblock %}
@@ -76,36 +84,43 @@
 
     <a href="tracks/beginner-essentials/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Copilot Essentials</div>
+      {{ track_modules(["1", "2"]) }}
       <div class="ghcp-track-card__desc">Sessions m1-01 to m1-03 and m2-01 to m2-02. Start with fundamentals, then practise CLI and IDE workflows.</div>
     </a>
 
     <a href="tracks/developer-productivity/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Developer Productivity</div>
+      {{ track_modules(["1", "2", "7"]) }}
       <div class="ghcp-track-card__desc">Sessions m1-01 to m1-03, m2-01 to m2-05, and m7-05. Build a daily developer workflow with app orchestration.</div>
     </a>
 
     <a href="tracks/agentic-development/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Agentic Development</div>
+      {{ track_modules(["1", "2", "3", "7"]) }}
       <div class="ghcp-track-card__desc">The developer path plus Sessions m3-01 to m3-05. Work with canvases, cloud agents, and custom tooling.</div>
     </a>
 
     <a href="tracks/devops-automation/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">DevOps &amp; Automation</div>
+      {{ track_modules(["1", "2", "4"]) }}
       <div class="ghcp-track-card__desc">Sessions m1-01 to m1-03, m2-02, and m4-01 to m4-03. Use Copilot for CI/CD and infrastructure work.</div>
     </a>
 
     <a href="tracks/product-and-delivery-teams/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Product and Delivery Teams</div>
+      {{ track_modules(["7"]) }}
       <div class="ghcp-track-card__desc">Sessions m7-01 to m7-06. Use the Copilot app to interview, plan in GitHub, build canvases, orchestrate work, and automate follow-up.</div>
     </a>
 
     <a href="tracks/hve-engineering/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">HVE Engineering</div>
-      <div class="ghcp-track-card__desc">Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, and 28. Build the foundations for evidence-led HVE delivery.</div>
+      {{ track_modules(["1", "2", "3", "5"]) }}
+      <div class="ghcp-track-card__desc">Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, and m5-03. Build the foundations for evidence-led HVE delivery.</div>
     </a>
 
     <a href="tracks/full-mastery/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Full Mastery</div>
+      {{ track_modules(["1", "2", "3", "4", "5", "6", "7"]) }}
       <div class="ghcp-track-card__desc">All sessions. The complete journey from zero to enterprise-ready Copilot delivery.</div>
     </a>
 

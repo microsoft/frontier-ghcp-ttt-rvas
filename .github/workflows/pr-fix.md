@@ -82,7 +82,6 @@ This repository contains a GitHub Copilot and Agentic Workflows train-the-traine
 Use the smallest validation that covers your change:
 
 - For site/navigation/content changes: `pip install -r requirements.txt && mkdocs build --strict`
-- For trainer guide rendering changes: `pip install -r requirements.txt && python scripts/render-trainer-guides.py`
 - For slide changes: `npm install -g @marp-team/marp-cli && npx puppeteer browsers install chrome && bash scripts/build-slides.sh`
 
 Do not edit generated `site/` or `output/` files unless the task explicitly requires generated artifacts. Keep curriculum tone trainer-friendly, practical, and consistent with the existing session structure.

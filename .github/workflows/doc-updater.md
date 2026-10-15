@@ -187,7 +187,7 @@ This PR updates the documentation based on features merged in the last 24 hours.
 - **Already documented**: If all features are already documented, exit gracefully
 - **Unclear features**: If a feature is complex and needs human review, note it in the PR description but include basic documentation
 - **No documentation directory**: If there's no obvious documentation location, document in README.md or suggest creating a docs directory
-- **Validation**: When documentation changes affect the MkDocs site or navigation, validate with `pip install -r requirements.txt && mkdocs build --strict`. When trainer guides or slides change, also validate the corresponding renderer (`python scripts/render-trainer-guides.py` or `bash scripts/build-slides.sh`).
+- **Validation**: When documentation changes affect the MkDocs site, navigation, or trainer guides, validate with `pip install -r requirements.txt && mkdocs build --strict`. When slides change, also run `bash scripts/build-slides.sh`.
 
 ## Guidelines
 

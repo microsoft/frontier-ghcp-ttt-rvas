@@ -221,7 +221,6 @@ This repository is a GitHub Copilot and Agentic Workflows train-the-trainer curr
 When diagnosing failures, prioritize these local reproduction commands:
 
 - Install site dependencies: `pip install -r requirements.txt`
-- Render trainer guides: `python scripts/render-trainer-guides.py`
 - Render slides: `npm install -g @marp-team/marp-cli && npx puppeteer browsers install chrome && bash scripts/build-slides.sh`
 - Build the site: `mkdocs build --strict`
 

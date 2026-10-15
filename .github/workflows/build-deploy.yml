@@ -88,38 +88,12 @@ jobs:
           retention-days: 7
 
   # ─────────────────────────────────────────────────────────────────────────────
-  # Job 3: Render trainer guides → output/trainer/*.html
-  # ─────────────────────────────────────────────────────────────────────────────
-  render-trainer-guides:
-    name: Render Trainer Guides
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install Python dependencies
-        run: pip install markdown pymdown-extensions
-
-      - name: Render trainer guides
-        run: python scripts/render-trainer-guides.py
-
-      - name: Upload trainer guide artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: trainer-guides
-          path: output/trainer/
-          retention-days: 7
-
-  # ─────────────────────────────────────────────────────────────────────────────
-  # Job 4: Build MkDocs site (runs on PRs and pushes; no environment gate)
+  # Job 3: Build MkDocs site (runs on PRs and pushes; no environment gate)
   # ─────────────────────────────────────────────────────────────────────────────
   build:
     name: Build MkDocs Site
     runs-on: ubuntu-latest
-    needs: [validate-labs, render-presentations, render-trainer-guides]
+    needs: [validate-labs, render-presentations]
     steps:
       - uses: actions/checkout@v4
 
@@ -135,12 +109,6 @@ jobs:
         with:
           name: presentations
           path: output/
-
-      - name: Download trainer guide artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: trainer-guides
-          path: output/trainer/
 
       - name: Build MkDocs site
         run: mkdocs build --strict
@@ -182,7 +150,7 @@ jobs:
           path: site/
 
   # ─────────────────────────────────────────────────────────────────────────────
-  # Job 5: Deploy MkDocs site to GitHub Pages (main pushes only)
+  # Job 4: Deploy MkDocs site to GitHub Pages (main pushes only)
   # ─────────────────────────────────────────────────────────────────────────────
   deploy:
     name: Deploy to GitHub Pages
@@ -234,9 +202,6 @@ jobs:
 
       - name: Build production presentations
         run: bash scripts/build-slides.sh
-
-      - name: Build production trainer guides
-        run: python scripts/render-trainer-guides.py
 
       - name: Build production site
         run: mkdocs build --strict
