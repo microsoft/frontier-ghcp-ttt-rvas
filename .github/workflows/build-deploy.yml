@@ -49,7 +49,7 @@ jobs:
         run: az bicep install --version v0.46.1
 
       - name: Install Python lab dependencies
-        run: python -m pip install -r sessions/session-27-python-repair-refactor/lab/solution/requirements-dev.txt
+        run: python -m pip install -r sessions/session-m2-06-python-repair-refactor/lab/solution/requirements-dev.txt
 
       - name: Validate lab files
         run: bash scripts/validate-labs.sh

@@ -21,17 +21,17 @@ Copilot for DevOps work. This track gives platform and DevOps engineers the Copi
 
 ## Sessions
 
-| Order   | Session #   | Title                                      | Difficulty   | Duration   |
+| Order   | Session ID   | Title                                      | Difficulty   | Duration   |
 | ------- | ----------- | ------------------------------------------ | ------------ | ---------- |
-| 1       | 01          | Introduction to GitHub Copilot             | Beginner     | 3 hrs      |
-| 2       | 02          | Copilot Chat & Inline Suggestions          | Beginner     | 3 hrs      |
-| 3       | 03          | Prompt Engineering Fundamentals            | Beginner     | 3 hrs      |
-| 4       | 05          | Agent Mode in the IDE                      | Intermediate | 3 hrs      |
-| 5       | 13          | GitHub Actions & Workflow Generation       | Intermediate | 3 hrs      |
-| 6       | 14          | Infrastructure as Code with Copilot        | Advanced     | 3 hrs      |
-| 7       | 15          | CI/CD Pipeline Debugging & Agentic Remediation | Advanced  | 3 hrs      |
+| 1       | m1-01          | Introduction to GitHub Copilot             | Beginner     | 3 hrs      |
+| 2       | m1-02          | Copilot Chat & Inline Suggestions          | Beginner     | 3 hrs      |
+| 3       | m1-03          | Prompt Engineering Fundamentals            | Beginner     | 3 hrs      |
+| 4       | m2-02          | Agent Mode in the IDE                      | Intermediate | 3 hrs      |
+| 5       | m4-01          | GitHub Actions & Workflow Generation       | Intermediate | 3 hrs      |
+| 6       | m4-02          | Infrastructure as Code with Copilot        | Advanced     | 3 hrs      |
+| 7       | m4-03          | CI/CD Pipeline Debugging & Agentic Remediation | Advanced  | 3 hrs      |
 
-> **Note:** Session 04 (CLI) is optional but recommended for DevOps engineers who work heavily in the terminal. Session 06 (Spaces) is also valuable for grounding Copilot in cloud documentation.
+> **Note:** Session m2-01 (CLI) is optional but recommended for DevOps engineers who work heavily in the terminal. Session m2-03 (Spaces) is also valuable for grounding Copilot in cloud documentation.
 
 ## Recommended Delivery Schedule
 
@@ -39,18 +39,18 @@ Copilot for DevOps work. This track gives platform and DevOps engineers the Copi
 
 | Day   | Sessions            | Focus                 |
 | ----- | ------------------- | --------------------- |
-| Day 1 | Sessions 01, 02, 03 | Copilot foundations   |
-| Day 2 | Sessions 05, 13     | Agent mode + Actions  |
-| Day 3 | Sessions 14, 15     | IaC + CI/CD debugging |
+| Day 1 | Sessions m1-01, m1-02, m1-03 | Copilot foundations   |
+| Day 2 | Sessions m2-02, m4-01     | Agent mode + Actions  |
+| Day 3 | Sessions m4-02, m4-03     | IaC + CI/CD debugging |
 
 ### 4-Day Extended (with optional sessions)
 
 | Day   | Sessions        | Focus                 |
 | ----- | --------------- | --------------------- |
-| Day 1 | Sessions 01, 02 | Setup and Chat        |
-| Day 2 | Sessions 03, 04 | Prompting + CLI       |
-| Day 3 | Sessions 05, 13 | Agent mode + Actions  |
-| Day 4 | Sessions 14, 15 | IaC + CI/CD debugging |
+| Day 1 | Sessions m1-01, m1-02 | Setup and Chat        |
+| Day 2 | Sessions m1-03, m2-01 | Prompting + CLI       |
+| Day 3 | Sessions m2-02, m4-01 | Agent mode + Actions  |
+| Day 4 | Sessions m4-02, m4-03 | IaC + CI/CD debugging |
 
 ## Learning Outcomes
 

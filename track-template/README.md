@@ -7,10 +7,11 @@ This directory contains the repeatable template structure for the GitHub Copilot
 1. **Copy** the `session-template/` folder into `sessions/` with the naming convention:
 
    ```
-   session-NN-short-slug/
+   session-mN-NN-short-slug/
    ```
 
-   Example: `session-01-intro-to-copilot/`
+   Example: `session-m2-08-new-topic/` for the next session in Module 2.
+   Use a two-digit number that starts at `01` within each module.
 
 2. **Fill in** each template file with session-specific content:
    - `README.md`: Session overview (title, objectives, prerequisites, difficulty)
@@ -20,8 +21,22 @@ This directory contains the repeatable template structure for the GitHub Copilot
    - `lab/starter/`: Starter files trainees begin with
    - `lab/solution/`: Reference solution for trainers
 
-3. **Link** the session in the top-level `README.md` session table, `curriculum-plan.md`,
-   `mkdocs.yml`, the relevant track(s), and the home-page session cards.
+3. **Register** the session in `data/session-catalog.json`, in module-local order.
+   Set `id` to `m2-08`, `module` to `2`, and `slug` to the directory name.
+   New sessions do not need `legacy_id`; that field preserves links from the
+   former global numbering.
+
+4. **Link** the session in the top-level `README.md` session table, `curriculum-plan.md`,
+   `mkdocs.yml`, and the relevant tracks. Home-page cards come from the catalog.
+   Keep each module's sessions together. Add new sessions at the end of their
+   module rather than renumbering existing IDs.
+
+5. **Check** the session:
+
+   ```bash
+   python .github/skills/session-format-validator/scripts/validate_session.py \
+     sessions/session-m2-08-new-topic
+   ```
 
 ## Folder Structure
 
@@ -43,7 +58,8 @@ session-template/
 
 - **Difficulty levels:** Beginner, Intermediate, Advanced
 - **Duration:** Each session is 3 hours total (1 hr trainer content + 2 hr lab)
-- **Prerequisites:** Always reference prior session numbers (e.g., "Sessions 01 to 03")
+- **Prerequisites:** Use full module-local IDs (e.g., "Sessions m1-01 to m1-03").
+  Split ranges at module boundaries so they do not imply unrelated sessions.
 - **Naming:** Use kebab-case slugs derived from the session title
 - **Enterprise delivery:** Add an access and cost preflight, state the required
   tools and permissions, and tell learners to stop when a required tool is

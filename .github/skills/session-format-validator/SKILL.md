@@ -12,14 +12,14 @@ metadata unless the user asks for a separate implementation task.
 
 ## Validate a session
 
-1. Identify the session directory. If the user provides only a number, find the
-   matching `sessions/session-NN-*` directory. If the request is ambiguous, ask
-   for the intended session.
+1. Identify the session directory by its full module-local ID, such as `m2-01`.
+   Find the matching `sessions/session-m2-01-*` directory. If the user provides
+   only a local number, ask which module they mean.
 2. Run the validator from the repository root:
 
    ```bash
    python .github/skills/session-format-validator/scripts/validate_session.py \
-     sessions/session-NN-topic
+     sessions/session-mN-NN-topic
    ```
 
    Add `--json` when the result must feed another tool or a CI job.
@@ -52,7 +52,7 @@ The repository's established template is the reference:
 Use this structure:
 
 ```markdown
-## Session NN — <title>
+## Session mN-NN — <title>
 
 **Status:** Ready | Needs work
 

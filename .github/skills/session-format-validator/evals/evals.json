@@ -3,22 +3,22 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Validate Session 18 before I publish it. I need to know whether its materials, catalog metadata, navigation, and lab readiness follow our repeatable session format.",
-      "expected_output": "A concise validation report for sessions/session-18-spec-kit with passed checks or exact gaps.",
+      "prompt": "Validate Session m5-02 before I publish it. I need to know whether its materials, catalog metadata, navigation, and lab readiness follow our repeatable session format.",
+      "expected_output": "A concise validation report for sessions/session-m5-02-spec-kit with passed checks or exact gaps.",
       "files": [],
       "expectations": [
-        "The report marks Session 18 as ready and separates passed checks from required work.",
+        "The report marks Session m5-02 as ready and separates passed checks from required work.",
         "The report covers materials, metadata, navigation, and lab readiness.",
-        "The report does not invent a defect for the published Session 18 materials."
+        "The report does not invent a defect for the published Session m5-02 materials."
       ]
     },
     {
       "id": 2,
-      "prompt": "I added a new Session 20 called session-20-spec-frameworks. Check whether it is ready to add to the curriculum. Do not create or edit anything.",
+      "prompt": "I added a new Session m7-01 called session-m7-01-spec-frameworks. Check whether it is ready to add to the curriculum. Do not create or edit anything.",
       "expected_output": "A validation report that stops at the missing session directory and does not propose edits outside the report.",
       "files": [],
       "expectations": [
-        "The report states that the Session 20 directory does not exist.",
+        "The report states that the Session m7-01 directory does not exist.",
         "The report stops after the missing-directory finding.",
         "The report does not scaffold or edit session files."
       ]
@@ -29,7 +29,7 @@
       "expected_output": "A validation report that identifies the template as an invalid publishable session and reports its missing curriculum registration.",
       "files": [],
       "expectations": [
-        "The report identifies that the template directory is not a valid session-NN directory.",
+        "The report identifies that the template directory is not a valid session-mN-NN directory.",
         "The report identifies missing curriculum registration or navigation.",
         "The report does not scaffold or edit session files."
       ]

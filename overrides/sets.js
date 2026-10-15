@@ -16,7 +16,9 @@ const SessionSets = (() => {
     if (params.get("v") !== "1" || !params.has("ids")) {
       throw new SetLinkError("This set link has an unsupported format. Create a new set.");
     }
-    const ids = params.get("ids") ? params.get("ids").split(",") : [];
+    const requested = params.get("ids") ? params.get("ids").split(",") : [];
+    const aliases = new Map(sessions.filter(session => session.legacy_id).map(session => [session.legacy_id, session.id]));
+    const ids = requested.map(id => aliases.get(id) || id);
     const known = new Set(sessions.map(session => session.id));
     if (ids.some(id => !known.has(id))) {
       throw new SetLinkError("This set includes a session that is not in the catalog. Create a new set.");

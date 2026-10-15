@@ -12,7 +12,7 @@ OUTPUT_DIR = REPO_ROOT / "output" / "trainer"
 
 
 def build_redirect(session_name: str) -> str:
-    if not re.fullmatch(r"session-\d{2}-[a-z0-9-]+", session_name):
+    if not re.fullmatch(r"session-m[1-9]\d*-\d{2}-[a-z0-9-]+", session_name):
         raise ValueError(f"Invalid session name: {session_name}")
     # README.md produces index.html with either MkDocs directory URL setting.
     target = f"../../sessions/{session_name}/trainer-content/index.html"

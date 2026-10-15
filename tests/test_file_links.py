@@ -17,8 +17,8 @@ class FileLinkTests(unittest.TestCase):
         }
         self.page = SimpleNamespace(
             file=SimpleNamespace(
-                src_path="sessions/session-18-spec-kit/lab/starter/exercise-2/README.md",
-                dest_uri="sessions/session-18-spec-kit/lab/starter/exercise-2/index.html",
+                src_path="sessions/session-m5-02-spec-kit/lab/starter/exercise-2/README.md",
+                dest_uri="sessions/session-m5-02-spec-kit/lab/starter/exercise-2/index.html",
             )
         )
         site_files = {
@@ -32,8 +32,8 @@ class FileLinkTests(unittest.TestCase):
     def test_links_an_exercise_asset_to_github(self):
         page = SimpleNamespace(
             file=SimpleNamespace(
-                src_path="sessions/session-04-copilot-cli/lab/README.md",
-                dest_uri="sessions/session-04-copilot-cli/lab/index.html",
+                src_path="sessions/session-m2-01-copilot-cli/lab/README.md",
+                dest_uri="sessions/session-m2-01-copilot-cli/lab/index.html",
             )
         )
         result = FILE_LINKS.on_page_markdown(
@@ -42,15 +42,15 @@ class FileLinkTests(unittest.TestCase):
         self.assertEqual(
             result,
             "Read [`task-list.md`](https://github.com/microsoft/frontier-ghcp-ttt-rvas/"
-            "blob/main/sessions/session-04-copilot-cli/lab/starter/agent-tasks/"
+            "blob/main/sessions/session-m2-01-copilot-cli/lab/starter/agent-tasks/"
             "task-list.md).\n",
         )
 
     def test_keeps_shared_course_pages_on_the_site(self):
         page = SimpleNamespace(
             file=SimpleNamespace(
-                src_path="sessions/session-04-copilot-cli/lab/README.md",
-                dest_uri="sessions/session-04-copilot-cli/lab/index.html",
+                src_path="sessions/session-m2-01-copilot-cli/lab/README.md",
+                dest_uri="sessions/session-m2-01-copilot-cli/lab/index.html",
             )
         )
         result = FILE_LINKS.on_page_markdown(
@@ -68,8 +68,8 @@ class FileLinkTests(unittest.TestCase):
     def test_rewrites_explicit_asset_file_and_directory_links(self):
         page = SimpleNamespace(
             file=SimpleNamespace(
-                src_path="sessions/session-20-copilot-app-foundations/lab/README.md",
-                dest_uri="sessions/session-20-copilot-app-foundations/lab/index.html",
+                src_path="sessions/session-m7-01-copilot-app-foundations/lab/README.md",
+                dest_uri="sessions/session-m7-01-copilot-app-foundations/lab/index.html",
             )
         )
         result = FILE_LINKS.on_page_markdown(
@@ -82,17 +82,17 @@ class FileLinkTests(unittest.TestCase):
         self.assertEqual(
             result,
             "[Overview](https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/"
-            "sessions/session-20-copilot-app-foundations/lab/starter/"
+            "sessions/session-m7-01-copilot-app-foundations/lab/starter/"
             "initiative-overview.md)\n"
             "[Starter files](https://github.com/microsoft/frontier-ghcp-ttt-rvas/tree/"
-            "main/sessions/session-20-copilot-app-foundations/lab/starter)\n",
+            "main/sessions/session-m7-01-copilot-app-foundations/lab/starter)\n",
         )
 
     def test_preserves_existing_links_and_code_examples(self):
         page = SimpleNamespace(
             file=SimpleNamespace(
-                src_path="sessions/session-04-copilot-cli/lab/starter/agent-tasks/task-list.md",
-                dest_uri="sessions/session-04-copilot-cli/lab/starter/agent-tasks/task-list/index.html",
+                src_path="sessions/session-m2-01-copilot-cli/lab/starter/agent-tasks/task-list.md",
+                dest_uri="sessions/session-m2-01-copilot-cli/lab/starter/agent-tasks/task-list/index.html",
             )
         )
         result = FILE_LINKS.on_page_markdown(
@@ -115,8 +115,8 @@ class FileLinkTests(unittest.TestCase):
     def test_links_non_markdown_files_to_github(self):
         page = SimpleNamespace(
             file=SimpleNamespace(
-                src_path="sessions/session-04-copilot-cli/lab/starter/agent-tasks/task-list.md",
-                dest_uri="sessions/session-04-copilot-cli/lab/starter/agent-tasks/task-list/index.html",
+                src_path="sessions/session-m2-01-copilot-cli/lab/starter/agent-tasks/task-list.md",
+                dest_uri="sessions/session-m2-01-copilot-cli/lab/starter/agent-tasks/task-list/index.html",
             )
         )
         result = FILE_LINKS.on_page_markdown(
@@ -125,7 +125,7 @@ class FileLinkTests(unittest.TestCase):
         self.assertEqual(
             result,
             "Read [`src/app.js`](https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/"
-            "sessions/session-04-copilot-cli/lab/starter/agent-tasks/src/app.js).\n",
+            "sessions/session-m2-01-copilot-cli/lab/starter/agent-tasks/src/app.js).\n",
         )
 
     def test_leaves_missing_and_non_file_references_unlinked(self):

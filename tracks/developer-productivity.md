@@ -11,8 +11,8 @@
 
 The core Copilot workflow track for developers who want to get more from Copilot
 each day. It covers suggestions, Chat, prompting, CLI, agent mode, context,
-review, and the GitHub Copilot app. Session 29 teaches isolated implementation and
-plan critique. Session 24's developer route adds supervised child sessions over
+review, and the GitHub Copilot app. Session m2-05 teaches isolated implementation and
+plan critique. Session m7-05's developer route adds supervised child sessions over
 local code and a synthetic PR snapshot.
 
 ## Prerequisites
@@ -24,28 +24,28 @@ local code and a synthetic PR snapshot.
 - Familiarity with pull request workflows
 - Copilot CLI access, including `/plan`, `/fleet`, `/review`, and `/security-review`
 - Copilot app access with `/rubber-duck` and `/orchestrate`
-- Node.js 22 or later and CLI `/refine` before Session 03
-- App `/fork`, `/merge-to-parent`, and `/spar` for Session 29
-- Local sandbox and installed-version limit checks for Session 04
-- Python 3.10 or later for Sessions 29 and 24
+- Node.js 22 or later and CLI `/refine` before Session m1-03
+- App `/fork`, `/merge-to-parent`, and `/spar` for Session m2-05
+- Local sandbox and installed-version limit checks for Session m2-01
+- Python 3.10 or later for Sessions m2-05 and m7-05
 
 ## Sessions
 
-| Order   | Session #   | Title                                   | Difficulty   | Duration   |
+| Order   | Session ID   | Title                                   | Difficulty   | Duration   |
 | ------- | ----------- | --------------------------------------- | ------------ | ---------- |
-| 1       | 01          | Introduction to GitHub Copilot          | Beginner     | 3 hrs      |
-| 2       | 02          | Copilot Chat & Inline Suggestions       | Beginner     | 3 hrs      |
-| 3       | 03          | Prompt Engineering Fundamentals         | Beginner     | 3 hrs      |
-| 4       | 04          | GitHub Copilot in the CLI               | Intermediate | 3 hrs      |
-| 5       | 05          | Agent Mode in the IDE                   | Intermediate | 3 hrs      |
-| 6       | 06          | Copilot Spaces & Context Management     | Intermediate | 3 hrs      |
-| 7       | 07          | Copilot for Code Review & Pull Requests | Intermediate | 3 hrs      |
-| 8       | 29          | GitHub Copilot App for Developers       | Intermediate | 3 hrs      |
-| 9       | 24          | Orchestrate Agents and Workstreams: developer route | Intermediate | 3 hrs |
+| 1       | m1-01          | Introduction to GitHub Copilot          | Beginner     | 3 hrs      |
+| 2       | m1-02          | Copilot Chat & Inline Suggestions       | Beginner     | 3 hrs      |
+| 3       | m1-03          | Prompt Engineering Fundamentals         | Beginner     | 3 hrs      |
+| 4       | m2-01          | GitHub Copilot in the CLI               | Intermediate | 3 hrs      |
+| 5       | m2-02          | Agent Mode in the IDE                   | Intermediate | 3 hrs      |
+| 6       | m2-03          | Copilot Spaces & Context Management     | Intermediate | 3 hrs      |
+| 7       | m2-04          | Copilot for Code Review & Pull Requests | Intermediate | 3 hrs      |
+| 8       | m2-05          | GitHub Copilot App for Developers       | Intermediate | 3 hrs      |
+| 9       | m7-05          | Orchestrate Agents and Workstreams: developer route | Intermediate | 3 hrs |
 
-**App access is required for Sessions 29 and 24.** Stop those labs if access or a
+**App access is required for Sessions m2-05 and m7-05.** Stop those labs if access or a
 required command is unavailable. Prepared outputs support trainer explanation
-only. The Session 24 developer route does not require Sessions 20 to 23 or MCP.
+only. The Session m7-05 developer route does not require Sessions m7-01 to m7-04 or MCP.
 
 ## Recommended Delivery Schedule
 
@@ -53,9 +53,9 @@ only. The Session 24 developer route does not require Sessions 20 to 23 or MCP.
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
-| Day 1 | Sessions 01, 02, 03 | Foundations: setup, Chat, prompting |
-| Day 2 | Sessions 04, 05, 06 | CLI, agent mode, and context |
-| Day 3 | Sessions 07, 29, 24 | Code review, app workflow, and orchestration |
+| Day 1 | Sessions m1-01, m1-02, m1-03 | Foundations: setup, Chat, prompting |
+| Day 2 | Sessions m2-01, m2-02, m2-03 | CLI, agent mode, and context |
+| Day 3 | Sessions m2-04, m2-05, m7-05 | Code review, app workflow, and orchestration |
 
 Each day has nine teaching hours before breaks. Use the four-day schedule for
 normal delivery.
@@ -64,10 +64,10 @@ normal delivery.
 
 | Day   | Sessions        | Focus                          |
 | ----- | --------------- | ------------------------------ |
-| Day 1 | Sessions 01, 02 | Setup and Chat workflows       |
-| Day 2 | Sessions 03, 04 | Prompting + CLI                |
-| Day 3 | Sessions 05, 06 | Agent mode + context           |
-| Day 4 | Sessions 07, 29, 24 | Code review, app workflow, and developer orchestration |
+| Day 1 | Sessions m1-01, m1-02 | Setup and Chat workflows       |
+| Day 2 | Sessions m1-03, m2-01 | Prompting + CLI                |
+| Day 3 | Sessions m2-02, m2-03 | Agent mode + context           |
+| Day 4 | Sessions m2-04, m2-05, m7-05 | Code review, app workflow, and developer orchestration |
 
 ## Learning Outcomes
 

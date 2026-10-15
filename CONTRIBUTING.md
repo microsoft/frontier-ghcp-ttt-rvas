@@ -1,9 +1,27 @@
 # Contributing
 
+## Adding or moving sessions
+
+Use **module-local session IDs**: `m1-01` through `m7-NN`. The number after the
+hyphen starts at `01` in each module. Directories use
+`sessions/session-m2-01-copilot-cli/`.
+
+Add a new session after the last ID in its module. Keep catalog entries and
+navigation grouped by module, even when a session is added later. Tracks can
+choose a different teaching order without changing session IDs.
+
+Follow the session template in `track-template/README.md` and update the catalog,
+curriculum plan, navigation, relevant tracks, and prerequisites together.
+Keep existing IDs stable once published. The catalog's optional `legacy_id`
+maps former global numbers to current IDs for old saved sets and site links;
+new sessions do not need one.
+
+## Contribution agreement
+
 This project welcomes contributions and suggestions. Most contributions require you to
 agree to a Contributor License Agreement (CLA) declaring that you have the right to,
 and actually do, grant us the rights to use your contribution. For details, visit
-https://cla.microsoft.com.
+<https://cla.microsoft.com>.
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need
 to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the

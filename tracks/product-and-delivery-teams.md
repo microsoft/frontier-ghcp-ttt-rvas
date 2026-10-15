@@ -31,13 +31,13 @@ synthetic, sanitized, and free of customer or source organization names.
 
 Programming experience, Git command-line knowledge, and repository administration are not required.
 
-**GitHub Copilot access is required for Sessions 20 to 25.** Learners without access
+**GitHub Copilot access is required for Sessions m7-01 to m7-06.** Learners without access
 should not take this track. Stop and reschedule their training after access is
 available.
 
 ## Capability setup
 
-Complete this setup before Session 20. Recheck the relevant capability before each
+Complete this setup before Session m7-01. Recheck the relevant capability before each
 later session because organizational policy can change what the app exposes.
 
 ### 1. Open the training project
@@ -69,11 +69,11 @@ Installing a plugin is not the same as verifying the GitHub MCP connection.
 
 ### 3. Verify skills
 
-Sessions 23 and 24 use the built-in `/create-canvas` and `/orchestrate` skills.
+Sessions m7-04 and m7-05 use the built-in `/create-canvas` and `/orchestrate` skills.
 Type `/` in a session and confirm that both commands appear before those sessions.
 They are built-in app skills, so do not install look-alike community skills.
 
-Session 21 supplies a project skill under
+Session m7-02 supplies a project skill under
 `.github/skills/decision-interview/SKILL.md`. After copying it into the training
 repository:
 
@@ -92,7 +92,7 @@ Copilot CLI users can verify the same project skill with:
 
 ### 4. Verify GitHub MCP
 
-Sessions 22 to 25 require GitHub repository tools.
+Sessions m7-03 to m7-06 require GitHub repository tools.
 
 In the app:
 
@@ -117,19 +117,19 @@ personal access tokens into prompts or repository files.
 
 | Session | Required tool or access |
 | --- | --- |
-| 20 | App project and repository reads |
-| 21 | Project skill `decision-interview` |
-| 22 | GitHub MCP issue reads and writes |
-| 23 | Built-in `/create-canvas` and GitHub MCP reads |
-| 24 | Built-in `/orchestrate`, child-session steering, and GitHub MCP |
-| 25 | Automations and GitHub MCP |
+| m7-01 | App project and repository reads |
+| m7-02 | Project skill `decision-interview` |
+| m7-03 | GitHub MCP issue reads and writes |
+| m7-04 | Built-in `/create-canvas` and GitHub MCP reads |
+| m7-05 | Built-in `/orchestrate`, child-session steering, and GitHub MCP |
+| m7-06 | Automations and GitHub MCP |
 
 When a required tool is unavailable, stop that lab. Do not replace hands-on work
 with role-play or claim that a static artifact proves the workflow ran.
 
 ### 6. Verify session controls and context syntax
 
-Before Session 20, confirm these controls in the current app:
+Before Session m7-01, confirm these controls in the current app:
 
 - session modes: **Interactive**, **Plan**, and **Autopilot**;
 - `@` for adding files, `#` for referencing issues, and `/` for commands;
@@ -157,12 +157,12 @@ Use these durable artifacts:
 
 | Session | Authoritative result | Used next |
 | --- | --- | --- |
-| 20 | `initiative-context-brief.md` | Grounded context for Session 21 |
-| 21 | `decision-brief.md`, `issue-proposal.md` | Product decisions for Session 22 |
-| 22 | Live parent and child GitHub issues | Issue state for Session 23 |
-| 23 | Live canvas linked to GitHub issues | Reconciled planning view for Session 24 |
-| 24 | `orchestration-plan.md`, live issues, reviewed parent result | Authoritative inputs for Session 25 |
-| 25 | `automation-definition.md`, `stakeholder-update.md` | Human-owned operating decision |
+| m7-01 | `initiative-context-brief.md` | Grounded context for Session m7-02 |
+| m7-02 | `decision-brief.md`, `issue-proposal.md` | Product decisions for Session m7-03 |
+| m7-03 | Live parent and child GitHub issues | Issue state for Session m7-04 |
+| m7-04 | Live canvas linked to GitHub issues | Reconciled planning view for Session m7-05 |
+| m7-05 | `orchestration-plan.md`, live issues, reviewed parent result | Authoritative inputs for Session m7-06 |
+| m7-06 | `automation-definition.md`, `stakeholder-update.md` | Human-owned operating decision |
 
 At each step, keep the next action and open questions in the authoritative
 artifact.
@@ -180,14 +180,14 @@ The supplied scenario covers every exercise and is the default learner path.
 
 ## Sessions
 
-| Order | Session # | Title | Difficulty | Duration |
+| Order | Session ID | Title | Difficulty | Duration |
 | --- | --- | --- | --- | --- |
-| 1 | 20 | Work Effectively in the GitHub Copilot App | Beginner | 3 hrs |
-| 2 | 21 | Interview Ideas and Shape Better Work | Beginner | 3 hrs |
-| 3 | 22 | Plan Work with GitHub Issues and MCP | Intermediate | 3 hrs |
-| 4 | 23 | Build and Use a Planning Canvas | Intermediate | 3 hrs |
-| 5 | 24 | Orchestrate Agents and Workstreams | Intermediate | 3 hrs |
-| 6 | 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | 3 hrs |
+| 1 | m7-01 | Work Effectively in the GitHub Copilot App | Beginner | 3 hrs |
+| 2 | m7-02 | Interview Ideas and Shape Better Work | Beginner | 3 hrs |
+| 3 | m7-03 | Plan Work with GitHub Issues and MCP | Intermediate | 3 hrs |
+| 4 | m7-04 | Build and Use a Planning Canvas | Intermediate | 3 hrs |
+| 5 | m7-05 | Orchestrate Agents and Workstreams | Intermediate | 3 hrs |
+| 6 | m7-06 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | 3 hrs |
 
 ## Recommended delivery schedule
 
@@ -195,9 +195,9 @@ The supplied scenario covers every exercise and is the default learner path.
 
 | Day | Sessions | Focus |
 | --- | --- | --- |
-| Day 1 | Sessions 20 to 21 | App fluency, context, and interviewing |
-| Day 2 | Sessions 22 to 23 | GitHub issues, MCP, and planning canvases |
-| Day 3 | Sessions 24 to 25 | Orchestration, automation, and work-system handoff |
+| Day 1 | Sessions m7-01 to m7-02 | App fluency, context, and interviewing |
+| Day 2 | Sessions m7-03 to m7-04 | GitHub issues, MCP, and planning canvases |
+| Day 3 | Sessions m7-05 to m7-06 | Orchestration, automation, and work-system handoff |
 
 ## Learning outcomes
 
@@ -227,13 +227,13 @@ By completing this track, learners will be able to:
 Use Azure Boards only when the delivery plan calls for it before the workshop.
 Do not introduce it as an alternate learner path during the standard labs.
 
-The tools in [`../scripts/azure-boards/`](../scripts/azure-boards/) seed, verify,
+The tools described in `scripts/azure-boards/README.md` seed, verify,
 and reset a synthetic backlog for Agile or Scrum projects. They verify existing
 project settings and never create them.
 
-Use the [Session 21 supplement](../sessions/session-21-interview-and-shape-work/lab/azure-boards/README.md)
+Use the [Session m7-02 supplement](../sessions/session-m7-02-interview-and-shape-work/lab/azure-boards/README.md)
 to shape a seeded requirement. Use the
-[Session 24 supplement](../sessions/session-24-orchestrate-workstreams/lab/azure-boards/README.md)
+[Session m7-05 supplement](../sessions/session-m7-05-orchestrate-workstreams/lab/azure-boards/README.md)
 to supervise seeded workstreams. Both still require GitHub Copilot.
 
 ## Next steps

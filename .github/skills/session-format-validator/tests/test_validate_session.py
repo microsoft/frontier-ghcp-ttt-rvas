@@ -20,19 +20,19 @@ class SessionValidatorTests(unittest.TestCase):
             return VALIDATOR.validate_lab_readiness(Path(directory))
 
     def test_published_session_is_ready(self):
-        result = VALIDATOR.validate(ROOT / "sessions/session-18-spec-kit")
+        result = VALIDATOR.validate(ROOT / "sessions/session-m5-02-spec-kit")
 
         self.assertEqual(result["status"], "ready")
         self.assertEqual(result["findings"], [])
 
     def test_published_hve_session_is_ready(self):
-        result = VALIDATOR.validate(ROOT / "sessions/session-28-hve-core-challenge")
+        result = VALIDATOR.validate(ROOT / "sessions/session-m5-03-hve-core-challenge")
 
         self.assertEqual(result["status"], "ready")
         self.assertEqual(result["findings"], [])
 
     def test_missing_session_stops_at_directory(self):
-        result = VALIDATOR.validate(ROOT / "sessions/session-20-spec-frameworks")
+        result = VALIDATOR.validate(ROOT / "sessions/session-m7-01-spec-frameworks")
 
         self.assertEqual(result["status"], "needs-work")
         self.assertEqual(len(result["findings"]), 1)

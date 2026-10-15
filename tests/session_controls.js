@@ -40,7 +40,7 @@ context = {
     addEventListener: (name, callback) => listeners.set(name, callback)
   },
   window: {
-    location: { href: "https://example.test/repo/sessions/session-01-test/trainer-content/" },
+    location: { href: "https://example.test/repo/sessions/session-m1-01-test/trainer-content/" },
     history: { replaceState: (_, __, url) => { context.window.location.href = url.href; } },
     getComputedStyle: () => ({ scrollPaddingTop: "0px", scrollMarginTop: "120px" }),
     matchMedia: () => ({ matches: true }),

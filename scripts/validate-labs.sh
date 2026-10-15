@@ -48,10 +48,10 @@ done < <(find "$labs_root" -mindepth 1 -maxdepth 1 -type d -name 'session-*' -pr
 while IFS= read -r -d '' file; do
   relative="${file#"$labs_root"/}"
   case "$relative" in
-    session-07-code-review-prs/lab/starter/conflict-scenario/utils-with-conflict.js | \
-      session-13-actions-workflows/lab/starter/broken-workflows/broken-ci.yml | \
-      session-27-python-repair-refactor/lab/starter/inventory_reconciliation/cli.py | \
-      session-27-python-repair-refactor/lab/starter/inventory_reconciliation/service.py)
+    session-m2-04-code-review-prs/lab/starter/conflict-scenario/utils-with-conflict.js | \
+      session-m4-01-actions-workflows/lab/starter/broken-workflows/broken-ci.yml | \
+      session-m2-06-python-repair-refactor/lab/starter/inventory_reconciliation/cli.py | \
+      session-m2-06-python-repair-refactor/lab/starter/inventory_reconciliation/service.py)
       printf 'Skipping intentional syntax exercise: %s\n' "$relative"
       continue
       ;;
@@ -80,11 +80,11 @@ done < <(
     -print0 | sort -z
 )
 
-session_26="$labs_root/session-26-java-to-dotnet-modernization/lab"
-if [[ -d "$session_26" ]]; then
-  java_starter="$session_26/starter/legacy-java-order-service"
-  dotnet_starter="$session_26/starter/modern-dotnet-order-service"
-  dotnet_solution="$session_26/solution/modern-dotnet-order-service"
+migration_lab="$labs_root/session-m2-07-java-to-dotnet-modernization/lab"
+if [[ -d "$migration_lab" ]]; then
+  java_starter="$migration_lab/starter/legacy-java-order-service"
+  dotnet_starter="$migration_lab/starter/modern-dotnet-order-service"
+  dotnet_solution="$migration_lab/solution/modern-dotnet-order-service"
 
   validate \
     "$java_starter" \
@@ -110,10 +110,10 @@ if [[ -d "$session_26" ]]; then
     "$dotnet_solution/OrderPricing.ContractTests/obj"
 fi
 
-session_17="$labs_root/session-17-copilot-sdk/lab"
-if [[ -d "$session_17" ]]; then
-  starter_project="$session_17/starter/sdk-readiness-assistant"
-  solution_project="$session_17/solution/sdk-readiness-assistant"
+sdk_lab="$labs_root/session-m6-01-copilot-sdk/lab"
+if [[ -d "$sdk_lab" ]]; then
+  starter_project="$sdk_lab/starter/sdk-readiness-assistant"
+  solution_project="$sdk_lab/solution/sdk-readiness-assistant"
 
   validate \
     "$starter_project" \
@@ -123,10 +123,10 @@ if [[ -d "$session_17" ]]; then
     bash -c "cd '$solution_project' && npm ci --quiet && npm run check && npm test"
 fi
 
-session_27="$labs_root/session-27-python-repair-refactor/lab"
-if [[ -d "$session_27" ]]; then
+python_lab="$labs_root/session-m2-06-python-repair-refactor/lab"
+if [[ -d "$python_lab" ]]; then
   starter_output="$(
-    cd "$session_27/starter" &&
+    cd "$python_lab/starter" &&
       python -m inventory_reconciliation \
         --warehouse fixtures/input/warehouse.csv \
         --ledger fixtures/input/ledger.csv \
@@ -135,18 +135,18 @@ if [[ -d "$session_27" ]]; then
   starter_status=$?
   if ((starter_status == 0)); then
     report_failure \
-      "$session_27/starter" \
+      "$python_lab/starter" \
       "The intentionally broken starter completed successfully; expected SYN-01."
   elif ! grep -Fq "expected ':'" <<<"$starter_output"; then
     report_failure \
-      "$session_27/starter" \
+      "$python_lab/starter" \
       "The starter did not stop at SYN-01 as documented:\n$starter_output"
   fi
   checked=$((checked + 1))
 
   validate \
-    "$session_27/solution" \
-    bash -c "cd '$session_27/solution' && python -m pytest -q"
+    "$python_lab/solution" \
+    bash -c "cd '$python_lab/solution' && python -m pytest -q"
 fi
 
 if ((failures > 0)); then

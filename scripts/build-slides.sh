@@ -2,10 +2,10 @@
 set -euo pipefail
 
 # Generate slide decks (PDF + HTML) for all sessions
-# Usage: ./scripts/build-slides.sh [session-number]
+# Usage: ./scripts/build-slides.sh [module-session-id]
 # Examples:
 #   ./scripts/build-slides.sh        # Build all sessions
-#   ./scripts/build-slides.sh 04     # Build session 04 only
+#   ./scripts/build-slides.sh m2-01  # Build session m2-01 only
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 THEME="$REPO_ROOT/themes/ghcp-ttt.css"
@@ -51,6 +51,10 @@ build_session() {
 }
 
 if [[ $# -eq 1 ]]; then
+  if [[ ! "$1" =~ ^m[1-7]-[0-9]{2}$ ]]; then
+    echo "Use a module-local session ID, such as m2-01."
+    exit 1
+  fi
   # Build specific session
   matches=("$REPO_ROOT"/sessions/session-"$1"-*)
   if [[ -d "${matches[0]}" ]]; then

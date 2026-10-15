@@ -112,13 +112,13 @@ def catalog_session(root: Path, slug: str) -> dict[str, Any] | None:
 
 def validate_metadata(root: Path, session_path: Path) -> list[dict[str, str]]:
     findings: list[dict[str, str]] = []
-    match = re.fullmatch(r"session-(\d{2})-[a-z0-9-]+", session_path.name)
+    match = re.fullmatch(r"session-(m[1-9]\d*-\d{2})-[a-z0-9-]+", session_path.name)
     if not match:
         return [
             finding(
                 "metadata",
                 session_path,
-                "Directory name must use the form session-NN-topic.",
+                "Directory name must use the form session-mN-NN-topic.",
             )
         ]
 
@@ -166,6 +166,14 @@ def validate_metadata(root: Path, session_path: Path) -> list[dict[str, str]]:
                 f"Catalog id '{entry['id']}' must match directory id '{session_id}'.",
             )
         )
+    if not session_id.startswith(f"m{entry['module']}-"):
+        findings.append(
+            finding(
+                "metadata",
+                root / "data/session-catalog.json",
+                f"Catalog module '{entry['module']}' must match id '{session_id}'.",
+            )
+        )
     if entry["difficulty"] not in VALID_DIFFICULTIES:
         findings.append(
             finding(
@@ -187,13 +195,13 @@ def validate_metadata(root: Path, session_path: Path) -> list[dict[str, str]]:
 
 def validate_navigation(root: Path, session_path: Path) -> list[dict[str, str]]:
     findings: list[dict[str, str]] = []
-    match = re.fullmatch(r"session-(\d{2})-[a-z0-9-]+", session_path.name)
+    match = re.fullmatch(r"session-(m[1-9]\d*-\d{2})-[a-z0-9-]+", session_path.name)
     if not match:
         return [
             finding(
                 "navigation",
                 session_path,
-                "Cannot validate curriculum registration until the directory uses session-NN-topic.",
+                "Cannot validate curriculum registration until the directory uses session-mN-NN-topic.",
             )
         ]
 
@@ -206,7 +214,7 @@ def validate_navigation(root: Path, session_path: Path) -> list[dict[str, str]]:
         ),
         root / "README.md": (f"sessions/{session_path.name}/",),
         root / "curriculum-plan.md": (f"Session {session_id}",),
-        root / "tracks/full-mastery.md": (f"| {int(session_id)}",),
+        root / "tracks/full-mastery.md": (f"| {session_id}",),
     }
 
     for path, required_texts in required_navigation.items():

@@ -1,0 +1,84 @@
+# Session m7-02: Interview Ideas and Shape Better Work
+
+**Module:** Product and Delivery Teams
+
+**Difficulty:** Beginner
+
+**Prerequisites:** Session m7-01 and working GitHub Copilot access
+
+**Duration:** 3 hours (1 hour trainer content + 2 hours lab)
+
+## Overview
+
+Session m7-02 continues the **Delivery Decision Studio** path. Learners use the
+Session m7-01 context brief, install a supplied project skill, and run a
+dependency-ordered interview. They turn approved answers into a decision brief
+and issue proposal, then revise the affected decisions when a late constraint
+arrives.
+
+The fictional Service Request Portal remains the initiative. Do not use customer
+requests or source organization names in the standard lab.
+
+> [!IMPORTANT]
+> **GitHub Copilot is required.** Confirm access before the session. If Copilot
+> cannot run the interview, stop the lab.
+
+## Learning outcomes
+
+By the end of this session, learners will be able to:
+
+- Install and verify the supplied `decision-interview` project skill.
+- Run a dependency-ordered interview with GitHub Copilot.
+- Ask only questions whose prerequisites are settled.
+- Resolve scope, constraints, success, failure, ownership, and approval.
+- Review Copilot recommendations before accepting or revising them.
+- Create a reviewed Markdown decision brief in the repository.
+- Draft an issue proposal with testable acceptance criteria and a practical
+  definition of done.
+- Reopen only the decisions affected by new evidence.
+- Verify that the revised brief and issue proposal remain aligned.
+- Check context health before each interview round and start fresh for the final
+  review.
+- Request an independent critique before approving the brief and proposal.
+- Assign an owner and reviewer before work enters a sprint.
+
+## Session flow
+
+```text
+Vague request
+  -> project skill installation
+  -> GitHub Copilot decision interview
+  -> human review and decisions
+  -> Markdown decision brief
+  -> GitHub issue proposal
+  -> acceptance criteria
+  -> definition of done
+```
+
+## Session structure
+
+| Block | Duration | Material |
+| --- | --- | --- |
+| Trainer content | 1 hour | [Trainer guide](trainer-content/README.md) |
+| Lab | 2 hours | [Lab guide](lab/README.md) |
+
+## Materials
+
+| Resource | Location |
+| --- | --- |
+| Marp slides | [`slides.md`](slides.md) |
+| Starter request and repository templates | [`lab/starter/`](lab/starter/) |
+| Completed Copilot-reviewed examples | [`lab/solution/`](lab/solution/) |
+
+## Boundaries
+
+- Teach the interview pattern, not skill authoring.
+- Use the supplied project skill; learners do not author a new skill in this session.
+- Use only approved, sanitized material.
+- Treat Copilot questions, recommendations, and drafts as proposals.
+- Keep product and approval decisions with named people.
+- Do not create or update a live work item until the request owner approves the brief.
+- Keep the lab no-code. Learners install and use the supplied skill; they do not
+  author or edit it.
+- Session m7-03 creates the approved GitHub issues. Session m7-02 prepares the source
+  brief and issue proposal.

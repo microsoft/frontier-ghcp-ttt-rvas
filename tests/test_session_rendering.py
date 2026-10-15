@@ -15,7 +15,7 @@ from unittest.mock import patch
 from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[1]
-SESSION = "session-01-intro-to-copilot"
+SESSION = "session-m1-01-intro-to-copilot"
 
 
 def load_module(name, path):
@@ -48,7 +48,7 @@ class SessionRenderingTests(unittest.TestCase):
         dest = source.replace("README.md", "index.html")
         page = SimpleNamespace(
             file=SimpleNamespace(src_path=source, dest_uri=dest),
-            title='Session 01 & "Copilot"',
+            title='Session m1-01 & "Copilot"',
         )
         targets = {
             f"sessions/{SESSION}/{directory}README.md": SimpleNamespace(
@@ -115,7 +115,7 @@ class SessionRenderingTests(unittest.TestCase):
                 frame = tags.named("iframe")[0]
                 self.assertNotIn("src", frame)
                 self.assertEqual(frame["data-src"], f"../../output/html/{SESSION}.html")
-                self.assertEqual(frame["title"], 'Slides: Session 01 & "Copilot"')
+                self.assertEqual(frame["title"], 'Slides: Session m1-01 & "Copilot"')
                 self.assertIn(f'href="../../output/pdf/{SESSION}.pdf"', output)
 
     def test_rendered_content_and_heading_ids_are_preserved(self):
@@ -279,7 +279,7 @@ class RedirectTests(unittest.TestCase):
             )
 
     def test_invalid_session_names_are_rejected(self):
-        for name in ("../escape", "session-01-<script>", "session-01-test/other"):
+        for name in ("../escape", "session-m1-01-<script>", "session-m1-01-test/other"):
             with self.assertRaises(ValueError):
                 RENDERER.build_redirect(name)
 

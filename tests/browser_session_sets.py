@@ -59,14 +59,14 @@ def run():
             page.screenshot(path=str(OUT / f"set-builder-empty-{label}-top.png"))
             page.screenshot(path=str(OUT / f"set-builder-empty-{label}.png"), full_page=True)
 
-            page.locator('[data-session-id="01"] input').check()
-            page.locator('[data-session-id="04"] input').check()
-            page.locator('[data-session-id="10"] input').check()
+            page.locator('[data-session-id="m1-01"] input').check()
+            page.locator('[data-session-id="m2-01"] input').check()
+            page.locator('[data-session-id="m3-03"] input').check()
             page.locator("[data-set-name]").fill("Team A & B")
             page.locator("[data-set-intro]").fill("Prepare your environment.\nBring your own repository.")
-            page.get_by_role("button", name="Move session 10 up").click()
+            page.get_by_role("button", name="Move session m3-03 up").click()
             selected = page.locator("[data-set-selected] > li")
-            assert selected.evaluate_all("nodes => nodes.map(n => n.dataset.selectedId)") == ["01", "10", "04"]
+            assert selected.evaluate_all("nodes => nodes.map(n => n.dataset.selectedId)") == ["m1-01", "m3-03", "m2-01"]
             page.locator("[data-set-search]").fill("no matching session here")
             expect(page.locator("[data-set-no-results]")).to_be_visible()
             expect(selected).to_have_count(3)
@@ -77,7 +77,7 @@ def run():
             page.locator("[data-set-clear-filters]").click()
             page.reload(wait_until="networkidle")
             expect(page.locator("[data-set-name]")).to_have_value("Team A & B")
-            assert selected.evaluate_all("nodes => nodes.map(n => n.dataset.selectedId)") == ["01", "10", "04"]
+            assert selected.evaluate_all("nodes => nodes.map(n => n.dataset.selectedId)") == ["m1-01", "m3-03", "m2-01"]
             page.locator("[data-set-create]").click()
             expect(page.locator("[data-set-open]")).to_be_focused()
             expect(page.locator("[data-set-open]")).to_have_css("color", "rgb(255, 255, 255)")
@@ -104,7 +104,7 @@ def run():
             page.locator("[data-set-open]").scroll_into_view_if_needed()
             page.screenshot(path=str(OUT / f"set-open-focused-{label}.png"))
             link = page.locator("[data-set-link]").input_value()
-            assert parse_qs(urlsplit(link).query)["ids"] == ["01,10,04"]
+            assert parse_qs(urlsplit(link).query)["ids"] == ["m1-01,m3-03,m2-01"]
             assert urlsplit(link).path == urlsplit(urljoin(BASE, "session-set/")).path
             page.evaluate("scrollTo(0, 0)")
             assert_layout(page)
@@ -126,7 +126,7 @@ def run():
             expect(page.locator("[data-set-title]")).to_have_text("Updated set")
             expect(page.locator("[data-set-delivery] > li")).to_have_count(3)
             assert [item.split(" / ")[0] for item in page.locator(".set-delivery .set-session-meta").all_text_contents()] == [
-                "Session 01", "Session 10", "Session 04"
+                "Session m1-01", "Session m3-03", "Session m2-01"
             ]
             expect(page.locator("[data-set-description]")).to_contain_text("Bring your own repository.")
             expect(page.locator(".set-materials a")).to_have_count(9)
@@ -142,7 +142,7 @@ def run():
             page.wait_for_url("**/build-set/?**")
             expect(page.locator("[data-set-name]")).to_have_value("Updated set")
             expect(page.locator("[data-set-selected] > li")).to_have_count(3)
-            page.get_by_role("button", name="Remove session 10").click()
+            page.get_by_role("button", name="Remove session m3-03").click()
             expect(page.locator("[data-set-selected] > li")).to_have_count(2)
             page.locator("[data-set-clear]").click()
             expect(page.locator("[data-set-create]")).to_be_disabled()
@@ -167,7 +167,7 @@ def run():
         page.screenshot(path=str(OUT / "session-set-invalid-mobile.png"))
         page.goto(urljoin(BASE, "build-set/") + "?v=1&ids=99", wait_until="networkidle")
         expect(page.locator("[data-set-error]")).to_be_visible()
-        page.locator('[data-session-id="01"] input').check()
+        page.locator('[data-session-id="m1-01"] input').check()
         expect(page.locator("[data-set-error]")).not_to_be_visible()
         page.locator("[data-set-name]").fill('<img src=x onerror="window.injected=true">')
         page.locator("[data-set-intro]").fill("<script>window.injected=true</script>")

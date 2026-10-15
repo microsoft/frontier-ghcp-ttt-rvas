@@ -11,8 +11,8 @@
 
 This path moves from Copilot fundamentals into full agentic workflows. It covers
 daily assistance, the GitHub Copilot app, cloud agents, MCP servers, custom
-agents, and skills. Sessions 29 and 24 teach isolated app work, plan critique, and
-supervision of independent child sessions. Session 12 compares a local interview
+agents, and skills. Sessions m2-05 and m7-05 teach isolated app work, plan critique, and
+supervision of independent child sessions. Session m3-05 compares a local interview
 skill with pinned community skills before turning decisions into `/plan`.
 
 ## Prerequisites
@@ -21,35 +21,35 @@ skill with pinned community skills before turning decisions into `/plan`.
 - GitHub Copilot Enterprise Cloud access; verify the customer's enabled features before the lab
 - VS Code installed with GitHub Copilot extension
 - Git proficiency (branching, PRs, merging)
-- Node.js or Python installed (for MCP server development in Sessions 10 to 12)
+- Node.js or Python installed (for MCP server development in Sessions m3-03 to m3-05)
 - Node.js 22 or later for CLI and live skills; Python 3.10 or later for the app labs
 - Copilot app access, including `/rubber-duck` and `/orchestrate`
-- CLI `/refine` before Session 03, and local sandbox support for Session 04
-- Node.js 22.22.2 or later and a working JavaScript LSP server for Session 11
-- App `/fork`, `/merge-to-parent`, and `/spar` for Session 29
+- CLI `/refine` before Session m1-03, and local sandbox support for Session m2-01
+- Node.js 22.22.2 or later and a working JavaScript LSP server for Session m3-04
+- App `/fork`, `/merge-to-parent`, and `/spar` for Session m2-05
 
 ## Sessions
 
-| Order   | Session #   | Title                                     | Difficulty   | Duration   |
+| Order   | Session ID   | Title                                     | Difficulty   | Duration   |
 | ------- | ----------- | ----------------------------------------- | ------------ | ---------- |
-| 1       | 01          | Introduction to GitHub Copilot            | Beginner     | 3 hrs      |
-| 2       | 02          | Copilot Chat & Inline Suggestions         | Beginner     | 3 hrs      |
-| 3       | 03          | Prompt Engineering Fundamentals           | Beginner     | 3 hrs      |
-| 4       | 04          | GitHub Copilot in the CLI                 | Intermediate | 3 hrs      |
-| 5       | 05          | Agent Mode in the IDE                     | Intermediate | 3 hrs      |
-| 6       | 06          | Copilot Spaces & Context Management       | Intermediate | 3 hrs      |
-| 7       | 07          | Copilot for Code Review & Pull Requests   | Intermediate | 3 hrs      |
-| 8       | 29          | GitHub Copilot App for Developers         | Intermediate | 3 hrs      |
-| 9       | 24          | Orchestrate Agents and Workstreams: developer route | Intermediate | 3 hrs |
-| 10      | 08          | Copilot App, Plugins & Canvas Extensions  | Advanced     | 3 hrs      |
-| 11      | 09          | Copilot Cloud Agent                       | Advanced     | 3 hrs      |
-| 12      | 10          | MCP Servers & Custom Tool Integration     | Advanced     | 3 hrs      |
-| 13      | 11          | Custom Agents & Agent Profiles            | Advanced     | 3 hrs      |
-| 14      | 12          | Agent Skills & the Copilot Ecosystem      | Advanced     | 3 hrs      |
+| 1       | m1-01          | Introduction to GitHub Copilot            | Beginner     | 3 hrs      |
+| 2       | m1-02          | Copilot Chat & Inline Suggestions         | Beginner     | 3 hrs      |
+| 3       | m1-03          | Prompt Engineering Fundamentals           | Beginner     | 3 hrs      |
+| 4       | m2-01          | GitHub Copilot in the CLI                 | Intermediate | 3 hrs      |
+| 5       | m2-02          | Agent Mode in the IDE                     | Intermediate | 3 hrs      |
+| 6       | m2-03          | Copilot Spaces & Context Management       | Intermediate | 3 hrs      |
+| 7       | m2-04          | Copilot for Code Review & Pull Requests   | Intermediate | 3 hrs      |
+| 8       | m2-05          | GitHub Copilot App for Developers         | Intermediate | 3 hrs      |
+| 9       | m7-05          | Orchestrate Agents and Workstreams: developer route | Intermediate | 3 hrs |
+| 10      | m3-01          | Copilot App, Plugins & Canvas Extensions  | Advanced     | 3 hrs      |
+| 11      | m3-02          | Copilot Cloud Agent                       | Advanced     | 3 hrs      |
+| 12      | m3-03          | MCP Servers & Custom Tool Integration     | Advanced     | 3 hrs      |
+| 13      | m3-04          | Custom Agents & Agent Profiles            | Advanced     | 3 hrs      |
+| 14      | m3-05          | Agent Skills & the Copilot Ecosystem      | Advanced     | 3 hrs      |
 
-**App access is required for Sessions 29 and 24.** Stop if access or a required
-command is unavailable. Use Session 24's developer route; it does not require
-Sessions 20 to 23 or GitHub MCP. Session 12 requires live CLI skill invocation.
+**App access is required for Sessions m2-05 and m7-05.** Stop if access or a required
+command is unavailable. Use Session m7-05's developer route; it does not require
+Sessions m7-01 to m7-04 or GitHub MCP. Session m3-05 requires live CLI skill invocation.
 
 ## Recommended Delivery Schedule
 
@@ -57,22 +57,22 @@ Sessions 20 to 23 or GitHub MCP. Session 12 requires live CLI skill invocation.
 
 | Day   | Sessions            | Focus                  |
 | ----- | ------------------- | ---------------------- |
-| Day 1 | Sessions 01, 02, 03 | Foundations            |
-| Day 2 | Sessions 04, 05, 06 | Intermediate workflows |
-| Day 3 | Sessions 07, 29, 24 | Review + app workflow + developer orchestration |
-| Day 4 | Sessions 08, 09, 10 | Canvases + cloud agent + MCP |
-| Day 5 | Sessions 11, 12 | Custom agents + skills |
+| Day 1 | Sessions m1-01, m1-02, m1-03 | Foundations            |
+| Day 2 | Sessions m2-01, m2-02, m2-03 | Intermediate workflows |
+| Day 3 | Sessions m2-04, m2-05, m7-05 | Review + app workflow + developer orchestration |
+| Day 4 | Sessions m3-01, m3-02, m3-03 | Canvases + cloud agent + MCP |
+| Day 5 | Sessions m3-04, m3-05 | Custom agents + skills |
 
 ### 6-Day Standard
 
 | Day   | Sessions        | Focus                            |
 | ----- | --------------- | -------------------------------- |
-| Day 1 | Sessions 01, 02 | Setup and Chat                   |
-| Day 2 | Sessions 03, 04 | Prompting + CLI                  |
-| Day 3 | Sessions 05, 06 | Agent mode + context             |
-| Day 4 | Sessions 07, 29, 24 | Review + developer app + orchestration |
-| Day 5 | Sessions 08, 09, 10 | Canvases + cloud agent + MCP |
-| Day 6 | Sessions 11, 12 | Custom agents + skills            |
+| Day 1 | Sessions m1-01, m1-02 | Setup and Chat                   |
+| Day 2 | Sessions m1-03, m2-01 | Prompting + CLI                  |
+| Day 3 | Sessions m2-02, m2-03 | Agent mode + context             |
+| Day 4 | Sessions m2-04, m2-05, m7-05 | Review + developer app + orchestration |
+| Day 5 | Sessions m3-01, m3-02, m3-03 | Canvases + cloud agent + MCP |
+| Day 6 | Sessions m3-04, m3-05 | Custom agents + skills            |
 
 ## Learning Outcomes
 

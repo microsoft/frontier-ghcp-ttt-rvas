@@ -118,125 +118,125 @@ nav:
     - Full Mastery: tracks/full-mastery.md
   - Sessions:
     - Module 1 — Copilot Fundamentals:
-      - "01 — Intro to Copilot":
-        - Overview: sessions/session-01-intro-to-copilot/README.md
-        - Lab: sessions/session-01-intro-to-copilot/lab/README.md
-        - Trainer Guide: sessions/session-01-intro-to-copilot/trainer-content/README.md
-      - "02 — Chat & Inline Suggestions":
-        - Overview: sessions/session-02-chat-and-inline/README.md
-        - Lab: sessions/session-02-chat-and-inline/lab/README.md
-        - Trainer Guide: sessions/session-02-chat-and-inline/trainer-content/README.md
-      - "03 — Prompt Engineering":
-        - Overview: sessions/session-03-prompt-engineering/README.md
-        - Lab: sessions/session-03-prompt-engineering/lab/README.md
-        - Trainer Guide: sessions/session-03-prompt-engineering/trainer-content/README.md
+      - "m1-01 — Intro to Copilot":
+        - Overview: sessions/session-m1-01-intro-to-copilot/README.md
+        - Lab: sessions/session-m1-01-intro-to-copilot/lab/README.md
+        - Trainer Guide: sessions/session-m1-01-intro-to-copilot/trainer-content/README.md
+      - "m1-02 — Chat & Inline Suggestions":
+        - Overview: sessions/session-m1-02-chat-and-inline/README.md
+        - Lab: sessions/session-m1-02-chat-and-inline/lab/README.md
+        - Trainer Guide: sessions/session-m1-02-chat-and-inline/trainer-content/README.md
+      - "m1-03 — Prompt Engineering":
+        - Overview: sessions/session-m1-03-prompt-engineering/README.md
+        - Lab: sessions/session-m1-03-prompt-engineering/lab/README.md
+        - Trainer Guide: sessions/session-m1-03-prompt-engineering/trainer-content/README.md
     - Module 2 — Copilot in Practice:
-      - "04 — Copilot CLI":
-        - Overview: sessions/session-04-copilot-cli/README.md
-        - Lab: sessions/session-04-copilot-cli/lab/README.md
-        - Trainer Guide: sessions/session-04-copilot-cli/trainer-content/README.md
-      - "05 — Agent Mode in the IDE":
-        - Overview: sessions/session-05-agent-mode-ide/README.md
-        - Lab: sessions/session-05-agent-mode-ide/lab/README.md
-        - Trainer Guide: sessions/session-05-agent-mode-ide/trainer-content/README.md
-      - "06 — Spaces & Context":
-        - Overview: sessions/session-06-spaces-and-context/README.md
-        - Lab: sessions/session-06-spaces-and-context/lab/README.md
-        - Trainer Guide: sessions/session-06-spaces-and-context/trainer-content/README.md
-      - "07 — Code Review & PRs":
-        - Overview: sessions/session-07-code-review-prs/README.md
-        - Lab: sessions/session-07-code-review-prs/lab/README.md
-        - Trainer Guide: sessions/session-07-code-review-prs/trainer-content/README.md
-      - "29 — Copilot App for Developers":
-        - Overview: sessions/session-29-copilot-app-for-developers/README.md
-        - Lab: sessions/session-29-copilot-app-for-developers/lab/README.md
-        - Trainer Guide: sessions/session-29-copilot-app-for-developers/trainer-content/README.md
-      - "27 — Python Repair & Refactor":
-        - Overview: sessions/session-27-python-repair-refactor/README.md
-        - Lab: sessions/session-27-python-repair-refactor/lab/README.md
-        - Trainer Guide: sessions/session-27-python-repair-refactor/trainer-content/README.md
-      - "26 — Java to .NET Modernization":
-        - Overview: sessions/session-26-java-to-dotnet-modernization/README.md
-        - Lab: sessions/session-26-java-to-dotnet-modernization/lab/README.md
-        - Trainer Guide: sessions/session-26-java-to-dotnet-modernization/trainer-content/README.md
+      - "m2-01 — Copilot CLI":
+        - Overview: sessions/session-m2-01-copilot-cli/README.md
+        - Lab: sessions/session-m2-01-copilot-cli/lab/README.md
+        - Trainer Guide: sessions/session-m2-01-copilot-cli/trainer-content/README.md
+      - "m2-02 — Agent Mode in the IDE":
+        - Overview: sessions/session-m2-02-agent-mode-ide/README.md
+        - Lab: sessions/session-m2-02-agent-mode-ide/lab/README.md
+        - Trainer Guide: sessions/session-m2-02-agent-mode-ide/trainer-content/README.md
+      - "m2-03 — Spaces & Context":
+        - Overview: sessions/session-m2-03-spaces-and-context/README.md
+        - Lab: sessions/session-m2-03-spaces-and-context/lab/README.md
+        - Trainer Guide: sessions/session-m2-03-spaces-and-context/trainer-content/README.md
+      - "m2-04 — Code Review & PRs":
+        - Overview: sessions/session-m2-04-code-review-prs/README.md
+        - Lab: sessions/session-m2-04-code-review-prs/lab/README.md
+        - Trainer Guide: sessions/session-m2-04-code-review-prs/trainer-content/README.md
+      - "m2-05 — Copilot App for Developers":
+        - Overview: sessions/session-m2-05-copilot-app-for-developers/README.md
+        - Lab: sessions/session-m2-05-copilot-app-for-developers/lab/README.md
+        - Trainer Guide: sessions/session-m2-05-copilot-app-for-developers/trainer-content/README.md
+      - "m2-06 — Python Repair & Refactor":
+        - Overview: sessions/session-m2-06-python-repair-refactor/README.md
+        - Lab: sessions/session-m2-06-python-repair-refactor/lab/README.md
+        - Trainer Guide: sessions/session-m2-06-python-repair-refactor/trainer-content/README.md
+      - "m2-07 — Java to .NET Modernization":
+        - Overview: sessions/session-m2-07-java-to-dotnet-modernization/README.md
+        - Lab: sessions/session-m2-07-java-to-dotnet-modernization/lab/README.md
+        - Trainer Guide: sessions/session-m2-07-java-to-dotnet-modernization/trainer-content/README.md
     - Module 3 — Agentic Workflows:
-      - "08 — Copilot App & Canvases":
-        - Overview: sessions/session-08-copilot-app-canvases/README.md
-        - Lab: sessions/session-08-copilot-app-canvases/lab/README.md
-        - Trainer Guide: sessions/session-08-copilot-app-canvases/trainer-content/README.md
-      - "09 — Cloud Agent":
-        - Overview: sessions/session-09-cloud-agent/README.md
-        - Lab: sessions/session-09-cloud-agent/lab/README.md
-        - Trainer Guide: sessions/session-09-cloud-agent/trainer-content/README.md
-      - "10 — MCP Servers":
-        - Overview: sessions/session-10-mcp-servers/README.md
-        - Lab: sessions/session-10-mcp-servers/lab/README.md
-        - Trainer Guide: sessions/session-10-mcp-servers/trainer-content/README.md
-      - "11 — Custom Agents":
-        - Overview: sessions/session-11-custom-agents/README.md
-        - Lab: sessions/session-11-custom-agents/lab/README.md
-        - Trainer Guide: sessions/session-11-custom-agents/trainer-content/README.md
-      - "12 — Agent Skills & Ecosystem":
-        - Overview: sessions/session-12-agent-skills-ecosystem/README.md
-        - Lab: sessions/session-12-agent-skills-ecosystem/lab/README.md
-        - Trainer Guide: sessions/session-12-agent-skills-ecosystem/trainer-content/README.md
+      - "m3-01 — Copilot App & Canvases":
+        - Overview: sessions/session-m3-01-copilot-app-canvases/README.md
+        - Lab: sessions/session-m3-01-copilot-app-canvases/lab/README.md
+        - Trainer Guide: sessions/session-m3-01-copilot-app-canvases/trainer-content/README.md
+      - "m3-02 — Cloud Agent":
+        - Overview: sessions/session-m3-02-cloud-agent/README.md
+        - Lab: sessions/session-m3-02-cloud-agent/lab/README.md
+        - Trainer Guide: sessions/session-m3-02-cloud-agent/trainer-content/README.md
+      - "m3-03 — MCP Servers":
+        - Overview: sessions/session-m3-03-mcp-servers/README.md
+        - Lab: sessions/session-m3-03-mcp-servers/lab/README.md
+        - Trainer Guide: sessions/session-m3-03-mcp-servers/trainer-content/README.md
+      - "m3-04 — Custom Agents":
+        - Overview: sessions/session-m3-04-custom-agents/README.md
+        - Lab: sessions/session-m3-04-custom-agents/lab/README.md
+        - Trainer Guide: sessions/session-m3-04-custom-agents/trainer-content/README.md
+      - "m3-05 — Agent Skills & Ecosystem":
+        - Overview: sessions/session-m3-05-agent-skills-ecosystem/README.md
+        - Lab: sessions/session-m3-05-agent-skills-ecosystem/lab/README.md
+        - Trainer Guide: sessions/session-m3-05-agent-skills-ecosystem/trainer-content/README.md
     - Module 4 — DevOps & Infrastructure:
-      - "13 — Actions & Workflows":
-        - Overview: sessions/session-13-actions-workflows/README.md
-        - Lab: sessions/session-13-actions-workflows/lab/README.md
-        - Trainer Guide: sessions/session-13-actions-workflows/trainer-content/README.md
-      - "14 — IaC with Copilot":
-        - Overview: sessions/session-14-iac-with-copilot/README.md
-        - Lab: sessions/session-14-iac-with-copilot/lab/README.md
-        - Trainer Guide: sessions/session-14-iac-with-copilot/trainer-content/README.md
-      - "15 — CI/CD & Debugging":
-        - Overview: sessions/session-15-cicd-debugging-autofix/README.md
-        - Lab: sessions/session-15-cicd-debugging-autofix/lab/README.md
-        - Trainer Guide: sessions/session-15-cicd-debugging-autofix/trainer-content/README.md
+      - "m4-01 — Actions & Workflows":
+        - Overview: sessions/session-m4-01-actions-workflows/README.md
+        - Lab: sessions/session-m4-01-actions-workflows/lab/README.md
+        - Trainer Guide: sessions/session-m4-01-actions-workflows/trainer-content/README.md
+      - "m4-02 — IaC with Copilot":
+        - Overview: sessions/session-m4-02-iac-with-copilot/README.md
+        - Lab: sessions/session-m4-02-iac-with-copilot/lab/README.md
+        - Trainer Guide: sessions/session-m4-02-iac-with-copilot/trainer-content/README.md
+      - "m4-03 — CI/CD & Debugging":
+        - Overview: sessions/session-m4-03-cicd-debugging-autofix/README.md
+        - Lab: sessions/session-m4-03-cicd-debugging-autofix/lab/README.md
+        - Trainer Guide: sessions/session-m4-03-cicd-debugging-autofix/trainer-content/README.md
     - Module 5 — Specification-Driven Frameworks:
-      - "16 — Brady's Squad":
-        - Overview: sessions/session-16-squad-orchestration/README.md
-        - Lab: sessions/session-16-squad-orchestration/lab/README.md
-        - Trainer Guide: sessions/session-16-squad-orchestration/trainer-content/README.md
-      - "18 — Spec Kit":
-        - Overview: sessions/session-18-spec-kit/README.md
-        - Lab: sessions/session-18-spec-kit/lab/README.md
-        - Trainer Guide: sessions/session-18-spec-kit/trainer-content/README.md
-      - "28 — HVE Core":
-        - Overview: sessions/session-28-hve-core-challenge/README.md
-        - Lab: sessions/session-28-hve-core-challenge/lab/README.md
-        - Trainer Guide: sessions/session-28-hve-core-challenge/trainer-content/README.md
+      - "m5-01 — Brady's Squad":
+        - Overview: sessions/session-m5-01-squad-orchestration/README.md
+        - Lab: sessions/session-m5-01-squad-orchestration/lab/README.md
+        - Trainer Guide: sessions/session-m5-01-squad-orchestration/trainer-content/README.md
+      - "m5-02 — Spec Kit":
+        - Overview: sessions/session-m5-02-spec-kit/README.md
+        - Lab: sessions/session-m5-02-spec-kit/lab/README.md
+        - Trainer Guide: sessions/session-m5-02-spec-kit/trainer-content/README.md
+      - "m5-03 — HVE Core":
+        - Overview: sessions/session-m5-03-hve-core-challenge/README.md
+        - Lab: sessions/session-m5-03-hve-core-challenge/lab/README.md
+        - Trainer Guide: sessions/session-m5-03-hve-core-challenge/trainer-content/README.md
     - Module 6 — Advanced Topics & Capstone:
-      - "17 — Copilot SDK":
-        - Overview: sessions/session-17-copilot-sdk/README.md
-        - Lab: sessions/session-17-copilot-sdk/lab/README.md
-        - Trainer Guide: sessions/session-17-copilot-sdk/trainer-content/README.md
-      - "19 — Capstone":
-        - Overview: sessions/session-19-capstone/README.md
-        - Lab: sessions/session-19-capstone/lab/README.md
-        - Trainer Guide: sessions/session-19-capstone/trainer-content/README.md
+      - "m6-01 — Copilot SDK":
+        - Overview: sessions/session-m6-01-copilot-sdk/README.md
+        - Lab: sessions/session-m6-01-copilot-sdk/lab/README.md
+        - Trainer Guide: sessions/session-m6-01-copilot-sdk/trainer-content/README.md
+      - "m6-02 — Capstone":
+        - Overview: sessions/session-m6-02-capstone/README.md
+        - Lab: sessions/session-m6-02-capstone/lab/README.md
+        - Trainer Guide: sessions/session-m6-02-capstone/trainer-content/README.md
     - Module 7 — Product and Delivery Teams:
-      - "20 — Copilot App Foundations":
-        - Overview: sessions/session-20-copilot-app-foundations/README.md
-        - Lab: sessions/session-20-copilot-app-foundations/lab/README.md
-        - Trainer Guide: sessions/session-20-copilot-app-foundations/trainer-content/README.md
-      - "21 — Interview and Shape Work":
-        - Overview: sessions/session-21-interview-and-shape-work/README.md
-        - Lab: sessions/session-21-interview-and-shape-work/lab/README.md
-        - Trainer Guide: sessions/session-21-interview-and-shape-work/trainer-content/README.md
-      - "22 — GitHub Issues & MCP":
-        - Overview: sessions/session-22-plan-work-with-github-issues/README.md
-        - Lab: sessions/session-22-plan-work-with-github-issues/lab/README.md
-        - Trainer Guide: sessions/session-22-plan-work-with-github-issues/trainer-content/README.md
-      - "23 — Planning Canvas":
-        - Overview: sessions/session-23-plan-and-steer-with-canvases/README.md
-        - Lab: sessions/session-23-plan-and-steer-with-canvases/lab/README.md
-        - Trainer Guide: sessions/session-23-plan-and-steer-with-canvases/trainer-content/README.md
-      - "24 — Orchestrate Workstreams":
-        - Overview: sessions/session-24-orchestrate-workstreams/README.md
-        - Lab: sessions/session-24-orchestrate-workstreams/lab/README.md
-        - Trainer Guide: sessions/session-24-orchestrate-workstreams/trainer-content/README.md
-      - "25 — Automate Delivery Follow-up":
-        - Overview: sessions/session-25-automate-delivery-follow-up/README.md
-        - Lab: sessions/session-25-automate-delivery-follow-up/lab/README.md
-        - Trainer Guide: sessions/session-25-automate-delivery-follow-up/trainer-content/README.md
+      - "m7-01 — Copilot App Foundations":
+        - Overview: sessions/session-m7-01-copilot-app-foundations/README.md
+        - Lab: sessions/session-m7-01-copilot-app-foundations/lab/README.md
+        - Trainer Guide: sessions/session-m7-01-copilot-app-foundations/trainer-content/README.md
+      - "m7-02 — Interview and Shape Work":
+        - Overview: sessions/session-m7-02-interview-and-shape-work/README.md
+        - Lab: sessions/session-m7-02-interview-and-shape-work/lab/README.md
+        - Trainer Guide: sessions/session-m7-02-interview-and-shape-work/trainer-content/README.md
+      - "m7-03 — GitHub Issues & MCP":
+        - Overview: sessions/session-m7-03-plan-work-with-github-issues/README.md
+        - Lab: sessions/session-m7-03-plan-work-with-github-issues/lab/README.md
+        - Trainer Guide: sessions/session-m7-03-plan-work-with-github-issues/trainer-content/README.md
+      - "m7-04 — Planning Canvas":
+        - Overview: sessions/session-m7-04-plan-and-steer-with-canvases/README.md
+        - Lab: sessions/session-m7-04-plan-and-steer-with-canvases/lab/README.md
+        - Trainer Guide: sessions/session-m7-04-plan-and-steer-with-canvases/trainer-content/README.md
+      - "m7-05 — Orchestrate Workstreams":
+        - Overview: sessions/session-m7-05-orchestrate-workstreams/README.md
+        - Lab: sessions/session-m7-05-orchestrate-workstreams/lab/README.md
+        - Trainer Guide: sessions/session-m7-05-orchestrate-workstreams/trainer-content/README.md
+      - "m7-06 — Automate Delivery Follow-up":
+        - Overview: sessions/session-m7-06-automate-delivery-follow-up/README.md
+        - Lab: sessions/session-m7-06-automate-delivery-follow-up/lab/README.md
+        - Trainer Guide: sessions/session-m7-06-automate-delivery-follow-up/trainer-content/README.md

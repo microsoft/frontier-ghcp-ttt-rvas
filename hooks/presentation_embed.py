@@ -4,10 +4,12 @@ from html import escape
 from html.parser import HTMLParser
 import json
 from pathlib import Path
+import posixpath
 import re
+import shutil
 
 _SESSION_RE = re.compile(
-    r"^sessions/(session-\d{2}-[^/]+)/(?:((?:lab|trainer-content))/)?README\.md$"
+    r"^sessions/(session-m[1-9]\d*-\d{2}-[^/]+)/(?:((?:lab|trainer-content))/)?README\.md$"
 )
 _PAGE_KINDS = (
     ("overview", "", "Overview"),
@@ -32,6 +34,7 @@ def validate_catalog(catalog):
 
     module_ids = set()
     session_ids = set()
+    legacy_ids = set()
     slugs = set()
     for collection, keys in (
         ("modules", {"id", "title"}),
@@ -39,9 +42,10 @@ def validate_catalog(catalog):
     ):
         for index, item in enumerate(catalog[collection]):
             label = f"Session catalog {collection}[{index}]"
-            if not isinstance(item, dict) or set(item) != keys:
-                raise ValueError(f"{label} must contain exactly: {', '.join(sorted(keys))}.")
-            for key in keys - {"duration_minutes"}:
+            optional = {"legacy_id"} if collection == "sessions" else set()
+            if not isinstance(item, dict) or not keys <= set(item) or set(item) - keys - optional:
+                raise ValueError(f"{label} must contain required fields: {', '.join(sorted(keys))}; optional: {', '.join(sorted(optional)) or 'none'}.")
+            for key in set(item) - {"duration_minutes"}:
                 if not isinstance(item[key], str) or not item[key].strip():
                     raise ValueError(f"{label}.{key} must be a nonempty string.")
             if collection == "modules":
@@ -51,8 +55,8 @@ def validate_catalog(catalog):
                     raise ValueError(f"{label} has a duplicate module id: {item['id']}.")
                 module_ids.add(item["id"])
                 continue
-            if not re.fullmatch(r"(?:0[1-9]|[1-9][0-9])", item["id"]):
-                raise ValueError(f"{label}.id must be a two-digit string from 01 to 99.")
+            if not re.fullmatch(r"m[1-9]\d*-(?:0[1-9]|[1-9][0-9])", item["id"]):
+                raise ValueError(f"{label}.id must use a module prefix and two-digit local number, such as m2-01.")
             if item["id"] in session_ids:
                 raise ValueError(f"{label} has a duplicate session id: {item['id']}.")
             if item["slug"] in slugs:
@@ -61,12 +65,27 @@ def validate_catalog(catalog):
                 raise ValueError(f"{label}.slug must be a session path matching its id.")
             if item["module"] not in module_ids:
                 raise ValueError(f"{label} references an unknown module: {item['module']}.")
+            if not item["id"].startswith(f"m{item['module']}-"):
+                raise ValueError(f"{label}.id must match its module.")
+            if "legacy_id" in item and not re.fullmatch(r"(?:0[1-9]|[1-9][0-9])", item["legacy_id"]):
+                raise ValueError(f"{label}.legacy_id must be a two-digit string from 01 to 99.")
+            if "legacy_id" in item and item["legacy_id"] in legacy_ids:
+                raise ValueError(f"{label} has a duplicate legacy id: {item['legacy_id']}.")
             if item["difficulty"] not in {"Beginner", "Intermediate", "Advanced"}:
                 raise ValueError(f"{label}.difficulty must be Beginner, Intermediate, or Advanced.")
             if type(item["duration_minutes"]) is not int or item["duration_minutes"] <= 0:
                 raise ValueError(f"{label}.duration_minutes must be a positive integer.")
             session_ids.add(item["id"])
+            if "legacy_id" in item:
+                legacy_ids.add(item["legacy_id"])
             slugs.add(item["slug"])
+    expected_ids = [
+        f"m{module['id']}-{index:02d}"
+        for module in catalog["modules"]
+        for index in range(1, 1 + sum(s["module"] == module["id"] for s in catalog["sessions"]))
+    ]
+    if [s["id"] for s in catalog["sessions"]] != expected_ids:
+        raise ValueError("Session catalog sessions must be ordered by module with consecutive local numbers starting at 01.")
     return catalog
 
 
@@ -143,6 +162,69 @@ def on_page_context(context, page, config, nav):
         ],
     }
     return context
+
+
+def redirect_page(target: str) -> str:
+    return f"""<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Session moved</title></head>
+<body>
+<p><a id="session-target" href="{escape(target, quote=True)}">Open this session</a></p>
+<script>
+const link = document.getElementById("session-target");
+const target = new URL(link.href);
+target.search = window.location.search;
+target.hash = window.location.hash;
+link.href = target.href;
+window.location.replace(target.href);
+</script>
+</body>
+</html>
+"""
+
+
+def preserve_session_anchors(html: str, sessions) -> str:
+    for session in sessions:
+        if "legacy_id" not in session:
+            continue
+        pattern = rf'(<h[1-6]\b[^>]*\bid="session-{session["id"]}([^"]*)"[^>]*>)'
+
+        def alias(match):
+            old_id = f"session-{session['legacy_id']}{match[2]}"
+            if f'id="{old_id}"' in html:
+                return match[0]
+            return f'<span id="{escape(old_id, quote=True)}" aria-hidden="true"></span>' + match[0]
+
+        html = re.sub(pattern, alias, html)
+    return html
+
+
+def on_post_build(config):
+    """Keep published session and artifact URLs working after renumbering."""
+    if _catalog_state is None or _catalog_state[0] is not config:
+        raise ValueError("Session catalog is not initialized for this build.")
+    _, catalog, targets, _ = _catalog_state
+    site = Path(config["site_dir"])
+    for session in catalog["sessions"]:
+        if "legacy_id" not in session:
+            continue
+        old_slug = session["slug"].replace(f"session-{session['id']}-", f"session-{session['legacy_id']}-", 1)
+        redirects = {
+            f"sessions/{old_slug}/{directory}index.html": targets[session["id"]][key].url
+            for key, (_, directory, _) in zip(_CATALOG_LINKS, _PAGE_KINDS)
+        }
+        redirects[f"output/html/{old_slug}.html"] = f"output/html/{session['slug']}.html"
+        redirects[f"output/trainer/{old_slug}-trainer.html"] = targets[session["id"]]["trainer_url"].url
+        for source, target in redirects.items():
+            path = site / source
+            path.parent.mkdir(parents=True, exist_ok=True)
+            relative = posixpath.relpath(target, posixpath.dirname(source))
+            if target.endswith("/"):
+                relative += "/"
+            path.write_text(redirect_page(relative), encoding="utf-8")
+        pdf = site / f"output/pdf/{session['slug']}.pdf"
+        if pdf.is_file():
+            shutil.copyfile(pdf, site / f"output/pdf/{old_slug}.pdf")
 
 
 class _TrainerHeadings(HTMLParser):
@@ -270,6 +352,8 @@ def trainer_controls() -> str:
 
 
 def on_page_content(html: str, page, config, files) -> str:
+    if _catalog_state is not None and _catalog_state[0] is config:
+        html = preserve_session_anchors(html, _catalog_state[1]["sessions"])
     session = session_page(page.file.src_path)
     if session is None:
         return html

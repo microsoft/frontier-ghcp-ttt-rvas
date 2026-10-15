@@ -33,13 +33,13 @@ Module 2: Copilot in Practice ──────────────── (
 Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
     │
     ├── Module 4: DevOps & Infrastructure ──── (Intermediate to Advanced, 3 sessions)
-    │   └── Requires: Module 1 + Session 05
+    │   └── Requires: Module 1 + Session m2-02
     │
     ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
     │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
-        └── Session 17 is independent; Session 18 is required before the capstone
+        └── Session m6-01 is independent; Session m5-02 is required before the capstone
 
 Module 7: Product and Delivery Teams ─────────────── (Beginner to Intermediate, 6 sessions)
     └── Standalone role-based path; no programming prerequisite
@@ -49,13 +49,13 @@ Module 7: Product and Delivery Teams ──────────────�
 
 | Audience                  | Recommended Path                 | Sessions     | Duration   |
 | ------------------------- | -------------------------------- | ------------ | ---------- |
-| **Copilot Beginners**     | Module 1 only                    | 01 to 03        | 9 hrs      |
-| **Copilot Practitioners** | Modules 1 to 2 + developer orchestration | 01 to 07, 29, 24, 27, 26 | 33 hrs |
-| **Agentic Developers**    | Modules 1 to 3 + developer orchestration | 01 to 12, 29, 24 | 42 hrs |
-| **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01 to 05, 13 to 15 | 21 hrs     |
-| **SDK Application Developers** | Modules 1 to 3 + Session 17 | 01 to 12, 17 | 39 hrs |
-| **Product and Delivery Teams** | Module 7                    | 20 to 25        | 18 hrs     |
-| **HVE Practitioners**     | HVE Engineering                  | 01 to 07, 10 to 11, 28 | 31 hrs |
+| **Copilot Beginners**     | Module 1 only                    | m1-01 to m1-03        | 9 hrs      |
+| **Copilot Practitioners** | Modules 1 to 2 + developer orchestration | m1-01 to m1-03, m2-01 to m2-04, m2-05, m7-05, m2-06, m2-07 | 33 hrs |
+| **Agentic Developers**    | Modules 1 to 3 + developer orchestration | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m2-05, m7-05 | 42 hrs |
+| **DevOps Engineers**      | Module 1 + Session m2-02 + Module 4 | m1-01 to m1-03, m2-01 to m2-02, m4-01 to m4-03 | 21 hrs     |
+| **SDK Application Developers** | Modules 1 to 3 + Session m6-01 | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m6-01 | 39 hrs |
+| **Product and Delivery Teams** | Module 7                    | m7-01 to m7-06        | 18 hrs     |
+| **HVE Practitioners**     | HVE Engineering                  | m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, m5-03 | 31 hrs |
 | **Full Track**            | All Modules                      | All available sessions | 88 hrs |
 
 ---
@@ -66,71 +66,71 @@ Module 7: Product and Delivery Teams ──────────────�
 
 | #   | Session                           | Difficulty  | Prerequisites   | Duration   |
 | --- | --------------------------------- | ----------- | --------------- | ---------- |
-| 01  | Introduction to GitHub Copilot    | Beginner    | None            | 3 hrs      |
-| 02  | Copilot Chat & Inline Suggestions | Beginner    | Session 01      | 3 hrs      |
-| 03  | Prompt Engineering Fundamentals   | Beginner    | Sessions 01 to 02  | 3 hrs      |
+| m1-01  | Introduction to GitHub Copilot    | Beginner    | None            | 3 hrs      |
+| m1-02  | Copilot Chat & Inline Suggestions | Beginner    | Session m1-01      | 3 hrs      |
+| m1-03  | Prompt Engineering Fundamentals   | Beginner    | Sessions m1-01 to m1-02  | 3 hrs      |
 
 ### Module 2: Copilot in Practice (Intermediate to Advanced)
 
 | #   | Session                                   | Difficulty   | Prerequisites   | Duration   |
 | --- | ----------------------------------------- | ------------ | --------------- | ---------- |
-| 04  | GitHub Copilot in the CLI                 | Intermediate | Sessions 01 to 03  | 3 hrs      |
-| 05  | Agent Mode in the IDE                     | Intermediate | Sessions 01 to 04  | 3 hrs      |
-| 06  | Copilot Spaces & Context Management       | Intermediate | Sessions 01 to 05  | 3 hrs      |
-| 07  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions 01 to 06  | 3 hrs      |
-| 29  | GitHub Copilot App for Developers         | Intermediate | Sessions 01 to 07  | 3 hrs      |
-| 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01 to 07 | 3 hrs |
-| 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01 to 07 | 3 hrs |
+| m2-01  | GitHub Copilot in the CLI                 | Intermediate | Sessions m1-01 to m1-03  | 3 hrs      |
+| m2-02  | Agent Mode in the IDE                     | Intermediate | Sessions m1-01 to m1-03, m2-01  | 3 hrs      |
+| m2-03  | Copilot Spaces & Context Management       | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-02  | 3 hrs      |
+| m2-04  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-03  | 3 hrs      |
+| m2-05  | GitHub Copilot App for Developers         | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-04  | 3 hrs      |
+| m2-06  | Repair and Refactor a Broken Python Application | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-04 | 3 hrs |
+| m2-07  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04 | 3 hrs |
 
-**App access:** Session 29 requires GitHub Copilot app access. The developer
-tracks then use Session 24's developer route, which needs `/orchestrate` but does
-not require Sessions 20 to 23 or GitHub MCP. Check access before scheduling.
+**App access:** Session m2-05 requires GitHub Copilot app access. The developer
+tracks then use Session m7-05's developer route, which needs `/orchestrate` but does
+not require Sessions m7-01 to m7-04 or GitHub MCP. Check access before scheduling.
 
 ### Module 3: Agentic Workflows (Advanced)
 
 | #   | Session                               | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------- | ----------- | ------------------ | ---------- |
-| 08  | Copilot App, Plugins & Canvas Extensions | Advanced  | Sessions 01 to 07     | 3 hrs      |
-| 09  | Copilot Cloud Agent                   | Advanced    | Sessions 01 to 07     | 3 hrs      |
-| 10  | MCP Servers & Custom Tool Integration | Advanced    | Sessions 01 to 07     | 3 hrs      |
-| 11  | Custom Agents & Agent Profiles        | Advanced    | Sessions 01 to 07, 10 | 3 hrs      |
-| 12  | Agent Skills & the Copilot Ecosystem  | Advanced    | Sessions 01 to 07, 11 | 3 hrs      |
+| m3-01  | Copilot App, Plugins & Canvas Extensions | Advanced  | Sessions m1-01 to m1-03, m2-01 to m2-04     | 3 hrs      |
+| m3-02  | Copilot Cloud Agent                   | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04     | 3 hrs      |
+| m3-03  | MCP Servers & Custom Tool Integration | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04     | 3 hrs      |
+| m3-04  | Custom Agents & Agent Profiles        | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 | 3 hrs      |
+| m3-05  | Agent Skills & the Copilot Ecosystem  | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-04 | 3 hrs      |
 
 ### Module 4: DevOps & Infrastructure with Copilot (Intermediate to Advanced)
 
 | #   | Session                                    | Difficulty   | Prerequisites      | Duration   |
 | --- | ------------------------------------------ | ------------ | ------------------ | ---------- |
-| 13  | GitHub Actions & Workflow Generation       | Intermediate | Sessions 01 to 05     | 3 hrs      |
-| 14  | Infrastructure as Code with Copilot        | Advanced     | Sessions 01 to 05, 13 | 2 hrs 30 min |
-| 15  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions 01 to 05, 13 | 3 hrs      |
+| m4-01  | GitHub Actions & Workflow Generation       | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-02     | 3 hrs      |
+| m4-02  | Infrastructure as Code with Copilot        | Advanced     | Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01 | 2 hrs 30 min |
+| m4-03  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01 | 3 hrs      |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| 16  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions 01 to 12 | 3 hrs   |
-| 18  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions 01 to 12 | 3 hrs |
-| 28  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions 01 to 07, 10 to 11 | 4 hrs |
+| m5-01  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs   |
+| m5-02  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs |
+| m5-03  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| 17  | Build Reliable Agent Applications with the GitHub Copilot SDK | Advanced | Sessions 01 to 12 | 3 hrs |
-| 19  | End-to-End Capstone Project                 | Advanced    | Sessions 01 to 12 and 18 | 3 hrs |
+| m6-01  | Build Reliable Agent Applications with the GitHub Copilot SDK | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs |
+| m6-02  | End-to-End Capstone Project                 | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and m5-02 | 3 hrs |
 
 ### Module 7: Product and Delivery Teams (Beginner to Intermediate)
 
 | # | Session | Difficulty | Prerequisites | Duration |
 | --- | --- | --- | --- | --- |
-| 20 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
-| 21 | Interview Ideas and Shape Better Work | Beginner | Session 20 | 3 hrs |
-| 22 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions 20 to 21; GitHub MCP write access | 3 hrs |
-| 23 | Build and Use a Planning Canvas | Intermediate | Sessions 20 to 22; canvas creation access | 3 hrs |
-| 24 | Orchestrate Agents and Workstreams | Intermediate | Product route: Sessions 20 to 23; developer route: Session 29; app orchestration access | 3 hrs |
-| 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions 20 to 24; Automations and GitHub MCP access | 3 hrs |
+| m7-01 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
+| m7-02 | Interview Ideas and Shape Better Work | Beginner | Session m7-01 | 3 hrs |
+| m7-03 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions m7-01 to m7-02; GitHub MCP write access | 3 hrs |
+| m7-04 | Build and Use a Planning Canvas | Intermediate | Sessions m7-01 to m7-03; canvas creation access | 3 hrs |
+| m7-05 | Orchestrate Agents and Workstreams | Intermediate | Product route: Sessions m7-01 to m7-04; developer route: Session m2-05; app orchestration access | 3 hrs |
+| m7-06 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions m7-01 to m7-05; Automations and GitHub MCP access | 3 hrs |
 
-**Access requirement:** GitHub Copilot access is required for Sessions 20 to 25.
+**Access requirement:** GitHub Copilot access is required for Sessions m7-01 to m7-06.
 Learners without access should not start Module 7. Stop and reschedule their
 training after access is available.
 
@@ -144,7 +144,7 @@ GitHub issues and does not branch into an alternate platform exercise.
 
 ---
 
-### Session 01: Introduction to GitHub Copilot
+### Session m1-01: Introduction to GitHub Copilot
 
 **Difficulty:** Beginner
 **Prerequisites:** None
@@ -186,10 +186,10 @@ Sets the stage. Trainers learn what GitHub Copilot is, how the underlying LLM wo
 
 ---
 
-### Session 02: Copilot Chat & Inline Suggestions
+### Session m1-02: Copilot Chat & Inline Suggestions
 
 **Difficulty:** Beginner
-**Prerequisites:** Session 01
+**Prerequisites:** Session m1-01
 **Module:** Copilot Fundamentals
 
 **Description:**
@@ -225,10 +225,10 @@ Deepens the daily developer workflow. Covers Copilot Chat (sidebar, inline, quic
 
 ---
 
-### Session 03: Prompt Engineering Fundamentals
+### Session m1-03: Prompt Engineering Fundamentals
 
 **Difficulty:** Beginner
-**Prerequisites:** Sessions 01 to 02
+**Prerequisites:** Sessions m1-01 to m1-02
 **Module:** Copilot Fundamentals
 
 **Description:**
@@ -264,15 +264,15 @@ Teaches trainees to write effective prompts for Copilot. Covers prompt structure
 - Create reusable prompt templates for repeated tasks
 - Distinguish prompt rewriting from task execution and test results
 
-**Access:** Session 03 needs standalone CLI `/refine` and Node.js 22 or later.
-Prepare it before delivery; Session 04 is not a prerequisite.
+**Access:** Session m1-03 needs standalone CLI `/refine` and Node.js 22 or later.
+Prepare it before delivery; Session m2-01 is not a prerequisite.
 
 ---
 
-### Session 04: GitHub Copilot in the CLI
+### Session m2-01: GitHub Copilot in the CLI
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 03
+**Prerequisites:** Sessions m1-01 to m1-03
 **Module:** Copilot in Practice
 
 **Description:**
@@ -331,10 +331,10 @@ Learners check generated work against local files and tests before accepting it.
 
 ---
 
-### Session 05: Agent Mode in the IDE
+### Session m2-02: Agent Mode in the IDE
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 04
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01
 **Module:** Copilot in Practice
 
 **Description:**
@@ -374,10 +374,10 @@ This session introduces agent mode, Copilot's autonomous multi-step coding exper
 
 ---
 
-### Session 06: Copilot Spaces & Context Management
+### Session m2-03: Copilot Spaces & Context Management
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 05
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
 **Module:** Copilot in Practice
 
 **Description:**
@@ -418,10 +418,10 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 
 ---
 
-### Session 07: Copilot for Code Review & Pull Requests
+### Session m2-04: Copilot for Code Review & Pull Requests
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 06
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-03
 **Module:** Copilot in Practice
 
 **Description:**
@@ -466,10 +466,10 @@ retain the human merge decision.
 
 ---
 
-### Session 29: GitHub Copilot App for Developers
+### Session m2-05: GitHub Copilot App for Developers
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 07
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
 **Module:** Copilot in Practice
 **Duration:** 3 hours
 
@@ -514,14 +514,71 @@ review the resulting diff and record pull-request readiness.
 - Run and review a manual read-only automation
 
 > **App access is required.** Stop if a required command is unavailable.
-> Developer tracks continue with Session 24's developer orchestration route.
+> Developer tracks continue with Session m7-05's developer orchestration route.
 
 ---
 
-### Session 08: Copilot App, Plugins & Canvas Extensions
+### Session m2-06: Repair and Refactor a Broken Python Application
+
+**Difficulty:** Intermediate
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Module:** Copilot in Practice
+**Duration:** 3 hours
+
+**Description:**
+Learners diagnose a broken Python application, restore its expected behavior, and refactor it behind a stable test suite.
+
+**Trainer Content Outline (1 hour):**
+
+- Separate repair work from structural refactoring
+- Trace failures from symptoms to root causes
+- Strengthen tests before changing design
+- Inspect Python LSP references and check inline copies of rules separately
+- Refactor in small steps with continuous verification
+
+**Lab Outline (2 hours):**
+
+- Reproduce the supplied failures
+- Repair the application until the baseline tests pass
+- Add focused tests for uncovered behavior
+- With tests green, inspect `severity_for` references and inline classification
+- Approve CLI `/plan` before the refactor
+- Refactor the repaired code and rerun the full suite
+- **Deliverable:** A repaired Python application with passing tests and documented refactoring decisions
+
+---
+
+### Session m2-07: Migrate a Legacy Java Service to Modern .NET
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Module:** Copilot in Practice
+**Duration:** 3 hours
+
+**Description:**
+Learners inspect a legacy Java service, capture its required behavior, and migrate it to modern .NET without losing compatibility.
+
+**Trainer Content Outline (1 hour):**
+
+- Define the migration boundary before changing code
+- Map Java structures and dependencies to .NET equivalents
+- Preserve API behavior and error handling
+- Use tests to compare the old and new implementations
+
+**Lab Outline (2 hours):**
+
+- Inspect the legacy service and its tests
+- Build the modern .NET replacement in stages
+- Fix compatibility gaps found by the test suite
+- Record migration decisions and verification evidence
+- **Deliverable:** A working .NET service with passing compatibility tests and a concise migration record
+
+---
+
+### Session m3-01: Copilot App, Plugins & Canvas Extensions
+
+**Difficulty:** Advanced
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -557,10 +614,10 @@ Introduces the GitHub Copilot App as a customizable work surface. Trainers use t
 
 ---
 
-### Session 09: Copilot Cloud Agent
+### Session m3-02: Copilot Cloud Agent
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -599,10 +656,10 @@ Covers the GitHub Copilot cloud agent and how to assign GitHub issues to it. Cop
 
 ---
 
-### Session 10: MCP Servers & Custom Tool Integration
+### Session m3-03: MCP Servers & Custom Tool Integration
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -638,10 +695,10 @@ Introduces the Model Context Protocol (MCP), an open standard for connecting AI 
 
 ---
 
-### Session 11: Custom Agents & Agent Profiles
+### Session m3-04: Custom Agents & Agent Profiles
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07, 10
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03
 **Module:** Agentic Workflows
 
 **Description:**
@@ -678,15 +735,15 @@ Covers custom GitHub agents, which are defined in Markdown files with YAML front
 - Distribute agents at the organization level
 - Distinguish language-server startup from a checked symbol lookup
 
-**Access:** Session 11 requires the standalone CLI and working JavaScript LSP
+**Access:** Session m3-04 requires the standalone CLI and working JavaScript LSP
 server. Static tests or manual traces do not replace the live run.
 
 ---
 
-### Session 12: Agent Skills & the Copilot Ecosystem
+### Session m3-05: Agent Skills & the Copilot Ecosystem
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07, 11
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -732,10 +789,10 @@ decisions to `/plan`.
 
 ---
 
-### Session 13: GitHub Actions & Workflow Generation
+### Session m4-01: GitHub Actions & Workflow Generation
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 05
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
@@ -772,10 +829,10 @@ Covers using Copilot to generate, explain, and debug GitHub Actions workflows. T
 
 ---
 
-### Session 14: Infrastructure as Code with Copilot
+### Session m4-02: Infrastructure as Code with Copilot
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 05, 13
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01
 **Module:** DevOps & Infrastructure with Copilot
 **Duration:** 2 hours 30 minutes
 
@@ -813,10 +870,10 @@ Bicep remains a short trainer comparison and optional extension.
 
 ---
 
-### Session 15: CI/CD Pipeline Debugging & Agentic Remediation
+### Session m4-03: CI/CD Pipeline Debugging & Agentic Remediation
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 05, 13
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
@@ -852,10 +909,10 @@ Covers advanced CI/CD debugging with Copilot assistance and an approved, reviewa
 
 ---
 
-### Session 16: Brady's Squad: Human-Led AI Teams
+### Session m5-01: Brady's Squad: Human-Led AI Teams
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07 and 09 to 12
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05
 **Module:** Specification-Driven Frameworks
 
 **Description:**
@@ -895,10 +952,10 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 
 ---
 
-### Session 18: Spec Kit: Specification-Driven Development
+### Session m5-02: Spec Kit: Specification-Driven Development
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 12
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05
 **Module:** Specification-Driven Frameworks
 **Duration:** 3 hours 30 minutes
 
@@ -936,10 +993,10 @@ Uses Spec Kit to carry one bounded feature from a source request to working code
 
 ---
 
-### Session 28: HVE Core: Evidence-Led Delivery with RPI
+### Session m5-03: HVE Core: Evidence-Led Delivery with RPI
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07 and 10 to 11, or equivalent experience
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-03 to m3-04, or equivalent experience
 **Module:** Specification-Driven Frameworks
 **Duration:** 4 hours
 
@@ -977,10 +1034,10 @@ delivery decision.
 
 ---
 
-### Session 17: Build Reliable Agent Applications with the GitHub Copilot SDK
+### Session m6-01: Build Reliable Agent Applications with the GitHub Copilot SDK
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 12
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -1017,10 +1074,10 @@ Learners build a TypeScript command-line application on the GitHub Copilot SDK. 
 
 ---
 
-### Session 19: End-to-End Capstone Project
+### Session m6-02: End-to-End Capstone Project
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 12 and 18; Session 16 is optional
+**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and m5-02; Session m5-01 is optional
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -1037,7 +1094,7 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 **Lab Outline (2 hours):**
 
 - Use the provided feature brief and governance constraints
-- Select or consume a prepared specification artifact from Session 18
+- Select or consume a prepared specification artifact from Session m5-02
 - Create one implementation-ready issue and complete one bounded agentic task
 - Review the change against acceptance criteria and policy constraints
 - Record the handover decision and retrospective
@@ -1045,7 +1102,7 @@ The capstone is a bounded integration scenario, not a full production build. Tra
 
 ---
 
-### Session 20: Work Effectively in the GitHub Copilot App
+### Session m7-01: Work Effectively in the GitHub Copilot App
 
 **Difficulty:** Beginner
 **Prerequisites:** GitHub Copilot app access
@@ -1071,10 +1128,10 @@ Learners open the GitHub Copilot app, choose repository context, inspect the cap
 
 ---
 
-### Session 21: Interview Ideas and Shape Better Work
+### Session m7-02: Interview Ideas and Shape Better Work
 
 **Difficulty:** Beginner
-**Prerequisites:** Session 20
+**Prerequisites:** Session m7-01
 **Module:** Product and Delivery Teams
 
 **Description:**
@@ -1098,10 +1155,10 @@ Learners run a decision-tree interview in the GitHub Copilot app. They turn appr
 
 ---
 
-### Session 22: Plan Work with GitHub Issues and MCP
+### Session m7-03: Plan Work with GitHub Issues and MCP
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 20-21; GitHub MCP write access
+**Prerequisites:** Sessions m7-01 to m7-02; GitHub MCP write access
 **Module:** Product and Delivery Teams
 
 **Description:**
@@ -1125,14 +1182,14 @@ Learners use the GitHub MCP server to inspect existing work, propose an issue hi
 
 ---
 
-### Session 23: Build and Use a Planning Canvas
+### Session m7-04: Build and Use a Planning Canvas
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 20-22; canvas creation access
+**Prerequisites:** Sessions m7-01 to m7-03; canvas creation access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners create a planning canvas from a plain-language request, load the Session 22 issues, and keep visible planning state aligned with GitHub and Copilot.
+Learners create a planning canvas from a plain-language request, load the Session m7-03 issues, and keep visible planning state aligned with GitHub and Copilot.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1153,17 +1210,17 @@ Learners create a planning canvas from a plain-language request, load the Sessio
 
 ---
 
-### Session 24: Orchestrate Agents and Workstreams
+### Session m7-05: Orchestrate Agents and Workstreams
 
 **Difficulty:** Intermediate
-**Prerequisites:** Product route: Sessions 20 to 23; developer route: Session 29.
+**Prerequisites:** Product route: Sessions m7-01 to m7-04; developer route: Session m2-05.
 Both routes require live app orchestration access.
 **Module:** Product and Delivery Teams
 
 **Description:**
 Learners start independent child sessions, intervene when needed, and check the
 parent's result. The product route uses live issues. The developer route uses
-local Session 29 code and a synthetic PR snapshot, without GitHub MCP.
+local Session m2-05 code and a synthetic PR snapshot, without GitHub MCP.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1187,14 +1244,14 @@ local Session 29 code and a synthetic PR snapshot, without GitHub MCP.
 
 ---
 
-### Session 25: Automate Delivery Follow-up and Connect Work Systems
+### Session m7-06: Automate Delivery Follow-up and Connect Work Systems
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 20-24; Automations and GitHub MCP access
+**Prerequisites:** Sessions m7-01 to m7-05; Automations and GitHub MCP access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners turn the Session 24 parent result and live issues into a draft-only
+Learners turn the Session m7-05 parent result and live issues into a draft-only
 GitHub Copilot Automation. They review two runs and decide whether GitHub or Azure
 Boards remains authoritative.
 
@@ -1209,68 +1266,11 @@ Boards remains authoritative.
 
 - Create the concise automation definition
 - Configure a manual, draft-only Automation
-- Run it against live issues and the Session 24 parent result
+- Run it against live issues and the Session m7-05 parent result
 - Apply one approved issue change and run the same Automation again
 - Compare both runs on the platform and record keep, revise, disable, or pause
 - Produce a stakeholder update
 - **Deliverable:** A concise automation definition and reviewed stakeholder update
-
----
-
-### Session 26: Migrate a Legacy Java Service to Modern .NET
-
-**Difficulty:** Advanced
-**Prerequisites:** Sessions 01 to 07
-**Module:** Copilot in Practice
-**Duration:** 3 hours
-
-**Description:**
-Learners inspect a legacy Java service, capture its required behavior, and migrate it to modern .NET without losing compatibility.
-
-**Trainer Content Outline (1 hour):**
-
-- Define the migration boundary before changing code
-- Map Java structures and dependencies to .NET equivalents
-- Preserve API behavior and error handling
-- Use tests to compare the old and new implementations
-
-**Lab Outline (2 hours):**
-
-- Inspect the legacy service and its tests
-- Build the modern .NET replacement in stages
-- Fix compatibility gaps found by the test suite
-- Record migration decisions and verification evidence
-- **Deliverable:** A working .NET service with passing compatibility tests and a concise migration record
-
----
-
-### Session 27: Repair and Refactor a Broken Python Application
-
-**Difficulty:** Intermediate
-**Prerequisites:** Sessions 01 to 07
-**Module:** Copilot in Practice
-**Duration:** 3 hours
-
-**Description:**
-Learners diagnose a broken Python application, restore its expected behavior, and refactor it behind a stable test suite.
-
-**Trainer Content Outline (1 hour):**
-
-- Separate repair work from structural refactoring
-- Trace failures from symptoms to root causes
-- Strengthen tests before changing design
-- Inspect Python LSP references and check inline copies of rules separately
-- Refactor in small steps with continuous verification
-
-**Lab Outline (2 hours):**
-
-- Reproduce the supplied failures
-- Repair the application until the baseline tests pass
-- Add focused tests for uncovered behavior
-- With tests green, inspect `severity_for` references and inline classification
-- Approve CLI `/plan` before the refactor
-- Refactor the repaired code and rerun the full suite
-- **Deliverable:** A repaired Python application with passing tests and documented refactoring decisions
 
 ---
 
@@ -1284,15 +1284,15 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 - **Group size:** 8 to 15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1 to 3 form the core track (required for full certification)
-  - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
-  - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
-  - Session 17 is an independent SDK specialization and is not a prerequisite for Session 19
-  - Developer tracks require Session 29 and Session 24's developer route.
+  - Module 4 (DevOps) can be delivered independently with Module 1 + Session m2-02 as prereqs
+  - Session m5-01 is optional; it is not a prerequisite for Session m5-02 or Session m6-02
+  - Session m6-01 is an independent SDK specialization and is not a prerequisite for Session m6-02
+  - Developer tracks require Session m2-05 and Session m7-05's developer route.
     Check their app commands before scheduling
-  - Prepare standalone CLI access before Session 03, JavaScript LSP before
-    Session 11, and Python LSP before Session 27
-  - Session 28 is the final session in the HVE Engineering track and should run
-    after Sessions 10 to 11
+  - Prepare standalone CLI access before Session m1-03, JavaScript LSP before
+    Session m3-04, and Python LSP before Session m2-06
+  - Session m5-03 is the final session in the HVE Engineering track and should run
+    after Sessions m3-03 to m3-04
   - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

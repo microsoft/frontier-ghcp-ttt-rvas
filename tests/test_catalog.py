@@ -64,8 +64,13 @@ class CatalogTests(unittest.TestCase):
 
     def test_catalog_matches_all_nav_session_sources(self):
         self.assertEqual([m["id"] for m in self.catalog["modules"]], list("1234567"))
-        expected_ids = [f"{i:02d}" for i in range(1, 30)]
+        expected_ids = [
+            f"m{module}-{index:02d}"
+            for module, count in enumerate((3, 7, 5, 3, 3, 2, 6), 1)
+            for index in range(1, count + 1)
+        ]
         self.assertEqual([s["id"] for s in self.catalog["sessions"]], expected_ids)
+        self.assertCountEqual([s["legacy_id"] for s in self.catalog["sessions"]], [f"{i:02d}" for i in range(1, 30)])
         sources = [
             f"sessions/{session['slug']}/{directory}README.md"
             for session in self.catalog["sessions"]
@@ -95,7 +100,7 @@ class CatalogTests(unittest.TestCase):
                 catalog = deepcopy(self.catalog)
                 catalog[collection][0] = entry
                 with self.subTest(collection=collection, entry=entry):
-                    with self.assertRaisesRegex(ValueError, "must contain exactly"):
+                    with self.assertRaisesRegex(ValueError, "must contain required fields"):
                         HOOK.validate_catalog(catalog)
 
     def test_required_strings_and_durations_are_validated(self):
@@ -121,6 +126,7 @@ class CatalogTests(unittest.TestCase):
             ("modules", "id", "duplicate module id"),
             ("sessions", "id", "duplicate session id"),
             ("sessions", "slug", "duplicate session slug"),
+            ("sessions", "legacy_id", "duplicate legacy id"),
         ):
             catalog = deepcopy(self.catalog)
             catalog[collection][1][key] = catalog[collection][0][key]
@@ -133,16 +139,20 @@ class CatalogTests(unittest.TestCase):
             ("id", "1", "two-digit"),
             ("id", "00", "two-digit"),
             ("id", "100", "two-digit"),
+            ("id", "m1-00", "two-digit"),
+            ("id", "m1-100", "two-digit"),
             ("module", "99", "unknown module"),
+            ("module", "2", "match its module"),
+            ("legacy_id", "m1-01", "legacy_id"),
             ("difficulty", "beginner", "difficulty"),
             ("difficulty", "Expert", "difficulty"),
-            ("slug", "../session-01-test", "session path"),
-            ("slug", "session-01-test/lab", "session path"),
-            ("slug", "session-01-test\\lab", "session path"),
-            ("slug", "session-02-test", "session path"),
-            ("slug", "session-01-test?query", "session path"),
-            ("slug", "session-01-test#fragment", "session path"),
-            ("slug", "session-01-test\n", "session path"),
+            ("slug", "../session-m1-01-test", "session path"),
+            ("slug", "session-m1-01-test/lab", "session path"),
+            ("slug", "session-m1-01-test\\lab", "session path"),
+            ("slug", "session-m1-02-test", "session path"),
+            ("slug", "session-m1-01-test?query", "session path"),
+            ("slug", "session-m1-01-test#fragment", "session path"),
+            ("slug", "session-m1-01-test\n", "session path"),
         ):
             catalog = deepcopy(self.catalog)
             catalog["sessions"][0][key] = value
@@ -154,6 +164,60 @@ class CatalogTests(unittest.TestCase):
             catalog["modules"][0]["id"] = module_id
             with self.assertRaisesRegex(ValueError, "positive integer string"):
                 HOOK.validate_catalog(catalog)
+
+    def test_module_local_numbers_must_be_consecutive_and_grouped(self):
+        for mutate in (
+            lambda sessions: sessions.reverse(),
+            lambda sessions: sessions.pop(1),
+        ):
+            catalog = deepcopy(self.catalog)
+            mutate(catalog["sessions"])
+            with self.assertRaisesRegex(ValueError, "ordered by module with consecutive"):
+                HOOK.validate_catalog(catalog)
+
+    def test_new_sessions_do_not_need_a_global_legacy_number(self):
+        catalog = deepcopy(self.catalog)
+        session = dict(catalog["sessions"][3], id="m2-08", slug="session-m2-08-new-topic")
+        session.pop("legacy_id")
+        catalog["sessions"].insert(10, session)
+        self.assertEqual(HOOK.validate_catalog(catalog), catalog)
+
+    def test_published_legacy_urls_redirect_in_both_directory_modes(self):
+        for directory_urls in (True, False):
+            with self.subTest(directory_urls=directory_urls), tempfile.TemporaryDirectory() as tmp:
+                config, files, _ = self.fixture(directory_urls)
+                config["site_dir"] = tmp
+                pdf = Path(tmp) / f"output/pdf/{self.catalog['sessions'][0]['slug']}.pdf"
+                pdf.parent.mkdir(parents=True)
+                pdf.write_bytes(b"%PDF-test")
+                HOOK.on_post_build(config)
+                for session in self.catalog["sessions"]:
+                    old_slug = session["slug"].replace(f"session-{session['id']}-", f"session-{session['legacy_id']}-", 1)
+                    for directory in ("", "lab/", "trainer-content/"):
+                        old_path = f"sessions/{old_slug}/{directory}index.html"
+                        redirect = (Path(tmp) / old_path).read_text()
+                        target = files.get_file_from_path(f"sessions/{session['slug']}/{directory}README.md")
+                        link = next(attrs["href"] for tag, attrs in Tags(redirect).tags if tag == "a")
+                        for prefix in ("/", "/org/training/"):
+                            self.assertEqual(
+                                urljoin(f"https://example.test{prefix}{old_path}", link),
+                                f"https://example.test{prefix}{target.url}",
+                            )
+                        self.assertIn("target.search = window.location.search", redirect)
+                        self.assertIn("target.hash = window.location.hash", redirect)
+                    for source in (
+                        f"output/html/{old_slug}.html",
+                        f"output/trainer/{old_slug}-trainer.html",
+                    ):
+                        self.assertTrue((Path(tmp) / source).is_file(), source)
+                self.assertEqual((Path(tmp) / "output/pdf/session-01-intro-to-copilot.pdf").read_bytes(), b"%PDF-test")
+
+    def test_renumbered_heading_aliases_keep_existing_fragments(self):
+        html = '<h2 id="session-m2-05-developer-app">Session m2-05: Developer app</h2>'
+        result = HOOK.preserve_session_anchors(html, self.catalog["sessions"])
+        self.assertIn('<span id="session-29-developer-app"', result)
+        self.assertTrue(result.endswith(html))
+        self.assertEqual(HOOK.preserve_session_anchors(result, self.catalog["sessions"]), result)
 
     def test_missing_or_malformed_catalog_fails_clearly(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -198,7 +262,7 @@ class CatalogTests(unittest.TestCase):
             for source in (
                 "README.md", "build-set.md", "builder.md", "session-set.md",
                 "nested/tools/builder.md",
-                "sessions/session-01-intro-to-copilot/trainer-content/README.md",
+                "sessions/session-m1-01-intro-to-copilot/trainer-content/README.md",
             ):
                 page = self.page(source, directory_urls)
                 context = HOOK.on_page_context({}, page, config, None)

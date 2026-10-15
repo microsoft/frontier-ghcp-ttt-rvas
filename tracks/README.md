@@ -56,14 +56,14 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
 - Each track lists exact session numbers and titles: cross-reference with [`curriculum-plan.md`](../curriculum-plan.md) for full session details
 - All tracks assume trainees meet the stated prerequisites
 - Tracks can be customized by adding or removing sessions based on specific customer needs
-- Most sessions use the standard 3-hour format. Session 28 uses a 1-hour trainer
+- Most sessions use the standard 3-hour format. Session m5-03 uses a 1-hour trainer
   segment and a 3-hour lab.
-- Developer Productivity and Agentic Development include Sessions 29 and 24's
+- Developer Productivity and Agentic Development include Sessions m2-05 and m7-05's
   developer route. Both require live app access; prepared outputs do not complete
-  the labs. Session 12's interview comparison requires live CLI skill loading.
-- Prepare CLI `/refine` before Session 03, not after it. Session 04 needs local
-  sandbox support and checked limit behavior. Session 11 needs JavaScript LSP;
-  Session 27 needs Python LSP. Check the session preflights before scheduling.
-- Session 29 also requires `/fork`, `/merge-to-parent`, and `/spar`. These app
+  the labs. Session m3-05's interview comparison requires live CLI skill loading.
+- Prepare CLI `/refine` before Session m1-03, not after it. Session m2-01 needs local
+  sandbox support and checked limit behavior. Session m3-04 needs JavaScript LSP;
+  Session m2-06 needs Python LSP. Check the session preflights before scheduling.
+- Session m2-05 also requires `/fork`, `/merge-to-parent`, and `/spar`. These app
   commands do not replace the CLI's worktree and recovery exercise.
-- See the individual session folders in [`sessions/`](../sessions/) for detailed materials
+- Open a session from the [module list](../README.md) for its materials.

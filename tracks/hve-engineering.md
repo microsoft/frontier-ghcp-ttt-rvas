@@ -16,7 +16,7 @@ description: "Phased HVE learning path from Copilot fundamentals through evidenc
 
 This track builds the skills needed for the HVE Core challenge instead of treating
 it as an isolated workshop. Learners first establish reliable Copilot habits, then
-practice context management, review, MCP, and custom agents. Session 28 brings
+practice context management, review, MCP, and custom agents. Session m5-03 brings
 those skills together through HVE Research, Plan, Implement, Review, and Follow-up.
 
 ## Prerequisites
@@ -37,18 +37,18 @@ those skills together through HVE Research, Plan, Implement, Review, and Follow-
 
 ## Sessions
 
-| Order | Session # | Title | Difficulty | Duration |
+| Order | Session ID | Title | Difficulty | Duration |
 |---:|---:|---|---|---:|
-| 1 | 01 | Introduction to GitHub Copilot | Beginner | 3 hrs |
-| 2 | 02 | Copilot Chat & Inline Suggestions | Beginner | 3 hrs |
-| 3 | 03 | Prompt Engineering Fundamentals | Beginner | 3 hrs |
-| 4 | 04 | GitHub Copilot in the CLI | Intermediate | 3 hrs |
-| 5 | 05 | Agent Mode in the IDE | Intermediate | 3 hrs |
-| 6 | 06 | Copilot Spaces & Context Management | Intermediate | 3 hrs |
-| 7 | 07 | Copilot for Code Review & Pull Requests | Intermediate | 3 hrs |
-| 8 | 10 | MCP Servers & Custom Tool Integration | Advanced | 3 hrs |
-| 9 | 11 | Custom Agents & Agent Profiles | Advanced | 3 hrs |
-| 10 | 28 | HVE Core: Evidence-Led Delivery with RPI | Advanced | 4 hrs |
+| 1 | m1-01 | Introduction to GitHub Copilot | Beginner | 3 hrs |
+| 2 | m1-02 | Copilot Chat & Inline Suggestions | Beginner | 3 hrs |
+| 3 | m1-03 | Prompt Engineering Fundamentals | Beginner | 3 hrs |
+| 4 | m2-01 | GitHub Copilot in the CLI | Intermediate | 3 hrs |
+| 5 | m2-02 | Agent Mode in the IDE | Intermediate | 3 hrs |
+| 6 | m2-03 | Copilot Spaces & Context Management | Intermediate | 3 hrs |
+| 7 | m2-04 | Copilot for Code Review & Pull Requests | Intermediate | 3 hrs |
+| 8 | m3-03 | MCP Servers & Custom Tool Integration | Advanced | 3 hrs |
+| 9 | m3-04 | Custom Agents & Agent Profiles | Advanced | 3 hrs |
+| 10 | m5-03 | HVE Core: Evidence-Led Delivery with RPI | Advanced | 4 hrs |
 
 ## Completion evidence
 
@@ -63,12 +63,12 @@ Learners should finish with:
 
 ## Optional comparison
 
-Add [Session 18](../sessions/session-18-spec-kit/) for a 3.5-hour comparison with
+Add [Session m5-02](../sessions/session-m5-02-spec-kit/README.md) for a 3.5-hour comparison with
 Spec Kit. The comparison should focus on workflow contracts, artifacts, human
 gates, and how each framework handles change.
 
 ## Next step
 
-Continue to [Session 19](../sessions/session-19-capstone/) when learners are ready
+Continue to [Session m6-02](../sessions/session-m6-02-capstone/README.md) when learners are ready
 to combine governance, specification, implementation, review, and handoff in one
 bounded capstone.
