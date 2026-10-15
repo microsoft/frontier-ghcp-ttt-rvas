@@ -18,21 +18,23 @@ edit tests, run one known command, and stop when production code must change.
 - Detect a boundary violation with a repeatable contract test.
 - Use documented tool aliases as a least-privilege allowlist.
 - Write a stop condition that hands production conflicts to a human.
-- Verify profile behavior on an approved Copilot surface or by manual simulation.
+- Load the profile in the CLI and check that a source-code conflict stops the run.
 - Choose between instructions, custom agents, skills, and MCP.
+- Inspect an LSP definition/reference lookup and distinguish a caller from an export.
 - Record an owner and version marker for a shared profile.
 
 ## Required access
 
-Node.js 20 or later is required for the local profile tests. A supported GitHub
-Copilot surface is optional. If live profile loading is unavailable, run the same
-boundary checks and manual scenario.
+Learners need Node.js 22.22.2 or later, Git, the standalone Copilot CLI with live
+custom-agent loading, and a working JavaScript LSP server. Stop if any required
+access is missing. A manual scenario does not replace the live run or lookup.
 
 | Resource | Location |
 | --- | --- |
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
+| Language-server setup | [`lab/lsp-setup.md`](lab/lsp-setup.md) |
 | Weak profile | [`lab/starter/agent-project/.github/agents/weak-test-writer.agent.md`](lab/starter/agent-project/.github/agents/weak-test-writer.agent.md) |
 | Tightened profile | [`lab/solution/agent-project/.github/agents/test-writer.agent.md`](lab/solution/agent-project/.github/agents/test-writer.agent.md) |
 | Profile reference | [`lab/solution/agent-project/PROFILE-REFERENCE.md`](lab/solution/agent-project/PROFILE-REFERENCE.md) |

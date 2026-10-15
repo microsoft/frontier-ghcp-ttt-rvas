@@ -8,6 +8,8 @@
 ## Overview
 
 Give Copilot the context a task needs. Learners use one Storefront API to select Space sources, add repository instructions, compare context levels, and store reusable prompts.
+They inspect CLI `/env` and `/instructions` to find and correct a stale
+module-style instruction before implementation.
 
 ## Learning Outcomes
 
@@ -16,6 +18,7 @@ Give Copilot the context a task needs. Learners use one Storefront API to select
 - Create reusable prompt files for team standards
 - Explain how instructions, Spaces, and Memory work together
 - Review and update context as a project changes
+- Distinguish instruction discovery, file scope, and observed model behavior
 - Choose the smallest source set that supports a task and verify claims against it
 
 ## Session Materials
@@ -34,3 +37,4 @@ Give Copilot the context a task needs. Learners use one Storefront API to select
 - VS Code instruction settings
 - Context selection as a policy-approved workflow
 - Before/after context comparison
+- Runtime instruction inspection in the standalone CLI; stop if it is unavailable

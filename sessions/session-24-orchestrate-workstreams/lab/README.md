@@ -4,16 +4,36 @@
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20-23, trainer content, live orchestration access, and
-GitHub MCP read access
+**Prerequisites:** Live app orchestration access; Sessions 20-23 and GitHub MCP
+read access for the product route, or Sessions 01-07 and 29 for the developer route
 
-**Deliverable:** An approved orchestration plan and a reviewed parent result from
+**Deliverable:** An accepted orchestration plan and a reviewed parent result from
 live child sessions
 
 ## Deliverables
 
-- An approved orchestration plan
-- A reviewed parent result backed by live GitHub issues
+- An accepted orchestration plan
+- A reviewed parent result backed by the selected route's source files or issues
+
+## Choose one route
+
+Read the [course safety baseline](../../learning-safety-baseline.md). Both routes
+require the app's built-in `/orchestrate` skill and live child sessions.
+**Stop if orchestration access is unavailable.** Separate prompts and prepared
+answers do not complete the lab.
+
+| Route | Use after | Inputs | Lab time |
+| --- | --- | --- | --- |
+| [Product and delivery](#product-and-delivery-route) | Sessions 20-23 | Live GitHub issues through MCP | 120 min |
+| [Developer](#developer-route-review-pr-readiness) | Sessions 01-07 and 29 | Local Python code and a synthetic PR snapshot | 120 min |
+
+Complete one route. Developers do not need the product route's GitHub issues,
+canvases, or MCP access.
+
+## Product and delivery route
+
+The following issue-based exercises are unchanged. Their GitHub access
+requirements apply to this route only.
 
 ## Scenario
 
@@ -132,3 +152,120 @@ separate handoff form.
 | A result cites no issue evidence | Reject it or redirect the child. |
 | Two workstreams overlap | Pause one and move the shared question to the parent. |
 | An issue cannot be retrieved | Stop that workstream until approved issue access is restored. |
+
+## Developer route: review PR readiness
+
+### Goal and access
+
+Supervise independent read-only reviews of a readiness evaluator, its tests, and
+a supplied PR snapshot. Passing local tests and PR readiness are different claims.
+
+You need the GitHub Copilot app with `/orchestrate`, local project read access,
+and Python 3.10 or later. Check that you can open, redirect, and stop child
+sessions. **If any requirement is unavailable, stop this route.** No GitHub
+connection, MCP server, or remote write is needed.
+
+### Prepare the local project
+
+From the curriculum root, copy these files to a fresh workspace:
+
+```bash
+mkdir -p ~/copilot-labs/session-24-developer
+cp -R sessions/session-29-copilot-app-for-developers/lab/solution/readiness_guard \
+  ~/copilot-labs/session-24-developer/
+cp -R sessions/session-29-copilot-app-for-developers/lab/solution/tests \
+  ~/copilot-labs/session-24-developer/
+cp sessions/session-29-copilot-app-for-developers/lab/starter/issue-brief.md \
+  ~/copilot-labs/session-24-developer/
+cp sessions/session-29-copilot-app-for-developers/lab/starter/prepared-evidence/05-pr-snapshot.json \
+  ~/copilot-labs/session-24-developer/pr-snapshot.json
+cp sessions/session-24-orchestrate-workstreams/lab/starter/developer-review-brief.md \
+  sessions/session-24-orchestrate-workstreams/lab/starter/developer-orchestration-plan.md \
+  ~/copilot-labs/session-24-developer/
+cd ~/copilot-labs/session-24-developer
+PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
+```
+
+The supplied reference implementation's six tests should pass. This route reviews
+it; do not repair it or install packages. Attach this folder as an app project.
+Keep the children read-only and restrict tool access to the named files and test
+command. Do not grant network or GitHub write access.
+
+### Exercise D1: Accept the work split (25 minutes)
+
+Read `developer-review-brief.md` and complete `developer-orchestration-plan.md`.
+
+Use independent questions:
+
+| Workstream | Question | Inputs |
+| --- | --- | --- |
+| Implementation | Does the evaluator meet the brief's behavior contract? | `issue-brief.md`, `readiness_guard/` |
+| Tests | What do the tests prove, and what remains untested? | `issue-brief.md`, `tests/`, `readiness_guard/` |
+| PR state | Is the supplied PR ready based on its required checks and threads? | `issue-brief.md`, `pr-snapshot.json` |
+
+Each child works from its own inputs and does not wait for another child. The
+parent compares the results afterward. Name a reviewer, stop conditions, and a
+usage limit. The test reviewer may run only the supplied test command.
+
+### Exercise D2: Start and inspect live work (30 minutes)
+
+Submit the accepted plan:
+
+```text
+/orchestrate Use developer-orchestration-plan.md to start independent read-only
+reviews of implementation, tests, and PR state. Each child must answer its
+question, cite files or JSON fields, and state uncertainty. Keep scope limited to
+the named local files and test command. Do not edit, install, use the network, or
+change GitHub. Stop at the agreed usage limit. The parent alone reconciles results.
+```
+
+Open the live children and check their inputs and task boundaries. If the command
+does not create live child sessions, stop and resolve the feature or plan. Do not
+substitute `/fleet`, separate chats, or captured answers.
+
+### Exercise D3: Redirect and reconcile (35 minutes)
+
+After the test reviewer returns its first result, redirect that child:
+
+```text
+Check your test-coverage conclusion against acceptance criterion 5 in
+issue-brief.md. Explain whether sorted reason codes are tested and whether the
+test also proves the exact complete reason list. Do not edit or broaden the task.
+```
+
+Compare the child's original and revised answers. This is a planned follow-up
+question, not proof that the first answer was wrong. Stop a child if it crosses
+scope; do not stage a harmful action merely to demonstrate stopping.
+
+Then ask the parent to reconcile all results with the provisional `READY` note in
+`developer-review-brief.md`. Check any disagreement against the source files.
+If children agree, say so; do not fabricate conflicting child conclusions.
+
+### Exercise D4: Review the parent result (30 minutes)
+
+Require the parent to return:
+
+- a separate verdict for implementation behavior, test coverage, and PR readiness;
+- accepted findings with file or JSON-field references;
+- rejected or unresolved claims and the reason;
+- the effect of the child redirection;
+- remaining gaps and the next human decision.
+
+The parent must explain why local passing tests cannot override a failed required
+PR check or unresolved blocking thread. Review the result yourself. Keep it in the
+app session; do not copy session identifiers or a second progress log into the plan.
+Inspect the app's usage display and explain whether the work justified orchestration.
+
+### Developer completion check
+
+- [ ] Accepted plan with independent questions and a usage limit.
+- [ ] Live child sessions inspected on the orchestration surface.
+- [ ] Test reviewer redirected and its revised answer checked.
+- [ ] Provisional `READY` note accepted or rejected using the actual PR fields.
+- [ ] Parent result separates implementation, test coverage, and PR state.
+- [ ] No source files, packages, or external systems changed.
+- [ ] A human decision and observed usage are recorded in the parent result.
+
+Compare your reviewed result with
+[`solution/developer-review-reference.md`](solution/developer-review-reference.md).
+That reference cannot replace live child-session work.

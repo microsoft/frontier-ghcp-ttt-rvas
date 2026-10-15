@@ -4,11 +4,12 @@
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 20-23 and live GitHub Copilot orchestration access
+**Prerequisites:** Live GitHub Copilot app orchestration access; Sessions 20-23 for
+the product route, or Sessions 01-07 and 29 for the developer route
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
-**Last updated:** October 5, 2026
+**Last updated:** October 15, 2026
 
 ## Overview
 
@@ -16,8 +17,12 @@ Session 24 teaches parent-led orchestration for one delivery objective. Learners
 split four live GitHub issues into independent workstreams, monitor the child
 sessions, and review the results.
 
-The plan stays small. Each workstream needs only a bounded question, approved
-inputs, a stop condition, and a reviewer. GitHub Copilot keeps session status,
+Developers can instead review a local readiness evaluator, its tests, and a
+synthetic PR snapshot. That route follows Session 29 and needs no GitHub MCP
+connection or product-track artifacts. Both routes take the same two-hour lab.
+
+The plan stays small. Each workstream needs a question, input paths or issues,
+a stop condition, and a reviewer. GitHub Copilot keeps session status,
 links, timing, and usage on the orchestration surface.
 
 **Live orchestration access is required.** There is no role-play or prepared-result
@@ -31,7 +36,8 @@ Learners practice how to:
 2. Set approved inputs and hard stop conditions.
 3. Start and monitor child sessions through `/orchestrate`.
 4. Redirect, stop, accept, or reject work.
-5. Return a reviewed parent result backed by live GitHub issues.
+5. Return a reviewed parent result backed by the selected route's sources.
+6. Separate local test success from PR readiness in the developer route.
 
 ## Session 16 distinction
 
@@ -52,14 +58,16 @@ result and keeps decision authority.
 ## Required preflight
 
 Confirm the built-in `orchestrate` skill and `/orchestrate` command in the GitHub
-Copilot app. Confirm that GitHub MCP can read the approved parent and child issues.
+Copilot app. Product learners also need GitHub MCP read access to their parent
+and child issues. Developers need Python 3.10 or later and local project read
+access instead.
 
-**Stop if orchestration or issue access is unavailable.** Fix access before the
-lab.
+**Stop if orchestration or the selected route's source access is unavailable.**
+Fix access before the lab.
 
 ## Product-state note
 
-**Verified against official GitHub documentation on October 5, 2026.** Interface
+**Checked against official GitHub documentation on October 15, 2026.** Interface
 labels can change by plan, policy, and app version. Use the current session
 management surface. The orchestration requirement does not change.
 

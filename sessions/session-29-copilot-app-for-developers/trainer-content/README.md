@@ -32,15 +32,17 @@ Complete this check on the delivery machine:
 3. Confirm that Chat and a project session both open.
 4. Confirm that Interactive, Plan, and Autopilot appear in the mode picker.
 5. Start a working-tree session and verify its branch with `git status`.
-6. Type `/` and confirm the commands needed for the demo, including file
-   attachment and review commands available in the current context.
-7. Confirm whether `/rubber-duck` is available. If not, use a separate
-   read-only critique prompt in a fresh session.
+6. Check `/plan`, `/review`, `/rubber-duck`, `/fork`, `/merge-to-parent`, and `/spar`.
+7. Check that the training Git baseline is committed and the repair is left
+   uncommitted for local diff review.
 8. Open My work and Automations only in a synthetic or approved training repository.
 9. Keep `lab/starter/prepared-evidence/` open for trainer demo recovery.
+10. Rehearse returning only `planning-alternative.md` from the fork before any
+    repair. Check local sandbox settings and tool approvals without weakening them.
 
 **Access is required for the lab.** A learner who cannot open and use the app must
-stop the lab. Do not spend lab time bypassing policy or moving code
+stop the lab. Stop if a required command is missing too. Do not spend lab time
+bypassing policy or moving code
 to an unapproved assistant.
 
 ## Teach the app layout as an engineering map
@@ -108,8 +110,8 @@ git status --short --branch
 git worktree list
 ```
 
-If the starter is not a Git repository in the delivery setup, explain the intended
-boundary and use a copied workspace.
+The lab initializes a Git baseline before the working-tree session starts.
+Do not replace it with a non-Git folder: `/review` needs the repair diff.
 
 ## Demonstrate context and handoff
 
@@ -134,10 +136,12 @@ flow is:
 
 1. Run the focused tests and capture the failure.
 2. Map each failing assertion to the issue criteria.
-3. Approve the smallest plan that can satisfy those criteria.
-4. Edit only `readiness_guard/readiness.py` unless tests need a justified change.
-5. Run the focused test command.
-6. Inspect the diff.
+3. Use `/plan`, then critique the plan with `/rubber-duck` before implementation.
+4. Record accepted and rejected suggestions and revise the plan.
+5. Check the project diff, approve the plan, and leave Plan mode.
+6. Edit only `readiness_guard/readiness.py` unless a test change is justified.
+7. Run the focused tests and inspect the diff.
+8. Run `/review` before committing; check its findings against code and tests.
 
 Use the exact test command:
 
@@ -150,12 +154,32 @@ python -m unittest discover -s tests -v
 Ask the rubber duck agent to inspect the plan or tests without editing:
 
 ```text
-/rubber-duck Find a case where this implementation could report READY even though
-the supplied pull-request evidence is incomplete. Do not propose unrelated features.
+/rubber-duck Critique the plan and tests against issue-brief.md before any
+implementation. Look for false READY verdicts and gaps in sorted reason codes.
+Do not edit files or propose unrelated features.
 ```
 
-If the command is unavailable, start a fresh session in read-only intent and use
-the same prompt. Apply useful findings and reject unsupported suggestions.
+Record the critique in `engineering-review.md`. Apply useful findings to the plan
+and explain rejected suggestions. A no-findings result does not need a fabricated
+revision. If the command is unavailable, stop and resolve access before the lab.
+
+Explain why this is a second opinion: rubber duck is built in and read-only;
+Copilot automatically chooses a contrasting model when one is available. Do not
+promise a fixed vendor or report a model the client did not show. Manual use
+adds a reasoning pass. Session 04 covers CLI `/subagents` and the persistent
+Proactive invocation opt-in; do not present that CLI picker as an app command.
+
+Before implementation, fork the plan with app `/fork`, check the fork's actual
+workspace, and run `/spar` on the same brief and tests. Its documented purpose is
+adversarial reasoning, not a promise of rubber duck's model or tool behavior.
+Keep it read-only through the task and permissions, then write only the checked
+analysis note. Inspect `/merge-to-parent` and accept only that note. Check that
+parent source still matches the baseline before approving implementation.
+This local return is unrelated to merging a GitHub PR.
+
+After implementation, run `/review` against the uncommitted repair. The critic
+checks the proposed approach; the reviewer checks the actual patch. Repeat tests
+and review after any correction.
 
 ## Teach the outer loop
 
@@ -192,6 +216,8 @@ not act as a reviewer of record.
 | Attaches the whole project | Ask which files affect the next decision |
 | Treats passing tests as PR approval | Open review threads and required checks |
 | Accepts critique without checking it | Ask what evidence supports the critique |
+| Calls the author's second answer independent critique | Use the required `/rubber-duck` command |
+| Commits before `/review` | Keep the repair diff available until review and triage finish |
 | Gives the automation write tools | Remove every tool that is not needed for the report |
 
 ## Trainer demo recovery
@@ -202,7 +228,16 @@ hands-on app practice.
 
 ## Official references
 
-Checked on **October 5, 2026**:
+The 120-minute lab allocates 15 minutes to isolation, 55 to plan/fork/repair/review,
+20 to the fresh handoff, and 30 to PR readiness and automation. Keep the checked
+critique, fork result, and code review if discussion runs long; reduce the app
+tour instead.
+
+Session 24's developer route continues with live `/orchestrate` work over local
+synthetic files. It does not require the product track's GitHub issues or MCP
+access. Do not start a fleet inside this Session 29 lab.
+
+Checked on **October 15, 2026**:
 
 - [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
 - [Work with agent sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)

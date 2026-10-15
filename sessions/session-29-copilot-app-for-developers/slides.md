@@ -168,16 +168,60 @@ Each claim should point to something another engineer can inspect.
 
 ---
 
-# Ask for a separate critique
+# Critique the plan before implementation
 
-Use `/rubber-duck` or ask the session for an independent second opinion:
+Use the required command while the plan can still change:
 
 ```text
-Critique the plan and current tests. Look for a case that could produce a false
-READY verdict. Do not edit files.
+/rubber-duck Critique the plan and tests against issue-brief.md. Look for a false
+READY verdict or missing reason-code checks. Do not edit files.
 ```
 
-The critic reviews. The main session decides whether and how to act.
+Check each suggestion. Revise the plan or explain why the suggestion was rejected.
+Record the decision in `engineering-review.md`.
+
+---
+
+# Review the patch after implementation
+
+```text
+/review Review the uncommitted repair against issue-brief.md.
+Focus on correctness and regression coverage. Cite files and lines. Do not edit.
+```
+
+Triage findings against actual code or tests. Fix supported defects and rerun
+tests and review. Keep the patch uncommitted until this is complete.
+
+**Plan critique and code review answer different questions.**
+
+---
+
+# Why rubber duck is a second opinion
+
+It is a built-in, read-only critic in the CLI and app.
+Copilot selects a contrasting model automatically when one is available.
+
+Record the model only if the client shows it. Check the feedback yourself.
+An extra reasoning pass adds usage; it does not approve the change.
+
+Session 04 covers the CLI's persistent Proactive invocation opt-in.
+This lab requires a manual invocation.
+
+---
+
+# Fork a plan before writing code
+
+```text
+/fork
+/spar Challenge the readiness plan with a counterexample.
+Use the same brief and tests. Reason only; do not implement.
+```
+
+Check the actual fork workspace and argument. Write only the checked
+`planning-alternative.md`, then inspect `/merge-to-parent`.
+
+Accept only the note; check parent source is unchanged before plan approval.
+Do not assume `/spar` has rubber duck's model policy or read-only guarantees.
 
 ---
 
@@ -230,8 +274,8 @@ It must not comment, label, push, approve, merge, or resolve threads.
 2. Use chat to explain the issue without editing.
 3. Start a Plan-mode working-tree session.
 4. Attach the brief and focused test.
-5. Approve a bounded plan and run checks.
-6. Request a read-only critique.
+5. Critique the plan, revise it, and approve it before implementation.
+6. Run checks, inspect the diff, and run `/review`.
 7. Show the synthetic PR snapshot and readiness report.
 
 If the live app fails, switch to the captured evidence at the same step.
@@ -244,6 +288,8 @@ Learners submit:
 
 - an implementation with passing tests;
 - a session handoff;
+- `engineering-review.md` with plan critique and code-review triage;
+- the checked analysis note returned from the `/spar` fork;
 - a PR-readiness report;
 - a manual read-only automation specification.
 
@@ -260,3 +306,16 @@ Supplied evidence may recover the trainer demonstration, but it does
 not replace learner app practice.
 
 The work is synthetic. Keep it that way.
+
+---
+
+# Continue with Session 24
+
+The developer route uses `/orchestrate` for independent read-only reviews of:
+
+- the readiness implementation;
+- regression coverage;
+- the supplied PR snapshot.
+
+Redirect a child and reconcile conflicting readiness claims.
+The product track's Sessions 20 to 23 and GitHub issue access are not required.

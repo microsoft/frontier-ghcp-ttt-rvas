@@ -1,6 +1,7 @@
 # Expected skill validation and bounded-run output
 
-Run from `lab/starter/skills-project`.
+Run from the working copy of `lab/starter/skills-project` after creating the
+learner's `.github/skills/api-design/SKILL.md`.
 
 ## Validate the directory
 
@@ -25,13 +26,13 @@ npm test
 Expected:
 
 ```text
-tests 5
-pass 5
+tests 6
+pass 6
 fail 0
 ```
 
-The suite covers one matching route task, one documentation task that must not
-trigger, one missing-reviewer failure, and valid and invalid skill directories.
+The suite covers the fixed scenario contract and a demo run that loads the
+project-local skill without relying on a sibling solution directory.
 
 ## Bounded run
 
@@ -54,3 +55,7 @@ The second scenario stops before work:
 
 That blocked result is expected. The skill must not hide a missing
 precondition behind a success response.
+
+These deterministic outputs do not complete the live checks. Require actual
+Copilot invocation and the interview comparison described in
+`../interview-comparison-reference.md`.

@@ -25,7 +25,7 @@ copilot --version
 | 1   | `copilot -p "Explain: command"` | Quick explanations of unfamiliar commands found in scripts  |
 | 2   | `copilot -p "Suggest a command to ..."` | Generate commands I can't remember the flags for     |
 | 3   | `copilot -p "prompt" --silent` | Automate report generation in scripts                       |
-| 4   | `copilot` → `Shift+Tab` → Plan | Complex multi-step tasks where I want to see the plan first |
+| 4   | `/plan` | Review and revise the approach before implementation |
 | 5   | `/research topic`              | Deep dives before adopting a new library or approach        |
 
 ---
@@ -35,19 +35,29 @@ copilot --version
 | Mode         | How to Activate       | When to Use                                         |
 | ------------ | --------------------- | --------------------------------------------------- |
 | Interactive  | `copilot`             | General work: conversations and multi-step tasks    |
-| Plan         | `Shift+Tab` to cycle  | When I want to review the approach before execution |
+| Plan         | `/plan` or `Shift+Tab` | Review and revise the approach before execution |
 | Autopilot    | `Shift+Tab` to cycle  | Trusted tasks I know are safe to run autonomously   |
 | Programmatic | `copilot -p "prompt"` | Scripts, CI/CD, automation, one-shot tasks          |
 
 ---
 
-## CLI-Exclusive Features I Will Use
+## Workflows I will use
 
 | Feature        | Command                     | My Use Case                                   |
 | -------------- | --------------------------- | --------------------------------------------- |
 | Research       | `/research "topic"`         | Evaluate libraries before adding to project   |
 | Delegate       | `/delegate "task"`          | Push documentation tasks to cloud agent       |
 | Fleet          | `/fleet "multi-part task"`  | Parallel code reviews across multiple files   |
+| Task inspection | `/tasks`                  | Inspect results and stop out-of-scope work |
+| Usage          | `/usage`                    | Check observed usage after parallel work |
+| Soft limit     | `/limits`                   | Inspect units and installed-version scope; not a hard budget |
+| Critique       | `/rubber-duck`              | Check a second opinion before approving a plan |
+| Proactive critic | `/subagents`              | Inspect persistent opt-in; do not change it for this lab |
+| Approval       | `/permissions show`         | Inspect current tool-approval mode |
+| Sandbox        | `/sandbox status` and `/sandbox policy` | Inspect process access without weakening it |
+| Recovery       | `/rewind`                   | Choose conversation-only or conversation-plus-files, then check |
+| Isolated fork  | `/fork worktree`            | Preserve context in a new checkout of HEAD |
+| Draft move     | `/move`                     | Transfer an uncommitted analysis note to a new worktree |
 | Session resume | `copilot --continue`        | Pick up where I left off after lunch          |
 | Programmatic   | `copilot -p "..." --silent` | Generate changelogs, reports, audit summaries |
 
@@ -71,10 +81,9 @@ copilot --version
 
 ```bash
 # Flags I use regularly:
---silent            # Clean output for scripting: no stats, no formatting
+--silent            # Suppress CLI commentary; still check the answer format
 --allow-tool='shell(git)'  # Pre-approve specific tools to avoid prompts
---yolo              # Skip ALL approval prompts (only for trusted tasks!)
---output-format=json # Machine-readable output for piping to jq
+--output-format=json # JSONL events; inspect task errors and validate any payload
 --share=output.md   # Save session to file for documentation
 --effort=high       # Deeper reasoning for complex problems
 --max-autopilot-continues=10  # Safety cap on autonomous iterations
@@ -112,7 +121,10 @@ alias cr='copilot -p "Review my staged git changes. Focus on bugs, security issu
 | `!command`  | Run shell command directly                |
 | `@filename` | Include file in prompt context            |
 | `Ctrl+T`    | Toggle reasoning visibility               |
-| `/undo`     | Revert last change                        |
+| `Ctrl+Q`    | Queue a follow-up; check it ran after the current task |
+| `Ctrl+S`    | Stash/restore an unsent draft |
+| `Ctrl+X, b` | Promote a running task/command; inspect `/tasks` |
+| `/rewind`   | Inspect recovery choice; not an external-action undo |
 | `/compact`  | Free up context window                    |
 
 ---
@@ -121,7 +133,8 @@ alias cr='copilot -p "Review my staged git changes. Focus on bugs, security issu
 
 1. **Programmatic mode fits scripts.** I can use it in bash pipelines for reports, changelogs, and audits.
 2. **Autopilot can make several changes without stopping.** Set `--max-autopilot-continues` until you understand its behavior for a task.
-3. **The CLI sees ~40% more features than the IDE.** `/research`, `/delegate`, `/fleet`, custom model providers, hooks, and OTel are all CLI-only.
+3. **Commands can be shared across surfaces.** The app also supports `/plan`,
+   `/fleet`, and `/research`. Terminal automation is the reason to choose the CLI.
 4. **Use the IDE to debug and the CLI to automate.** That is the rule I will start with.
 5. **`/research` produces more detailed output than regular chat.** Use the extra
    time when the decision needs that depth.

@@ -46,5 +46,6 @@ Do not add dependencies, use network tools, open a pull request, or merge.
 
 ## Failure behavior
 
-If the selected surface cannot load this profile, follow the same steps as a manual
-checklist. Mark the test command as **not run** when it cannot execute.
+If the CLI cannot load this profile or run the required test command, stop and
+report the missing access or tool. Mark the command as **not run**. A manual
+checklist does not complete the live profile exercise.

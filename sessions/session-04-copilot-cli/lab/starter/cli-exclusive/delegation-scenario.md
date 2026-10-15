@@ -1,72 +1,45 @@
-# Delegation Scenario
+# Fleet scenario: inspect the repaired project
 
-Use the CLI's `/delegate` and `/fleet` commands to distribute work across agents. Review the scope and results from each agent before you accept any changes.
+Use `/plan`, then `/fleet` to analyse independent parts of the repaired
+`agent-tasks` project. Record results in `workflow-record.md`.
 
----
+## Plan before delegation
 
-## Scenario: Project Quality Audit
-
-Your team is taking over the `agent-tasks` project and needs a quality assessment. Split independent checks when parallel work saves time.
-
----
-
-## Part 1: Delegate to Cloud Agent (`/delegate`)
-
-Push a documentation improvement task to the Copilot cloud agent on GitHub:
-
-```
-/delegate Review the agent-tasks project README.md (if it exists) or create one. It should include: project description, setup instructions, API endpoint documentation with example requests/responses, and testing instructions. Create a PR with the improvements.
+```text
+/plan Split a read-only analysis of agent-tasks into independent questions about
+src/app.js, src/utils.js, and tests/. Give each task input paths, an expected
+result, and a stop rule. Identify any shared assumption the parent must settle
+first. Do not edit files or delegate implementation alongside dependent tests.
 ```
 
-**What to observe:**
+Review the breakdown and agree a usage limit. Leave Plan mode before starting
+the fleet.
 
-- Does Copilot create a branch on GitHub?
-- Does it open a draft PR?
-- How does the PR description look?
+## Run and inspect
 
-> **Note:** This requires your project to be pushed to a GitHub remote. If you're working locally, observe the attempt and note what `/delegate` tries to do.
-
----
-
-## Part 2: Fleet Parallel Analysis (`/fleet`)
-
-Run a multi-part code analysis using parallel subagents:
-
-```
-/fleet Perform a full audit of the agent-tasks project:
-1. Analyze src/app.js for security vulnerabilities (SQL injection, XSS, missing input validation, rate limiting gaps)
-2. Analyze src/utils.js for correctness issues (edge cases that would cause runtime errors, missing null checks)
-3. Review tests/ for coverage gaps (untested endpoints, missing edge case tests, no error path testing)
+```text
+/fleet Use the accepted analysis plan. Assign independent read-only tasks for
+route behavior, utility input contracts, and test gaps. Each result must cite
+files and separate proven defects from proposed improvements. Do not edit files,
+install packages, or use the network. Stop on scope growth or the usage limit.
 ```
 
-**What to observe:**
+Open `/tasks`, inspect the live child tasks, and stop work that crosses the rule.
+Check at least one claim per result against a file or focused test. Ask the parent
+to reconcile duplicates and conflicting conclusions.
 
-- [ ] Did `/fleet` spawn 3 separate subagents?
-- [ ] Can you see them working in parallel via `/tasks`?
-- [ ] How does the combined result compare to asking each question sequentially?
-- [ ] Did any subagent find issues the others missed?
+**Do not grade agent count or speed.** Record the tasks actually created. If the
+work stayed sequential, the trainer must adjust the split before learners can
+claim hands-on fleet completion.
 
----
+## Compare the tools
 
-## Part 3: Check Status (`/tasks`)
+| Tool | Use in this curriculum |
+| --- | --- |
+| `/fleet` | Parallel subagents for suitable parts of one task; available in CLI and app |
+| `/tasks` | Inspect CLI child-task details and stop a task |
+| `/delegate` | Cloud changes and a pull request; taught in Session 09 |
+| `/orchestrate` | App built-in skill for steerable sessions; taught in Session 24 |
 
-While the fleet is working (or after it completes):
-
-```
-/tasks
-```
-
-**Record:**
-
-- Number of subagents spawned: ___
-- Status of each: ___
-- Total time for parallel execution: ___
-- Estimated time if done sequentially: ___
-
----
-
-## Reflection
-
-1. When would you use `/delegate` (cloud agent) vs. `/fleet` (local subagents)? ___
-2. What types of tasks benefit most from parallel execution? ___
-3. Could you use these in a CI/CD pipeline? How? ___
+Finish with `/usage`. Record the observed usage and explain whether this task
+justified parallel work. Never estimate a sequential runtime you did not measure.

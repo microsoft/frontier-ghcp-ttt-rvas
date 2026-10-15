@@ -14,14 +14,15 @@ and availability can change.
 2. Check the current docs for the review tools.
 3. Choose a small pull request with clear acceptance criteria.
 4. Set a usage limit if the work is metered.
-5. Check pull-request and Copilot review access before the lab.
+5. Check CLI `/review` and `/security-review`, Copilot PR review, and a private
+   training remote with the baseline `main` branch before the lab.
 6. Ask learners to write their first verdict before assisted review.
 
 ### Access failure
 
-Stop the learner lab. The intentional defects can recover a
-trainer demonstration, but they do not replace pull-request and Copilot review
-practice.
+Stop the learner lab if a required command or review surface is unavailable.
+The intentional defects can recover a trainer demonstration, but they do not
+replace the local commands and pull-request review.
 
 ## Session objective
 
@@ -85,8 +86,8 @@ Ask learners what they need to see before approving a change.
 | --- | --- | --- |
 | 0:00 to 0:08 | Review roles and accountability | Author, automation, checks, and reviewer roles are named. |
 | 0:08 to 0:18 | PR summaries and review contracts | Learners separate generated prose from diff evidence. |
-| 0:18 to 0:28 | Review requests and quality gates | A policy-aware first-pass workflow is defined. |
-| 0:28 to 0:43 | Scripted intentional-defect demo | The group traces the finding, test, fix, and decision. |
+| 0:18 to 0:28 | Local commands and PR review | The group distinguishes diff review from PR review. |
+| 0:28 to 0:43 | Intentional-defect and triage demo | Findings connect to behavior; unsupported exploit claims are rejected. |
 | 0:43 to 0:51 | Suggested fixes and conflicts | Learners preserve intent before editing. |
 | 0:51 to 0:58 | Limits, adoption, and Q&A | Learners design reversible human gates. |
 | 0:58 to 1:00 | Close and lab handoff | Reviewer roles and access are confirmed. |
@@ -99,7 +100,8 @@ Ask learners what they need to see before approving a change.
 - At 0:38, use the prepared fix and focus on verification.
 - At 0:43, omit optional assisted fix application.
 - At 0:51, run the conflict decision statement without editing code.
-- Never cut human review, test output, access checks, or lab roles.
+- Never cut the learner's human review, either local command, test output, or
+  access checks. The lab allocates 40/35/25/20 minutes to its four exercises.
 
 ## Segment 1: Review is an accountable decision (0:00 to 0:08)
 
@@ -186,7 +188,7 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 | --- | --- |
 | Ready for independent critique | Clear intent, a small diff, and focused checks. |
 | Ready for assisted review | The learner has written an initial verdict and the findings that matter most. |
-| Ready for human review | Assisted comments, if any, are classified and checks reported. |
+| Ready for human review | Local and PR findings are classified and checks reported. |
 | Ready for approval | Acceptance criteria and risks are reviewed by an accountable human. |
 | Ready for merge | Required approvals and repository protections are satisfied. |
 
@@ -198,6 +200,37 @@ Before the assisted prompt, have learners write their initial verdict and two
 important findings in `lab/starter/partner-review-checklist.md`. Afterward, they
 can compare missed findings, false positives, and anything that changed the final
 decision.
+
+### Demonstrate the two local commands
+
+Use a fresh Git repository with a committed baseline. Apply the synthetic changes
+from `code-changes.md` and leave them uncommitted.
+
+```text
+/review Review the current changes for correctness and missing tests. Cite files
+and lines. Review only; do not edit.
+```
+
+Then run:
+
+```text
+/security-review
+```
+
+Both commands must see the same staged or unstaged patch. Committing it first
+removes it from the security command's current-change scope. Record command output
+even if there are no findings. Check `git diff` afterward; review should not have
+changed the project.
+
+Use the triage table in `fix-evaluation-template.md`. Require a source, claimed
+impact, and reproduction or code reference for each accepted finding. The mock
+search route does not execute SQL. The training strings are not live credentials.
+Do not teach those as proven exploits. Show the observable password response
+defect separately.
+
+After the initial local review, commit and push only the training patch, request
+Copilot PR review, and compare results. Repeat both local commands on the
+uncommitted correction diff before committing fixes.
 
 ### Transition
 
@@ -411,7 +444,10 @@ diff and command output.
 
 ### "Is security review covered by this feature?"
 
-An assisted general review is not a substitute for the organization's required security practices, tooling, or specialists.
+`/review` checks general code issues. `/security-review` targets high-confidence
+vulnerabilities in current changes. It is a focused, read-only check, not a full
+repository audit or a replacement for code scanning, secret scanning, or
+dependency checks. Check current preview and access requirements before teaching.
 
 ### "Which repositories should enable automatic review?"
 
@@ -461,8 +497,18 @@ the learner pull-request workflow.
 
 - [ ] A small synthetic change is selected.
 - [ ] Required checks and reviewer are named.
-- [ ] Pull-request and Copilot review access is available.
+- [ ] Both local commands and Copilot PR review are available.
+- [ ] The private remote has the baseline branch before learners open a PR.
+- [ ] No learner commits the initial patch before the local command reviews.
 - [ ] Findings will name the file and function.
 - [ ] The conflict intent statement is ready.
 - [ ] A usage limit is recorded when it applies.
 - [ ] Final approval remains a human decision.
+
+## Product references
+
+Checked on October 15, 2026:
+
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [App review command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
+- [About Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review)

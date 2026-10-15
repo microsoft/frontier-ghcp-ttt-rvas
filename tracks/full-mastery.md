@@ -145,9 +145,11 @@ By completing this track, trainees will be able to:
 13. Teach HVE Research, Plan, Implement, Review, and Follow-up through a complete evidence chain
 14. Teach developers to use isolated Copilot App sessions, independent critique, and pull-request readiness evidence
 
-> **Optional specialization:** Session 29 requires GitHub Copilot app access for
-> the live route. A supplied evidence fallback preserves the workflow and
-> learner deliverables when app access is unavailable.
+**Live app access is required for Session 29 and either Session 24 route.**
+Prepared outputs support trainer explanation only. The schedule above uses
+Session 24's product route after Sessions 20 to 23. For a developer-only delivery,
+use its developer route after Session 29 instead; do not count the same session
+twice toward the 88-hour total. Session 12 requires live CLI skill loading.
 
 ## Next Steps
 

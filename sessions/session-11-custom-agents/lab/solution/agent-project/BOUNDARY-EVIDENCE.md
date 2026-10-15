@@ -42,11 +42,20 @@ PASS .../test-writer.agent.md
 - test-only path boundary declared
 - production conflict stops for human review
 
-tests 2
-pass 2
+tests 3
+pass 3
 fail 0
 ```
 
 The tightened profile may read `src/`, but it may edit only `tests/`. A production
 conflict now produces a stop report and a human decision instead of a silent source
 change.
+
+The learner's `check:tight` checks the local profile, not this reference fixture.
+The third harness test checks that the command works without a sibling solution
+and fails when the learner profile is weak.
+
+For the live conflict, request a new shipped-to-processing transition. The
+supplied source rejects it, so a test-only writer must stop before changing
+production behavior. Record the actual selected profile and source diff in
+`agent-run.md`; static tests alone do not complete this run.

@@ -1,6 +1,23 @@
 # Session 07 Lab: Solution Reference
 
-**For trainers only.** This directory contains the fully corrected review project after applying all 6 code changes from `lab/starter/code-changes.md` and fixing every issue Copilot should have flagged.
+**For trainers only.** This directory contains a corrected review project for the
+six changes in `lab/starter/code-changes.md`. It is a code reference, not a
+prediction of what either review command will report.
+
+## Required live review record
+
+Learners must retain their first human review, initial `/review` and
+`/security-review` outputs, and the same commands run on the uncommitted correction
+diff. Use `fix-evaluation-template.md` to record accepted and rejected findings,
+then compare with Copilot review on the private training PR.
+
+Do not require a fixed number of security findings. The SQL text is never sent
+to a database, and the hardcoded strings are fake and unused. Reject claims of
+proven database compromise or leaked live credentials. Password exposure is an
+observable response defect; pagination and duplication are separate review topics.
+
+The commands supplement repository security scanning. Their output does not
+replace the human decision or authorize merging intentional defects.
 
 ## Access and cost preflight
 
@@ -22,11 +39,11 @@ Use this reference to:
 
 | #   | Issue                                                      | File           | Fix Applied                                                                                           |
 | --- | ---------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------- |
-| 1   | SQL injection in `/api/users/search`                       | `src/api.js`   | Replaced string interpolation with in-memory filter; comment notes parameterized queries for real DBs |
+| 1   | Unsafe SQL-string construction in `/api/users/search` (no database executes it) | `src/api.js` | Replaced string interpolation with in-memory filter; comment notes parameterized queries for real DBs |
 | 2   | Password returned in API response                          | `src/api.js`   | Added `sanitizeUser()` helper that strips `passwordHash` before all responses                         |
 | 3   | Off-by-one in `paginate()`: page=1 skipped first items     | `src/utils.js` | Corrected `start = page * pageSize` → `start = (page - 1) * pageSize`                                 |
 | 4   | Missing error handling in `POST /api/users`                | `src/api.js`   | Wrapped in `try/catch`, returns 400 with message on invalid input                                     |
-| 5   | Hardcoded `JWT_SECRET` and `API_KEY`                       | `src/api.js`   | Moved to `process.env.JWT_SECRET` / `process.env.API_KEY` with startup warning                        |
+| 5   | Hardcoded synthetic `JWT_SECRET` and `API_KEY` values       | `src/api.js`   | Moved to `process.env.JWT_SECRET` / `process.env.API_KEY` with startup warning                        |
 | 6   | `/api/products` duplicated the items array (DRY violation) | `src/api.js`   | Removed duplicate array; endpoint now references `items` directly                                     |
 
 ---
@@ -37,7 +54,7 @@ Use this reference to:
 
 - All original item CRUD tests (passing before and after fixes)
 - Password field exclusion verification (Fix 2)
-- SQL injection input handling: no raw SQL echoed, sanitized results (Fix 1)
+- Search input handling: no raw SQL echoed, filtered results (Fix 1)
 - Error handling for invalid `POST /api/users` body (Fix 4)
 - `/api/products` returns same data as `/api/items` (Fix 6)
 - Pagination page-1 starts at index 0, not pageSize (Fix 3)
@@ -50,16 +67,18 @@ npm install
 npm test
 ```
 
-All 16 tests should pass.
+All 17 tests should pass.
 
 ---
 
 ## Common Trainer Questions
 
 **"Will Copilot catch all 6 issues?"**  
-Often four or five. It may catch SQL injection, password exposure, and hardcoded secrets. It may miss the pagination off-by-one or a small duplicate. The lab uses those misses for false-negative analysis.
+Do not promise a count. General and security review have different scopes. Record
+misses and unsupported claims, then inspect the actual behavior and tests.
 
-**"What if Copilot's suggested fix for the SQL injection is wrong?"**  
+**"What if Copilot's suggested fix for the SQL-string construction is wrong?"**
+
 Copilot may suggest `.escape()` from a MySQL library or parameterized-query syntax. The solution uses an in-memory filter because there is no database. Accept an approach that prevents string interpolation of user input.
 
 **"Trainee applied a fix but tests still fail: why?"**

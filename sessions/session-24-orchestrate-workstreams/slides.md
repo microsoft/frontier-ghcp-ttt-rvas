@@ -10,7 +10,7 @@ footer: 'Session 24: Orchestrate Agents and Workstreams'
 
 # Orchestrate Agents and Workstreams
 
-## Product and Delivery Teams | Intermediate
+## Product and delivery teams, or developers after Session 29
 
 Session 24 | 3 hours
 
@@ -33,10 +33,22 @@ Session 24 | 3 hours
 # Required access
 
 - `/orchestrate` must create and coordinate live child sessions.
-- GitHub MCP must read the approved issues.
+- Product route: GitHub MCP must read the selected issues.
+- Developer route: local project read access and Python 3.10 or later.
 - You must be able to open, redirect, and stop child sessions.
 
-**Stop if orchestration or issue access is unavailable.**
+**Stop if orchestration or the selected route's inputs are unavailable.**
+
+---
+
+# Choose one lab route
+
+| Route | Inputs | Result |
+| --- | --- | --- |
+| Product and delivery | Four live GitHub issues | Parent result used by Session 25 |
+| Developer | Local evaluator, tests, synthetic PR snapshot | Separate implementation, coverage, and PR conclusions |
+
+Each route takes 120 minutes. Developers need Session 29, not Sessions 20 to 23.
 
 ---
 
@@ -72,6 +84,46 @@ The orchestration surface already holds session links, status, timing, and usage
 | Access boundary | Is the approved evidence ready? |
 
 Move shared questions back to the parent.
+
+---
+
+# Developer workstreams
+
+| Question | Input |
+| --- | --- |
+| Does implementation meet the behavior contract? | Brief and evaluator |
+| What do tests prove or miss? | Brief, tests, and evaluator |
+| Is the supplied PR ready? | Brief and PR snapshot |
+
+Children read the same fixed inputs. They do not wait for one another or edit.
+
+---
+
+# Practise steering
+
+Redirect the test reviewer after its first answer:
+
+```text
+Check criterion 5. Does the test prove sorted reason codes, the exact complete
+reason list, or both? Do not edit files.
+```
+
+Inspect the revised answer. A follow-up question does not prove the first answer
+was wrong.
+
+---
+
+# Reconcile the readiness claim
+
+The synthetic author says: "Local tests pass, so the PR is READY."
+
+Check the actual snapshot:
+
+- required `integration-tests` failed;
+- blocking thread `R1` is unresolved.
+
+Require a source-backed parent decision. Do not manufacture conflicting child
+answers. Local success does not override PR blockers.
 
 ---
 
@@ -149,3 +201,7 @@ publication, or release statement.
 3. Reviewed parent result linked to live issues
 
 No manual delivery-status form. No copied session identifiers.
+
+For developers, use the developer plan and reviewed parent result instead of
+live issues. Include the actual redirection, rejected or unresolved claims, and
+observed usage.

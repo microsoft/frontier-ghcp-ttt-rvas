@@ -22,12 +22,12 @@ Session 04 | 3 hours
 
 | Segment | Time |
 | --- | --- |
-| When the CLI fits | 10 min |
-| Modes and control | 15 min |
+| CLI fit and setup | 10 min |
+| Modes and checked plan critique | 10 min |
 | Programmatic use | 10 min |
-| CLI and IDE together | 10 min |
-| Safety and evidence | 10 min |
-| Lab handoff | 5 min |
+| Agents and fleet supervision | 10 min |
+| Controls, queue, and recovery | 10 min |
+| Surface choice and handoff | 10 min |
 
 ---
 
@@ -53,6 +53,61 @@ Use the IDE when visual navigation and diff review matter more.
 | **Autopilot** | The task is bounded and recovery is clear |
 
 Permissions still apply. More autonomy requires a narrower task.
+
+---
+
+# Revise the plan before accepting it
+
+```text
+/plan Find the three failing behaviors. Name the files and tests for each fix.
+Do not edit project files.
+```
+
+Add a constraint: preserve the response fields and status codes.
+Ask which steps change. Check the diff before approval.
+
+**Save both plans and the assumption you challenged.**
+
+---
+
+# Ask a different critic before approval
+
+```text
+/rubber-duck Critique the repair plan against the source and tests.
+Look for a hidden defect or response-contract change. Do not edit files.
+```
+
+Rubber duck is built in and read-only. Copilot automatically selects a contrasting
+model when one is available. Check the findings yourself.
+
+Inspect `/subagents` Proactive invocation; leave the existing setting unchanged.
+That opt-in persists and adds usage. This lab requires a manual invocation.
+
+---
+
+# Fleet needs independent work
+
+Plan separate read-only questions about routes, utilities, and test gaps.
+
+1. Leave Plan mode and run `/fleet` with that breakdown.
+2. Open `/tasks` and inspect actual child-task results.
+3. Check claims against files or focused tests.
+4. Reconcile disagreements and inspect `/usage`.
+
+Do not promise an agent count or speedup. Extra agents can use more credits.
+
+---
+
+# Shared commands, different surfaces
+
+| Workflow | Surface |
+| --- | --- |
+| `/plan`, `/fleet`, `/review` | CLI and app |
+| `/orchestrate` | App built-in skill; Session 24 |
+| `copilot -p` and shell pipelines | CLI |
+| Cloud changes through `/delegate` | Session 09 |
+
+Check the current command picker before delivery.
 
 ---
 
@@ -84,6 +139,9 @@ A script needs more than a useful answer. Define:
 - limited permissions.
 
 Free-form output is not a reliable pipeline interface.
+
+`--output-format=json` emits **JSONL events**. Parsing each line does not prove
+that the task succeeded or that the answer meets the requested schema.
 
 ---
 
@@ -136,6 +194,66 @@ Use the smallest permission that completes the task.
 
 ---
 
+# Inspect approval, sandbox, and limit separately
+
+```text
+/permissions show
+/sandbox status
+/sandbox policy node --version
+/limits
+```
+
+Approval controls whether a tool may run. The sandbox limits process access.
+Inspect both without weakening them.
+
+AI-credit caps are soft. GitHub's references disagree about reset scope.
+Check the installed UI with the trainer; stop before metered work if unclear.
+Do not force exhaustion or treat a cap as a hard budget.
+
+---
+
+# Queue, stash, and background are different
+
+| Control | Result |
+| --- | --- |
+| `Ctrl+Q` | Queue a follow-up while busy; check the pending label |
+| `Ctrl+S` | Stash or restore an unsent draft |
+| `Ctrl+X, b` | Promote a running command/task to background |
+| `/tasks` | Inspect its actual state, output, and exit status |
+
+Use the lab's harmless 15-second command.
+Check the queued summary against the real result.
+
+Background work remains in the CLI session. It is not file isolation.
+
+---
+
+# Recover before branching an alternative
+
+1. Commit the checked repair.
+2. Let Copilot create only a disposable note.
+3. Inspect `/rewind` choices; restore conversation **and files**.
+4. Check the note is gone and the repair remains.
+
+Rewind does not undo external actions or replace Git rollback.
+Later manual edits may be skipped; inspect the result.
+
+---
+
+# Context fork is not file isolation
+
+| Command | Check |
+| --- | --- |
+| `/fork` | Conversation fork; do not infer a separate checkout |
+| `/fork worktree` | Context plus a new checkout of `HEAD` |
+| `/worktree` | New checkout; uncommitted edits stay behind |
+| `/move` | Transfer the uncommitted draft into a new worktree |
+| `/resume` | Return to the parent and check its path/branch/status |
+
+Move only the analysis note. Do not merge the alternative in this lab.
+
+---
+
 # Evidence should survive the session
 
 Keep:
@@ -154,8 +272,11 @@ Conversation history alone is not a delivery record.
 
 # Lab handoff
 
-Use the CLI to inspect a project, repair a bounded defect, produce a health report,
-and compare the CLI and IDE workflows.
+Use `/plan`, challenge an assumption, and approve the revision before repair.
+Inspect live `/fleet` results through `/tasks` and check the accepted claims.
+Check the critic, controls, queue/background result, and recovery/worktree state.
 
-**Success looks like:** passing checks, a reviewed diff, and evidence another person
-can inspect.
+**120 minutes:** setup 15; repair 40; programmatic/fleet 35; recovery/choice 30.
+
+**Submit:** passing checks, a reviewed diff, the health report, and
+`workflow-record.md` with the plan revision and observed usage.

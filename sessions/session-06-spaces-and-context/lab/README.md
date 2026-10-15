@@ -14,7 +14,7 @@ levels. Store reusable prompt files beside the project.
 | Stage | Work | Time |
 | --- | --- | --- |
 | 1 | Prepare the project and select Space sources | 30 min |
-| 2 | Add repository instructions | 30 min |
+| 2 | Add instructions and inspect what the CLI loaded | 30 min |
 | 3 | Compare one task across context levels | 30 min |
 | 4 | Build and test a prompt library | 30 min |
 
@@ -28,11 +28,12 @@ You need:
 - Copilot Spaces access if you will use the live Space path;
 - a repository or approved sandbox that can hold the Storefront API;
 - Node.js and npm;
-- permission to add repository instructions and prompt files.
+- permission to add repository instructions and prompt files;
+- standalone Copilot CLI access with `/env` and `/instructions`.
 
-If Copilot Spaces or GitHub Copilot is unavailable, stop the lab. A local context
-packet can support later review, but it does not replace creating and testing a
-Space.
+If Copilot Spaces, GitHub Copilot, or a required CLI command is unavailable, stop
+the lab. A local context packet does not replace creating a Space or inspecting
+the loaded instructions.
 
 Create a writable copy:
 
@@ -41,6 +42,7 @@ mkdir -p ~/copilot-labs/session-06
 cp -R sessions/session-06-spaces-and-context/lab/starter/ecommerce-project \
   ~/copilot-labs/session-06/storefront-api
 cp sessions/session-06-spaces-and-context/lab/starter/context-comparison.md \
+  sessions/session-06-spaces-and-context/lab/starter/stale-storefront.instructions.md \
   ~/copilot-labs/session-06/storefront-api/
 cd ~/copilot-labs/session-06/storefront-api
 npm install
@@ -122,6 +124,34 @@ Create `.github/copilot-instructions.md` in the Storefront API:
 - Keep examples and tests on synthetic data.
 ```
 
+### Inspect a stale instruction before implementation (10 minutes)
+
+In this copied workspace only, create `.github/instructions/` and copy
+`stale-storefront.instructions.md` into it as
+`storefront-style.instructions.md`. Read the file before starting the CLI.
+It deliberately conflicts with the current ES-module contract.
+
+Start `copilot` from the Storefront project and run:
+
+```text
+/env
+/instructions
+```
+
+Inspect instruction source paths and any file-match scope shown by the client.
+Do not toggle or edit personal, organization, or security instructions. In
+`context-comparison.md`, name the project instruction and the stale route note,
+then compare both with `package.json` and an existing route.
+
+Ask Copilot to identify the conflict without editing. Correct only the stale
+training note to require ES modules. Restart the CLI and inspect `/env` and
+`/instructions` again before continuing. A file appearing in a list proves
+discovery, not that every scoped instruction applies to every task or that the
+model followed it.
+
+If another source conflicts, stop and ask the trainer who owns it. Do not claim
+that an instruction in the prompt overrides managed rules.
+
 Ask Copilot to plan the low-stock endpoint:
 
 ```text
@@ -156,6 +186,7 @@ Compare your instruction file with `lab/solution/ecommerce-project/.github/copil
 - [ ] Invalid thresholds produce a structured `400` response.
 - [ ] Existing product routes still work.
 - [ ] `context-notes.md` records one instruction Copilot followed and one item you still had to review.
+- [ ] CLI inspection identified the stale training source and its corrected text.
 
 ## Stage 3: Compare one task across context levels (30 minutes)
 
@@ -236,3 +267,8 @@ Submit the `storefront-api/` workspace with:
 5. Low-stock endpoint verification and the final context choice.
 
 **Done:** Another engineer can see which sources were selected, how each context layer changed the result, and how to verify the project-specific output.
+
+## Command reference
+
+Checked October 15, 2026:
+[Copilot CLI environment and instruction commands](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference).

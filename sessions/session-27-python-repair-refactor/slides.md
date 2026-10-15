@@ -258,6 +258,24 @@ Keep public behavior stable.
 
 ---
 
+# Use Python LSP after the tests are green
+
+```text
+/lsp show
+/lsp test python
+```
+
+Ask for the definition and references of `severity_for`.
+Inspect the actual LSP operation and check its locations.
+
+Then read `service.py` for inline duplicate rules: they are not necessarily
+references to that function.
+
+Approve `/plan` before structural edits. The lookup uses five minutes of the
+existing 25-minute refactor block.
+
+---
+
 # Review Copilot output like a patch
 
 Ask:

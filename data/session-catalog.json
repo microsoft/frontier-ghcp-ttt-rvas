@@ -32,7 +32,7 @@
       "slug": "session-03-prompt-engineering",
       "module": "1",
       "title": "Prompt Engineering Fundamentals",
-      "description": "How to construct prompts that reliably produce quality output \u2014 context, specificity, iteration, and custom instructions.",
+      "description": "Build a todo API with focused prompts, check a CLI /refine rewrite, and compare context before accepting changes.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -41,7 +41,7 @@
       "slug": "session-04-copilot-cli",
       "module": "2",
       "title": "GitHub Copilot CLI & App",
-      "description": "Using standalone Copilot CLI for terminal work, with Copilot App positioned alongside the VS Code hands-on baseline.",
+      "description": "Critique a repair plan, inspect controls and fleet results, practise queueing and recovery, and check terminal automation.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -59,7 +59,7 @@
       "slug": "session-06-spaces-and-context",
       "module": "2",
       "title": "Copilot Spaces & Context Management",
-      "description": "Curated context sets, repository indexing, and managing what Copilot knows to improve output quality at scale.",
+      "description": "Curate Storefront context, inspect loaded CLI instructions, correct a stale rule, and compare resulting behavior.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -68,7 +68,7 @@
       "slug": "session-07-code-review-prs",
       "module": "2",
       "title": "Copilot for Code Review & PRs",
-      "description": "AI-powered pull request reviews, automated summaries, issue-to-PR workflows, and Copilot Autofix in action.",
+      "description": "Compare human review, local /review and /security-review, and Copilot PR review; triage findings and check focused fixes.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -104,7 +104,7 @@
       "slug": "session-11-custom-agents",
       "module": "3",
       "title": "Custom Agents & Agent Profiles",
-      "description": "Building purpose-built agents with custom instructions, tool restrictions, and persona definitions for specific team workflows.",
+      "description": "Check a JavaScript LSP lookup, tighten a custom-agent profile, and require a live stop before an out-of-scope source change.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -113,7 +113,7 @@
       "slug": "session-12-agent-skills-ecosystem",
       "module": "3",
       "title": "Agent Skills & the Copilot Ecosystem",
-      "description": "Packaging reusable domain knowledge as agent skills, discovering community skills, and orchestrating multi-agent workflows.",
+      "description": "Test live repository skills, compare pinned interviews before planning, and review scoped Chronicle suggestions without auto-applying them.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -221,7 +221,7 @@
       "slug": "session-24-orchestrate-workstreams",
       "module": "7",
       "title": "Orchestrate Agents and Workstreams",
-      "description": "Use the built-in orchestrate skill to supervise child sessions, redirect weak work, and consolidate only accepted evidence.",
+      "description": "Supervise live child sessions over GitHub issues or local developer inputs; redirect work and reconcile checked findings.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -248,7 +248,7 @@
       "slug": "session-27-python-repair-refactor",
       "module": "2",
       "title": "Repair and Refactor a Broken Python Application",
-      "description": "Repair a broken Python application, stabilize its tests, and refactor the code without changing required behavior.",
+      "description": "Repair Python in failure order, check LSP references against inline rules, and refactor from an accepted plan without changing reports.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -266,7 +266,7 @@
       "slug": "session-29-copilot-app-for-developers",
       "module": "2",
       "title": "GitHub Copilot App for Developers",
-      "description": "Move a bounded engineering change from chat and isolated project sessions through evidence-backed implementation, independent critique, pull-request readiness, and a manual read-only automation.",
+      "description": "Compare rubber-duck and spar critiques in checked app workspaces, return a forked plan note, review the repair, and assess PR readiness.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     }

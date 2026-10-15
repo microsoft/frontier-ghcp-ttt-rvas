@@ -62,9 +62,46 @@ Accept, request revision, or implement manually
 
 # Required access
 
-Confirm Copilot review, pull-request access, Git, Node.js, and npm before the lab.
-If a requirement is missing, stop and resolve it. A worksheet-only review does not
-replace the pull-request workflow.
+Check CLI `/review` and `/security-review`, Copilot PR review, Git, Node.js, and npm.
+Use a private training remote with the baseline branch already present.
+
+**Stop if a command or review access is missing.** A worksheet does not replace
+the required runs.
+
+---
+
+# Review the same diff through separate passes
+
+1. Record the human verdict before assisted review.
+2. Leave the patch uncommitted and run `/review`.
+3. Run `/security-review` against that same local patch.
+4. Triage both outputs, then commit and request Copilot PR review.
+5. Repeat the local commands on the correction diff before committing fixes.
+
+Keep the original verdict. Record no-findings results honestly.
+
+---
+
+# A finding needs support
+
+| Claim | Check |
+| --- | --- |
+| Exposed password field | Inspect the actual response and add a regression test |
+| Database compromise | The mock route never executes SQL; reject that claim |
+| Leaked credential | The strings are fake and unused; do not claim a live leak |
+| Pagination defect | Check page-one behavior separately from security review |
+
+**Record:** review source, file/line, impact, check, and triage decision.
+
+---
+
+# Security review has a narrow scope
+
+`/security-review` examines current local changes.
+It is read-only and does not replace repository security scanning.
+
+A clean result does not prove that a change is secure.
+The human reviewer still decides.
 
 ---
 
@@ -76,8 +113,8 @@ replace the pull-request workflow.
 | --- | --- | --- |
 | 0:00 | Review workflow and roles | Define accountability |
 | 0:08 | Summaries and descriptions | Separate draft from evidence |
-| 0:18 | Manual and automatic review | Show policy controls |
-| 0:28 | End-to-end PR demo | Apply the rubric |
+| 0:18 | Local commands and PR review | Keep the patch uncommitted |
+| 0:28 | Defect and triage demo | Check behavior and reject unsupported claims |
 | 0:43 | Suggestions and conflicts | Preserve author intent |
 | 0:51 | Limits and adoption | Design human gates |
 | 0:58 | Lab handoff and Q&A | Assign reviewer roles |
@@ -303,7 +340,8 @@ Learners will:
 5. make an explicit final human decision.
 
 **Final deliverable:** Review notes, the corrected project, conflict results, and
-the final decision.
+the final decision. Include initial and correction outputs from `/review` and
+`/security-review`, with triage and a private training PR reference.
 
 ---
 

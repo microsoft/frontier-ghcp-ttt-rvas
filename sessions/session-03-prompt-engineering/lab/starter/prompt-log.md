@@ -14,6 +14,16 @@
 | Add tests |  |  |  |
 | Apply the change request |  |  |  |
 
+## `/refine` comparison
+
+- CLI version:
+- Rough request:
+- Actual rewritten prompt:
+- Requirements checked against the tests:
+- Invented or missing detail, if any:
+- My corrections and accepted prompt:
+- Project diff before submitting the accepted prompt:
+
 ## Context experiment
 
 Record how the suggestion changed with `examples/response-shapes.js` open and

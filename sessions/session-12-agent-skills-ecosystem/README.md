@@ -8,9 +8,12 @@
 ## Overview
 
 Skills capture reusable procedures owned by the repository. Learners build one
-skill under `.github/skills/`, validate its directory and frontmatter, then run
-three deterministic scenarios: a matching API task, a documentation task that
-must not trigger, and a matching task blocked by a missing reviewer.
+skill under `.github/skills/` and test matching, non-matching, and missing-reviewer
+scenarios. They then check live loading and compare the local `decision-interview`
+skill with a pinned copy of Matt Pocock's `grill-me` and its `grilling` dependency.
+The accepted interview decisions become inputs to `/plan`.
+Learners finish with scoped `/chronicle improve` suggestions and check whether
+actual session friction belongs in instructions, a skill, or neither.
 
 ## Learning outcomes
 
@@ -20,12 +23,16 @@ must not trigger, and a matching task blocked by a missing reviewer.
 - Stop visibly when required evidence or approval is missing.
 - Run one bounded scenario and inspect its result.
 - Maintain skills through an owner and repository review.
+- Inspect community skill dependencies and license before loading them.
+- Compare two live interviews, then trace owner decisions into an implementation plan.
+- Review repository-scoped session suggestions without applying them automatically.
 
 ## Required access
 
-Learners need Node.js 20 or later. A supported GitHub Copilot surface is optional
-because the lab includes a local contract runner. If live loading is unavailable,
-the same skill remains usable as a manual checklist.
+Learners need Node.js 22 or later and the standalone Copilot CLI with project
+skill loading, `/plan`, and `/chronicle improve`. **Stop if required access is unavailable.**
+The deterministic runner checks its own contract; it does not replace live skill
+invocation. Session 21 supplies reusable interview assets but is not a prerequisite.
 
 | Resource | Location |
 | --- | --- |
@@ -34,3 +41,5 @@ the same skill remains usable as a manual checklist.
 | Lab | [`lab/README.md`](lab/README.md) |
 | Completed skill | [`lab/solution/skills-project/.github/skills/api-design/SKILL.md`](lab/solution/skills-project/.github/skills/api-design/SKILL.md) |
 | Expected output | [`lab/solution/skills-project/EXPECTED-OUTPUT.md`](lab/solution/skills-project/EXPECTED-OUTPUT.md) |
+| Pinned community snapshot | [`lab/starter/community-interview/README.md`](lab/starter/community-interview/README.md) |
+| Interview comparison reference | [`lab/solution/interview-comparison-reference.md`](lab/solution/interview-comparison-reference.md) |

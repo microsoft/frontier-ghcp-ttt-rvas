@@ -17,6 +17,8 @@ The minimum viable path to Copilot productivity. This track covers installation,
 - GitHub account with Copilot access
 - VS Code installed
 - Basic Git proficiency
+- Node.js 22 or later and standalone CLI authentication before Session 03's `/refine` exercise
+- CLI commands and local sandbox support listed in Session 04's preflight
 
 ## Sessions
 

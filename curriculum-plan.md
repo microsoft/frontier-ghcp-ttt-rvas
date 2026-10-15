@@ -50,8 +50,8 @@ Module 7: Product and Delivery Teams ──────────────�
 | Audience                  | Recommended Path                 | Sessions     | Duration   |
 | ------------------------- | -------------------------------- | ------------ | ---------- |
 | **Copilot Beginners**     | Module 1 only                    | 01 to 03        | 9 hrs      |
-| **Copilot Practitioners** | Modules 1 to 2                      | 01 to 07, 29, 27, 26 | 30 hrs |
-| **Agentic Developers**    | Modules 1 to 3                      | 01 to 12, 29    | 39 hrs     |
+| **Copilot Practitioners** | Modules 1 to 2 + developer orchestration | 01 to 07, 29, 24, 27, 26 | 33 hrs |
+| **Agentic Developers**    | Modules 1 to 3 + developer orchestration | 01 to 12, 29, 24 | 42 hrs |
 | **DevOps Engineers**      | Module 1 + Session 05 + Module 4 | 01 to 05, 13 to 15 | 21 hrs     |
 | **SDK Application Developers** | Modules 1 to 3 + Session 17 | 01 to 12, 17 | 39 hrs |
 | **Product and Delivery Teams** | Module 7                    | 20 to 25        | 18 hrs     |
@@ -82,8 +82,9 @@ Module 7: Product and Delivery Teams ──────────────�
 | 27  | Repair and Refactor a Broken Python Application | Intermediate | Sessions 01 to 07 | 3 hrs |
 | 26  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions 01 to 07 | 3 hrs |
 
-**Optional specialization:** Session 29 requires GitHub Copilot app access.
-Confirm access before scheduling the session.
+**App access:** Session 29 requires GitHub Copilot app access. The developer
+tracks then use Session 24's developer route, which needs `/orchestrate` but does
+not require Sessions 20 to 23 or GitHub MCP. Check access before scheduling.
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -126,7 +127,7 @@ Confirm access before scheduling the session.
 | 21 | Interview Ideas and Shape Better Work | Beginner | Session 20 | 3 hrs |
 | 22 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions 20 to 21; GitHub MCP write access | 3 hrs |
 | 23 | Build and Use a Planning Canvas | Intermediate | Sessions 20 to 22; canvas creation access | 3 hrs |
-| 24 | Orchestrate Agents and Workstreams | Intermediate | Sessions 20 to 23; orchestration access | 3 hrs |
+| 24 | Orchestrate Agents and Workstreams | Intermediate | Product route: Sessions 20 to 23; developer route: Session 29; app orchestration access | 3 hrs |
 | 25 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions 20 to 24; Automations and GitHub MCP access | 3 hrs |
 
 **Access requirement:** GitHub Copilot access is required for Sessions 20 to 25.
@@ -240,6 +241,7 @@ Teaches trainees to write effective prompts for Copilot. Covers prompt structure
 - The "neighboring tabs" effect: how open files influence suggestions
 - Comment-driven development: using comments as prompts
 - Iterative prompting: refining output through follow-up instructions
+- CLI `/refine`: review the rewrite against the task before submitting it
 - Anti-patterns: vague prompts, over-specified prompts, prompt injection risks
 - Demo: same task, three prompt strategies: compare results
 - Prompt libraries and team-shared prompt patterns
@@ -248,6 +250,7 @@ Teaches trainees to write effective prompts for Copilot. Covers prompt structure
 
 - Prompt challenge round: given a task, write the best prompt (timed exercises)
 - Refactor a poorly prompted Copilot session into a well-prompted one
+- Run `/refine` on the rough todo-store request and correct its rewrite before implementation
 - Build a small REST API endpoint using only comment-driven prompting
 - Experiment with context manipulation: open/close files, see how suggestions change
 - Create a personal prompt cheat sheet for common development tasks
@@ -259,6 +262,10 @@ Teaches trainees to write effective prompts for Copilot. Covers prompt structure
 - Use context strategically (open files, comments, naming conventions)
 - Identify and fix common prompting anti-patterns
 - Create reusable prompt templates for repeated tasks
+- Distinguish prompt rewriting from task execution and test results
+
+**Access:** Session 03 needs standalone CLI `/refine` and Node.js 22 or later.
+Prepare it before delivery; Session 04 is not a prerequisite.
 
 ---
 
@@ -269,7 +276,9 @@ Teaches trainees to write effective prompts for Copilot. Covers prompt structure
 **Module:** Copilot in Practice
 
 **Description:**
-Introduces GitHub Copilot's terminal experience through the standalone `copilot` CLI and CLI agent mode. Trainees use interactive chat, non-interactive prompts, generated shell scripts, and autonomous agent tasks without leaving the terminal. This session connects the foundational Copilot skills in Sessions 01 to 03 with IDE agent mode in Session 05. It also covers piping command output to Copilot, remote and SSH workflows, and environments where an IDE is unavailable.
+Introduces the standalone `copilot` CLI through terminal assistance, required
+planning and revision, programmatic output, and supervised `/fleet` analysis.
+Learners check generated work against local files and tests before accepting it.
 
 **Trainer Content Outline (1 hour):**
 
@@ -278,8 +287,13 @@ Introduces GitHub Copilot's terminal experience through the standalone `copilot`
 - Interactive `copilot` mode: conversational terminal assistance for commands, code, and errors
 - Non-interactive `copilot -p "<prompt>"`: generating answers, commands, and scripts from prompts
 - Slash commands: `/plan`, `/agent`, `/skills`, `/mcp`, `/model`, and when to use each
-- Plan and Autopilot modes: autonomous multi-step terminal tasks with planning and iteration
-- CLI-exclusive capabilities: piping output to Copilot, log analysis, environment debugging
+- Plan mode: challenge an assumption, revise the plan, then approve implementation
+- Rubber duck: a read-only contrasting-model critic; inspect the persistent proactive opt-in
+- Terminal-first workflows: piping output, log analysis, and environment debugging
+- `/fleet` task independence, `/tasks` inspection, usage limits, and parent reconciliation
+- Programmatic output: distinguish plain text from a JSONL event stream
+- Permission and sandbox inspection; check the installed version's soft-limit scope
+- Queue/background controls and checked recovery/worktree transitions
 - Remote/SSH workflows: when the CLI is your only Copilot surface
 - Demo: compare the same task (set up a Docker compose project) done via CLI vs. IDE
 - CLI vs. IDE decision framework: when each surface is most effective
@@ -292,18 +306,26 @@ Introduces GitHub Copilot's terminal experience through the standalone `copilot`
 - Use interactive `copilot` to explain progressively complex commands: simple → piped → scripted
 - Use `copilot -p "<prompt>"` to generate commands for file operations, git workflows, Docker, and cloud CLIs
 - Generate a multi-step shell script using Copilot CLI, then debug and refine it
-- Use CLI agent mode to scaffold a project, install dependencies, and configure a development environment
+- Repair the starter project from an accepted `/plan` revision and run its tests
+- Check `/rubber-duck` findings before approving the repair plan
+- Inspect `/permissions show`, sandbox policy, and `/limits` before a metered run
+- Queue a follow-up, background the harmless timed command, and check `/tasks`
 - Pipe real command output (error logs, test results) to Copilot for analysis
+- Parse JSONL output and check the CLI exit status separately from answer correctness
+- Run live read-only `/fleet` tasks, check child claims, and reconcile disagreements
+- Rewind a disposable edit; check `/fork worktree`, `/move`, and parent `/resume`
 - Side-by-side comparison: complete the same task in CLI and IDE, document tradeoffs
 - Create a CLI workflow cheat sheet mapping common developer tasks to optimal Copilot surface
-- **Deliverable:** A CLI workflow cheat sheet + a shell script generated and refined via Copilot CLI
+- **Deliverable:** A CLI cheat sheet, repaired project, pipeline script, and
+  workflow record with plan revisions and checked child-task results
 
 **Expected Learning Outcomes:**
 
 - Install and configure standalone `copilot` for terminal workflows
 - Use interactive and non-interactive `copilot -p "<prompt>"` workflows effectively for daily terminal work
-- Run Plan/Autopilot modes and built-in agents for autonomous multi-step terminal tasks
-- Identify CLI-exclusive capabilities and workflows where CLI outperforms the IDE
+- Revise and approve a plan before implementation
+- Supervise independent fleet tasks and check the parent's synthesis
+- Distinguish terminal-first workflows from commands also available in the app
 - Apply the CLI vs. IDE decision framework to advise teams on surface selection
 - Generate and iterate on shell scripts using Copilot CLI assistance
 
@@ -369,6 +391,7 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 - Custom instructions per Space for specialized workflows
 - `.github/copilot-instructions.md`: project-level instructions
 - `.github/prompts/*.md`: reusable prompt files for team tasks
+- CLI `/env` and `/instructions`: discovery, file-match scope, and actual behavior
 - VS Code settings: `github.copilot.chat.codeGeneration.useInstructionFiles`
 - Copilot Memory: how the agent remembers and validates knowledge (Preview)
 - Demo: before/after: same prompt with and without Space context
@@ -380,6 +403,7 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 - Add relevant files, docs, and specs to the Space
 - Set custom instructions for the Space and observe behavior changes
 - Create a `copilot-instructions.md` for a provided project with specific coding standards
+- Inspect and correct the copied stale module-style instruction, then restart and inspect again
 - Build 3 reusable prompt files for common team tasks
 - Compare Copilot's responses: no context vs. instructions vs. Space
 - **Deliverable:** A complete Copilot Space + custom instructions setup with before/after comparison
@@ -401,7 +425,10 @@ Covers how to give Copilot the right context for better results. Introduces Copi
 **Module:** Copilot in Practice
 
 **Description:**
-Focuses on using Copilot in the code review process. Covers Copilot-generated PR summaries, AI code review, review comments with suggested fixes, and how to use Copilot as a first-pass reviewer. Also covers merge conflict resolution via the cloud agent.
+Learners review a synthetic change themselves, run `/review` and
+`/security-review` on the same uncommitted diff, then compare the results with
+Copilot pull-request review. They reproduce findings, correct the code, and
+retain the human merge decision.
 
 **Trainer Content Outline (1 hour):**
 
@@ -409,29 +436,32 @@ Focuses on using Copilot in the code review process. Covers Copilot-generated PR
 - Requesting Copilot review on a PR (manual and automatic)
 - Configuring automatic reviews at repo and org level
 - Copilot-generated commit messages and PR descriptions
-- Quality gates: using Copilot review as a pre-human-review step
-- Merge conflict resolution with the cloud agent
+- Human review before assisted review to preserve an independent initial verdict
+- Local `/review` and `/security-review`: scope, claim checking, and false positives
+- Security review limits: the command does not replace repository scanners
+- Merge conflict resolution with tests
 - Demo: a complete PR lifecycle with Copilot assistance
 - Limitations: what Copilot review catches vs. what it misses
 - Team adoption patterns for Copilot-assisted review
 
 **Lab Outline (2 hours):**
 
-- Create a feature branch with intentional code quality issues
-- Open a PR and request Copilot review
-- Analyze Copilot's review comments: which are valid? Which are noise?
-- Apply Copilot's suggested fixes with one-click
-- Use Copilot to generate a PR summary and improve commit messages
-- Create a merge conflict and resolve it via the cloud agent
-- Practice the reviewer workflow: use Copilot to assist your own review of a partner's PR
-- **Deliverable:** A PR with Copilot review, human review layered on top, and a reflection on review quality
+- Create a feature branch with intentional defects and record a human review
+- Run both local commands before committing the change
+- Open a private training PR and compare its Copilot review with the local results
+- Accept, reject, or leave findings unresolved with file references and reasons
+- Fix defects, add focused tests, and rerun local review on the correction diff
+- Resolve a conflict without losing either branch's intent
+- **Deliverable:** The reviewed training PR, corrected project, and finding-to-test
+  record with the final human decision
 
 **Expected Learning Outcomes:**
 
 - Use Copilot to generate PR summaries and review comments
 - Configure automatic Copilot reviews at repo/org level
 - Evaluate Copilot review quality and identify blind spots
-- Resolve merge conflicts using the cloud agent
+- Run local code and security review and distinguish demonstrated impact from speculation
+- Resolve merge conflicts and test the result
 - Integrate Copilot into a team code review workflow
 
 ---
@@ -444,24 +474,31 @@ Focuses on using Copilot in the code review process. Covers Copilot-generated PR
 **Duration:** 3 hours
 
 **Description:**
-Learners use the GitHub Copilot app to move a bounded engineering change from
-chat and isolated project sessions through evidence-backed implementation,
-independent critique, pull-request readiness, and a manual read-only automation.
+Learners use the GitHub Copilot app to plan a small engineering change, critique
+the plan with `/rubber-duck`, and approve a revision before implementation. They
+review the resulting diff and record pull-request readiness.
 
 **Trainer Content Outline (1 hour):**
 
 - Choose between chat, project sessions, and the repository workflow
 - Keep parallel work isolated and give each session a clear stop condition
-- Separate implementation from independent critique
+- Challenge a plan with `/rubber-duck` before approving implementation
+- Explain automatic contrasting-model selection and the critic's read-only role
+- App `/fork`, checked `/spar` reasoning, and reviewed `/merge-to-parent`
+- Separate implementation from independent code critique
+- Run app `/review` on the active diff and check its findings
 - Gather test and review evidence before a pull request decision
 - Use a manual read-only automation without expanding repository access
 
 **Lab Outline (2 hours):**
 
-- Start from a bounded engineering change and explicit acceptance criteria
+- Start from a small engineering change with testable acceptance criteria
+- Use `/plan`, critique it, and approve a revised plan
+- Before implementation, compare a forked `/spar` argument and return only the checked plan note
 - Run the implementation in an isolated project session
 - Ask a separate session to critique the change and its evidence
 - Resolve findings and prepare a pull-request readiness record
+- Triage active-diff code-review findings before committing
 - Run the supplied manual read-only automation
 - **Deliverable:** A tested change, independent critique, pull-request readiness
   record, and automation evidence
@@ -471,11 +508,13 @@ independent critique, pull-request readiness, and a manual read-only automation.
 - Select the right Copilot App surface for a development task
 - Isolate parallel sessions and define useful stop conditions
 - Use independent critique to find gaps in code or evidence
+- Revise a plan before implementation and check active-diff review claims
+- Distinguish a local fork return from merging a GitHub pull request
 - Make a pull-request readiness decision from recorded proof
 - Run and review a manual read-only automation
 
-> **Optional specialization:** GitHub Copilot app access is required. Confirm
-> access before scheduling the session.
+> **App access is required.** Stop if a required command is unavailable.
+> Developer tracks continue with Session 24's developer orchestration route.
 
 ---
 
@@ -615,6 +654,7 @@ Covers custom GitHub agents, which are defined in Markdown files with YAML front
 - Repository, organization, and enterprise-level agents
 - Creating agents for specific domains: test-writer, readme-creator, security-reviewer
 - Agent tool configuration: which tools and MCP servers each agent can use
+- CLI LSP setup, server-start checks, and inspected definition/reference operations
 - Invoking custom agents: Chat, cloud agent, CLI
 - Comparison: custom agents vs. MCP servers vs. custom instructions: when to use each
 - Demo: build a custom agent and assign it work
@@ -622,13 +662,12 @@ Covers custom GitHub agents, which are defined in Markdown files with YAML front
 
 **Lab Outline (2 hours):**
 
-- Create a custom agent profile (`.github/agents/test-writer.md`) that specializes in writing tests
-- Create a second agent for documentation generation
-- Configure each agent with specific tools and MCP servers
-- Test agents via Copilot Chat: invoke by name, observe specialized behavior
-- Assign a GitHub issue to a custom agent and review the results
-- Iterate on agent instructions based on output quality
-- **Deliverable:** 2 working custom agents deployed in a repository, with test results documented
+- Inspect JavaScript LSP references and distinguish a caller from a CommonJS export
+- Fail the weak test-writer contract and create `.github/agents/test-writer.agent.md`
+- Check the learner's local profile with the same contract
+- Load it through CLI `/agent` and request behavior that would require a source edit
+- Check that the test-only agent stops without changing production code
+- **Deliverable:** The tightened profile, contract results, and actual LSP/live-run record
 
 **Expected Learning Outcomes:**
 
@@ -637,6 +676,10 @@ Covers custom GitHub agents, which are defined in Markdown files with YAML front
 - Invoke custom agents across Copilot Chat, cloud agent, and CLI
 - Evaluate when to build a custom agent vs. use MCP vs. use custom instructions
 - Distribute agents at the organization level
+- Distinguish language-server startup from a checked symbol lookup
+
+**Access:** Session 11 requires the standalone CLI and working JavaScript LSP
+server. Static tests or manual traces do not replace the live run.
 
 ---
 
@@ -647,7 +690,10 @@ Covers custom GitHub agents, which are defined in Markdown files with YAML front
 **Module:** Agentic Workflows
 
 **Description:**
-Introduces agent skills, which are folders of instructions, scripts, and resources that Copilot loads for specialized tasks. Covers skill creation, the open Agent Skills specification, personal and project skills, and examples from the GitHub community.
+Learners build and test a repository skill, then check its actual loading in
+Copilot. They compare the local `decision-interview` skill with a pinned copy of
+Matt Pocock's `grill-me` and its `grilling` dependency before passing accepted
+decisions to `/plan`.
 
 **Trainer Content Outline (1 hour):**
 
@@ -657,27 +703,32 @@ Introduces agent skills, which are folders of instructions, scripts, and resourc
 - Skill anatomy: SKILL.md format, when skills are loaded, confidence levels
 - Creating skills for common workflows: deployment, testing, code review
 - Community ecosystem: `github/awesome-copilot`, `anthropics/skills`
-- Notable community examples: real-world agents and skills in production
+- Community source review, pinned revisions, dependency inspection, and licensing
 - Demo: create a skill, observe behavior change, share it
 - Composing agents + skills + MCP for powerful workflows
-- The future: skill marketplaces and discovery
+- Interview first in Interactive mode; start planning from accepted decisions
+- Scoped `/chronicle improve`: inspect friction and cancel before applying suggestions
 
 **Lab Outline (2 hours):**
 
 - Create a project skill (`.github/skills/api-design/SKILL.md`) for API design patterns
-- Create a personal skill for a preferred workflow
-- Install a community skill from `github/awesome-copilot` and test it
-- Combine a custom agent + skill + MCP server into an integrated workflow
-- Document a "skill catalog" for a fictional team: which skills would benefit them?
-- **Deliverable:** 2 custom skills (project + personal), 1 community skill installed, integrated workflow demo
+- Test matching, non-matching, and missing-precondition scenarios locally
+- Check live skill loading and the missing-reviewer stop in Copilot
+- Inspect and load pinned `grill-me` plus `grilling`
+- Run both interview skills in fresh sessions with the same request and late constraint
+- Save accepted decisions and trace at least two into `/plan` steps or checks
+- Check a Chronicle recommendation against an actual correction, or record insufficient history
+- **Deliverable:** A validated repository skill, live loading results, and an
+  interview comparison with the resulting plan
 
 **Expected Learning Outcomes:**
 
-- Create project-level and personal agent skills
+- Create and test a repository skill
 - Understand the Agent Skills specification and SKILL.md format
 - Discover and install community skills
-- Compose agents, skills, and MCP servers into integrated workflows
-- Curate a skill catalog for a development team
+- Distinguish local contract tests from live skill behavior
+- Compare interview skills and carry accepted decisions into a plan
+- Decide whether session friction belongs in instructions, a skill, or neither
 
 ---
 
@@ -1105,27 +1156,34 @@ Learners create a planning canvas from a plain-language request, load the Sessio
 ### Session 24: Orchestrate Agents and Workstreams
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions 20-23; live orchestration access
+**Prerequisites:** Product route: Sessions 20 to 23; developer route: Session 29.
+Both routes require live app orchestration access.
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners select independent work from live issues, start child sessions, review
-each result, and return one parent result backed by issue evidence.
+Learners start independent child sessions, intervene when needed, and check the
+parent's result. The product route uses live issues. The developer route uses
+local Session 29 code and a synthetic PR snapshot, without GitHub MCP.
 
 **Trainer Content Outline (1 hour):**
 
 - Parent objectives and independent workstreams
-- Bounded questions, approved inputs, stop conditions, and reviewers
+- Input paths, independent questions, stop conditions, and reviewers
 - Monitoring, redirecting, and stopping sessions
 - Reviewing the parent result against live issues
+- Developer route: reconcile local test success with a blocked PR snapshot
+- Keep `/fleet` task parallelism distinct from app `/orchestrate` child sessions
 
 **Lab Outline (2 hours):**
 
-- Select workstreams from the approved issues
+- Select independent workstreams from live issues or the developer review brief
 - Run live GitHub Copilot orchestration
 - Wait, redirect, stop, accept, or reject live child-session work
 - Review the parent result and verify any approved GitHub issue update
-- **Deliverable:** An orchestration plan and reviewed parent result backed by live issues
+- Developer route: run read-only child reviews, check their claims, and resolve
+  conflicting release-readiness conclusions without writing code or updating GitHub
+- **Deliverable:** An orchestration plan, checked child results, and a reviewed
+  parent decision with issue references or local file and PR-field references
 
 ---
 
@@ -1201,6 +1259,7 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 - Separate repair work from structural refactoring
 - Trace failures from symptoms to root causes
 - Strengthen tests before changing design
+- Inspect Python LSP references and check inline copies of rules separately
 - Refactor in small steps with continuous verification
 
 **Lab Outline (2 hours):**
@@ -1208,6 +1267,8 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 - Reproduce the supplied failures
 - Repair the application until the baseline tests pass
 - Add focused tests for uncovered behavior
+- With tests green, inspect `severity_for` references and inline classification
+- Approve CLI `/plan` before the refactor
 - Refactor the repaired code and rerun the full suite
 - **Deliverable:** A repaired Python application with passing tests and documented refactoring decisions
 
@@ -1226,8 +1287,10 @@ Learners diagnose a broken Python application, restore its expected behavior, an
   - Module 4 (DevOps) can be delivered independently with Module 1 + Session 05 as prereqs
   - Session 16 is optional; it is not a prerequisite for Session 18 or Session 19
   - Session 17 is an independent SDK specialization and is not a prerequisite for Session 19
-  - Session 29 is an optional developer specialization. Confirm GitHub Copilot
-    app access before scheduling it
+  - Developer tracks require Session 29 and Session 24's developer route.
+    Check their app commands before scheduling
+  - Prepare standalone CLI access before Session 03, JavaScript LSP before
+    Session 11, and Python LSP before Session 27
   - Session 28 is the final session in the HVE Engineering track and should run
     after Sessions 10 to 11
   - Module 7 is a standalone role-based path and does not require programming experience

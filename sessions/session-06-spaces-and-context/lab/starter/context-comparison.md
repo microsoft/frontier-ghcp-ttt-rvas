@@ -1,5 +1,19 @@
 # Context Comparison Experiment
 
+## Runtime instruction inspection
+
+- CLI version and working directory:
+- Project instruction sources shown by `/env` and `/instructions`:
+- File-match scopes shown by the client:
+- Stale module-style claim:
+- Current contract and route used to check it:
+- Correction made to the copied training note:
+- Sources shown after restarting:
+- Behavior observed in the low-stock task:
+
+Do not copy tokens, personal instruction text, or unrelated environment details
+into this record.
+
 ## Task used in every experiment
 
 > Add request-logging middleware to the Storefront API. Record timestamp, method, URL, response time, and status code. Use info for 2xx, warn for 4xx, and error for 5xx. Add no logging package.

@@ -23,11 +23,11 @@ Session 12 | 3 hours
 | Segment | Time |
 | --- | --- |
 | Skill directory and loading model | 8 min |
-| Required frontmatter and description | 10 min |
-| Trigger and non-trigger design | 12 min |
-| Preconditions and visible failure | 12 min |
-| Validation and bounded runner | 10 min |
-| Candidate review and lab handoff | 8 min |
+| Required frontmatter and description | 8 min |
+| Selection and visible failure | 10 min |
+| Validation versus live invocation | 10 min |
+| Pinned interview comparison and plan handoff | 18 min |
+| Access check and lab handoff | 6 min |
 
 ---
 
@@ -192,6 +192,58 @@ The local runner is a teaching harness, not a replacement skill platform.
 
 ---
 
+# Local tests and live skills prove different things
+
+| Check | What it shows |
+| --- | --- |
+| Local directory validator | The learner's file has the required structure |
+| Harness unit tests | The fixed scenario contract behaves as expected |
+| `/skills info` and actual invocation | Copilot discovered and used the skill |
+
+**Live CLI access is required.** Stop if a required skill cannot load.
+
+---
+
+# Inspect the pinned interview skill
+
+Matt Pocock's `grill-me` is a community entry point that invokes `grilling`.
+
+- Check the recorded revision and SHA-256 hashes.
+- Read both files and the retained MIT license.
+- Load only the reviewed project-local copy.
+- Keep permissions and the agreed usage limit in place.
+
+No marketplace installer or live download is needed for this lab.
+
+---
+
+# Compare the same request twice
+
+Use separate fresh Interactive sessions:
+
+| Run | Skill |
+| --- | --- |
+| Local | `/decision-interview` from Session 21 |
+| Community | `/grill-me` with its `grilling` dependency |
+
+Use the same request, owner decisions, and late visibility constraint.
+Record actual loading and changes to the decisions.
+
+---
+
+# Interview first, plan second
+
+Keep Plan mode off while decisions are unsettled.
+
+1. Finish the interview and review the decisions.
+2. Save the accepted brief with open questions.
+3. Start a fresh `/plan` session from that brief.
+4. Name two decisions that change plan steps or acceptance checks.
+
+No implementation or live work-item creation is part of this comparison.
+
+---
+
 # Review candidates before adaptation
 
 Check:
@@ -207,6 +259,23 @@ Do not run an unfamiliar script just to inspect it.
 
 ---
 
+# Learn from actual session friction
+
+```text
+/chronicle improve
+```
+
+This subcommand scopes history to the current repository or working directory.
+Check a recommendation against an actual correction.
+
+Choose instructions, a skill, or neither. Cancel the apply step; suggestions may
+start selected. Do not reindex or inspect unrelated history for this lab.
+
+Too little history is a valid result. This uses the last five minutes of the
+45-minute comparison block.
+
+---
+
 # Lab handoff
 
 1. Create `api-design/SKILL.md`.
@@ -215,7 +284,9 @@ Do not run an unfamiliar script just to inspect it.
 4. Run the non-trigger scenario.
 5. Run the missing-reviewer scenario.
 6. Finish with the bounded demo.
-7. Record live loading as executed or **not executed**.
+7. Check live API-skill invocation and the missing-reviewer stop.
+8. Compare both live interviews and trace decisions into `/plan`.
+9. Check scoped Chronicle suggestions without auto-applying them.
 
-**The final evidence must show both correct application and a visible precondition
-failure.**
+**Submit actual outputs.** The harness or prepared transcripts cannot replace
+live loading, either interview, or the plan handoff.

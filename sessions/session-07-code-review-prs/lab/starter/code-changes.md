@@ -8,7 +8,7 @@ Apply the changes below to `review-project` on a new `feature/add-user-managemen
 
 ---
 
-### Change 1: Add User Route with SQL Injection Vulnerability
+### Change 1: Construct SQL from untrusted input
 
 Add this code to `src/api.js` (after the items routes):
 
@@ -23,7 +23,10 @@ app.get('/api/users/search', (req, res) => {
 });
 ```
 
-**Issue:** SQL injection. User input is interpolated directly into a query string.
+**Review issue:** Untrusted input is interpolated into SQL text and echoed in the
+response. This lab has no database connection, so it does not demonstrate
+exploitable SQL execution. Reviewers must distinguish that fact from the risk of
+copying this construction into a database-backed route.
 
 ---
 
@@ -92,12 +95,14 @@ app.post('/api/users', async (req, res) => {
 Add this near the top of `src/api.js`:
 
 ```javascript
-const JWT_SECRET = 'my-super-secret-key-2026';
-const API_KEY = 'sk-proj-abc123def456ghi789';
+const JWT_SECRET = 'training-only-not-a-real-secret';
+const API_KEY = 'training-only-not-a-real-api-key';
 ```
 
-**Issue:** Secrets are hardcoded in source code. They should be in environment
-variables.
+**Review issue:** These synthetic placeholders model hardcoded configuration.
+They are not live credentials and are unused in this exercise. Do not claim an
+actual credential leak or add real credentials. Discuss how real configuration
+should be supplied only when that becomes part of the application.
 
 ---
 
@@ -123,7 +128,7 @@ app.get('/api/products', (req, res) => {
 
 ## After Making Changes
 
-1. Review the diff, then commit only the intended files: `git add src/api.js src/utils.js && git commit -m "Add user management feature"`
-2. Push: `git push -u origin feature/add-user-management`
-3. Open a PR: `gh pr create --title "Add user management" --body "Adds user endpoints"`
-4. Request Copilot review from the PR page, if the approved workflow allows it.
+1. Keep the patch uncommitted. Write your human review first.
+2. Run `/review`, then `/security-review`, against the same local diff.
+3. Triage both results in `fix-evaluation-template.md`. Record misses and rejected claims.
+4. Follow the main lab's private training PR steps. Do not merge intentional defects.

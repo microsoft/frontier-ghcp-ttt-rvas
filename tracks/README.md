@@ -7,8 +7,8 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 | Track                                               | Target Audience                                    | Sessions   | Duration   | Difficulty            |
 | --------------------------------------------------- | -------------------------------------------------- | ---------- | ---------- | --------------------- |
 | [Copilot Essentials](beginner-essentials.md)        | Teams just starting with Copilot                   | 5          | 15 hrs     | Beginner              |
-| [Developer Productivity](developer-productivity.md) | Individual developers maximizing daily output      | 8          | 24 hrs     | Beginner to Intermediate |
-| [Agentic Development](agentic-development.md)       | Teams adopting agentic workflows                   | 13         | 39 hrs     | Beginner to Advanced     |
+| [Developer Productivity](developer-productivity.md) | Individual developers maximizing daily output      | 9          | 27 hrs     | Beginner to Intermediate |
+| [Agentic Development](agentic-development.md)       | Teams adopting agentic workflows                   | 14         | 42 hrs     | Beginner to Advanced     |
 | [DevOps & Automation](devops-automation.md)         | DevOps / Platform engineers                        | 7          | 21 hrs     | Beginner to Advanced     |
 | [Product and Delivery Teams](product-and-delivery-teams.md) | PMs, POs, BAs, project managers, delivery leads | 6 | 18 hrs | Beginner to Intermediate |
 | [HVE Engineering](hve-engineering.md)               | Developers, engineering leads, and HVE trainers     | 10         | 31 hrs     | Beginner to Advanced     |
@@ -21,10 +21,10 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
                                     │   → Copilot Essentials (15 hrs)
                                     │
 "How experienced is your team?" ────┼─ Using Copilot daily?
-                                    │   → Developer Productivity (24 hrs)
+                                    │   → Developer Productivity (27 hrs)
                                     │
                                     ├─ Ready for agents?
-                                    │   → Agentic Development (39 hrs)
+                                    │   → Agentic Development (42 hrs)
                                     │
                                     ├─ DevOps / Platform focus?
                                     │   → DevOps & Automation (21 hrs)
@@ -58,7 +58,12 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
 - Tracks can be customized by adding or removing sessions based on specific customer needs
 - Most sessions use the standard 3-hour format. Session 28 uses a 1-hour trainer
   segment and a 3-hour lab.
-- Session 29 is an optional specialization in the Developer Productivity and
-  Agentic Development tracks. Its evidence fallback supports delivery without
-  live GitHub Copilot app access.
+- Developer Productivity and Agentic Development include Sessions 29 and 24's
+  developer route. Both require live app access; prepared outputs do not complete
+  the labs. Session 12's interview comparison requires live CLI skill loading.
+- Prepare CLI `/refine` before Session 03, not after it. Session 04 needs local
+  sandbox support and checked limit behavior. Session 11 needs JavaScript LSP;
+  Session 27 needs Python LSP. Check the session preflights before scheduling.
+- Session 29 also requires `/fork`, `/merge-to-parent`, and `/spar`. These app
+  commands do not replace the CLI's worktree and recovery exercise.
 - See the individual session folders in [`sessions/`](../sessions/) for detailed materials

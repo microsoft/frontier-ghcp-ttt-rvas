@@ -10,6 +10,10 @@ Teach learners to direct four issue-based workstreams through live GitHub Copilo
 orchestration. The orchestration surface holds operational state. The plan holds
 only the decisions needed before work starts.
 
+For developers after Session 29, use the local PR-readiness route instead. It
+reviews implementation behavior, tests, and a supplied snapshot without GitHub
+MCP access. Preserve the product route's live issue workflow and Session 25 handoff.
+
 ## One-hour plan
 
 | Time | Segment | Outcome |
@@ -24,12 +28,13 @@ only the decisions needed before work starts.
 ## Required preflight
 
 - Confirm `/orchestrate` and the built-in `orchestrate` skill.
-- Confirm GitHub MCP read access to the approved issues.
+- Product route: check GitHub MCP read access to the selected issues.
+- Developer route: run the supplied Python tests and check local project read access.
 - Use synthetic or approved sanitized work.
 - Confirm that the trainer can open, redirect, and stop child sessions.
 - Decide who may approve issue updates.
 
-**Do not deliver the lab if orchestration or issue access is unavailable.**
+**Stop if orchestration or the selected route's source access is unavailable.**
 
 ## Minimal workstream plan
 
@@ -74,6 +79,36 @@ systems without approval.
 Session 25 reads the live issues and the reviewed parent result. There is no manual
 delivery-status record or static handoff.
 
+## Developer demonstration
+
+Use the developer route in `lab/README.md` and keep the same one-hour teaching
+plan. Replace the four issue questions with implementation, tests, and PR-state
+questions from `developer-orchestration-plan.md`.
+
+Before delivery:
+
+1. Copy the supplied reference implementation and six tests from Session 29.
+2. Run the documented unittest command and retain the actual result.
+3. Read `developer-review-brief.md` and `pr-snapshot.json`.
+4. Check that child sessions can read the shared files without editing or network use.
+5. Agree a usage limit and identify the human reviewer.
+
+Run `/orchestrate` with the accepted questions. Open each child on the app
+surface. Redirect the test reviewer to criterion 5 after its first answer; inspect
+the revised answer rather than assuming the first was wrong.
+
+Require the parent to evaluate the provisional author note that green local
+tests make the PR ready. The supplied snapshot has a failed required integration
+check and unresolved blocking thread `R1`. Those remain blockers even when local
+tests pass. Children may agree; never fabricate a disagreement.
+
+The developer lab spends 25 minutes on the work split, 30 on live inspection,
+35 on steering and reconciliation, and 30 on parent review. Grade checked
+findings and the redirection, not an exact child count or speedup.
+
+Use `lab/solution/developer-review-reference.md` after the human review. It
+explains the source facts but cannot replace live child results.
+
 ## Session 16 distinction
 
 Session 16 covers an optional persistent-team framework. Session 24 covers
@@ -86,6 +121,10 @@ Learners submit:
 1. the approved orchestration plan;
 2. the live orchestration result;
 3. fresh-read proof for any approved GitHub issue update.
+
+For the developer route, require the accepted developer plan and the app's
+reviewed parent result, including the redirection, rejected readiness claim, and
+observed usage. Do not require an issue update or Session 25 handoff.
 
 For an Azure Boards delivery, use the
 [trainer supplement](../lab/azure-boards/README.md). GitHub Copilot still performs

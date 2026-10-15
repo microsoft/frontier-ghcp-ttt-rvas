@@ -7,7 +7,7 @@
   "scripts": {
     "test": "node --test test/*.test.js",
     "check:weak": "node scripts/check-profile.js .github/agents/weak-test-writer.agent.md",
-    "check:tight": "node scripts/check-profile.js ../../solution/agent-project/.github/agents/test-writer.agent.md"
+    "check:tight": "node scripts/check-profile.js .github/agents/test-writer.agent.md"
   },
   "engines": {
     "node": ">=20"

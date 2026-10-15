@@ -1,7 +1,7 @@
 # Track: Developer Productivity
 
 **Target Audience:** Individual developers wanting to maximize daily productivity with Copilot
-**Duration:** 24 hours (8 sessions × 3 hrs)
+**Duration:** 27 hours (9 sessions × 3 hrs)
 **Difficulty:** Beginner → Intermediate
 **Recommended Delivery:** 3 to 4 days (2 to 3 sessions per day)
 
@@ -11,9 +11,9 @@
 
 The core Copilot workflow track for developers who want to get more from Copilot
 each day. It covers suggestions, Chat, prompting, CLI, agent mode, context,
-review, and the GitHub Copilot app. Session 29 is an optional specialization for
-developers who want an app-based workflow with isolated sessions and independent
-critique.
+review, and the GitHub Copilot app. Session 29 teaches isolated implementation and
+plan critique. Session 24's developer route adds supervised child sessions over
+local code and a synthetic PR snapshot.
 
 ## Prerequisites
 
@@ -22,6 +22,12 @@ critique.
 - VS Code installed with GitHub Copilot extension
 - Basic Git proficiency
 - Familiarity with pull request workflows
+- Copilot CLI access, including `/plan`, `/fleet`, `/review`, and `/security-review`
+- Copilot app access with `/rubber-duck` and `/orchestrate`
+- Node.js 22 or later and CLI `/refine` before Session 03
+- App `/fork`, `/merge-to-parent`, and `/spar` for Session 29
+- Local sandbox and installed-version limit checks for Session 04
+- Python 3.10 or later for Sessions 29 and 24
 
 ## Sessions
 
@@ -35,10 +41,11 @@ critique.
 | 6       | 06          | Copilot Spaces & Context Management     | Intermediate | 3 hrs      |
 | 7       | 07          | Copilot for Code Review & Pull Requests | Intermediate | 3 hrs      |
 | 8       | 29          | GitHub Copilot App for Developers       | Intermediate | 3 hrs      |
+| 9       | 24          | Orchestrate Agents and Workstreams: developer route | Intermediate | 3 hrs |
 
-> **Optional specialization:** Session 29 requires GitHub Copilot app access for
-> the live route. A supplied evidence fallback preserves the workflow and
-> learner deliverables when app access is unavailable.
+**App access is required for Sessions 29 and 24.** Stop those labs if access or a
+required command is unavailable. Prepared outputs support trainer explanation
+only. The Session 24 developer route does not require Sessions 20 to 23 or MCP.
 
 ## Recommended Delivery Schedule
 
@@ -47,8 +54,11 @@ critique.
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
 | Day 1 | Sessions 01, 02, 03 | Foundations: setup, Chat, prompting |
-| Day 2 | Sessions 04, 05     | Multi-surface: CLI + agent mode     |
-| Day 3 | Sessions 06, 07, 29 | Context, code review + app workflow |
+| Day 2 | Sessions 04, 05, 06 | CLI, agent mode, and context |
+| Day 3 | Sessions 07, 29, 24 | Code review, app workflow, and orchestration |
+
+Each day has nine teaching hours before breaks. Use the four-day schedule for
+normal delivery.
 
 ### 4-Day Relaxed
 
@@ -57,7 +67,7 @@ critique.
 | Day 1 | Sessions 01, 02 | Setup and Chat workflows       |
 | Day 2 | Sessions 03, 04 | Prompting + CLI                |
 | Day 3 | Sessions 05, 06 | Agent mode + context           |
-| Day 4 | Sessions 07, 29 | Code review + app specialization |
+| Day 4 | Sessions 07, 29, 24 | Code review, app workflow, and developer orchestration |
 
 ## Learning Outcomes
 
@@ -71,6 +81,9 @@ By completing this track, trainees will be able to:
 6. Choose the right Copilot surface for any given task
 7. Set up project-level and personal context that improves Copilot's output quality
 8. Use isolated Copilot App sessions for implementation and independent critique
+9. Revise a plan before implementation and triage local code/security findings
+10. Direct read-only child sessions and distinguish local success from PR readiness
+11. Inspect loaded instructions, manage queued/background work, and check recovery state
 
 ## Next Steps
 

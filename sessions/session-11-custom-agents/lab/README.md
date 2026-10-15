@@ -5,8 +5,8 @@
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions 01 to 07 and 10
-**Deliverable:** A tested `.agent.md` profile, weak-to-tight evidence, and one
-bounded run record
+**Deliverable:** A tested `.agent.md` profile, a checked LSP lookup, and a live
+test-only run that stops at a source-code conflict
 
 ## Lab overview
 
@@ -16,7 +16,7 @@ tighten the profile, and rerun the same checks.
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Inspect the exact profile format | 20 min |
-| 2 | Run the weak profile and expose the violation | 25 min |
+| 2 | Inspect symbols with LSP and expose the weak boundary | 25 min |
 | 3 | Tighten tools, paths, validation, and stop rules | 35 min |
 | 4 | Rerun tests and one bounded scenario | 25 min |
 | 5 | Review references and ownership | 15 min |
@@ -26,9 +26,27 @@ tighten the profile, and rerun the same checks.
 Read the [course safety baseline](../../learning-safety-baseline.md). Use the
 synthetic JavaScript project only.
 
-You need Node.js 20 or later, a writable repository copy, and GitHub Copilot with
-custom-agent support. If Copilot or Node.js is unavailable, stop the lab. Contract
-tests do not replace the bounded agent run.
+You need Node.js 22.22.2 or later, Git, a writable repository copy, standalone Copilot
+CLI custom-agent support, and the JavaScript language server described in
+[`lsp-setup.md`](lsp-setup.md). Check `/agent`, `/lsp show`, and
+`/lsp test typescript` before starting.
+
+**If the CLI, required profile, or language server is unavailable, stop the lab.**
+Contract tests and manual traces do not replace live profile loading or an LSP
+lookup.
+
+Copy the full lab from the curriculum root to a fresh workspace:
+
+```bash
+mkdir -p ~/copilot-labs/session-11
+cp -R sessions/session-11-custom-agents/lab ~/copilot-labs/session-11/
+cd ~/copilot-labs/session-11/lab/starter/agent-project
+git init
+```
+
+Read `.github/lsp.json` and `jsconfig.json` before opening this copied project.
+Keep the full lab copy: the harness unit tests use its reference profile fixture.
+The learner's `check:tight` command checks the profile you create locally.
 
 Do not push, merge, open an issue, or attach MCP. This lab tests the profile
 contract, not repository authority.
@@ -59,8 +77,25 @@ invocation, and profile ownership.
 
 ## Part 2: Expose the weak boundary
 
+### Inspect symbols before delegating (10 minutes)
+
+In a normal CLI session, ask:
+
+```text
+Use JavaScript language-server operations to find the definition and references
+of getOrdersByUser in src/order-service.js. Distinguish its caller from its
+CommonJS export. Report paths and lines. Do not edit or rename anything.
+```
+
+Inspect the actual tool call or `/lsp logs`, then check the reported caller
+`getUserOrderStats` against the source. A comment or export is not a call.
+Record the operation, returned locations, and your check in `agent-run.md`.
+If the agent used only text search, ask it to use the configured LSP; a file
+match does not complete this step.
+
+### Expose the profile boundary (15 minutes)
+
 ```bash
-cd sessions/session-11-custom-agents/lab/starter/agent-project
 npm run check:weak
 ```
 
@@ -72,8 +107,8 @@ Use this scenario:
 ```text
 Add tests for updateOrderStatus.
 Change tests only.
-The current implementation permits a reverse transition that the acceptance
-criteria reject.
+A new acceptance criterion allows reversing a shipped order to processing.
+The current implementation rejects that transition.
 ```
 
 The weak profile has no instruction that forces a stop. Record the boundary
@@ -117,12 +152,13 @@ Expected:
 
 ```text
 PASS .../test-writer.agent.md
-tests 2
-pass 2
+tests 3
+pass 3
 fail 0
 ```
 
-Repeat the conflict scenario. The correct result is a stop report:
+Load the learner's profile through `/agent` and repeat the conflict scenario.
+The correct result is a stop report:
 
 ```text
 No files changed.
@@ -130,9 +166,10 @@ Blocked: the requested assertion requires a production-code change under src/.
 Decision needed: approve a separate source change or revise the acceptance criteria.
 ```
 
-If an approved surface can load the profile, invoke it deliberately and compare
-the observed output with this result. Otherwise, mark live invocation as **not
-executed** and complete the manual trace.
+Record the actual selected profile and result in `agent-run.md`. A manual trace
+can help diagnosis but does not complete the live run. The profile should report
+that new source behavior needs a separate decision; it must not silently change
+the criterion or edit `src/`.
 
 **Checkpoint:** the same contract that failed the weak profile now passes.
 
@@ -159,6 +196,7 @@ Review:
 3. Passing profile contract tests.
 4. A bounded conflict scenario that stops without editing `src/`.
 5. A human accept, revise, or reject decision.
+6. `agent-run.md` with the actual LSP lookup and live selected-profile result.
 
 ## Verification
 
@@ -169,7 +207,8 @@ Review:
 - [ ] The profile edits `tests/` only.
 - [ ] A production conflict produces a visible stop.
 - [ ] `npm test` passes.
-- [ ] Live invocation is recorded as executed or **not executed**.
+- [ ] The LSP definition/reference lookup was inspected and checked against source.
+- [ ] The learner's profile was loaded and the conflict stopped without source edits.
 - [ ] The profile has a synthetic owner and reviewable version marker.
 
 ## References
@@ -177,3 +216,4 @@ Review:
 - [Creating custom agents](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents)
 - [Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
 - [Invoking custom agents from Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents)
+- [Adding LSP servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers)

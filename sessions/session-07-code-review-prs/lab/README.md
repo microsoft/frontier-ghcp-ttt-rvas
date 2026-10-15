@@ -15,9 +15,9 @@ deliberate defects for comparing human review and Copilot-assisted review.
 
 | Exercise | Topic | Time |
 | --- | --- | --- |
-| 1 | Review a bounded change | 30 min |
+| 1 | Human, code, and security review of one diff | 40 min |
 | 2 | Validate and correct the starter project | 35 min |
-| 3 | Resolve a conflict with review evidence | 35 min |
+| 3 | Resolve a conflict with review evidence | 25 min |
 | 4 | Evaluate review evidence and final decision | 20 min |
 
 ---
@@ -39,9 +39,15 @@ Before you start, record these decisions in your notes:
 > **Success criteria:** You can explain what is allowed, what is out of scope, who
 > reviews the work, and which check validates the change.
 
-Learners need GitHub Copilot review, pull-request access, Git, Node.js, and npm. If
-any of these are unavailable, stop the lab. A local
-worksheet does not replace the pull-request and assisted-review practice.
+Learners need the standalone Copilot CLI with `/review` and `/security-review`,
+Copilot pull-request review, a private training repository they may push to, Git,
+the authenticated GitHub CLI (`gh`), Node.js, and npm. Check both Copilot commands
+in `/help` and repository access with `gh auth status` before starting.
+
+**If a required command or review access is unavailable, stop the lab.** A generic
+chat review or worksheet does not replace the local commands and pull-request
+practice. `/security-review` examines current changes; it does not replace
+repository security scanning.
 
 ---
 
@@ -67,17 +73,36 @@ cp -R lab/starter/review-project ~/copilot-labs/session-07/review-project
 cd ~/copilot-labs/session-07/review-project
 npm install
 npm test
+git init
+printf 'node_modules/\n' > .gitignore
+git add .gitignore package.json package-lock.json src tests
+git commit -m "Record review baseline"
+git branch -M main
+git switch -c feature/add-user-management
 ```
 
 > **Expected:** `npm install` completes without new dependencies and `npm test` reports that the existing API tests pass.
 >
-> **If install fails:** Read `package.json` to find the expected test command.
-> Record the error and continue with static review. Do not change package versions
-> unless the instructor approves that troubleshooting exercise.
+> **If install or tests fail:** Stop and fix the environment. Static review alone
+> does not complete the lab. Do not change package versions to hide a failure.
+
+Use a fresh folder for this local repository. Ask the trainer for an **empty
+private training repository**. Before applying the change brief, add its URL as
+`origin` and push the baseline:
+
+```bash
+git remote add origin <private-training-repository-url>
+git push -u origin main
+```
+
+The baseline must be the same commit locally and remotely so the PR contains
+only the intended change. If the remote already has commits, stop and ask for an
+empty training repository. Do not force-push or push intentional defects to a
+public repository.
 
 ---
 
-## Exercise 1: Review a bounded change (30 minutes)
+## Exercise 1: Review one diff through three passes (40 minutes)
 
 ### Objective
 
@@ -102,9 +127,9 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
 
    > **Check:** The baseline has a small API, utility functions, and existing tests. Record its behavior so you can separate existing code from introduced defects.
 
-4. **Apply the change brief in a local branch or sandbox.** In a Git repository,
-   create a branch named `feature/add-user-management`. In a copied folder without
-   Git, keep a written change log instead.
+4. **Apply the change brief on `feature/add-user-management`.** Keep these changes
+   uncommitted until both local reviews have finished. Check
+   `git diff -- src/api.js src/utils.js` against the brief.
 
    > **Success criteria:** The modified files match the change brief closely enough for review; you have not added unrelated features.
 
@@ -123,21 +148,48 @@ Review a deliberately flawed change set. Focus on risks you can connect to evide
    > **Success criteria:** Your initial review cites the relevant file or
    > function and explains what evidence supports the verdict.
 
-7. **Optional assisted review.** After recording your own review,
-   use Copilot review or an approved local agent when policy permits it. Ask it
-   to review only the bounded change.
-
-   Suggested prompt:
+7. **Run the general code review.** Start `copilot` in the working repository:
 
    ```text
-   Review only the changes described in code-changes.md. Focus on correctness,
-   security, tests, and whether the implementation should be approved.
-   Return file-specific findings with evidence. Do not propose unrelated rewrites.
+   /review Review the current changes to src/api.js and src/utils.js for
+   correctness and missing tests. Cite file and line references. Review only;
+   do not edit files.
    ```
 
-   > **Expected output:** The assistant should produce specific findings. Note
-   > anything useful that you missed, reject unsupported findings, and record
-   > whether the new information changes your final decision.
+8. **Run the focused security review on the same diff:**
+
+   ```text
+   /security-review
+   ```
+
+   Keep `src/api.js` and `src/utils.js` as the only modified project files during
+   these runs. The command reviews staged and unstaged changes; committing the
+   patch first would remove it from that scope.
+
+9. **Triage both outputs** in `fix-evaluation-template.md`. Keep your original
+   human review unchanged. For each finding, name the source, file/line, claimed
+   impact, and reproduction or code reference. Accept, reject, or leave unresolved
+   with a reason. Record a zero-findings result honestly.
+
+   The search route builds SQL text but connects to no database. Reject a claim
+   that this lab proves database compromise. Synthetic key-shaped strings also
+   do not prove a leaked real credential. Keep actual data exposure separate from
+   unsafe patterns and maintainability suggestions.
+
+10. **Open the training PR after the local reviews.** Commit only the intended
+    files, push to the trainer-provided private remote, and open a PR:
+
+    ```bash
+    git add src/api.js src/utils.js
+    git commit -m "Add synthetic user-management change for review"
+    git push -u origin feature/add-user-management
+    gh pr create --base main --title "Review synthetic user management" \
+      --body "Training-only change. Contains intentional defects; do not merge."
+    ```
+
+    The remote must already contain the baseline `main` branch. Request Copilot
+    review from the PR page and record at least one comparison with the local
+    results. Do not merge the intentionally flawed change.
 
 ### Checkpoint
 
@@ -148,6 +200,8 @@ You are ready to continue when you can answer:
 - Which defects were not covered by the existing tests?
 - What evidence would convince you that the fixes are complete?
 - What changed after the assisted review, if anything?
+- What did `/review` and `/security-review` each report?
+- Which claim was supported by actual behavior rather than an assumed backend?
 
 ---
 
@@ -191,6 +245,11 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
    > **Success criteria:** A reviewer can trace every fix back to an original finding.
 
+8. **Before committing the fixes**, rerun `/review` and `/security-review` on the
+   correction diff. Compare the results with the initial findings. Rerun
+   `npm test`, then commit and push only the reviewed fixes to the same training
+   PR. A clean automated review does not approve the PR.
+
 ### Checkpoint 2: fixes trace to findings
 
 - [ ] Every blocking finding maps to a focused fix.
@@ -200,7 +259,7 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
 ---
 
-## Exercise 3: Resolve a conflict (35 minutes)
+## Exercise 3: Resolve a conflict (25 minutes)
 
 ### Objective
 
@@ -281,8 +340,8 @@ Make the final review decision from evidence, not an automated suggestion.
 
    > **Success criteria:** The decision is understandable without seeing the entire lab conversation.
 
-5. **Compare the locked independent critique with the assisted findings when
-   applicable.** Complete all comparison fields. Preserve the original critique,
+5. **Compare the initial human review with both local command outputs and the
+   PR review.** Complete all comparison fields. Preserve the original critique,
    record which source raised each finding, and state why the final human
    assessment accepted, revised, or rejected it.
 
@@ -305,6 +364,8 @@ Submit one folder or document containing:
 3. Test evidence for the corrected project.
 4. The resolved conflict decision and validation evidence.
 5. A final human review decision: approve, request changes, or pause.
+6. Initial and correction outputs from `/review` and `/security-review`, their
+   triage decisions, and the private training PR reference.
 
 > **Done:** A reviewer can reconstruct the original risk, fix, validation, and final decision without undocumented tool behavior.
 
@@ -314,6 +375,11 @@ Submit one folder or document containing:
 
 - [ ] Findings are tied to evidence and acceptance criteria.
 - [ ] A human reviewer made the final decision.
+- [ ] Both local commands ran before the initial change was committed.
+- [ ] Findings name their review source and a file/line or reproduction.
+- [ ] Unsupported exploit claims and zero-findings results are recorded honestly.
+- [ ] Both commands ran again on the correction diff before it was committed.
+- [ ] The private training PR received Copilot review; it was not merged.
 - [ ] Required checks were run.
 - [ ] Metered work stayed within the usage limit.
 - [ ] Starter files used: `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`, `review-project/`, and `conflict-scenario/`.

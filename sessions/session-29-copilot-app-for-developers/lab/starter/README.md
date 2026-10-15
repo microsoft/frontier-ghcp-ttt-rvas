@@ -20,6 +20,7 @@ missing required evidence.
 - `tests/test_readiness.py`: focused behavior checks
 - `synthetic-pr.json`: local input fixture
 - `session-handoff-template.md`: fresh-session handoff
+- `engineering-review.md`: plan critique, revision, and `/review` triage
 - `pr-readiness-report.md`: outer-loop report template
 - `automation-prompt-template.md`: manual read-only automation contract
 - `prepared-evidence/`: synthetic PR and trainer demonstration evidence

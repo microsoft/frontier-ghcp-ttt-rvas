@@ -35,19 +35,29 @@ copilot --version
 | Mode         | How to Activate       | When to Use   |
 | ------------ | --------------------- | ------------- |
 | Interactive  | `copilot`             | ___           |
-| Plan         | `Shift+Tab` to cycle  | ___           |
+| Plan         | `/plan` or `Shift+Tab` | ___          |
 | Autopilot    | `Shift+Tab` to cycle  | ___           |
 | Programmatic | `copilot -p "prompt"` | ___           |
 
 ---
 
-## CLI-Exclusive Features I'll Use
+## Workflows I will use
 
 | Feature        | Command                     | My Use Case   |
 | -------------- | --------------------------- | ------------- |
 | Research       | `/research ___`             | ___           |
 | Delegate       | `/delegate ___`             | ___           |
 | Fleet          | `/fleet ___`                | ___           |
+| Task inspection | `/tasks`                   | ___           |
+| Usage          | `/usage`                    | ___           |
+| Soft limit     | `/limits`                   | Value, unit, scope, and reset behavior checked: ___ |
+| Critique       | `/rubber-duck ___`           | ___           |
+| Proactive critic | `/subagents`              | Existing setting and persistence: ___ |
+| Approval       | `/permissions show`         | ___           |
+| Sandbox        | `/sandbox status` and `/sandbox policy` | ___ |
+| Recovery       | `/rewind`                   | Conversation-only versus files: ___ |
+| Isolated fork  | `/fork worktree`            | ___           |
+| Draft move     | `/move`                     | ___           |
 | Session resume | `copilot --continue`        | ___           |
 | Programmatic   | `copilot -p "___" --silent` | ___           |
 
@@ -73,10 +83,18 @@ copilot --version
 # I always use these flags:
 --silent            # ___
 --allow-tool='___'  # ___
---yolo              # ___
 --output-format=json # ___
 --share=output.md   # ___
 ```
+
+Which commands are shared with the app? Which workflow needs a terminal?
+Use the command picker and current product documentation to check.
+
+| Shortcut | My observed result |
+| --- | --- |
+| `Ctrl+Q` | ___ |
+| `Ctrl+S` | ___ |
+| `Ctrl+X, b` then `/tasks` | ___ |
 
 ---
 

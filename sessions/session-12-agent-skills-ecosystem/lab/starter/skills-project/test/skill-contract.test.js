@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
@@ -65,4 +66,21 @@ test('fails visibly when the reviewer precondition is missing', () => {
     skill: 'api-design',
     reason: 'Missing precondition: human reviewer.'
   });
+});
+
+test('the demo uses the learner skill without a sibling solution directory', (t) => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'local-skill-demo-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  fs.cpSync(path.join(project, 'scripts'), path.join(root, 'scripts'), { recursive: true });
+  fs.cpSync(path.join(project, 'scenarios'), path.join(root, 'scenarios'), { recursive: true });
+  const localSkill = path.join(root, '.github/skills/api-design');
+  fs.mkdirSync(localSkill, { recursive: true });
+  fs.copyFileSync(path.join(skillDirectory, 'SKILL.md'), path.join(localSkill, 'SKILL.md'));
+
+  const output = execFileSync(process.execPath, [path.join(root, 'scripts/demo.js')], {
+    encoding: 'utf8'
+  });
+
+  assert.match(output, /"status": "applied"/);
+  assert.match(output, /"status": "blocked"/);
 });

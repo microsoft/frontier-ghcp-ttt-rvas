@@ -37,6 +37,8 @@ Before delivery:
 6. Run the starter command and preserve the first failure.
 7. Run the solution tests.
 8. Keep `lab/solution/` closed until the lab review.
+9. Read the supplied `.github/lsp.json`, prepare `pyright-langserver`, and check
+   CLI `/plan` and `/lsp test python` in the copied repository.
 
 Use these commands from the session directory:
 
@@ -210,6 +212,17 @@ into named functions.
 Do not ask for a large rewrite. First lock behavior with tests. Then make one
 structural change at a time.
 
+Spend five minutes of the refactor lab block on an actual Python LSP lookup.
+Ask for the definition and references of `severity_for`; inspect the operation
+or `/lsp logs` and check the returned locations. Then inspect `service.py` for
+inline copies of the same rule. Those copies need not appear as symbol references.
+Record both before approving `/plan`. Do not use LSP diagnostics to skip the
+ordered syntax and import repairs.
+
+Stop if the required server or lookup cannot run. A startup check or text search
+does not replace the operation. Keep the lab at 120 minutes by using this lookup
+inside the existing 25-minute refactor block.
+
 ## Useful Copilot prompts
 
 Repair prompt:
@@ -229,9 +242,9 @@ the existing test style. Do not change production code.
 Refactor prompt:
 
 ```text
-The tests are green. Refactor this function to remove global state and duplicated
-classification logic. Preserve public function signatures and output order.
-Show the plan before editing.
+/plan The tests are green. Plan removal of global state and duplicated
+classification logic using the checked references and inline duplicates.
+Preserve public signatures and output order. Name protecting tests. Do not edit.
 ```
 
 Review prompt:

@@ -23,6 +23,8 @@ into production code, tighten the profile, and rerun the same test.
 - Run `npm test` from `lab/starter/agent-project`.
 - Keep `PROFILE-REFERENCE.md` and `BOUNDARY-EVIDENCE.md` open.
 - Confirm profile support in the Copilot surface.
+- Prepare the JavaScript LSP server using `lab/lsp-setup.md`; check its
+  startup and an actual `getOrdersByUser` reference lookup.
 - Stop the learner lab if live profile loading is unavailable.
 
 Do not push, merge, open issues, or attach MCP during the core demonstration.
@@ -67,6 +69,12 @@ Explain:
 
 The Markdown body carries the operational boundary.
 
+Use five minutes of this segment to distinguish tools from code intelligence.
+`/lsp show` reports configured servers; `/lsp test typescript` checks startup.
+Neither proves a lookup. Ask for `getOrdersByUser` references and inspect the LSP
+call or logs. Check that `getUserOrderStats` is a caller and the export is not.
+Keep this lookup read-only and separate from the test-writing role.
+
 ### 0:18 to 0:30: Weak profile
 
 Open `weak-test-writer.agent.md`:
@@ -85,7 +93,8 @@ Use this conflict:
 
 ```text
 Add tests for updateOrderStatus. Change tests only.
-The implementation permits a reverse transition that the criteria reject.
+A new criterion allows reversing shipped to processing; the implementation
+rejects it.
 ```
 
 The profile has no reason to stop before editing `src/`. The failure is in the
@@ -139,8 +148,9 @@ npm run check:tight
 npm test
 ```
 
-The same contract now passes. If a supported surface is available, invoke the
-profile deliberately with the conflict scenario. Otherwise, trace it manually.
+The same contract now passes. Load the learner's profile through CLI `/agent` and
+run the conflict scenario. Require the actual stop report and unchanged source;
+a manual trace does not count as live invocation.
 
 Finish with the extension choice:
 
@@ -159,6 +169,7 @@ Finish with the extension choice:
 4. Show the tightened frontmatter and body.
 5. Run `check:tight` and the full tests.
 6. Produce the stop report for the same conflict.
+7. Keep the LSP operation and actual selected profile in `agent-run.md`.
 
 ## Common mistakes
 
@@ -173,10 +184,12 @@ Finish with the extension choice:
 
 Learners inspect the current structure, fail the weak profile, tighten it, rerun the
 contract, and record a bounded stop result. They then review the documentation and
-read-only data analyst examples with the same structure.
+read-only data analyst examples with the same structure. The 25-minute weak-profile
+block includes ten minutes for the LSP lookup. Keep the lab at 120 minutes.
 
 ## References
 
 - [Creating custom agents](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents)
 - [Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
 - [Invoking custom agents from Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents)
+- [Adding LSP servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers)

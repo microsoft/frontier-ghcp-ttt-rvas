@@ -22,11 +22,12 @@ The timings match [`slides.md`](../slides.md).
 
 ## Before delivery
 
-- Confirm Node.js 20 or later is available.
+- Check Node.js 22 or later and standalone CLI authentication.
 - Run starter syntax checks.
 - Run the solution tests.
 - Prepare a demo copy of the todo store.
 - Confirm GitHub Copilot Chat and inline-suggestion access.
+- Check `/refine` in CLI `/help`; do not substitute an editor command.
 - Verify current context controls in official product documentation.
 - Keep `change-request.md` closed until the lab evolution stage.
 
@@ -89,7 +90,16 @@ The accepted API contract still decides which proposal to keep.
 ### 0:29 to 0:39: Iterative refinement
 
 **Slides:** *Refine the missing behavior*, *One concern per turn*, *Restart when
-the frame is wrong*
+the frame is wrong*, *Review the `/refine` rewrite*
+
+Spend the first four minutes on CLI `/refine`. Use the lab's rough baseline-store
+request. Compare the rewrite with the tests before submitting it for
+implementation. Ask learners to find an omitted constraint or invented behavior;
+record no mismatch if the rewrite preserves the request.
+
+Show the input-box variant: type a rough draft, press `Ctrl+X`, then `/`, and run
+`/refine` without arguments. A rewritten prompt still needs a human decision.
+It does not execute the task on the learner's behalf.
 
 Use this progression:
 
@@ -156,7 +166,8 @@ Verify with <command or review>.
 ```
 
 Learners will build the store, wire routes, compare context, apply the priority
-change, and save one prompt that worked.
+change, and save one prompt that worked. The 30-minute baseline-store block
+includes five minutes for `/refine`; do not add a separate lab block.
 
 ## Teaching points
 
@@ -194,5 +205,11 @@ repeat obvious code.
 - [ ] Starter syntax checks pass.
 - [ ] The expected starter test failures are understood.
 - [ ] Required Copilot access is confirmed.
+- [ ] CLI `/refine` works before learners start.
 - [ ] Learners know the baseline and change tests are separate.
 - [ ] The reference solution is available but closed.
+
+## Command reference
+
+Checked October 15, 2026:
+[Copilot CLI commands and shortcuts](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference).

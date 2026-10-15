@@ -34,6 +34,10 @@ By the end of this session, learners can:
 - Attach only the files needed for the next decision.
 - Hand a task to a fresh session without relying on hidden conversation history.
 - Use tests, diffs, and command output as evidence in the inner loop.
+- Challenge `/plan` with `/rubber-duck` before implementation and record the revision.
+- Explain the critic's read-only role and automatic contrasting-model selection.
+- Compare a `/spar` argument in a checked fork and review `/merge-to-parent`.
+- Run `/review` on the uncommitted repair and check its findings.
 - Connect issue intent, pull-request changes, review threads, and checks.
 - Request an independent critique before declaring work ready.
 - Define and run a manual read-only PR-readiness automation.
@@ -41,11 +45,19 @@ By the end of this session, learners can:
 ## Access policy
 
 **GitHub Copilot app access is required.** Before the session,
-confirm that each learner can install or open the app, sign in, connect the local
-training project, and start a working-tree session.
+check that each learner can open the app, sign in, connect the local Git training
+project, and start a working-tree session. Check `/plan`, `/review`, and
+`/rubber-duck` in the command picker.
+The lab also requires `/fork`, `/merge-to-parent`, and `/spar`. Check local
+sandbox and approval settings before the run; do not weaken them for the exercise.
 
 If app access is unavailable, learners must not improvise with customer repositories
-or paste protected code into another service. Stop the lab.
+or paste protected code into another service. Stop the lab if app access or a
+required command is unavailable.
+
+After this session, use the [Session 24 developer route](../session-24-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
+to practise supervising independent child sessions. Sessions 20 to 23 are not
+prerequisites for that route.
 
 ## Session structure
 
@@ -73,7 +85,7 @@ private repository URLs, secrets, or production logs.
 
 ## Product references
 
-These references were checked on **October 5, 2026**. The app is evolving, so
+These references were checked on **October 15, 2026**. The app is evolving, so
 trainers should recheck command names and preview labels before delivery.
 
 - [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)

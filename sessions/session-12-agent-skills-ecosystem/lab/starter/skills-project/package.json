@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/api/routes.js",
     "test": "node --test test/*.test.js",
-    "validate:skill": "node scripts/validate-skill.js ../../solution/skills-project/.github/skills/api-design",
+    "validate:skill": "node scripts/validate-skill.js .github/skills/api-design",
     "demo": "node scripts/demo.js"
   },
   "dependencies": {

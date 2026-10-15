@@ -22,8 +22,13 @@ It fits DevOps engineers, SREs, and other terminal-focused developers.
 - [ ] Use `lab/starter/agent-tasks/` for the demo and lab handoff
 - [ ] Terminal with good font size for projection (24pt+)
 - [ ] Test all demo commands beforehand because CLI versions change rapidly
-- [ ] Have backup screenshots/recordings in case of auth issues
-- [ ] Review the CLI-exclusive features table in Section 5
+- [ ] Check `/plan`, `/fleet`, `/tasks`, and `/usage` in the installed CLI
+- [ ] Agree a usage limit and practise stopping a child task
+- [ ] Rehearse the plan revision and JSONL inspection using the training project
+- [ ] Check `/rubber-duck`, `/subagents`, `/rewind`, `/fork worktree`, `/move`, and `/resume`
+- [ ] Check permission mode and effective local sandbox policy without weakening them
+- [ ] Check `/limits` units, minimum, scope, and reset behavior in the installed version
+- [ ] Rehearse `Ctrl+Q` and `Ctrl+X, b` with the supplied 15-second command
 
 ---
 
@@ -44,11 +49,11 @@ Walk through three reasons the CLI matters:
 
 **2. It includes terminal-oriented features**
 
-- Autopilot mode (no approval prompts)
+- Autopilot mode for autonomous continuation; tool permissions still apply
 - Programmatic mode for scripting (`-p` flag)
 - Custom model providers (Ollama, Azure OpenAI, Anthropic)
-- 6 built-in specialized agents
-- Subagent orchestration with `/delegate` and `/fleet`
+- Built-in specialized agents; check the installed version rather than a fixed count
+- Parallel subagents with `/fleet`; cloud delegation with `/delegate`
 - Hooks system for CI/CD automation
 - OpenTelemetry monitoring for enterprise observability
 
@@ -84,7 +89,7 @@ The CLI installs as a standalone binary, not a `gh` extension:
 
 - First launch: `/login` triggers an OAuth device flow
 - For CI/CD: Set `COPILOT_GITHUB_TOKEN` or `GH_TOKEN` environment variable
-- For GitHub Enterprise Server: `copilot login --host YOUR-GHES-HOST`
+- Check current GitHub documentation and organization policy for supported hosts
 
 ### Demo: Installation & First Launch
 
@@ -125,7 +130,22 @@ The interactive CLI has three modes, cycled with `Shift+Tab`:
 
 > **Trainer note:** "Plan mode asks questions, develops an approach, and shows the plan before it writes code. You approve the plan, then it executes."
 
-> **Autopilot:** "It does not stop to request approval for file edits, shell commands, or Git operations. Use it carefully."
+> **Autopilot:** "It can continue without another conversational prompt.
+> Tool permissions still apply. Keep the task small and inspect the result."
+
+**Required lab practice:** Run `/plan`, challenge one assumption, and request a
+`/rubber-duck` critique before approving implementation. Check findings against
+the source, then revise or explain rejected suggestions. Record target files
+and checks. Check the project diff before approval and after implementation.
+
+Rubber duck is a built-in, read-only critic. Copilot chooses a contrasting model
+automatically when one is available. Do not guess its identity or promise a
+particular vendor. Inspect Proactive invocation through CLI `/subagents` and leave
+the learner's setting unchanged. The opt-in persists and adds model usage; this
+lab requires manual invocation. Stop if no suitable critic is available.
+
+Plan mode protects project edits during planning, but it is not a sandbox for
+external or MCP tools. Keep those permissions restricted.
 
 ### Slash Commands
 
@@ -147,6 +167,7 @@ The CLI has **40+ slash commands** that control every aspect of behavior. Here a
 - `/plan`: create an implementation plan before coding
 - `/research`: deep research using GitHub search and the web
 - `/review`: run the code review agent
+- `/security-review`: review current local changes for high-confidence vulnerabilities; practised in Session 07
 - `/pr`: PR operations (view, create, fix, auto)
 - `/diff`: review changes
 
@@ -157,7 +178,8 @@ The CLI has **40+ slash commands** that control every aspect of behavior. Here a
 - `/skills`: manage skills inline
 - `/init`: generate `copilot-instructions.md` for your project
 
-> **Slide suggestion:** A categorized slash command reference card. Highlight the ones marked "CLI-exclusive."
+> **Slide suggestion:** Separate shared commands from terminal-only workflows.
+> The app also provides `/plan`, `/fleet`, and `/review`.
 
 ### Demo: Interactive Modes
 
@@ -169,19 +191,16 @@ copilot
 # Ask: "What does this project do?"
 # Copilot reads files, explains
 
-# PLAN MODE (press Shift+Tab)
-# Ask: "Add input validation to all API endpoints"
-# Copilot will ask questions: "What validation library?", "Which endpoints?"
-# Then present a structured plan before coding
+# PLAN MODE
+/plan Explain the failing behaviors in src/app.js. Name the files and tests for the smallest fixes. Do not implement.
 
-# AUTOPILOT MODE (press Shift+Tab again)
-# Ask: "Fix all linting errors in src/"
-# Copilot will find and fix without stopping to ask
-# Watch it cycle through files autonomously
+# Challenge the plan before accepting it
+# "Preserve response fields and status codes. Revise the affected steps."
+# Inspect git diff, then approve implementation
 ```
 
-> **Trainer tip:** Have a project with linting errors ready. Autopilot can fix them
-> without a risky demo. Do not use it for destructive operations.
+Show where the learner records both plan versions in `workflow-record.md`.
+An ordinary "plan first" prompt does not demonstrate selecting Plan mode.
 
 ### Transition
 
@@ -206,8 +225,7 @@ copilot -p "PROMPT" [OPTIONS]
 | Flag                           | What it does                              |
 | ------------------------------ | ----------------------------------------- |
 | `-p "PROMPT"`                  | Single-shot prompt, exit when done        |
-| `--allow-all-tools` / `--yolo` | Skip all approval prompts                 |
-| `--allow-tool='shell(git)'`    | Allow only specific tools                 |
+| `--allow-tool='shell(git log)'` | Pre-approve that operation; other permissions still apply |
 | `--deny-tool='shell(rm)'`      | Block specific tools                      |
 | `--output-format=json`         | JSONL output for machine parsing          |
 | `-s` / `--silent`              | Output only the agent's response          |
@@ -228,17 +246,18 @@ copilot -p "Generate a changelog from the last 10 commits" \
 **2. Automated code review in CI:**
 
 ```bash
-copilot -p "Review the changes in this PR for security issues" \
-  --allow-tool='shell(git)' --output-format=json | \
-  jq '.content' > review-results.txt
+copilot -p "Summarize the current diff. Do not edit files." \
+  --allow-tool='shell(git diff)' --output-format=json > review-events.jsonl
 ```
 
-**3. Batch refactoring:**
+Check the Copilot process exit status before parsing the file. Inspect the event
+types and the task result; a JSON parser accepting the file does not prove success.
+If another script needs an answer payload, extract it using the documented event
+schema for the installed version, then validate the payload separately. Do not
+assume every event has a `.content` field.
 
-```bash
-copilot -p "Rename all snake_case variables to camelCase in src/" \
-  --allow-all-tools --autopilot --max-autopilot-continues=20
-```
+**3. Refactoring:** Use the required `/plan` lab to review scope before edits.
+Do not remove permission prompts to make a demo finish.
 
 **4. Infrastructure validation:**
 
@@ -295,15 +314,19 @@ copilot -p "List all TODO comments in this project" \
 
 ### Talking Points
 
-The CLI ships with **5 verified built-in specialized agents**, each optimized for a specific task type:
+Check `/agent` for the installed built-in agents. Distinguish a session mode from
+an agent:
 
 | Agent           | Purpose                                                             |
 | --------------- | ------------------------------------------------------------------- |
 | **Explore**     | Fast codebase exploration and Q&A                                   |
 | **Task**        | Command execution such as tests, builds, and lints                  |
 | **Code Review** | High signal-to-noise review of diffs for bugs, security, and logic  |
-| **Plan**        | Structured implementation planning before coding                    |
+| **Security Review** | Read-only review of current changes for exploitable vulnerabilities |
 | **Rubber Duck** | Adversarial feedback that identifies weak points in designs/answers |
+
+**Plan is a mode.** `/plan` prepares an implementation plan; it is not a custom
+agent learners must install.
 
 > "The main agent can delegate work to these specialists. For a complex task, it can explore the codebase first, then run tests with the task agent."
 
@@ -312,8 +335,7 @@ The CLI ships with **5 verified built-in specialized agents**, each optimized fo
 The CLI has a full orchestration system:
 
 - Main agent delegates tasks to subagents running in **separate context windows**
-- Subagents can be nested up to 6 levels deep
-- Up to 32 subagents can run concurrently
+- Available concurrency depends on plan and configuration; check it before delivery
 - `/fleet` enables parallel execution of task parts
 
 **`/delegate`:** Send work to the Copilot cloud agent on GitHub:
@@ -324,13 +346,17 @@ The CLI has a full orchestration system:
 
 This creates a branch, writes code, and opens a draft PR from your terminal.
 
-**`/fleet`:** Run subagents in parallel:
+**`/fleet`:** Delegate suitable independent work:
 
-```
-/fleet Refactor all 5 service modules to use the new logging library
+```text
+/fleet Use the accepted analysis plan. Inspect route behavior, utility contracts,
+and test gaps as independent read-only tasks. Cite files. Do not edit or use the
+network. Stop on scope growth or the agreed usage limit.
 ```
 
-The CLI spawns multiple subagents to work on different modules simultaneously.
+Copilot decides how to split the work. Do not promise one agent per bullet or a
+speedup. Keep shared decisions with the parent and inspect every accepted claim.
+The app also supports `/fleet`; its `/orchestrate` skill is taught in Session 24.
 
 **`/research`:** Start deep research mode:
 
@@ -338,7 +364,8 @@ The CLI spawns multiple subagents to work on different modules simultaneously.
 /research What are the best practices for rate limiting in Express.js?
 ```
 
-Uses the research agent (Sonnet 4.6) to search GitHub repos, read documentation, and produce a report.
+Uses a research agent to consult sources and produce a report. Check citations
+against the source; do not teach a fixed underlying model.
 
 **`/tasks`:** Monitor background subagents:
 
@@ -346,7 +373,9 @@ Uses the research agent (Sonnet 4.6) to search GitHub repos, read documentation,
 /tasks
 ```
 
-Shows status of all running subagents.
+Open a task's details and inspect its result. Use the task-list stop control if it
+crosses scope. Finish with `/usage` and record actual usage. Do not invent a
+sequential runtime or claim a speedup you did not measure.
 
 > **Trainer note:** "The CLI can run subagents in parallel with `/fleet`."
 
@@ -355,15 +384,14 @@ Shows status of all running subagents.
 ```bash
 copilot
 
-# Use /research for a deep dive
-/research How does authentication work in this codebase?
-
-# Use /delegate to send work to the cloud
-/delegate Write tests for the user authentication module
-
-# Check on background tasks
+# Start from the accepted read-only breakdown
+/fleet Inspect routes, utilities, and test gaps using the accepted plan.
 /tasks
+/usage
 ```
+
+Cloud delegation is explained here and practised in Session 09. It does not
+replace the required local fleet run.
 
 ### Transition
 
@@ -371,7 +399,46 @@ copilot
 
 ---
 
-## Section 6: CLI-Exclusive Power Features (10 min)
+## Section 6: Terminal Automation and Session Control (10 min)
+
+### Inspect controls and recover work
+
+Use this block for the required controls. The provider, hooks, ACP, and telemetry
+examples below are trainer reference, not extra demonstrations in the hour.
+
+```text
+/permissions show
+/sandbox status
+/sandbox policy node --version
+/limits
+```
+
+Explain tool approval versus process-level filesystem/network restrictions.
+Inspect the sandbox; do not disable it, broaden access, or switch permission
+mode to remove a denial.
+
+Set a trainer-agreed soft AI-credit limit after recording its original value.
+GitHub's command reference describes per-response limits; its session-limit
+guide describes a cumulative session cap. Check the installed UI's value,
+minimum, and scope before delivery. Do not claim a hard spending ceiling or
+assume that another prompt resets the cap. If scope is unresolved, stop before
+the metered task. Restore the original setting afterward.
+
+Show the 15-second command from the lab. Queue a follow-up with `Ctrl+Q`, promote
+the command with `Ctrl+X, b`, and inspect `/tasks`. Check its output before
+accepting the queued follow-up's summary. `Ctrl+S` stashes an unsent draft; it does
+not submit it. Background promotion does not detach the process or isolate writes.
+
+Use a committed repair checkpoint for recovery. Let the agent create a disposable
+note, then inspect `/rewind`: conversation-only and conversation-plus-files have
+different effects. Check the restored files. Rewind does not undo external writes
+or replace Git rollback.
+
+Use `/fork worktree` to carry context to a new checkout of `HEAD`. Contrast a
+plain context fork with file isolation. Move only the disposable analysis draft
+through `/move`, inspect old/new paths, and return with `/resume`. Do not merge
+the alternative. Leave worktrees for trainer review rather than force-cleaning
+them to make the exercise look complete.
 
 ### Custom Model Providers
 
@@ -453,6 +520,12 @@ OTLP-compatible backend.
 - **Remote access:** `/remote` enables access from GitHub.com and GitHub Mobile
 - **Session sharing:** `/share gist` exports your session as a GitHub gist
 
+For the required lab, show `/context` before a phase change. Use
+`/compact Preserve the accepted plan, changed files, and remaining checks` when
+the same thread needs to continue. Explain what might be lost in a summary.
+Keep the accepted plan and test output in the workflow record before starting a
+fresh session. Export locally unless external sharing is permitted.
+
 ### Transition
 
 > "Choose the CLI or IDE based on the work."
@@ -470,11 +543,11 @@ Present this decision framework for CLI, IDE Chat, IDE Agent Mode, and Copilot A
 | SSH'd into remote server              | ✅  | ❌  | ❌  | ❌  |
 | Scripting/CI/CD automation            | ✅  | ❌  | ❌  | ❌  |
 | Quick shell command help              | ✅  | ❌  | ❌  | ⚠️  |
-| Custom/local model needed             | ✅  | ❌  | ❌  | ❌  |
-| Deep codebase research                | ✅  | ✅  | ❌  | ⚠️  |
-| Parallel multi-agent orchestration    | ✅  | ❌  | ❌  | ❌  |
+| Custom/local model needed             | Check provider support and policy | Check editor | Check editor | Check provider support and policy |
+| Deep codebase research                | ✅  | ✅  | Check editor | ✅ |
+| Parallel multi-agent orchestration    | ✅  | Check editor | Check editor | ✅ |
 | Writing code in an IDE editor         | ❌  | ✅  | ✅  | ❌  |
-| Visual diff review before accepting   | ❌  | ❌  | ✅  | ❌  |
+| Visual diff review before accepting   | `/diff` | Check editor | ✅ | ✅ |
 | Inline suggestions while typing       | ❌  | ❌  | ✅  | ❌  |
 | Multi-file refactoring w/ visual diffs| ❌  | ❌  | ✅  | ❌  |
 | Quick question about selected code    | ❌  | ✅  | ❌  | ✅  |
@@ -491,9 +564,9 @@ editor. It can use open-file context.
 **IDE Agent Mode:** Use it for multi-step coding tasks that need visual control.
 Review diffs before accepting complex edits or refactors.
 
-**Copilot App:** Use this dedicated surface for app-managed agent sessions or a
-shared canvas. Session 08 covers the Customize area, plugins, and canvas
-extensions.
+**Copilot App:** Use Session 29 for isolated developer sessions and review.
+Session 08 covers customization and canvas extensions. Session 24 adds
+supervised child sessions through `/orchestrate`.
 
 > "Use the IDE for daily coding, the CLI for terminal automation, Chat for short questions, and the App when shared state helps people steer the work."
 
@@ -618,17 +691,20 @@ A: Do not teach a fixed rule. Check the current billing docs and stop at the
 agreed usage limit.
 
 **Q: Can I use the CLI in GitHub Actions?**
-A: Yes. Use programmatic mode with `--yolo` or specific `--allow-tool` flags.
-Authenticate through `GITHUB_TOKEN`.
+A: Use programmatic mode with task-specific permissions and the documented
+authentication for your organization. Session 13 covers workflow setup.
 
 **Q: Is the CLI safe for production servers?**
-A: With proper permission controls (`--available-tools`, `--deny-tool`), yes. The fine-grained permission system lets you lock down exactly what the CLI can do. Never use `--yolo` on production.
+A: This lab uses a synthetic local project. Production use needs a separate
+permission and data review; a successful training run does not authorize it.
 
 **Q: Can I use Copilot CLI without internet?**
 A: Only with custom model providers pointing to a local model (e.g., Ollama). GitHub-hosted models require internet connectivity.
 
 **Q: How does the CLI handle large codebases?**
-A: Auto-compaction keeps conversations going virtually forever. The `/context` command shows token usage. The explore agent uses fast Haiku models for efficient codebase scanning.
+A: `/context` shows context usage. `/compact` summarizes the active thread and
+can lose detail. Keep the accepted plan and checked results in files. Use a fresh
+session with a handoff when the old conversation no longer helps.
 
 **Q: Can I share sessions with my team?**
 A: Yes. `/share gist` creates a secret GitHub gist, and `/share file PATH` exports
@@ -641,9 +717,9 @@ to Markdown. Sessions can also be resumed across devices.
 1. **Title slide:** "GitHub Copilot in the CLI. Your Terminal's AI Agent"
 2. **Three Modes:** Standard / Plan / Autopilot with descriptions
 3. **Programmatic Mode:** Code examples showing CI/CD integration
-4. **Built-in Agents:** Table of 5 verified agents and purposes
+4. **Built-in Agents:** Distinguish built-in specialists from Plan mode
 5. **Subagent Architecture:** Diagram showing main agent → subagents → /fleet
-6. **CLI-Exclusive Features:** Venn diagram (CLI-only / Shared / IDE-only)
+6. **Shared commands:** CLI/app `/fleet` versus app `/orchestrate`
 7. **Custom Model Providers:** Ollama / Azure OpenAI / Anthropic logos
 8. **Hooks System:** Lifecycle event diagram
 9. **Decision Framework:** When to use CLI vs IDE table
@@ -661,6 +737,30 @@ to Markdown. Sessions can also be resumed across devices.
 | 3. Core Interactive Modes       | 10 min     | 20 min       |
 | 4. Programmatic Mode            | 10 min     | 30 min       |
 | 5. Built-in Agents & Subagents  | 10 min     | 40 min       |
-| 6. CLI-Exclusive Power Features | 10 min     | 50 min       |
+| 6. Automation and Session Control | 10 min   | 50 min       |
 | 7. CLI vs IDE Framework         | 5 min      | 55 min       |
 | 8. Wrap-up & Transition         | 5 min      | 60 min       |
+
+## Lab assessment and recovery
+
+The lab stays at 120 minutes: setup 15, plan/repair 40, programmatic/fleet 35,
+and recovery/surface choice 30. Learners choose two command-generation examples
+and one surface-comparison task. Keep the controls, checked critique, recovery,
+and live fleet work; use the remaining examples as reference practice.
+
+Require `workflow-record.md`, passing tests, a reviewed diff, and a checked health
+report. Each accepted child claim needs a file reference or focused test. The
+completion check must not accept `/delegate` instead of `/fleet`.
+
+If a required command or CLI access is unavailable, stop and resolve access.
+Screenshots can explain the UI but do not complete the learner exercise.
+
+## Current references
+
+Checked on October 15, 2026:
+
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Plan and fleet workflow](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/speed-up-task-completion)
+- [App slash commands](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
+- [Rubber duck](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/rubber-duck)
+- [Session-limit guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/set-session-limit)

@@ -22,14 +22,17 @@ that still has to pass the project tests and API checks.
 
 - Write prompts that state the task, relevant context, boundaries, and examples.
 - Refine a useful result without mixing unrelated concerns.
+- Use CLI `/refine` and check that its rewrite preserves the intended task.
 - Use comments and neighboring files as deliberate context.
 - Recognize vague, overloaded, and untrusted instructions.
 - Turn a successful project prompt into a reusable pattern.
 
 ## Required access
 
-Learners need GitHub Copilot Chat, inline suggestions, Node.js 20 or later, and
-the declared npm dependency. If a requirement is unavailable, stop the lab.
+Learners need GitHub Copilot Chat, inline suggestions, the standalone CLI with
+`/refine`, Node.js 22 or later, and the declared npm dependency. Set up the CLI
+before delivery; Session 04 is not a prerequisite. If a requirement is
+unavailable, stop the lab.
 
 ## Materials
 

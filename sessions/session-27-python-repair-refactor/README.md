@@ -36,6 +36,8 @@ Learners practice how to:
 - remove duplicated rules and global state;
 - replace tangled control flow with small, named functions;
 - prove that a refactor preserved behavior.
+- inspect Python LSP references and distinguish them from duplicated inline rules;
+- approve a CLI `/plan` before structural changes.
 
 ## Session structure
 
@@ -79,6 +81,9 @@ predictable Python and editor setup.
 
 For a native setup, use Python 3.11 or later, create a virtual environment, and
 install the pinned development requirements from the selected lab directory.
+The lab also needs the standalone Copilot CLI and `pyright-langserver`.
+Check `/lsp test python` before delivery. The LSP exercise runs only after
+parsing and behavior checks pass; missing access stops the lab.
 
 ## Trainer note
 

@@ -1,6 +1,8 @@
 # Repository sandbox examples
 
-These exercises are for review, not installation. Deliver skills only through `.github/skills/`.
+These examples are for review, not installation. The required live comparison
+uses the separate pinned `community-interview/` snapshot and the local Session 21
+skill. Deliver skills only through the training project's `.github/skills/`.
 
 ```markdown
 # Focused Test Addition

@@ -97,14 +97,29 @@ It never says which files may change or when to stop.
 
 ---
 
+# Check code intelligence, not just text matches
+
+```text
+/lsp show
+/lsp test typescript
+```
+
+Ask for the definition and references of `getOrdersByUser`.
+Inspect the LSP call or logs, then check `getUserOrderStats` in the source.
+
+An export is not a caller. A startup test is not a symbol lookup.
+Do not rename or edit code during this step.
+
+---
+
 # Use a hostile example
 
 ```text
 Add tests for updateOrderStatus.
 Change tests only.
 
-The implementation permits a reverse transition that the acceptance criteria
-reject.
+A new criterion allows reversing shipped to processing.
+The current implementation rejects that transition.
 ```
 
 The weak wording permits a source edit. One lucky run staying in scope does not fix
@@ -185,8 +200,8 @@ Expected:
 
 ```text
 PASS .../test-writer.agent.md
-tests 2
-pass 2
+tests 3
+pass 3
 fail 0
 ```
 
@@ -219,3 +234,6 @@ Do not add MCP to a role that only needs repository files.
 
 **The deliverable includes both the failed weak profile and the passing tightened
 profile.**
+
+Submit the actual LSP lookup and live selected-profile stop too.
+CLI and JavaScript LSP access are required; a manual trace does not complete them.

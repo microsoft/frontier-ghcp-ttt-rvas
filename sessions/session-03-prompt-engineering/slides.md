@@ -202,6 +202,25 @@ Small turns produce smaller diffs.
 
 ---
 
+# Review the `/refine` rewrite
+
+In the standalone CLI:
+
+```text
+/refine make the todo store work, baseline tests only, plain js,
+no packages, return copies, only lib/todo-store.js
+```
+
+Compare the rewrite with the tests. Correct missing constraints or invented work
+before submitting it for implementation.
+
+**Current input:** `Ctrl+X`, then `/`, then `/refine` without arguments.
+
+The lab uses five minutes of the baseline-store block for this comparison.
+CLI access is required; do not assume the same command exists in editor Chat.
+
+---
+
 # Restart when the frame is wrong
 
 Iterate when the structure is sound and one behavior is missing.

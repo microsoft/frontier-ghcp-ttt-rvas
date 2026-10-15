@@ -209,6 +209,24 @@ Verify the current supported filename and frontmatter behavior before delivery.
 
 ---
 
+# Inspect what the CLI loaded
+
+```text
+/env
+/instructions
+```
+
+Find the copied stale CommonJS note and its route-file scope.
+Compare it with `package.json` and the current ES-module route.
+
+Correct only that training note, restart, and inspect again.
+Do not toggle personal, managed, or security instructions.
+
+**Discovery is not proof of application.** Check the proposed code too.
+The lab includes this work in its 30-minute instruction block.
+
+---
+
 # VS Code instruction settings
 
 The curriculum references:

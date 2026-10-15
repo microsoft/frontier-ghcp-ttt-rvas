@@ -4,7 +4,8 @@
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions 01-07, Python 3.11 or later, and GitHub Copilot access
+**Prerequisites:** Sessions 01-07, Python 3.11 or later, standalone Copilot CLI,
+and a working Python language server
 
 ## Objective
 
@@ -19,7 +20,8 @@ without changing the reports.
 - at least two new focused regression tests;
 - unchanged files under `fixtures/expected/`;
 - production code with no process-wide result state or duplicated rules;
-- passing `pytest -q` output.
+- passing `pytest -q` output;
+- an inspected Python LSP lookup and accepted refactor plan.
 
 ## Preflight
 
@@ -42,7 +44,15 @@ original remains available:
 cp -R sessions/session-27-python-repair-refactor/lab/starter \
   /tmp/session-27-inventory
 cd /tmp/session-27-inventory
+git init
 ```
+
+Use a fresh destination if that folder exists. Read `.github/lsp.json` before
+opening the copy in the CLI. Before delivery, prepare `pyright-langserver` using
+the [LSP setup guide](../../session-11-custom-agents/lab/lsp-setup.md#python-session-27).
+Session 11 is not a prerequisite; the setup commands are self-contained.
+Check `/plan`, `/lsp show`, and `/lsp test python`.
+**Stop if the CLI, required command, or Python server is unavailable.**
 
 Create the environment:
 
@@ -246,15 +256,34 @@ Required changes:
 - preserve the command arguments and output format;
 - preserve deterministic SKU order.
 
-Ask Copilot for a plan before edits:
+### Inspect references before planning (5 minutes of this block)
+
+With tests green, ask the CLI:
 
 ```text
-The tests are green. Plan a small refactor that removes global result state and
-duplicated classification rules. Preserve the CLI, output files, output order,
-and public behavior. Name the tests that protect each step.
+Use Python language-server operations to locate severity_for and its references.
+Report paths and lines. Then inspect service.py for inline classification that
+would not appear as a reference to that function. Do not edit files.
 ```
 
-Run `pytest -q` after each structural move.
+Inspect the actual operation or `/lsp logs`, then check its locations against
+the source. Record the result in the repair log. A successful server-start test
+or a plain text search does not prove an LSP lookup.
+
+Keep duplicated behavior separate from symbol references: inline classification
+can duplicate a rule without calling its function. Do not ask for a bulk rename
+or refactor while syntax or behavior checks are still failing.
+
+Use Plan mode for the remaining refactor:
+
+```text
+/plan The tests are green. Plan a small refactor that removes global result state and
+duplicated classification rules. Preserve the CLI, output files, output order,
+and public behavior. Use the checked reference locations and identify inline
+duplicates separately. Name the tests that protect each step. Do not implement.
+```
+
+Approve the plan, leave Plan mode, and run `pytest -q` after each structural move.
 
 ## Part 6: Final verification (5 minutes)
 
@@ -295,6 +324,8 @@ Submit or demonstrate:
 - [ ] Repeated service calls do not leak results.
 - [ ] Status and severity rules have one implementation.
 - [ ] Expected fixture files were not changed.
+- [ ] The LSP lookup was inspected; inline duplicate rules were checked separately.
+- [ ] An accepted `/plan` preceded the structural changes.
 - [ ] Text and JSON output match the supplied contract.
 - [ ] `pytest -q` passes.
 
@@ -315,3 +346,8 @@ Submit or demonstrate:
 
 The tested reference implementation is in [`solution/`](solution/). Review it
 after the lab or when the trainer starts the solution walkthrough.
+
+## Command reference
+
+Checked October 15, 2026:
+[Adding LSP servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers).

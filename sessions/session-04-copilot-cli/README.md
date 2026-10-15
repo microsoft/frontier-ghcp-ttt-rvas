@@ -8,7 +8,8 @@
 ## Overview
 
 Use the standalone `copilot` CLI to take over one small Node.js project. Learners
-inspect commands, fix the project, and automate a project health report. They also
+inspect commands, revise an implementation plan, and fix the project. They also
+inspect live fleet results and automate a project health report. Finally, they
 compare terminal and IDE workflows. The `agent-tasks` project ties the lab together
 from the first command through the final handoff.
 
@@ -17,6 +18,13 @@ from the first command through the final handoff.
 - Install and configure the standalone `copilot` CLI and shell workflows.
 - Use interactive `copilot` and `copilot -p "..."` for command-line help.
 - Use Standard, Plan, and Autopilot modes for multi-step tasks.
+- Revise a `/plan` before approval and trace it to the implementation diff.
+- Check a `/rubber-duck` critique and inspect its persistent proactive-invocation setting.
+- Inspect permissions, sandbox policy, and the installed version's soft-limit scope.
+- Queue a follow-up, background a command, and inspect its actual result.
+- Recover a disposable edit and distinguish fork, worktree, move, and resume.
+- Use `/fleet` and `/tasks` for independent analysis, then check results and usage.
+- Distinguish JSONL events from an answer payload in programmatic output.
 - Compare CLI, IDE Chat, IDE Agent Mode, and Copilot App workflows.
 - Identify CLI-specific features and when the CLI fits better than the IDE.
 - Check Copilot App and cross-IDE support for the approved environment.
@@ -37,10 +45,11 @@ from the first command through the final handoff.
 - `copilot -p "..."` for command generation from intent descriptions
 - Shell integrations: aliases, shell completion, inline invocation
 - CLI agent mode: autonomous multi-step terminal tasks
-- CLI-exclusive features: piping output to Copilot, log analysis, environment debugging
+- Terminal automation and shared CLI/app commands
 - Copilot App orientation and handoff to Session 08 for plugins and canvas extensions
 - Cross-IDE comparison: VS Code, Visual Studio, JetBrains, Eclipse, Xcode, and others
 - Decision framework: when to use CLI vs. IDE Chat vs. IDE Agent Mode vs. Copilot App
 - SSH and remote workflows where CLI is the only option
 - Scripting with Copilot: generating and debugging shell scripts
 - Security considerations: what context the CLI sends, privacy implications
+- Recovery and session controls without broadening permissions

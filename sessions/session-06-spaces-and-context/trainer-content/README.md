@@ -15,6 +15,7 @@ behavior and availability can change.
 3. Choose a small question and the files needed to answer it.
 4. Set a usage limit if the work is metered.
 5. Check Spaces and GitHub Copilot access before the lab.
+6. Check standalone CLI `/env` and `/instructions` in the copied Storefront project.
 
 ### Access failure
 
@@ -228,11 +229,17 @@ Learners can explain why every included source is necessary and why every exclud
 ### Trainer talking points
 
 - Use observable instructions rather than "write high-quality code."
+- Show `/env` and `/instructions` in the CLI. Inspect the source and file scope;
+  discovery alone does not prove an instruction was applied.
+- Use the supplied stale CommonJS note in the copied project only. Compare it
+  with the current ES-module contract, correct that note, restart, and inspect
+  again. Do not disable personal, managed, or security rules.
 - Keep durable conventions separate from one feature's requirements.
 - Review instruction files through the repository's normal process.
 - Instructions guide proposals; they are not enforcement or proof.
 - Verify current supported paths, names, and settings before demonstrating.
-- Retain the text as a manual checklist if loading behavior is unavailable.
+- Stop the runtime-inspection exercise if a required command or source cannot
+  be inspected. A manual checklist does not prove loading.
 
 ### Reusable prompt example
 
