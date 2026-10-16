@@ -1,9 +1,9 @@
-# Session m2-02 Lab: Agent Mode in the IDE
+# Session m2-02 lab: Agent mode in the IDE
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 completed
-**Deliverable:** A tested Todo API built and evolved with visible human review points
+**Deliverable:** A tested Todo API built and extended with human review at each stage
 
 ## Lab overview
 
@@ -99,7 +99,7 @@ before installing packages. After approval, implement the project and run its te
 At each pause:
 
 1. Check the command and working directory.
-2. Confirm that the action supports the brief.
+2. Check that the action supports the brief.
 3. Review changed files before the next command.
 4. Record any revision in `lab-notes.md`.
 
@@ -164,7 +164,7 @@ implements the feature without changing existing behavior. Include focused tests
 Wait for approval before editing.
 ```
 
-Review the plan, approve the bounded work, and watch each file and command. Then run:
+Review the plan, approve only the work it describes, and watch each file and command. Then run:
 
 ```bash
 cd todo-api
@@ -244,12 +244,12 @@ If the agent requests an unexpected dependency, network access, or broader file 
 Review the final project as if another engineer submitted it.
 
 1. Inspect `git diff --stat` and `git diff`, or use the editor's change view.
-2. Confirm each changed file traces to the brief, feature spec, or course correction.
+2. Check that each changed file traces to the brief, feature spec, or course correction.
 3. Run `npm test` again.
 4. Start the service and make one create request and one filtered list request.
 5. Write the final decision: **accept**, **revise**, or **stop**.
 
-Use `lab/solution/final-review.md` as the trainer reference. Review behavior and evidence rather than requiring an exact file layout.
+Use `lab/solution/final-review.md` as the trainer reference. Review behavior, tests, and the diff rather than requiring an exact file layout.
 
 Example requests:
 
@@ -271,7 +271,7 @@ Do not approve the work only because the agent reports success. Use the diff, te
 - [ ] The manual API check matches the feature spec.
 - [ ] The final decision names remaining risk.
 
-## Final Deliverable
+## Final deliverable
 
 Submit the `session-m2-02` workspace with:
 

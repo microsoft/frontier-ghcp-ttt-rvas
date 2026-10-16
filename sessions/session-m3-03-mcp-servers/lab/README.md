@@ -1,4 +1,4 @@
-# Session m3-03 Lab: Build and Test an MCP Server
+# Session m3-03 lab: Build and test an MCP server
 
 **Duration:** 2 hours
 
@@ -6,7 +6,7 @@
 
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
 **Deliverable:** A three-tool local MCP server with automated tests, Inspector
-evidence, and recorded good and bad requests
+output, and recorded good and bad requests
 
 ## Lab overview
 
@@ -19,7 +19,7 @@ surface small enough to review.
 | 2 | Prove `get_weather` from schema through handler | 30 min |
 | 3 | Inspect good and bad protocol calls | 25 min |
 | 4 | Add `get_forecast` and `convert_temperature` | 35 min |
-| 5 | Run the full verification and record evidence | 15 min |
+| 5 | Run all checks and record output | 15 min |
 
 ## Before you start
 
@@ -181,16 +181,16 @@ output for:
 3. a bad `get_forecast` call;
 4. `npm test`.
 
-If an approved Copilot surface is available, attach the local server and ask for a
-three-day forecast in Fahrenheit. Verify each tool call against the recorded
-contract. The local evidence remains the acceptance source.
+If repository policy allows a Copilot client, attach the local server and ask for a
+three-day forecast in Fahrenheit. Check each tool call against the recorded
+contract. Use the local tests and Inspector output to judge completion.
 
 ## Final deliverable
 
 1. A staged commit or diff showing `get_weather` before the other tools.
 2. A completed server with three tool schemas and handlers.
 3. Passing automated tests.
-4. Inspector output or an explicit **not executed** record.
+4. Inspector output or a **not executed** record.
 5. One good request and one bad request with expected and actual responses.
 
 ## Verification
@@ -202,7 +202,7 @@ contract. The local evidence remains the acceptance source.
 - [ ] Bad input and unknown tools return `isError: true`.
 - [ ] The completed tool catalog contains exactly three tools.
 - [ ] `npm test` passes in the starter and solution projects.
-- [ ] Inspector evidence is captured or marked **not executed**.
+- [ ] Inspector output is captured or marked **not executed**.
 - [ ] No credential, network service, or source-system data was used.
 
 ## References

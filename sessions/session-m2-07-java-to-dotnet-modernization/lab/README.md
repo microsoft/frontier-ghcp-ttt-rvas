@@ -1,4 +1,4 @@
-# Session m2-07 Lab: Migrate One Order-Pricing Slice to .NET 10
+# Session m2-07 lab: Migrate one order-pricing slice to .NET 10
 
 **Duration:** 2 hours
 
@@ -32,8 +32,8 @@ main exercise.
 
 ### Copilot access
 
-Confirm that GitHub Copilot Chat works in the approved coding environment. Ask it
-to summarize the open file, then verify that the answer refers to that file.
+Check that GitHub Copilot Chat works in the training environment. Ask it
+to summarize the open file, then check that the answer refers to that file.
 
 If GitHub Copilot access is unavailable, **stop the lab**. Resolve the account,
 extension, license, or policy issue first. Do not paste the exercise into an
@@ -193,7 +193,7 @@ Read the Java files in this order:
 5. `src/main/java/training/orders/PriceQuote.java`
 6. `src/test/java/training/orders/ContractFixtureTest.java`
 
-Use Copilot for a bounded inspection:
+Ask Copilot to inspect only this request path:
 
 ```text
 Trace POST /orders/price through this Java project. Return a table with the entry
@@ -201,7 +201,7 @@ point, JSON parsing, validation, pricing calculation, response mapping, and test
 evidence. Cite file and symbol names. Do not propose .NET code and do not edit.
 ```
 
-Verify every row against the files.
+Check every row against the files.
 
 Complete the request path and pricing-rule tables in `architecture-notes.md`.
 
@@ -462,7 +462,7 @@ curl -i -X POST http://localhost:5080/orders/price \
   --data '{"customerTier":"PLATINUM","destination":"DOMESTIC","couponCode":"","items":[{"sku":"SKU-RED","quantity":1,"unitPriceCents":100}]}'
 ```
 
-Confirm an HTTP 400 response with a clear error.
+Check for an HTTP 400 response with a clear error.
 
 Copy the backlog template:
 
@@ -495,7 +495,7 @@ Under **Remove only after**, require:
 - deployment and rollback ownership;
 - a decision on how callers move to the new route.
 
-## Final Deliverable
+## Final deliverable
 
 Submit or demonstrate:
 
@@ -527,7 +527,7 @@ Submit or demonstrate:
 | Problem | Check |
 | --- | --- |
 | `Permission denied: ./mvnw` | Run `chmod +x mvnw`, then retry |
-| Maven cannot download on first run | Confirm network or use the instructor-prepared wrapper cache |
+| Maven cannot download on first run | Check the network or use the instructor-prepared wrapper cache |
 | Port 8080 is in use | Set `PORT=8081` for Java and update the request URL |
 | .NET SDK cannot target `net10.0` | Use the Dev Container/Codespaces or install .NET 10 |
 | Contract test cannot find JSONL | Check the `None Include` path and `CopyToOutputDirectory` |
@@ -539,4 +539,4 @@ Submit or demonstrate:
 
 The reference implementation is in [`solution/`](solution/). Review it after you
 have test output or when the trainer ends the implementation timebox. Compare
-behavior and evidence before comparing formatting.
+behavior and test results before comparing formatting.

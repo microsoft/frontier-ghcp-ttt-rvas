@@ -1,4 +1,4 @@
-# Session m6-02 Trainer Guide: Bounded End-to-End Capstone
+# Session m6-02 trainer guide: End-to-end capstone for one endpoint
 
 ## Delivery objective
 
@@ -20,8 +20,8 @@ or tool tour.
 
 ## Teach the boundary
 
-The required slice is `POST /api/bookmarks`. Learners may implement it with an
-approved agent or manually. They may also produce a patch plan when execution is
+The required slice is `POST /api/bookmarks`. Learners may implement it with
+Copilot or manually. They may also produce a patch plan when execution is
 blocked. All paths use the same issue, checks, review gate, and handoff.
 
 Write these non-goals where everyone can see them:
@@ -43,7 +43,7 @@ endpoint, live data, deployment, tool configuration, or a new dependency.
 
 Use `lab/starter/bookmark-create-spec.md` as the accepted behavior source. Ask
 learners to check that each requirement is observable, technology choices stay in
-the constraints section, and non-goals are explicit. They must map each issue
+the constraints section, and non-goals are named. They must map each issue
 criterion to a specification ID and a test.
 
 The issue should name the exact route, response shapes, validation rules, duplicate
@@ -52,7 +52,7 @@ invent behavior absent from the specification.
 
 ## Implementation walkthrough
 
-Use this work order with the selected approved path:
+Use this work order:
 
 ```text
 Implement only the accepted POST /api/bookmarks issue in the training sandbox.
@@ -80,7 +80,7 @@ issue because time ran out.**
 
 ## Reference assets
 
-- `lab/solution/capstone-project/` contains the bounded implementation and tests.
+- `lab/solution/capstone-project/` contains the creation endpoint and tests.
 - `lab/solution/reference-handoff.md` shows the full issue-to-handoff record.
 - `lab/starter/capstone-handoff.md` is the learner template.
 - `lab/starter/trainer-delivery-plan-template.md` is an optional trainer

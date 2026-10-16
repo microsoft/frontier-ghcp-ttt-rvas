@@ -8,7 +8,7 @@ footer: 'Session m7-06: Automate Delivery Follow-up'
 
 <!-- _class: lead -->
 
-# Automate Delivery Follow-up
+# Automate delivery follow-up
 
 ## Product and Delivery Teams | Intermediate
 
@@ -67,7 +67,7 @@ Use the minimum GitHub read tools.
 - Trace every claim to an issue or the parent result.
 - Keep unresolved evidence visible.
 - Reject unsupported causes and forecasts.
-- Confirm that no prohibited side effect occurred.
+- Check that no prohibited side effect occurred.
 - Choose Keep, Revise, Disable, or Pause.
 
 ---

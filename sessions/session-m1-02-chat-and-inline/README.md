@@ -1,4 +1,4 @@
-# Session m1-02: Copilot Chat & Inline Suggestions
+# Session m1-02: Copilot Chat & inline suggestions
 
 **Module:** Copilot Fundamentals
 
@@ -16,7 +16,7 @@ workspace context without losing the engineering contract established in Session
 1.
 
 The project contains a weighted-average defect and a later zero-total-weight change
-request. Learners record the context and prompts that helped, then verify every
+request. Learners record the context and prompts that helped, then check every
 change with standard-library tests.
 
 ## Learning outcomes
@@ -26,8 +26,8 @@ change with standard-library tests.
 - Use task shortcuts such as explain, fix, tests, and documentation when the
   current surface offers them.
 - Refine a conversation without broadening the requested change.
-- Compare approved model choices against the same tests when more than one choice
-  is available.
+- Compare model choices allowed by policy against the same tests when more than
+  one choice is available.
 
 ## Required access
 

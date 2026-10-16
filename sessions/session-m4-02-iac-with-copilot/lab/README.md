@@ -1,9 +1,9 @@
-# Session m4-02 Lab: Terraform from Modules to Security Gate
+# Session m4-02 lab: Terraform from modules to security gate
 
 **Duration:** 1 hour 30 minutes
 **Difficulty:** Advanced
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02 and m4-01
-**Deliverable:** Validated Terraform modules, a repaired security case, and command evidence
+**Deliverable:** Validated Terraform modules, a repaired security case, and command output
 
 ## Lab overview
 
@@ -13,7 +13,7 @@
 | 2 | Build and connect the modules | 35 min |
 | 3 | Initialize and validate | 15 min |
 | 4 | Investigate the intentional security failure | 20 min |
-| 5 | Record evidence and review limits | 10 min |
+| 5 | Record command output and review limits | 10 min |
 
 ## Before you start
 
@@ -126,7 +126,7 @@ Submit:
 
 1. The completed Terraform root module and three modules.
 2. Clean formatting and validation output.
-3. The security-gate failure and passing repair evidence.
+3. Output from the failing security check and passing rerun after repair.
 4. A short review note that states what requires a plan, cloud policy review, and
    human approval before deployment.
 

@@ -1,4 +1,4 @@
-# Session m5-01 Lab: Carry One Issue Through a Squad
+# Session m5-01 lab: Carry one issue through a Squad
 
 **Duration:** 2 hours
 
@@ -7,14 +7,14 @@
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05
 
 **Deliverable:** One input-validation issue carried through assignment,
-implementation, tests, review, and a durable decision record
+implementation, tests, review, and a committed decision record
 
 ## Before you start
 
 Read the [course safety baseline](../../learning-safety-baseline.md). Use synthetic
 data only.
 
-Confirm GitHub Copilot access, the orchestration tool, the GitHub training
+Check GitHub Copilot access, the orchestration tool, the GitHub training
 repository, integrations, and the metered-work limit. If any requirement is
 unavailable, stop the lab. Do not improvise installation commands
 or replace orchestration with a tabletop simulation.
@@ -44,7 +44,7 @@ npm test
 
 The starter suite should pass. Issue 001's validation cases do not exist yet.
 
-Verify the installation:
+Check the installation:
 
 ```bash
 squad --version
@@ -53,8 +53,8 @@ squad --version
 Read `lab/starter/squad-init-guide.md`, then initialize or inspect the team:
 
 ```text
-Initialize a Squad team for this Node.js Express API. We need bounded roles
-for lead review, backend implementation, test evidence, and decision recording.
+Initialize a Squad team for this Node.js Express API. Define role limits
+for lead review, backend implementation, test results, and decision recording.
 Keep one owner for the shared decision record.
 ```
 
@@ -70,7 +70,7 @@ tree .squad/ -L 3
 | Check | Expected result |
 | --- | --- |
 | Team | Lead, backend, tester, and scribe have charters and history files. |
-| Routing | Implementation, test evidence, review, and decision updates have one owner each. |
+| Routing | Implementation, test results, review, and decision updates have one owner each. |
 | Decisions | The shared record names the scribe as its editor. |
 | Stop rule | Overlapping ownership, failed tests, scope growth, or an unclear data boundary pauses work. |
 
@@ -142,7 +142,7 @@ The review packet must include:
 - test command and result;
 - acceptance-criteria checks;
 - lead decision;
-- durable decision-record entry.
+- committed decision-record entry.
 
 Use `lab/starter/ralph-guide.md` to simulate the monitor after review. The monitor
 may surface Issue 001 as ready for closure only after the lead approves it. A human
@@ -157,17 +157,17 @@ Submit one folder or pull request containing:
 
 1. the reviewed team structure or tabletop role sheet;
 2. the Issue 001 assignment;
-3. the bounded code and test changes;
-4. passing `npm test` evidence;
-5. the lead review and durable decision.
+3. the code and test changes for Issue 001;
+4. passing `npm test` output;
+5. the lead review and recorded decision.
 
 ## Verification
 
 - [ ] Local prerequisites match Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05.
-- [ ] The selected route was approved before work began.
+- [ ] The trainer signed off on the team boundaries before work began.
 - [ ] One role owned each write boundary.
 - [ ] Issue 001 kept the same acceptance criteria through review.
 - [ ] No dependency or unrelated route was changed.
 - [ ] Existing and focused tests pass.
-- [ ] The lead decision cites test evidence.
+- [ ] The lead decision cites test results.
 - [ ] The Squad run produces a complete review packet.

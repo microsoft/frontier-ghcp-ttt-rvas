@@ -1,4 +1,4 @@
-# Session m4-01: GitHub Actions & Workflow Generation
+# Session m4-01: GitHub Actions & workflow generation
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Intermediate
@@ -12,12 +12,12 @@ staged deployment, repair broken workflow files, and validate a local JavaScript
 action. Every task uses `copilot-webapp`, so learners can trace each decision back
 to the same scripts, tests, build output, and health endpoint.
 
-The lab requires evidence, not just finished YAML. Learners record the command,
+Learners submit workflow files and record the command,
 result, changed file, and review decision at each checkpoint.
 
 ## Learning outcomes
 
-- Generate CI from repository facts and verify it with local commands.
+- Generate CI from repository facts and check it with local commands.
 - Design staging and production jobs without performing a live deployment.
 - Repair workflow syntax and behavior from exact failures.
 - Validate a JavaScript action against the application with pass and fail cases.

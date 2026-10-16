@@ -11,13 +11,13 @@ web
 **Trainers** prepare and deliver GitHub Copilot and Agentic Workflows training.
 Learners use the site to choose a track and complete hands-on labs.
 
-## Product Purpose
+## Product purpose
 
 Make training repeatable through reusable session kits and trainer guidance.
-Success means a trainer can deliver a session and learners can complete a bounded
-task with human review.
+Success means a trainer can deliver a session and learners can complete the
+assigned task with human review.
 
-## Operating Context
+## Operating context
 
 Trainers choose a learning track, prepare the environment, and deliver sessions
 using the repository's materials. Learners follow session overviews and lab
@@ -26,17 +26,17 @@ instructions.
 The web site uses MkDocs Material. Markdown files hold the curriculum and learning
 materials; preserve their structure and working resource links.
 
-## Capabilities and Constraints
+## Capabilities and constraints
 
 - Keep the curriculum organized into learning tracks and sessions with reusable
   trainer guidance and hands-on labs.
 - Use **Enterprise Cloud as the governance baseline** and follow customer policy.
-- Verify required tools, permissions, and accounts before each learner lab.
+- Check required tools, permissions, and accounts before each learner lab.
 - Stop the lab when a required tool is unavailable. Keep demo recovery in
   trainer guidance rather than replacing the learner exercise.
 - Keep human review in the learning workflow.
 
-## Brand Commitments
+## Brand commitments
 
 Keep the name **GitHub Copilot Train-the-Trainer**.
 Use the RVAP brand system recorded in `DESIGN.md` across the website and its
@@ -50,9 +50,7 @@ identify curriculum categories; they do not assign RVAP pillar meanings.
 Write direct technical prose for a competent engineer. Follow `AGENTS.md` for
 repository writing.
 
-## Evidence on Hand
-
-Existing materials support future work:
+## Existing materials
 
 - `README.md` and `curriculum-plan.md` describe the curriculum.
 - `tracks/` contains learning paths.
@@ -63,16 +61,16 @@ Existing materials support future work:
 These are training materials. Do not treat them as evidence of measured learning
 outcomes or invent adoption claims.
 
-## Product Principles
+## Product principles
 
 - Help trainers reuse materials without rebuilding a session.
-- Keep each exercise bounded and subject to human review.
-- Make access requirements explicit and stop before the lab when they are not met.
+- Define each exercise's scope and require human review.
+- State access requirements and stop before the lab when they are not met.
 - Offer another setup only when it preserves the same learning objective and
-  completion evidence.
+  completion checks.
 - Keep linked learning resources easy to find as the curriculum changes.
 
-## Custom Session Sets
+## Custom session sets
 
 Trainers can select sessions from the shared catalog, add a title and introduction,
 and arrange the delivery order. A shareable link opens a page containing only those
@@ -83,6 +81,6 @@ the current draft in its URL across reloads. Anyone with a shared link can read
 its title and introduction; users must not include confidential information.
 Selecting a subset does not remove the curriculum's preparation requirements.
 
-## Open Decisions
+## Open decisions
 
 No product-specific accessibility standard has been established.

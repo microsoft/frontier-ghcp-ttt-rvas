@@ -1,4 +1,4 @@
-# Session m3-02: Copilot Cloud Agent
+# Session m3-02: Copilot cloud agent
 
 **Module:** Agentic Workflows
 
@@ -19,12 +19,12 @@ The issue stays fixed throughout the journey: reject blank or whitespace-only ta
 
 ## Learning outcomes
 
-- Write a bounded issue with testable acceptance criteria and explicit non-goals.
+- Write an issue with testable acceptance criteria, allowed files, and non-goals.
 - Review repository instructions and Copilot setup steps before assignment.
-- Monitor an approved agent session without expanding the issue.
+- Monitor an agent session without expanding the issue or its repository access.
 - Compare a proposed change with the issue and allowed file scope.
 - Run and record focused tests.
-- Make an accountable human review decision.
+- Name the human reviewer and record their decision.
 
 ## Deliverables
 

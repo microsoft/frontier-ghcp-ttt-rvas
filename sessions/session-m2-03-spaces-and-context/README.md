@@ -1,4 +1,4 @@
-# Session m2-03: Copilot Spaces & Context Management
+# Session m2-03: Copilot Spaces & context management
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
@@ -11,7 +11,7 @@ Give Copilot the context a task needs. Learners use one Storefront API to select
 They inspect CLI `/env` and `/instructions` to find and correct a stale
 module-style instruction before implementation.
 
-## Learning Outcomes
+## Learning outcomes
 
 - Create Copilot Spaces for team workflows
 - Write project-level and user-level custom instructions
@@ -19,9 +19,9 @@ module-style instruction before implementation.
 - Explain how instructions, Spaces, and Memory work together
 - Review and update context as a project changes
 - Distinguish instruction discovery, file scope, and observed model behavior
-- Choose the smallest source set that supports a task and verify claims against it
+- Choose the smallest source set that supports a task and check claims against it
 
-## Session Materials
+## Session materials
 
 | Resource                | Location                               |
 | ----------------------- | -------------------------------------- |
@@ -29,7 +29,7 @@ module-style instruction before implementation.
 | Lab starter files       | `lab/starter/`         |
 | Lab solution files      | `lab/solution/`       |
 
-## Key Topics
+## Key topics
 
 - Copilot Spaces: selected context sources
 - `.github/copilot-instructions.md`: project-level instructions

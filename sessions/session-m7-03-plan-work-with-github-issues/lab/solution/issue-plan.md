@@ -1,4 +1,4 @@
-# GitHub Issue Plan
+# GitHub issue plan
 
 > Temporary preview only. The created GitHub issues become authoritative.
 
@@ -42,7 +42,7 @@ The parent closes only after the public mapping, requester view, empty and stale
 | 1 | Approve the public status mapping | Approved mapping and wording | None | Product owner |
 | 2 | Extend #241 with public status and next step | Requester-facing status view | Issue 1 | Implementation owner unset |
 | 3 | Handle unavailable and stale status | Safe fallback behavior | Issue 1 | Implementation owner unset |
-| 4 | Verify requester access boundaries | Evidence that users see only their requests | Issues 2-3 | Access reviewer |
+| 4 | Check requester access boundaries | Recorded checks show users see only their requests | Issues 2-3 | Access reviewer |
 | 5 | Prepare service handoff evidence | Reviewed support and release notes | Issues 2-4 | Delivery lead |
 
 ## Proposed labels and milestone

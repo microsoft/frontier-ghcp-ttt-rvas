@@ -1,4 +1,4 @@
-# Session m3-05 Lab: Test Skills and Compare Live Interviews
+# Session m3-05 lab: Test skills and compare live interviews
 
 **Duration:** 2 hours
 
@@ -110,7 +110,7 @@ The matching scenario must return:
 }
 ```
 
-The full result also lists the bounded paths and ordered checks. The skill may not
+The full result also lists the allowed paths and ordered checks. The skill may not
 expand the task to deployment, documentation, or unrelated refactoring.
 
 ## Part 3: Test the non-trigger
@@ -295,7 +295,7 @@ has already improved the workflow.
 - [ ] The missing-reviewer scenario returns `blocked`.
 - [ ] Invalid skill structure fails validation.
 - [ ] `npm test` passes.
-- [ ] The bounded run shows both correct application and visible failure.
+- [ ] The demo run shows both correct application and visible failure.
 - [ ] Copilot loaded and used the API skill in both live scenarios.
 - [ ] The community snapshot passed checksums and both dependency skills loaded.
 - [ ] Both interviews ran live in separate Interactive sessions.

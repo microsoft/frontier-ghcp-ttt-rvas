@@ -1,4 +1,4 @@
-# Session m7-01 Lab: Build and Verify a Grounded Working Brief
+# Session m7-01 lab: Build and check a grounded working brief
 
 **Duration:** 2 hours
 
@@ -10,16 +10,16 @@ original chat
 ## What you will learn
 
 See how project context changes Copilot's answer. Then turn sourced information
-into a durable brief, update it when new evidence arrives, and verify it in a fresh
+into a saved brief, update it when new source information arrives, and check it in a fresh
 session.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Verify the app, mode, and project | 15 min |
+| 1 | Check the app, mode, and project | 15 min |
 | 2 | Compare weak and grounded context | 25 min |
 | 3 | Create the first working brief | 30 min |
 | 4 | Update the brief with new evidence | 25 min |
-| 5 | Verify the brief in a fresh session | 25 min |
+| 5 | Check the brief in a fresh session | 25 min |
 
 ## Before you start
 
@@ -31,10 +31,10 @@ You need:
 - read access to the training repository project;
 - permission to create a branch or working copy for the brief.
 
-Confirm GitHub Copilot access before starting. If GitHub Copilot access or project
+Check GitHub Copilot access before starting. If GitHub Copilot access or project
 access is unavailable, **stop**. Do not continue in a generic chatbot.
 
-## Part 1: Verify the app and project (15 minutes)
+## Part 1: Check the app and project (15 minutes)
 
 1. Open the training repository under **Projects**.
 2. Start an interactive session.
@@ -51,7 +51,7 @@ write needs a learner review.
 
 `@` adds files, `#` references issues, and `/` opens commands in the app. Type the
 character and select the item from the picker. A typed file token alone does not
-confirm that the app attached the source.
+show that the app attached the source.
 
 **Checkpoint:** Copilot can read the supplied file and the learner knows which
 capabilities are available.
@@ -101,7 +101,7 @@ Ask Copilot to complete the brief from `initiative-overview.md`. Require:
 - the requested outcome and affected users;
 - known facts with section references;
 - assumptions separated from unknowns;
-- explicit non-goals;
+- named non-goals;
 - the next decision and its owner;
 - the relevant capabilities found in Part 1.
 
@@ -120,12 +120,12 @@ the next decision without reading the chat.
 
 ## Part 4: Update the brief with new evidence (25 minutes)
 
-Open `starter/late-evidence.md`. Treat it as newly approved evidence that arrived
+Open `starter/late-evidence.md`. Treat it as source information the owner approved
 after the first brief was committed.
 
 Ask Copilot to:
 
-1. compare the new evidence with the saved brief;
+1. compare the new information with the saved brief;
 2. list which sections need to change;
 3. identify any resolved unknown;
 4. identify any statement that is now contradicted;
@@ -140,9 +140,9 @@ git add docs/discovery/initiative-context-brief.md
 git commit -m "Update working brief with approved evidence"
 ```
 
-**Checkpoint:** Git history shows what changed when the evidence changed.
+**Checkpoint:** Git history shows which source changes led to the revision.
 
-## Part 5: Verify the brief in a fresh session (25 minutes)
+## Part 5: Check the brief in a fresh session (25 minutes)
 
 Before starting fresh, run `/context`. If the current session is crowded but the
 thread still matters, use `/compact`. For the fresh-session check, use
@@ -156,7 +156,7 @@ Using only this working brief, report:
 1. the requested outcome;
 2. supported facts and their sources;
 3. unresolved decisions;
-4. explicit non-goals;
+4. named non-goals;
 5. the next owner action.
 Do not infer missing information.
 ```
@@ -171,7 +171,7 @@ Run an independent critique:
 ambiguous ownership, hidden customer references, and decisions presented as facts.
 ```
 
-If `/rubber-duck` is unavailable, stop this step. The trainer must verify the
+If `/rubber-duck` is unavailable, stop this step. The trainer must check the
 current documented critique option before delivery rather than inventing a
 replacement command.
 
@@ -180,7 +180,7 @@ replacement command.
 Submit:
 
 1. `docs/discovery/initiative-context-brief.md`;
-2. two commits showing the first brief and the evidence-driven revision.
+2. two commits showing the first brief and the revision based on the new source.
 
 Session m7-02 uses this brief as the source for its decision interview.
 
@@ -190,6 +190,6 @@ Session m7-02 uses this brief as the source for its decision interview.
 - [ ] The unscoped and grounded answers were compared.
 - [ ] Every fact in the brief points to a source section.
 - [ ] Assumptions and unknowns remain separate.
-- [ ] New evidence produced a focused revision.
+- [ ] New source information produced a focused revision.
 - [ ] A fresh session recovered the intended state from the brief alone.
 - [ ] No customer or source organization names appear.

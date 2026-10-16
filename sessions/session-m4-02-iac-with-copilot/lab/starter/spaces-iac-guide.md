@@ -1,4 +1,4 @@
-# Using Copilot Spaces for IaC
+# Use Copilot Spaces for IaC
 
 Create a Space only when the selected sources and custom instructions are approved.
 

@@ -1,37 +1,37 @@
-# Architecture Decisions
+# Architecture decisions
 
 ## Overview
 
 The Storefront Product API uses a **layered architecture**.
 
-## Architecture Layers
+## Architecture layers
 
 ```
 Routes (HTTP) → Validation (Middleware) → Models (Business Logic) → Store (Data)
 ```
 
-### Routes Layer
+### Routes layer
 
 - Handles HTTP request/response
 - Uses the model's static validation methods
 - Sends data operations to the store
 - Always returns structured JSON responses
 
-### Validation Layer
+### Validation layer
 
 - Each model has a static `validate()` method
 - Validation runs before any data mutation
 - Returns an array of human-readable error strings
 - Supports both create (all required fields) and update (partial) validation
 
-### Model Layer
+### Model layer
 
 - Plain JavaScript classes
 - Holds business logic and transforms data
 - Generates `createdAt` and `updatedAt`
 - Receives and returns plain objects, without HTTP knowledge
 
-### Data Layer
+### Data layer
 
 - In-memory arrays (planned migration to PostgreSQL)
 - Auto-incrementing integer IDs
@@ -39,7 +39,7 @@ Routes (HTTP) → Validation (Middleware) → Models (Business Logic) → Store 
 
 ## Conventions
 
-### Response Envelope
+### Response envelope
 
 Successful responses use a `{ data: ... }` envelope:
 
@@ -48,7 +48,7 @@ Successful responses use a `{ data: ... }` envelope:
 { "data": [...], "total": 42 }
 ```
 
-### Error Format
+### Error format
 
 All errors use the structured format:
 
@@ -56,7 +56,7 @@ All errors use the structured format:
 { "error": { "code": "ERROR_CODE", "message": "...", "details": [...] } }
 ```
 
-### Import Style
+### Import style
 
 - ES module syntax (`import/export`), not CommonJS
 - Named imports preferred over default imports

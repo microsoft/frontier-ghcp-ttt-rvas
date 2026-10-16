@@ -1,4 +1,4 @@
-# Session m7-01 Trainer Guide: Work Effectively in the GitHub Copilot App
+# Session m7-01 trainer guide: Work effectively in the GitHub Copilot app
 
 **Duration:** 1 hour  
 **Audience:** Product managers, product owners, business analysts, project managers, and delivery leads
@@ -17,13 +17,13 @@ Decision Studio brief.
 | 0:08-0:18 | Choose mode and context |
 | 0:18-0:28 | Inspect capabilities and context health |
 | 0:28-0:40 | Compare unscoped and grounded answers |
-| 0:40-0:53 | Create, revise, and verify a working brief |
+| 0:40-0:53 | Create, revise, and check a working brief |
 | 0:53-1:00 | Explain boundaries and launch the lab |
 
 ## Required preflight
 
-- Confirm that every learner can open the GitHub Copilot app.
-- Confirm that the learner can start a chat and open the training repository as a project.
+- Check that every learner can open the GitHub Copilot app.
+- Check that the learner can start a chat and open the training repository as a project.
 - Check that the learner can see the current app navigation and available
   Customize items.
 - Open the starter initiative and reference brief.
@@ -49,10 +49,10 @@ Labels can move. Teach what each area is for rather than a fixed click path.
 
 - **Interactive:** use for interviews, source checks, and reviewed drafts.
 - **Plan:** use before a multi-step change so the learner can approve the plan.
-- **Autopilot:** reserve for bounded work with approved autonomy. It is not used
+- **Autopilot:** reserve for work with agreed scope and permission to act without review of every action. It is not used
   for the Session m7-01 write.
 
-GitHub documents `@` for files, `#` for issues, and `/` for commands. Confirm the
+GitHub documents `@` for files, `#` for issues, and `/` for commands. Check the
 picker in the current app. Run `/context` before the first draft. Use `/compact`
 only when the learner needs to keep a long thread. Use `/clear` or `/reset` for
 the fresh-session test.
@@ -61,7 +61,7 @@ the fresh-session test.
 
 Use a simple rule:
 
-> Give Copilot the smallest approved context that can answer the question.
+> Use only permitted sources. Attach the smallest set that answers the question.
 
 Demonstrate the difference between:
 
@@ -89,12 +89,12 @@ Open **Customize** and identify what is available in the learner's environment. 
 - a **plugin** is an installable package that can bundle skills, agents, hooks,
   MCP servers, or canvases;
 - a **canvas** provides visible shared state;
-- an **automation** repeats a bounded task.
+- an **automation** repeats a task with a defined scope.
 
 Do not teach construction in this session. Learners only need to recognize these
 capabilities and know that availability depends on plan, policy, and installation.
 
-## Demo: create and revise a durable brief
+## Demo: Create and revise a saved brief
 
 1. Ask for an initiative summary without attaching the source.
 2. Mark unsupported statements.
@@ -105,7 +105,7 @@ capabilities and know that availability depends on plan, policy, and installatio
 6. Reveal `lab/starter/late-evidence.md`.
 7. Ask Copilot for a focused update and review the diff.
 8. Run `/rubber-duck` for an independent critique.
-9. Start a fresh session with only the saved brief and verify that it can recover
+9. Start a fresh session with only the saved brief and check that it can recover
    the intended state.
 
 Stress the pattern:
@@ -118,7 +118,7 @@ The pattern returns in every later session.
 
 ## Product notes verified October 5, 2026
 
-Before delivery, verify the current GitHub Copilot app navigation, plan
+Before delivery, check the current GitHub Copilot app navigation, plan
 requirements, policy controls, and Customize feature availability.
 
 Official references:

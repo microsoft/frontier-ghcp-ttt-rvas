@@ -1,4 +1,4 @@
-# Session m4-02: Infrastructure as Code with Copilot
+# Session m4-02: Infrastructure as code with Copilot
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Use Terraform to build and review one modular infrastructure path. Learners connect
+Use Terraform to build and review one modular infrastructure project. Learners connect
 network, compute, and database modules, validate each stage, and repair a supplied
 configuration that fails the local security gate.
 

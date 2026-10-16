@@ -9,7 +9,9 @@
 
 ## Description
 
-Copilot for DevOps work. This track gives platform and DevOps engineers the Copilot fundamentals they need, then covers agent mode, GitHub Actions generation, Infrastructure as Code (Terraform/Bicep), and CI/CD debugging with reviewed security remediation. It is for engineers who work with pipelines, infrastructure, and operations.
+This track teaches platform and DevOps engineers the Copilot fundamentals, then
+covers agent mode, GitHub Actions generation, Infrastructure as Code with Terraform
+and Bicep, and CI/CD debugging with reviewed security remediation.
 
 ## Prerequisites
 
@@ -33,9 +35,9 @@ Copilot for DevOps work. This track gives platform and DevOps engineers the Copi
 
 > **Note:** Session m2-01 (CLI) is optional but recommended for DevOps engineers who work heavily in the terminal. Session m2-03 (Spaces) is also valuable for grounding Copilot in cloud documentation.
 
-## Recommended Delivery Schedule
+## Recommended delivery schedule
 
-### 3-Day Standard
+### 3-day standard
 
 | Day   | Sessions            | Focus                 |
 | ----- | ------------------- | --------------------- |
@@ -43,7 +45,7 @@ Copilot for DevOps work. This track gives platform and DevOps engineers the Copi
 | Day 2 | Sessions m2-02, m4-01     | Agent mode + Actions  |
 | Day 3 | Sessions m4-02, m4-03     | IaC + CI/CD debugging |
 
-### 4-Day Extended (with optional sessions)
+### 4-day extended with optional sessions
 
 | Day   | Sessions        | Focus                 |
 | ----- | --------------- | --------------------- |
@@ -52,7 +54,7 @@ Copilot for DevOps work. This track gives platform and DevOps engineers the Copi
 | Day 3 | Sessions m2-02, m4-01 | Agent mode + Actions  |
 | Day 4 | Sessions m4-02, m4-03 | IaC + CI/CD debugging |
 
-## Learning Outcomes
+## Learning outcomes
 
 By completing this track, trainees will be able to:
 
@@ -65,7 +67,7 @@ By completing this track, trainees will be able to:
 7. Optimize pipeline performance (caching, parallelization, conditional execution)
 8. Integrate security scanning into every pipeline stage
 
-## Next Steps
+## Next steps
 
 - **Agentic Development**. Learn to build custom agents and MCP servers that automate infrastructure workflows
-- **Developer Productivity**. Fill in the intermediate sessions (Spaces and Code Review) for broader Copilot fluency
+- **Developer Productivity**. Add the intermediate sessions on Spaces and code review

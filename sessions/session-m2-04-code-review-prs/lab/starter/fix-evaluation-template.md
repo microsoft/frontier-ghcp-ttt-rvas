@@ -1,6 +1,6 @@
-# Fix Evaluation Template
+# Fix evaluation template
 
-## Copilot Review Analysis
+## Copilot review analysis
 
 Use this template for the local reviews and the private training PR. Preserve
 your initial human verdict before running either local command.
@@ -29,9 +29,9 @@ proof that the change is secure.
 
 ### Comment 1
 
-- **File & Line:**
-- **Issue Copilot Found:**
-- **Copilot's Suggested Fix:**
+- **File & line:**
+- **Issue Copilot found:**
+- **Copilot's suggested fix:**
 - **Is the diagnosis accurate?** (Yes / Partial / No)
 - **Is the fix correct?** (Yes / Partial / No)
 - **Would you apply this fix?** (Apply as-is / Modify then apply / Reject)
@@ -41,9 +41,9 @@ proof that the change is secure.
 
 ### Comment 2
 
-- **File & Line:**
-- **Issue Copilot Found:**
-- **Copilot's Suggested Fix:**
+- **File & line:**
+- **Issue Copilot found:**
+- **Copilot's suggested fix:**
 - **Is the diagnosis accurate?** (Yes / Partial / No)
 - **Is the fix correct?** (Yes / Partial / No)
 - **Would you apply this fix?** (Apply as-is / Modify then apply / Reject)
@@ -53,9 +53,9 @@ proof that the change is secure.
 
 ### Comment 3
 
-- **File & Line:**
-- **Issue Copilot Found:**
-- **Copilot's Suggested Fix:**
+- **File & line:**
+- **Issue Copilot found:**
+- **Copilot's suggested fix:**
 - **Is the diagnosis accurate?** (Yes / Partial / No)
 - **Is the fix correct?** (Yes / Partial / No)
 - **Would you apply this fix?** (Apply as-is / Modify then apply / Reject)
@@ -79,7 +79,7 @@ _(Copy this block for additional comments)_
 | **False positives** (flagged non-issues)      |         |
 | **False negatives** (missed real issues)      |         |
 
-## Issues Copilot Found (of the 6 intentional)
+## Issues Copilot found (of the 6 intentional)
 
 - [ ] Unsafe SQL construction, distinguished from actual SQL execution
 - [ ] Password exposure in API response
@@ -88,7 +88,7 @@ _(Copy this block for additional comments)_
 - [ ] Synthetic hardcoded configuration, distinguished from a real credential leak
 - [ ] Duplicate code (DRY violation)
 
-## Overall Assessment
+## Overall assessment
 
 **Copilot as a first-pass reviewer (1 to 5):** ___
 

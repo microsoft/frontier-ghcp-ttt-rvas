@@ -1,4 +1,4 @@
-# Session m3-02: Trainer Guide
+# Session m3-02: Trainer guide
 
 **Teaching time:** 60 minutes
 
@@ -6,13 +6,13 @@
 
 ## Teaching goal
 
-Teach one bounded issue-to-review journey. Learners should be able to stop at each checkpoint, point to evidence, and name the human who decides what happens next.
+Teach one issue from assignment through review. At each checkpoint, learners should show the relevant files or test output and name the human who decides what happens next.
 
 ## Required preparation
 
 Before class:
 
-1. Confirm whether Copilot cloud agent is approved for the training repository.
+1. Check whether Copilot cloud agent is approved for the training repository.
 2. Use only the synthetic task API in `../lab/starter/sample-project/`.
 3. Name the reviewer and define the stop condition.
 4. Run:
@@ -48,7 +48,7 @@ broaden access, or paste credentials into an issue or instruction file.**
 | 0:00 to 0:05 | Frame and access decision | Live route confirmed |
 | 0:05 to 0:16 | Checkpoint 1: issue contract | Approved issue |
 | 0:16 to 0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
-| 0:27 to 0:39 | Start or simulate one session | Bounded progress evidence |
+| 0:27 to 0:39 | Start or simulate one session | Planned files, commands, and edits stay within the issue |
 | 0:39 to 0:47 | Checkpoint 3: proposed change | Scoped diff review |
 | 0:47 to 0:54 | Checkpoint 4: tests | Recorded test result |
 | 0:54 to 0:58 | Checkpoint 5: human decision | Approve, request changes, or pause |
@@ -62,7 +62,7 @@ Say:
 
 > "We will keep one issue fixed from assignment through review. If the work needs a different issue, we stop and write one."
 
-State the selected access route. Ask the reviewer to confirm ownership of the final decision.
+State how the class will access the agent. Ask the reviewer to accept responsibility for the final decision.
 
 ## 0:05 to 0:16: Checkpoint 1: issue contract
 
@@ -72,7 +72,7 @@ Start with this weak request:
 Fix title validation.
 ```
 
-Open `../lab/starter/issue.md`. Show how the same request becomes a bounded contract:
+Open `../lab/starter/issue.md`. Show how the same request gains testable criteria and a file scope:
 
 - blank and whitespace-only titles return HTTP 400;
 - the error body is `{ "error": "title is required" }`;
@@ -81,7 +81,7 @@ Open `../lab/starter/issue.md`. Show how the same request becomes a bounded cont
 - `npm test` must pass;
 - no dependency or unrelated endpoint change is allowed.
 
-Ask a learner to map each criterion to evidence.
+Ask a learner to map each criterion to a test or diff check.
 
 **Gate:** Do not assign the issue until a peer can name changed behavior, preserved behavior, allowed files, required checks, and non-goals.
 
@@ -89,7 +89,7 @@ Ask a learner to map each criterion to evidence.
 
 Open `../lab/starter/copilot-instructions.md`.
 
-Confirm that it describes:
+Check that it describes:
 
 - Node.js and the supplied Express app;
 - file scope;
@@ -120,7 +120,7 @@ npm test
 
 ### Live route
 
-Assign only `../lab/starter/issue.md` through a currently supported and approved entry point.
+Assign only `../lab/starter/issue.md` through a currently supported entry point allowed by repository policy.
 
 Monitor observed facts:
 
@@ -159,7 +159,7 @@ Check:
 
 Use `../lab/starter/pr-review-checklist.md`.
 
-Model one bounded review comment:
+Model one review comment that stays within the issue:
 
 ```text
 The blank-title test passes, but the whitespace case is missing.
@@ -175,7 +175,7 @@ Run:
 npm test
 ```
 
-Require evidence for:
+Require test results for:
 
 - empty string;
 - whitespace-only string;
@@ -184,7 +184,7 @@ Require evidence for:
 
 Passing tests are necessary, but they do not replace diff review.
 
-If a test fails, decide whether the correction fits the issue. Request a bounded change or pause.
+If a test fails, decide whether the correction fits the issue. Request that change or pause.
 
 ## 0:54 to 0:58: Checkpoint 5: human decision
 
@@ -192,7 +192,7 @@ The named reviewer chooses:
 
 - **approve** when scope, behavior, and tests match the issue;
 - **request changes** when the required correction stays within the issue;
-- **pause** when access, evidence, policy, or ownership is unresolved.
+- **pause** when access, test output, policy, or ownership is unresolved.
 
 Do not turn the decision into a new implementation request.
 
@@ -234,4 +234,4 @@ Recovery succeeds when the proposal returns to the fixed issue and the full suit
 
 ## Product notes checked September 24, 2026
 
-Official GitHub documentation describes Copilot cloud agent as an asynchronous workflow that can work from an issue, use an ephemeral development environment, produce a pull request, expose session logs, and accept human steering. The documented setup workflow path is `.github/workflows/copilot-setup-steps.yml`, with one job named `copilot-setup-steps`. Access, policies, available entry points, and usage controls can differ, so trainers must verify them before delivery.
+Official GitHub documentation describes Copilot cloud agent as an asynchronous workflow that can work from an issue, use an ephemeral development environment, produce a pull request, expose session logs, and accept human steering. The documented setup workflow path is `.github/workflows/copilot-setup-steps.yml`, with one job named `copilot-setup-steps`. Access, policies, available entry points, and usage controls can differ, so trainers must check them before delivery.

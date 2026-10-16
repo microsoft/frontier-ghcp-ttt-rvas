@@ -1,4 +1,4 @@
-# Trainer Delivery Reflection
+# Trainer delivery reflection
 
 **Optional trainer aid. Learners do not submit this file.**
 
@@ -10,7 +10,7 @@ Use it after delivery to record one change for the next run.
 
 **Expected experience:**
 
-**Approved implementation path:**
+**Implementation approach:**
 
 **Demo recovery:**
 
@@ -34,7 +34,7 @@ Which artifacts will learners submit?
 - [ ] Accepted specification trace
 - [ ] Implementation-ready issue
 - [ ] Patch or patch plan
-- [ ] Test evidence
+- [ ] Test results
 - [ ] Review decision and next action
 
 ## Adaptation
@@ -54,6 +54,6 @@ What will you change before teaching this session again?
 
 **Change:**
 
-**Evidence for the change:**
+**Reason for the change:**
 
 **Owner:**

@@ -1,8 +1,8 @@
-# Session m7-06 Trainer Guide: Automate Delivery Follow-up
+# Session m7-06 trainer guide: Automate delivery follow-up
 
 ## Delivery objective
 
-Teach learners to build one bounded automation from live GitHub issues and the
+Teach learners to build one draft-only automation from live GitHub issues and the
 reviewed Session m7-05 parent result. The automation drafts a stakeholder update. A
 person reviews every run and controls distribution.
 
@@ -13,13 +13,13 @@ person reviews every run and controls distribution.
 | 0:00-0:10 | Choose the recurring draft |
 | 0:10-0:22 | Write the concise automation definition |
 | 0:22-0:35 | Configure and run the automation |
-| 0:35-0:47 | Review platform evidence |
+| 0:35-0:47 | Review platform run records |
 | 0:47-0:55 | Change one issue and rerun |
 | 0:55-1:00 | Decide the authoritative system and current state |
 
 ## Required access
 
-Verify Automations and GitHub MCP access before the session. Stop if either is
+Check Automations and GitHub MCP access before the session. Stop if either is
 unavailable.
 
 ## The automation definition

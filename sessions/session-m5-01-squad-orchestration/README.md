@@ -1,4 +1,4 @@
-# Session m5-01: Brady's Squad: Human-Led AI Teams
+# Session m5-01: Brady's Squad: Human-led AI teams
 
 **Module:** Specification-Driven Frameworks
 
@@ -9,7 +9,7 @@
 
 ## Overview
 
-This elective uses Brady's Squad to teach bounded roles, routing, durable
+This elective uses Brady's Squad to teach role limits, routing, recorded
 decisions, and review. The lab carries one input-validation issue from assignment
 through tests and lead review using Squad.
 
@@ -30,7 +30,7 @@ If a requirement is unavailable, stop and resolve it before the lab.
 ## Deliverable
 
 Submit one review packet for the input-validation issue. It must include the
-assignment, bounded implementation, test evidence, lead decision, and the durable
+assignment, implementation within the issue scope, test results, lead decision, and the
 decision record. The reference solution includes both a `.squad/` result and a
 tabletop equivalent.
 

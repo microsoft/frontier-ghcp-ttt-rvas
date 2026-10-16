@@ -50,7 +50,7 @@ Use the IDE when visual navigation and diff review matter more.
 | --- | --- |
 | **Standard** | The task is small or still changing |
 | **Plan** | You want to review the approach before edits |
-| **Autopilot** | The task is bounded and recovery is clear |
+| **Autopilot** | The task has clear limits and a recovery plan |
 
 Permissions still apply. More autonomy requires a narrower task.
 
@@ -111,7 +111,7 @@ Check the current command picker before delivery.
 
 ---
 
-# A bounded task is easier to trust
+# A task with clear limits is easier to review
 
 State:
 
@@ -184,11 +184,11 @@ That context helps Copilot reason. It does not decide:
 
 Before a command changes files or external systems:
 
-1. confirm the directory and scope;
+1. check the directory and scope;
 2. inspect the proposed action;
 3. limit tools and credentials;
 4. define a rollback or stop rule;
-5. verify the result outside the conversation.
+5. check the result outside the conversation.
 
 Use the smallest permission that completes the task.
 

@@ -10,7 +10,7 @@
 
 ## Overview
 
-Introduce GitHub Copilot through one disciplined engineering loop: define behavior,
+Introduce GitHub Copilot through one engineering loop: define behavior,
 inspect a proposal, run focused checks, and decide whether to accept the change.
 Learners complete a small Python utility module, handle an ambiguous text rule, and
 review a follow-up rename.
@@ -20,9 +20,9 @@ Copilot and Python 3.10 or later.
 
 ## Learning outcomes
 
-- Explain why generated output is a proposal rather than evidence of correctness.
-- Confirm access, data, repository scope, and any metered-work guard before use.
-- Accept, revise, or reject an inline suggestion against explicit tests.
+- Explain why generated output needs tests and review.
+- Check access, data, repository scope, and any usage limit before use.
+- Accept, revise, or reject an inline suggestion against the tests.
 - Review a predicted follow-up edit and search for missed references.
 
 ## Required access

@@ -1,10 +1,10 @@
-# Session m7-03 Lab: Create, Verify, and Correct a GitHub Issue Plan
+# Session m7-03 lab: Create, check, and correct a GitHub issue plan
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Deliverable:** A live GitHub issue hierarchy created through MCP, verified by a
+**Deliverable:** A live GitHub issue hierarchy created through MCP, checked by a
 fresh read, and corrected through a second approved write
 
 ## Deliverables
@@ -14,33 +14,33 @@ fresh read, and corrected through a second approved write
 
 ## Lab outcome
 
-Create a reviewed GitHub issue hierarchy through MCP. Verify it with a fresh read,
-then make and verify one focused correction.
+Create a reviewed GitHub issue hierarchy through MCP. Check it with a fresh read,
+then make and check one focused correction.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Verify GitHub MCP and write access | 15 min |
+| 1 | Check GitHub MCP and write access | 15 min |
 | 2 | Read the source and existing GitHub state | 20 min |
 | 3 | Design and review the issue hierarchy | 30 min |
 | 4 | Preview and create the issues | 35 min |
-| 5 | Verify and correct one issue | 20 min |
+| 5 | Check and correct one issue | 20 min |
 
 ## Preflight
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot access. **Stop if access is unavailable.**
+Check GitHub Copilot access. **Stop if access is unavailable.**
 
-## Part 1: Verify GitHub MCP and write access (15 minutes)
+## Part 1: Check GitHub MCP and write access (15 minutes)
 
 In the GitHub Copilot app:
 
 1. open **Customize** → **MCP** → **Installed**;
-2. confirm that the approved GitHub MCP connection is available;
+2. check that the approved GitHub MCP connection is available;
 3. start a session for the training repository;
 4. ask Copilot to list the GitHub tools it can use;
 5. ask it to retrieve the repository name and five open issues;
-6. confirm that you have issue-write permission.
+6. check that you have issue-write permission.
 
 GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
 
@@ -56,7 +56,7 @@ or repository file.**
 Stop if the read test or issue-write check fails.
 
 GitHub MCP is the tool connection used in this lab. A plugin can bundle an MCP
-server with other customizations, but the learner must still verify the active
+server with other customizations, but the learner must still check the active
 connection and its tools.
 
 ## Part 2: Read the source and existing GitHub state (20 minutes)
@@ -130,7 +130,7 @@ returned issue number and URL in the parent issue or its linked child issues.
 **Checkpoint:** The write result contains one parent and no more than five child
 issues in the approved repository.
 
-## Part 5: Verify and correct one issue (15 minutes)
+## Part 5: Check and correct one issue (15 minutes)
 
 Start a new Copilot request. Do not reuse the create response.
 
@@ -151,7 +151,7 @@ Source decision: docs/discovery/decision-brief.md
 ```
 
 Require a full update preview. Approve the focused write, then retrieve the issue
-again and confirm the new section is present. No separate verification document
+again and check the new section is present. No separate verification document
 is needed.
 
 **Checkpoint:** A fresh read proves that both the original create and the correction
@@ -168,8 +168,8 @@ Session m7-04 reads this live issue set through GitHub MCP.
 - [ ] Concrete duplicate and partial-overlap candidates received a disposition.
 - [ ] The complete write was previewed before approval.
 - [ ] Created issues match the approved decision brief.
-- [ ] A fresh read verified the created state.
-- [ ] A second preview, write, and fresh read verified the correction.
+- [ ] A fresh read matched the created state to the approved plan.
+- [ ] A second preview, write, and fresh read checked the correction.
 - [ ] The parent issue links the child issues and records the planning decisions.
 - [ ] No invented owner, date, label, or milestone was added.
 - [ ] No customer or source organization names appear.

@@ -1,4 +1,4 @@
-# Session m2-06 Lab: Repair and Refactor a Broken Python Application
+# Session m2-06 lab: Repair and refactor a broken Python application
 
 **Duration:** 2 hours
 
@@ -27,7 +27,7 @@ without changing the reports.
 
 Use the repository Dev Container or GitHub Codespaces.
 
-Confirm GitHub Copilot access before starting. If Copilot access is missing, unavailable, or blocked in the training environment,
+Check GitHub Copilot access before starting. If Copilot access is missing, unavailable, or blocked in the training environment,
 **stop the lab**. Fix access first.
 
 Run:
@@ -37,7 +37,7 @@ python --version
 git --version
 ```
 
-Confirm Python 3.11 or later. Then copy the starter to a scratch directory so the
+Check that Python 3.11 or later is installed. Then copy the starter to a scratch directory so the
 original remains available:
 
 ```bash
@@ -302,7 +302,7 @@ pytest -q
 
 For Windows, compare the files in the editor if `diff` is unavailable.
 
-## Final Deliverable
+## Final deliverable
 
 Submit or demonstrate:
 

@@ -1,8 +1,8 @@
-# Repair Log
+# Repair log
 
 Copy this file to `repair-log-working.md`.
 
-| Order | Failure | Evidence | Hypothesis | Small change | Verification command | Result |
+| Order | Failure | Error or output | Hypothesis | Small change | Check command | Result |
 | ---: | --- | --- | --- | --- | --- | --- |
 | 1 | `SYN-01` |  |  |  |  |  |
 | 2 | `SYN-02` |  |  |  |  |  |

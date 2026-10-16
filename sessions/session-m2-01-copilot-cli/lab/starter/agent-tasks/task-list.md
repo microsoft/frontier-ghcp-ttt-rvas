@@ -1,10 +1,10 @@
-# Agent Mode Task List
+# Agent mode task list
 
 Complete these three tasks with Copilot CLI agent mode. Run the tests after each task; the next task uses the result of the previous one.
 
 ---
 
-## Task 1: Fix the Bugs (10 min)
+## Task 1: Fix the bugs (10 min)
 
 **Difficulty:** Easy
 
@@ -32,7 +32,7 @@ Read src/app.js and tests/app.test.js. There are 3 bugs in app.js causing test f
 
 ---
 
-## Task 2: Add Missing Tests (10 min)
+## Task 2: Add missing tests (10 min)
 
 **Difficulty:** Medium
 
@@ -53,11 +53,11 @@ The utils.js file has 4 exported functions but no tests. Create a full test file
 
 ---
 
-## Task 3: Refactor with Validation (10 min)
+## Task 3: Refactor with validation (10 min)
 
 **Difficulty:** Hard
 
-Refactor `src/utils.js` to be production-quality. Use **autopilot mode** (press `Shift+Tab` until you see "autopilot").
+Refactor `src/utils.js` to add validation and JSDoc comments. Use **autopilot mode** (press `Shift+Tab` until you see "autopilot").
 
 **Tell the agent:**
 
@@ -73,5 +73,5 @@ Refactor src/utils.js:
 
 - All 4 functions have `@param` and `@returns` JSDoc comments
 - Invalid arguments throw `TypeError` with descriptive messages
-- Tests verify normal behavior and error cases
+- Tests check normal behavior and error cases
 - `npm test` passes all tests (including new validation tests)

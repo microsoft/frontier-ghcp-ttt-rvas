@@ -8,15 +8,13 @@ footer: 'Session m7-01: Work Effectively in the GitHub Copilot App'
 
 <!-- _class: lead -->
 
-# Work Effectively in the GitHub Copilot App
+# Work effectively in the GitHub Copilot app
 
 Session m7-01 | Product and Delivery Teams | Beginner
 
 ---
 
 # The app is the classroom
-
-This track does not use Copilot as a background writing tool.
 
 Learners work in the GitHub Copilot app with repository context and reviewable
 artifacts.
@@ -26,7 +24,7 @@ is the initiative.
 
 ---
 
-# The app is a workspace, not an answer engine
+# Save work beyond the chat
 
 The chat is one place to work. Projects, source references, issues, and saved
 artifacts make the work reviewable after the conversation ends.
@@ -79,7 +77,7 @@ This makes uncertainty visible. A polished paragraph can hide all three.
 
 # Context comes before the prompt
 
-Give Copilot the smallest approved context that can answer the question.
+Use only permitted sources. Attach the smallest set that answers the question.
 
 Name the files, issues, or repository that should support the answer.
 
@@ -91,7 +89,7 @@ Name the files, issues, or repository that should support the answer.
 | --- | --- |
 | Interactive | Questions, interviews, and reviewed drafts |
 | Plan | Review a multi-step approach before changes |
-| Autopilot | Bounded work with approved autonomy |
+| Autopilot | Work with agreed scope and permission to act without review of every action |
 
 Session m7-01 uses Interactive, then Plan. The learner reviews every write.
 
@@ -128,7 +126,7 @@ Mark missing information as unknown.
 - Plugins install reusable packages that can include MCP servers and other
   customizations.
 - Canvases provide visible shared state.
-- Automations repeat bounded work.
+- Automations repeat tasks with a defined scope.
 
 Availability depends on the plan, policy, and installation.
 
@@ -167,7 +165,7 @@ Initial source
   → fresh-session verification
 ```
 
-The brief works only while it matches approved evidence.
+Keep the brief consistent with source information the owner has approved.
 
 ---
 
@@ -180,6 +178,6 @@ The brief works only while it matches approved evidence.
 5. Apply approved late evidence.
 6. Review and commit the focused revision.
 7. Ask `/rubber-duck` for independent critique.
-8. Verify the brief in a fresh session.
+8. Check the brief in a fresh session.
 
 **Stop if the app or repository context is unavailable.**

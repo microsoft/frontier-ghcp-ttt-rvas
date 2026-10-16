@@ -1,8 +1,9 @@
-# Track Template
+# Track template
 
-This directory contains the repeatable template structure for the GitHub Copilot & Agentic Workflows Train-the-Trainer track. Use it to scaffold new sessions or create variations of the curriculum.
+Use this template to create sessions for the GitHub Copilot & Agentic Workflows
+Train-the-Trainer curriculum.
 
-## How to Use
+## How to use
 
 1. **Copy** the `session-template/` folder into `sessions/` with the naming convention:
 
@@ -36,7 +37,7 @@ This directory contains the repeatable template structure for the GitHub Copilot
      sessions/session-m2-08-new-topic
    ```
 
-## Folder Structure
+## Folder structure
 
 ```
 session-template/
@@ -62,7 +63,7 @@ session-template/
 - **Enterprise delivery:** Add an access and cost preflight, state the required
   tools and permissions, and tell learners to stop when a required tool is
   missing. Put demo recovery in the trainer guide. Add another learner setup only
-  when it preserves the same objective and completion evidence.
+  when it preserves the same objective and completion checks.
 - **Trainer slides:** Teach the concepts before the lab. Include an agenda, enough
   explanation for the trainer to introduce each concept, concrete examples or
   decision tables, a prepared demonstration where relevant, and a clear lab handoff.

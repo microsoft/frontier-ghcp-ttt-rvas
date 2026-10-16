@@ -1,4 +1,4 @@
-# Session m4-02 Trainer Guide: Terraform as the Required Path
+# Session m4-02 trainer guide: Terraform as the required path
 
 ## Delivery objective
 
@@ -93,17 +93,17 @@ any is unavailable. No cloud account or credentials are needed.
 ## Lab handoff
 
 Learners have 90 minutes. They complete the Terraform modules, run staged checks,
-investigate the security failure, and submit evidence. Point out that the session
+investigate the security failure, and submit command output. Point out that the session
 duration changed to 2 hours 30 minutes because the duplicate Bicep build was
 removed from the required lab.
 
 ## Common questions
 
-**Why no plan?** The required exercise has no approved cloud target or identity.
+**Do not run a plan.** The required exercise has no approved cloud target or identity.
 Local validation is enough for the learning goal.
 
-**Why keep Bicep?** It shows that the module and validation ideas transfer without
+**Keep Bicep as a comparison.** It shows that the module and validation ideas transfer without
 doubling the required implementation.
 
-**Does the security script replace policy tooling?** No. It is a deterministic
-training gate for the supplied failure.
+**Keep policy tooling separate.** The security script is a deterministic
+training gate for the supplied failure. It does not replace policy tooling.

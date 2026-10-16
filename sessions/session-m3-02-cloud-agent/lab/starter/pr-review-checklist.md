@@ -1,4 +1,4 @@
-# Human Review Checklist
+# Human review checklist
 
 ## Issue contract
 
@@ -25,7 +25,7 @@
 - [ ] Focused invalid-title tests pass.
 - [ ] A valid-title regression test passes.
 - [ ] Existing endpoint tests pass.
-- [ ] Failures, skipped tests, or missing evidence are recorded.
+- [ ] Failures, skipped tests, or missing test output are recorded.
 
 ## Safety and reviewability
 

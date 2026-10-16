@@ -8,7 +8,7 @@ footer: 'Session m2-05. GitHub Copilot App for Developers'
 
 <!-- _class: lead -->
 
-# GitHub Copilot App for Developers
+# GitHub Copilot App for developers
 
 Isolated work, visible evidence, reviewable handoffs
 
@@ -89,7 +89,7 @@ Working-tree isolation does not provide that security boundary by itself.
 
 ---
 
-# Verify the workspace before work starts
+# Check the workspace before work starts
 
 Ask the session to report:
 
@@ -151,8 +151,7 @@ Observe failing behavior
   → inspect the diff
 ```
 
-Chat narration is not verification. Use a command, diff, test, or reproducible
-manual check.
+Check the result with a command, diff, test, or reproducible manual check.
 
 ---
 
@@ -293,7 +292,7 @@ Learners submit:
 - a PR-readiness report;
 - a manual read-only automation specification.
 
-**Success means another engineer can replay the reasoning from the evidence.**
+**Another engineer should be able to check the decision from the saved files and results.**
 
 ---
 
@@ -301,7 +300,7 @@ Learners submit:
 
 # Lab handoff
 
-Confirm live app access before the lab. If access is unavailable, stop the lab.
+Check live app access before the lab. If access is unavailable, stop the lab.
 Supplied evidence may recover the trainer demonstration, but it does
 not replace learner app practice.
 

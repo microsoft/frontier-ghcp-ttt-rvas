@@ -1,12 +1,12 @@
-# GitHub Copilot CLI Cheat Sheet: Example
+# GitHub Copilot CLI cheat sheet: Example
 
 > Example completed cheat sheet. Make yours reflect your preferences and workflow.
 
 ---
 
-## Quick Reference
+## Quick reference
 
-### Installation & Setup
+### Installation & setup
 
 ```bash
 # Install
@@ -18,7 +18,7 @@ npm install -g @github/copilot
 copilot --version
 ```
 
-### Top 5 Commands
+### Top 5 commands
 
 | #   | Command                        | What I Use It For                                           |
 | --- | ------------------------------ | ----------------------------------------------------------- |
@@ -26,11 +26,11 @@ copilot --version
 | 2   | `copilot -p "Suggest a command to ..."` | Generate commands I can't remember the flags for     |
 | 3   | `copilot -p "prompt" --silent` | Automate report generation in scripts                       |
 | 4   | `/plan` | Review and revise the approach before implementation |
-| 5   | `/research topic`              | Deep dives before adopting a new library or approach        |
+| 5   | `/research topic`              | Research before adopting a new library or approach        |
 
 ---
 
-## CLI Modes
+## CLI modes
 
 | Mode         | How to Activate       | When to Use                                         |
 | ------------ | --------------------- | --------------------------------------------------- |
@@ -63,7 +63,7 @@ copilot --version
 
 ---
 
-## My CLI vs IDE Decision Rules
+## My CLI vs IDE decision rules
 
 | Situation           | My Choice   | Why                                              |
 | ------------------- | ----------- | ------------------------------------------------ |
@@ -77,7 +77,7 @@ copilot --version
 
 ---
 
-## Useful Flags
+## Useful flags
 
 ```bash
 # Flags I use regularly:
@@ -91,7 +91,7 @@ copilot --version
 
 ---
 
-## My Shell Aliases
+## My shell aliases
 
 ```bash
 # Quick explain and suggest helpers
@@ -112,7 +112,7 @@ alias cr='copilot -p "Review my staged git changes. Focus on bugs, security issu
 
 ---
 
-## Key Shortcuts (Interactive Mode)
+## Key shortcuts (interactive mode)
 
 | Shortcut    | Action                                    |
 | ----------- | ----------------------------------------- |
@@ -129,7 +129,7 @@ alias cr='copilot -p "Review my staged git changes. Focus on bugs, security issu
 
 ---
 
-## Notes from Today's Lab
+## Notes from today's lab
 
 1. **Programmatic mode fits scripts.** I can use it in bash pipelines for reports, changelogs, and audits.
 2. **Autopilot can make several changes without stopping.** Set `--max-autopilot-continues` until you understand its behavior for a task.

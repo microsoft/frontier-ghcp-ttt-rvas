@@ -1,4 +1,4 @@
-# Delivery-Readiness Canvas Contract
+# Delivery-readiness canvas contract
 
 ## Purpose
 

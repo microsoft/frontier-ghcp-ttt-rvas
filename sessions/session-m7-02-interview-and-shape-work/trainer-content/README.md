@@ -1,4 +1,4 @@
-# Session m7-02 Trainer Guide: Interview Ideas and Shape Better Work
+# Session m7-02 trainer guide: Interview ideas and shape better work
 
 ## Delivery objective
 
@@ -22,16 +22,16 @@ decision brief and issue proposal.
 
 Complete this check before learners begin:
 
-- Confirm that every learner can open the GitHub Copilot app and the training repository project.
+- Check that every learner can open the GitHub Copilot app and the training repository project.
 - Copy the supplied skill to
   `.github/skills/decision-interview/SKILL.md`.
-- Open a new app session and confirm that `decision-interview` appears under
+- Open a new app session and check that `decision-interview` appears under
   **Customize** → **Skills** → **Installed**.
 - Run `/decision-interview` with the short test request from the lab.
 - Test one prompt and one follow-up answer.
-- Confirm Interactive, Plan, and Autopilot modes are visible. The interview uses
+- Check Interactive, Plan, and Autopilot modes are visible. The interview uses
   Interactive; artifact changes use Plan.
-- Confirm `/context`, `/compact`, `/clear` or `/reset`, and `/rubber-duck` in the
+- Check `/context`, `/compact`, `/clear` or `/reset`, and `/rubber-duck` in the
   current command picker.
 - Use only the supplied fictional scenario during the demonstration.
 - Open the starter templates and completed solution in separate windows.
@@ -40,7 +40,7 @@ Complete this check before learners begin:
 > [!IMPORTANT]
 > **Stop if the GitHub Copilot app or repository project is unavailable.** Resolve licensing, sign-in, policy, client, or repository access before the session starts.
 
-For a planned trainer-only Azure Boards delivery, confirm that learners can use
+For a planned trainer-only Azure Boards delivery, check that learners can use
 either an approved MCP connection or the browser. Azure Boards changes the update
 method. It never replaces GitHub Copilot.
 
@@ -81,7 +81,7 @@ When evidence is unavailable, mark the fact as unverified. Do not disguise it as
 Run `/context` after each interview round. Compact only when the same thread must
 continue. Start fresh when old recommendations begin to leak into new decisions.
 When starting fresh, carry only confirmed decisions and open questions. The
-decision brief becomes the durable record.
+decision brief becomes the saved record.
 
 ### Use an independent critic
 
@@ -98,7 +98,7 @@ Start with:
 Run the demonstration through `/decision-interview`. The skill must ask a numbered
 frontier and wait for owner decisions instead of drafting the final artifact.
 
-### Round 1: define the problem
+### Round 1: Define the problem
 
 Ask GitHub Copilot to cover:
 
@@ -108,7 +108,7 @@ Ask GitHub Copilot to cover:
 
 Recommended direction: submitted requesters need a plain-language status and recent update. The first outcome is fewer manual "what is happening?" contacts. It is not a redesign of the service process.
 
-### Round 2: bound the solution
+### Round 2: Set the scope
 
 Use the first answers to ask:
 
@@ -119,7 +119,7 @@ Use the first answers to ask:
 
 Recommended direction: cover facilities and equipment requests in the web portal. Show a mapped public status, last updated time, and safe summary. Exclude outbound notifications, internal notes, agent names, and security details.
 
-### Round 3: define success and failure
+### Round 3: Define success and failure
 
 Ask:
 
@@ -128,9 +128,9 @@ Ask:
 3. What should the requester see when a status is missing or stale?
 4. Which accessibility and permission checks apply?
 
-Recommended direction: measure fewer status-chasing contacts and confirm that every supported request shows a public status. Failure includes exposing internal notes, showing a status to the wrong requester, or presenting stale data as current.
+Recommended direction: measure fewer status-chasing contacts and check that every supported request shows a public status. Failure includes exposing internal notes, showing a status to the wrong requester, or presenting stale data as current.
 
-### Round 4: close ownership and approval
+### Round 4: Close ownership and approval
 
 Ask:
 
@@ -161,7 +161,7 @@ Keep it short enough to review in one sitting. Review the proposed repository ch
 Ask GitHub Copilot to convert the approved brief into an issue proposal:
 
 1. Write one user outcome.
-2. Copy the bounded scope and non-goals.
+2. Copy the agreed scope and non-goals.
 3. Turn success and failure cases into observable acceptance criteria.
 4. Add dependencies and open risks.
 5. Name the owner and reviewer.
@@ -191,14 +191,14 @@ Learners use the Service Request Portal context from Session m7-01 or
 [`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).
 
 Each learner or pair needs a request owner and delivery reviewer. The request owner
-approves the decision brief. The delivery reviewer verifies the brief and proposal
+approves the decision brief. The delivery reviewer checks the brief and proposal
 in a fresh session.
 
 ### Trainer-only Azure Boards supplement
 
 Use [`../lab/azure-boards/README.md`](../lab/azure-boards/README.md) when learners have a seeded training requirement. The companion replaces work-item drafting in Phases 4 and 5.
 
-Before the lab, confirm the field labels used for priority and readiness. Learners
+Before the lab, check the field labels used for priority and readiness. Learners
 may use MCP or the browser to apply approved changes. They must use GitHub Copilot
 for the interview and draft review.
 

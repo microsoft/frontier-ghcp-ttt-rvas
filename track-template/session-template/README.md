@@ -13,9 +13,9 @@
 
 ## Description
 
-[2 to 3 sentence description of what this session covers and why it matters in the learning arc.]
+[Describe what this session teaches and how it relates to other sessions in 2 to 3 sentences.]
 
-## Learning Objectives
+## Learning objectives
 
 By the end of this session, trainees will be able to:
 
@@ -24,20 +24,20 @@ By the end of this session, trainees will be able to:
 3. [Objective 3]
 4. [Objective 4]
 
-## Session Structure
+## Session structure
 
 | Block           | Duration   | Content                                                    |
 | --------------- | ---------- | ---------------------------------------------------------- |
 | Trainer Content | 1 hour     | [Slides](slides.md) and [trainer guide](trainer-content/README.md) |
 | Lab             | 2 hours    | [See lab/README.md](lab/README.md)                         |
 
-## Materials Needed
+## Materials needed
 
 - [ ] GitHub account with Copilot access
 - [ ] VS Code with GitHub Copilot extension
 - [ ] [Additional materials specific to this session]
 
-## Current Product References
+## Current product references
 
 Product notes were checked against official GitHub sources on YYYY-MM-DD.
 Trainers must recheck access, policy, and feature status before delivery:
@@ -46,6 +46,6 @@ Trainers must recheck access, policy, and feature status before delivery:
 - [GitHub Copilot changelog](https://github.com/changelog?label=github-copilot)
 - [Add a direct official source for each product claim]
 
-## Trainer Notes
+## Trainer notes
 
-[Any special guidance for delivering this session. Pacing tips, common questions, areas where trainees typically struggle.]
+[Add pacing tips, common questions, and topics trainees often find difficult.]

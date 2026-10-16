@@ -2,11 +2,11 @@
 
 ## Access path
 
-- [ ] Required Copilot Chat access confirmed
+- [ ] Required Copilot Chat access checked
 
 ## Conversation record
 
-| Stage | Surface or command | Prompt | What you verified |
+| Stage | Surface or command | Prompt | What you checked |
 | --- | --- | --- | --- |
 | Explain |  |  |  |
 | Diagnose |  |  |  |
@@ -22,6 +22,6 @@
 
 ## Comparison
 
-If policy exposes two approved model choices, run the same weighted-average review
+If policy allows two model choices, run the same weighted-average review
 prompt with both. Otherwise compare the assisted response with the reference
 solution. Record only observable differences.

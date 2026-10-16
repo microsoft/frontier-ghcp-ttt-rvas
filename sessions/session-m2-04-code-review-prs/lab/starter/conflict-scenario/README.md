@@ -1,4 +1,4 @@
-# Merge Conflict Scenario: Trainer Setup Guide
+# Merge conflict scenario: Trainer setup guide
 
 **Used in:** Session m2-04 conflict-resolution exercise
 

@@ -1,8 +1,8 @@
-# Session m1-01 Trainer Guide: Introduction to GitHub Copilot
+# Session m1-01 trainer guide: Introduction to GitHub Copilot
 
 ## Delivery objective
 
-Teach one durable habit: **define, inspect, test, decide**. Learners should leave
+Teach one habit: **define, inspect, test, decide**. Learners should leave
 able to review an inline suggestion without treating fluency as correctness.
 
 ## One-hour plan
@@ -21,13 +21,13 @@ The timings match [`slides.md`](../slides.md).
 
 ## Before delivery
 
-- Confirm the training repository uses synthetic content.
-- Confirm Python 3.10 or later is available.
-- Verify current product setup in official documentation.
-- Confirm the selected editor and account are approved.
+- Check that the training repository uses synthetic content.
+- Check that Python 3.10 or later is available.
+- Check current product setup in official documentation.
+- Check that learners may use the selected editor and account.
 - If the exercise can create metered use, name the owner, threshold, and stop
   condition.
-- Confirm access before delivery and prepare screenshots only for demo recovery.
+- Check access before delivery and prepare screenshots only for demo recovery.
 - Run the starter syntax check and the solution tests.
 
 Do not teach fixed prices, model lists, shortcuts, or data-handling claims. Show the
@@ -37,7 +37,7 @@ controls available in the training environment.
 
 ### 0:00 to 0:07: Proposal and evidence
 
-**Slides:** *Introduction to GitHub Copilot*, *The durable workflow*, *Proposal is
+**Slides:** *Introduction to GitHub Copilot*, *The review workflow*, *Proposal is
 not proof*
 
 State the session rule:
@@ -68,7 +68,7 @@ with the docstring and test. The second version gives reviewers a clear contract
 
 **Slides:** *Preflight before use*, *Access policy*
 
-Confirm four boundaries:
+Check four boundaries:
 
 1. **Access:** Is the selected account and surface enabled?
 2. **Data:** Is every file and value approved for this workflow?
@@ -107,7 +107,7 @@ Open `lab/starter/utils.py` and `test_utils.py`.
 7. Show the failure for repeated whitespace.
 8. Restore the reviewed implementation and rerun the test.
 
-This demo shows why a failing check is useful evidence rather than a bad outcome.
+The failing check exposes the whitespace bug before the change grows.
 
 ### 0:50 to 0:56: Follow-up edits
 
@@ -122,7 +122,7 @@ run an independent search for the old name. A prediction can miss a reference.
 
 **Slides:** *Access check*, *Lab handoff*
 
-Confirm that learners can request an inline suggestion. If they cannot, fix access
+Check that learners can request an inline suggestion. If they cannot, fix access
 before starting the lab.
 
 The lab continues in one module. Learners complete two simple functions, settle
@@ -168,6 +168,6 @@ Use the shortcut displayed by the editor.
 
 - [ ] The starter files are open.
 - [ ] The five expected baseline failures are understood.
-- [ ] Required Copilot access is confirmed.
+- [ ] Required Copilot access is checked.
 - [ ] Learners know where to record decisions.
 - [ ] The solution is available but closed.

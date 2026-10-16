@@ -1,4 +1,4 @@
-# Course Correction: Preserve Storage Boundaries
+# Course correction: Preserve storage boundaries
 
 The repository refactor now has two extra constraints:
 

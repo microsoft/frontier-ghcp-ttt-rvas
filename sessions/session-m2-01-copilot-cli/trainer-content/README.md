@@ -1,10 +1,10 @@
-# Session m2-01: GitHub Copilot in the CLI Trainer Content
+# Session m2-01: GitHub Copilot in the CLI trainer content
 
 > **Duration:** 1 hour | **Difficulty:** Intermediate | **Module:** Copilot in Practice
 
 ---
 
-## Session Overview
+## Session overview
 
 This session covers GitHub Copilot's standalone CLI. Trainers learn its terminal
 workflows and when it fits better than an IDE. They also learn how to teach those
@@ -15,7 +15,7 @@ It fits DevOps engineers, SREs, and other terminal-focused developers.
 
 ---
 
-## Preparation Checklist
+## Preparation checklist
 
 - [ ] Install the Copilot CLI: `npm install -g @github/copilot` (requires Node.js 22+)
 - [ ] Authenticate: run `copilot` and use `/login`
@@ -32,15 +32,15 @@ It fits DevOps engineers, SREs, and other terminal-focused developers.
 
 ---
 
-## Section 1: Why a Dedicated CLI Session? (5 min)
+## Section 1: Why a dedicated CLI session? (5 min)
 
-### Talking Points
+### Talking points
 
 Open with this framing:
 
 > "You have already used Copilot in VS Code through Chat, inline suggestions, and agent mode. The CLI is a separate product surface with its own architecture and capabilities."
 
-Walk through three reasons the CLI matters:
+Explain where the CLI fits:
 
 **1. It has its own agent loop**
 
@@ -72,9 +72,9 @@ Walk through three reasons the CLI matters:
 
 ---
 
-## Section 2: Installation & Setup (5 min)
+## Section 2: Installation & setup (5 min)
 
-### Talking Points
+### Talking points
 
 The CLI installs as a standalone binary, not a `gh` extension:
 
@@ -91,7 +91,7 @@ The CLI installs as a standalone binary, not a `gh` extension:
 - For CI/CD: Set `COPILOT_GITHUB_TOKEN` or `GH_TOKEN` environment variable
 - Check current GitHub documentation and organization policy for supported hosts
 
-### Demo: Installation & First Launch
+### Demo: Installation & first launch
 
 ```bash
 # Install (if not already installed)
@@ -116,9 +116,9 @@ copilot
 
 ---
 
-## Section 3: Core Interactive Modes (10 min)
+## Section 3: Core interactive modes (10 min)
 
-### Three Sub-Modes
+### Three sub-modes
 
 The interactive CLI has three modes, cycled with `Shift+Tab`:
 
@@ -147,17 +147,17 @@ lab requires manual invocation. Stop if no suitable critic is available.
 Plan mode protects project edits during planning, but it is not a sandbox for
 external or MCP tools. Keep those permissions restricted.
 
-### Slash Commands
+### Slash commands
 
-The CLI has **40+ slash commands** that control every aspect of behavior. Here are the most important:
+The CLI has **40+ slash commands** for session, agent, and configuration controls:
 
 **Session Management:**
 
 - `/clear` or `/new`: start a fresh conversation
-- `/resume`: resume a previous session (sessions persist!)
+- `/resume`: resume a saved session
 - `/compact`: compress conversation to free up context window
 - `/context`: visualize token usage
-- `/usage`: inspect session information when the approved CLI exposes it
+- `/usage`: inspect session information when the installed CLI exposes it
 
 **Agentic Commands:**
 
@@ -181,7 +181,7 @@ The CLI has **40+ slash commands** that control every aspect of behavior. Here a
 > **Slide suggestion:** Separate shared commands from terminal-only workflows.
 > The app also provides `/plan`, `/fleet`, and `/review`.
 
-### Demo: Interactive Modes
+### Demo: Interactive modes
 
 ```bash
 # Start the CLI
@@ -208,19 +208,17 @@ An ordinary "plan first" prompt does not demonstrate selecting Plan mode.
 
 ---
 
-## Section 4: Programmatic Mode and Scriptable AI (10 min)
+## Section 4: Programmatic mode and scriptable AI (10 min)
 
-### Talking Points
+### Talking points
 
-This CLI feature lets you run a prompt from the command line.
-
-**Programmatic mode (`-p`)** passes a prompt on the command line, Copilot executes it, then exits. You can embed Copilot in bash scripts, CI/CD pipelines, cron jobs, and automation workflows.
+**Programmatic mode (`-p`)** runs a command-line prompt, then exits. You can use it in bash scripts, CI/CD pipelines, cron jobs, and automation workflows.
 
 ```bash
 copilot -p "PROMPT" [OPTIONS]
 ```
 
-### Key Flags for Scripting
+### Key flags for scripting
 
 | Flag                           | What it does                              |
 | ------------------------------ | ----------------------------------------- |
@@ -269,7 +267,7 @@ copilot -p "Check this Terraform for security issues and fix them" \
 
 > **Trainer note:** "Programmatic mode supports automation in CI/CD pipelines, Git hooks, and deployment scripts."
 
-### Fine-Grained Tool Permissions
+### Fine-grained tool permissions
 
 The permission system uses `Kind(argument)` syntax for precise control:
 
@@ -289,7 +287,7 @@ copilot --available-tools='view,grep,glob'
 
 > **Trainer tip:** The permission system lets you restrict what Copilot can access in CI/CD.
 
-### Demo: Programmatic Mode
+### Demo: Programmatic mode
 
 ```bash
 # Simple: explain a command (one-shot, exits after)
@@ -310,9 +308,9 @@ copilot -p "List all TODO comments in this project" \
 
 ---
 
-## Section 5: Built-in Agents & Subagent Architecture (10 min)
+## Section 5: Built-in agents & subagent architecture (10 min)
 
-### Talking Points
+### Talking points
 
 Check `/agent` for the installed built-in agents. Distinguish a session mode from
 an agent:
@@ -330,9 +328,9 @@ agent learners must install.
 
 > "The main agent can delegate work to these specialists. For a complex task, it can explore the codebase first, then run tests with the task agent."
 
-### Subagent Orchestration
+### Subagent orchestration
 
-The CLI has a full orchestration system:
+The main agent can coordinate subagents:
 
 - Main agent delegates tasks to subagents running in **separate context windows**
 - Available concurrency depends on plan and configuration; check it before delivery
@@ -379,7 +377,7 @@ sequential runtime or claim a speedup you did not measure.
 
 > **Trainer note:** "The CLI can run subagents in parallel with `/fleet`."
 
-### Demo: Subagent Orchestration
+### Demo: Subagent orchestration
 
 ```bash
 copilot
@@ -399,7 +397,7 @@ replace the required local fleet run.
 
 ---
 
-## Section 6: Terminal Automation and Session Control (10 min)
+## Section 6: Terminal automation and session control (10 min)
 
 ### Inspect controls and recover work
 
@@ -440,7 +438,7 @@ through `/move`, inspect old/new paths, and return with `/resume`. Do not merge
 the alternative. Leave worktrees for trainer review rather than force-cleaning
 them to make the exercise look complete.
 
-### Custom Model Providers
+### Custom model providers
 
 You can connect alternative AI providers:
 
@@ -454,7 +452,7 @@ You can connect alternative AI providers:
 > Ollama instance that runs an open-source model. The CLI agent can then use that
 > local model."
 
-### Hooks System for CI/CD Automation
+### Hooks system for CI/CD automation
 
 Hooks are external commands that fire at lifecycle points. Configured in `.github/hooks/*.json`:
 
@@ -488,7 +486,7 @@ Hooks are external commands that fire at lifecycle points. Configured in `.githu
 }
 ```
 
-### ACP Server Mode (Preview)
+### ACP server mode (preview)
 
 The CLI can function as an **AI backend** for any ACP-compatible tool:
 
@@ -499,9 +497,9 @@ copilot --acp --transport=sse --port=8080
 This turns Copilot into a server for requests from custom IDE integrations, web
 interfaces, or automation tools.
 
-### OpenTelemetry Monitoring
+### OpenTelemetry monitoring
 
-Enterprise observability for AI agent usage:
+Monitor AI agent usage with OpenTelemetry:
 
 ```bash
 copilot --otel-endpoint=http://localhost:4318
@@ -513,7 +511,7 @@ OTLP-compatible backend.
 
 > **Trainer tip:** This matters most for enterprise audiences that need to monitor AI agent behavior.
 
-### Session Management & Remote Access
+### Session management & remote access
 
 - **Session persistence:** Sessions are saved and can be resumed (`copilot --continue`)
 - **Cross-device resume:** Start on GitHub.com, continue in CLI (`/resume`)
@@ -532,29 +530,29 @@ fresh session. Export locally unless external sharing is permitted.
 
 ---
 
-## Section 7: CLI vs IDE Decision Framework (5 min)
+## Section 7: CLI vs IDE decision framework (5 min)
 
-### Talking Points
+### Talking points
 
 Present this decision framework for CLI, IDE Chat, IDE Agent Mode, and Copilot App:
 
 | Scenario                              | CLI | IDE Chat | IDE Agent | Copilot App |
 | ------------------------------------- | --- | --- | --- | --- |
-| SSH'd into remote server              | ✅  | ❌  | ❌  | ❌  |
-| Scripting/CI/CD automation            | ✅  | ❌  | ❌  | ❌  |
-| Quick shell command help              | ✅  | ❌  | ❌  | ⚠️  |
+| SSH'd into remote server              | Yes | No | No | No |
+| Scripting/CI/CD automation            | Yes | No | No | No |
+| Quick shell command help              | Yes | No | No | Check support |
 | Custom/local model needed             | Check provider support and policy | Check editor | Check editor | Check provider support and policy |
-| Deep codebase research                | ✅  | ✅  | Check editor | ✅ |
-| Parallel multi-agent orchestration    | ✅  | Check editor | Check editor | ✅ |
-| Writing code in an IDE editor         | ❌  | ✅  | ✅  | ❌  |
-| Visual diff review before accepting   | `/diff` | Check editor | ✅ | ✅ |
-| Inline suggestions while typing       | ❌  | ❌  | ✅  | ❌  |
-| Multi-file refactoring w/ visual diffs| ❌  | ❌  | ✅  | ❌  |
-| Quick question about selected code    | ❌  | ✅  | ❌  | ✅  |
-| Chat-only (no coding)                 | ⚠️  | ✅  | ❌  | ✅  |
-| Shared artifact and direct steering   | ❌  | ❌  | ⚠️  | ✅  |
+| Deep codebase research                | Yes | Yes | Check editor | Yes |
+| Parallel multi-agent orchestration    | Yes | Check editor | Check editor | Yes |
+| Writing code in an IDE editor         | No | Yes | Yes | No |
+| Visual diff review before accepting   | `/diff` | Check editor | Yes | Yes |
+| Inline suggestions while typing       | No | No | Yes | No |
+| Multi-file refactoring w/ visual diffs| No | No | Yes | No |
+| Quick question about selected code    | No | Yes | No | Yes |
+| Chat-only (no coding)                 | Check support | Yes | No | Yes |
+| Shared artifact and direct steering   | No | No | Check support | Yes |
 
-#### Understanding the Surfaces
+#### Understanding the surfaces
 
 **CLI** supports automation, scripting, and headless environments. It offers programmatic control and parallel subagents. It fits operators, SREs, and CI/CD pipelines.
 
@@ -570,7 +568,7 @@ supervised child sessions through `/orchestrate`.
 
 > "Use the IDE for daily coding, the CLI for terminal automation, Chat for short questions, and the App when shared state helps people steer the work."
 
-### Copilot App Orientation
+### Copilot App orientation
 
 The Copilot App gives teams a dedicated place to run agent sessions and manage customizations. Keep this part of Session m2-01 brief. Session m3-01 covers the App in depth.
 
@@ -579,7 +577,7 @@ The Copilot App gives teams a dedicated place to run agent sessions and manage c
 - **Agent sessions:** Work in an app-managed session when that surface fits the task.
 - **Customize area:** Discover plugins, skills, MCP servers, and canvases.
 - **Shared canvases:** Work with an agent on a visible plan, board, or checklist.
-- **Approved access:** Confirm the enabled plan, features, data boundary, and policy.
+- **Access:** Check the enabled plan, features, data boundary, and policy.
 
 **When to use:**
 
@@ -591,20 +589,20 @@ The Copilot App gives teams a dedicated place to run agent sessions and manage c
 
 > "The Copilot App is another Copilot surface. It is also where people can work with shared canvases and manage customizations. We will use the CLI for terminal work today. Session m3-01 covers the App and canvas extensions."
 
-### Cross-IDE Comparison
+### Cross-IDE comparison
 
 Copilot works across multiple IDEs, though the IDE environment affects which features are available:
 
 | IDE | Completions | Chat | Agent Mode | Notes |
 | --- | --- | --- | --- | --- |
-| **VS Code** | ✅ (GA) | ✅ (GA) | ✅ (GA) | Primary platform, most features first |
-| **Visual Studio** | ✅ (GA) | ✅ (GA) | ✅ (GA) | Full support for .NET developers |
-| **JetBrains** (IntelliJ, PyCharm, WebStorm) | ✅ (GA) | ✅ (GA) | ✅ (GA) | Excellent support for multi-language work |
-| **Eclipse** | ✅ (GA) | ✅ (GA) | ✅ (Preview) | Agent mode in preview |
-| **Xcode** | ✅ (GA) | ✅ (GA) | ✅ (Preview) | Apple dev-focused; agent mode in preview |
-| **Vim / Neovim** | ✅ (GA) | ❌ | ❌ | Completions only; minimal overhead |
-| **Azure Data Studio** | ✅ (GA) | ✅ (GA) | ❌ | Database-focused, no agent mode |
-| **Sublime Text** | ✅ (GA) | ✅ (GA) | ❌ | Lightweight, no agent mode |
+| **VS Code** | Yes (GA) | Yes (GA) | Yes (GA) | Primary platform, most features first |
+| **Visual Studio** | Yes (GA) | Yes (GA) | Yes (GA) | Full support for .NET developers |
+| **JetBrains** (IntelliJ, PyCharm, WebStorm) | Yes (GA) | Yes (GA) | Yes (GA) | Supports multi-language work |
+| **Eclipse** | Yes (GA) | Yes (GA) | Yes (Preview) | Agent mode in preview |
+| **Xcode** | Yes (GA) | Yes (GA) | Yes (Preview) | Apple dev-focused; agent mode in preview |
+| **Vim / Neovim** | Yes (GA) | No | No | Completions only; minimal overhead |
+| **Azure Data Studio** | Yes (GA) | Yes (GA) | No | Database-focused, no agent mode |
+| **Sublime Text** | Yes (GA) | Yes (GA) | No | Lightweight, no agent mode |
 
 **Trainer talking point:**
 
@@ -612,7 +610,7 @@ Copilot works across multiple IDEs, though the IDE environment affects which fea
 > Visual Studio, IntelliJ, Vim, Sublime, and other editors. Check the current
 > feature matrix before teaching a different IDE because support varies."
 
-### CLI vs IDE: The Complementary Approach
+### CLI vs IDE: The complementary approach
 
 **Teaching point:** The CLI and IDE support different parts of the workflow.
 
@@ -624,7 +622,7 @@ Copilot works across multiple IDEs, though the IDE environment affects which fea
 > "A team may use the IDE for feature work, the CLI for deployment automation, and
 > Copilot App for an app-managed review session. Pick the surface for the task."
 
-### CLI-Native Workflow Patterns
+### CLI-native workflow patterns
 
 **1. The Ops/SRE Pattern:**
 
@@ -661,7 +659,7 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 
 ---
 
-## Section 8: Wrap-up & Transition to Session m2-02 (5 min)
+## Section 8: Wrap-up & transition to Session m2-02 (5 min)
 
 ### What to remember
 
@@ -672,7 +670,7 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 5. **The hooks system** enables enterprise security controls and audit
 6. **Use the CLI or IDE based on the task context**
 
-### Connection to Next Session
+### Connection to next session
 
 > "Session m2-02 covers agent mode in the IDE. It uses visual diffs and inline changes
 > for a tighter edit-and-review loop. The CLI remains the terminal automation
@@ -712,7 +710,7 @@ to Markdown. Sessions can also be resumed across devices.
 
 ---
 
-## Slide Suggestions
+## Slide suggestions
 
 1. **Title slide:** "GitHub Copilot in the CLI. Your Terminal's AI Agent"
 2. **Three Modes:** Standard / Plan / Autopilot with descriptions
@@ -728,7 +726,7 @@ to Markdown. Sessions can also be resumed across devices.
 
 ---
 
-## Time Budget
+## Time budget
 
 | Section                         | Duration   | Cumulative   |
 | ------------------------------- | ---------- | ------------ |

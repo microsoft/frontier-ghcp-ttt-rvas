@@ -29,9 +29,9 @@ Trainer controls sit with the guide. Switching materials is the signature
 interaction; motion is limited to state feedback and respects reduced motion.
 
 FORM: Existing documentation structure within the user-pinned RVAP system.
-No seed: the brand and shared reading layout were explicitly selected.
+No seed: the user selected the brand and shared reading layout.
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+FINISH: Complete the finish review, record its verdict, update DESIGN.md, and record the source of every shipped raster image.
 
 ## Reference refinement, September 7, 2026
 
@@ -41,7 +41,7 @@ Concentrate color in the hero and navigation states; preserve light reading
 pages, curriculum wording, and trainer controls. Module links jump to their
 session groups. They do not assign Build / Innovate / Scale meanings.
 
-The user explicitly approved the reference's compact full wordmark in the
+The user approved the reference's compact full wordmark in the
 header, replacing the earlier abbreviated-logo constraint for this placement.
 `assets/logos/rvap-full.png` is an unmodified copy of the reference's
 `docs/assets/img/logo-full.png`, identical to the supplied brand-kit asset.

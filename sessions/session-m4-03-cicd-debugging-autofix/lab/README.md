@@ -1,9 +1,9 @@
-# Session m4-03 Lab: Evidence-Led Pipeline Debugging
+# Session m4-03 lab: Evidence-led pipeline debugging
 
 **Duration:** 2 hours
 **Difficulty:** Advanced
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02 and m4-01
-**Deliverable:** Three evidence records, fixed workflows, and a reviewed security patch
+**Deliverable:** Three investigation records, fixed workflows, and a reviewed security patch
 
 ## Lab overview
 
@@ -13,7 +13,7 @@
 | 2 | Investigate three pipeline cases | 50 min |
 | 3 | Review a security remediation | 30 min |
 | 4 | Improve feedback speed | 20 min |
-| 5 | Package evidence | 10 min |
+| 5 | Collect investigation records | 10 min |
 
 ## Before you start
 
@@ -45,7 +45,7 @@ cd ../../..
 
 Expected result: install, tests, lint, and build pass.
 
-Create one evidence record per case:
+Create one investigation record per case:
 
 | Field | Record |
 | --- | --- |
@@ -145,7 +145,7 @@ Repair the first failure and parse the workflow. Then open
 `error-log-3-stage-2.txt`. The second log represents the next run after the first
 repair.
 
-Use the new evidence. Do not restore the first change or add unrelated fixes.
+Use the new log. Do not restore the first change or add unrelated fixes.
 After the second repair, run:
 
 ```bash
@@ -208,9 +208,9 @@ grep -nE "cache: 'npm'|needs: \\[lint, test\\]|fetch-depth: 1|github.event_name"
 Submit:
 
 1. Three fixed workflows.
-2. Three evidence records, with two stages for Case 3.
+2. Three investigation records, with two stages for Case 3.
 3. A reviewed security patch and local syntax proof.
 4. The optimized workflow review.
 
 Write the root-cause statement after the observation and local proof. Keep the
-original logs unchanged in the evidence package.
+original logs unchanged with the investigation records.

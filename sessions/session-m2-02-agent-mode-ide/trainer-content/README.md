@@ -1,4 +1,4 @@
-# Session m2-02: IDE Agent Workflows
+# Session m2-02: IDE agent workflows
 
 ## Trainer content guide
 
@@ -39,7 +39,7 @@ Learners own the task definition and approvals. The assistant proposes work with
 | Plan | Write the goal, constraints, and acceptance criteria. |
 | Act | Inspect proposed changes and commands before approval. |
 | Observe | Read test output, diffs, and unexpected effects. |
-| Review | Validate correctness, safety, scope, and maintainability. |
+| Review | Check correctness, safety, scope, and maintainability. |
 | Access gate | Stop when required Agent mode access is missing. |
 
 ## Trainer talking points
@@ -70,7 +70,7 @@ Describe one user-visible, testable change.
 
 ## Review rubric
 
-- Is the plan small enough to verify?
+- Is the plan small enough to check?
 - Does each proposed change stay within the planned files?
 - Are commands, dependencies, and data access understood before approval?
 - Do relevant checks pass?
@@ -94,7 +94,7 @@ would reduce risk.
 | 0:28 to 0:43 | Scripted multi-file demo | The group reviews the plan, tool decisions, diff, and test output. |
 | 0:43 to 0:50 | Chat, agent, or manual decision | Learners select a workflow from task characteristics. |
 | 0:50 to 0:57 | Intervention exercise | Learners redirect or stop without expanding scope. |
-| 0:57 to 1:00 | Close and lab handoff | Required access is confirmed. |
+| 0:57 to 1:00 | Close and lab handoff | Required access is checked. |
 
 ### Time-pressure cutpoints
 
@@ -114,7 +114,7 @@ would reduce risk.
 2. Chat commonly answers or proposes a small edit.
 3. An agent can pursue a defined goal through multiple actions.
 4. More actions create more review points, not less accountability.
-5. Capability is not authorization; current documentation and organizational policy decide what may run.
+5. A tool's capabilities do not grant permission to use it. Check current documentation and organizational policy.
 6. Check current product modes, controls, models, and availability before delivery.
 
 ### Trainer interaction
@@ -197,7 +197,7 @@ Done:
 | Read a file | Is its path and data approved? |
 | Edit a file | Which criterion requires the edit? |
 | Run a test | Is the command understood and scoped? |
-| Add a package | Is it necessary and explicitly approved? |
+| Add a package | Is it necessary and approved by a reviewer? |
 | Use a network or external tool | Is that destination and permission approved? |
 
 ### Transition
@@ -284,7 +284,7 @@ Ask learners:
 - Which test proves omitted behavior?
 - Could a truthiness conversion incorrectly accept `"yes"`?
 - Did the service mutate stored tasks?
-- Does the diff match the approved file graph?
+- Does the diff match the file relationships in the accepted plan?
 - Which result was independently reproduced?
 
 ### Prepared demonstration
@@ -391,7 +391,7 @@ No. Requirements, tests, risk, repository size, and review cost matter. Manual w
 
 ### "Can an agent add a dependency?"
 
-Only through the organization's normal dependency approval and review process. This session's demo explicitly forbids it.
+Only through the organization's normal dependency approval and review process. This session's demo forbids it.
 
 ### "What if it keeps fixing its own failures?"
 
@@ -451,7 +451,7 @@ required repository permissions are unavailable.
 
 ### Lab readiness checklist
 
-- [ ] Required Agent mode access is confirmed.
+- [ ] Required Agent mode access is checked.
 - [ ] Repository copy contains no sensitive data.
 - [ ] Goal, constraints, tests, and stop rules are written.
 - [ ] Human reviewer is named.

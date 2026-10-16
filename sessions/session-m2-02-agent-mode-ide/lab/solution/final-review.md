@@ -1,4 +1,4 @@
-# Todo API Final Review Reference
+# Todo API final review reference
 
 Use this reference to review the learner's result. The exact file layout may differ.
 
@@ -20,4 +20,4 @@ Use this reference to review the learner's result. The exact file layout may dif
 - No database, front end, authentication feature, or unapproved package was added.
 - `lab-notes.md` records the plan, Ask-versus-Agent comparison, course correction, and final human decision.
 
-Approve the result only when the code and evidence satisfy these checks.
+Approve the result only when the code, tests, and review notes satisfy these checks.

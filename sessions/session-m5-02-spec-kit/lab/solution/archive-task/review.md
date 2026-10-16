@@ -1,6 +1,6 @@
-# Convergence Review
+# Convergence review
 
-| Requirement | Evidence |
+| Requirement | Test |
 | --- | --- |
 | FR-001, FR-002 | `test_archive_hides_task_from_default_list` |
 | FR-003 | `test_archive_is_idempotent` |

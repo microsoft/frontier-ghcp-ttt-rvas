@@ -1,9 +1,9 @@
-# Session m2-03 Lab: Spaces and Context Management
+# Session m2-03 lab: Spaces and context management
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02 completed
-**Deliverable:** A context package for one Storefront API, with comparison evidence
+**Deliverable:** A context package for one Storefront API, with recorded comparison results
 
 ## Lab overview
 
@@ -26,7 +26,7 @@ You need:
 
 - required GitHub Copilot access in the editor;
 - Copilot Spaces access if you will use the live Space path;
-- a repository or approved sandbox that can hold the Storefront API;
+- a repository or sandbox you may use for the Storefront API;
 - Node.js and npm;
 - permission to add repository instructions and prompt files;
 - standalone Copilot CLI access with `/env` and `/instructions`.
@@ -98,7 +98,7 @@ What files and acceptance criteria should guide a low-stock report endpoint?
 Do not write code yet.
 ```
 
-Verify every claim against the selected sources.
+Check every claim against the selected sources.
 
 ### Checkpoint 1: context scope is visible
 
@@ -170,7 +170,7 @@ Implement the accepted low-stock endpoint plan. Keep the current API behavior.
 Run the smallest useful check and show the result.
 ```
 
-Manually verify:
+Check manually:
 
 ```bash
 curl "http://localhost:3000/api/products/reports/low-stock?threshold=80"
@@ -231,7 +231,8 @@ Create these files in `storefront-api/.github/prompts/`:
 2. `generate-api-docs.prompt.md`
 3. `migration-checklist.prompt.md`
 
-Each prompt needs front matter with a short description, a bounded input, expected output sections, and a verification step.
+Each prompt needs front matter with a short description. State which inputs it
+accepts, its output sections, and a check to run.
 
 ### Test the prompts on the same project
 
@@ -248,7 +249,7 @@ Review each result:
 
 Compare with `lab/solution/ecommerce-project/.github/prompts/`.
 
-### Checkpoint 4: prompts are reusable and bounded
+### Checkpoint 4: prompts define their inputs and checks
 
 - [ ] All three prompt files appear in `.github/prompts/`.
 - [ ] Each prompt was tested on the Storefront API.
@@ -256,7 +257,7 @@ Compare with `lab/solution/ecommerce-project/.github/prompts/`.
 - [ ] The migration prompt stops before package changes.
 - [ ] Stale or duplicate instructions were removed.
 
-## Final Deliverable
+## Final deliverable
 
 Submit the `storefront-api/` workspace with:
 
@@ -266,7 +267,7 @@ Submit the `storefront-api/` workspace with:
 4. Three tested prompt files under `.github/prompts/`.
 5. Low-stock endpoint verification and the final context choice.
 
-**Done:** Another engineer can see which sources were selected, how each context layer changed the result, and how to verify the project-specific output.
+**Done:** Another engineer can see which sources were selected, how each context layer changed the result, and how to check the project-specific output.
 
 ## Command reference
 

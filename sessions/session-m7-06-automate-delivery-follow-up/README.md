@@ -1,4 +1,4 @@
-# Session m7-06: Automate Delivery Follow-up and Connect Work Systems
+# Session m7-06: Automate delivery follow-up and connect work systems
 
 **Module:** Product and Delivery Teams
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Session m7-06 turns the reviewed Session m7-05 result into one bounded automation. The
+Session m7-06 turns the reviewed Session m7-05 result into one draft-only automation. The
 automation reads live GitHub issues and the parent orchestration result, then
 drafts a stakeholder update for human review.
 
@@ -20,10 +20,10 @@ disabled unless the trainer approves it.
 
 ## Learning outcomes
 
-- Define a bounded automation in a few operational fields.
+- Define an automation's inputs, output, and limits in a short table.
 - Use live GitHub issues and the parent orchestration result as authoritative inputs.
 - Restrict the automation to one draft stakeholder update.
-- Review platform run evidence instead of copying it into a separate form.
+- Review run records on the platform instead of copying them into a separate form.
 - Rerun after an approved issue change.
 - Decide whether to keep, revise, disable, or pause the automation.
 - Name the authoritative planning system.

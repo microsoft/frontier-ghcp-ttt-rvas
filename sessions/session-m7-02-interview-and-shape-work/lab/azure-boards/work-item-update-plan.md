@@ -1,4 +1,4 @@
-# Service Request Portal: Work Item Update Plan
+# Service Request Portal: Work item update plan
 
 ## Requirement
 

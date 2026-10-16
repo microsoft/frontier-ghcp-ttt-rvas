@@ -1,4 +1,4 @@
-# Feature Spec: Add Todo Ownership and Due Dates
+# Feature spec: Add Todo ownership and due dates
 
 Extend the Todo API created from `project-brief.md`. Keep all existing routes and response behavior working.
 

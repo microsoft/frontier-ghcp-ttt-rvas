@@ -80,7 +80,7 @@ Required context:
 - acceptance criteria;
 - named paths;
 - reviewer;
-- verified focused test command.
+- focused test command that runs in this project.
 
 Expected status: `applied`.
 
@@ -102,7 +102,7 @@ Expected:
 }
 ```
 
-A bounded skill stays quiet outside its job.
+A skill should not run on tasks outside its scope.
 
 ---
 
@@ -177,7 +177,7 @@ The suite proves:
 
 ---
 
-# End with a bounded run
+# Run the two demo scenarios
 
 ```bash
 npm run demo
@@ -283,7 +283,7 @@ Too little history is a valid result. This uses the last five minutes of the
 3. Run the trigger scenario.
 4. Run the non-trigger scenario.
 5. Run the missing-reviewer scenario.
-6. Finish with the bounded demo.
+6. Finish with the two-scenario demo.
 7. Check live API-skill invocation and the missing-reviewer stop.
 8. Compare both live interviews and trace decisions into `/plan`.
 9. Check scoped Chronicle suggestions without auto-applying them.

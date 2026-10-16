@@ -1,4 +1,4 @@
-# Issue 001 Work Assignment
+# Issue 001 work assignment
 
 Use this sheet for the Squad run.
 
@@ -12,7 +12,7 @@ Use this sheet for the Squad run.
 | --- | --- | --- |
 | Lead | Assignment and final review | Edit implementation or test files |
 | Backend | `src/routes/api.js` | Add packages or edit unrelated routes |
-| Tester | `tests/api.test.js` and test evidence | Change source to make a test pass |
+| Tester | `tests/api.test.js` and test results | Change source to make a test pass |
 | Scribe | `.squad/decisions.md` or tabletop decision record | Change the lead's decision |
 
 ## Assignment
@@ -25,12 +25,12 @@ Accept a non-empty string name up to 100 characters and a valid email shape.
 Return status 400 with a descriptive error for invalid input.
 Do not add dependencies, change the response envelope, or edit unrelated routes.
 
-The tester owns focused evidence in tests/api.test.js.
+The tester owns focused tests in tests/api.test.js.
 The lead reviews the final packet.
 Stop if ownership overlaps, scope grows, or any test fails.
 ```
 
-## Evidence fields
+## Assignment fields
 
 - Assignment owner:
 - Implementation owner:

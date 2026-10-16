@@ -36,7 +36,7 @@ stop conditions, and failure behavior.
 
 | Property | Lab decision |
 | --- | --- |
-| `description` | Required. States the bounded job and stop condition. |
+| `description` | Required. States the task, its scope, and the stop condition. |
 | `name` | Gives the profile a readable display name. |
 | `target` | Limits this example to `github-copilot`. |
 | `tools` | Uses the documented `read`, `search`, `edit`, and `execute` aliases. |

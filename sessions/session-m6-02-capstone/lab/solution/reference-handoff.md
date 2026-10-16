@@ -1,4 +1,4 @@
-# Reference Handoff: Bookmark Creation
+# Reference handoff: Bookmark creation
 
 ## Issue
 
@@ -31,7 +31,7 @@ deployment, tool configuration, or a new dependency.
 
 ### Acceptance criteria and trace
 
-| Criterion | Specification | Test evidence |
+| Criterion | Specification | Test |
 | --- | --- | --- |
 | Valid requests return `201` and one `data` object | FR-001 | `creates a bookmark with all accepted fields` |
 | Optional fields use accepted defaults | FR-002 | `normalizes omitted optional fields` |
@@ -48,7 +48,7 @@ deployment, tool configuration, or a new dependency.
 | `src/models/bookmark.js` | Store bookmarks in memory and generate IDs and timestamps. | FR-002, FR-007 |
 | `tests/bookmarks.test.js` | Exercise every accepted creation behavior. | FR-001 to FR-008 |
 | `tests/health.test.js` | Protect the starter health behavior. | Regression check |
-| `README.md` | Document the bounded slice and verification command. | Handoff |
+| `README.md` | Document the creation endpoint and test command. | Handoff |
 
 No dependency or unrelated endpoint was added.
 
@@ -58,7 +58,7 @@ No dependency or unrelated endpoint was added.
 
 **Observed result:** 2 suites and 18 tests pass.
 
-**Review evidence:** The suite sends HTTP requests through Express with Supertest.
+The suite sends HTTP requests through Express with Supertest.
 It checks status codes, response envelopes, generated fields, defaults, validation,
 and duplicate handling.
 

@@ -1,4 +1,4 @@
-# Broken Inventory Reconciliation Starter
+# Broken inventory reconciliation starter
 
 This application is deliberately broken. Fix the named failures in the order
 listed in the lab guide.

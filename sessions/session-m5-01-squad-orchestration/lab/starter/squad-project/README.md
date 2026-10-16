@@ -1,4 +1,4 @@
-# Squad Lab Project
+# Squad lab project
 
 This small Node.js Express API supports the Squad orchestration lab.
 

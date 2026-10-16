@@ -1,8 +1,8 @@
-# Session m2-07 Trainer Guide: Migrate a Legacy Java Service to Modern .NET
+# Session m2-07 trainer guide: Migrate a legacy Java service to modern .NET
 
 ## Delivery objective
 
-Teach learners to migrate behavior, not syntax. They inspect a runnable Java
+Teach learners to preserve behavior during migration. They inspect a runnable Java
 service, define the pricing contract, move one complete HTTP slice to .NET 10,
 and prove that both implementations agree on the same JSON cases.
 
@@ -11,8 +11,8 @@ backlog for the rest of the service, not a rewrite plan built on untested
 assumptions.
 
 > [!IMPORTANT]
-> Verify GitHub Copilot access before delivery. If a learner cannot use Copilot in
-> the approved coding environment, **stop the lab for that learner**. Do not replace
+> Check GitHub Copilot access before delivery. If a learner cannot use Copilot in
+> the training environment, **stop the lab for that learner**. Do not replace
 > the session with an unreviewed public tool or personal account.
 
 ## One-hour plan
@@ -206,7 +206,7 @@ Those additions hide the lesson under scaffolding.
 
 ## Copilot working agreement
 
-Copilot works best with a sharp boundary. Do not ask it to infer the business
+Give Copilot a specific route and contract. Do not ask it to infer the business
 contract.
 
 ### Good prompt sequence
@@ -254,7 +254,7 @@ and response fields. Return findings before editing.
 
 ## Prepared demonstration
 
-Use the verified starter and solution.
+Use the tested starter and solution.
 
 ### Step 1: establish the Java behavior
 
@@ -413,5 +413,5 @@ Learners:
 6. compare Java and .NET HTTP responses;
 7. write the next migration backlog.
 
-**Success means one route has evidence.** The rest of the Java service stays in
+**One route must pass the contract and HTTP checks.** The rest of the Java service stays in
 place until its own slices have contracts and review.

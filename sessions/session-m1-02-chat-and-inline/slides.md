@@ -8,9 +8,9 @@ footer: 'Session m1-02: Copilot Chat & Inline Suggestions'
 
 <!-- _class: lead -->
 
-# Copilot Chat & Inline Suggestions
+# Copilot Chat & inline suggestions
 
-## Use the right context, then verify the change
+## Use the right context, then check the change
 
 Session m1-02 | 3 hours
 
@@ -37,7 +37,7 @@ Session m1-02 | 3 hours
 | Inline suggestions | Chat |
 | --- | --- |
 | Draft at the cursor | Respond to an explicit request |
-| Best for the next bounded edit | Best for explanation and multi-step work |
+| Best for the next small edit | Best for explanation and multi-step work |
 | Context comes from the editing surface | Context can be selected or named |
 
 Both produce proposals that need review.
@@ -112,7 +112,7 @@ Identify the defect without changing other methods.
 | Selection | One function or block |
 | Named file | Known cross-file dependency |
 | Workspace search | Broad structure or usage |
-| Terminal output | Recent command evidence |
+| Terminal output | Recent command results |
 
 Relevant context beats large context.
 
@@ -202,7 +202,7 @@ Style alone is weak evidence.
 
 # Access policy
 
-The live path requires approved Chat access.
+The live path requires Chat access allowed by your organization.
 
 When access or comparison is unavailable:
 

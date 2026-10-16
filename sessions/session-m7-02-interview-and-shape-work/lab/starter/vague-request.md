@@ -1,4 +1,4 @@
-# Service Request Portal: Vague Request
+# Service Request Portal: Vague request
 
 ## Request as received
 

@@ -1,4 +1,4 @@
-# Status-Visibility Source Brief
+# Status-visibility source brief
 
 Use this fictional source brief with the live Session m7-03 GitHub issues and Session
 m7-04 planning canvas. It contains no production data or source organization names.

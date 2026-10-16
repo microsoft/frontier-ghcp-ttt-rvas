@@ -15,8 +15,8 @@ supporting resources. See [Session m3-05](session-m3-05-agent-skills-ecosystem/R
 
 ## Automation
 
-A scheduled or event-driven Copilot task with defined tools, evidence, and review
-rules. See [Session m7-06](session-m7-06-automate-delivery-follow-up/README.md).
+A scheduled or event-driven Copilot task with defined tools, required run records,
+and review rules. See [Session m7-06](session-m7-06-automate-delivery-follow-up/README.md).
 
 ## Canvas
 
@@ -63,7 +63,7 @@ A standard interface for connecting an agent to external tools and data. See
 
 ## Pull request readiness
 
-The point where scope, tests, review evidence, and remaining risks are clear enough
+The point where scope, test results, review findings, and remaining risks are clear enough
 for a human pull request decision. See
 [Session m2-05](session-m2-05-copilot-app-for-developers/README.md).
 

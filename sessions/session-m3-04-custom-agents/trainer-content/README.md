@@ -1,4 +1,4 @@
-# Session m3-04 Trainer Guide: Custom Agent Boundaries
+# Session m3-04 trainer guide: Custom agent boundaries
 
 ## Delivery objective
 
@@ -22,7 +22,7 @@ into production code, tighten the profile, and rerun the same test.
 - Open the weak and tightened profiles side by side.
 - Run `npm test` from `lab/starter/agent-project`.
 - Keep `PROFILE-REFERENCE.md` and `BOUNDARY-EVIDENCE.md` open.
-- Confirm profile support in the Copilot surface.
+- Check profile support in the Copilot client.
 - Prepare the JavaScript LSP server using `lab/lsp-setup.md`; check its
   startup and an actual `getOrdersByUser` reference lookup.
 - Stop the learner lab if live profile loading is unavailable.
@@ -136,7 +136,7 @@ Read the production-conflict rule aloud. The correct output names:
 - the forbidden production path;
 - the decision a human must make.
 
-Then show `npm test` as the verified command. If the command does not run, the
+Then show that `npm test` runs in the project. If the command does not run, the
 profile reports **not run**. It must not fill the gap with a success claim.
 
 ### 0:52 to 1:00: Rerun
@@ -158,8 +158,8 @@ Finish with the extension choice:
 | --- | --- |
 | Repository-wide rule | Instructions |
 | Repeatable procedure | Skill |
-| Bounded role | Custom agent |
-| Approved external capability | MCP |
+| Role with a defined scope | Custom agent |
+| External tools or data allowed by policy | MCP |
 
 ## Prepared demonstration
 
@@ -183,7 +183,7 @@ Finish with the extension choice:
 ## Lab handoff
 
 Learners inspect the current structure, fail the weak profile, tighten it, rerun the
-contract, and record a bounded stop result. They then review the documentation and
+contract, and record a stop report with no source edits. They then review the documentation and
 read-only data analyst examples with the same structure. The 25-minute weak-profile
 block includes ten minutes for the LSP lookup. Keep the lab at 120 minutes.
 

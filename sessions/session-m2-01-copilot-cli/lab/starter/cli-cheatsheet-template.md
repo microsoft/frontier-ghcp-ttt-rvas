@@ -1,12 +1,12 @@
-# My GitHub Copilot CLI Cheat Sheet
+# My GitHub Copilot CLI cheat sheet
 
-> Personalize this during the lab. Use this as your daily reference.
+> Fill this in during the lab for use as a daily reference.
 
 ---
 
-## Quick Reference
+## Quick reference
 
-### Installation & Setup
+### Installation & setup
 
 ```bash
 # Install
@@ -18,7 +18,7 @@ npm install -g @github/copilot
 copilot --version
 ```
 
-### Top 5 Commands (fill in your favorites)
+### Top 5 commands (fill in your favorites)
 
 | #   | Command            | What I Use It For   |
 | --- | ------------------ | ------------------- |
@@ -30,7 +30,7 @@ copilot --version
 
 ---
 
-## CLI Modes
+## CLI modes
 
 | Mode         | How to Activate       | When to Use   |
 | ------------ | --------------------- | ------------- |
@@ -63,7 +63,7 @@ copilot --version
 
 ---
 
-## My CLI vs IDE Decision Rules
+## My CLI vs IDE decision rules
 
 | Situation           | My Choice   | Why   |
 | ------------------- | ----------- | ----- |
@@ -77,7 +77,7 @@ copilot --version
 
 ---
 
-## Useful Flags
+## Useful flags
 
 ```bash
 # I always use these flags:
@@ -98,7 +98,7 @@ Use the command picker and current product documentation to check.
 
 ---
 
-## My Shell Aliases (beyond the defaults)
+## My shell aliases (beyond the defaults)
 
 ```bash
 # Add custom aliases here as you discover useful patterns
@@ -107,7 +107,7 @@ Use the command picker and current product documentation to check.
 
 ---
 
-## Notes from Today's Lab
+## Notes from today's lab
 
 _Write what you will use here:_
 

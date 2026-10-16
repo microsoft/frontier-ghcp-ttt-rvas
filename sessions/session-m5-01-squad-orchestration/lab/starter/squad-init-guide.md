@@ -1,4 +1,4 @@
-# Squad Initialization Guide
+# Squad initialization guide
 
 Use this guide only after the customer approves the tool, repository, and
 integration.
@@ -11,7 +11,7 @@ copilot --version
 squad --version
 ```
 
-Use Node.js 20 or later. Verify the current installation and agent-mode
+Use Node.js 20 or later. Check the current installation and agent-mode
 instructions. Do not rely on a training example.
 
 ## Open the project
@@ -22,15 +22,15 @@ Chat. Select the Squad agent mode if it is available.
 Describe the project and the required Issue 001 boundaries:
 
 ```text
-Initialize a Squad team for this Node.js Express API. We need bounded roles
-for lead review, backend implementation, test evidence, and decision recording.
+Initialize a Squad team for this Node.js Express API. Define role limits
+for lead review, backend implementation, test results, and decision recording.
 The required lab changes only src/routes/api.js and tests/api.test.js.
 ```
 
 ## Review the proposed team
 
-Review roles before confirming a team. Fictional names do not affect behavior.
-Confirm that the proposal has a lead, backend implementer, tester, and scribe.
+Review roles before accepting a team. Fictional names do not affect behavior.
+Check that the proposal has a lead, backend implementer, tester, and scribe.
 Keep the source and test write boundaries separate.
 
 ## Inspect the shared state
@@ -41,10 +41,10 @@ After initialization, inspect:
 | --- | --- |
 | `team.md` | Roster and role boundaries |
 | `routing.md` | Assignment rules |
-| `decisions.md` | Durable team decisions |
+| `decisions.md` | Committed team decisions |
 | `agents/{name}/charter.md` | Role inputs, outputs, and limits |
 | `agents/{name}/history.md` | Role-specific project notes |
-| `reviews/issue-001-review.md` | Acceptance checks, test evidence, and lead decision |
+| `reviews/issue-001-review.md` | Acceptance checks, test results, and lead decision |
 | `orchestration-log/issue-001.md` | Assignment-to-review state changes |
 
 The expected `.squad/` directory also contains agent folders, a decision inbox,
@@ -59,5 +59,5 @@ git commit -m "Initialize Squad team"
 git push origin main
 ```
 
-Commit only the state the team reviewed. If the live path is unavailable, create
+Commit only the state the team reviewed. If Squad is unavailable, create
 the same role, routing, and decision artifacts manually.

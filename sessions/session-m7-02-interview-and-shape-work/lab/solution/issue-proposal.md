@@ -1,4 +1,4 @@
-# GitHub Issue Proposal: Show Requesters the Current Status of Included Requests
+# GitHub issue proposal: Show requesters the current status of included requests
 
 ## User and outcome
 
@@ -63,14 +63,14 @@ checked the draft before marking it ready.
 
 ## Definition of done
 
-- [ ] Every acceptance criterion has test or review evidence.
+- [ ] Every acceptance criterion has test or review results.
 - [ ] The service operations manager approves the public state mapping and fallback wording.
-- [ ] The privacy reviewer confirms requester-only access and the visible field set.
+- [ ] The privacy reviewer checks requester-only access and the visible field set.
 - [ ] Supported, unmapped, stale, empty-summary, and unauthorized states are covered.
-- [ ] Requester and support visibility boundaries have focused evidence.
+- [ ] Focused checks record requester and support visibility results.
 - [ ] The portal guidance explains the public statuses and contact route.
 - [ ] No notification channel or additional request type entered the change.
-- [ ] The delivery reviewer confirms that the Copilot draft matches the approved brief.
+- [ ] The delivery reviewer checks that the Copilot draft matches the approved brief.
 - [ ] The portal product owner reviews the evidence and records approval or required changes.
 
 ## Ownership

@@ -1,4 +1,4 @@
-# Automation Definition
+# Automation definition
 
 | Field | Definition |
 | --- | --- |

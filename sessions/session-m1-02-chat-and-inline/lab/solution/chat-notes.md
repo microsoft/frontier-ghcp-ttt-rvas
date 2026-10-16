@@ -2,11 +2,11 @@
 
 ## Access path
 
-- [x] Required Copilot Chat access confirmed
+- [x] Required Copilot Chat access checked
 
 ## Conversation record
 
-| Stage | Surface or command | Prompt | What you verified |
+| Stage | Surface or command | Prompt | What you checked |
 | --- | --- | --- | --- |
 | Explain | Inline Chat, `/explain` | Explain the weighted-average formula and each guard. | The denominator should be the sum of weights. |
 | Diagnose | Sidebar with `#file` | Compare the failing test with `weighted_average`. | The implementation divides by the item count. |

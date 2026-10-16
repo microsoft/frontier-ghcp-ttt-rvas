@@ -1,8 +1,8 @@
-# Session m3-03 Trainer Guide: MCP Servers
+# Session m3-03 trainer guide: MCP servers
 
 ## Delivery objective
 
-Show one MCP tool from contract to evidence. Learners should see the schema, handler,
+Show one MCP tool from its contract through tests and Inspector output. Learners should see the schema, handler,
 good input, bad input, automated test, and Inspector call before the server grows
 to three tools.
 
@@ -24,7 +24,7 @@ at 0:50. Use the recorded expected output and protect the lab handoff.
 
 - Use Node.js 20 or later and the approved npm registry.
 - Run `npm ci && npm test` in both custom MCP projects.
-- Confirm that no `node_modules` directory is tracked.
+- Check that no `node_modules` directory is tracked.
 - Pin MCP Inspector 2.5.0 for the demonstration.
 - Keep [`lab/solution/custom-mcp/EVIDENCE.md`](../lab/solution/custom-mcp/EVIDENCE.md)
   open for trainer demo recovery.
@@ -116,7 +116,7 @@ Compare this with two weak patterns:
 - returning an empty success object;
 - throwing an unhandled exception that terminates the server.
 
-The caller needs a visible, bounded failure it can report.
+The caller needs an error response it can report without crashing.
 
 ### 0:43 to 0:52: Inspector and test evidence
 
@@ -127,7 +127,7 @@ npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
   node src/index.js --method tools/list
 ```
 
-Then call `get_weather`. Keep tests and Inspector evidence separate:
+Then call `get_weather`. Keep test results and Inspector output separate:
 
 | Evidence | Proves |
 | --- | --- |
@@ -136,8 +136,8 @@ Then call `get_weather`. Keep tests and Inspector evidence separate:
 | `tools/call` | The stdio protocol path reaches the handler |
 | Copilot call | A selected client can discover and choose the tool |
 
-A Copilot prompt is useful integration evidence, but it is not a replacement for
-the deterministic tests.
+A Copilot call can show that client integration works. Keep the deterministic
+tests too.
 
 ### 0:52 to 1:00: Add the remaining tools
 
@@ -163,8 +163,8 @@ add the other two.
 5. Open the solution catalog and show the two added tools.
 6. Run the five solution tests.
 
-Do not type the full server from scratch during delivery. The teaching point is the
-contract and evidence, not watching boilerplate appear.
+Do not type the full server from scratch during delivery. Focus on the contract,
+tests, and protocol calls.
 
 ## Review prompts
 
@@ -178,7 +178,7 @@ contract and evidence, not watching boilerplate appear.
 
 Learners start with the one-tool server, add one test, inspect good and bad calls,
 then add the remaining tools. The final deliverable includes lockfiles, passing
-tests, Inspector evidence or **not executed**, and exact request and response
+tests, Inspector output or **not executed**, and exact request and response
 records.
 
 ## References

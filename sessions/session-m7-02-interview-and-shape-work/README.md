@@ -1,4 +1,4 @@
-# Session m7-02: Interview Ideas and Shape Better Work
+# Session m7-02: Interview ideas and shape better work
 
 **Module:** Product and Delivery Teams
 
@@ -20,14 +20,14 @@ The fictional Service Request Portal remains the initiative. Do not use customer
 requests or source organization names in the standard lab.
 
 > [!IMPORTANT]
-> **GitHub Copilot is required.** Confirm access before the session. If Copilot
+> **GitHub Copilot is required.** Check access before the session. If Copilot
 > cannot run the interview, stop the lab.
 
 ## Learning outcomes
 
 By the end of this session, learners will be able to:
 
-- Install and verify the supplied `decision-interview` project skill.
+- Install and check the supplied `decision-interview` project skill.
 - Run a dependency-ordered interview with GitHub Copilot.
 - Ask only questions whose prerequisites are settled.
 - Resolve scope, constraints, success, failure, ownership, and approval.
@@ -36,8 +36,8 @@ By the end of this session, learners will be able to:
 - Draft an issue proposal with testable acceptance criteria and a practical
   definition of done.
 - Reopen only the decisions affected by new evidence.
-- Verify that the revised brief and issue proposal remain aligned.
-- Check context health before each interview round and start fresh for the final
+- Check that the revised brief and issue proposal agree.
+- Check context usage before each interview round and start fresh for the final
   review.
 - Request an independent critique before approving the brief and proposal.
 - Assign an owner and reviewer before work enters a sprint.

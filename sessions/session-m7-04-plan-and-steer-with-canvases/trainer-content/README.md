@@ -1,4 +1,4 @@
-# Session m7-04 Trainer Guide: Build and Use a Planning Canvas
+# Session m7-04 trainer guide: Build and use a planning canvas
 
 **Duration:** 1 hour
 
@@ -22,15 +22,15 @@ record.
 
 ## Required preflight
 
-- Confirm that every learner has the GitHub Copilot app.
-- Confirm that `/create-canvas` is available.
+- Check that every learner has the GitHub Copilot app.
+- Check that `/create-canvas` is available.
 - Open **Customize** → **Skills** → **Installed** and show that `create-canvas` is
   a built-in skill.
-- Confirm that the learner can read the Session m7-03 issues through GitHub MCP.
+- Check that the learner can read the Session m7-03 issues through GitHub MCP.
 - Use a training repository and synthetic issue data.
 - Name the canvas owner and reviewer.
 - Retrieve the Session m7-03 parent issue and linked child issues.
-- Confirm `/context`, `/clear` or `/reset`, and `/rubber-duck`.
+- Check `/context`, `/clear` or `/reset`, and `/rubber-duck`.
 
 > [!IMPORTANT]
 > Stop if canvas creation, GitHub reads, or the required canvas actions are unavailable. A static JSON edit does not meet this session's outcome.
@@ -106,9 +106,9 @@ Check:
 5. Add the lab's reviewed blocker comment to one GitHub issue through MCP.
 6. Read the issue again without refreshing the canvas.
 7. Show the mismatch and last-refresh time.
-8. Refresh the canvas and verify the blocker and next action.
+8. Refresh the canvas and check the blocker and next action.
 
-The live canvas and linked GitHub issues are the durable result. Do not create a
+The live canvas and linked GitHub issues are the saved result. Do not create a
 separate transfer file.
 
 ## Product notes verified October 5, 2026

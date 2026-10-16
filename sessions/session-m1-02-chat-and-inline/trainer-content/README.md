@@ -1,9 +1,9 @@
-# Session m1-02 Trainer Guide: Copilot Chat & Inline Suggestions
+# Session m1-02 trainer guide: Copilot Chat & inline suggestions
 
 ## Delivery objective
 
-Show how Chat surfaces change the available context, not the standard of evidence.
-Use one calculator defect from explanation through final verification.
+Show the context available in each Chat surface. Use the same tests and review
+standards throughout the calculator exercise.
 
 ## One-hour plan
 
@@ -21,11 +21,11 @@ The timings match [`slides.md`](../slides.md).
 
 ## Before delivery
 
-- Run the starter suite and confirm one expected failure.
-- Run the solution suite and confirm eight passing tests.
-- Confirm the approved Chat surfaces in the selected editor.
-- Verify current context-reference and shortcut syntax in official documentation.
-- Confirm whether a model comparison is permitted.
+- Run the starter suite and check for one expected failure.
+- Run the solution suite and check for eight passing tests.
+- Check which Chat surfaces learners may use in the selected editor.
+- Check current context-reference and shortcut syntax in official documentation.
+- Check whether a model comparison is permitted.
 - Prepare screenshots for demo recovery. They do not replace learner access.
 
 Avoid fixed model catalogs, prices, keyboard shortcuts, or claims that a surface
@@ -76,7 +76,7 @@ The second request names the symptom, expected behavior, scope, and evidence.
 Explain the role of:
 
 - selected code for a local question;
-- named files for a bounded cross-file question;
+- named files for a specific cross-file question;
 - workspace search for architecture or usage;
 - terminal output for a recent failure.
 
@@ -158,8 +158,8 @@ Keep related work together. Start fresh when assumptions or topic change.
 
 **Why did workspace context miss a file?**
 
-Search and retrieval are not guaranteed to select every relevant file. Verify
-citations and use explicit file context when scope is known.
+Search and retrieval may miss relevant files. Check citations and name the files
+when you know the scope.
 
 **Can Chat fix the project without tests?**
 
@@ -172,7 +172,7 @@ Use a direct prompt with the same task and context.
 ## Lab readiness check
 
 - [ ] The starter failure is reproducible.
-- [ ] Required Copilot Chat access is confirmed.
+- [ ] Required Copilot Chat access is checked.
 - [ ] The permitted comparison path is known.
 - [ ] Learners know where to record prompts and verification.
 - [ ] The change request remains closed until Part 5.

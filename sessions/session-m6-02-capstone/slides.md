@@ -8,7 +8,7 @@ footer: 'Session m6-02: Bounded End-to-End Capstone'
 
 <!-- _class: lead -->
 
-# Bounded End-to-End Capstone
+# End-to-end capstone for one endpoint
 
 Session m6-02 | 3 hours
 
@@ -29,7 +29,7 @@ POST /api/bookmarks
 
 - implementation-ready issue;
 - patch or patch plan;
-- executable test evidence;
+- executable test results;
 - review decision;
 - deferred scope and next action.
 
@@ -86,7 +86,7 @@ packages.
 
 | Path | Use |
 | --- | --- |
-| Approved agent | Implement the single issue |
+| Copilot | Implement the single issue |
 | Manual | Implement the same files and tests |
 | Blocked | Produce a reviewable patch plan |
 

@@ -1,4 +1,4 @@
-# Session m1-01 Lab: Review Inline Suggestions
+# Session m1-01 lab: Review inline suggestions
 
 **Duration:** 2 hours
 
@@ -12,24 +12,25 @@ decision record in `lab-notes.md`
 ## Lab overview
 
 You will complete one Python utility module in stages. The tests define the
-observable behavior. You will inspect each proposed implementation, settle one
+expected behavior. You will inspect each proposed implementation, settle one
 ambiguous word-parsing rule, and then apply a parameter rename as a separate
 reviewed change.
 
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Prepare the project and inspect the failing baseline | 15 min |
-| 2 | Complete two bounded functions | 30 min |
+| 2 | Complete two functions | 30 min |
 | 3 | Resolve the word-parsing ambiguity | 30 min |
 | 4 | Add the profile summary and apply the rename | 30 min |
-| 5 | Review the diff and verify the deliverable | 15 min |
+| 5 | Review the diff and check the deliverable | 15 min |
 
 ## Before you start
 
-Use only synthetic data. Confirm the repository and editor are approved for the
+Use only synthetic data. Check that you may use the repository and editor for the
 exercise.
 
-Confirm GitHub Copilot access in your editor. If it does not work, stop the lab.
+Before starting, check GitHub Copilot access in your editor. If it does not work,
+stop the lab.
 Manual implementation does not replace the inline-suggestion practice.
 
 You need:
@@ -37,7 +38,7 @@ You need:
 - Python 3.10 or later;
 - a terminal;
 - an editor;
-- GitHub Copilot only for the live path.
+- GitHub Copilot.
 
 ## Part 1: Prepare the project (15 minutes)
 
@@ -58,7 +59,7 @@ open the solution until the final comparison.
 **Checkpoint:** You can name the expected result for every test before requesting
 a suggestion.
 
-## Part 2: Complete two bounded functions (30 minutes)
+## Part 2: Complete two functions (30 minutes)
 
 Start with `normalize_username`.
 
@@ -134,7 +135,7 @@ The search should find no stale parameter or caller. Run the focused test again.
 **Checkpoint:** The rename changed the parameter and caller without changing the
 output.
 
-## Part 5: Review and verify (15 minutes)
+## Part 5: Review and check (15 minutes)
 
 Inspect the complete change:
 

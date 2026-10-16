@@ -1,4 +1,4 @@
-# Session m2-04: Code Review Workflows
+# Session m2-04: Code review workflows
 
 ## Trainer content guide
 
@@ -90,7 +90,7 @@ Ask learners what they need to see before approving a change.
 | 0:28 to 0:43 | Intentional-defect and triage demo | Findings connect to behavior; unsupported exploit claims are rejected. |
 | 0:43 to 0:51 | Suggested fixes and conflicts | Learners preserve intent before editing. |
 | 0:51 to 0:58 | Limits, adoption, and Q&A | Learners design reversible human gates. |
-| 0:58 to 1:00 | Close and lab handoff | Reviewer roles and access are confirmed. |
+| 0:58 to 1:00 | Close and lab handoff | Reviewer roles and access are checked. |
 
 ### Time-pressure cutpoints
 
@@ -174,8 +174,8 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 ### Exact preflight actions
 
 1. Revisit the Delivery baseline.
-2. Confirm repository, data classification, author, reviewer, and required checks.
-3. Verify current official documentation for the selected review workflow.
+2. Check repository, data classification, author, reviewer, and required checks.
+3. Check current official documentation for the selected review workflow.
 4. Check organization and repository rules.
 5. Set a usage limit and name who can approve more.
 6. Prepare the human-only review worksheet.
@@ -284,7 +284,7 @@ Do not propose unrelated refactoring.
 1. Read the requirement before the implementation.
 2. Ask learners to predict each case.
 3. Run a prepared test or trace the cases manually.
-4. If approved, request the bounded assisted review.
+4. If approved, request the assisted review of this function only.
 5. Classify the response as valid, uncertain, noise, or out of scope.
 6. Restate the valid finding:
 
@@ -358,7 +358,7 @@ required review surfaces for the lab.
 
 ### Transition
 
-> "Applying a fix saved typing at most; the requirement, regression test, and human decision made it reviewable."
+> "The requirement explains the fix. The regression test checks it, and the reviewer decides whether to accept it."
 
 ## Segment 5: Suggested fixes and conflict intent (0:43 to 0:51)
 

@@ -261,14 +261,14 @@ components:
     textColor: "{colors.charcoal}"
 ---
 
-# Design System: RVAP Technical Field Guide
+# Design system: RVAP Technical Field Guide
 
 ## Overview
 
 **Design direction.** "RVAP Technical Field Guide"
 
-The compact full RVAP wordmark and blue navigation anchor the shared white
-header. The home hero uses the brand's navy-to-blue gradient. Labs and trainer
+The shared white header contains the compact full RVAP wordmark and blue
+navigation. The home hero uses the brand's navy-to-blue gradient. Labs and trainer
 guides keep their white reading surfaces and navy headings, with trainer controls
 inside the document.
 
@@ -283,7 +283,7 @@ Markup and behavior come from `overrides/main.html`, the header and logo partial
 under `overrides/partials/`, `mkdocs.yml`, `hooks/presentation_embed.py`, and
 `overrides/session.js`.
 `PRODUCT.md` holds product facts. `.impeccable/surfaces/overrides-extra-css.md`
-holds the approved direction. Frontmatter records used primitives;
+holds the approved direction. Frontmatter records the design values in use;
 `.impeccable/design.json` adds metadata and scoped component previews.
 
 The custom builder and shared viewer inherit this system and the compact logo
@@ -298,7 +298,7 @@ Preview CSS uses pixel equivalents of the observed 20px Material rem to render
 independently of the preview host. Previews describe appearance, without running
 the site's JavaScript.
 
-**Key Characteristics:**
+The shared layout uses:
 
 - Shared light reading layout with navy headings.
 - Aptos font stacks with Outfit and Inter web fallbacks.
@@ -336,7 +336,7 @@ The supplied pillar palette remains available as **brand reference**:
 | Innovate | `purple` | `purple-light` | Also used for M3 and Advanced labels |
 | Scale | Teal (`#14868A`) | `#DDE3EF` | Kit only; category badges use a darker teal adaptation |
 
-**The Category Color Rule.** Use distinct colors for difficulty and M1-M7 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.
+**Category colors.** Use distinct colors for difficulty and M1-M7 badges, with visible names and module numbers. These categories have no Build / Innovate / Scale mapping.
 
 The September 7, 2026 approval supersedes neutral-difficulty and no-category-color
 instructions for these badges. Beginner uses `category-teal` on
@@ -368,7 +368,7 @@ metrics depend on local fonts. The code stack relies on local monospace fallback
 The Inter detector exception in `.impeccable/config.json` records the user's
 required brand choice.
 
-The observed Material rem is 20px. The hierarchy uses explicit sizes, without a
+The observed Material rem is 20px. The hierarchy uses fixed sizes, without a
 fixed scale ratio:
 
 | Reading role | Frontmatter role | Observed size | Line height |
@@ -435,7 +435,7 @@ At `40em` and below, filters stack in one column and side padding becomes `.8rem
 header/drawer remains unchanged. Viewer rows pair an order number with reading
 copy; their number column narrows from `2rem` to `1.2rem` at `40em`.
 
-## Elevation & Depth
+## Elevation and depth
 
 The header and reading panels stay flat. Borders and light fills separate them.
 Session and track cards retain the supplied `--shadow-card`:
@@ -452,8 +452,8 @@ the site has no dark-mode palette.
 
 ## Shapes
 
-Small corners serve labels and inline code; medium corners serve controls and
-reading panels. Cards and the slide dialog use the large radius. Borders are
+Labels and inline code use the small corner radius. Controls and reading panels
+use the medium radius. Cards and the slide dialog use the large radius. Borders are
 normally 1px Light Neutral. The shipped outline action has a neutral border,
 replacing the raw kit's 1.5px blue outline.
 
@@ -501,7 +501,7 @@ the navy overlay. Hover and selected links use navy on white. The selected label
 is also underlined. Links target focusable `#module-1` through `#module-7` headings;
 the targeted heading receives an RVAP Blue underline.
 
-**The Curriculum Jump Rule.** Module links jump to session groups. Keep all 29 sessions and seven tracks visible; selection must not filter content.
+**Curriculum links.** Module links jump to session groups. Keep all 29 sessions and seven tracks visible; selection must not filter content.
 
 `overrides/session.js` synchronizes `aria-current="location"` with the URL hash
 on initial load and `hashchange`, including deep links. Native anchor navigation
@@ -509,7 +509,7 @@ works without JavaScript; the script adds the current-location state.
 
 ### Custom session builder and shared set
 
-**The Filter/Selection Rule.** Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.
+**Filters and selection.** Builder filters affect only its catalog rows. Keep selected sessions and their order when filters change; clearing filters and clearing selection are separate actions.
 
 The homepage and builder share `data/session-catalog.json`: 29 sessions across
 seven modules. `hooks/presentation_embed.py` resolves material links from actual
@@ -537,7 +537,7 @@ uses a 2px navy outline with a 3px offset. White text no longer crosses a light
 fill during transitions, fixing Open page. Home and other action states stay
 unchanged.
 
-**The URL Set Rule.** Store the ordered subset and user text in the query string; leave the fragment available for heading anchors.
+**Set URLs.** Store the ordered subset and user text in the query string; leave the fragment available for heading anchors.
 
 State uses `?v=1&ids=01,10,04&name=...&intro=...`. Draft edits use `replaceState`;
 text input waits 300ms, then flushes on change or before unload. Reload, Back,
@@ -553,7 +553,7 @@ with Overview, Lab, and Trainer Guide links. Title and introduction use
 actions sit above the list; print hides controls and avoids splitting rows.
 The preparation reminder remains visible. Prerequisites are not added automatically.
 
-**JavaScript is required** for both set surfaces. Their loading notice links to
+**JavaScript is required** for the builder and shared viewer. Their loading notice links to
 the full curriculum and asks readers to enable JavaScript. Invalid versions,
 unknown or duplicate IDs, repeated/unexpected fields, and excessive lengths
 produce a visible alert in a navy-bordered tinted panel. Query strings above
@@ -594,7 +594,7 @@ and restores focus. Direct links remain without JavaScript. All 24 slide
 HTML/PDF pairs use `themes/ghcp-ttt.css`: light content slides, with the permitted
 gradient on titles/dividers.
 
-**The Logo Rule.** Use the approved compact full RVAP wordmark in the header and drawer. Keep the 600px minimum displayed width for other full-logo placements. Use a white or very light background, preserve proportions and clear space, and never recolor the artwork.
+**Logo use.** Use the approved compact full RVAP wordmark in the header and drawer. Keep the 600px minimum displayed width for other full-logo placements. Use a white or very light background, preserve proportions and clear space, and never recolor the artwork.
 
 The user approved "Match the reference's compact full RVAP wordmark" on
 September 7, 2026. `assets/logos/rvap-full.png` is the unmodified
@@ -605,10 +605,10 @@ The header displays it at 36px high, or 32px at `40em` and below; the drawer
 uses 36px. Width stays automatic from the 1058:376 source proportions.
 The existing GitHub favicon is unchanged.
 
-**Not canonized:** unused kit eyebrows conflict with the craft floor; unused
-pillar-badge recipes carry no curriculum meaning.
+The site does not use the kit's small labels above headings or its pillar-badge
+styles. The pillar badges have no curriculum meaning.
 
-## Do's and Don'ts
+## Do's and don'ts
 
 - **Do** keep labs and trainer guides in the same MkDocs reading system.
 - **Do** use Microsoft Blue for small filled actions and ordinary links; use navy for links on tinted reading surfaces.

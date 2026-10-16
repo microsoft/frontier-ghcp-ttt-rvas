@@ -8,7 +8,7 @@ footer: 'Session m2-02: IDE Agent Workflows'
 
 <!-- _class: lead -->
 
-# IDE Agent Workflows
+# IDE agent workflows
 ## Plan, act, observe, and review
 
 ---
@@ -30,7 +30,7 @@ Follow the course safety baseline.
 Plan → Act → Observe → Review → Revise or stop
 ```
 
-Use the loop to review the work. Confirm current controls and behavior before a live demonstration.
+Use the loop to review the work. Check current controls and behavior before a live demonstration.
 
 ---
 
@@ -63,7 +63,7 @@ Add one small, testable behavior.
 
 # Required access
 
-Confirm that Agent mode works before the lab starts. If it does not, stop the lab.
+Check that Agent mode works before the lab starts. If it does not, stop the lab.
 Manual editing does not demonstrate
 tool approval, steering, or agent review.
 
@@ -81,7 +81,7 @@ tool approval, steering, or agent review.
 | 0:28 | Multi-file live demo | Pause at checkpoints |
 | 0:43 | Chat vs. agent mode | Apply decision framework |
 | 0:50 | Intervention and TODO delegation | Show safe handoff |
-| 0:57 | Lab handoff and Q&A | Confirm stop rules |
+| 0:57 | Lab handoff and Q&A | Check stop rules |
 
 **Transition:** "Autocomplete predicts text; an agent pursues a goal through tools."
 
@@ -95,7 +95,7 @@ tool approval, steering, or agent review.
 | Chat | A question and references | Guidance or a proposed edit |
 | Agent | Goal, constraints, and repository | A multi-step change with evidence |
 
-More autonomy needs a bounded scope, observable progress, and review.
+More autonomy needs clear file limits, progress checks, and review.
 
 ---
 
@@ -126,7 +126,7 @@ Plan ──→ Act ──→ Observe
 Human review or stop
 ```
 
-**Trainer cue:** Pause after each arrow and ask what evidence should be visible.
+**Trainer cue:** Pause after each arrow and ask which plan, diff, or test result learners should see.
 
 ---
 
@@ -243,11 +243,11 @@ A TODO can become a concise delegation point:
 
 Before delegating:
 
-- convert the comment into explicit acceptance criteria;
-- confirm the target repository and branch;
+- convert the comment into acceptance criteria;
+- check the target repository and branch;
 - remove sensitive context;
 - define tests and reviewer ownership;
-- verify current support and policy for the selected handoff.
+- check current support and policy for the selected handoff.
 
 ---
 
@@ -267,13 +267,13 @@ Use the answers to discuss task selection.
 
 # Lab handoff
 
-Learners will scaffold, implement, test, and refactor bounded features while:
+Learners will scaffold, implement, test, and refactor features with clear limits while:
 
 1. observing tool calls and multi-file edits;
 2. redirecting the agent after an intentional scope change;
 3. comparing manual and agent-mode implementations;
 4. trying a TODO delegation only when access is approved;
-5. recording the evidence used to accept or reject output.
+5. recording the checks used to accept or reject output.
 
 **Continuing story:** Build one Todo API, add ownership and due dates, then redirect its repository refactor.
 
@@ -283,7 +283,7 @@ Learners will scaffold, implement, test, and refactor bounded features while:
 
 # Remember
 
-1. Agent mode is best for explicit, testable, multi-step work.
+1. Agent mode fits clearly defined, testable, multi-step work.
 2. Task contracts convert autonomy into reviewable boundaries.
 3. Tool approval and file scope are trust decisions.
 4. Intervention is expected, not a failure.

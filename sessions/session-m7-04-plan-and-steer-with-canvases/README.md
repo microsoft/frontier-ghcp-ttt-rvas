@@ -1,4 +1,4 @@
-# Session m7-04: Build and Use a Planning Canvas
+# Session m7-04: Build and use a planning canvas
 
 **Module:** Product and Delivery Teams
 

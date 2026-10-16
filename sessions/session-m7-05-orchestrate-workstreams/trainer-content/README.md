@@ -1,4 +1,4 @@
-# Trainer Content: Session m7-05, Orchestrate Agents and Workstreams
+# Trainer content: Session m7-05, orchestrate agents and workstreams
 
 **Duration:** 1 hour
 
@@ -23,15 +23,15 @@ MCP access. Preserve the product route's live issue workflow and Session m7-06 h
 | 0:20-0:32 | Monitor and intervene | Wait, redirect, stop, accept, reject, or escalate. |
 | 0:32-0:45 | Live demonstration | Review child sessions on the orchestration surface. |
 | 0:45-0:55 | Review the parent result | Keep supported findings and visible gaps. |
-| 0:55-1:00 | Lab handoff | Confirm access and deliverables. |
+| 0:55-1:00 | Lab handoff | Check access and deliverables. |
 
 ## Required preflight
 
-- Confirm `/orchestrate` and the built-in `orchestrate` skill.
+- Check `/orchestrate` and the built-in `orchestrate` skill.
 - Product route: check GitHub MCP read access to the selected issues.
 - Developer route: run the supplied Python tests and check local project read access.
 - Use synthetic or approved sanitized work.
-- Confirm that the trainer can open, redirect, and stop child sessions.
+- Check that the trainer can open, redirect, and stop child sessions.
 - Decide who may approve issue updates.
 
 **Stop if orchestration or the selected route's source access is unavailable.**
@@ -40,7 +40,7 @@ MCP access. Preserve the product route's live issue workflow and Session m7-06 h
 
 Each workstream needs:
 
-- one bounded question;
+- one question with a clear scope;
 - approved issue inputs;
 - one hard stop condition;
 - one reviewer.
@@ -68,7 +68,7 @@ Use the current session management surface.
 | The result lacks support | Reject |
 | Human authority is required | Escalate |
 
-Show one meaningful intervention. Do not invent an intervention for the exercise.
+Show a wait, redirect, stop, accept, reject, or escalate decision when the work calls for it.
 
 ## Review the parent result
 

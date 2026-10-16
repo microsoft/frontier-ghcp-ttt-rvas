@@ -2,7 +2,7 @@
 description: "Lab for isolated GitHub Copilot app sessions and PR-readiness evidence"
 ---
 
-# Session m2-05 Lab: From Isolated Session to PR-Readiness Report
+# Session m2-05 lab: From isolated session to PR-readiness report
 
 **Duration:** 120 minutes  
 **Difficulty:** Intermediate  
@@ -10,7 +10,7 @@ description: "Lab for isolated GitHub Copilot app sessions and PR-readiness evid
 
 ## Objective
 
-Use the GitHub Copilot app to repair a small readiness evaluator, verify the change
+Use the GitHub Copilot app to repair a small readiness evaluator, check the change
 with focused checks, hand the work to a fresh session, and assess a synthetic pull
 request. Finish by defining a manual read-only automation that can repeat the
 readiness report without modifying GitHub.
@@ -20,12 +20,12 @@ readiness report without modifying GitHub.
 You must have:
 
 - access to the GitHub Copilot app;
-- an approved GitHub account and Copilot plan, or an approved model-provider setup;
+- a GitHub account and Copilot plan, or a model-provider setup allowed by your organization;
 - permission to connect a local training folder;
 - Python 3.10 or later;
 - Git with a configured local commit identity.
 
-Before starting, open the app and confirm that you can create a project session.
+Before starting, open the app and check that you can create a project session.
 Check that Interactive, Plan, and Autopilot appear in the mode picker and that
 `/plan`, `/review`, and `/rubber-duck` appear in the command picker.
 Check `/fork`, `/merge-to-parent`, and `/spar` too. Inspect the project's local
@@ -39,7 +39,7 @@ by treating supplied evidence as hands-on app work.
 
 ### Workspace
 
-Copy `lab/starter` to an approved writable location. If the copy is inside a Git
+Copy `lab/starter` to a writable training folder. If the copy is inside a Git
 repository, create a clean branch before opening it in the app.
 
 ```bash
@@ -68,7 +68,7 @@ repository links, email addresses, secrets, tenant identifiers, or production lo
 
 ### Goal
 
-Use chat for discovery, then start a project session with an explicit workspace
+Use chat for discovery, then start a project session with a named workspace
 and mode.
 
 1. Open a new Chat in the app.
@@ -99,7 +99,7 @@ and mode.
 
 ### Goal
 
-Repair the evaluator with a bounded plan and exact test evidence.
+Repair the evaluator with a plan that names the files and tests.
 
 1. Attach `issue-brief.md`, `readiness_guard/readiness.py`, and
    `tests/test_readiness.py`.
@@ -253,9 +253,9 @@ Connect issue intent to PR evidence and create a safe repeatable readiness repor
 6. Open `automation-prompt-template.md`.
 7. Define a **manual trigger** and read-only tools.
 8. In the live route, create the automation if policy and repository access allow.
-   Run it manually against an approved synthetic repository or keep it as a saved
+   Run it manually against a synthetic repository you may use or keep it as a saved
    specification when no repository is available.
-9. Confirm that the automation cannot comment, label, push, approve, merge, or
+9. Check that the automation cannot comment, label, push, approve, merge, or
    resolve review threads.
 
 The supplied PR snapshot should produce `NOT_READY`.

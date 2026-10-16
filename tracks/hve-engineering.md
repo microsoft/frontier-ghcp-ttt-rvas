@@ -14,14 +14,13 @@ description: "Phased HVE learning path from Copilot fundamentals through evidenc
 
 ## Description
 
-This track builds the skills needed for the HVE Core challenge instead of treating
-it as an isolated workshop. Learners first establish reliable Copilot habits, then
+This track prepares learners for the HVE Core challenge. They first learn daily Copilot workflows, then
 practice context management, review, MCP, and custom agents. Session m5-03 brings
 those skills together through HVE Research, Plan, Implement, Review, and Follow-up.
 
 ## Prerequisites
 
-- GitHub Copilot access in an approved environment
+- GitHub Copilot access in an environment that meets the organization's policy
 - Node.js 20 or later
 - HVE Core installed through an approved extension or Copilot CLI plugin
 - Permission to download the supplied Node.js dependencies or use a prepared copy
@@ -32,7 +31,7 @@ those skills together through HVE Research, Plan, Implement, Review, and Follow-
 |---|---|---|---:|
 | 1. Copilot foundations | 01 to 03 | Chat, prompting, context, and verification | 9 hrs |
 | 2. Guided engineering | 04 to 07 | CLI, agent mode, shared context, and review | 12 hrs |
-| 3. Agent integration | 10 to 11 | MCP tools and bounded custom agents | 6 hrs |
+| 3. Agent integration | 10 to 11 | MCP tools and custom agents with defined scope | 6 hrs |
 | 4. HVE delivery | 28 | Evidence-led RPI challenge and human decision | 4 hrs |
 
 ## Sessions
@@ -50,14 +49,14 @@ those skills together through HVE Research, Plan, Implement, Review, and Follow-
 | 9 | m3-04 | Custom Agents & Agent Profiles | Advanced | 3 hrs |
 | 10 | m5-03 | HVE Core: Evidence-Led Delivery with RPI | Advanced | 4 hrs |
 
-## Completion evidence
+## Completion records
 
 Learners should finish with:
 
-- A bounded HVE Research, Plan, Implement, and Review artifact chain
-- Repository context, targeted instructions, and a custom reviewer with activation
-  evidence
-- Product Manager Advisor and Agile Coach outputs that shape or confirm the plan
+- Linked HVE Research, Plan, Implement, and Review files for the assigned feature
+- Repository context, targeted instructions, and a custom reviewer, with records
+  showing that Copilot used each customization
+- Product Manager Advisor and Agile Coach outputs that shape or support the plan
 - A tested API slice and container contract
 - A human decision to approve, request changes, or pause
 
@@ -71,4 +70,4 @@ gates, and how each framework handles change.
 
 Continue to [Session m6-02](../sessions/session-m6-02-capstone/README.md) when learners are ready
 to combine governance, specification, implementation, review, and handoff in one
-bounded capstone.
+capstone task.

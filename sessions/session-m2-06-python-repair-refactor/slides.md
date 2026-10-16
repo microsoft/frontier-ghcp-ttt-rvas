@@ -8,7 +8,7 @@ footer: 'Session m2-06: Repair and Refactor a Broken Python Application'
 
 <!-- _class: lead -->
 
-# Repair and Refactor a Broken Python Application
+# Repair and refactor a broken Python application
 
 ## Copilot in Practice
 
@@ -54,7 +54,7 @@ It currently does none of this reliably.
 | Repeatability | `STATE-01` |
 | Design | `DESIGN-01` |
 
-Each repaired fault reveals the next signal.
+Each repaired fault lets execution reach the next failure.
 
 ---
 
@@ -188,7 +188,7 @@ The same fixtures always expose:
 - the wrong urgent threshold;
 - stale results on a second call.
 
-Stable evidence makes debugging discussions concrete.
+Use these repeatable failures to test each diagnosis.
 
 ---
 
@@ -286,7 +286,7 @@ Ask:
 - Does output order stay deterministic?
 - What assumption is still unproved?
 
-Generated code still needs evidence.
+Check generated code against tests and fixtures.
 
 ---
 
@@ -298,7 +298,7 @@ Generated code still needs evidence.
 | Restore parsing and imports | 30 min |
 | Recover behavior | 30 min |
 | Add regression tests | 20 min |
-| Refactor and verify | 25 min |
+| Refactor and check | 25 min |
 | Final evidence | 5 min |
 
 ---
@@ -320,5 +320,5 @@ Generated code still needs evidence.
 
 Work in failure order. Record every repair.
 
-**Success looks like:** the solution produces the supplied text and JSON outputs,
-passes all tests, and returns the same result on repeated runs.
+**The solution must** produce the supplied text and JSON outputs,
+pass all tests, and return the same result on repeated runs.

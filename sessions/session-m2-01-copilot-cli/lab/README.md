@@ -1,4 +1,4 @@
-# Session m2-01 Lab: GitHub Copilot in the CLI
+# Session m2-01 lab: GitHub Copilot in the CLI
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
@@ -7,7 +7,7 @@
 
 ---
 
-## Lab Overview
+## Lab overview
 
 You are taking over the `agent-tasks` Node.js project. Use the standalone CLI to
 inspect its commands, repair it, and automate a health report. Then decide whether
@@ -23,11 +23,11 @@ project.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Confirm that the [Copilot CLI](https://docs.github.com/en/copilot/get-started/cli-quickstart), its authentication method, and terminal access are approved.
+Read the [course safety baseline](../../learning-safety-baseline.md). Check that you may use the [Copilot CLI](https://docs.github.com/en/copilot/get-started/cli-quickstart), its authentication method, and terminal access.
 
 ### Required access
 
-- [ ] Confirmed GitHub Copilot access for the standalone CLI
+- [ ] GitHub Copilot access checked for the standalone CLI
 - [ ] Approval to use the local `agent-tasks` training project
 - [ ] GitHub CLI (`gh`) installed
 - [ ] Node.js 22 or later
@@ -46,7 +46,7 @@ Agree a usage limit with the trainer before starting parallel work.
 before continuing. Normal shell work or a cloud delegation does not replace the
 planning and fleet exercises.
 
-### Verify Your Setup
+### Check your setup
 
 ```bash
 # Check GitHub CLI
@@ -66,11 +66,11 @@ gh auth status
 
 ---
 
-## Exercise 1: CLI Setup & First Commands (15 min)
+## Exercise 1: CLI setup & first commands (15 min)
 
 ### Objective
 
-Install the GitHub Copilot standalone CLI, verify it's working, and use it to explain commands and generate suggestions interactively.
+Install the GitHub Copilot standalone CLI, check that it works, and use it to explain and suggest commands.
 
 ### Part A: Installation (5 min)
 
@@ -87,7 +87,7 @@ Install the GitHub Copilot standalone CLI, verify it's working, and use it to ex
    winget install GitHub.Copilot
    ```
 
-2. **Verify installation:**
+2. **Check installation:**
 
    ```bash
    copilot --version
@@ -104,7 +104,7 @@ Install the GitHub Copilot standalone CLI, verify it's working, and use it to ex
 
    This starts an OAuth device flow. Follow the browser prompts.
 
-4. **Verify you can start a session:**
+4. **Check that you can start a session:**
 
    ```bash
    copilot
@@ -120,12 +120,12 @@ Install the GitHub Copilot standalone CLI, verify it's working, and use it to ex
 | -------------------------------- | ------------------------------------------------------------------------------ |
 | `copilot: command not found`     | Ensure Node.js 22+ is installed, or try `npx @github/copilot`                 |
 | Authentication fails             | Run `copilot` then `/login`, or set `GH_TOKEN` environment variable           |
-| "Copilot isn't enabled" error    | Verify your GitHub account has Copilot access at github.com/settings/copilot   |
+| "Copilot isn't enabled" error    | Check your GitHub account has Copilot access at github.com/settings/copilot   |
 | Permission denied during install | On Linux/macOS, you may need `sudo` for global npm install, or use `nvm`      |
 
 ---
 
-### Part B: Explain Commands (5 min)
+### Part B: Explain commands (5 min)
 
 Open `lab/starter/explain-challenges.md`. The file has five commands, from simple to complex. For each one:
 
@@ -148,7 +148,7 @@ Open `lab/starter/explain-challenges.md`. The file has five commands, from simpl
 
 ---
 
-### Part C: Suggest Commands (5 min)
+### Part C: Suggest commands (5 min)
 
 Open `lab/starter/suggest-challenges.md`. The file has five tasks written in plain language. For each one:
 
@@ -182,7 +182,7 @@ By the end of Exercise 1:
 
 ---
 
-## Exercise 2: Plan, Revise, and Repair (40 min)
+## Exercise 2: Plan, revise, and repair (40 min)
 
 ### Objective
 
@@ -343,7 +343,7 @@ as selecting Plan mode.
 
 ---
 
-### Task 2: Add Missing Tests (10 min)
+### Task 2: Add missing tests (10 min)
 
 **In the same Copilot CLI session (or start a new one):**
 
@@ -358,7 +358,7 @@ The utils.js file has 4 exported functions but no tests. Create a full test file
 - [ ] Does it run the tests automatically?
 - [ ] Are there at least 3 tests per function?
 
-**Verify:**
+**Check:**
 
 ```bash
 npm test
@@ -421,7 +421,7 @@ By the end of Exercise 2:
 
 ---
 
-## Exercise 3: Programmatic Output and Fleet (35 min)
+## Exercise 3: Programmatic output and fleet (35 min)
 
 ### Objective
 
@@ -429,7 +429,7 @@ Build terminal-first automation, then delegate independent analysis of the same
 project. `/fleet` and `/research` are also available in the app; they are not
 CLI-exclusive.
 
-### Part A: Programmatic Mode (15 min)
+### Part A: Programmatic mode (15 min)
 
 Programmatic mode (`-p`) lets you use Copilot in automated pipelines. Review its inputs, permissions, and output before adding it to a workflow.
 
@@ -473,7 +473,7 @@ Programmatic mode (`-p`) lets you use Copilot in automated pipelines. Review its
    Record the CLI exit status immediately after the Copilot command. If it failed,
    stop and inspect the error before running the parser.
 
-5. **Now complete the pipeline script.** Open `pipeline-script.sh` in a text editor (or use the Copilot CLI itself!) and fill in the TODO sections:
+5. **Complete the pipeline script.** Open `pipeline-script.sh` in a text editor or the Copilot CLI and fill in the TODO sections:
 
    ```bash
    # You can even use Copilot to help you complete the script:
@@ -517,7 +517,7 @@ it does not queue or send it. Record which control did what.
 
 ### Part B: Focused research with `/research` (5 min)
 
-The `/research` command launches a specialized research agent that searches your codebase, GitHub repositories, and the web to produce in-depth reports.
+The `/research` command starts a research agent that searches your codebase, GitHub repositories, and the web, then writes a report.
 
 1. **Open `starter/cli-exclusive/research-topics.md`.** Pick one of the 3 research topics.
 
@@ -696,7 +696,7 @@ By the end of Exercise 4:
 
 ---
 
-## Final Deliverable
+## Final deliverable
 
 Submit one folder containing:
 
@@ -723,7 +723,7 @@ Checked October 15, 2026:
 
 ## Trainer notes
 
-1. **Treat the CLI as a terminal workflow.** Confirm the current supported commands and controls in official documentation before teaching or automating them.
+1. **Treat the CLI as a terminal workflow.** Check the current supported commands and controls in official documentation before teaching or automating them.
 
 2. **Programmatic mode (`-p`) supports automation.** It can generate changelogs, reports, and audit summaries. Start with limited permissions and review the output.
 
@@ -731,4 +731,4 @@ Checked October 15, 2026:
 
 4. **Choose between the CLI and IDE based on the work.** SSH, CI/CD, and automation favor the CLI. Visual development and code navigation favor the IDE.
 
-5. **Choose the surface deliberately.** Use current official documentation and the applicable policy to decide whether CLI, IDE, or web workflows fit the task.
+5. **Choose the surface deliberately.** Use current official documentation and your organization's policy to decide whether CLI, IDE, or web workflows fit the task.

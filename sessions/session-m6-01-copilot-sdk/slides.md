@@ -8,9 +8,9 @@ footer: 'Session m6-01. Build Reliable Agent Applications with the GitHub Copilo
 
 <!-- _class: lead -->
 
-# Build Reliable Agent Applications with the GitHub Copilot SDK
+# Build reliable agent applications with the GitHub Copilot SDK
 
-Own the lifecycle, policy, evidence, and failure path
+Own the lifecycle, policy, run records, and failure path
 
 Session m6-01 | Module 6 | Advanced
 
@@ -30,7 +30,7 @@ Session m6-01 | Module 6 | Advanced
 
 ---
 
-# The SDK is a component, not the application
+# The application owns the control path
 
 The SDK provides an agent session. Your application still owns:
 
@@ -39,7 +39,7 @@ The SDK provides an agent session. Your application still owns:
 - which tools exist;
 - which calls may run;
 - what the user sees when work fails;
-- the evidence kept after the session ends.
+- the records kept after the session ends.
 
 **A useful answer with an unsafe control path is still a broken application.**
 
@@ -136,7 +136,7 @@ and rules. Do not infer readiness from a fluent answer.
 
 ---
 
-# A custom tool gives the agent bounded capability
+# A custom tool limits what the agent can do
 
 ```ts
 import { defineTool } from "@github/copilot-sdk";
@@ -224,7 +224,7 @@ code review, not inherit approval by accident.
 
 ---
 
-# Hooks form the reliability rail
+# Hooks record and control the lifecycle
 
 ```text
 Session starts
@@ -394,7 +394,7 @@ look guarded.
 7. Open the same run in Jaeger.
 8. Trigger an unknown ID and show the failure path.
 
-**WOW moment:** The audience sees one denied tool call in the CLI and then finds
+Show one denied tool call in the CLI, then find
 the same policy decision inside the trace.
 
 ---

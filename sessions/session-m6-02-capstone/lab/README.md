@@ -1,4 +1,4 @@
-# Session m6-02 Lab: Bounded End-to-End Capstone
+# Session m6-02 lab: End-to-end capstone for one endpoint
 
 **Duration:** 2 hours
 
@@ -8,8 +8,8 @@
 
 ## Before you start
 
-Confirm an approved training repository or local sandbox, GitHub Copilot access for
-the selected path, Node.js 20 or later, and a human reviewer. Use only synthetic
+Before the lab, check repository or sandbox permissions, GitHub Copilot access,
+Node.js 20 or later, and a human reviewer. Use only synthetic
 bookmark data.
 
 If GitHub Copilot, repository access, Node.js, or dependency installation is
@@ -32,7 +32,7 @@ Read `starter/bookmark-create-spec.md`. Check it against the Session m5-02 stand
 - requirements describe observable behavior;
 - acceptance scenarios are testable;
 - implementation choices appear only under constraints;
-- non-goals are explicit;
+- non-goals are named;
 - every open question has an owner or a safe default.
 
 Record the accepted specification IDs and all scope decisions in the GitHub issue
@@ -86,7 +86,7 @@ the existing dependencies. Stop if the work requires another endpoint, live data
 deployment, tool configuration, or a new dependency.
 
 When blocked or out of time, stop implementation and record the blocker in
-`starter/capstone-handoff.md`. Do not claim completion without executable evidence.
+`starter/capstone-handoff.md`. Do not claim completion without test results.
 
 ## Phase 4: Verify, review, and hand off (35 min)
 
@@ -96,7 +96,7 @@ Run:
 npm test
 ```
 
-Compare the patch with the issue and specification. Confirm that `package.json`
+Compare the patch with the issue and specification. Check that `package.json`
 contains no new dependency. Record any deviation from the accepted issue in the
 handoff.
 
@@ -113,7 +113,7 @@ Complete every section in `starter/capstone-handoff.md`.
 | 105 min | Tests and specification trace are reviewed |
 | 120 min | Decision and next action are recorded |
 
-## Final Deliverable
+## Final deliverable
 
 Submit one `capstone-handoff.md` containing:
 

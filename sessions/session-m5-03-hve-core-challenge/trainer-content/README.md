@@ -2,13 +2,13 @@
 description: "Trainer guide for HVE Core RPI, customization, and product delivery"
 ---
 
-# Session m5-03 Trainer Guide: HVE From Product Intent to Reviewed Code
+# Session m5-03 trainer guide: HVE from product intent to reviewed code
 
 ## Delivery objective
 
-Learners should leave able to explain HVE and use it. The API is the practice
-surface. The assessed skill is moving from product intent to reviewed code through
-HVE agents, prompts, instructions, and durable tracking artifacts.
+Learners should leave able to explain HVE and use it. They practice on the API.
+Assess how they move from product intent to reviewed code through
+HVE agents, prompts, instructions, and saved tracking artifacts.
 
 ## Indicative trainer pacing
 
@@ -29,8 +29,8 @@ slow, switch to the reference artifact and continue the explanation.
 
 ## Preflight
 
-Before the session, verify Node.js 20 or later and the approved HVE Core extension
-or Copilot CLI plugin. Record the version or channel. Open Copilot Chat and confirm
+Before the session, check Node.js 20 or later and the approved HVE Core extension
+or Copilot CLI plugin. Record the version or channel. Open Copilot Chat and check
 the required prompts and agents appear. Do not describe HVE as optional or
 substitute generic agent mode for an HVE phase.
 
@@ -53,12 +53,11 @@ things learners must distinguish:
 * agents own roles and protocols;
 * prompts provide repeatable workflow entry points;
 * instructions apply standards when file patterns match;
-* `.copilot-tracking/` is the local durable interface between phases and must stay
+* `.copilot-tracking/` stores local handoff files between phases and must stay
   ignored by Git.
 
-The file-as-interface model matters. Research does not hand an invisible chat
-summary to Plan. It writes an artifact that a person can inspect, diff, attach,
-and approve.
+Research writes a file that Plan can use. A person can inspect, diff, attach,
+and approve it.
 
 ## Demonstrate direct RPI phases
 
@@ -86,7 +85,7 @@ Then show the combined form without running a second feature:
 
 Explain that combined RPI orchestrates the same phases and uses Follow-up to route
 new defects or missing evidence back to the responsible phase. Use direct phase
-prompts for learning and explicit gates. Use combined mode after the team trusts
+prompts for learning and phase-by-phase approval. Use combined mode after the team trusts
 the workflow and understands its artifacts.
 
 ## Demonstrate customization

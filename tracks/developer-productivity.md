@@ -1,6 +1,6 @@
 # Track: Developer Productivity
 
-**Target Audience:** Individual developers wanting to maximize daily productivity with Copilot
+**Target Audience:** Developers using Copilot in daily work
 **Duration:** 27 hours (9 sessions × 3 hrs)
 **Difficulty:** Beginner → Intermediate
 **Recommended Delivery:** 3 to 4 days (2 to 3 sessions per day)
@@ -9,8 +9,7 @@
 
 ## Description
 
-The core Copilot workflow track for developers who want to get more from Copilot
-each day. It covers suggestions, Chat, prompting, CLI, agent mode, context,
+This track covers suggestions, Chat, prompting, CLI, agent mode, context,
 review, and the GitHub Copilot app. Session m2-05 teaches isolated implementation and
 plan critique. Session m7-05's developer route adds supervised child sessions over
 local code and a synthetic PR snapshot.
@@ -47,9 +46,9 @@ local code and a synthetic PR snapshot.
 required command is unavailable. Prepared outputs support trainer explanation
 only. The Session m7-05 developer route does not require Sessions m7-01 to m7-04 or MCP.
 
-## Recommended Delivery Schedule
+## Recommended delivery schedule
 
-### 3-Day Standard
+### 3-day standard
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
@@ -60,7 +59,7 @@ only. The Session m7-05 developer route does not require Sessions m7-01 to m7-04
 Each day has nine teaching hours before breaks. Use the four-day schedule for
 normal delivery.
 
-### 4-Day Relaxed
+### 4-day relaxed
 
 | Day   | Sessions        | Focus                          |
 | ----- | --------------- | ------------------------------ |
@@ -69,23 +68,23 @@ normal delivery.
 | Day 3 | Sessions m2-02, m2-03 | Agent mode + context           |
 | Day 4 | Sessions m2-04, m2-05, m7-05 | Code review, app workflow, and developer orchestration |
 
-## Learning Outcomes
+## Learning outcomes
 
 By completing this track, trainees will be able to:
 
-1. Use all Copilot surfaces fluently. Inline, Chat, CLI, and agent mode
+1. Use inline suggestions, Chat, CLI, and agent mode in daily work
 2. Write effective prompts and apply context management strategies
 3. Configure Copilot Spaces and custom instructions for team workflows
 4. Use Copilot for PR summaries, code review, and merge conflict resolution
-5. Build a personal productivity workflow combining multiple Copilot surfaces
-6. Choose the right Copilot surface for any given task
+5. Combine Copilot tools in a daily development workflow
+6. Choose the right Copilot tool for a task
 7. Set up project-level and personal context that improves Copilot's output quality
 8. Use isolated Copilot App sessions for implementation and independent critique
 9. Revise a plan before implementation and triage local code/security findings
 10. Direct read-only child sessions and distinguish local success from PR readiness
 11. Inspect loaded instructions, manage queued/background work, and check recovery state
 
-## Next Steps
+## Next steps
 
 - **Agentic Development**. Move into Copilot App canvases, autonomous agents, MCP servers, and custom agents
 - **DevOps & Automation**. Apply Copilot to CI/CD pipelines, GitHub Actions, and Infrastructure as Code

@@ -8,7 +8,7 @@ footer: 'Session m3-04: Custom Agents & Agent Profiles'
 
 <!-- _class: lead -->
 
-# Custom Agent Boundaries
+# Custom agent boundaries
 
 ## Fail the weak profile, tighten it, rerun the same test
 
@@ -138,7 +138,7 @@ Expected failures include:
 - every tool is enabled;
 - no test-only path is named;
 - no production-code stop exists;
-- no verified command or human decision exists.
+- no working test command or human review decision is named.
 
 ---
 
@@ -215,8 +215,8 @@ The weak profile fails. The tightened profile passes.
 | --- | --- |
 | Repository-wide convention | Instructions |
 | Repeatable procedure | Skill |
-| Bounded specialist role | Custom agent |
-| Approved external capability | MCP |
+| Specialist role with a defined scope | Custom agent |
+| External tools or data allowed by policy | MCP |
 
 Do not add MCP to a role that only needs repository files.
 

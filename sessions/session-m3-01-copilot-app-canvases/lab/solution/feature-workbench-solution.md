@@ -1,4 +1,4 @@
-# Optional Feature Workbench Solution
+# Optional Feature Workbench solution
 
 ## Gate review
 
@@ -6,7 +6,7 @@
 - **Proposal:** `hold`
 - **Human decision:** `hold`
 - **Blocking check:** `integration-tests`
-- **Observed evidence:** The owner-isolation scenario failed.
+- **Test result:** The owner-isolation scenario failed.
 
 ## Rationale
 

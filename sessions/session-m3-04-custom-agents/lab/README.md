@@ -1,4 +1,4 @@
-# Session m3-04 Lab: Tighten a Custom Agent Boundary
+# Session m3-04 lab: Tighten a custom agent boundary
 
 **Duration:** 2 hours
 
@@ -10,7 +10,7 @@ test-only run that stops at a source-code conflict
 
 ## Lab overview
 
-Start with a profile that looks useful but has no real boundary. Prove the problem,
+Start with a profile that does not restrict source edits. Show the problem,
 tighten the profile, and rerun the same checks.
 
 | Part | Work | Time |
@@ -18,7 +18,7 @@ tighten the profile, and rerun the same checks.
 | 1 | Inspect the exact profile format | 20 min |
 | 2 | Inspect symbols with LSP and expose the weak boundary | 25 min |
 | 3 | Tighten tools, paths, validation, and stop rules | 35 min |
-| 4 | Rerun tests and one bounded scenario | 25 min |
+| 4 | Rerun tests and the source-conflict scenario | 25 min |
 | 5 | Review references and ownership | 15 min |
 
 ## Before you start
@@ -194,7 +194,7 @@ Review:
 1. The weak profile and its failed contract output.
 2. The tightened `test-writer.agent.md`.
 3. Passing profile contract tests.
-4. A bounded conflict scenario that stops without editing `src/`.
+4. A source-conflict scenario that stops without editing `src/`.
 5. A human accept, revise, or reject decision.
 6. `agent-run.md` with the actual LSP lookup and live selected-profile result.
 

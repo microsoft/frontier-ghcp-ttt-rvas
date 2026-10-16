@@ -2,7 +2,7 @@
 
 An Express.js REST API for an e-commerce product catalog with a modular architecture.
 
-## Quick Start
+## Quick start
 
 ```bash
 npm install
@@ -11,7 +11,7 @@ npm start
 
 The server runs at `http://localhost:3000`.
 
-## Project Structure
+## Project structure
 
 ```
 ecommerce-project/
@@ -25,7 +25,7 @@ ecommerce-project/
 └── package.json
 ```
 
-## API Endpoints
+## API endpoints
 
 | Method   | Route               | Description                            |
 | -------- | ------------------- | -------------------------------------- |
@@ -35,9 +35,9 @@ ecommerce-project/
 | PUT      | `/api/products/:id` | Update a product                       |
 | DELETE   | `/api/products/:id` | Delete a product                       |
 
-## Coding Standards
+## Coding standards
 
 - Use ES module imports.
 - Use `async`/`await`.
-- Structured error responses
-- Input validation on all endpoints
+- Return structured errors.
+- Validate input on all endpoints.

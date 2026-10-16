@@ -1,4 +1,4 @@
-# Session m1-03 Trainer Guide: Prompt Engineering Fundamentals
+# Session m1-03 trainer guide: Prompt engineering fundamentals
 
 ## Delivery objective
 
@@ -10,7 +10,7 @@ a time.
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:07 | Prompting is specification at conversation scale |
+| 0:00 to 0:07 | Prompting as task design |
 | 0:07 to 0:20 | Intent, context, constraints, and examples |
 | 0:20 to 0:29 | Comments and neighboring-file context |
 | 0:29 to 0:39 | Iterative refinement |
@@ -26,9 +26,9 @@ The timings match [`slides.md`](../slides.md).
 - Run starter syntax checks.
 - Run the solution tests.
 - Prepare a demo copy of the todo store.
-- Confirm GitHub Copilot Chat and inline-suggestion access.
+- Check GitHub Copilot Chat and inline-suggestion access.
 - Check `/refine` in CLI `/help`; do not substitute an editor command.
-- Verify current context controls in official product documentation.
+- Check current context controls in official product documentation.
 - Keep `change-request.md` closed until the lab evolution stage.
 
 ## Slide delivery map
@@ -144,7 +144,7 @@ Compare three prompts:
 
 1. `Implement create.`
 2. `Implement TodoStore.create using the test.`
-3. The complete bounded prompt from the earlier slide.
+3. The prompt with behavior, file limits, and checks from the earlier slide.
 
 Review which prompt states scope, behavior, dependency limits, and verification.
 Use the third prompt or implement manually. Run the focused test.
@@ -187,7 +187,7 @@ No. Add the components the task needs. Use the list to diagnose missing detail.
 
 **How long should a prompt be?**
 
-Long enough to prevent material guessing, but shorter than a line-by-line
+Long enough to state the required behavior, but shorter than a line-by-line
 implementation.
 
 **Why did opening a file not change the suggestion?**
@@ -204,7 +204,7 @@ repeat obvious code.
 
 - [ ] Starter syntax checks pass.
 - [ ] The expected starter test failures are understood.
-- [ ] Required Copilot access is confirmed.
+- [ ] Required Copilot access is checked.
 - [ ] CLI `/refine` works before learners start.
 - [ ] Learners know the baseline and change tests are separate.
 - [ ] The reference solution is available but closed.

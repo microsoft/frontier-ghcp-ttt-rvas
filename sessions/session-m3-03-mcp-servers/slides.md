@@ -8,7 +8,7 @@ footer: 'Session m3-03: MCP Servers & Custom Tool Integration'
 
 <!-- _class: lead -->
 
-# MCP Servers & Custom Tool Integration
+# MCP servers & custom tool integration
 
 ## Prove one tool before adding the next
 
@@ -24,9 +24,9 @@ Session m3-03 | 3 hours
 | --- | --- |
 | MCP request path and boundaries | 8 min |
 | Names, descriptions, and schemas | 10 min |
-| One bounded tool example | 15 min |
+| One tool from schema to response | 15 min |
 | Bad input and visible errors | 10 min |
-| Evidence and review | 9 min |
+| Test output and review | 9 min |
 | Lab handoff | 8 min |
 
 ---
@@ -149,7 +149,7 @@ Do not assume every caller reaches the handler through the same client-side chec
 | Unit test | Handler behavior is correct for known inputs |
 | `tools/list` | The expected catalog is exposed |
 | `tools/call` | The stdio protocol path reaches the handler |
-| Copilot call | One approved client can discover and choose the tool |
+| Copilot call | One client allowed by repository policy can discover and choose the tool |
 
 Keep the deterministic tests even when the client integration works.
 
@@ -160,5 +160,4 @@ Keep the deterministic tests even when the client integration works.
 Apply the same contract to three tools. Check discovery, valid input, invalid input,
 and visible errors through tests and the MCP Inspector.
 
-**The deliverable is a three-tool server with exact request, response, and failure
-evidence.**
+**Submit a three-tool server with recorded requests, responses, and errors.**

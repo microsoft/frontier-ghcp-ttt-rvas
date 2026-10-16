@@ -2,7 +2,7 @@
 
 ## Access path
 
-- [x] Required Copilot access confirmed
+- [x] Required Copilot access checked
 
 ## Suggestion decisions
 
@@ -19,7 +19,7 @@ How should `word_frequency` treat apostrophes inside words?
 
 **Decision:** Preserve an internal apostrophe, so `don't` is one word.
 
-**Evidence:** `test_word_frequency_preserves_apostrophes` passes.
+**Test result:** `test_word_frequency_preserves_apostrophes` passes.
 
 ## Change review
 

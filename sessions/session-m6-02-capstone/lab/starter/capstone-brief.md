@@ -1,4 +1,4 @@
-# Capstone Brief: Create a Bookmark
+# Capstone brief: Create a bookmark
 
 ## Goal
 

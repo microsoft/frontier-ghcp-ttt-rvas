@@ -1,4 +1,4 @@
-# Session m3-05: Agent Skills and Repository Guidance
+# Session m3-05: Agent Skills and repository guidance
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced
@@ -21,7 +21,7 @@ actual session friction belongs in instructions, a skill, or neither.
 - Write a description that carries positive and negative trigger conditions.
 - Test matching, non-matching, and failed-precondition behavior.
 - Stop visibly when required evidence or approval is missing.
-- Run one bounded scenario and inspect its result.
+- Run the named API scenario and inspect its result.
 - Maintain skills through an owner and repository review.
 - Inspect community skill dependencies and license before loading them.
 - Compare two live interviews, then trace owner decisions into an implementation plan.

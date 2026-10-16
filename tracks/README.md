@@ -1,8 +1,9 @@
-# Learning Tracks
+# Learning tracks
 
-Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agentic Workflows curriculum into curated tracks based on audience maturity, role, and goals.
+Choose a learning path based on your team's Copilot experience, role, and goals.
+Each track lists sessions from the GitHub Copilot & Agentic Workflows curriculum.
 
-## Track Comparison
+## Track comparison
 
 | Track | Target Audience | Modules | Sessions | Duration | Difficulty |
 | ----- | --------------- | ------- | -------- | -------- | ---------- |
@@ -17,7 +18,7 @@ Pre-defined learning paths that assemble sessions from the GitHub Copilot & Agen
 Module colors match the [curriculum map](../README.md). **m2**, for example,
 contains sessions whose IDs start with `m2-`.
 
-## How to Choose
+## How to choose
 
 ```
                                     ┌─ Just starting?
@@ -42,9 +43,9 @@ contains sessions whose IDs start with `m2-`.
                                         → Full Mastery (88 hrs)
 ```
 
-## Progression Path
+## Progression path
 
-Tracks are designed to stack. After completing one track, the natural next step is indicated in each track's "Next Steps" section:
+Each track's "Next steps" section suggests which track to take next:
 
 ```
 Copilot Essentials → Developer Productivity → Agentic Development → Full Mastery
@@ -54,11 +55,11 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
                             HVE Engineering ──────────┘
 ```
 
-## Notes for Trainers
+## Notes for trainers
 
 - Each track lists exact session numbers and titles: cross-reference with [`curriculum-plan.md`](../curriculum-plan.md) for full session details
 - All tracks assume trainees meet the stated prerequisites
-- Tracks can be customized by adding or removing sessions based on specific customer needs
+- Add or remove sessions to match customer needs
 - Most sessions use the standard 3-hour format. Session m5-03 uses a 1-hour trainer
   segment and a 3-hour lab.
 - Developer Productivity and Agentic Development include Sessions m2-05 and m7-05's

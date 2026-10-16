@@ -1,4 +1,4 @@
-# Session m2-05 Starter
+# Session m2-05 starter
 
 This folder is a synthetic project for the GitHub Copilot app lab.
 
@@ -15,7 +15,7 @@ missing required evidence.
 
 ## Files
 
-- `issue-brief.md`: bounded engineering request
+- `issue-brief.md`: engineering request with scope and acceptance criteria
 - `readiness_guard/readiness.py`: incomplete implementation
 - `tests/test_readiness.py`: focused behavior checks
 - `synthetic-pr.json`: local input fixture

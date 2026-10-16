@@ -1,4 +1,4 @@
-# Inventory Reconciliation Reference Solution
+# Inventory reconciliation reference solution
 
 The reference solution separates parsing, rules, reconciliation, reporting, and
 the command-line entry point. It has no process-wide result state.

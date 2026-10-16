@@ -1,4 +1,4 @@
-# Session m5-02 Trainer Guide: Spec Kit
+# Session m5-02 trainer guide: Spec Kit
 
 ## Delivery objective
 
@@ -75,7 +75,7 @@ choosing a design*
 2. **Keep `spec.md` technology-neutral.** It defines the user, outcome, scenarios,
    non-goals, and measurable requirements. Class names, storage choices, packages,
    and file paths belong later.
-3. **Teach scenarios as decision probes.** Walk through the active-task and
+3. **Use scenarios to test decisions.** Walk through the active-task and
    unknown-ID examples. Each Given/When/Then statement should let a reviewer
    challenge one behavior.
 4. **Resolve the archive questions.** Reveal the accepted decisions only after
@@ -120,13 +120,13 @@ GitHub Issues*
 1. **Set the implementation gate.** The checklist has been reviewed, material
    analysis findings are resolved, accepted artifacts are committed, and the task
    scope is clear.
-2. **Explain convergence as comparison, not correction by assertion.** It compares
+2. **Explain what convergence compares.** It compares
    the implementation, tests, specification, plan, and tasks. When it finds a gap,
    it adds work. It must not rewrite accepted requirements to match the code.
 3. **Correct the `specify check` misconception.** It checks the local Spec Kit
    environment. It does not prove implementation compliance, security, performance,
    or test coverage.
-4. **Name the invented controls explicitly.** There is no `.specify.yml` lifecycle
+4. **Name the invented controls.** There is no `.specify.yml` lifecycle
    record, fallback-model file, fictional verification flag, or generated
    course-specific skill in this session.
 5. **Show how accepted behavior changes.** Restore behavior starts in `spec.md`.
@@ -165,9 +165,9 @@ learners see the baseline.
 
 **Preflight**
 
-- Confirm the approved Spec Kit source and release tag.
+- Check the approved Spec Kit source and release tag.
 - Prepare an initialized demo copy before the session.
-- Confirm that the training repository allows issue creation.
+- Check that the training repository allows issue creation.
 - Do not install an unapproved package during delivery.
 
 After `specify init`, show the generated files before running any agent command:

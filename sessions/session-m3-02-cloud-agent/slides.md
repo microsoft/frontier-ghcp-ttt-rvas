@@ -7,8 +7,8 @@ footer: 'Session m3-02: Cloud Agent'
 ---
 
 <!-- _class: lead -->
-# One Issue, One Review Decision
-## A bounded Copilot cloud agent workflow
+# One issue, one review decision
+## Keep the Copilot cloud agent within the issue
 
 ---
 # Today's journey
@@ -35,7 +35,7 @@ The live route requires:
 - approved Copilot cloud agent access;
 - a training repository with synthetic data;
 - a named reviewer;
-- a bounded issue and stop condition.
+- an issue with a file scope and stop condition.
 
 If one requirement is missing, stop the lab. Do not bypass policy.
 
@@ -118,7 +118,7 @@ Stop when the baseline is unexplained or setup requires unapproved access.
 ---
 # Start the session
 
-- assign the fixed issue through an approved entry point;
+- assign the fixed issue through an entry point allowed by repository policy;
 - watch the session log;
 - steer only within the issue;
 - stop on scope drift.
@@ -161,7 +161,7 @@ Required cases:
 Run the full supplied suite and record the command output.
 
 ---
-# Review feedback stays bounded
+# Keep review feedback within the issue
 
 Good:
 
@@ -183,8 +183,8 @@ Clean up the API while you are there.
 Choose:
 
 - **approve** when criteria, scope, and tests pass;
-- **request changes** when a bounded correction remains;
-- **pause** when access, evidence, or ownership is unresolved.
+- **request changes** when a correction within the issue remains;
+- **pause** when access, test output, or ownership is unresolved.
 
 The agent does not make this decision.
 
@@ -196,7 +196,7 @@ Stop the live route when:
 - the requested files expand;
 - a new dependency appears;
 - credentials or unapproved data are requested;
-- tests loop without a bounded recovery;
+- repeated test failures have no recovery plan;
 - the issue changes during implementation;
 - the reviewer is no longer available.
 
@@ -219,4 +219,4 @@ cloud-agent run for lab completion.
 <!-- _class: divider -->
 # Lab handoff
 
-One issue. Five checkpoints. One accountable decision.
+Keep the same issue through all five checkpoints. Record the reviewer's decision.

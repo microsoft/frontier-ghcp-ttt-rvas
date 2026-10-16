@@ -8,7 +8,7 @@ footer: 'Session m7-05: Orchestrate Agents and Workstreams'
 
 <!-- _class: lead -->
 
-# Orchestrate Agents and Workstreams
+# Orchestrate agents and workstreams
 
 ## Product and delivery teams, or developers after Session m2-05
 
@@ -65,7 +65,7 @@ The parent owns scope and review.
 
 Each workstream needs:
 
-- a bounded question;
+- a question with a clear scope;
 - approved inputs;
 - a stop condition;
 - a reviewer.
@@ -154,13 +154,13 @@ Do not maintain a second status log.
 
 # Review each result
 
-- Does it answer the bounded question?
+- Does it answer the assigned question?
 - Does it use only approved issue evidence?
 - Did it obey the stop condition?
-- Are gaps explicit?
+- Are gaps listed?
 - Is the recommendation supported?
 
-A fluent answer without evidence is still a rejection.
+Reject answers that lack supporting sources.
 
 ---
 

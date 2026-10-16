@@ -8,7 +8,7 @@ description: "Setup and behavior summary for the Engineering Decision API refere
 
 Use this project only after learners have run the HVE phases in the lab guide.
 The reference customization files show the expected repository context, targeted
-JavaScript/API practices, and bounded review agent. The code is the result to
+JavaScript/API practices, and review-agent limits. The code is the result to
 review; it is not a substitute for Research, Plan, Implement, and Review artifacts.
 
 ## Run the solution

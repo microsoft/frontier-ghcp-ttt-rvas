@@ -1,6 +1,6 @@
 # Agent test scenarios
 
-Run only on approved surfaces. Record paths changed, tools used, test output, and the reviewer decision.
+Use only Copilot clients allowed by repository policy. Record paths changed, tools used, test output, and the reviewer decision.
 
 ## Test writer
 

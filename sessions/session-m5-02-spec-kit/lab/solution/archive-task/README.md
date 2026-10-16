@@ -1,4 +1,4 @@
-# Archive Task Reference Result
+# Archive task reference result
 
 This directory shows one valid result after the archive feature converged and the
 living specification added restore behavior. Spec Kit output can vary with the
@@ -11,7 +11,7 @@ Run the reference tests:
 python -m unittest discover -s tests -v
 ```
 
-The meaningful Spec Kit artifacts are:
+The Spec Kit artifacts are:
 
 - `.specify/memory/constitution.md`;
 - `specs/001-archive-task/spec.md`;

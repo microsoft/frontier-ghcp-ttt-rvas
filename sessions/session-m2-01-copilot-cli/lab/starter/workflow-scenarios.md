@@ -1,10 +1,10 @@
-# Workflow Scenarios: CLI or IDE?
+# Workflow scenarios: CLI or IDE?
 
 For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice from the task constraints. Several answers can work; the reason matters.
 
 ---
 
-## Scenario 1: SSH into a Production Server
+## Scenario 1: SSH into a production server
 
 **Situation:** A Node.js service on a Linux server is crashing intermittently.
 You've connected through SSH and have only a terminal. You need to read logs, check
@@ -17,7 +17,7 @@ process status, inspect memory use, and possibly fix a configuration file.
 
 ---
 
-## Scenario 2: Setting Up CI/CD Pipeline
+## Scenario 2: Setting up a CI/CD pipeline
 
 **Situation:** You're creating a GitHub Actions workflow for a new repository.
 Write `.github/workflows/ci.yml` with build, test, and deploy stages. It needs
@@ -30,7 +30,7 @@ matrix builds for Node 20 and 22, caching, and conditional deployment.
 
 ---
 
-## Scenario 3: Analyzing a 500-Line Error Log
+## Scenario 3: Analyzing a 500-line error log
 
 **Situation:** A deployment failed. The CI log contains more than 500 lines of npm
 output, build errors, and test failures. Find the root cause in
@@ -43,7 +43,7 @@ output, build errors, and test failures. Find the root cause in
 
 ---
 
-## Scenario 4: Writing a New React Component
+## Scenario 4: Writing a new React component
 
 **Situation:** Create a dashboard component in an existing React project. It needs
 subcomponents, styled-components, data-fetching hooks, and unit tests across more
@@ -56,7 +56,7 @@ than 5 files.
 
 ---
 
-## Scenario 5: Automating a Weekly Report Script
+## Scenario 5: Automating a weekly report script
 
 **Situation:** Every Friday, you gather Git commits, Jira API data, and deployment
 logs. You combine them into a summary and post it to Slack. Automate the work with

@@ -1,4 +1,4 @@
-# Delivery Decision Studio: Initiative Context Brief
+# Delivery Decision Studio: Initiative context brief
 
 **Initiative:** Service Request Portal
 **Decision owner:**
@@ -25,7 +25,7 @@
 
 ## Non-goals
 
-<!-- Outcomes explicitly excluded from this stage -->
+<!-- Outcomes excluded from this stage -->
 
 ## Relevant GitHub artifacts
 

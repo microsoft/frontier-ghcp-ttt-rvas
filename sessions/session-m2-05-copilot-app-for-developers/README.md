@@ -2,7 +2,7 @@
 description: "Use the GitHub Copilot app for isolated, evidence-backed engineering work"
 ---
 
-# Session m2-05: GitHub Copilot App for Developers
+# Session m2-05: GitHub Copilot App for developers
 
 **Module:** Module 2: Copilot in Practice
 
@@ -14,10 +14,9 @@ description: "Use the GitHub Copilot app for isolated, evidence-backed engineeri
 
 ## Overview
 
-This session teaches the GitHub Copilot app as an engineering workspace, not a
-larger chat window. Learners separate exploratory chats from project sessions,
-choose Interactive, Plan, or Autopilot based on risk, and keep concurrent work in
-isolated working trees.
+Use the GitHub Copilot app for engineering work. Learners separate exploratory
+chats from project sessions, choose Interactive, Plan, or Autopilot based on risk,
+and keep concurrent work in isolated working trees.
 
 The lab follows one synthetic change through a tight inner loop and a GitHub-facing
 outer loop. Learners attach evidence, hand work between sessions, request an
@@ -26,11 +25,9 @@ manual read-only automation that reports PR readiness without changing GitHub.
 
 ## Learning outcomes
 
-By the end of this session, learners can:
-
 - Choose between a chat and a project session.
 - Explain when to use Interactive, Plan, or Autopilot.
-- Start isolated work and verify the branch or working-tree boundary.
+- Start isolated work and check the branch or working-tree boundary.
 - Attach only the files needed for the next decision.
 - Hand a task to a fresh session without relying on hidden conversation history.
 - Use tests, diffs, and command output as evidence in the inner loop.

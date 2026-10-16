@@ -1,4 +1,4 @@
-# Session m7-05: Orchestrate Agents and Workstreams
+# Session m7-05: Orchestrate agents and workstreams
 
 **Module:** Product and Delivery Teams
 
@@ -57,7 +57,7 @@ result and keeps decision authority.
 
 ## Required preflight
 
-Confirm the built-in `orchestrate` skill and `/orchestrate` command in the GitHub
+Check the built-in `orchestrate` skill and `/orchestrate` command in the GitHub
 Copilot app. Product learners also need GitHub MCP read access to their parent
 and child issues. Developers need Python 3.10 or later and local project read
 access instead.

@@ -1,4 +1,4 @@
-# Context Comparison Experiment
+# Context comparison experiment
 
 ## Runtime instruction inspection
 
@@ -20,7 +20,7 @@ into this record.
 
 ---
 
-## Experiment A: No Context
+## Experiment A: No context
 
 **Setup:** An empty file with no project open.
 
@@ -38,7 +38,7 @@ _(paste the response here)_
 
 ---
 
-## Experiment B: With Custom Instructions
+## Experiment B: With custom instructions
 
 **Setup:** The Storefront API is open and includes `.github/copilot-instructions.md`.
 
@@ -74,7 +74,7 @@ _(paste the response here)_
 
 ---
 
-## Experiment D: With Prompt File
+## Experiment D: With prompt file
 
 **Setup:** Use a prompt file with structured instructions.
 
@@ -91,7 +91,7 @@ _(paste the response here)_
 
 ---
 
-## Comparison Summary
+## Comparison summary
 
 | Dimension               | No Context  | Instructions  | Space   | Prompt File   |
 | ----------------------- | ----------- | ------------- | ------- | ------------- |

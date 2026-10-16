@@ -1,4 +1,4 @@
-# Sample Issues for Squad Integration
+# Sample issues for Squad integration
 
 Issue 001 is the required lab issue. The other issues in
 `backlog-items.md` are optional discussion material.
@@ -42,9 +42,9 @@ Add bounded input validation to POST /api/users.
 
 **Reviewer:** Lead
 
-## Create and verify the issue
+## Create and check the issue
 
-Run the command above, then verify:
+Run the command above, then check:
 
 ```bash
 gh issue list --label "squad" --json number,title,labels,state

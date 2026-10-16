@@ -8,7 +8,7 @@ footer: 'Session m5-03: HVE Core Challenge'
 
 <!-- _class: lead -->
 
-# HVE Core Challenge
+# HVE Core challenge
 
 From product intent to reviewed code
 
@@ -18,8 +18,8 @@ From product intent to reviewed code
 
 Hypervelocity Engineering is a structured engineering framework for GitHub Copilot.
 
-It turns agent work into a repeatable process with explicit roles, standards,
-human gates, and durable evidence.
+It gives agent work defined roles, standards, human review gates, and
+saved phase artifacts.
 
 ---
 
@@ -43,7 +43,7 @@ Research artifact
   → Review findings and decision
 ```
 
-Each handoff is inspectable, diffable, and resumable.
+Reviewers can inspect and diff each handoff, then resume work from it.
 
 ---
 
@@ -145,7 +145,7 @@ outcome-oriented story and acceptance criteria.
 
 # The implementation surface
 
-Deliver `POST /api/decisions` from a bounded product intent and API contract.
+Deliver `POST /api/decisions` within the supplied product intent and API contract.
 
 The endpoint is small on purpose. Scope control is part of the score.
 
@@ -175,7 +175,7 @@ a health check.
 4. Inspect the exact error envelope.
 5. Check which stage supplies source to the runtime image.
 
-These checks test the boundary, not the happy path.
+These checks test invalid inputs and container build boundaries.
 
 ---
 

@@ -1,10 +1,10 @@
-# Suggest Challenges: Expected Answers
+# Suggest challenges: Expected answers
 
 Reference commands for the five suggest challenges. Copilot may suggest valid alternatives. Check that the command performs the task correctly and safely.
 
 ---
 
-## Challenge 1: Find Large Python Files
+## Challenge 1: Find large Python files
 
 **Task:** Find all Python files (`.py`) larger than 1MB in the current directory tree.
 
@@ -30,7 +30,7 @@ find . -name "*.py" -exec du -h {} + | awk '$1 ~ /M|G/ && $1+0 >= 1'
 
 ---
 
-## Challenge 2: Recent Commits by Author
+## Challenge 2: Recent commits by author
 
 **Task:** Show commits from the last 7 days by a specific author.
 
@@ -59,7 +59,7 @@ git log --stat --since="1 week ago" --author="octocat"
 
 ---
 
-## Challenge 3: Branch, Commit, and Push
+## Challenge 3: Branch, commit, and push
 
 **Task:** Create branch `feature/cli-lab`, commit all changes, and push in one line.
 
@@ -86,7 +86,7 @@ message, and pushes with upstream tracking. The `&&` chain stops when a step fai
 
 ---
 
-## Challenge 4: Top 10 Largest Files
+## Challenge 4: Top 10 largest files
 
 **Task:** Find the top 10 largest files with human-readable sizes.
 
@@ -115,7 +115,7 @@ find . -type f -printf '%s %p\n' | sort -rn | head -10 | numfmt --to=iec --field
 
 ---
 
-## Challenge 5: List Assigned Issues
+## Challenge 5: List assigned issues
 
 **Task:** List all open issues assigned to you in `octo-org/octo-repo`.
 
@@ -148,5 +148,5 @@ gh issue list --repo octo-org/octo-repo --assignee @me --state open --limit 50
 | 5/5 first-try accurate | Copilot handled all 5 without refinement                                 |
 | 4/5                    | Solid; one needed a minor adjustment                                     |
 | 3/5                    | Good baseline; some commands needed iteration                            |
-| 2/5                    | Descriptions may have been too vague. Practice specificity               |
-| 1/5                    | Try being more explicit about what you want (constraints, flags, format) |
+| 2/5                    | Descriptions may have been too vague. Name the missing details          |
+| 1/5                    | State the constraints, flags, and output format you need                 |

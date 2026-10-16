@@ -1,4 +1,4 @@
-# Session m2-04 Lab: Solution Reference
+# Session m2-04 lab: Solution reference
 
 **For trainers only.** This directory contains a corrected review project for the
 six changes in `lab/starter/code-changes.md`. It is a code reference, not a
@@ -29,7 +29,7 @@ learner decision with the documented fixes.
 
 Use this reference to:
 
-- Verify fixes during demo preparation.
+- Check fixes during demo preparation.
 - Help trainees who are stuck on a specific fix.
 - Compare with the Exercise 2 test suite.
 
@@ -48,12 +48,12 @@ Use this reference to:
 
 ---
 
-## Test Coverage
+## Test coverage
 
 `tests/api.test.js` covers:
 
 - All original item CRUD tests (passing before and after fixes)
-- Password field exclusion verification (Fix 2)
+- Password field exclusion (Fix 2)
 - Search input handling: no raw SQL echoed, filtered results (Fix 1)
 - Error handling for invalid `POST /api/users` body (Fix 4)
 - `/api/products` returns same data as `/api/items` (Fix 6)
@@ -71,7 +71,7 @@ All 17 tests should pass.
 
 ---
 
-## Common Trainer Questions
+## Common trainer questions
 
 **"Will Copilot catch all 6 issues?"**  
 Do not promise a count. General and security review have different scopes. Record

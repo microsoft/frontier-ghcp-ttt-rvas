@@ -1,10 +1,10 @@
-# Trainer Supplement: Orchestrate Work Tracked in Azure Boards
+# Trainer supplement: Orchestrate work tracked in Azure Boards
 
 **Time:** 45 to 60 minutes inside the existing two-hour lab
 
 **Use:** Use Azure Boards as the approved issue source for the main lab.
 
-**Deliverable:** Live child-session results, reviewed parent result, and verified
+**Deliverable:** Live child-session results, reviewed parent result, and checked
 planning updates
 
 > [!IMPORTANT]
@@ -31,13 +31,13 @@ You need:
 
 ## Required preflight
 
-1. Open the seeded parent and confirm that it is tagged for Session m7-05 training.
+1. Open the seeded parent and check that it is tagged for Session m7-05 training.
 2. Record the parent ID, process type, starting state, and selected child IDs.
-3. Type `/` in the GitHub Copilot app and confirm that `/orchestrate` is available.
-4. Open **Customize** → **Skills** → **Installed** and confirm the built-in
+3. Type `/` in the GitHub Copilot app and check that `/orchestrate` is available.
+4. Open **Customize** → **Skills** → **Installed** and check the built-in
    `orchestrate` skill.
-5. Confirm that you can open, steer, and stop those sessions.
-6. Confirm who reviews the parent result and who may approve Boards updates.
+5. Check that you can open, steer, and stop those sessions.
+6. Name who reviews the parent result and who may approve Boards updates.
 
 > [!IMPORTANT]
 > **Stop if GitHub Copilot orchestration is unavailable.** Fix access before you
@@ -66,7 +66,7 @@ Mirror the standard lab wording:
 | Empty and stale states | Empty and stale state validation |
 | Requester access verification | Requester-only access evidence |
 
-For each selected item, record the bounded question, approved inputs, hard stop
+For each selected item, record the question and its scope, approved inputs, hard stop
 condition, and reviewer.
 
 No selected child should wait for another child result. Keep shared dependencies with the parent or run dependent work in sequence.
@@ -76,17 +76,17 @@ No selected child should wait for another child result. Keep shared dependencies
 For each selected child:
 
 1. Move the item to the mapped active state.
-2. Add the bounded question and stop condition to the description or a comment.
+2. Add the question, scope, and stop condition to the description or a comment.
 3. Keep the parent item as the owner of shared decisions.
 
-Use the project's existing state mapping. Confirm the item ID before every MCP or browser write.
+Use the project's existing state mapping. Check the item ID before every MCP or browser write.
 
 ## Step 3: Start GitHub Copilot orchestration
 
 Build the parent instruction from the selected work items. Include each item ID,
-bounded question, approved inputs, stop condition, and reviewer.
+question and its scope, approved inputs, stop condition, and reviewer.
 
-Start the work through `/orchestrate`. Confirm that GitHub Copilot created one live
+Start the work through `/orchestrate`. Check that GitHub Copilot created one live
 child session for each selected item. Use the orchestration surface to track the
 sessions. Do not copy live session identifiers into Boards.
 
@@ -99,7 +99,7 @@ Inspect the live child sessions in GitHub Copilot. Use Azure Boards MCP or the b
 | Signal | Action |
 | --- | --- |
 | Work is safe and on scope | **Wait** |
-| A safe result needs a bounded correction | **Redirect** |
+| A safe result needs a specific correction | **Redirect** |
 | A completed result is unusable or outside scope | **Reject** |
 | Work crosses an access, data, usage, or authority boundary | **Stop** |
 | The contract is met | **Accept** |
@@ -116,7 +116,7 @@ Preserve genuine control decisions. Stop unsafe work. Reject unsupported claims.
 
 Return to Exercise 4 in `../README.md`. Use the reviewed parent result to update
 the parent item only when that write is approved. Retrieve the item again to
-verify the change.
+check the change.
 
 ## Safety boundaries
 

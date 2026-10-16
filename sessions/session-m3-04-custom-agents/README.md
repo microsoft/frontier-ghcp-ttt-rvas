@@ -1,4 +1,4 @@
-# Session m3-04: Custom Agents & Agent Profiles
+# Session m3-04: Custom agents & agent profiles
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced

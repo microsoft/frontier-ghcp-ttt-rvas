@@ -1,4 +1,4 @@
-# Trainer Supplement: Shape a Requirement in Azure Boards
+# Trainer supplement: Shape a requirement in Azure Boards
 
 Use GitHub Copilot to interview the request owner, review a seeded Azure Boards
 requirement, and prepare approved updates.
@@ -35,10 +35,10 @@ Before starting:
 2. Open [`../starter/vague-request.md`](../starter/vague-request.md).
 3. Open [`work-item-update-plan.md`](work-item-update-plan.md).
 4. Open the seeded requirement.
-5. Confirm the title and the `session-m7-02` and `service-request-portal` tags.
+5. Check the title and the `session-m7-02` and `service-request-portal` tags.
 6. Record the current description, acceptance criteria, priority, state, board column, and readiness value.
-7. Confirm which field, board column, or approved tag represents readiness.
-8. Confirm the trainer's reset method.
+7. Check which field, board column, or approved tag represents readiness.
+8. Check the trainer's reset method.
 
 > [!IMPORTANT]
 > **Stop if GitHub Copilot access fails.** Fix access before the exercise starts.
@@ -58,7 +58,7 @@ Do not configure a new organization, process, field, or MCP server during the la
 - Never delete the seeded requirement.
 - Do not paste tokens, credentials, personal data, or live customer material into prompts.
 
-## Phase 1: run the Copilot interview
+## Phase 1: Run the Copilot interview
 
 Run the decision-tree interview against:
 
@@ -69,23 +69,23 @@ and approval. Record the approved decisions in the update plan.
 
 The request owner must confirm shared understanding before the Azure Boards review.
 
-## Phase 2: compare the findings with the requirement
+## Phase 2: Compare the findings with the requirement
 
 Read the seeded item without changing it. Ask GitHub Copilot to compare the current
 fields with the approved decisions.
 
 | Field | Review question |
 | --- | --- |
-| Description | Does it name the user, current problem, bounded outcome, scope, and non-goals? |
-| Acceptance criteria | Can a reviewer observe the main path, permission boundary, stale or unmapped state, and explicit non-goal? |
+| Description | Does it name the user, current problem, target outcome, scope, and non-goals? |
+| Acceptance criteria | Can a reviewer observe the main path, permission boundary, stale or unmapped state, and excluded behavior? |
 | Priority | Does the value match approved impact and urgency? |
 | State | Does the state match the request owner's decision? |
 | Board column | Is the item still in refinement, or is it approved for planning? |
-| Readiness | Is readiness explicit in the team's existing field, column, or tag? |
+| Readiness | Does the team's existing field, column, or tag state readiness? |
 
 Record the current value, Copilot proposal, reason, and owner decision. A field may stay unchanged.
 
-## Phase 3: prepare the update
+## Phase 3: Prepare the update
 
 Ask GitHub Copilot to draft exact field values from the approved decisions.
 
@@ -102,7 +102,7 @@ For the supplied scenario, expect this direction:
 
 Do not save yet.
 
-## Phase 4: request owner approval
+## Phase 4: Request owner approval
 
 Show the request owner:
 
@@ -120,7 +120,7 @@ The request owner records:
 **Silence is not approval.** The delivery reviewer cannot approve for the request
 owner.
 
-## Phase 5: apply the approved update
+## Phase 5: Apply the approved update
 
 ### MCP path
 
@@ -144,7 +144,7 @@ If MCP cannot show the pending update or read back the saved result, use the bro
 4. Save the requirement.
 5. Reopen it and record the saved values.
 6. Create only the approved child Tasks.
-7. Confirm each Task links to the seeded requirement.
+7. Check each Task links to the seeded requirement.
 
 Do not use bulk edit.
 
@@ -177,7 +177,7 @@ Use the trainer's reset method. If the trainer directs cleanup in the browser or
 1. Remove only child Tasks created by your pair.
 2. Restore only the fields listed in the trainer's seed record.
 3. Read the item again.
-4. Confirm the seeded title, tags, field values, and empty child-link list.
+4. Check the seeded title, tags, field values, and empty child-link list.
 
 If you cannot prove that your pair created a child Task, leave it in place and tell
 the trainer.

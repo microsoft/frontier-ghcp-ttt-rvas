@@ -1,4 +1,4 @@
-# Stakeholder Update
+# Stakeholder update
 
 **Reporting scope:** Status-visibility workstreams after the approved issue update
 
@@ -21,7 +21,7 @@ still needs to accept the requester-access evidence.
 ## Review decision
 
 The delivery lead accepted this draft after comparing both platform runs and
-confirming that the issue change explains the new access status. Neither run made
+checking that the issue change explains the new access status. Neither run made
 an external change.
 
 ## Next step

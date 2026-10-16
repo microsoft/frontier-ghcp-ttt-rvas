@@ -7,8 +7,8 @@ footer: 'Session m4-01: GitHub Actions & Workflow Generation'
 ---
 
 <!-- _class: lead -->
-# One Application Through GitHub Actions
-## DevOps & Infrastructure | Intermediate
+# One application through GitHub Actions
+## DevOps & infrastructure | Intermediate
 
 Session m4-01 | 3 hours
 
@@ -88,7 +88,7 @@ production reviewers. Placeholder commands must not imply that a deployment ran.
 `broken-deploy.yml` parses but contains a stale runner, a bad Git ref, a wrong
 secret name, and no checkout.
 
-Ask for the evidence before the repair.
+Ask for the failed-step output before the repair.
 
 ---
 # A repair is a claim plus proof
@@ -111,7 +111,7 @@ env INPUT_THRESHOLD=101 ... node src/main.js
 
 The first run must pass and write a summary. The second must exit with code 1.
 
-One successful run does not confirm enforcement.
+One successful run does not show that the action enforces the threshold.
 
 ---
 # Access and checks

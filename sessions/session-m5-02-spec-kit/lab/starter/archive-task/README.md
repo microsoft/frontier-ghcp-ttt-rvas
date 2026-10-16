@@ -1,4 +1,4 @@
-# Archive Task Starter
+# Archive task starter
 
 This small Python project stores tasks in memory. It creates and lists active
 tasks. The lab adds archive behavior through the Spec Kit workflow.

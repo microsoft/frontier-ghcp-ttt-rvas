@@ -1,4 +1,4 @@
-# Session m4-03: CI/CD Debugging & Agentic Remediation
+# Session m4-03: CI/CD debugging & agentic remediation
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Debug CI/CD failures with workflow files, failed-step output, and local proof.
+Debug CI/CD failures with workflow files, failed-step output, and local checks.
 Learners must record an observation and hypothesis before opening a reference fix.
 One case has a second failure that appears only after the first repair.
 

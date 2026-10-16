@@ -1,4 +1,4 @@
-# Prompt Templates: Starter
+# Prompt templates: Starter
 
 Create reusable prompt files in this directory.
 
@@ -10,7 +10,7 @@ usage limit if the work is metered.
 GitHub Copilot and Spaces access are required for the lab. If either is
 unavailable, stop the lab.
 
-## Prompt File Format
+## Prompt file format
 
 Prompt files use the `.prompt.md` extension and live in `.github/prompts/`.
 
@@ -26,7 +26,7 @@ Write the prompt instructions here.
 Use `{{ variable_name }}` for a value the user supplies.
 ```
 
-## Your Task
+## Your task
 
 Create **three prompt files** for common team workflows:
 

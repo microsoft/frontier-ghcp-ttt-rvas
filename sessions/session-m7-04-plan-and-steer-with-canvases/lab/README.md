@@ -1,4 +1,4 @@
-# Session m7-04 Lab: Build, Drift, and Reconcile a Planning Canvas
+# Session m7-04 lab: Build a planning canvas and reconcile stale state
 
 **Duration:** 2 hours
 
@@ -22,7 +22,7 @@ stale canvas data, and reconcile it.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Verify canvas and MCP capabilities | 15 min |
+| 1 | Check canvas and MCP capabilities | 15 min |
 | 2 | Define the minimum canvas contract | 20 min |
 | 3 | Create and simplify the canvas | 30 min |
 | 4 | Load and operate live issue state | 25 min |
@@ -33,14 +33,14 @@ stale canvas data, and reconcile it.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot access. **Stop if access is unavailable.**
+Check GitHub Copilot access before starting. **Stop if access is unavailable.**
 
-## Part 1: Verify canvas and MCP capabilities (15 minutes)
+## Part 1: Check canvas and MCP capabilities (15 minutes)
 
 1. Open a GitHub Copilot app session for the training repository.
-2. Type `/` and confirm that `/create-canvas` appears.
+2. Type `/` and check that `/create-canvas` appears.
 3. Open **Customize** → **Canvas** and inspect installed canvases.
-4. Open **Customize** → **MCP** → **Installed** and confirm GitHub MCP.
+4. Open **Customize** → **MCP** → **Installed** and check GitHub MCP.
 5. Ask Copilot to retrieve the Session m7-03 parent issue and child issues.
 
 `/create-canvas` is a built-in app skill. Do not install a community replacement.
@@ -96,7 +96,7 @@ Review:
 - the capabilities exposed to Copilot;
 - any package or dependency added by the extension.
 
-This review is no-code. Learners inspect generated files and request bounded
+This review is no-code. Learners inspect generated files and request specific
 changes through Copilot. They do not hand-edit extension code.
 
 Ask Copilot to remove generated state or actions that exceed the approved contract.
@@ -150,7 +150,7 @@ The canvas should now be visibly stale.
 Use the canvas refresh action or ask Copilot to call the approved refresh
 capability.
 
-Confirm that:
+Check that:
 
 - the issue's planning status reflects the new blocker;
 - the next action names the product-owner decision;
@@ -158,7 +158,7 @@ Confirm that:
 - the last-refresh time changed.
 
 Record the owner, refresh procedure, recovery procedure, retirement trigger, and
-next safe action in the live canvas. Confirm that the canvas links the four
+next safe action in the live canvas. Check that the canvas links the four
 status-visibility issues for Session m7-05.
 
 Run `/context`. If the creation thread is crowded, start a fresh session and

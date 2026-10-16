@@ -8,8 +8,8 @@ footer: 'Session m2-04: Code Review'
 
 <!-- _class: lead -->
 
-# Code Review Workflows
-## Evidence, human judgment, and policy-approved automation
+# Code review workflows
+## Diffs, test results, and human judgment
 
 ---
 
@@ -145,7 +145,7 @@ Each stage gives the accountable reviewer evidence.
 
 # Commit messages and PR descriptions
 
-Copilot can draft text from the visible change, but authors must verify:
+Copilot can draft text from the visible change, but authors must check:
 
 - the user-visible behavior is accurate;
 - tests and results are not invented;
@@ -182,11 +182,11 @@ Name data, dependency, security, and recovery considerations.
 
 For a manual request:
 
-1. Confirm the PR is ready for a first pass.
-2. Verify current availability, permissions, and repository policy.
+1. Check that the PR is ready for a first pass.
+2. Check current availability, permissions, and repository policy.
 3. Request the Copilot review through the supported PR control.
 4. Wait for comments and review them as hypotheses.
-5. Resolve, reject with rationale, or implement a verified fix.
+5. Resolve, reject with rationale, or implement a checked fix.
 6. Request human review with the complete evidence.
 
 Do not use Copilot review to bypass required reviewers.
@@ -248,7 +248,7 @@ Ask which tests and policy evidence should accompany this suggestion.
 3. Generate or improve the PR description; correct unsupported claims.
 4. Run required checks and request Copilot review.
 5. Classify each comment: valid, uncertain, noise, or out of scope.
-6. Apply one verified fix and add a regression test.
+6. Apply one checked fix and add a regression test.
 7. Request human review and record the final decision.
 
 ---
@@ -337,7 +337,7 @@ Learners will:
 2. classify human and Copilot findings;
 3. apply only fixes supported by evidence;
 4. resolve the prepared conflict without losing either branch goal;
-5. make an explicit final human decision.
+5. record the final human decision.
 
 **Final deliverable:** Review notes, the corrected project, conflict results, and
 the final decision. Include initial and correction outputs from `/review` and
@@ -347,7 +347,7 @@ the final decision. Include initial and correction outputs from `/review` and
 
 # Remember
 
-1. Generated summaries must be verified against the diff.
+1. Check generated summaries against the diff.
 2. AI review is a first pass before accountable human review.
 3. Suggested fixes require reproduction, inspection, and tests.
 4. Conflict resolution starts from intended merged behavior.

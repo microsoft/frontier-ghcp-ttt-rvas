@@ -1,4 +1,4 @@
-# Worked Delivery-Readiness Canvas Contract
+# Worked delivery-readiness canvas contract
 
 ## Purpose
 

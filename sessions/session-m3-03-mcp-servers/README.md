@@ -1,4 +1,4 @@
-# Session m3-03: MCP Servers & Custom Tool Integration
+# Session m3-03: MCP servers & custom tool integration
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced
@@ -55,4 +55,4 @@ unapproved registry or copied `node_modules` directory.
 | Lab | [`lab/README.md`](lab/README.md) |
 | Staged server | [`lab/starter/custom-mcp/`](lab/starter/custom-mcp/) |
 | Completed server | [`lab/solution/custom-mcp/`](lab/solution/custom-mcp/) |
-| Expected evidence | [`lab/solution/custom-mcp/EVIDENCE.md`](lab/solution/custom-mcp/EVIDENCE.md) |
+| Expected test and Inspector output | [`lab/solution/custom-mcp/EVIDENCE.md`](lab/solution/custom-mcp/EVIDENCE.md) |

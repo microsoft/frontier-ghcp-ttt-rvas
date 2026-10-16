@@ -1,4 +1,4 @@
-# Accepted Specification: Create a Bookmark
+# Accepted specification: Create a bookmark
 
 ## Goal
 
@@ -20,7 +20,7 @@ Create one bookmark through `POST /api/bookmarks`.
 ## Acceptance scenarios
 
 1. Create a bookmark with every field and inspect the response envelope.
-2. Create a bookmark without optional fields and confirm `description: null` and
+2. Create a bookmark without optional fields and check `description: null` and
    `tags: []`.
 3. Reject missing and invalid URLs.
 4. Reject missing, empty, non-string, and overlong titles.

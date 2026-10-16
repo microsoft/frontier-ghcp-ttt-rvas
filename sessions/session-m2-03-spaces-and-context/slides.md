@@ -8,8 +8,8 @@ footer: 'Session m2-03: Context Workflows'
 
 <!-- _class: lead -->
 
-# Context Workflows
-## Give each task the repository evidence it needs
+# Context workflows
+## Give each task the source files it needs
 
 ---
 
@@ -26,7 +26,7 @@ Follow the course safety baseline.
 
 # Context selection
 
-Choose evidence a reviewer can explain:
+Choose sources a reviewer can explain:
 
 - repository instructions;
 - relevant source files and tests;
@@ -57,14 +57,14 @@ Ask learners to explain why each source is needed and what is excluded.
 
 - Does it cite or follow the selected repository evidence?
 - Is the scope limited to the task?
-- Are assumptions surfaced for human review?
+- Are assumptions listed for human review?
 - Do relevant tests pass?
 
 ---
 
 # Required access
 
-Confirm Spaces and GitHub Copilot access before the lab. If either is unavailable,
+Check Spaces and GitHub Copilot access before the lab. If either is unavailable,
 stop the lab. A manually assembled packet does not demonstrate Space
 creation, reuse, or behavior.
 
@@ -78,13 +78,13 @@ creation, reuse, or behavior.
 | --- | --- | --- |
 | 0:00 | Why context fails | Diagnose a vague response |
 | 0:08 | Context layers | Build a source hierarchy |
-| 0:18 | Spaces | Curate and share evidence |
+| 0:18 | Spaces | Select and share sources |
 | 0:30 | Instructions and prompt files | Show repository artifacts |
 | 0:42 | Memory and maintenance | Separate preview from policy |
 | 0:50 | Before/after demo | Compare with a rubric |
 | 0:58 | Lab handoff | Assign context packet |
 
-**Transition:** "Better output begins with better evidence, not a longer prompt."
+**Transition:** "Choose sources that answer the task before adding more prompt text."
 
 ---
 
@@ -162,19 +162,19 @@ documents with no accountable owner.
 Before sharing:
 
 1. Name the intended audience and task.
-2. Confirm every source is approved for that audience.
+2. Check that every source is approved for that audience.
 3. Add purpose-specific instructions.
 4. Assign an owner and review date.
 5. Test with a known question and compare against source evidence.
 6. Remove or replace stale sources.
 
-Current access controls and sharing behavior must be verified before the demo.
+Check current access controls and sharing behavior before the demo.
 
 ---
 
 # Repository-level instructions
 
-Create `.github/copilot-instructions.md` for durable project guidance:
+Create `.github/copilot-instructions.md` for project-wide guidance:
 
 ```markdown
 # Repository guidance
@@ -205,7 +205,7 @@ Do not edit files outside the selected feature.
 End with the focused validation command.
 ```
 
-Verify the current supported filename and frontmatter behavior before delivery.
+Check the current supported filename and frontmatter behavior before delivery.
 
 ---
 
@@ -239,7 +239,7 @@ The curriculum references:
 
 Treat settings as version-sensitive:
 
-- verify current documentation and the learner's IDE version;
+- check current documentation and the learner's IDE version;
 - show where workspace settings are reviewed;
 - do not claim an instruction loaded without observing the result;
 - retain the instructions as a useful manual checklist.
@@ -256,7 +256,7 @@ Use three questions:
 2. **Scope:** Does it apply to this user, repository, or task?
 3. **Freshness:** How will it be corrected when the code changes?
 
-Never store secrets, restricted data, or guesses. Verify current availability and controls.
+Never store secrets, restricted data, or guesses. Check current availability and controls.
 
 ---
 
@@ -343,7 +343,7 @@ Learners will:
 
 1. Relevant context matters more than a large context packet.
 2. Spaces curate evidence for a purpose and audience.
-3. Instructions encode durable rules; prompt files encode reusable tasks.
+3. Instructions state project-wide rules; prompt files define reusable tasks.
 4. Memory requires source, scope, freshness, and current policy checks.
 5. Every context source needs an owner and maintenance path.
 

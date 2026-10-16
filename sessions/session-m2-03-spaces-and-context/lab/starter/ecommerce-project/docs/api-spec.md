@@ -1,4 +1,4 @@
-# E-Commerce API Specification
+# E-commerce API specification
 
 ## Base URL
 
@@ -10,7 +10,7 @@ http://localhost:3000/api
 
 Authentication is not implemented. All endpoints are public.
 
-## Error Response Format
+## Error response format
 
 All errors follow this structure:
 
@@ -24,7 +24,7 @@ All errors follow this structure:
 }
 ```
 
-### Error Codes
+### Error codes
 
 | Code               | HTTP Status  | Meaning                        |
 | ------------------ | ------------ | ------------------------------ |
@@ -36,13 +36,13 @@ All errors follow this structure:
 
 ### Products
 
-#### List Products
+#### List products
 
 ```
 GET /api/products
 ```
 
-**Query Parameters:**
+**Query parameters:**
 
 | Param      | Type   | Description                                       |
 | ---------- | ------ | ------------------------------------------------- |
@@ -73,7 +73,7 @@ GET /api/products
 }
 ```
 
-#### Get Product
+#### Get product
 
 ```
 GET /api/products/:id
@@ -95,14 +95,14 @@ GET /api/products/:id
 }
 ```
 
-#### Create Product
+#### Create product
 
 ```
 POST /api/products
 Content-Type: application/json
 ```
 
-**Request Body:**
+**Request body:**
 
 | Field         | Type    | Required   | Constraints                    |
 | ------------- | ------- | ---------- | ------------------------------ |
@@ -118,7 +118,7 @@ Content-Type: application/json
 **Response (201):** Created product
 **Response (400):** Validation errors
 
-#### Update Product
+#### Update product
 
 ```
 PUT /api/products/:id
@@ -130,7 +130,7 @@ Partial updates are accepted. The endpoint updates only supplied fields.
 **Response (200):** Updated product
 **Response (404):** Product not found
 
-#### Delete Product
+#### Delete product
 
 ```
 DELETE /api/products/:id

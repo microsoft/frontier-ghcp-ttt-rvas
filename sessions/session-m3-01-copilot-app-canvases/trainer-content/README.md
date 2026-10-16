@@ -1,4 +1,4 @@
-# Session m3-01: Trainer Guide
+# Session m3-01: Trainer guide
 
 **Teaching time:** 60 minutes
 
@@ -12,7 +12,7 @@ Learners should leave the teaching hour able to define a canvas contract, explai
 
 Before class:
 
-1. Confirm GitHub Copilot app access and the built-in `/create-canvas` skill.
+1. Check GitHub Copilot app access and the built-in `/create-canvas` skill.
 2. Decide whether project scope under `.github/extensions` is allowed. Use user
    scope when it is not.
 3. Use only the synthetic files in `../lab/starter/`.
@@ -55,7 +55,7 @@ If one condition fails, use the prepared manual demo. **Do not bypass a policy, 
 
 | Time | Segment | Learner evidence |
 | --- | --- | --- |
-| 0:00 to 0:05 | Outcome and access gate | Required access confirmed |
+| 0:00 to 0:05 | Outcome and access check | Required access checked |
 | 0:05 to 0:13 | Choose the right customization | Canvas decision explained |
 | 0:13 to 0:23 | Build the contract | State, actions, capabilities, validation |
 | 0:23 to 0:30 | Inspect prepared inputs and harness | Passing local contract tests |
@@ -89,7 +89,7 @@ Make the distinction concrete:
 
 Use a canvas when the state must stay visible across several actions or a handoff. Stay in chat for a short answer or one draft.
 
-**Checkpoint:** Ask, "What breaks if this remains only in chat?" A valid answer names lost visibility, direct steering, or durable handoff state.
+**Checkpoint:** Ask, "What breaks if this remains only in chat?" A valid answer names lost visibility, direct control, or saved state for handoff.
 
 ## 0:13 to 0:23: Build the worked contract
 
@@ -131,7 +131,7 @@ Show these results:
 
 ### Live route
 
-Start an approved app session and use:
+Start an app session with the required access and use:
 
 ```text
 /create-canvas
@@ -158,11 +158,11 @@ After generation:
 
 Open `../lab/solution/demo-evidence.md` and `../lab/solution/final-state.json`.
 
-Trace the same two changes. Mark each statement as observed evidence or prepared example. Do not imply that a live app call occurred.
+Trace the same two changes. Label each statement as an observed result or a prepared example. Do not imply that a live app call occurred.
 
 ### Time guard
 
-If the canvas is not reviewable by 0:38, switch to prepared evidence. Keep the rejection, recovery, and review segments.
+If the canvas is not ready for review by 0:38, switch to the prepared demo record. Keep the rejection, recovery, and review segments.
 
 ## 0:43 to 0:50: Show rejection and recovery
 

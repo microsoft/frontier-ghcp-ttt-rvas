@@ -13,7 +13,7 @@ inspect live fleet results and automate a project health report. Finally, they
 compare terminal and IDE workflows. The `agent-tasks` project ties the lab together
 from the first command through the final handoff.
 
-## Learning Outcomes
+## Learning outcomes
 
 - Install and configure the standalone `copilot` CLI and shell workflows.
 - Use interactive `copilot` and `copilot -p "..."` for command-line help.
@@ -27,10 +27,10 @@ from the first command through the final handoff.
 - Distinguish JSONL events from an answer payload in programmatic output.
 - Compare CLI, IDE Chat, IDE Agent Mode, and Copilot App workflows.
 - Identify CLI-specific features and when the CLI fits better than the IDE.
-- Check Copilot App and cross-IDE support for the approved environment.
+- Check Copilot App and cross-IDE support in the training environment.
 - Produce test output, an automation artifact, and a surface-choice record at clear review checkpoints.
 
-## Session Materials
+## Session materials
 
 | Resource                | Location                               |
 | ----------------------- | -------------------------------------- |
@@ -38,7 +38,7 @@ from the first command through the final handoff.
 | Lab starter files       | `lab/starter/`         |
 | Lab solution files      | `lab/solution/`       |
 
-## Key Topics
+## Key topics
 
 - Standalone `copilot` binary: installation, authentication, configuration
 - Interactive `copilot` prompts for natural-language command explanations

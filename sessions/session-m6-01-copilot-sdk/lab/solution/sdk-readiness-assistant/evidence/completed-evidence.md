@@ -31,5 +31,5 @@ The authenticated SDK demo passed on October 5, 2026:
 - Each request ended with `reason=complete`.
 
 Docker was not available in the validation environment. Start
-`docker compose up -d`, rerun the demo, and confirm the traces in Jaeger at
+`docker compose up -d`, rerun the demo, and check the traces in Jaeger at
 `http://localhost:16686` before using this record as delivery evidence.

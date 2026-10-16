@@ -8,13 +8,13 @@ footer: 'Session m7-03: Plan Work with GitHub Issues and MCP'
 
 <!-- _class: lead -->
 
-# Plan Work with GitHub Issues and MCP
+# Plan work with GitHub Issues and MCP
 
 Session m7-03 | Product and Delivery Teams | Intermediate
 
 ---
 
-# Conversation becomes durable work
+# Turn the brief into GitHub issues
 
 Session m7-02 produced an approved decision brief.
 
@@ -30,7 +30,7 @@ An MCP server gives Copilot named tools for reading or changing another system.
 
 Learners use the tools. They do not build the server.
 
-A plugin may bundle an MCP server with skills or other customizations. Verify the
+A plugin may bundle an MCP server with skills or other customizations. Check the
 active GitHub MCP connection itself before reading or writing issues.
 
 ---
@@ -48,7 +48,7 @@ looks like, and who will review it.
 | Dependency | Work that starts before a needed decision |
 | Ownership gap | Silent assumptions about who decides |
 
-Tickets are not busywork when they reduce the handoff cost.
+Write enough detail for the next contributor to act.
 
 ---
 
@@ -84,7 +84,7 @@ authoritative.**
 
 # Read before writing
 
-1. Confirm the repository.
+1. Check the repository.
 2. Inspect existing labels and milestones.
 3. Search for duplicate issues.
 4. Read the approved brief.
@@ -107,7 +107,7 @@ The lab includes open, closed, overlapping, and conflicting status issues.
 
 # Decompose by outcome
 
-Create one parent issue and bounded child issues.
+Create one parent issue and child issues with defined scope.
 
 Each child needs:
 

@@ -1,4 +1,4 @@
-# Completed Issue Journey
+# Completed issue journey
 
 ## Checkpoint 1: Issue contract
 
@@ -11,7 +11,7 @@
 
 ## Checkpoint 2: Setup
 
-- Route: prepared manual evidence; the same record can support an approved live route.
+- Run type: prepared example; the same record can document a live run with the required repository access.
 - Baseline: starter tests passed.
 - Repository instructions: reviewed.
 - Setup workflow: single `copilot-setup-steps` job with read-only contents permission.
@@ -32,10 +32,10 @@ Test Suites: 1 passed, 1 total
 Tests:       10 passed, 10 total
 ```
 
-The recorded result is prepared evidence. Run `npm test` in `sample-project/` to reproduce it.
+The recorded result is a prepared example. Run `npm test` in `sample-project/` to reproduce it.
 
 ## Checkpoint 5: Human decision
 
 - Decision: approve.
-- Reason: the diff stays within scope, all criteria have test evidence, and valid behavior is preserved.
+- Reason: the diff stays within scope, tests cover all criteria, and valid behavior is preserved.
 - Next safe action: use the normal repository review and merge policy if this were a live training pull request.

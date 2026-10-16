@@ -2,7 +2,7 @@
 description: "Overview of the HVE Core RPI, customization, and product delivery challenge"
 ---
 
-# Session m5-03: HVE Core: Evidence-Led Delivery with RPI
+# Session m5-03: HVE Core: Evidence-led delivery with RPI
 
 **Module:** Specification-Driven Frameworks
 
@@ -19,7 +19,7 @@ framework for GitHub Copilot. Learners use its file-based Research, Plan,
 Implement, Review (RPI) workflow, then extend that workflow with repository
 instructions, targeted coding standards, and a custom review agent.
 
-The challenge then moves upstream. Product Manager Advisor tests the value and
+Product Manager Advisor then tests the value and
 scope of an Engineering Decision API feature. Agile Coach turns the result into
 an outcome-oriented story with acceptance criteria. Those artifacts feed back into
 the HVE plan before implementation and review.
@@ -31,22 +31,22 @@ the HVE plan before implementation and review.
   `.copilot-tracking/` handoff.
 * Compare direct RPI phase prompts with the combined `/rpi` orchestrator and its
   Follow-up phase.
-* Add project context, targeted JavaScript/API standards, and a bounded custom agent.
+* Add project context, targeted JavaScript/API standards, and a custom agent with a defined scope.
 * Use Product Manager Advisor and Agile Coach to refine value, scope, user story,
   and acceptance criteria.
 * Deliver and review one containerized API slice through the customized HVE workflow.
 
 ## Delivery boundary
 
-HVE Core is required for the hands-on challenge. Confirm that the approved HVE
+HVE Core is required for the hands-on challenge. Check that the approved HVE
 Core extension or Copilot CLI plugin exposes the RPI prompts, agents, and
 customizations before the lab starts. Add the tested HVE version or channel to the
 Research artifact.
 If HVE cannot run, learners may inspect trainer-provided HVE artifacts and observe
 the workflow, but that route does not count as challenge completion.
 
-Use synthetic records in an approved sandbox. Package downloads must use an
-approved environment. When local downloads are restricted, use existing
+Use synthetic records in a sandbox permitted by the customer. Get approval for
+package downloads. When local downloads are restricted, use existing
 dependencies and a trainer-managed remote container build.
 
 Keep `.copilot-tracking/` local and ignored by Git. Learners inspect and grade those

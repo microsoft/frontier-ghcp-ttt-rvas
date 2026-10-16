@@ -1,4 +1,4 @@
-# Bookmark Creation Handoff
+# Bookmark creation handoff
 
 ## Issue
 
@@ -19,7 +19,7 @@
 
 ## Patch or patch plan
 
-**Path used:** Approved agent / manual / patch plan  
+**Path used:** Copilot / manual / patch plan
 
 | File | Implemented or planned change | Requirement |
 | --- | --- | --- |
@@ -29,7 +29,7 @@
 
 **Command:**  
 **Result:**  
-**Acceptance evidence:**  
+**Acceptance test results:**<br>
 **Not run or failed checks:**  
 
 ## Review decision

@@ -1,4 +1,4 @@
-# Capstone Starter: Bookmark Creation
+# Capstone starter: Bookmark creation
 
 This starter exposes a health check. The issue adds only `POST /api/bookmarks`.
 

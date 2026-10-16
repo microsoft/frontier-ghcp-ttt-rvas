@@ -1,4 +1,4 @@
-# Session m2-04 Lab: Code Review Workflows
+# Session m2-04 lab: Code review workflows
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
@@ -9,9 +9,10 @@
 
 ## Lab overview
 
-Review AI-assisted work within a bounded scope. Write evidence-based comments,
-apply targeted fixes, and make a human decision. The starter project includes
-deliberate defects for comparing human review and Copilot-assisted review.
+Review AI-assisted work within the named files. Support comments with code
+references and test results. Apply targeted fixes and make a human decision. The
+starter project includes deliberate defects for comparing human review and
+Copilot-assisted review.
 
 | Exercise | Topic | Time |
 | --- | --- | --- |
@@ -61,7 +62,7 @@ Use these starter assets:
 - `lab/starter/review-project/tests/api.test.js`: existing Jest/Supertest checks
 - `lab/starter/code-changes.md`: intentionally flawed changes to review
 - `lab/starter/partner-review-checklist.md`: structured review worksheet
-- `lab/starter/fix-evaluation-template.md`: evidence template for corrected changes
+- `lab/starter/fix-evaluation-template.md`: finding, fix, and test record
 - `lab/starter/conflict-scenario/README.md`: manual merge-conflict scenario
 - `lab/starter/conflict-scenario/utils-with-conflict.js`: conflict exercise source file
 
@@ -106,7 +107,8 @@ public repository.
 
 ### Objective
 
-Review a deliberately flawed change set. Focus on risks you can connect to evidence and acceptance criteria.
+Review a deliberately flawed change set. Connect each risk to a code reference
+or test result and an acceptance criterion.
 
 ### Steps
 
@@ -225,7 +227,7 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
    > **Success criteria:** Inspecting the JSON response shows only fields needed by the API contract.
 
-4. **Fix pagination in `src/utils.js`.** Verify that page 1 begins with the first item and boundary cases return predictable results.
+4. **Fix pagination in `src/utils.js`.** Check that page 1 begins with the first item and boundary cases return predictable results.
 
    > **Expected output:** A focused test or manual Node.js check demonstrates page 1, page 2, and empty collections.
 
@@ -241,7 +243,7 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
    > **Expected output:** All tests pass. If tests fail, record the failing assertion and correct only the related implementation or test expectation.
 
-7. **Fill in `lab/starter/fix-evaluation-template.md`.** Use it to summarize the finding, fix, test evidence, reviewer decision, and residual risk.
+7. **Fill in `lab/starter/fix-evaluation-template.md`.** Record the finding, fix, test result, reviewer decision, and residual risk.
 
    > **Success criteria:** A reviewer can trace every fix back to an original finding.
 
@@ -289,7 +291,7 @@ Resolve a merge conflict by preserving intent and adding verification. Do not bl
 
    > **Expected output:** The file contains no `<<<<<<<`, `=======`, or `>>>>>>>` markers.
 
-5. **Add focused tests.** Verify date formatting, default currency behavior, explicit currency behavior, and any unchanged helper behavior.
+5. **Add focused tests.** Check date formatting, default currency behavior, the supplied currency behavior, and any unchanged helper behavior.
 
    > **Success criteria:** Tests show that neither branch's intended behavior was lost.
 
@@ -355,14 +357,14 @@ Make the final review decision from evidence, not an automated suggestion.
 - [ ] Automated findings were accepted only after human review.
 - [ ] Remaining risk and the reviewer are named.
 
-## Final Deliverable
+## Final deliverable
 
 Submit one folder or document containing:
 
 1. The completed `partner-review-checklist.md` or equivalent review notes.
 2. A list of blocking findings and the smallest fix for each.
-3. Test evidence for the corrected project.
-4. The resolved conflict decision and validation evidence.
+3. Test output for the corrected project.
+4. The resolved conflict decision and its test results.
 5. A final human review decision: approve, request changes, or pause.
 6. Initial and correction outputs from `/review` and `/security-review`, their
    triage decisions, and the private training PR reference.

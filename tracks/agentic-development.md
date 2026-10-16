@@ -9,7 +9,7 @@
 
 ## Description
 
-This path moves from Copilot fundamentals into full agentic workflows. It covers
+This track starts with Copilot fundamentals, then teaches agentic workflows. It covers
 daily assistance, the GitHub Copilot app, cloud agents, MCP servers, custom
 agents, and skills. Sessions m2-05 and m7-05 teach isolated app work, plan critique, and
 supervision of independent child sessions. Session m3-05 compares a local interview
@@ -18,7 +18,7 @@ skill with pinned community skills before turning decisions into `/plan`.
 ## Prerequisites
 
 - Solid software development experience (1+ years)
-- GitHub Copilot Enterprise Cloud access; verify the customer's enabled features before the lab
+- GitHub Copilot Enterprise Cloud access; check the customer's enabled features before the lab
 - VS Code installed with GitHub Copilot extension
 - Git proficiency (branching, PRs, merging)
 - Node.js or Python installed (for MCP server development in Sessions m3-03 to m3-05)
@@ -51,9 +51,9 @@ skill with pinned community skills before turning decisions into `/plan`.
 command is unavailable. Use Session m7-05's developer route; it does not require
 Sessions m7-01 to m7-04 or GitHub MCP. Session m3-05 requires live CLI skill invocation.
 
-## Recommended Delivery Schedule
+## Recommended delivery schedule
 
-### 5-Day Intensive
+### 5-day intensive
 
 | Day   | Sessions            | Focus                  |
 | ----- | ------------------- | ---------------------- |
@@ -63,7 +63,7 @@ Sessions m7-01 to m7-04 or GitHub MCP. Session m3-05 requires live CLI skill inv
 | Day 4 | Sessions m3-01, m3-02, m3-03 | Canvases + cloud agent + MCP |
 | Day 5 | Sessions m3-04, m3-05 | Custom agents + skills |
 
-### 6-Day Standard
+### 6-day standard
 
 | Day   | Sessions        | Focus                            |
 | ----- | --------------- | -------------------------------- |
@@ -74,11 +74,11 @@ Sessions m7-01 to m7-04 or GitHub MCP. Session m3-05 requires live CLI skill inv
 | Day 5 | Sessions m3-01, m3-02, m3-03 | Canvases + cloud agent + MCP |
 | Day 6 | Sessions m3-04, m3-05 | Custom agents + skills            |
 
-## Learning Outcomes
+## Learning outcomes
 
 By completing this track, trainees will be able to:
 
-1. Use all Copilot surfaces. Inline, Chat, CLI, agent mode, Copilot App, and cloud agent
+1. Use inline suggestions, Chat, CLI, agent mode, Copilot App, and cloud agent
 2. Build and configure Copilot Spaces for team context management
 3. Use the cloud agent for issue-driven autonomous development
 4. Build canvases that let people and agents work from the same artifact
@@ -87,13 +87,13 @@ By completing this track, trainees will be able to:
 7. Develop and share agent skills for team workflows
 8. Design end-to-end agentic workflows: issue → agent → PR → review → merge
 9. Evaluate third-party coding agents (Claude, Codex) alongside Copilot
-10. Architect an agent strategy for a development team
-11. Use isolated Copilot App sessions to implement and critique a bounded change
+10. Choose agent workflows for a development team
+11. Use isolated Copilot App sessions to implement and critique a scoped change
 12. Supervise native orchestration and check claims against local code and PR fields
 13. Compare live interview skills and trace accepted decisions into a plan
 14. Inspect LSP results and runtime instructions; review scoped Chronicle suggestions
 
-## Next Steps
+## Next steps
 
 - **DevOps & Automation**. Apply Copilot and agent mode to CI/CD pipelines and infrastructure
 - **Full Mastery**. Add DevOps, Squad orchestration, and the capstone

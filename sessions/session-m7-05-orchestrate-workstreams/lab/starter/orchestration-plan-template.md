@@ -1,11 +1,11 @@
-# Orchestration Plan
+# Orchestration plan
 
 **Parent objective:** Review the four approved status-visibility issues and return
 one reviewed result for each.
 
 ## Workstreams
 
-| ID | Bounded question | Approved inputs | Stop condition | Reviewer |
+| ID | Question and scope | Approved inputs | Stop condition | Reviewer |
 | --- | --- | --- | --- | --- |
 | WS-01 |  |  |  |  |
 | WS-02 |  |  |  |  |
@@ -19,7 +19,7 @@ empty and stale states, and access-boundary verification.
 
 ```text
 Use the four workstreams in this plan. Keep them independent. Each result must
-answer its bounded question, cite its approved inputs, state unresolved gaps,
+answer its assigned question, cite its approved inputs, state unresolved gaps,
 and give a recommendation. Obey each stop condition. Do not publish, contact
 people, access restricted data, or change systems.
 ```

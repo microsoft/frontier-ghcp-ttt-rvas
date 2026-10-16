@@ -1,4 +1,4 @@
-# Session m7-03 Trainer Guide: Plan Work with GitHub Issues and MCP
+# Session m7-03 trainer guide: Plan work with GitHub Issues and MCP
 
 **Duration:** 1 hour
 
@@ -6,33 +6,33 @@
 
 Teach learners to use GitHub MCP as a controlled work interface in the Delivery
 Decision Studio path: plan first,
-approve the write, then verify the stored result. The live issues become the
+approve the write, then check the stored result. The live issues become the
 source of record.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:08 | Connect the decision brief to durable GitHub work |
+| 0:00-0:08 | Connect the decision brief to saved GitHub issues |
 | 0:08-0:18 | Explain MCP from the learner's point of view |
 | 0:18-0:30 | Inspect tools, permissions, and repository context |
 | 0:30-0:43 | Decompose the initiative into an issue plan |
-| 0:43-0:53 | Preview, approve, and verify a write |
+| 0:43-0:53 | Preview, approve, and check a write |
 | 0:53-1:00 | Explain the lab guardrails |
 
 ## Required preflight
 
-- Confirm that every learner can open the GitHub Copilot app.
-- Confirm that the approved GitHub MCP server is available.
+- Check that every learner can open the GitHub Copilot app.
+- Check that the approved GitHub MCP server is available.
 - In the app, open **Customize** → **MCP** → **Installed** and inspect the
   connection.
 - Test one GitHub read before demonstrating a write.
-- Confirm that learners can read the training repository and create issues in it.
+- Check that learners can read the training repository and create issues in it.
 - Use a repository created for training. Do not use a production backlog.
 - Record the repository owner and name before the demonstration.
 
 > [!IMPORTANT]
-> Stop if the learner cannot identify the target repository, inspect the tool call, or verify the resulting issue.
+> Stop if the learner cannot identify the target repository, inspect the tool call, or check the resulting issue.
 
 ## Explain MCP without implementation detail
 
@@ -40,7 +40,7 @@ Use this definition:
 
 > An MCP server gives Copilot a set of named tools for reading or changing another system.
 
-Make these points explicit:
+Explain these rules:
 
 - the tool runs with the permissions available to the connection;
 - a read operation can still expose restricted information;
@@ -79,7 +79,7 @@ already contain the seeded records. Learners must make a real disposition:
 Use one parent issue and three to five child issues. Each issue should have:
 
 - a clear outcome;
-- bounded scope;
+- defined scope;
 - acceptance criteria;
 - a non-goal;
 - dependencies;
@@ -103,13 +103,13 @@ Before Copilot calls a write tool, ask it to show:
 
 The learner records **Approve**, **Revise**, or **Reject** before the write.
 
-### 5. Verify and correct
+### 5. Check and correct
 
 After creation, start a fresh read. Retrieve the issues and compare them with the
 approved plan. Add the verification owner and source-decision path to one child
 issue through another preview, approval, write, and fresh read.
 
-Confirm that the live parent issue links the complete child set. Session m7-04 reads
+Check that the live parent issue links the complete child set. Session m7-04 reads
 those issues directly.
 
 ## Common failure modes

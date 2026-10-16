@@ -1,4 +1,4 @@
-# Session m7-02 Lab: Interview a Request and Revise the Decision Brief
+# Session m7-02 lab: Interview a request and revise the decision brief
 
 **Duration:** 2 hours
 
@@ -13,15 +13,15 @@ repeatable project skill
 
 Install a repository skill and use it to interview the request owner. Turn the
 decisions into a brief and issue proposal, revise the affected decisions when a
-late constraint arrives, and verify that both files still agree.
+late constraint arrives, and check that both files still agree.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Install and verify the interview skill | 20 min |
+| 1 | Install and check the interview skill | 20 min |
 | 2 | Run the first decision interview | 35 min |
 | 3 | Create the decision brief and issue proposal | 25 min |
 | 4 | Reopen one branch for a late constraint | 25 min |
-| 5 | Verify readiness in a fresh session | 15 min |
+| 5 | Check readiness in a fresh session | 15 min |
 
 ## Before you start
 
@@ -30,10 +30,10 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 Use the Session m7-01 `initiative-context-brief.md`. If the trainer is delivering
 Session m7-02 alone, use `starter/vague-request.md`.
 
-Confirm GitHub Copilot access before starting. If access is unavailable, **stop**.
+Check GitHub Copilot access before starting. If access is unavailable, **stop**.
 Also stop if Copilot cannot read the training repository or load project skills.
 
-## Part 1: Install and verify the interview skill (20 minutes)
+## Part 1: Install and check the interview skill (20 minutes)
 
 Copy the supplied project skill into the root of the training repository:
 
@@ -46,7 +46,7 @@ git commit -m "Add decision interview skill"
 ```
 
 Open a new GitHub Copilot app session for the project. Open
-**Customize** → **Skills** → **Installed** and confirm that
+**Customize** → **Skills** → **Installed** and check that
 `decision-interview` appears.
 
 Select **Interactive** mode for the interview. Use **Plan** only when Copilot
@@ -64,8 +64,8 @@ Ask only the first decision frontier, then stop.
 
 If the skill does not appear:
 
-1. confirm the file is at `.github/skills/decision-interview/SKILL.md`;
-2. confirm the skill name and description are present in its frontmatter;
+1. check the file is at `.github/skills/decision-interview/SKILL.md`;
+2. check the skill name and description are present in its frontmatter;
 3. reopen the project or start a new session;
 4. stop if the project skill still does not load.
 
@@ -92,7 +92,7 @@ For each frontier:
 1. answer as the request owner;
 2. accept, reject, or revise each recommendation;
 3. require Copilot to restate the decision and reason;
-4. confirm that dependent questions wait for earlier decisions;
+4. check that dependent questions wait for earlier decisions;
 5. ask for the next frontier.
 
 Stop when each branch has a decision or a named open question.
@@ -158,7 +158,7 @@ Commit the revision separately.
 **Checkpoint:** The repository history shows a focused decision change, not a
 complete rewrite.
 
-## Part 5: Verify readiness in a fresh session (15 minutes)
+## Part 5: Check readiness in a fresh session (15 minutes)
 
 Start a new session with `/clear` or `/reset`. Attach only the decision brief and
 issue proposal.
@@ -196,7 +196,7 @@ Session m7-03 uses the approved brief and issue proposal to create live GitHub i
 
 ## Verification
 
-- [ ] The project skill was installed and verified.
+- [ ] The project skill was installed and its invocation passed.
 - [ ] Questions followed dependency order.
 - [ ] Owner decisions and reasons are recorded.
 - [ ] A late constraint reopened only affected branches.

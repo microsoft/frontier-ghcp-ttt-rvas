@@ -8,8 +8,8 @@ footer: 'Session m5-01: AI Team Orchestration & Coordination Patterns'
 
 <!-- _class: lead -->
 
-# Brady's Squad: Human-Led AI Teams
-## Module 5: Specification-Driven Frameworks | Advanced
+# Brady's Squad: Human-led AI teams
+## Module 5: Specification-driven frameworks | Advanced
 
 Session m5-01 | 3 hours | Optional
 
@@ -34,7 +34,7 @@ Prerequisites: Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05
 
 # Coordination has a cost
 
-Use a team when work has separate owners, clear interfaces, and a durable decision to share. An individual agent is better for a small, well-understood change.
+Use a team when work has separate owners, clear interfaces, and a decision record to share. An individual agent is better for a small, well-understood change.
 
 More agents create more state, review work, and cost.
 
@@ -59,15 +59,15 @@ A coordinator does more than hand out tasks. It needs to know:
 
 1. Which decision makes the workstreams compatible.
 2. Which files or systems only one role may change.
-3. What evidence each role must return.
+3. Which results each role must return.
 4. When a conflict should stop the workflow rather than be merged automatically.
 
 The coordinator stays human-led even when agents do the initial work.
 
 ---
-# Return a result summary, not a chat transcript
+# Return a result summary
 
-Each workstream should return a small, reviewable artifact:
+Each workstream should return a short result summary:
 
 ```text
 Scope completed:
@@ -79,7 +79,7 @@ Recommendation:
 ```
 
 The parent can compare packets without reconstructing a long agent conversation.
-**Missing evidence is a finding. Do not guess.**
+**Report missing results. Do not guess.**
 
 ---
 # Coordinator pattern
@@ -96,7 +96,7 @@ Focused checks and human review
 Decision record, merge, follow-up, or pause
 ```
 
-The coordinator routes bounded work. An ambiguous request needs clarification before implementation.
+The coordinator routes work with a defined scope. Clarify an ambiguous request before implementation.
 
 ---
 
@@ -105,7 +105,7 @@ The coordinator routes bounded work. An ambiguous request needs clarification be
 | Role | Responsibility |
 | --- | --- |
 | Lead | Scope, decisions, review gate |
-| Implementer | A bounded product area or file set |
+| Implementer | A defined product area or file set |
 | Tester | Focused checks and reported gaps |
 | Scribe | Shared decisions and history |
 | Work monitor | Surface ready, approved work |
@@ -116,7 +116,7 @@ Agents need charters that state inputs, outputs, and limits. Avoid concurrent wr
 
 # Shared memory
 
-Commit durable decisions: the choice, evidence, owner, and date. Keep temporary drafts separate.
+Commit decision records: the choice, supporting results, owner, and date. Keep temporary drafts separate.
 
 Agents can write individual proposals. A designated owner reviews and merges the shared record. Git history keeps the trail.
 
@@ -140,7 +140,7 @@ Treat Ralph as a monitored queue. Stop when approval, ownership, policy, test st
 | Situation | Path |
 | --- | --- |
 | One small repair | Individual agent or manual work |
-| Separate work with explicit interfaces | Coordinated team |
+| Separate work with defined interfaces | Coordinated team |
 | Overlapping ownership or unclear design | Plan before implementation |
 | Restricted path or unapproved tool | Manual workflow |
 
@@ -183,7 +183,7 @@ The reference project also includes the implemented route and passing tests.
 
 # Required access
 
-Confirm GitHub Copilot, Squad, repository integration,
+Check GitHub Copilot, Squad, repository integration,
 and the network path before the lab. If a requirement is unavailable, stop and
 resolve it. A tabletop simulation does not demonstrate orchestration.
 
@@ -191,7 +191,7 @@ resolve it. A tabletop simulation does not demonstrate orchestration.
 
 # Lab handoff
 
-Copy the starter project and choose the approved route before work begins.
+Copy the starter project and check Squad access before work begins.
 
 Submit:
 
@@ -200,4 +200,4 @@ Submit:
 - passing focused tests;
 - a lead review and decision record.
 
-Use `lab/solution/squad-project/` to verify the expected result.
+Use `lab/solution/squad-project/` to check the expected result.

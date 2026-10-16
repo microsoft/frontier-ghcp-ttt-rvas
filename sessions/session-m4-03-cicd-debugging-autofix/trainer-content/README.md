@@ -1,4 +1,4 @@
-# Session m4-03 Trainer Guide: Evidence Before Repair
+# Session m4-03 trainer guide: Evidence before repair
 
 ## Delivery objective
 
@@ -38,7 +38,7 @@ Proof after repair:
 ```
 
 An observation quotes a file, command, or log. A hypothesis explains those facts.
-Do not let learners write the root cause before they have evidence.
+Do not let learners write the root cause before they have checked the files and logs.
 
 ## Prepared investigation
 
@@ -58,11 +58,11 @@ For Case 3:
 3. Apply only the first repair.
 4. Announce that the next run reached another stage.
 5. Reveal `error-log-3-stage-2.txt`.
-6. Repeat the evidence sequence.
+6. Repeat the investigation sequence.
 7. Compare with the solution after both proofs pass.
 
-The first failure can hide another fault. New evidence should update the diagnosis,
-not trigger a broad rewrite.
+The first failure can hide another fault. Use the new log to update the diagnosis.
+Keep each repair focused on the observed failure.
 
 ## Security review
 
@@ -70,7 +70,7 @@ Open one vulnerable route at a time. Ask learners to identify the source, sink,
 and expected protection before showing the secure file.
 
 Use local syntax checks as the minimum executable proof. If an approved scan is
-available, add it as evidence. A clean scan alone does not prove that the repair
+available, include its findings. A clean scan alone does not prove that the repair
 preserves behavior or covers the intended path.
 
 ## Access policy
@@ -82,8 +82,7 @@ files and local commands when those routes are unavailable.
 ## Lab handoff
 
 Learners must keep solutions closed until each checkpoint. Case 3 requires two
-evidence records in sequence. The deliverable is the investigation trail plus the
-fixed files, not a list of answers.
+investigation records in sequence. Submit the investigation trail and fixed files.
 
 ## Facilitator answer key
 

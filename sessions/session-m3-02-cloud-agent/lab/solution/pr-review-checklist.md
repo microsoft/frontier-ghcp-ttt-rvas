@@ -1,4 +1,4 @@
-# Completed Human Review Checklist
+# Completed human review checklist
 
 ## Issue contract
 
@@ -24,5 +24,5 @@
 
 - Reviewer: Assigned human reviewer
 - Decision: approve
-- Reason: scope, behavior, and test evidence match the fixed issue.
+- Reason: scope, behavior, and test output match the fixed issue.
 - Next safe action: follow the repository's normal merge controls.

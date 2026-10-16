@@ -1,4 +1,4 @@
-# Session m6-02: End-to-End Capstone Project
+# Session m6-02: End-to-end capstone project
 
 **Module:** Advanced Topics & Capstone (Module 6)
 
@@ -12,7 +12,7 @@
 
 The capstone delivers one reviewed Bookmark API slice: `POST /api/bookmarks`.
 Learners use the accepted GitHub issue as the scope boundary and apply Session m5-02
-specification standards. They finish with executable evidence and a handoff that
+specification standards. They finish with test results and a handoff that
 another engineer can use.
 
 **The capstone stays small on purpose.** Authentication, persistent storage,
@@ -25,9 +25,9 @@ tool configuration, or a new dependency.
 ## Learning outcomes
 
 - Keep scope decisions in the accepted GitHub issue.
-- Check a prepared specification for testable behavior and explicit non-goals.
+- Check a prepared specification for testable behavior and named non-goals.
 - Turn the accepted specification into one implementation-ready issue.
-- Verify the Bookmark creation slice with executable tests.
+- Check the Bookmark creation slice with executable tests.
 - Record a review decision, deferred scope, and the next action.
 
 ## Materials
@@ -40,8 +40,8 @@ tool configuration, or a new dependency.
 | Starter files | `lab/starter/` |
 | Reference solution | `lab/solution/` |
 
-## Final Deliverable
+## Final deliverable
 
 A reviewed handoff for `POST /api/bookmarks` containing the issue, implementation
-patch or patch plan, test evidence, review decision, deviations, deferred scope, and
+patch or patch plan, test results, review decision, deviations, deferred scope, and
 next action.

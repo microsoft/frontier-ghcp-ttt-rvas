@@ -1,4 +1,4 @@
-# Session m7-06 Lab: Create and Review a Delivery Automation
+# Session m7-06 lab: Create and review a delivery automation
 
 **Duration:** 2 hours
 
@@ -6,7 +6,7 @@
 
 **Prerequisites:** Sessions m7-01 to m7-05, Automations access, and GitHub MCP access
 
-**Deliverable:** One reviewed stakeholder update from a bounded automation
+**Deliverable:** One reviewed stakeholder update from a draft-only automation
 
 ## Deliverables
 
@@ -24,7 +24,7 @@ disabled.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Verify access and retrieve inputs | 20 min |
+| 1 | Check access and retrieve inputs | 20 min |
 | 2 | Complete the automation definition | 20 min |
 | 3 | Create and run the automation | 30 min |
 | 4 | Review the draft | 20 min |
@@ -36,18 +36,18 @@ disabled.
 Complete the track
 [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Confirm GitHub Copilot Automations access and GitHub MCP access before the lab.
+Check GitHub Copilot Automations access and GitHub MCP access before the lab.
 
 **Stop if GitHub Copilot access, Automations, or GitHub MCP access is
 unavailable.** Fix access before continuing.
 
-## Part 1: Verify access and retrieve inputs
+## Part 1: Check access and retrieve inputs
 
 1. Open **Automations** in the GitHub Copilot app.
-2. Confirm that **New automation** is available.
+2. Check that **New automation** is available.
 3. Retrieve the approved parent and child GitHub issues through GitHub MCP.
 4. Open the reviewed Session m7-05 parent orchestration result.
-5. Confirm that issue state and the parent result agree on the four workstreams.
+5. Check that issue state and the parent result agree on the four workstreams.
 
 Do not copy platform state into local handoff files.
 
@@ -106,10 +106,10 @@ Open `starter/approved-input-change.md`.
 
 1. Apply the approved synthetic evidence update to the named training issue
    through a reviewed GitHub MCP write.
-2. Retrieve the issue again and verify the new state.
+2. Retrieve the issue again and check the new state.
 3. Run the same automation. Do not create a second automation.
 4. Compare the two runs on the Automations surface.
-5. Confirm that only the approved issue change explains the draft change.
+5. Check that only the approved issue change explains the draft change.
 
 ## Part 6: Finalize the stakeholder update
 
@@ -131,8 +131,8 @@ a human action outside the automation.
 - [ ] Live issues and the Session m7-05 parent result were the only status inputs.
 - [ ] The concise automation definition is complete.
 - [ ] The automation produced one draft stakeholder update.
-- [ ] The platform holds run status and evidence.
-- [ ] One approved issue change was verified with a fresh read.
+- [ ] The platform holds run status, tool calls, and output.
+- [ ] One approved issue change was checked with a fresh read.
 - [ ] The same automation ran again.
 - [ ] A person chose Keep, Revise, Disable, or Pause.
 - [ ] Scheduling remains disabled.

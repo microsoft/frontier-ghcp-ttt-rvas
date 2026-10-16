@@ -8,7 +8,7 @@ footer: 'Session m5-02: Spec Kit: Specification-Driven Development'
 
 <!-- _class: lead -->
 
-# Spec Kit: Specification-Driven Development
+# Spec Kit: Specification-driven development
 
 ## Make the work clear before asking an agent to build it
 
@@ -56,7 +56,7 @@ This sounds clear until implementation starts:
 | Scope additions appear as code | Non-goals make additions visible |
 | Review starts with implementation details | Review starts with intent and evidence |
 
-The goal is fewer accidental decisions, not more documents.
+The goal is to resolve decisions before implementation.
 
 ---
 
@@ -233,7 +233,7 @@ The plan can now choose implementation details:
 | `research.md` | Which choices were made, and which alternatives were rejected? |
 | `data-model.md` | Which entities, fields, rules, and state transitions exist? |
 | `contracts/` | Which external interfaces must consumers follow? |
-| `quickstart.md` | How can a reviewer verify the planned behavior? |
+| `quickstart.md` | How can a reviewer check the planned behavior? |
 
 Not every feature needs every optional artifact. Keep the files that help someone
 implement or review the change.
@@ -249,7 +249,7 @@ implement or review the change.
 A requirements checklist asks questions such as:
 
 - Is repeated archive behavior defined?
-- Is the default list behavior explicit?
+- Is the default list behavior defined?
 - Does the specification define an unknown-ID result?
 - Are existing behaviors protected?
 
@@ -307,7 +307,7 @@ Before implementation:
 1. Review and approve the requirements checklist.
 2. Resolve material analysis findings.
 3. Commit the accepted artifacts.
-4. Confirm the implementation scope.
+4. Check the implementation scope.
 
 During implementation, tests and source code should point back to user stories and
 requirements rather than to a vague original prompt.

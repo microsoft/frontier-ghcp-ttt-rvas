@@ -1,4 +1,4 @@
-# GitHub Issue Proposal: <Outcome-Focused Title>
+# GitHub issue proposal: <Outcome-focused title>
 
 > Session m7-03 creates the live GitHub issue after review and decomposition.
 
@@ -43,7 +43,7 @@ against the brief.
 
 ## Definition of done
 
-- [ ] Every acceptance criterion has review evidence.
+- [ ] Every acceptance criterion has a recorded review result.
 - [ ] Permission and data-boundary checks pass.
 - [ ] Supported states and fallback behavior are documented.
 - [ ] No non-goal entered the implementation.

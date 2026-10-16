@@ -7,8 +7,8 @@ footer: 'Session m4-02: Infrastructure as Code with Copilot'
 ---
 
 <!-- _class: lead -->
-# Terraform from Modules to Security Gate
-## DevOps & Infrastructure | Advanced
+# Terraform from modules to security gate
+## DevOps & infrastructure | Advanced
 
 Session m4-02 | 2 hours 30 minutes
 

@@ -2,7 +2,7 @@
 description: "HVE Core challenge covering RPI, customization, product agents, and reviewed delivery"
 ---
 
-# Session m5-03 Lab: HVE From Product Intent to Reviewed Code
+# Session m5-03 lab: HVE from product intent to reviewed code
 
 **Duration:** 3 hours
 
@@ -20,19 +20,19 @@ next. The handoff only indexes those artifacts and records the final decision.
 ## Preflight
 
 1. Work in a local sandbox with synthetic decision records.
-2. Confirm the approved HVE Core extension or Copilot CLI plugin is active. Record
-   its version or channel. Verify that `/rpi-research`, `/rpi-plan`,
+2. Check that the approved HVE Core extension or Copilot CLI plugin is active. Record
+   its version or channel. Check that `/rpi-research`, `/rpi-plan`,
    `/rpi-implement`, `/rpi-review`, `/rpi`, `@Product Manager Advisor`, and
    `@Agile Coach` are available.
-3. Confirm that `.copilot-tracking/` is ignored by Git.
+3. Check that `.copilot-tracking/` is ignored by Git.
 4. Identify the human reviewer and reserve roughly the final 20 to 30 minutes for
    Review, the human decision, and handoff.
-5. Confirm Node.js 20 or later and whether local package downloads are approved.
+5. Check Node.js 20 or later and whether local package downloads are approved.
 6. Run `npm test` when dependencies already exist. Run `npm ci` first only when
    package downloads are approved.
 7. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and the thin
    artifact index in `starter/challenge-handoff.md`.
-8. Confirm whether container validation will use an approved local engine or a
+8. Check whether container validation will use an approved local engine or a
    trainer-managed remote build.
 
 The expected baseline is one passing health test and no implementation of
@@ -67,7 +67,7 @@ Before changing code, identify HVE's four component types:
 * agents define roles and multi-step protocols;
 * prompts provide slash-command entry points;
 * instructions apply standards by file pattern;
-* `.copilot-tracking/` files carry durable state between phases.
+* `.copilot-tracking/` files save state between phases.
 
 Run:
 
@@ -75,7 +75,7 @@ Run:
 /rpi-research "Add POST /api/decisions to the starter API using the supplied product intent and feature contract"
 ```
 
-Open the research artifact under `.copilot-tracking/research/`. Confirm that it
+Open the research artifact under `.copilot-tracking/research/`. Check that it
 records the scope, a rejected alternative, a constraint, and the next phase.
 
 Clear the chat, attach the research artifact, then run `/rpi-plan`. Inspect the
@@ -105,7 +105,7 @@ feature's value, users, assumptions, priority, and non-goals. Keep its output in
 the platform record and cite it from the Plan artifact.
 
 Give the advisor output and challenge brief to `@Agile Coach`. Ask it to produce
-one outcome-oriented user story, acceptance criteria, and explicit exclusions.
+one outcome-oriented user story, acceptance criteria, and named exclusions.
 Compare those criteria with the HVE plan. Update the plan when the product or Agile
 artifact exposes a gap, and record that effect in the Plan artifact. Do not copy
 the agent outputs into the handoff. Do not create live work items in this lab.
@@ -150,14 +150,14 @@ not start another implementation cycle during the lab.
 | Combined RPI | Explain `/rpi` orchestration and Follow-up | Direct-to-combined comparison |
 | Repository context | Add `.github/copilot-instructions.md` | Later phase cites a project rule |
 | Coding practice | Add a targeted API instruction | Matching source or test file follows the rule |
-| Agent customization | Add a bounded review agent | Agent output uses the required criterion map |
+| Agent customization | Add a review agent with a defined scope | Agent output uses the required criterion map |
 | Product planning | Use Product Manager Advisor | Value, assumptions, priority, and human question |
 | Agile refinement | Use Agile Coach | User story, acceptance criteria, and exclusions |
 
 Stretch work starts only after the core review decision. It cannot replace risk or
 handoff evidence.
 
-## Final Deliverable
+## Final deliverable
 
 Submit or demonstrate:
 

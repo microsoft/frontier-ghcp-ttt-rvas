@@ -1,18 +1,18 @@
-# Session m2-06 Trainer Guide: Repair and Refactor a Broken Python Application
+# Session m2-06 trainer guide: Repair and refactor a broken Python application
 
 ## Delivery objective
 
 Teach learners to repair a deliberately broken inventory-reconciliation
-application, then improve its design without changing its output. The goal is
-disciplined repair, not a race to make the test command green.
+application, then improve its design without changing its output. Keep each repair
+small enough to explain and check.
 
 Each learner finishes with a working command-line application, added regression
-tests, a completed repair log, and evidence that the refactor preserved the
+tests, a completed repair log, and file comparisons showing that the refactor preserved the
 supplied text and JSON outputs.
 
 > [!IMPORTANT]
-> Confirm GitHub Copilot access before the session. If Copilot access is missing or
-> unavailable in the approved environment, stop and do not continue.
+> Check GitHub Copilot access before the session. If Copilot access is missing or
+> unavailable in the training environment, stop and do not continue.
 
 ## One-hour plan
 
@@ -30,8 +30,8 @@ supplied text and JSON outputs.
 Before delivery:
 
 1. Open the repository in its Dev Container or a Codespace.
-2. Confirm Python 3.11 or later.
-3. Confirm GitHub Copilot Chat and inline suggestions work.
+2. Check Python 3.11 or later.
+3. Check that GitHub Copilot Chat and inline suggestions work.
 4. Create a private working copy of `lab/starter/`.
 5. Install `requirements-dev.txt` in that copy.
 6. Run the starter command and preserve the first failure.
@@ -70,7 +70,7 @@ Work from the lowest layer that blocks evidence:
 | Behavior | Does the output match the contract? | `pytest -q` and fixture comparison |
 | Structure | Can the code change safely? | regression tests stay green |
 
-Skipping a layer creates noisy evidence. A test suite cannot explain business
+Skipping a layer obscures the current failure. A test suite cannot check business
 logic while test collection is blocked by a syntax error.
 
 ### One failure at a time
@@ -123,7 +123,7 @@ python -m inventory_reconciliation \
 Read the traceback from the bottom. Point out the file, line, exception type, and
 source line. Ignore every later concern until Python can parse that file.
 
-### 2. Ask a bounded Copilot question
+### 2. Ask Copilot about one failure
 
 Use a prompt such as:
 
@@ -132,9 +132,9 @@ Explain this SyntaxError using only the shown file and traceback. Identify the
 smallest syntax repair. Do not refactor or change behavior.
 ```
 
-Show that a good repair prompt includes evidence and a boundary.
+Show that a good repair prompt includes the traceback and names what may change.
 
-### 3. Verify the repair
+### 3. Check the repair
 
 Run:
 

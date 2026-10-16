@@ -1,8 +1,8 @@
 ---
-description: "Build and verify a reliable TypeScript agent application with the GitHub Copilot SDK"
+description: "Build and check a reliable TypeScript agent application with the GitHub Copilot SDK"
 ---
 
-# Session m6-01: Build Reliable Agent Applications with the GitHub Copilot SDK
+# Session m6-01: Build reliable agent applications with the GitHub Copilot SDK
 
 **Module:** Module 6: Advanced Topics & Capstone
 
@@ -65,7 +65,7 @@ repository, or external business system is used.
 | Block | Duration | Content |
 | --- | ---: | --- |
 | Trainer content | 60 min | [Slides](slides.md), concepts, and prepared demo |
-| Lab | 120 min | [Build and verify the CLI](lab/README.md) |
+| Lab | 120 min | [Build and check the CLI](lab/README.md) |
 
 ## Materials
 
@@ -84,7 +84,7 @@ The required path covers:
 - local `CopilotClient` and session lifecycle;
 - TypeScript streaming event handlers;
 - one application-owned readiness tool;
-- explicit permission decisions;
+- recorded permission decisions;
 - pre-tool, post-tool-failure, error, and session-end hooks;
 - a visible denied action;
 - focused automated tests;

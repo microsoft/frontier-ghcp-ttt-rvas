@@ -1,4 +1,4 @@
-# Session m7-05 Lab: Orchestrate Agents and Workstreams
+# Session m7-05 lab: Orchestrate agents and workstreams
 
 **Duration:** 2 hours
 
@@ -32,8 +32,7 @@ canvases, or MCP access.
 
 ## Product and delivery route
 
-The following issue-based exercises are unchanged. Their GitHub access
-requirements apply to this route only.
+The GitHub access requirements below apply to this route only.
 
 ## Scenario
 
@@ -43,10 +42,10 @@ parent result will become an authoritative input to Session m7-06.
 
 ## Preflight
 
-- Confirm GitHub Copilot access before the lab.
-- Confirm `/orchestrate` is available.
-- Confirm GitHub MCP can retrieve the approved parent and child issues.
-- Confirm that you can open, redirect, and stop child sessions.
+- Check GitHub Copilot access before the lab.
+- Check `/orchestrate` is available.
+- Check GitHub MCP can retrieve the approved parent and child issues.
+- Check that you can open, redirect, and stop child sessions.
 - Use only supplied synthetic material or approved sanitized work.
 - Stop any work that requests production data, personal data, secrets, external
   contact, publication, or unapproved changes.
@@ -70,22 +69,22 @@ parent result will become an authoritative input to Session m7-06.
 Open `starter/orchestration-plan-template.md`.
 
 1. Retrieve the approved parent and child issues through GitHub MCP.
-2. Define one bounded question for each child issue.
+2. Define one question with a clear scope for each child issue.
 3. Name the approved issue and linked evidence for each workstream.
 4. Add a hard stop condition and reviewer.
-5. Confirm that no child depends on another child result.
+5. Check that no child depends on another child result.
 6. Submit the plan through `/orchestrate`.
 
 Use this prompt:
 
 ```text
 /orchestrate Use the four workstreams in my approved plan. Keep them independent.
-Each result must answer its bounded question, cite its approved inputs, state
+Each result must answer its assigned question, cite its approved inputs, state
 unresolved gaps, and give a recommendation. Obey each stop condition. Do not
 publish, contact people, access restricted data, or change systems.
 ```
 
-Open each child session from the orchestration surface. Confirm its question,
+Open each child session from the orchestration surface. Check its question,
 inputs, stop condition, and reviewer.
 
 ## Exercise 2: Monitor and intervene
@@ -108,10 +107,10 @@ Redirect only when a specific scope or evidence problem can be fixed safely.
 
 Review each child result against its workstream:
 
-- Does it answer the bounded question?
+- Does it answer the assigned question?
 - Does it use only the approved issue and linked evidence?
 - Did it obey the stop condition?
-- Are unresolved gaps explicit?
+- Are unresolved gaps listed?
 - Is the recommendation supported?
 
 Reject unsupported claims. Redirect a safe, repairable result. Stop work that
@@ -130,14 +129,14 @@ The parent result must:
 - avoid publication or source-system changes.
 
 Add the reviewed result to the approved parent GitHub issue if the trainer has
-approved that write. Retrieve the issue again to verify the update.
+approved that write. Retrieve the issue again to check the update.
 
 Session m7-06 uses the live GitHub issues and this parent result. Do not create a
 separate handoff form.
 
 ## Completion check
 
-- [ ] Approved plan with four bounded workstreams.
+- [ ] Approved plan with four workstreams, each with a defined scope.
 - [ ] Live child results on the orchestration surface.
 - [ ] At least one deliberate wait, redirect, stop, accept, or reject decision.
 - [ ] Reviewed parent result linked to the live GitHub issues.
@@ -153,7 +152,7 @@ separate handoff form.
 | Two workstreams overlap | Pause one and move the shared question to the parent. |
 | An issue cannot be retrieved | Stop that workstream until approved issue access is restored. |
 
-## Developer route: review PR readiness
+## Developer route: Review PR readiness
 
 ### Goal and access
 

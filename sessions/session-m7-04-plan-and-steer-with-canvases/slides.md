@@ -8,7 +8,7 @@ footer: 'Session m7-04: Build and Use a Planning Canvas'
 
 <!-- _class: lead -->
 
-# Build and Use a Planning Canvas
+# Build and use a planning canvas
 
 Session m7-04 | Product and Delivery Teams | Intermediate
 
@@ -89,7 +89,7 @@ and propose updates. Do not close issues, change assignees, or publish content.
 ```
 
 This is a no-code review. Inspect generated files and capabilities, then ask
-Copilot for bounded changes.
+Copilot for specific changes.
 
 ---
 
@@ -109,8 +109,6 @@ Ask:
 
 Remove generated fields and actions that do not help the team decide or act.
 
-A crowded canvas is not a mature canvas.
-
 ---
 
 # Load live GitHub issues
@@ -121,7 +119,7 @@ Copilot can move the approved fields into the canvas. GitHub remains the source 
 
 ---
 
-# Keep planning state explicit
+# Label planning state separately
 
 The canvas may show `ready for review` while the GitHub issue remains open.
 
@@ -129,7 +127,7 @@ That is acceptable when the canvas labels the planning state and source-system s
 
 ---
 
-# Verify three views
+# Check three views
 
 Compare:
 
@@ -156,7 +154,7 @@ The canvas should show that its last refresh is older than the source change.
 
 Use the approved refresh capability.
 
-Confirm:
+Check:
 
 - the blocker appears in planning state;
 - the next action names the owner decision;

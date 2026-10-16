@@ -1,4 +1,4 @@
-# Session m5-02 Lab: Implement and Evolve a Feature with Spec Kit
+# Session m5-02 lab: Implement and evolve a feature with Spec Kit
 
 **Duration:** 2 hours 30 minutes
 
@@ -6,7 +6,7 @@
 
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05
 **Deliverable:** An implemented and evolved feature with traceable Spec Kit
-artifacts, GitHub Issues, tests, and convergence evidence
+artifacts, GitHub Issues, tests, and convergence results
 
 ## Lab overview
 
@@ -26,20 +26,20 @@ requirement and update the accepted artifacts and implementation.
 
 ## Before you start
 
-Confirm the approved Spec Kit source and release tag. Do not install an unapproved
+Check the approved Spec Kit source and release tag. Do not install an unapproved
 package or use production data.
 
 You need:
 
 - Python 3.10 or later;
 - Git and a local terminal;
-- confirmed GitHub Copilot access in your coding environment;
+- GitHub Copilot access in your coding environment;
 - `uv` and an approved Spec Kit release;
 - a GitHub training repository where you can create issues.
 
 If GitHub Copilot access is unavailable, **stop the lab**. If the
 environment cannot run Spec Kit or the selected integration, stop and fix the
-approved installation. For a disconnected environment, the instructor must prepare
+installation from the approved source. For a disconnected environment, the instructor must prepare
 the official Spec Kit air-gapped package before the session.
 
 ## Part 1: Prepare and initialize the project (15 minutes)
@@ -110,7 +110,7 @@ Use feature-request.md as the source. Add task archiving without changing create
 or list behavior. Keep the specification technology-neutral.
 ```
 
-Inspect `specs/<feature>/spec.md`. Confirm that it contains prioritized,
+Inspect `specs/<feature>/spec.md`. Check that it contains prioritized,
 independently testable user stories and measurable acceptance scenarios.
 
 Clarify the missing decisions:
@@ -192,7 +192,7 @@ Create issues from the unchecked tasks in tasks.md. Preserve task IDs, user-stor
 references, dependencies, and file paths.
 ```
 
-Open the created issues and verify:
+Open the created issues and check:
 
 - each issue maps to a task ID;
 - dependency order remains visible;

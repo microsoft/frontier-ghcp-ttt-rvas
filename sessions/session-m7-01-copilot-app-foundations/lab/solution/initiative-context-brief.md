@@ -1,4 +1,4 @@
-# Delivery Decision Studio: Initiative Context Brief
+# Delivery Decision Studio: Initiative context brief
 
 **Initiative:** Service Request Portal
 **Decision owner:** Product owner
@@ -45,7 +45,7 @@ Make Service Request Portal status information understandable without exposing i
 
 ## Available Copilot capabilities
 
-Record the capabilities visible in the learner's approved environment. Do not
+Record the capabilities visible in the learner's environment. Do not
 assume every installation exposes the same skills, agents, MCP servers, canvases,
 or automations.
 

@@ -9,7 +9,8 @@
 
 ## Description
 
-The minimum viable path to Copilot productivity. This track covers installation, core features, prompt engineering, and the CLI. Trainees leave ready to use Copilot in the IDE and terminal.
+This track covers installation, core features, prompt engineering, and the CLI.
+Trainees practice using Copilot in the IDE and terminal.
 
 ## Prerequisites
 
@@ -30,36 +31,36 @@ The minimum viable path to Copilot productivity. This track covers installation,
 | 4       | m2-01          | GitHub Copilot in the CLI         | Intermediate | 3 hrs      |
 | 5       | m2-02          | Agent Mode in the IDE             | Intermediate | 3 hrs      |
 
-## Recommended Delivery Schedule
+## Recommended delivery schedule
 
-### 2-Day Intensive
+### 2-day intensive
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
 | Day 1 | Sessions m1-01, m1-02, m1-03 | Foundations: setup, Chat, prompting |
 | Day 2 | Sessions m2-01, m2-02     | Surfaces: CLI and agent mode        |
 
-### 3-Day Relaxed
+### 3-day relaxed
 
 | Day   | Sessions        | Focus                        |
 | ----- | --------------- | ---------------------------- |
 | Day 1 | Sessions m1-01, m1-02 | Setup and Chat workflows     |
-| Day 2 | Session m1-03      | Prompt engineering deep dive |
+| Day 2 | Session m1-03      | Prompt engineering practice  |
 | Day 3 | Sessions m2-01, m2-02 | CLI and agent mode           |
 
-## Learning Outcomes
+## Learning outcomes
 
 By completing this track, trainees will be able to:
 
-1. Install, configure, and use GitHub Copilot across IDE and CLI surfaces
+1. Install, configure, and use GitHub Copilot in the IDE and CLI
 2. Use Copilot Chat, inline suggestions, and Next Edit Suggestions in daily workflows
 3. Write effective prompts that produce accurate, useful Copilot output
 4. Use standalone `copilot` in the terminal for command explanation and generation
 5. Use agent mode for multi-step, multi-file coding tasks
 6. Explain Copilot's capabilities and limitations to their teams
 
-## Next Steps
+## Next steps
 
-- **Developer Productivity**. Add code review and Spaces to maximize daily output
-- **Agentic Development**. Go deep into autonomous agents, MCP, and custom agents
+- **Developer Productivity**. Add code review and Spaces to daily development
+- **Agentic Development**. Learn autonomous workflows, MCP, and custom agents
 - **DevOps & Automation**. Apply Copilot to CI/CD, Actions, and infrastructure

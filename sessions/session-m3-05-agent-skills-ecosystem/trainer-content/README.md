@@ -1,4 +1,4 @@
-# Session m3-05 Trainer Guide: Skill Selection and Failure
+# Session m3-05 trainer guide: Skill selection and failure
 
 ## Delivery objective
 
@@ -85,7 +85,7 @@ The first task matches the work and path. The second does not. A skill that trig
 for both is noisy and unsafe.
 
 Open `trigger.json` and `non-trigger.json`. Ask learners which fields make the
-decision observable.
+decision visible in the output.
 
 #### Missing precondition
 
@@ -93,7 +93,7 @@ The API skill requires:
 
 - named acceptance criteria;
 - a human reviewer;
-- a verified focused test command.
+- a focused test command that runs in this project.
 
 Open `failure.json`. It matches the trigger but has no reviewer. The expected
 result is:
@@ -125,11 +125,10 @@ Separate the claims:
 | --- | --- |
 | Directory validator | Required file, frontmatter, and sections exist |
 | Scenario tests | The local harness behaves as its fixed contract specifies |
-| Bounded demo | A reviewer can see the applied and blocked outputs |
+| Two-scenario demo | A reviewer can see the applied and blocked outputs |
 | Live surface | The selected product discovers and uses the skill |
 
-The local runner is intentionally bounded. It is a teaching harness, not a new
-skill platform.
+The local runner only handles the supplied scenarios. It is a teaching harness.
 
 The learner validator and demo now read the project-local API skill. The harness
 unit tests retain a fixed reference fixture. Neither claims that an LLM followed
@@ -171,7 +170,7 @@ during delivery.
 
 1. Validate the completed directory.
 2. Run the six automated tests.
-3. Run the trigger scenario and point to the bounded paths.
+3. Run the trigger scenario and point to the allowed paths.
 4. Run the documentation non-trigger.
 5. Run the missing-reviewer failure.
 6. Show the same outputs in `EXPECTED-OUTPUT.md`.

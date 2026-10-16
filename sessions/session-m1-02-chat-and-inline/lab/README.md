@@ -1,4 +1,4 @@
-# Session m1-02 Lab: Diagnose and Extend a Calculator with Chat
+# Session m1-02 lab: Diagnose and extend a calculator with Chat
 
 **Duration:** 2 hours
 
@@ -23,14 +23,15 @@ about zero total weight.
 | 3 | Apply the fix and expand tests | 30 min |
 | 4 | Review the project with workspace and terminal context | 20 min |
 | 5 | Decide and implement the change request | 20 min |
-| 6 | Compare, document, and verify | 10 min |
+| 6 | Compare, document, and check | 10 min |
 
 ## Before you start
 
-Use synthetic data and an approved training repository.
+Use synthetic data in a training repository you may use for the exercise.
 
-Confirm GitHub Copilot Chat access in your editor. If Chat does not work, stop the
-lab. Manual implementation does not replace the Chat and inline-suggestion practice.
+Before starting, check GitHub Copilot Chat access in your editor. If Chat does not
+work, stop the lab. Manual implementation does not replace the Chat and
+inline-suggestion practice.
 
 If model comparison is allowed, use only choices approved for the exercise and set
 any required metered-work stop condition. If no second choice is available, compare
@@ -124,10 +125,10 @@ Explain the most recent test result. Which behavior failed or passed, and which
 file owns the next change?
 ```
 
-Verify the response yourself. Terminal context can summarize output; it does not
+Check the response yourself. Terminal context can summarize output; it does not
 replace reading the failure.
 
-**Checkpoint:** Your notes distinguish code behavior, test evidence, and Chat
+**Checkpoint:** Your notes distinguish code behavior, test output, and Chat
 interpretation.
 
 ## Part 5: Decide the change request (20 minutes)
@@ -154,7 +155,7 @@ python -m unittest -v
 **Checkpoint:** The suite covers the original defect, mismatch, empty input, zero
 total weight, and history.
 
-## Part 6: Compare and verify (10 minutes)
+## Part 6: Compare and check (10 minutes)
 
 If two approved model choices are available, send both the same prompt:
 
@@ -185,6 +186,6 @@ python -m unittest -v
 
 - [ ] Both Python files compile.
 - [ ] All eight reference tests pass.
-- [ ] The zero-total-weight decision is explicit in code, test, and notes.
+- [ ] The code, test, and notes state the zero-total-weight decision.
 - [ ] Chat changes stayed inside the calculator project.
 - [ ] No new dependency was added.

@@ -5,7 +5,7 @@ result.
 
 | File | Purpose |
 | --- | --- |
-| `automation-definition-template.md` | Defines the bounded automation |
+| `automation-definition-template.md` | Defines the automation's inputs, output, and limits |
 | `approved-input-change.md` | Describes the reviewed issue update between runs |
 | `stakeholder-update-template.md` | Holds the stakeholder-ready draft |
 

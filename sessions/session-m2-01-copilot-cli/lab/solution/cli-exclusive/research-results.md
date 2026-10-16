@@ -1,10 +1,10 @@
-# Research Results: Expected Format
+# Research results: Expected format
 
-This example shows a useful `/research` result. Your result will depend on the topic and sources, so verify its claims before you use them.
+This example shows a useful `/research` result. Your result will depend on the topic and sources, so check its claims before you use them.
 
 ---
 
-## Example: Express.js Security Best Practices (Topic 1)
+## Example: Express.js security best practices (Topic 1)
 
 ### What a useful `/research` result includes
 
@@ -36,7 +36,7 @@ A thorough `/research` result for this topic should include:
 - `/research`: Specific package versions, examples from GitHub repositories, 1500+
   words, cited sources, current best practices
 
-### Sample Research Output Structure
+### Sample research output structure
 
 ```markdown
 # Express.js Security Best Practices (2026)
@@ -69,7 +69,7 @@ Sources: [OWASP Authentication Guide]
 
 ---
 
-## Evaluation Criteria
+## Evaluation criteria
 
 Rate your `/research` output:
 

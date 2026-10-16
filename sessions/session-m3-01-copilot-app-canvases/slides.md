@@ -7,15 +7,15 @@ footer: 'Session m3-01: Copilot App & Canvases'
 ---
 
 <!-- _class: lead -->
-# Canvas Extensions
-## Contract first, visible state, bounded actions
+# Canvas extensions
+## Define the contract, state, and allowed actions
 
 ---
 # Today's outcome
 
 Build or simulate one delivery-readiness canvas.
 
-Evidence must show:
+The demo record must show:
 
 - the approved contract;
 - one direct update;
@@ -26,7 +26,7 @@ Evidence must show:
 ---
 # Access policy
 
-The live route requires:
+The lab requires:
 
 - GitHub Copilot app access;
 - the built-in `/create-canvas` skill;
@@ -162,7 +162,7 @@ A safe canvas keeps the state unchanged and explains the rule.
 
 1. Add synthetic evidence to `DOC-101`.
 2. Retry the same transition.
-3. Confirm `ready` is now accepted.
+3. Check that `ready` is now accepted.
 4. Record before, rejection, correction, and after state.
 
 Do not "fix" the demo by removing validation.
@@ -198,7 +198,7 @@ If another system owns the data:
 The reviewer chooses:
 
 - **approve** when the contract and evidence match;
-- **revise** when a bounded correction is clear;
+- **revise** when the correction fits the contract;
 - **pause** when access, ownership, data, or behavior is unresolved.
 
 ---

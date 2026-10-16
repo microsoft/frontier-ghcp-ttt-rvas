@@ -4,7 +4,7 @@ description: "HVE Core challenge contract from product intent through reviewed i
 
 # HVE Core challenge brief
 
-Use HVE Core to move a bounded Engineering Decision API feature from product intent
+Use HVE Core to move one Engineering Decision API feature from product intent
 to reviewed code. The API behavior is one part of the challenge. Your evidence
 must also show the HVE RPI handoffs, repository customization, and product-to-Agile
 refinement that shaped the implementation.
@@ -17,7 +17,7 @@ Complete these stages in order:
   code. Later, run Implement and Review. Inspect the `.copilot-tracking/` artifact
   produced by each phase and record how the next phase used it.
 2. **Customize HVE for the repository.** Add repository context, a targeted
-  JavaScript/API coding instruction, and a bounded Decision API Reviewer agent.
+  JavaScript/API coding instruction, and a Decision API Reviewer agent with a defined scope.
   Prove that each customization changed a later plan, implementation, or review.
 3. **Refine the product intent.** Use Product Manager Advisor to test value,
   assumptions, priority, and non-goals. Use Agile Coach to produce one user story,

@@ -1,4 +1,4 @@
-# Course Safety Baseline
+# Course safety baseline
 
 Use this checklist before any hands-on session:
 

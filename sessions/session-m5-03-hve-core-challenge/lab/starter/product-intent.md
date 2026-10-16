@@ -17,7 +17,7 @@ so clients can handle mistakes without parsing free-form text.
 
 Teams can capture a decision in a stable structure before it disappears into chat
 history. This slice proves the create contract; it does not prove discovery,
-adoption, or durable retention.
+adoption, or long-term retention.
 
 ## Known constraints
 

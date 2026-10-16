@@ -15,7 +15,7 @@
 
 ## Required access
 
-Confirm that [required Copilot tool] is available and that you are signed in.
+Check that [required Copilot tool] is available and that you are signed in.
 
 If the required tool is unavailable, stop the lab. Do not
 replace it with another assistant or a manual simulation.
@@ -38,7 +38,7 @@ replace it with another assistant or a manual simulation.
 2. [Step 2]
 3. [Step 3]
 
-**Expected Result:** [What a successful completion looks like]
+**Expected result:** [What the trainee should see after completing these steps]
 
 ---
 
@@ -52,7 +52,7 @@ replace it with another assistant or a manual simulation.
 2. [Step 2]
 3. [Step 3]
 
-**Expected Result:** [What a successful completion looks like]
+**Expected result:** [What the trainee should see after completing these steps]
 
 ---
 
@@ -66,11 +66,11 @@ replace it with another assistant or a manual simulation.
 2. [Step 2]
 3. [Step 3]
 
-**Expected Result:** [What a successful completion looks like]
+**Expected result:** [What the trainee should see after completing these steps]
 
 ---
 
-### Exercise 4 (Stretch): [Title] (30 min)
+### Exercise 4: [Title], stretch task, 30 min
 
 **Goal:** [Bonus challenge for fast finishers]
 
@@ -91,6 +91,6 @@ replace it with another assistant or a manual simulation.
 | [Common issue 1] | [Fix]      |
 | [Common issue 2] | [Fix]      |
 
-## Solution Reference
+## Solution reference
 
 See the `solution/` directory for the reference implementation. Trainers should review this before the session but not distribute it to trainees until after lab completion.

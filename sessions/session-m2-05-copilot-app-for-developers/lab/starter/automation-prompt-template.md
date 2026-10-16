@@ -47,4 +47,4 @@ reopen, or resolve anything. The final decision belongs to a human reviewer.
 - Tools granted:
 - Suggested verdict:
 - Evidence links:
-- Confirmed repository writes: `none`
+- Repository writes checked: `none`

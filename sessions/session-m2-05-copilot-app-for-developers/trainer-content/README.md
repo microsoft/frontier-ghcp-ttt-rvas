@@ -2,7 +2,7 @@
 description: "Trainer guide for GitHub Copilot app engineering sessions and PR readiness"
 ---
 
-# Session m2-05 Trainer Guide: GitHub Copilot App for Developers
+# Session m2-05 trainer guide: GitHub Copilot App for developers
 
 **Duration:** 60 minutes  
 **Format:** Concept teaching, prepared demo, lab briefing
@@ -10,8 +10,8 @@ description: "Trainer guide for GitHub Copilot app engineering sessions and PR r
 ## Delivery objective
 
 Learners should treat the app as a set of engineering workspaces with different
-risk boundaries. The main lesson is simple: choose the right surface, isolate the
-work, and require evidence before moving from code to pull-request readiness.
+risk boundaries. Choose the surface for the task, isolate concurrent work, and
+check tests, diffs, and review threads before deciding PR readiness.
 
 ## Pacing
 
@@ -21,21 +21,21 @@ work, and require evidence before moving from code to pull-request readiness.
 | Chats, sessions, modes, and worktrees | 15 min | Learners can justify a surface, mode, and workspace |
 | Context, handoffs, and inner-loop evidence | 12 min | A fresh session could continue from the written handoff |
 | Issue, PR, review, checks, and critique | 13 min | Learners can state why local success is not PR readiness |
-| Demo close and lab route | 10 min | Each learner has confirmed app access |
+| Demo close and lab route | 10 min | Each learner has checked app access |
 
 ## Trainer preflight
 
 Complete this check on the delivery machine:
 
-1. Open the GitHub Copilot app and sign in with an approved training account.
-2. Add `lab/starter` as a local project or copy it to an approved sandbox first.
-3. Confirm that Chat and a project session both open.
-4. Confirm that Interactive, Plan, and Autopilot appear in the mode picker.
-5. Start a working-tree session and verify its branch with `git status`.
+1. Open the GitHub Copilot app and sign in with a training account your organization allows.
+2. Add `lab/starter` as a local project or copy it to a training sandbox your organization allows.
+3. Check that Chat and a project session both open.
+4. Check that Interactive, Plan, and Autopilot appear in the mode picker.
+5. Start a working-tree session and check its branch with `git status`.
 6. Check `/plan`, `/review`, `/rubber-duck`, `/fork`, `/merge-to-parent`, and `/spar`.
 7. Check that the training Git baseline is committed and the repair is left
    uncommitted for local diff review.
-8. Open My work and Automations only in a synthetic or approved training repository.
+8. Open My work and Automations only in a synthetic or training repository you may use.
 9. Keep `lab/starter/prepared-evidence/` open for trainer demo recovery.
 10. Rehearse returning only `planning-alternative.md` from the fork before any
     repair. Check local sandbox settings and tool approvals without weakening them.
@@ -55,7 +55,7 @@ Avoid a feature tour. Tie each area to a decision:
 | Projects | Group local folders or repositories and start agent sessions |
 | Active sessions | Switch between isolated tasks and inspect their state |
 | My work | Read issues, PRs, review activity, and checks |
-| Automations | Save a repeatable task with explicit triggers and tools |
+| Automations | Save a repeatable task with named triggers and tools |
 | Settings | Control project instructions, sandboxing, and session defaults |
 
 Ask learners where evidence lives after each action. If the answer is only "in

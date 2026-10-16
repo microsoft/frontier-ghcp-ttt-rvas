@@ -1,4 +1,4 @@
-# Service Request Portal Initiative
+# Service Request Portal initiative
 
 ## Product
 

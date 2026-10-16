@@ -1,10 +1,10 @@
-# CLI vs IDE Comparison Tasks
+# CLI vs IDE comparison tasks
 
 Do each task twice: once in the CLI and once in VS Code. Time both attempts and record what you observed.
 
 ---
 
-## Task 1: Explain a Complex Regex
+## Task 1: Explain a complex regex
 
 **The regex:**
 
@@ -36,7 +36,7 @@ copilot -p "Explain this regex: ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A
 
 ---
 
-## Task 2: Generate a Log Processing Script
+## Task 2: Generate a log processing script
 
 **The task:** Write a bash script that:
 
@@ -71,7 +71,7 @@ copilot -p "Write a bash script that finds all .log files in /var/log modified i
 
 ---
 
-## Task 3: Debug a Failing Test
+## Task 3: Debug a failing test
 
 **Setup:** Open the `agent-tasks` project from Exercise 2. If you've already fixed the bugs, reset the project by copying from `starter/agent-tasks/` again.
 

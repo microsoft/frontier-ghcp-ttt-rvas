@@ -1,4 +1,4 @@
-# Session m3-02 Lab: One Issue from Contract to Review
+# Session m3-02 lab: One issue from contract to review
 
 **Duration:** 2 hours
 
@@ -70,7 +70,7 @@ The setup workflow asset is intended for `.github/workflows/copilot-setup-steps.
 | Checkpoint | Work | Time |
 | --- | --- | --- |
 | 1 | Approve the issue contract | 20 min |
-| 2 | Verify repository setup | 20 min |
+| 2 | Check repository setup | 20 min |
 | 3 | Produce and inspect the proposed change | 35 min |
 | 4 | Run and review tests | 25 min |
 | 5 | Make the human decision | 20 min |
@@ -97,8 +97,8 @@ a stop condition.
 
 1. Review `starter/copilot-instructions.md`.
 2. Review `starter/copilot-setup-steps.yml`.
-3. Confirm that the workflow content targets `.github/workflows/copilot-setup-steps.yml`.
-4. Confirm the single job is named `copilot-setup-steps`.
+3. Check that the workflow content targets `.github/workflows/copilot-setup-steps.yml`.
+4. Check that the single job is named `copilot-setup-steps`.
 5. Run the starter baseline:
 
    ```bash
@@ -110,7 +110,7 @@ a stop condition.
 
 Stop if the baseline failure is unexplained, setup needs a credential, or any required command is not approved.
 
-**Visible evidence:** Passing baseline, reviewed setup files, named reviewer, and stop condition.
+**Checkpoint record:** Passing test output, reviewed setup files, named reviewer, and stop condition.
 
 ## Checkpoint 3: Proposed change (35 minutes)
 
@@ -119,7 +119,7 @@ Copy the contents of `starter/sample-project/` to the repository root. The setup
 workflow expects `package.json`, `package-lock.json`, `src/`, and `tests/` at that
 root.
 
-Create or reuse the one issue from `starter/issue.md`. Assign it through a currently supported and approved Copilot cloud agent entry point.
+Create or reuse the one issue from `starter/issue.md`. Assign it through a currently supported Copilot cloud agent entry point allowed by repository policy.
 
 Monitor the session. Record:
 
@@ -139,7 +139,7 @@ Add no dependency. Stop and ask for clarification if broader work is required.
 
 Before tests, inspect the diff with `starter/pr-review-checklist.md`.
 
-Confirm:
+Check:
 
 - only the two allowed files changed;
 - blank and whitespace-only titles return HTTP 400;
@@ -149,7 +149,7 @@ Confirm:
 
 If no proposal is ready after 25 minutes, stop the run.
 
-**Visible evidence:** A pull request or agent-produced diff tied to the same issue.
+**Checkpoint record:** A pull request or agent-produced diff tied to the same issue.
 
 ## Checkpoint 4: Tests (25 minutes)
 
@@ -159,7 +159,7 @@ Run:
 npm test
 ```
 
-The evidence must cover:
+The test output must cover:
 
 | Case | Expected result |
 | --- | --- |
@@ -179,8 +179,8 @@ Use `starter/pr-review-checklist.md` to inspect the change.
 Choose:
 
 - **approve** when the issue, diff, and tests agree;
-- **request changes** when a bounded correction remains;
-- **pause** when access, evidence, policy, or ownership is unresolved.
+- **request changes** when a correction within the issue remains;
+- **pause** when access, test output, policy, or ownership is unresolved.
 
 Compare the result with `solution/issue-journey.md` after the review.
 
@@ -202,7 +202,7 @@ same issue → reviewed setup → proposed change → tests → review outcome
 | Copilot cloud agent access is missing | Stop the lab. |
 | Setup workflow is not active on the default branch | Stop the lab. |
 | Session edits extra files | Stop or request a scoped correction. |
-| Test output is missing | Run the verified command before deciding. |
+| Test output is missing | Run the required test command before deciding. |
 | A test passes but response shape changed | Request changes and cite the preserved-behavior criterion. |
 | Review suggests a second feature | Record it as future work, outside this issue. |
 

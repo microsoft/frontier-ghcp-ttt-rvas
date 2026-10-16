@@ -1,9 +1,9 @@
-# Reference Result
+# Reference result
 
 Session m7-04 has no static canvas solution. The completed result is the live canvas
 linked to the Session m7-03 parent and child issues.
 
-Verify the result in the GitHub Copilot app:
+Check the result in the GitHub Copilot app:
 
 - the canvas links the current issue set;
 - GitHub state and planning state use different fields;

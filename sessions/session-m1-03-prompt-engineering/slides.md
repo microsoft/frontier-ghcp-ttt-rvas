@@ -8,7 +8,7 @@ footer: 'Session m1-03: Prompt Engineering Fundamentals'
 
 <!-- _class: lead -->
 
-# Prompt Engineering Fundamentals
+# Prompt engineering fundamentals
 
 ## Make the work reviewable before asking for code
 
@@ -42,7 +42,7 @@ Build the todo feature.
 
 The model must guess the file, behavior, errors, dependencies, and finish line.
 
-**A useful prompt moves material decisions out of the guesswork.**
+**A useful prompt states the decisions that affect the result.**
 
 ---
 
@@ -282,9 +282,9 @@ must return:
 
 1. `Implement create.`
 2. `Implement TodoStore.create using the test.`
-3. A bounded prompt with behavior, constraints, and verification.
+3. A prompt with behavior, file limits, and a check to run.
 
-Compare how much material guessing remains in each request.
+Compare what the model must still guess in each request.
 
 ---
 
@@ -316,7 +316,7 @@ Short. Specific. Testable.
 
 # Lab handoff
 
-You will evolve one todo API:
+You will extend one todo API:
 
 1. implement the baseline store;
 2. wire the REST routes;

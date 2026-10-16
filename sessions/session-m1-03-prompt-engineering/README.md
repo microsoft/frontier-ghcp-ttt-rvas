@@ -1,4 +1,4 @@
-# Session m1-03: Prompt Engineering Fundamentals
+# Session m1-03: Prompt engineering fundamentals
 
 **Module:** Copilot Fundamentals
 
@@ -15,7 +15,7 @@ context, constraints, and examples to implement a store and Express routes. They
 then change the accepted behavior to add priority filtering and record how context
 affected the proposal.
 
-The lab keeps prompting tied to executable evidence. A useful prompt produces work
+The lab ties prompts to tests and API checks. A useful prompt produces work
 that still has to pass the project tests and API checks.
 
 ## Learning outcomes

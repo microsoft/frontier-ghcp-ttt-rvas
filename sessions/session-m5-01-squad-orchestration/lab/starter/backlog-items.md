@@ -1,4 +1,4 @@
-# Optional Backlog Items for Ralph
+# Optional backlog items for Ralph
 
 Use these issues for discussion after the Issue 001 review. They are outside the
 required lab deliverable.
@@ -10,7 +10,7 @@ exercise.
 
 ---
 
-## Issue 6: Add Rate Limiting
+## Issue 6: Add rate limiting
 
 ```bash
 gh issue create --title "Add basic rate limiting to API" \
@@ -31,7 +31,7 @@ Protect the API from abuse by adding basic rate limiting.
 
 ---
 
-## Issue 7: Add GET /api/users/search Endpoint
+## Issue 7: Add GET /api/users/search endpoint
 
 ```bash
 gh issue create --title "Add user search endpoint" \
@@ -52,7 +52,7 @@ Allow searching users by name or email.
 
 ---
 
-## Issue 8: Add Created/Updated Timestamps
+## Issue 8: Add created/updated timestamps
 
 ```bash
 gh issue create --title "Add updatedAt timestamp to user model" \
@@ -72,7 +72,7 @@ Users have createdAt but no updatedAt. Add update tracking.
 
 ---
 
-## Issue 9: Add Pagination to GET /api/users
+## Issue 9: Add pagination to GET /api/users
 
 ```bash
 gh issue create --title "Add pagination to user listing" \
@@ -93,7 +93,7 @@ GET /api/users returns all users. Add pagination for scalability.
 
 ---
 
-## Issue 10: Add Error Codes to API Responses
+## Issue 10: Add error codes to API responses
 
 ```bash
 gh issue create --title "Standardize error responses with error codes" \
@@ -115,7 +115,7 @@ Error responses are inconsistent. Standardize with machine-readable codes.
 
 ---
 
-## Creating All Issues
+## Creating all issues
 
 Run each command in sequence:
 
@@ -129,7 +129,7 @@ The list shows five new issues, plus any remaining from Exercise 3.
 
 ---
 
-## What to Expect from Ralph
+## What to expect from Ralph
 
 When approved, `squad watch --execute` can use this flow:
 

@@ -1,15 +1,15 @@
-# Peer Review Checklist
+# Peer review checklist
 
-## Review Information
+## Review information
 
-- **PR Number:** #___
+- **PR number:** #___
 - **Author:**
 - **Reviewer:**
 - **Date:**
 
 ---
 
-## Review Before Assistance
+## Review before assistance
 
 Complete this short section before opening an assisted review.
 
@@ -20,7 +20,7 @@ Complete this short section before opening an assisted review.
 
 ---
 
-## Review Checklist
+## Review checklist
 
 ### Correctness
 
@@ -58,13 +58,13 @@ Complete this short section before opening an assisted review.
 
 ---
 
-## Review Comments
+## Review comments
 
 ### Comment 1
 
 - **File:**
 - **Line:**
-- **Severity:** 🔴 Critical / 🟡 Warning / 🟢 Suggestion
+- **Severity:** Critical / Warning / Suggestion
 - **Found by:** Human / Copilot / Both
 - **Issue:**
 - **Suggested fix:**
@@ -73,7 +73,7 @@ Complete this short section before opening an assisted review.
 
 - **File:**
 - **Line:**
-- **Severity:** 🔴 Critical / 🟡 Warning / 🟢 Suggestion
+- **Severity:** Critical / Warning / Suggestion
 - **Found by:** Human / Copilot / Both
 - **Issue:**
 - **Suggested fix:**
@@ -82,14 +82,14 @@ _(Add more as needed)_
 
 ---
 
-## Assisted Review Notes
+## Assisted review notes
 
 - **Tool or review surface:**
 - **Prompt or review scope:**
 
-## What Changed After the Assisted Review?
+## What changed after the assisted review?
 
-- **Useful new finding, after verification:**
+- **Useful new finding, after checking:**
 - **Unsupported or irrelevant finding rejected:**
 - **Did the final verdict change? Why or why not?**
 
@@ -99,7 +99,7 @@ _(Add more as needed)_
 - [ ] **Request changes**: blocking issues need correction
 - [ ] **Pause**: evidence, access, or scope remains unresolved
 
-## Short Reflection
+## Short reflection
 
 **What, if anything, did the assisted review add to your decision?**
 

@@ -1,4 +1,4 @@
-# Session m2-06: Repair and Refactor a Broken Python Application
+# Session m2-06: Repair and refactor a broken Python application
 
 **Module:** Module 2: Copilot in Practice
 
@@ -22,12 +22,10 @@ entry point.
 
 > [!IMPORTANT]
 > GitHub Copilot access is required for the guided workflow. If a learner cannot
-> access Copilot in the approved development environment, stop. Do not continue
+> access Copilot in the training environment, stop. Do not continue
 > until access is restored.
 
 ## Learning outcomes
-
-Learners practice how to:
 
 - reduce a broken Python program to the first actionable failure;
 - repair syntax and import faults without mixing in unrelated changes;

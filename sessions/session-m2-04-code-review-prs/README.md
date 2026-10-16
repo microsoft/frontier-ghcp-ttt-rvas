@@ -1,4 +1,4 @@
-# Session m2-04: Copilot for Code Review & Pull Requests
+# Session m2-04: Copilot for code review & pull requests
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
@@ -10,9 +10,9 @@
 Follow one pull request from change brief to final human decision. Learners inspect
 a flawed change, run `/review` and `/security-review` on its local diff, and compare
 those findings with Copilot PR review. They correct the code,
-resolve a conflict, and record the evidence required for approval.
+resolve a conflict, and record the diff, test output, and reviewer decision.
 
-## Learning Outcomes
+## Learning outcomes
 
 - Use Copilot to generate PR summaries and review comments
 - Configure automatic Copilot reviews at repository or organization level
@@ -21,9 +21,9 @@ resolve a conflict, and record the evidence required for approval.
 - Triage unsupported claims and check fixes with regression tests
 - Resolve merge conflicts using the cloud agent
 - Add Copilot to a team code-review workflow
-- Tie every blocking comment and accepted fix to reproducible evidence
+- Support every blocking comment and accepted fix with a code reference or reproducible check
 
-## Session Materials
+## Session materials
 
 | Resource                | Location                               |
 | ----------------------- | -------------------------------------- |
@@ -31,7 +31,7 @@ resolve a conflict, and record the evidence required for approval.
 | Lab starter files       | `lab/starter/`         |
 | Lab solution files      | `lab/solution/`       |
 
-## Key Topics
+## Key topics
 
 - PR summaries and commit message generation
 - Copilot code review, manual and automatic

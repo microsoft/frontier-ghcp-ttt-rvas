@@ -7,8 +7,8 @@ footer: 'Session m4-03: CI/CD Debugging & Agentic Remediation'
 ---
 
 <!-- _class: lead -->
-# Evidence Before Repair
-## DevOps & Infrastructure | Advanced
+# Evidence before repair
+## DevOps & infrastructure | Advanced
 
 Session m4-03 | 3 hours
 
@@ -54,7 +54,7 @@ If these commands pass locally, the workflow may still use the wrong runtime,
 directory, environment, or job order.
 
 ---
-# Give Copilot bounded evidence
+# Give Copilot the workflow and failed-step output
 
 ```text
 Read this workflow and failed-step output. Separate observations from hypotheses.
@@ -68,7 +68,7 @@ proof command. Do not change unrelated jobs.
 # Do not reveal the answer early
 
 1. Read the failed step.
-2. Record exact evidence.
+2. Record the exact log output.
 3. Reproduce the relevant command.
 4. State one hypothesis.
 5. Repair one cause.

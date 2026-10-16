@@ -1,4 +1,4 @@
-# Suggest Challenges
+# Suggest challenges
 
 Use the standalone `copilot` CLI for each task below. Ask in interactive mode or
 with `copilot -p "Suggest a command to ..."`. Review the suggestion before running
@@ -6,7 +6,7 @@ it, then record whether it meets the requirements.
 
 ---
 
-## Challenge 1: Find Large Python Files
+## Challenge 1: Find large Python files
 
 **Task:** Find all Python files (`.py`) in the current directory tree that are larger than 1MB.
 
@@ -26,7 +26,7 @@ Tell Copilot this should be a **shell** command.
 
 ---
 
-## Challenge 2: Recent Commits by Author
+## Challenge 2: Recent commits by author
 
 **Task:** Show all commits from the last 7 days written by a specific author (use your own name or "octocat").
 
@@ -46,7 +46,7 @@ Tell Copilot this should be a **git** command.
 
 ---
 
-## Challenge 3: Branch, Commit, and Push
+## Challenge 3: Branch, commit, and push
 
 **Task:** Create a new branch called `feature/cli-lab`, make a commit with message
 "add CLI lab files", and push the branch in one line.
@@ -65,11 +65,11 @@ Tell Copilot this should be a **git** command.
 **Does it work?**___  
 **Did you need to refine?** ___
 
-> **Safety note:** Don't actually run this command unless you want to create the branch! Review the suggestion first.
+> **Safety note:** Do not run this command unless you intend to create the branch, commit, and push. Review the suggestion first.
 
 ---
 
-## Challenge 4: Top 10 Largest Files
+## Challenge 4: Top 10 largest files
 
 **Task:** Find the top 10 largest files in the current directory tree, showing their sizes in human-readable format.
 
@@ -89,7 +89,7 @@ Tell Copilot this should be a **shell** command.
 
 ---
 
-## Challenge 5: List Assigned Issues
+## Challenge 5: List assigned issues
 
 **Task:** List all open issues assigned to you in a GitHub repository (use `octo-org/octo-repo` as the example repo).
 

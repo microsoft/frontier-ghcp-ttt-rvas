@@ -2,7 +2,7 @@
 
 ## Access path
 
-- [x] Required Copilot access confirmed
+- [x] Required Copilot access checked
 
 ## Prompt iterations
 

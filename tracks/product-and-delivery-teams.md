@@ -10,11 +10,11 @@
 ## Description
 
 This track teaches product and delivery teams to use the GitHub Copilot app as a
-working environment. The six sessions form one path called **Delivery Decision
-Studio**. That name is a curriculum wrapper, not a GitHub product or app mode.
+working environment. The six-session path is called **Delivery Decision
+Studio**. This is the curriculum's name, not a GitHub product or app mode.
 
 Learners carry one initiative through context gathering, decision shaping, issue
-planning, a planning canvas, parallel review, and a bounded follow-up draft.
+planning, a planning canvas, parallel review, and a follow-up draft with defined limits.
 
 The initiative is the fictional **Service Request Portal**. Do not replace it
 with customer work in the standard path. Trainer-approved substitutions must be
@@ -67,10 +67,10 @@ Keep these terms separate:
 
 Installing a plugin is not the same as verifying the GitHub MCP connection.
 
-### 3. Verify skills
+### 3. Check skills
 
 Sessions m7-04 and m7-05 use the built-in `/create-canvas` and `/orchestrate` skills.
-Type `/` in a session and confirm that both commands appear before those sessions.
+Type `/` in a session and check that both commands appear before those sessions.
 They are built-in app skills, so do not install look-alike community skills.
 
 Session m7-02 supplies a project skill under
@@ -80,24 +80,24 @@ repository:
 1. commit the skill;
 2. open a new app session for the project;
 3. open **Customize** → **Skills** → **Installed**;
-4. confirm that `decision-interview` appears;
+4. check that `decision-interview` appears;
 5. run `/decision-interview` with a short test request.
 
-Copilot CLI users can verify the same project skill with:
+Copilot CLI users can check the same project skill with:
 
 ```text
 /skills reload
 /skills info decision-interview
 ```
 
-### 4. Verify GitHub MCP
+### 4. Check GitHub MCP
 
 Sessions m7-03 to m7-06 require GitHub repository tools.
 
 In the app:
 
 1. open **Customize** → **MCP** → **Installed**;
-2. confirm that the approved GitHub MCP connection is available;
+2. check that the approved GitHub MCP connection is available;
 3. start a session and ask Copilot to list the available GitHub tools;
 4. test one read against the training repository;
 5. do not continue to a write lab until the read succeeds.
@@ -127,9 +127,9 @@ personal access tokens into prompts or repository files.
 When a required tool is unavailable, stop that lab. Do not replace hands-on work
 with role-play or claim that a static artifact proves the workflow ran.
 
-### 6. Verify session controls and context syntax
+### 6. Check session controls and context syntax
 
-Before Session m7-01, confirm these controls in the current app:
+Before Session m7-01, check these controls in the current app:
 
 - session modes: **Interactive**, **Plan**, and **Autopilot**;
 - `@` for adding files, `#` for referencing issues, and `/` for commands;
@@ -139,8 +139,8 @@ Before Session m7-01, confirm these controls in the current app:
 - `/rubber-duck` for an independent critique from a different model.
 
 GitHub notes that command availability depends on context. Type `/` in the app
-before delivery. If a command is missing, use a trainer verification note rather
-than teaching an unverified substitute.
+before delivery. If a command is missing, record it in the trainer notes.
+Do not teach a substitute without checking that it works.
 
 ## Delivery Decision Studio continuity
 
@@ -149,11 +149,11 @@ Use these roles throughout the path:
 | Role | Responsibility |
 | --- | --- |
 | Decision owner | Makes product and scope decisions |
-| Delivery reviewer | Checks evidence, readiness, and handoffs |
-| Work-system steward | Confirms the authoritative GitHub or Azure Boards state |
-| Trainer | Verifies access and teaches optional maturity guidance |
+| Delivery reviewer | Checks results, readiness, and handoffs |
+| Work-system steward | Checks the authoritative GitHub or Azure Boards state |
+| Trainer | Checks access and teaches optional maturity guidance |
 
-Use these durable artifacts:
+Save and reuse these results:
 
 | Session | Authoritative result | Used next |
 | --- | --- | --- |
@@ -205,10 +205,10 @@ By completing this track, learners will be able to:
 
 1. Compare unscoped and repository-grounded Copilot work.
 2. Install and use a project skill to create and revise a decision brief.
-3. Use GitHub MCP to preview, create, verify, and correct an issue plan.
+3. Use GitHub MCP to preview, create, check, and correct an issue plan.
 4. Create a planning canvas and reconcile it after GitHub state changes.
 5. Use built-in orchestration to supervise, redirect, and review child sessions.
-6. Run and compare two draft-only Automation runs with explicit evidence.
+6. Run a draft-only Automation twice and compare the recorded results.
 7. Decide which approved work system remains authoritative.
 
 ## Trainer guidance
@@ -217,7 +217,7 @@ By completing this track, learners will be able to:
 - Keep customer and source organization names out of prompts, artifacts, issues,
   screenshots, and demonstrations.
 - Teach the product through one continuous delivery workflow. Avoid a disconnected feature tour.
-- Verify current official GitHub documentation and organizational policy before every live delivery.
+- Check current official GitHub documentation and organizational policy before every live delivery.
 - Treat generated output as a proposal. The accountable person accepts, rejects, or revises it.
 - Keep the path no-code. Learners review generated extensions and tool calls but
   do not write application code, MCP servers, plugins, or canvas extensions.
@@ -227,8 +227,8 @@ By completing this track, learners will be able to:
 Use Azure Boards only when the delivery plan calls for it before the workshop.
 Do not introduce it as an alternate learner path during the standard labs.
 
-The tools described in `scripts/azure-boards/README.md` seed, verify,
-and reset a synthetic backlog for Agile or Scrum projects. They verify existing
+The tools described in `scripts/azure-boards/README.md` seed, check,
+and reset a synthetic backlog for Agile or Scrum projects. They check existing
 project settings and never create them.
 
 Use the [Session m7-02 supplement](../sessions/session-m7-02-interview-and-shape-work/lab/azure-boards/README.md)

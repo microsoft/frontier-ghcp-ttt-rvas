@@ -7,9 +7,9 @@ mkdir -p .github/skills/development-workflow
 touch .github/skills/development-workflow/SKILL.md
 ```
 
-Before use, name the bounded task, required permissions and data, reviewer,
-validation, recovery step, and stop condition. Verify current documentation and
-customer policy before a live demonstration.
+Before use, name the task and allowed files, required permissions and data,
+reviewer, test command, recovery step, and stop condition. Check current
+documentation and customer policy before a live demonstration.
 
 ```markdown
 ---

@@ -1,4 +1,4 @@
-# GitHub Issue Plan
+# GitHub issue plan
 
 > Temporary preview only. The created GitHub issues become authoritative.
 

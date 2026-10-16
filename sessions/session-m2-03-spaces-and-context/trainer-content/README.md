@@ -1,4 +1,4 @@
-# Session m2-03: Context Workflows
+# Session m2-03: Context workflows
 
 ## Trainer content guide
 
@@ -85,7 +85,7 @@ Ask learners to identify a task that would be easier to review with fewer files.
 | 0:00 to 0:08 | Diagnose the context problem | Learners distinguish missing information from excess noise. |
 | 0:08 to 0:18 | Context hierarchy | Learners rank task, instructions, curated sources, and local references. |
 | 0:18 to 0:30 | Curated context workflows | The group creates a purpose, audience, source list, and owner. |
-| 0:30 to 0:42 | Instructions and reusable prompts | Learners separate durable rules from repeatable tasks. |
+| 0:30 to 0:42 | Instructions and reusable prompts | Learners separate project-wide rules from repeatable tasks. |
 | 0:42 to 0:50 | Source governance and maintenance | Each source receives scope and freshness checks. |
 | 0:50 to 0:58 | Scripted before/after demo | The group compares two responses with the source files. |
 | 0:58 to 1:00 | Close and lab handoff | Learners begin with the context packet. |
@@ -136,7 +136,7 @@ Expected answers include unrelated repositories, production records, secrets, an
 ### Detailed talking points
 
 1. Task intent and acceptance criteria define the immediate outcome.
-2. Repository instructions provide durable, reviewed conventions.
+2. Repository instructions provide reviewed project-wide conventions.
 3. Reusable prompt files encode repeatable workflows.
 4. Curated collections can bring code, docs, issues, and specifications together.
 5. Current files and named references supply local context.
@@ -160,7 +160,7 @@ Exclude the unrelated roadmap and production log.
 
 ### Transition
 
-> "A useful curated workflow makes that source decision explicit and maintainable."
+> "Record why each source is included and who will maintain it."
 
 ## Segment 3: Curated context workflow (0:18 to 0:30)
 
@@ -199,7 +199,7 @@ Exclude:
 
 - A curated Space may support this workflow when it is available and approved.
 - Do not infer sharing, access, retention, or entitlement behavior.
-- Verify those facts in current official documentation and organizational policy.
+- Check those facts in current official documentation and organizational policy.
 - Source-level access does not automatically authorize a new audience or use.
 - Assign an owner and review trigger before sharing.
 - Test the packet with a known question whose answer exists in the sources.
@@ -234,10 +234,10 @@ Learners can explain why every included source is necessary and why every exclud
 - Use the supplied stale CommonJS note in the copied project only. Compare it
   with the current ES-module contract, correct that note, restart, and inspect
   again. Do not disable personal, managed, or security rules.
-- Keep durable conventions separate from one feature's requirements.
+- Keep project-wide conventions separate from one feature's requirements.
 - Review instruction files through the repository's normal process.
 - Instructions guide proposals; they are not enforcement or proof.
-- Verify current supported paths, names, and settings before demonstrating.
+- Check current supported paths, names, and settings before demonstrating.
 - Stop the runtime-inspection exercise if a required command or source cannot
   be inspected. A manual checklist does not prove loading.
 
@@ -258,7 +258,7 @@ End with assumptions, cited evidence, and the focused validation command.
 
 Ask pairs to label each sentence as:
 
-- durable instruction;
+- project-wide instruction;
 - task-specific prompt;
 - acceptance criterion;
 - unsuitable vague guidance.
@@ -292,7 +292,7 @@ For every source or remembered fact, ask:
 
 ### Safe delivery wording
 
-> "Availability-dependent memory or context features must be verified before use. Never store secrets, restricted material, or guesses. The manual source log remains authoritative for this exercise."
+> "Check that memory or context features are available before use. Never store secrets, restricted material, or guesses. The manual source log remains authoritative for this exercise."
 
 ### Transition
 
@@ -350,7 +350,7 @@ Add a low-stock report endpoint.
 
 The response may place the route after `/:id`, accept invalid thresholds, invent an error, or omit verification.
 
-Variation is acceptable; the teaching point is that the request lacks evidence.
+Results may vary. The request lacks the source files needed to judge the proposal.
 
 ### Pass B: Grounded prompt
 
@@ -507,5 +507,5 @@ or memory feature.
 - [ ] Exclusions are clear.
 - [ ] One known-answer question is ready.
 - [ ] Maintenance triggers are assigned.
-- [ ] Required Spaces and GitHub Copilot access is confirmed.
+- [ ] Required Spaces and GitHub Copilot access is checked.
 - [ ] A usage limit is recorded when it applies.

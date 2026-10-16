@@ -16,7 +16,7 @@ record the paths and decisions produced by their own HVE run.
 * Selected approach: one router instance per app, with process-local records
 * Rejected approach: module-global records because tests and app instances would share state
 * Constraints: no new application dependency, persistence, authentication, or extra endpoint
-* Discriminating checks: malformed JSON and a duplicate title with changed case and spacing
+* Checks that challenge the approach: malformed JSON and a duplicate title with changed case and spacing
 
 ## Plan reference
 
@@ -43,8 +43,8 @@ Activation is proven when a later artifact cites or applies one of those rules.
 
 ## Product and Agile reference
 
-Product Manager Advisor should recommend a bounded experiment. The intended value
-is faster, more consistent capture of decisions. Adoption and durable retention
+Product Manager Advisor should recommend an experiment with a defined scope. The intended value
+is faster, more consistent capture of decisions. Adoption and long-term retention
 remain assumptions, and a human must decide who owns decision quality.
 
 Agile Coach should produce a story similar to:

@@ -32,7 +32,7 @@ Session m1-01 | 3 hours
 
 ---
 
-# The durable workflow
+# The review workflow
 
 ```text
 Define observable behavior
@@ -88,14 +88,14 @@ Useful context includes:
 - selected code and nearby files;
 - tests and repository instructions.
 
-More context is useful only when it is relevant and approved.
+Use context only when it is relevant and you may use it for the task.
 
 ---
 
 # Preflight before use
 
-1. Confirm the account and surface.
-2. Confirm the repository and data classification.
+1. Check the account and surface.
+2. Check the repository and data classification.
 3. Limit the task to named files.
 4. Name any metered-work owner and stop condition.
 
@@ -118,7 +118,7 @@ inspect, accept, revise, or reject an inline suggestion.
 
 **Revise** when the direction is useful but a detail is wrong.
 
-**Reject** when it changes scope, invents behavior, or is hard to verify.
+**Reject** when it changes scope, invents behavior, or is hard to check.
 
 Undo is a normal review action.
 
@@ -194,14 +194,14 @@ A predicted edit can miss a reference.
 
 # Access check
 
-Confirm that every learner can request and review an inline suggestion before the
+Check that every learner can request and review an inline suggestion before the
 lab starts. Fix access problems before handing off the exercise.
 
 ---
 
 # Lab handoff
 
-You will evolve one Python utility module:
+You will extend one Python utility module:
 
 1. complete `normalize_username` and `is_palindrome`;
 2. decide how apostrophes count in `word_frequency`;

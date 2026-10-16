@@ -2,7 +2,7 @@
 description: "Trainer guide and prepared demo for a reliable GitHub Copilot SDK application"
 ---
 
-# Session m6-01 Trainer Guide: Build Reliable Agent Applications with the GitHub Copilot SDK
+# Session m6-01 trainer guide: Build reliable agent applications with the GitHub Copilot SDK
 
 **Duration:** 60 minutes  
 **Format:** Concept teaching, prepared live demo, lab briefing
@@ -33,15 +33,15 @@ Use [`slides.md`](../slides.md) for the teaching sequence.
 
 Prepare the delivery machine before learners arrive:
 
-1. Confirm Node.js and npm meet the versions declared in the supplied project.
-2. Confirm Docker Engine and Docker Compose can start the supplied local stack.
-3. Confirm authenticated GitHub Copilot SDK access with the same account and
+1. Check Node.js and npm meet the versions declared in the supplied project.
+2. Check Docker Engine and Docker Compose can start the supplied local stack.
+3. Check authenticated GitHub Copilot SDK access with the same account and
    network path learners will use.
 4. Run `npm ci`, the test command, and the type-check command in the reference
    solution.
 5. Start the OpenTelemetry Collector and Jaeger from the reference solution.
 6. Run one successful readiness assessment and find its trace in Jaeger.
-7. Run the denied action and confirm the reason appears in both terminal output
+7. Run the denied action and check that the reason appears in both terminal output
    and trace data.
 8. Keep the solution project open at the files used in the demo.
 
@@ -99,7 +99,7 @@ hook blocks them before the handler runs.
 
 ### Failure and error hooks
 
-Explain the distinction with two prepared runs:
+Explain the distinction with these prepared cases:
 
 - malformed input returns a fixed validation result;
 - a failed tool execution enters `onPostToolUseFailure`;
@@ -123,7 +123,7 @@ that reason.
 **Level:** L300  
 **Time:** 10 minutes
 
-### WOW moment
+### Demo focus
 
 The terminal shows a denied lookup for `RESTRICTED-0001`. Seconds later, the
 trainer opens Jaeger and points to the same blocked tool call inside the connected
@@ -131,7 +131,7 @@ trace. The policy is visible from both the user and operator view.
 
 ### Demo prerequisites
 
-- Authenticated GitHub Copilot SDK access is confirmed.
+- The authenticated GitHub Copilot SDK access check passed.
 - Node.js, npm, Docker, and Docker Compose are working.
 - The reference solution dependencies are installed.
 - The solution tests pass.
@@ -147,7 +147,7 @@ trace. The policy is visible from both the user and operator view.
    `src/permission-policy.ts`, `src/hook-decisions.ts`, the tests, and the
    telemetry configuration.
 
-   > **Say this:** "The model does not own this data or policy. It can reason over
+   > "The model does not own this data or policy. It can reason over
    > one fixed record. TypeScript decides which capability exists and whether the
    > exact call may run."
 
@@ -160,7 +160,7 @@ trace. The policy is visible from both the user and operator view.
    npm run check
    ```
 
-   > **Say this:** "I want the control path green before I involve a live model.
+   > "I want the control path green before I involve a live model.
    > These tests check known data, denial, failure handling, streaming, and
    > cleanup. They do not compare natural-language answers."
 
@@ -173,7 +173,7 @@ trace. The policy is visible from both the user and operator view.
    docker compose -f compose.yaml ps
    ```
 
-   > **Say this:** "The SDK exports OTLP data to the Collector on port 4318. The
+   > "The SDK exports OTLP data to the Collector on port 4318. The
    > Collector forwards traces to Jaeger. The CLI stays unaware of the Jaeger
    > backend."
 
@@ -182,14 +182,14 @@ trace. The policy is visible from both the user and operator view.
    Run `npm run demo`. The first request assesses `CR-1042`. Let the response
    stream to the terminal.
 
-   > **Say this:** "You see text as it arrives. The final event is still recorded,
+   > "You see text as it arrives. The final event is still recorded,
    > but the renderer does not print it a second time."
 
 5. **Watch the restricted lookup.**
 
    The third prepared prompt requests `RESTRICTED-0001`.
 
-   > **Say this:** "The tool is known to the application, so the request reaches
+   > "The tool is known to the application, so the request reaches
    > policy. The pre-tool hook checks the request ID and denies this lookup before
    > the handler can run."
 
@@ -198,7 +198,7 @@ trace. The policy is visible from both the user and operator view.
    Read the denial reason from the terminal. Show the audit entry produced by the
    application.
 
-   > **Say this:** "A denied action is an expected result. The user gets a reason,
+   > "A denied action is an expected result. The user gets a reason,
    > and the audit path records the decision. Nothing is silently dropped."
 
 7. **Open Jaeger.**
@@ -206,7 +206,7 @@ trace. The policy is visible from both the user and operator view.
    Open the local Jaeger UI, select the service name declared by the project, and
    find the latest trace.
 
-   > **Say this:** "This is the same run from the operator view. The trace shows
+   > "This is the same run from the operator view. The trace shows
    > the session work and the blocked tool call. There is no handler span after
    > the denial."
 
@@ -215,7 +215,7 @@ trace. The policy is visible from both the user and operator view.
    Point to the `bad-id` run. Then show the failed-tool hook test and session-end
    hook test.
 
-   > **Say this:** "Invalid input is different from denied policy. The tool returns
+   > "Invalid input is different from denied policy. The tool returns
    > a fixed validation result. A failed tool execution uses its own hook, and the
    > session-end hook records why the session closed."
 
@@ -224,26 +224,25 @@ trace. The policy is visible from both the user and operator view.
    Stop the application. Leave the trace stack running for the lab if the training
    machine is shared and the instructor setup permits it.
 
-   > **Say this:** "The reliable part is not the wording of the answer. It is the
-   > chain of bounded capability, explicit decision, visible outcome, test
-   > evidence, and trace evidence."
+   > "We check reliability through tool limits, permission decisions,
+   > visible outcomes, tests, and traces."
 
 ### Demo troubleshooting
 
 | Problem | Response |
 | --- | --- |
-| SDK authentication fails | Stop the demo. Confirm the approved GitHub Copilot sign-in and network path. Do not use BYOK or another provider. |
-| No streamed text appears | Confirm the session enables streaming and the handler listens for parent `assistant.message_delta` events. |
+| SDK authentication fails | Stop the demo. Check the GitHub Copilot sign-in and permitted network path. Do not use BYOK or another provider. |
+| No streamed text appears | Check the session enables streaming and the handler listens for parent `assistant.message_delta` events. |
 | Restricted data reaches the handler | Stop. Check the exact tool name and parsed `requestId` in `onPreToolUse`, then rerun the denial test. |
 | Collector is unreachable | Check Docker Compose health and the OTLP HTTP endpoint configured as `http://localhost:4318`. |
-| Jaeger shows no trace | Confirm the Collector exports to Jaeger, select the configured service name, and widen the time range. |
+| Jaeger shows no trace | Check the Collector exports to Jaeger, select the configured service name, and widen the time range. |
 | Output appears twice | Check whether both message deltas and the final assistant message are printed as primary output. |
 
 ### Transition to the lab
 
 Say:
 
-> "You will now build the same reliability rail in the starter project. Finish one
+> "You will now add the same controls to the starter project. Finish one
 > layer at a time, run the focused checks at each checkpoint, and do not continue
 > if access or Docker preflight fails."
 

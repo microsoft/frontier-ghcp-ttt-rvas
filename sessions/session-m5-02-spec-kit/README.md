@@ -1,4 +1,4 @@
-# Session m5-02: Spec Kit: Specification-Driven Development
+# Session m5-02: Spec Kit: Specification-driven development
 
 **Module:** Specification-Driven Frameworks
 
@@ -9,7 +9,7 @@
 
 ## Overview
 
-Use Spec Kit to carry one bounded change from a feature request to tested code.
+Use Spec Kit to carry one feature request through to tested code.
 Learners initialize an existing Python project, create the Spec Kit artifacts,
 implement an archive operation, and run convergence review. They then update the
 living specification to add restore behavior and repeat the workflow.
@@ -33,7 +33,7 @@ does not ship substitute skills or a `.specify.yml` configuration file.**
 - Turn the accepted specification into a plan and dependency-ordered tasks.
 - Convert generated tasks into GitHub Issues.
 - Implement the change in stages and use convergence to find missing work.
-- Evolve a living specification and bring downstream artifacts back into alignment.
+- Evolve a living specification and update the plan, tasks, and code to match.
 - Explain which files come from Spec Kit and which records belong to the team.
 
 ## Required access

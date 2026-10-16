@@ -1,4 +1,4 @@
-# Decision Brief: <Short Title>
+# Decision brief: <Short title>
 
 ## Status
 

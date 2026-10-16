@@ -8,7 +8,7 @@ footer: 'Session m7-02: Interview Ideas and Shape Better Work'
 
 <!-- _class: lead -->
 
-# Interview Ideas and Shape Better Work
+# Interview ideas and shape better work
 
 Session m7-02 | Product and Delivery Teams | 3 hours
 
@@ -21,7 +21,7 @@ Before the session:
 - Copy the supplied project skill to
   `.github/skills/decision-interview/SKILL.md`.
 - Start a new project session.
-- Confirm `decision-interview` under **Customize** → **Skills**.
+- Check `decision-interview` under **Customize** → **Skills**.
 - Run `/decision-interview` with the short test request.
 
 **Stop the lab if any check fails.**
@@ -119,7 +119,7 @@ GitHub Copilot frames the choice. **A person owns the choice.**
 | Known technical limits | Which tradeoff to accept |
 | Policy and data rules | Who approves release |
 
-Mark a fact as unverified. Do not present it as settled.
+Mark unsupported claims as unverified. Do not present them as facts.
 
 ---
 
@@ -156,7 +156,7 @@ Keep it short enough to review in one sitting.
 Ask GitHub Copilot to draft:
 
 - user and outcome;
-- bounded scope and non-goals;
+- defined scope and non-goals;
 - acceptance criteria;
 - dependencies and risks;
 - owner and reviewer;
@@ -185,7 +185,7 @@ Do not restart the interview or rewrite settled scope without evidence.
 
 ---
 
-# Verify in a fresh session
+# Check in a fresh session
 
 Give a new session only:
 

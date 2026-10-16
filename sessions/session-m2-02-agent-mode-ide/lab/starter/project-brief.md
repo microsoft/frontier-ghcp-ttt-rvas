@@ -1,12 +1,12 @@
-# Project Brief: Todo API
+# Project brief: Todo API
 
-## What to Build
+## What to build
 
 Build an Express.js REST API for a simple task list.
 
 ## Requirements
 
-### API Endpoints
+### API endpoints
 
 | Method   | Route            | Description                                                                                                    |
 | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -16,7 +16,7 @@ Build an Express.js REST API for a simple task list.
 | PUT      | `/api/todos/:id` | Update any todo field. Return 404 when the todo does not exist.                                                |
 | DELETE   | `/api/todos/:id` | Delete a todo. Return 404 when the todo does not exist.                                                        |
 
-### Data Model
+### Data model
 
 Each todo has:
 
@@ -28,7 +28,7 @@ Each todo has:
 - `createdAt`: automatically generated ISO timestamp
 - `updatedAt`: automatically updated ISO timestamp
 
-### Technical Requirements
+### Technical requirements
 
 - **Runtime:** Node.js with Express.js
 - **Storage:** In-memory array (no database)
@@ -37,7 +37,7 @@ Each todo has:
 - **Testing:** At least 5 test cases using a test framework (Jest or similar)
 - **Structure:** Separate routes, middleware, and utilities into their own files
 
-### Project Structure
+### Project structure
 
 ```
 todo-api/
@@ -54,7 +54,7 @@ todo-api/
     └── todos.test.js       # API tests
 ```
 
-### Example Requests & Responses
+### Example requests & responses
 
 **Create a todo:**
 

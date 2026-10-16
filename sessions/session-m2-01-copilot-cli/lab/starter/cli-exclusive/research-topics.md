@@ -1,10 +1,10 @@
-# Research Topics for `/research`
+# Research topics for `/research`
 
-Choose one topic and use `/research` in the Copilot CLI. Compare the result with a normal chat prompt, then verify its sources and claims.
+Choose one topic and use `/research` in the Copilot CLI. Compare the result with a normal chat prompt, then check its sources and claims.
 
 ---
 
-## Topic 1: Express.js Security Best Practices (Recommended)
+## Topic 1: Express.js security best practices (recommended)
 
 ```
 /research What are the current security best practices for Express.js middleware in 2026? Cover OWASP Top 10 mitigations, recommended security packages (helmet, cors, rate-limit), and common vulnerability patterns to avoid.
@@ -19,7 +19,7 @@ Choose one topic and use `/research` in the Copilot CLI. Compare the result with
 
 ---
 
-## Topic 2: Node.js Testing Strategies
+## Topic 2: Node.js testing strategies
 
 ```
 /research Compare the current Node.js testing ecosystem: node:test (built-in) vs Jest vs Vitest vs Mocha. Cover performance benchmarks, TypeScript support, watch mode capabilities, and migration paths. Which should a team starting a new project in 2026 choose?
@@ -34,7 +34,7 @@ Choose one topic and use `/research` in the Copilot CLI. Compare the result with
 
 ---
 
-## Topic 3: CLI Tool Architecture Patterns
+## Topic 3: CLI tool architecture patterns
 
 ```
 /research What are the best architecture patterns for building production CLI tools in Node.js? Cover argument parsing (yargs, commander, citty), configuration management, plugin systems, and testing strategies. Include examples from well-known CLI tools.

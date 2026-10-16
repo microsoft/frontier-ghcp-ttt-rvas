@@ -1,4 +1,4 @@
-# Session m1-03 Lab: Prompt and Evolve a Todo API
+# Session m1-03 lab: Prompt and extend a Todo API
 
 **Duration:** 2 hours
 
@@ -23,7 +23,7 @@ decision open.
 | 3 | Implement the REST routes from comments | 25 min |
 | 4 | Run a deliberate context experiment | 15 min |
 | 5 | Apply the priority change request | 25 min |
-| 6 | Verify and extract a reusable prompt | 10 min |
+| 6 | Check and extract a reusable prompt | 10 min |
 
 ## Before you start
 
@@ -172,7 +172,7 @@ Delete or undo one route handler so it can be proposed again.
 5. Request the same handler again with the same wording.
 6. Record any difference.
 
-The context may change the proposal, or it may not. Either result is valid evidence.
+The context may change the proposal, or it may not. Record either result.
 Keep the implementation that matches the route contract.
 
 **Checkpoint:** `prompt-log.md` records the two contexts and the observable result.
@@ -207,7 +207,7 @@ npm run check
 **Checkpoint:** All six tests pass, and the route supports a `priority` query
 filter.
 
-## Part 6: Verify and extract a reusable prompt (10 minutes)
+## Part 6: Check and extract a reusable prompt (10 minutes)
 
 Inspect the complete project diff:
 
@@ -236,7 +236,7 @@ implementation line by line.
 - [ ] `npm test` passes six tests.
 - [ ] `/refine` ran in the CLI; its rewrite was checked before implementation.
 - [ ] Baseline behavior still passes after the priority change.
-- [ ] Invalid priority behavior is explicit in code, tests, and notes.
+- [ ] The code, tests, and notes state the invalid-priority behavior.
 - [ ] No package beyond the declared Express dependency was added.
 - [ ] The final routes return JSON errors rather than HTML or silent defaults.
 

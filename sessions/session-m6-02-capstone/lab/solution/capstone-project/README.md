@@ -1,9 +1,9 @@
-# Bookmark Creation Reference
+# Bookmark creation reference
 
 This project implements only `POST /api/bookmarks`. It uses in-memory storage and
 the dependencies supplied in `package.json`.
 
-## Verify
+## Check
 
 ```bash
 npm install

@@ -1,4 +1,4 @@
-# Stakeholder Update
+# Stakeholder update
 
 **Reporting scope:** `<scope>`
 

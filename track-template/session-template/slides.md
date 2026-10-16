@@ -64,18 +64,18 @@ Use one concept per slide when the ideas need separate discussion.
 | [Situation B] | [Path B] | [Reason] |
 | [Boundary or stop condition] | [Pause or recovery] | [Reason] |
 
-The trainer should be able to explain why a path is chosen, not only how to run it.
+Explain why you chose the path as well as how to run it.
 
 ---
 
 # Prepared demonstration
 
-Show a small, bounded example that connects the concept to the lab.
+Show a small example that connects the concept to the lab.
 
 1. Establish the starting state.
 2. Explain the next action and the expected result.
 3. Point out one failure or review decision.
-4. State what evidence makes the result acceptable.
+4. Name the test results or other checks needed to accept the result.
 
 Keep the demo focused. It should teach the workflow, not perform the whole lab.
 
@@ -87,9 +87,9 @@ Keep the demo focused. It should teach the workflow, not perform the whole lab.
 
 Learners will:
 
-1. [Complete the first bounded task.]
+1. [Complete the first task within its stated limits.]
 2. [Apply the concept to the supplied materials.]
 3. [Produce a reviewable deliverable.]
-4. [Verify the result using the stated checks.]
+4. [Check the result using the stated commands or review steps.]
 
-**Success looks like:** [A concrete, observable outcome.]
+**Expected result:** [Name the output or behavior learners must produce.]

@@ -9,7 +9,10 @@
 
 ## Description
 
-The complete GitHub Copilot & Agentic Workflows curriculum: every session, every module, and every lab. This track prepares trainers to teach technical teams and non-developer product or delivery audiences. It covers first-time setup, agentic delivery, DevOps automation, and role-based supervision of agent work.
+This track includes all 29 sessions in the GitHub Copilot & Agentic Workflows
+curriculum. It prepares trainers to teach technical teams and non-developer
+product or delivery audiences. Topics include first-time setup, agentic delivery,
+DevOps automation, and supervision of agent work.
 
 ## Prerequisites
 
@@ -89,9 +92,9 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | 28 | m7-05 | Orchestrate Agents and Workstreams | Intermediate | 3 hrs |
 | 29 | m7-06 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | 3 hrs |
 
-## Recommended Delivery Schedule
+## Recommended delivery schedule
 
-### 10-Day Intensive
+### 10-day intensive
 
 | Day | Sessions | Focus |
 | --- | --- | --- |
@@ -106,7 +109,7 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 9 | Sessions m7-02, m7-03, m7-04 | Interviewing + GitHub planning + Planning canvas |
 | Day 10 | Sessions m7-05, m7-06 | Orchestration + Automation |
 
-### 15-Day Standard
+### 15-day standard
 
 | Day | Sessions | Focus |
 | --- | --- | --- |
@@ -126,11 +129,11 @@ The complete GitHub Copilot & Agentic Workflows curriculum: every session, every
 | Day 14 | Sessions m7-04, m7-05 | Planning canvas + Orchestration |
 | Day 15 | Session m7-06 | Automation |
 
-## Learning Outcomes
+## Learning outcomes
 
 By completing this track, trainees will be able to:
 
-1. Deliver any session in the curriculum confidently with full trainer content
+1. Deliver any session using its trainer materials
 2. Customize delivery for developer, DevOps, enterprise, product, and delivery audiences
 3. Use the complete Copilot toolchain: inline, Chat, CLI, agent mode, Copilot App, canvases, cloud agent, Spaces, custom agents, MCP, skills
 4. Build canvas extensions, custom MCP servers, agent profiles, and agent skills
@@ -141,9 +144,9 @@ By completing this track, trainees will be able to:
 9. Design and execute end-to-end agentic development workflows
 10. Assess trainee progress and adapt delivery based on audience needs
 11. Create a personal trainer delivery plan for their organization
-12. Teach non-developers to create briefs, issues, canvases, orchestrated work, and bounded Automations with GitHub Copilot
-13. Teach HVE Research, Plan, Implement, Review, and Follow-up through a complete evidence chain
-14. Teach developers to use isolated Copilot App sessions, independent critique, and pull-request readiness evidence
+12. Teach non-developers to create briefs, issues, canvases, orchestrated work, and Automations with defined limits
+13. Teach HVE Research, Plan, Implement, Review, and Follow-up using linked phase results
+14. Teach developers to use isolated Copilot App sessions, independent critique, and test and review records for pull-request decisions
 
 **Live app access is required for Session m2-05 and either Session m7-05 route.**
 Prepared outputs support trainer explanation only. The schedule above uses
@@ -151,11 +154,9 @@ Session m7-05's product route after Sessions m7-01 to m7-04. For a developer-onl
 use its developer route after Session m2-05 instead; do not count the same session
 twice toward the 88-hour total. Session m3-05 requires live CLI skill loading.
 
-## Next Steps
+## Next steps
 
-You've completed the full curriculum. From here:
-
-- **Deliver:** Start with the track most relevant to your audience
-- **Customize:** Build custom tracks by mixing sessions for specific customer needs
-- **Contribute:** Help improve the curriculum based on your delivery experience
-- **Stay current:** Update materials as Copilot features evolve (check Preview → GA status)
+- Start with the track most relevant to your audience.
+- Combine sessions to match customer needs.
+- Update the curriculum based on your delivery experience.
+- Check feature status and update materials when Preview features reach GA.

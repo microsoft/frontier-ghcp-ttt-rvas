@@ -2,7 +2,7 @@
 description: "Two-hour TypeScript lab for a reliable GitHub Copilot SDK readiness assistant"
 ---
 
-# Session m6-01 Lab: Build a Traced Change Readiness Assistant
+# Session m6-01 lab: Build a traced change readiness assistant
 
 **Duration:** 120 minutes  
 **Difficulty:** Advanced  
@@ -12,7 +12,7 @@ description: "Two-hour TypeScript lab for a reliable GitHub Copilot SDK readines
 
 Complete a TypeScript CLI that uses the GitHub Copilot SDK to assess deterministic
 synthetic change records. The finished application must stream its response, call
-one bounded tool, deny a restricted lookup, record failures, pass focused tests,
+one tool limited to readiness lookups, deny a restricted lookup, record failures, pass focused tests,
 and export traces through an OpenTelemetry Collector to Jaeger.
 
 ## Final deliverables
@@ -20,7 +20,7 @@ and export traces through an OpenTelemetry Collector to Jaeger.
 Submit or demonstrate:
 
 1. a working CLI under `sdk-readiness-assistant/`;
-2. explicit client and session cleanup;
+2. client and session cleanup on every exit path;
 3. streamed parent-agent output without duplicate final text;
 4. the typed readiness tool over the supplied synthetic data;
 5. permission handling plus a pre-tool policy that visibly denies
@@ -29,7 +29,7 @@ Submit or demonstrate:
 7. passing tests and type checks;
 8. one Jaeger trace for a permitted assessment;
 9. one Jaeger trace or trace event showing the denied action;
-10. terminal evidence for the unknown-change failure path.
+10. terminal output for the unknown-change failure path.
 
 ## Time plan
 
@@ -50,7 +50,7 @@ Work from:
 sessions/session-m6-01-copilot-sdk/lab/starter/sdk-readiness-assistant/
 ```
 
-You must have:
+You need authenticated GitHub Copilot SDK access and these local tools and permissions:
 
 - authenticated GitHub Copilot SDK access;
 - Node.js and npm versions accepted by `package.json`;
@@ -291,7 +291,7 @@ Export one connected trace through the local Collector and inspect it in Jaeger.
 ### Steps
 
 1. Review `compose.yaml` and `otel-collector-config.yaml`.
-2. Confirm the SDK OTLP HTTP endpoint is:
+2. Check the SDK OTLP HTTP endpoint is:
 
    ```text
    http://localhost:4318
@@ -306,14 +306,14 @@ Export one connected trace through the local Collector and inspect it in Jaeger.
 
 4. Wait until the Collector and Jaeger services are healthy.
 5. Run `npm run demo`.
-6. Confirm `CR-1042` streams a ready assessment.
-7. Confirm `bad-id` returns the fixed invalid-input result.
-8. Confirm `RESTRICTED-0001` prints the denial reason.
-9. Confirm the session disconnects and the client stops.
+6. Check that `CR-1042` streams a ready assessment.
+7. Check that `bad-id` returns the fixed invalid-input result.
+8. Check that `RESTRICTED-0001` prints the denial reason.
+9. Check that the session disconnects and the client stops.
 10. Open the Jaeger UI at `http://localhost:16686`.
 11. Select the service name configured by the project.
 12. Find the three most recent runs.
-13. Open the denied run and confirm no lookup handler work follows the policy
+13. Open the denied run and check that no lookup handler work follows the policy
     denial.
 14. Locate the permitted and invalid-input paths.
 
@@ -338,7 +338,7 @@ Show the trainer:
 
 - [ ] Authenticated GitHub Copilot SDK preflight passed.
 - [ ] Node.js, npm, Docker, and Docker Compose preflight passed.
-- [ ] Client startup and shutdown are explicit.
+- [ ] The client starts before session creation and stops on every exit path.
 - [ ] The session streams parent output without duplicate final text.
 - [ ] The readiness tool reads only deterministic synthetic data.
 - [ ] Permission handling rejects unrelated requests.
@@ -356,13 +356,13 @@ Show the trainer:
 
 | Problem | Fix |
 | --- | --- |
-| `client.getAuthStatus()` reports unauthenticated | Stop. Confirm the approved GitHub Copilot sign-in and network path. Do not use BYOK or another provider. |
+| `client.getAuthStatus()` reports unauthenticated | Stop. Check the GitHub Copilot sign-in and permitted network path. Do not use BYOK or another provider. |
 | `CopilotClient` starts but session creation fails | Check the installed package lock, supported Node.js version, and current GitHub Copilot access. |
 | Output is duplicated | Print `assistant.message_delta` as live output and keep the final message for records only. |
 | Restricted data reaches the handler | Match the exact tool name and inspect parsed `toolArgs.requestId` in `onPreToolUse`. |
 | Unknown IDs produce an invented answer | Return a failed tool result and add failure-hook context that forbids invention. |
 | Tests call the live model | Mock the SDK session boundary and assert deterministic events or decisions. |
-| Collector cannot bind port 4318 | Stop the conflicting approved process or change the supplied local configuration consistently. |
+| Collector cannot bind port 4318 | Stop the conflicting process only if you may do so, or change the supplied local configuration consistently. |
 | Jaeger is empty | Check container health, the Collector export pipeline, service name, and Jaeger time range. |
 | Session state remains after completion | Delete the session ID in `onSessionEnd` and keep outer cleanup in `finally`. |
 
@@ -384,7 +384,7 @@ Review these areas in order:
 6. `compose.yaml` and `otel-collector-config.yaml` for trace routing.
 
 Do not copy the solution before the checkpoints. Use it to compare boundaries and
-verification evidence.
+test results and traces.
 
 ## Official references
 

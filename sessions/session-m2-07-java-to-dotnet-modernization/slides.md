@@ -8,7 +8,7 @@ footer: 'Session m2-07: Migrate a Legacy Java Service to Modern .NET'
 
 <!-- _class: lead -->
 
-# Migrate a Legacy Java Service to Modern .NET
+# Migrate a legacy Java service to modern .NET
 
 ## Preserve behavior one vertical slice at a time
 
@@ -57,7 +57,7 @@ The slice includes:
 | Cutover evidence arrives late | Each slice carries its own proof |
 | Java structure leaks into C# | Target design follows the contract |
 
-Small slices force honest decisions.
+Record unknown behavior before expanding the slice.
 
 ---
 
@@ -409,7 +409,7 @@ Keep Java behavior until its replacement has evidence.
 
 # Access stop
 
-Before the lab, confirm GitHub Copilot works in the approved coding environment.
+Before the lab, check that GitHub Copilot works in the training environment.
 
 If access is missing:
 
@@ -430,4 +430,4 @@ Inspect the Java service, complete architecture notes, implement the .NET pricin
 slice, run shared contract cases, compare HTTP responses, and write the migration
 backlog.
 
-**Success looks like one proven route, not a claimed rewrite.**
+**Complete one route and show its test results.**

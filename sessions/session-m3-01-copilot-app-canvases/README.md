@@ -1,4 +1,4 @@
-# Session m3-01: Copilot App, Plugins & Canvas Extensions
+# Session m3-01: Copilot app, plugins & canvas extensions
 
 **Module:** Agentic Workflows
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-This session teaches canvas extension design through one synthetic delivery-readiness board. Learners define the contract first, create the canvas in the GitHub Copilot app when access is approved, test direct and agent-requested updates, force a safe rejection, recover, and inspect the final canvas against the contract.
+Learners design a canvas extension for one synthetic delivery-readiness board. They define the contract, create the canvas in the GitHub Copilot app with the required access, and test direct and agent-requested updates. They then test a rejected update, recover, and compare the final canvas with the contract.
 
 A canvas is a shared interactive surface. People use visible controls while an agent uses named capabilities against the same state. The canvas does not replace the system that owns the work.
 
@@ -29,7 +29,7 @@ Learners submit:
 
 1. a completed canvas contract;
 2. a canvas created in an approved sandbox;
-3. checkpoint evidence for direct, agent-requested, rejected, and recovered changes;
+3. checkpoint records for direct, agent-requested, rejected, and recovered changes;
 4. a final state that matches the contract.
 
 ## Access policy
@@ -49,7 +49,7 @@ or install a replacement.**
 | [`slides.md`](slides.md) | Trainer-facing teaching deck |
 | [`lab/README.md`](lab/README.md) | Two-hour learner guide |
 | [`lab/starter/`](lab/starter/) | Prepared inputs and contract harness |
-| [`lab/solution/`](lab/solution/) | Worked contract, final state, and completed evidence |
+| [`lab/solution/`](lab/solution/) | Worked contract, final state, and completed change records |
 
 The default lab remains the delivery-readiness board. An optional **Feature
 Workbench** variant uses synthetic CI results to practice a test-gate decision:

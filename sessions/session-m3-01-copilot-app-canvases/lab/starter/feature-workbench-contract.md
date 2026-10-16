@@ -1,4 +1,4 @@
-# Optional Feature Workbench Contract
+# Optional Feature Workbench contract
 
 ## Purpose
 

@@ -18,8 +18,8 @@ Aptos/Outfit display stack, Aptos/Inter body stack, and blue actions.
 STORY: Find sessions, arrange a delivery set, and give the group one shared page.
 
 FORM: Extend the existing website using the user's specified reference
-select-and-share flow. This is a pinned extension inside an established world,
-not an open visual concept exercise. No concept roll ran; no seed is claimed.
+select-and-share flow. Keep the existing design. No visual concept selection
+or random seed was used.
 
 FIRST VIEWPORT: A searchable catalog beside a set composer. Native checkboxes
 keep selection clear; the composer shows the title, introduction, and delivery
@@ -27,7 +27,7 @@ order. On narrow screens, the composer sits above the catalog. The shared page
 shows only the selected sessions in their chosen order.
 
 INTERACTION: Selection survives filtering. Up/down buttons support keyboard
-reordering. An explicit Create page action exposes a shareable link; editing
+reordering. The Create page action exposes a shareable link; editing
 invalidates it. The current builder URL preserves the draft across reloads.
 No accounts, backend storage, or confidential text.
 

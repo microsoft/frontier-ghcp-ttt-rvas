@@ -1,4 +1,4 @@
-# Session m7-03: Plan Work with GitHub Issues and MCP
+# Session m7-03: Plan work with GitHub Issues and MCP
 
 **Module:** Product and Delivery Teams
 
@@ -11,15 +11,15 @@
 ## Overview
 
 Continue the **Delivery Decision Studio** path by turning the approved Session m7-02
-decision brief into a GitHub issue hierarchy. Verify the GitHub
+decision brief into a GitHub issue hierarchy. Check the GitHub
 MCP connection, inspect the repository, use Markdown to preview the full write,
-create the approved issues, then verify and correct them through fresh reads.
+create the approved issues, then check and correct them through fresh reads.
 The created GitHub issues are authoritative.
 
-The focus is safe tool use, not MCP server development.
+The session teaches safe tool use. Learners do not develop an MCP server.
 
 > [!IMPORTANT]
-> **The GitHub MCP connection and write access to the training repository are required.** Stop if the learner cannot inspect tools, preview the write, or verify the created issues.
+> **The GitHub MCP connection and write access to the training repository are required.** Stop if the learner cannot inspect tools, preview the write, or check the created issues.
 
 ## Learning outcomes
 
@@ -27,14 +27,14 @@ Learners practice how to:
 
 1. Explain what an MCP server lets Copilot do.
 2. Inspect the GitHub tools available to the current session.
-3. Decompose an approved outcome into a parent issue and bounded child issues.
+3. Split an approved outcome into a parent issue and child issues with defined scope.
 4. Review issue titles, descriptions, acceptance criteria, dependencies, and ownership.
 5. Approve a GitHub write operation only after checking its target and arguments.
 6. Retrieve the created issues and compare them with the approved plan.
-7. Preview, apply, and verify a focused correction.
+7. Preview, apply, and check a focused correction.
 8. Classify concrete existing issues as duplicate, partial overlap, conflict, or
    unrelated.
-9. Leave a verified live issue set that Session m7-04 can read directly.
+9. Leave a checked live issue set that Session m7-04 can read directly.
 
 ## Session structure
 
@@ -59,7 +59,7 @@ Learners practice how to:
 - Treat issue-plan Markdown as a temporary preview. Do not use it as the source
   of record after creation.
 - Keep issue creation within the agreed count and labels.
-- Verify every created issue through a fresh GitHub read.
+- Check every created issue through a fresh GitHub read.
 - Use an optional Azure Boards route only when it remains the approved system of record.
 - GitHub MCP supplies tools. A plugin may package an MCP server, but plugin
   installation does not prove that the approved GitHub connection is active.

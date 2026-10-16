@@ -1,4 +1,4 @@
-# Expected skill validation and bounded-run output
+# Expected skill validation and demo output
 
 Run from the working copy of `lab/starter/skills-project` after creating the
 learner's `.github/skills/api-design/SKILL.md`.
@@ -34,14 +34,14 @@ fail 0
 The suite covers the fixed scenario contract and a demo run that loads the
 project-local skill without relying on a sibling solution directory.
 
-## Bounded run
+## Demo run
 
 ```bash
 npm run demo
 ```
 
 The first scenario applies `api-design` only to `src/api/routes.js` and its focused
-test. It prints the ordered checks and the verified `npm test` command.
+test. It prints the ordered checks and `npm test`, the command checked for this project.
 
 The second scenario stops before work:
 

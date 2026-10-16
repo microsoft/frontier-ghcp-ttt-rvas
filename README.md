@@ -1,18 +1,18 @@
 # GitHub Copilot & Agentic Workflows: Train-the-Trainer
 
-A structured, repeatable curriculum for training trainers on GitHub Copilot and GitHub Agentic Workflows. It contains 29 sessions across 7 modules, including dedicated paths for product and delivery teams and HVE engineering. Most sessions have 1 hour of trainer content and a 2-hour hands-on lab. Session m4-02 uses a 90-minute lab, Session m5-02 uses a 2-hour 30-minute lab, and Session m5-03 uses a 3-hour lab.
+A curriculum for trainers teaching GitHub Copilot and GitHub Agentic Workflows. It contains 29 sessions across 7 modules, including paths for product and delivery teams and HVE engineering. Most sessions have 1 hour of trainer content and a 2-hour hands-on lab. Session m4-02 uses a 90-minute lab, Session m5-02 uses a 2-hour 30-minute lab, and Session m5-03 uses a 3-hour lab.
 
-## Who This Is For
+## Who this is for
 
-- **Trainers** delivering GitHub Copilot enablement to development teams
+- **Trainers** teaching development teams to use GitHub Copilot
 - **Developer advocates** building Copilot adoption programs
-- **Engineering leads** running internal Copilot skill-building initiatives
+- **Engineering leads** teaching Copilot skills within their teams
 - **DevOps engineers** integrating Copilot into CI/CD and infrastructure workflows
 - **Product and delivery leaders** teaching non-developers to understand, steer, and review agent work
 
 ## Prerequisites
 
-### For Technical-Track Trainers
+### For technical-track trainers
 
 - Strong software development background (any language)
 - Familiarity with GitHub (repos, PRs, issues, Actions)
@@ -20,7 +20,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 - Comfort with live coding and demos
 - Docker for the Session m6-01 observability lab
 
-### For Technical-Track Trainees
+### For technical-track trainees
 
 - Working knowledge of at least one programming language
 - GitHub account with Copilot access
@@ -29,7 +29,7 @@ A structured, repeatable curriculum for training trainers on GitHub Copilot and 
 - Node.js 22 or later and standalone CLI `/refine` access before Session m1-03
 - Working language servers for Session m3-04 (JavaScript) and Session m2-06 (Python)
 
-### For Product and Delivery Trainees
+### For product and delivery trainees
 
 - Basic knowledge of their product or delivery process
 - **A GitHub account with GitHub Copilot access**
@@ -43,7 +43,7 @@ Programming experience, Git command-line knowledge, and repository administratio
 should not take these sessions. Stop and reschedule their Module 7 training after
 access is available.
 
-## Curriculum Overview
+## Curriculum overview
 
 **Session IDs start with their module:** `m2-01` is the first session in Module 2.
 Numbers restart at `01` in each module. Directories use the same ID, such as
@@ -79,7 +79,7 @@ the required commands before delivery. Prepared outputs do not replace live work
 
 | #   | Session                                                                             | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| m3-01  | [Copilot App, Plugins & Canvas Extensions](sessions/session-m3-01-copilot-app-canvases/) | Advanced  | 3 hrs      | Uses the Copilot App Customize area and builds a shared canvas with bounded state, actions, and review evidence. |
+| m3-01  | [Copilot App, Plugins & Canvas Extensions](sessions/session-m3-01-copilot-app-canvases/) | Advanced  | 3 hrs      | Uses the Copilot App Customize area to build a shared canvas with state limits, defined actions, and a review record. |
 | m3-02  | [Copilot Cloud Agent](sessions/session-m3-02-cloud-agent/)                             | Advanced    | 3 hrs      | Covers assigning GitHub issues to the cloud agent for autonomous resolution, branch, code, tests, and draft PR.   |
 | m3-03  | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/)           | Advanced    | 3 hrs      | Introduces the Model Context Protocol, server architecture, configuration, and building custom MCP servers.       |
 | m3-04  | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/)                | Advanced    | 3 hrs      | Checks JavaScript LSP results and a live test-only agent that stops at a source-code conflict. |
@@ -91,22 +91,22 @@ the required commands before delivery. Prepared outputs do not replace live work
 | --- | ----------------------------------------------------------------------------------------- | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | m4-01  | [GitHub Actions & Workflow Generation](sessions/session-m4-01-actions-workflows/)            | Intermediate | 3 hrs      | Carries one Node.js application through CI generation, deployment design, workflow repair, and custom-action validation. |
 | m4-02  | [Infrastructure as Code with Copilot](sessions/session-m4-02-iac-with-copilot/)              | Advanced     | 2 hrs 30 min | Builds, connects, validates, and security-reviews Terraform modules. Bicep is an optional comparison. |
-| m4-03  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-m4-03-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Diagnoses pipeline failures from workflow evidence and local proof, including a staged failure and reviewed security remediation. |
+| m4-03  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-m4-03-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Diagnoses pipeline failures from logs and local checks, including a staged failure and reviewed security remediation. |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| m5-01  | [Brady's Squad: Human-Led AI Teams](sessions/session-m5-01-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to turn scoped work into persistent roles, decisions, and reviewable evidence. |
+| m5-01  | [Brady's Squad: Human-Led AI Teams](sessions/session-m5-01-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to assign scoped work to persistent roles and save decisions and results for review. |
 | m5-02  | [Spec Kit: Specification-Driven Development](sessions/session-m5-02-spec-kit/)              | Advanced    | 3.5 hrs    | Uses Spec Kit for task-to-issue conversion, staged implementation, convergence, and living-spec evolution. |
-| m5-03  | [HVE Core: Evidence-Led Delivery with RPI](sessions/session-m5-03-hve-core-challenge/)       | Advanced    | 4 hrs      | Uses HVE Research, Plan, Implement, Review, and Follow-up to move a bounded API feature from product intent to a human decision. |
+| m5-03  | [HVE Core: Evidence-Led Delivery with RPI](sessions/session-m5-03-hve-core-challenge/)       | Advanced    | 4 hrs      | Uses HVE Research, Plan, Implement, Review, and Follow-up to develop one API feature and submit it for a human decision. |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
 | #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| m6-01  | [Build Reliable Agent Applications with the GitHub Copilot SDK](sessions/session-m6-01-copilot-sdk/) | Advanced | 3 hrs | Builds a TypeScript agent application with streaming, a custom tool, explicit permissions, blocking hooks, tests, and OpenTelemetry traces. |
-| m6-02  | [End-to-End Capstone Project](sessions/session-m6-02-capstone/)                              | Advanced    | 3 hrs      | Uses a bounded integration scenario to connect governance, specification, agentic delivery, review, and handover. |
+| m6-01  | [Build Reliable Agent Applications with the GitHub Copilot SDK](sessions/session-m6-01-copilot-sdk/) | Advanced | 3 hrs | Builds a TypeScript agent application with streaming, a custom tool, permission decisions, blocking hooks, tests, and OpenTelemetry traces. |
+| m6-02  | [End-to-End Capstone Project](sessions/session-m6-02-capstone/)                              | Advanced    | 3 hrs      | Connects governance, specification, agentic delivery, review, and handover in one integration scenario. |
 
 ### Module 7: Product and Delivery Teams (Beginner to Intermediate)
 
@@ -114,14 +114,14 @@ the required commands before delivery. Prepared outputs do not replace live work
 | --- | --- | --- | --- | --- |
 | m7-01 | [Work Effectively in the GitHub Copilot App](sessions/session-m7-01-copilot-app-foundations/) | Beginner | 3 hrs | Uses repository context, inspects available capabilities, and creates a reviewed working brief. |
 | m7-02 | [Interview Ideas and Shape Better Work](sessions/session-m7-02-interview-and-shape-work/) | Beginner | 3 hrs | Turns an unclear request into a repository decision brief and approved GitHub issue proposal. |
-| m7-03 | [Plan Work with GitHub Issues and MCP](sessions/session-m7-03-plan-work-with-github-issues/) | Intermediate | 3 hrs | Creates and verifies a bounded GitHub issue plan through the GitHub MCP server. |
+| m7-03 | [Plan Work with GitHub Issues and MCP](sessions/session-m7-03-plan-work-with-github-issues/) | Intermediate | 3 hrs | Creates and checks a GitHub issue plan through the GitHub MCP server. |
 | m7-04 | [Build and Use a Planning Canvas](sessions/session-m7-04-plan-and-steer-with-canvases/) | Intermediate | 3 hrs | Creates a planning canvas and aligns its visible state with GitHub issues. |
 | m7-05 | [Orchestrate Agents and Workstreams](sessions/session-m7-05-orchestrate-workstreams/) | Intermediate | 3 hrs | Supervises live child sessions over GitHub issues, or local code and PR snapshots in the developer route. |
 | m7-06 | [Automate Delivery Follow-up and Connect Work Systems](sessions/session-m7-06-automate-delivery-follow-up/) | Intermediate | 3 hrs | Runs one draft-only Automation and records whether GitHub or Azure Boards remains authoritative. |
 
 **Total track duration:** 88 hours across 29 sessions
 
-## Getting Started
+## Getting started
 
 1. **Review the curriculum plan**. Read [`curriculum-plan.md`](curriculum-plan.md) for full session details, learning objectives, and progression. Use the [`glossary`](sessions/glossary.md) for shared product and workflow terms.
 
@@ -151,7 +151,7 @@ the required commands before delivery. Prepared outputs do not replace live work
 
 6. **Deliver and iterate**. Each session has trainer notes. After delivering, update the materials based on what worked.
 
-## Repository Structure
+## Repository structure
 
 ```
 ghcp-ttt/

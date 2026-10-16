@@ -1,4 +1,4 @@
-# Approved Decision Brief: Clear Request Status
+# Approved decision brief: Clear request status
 
 ## Outcome
 
@@ -23,7 +23,7 @@ Employees who submitted a facilities or equipment request can understand its cur
 ## Acceptance evidence
 
 - Requesters can see only their own requests.
-- Every supported request displays a public status or an explicit unavailable state.
+- Every supported request displays a public status or an unavailable-state message.
 - Internal notes and staff-only status details are not exposed.
 - The product owner approves the public status mapping.
 - Service operations reviews the wording and stale-state behavior.

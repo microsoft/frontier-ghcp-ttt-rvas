@@ -1,4 +1,4 @@
-# Session m3-01 Lab: Build and Review a Bounded Canvas
+# Session m3-01 lab: Build and review a canvas contract
 
 **Duration:** 2 hours  
 **Difficulty:** Advanced  
@@ -7,7 +7,7 @@
 
 ## Objective
 
-Use one synthetic delivery-readiness contract from setup through handoff. You will test the contract locally, create or simulate the canvas, make visible and agent-requested changes, verify that an invalid change is rejected, and recover safely.
+Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, create or simulate the canvas, and make visible and agent-requested changes. Check that an invalid change is rejected, then recover without changing the rule.
 
 ## Deliverables
 
@@ -55,20 +55,20 @@ Copy the record files to a writable working folder if you do not want to edit th
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Confirm access and contract | 20 min |
+| 1 | Check access and contract | 20 min |
 | 2 | Run the prepared contract tests | 15 min |
 | 3 | Create the canvas | 25 min |
 | 4 | Make two visible state changes | 20 min |
-| 5 | Verify rejection and recovery | 20 min |
+| 5 | Check rejection and recovery | 20 min |
 | 6 | Inspect and hand off | 20 min |
 
-## Part 1: Confirm access and contract (20 minutes)
+## Part 1: Check access and contract (20 minutes)
 
 1. Select project or user scope.
-2. Confirm that all data comes from `prepared-items.json`.
+2. Check that all data comes from `prepared-items.json`.
 3. Review every state field, human action, agent capability, and validation rule in `canvas-contract.md`.
 4. Replace the owner and reviewer placeholders.
-5. Confirm the retirement trigger.
+5. Check the retirement trigger.
 
 The contract must retain these rules:
 
@@ -103,7 +103,7 @@ Do not continue with a failing harness. Fix only a mismatch caused by your edits
 
 ## Part 3: Create the canvas (25 minutes)
 
-Open an approved GitHub Copilot app session. Run:
+Open a GitHub Copilot app session with the required access. Run:
 
 ```text
 /create-canvas
@@ -143,18 +143,18 @@ Ask Copilot:
 Move API-204 from in-progress to review. Change only that item.
 ```
 
-Verify:
+Check:
 
 - `WEB-318` is `ready`;
 - `API-204` is `review`;
 - `DOC-101` is still `planned`;
 - the visible state and response agree.
 
-Confirm the before and after values in the canvas state.
+Compare the before and after values in the canvas state.
 
-**Checkpoint 4:** One human action and one agent-requested capability changed the same bounded state model.
+**Checkpoint 4:** One human action and one agent-requested capability changed the same state model within the contract.
 
-## Part 5: Verify rejection and recovery (20 minutes)
+## Part 5: Check rejection and recovery (20 minutes)
 
 Request:
 
@@ -168,7 +168,7 @@ Expected result:
 Rejected: evidence is required before ready.
 ```
 
-Confirm that `DOC-101` remains `planned`.
+Check that `DOC-101` remains `planned`.
 
 Now add this synthetic evidence:
 
@@ -197,7 +197,7 @@ Exchange canvases with another group. Inspect:
 - state and defaults;
 - visible human actions;
 - agent-callable capabilities;
-- rejection and recovery evidence;
+- rejection and recovery records;
 - dependencies and persisted data;
 - owner and retirement trigger.
 
@@ -210,7 +210,7 @@ unresolved. Then compare the final state with `../solution/final-state.json`.
 
 The work is complete when another person can identify:
 
-- the selected access route;
+- the selected extension scope;
 - the fixed canvas contract;
 - the prepared starting state;
 - both accepted changes;

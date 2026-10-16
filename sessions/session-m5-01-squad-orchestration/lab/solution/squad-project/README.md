@@ -1,9 +1,9 @@
-# Session m5-01 Reference Result
+# Session m5-01 reference result
 
 This project shows the completed Issue 001 workflow: assignment, implementation,
 tests, lead review, and decision record.
 
-## Verify the code
+## Check the code
 
 ```bash
 npm install
@@ -12,16 +12,16 @@ npm test
 
 The suite should pass all baseline and input-validation tests.
 
-## Inspect the evidence
+## Inspect the review packet
 
-| Evidence | Path |
+| Record | Path |
 | --- | --- |
 | Team and write boundaries | `.squad/team.md` |
 | Routing rules | `.squad/routing.md` |
 | Assignment proposal | `.squad/decisions/inbox/issue-001-proposal.md` |
 | Work log | `.squad/orchestration-log/issue-001.md` |
-| Test evidence and lead review | `.squad/reviews/issue-001-review.md` |
-| Durable decision | `.squad/decisions.md` |
+| Test results and lead review | `.squad/reviews/issue-001-review.md` |
+| Committed decision | `.squad/decisions.md` |
 | Prepared trainer example | `tabletop/issue-001-review-packet.md` |
 
 The prepared packet supports trainer demonstration recovery. It does not replace a

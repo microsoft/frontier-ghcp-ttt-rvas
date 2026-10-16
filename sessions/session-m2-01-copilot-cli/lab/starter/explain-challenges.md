@@ -1,4 +1,4 @@
-# Explain Challenges
+# Explain challenges
 
 Use the standalone `copilot` CLI for each command below. Ask in interactive mode
 or with `copilot -p "Explain what this command does: ..."`. Rate the explanation.
@@ -6,7 +6,7 @@ Record what it covered or missed.
 
 ---
 
-## Challenge 1: Simple File Listing
+## Challenge 1: Simple file listing
 
 ```bash
 ls -la
@@ -26,7 +26,7 @@ copilot -p "Explain what this command does: ls -la"
 
 ---
 
-## Challenge 2: Moderate Find and Delete
+## Challenge 2: Moderate find and delete
 
 ```bash
 find . -name "*.log" -mtime +7 -delete
@@ -48,7 +48,7 @@ copilot -p 'Explain what this command does and call out safety risks: find . -na
 
 ---
 
-## Challenge 3: Git-Specific Visual Log
+## Challenge 3: Git-specific visual log
 
 ```bash
 git log --oneline --graph --all --decorate
@@ -68,7 +68,7 @@ copilot -p "Explain what this command does: git log --oneline --graph --all --de
 
 ---
 
-## Challenge 4: Multi-Flag Archive with Exclusions
+## Challenge 4: Multi-flag archive with exclusions
 
 ```bash
 tar czf backup.tar.gz --exclude='node_modules' --exclude='.git' ./src
@@ -90,7 +90,7 @@ copilot -p "Explain what this command does: tar czf backup.tar.gz --exclude='nod
 
 ---
 
-## Challenge 5: Complex AWK Data Processing
+## Challenge 5: Complex AWK data processing
 
 ```bash
 awk -F',' '{sum[$1]+=$3; count[$1]++} END {for (k in sum) print k, sum[k]/count[k]}'
@@ -119,7 +119,7 @@ copilot -p "Explain this awk command: awk -F',' '{sum[\$1]+=\$3; count[\$1]++} E
 
 ## Summary
 
-After completing all 5 challenges, reflect:
+After completing all 5 challenges, answer:
 
 1. Which command types did Copilot explain best? ___
 2. Which did it struggle with? ___

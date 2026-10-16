@@ -1,4 +1,4 @@
-# Prepared Demo Runbook
+# Prepared demo runbook
 
 Run commands from this directory.
 

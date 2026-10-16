@@ -1,4 +1,4 @@
-# Session m2-07: Migrate a Legacy Java Service to Modern .NET
+# Session m2-07: Migrate a legacy Java service to modern .NET
 
 **Module:** Module 2: Copilot in Practice
 
@@ -19,20 +19,18 @@ The exercise uses synthetic orders and integer-cent arithmetic. It needs no
 database, cloud service, or production data.
 
 > [!IMPORTANT]
-> Confirm GitHub Copilot access in the selected coding environment before the
+> Check GitHub Copilot access in the selected coding environment before the
 > session. If access is unavailable, **stop and do not start the lab**. Resolve
 > access first.
 
 ## Learning outcomes
-
-Learners practice how to:
 
 - map a legacy request from HTTP entry point to domain calculation and response;
 - separate observed behavior from incidental Java structure;
 - capture pricing rules in shared contract fixtures;
 - migrate one vertical slice to a .NET 10 Minimal API;
 - preserve rounding, validation, shipping, discount, and tax behavior;
-- use GitHub Copilot with bounded prompts and review every generated change;
+- limit Copilot prompts to the pricing slice and review every generated change;
 - compare Java and .NET results with repeatable tests;
 - create a migration backlog without turning the exercise into a full rewrite.
 

@@ -1,4 +1,4 @@
-# Code Changes to Make
+# Code changes to make
 
 ## Instructions
 
@@ -30,7 +30,7 @@ copying this construction into a database-backed route.
 
 ---
 
-### Change 2: Return Password in API Response
+### Change 2: Return password in API response
 
 Add this user data and endpoint to `src/api.js`:
 
@@ -50,7 +50,7 @@ app.get('/api/users', (req, res) => {
 
 ---
 
-### Change 3: Off-by-One Error in Pagination
+### Change 3: Off-by-one error in pagination
 
 Modify the `paginate` function in `src/utils.js`:
 
@@ -72,7 +72,7 @@ function paginate(items, page, pageSize) {
 
 ---
 
-### Change 4: Missing Error Handling
+### Change 4: Missing error handling
 
 Add this endpoint to `src/api.js`:
 
@@ -90,7 +90,7 @@ app.post('/api/users', async (req, res) => {
 
 ---
 
-### Change 5: Hardcoded Secret
+### Change 5: Hardcoded secret
 
 Add this near the top of `src/api.js`:
 
@@ -106,7 +106,7 @@ should be supplied only when that becomes part of the application.
 
 ---
 
-### Change 6: Duplicate Code
+### Change 6: Duplicate code
 
 Add this endpoint to `src/api.js` (duplicates the items list logic):
 
@@ -126,7 +126,7 @@ app.get('/api/products', (req, res) => {
 
 ---
 
-## After Making Changes
+## After making changes
 
 1. Keep the patch uncommitted. Write your human review first.
 2. Run `/review`, then `/security-review`, against the same local diff.

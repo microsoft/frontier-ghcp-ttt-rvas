@@ -1,4 +1,4 @@
-# Explain Challenges: Expected Answers
+# Explain challenges: Expected answers
 
 Reference points for the five explain challenges. Copilot output will vary; use these points to assess whether the explanation is complete and safe.
 
@@ -27,8 +27,8 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 - `find .`: search starting from current directory
 - `-name "*.log"`: match files ending in `.log`
 - `-mtime +7`: files whose data was last modified MORE than 7 days ago (not exactly 7, not within 7)
-- `-delete`: **deletes** matching files (this is destructive!)
-- ⚠️ **Safety warning:** A good explanation should note that `-delete` is
+- `-delete`: **deletes** matching files.
+- **Safety warning:** A good explanation should note that `-delete` is
   irreversible and suggest testing with `-print` first.
 - Execution order matters: `-delete` must come after other predicates
 
@@ -47,11 +47,11 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 - `--graph`: draw an ASCII graph of the branch and merge structure
 - `--all`: show commits from all branches and refs, not just the current branch
 - `--decorate`: show ref names (branch names and tags) next to commit hashes
-- The combination creates a visual branch topology view popular for understanding project history
+- Together, these flags show the branch and merge history
 
 **Common misses:** Not explaining that `--all` changes what you see (without it, only current branch is shown), not describing what the ASCII graph looks like.
 
-**Quality rating guide:** 5 = explains each flag and describes the visual output, 3 = explains flags but doesn't paint the picture, 1 = generic "shows git history."
+**Quality rating guide:** 5 = explains each flag and describes the visual output, 3 = explains flags but doesn't describe the output, 1 = generic "shows git history."
 
 ---
 

@@ -1,4 +1,4 @@
-# Approved Issue Change
+# Approved issue change
 
 After the first run, update the approved requester-access training issue:
 

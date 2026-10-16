@@ -1,4 +1,4 @@
-# Session m7-01: Work Effectively in the GitHub Copilot App
+# Session m7-01: Work effectively in the GitHub Copilot app
 
 **Module:** Product and Delivery Teams
 
@@ -11,8 +11,8 @@
 ## Overview
 
 Session m7-01 opens the **Delivery Decision Studio** path. Learners compare
-unscoped and repository-grounded answers, create a durable initiative context
-brief, check context health, request an independent critique, and verify the
+unscoped and repository-grounded answers, save an initiative context
+brief, check context usage, request an independent critique, and check the
 brief in a fresh session.
 
 The fictional **Service Request Portal** provides the shared scenario. Learners
@@ -27,7 +27,7 @@ may use approved, sanitized work from their own team.
 By the end of this session, learners can:
 
 1. Find and use Chats, Projects, My work, Search, Automations, and Customize.
-2. Choose Interactive, Plan, or Autopilot mode for a bounded task.
+2. Choose Interactive, Plan, or Autopilot mode for a task with a defined scope.
 3. Add files with `@`, reference issues with `#`, and open commands with `/`.
 4. Choose repository, issue, file, or uploaded-document context for a question.
 5. Inspect the skills, agents, MCP servers, plugins, and canvases available in their
@@ -35,7 +35,7 @@ By the end of this session, learners can:
 6. Explain the difference between an MCP connection and a plugin package.
 7. Check context usage and decide whether to compact or start fresh.
 8. Review and revise a proposed Markdown change.
-9. Update a context brief when approved evidence changes.
+9. Update a context brief when the owner approves new source information.
 10. Use independent critique before sharing the brief.
 
 ## Session structure
@@ -60,5 +60,5 @@ By the end of this session, learners can:
 - Keep write actions reviewable and reversible.
 - Do not require programming, Git command-line work, or extension development.
 - Do not use customer data or source organization names.
-- Delivery Decision Studio is the path wrapper. Service Request Portal remains the
+- Delivery Decision Studio is the learning path. Service Request Portal is the
   initiative.

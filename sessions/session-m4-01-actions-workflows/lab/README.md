@@ -1,9 +1,9 @@
-# Session m4-01 Lab: One Application, Four Workflow Tasks
+# Session m4-01 lab: One application, four workflow tasks
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
-**Deliverable:** A reviewed workflow set and evidence record for `copilot-webapp`
+**Deliverable:** Reviewed workflows, command output, and review notes for `copilot-webapp`
 
 ## Lab overview
 
@@ -15,7 +15,7 @@ Use the same application for every part of the lab.
 | 2 | Design staged deployment jobs | 25 min |
 | 3 | Repair two supplied workflow failures | 30 min |
 | 4 | Validate a JavaScript action | 25 min |
-| 5 | Package the evidence | 10 min |
+| 5 | Collect command results and review notes | 10 min |
 
 ## Before you start
 
@@ -111,13 +111,13 @@ grep -nE 'environment: (staging|production)|needs:|permissions:' \
 ```
 
 Expected result: YAML parsing succeeds. The output shows both environments, job
-ordering, and an explicit permissions block.
+ordering, and a permissions block.
 
 Compare with `lab/solution/workflows/cd.yml`. Repository settings own production
 reviewers. The workflow only references the `production` environment.
 
 **Checkpoint:** Record the secret names, the production gate, the health-check
-behavior, and the rollback evidence. Do not claim that a deployment occurred.
+behavior, and the rollback steps. Do not claim that a deployment occurred.
 
 ## Part 3: Repair workflow failures
 
@@ -149,7 +149,7 @@ bad ref, wrong secret name, and missing checkout step. Repair those items, parse
 the file again, and compare with the solution.
 
 **Checkpoint:** For each change, cite the observed failure or repository fact.
-Do not accept a broad rewrite that cannot explain its evidence.
+Do not accept a broad rewrite unless each change addresses a recorded failure.
 
 ## Part 4: Validate the custom action
 
@@ -197,7 +197,7 @@ and summary location.
 Submit:
 
 1. CI and deployment workflow files for `copilot-webapp`.
-2. Both repaired workflow files with evidence-linked explanations.
+2. Both repaired workflow files with explanations tied to the recorded failures.
 3. The completed JavaScript action.
 4. `lab/evidence.md` with commands, results, changed files, and reviewer decisions.
 

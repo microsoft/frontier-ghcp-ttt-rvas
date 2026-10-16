@@ -1,4 +1,4 @@
-# Decision Brief: Show Requesters a Clear Public Status
+# Decision brief: Show requesters a clear public status
 
 ## Status
 
@@ -55,8 +55,8 @@ A requester can see a plain-language public status, the last updated time, and a
 | Measure | Baseline | Target | Evidence source |
 | --- | --- | --- | --- |
 | Status-chasing contacts for included types | Measure before pilot | 20% reduction within six weeks | Service desk contact tags |
-| Supported request coverage | No public status view | 100% show a mapped status or explicit fallback | Portal validation report |
-| Requester access | Existing ownership rule | No cross-user status exposure | Permission test evidence |
+| Supported request coverage | No public status view | 100% show a mapped status or fallback message | Portal validation report |
+| Requester access | Existing ownership rule | No cross-user status exposure | Permission test results |
 
 ## Failure and safeguards
 

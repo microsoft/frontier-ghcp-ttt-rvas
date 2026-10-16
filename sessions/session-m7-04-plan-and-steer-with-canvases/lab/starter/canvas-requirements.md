@@ -1,4 +1,4 @@
-# Planning Canvas Requirements
+# Planning canvas requirements
 
 ## Purpose
 

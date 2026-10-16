@@ -1,4 +1,4 @@
-# Session m4-01 Trainer Guide: One Application Through GitHub Actions
+# Session m4-01 trainer guide: One application through GitHub Actions
 
 ## Delivery objective
 
@@ -47,7 +47,7 @@ the build command creates it.
 
 ## 0:08 to 0:18: Generate CI
 
-Use this bounded request:
+Use this request with a fixed scope:
 
 ```text
 Read package.json, tests, and scripts/build.js in copilot-webapp. Create ci.yml
@@ -109,11 +109,11 @@ no credentials or deployment target.
 
 ## Common questions
 
-**Does valid YAML prove the workflow works?** No. It proves only that the file
-parses. Run the application commands and review the workflow semantics.
+**Valid YAML only proves that the file parses.** Run the application commands
+and review what the workflow does.
 
-**Why use one application?** The same facts support every decision. Learners do
+**Use one application throughout.** The same facts support every decision. Learners do
 not waste time reconstructing a new project for each exercise.
 
-**Why force an action failure?** A custom action that always exits successfully
-has not proved its enforcement behavior.
+**Test an action failure too.** A custom action that always exits successfully
+has not shown that it enforces the threshold.
