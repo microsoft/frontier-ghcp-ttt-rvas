@@ -10,9 +10,9 @@ description: "Lab for isolated GitHub Copilot app sessions and PR-readiness evid
 
 ## Objective
 
-Use the GitHub Copilot app to repair a small readiness evaluator, check the change
-with focused checks, hand the work to a fresh session, and assess a synthetic pull
-request. Finish by defining a manual read-only automation that can repeat the
+Use the GitHub Copilot app to repair a small readiness evaluator. Run focused
+checks, then hand the work to a fresh session and assess a synthetic pull request.
+Finish by defining a manual read-only automation that can repeat the
 readiness report without modifying GitHub.
 
 ## Required setup
@@ -35,7 +35,7 @@ isolates files; it is not a sandbox or permission grant.
 
 **If app access or a required command is unavailable, stop the lab.**
 Do not continue by pasting the files into another assistant or
-by treating supplied evidence as hands-on app work.
+by treating the supplied session output as hands-on app work.
 
 ### Workspace
 
@@ -197,9 +197,9 @@ a GitHub pull request. Do not treat one pair of critiques as a model benchmark.
 
 ### Checkpoint
 
-The accepted plan and any revision explain the diff. The tests and `/review`
-triage support the behavior claims. Critique of the approach and review of the
-implemented patch are separate steps.
+You can explain the diff from the accepted plan and any revision. Your tests and
+`/review` triage support the behavior claims. Keep the critique of the approach
+separate from the review of the implemented patch.
 
 ## Exercise 3: Create a handoff and request independent critique (20 minutes)
 
@@ -236,7 +236,8 @@ next decision without the original conversation.
 
 ### Goal
 
-Connect issue intent to PR evidence and create a safe repeatable readiness report.
+Trace the issue's requirements through the PR diff, reviews, and checks. Use them
+to create a repeatable read-only readiness report.
 
 ### Steps
 

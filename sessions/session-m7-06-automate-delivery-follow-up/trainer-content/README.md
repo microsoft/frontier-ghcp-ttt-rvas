@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Teach learners to build one draft-only automation from live GitHub issues and the
-reviewed Session m7-05 parent result. The automation drafts a stakeholder update. A
-person reviews every run and controls distribution.
+Show learners how to build one draft-only automation from live GitHub issues and
+the reviewed Session m7-05 parent result. It drafts a stakeholder update, but a
+person must review every run and control distribution.
 
 ## One-hour plan
 
@@ -48,11 +48,11 @@ the platform state.
 
 ## Review the run on the platform
 
-Check claim traceability, open exceptions, tool use, side effects, and the final
-draft. Do not ask learners to copy run identifiers, timing, usage, or status into
-a second record.
+Check the sources behind each claim in the final draft. Review open exceptions,
+tool use, and side effects on the platform. Do not ask learners to copy run
+identifiers, timing, usage, or status into a second record.
 
-The learner chooses **Keep**, **Revise**, **Disable**, or **Pause**, then updates
+Have learners choose **Keep**, **Revise**, **Disable**, or **Pause**, then update
 the definition's current state to match.
 
 ## Demo

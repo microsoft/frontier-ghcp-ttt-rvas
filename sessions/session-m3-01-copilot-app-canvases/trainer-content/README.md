@@ -6,7 +6,7 @@
 
 ## Teaching goal
 
-Learners should leave the teaching hour able to define a canvas contract, explain each action, show a safe rejection, and check whether the final state is safe to share.
+Teach learners to define a canvas contract and explain each action. Demonstrate a safe rejection, then show how to check whether the final state is safe to share.
 
 ## Required preparation
 
@@ -53,7 +53,7 @@ If one condition fails, use the prepared manual demo. **Do not bypass a policy, 
 
 ## One-hour plan
 
-| Time | Segment | Learner evidence |
+| Time | Segment | What learners show |
 | --- | --- | --- |
 | 0:00 to 0:05 | Outcome and access check | Required access checked |
 | 0:05 to 0:13 | Choose the right customization | Canvas decision explained |
@@ -70,7 +70,7 @@ Say:
 
 > "We are designing one shared artifact. Judge it by its visible behavior, not by a polished chat response."
 
-Show the required deliverables. Then state which route the class will use.
+Show the required deliverables. Tell the class whether you will use the live or prepared demo.
 
 Ask one learner to name a condition that should stop the canvas from being shared.
 
@@ -184,7 +184,7 @@ Expected behavior:
 
 - the same transition now succeeds;
 - the rule did not change;
-- the evidence record shows before, rejection, correction, and after state.
+- the change record shows the state before the request, the rejection, the correction, and the state afterward.
 
 If the generated canvas accepts the first request, pause the demo. Restore the rule before continuing. A successful unsafe update is a failed demo.
 
@@ -223,7 +223,7 @@ End with:
 | --- | --- |
 | `/create-canvas` is missing | Stop the lab. Do not install a replacement. |
 | Project scope is not allowed | Use user scope. |
-| Generation takes too long | Stop the run and show prepared demo evidence. |
+| Generation takes too long | Stop the run and show the prepared demo record. |
 | Extra capabilities appear | Remove them and record the review decision. |
 | Agent response and visible state differ | Stop, inspect the artifact, and record the mismatch. |
 | `ready` succeeds without evidence | Treat it as a failed rule, fix it, and rerun the rejection. |

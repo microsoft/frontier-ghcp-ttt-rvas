@@ -66,8 +66,7 @@ npm test -- --runTestsByPath tests/health.test.js
 ```
 
 Then run `npm test`. The Bookmark tests should fail because the route does not exist.
-Record the baseline without treating the expected failure as an implementation
-defect.
+Record that baseline. The missing-route failures are expected at this stage.
 
 ## Phase 3: Implement the accepted slice (35 min)
 
@@ -100,8 +99,8 @@ Compare the patch with the issue and specification. Check that `package.json`
 contains no new dependency. Record any deviation from the accepted issue in the
 handoff.
 
-The reviewer records one decision: **approve**, **request changes**, or **pause**.
-Complete every section in `starter/capstone-handoff.md`.
+Ask your reviewer to record one decision: **approve**, **request changes**, or
+**pause**. Complete every section in `starter/capstone-handoff.md`.
 
 ## Checkpoints
 
@@ -124,5 +123,5 @@ Submit one `capstone-handoff.md` containing:
 5. Deferred scope, deviations, and known risks.
 6. One owned next action.
 
-**The deliverable is incomplete** without executable verification or a review
+**Your deliverable is incomplete** without executable test results or a review
 decision.

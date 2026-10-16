@@ -42,7 +42,7 @@ The slice includes:
 - request parsing and validation;
 - pricing rules and rounding;
 - response fields and errors;
-- repeatable verification.
+- repeatable checks.
 
 **The health and sample-order routes stay in Java.**
 
@@ -75,7 +75,7 @@ Contract fixture tests passed: 5
 Legacy order service listening on http://localhost:8080
 ```
 
-Read running behavior before reading every file.
+Check how the service behaves before reading every file.
 
 ---
 
@@ -247,7 +247,7 @@ The target uses:
 - C# records;
 - a console test executable.
 
-No database. No mapper. No mediator. No test package.
+Do not add a database, mapper, mediator, or test package.
 
 ---
 
@@ -286,7 +286,7 @@ Use integer cents, checked arithmetic, and platform APIs.
 Do not add packages or change the endpoint shape.
 ```
 
-Copilot gets a small job with visible constraints.
+Name the limits so you can check whether Copilot stayed within them.
 
 ---
 
@@ -349,7 +349,7 @@ No single layer proves the whole service.
 5. Watch the shared case fail.
 6. restore the accepted code and rerun.
 
-The failure teaches more than a static code tour.
+Use the failing case to show why the calculation order matters.
 
 ---
 
@@ -361,7 +361,7 @@ Learners should name:
 - the parsing boundary;
 - the domain calculation;
 - the response mapping;
-- the existing verification.
+- the existing checks.
 
 Class names alone are not an architecture explanation.
 
@@ -369,7 +369,7 @@ Class names alone are not an architecture explanation.
 
 # Review point: parity evidence
 
-Required evidence:
+Save these results:
 
 ```text
 Java:  Contract fixture tests passed: 5
@@ -391,7 +391,7 @@ Also record checks that were not run.
 | P2 | Error matrix | Status and error cases |
 | P2 | Concurrency | Measured target |
 
-Keep Java behavior until its replacement has evidence.
+Keep the Java behavior until tests and review support its replacement.
 
 ---
 

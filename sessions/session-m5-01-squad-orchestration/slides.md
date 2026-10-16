@@ -78,7 +78,7 @@ Open questions:
 Recommendation:
 ```
 
-The parent can compare packets without reconstructing a long agent conversation.
+The parent can compare these summaries without reading each agent's full conversation.
 **Report missing results. Do not guess.**
 
 ---
@@ -159,8 +159,8 @@ Issue contract
   → durable decision
 ```
 
-Keep the same acceptance criteria through every step. A role may add evidence. It
-must not quietly expand the issue.
+Keep the same acceptance criteria through every step. A role may add supporting
+results, but it must not quietly expand the issue.
 
 ---
 

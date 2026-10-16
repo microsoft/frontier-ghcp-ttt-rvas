@@ -10,12 +10,12 @@
 
 ## Overview
 
-Session m7-06 turns the reviewed Session m7-05 result into one draft-only automation. The
-automation reads live GitHub issues and the parent orchestration result, then
-drafts a stakeholder update for human review.
+Build one draft-only automation from the reviewed Session m7-05 result. It reads
+live GitHub issues and the parent orchestration result, then drafts a stakeholder
+update for human review.
 
-Learners run the automation, update one approved issue, rerun it, and compare the
-platform results. The stakeholder update is the real output. Scheduling remains
+Run the automation, update one approved issue, and run it again. Compare the
+results on the platform before finishing the stakeholder update. Keep scheduling
 disabled unless the trainer approves it.
 
 ## Learning outcomes

@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Teach one complete IaC path. Learners build Terraform modules, connect their
-contracts, validate locally, and investigate one security-gate failure. Bicep is
-a short trainer comparison or optional extension.
+Demonstrate one complete IaC workflow. Show how to build and connect Terraform
+modules, validate them locally, and investigate a security-gate failure. Keep
+Bicep as a short trainer comparison or optional extension.
 
 ## One-hour plan
 
@@ -28,9 +28,9 @@ a short trainer comparison or optional extension.
 
 ## Architecture and module contracts
 
-Use the supplied three-tier design. The network module owns address space and
-subnets. Compute consumes subnet IDs and exposes the application security group.
-Database consumes that security group and its private subnets.
+Use the supplied three-tier design. Trace address space and subnets through the
+network module. Show how compute uses subnet IDs and exposes the application
+security group, then how database uses that group and its private subnets.
 
 Ask learners to state each boundary before generating code. A module is useful
 when its callers depend on a small, stable interface.
@@ -92,10 +92,10 @@ any is unavailable. No cloud account or credentials are needed.
 
 ## Lab handoff
 
-Learners have 90 minutes. They complete the Terraform modules, run staged checks,
-investigate the security failure, and submit command output. Point out that the session
-duration changed to 2 hours 30 minutes because the duplicate Bicep build was
-removed from the required lab.
+Give learners 90 minutes to complete the Terraform modules, run staged checks,
+and investigate the security failure. Ask them to submit command output.
+Explain that the session now lasts 2 hours 30 minutes because the second,
+required Bicep build was removed.
 
 ## Common questions
 

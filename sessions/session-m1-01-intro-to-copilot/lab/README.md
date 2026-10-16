@@ -12,9 +12,8 @@ decision record in `lab-notes.md`
 ## Lab overview
 
 You will complete one Python utility module in stages. The tests define the
-expected behavior. You will inspect each proposed implementation, settle one
-ambiguous word-parsing rule, and then apply a parameter rename as a separate
-reviewed change.
+expected behavior. Inspect each proposed implementation and settle one ambiguous
+word-parsing rule. Then review a parameter rename as a separate change.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -87,7 +86,7 @@ Record both decisions in `lab-notes.md`.
 
 ## Part 3: Resolve the word-parsing ambiguity (30 minutes)
 
-The phrase "count words" is incomplete. It does not define whether an apostrophe
+Before implementing "count words," you need to decide whether an apostrophe
 splits a word.
 
 Read `test_word_frequency_preserves_apostrophes`. The accepted rule is:
@@ -96,8 +95,8 @@ Read `test_word_frequency_preserves_apostrophes`. The accepted rule is:
 > word.
 
 Use that decision to complete `word_frequency`. A simple `split()` or punctuation
-removal may violate the rule. Ask for an explanation if the proposed expression is
-hard to review.
+removal may break the rule. If you cannot follow the proposed expression, ask
+for an explanation before accepting it.
 
 Run:
 

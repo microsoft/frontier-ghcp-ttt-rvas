@@ -86,7 +86,8 @@ next workflow run
 new failed stage
 ```
 
-Use the new log. Do not undo a proven repair or stack guesses.
+Use the new log to diagnose the next failure. Keep the repair you already checked
+and avoid speculative changes.
 
 ---
 # Security findings need path evidence
@@ -99,7 +100,7 @@ For each finding, identify:
 - focused proof;
 - approval decision.
 
-Scanner silence is not enough.
+An absence of scanner findings is not enough.
 
 ---
 # Access policy

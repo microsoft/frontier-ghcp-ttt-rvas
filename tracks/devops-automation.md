@@ -9,9 +9,10 @@
 
 ## Description
 
-This track teaches platform and DevOps engineers the Copilot fundamentals, then
-covers agent mode, GitHub Actions generation, Infrastructure as Code with Terraform
-and Bicep, and CI/CD debugging with reviewed security remediation.
+Use this track if you work on pipelines or infrastructure. Start with Copilot
+fundamentals and agent mode, then generate GitHub Actions workflows, work with
+Terraform and Bicep, and debug CI/CD failures. Review proposed security fixes
+before they become changes.
 
 ## Prerequisites
 
@@ -33,7 +34,8 @@ and Bicep, and CI/CD debugging with reviewed security remediation.
 | 6       | m4-02          | Infrastructure as Code with Copilot        | Advanced     | 3 hrs      |
 | 7       | m4-03          | CI/CD Pipeline Debugging & Agentic Remediation | Advanced  | 3 hrs      |
 
-> **Note:** Session m2-01 (CLI) is optional but recommended for DevOps engineers who work heavily in the terminal. Session m2-03 (Spaces) is also valuable for grounding Copilot in cloud documentation.
+> Add Session m2-01 if your team works heavily in the terminal. Add Session m2-03
+> to practice giving Copilot cloud documentation through Spaces. Both are optional.
 
 ## Recommended delivery schedule
 
@@ -56,7 +58,7 @@ and Bicep, and CI/CD debugging with reviewed security remediation.
 
 ## Learning outcomes
 
-By completing this track, trainees will be able to:
+After this track, you should be able to:
 
 1. Use Copilot effectively across IDE, Chat, and agent mode for DevOps tasks
 2. Generate GitHub Actions workflows from natural language descriptions

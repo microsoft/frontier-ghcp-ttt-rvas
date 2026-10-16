@@ -14,8 +14,8 @@ description: "HVE Core challenge covering RPI, customization, product agents, an
 
 Use HVE Core to take one Engineering Decision API feature through direct RPI phases,
 repository customization, product and Agile refinement, implementation, and review.
-The HVE artifacts must show what each agent produced and how one phase changed the
-next. The handoff only indexes those artifacts and records the final decision.
+Use the HVE artifacts to show what each agent produced and how one phase changed
+the next. Keep the handoff to an index of those artifacts and the final decision.
 
 ## Preflight
 
@@ -44,8 +44,9 @@ agent. Do not replace the complete HVE workflow with manual artifacts.
 ## Indicative effort
 
 Agent latency varies by model, reasoning level, workspace size, and tool access.
-Use these ranges for pacing, not as deadlines. Move on when the evidence gate is
-met. If one agent stalls, use the phase-recovery guide and protect time for Review.
+Use these ranges to pace your work, not as deadlines. Move on when you have the
+artifacts or results listed for that stage. If one agent stalls, use the
+phase-recovery guide so you still have time for Review.
 
 | Stage | Indicative range | Evidence gate |
 |-------|------------------|---------------|
@@ -56,9 +57,9 @@ met. If one agent stalls, use the phase-recovery guide and protect time for Revi
 | Implement and validate | 35 to 45 min | Changes log, code, tests, and container evidence exist |
 | Review and combined-RPI comparison | 20 to 30 min | Review artifact, human decision, and comparison are recorded |
 
-Treat the ranges as planning guidance, not additive deadlines. Faster phases create
-room for deeper artifact review. Slower phases should use recovery rather than
-consume the final review gate.
+Do not add the ranges together as deadlines. If a phase finishes early, spend more
+time reviewing its artifacts. If a phase runs slowly, use recovery rather than
+take time away from the final review.
 
 ## Exercise 1: Understand HVE and run Research
 
@@ -96,7 +97,7 @@ Create three repository-owned customization layers:
 
 Record an activation check for each layer. Then ask HVE to review the current plan
 again. Note one concrete change caused by the repository context, coding instruction,
-or custom agent. File creation alone is not activation evidence.
+or custom agent. Creating a file alone does not show that HVE used it.
 
 ## Exercise 3: Explore HVE product and Agile agents
 
@@ -178,10 +179,10 @@ Submit or demonstrate:
 | Product and Agile agents | 20 | Platform outputs cited by the Plan artifact |
 | Feature validation | 15 | Test and container output cited by Implement or Review |
 
-Trainer-provided recovery artifacts can unblock one failed phase. They do not earn
-the execution points for that phase, and a fully manual submission does not pass
-this HVE challenge. The thin handoff is required for review, but it does not replace
-missing phase evidence.
+You may use a trainer-provided recovery artifact to unblock one failed phase, but
+you do not earn execution points for that phase. A fully manual submission does
+not pass this HVE challenge. You must provide the thin handoff for review; it
+cannot replace missing phase artifacts or results.
 
 ## Official references
 

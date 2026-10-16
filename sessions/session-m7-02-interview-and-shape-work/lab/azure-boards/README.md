@@ -11,7 +11,7 @@ requirement, and prepare approved updates.
 
 ## Deliverable
 
-Use [`work-item-update-plan.md`](work-item-update-plan.md) to carry:
+Record these items in [`work-item-update-plan.md`](work-item-update-plan.md):
 
 - the approved decisions;
 - planned field changes;
@@ -64,10 +64,12 @@ Run the decision-tree interview against:
 
 > Make request status clearer so people stop asking support.
 
-Close or assign the branches for scope, constraints, success, failure, ownership,
-and approval. Record the approved decisions in the update plan.
+Work through the branches for scope, constraints, success, failure, ownership,
+and approval. Settle each branch or assign its open question to an owner. Record
+the approved decisions in the update plan.
 
-The request owner must confirm shared understanding before the Azure Boards review.
+Ask the request owner to check that the recorded decisions match what you agreed
+before you review Azure Boards.
 
 ## Phase 2: Compare the findings with the requirement
 
@@ -89,7 +91,7 @@ Record the current value, Copilot proposal, reason, and owner decision. A field 
 
 Ask GitHub Copilot to draft exact field values from the approved decisions.
 
-For the supplied scenario, expect this direction:
+For the supplied scenario, use these expected changes to review the draft:
 
 | Field | Proposed direction |
 | --- | --- |
@@ -155,7 +157,7 @@ Create child Tasks only after the request owner accepts the parent changes. The 
 - implement the requester status view and safe application fallback behavior;
 - validate state mapping, freshness behavior, and requester-only access.
 
-Each Task needs a clear result and owner role. If a blocking decision remains open,
+Give each Task a clear result and owner role. If a blocking decision remains open,
 leave the child Task table empty.
 
 ## Review and deliver

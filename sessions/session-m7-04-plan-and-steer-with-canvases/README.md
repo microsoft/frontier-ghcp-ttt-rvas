@@ -12,11 +12,11 @@
 
 Continue the **Delivery Decision Studio** path. Use the built-in
 `/create-canvas` skill to turn the live Session m7-03 issues into a visible delivery
-workspace. Review the generated extension, remove unnecessary
-capabilities, create a real GitHub state change, detect stale canvas data, and
-reconcile it.
+workspace. Review the generated extension and remove capabilities you do not need.
+Then change GitHub state and compare it with the canvas. Detect the stale data
+and refresh it.
 
-Learners describe and operate the canvas. They do not hand-code the extension.
+You describe and operate the canvas without hand-coding the extension.
 
 The GitHub MCP connection supplies issue tools. A plugin may package MCP and
 canvas capabilities, but it does not replace connection or capability review.
@@ -27,7 +27,7 @@ Keep the lab no-code and free of customer or source organization names.
 
 ## Learning outcomes
 
-Learners practice how to:
+In this session, you will:
 
 1. Decide when a canvas is more useful than another chat response.
 2. Describe the state and actions needed for a planning canvas.

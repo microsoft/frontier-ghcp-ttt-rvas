@@ -10,8 +10,8 @@ and a local-versus-community interview comparison that feeds `/plan`
 
 ## Lab overview
 
-The procedure is only half the skill. The description must select the right work,
-and missing preconditions must stop the run.
+You will test both parts of a skill: how its description selects work and how its
+procedure handles that work. Check that missing preconditions stop the run.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -127,7 +127,7 @@ Expected result:
 }
 ```
 
-A useful skill stays quiet outside its boundary. Do not rewrite the description to
+Keep the skill out of tasks beyond its scope. Do not rewrite the description to
 match every software task.
 
 **Checkpoint:** the documentation scenario does not apply the API procedure.
@@ -146,7 +146,7 @@ Expected result:
 }
 ```
 
-This is a successful test of failure behavior. Do not replace the missing reviewer,
+This result shows that your failure check works. Do not replace the missing reviewer,
 skip the condition, or return an applied result.
 
 ## Part 5: Check the local harness and live loading
@@ -191,8 +191,8 @@ cp ../community-interview/LICENSE .github/skills/MATT-POCOCK-LICENSE
 ```
 
 Use `shasum -a 256 -c SHA256SUMS` on macOS. **Stop on a checksum mismatch.**
-The source review covers both files, any delegated fact-finding, and the agreed
-usage limit. There are no bundled scripts or downloads to run during the lab.
+Review both files, including any delegated fact-finding, against the agreed usage
+limit. There are no bundled scripts or downloads to run during the lab.
 
 In Copilot, run:
 

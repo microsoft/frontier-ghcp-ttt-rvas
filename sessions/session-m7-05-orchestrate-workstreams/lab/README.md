@@ -36,9 +36,10 @@ The GitHub access requirements below apply to this route only.
 
 ## Scenario
 
-Four live GitHub issues cover public status mapping, requester status, empty and
-stale states, and requester access. Orchestrate one workstream per issue. The
-parent result will become an authoritative input to Session m7-06.
+You will work with four live GitHub issues: public status mapping, requester
+status, empty and stale states, and requester access. Orchestrate one workstream
+per issue. Session m7-06 will use your reviewed parent result as an authoritative
+input.
 
 ## Preflight
 
@@ -203,7 +204,7 @@ Use independent questions:
 | PR state | Is the supplied PR ready based on its required checks and threads? | `issue-brief.md`, `pr-snapshot.json` |
 
 Each child works from its own inputs and does not wait for another child. The
-parent compares the results afterward. Name a reviewer, stop conditions, and a
+parent compares the results afterward. Name a reviewer and set stop conditions and a
 usage limit. The test reviewer may run only the supplied test command.
 
 ### Exercise D2: Start and inspect live work (30 minutes)
@@ -250,10 +251,11 @@ Require the parent to return:
 - the effect of the child redirection;
 - remaining gaps and the next human decision.
 
-The parent must explain why local passing tests cannot override a failed required
-PR check or unresolved blocking thread. Review the result yourself. Keep it in the
-app session; do not copy session identifiers or a second progress log into the plan.
-Inspect the app's usage display and explain whether the work justified orchestration.
+Check that the parent explains why passing local tests cannot override a failed
+required PR check or unresolved blocking thread. Review the result yourself and
+keep it in the app session. Do not copy session identifiers or a second progress
+log into the plan. Inspect the app's usage display and explain whether the work
+justified orchestration.
 
 ### Developer completion check
 

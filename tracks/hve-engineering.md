@@ -14,9 +14,10 @@ description: "Phased HVE learning path from Copilot fundamentals through evidenc
 
 ## Description
 
-This track prepares learners for the HVE Core challenge. They first learn daily Copilot workflows, then
-practice context management, review, MCP, and custom agents. Session m5-03 brings
-those skills together through HVE Research, Plan, Implement, Review, and Follow-up.
+Use this track to prepare for the HVE Core challenge. Start with daily Copilot
+workflows, then practice selecting context, reviewing changes, and working with
+MCP and custom agents. In Session m5-03, use those skills through HVE Research,
+Plan, Implement, Review, and Follow-up.
 
 ## Prerequisites
 
@@ -51,7 +52,7 @@ those skills together through HVE Research, Plan, Implement, Review, and Follow-
 
 ## Completion records
 
-Learners should finish with:
+Keep these records as you work:
 
 - Linked HVE Research, Plan, Implement, and Review files for the assigned feature
 - Repository context, targeted instructions, and a custom reviewer, with records
@@ -63,8 +64,8 @@ Learners should finish with:
 ## Optional comparison
 
 Add [Session m5-02](../sessions/session-m5-02-spec-kit/README.md) for a 3.5-hour comparison with
-Spec Kit. The comparison should focus on workflow contracts, artifacts, human
-gates, and how each framework handles change.
+Spec Kit. Compare the files each workflow requires, where a person must review
+the work, and how each framework handles change.
 
 ## Next step
 

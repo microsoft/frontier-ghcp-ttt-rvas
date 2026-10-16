@@ -2,13 +2,12 @@
 
 ## Delivery objective
 
-Teach learners to preserve behavior during migration. They inspect a runnable Java
-service, define the pricing contract, move one complete HTTP slice to .NET 10,
-and prove that both implementations agree on the same JSON cases.
+Teach learners to preserve behavior during migration. Have them inspect a runnable
+Java service and define the pricing contract before moving one complete HTTP
+slice to .NET 10. Then compare both implementations using the same JSON cases.
 
-The slice stays narrow. A successful session ends with one reviewed route and a
-backlog for the rest of the service, not a rewrite plan built on untested
-assumptions.
+Keep the slice narrow. Aim for one reviewed route and a backlog for the rest of
+the service. Do not build a rewrite plan on untested assumptions.
 
 > [!IMPORTANT]
 > Check GitHub Copilot access before delivery. If a learner cannot use Copilot in
@@ -128,8 +127,8 @@ Ask learners to mark each finding as one of:
 | Language structure | getters and nested item class | Redesign in C# |
 | Unknown behavior | concurrent request limit | Record, do not invent |
 
-This classification stops mechanical translation. Copilot may reproduce a Java
-shape in C#, but familiar-looking code is not proof of parity.
+Use this classification to show which Java structures can change. Copilot may
+reproduce them in C#. Check behavior to establish parity.
 
 ### 3. Use integer money and explicit rounding
 
@@ -305,8 +304,8 @@ Run:
 dotnet run --project OrderPricing.ContractTests
 ```
 
-The `gold-save10-domestic` case should fail. This is the point of the session:
-clean C# can still be wrong.
+The `gold-save10-domestic` case should fail. Use the failure to show that clean C#
+can still produce the wrong result.
 
 Restore the reference code. Run the test again and show all five cases passing.
 
@@ -359,7 +358,7 @@ Before learners accept Copilot output, ask:
 
 ### Review point 4: parity evidence
 
-The final evidence must include:
+Require these results at the final review:
 
 - Java contract test output;
 - .NET contract test output;
@@ -378,8 +377,8 @@ Use a slice-first backlog:
 | P2 | Error consistency | Status and JSON error matrix |
 | P2 | Load and concurrency | Measured target and repeatable test |
 
-The backlog should also say what remains in Java. An honest backlog has boundaries,
-unknowns, and removal conditions.
+Have learners state what remains in Java, what they do not yet know, and when they
+can remove each legacy slice.
 
 ## Common mistakes
 

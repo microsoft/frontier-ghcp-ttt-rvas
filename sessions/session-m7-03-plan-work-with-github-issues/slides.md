@@ -28,7 +28,7 @@ This is the third step in **Delivery Decision Studio**.
 
 An MCP server gives Copilot named tools for reading or changing another system.
 
-Learners use the tools. They do not build the server.
+You use the tools in this session without building the server.
 
 A plugin may bundle an MCP server with skills or other customizations. Check the
 active GitHub MCP connection itself before reading or writing issues.
@@ -74,8 +74,8 @@ clarify the design first.
 Copilot can prepare the issue plan. A person approves the write only after seeing
 the target repository and expected result.
 
-After the write, fetch the issue again. This fresh read proves what the system
-stored, rather than what the tool claimed it stored.
+After the write, fetch the issue again. Compare what GitHub stored with the
+approved plan instead of relying on the tool's success message.
 
 The Markdown plan is a temporary preview. **The created GitHub issues are
 authoritative.**

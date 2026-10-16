@@ -7,13 +7,13 @@
 
 ## Overview
 
-Carry one Node.js application through four workflow tasks: create CI, design a
+You will use one Node.js application for four workflow tasks: create CI, design a
 staged deployment, repair broken workflow files, and validate a local JavaScript
-action. Every task uses `copilot-webapp`, so learners can trace each decision back
+action. Every task uses `copilot-webapp`, so you can trace each decision back
 to the same scripts, tests, build output, and health endpoint.
 
-Learners submit workflow files and record the command,
-result, changed file, and review decision at each checkpoint.
+Submit your workflow files. At each checkpoint, record the command and result,
+which file changed, and the review decision.
 
 ## Learning outcomes
 
@@ -25,7 +25,7 @@ result, changed file, and review decision at each checkpoint.
 
 ## Required access
 
-Learners need Node.js 20 or later and GitHub Copilot in the selected coding
+You need Node.js 20 or later and GitHub Copilot in the selected coding
 environment. Repository and GitHub Actions access are optional. The required path
 uses local tests, YAML parsing, and peer review.
 

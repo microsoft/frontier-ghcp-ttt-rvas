@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Learners use the Session m7-01 context brief and the supplied
-`decision-interview` project skill to turn an unclear request into a reviewed
-decision brief and issue proposal.
+Demonstrate how the supplied `decision-interview` project skill uses the Session
+m7-01 context brief to turn an unclear request into a reviewed decision brief and
+issue proposal.
 
 ## One-hour plan
 
@@ -48,8 +48,9 @@ method. It never replaces GitHub Copilot.
 
 ### The frontier controls question order
 
-The frontier contains decisions with settled prerequisites. Ask the whole frontier
-in one round. Hold questions that depend on an answer still open in that round.
+Explain the frontier as the decisions the owner can make now because their
+prerequisites are settled. Ask all of those questions in one round. Hold any
+question that depends on an answer still open in that round.
 
 For example, do not ask for notification wording before the group decides whether the first release includes notifications. Do not ask for a success target before the group agrees on the problem and affected user.
 
@@ -70,11 +71,12 @@ out of the first release because they already have an internal queue.
 
 ### Facts do not belong in the decision queue
 
-GitHub Copilot should use approved evidence for facts such as current status
+GitHub Copilot should use approved sources for facts such as current status
 values, portal fields, or published retention rules. The request owner decides
 product behavior, tradeoffs, ownership, and approval.
 
-When evidence is unavailable, mark the fact as unverified. Do not disguise it as a decision.
+When a source is unavailable, mark the claim as unverified. Do not turn it into
+a question for the owner to decide.
 
 ### Keep context healthy
 
@@ -106,7 +108,9 @@ Ask GitHub Copilot to cover:
 2. What do they need to know?
 3. What business or service problem should change?
 
-Recommended direction: submitted requesters need a plain-language status and recent update. The first outcome is fewer manual "what is happening?" contacts. It is not a redesign of the service process.
+Recommended direction: people who submitted a request need a plain-language status
+and recent update. Aim first to reduce manual "what is happening?" contacts. Keep
+service-process redesign outside this work.
 
 ### Round 2: Set the scope
 
@@ -167,8 +171,8 @@ Ask GitHub Copilot to convert the approved brief into an issue proposal:
 5. Name the owner and reviewer.
 6. Add a definition of done that covers evidence and approval.
 
-The learner checks every field against the approved brief. Copilot drafts the
-proposal. Session m7-03 creates the approved issue set through GitHub MCP.
+Have learners check every field Copilot drafts against the approved brief.
+Session m7-03 creates the approved issue set through GitHub MCP.
 
 ## Reopen an affected branch
 

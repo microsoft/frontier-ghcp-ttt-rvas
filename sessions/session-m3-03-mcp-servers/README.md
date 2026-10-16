@@ -8,9 +8,9 @@
 ## Overview
 
 Model Context Protocol (MCP) gives AI clients a standard way to discover and call
-tools. Learners build a local stdio server in two stages. They first carry
-`get_weather` from JSON Schema through its handler, good input, bad input, tests,
-and MCP Inspector. Only then do they add `get_forecast` and
+tools. You will build a local stdio server in two stages. First, trace
+`get_weather` from its JSON Schema through the handler. Test good and bad input,
+then call it with MCP Inspector. Only then add `get_forecast` and
 `convert_temperature`.
 
 The server uses deterministic synthetic weather data. No network service,
@@ -39,7 +39,7 @@ plugin terminology.
 
 ## Required access
 
-Learners need Node.js 20 or later and npm. GitHub Copilot is
+You need Node.js 20 or later and npm. GitHub Copilot is
 useful for the final integration check but is not required. The local tests and
 Inspector route prove the server contract.
 

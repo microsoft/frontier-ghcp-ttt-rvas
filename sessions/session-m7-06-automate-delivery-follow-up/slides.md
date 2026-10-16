@@ -45,8 +45,8 @@ Do not copy platform state into a static handoff.
 
 The automation produces one stakeholder update.
 
-The platform already holds run status, identifiers, timing, usage, and evidence.
-Do not recreate those fields in a form.
+Inspect run status, identifiers, timing, usage, and supporting results on the
+platform. Do not recreate those fields in a form.
 
 ---
 
@@ -78,7 +78,7 @@ Update the requester-access training issue with the approved synthetic evidence.
 
 Retrieve the issue again. Then run the same automation.
 
-Only the approved issue change should explain the new draft.
+Check that the new draft differs only because of the approved issue change.
 
 ---
 
@@ -120,4 +120,5 @@ automation is enabled or disabled.
 1. Concise automation definition
 2. Reviewed stakeholder update
 
-No copied Session m7-05 status file. No second run-status artifact.
+Use the live Session m7-05 result and platform run records. Do not copy them into
+a status file or second run-status artifact.

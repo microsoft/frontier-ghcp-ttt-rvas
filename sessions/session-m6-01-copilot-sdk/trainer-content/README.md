@@ -9,9 +9,9 @@ description: "Trainer guide and prepared demo for a reliable GitHub Copilot SDK 
 
 ## Delivery objective
 
-Learners should leave with a clear application boundary. The model produces an
-assessment, while TypeScript code owns lifecycle, tool scope, permission decisions,
-failure handling, and trace evidence.
+Show where the model's work ends and application code takes over. The model
+produces an assessment. TypeScript code manages the lifecycle, limits tools,
+makes permission decisions, handles failures, and records traces.
 
 Keep the session local and focused. Do not add orchestration, remote sessions,
 BYOK, packaging, deployment, external systems, or another language.
@@ -55,9 +55,9 @@ authenticated Copilot access with another model provider.
 Open with the synthetic change record. Ask which parts need model reasoning and
 which parts should stay deterministic.
 
-The readiness tool returns fixed evidence. The model can explain that evidence,
-but it cannot create a new record or change the policy. This separation makes the
-lab testable.
+The readiness tool returns fixed lookup results. The model can explain those
+results, but it cannot create a new record or change the policy. This separation
+makes the lab testable.
 
 Emphasize these decisions:
 
@@ -113,7 +113,7 @@ designed to do.
 The tests assert control decisions and deterministic results. They do not assert
 the model's prose.
 
-Jaeger adds timing and sequence evidence. It helps answer whether the restricted
+Use Jaeger to show the timing and sequence of a run. Check whether the restricted
 call reached the handler and where a failed run stopped. Remind learners that trace
 payloads can expose prompts and tool arguments. The lab uses synthetic data for
 that reason.
@@ -125,9 +125,9 @@ that reason.
 
 ### Demo focus
 
-The terminal shows a denied lookup for `RESTRICTED-0001`. Seconds later, the
-trainer opens Jaeger and points to the same blocked tool call inside the connected
-trace. The policy is visible from both the user and operator view.
+Show the denied lookup for `RESTRICTED-0001` in the terminal. Seconds later, open
+Jaeger and point to the same blocked tool call inside the connected trace.
+Learners can compare what the user sees with what the operator can inspect.
 
 ### Demo prerequisites
 

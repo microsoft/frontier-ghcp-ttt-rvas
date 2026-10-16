@@ -16,8 +16,8 @@
 ## Outcome
 
 Create one automation that reads the live GitHub issues and the reviewed Session
-m7-05 parent result. Run it, review the draft, apply one approved issue change, and
-run it again.
+m7-05 parent result. Review its first draft, then apply one approved issue change
+and run it again. Compare the drafts to see how that change affected the update.
 
 The core lab uses a manual trigger and draft-only output. Scheduling stays
 disabled.
@@ -65,8 +65,8 @@ Complete only these fields:
 - stop conditions;
 - current enabled or disabled state.
 
-The core definition uses a manual trigger, one draft stakeholder update, and an
-enabled state for supervised lab runs only.
+In your definition, use a manual trigger and limit the output to one draft
+stakeholder update. Enable the automation only for supervised lab runs.
 
 ## Part 3: Create and run the automation
 
@@ -123,8 +123,8 @@ The update must state:
 - the review decision;
 - the next action.
 
-Name GitHub or Azure Boards as the authoritative planning system. Distribution is
-a human action outside the automation.
+Name GitHub or Azure Boards as the authoritative planning system. Leave
+distribution to a person outside the automation.
 
 ## Verification
 

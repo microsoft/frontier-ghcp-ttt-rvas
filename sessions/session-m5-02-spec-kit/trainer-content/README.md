@@ -31,8 +31,8 @@ request is a starting point*, and *Specification changes when decisions happen*
 
 1. **Open with the lesson goal.** Decide what the feature means before asking an
    agent to implement it. Spec Kit makes those decisions visible.
-2. **Set the pace from the agenda.** Explain that the trainer content establishes
-   the model. Learners will run the complete workflow in the 2-hour 30-minute lab.
+2. **Set the pace from the agenda.** Explain how Spec Kit works before the lab.
+   Learners will run the complete workflow in the 2-hour 30-minute lab.
 3. **Read the archive request aloud.** Ask learners to notice how many decisions
    hide inside the word "remove." Use the four questions on the slide. Do not answer
    them yet.
@@ -82,7 +82,7 @@ choosing a design*
    learners have seen the ambiguity. Clarification updates `spec.md`; it does not
    create a competing decision log.
 
-The agreed behavior now gives the technical design a stable boundary.
+Use the agreed archive behavior to show which technical choices the plan must support.
 
 ### 0:30 to 0:42: Planning, checklists, tasks, and analysis
 
@@ -136,8 +136,8 @@ GitHub Issues*
    accepted task IDs, dependencies, parallel markers, file paths, and scope. They
    do not become a second requirements source.
 
-The final slides set the approved installation path, show one real gap, and hand
-control to the lab.
+Use the final slides to explain installation approval, demonstrate one real gap,
+and introduce the lab.
 
 ### 0:52 to 1:00: Installation, demonstration, and lab handoff
 
@@ -225,14 +225,15 @@ and show the appended test task. Then add the test, run the suite, and converge
 again. Then reveal `change-request.md` and show how restore behavior flows through
 clarification, planning, tasks, analysis, implementation, and convergence.
 
-Learners see the artifacts drive real work instead of watching a static handoff.
+Point out how the missing test creates a task and how the restore request changes
+the specification. Learners should see the artifacts change the work.
 
 ## Delivery controls
 
-Use synthetic data and a GitHub training repository. Record the approved source and
-release tag. If the environment is disconnected, use an official air-gapped
-package prepared before delivery. Stop when the approved Spec Kit path or selected
-integration is unavailable.
+Use synthetic data and a GitHub training repository. Record the approved package
+source and release tag. If the environment is disconnected, use an official
+air-gapped package prepared before delivery. Stop when the approved Spec Kit
+installation or selected integration is unavailable.
 
 ## Common questions
 

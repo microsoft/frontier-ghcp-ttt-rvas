@@ -57,7 +57,7 @@ Add one small, testable behavior.
 - Inspect the proposed file changes.
 - Review every command before it is run.
 - Check test results and unexpected side effects.
-- Stop when scope, data, policy, or the agreed guard is unclear.
+- Stop when scope, data, policy, or the agreed stop rule is unclear.
 
 ---
 
@@ -93,7 +93,7 @@ tool approval, steering, or agent review.
 | --- | --- | --- |
 | Inline | Local code context | A continuation |
 | Chat | A question and references | Guidance or a proposed edit |
-| Agent | Goal, constraints, and repository | A multi-step change with evidence |
+| Agent | Goal, constraints, and repository | A multi-step change with a diff and check results |
 
 More autonomy needs clear file limits, progress checks, and review.
 
@@ -157,7 +157,8 @@ route.ts ──calls──→ service.ts
                      README.md
 ```
 
-Name the behavior, not a file count. Review every changed node and check for missing connections.
+Name the behavior you want to change. Review every changed file and check that
+its callers and tests still fit.
 
 ---
 
@@ -202,7 +203,7 @@ Ask the agent to implement and test the smallest valid change, then explain it.
 5. When a test fails, ask the agent to explain before revising.
 6. Inspect the final diff and run tests independently.
 
-**Transition:** "A passing test is evidence. It does not complete the review."
+**Transition:** "A passing test checks one behavior. Review the rest of the diff too."
 
 ---
 
@@ -216,7 +217,9 @@ Keep the existing service API and add only the optional filter.
 Show the revised plan before editing.
 ```
 
-Stop for unexpected file scope, destructive commands, restricted data, unapproved network access, or repeated changes without new evidence.
+Stop for unexpected file scope, destructive commands, restricted data, unapproved
+network access, or repeated changes without new test results or an explained
+diagnosis.
 
 ---
 
@@ -226,8 +229,8 @@ Stop for unexpected file scope, destructive commands, restricted data, unapprove
 | --- | --- |
 | You need explanation or options | The outcome spans related files |
 | You want one surgical edit | Tests can drive iteration |
-| Requirements are still forming | Requirements and constraints are explicit |
-| You need to retain manual control | Tool use creates useful evidence |
+| Requirements are still forming | Requirements and constraints are clear |
+| You need to retain manual control | Tool output helps you check the work |
 
 Implement manually when policy, risk, or ambiguity makes an agent unsuitable.
 
@@ -267,7 +270,7 @@ Use the answers to discuss task selection.
 
 # Lab handoff
 
-Learners will scaffold, implement, test, and refactor features with clear limits while:
+You will scaffold, implement, test, and refactor features with clear limits while:
 
 1. observing tool calls and multi-file edits;
 2. redirecting the agent after an intentional scope change;
@@ -284,9 +287,9 @@ Learners will scaffold, implement, test, and refactor features with clear limits
 # Remember
 
 1. Agent mode fits clearly defined, testable, multi-step work.
-2. Task contracts convert autonomy into reviewable boundaries.
+2. Write the task limits before the agent starts.
 3. Tool approval and file scope are trust decisions.
-4. Intervention is expected, not a failure.
+4. Redirect or stop the agent when needed.
 5. Human review closes the loop.
 
 ---

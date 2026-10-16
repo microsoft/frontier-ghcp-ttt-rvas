@@ -10,9 +10,10 @@
 ## Overview
 
 Use Spec Kit to carry one feature request through to tested code.
-Learners initialize an existing Python project, create the Spec Kit artifacts,
-implement an archive operation, and run convergence review. They then update the
-living specification to add restore behavior and repeat the workflow.
+You initialize an existing Python project and create the Spec Kit artifacts.
+Then you implement an archive operation and run convergence review. A later
+restore requirement gives you a reason to update the living specification and
+repeat the workflow.
 
 The lab uses Spec Kit's real project model:
 

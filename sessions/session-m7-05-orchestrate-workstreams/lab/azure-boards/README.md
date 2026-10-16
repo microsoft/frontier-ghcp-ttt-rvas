@@ -12,8 +12,8 @@ planning updates
 > part of the standard learner path.
 
 Use a seeded Azure Boards Epic or Feature for the same four Session m7-03 issue
-roles. Azure Boards holds the authoritative plan and status. GitHub holds
-repository work.
+roles. Keep the authoritative plan and status in Azure Boards, and repository
+work in GitHub.
 
 **GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser
 are planning interfaces. They do not replace the built-in `/orchestrate` skill.
@@ -55,7 +55,8 @@ Use the seeded status-visibility Epic or Feature.
 
 ## Step 1: Select independent child work items
 
-Open the parent item through approved MCP tools or the browser. Select up to four children with separate questions and approved inputs.
+Open the parent item through approved MCP tools or the browser. Select up to four
+children. Give each a separate question and approved inputs.
 
 Mirror the standard lab wording:
 
@@ -69,7 +70,8 @@ Mirror the standard lab wording:
 For each selected item, record the question and its scope, approved inputs, hard stop
 condition, and reviewer.
 
-No selected child should wait for another child result. Keep shared dependencies with the parent or run dependent work in sequence.
+Check that each selected child can work without waiting for another child's
+result. Keep shared dependencies with the parent or run dependent work in sequence.
 
 ## Step 2: Record the contracts
 
@@ -104,7 +106,8 @@ Inspect the live child sessions in GitHub Copilot. Use Azure Boards MCP or the b
 | Work crosses an access, data, usage, or authority boundary | **Stop** |
 | The contract is met | **Accept** |
 
-Preserve genuine control decisions. Stop unsafe work. Reject unsupported claims. Escalate decisions that require human authority.
+Record the control decisions you actually make. Stop unsafe work, reject
+unsupported claims, and escalate decisions that require human authority.
 
 ## Step 5: Review and update Boards
 

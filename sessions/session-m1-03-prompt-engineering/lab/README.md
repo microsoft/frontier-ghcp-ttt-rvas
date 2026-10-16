@@ -12,9 +12,9 @@
 ## Lab overview
 
 You will build one todo API in stages. The starter includes tests, route comments,
-and a small context example. You will first implement baseline todo behavior, then
-wire the HTTP routes. A change request adds priority and leaves one invalid-input
-decision open.
+and a small context example. First implement baseline todo behavior, then
+wire the HTTP routes. A later change request adds priority. You will decide how
+to handle invalid priority input.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -181,8 +181,8 @@ Keep the implementation that matches the route contract.
 
 Open `../change-request.md`.
 
-The request defines allowed values and filtering but leaves invalid priority
-behavior open. Decide before editing. The reference solution rejects invalid
+The request defines allowed values and filtering. Decide how to handle invalid
+priority values before editing. The reference solution rejects invalid
 priority with:
 
 ```text
@@ -219,7 +219,7 @@ npm test
 ```
 
 Write one reusable prompt in `prompt-log.md`. It should state the exact file, task,
-constraints, accepted behavior, and verification command without restating the
+constraints, accepted behavior, and check command without restating the
 implementation line by line.
 
 ## Final deliverable

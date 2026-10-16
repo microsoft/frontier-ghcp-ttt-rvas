@@ -10,10 +10,10 @@
 
 ## Overview
 
-The capstone delivers one reviewed Bookmark API slice: `POST /api/bookmarks`.
-Learners use the accepted GitHub issue as the scope boundary and apply Session m5-02
-specification standards. They finish with test results and a handoff that
-another engineer can use.
+Implement and review one Bookmark API slice: `POST /api/bookmarks`. Keep the
+accepted GitHub issue as your scope boundary and apply the Session m5-02
+specification standards. Finish with test results and a handoff that another
+engineer can use.
 
 **The capstone stays small on purpose.** Authentication, persistent storage,
 deployment, and every other bookmark endpoint remain out of scope.

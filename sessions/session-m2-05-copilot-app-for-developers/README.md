@@ -14,14 +14,14 @@ description: "Use the GitHub Copilot app for isolated, evidence-backed engineeri
 
 ## Overview
 
-Use the GitHub Copilot app for engineering work. Learners separate exploratory
-chats from project sessions, choose Interactive, Plan, or Autopilot based on risk,
-and keep concurrent work in isolated working trees.
+Use the GitHub Copilot app for engineering work. Separate exploratory chats from
+project sessions and choose Interactive, Plan, or Autopilot based on risk.
+Keep concurrent work in isolated working trees.
 
-The lab follows one synthetic change through a tight inner loop and a GitHub-facing
-outer loop. Learners attach evidence, hand work between sessions, request an
-independent critique, inspect an issue and pull-request snapshot, and define a
-manual read-only automation that reports PR readiness without changing GitHub.
+Follow one synthetic change through a local inner loop and a GitHub-facing outer
+loop. Attach files and test output, hand work between sessions, and request an
+independent critique. Then inspect an issue and pull-request snapshot and define
+a manual read-only automation that reports PR readiness without changing GitHub.
 
 ## Learning outcomes
 
@@ -30,7 +30,7 @@ manual read-only automation that reports PR readiness without changing GitHub.
 - Start isolated work and check the branch or working-tree boundary.
 - Attach only the files needed for the next decision.
 - Hand a task to a fresh session without relying on hidden conversation history.
-- Use tests, diffs, and command output as evidence in the inner loop.
+- Use tests, diffs, and command output to check work in the inner loop.
 - Challenge `/plan` with `/rubber-duck` before implementation and record the revision.
 - Explain the critic's read-only role and automatic contrasting-model selection.
 - Compare a `/spar` argument in a checked fork and review `/merge-to-parent`.

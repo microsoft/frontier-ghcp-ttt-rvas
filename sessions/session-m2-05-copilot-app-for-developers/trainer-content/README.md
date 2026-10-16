@@ -9,9 +9,9 @@ description: "Trainer guide for GitHub Copilot app engineering sessions and PR r
 
 ## Delivery objective
 
-Learners should treat the app as a set of engineering workspaces with different
-risk boundaries. Choose the surface for the task, isolate concurrent work, and
-check tests, diffs, and review threads before deciding PR readiness.
+Show how the app's workspaces separate tasks with different risks. Teach learners
+to choose the surface for the task and isolate concurrent work. Before deciding
+PR readiness, have them check tests, diffs, and review threads.
 
 ## Pacing
 
@@ -58,8 +58,8 @@ Avoid a feature tour. Tie each area to a decision:
 | Automations | Save a repeatable task with named triggers and tools |
 | Settings | Control project instructions, sandboxing, and session defaults |
 
-Ask learners where evidence lives after each action. If the answer is only "in
-the conversation," the workflow is too fragile.
+After each action, ask learners where they saved its output. If it exists only
+in the conversation, ask them to record it for the next session.
 
 ## Explain chat versus project session
 
@@ -126,13 +126,14 @@ Summarize the goal, accepted scope, files changed, checks run with exact results
 open risks, and the next human decision. Keep the handoff usable in a fresh session.
 ```
 
-Open a fresh session and attach the handoff. Ask it what evidence is missing. This
-shows whether the handoff carries state or merely repeats the story.
+Open a fresh session and attach the handoff. Ask which files or check results
+are missing. Use the answer to check whether another session could continue the
+work.
 
 ## Demonstrate the inner loop
 
-The starter has a small Python module with deliberate readiness gaps. The correct
-flow is:
+The starter has a small Python module with deliberate readiness gaps. Demonstrate
+this repair sequence:
 
 1. Run the focused tests and capture the failure.
 2. Map each failing assertion to the issue criteria.
@@ -192,7 +193,7 @@ Ask these questions in order:
 2. Did the diff add unrelated scope?
 3. Which review threads still block approval?
 4. Which checks are required?
-5. Which evidence is missing or stale?
+5. Which files, review results, or check results are missing or stale?
 6. Who makes the final readiness decision?
 
 The expected verdict for the supplied snapshot is **NOT READY**. One required check
@@ -204,8 +205,8 @@ Open `automation-prompt-template.md`. The learner creates a manual automation or
 when cloud automation is unavailable, writes the same specification.
 
 Use only read tools. The prompt must forbid comments, labels, pushes, approvals,
-merges, and thread resolution. A good run reports evidence and uncertainty. It does
-not act as a reviewer of record.
+merges, and thread resolution. Have learners check that the report cites its
+sources and names uncertainty. It does not act as a reviewer of record.
 
 ## Common coaching corrections
 
@@ -215,14 +216,14 @@ not act as a reviewer of record.
 | Opens work in the local repository | Ask whether a parallel session could touch the same files |
 | Attaches the whole project | Ask which files affect the next decision |
 | Treats passing tests as PR approval | Open review threads and required checks |
-| Accepts critique without checking it | Ask what evidence supports the critique |
+| Accepts critique without checking it | Ask which code or test result supports the critique |
 | Calls the author's second answer independent critique | Use the required `/rubber-duck` command |
 | Commits before `/review` | Keep the repair diff available until review and triage finish |
 | Gives the automation write tools | Remove every tool that is not needed for the report |
 
 ## Trainer demo recovery
 
-If the trainer demonstration fails, use the captured session evidence to explain
+If the trainer demonstration fails, use the saved session output to explain
 the remaining decisions. Do not use this pack as the learner lab or count it as
 hands-on app practice.
 

@@ -61,7 +61,7 @@ and pushes to main. Use Node.js 20, npm ci, existing lint, test, and build scrip
 npm caching, contents: read, and a seven-day dist artifact.
 ```
 
-Then prove both layers:
+Then check both YAML syntax and application behavior:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' ci.yml
@@ -77,8 +77,8 @@ The same application moves through:
 build → staging → production
 ```
 
-The workflow references environments and secrets. Repository settings own the
-production reviewers. Placeholder commands must not imply that a deployment ran.
+The workflow references environments and secrets. Production reviewers are
+configured in repository settings. Placeholder commands must not imply that a deployment ran.
 
 ---
 # Syntax and behavior fail differently

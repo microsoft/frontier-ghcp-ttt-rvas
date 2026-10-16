@@ -16,8 +16,9 @@ Squad is an optional open-source example:
 coordination, role limits, shared decisions, and review. Before a live
 demonstration, check current availability, requirements, and customer approval.
 
-Learners decide when an agent team helps, set ownership that prevents conflicting
-changes, and use a manual workflow when the tool path is unavailable.
+Show learners how to decide whether a task needs an agent team and assign owners
+without conflicting changes. Explain the manual workflow for when the tool is
+unavailable.
 
 ## One-hour plan
 
@@ -44,7 +45,9 @@ demonstration into one hour.
 
 ## 1. Why coordinate agents (0:00 to 0:07)
 
-An individual agent works well for a task with a defined scope. A team becomes useful when work has clear boundaries, several specialties, and a shared decision that must outlive the current conversation.
+Start with a task one agent can finish within a defined scope. Contrast it with
+work that needs several specialties and shared decisions beyond the current
+conversation. A team needs clear boundaries between those tasks.
 
 Coordination adds state and review work. It also costs more, and mistakes take time to recover from. The tool does not remove the engineering lead. Someone still owns scope and the final decision.
 
@@ -77,7 +80,9 @@ Use an issue as the work contract. It needs acceptance criteria, non-goals, cons
 
 ## 3. Saved team decisions (0:17 to 0:27)
 
-Keep shared state small and useful. A committed decision log answers questions that should not be rediscovered every session: chosen architecture, rejected option, owner, evidence, and date.
+Show what belongs in a committed decision log: the chosen architecture, rejected
+option, owner, supporting results, and date. These are decisions the team should
+not have to rediscover in every session.
 
 Personal history can record role-specific lessons. Temporary inboxes, drafts, and task output do not belong in the decision record.
 
@@ -113,7 +118,7 @@ demonstration.
    permitted files, required tests, and reviewer.
 2. **0:37 to 0:39: Show the team.** Open the reference `.squad/team.md`,
    `.squad/routing.md`, and the backend charter. Explain why the backend role owns
-   the implementation while the tester returns evidence without editing source.
+   the implementation while the tester returns test results without editing source.
 3. **0:39 to 0:41: Assign the issue.** Open
    `.squad/decisions/inbox/issue-001-proposal.md` and
    `.squad/orchestration-log/issue-001.md`. The assignment must preserve the issue
@@ -123,9 +128,9 @@ demonstration.
    from the prepared solution.
 5. **0:44 to 0:46: Review the result.** Open
    `.squad/reviews/issue-001-review.md`. Check each acceptance criterion against
-   code and test evidence.
+   code and test results.
 6. **0:46 to 0:47: Record the decision.** Open `.squad/decisions.md`. Show the
-   approved decision, evidence, owner, and date.
+   approved decision, supporting results, owner, and date.
 
 If the tool is unavailable during the trainer demonstration, walk through the
 prepared files. Fix access before the learner lab.
@@ -139,9 +144,10 @@ Record the proposal, focused-check evidence, and a lead review decision.
 Stop if ownership or the data boundary is unclear.
 ```
 
-Learners should see one charter, one assignment, a change within the issue scope, focused test
-results, and the lead's decision. At 0:41, switch to the reference `.squad/`
-example if the live path has not produced the assignment. At 0:44, switch to the
+Make the review trail visible: one charter and assignment, the change within the
+issue scope, focused test results, and the lead's decision. At 0:41, switch to the
+reference `.squad/` example if the live path has not produced the assignment.
+At 0:44, switch to the
 tabletop packet if implementation or tests are still blocked.
 
 ## 6. When a team helps (0:47 to 0:55)

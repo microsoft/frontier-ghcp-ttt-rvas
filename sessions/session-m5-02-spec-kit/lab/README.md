@@ -10,9 +10,10 @@ artifacts, GitHub Issues, tests, and convergence results
 
 ## Lab overview
 
-Add task archiving to a small Python project, implement it in stages, and run
-convergence review. Then use Spec Kit's living-spec workflow to add a restore
-requirement and update the accepted artifacts and implementation.
+Add task archiving to a small Python project. You will implement it in stages and
+use convergence review to find missing work. Then add a restore requirement
+through Spec Kit's living-spec workflow, updating the accepted artifacts and
+implementation together.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -98,8 +99,8 @@ Create principles for this training project:
 - keep requirements separate from implementation choices.
 ```
 
-Open `.specify/memory/constitution.md`. Each principle should create a check that
-can affect planning, implementation, or review.
+Open `.specify/memory/constitution.md`. Check that you can use each principle
+to judge a plan, implementation, or review.
 
 Create the feature specification:
 
@@ -145,7 +146,8 @@ Use Python 3.10+ and the standard library. Extend src/task_store.py and
 tests/test_task_store.py. Keep storage in memory. Do not add packages.
 ```
 
-Review `plan.md`, `research.md`, `data-model.md`, and `quickstart.md`. Remove any dependency, service, or infrastructure that the accepted feature does
+Review `plan.md`, `research.md`, `data-model.md`, and `quickstart.md`.
+Remove any dependency, service, or infrastructure that the accepted feature does
 not need.
 
 Generate and review a requirements-quality checklist:
@@ -245,13 +247,13 @@ If convergence appends a new phase to `tasks.md`:
 3. rerun the unit tests;
 4. run `/speckit-converge` again.
 
-Repeat until Spec Kit reports **Converged**. A clean result does not change
-`tasks.md`.
+Repeat until Spec Kit reports **Converged**. When it finds no remaining work,
+it leaves `tasks.md` unchanged.
 
 ## Part 7: Evolve the living specification (30 minutes)
 
-Open `change-request.md`. The accepted behavior now includes restoring archived
-tasks.
+Open `change-request.md`. You now need to support restoring archived tasks as
+part of the accepted behavior.
 
 Use the documented living-spec sequence:
 

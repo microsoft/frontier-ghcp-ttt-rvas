@@ -28,8 +28,8 @@ copied `agent-project` directory and run:
 /lsp test typescript
 ```
 
-`test` checks a temporary server's startup; it does not prove a symbol lookup.
-The lab requires an actual definition/reference lookup too.
+`test` starts a temporary server to check startup. You must also run an actual
+definition/reference lookup in the lab.
 
 ## Python: Session m2-06
 
@@ -47,8 +47,8 @@ Start the CLI in the copied inventory project and run:
 /lsp test python
 ```
 
-Run these before delivery, but save the code-navigation exercise until the
-application parses and its tests are green.
+Run these checks before delivery. Wait until the application parses and its
+tests pass before starting the code-navigation exercise.
 
 ## If a check fails
 

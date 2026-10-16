@@ -190,7 +190,7 @@ def presentation_launcher(page, session_name: str) -> str:
     return f"""
 <div class="presentation-launcher">
   <button type="button" class="presentation-launch-btn" data-presentation-open
-    aria-haspopup="dialog" aria-controls="pres-modal" hidden>Launch Slides</button>
+    aria-haspopup="dialog" aria-controls="pres-modal" hidden>Open slides</button>
   <a class="presentation-newwindow-btn" href="{presentation_url}"
     target="_blank" rel="noopener">Slides in new tab</a>
   <a class="presentation-pdf-btn" href="{pdf_url}"

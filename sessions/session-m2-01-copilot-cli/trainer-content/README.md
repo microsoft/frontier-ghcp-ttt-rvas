@@ -6,9 +6,8 @@
 
 ## Session overview
 
-This session covers GitHub Copilot's standalone CLI. Trainers learn its terminal
-workflows and when it fits better than an IDE. They also learn how to teach those
-choices without overstating product behavior.
+Demonstrate GitHub Copilot's standalone CLI in terminal workflows. Show when it
+fits better than an IDE, and keep product claims within what you can demonstrate.
 
 **Session focus:** The CLI supports scriptable workflows in headless environments.
 It fits DevOps engineers, SREs, and other terminal-focused developers.
@@ -20,7 +19,7 @@ It fits DevOps engineers, SREs, and other terminal-focused developers.
 - [ ] Install the Copilot CLI: `npm install -g @github/copilot` (requires Node.js 22+)
 - [ ] Authenticate: run `copilot` and use `/login`
 - [ ] Use `lab/starter/agent-tasks/` for the demo and lab handoff
-- [ ] Terminal with good font size for projection (24pt+)
+- [ ] Set the terminal font large enough for projection (24pt+)
 - [ ] Test all demo commands beforehand because CLI versions change rapidly
 - [ ] Check `/plan`, `/fleet`, `/tasks`, and `/usage` in the installed CLI
 - [ ] Agree a usage limit and practise stopping a child task
@@ -133,7 +132,7 @@ The interactive CLI has three modes, cycled with `Shift+Tab`:
 > **Autopilot:** "It can continue without another conversational prompt.
 > Tool permissions still apply. Keep the task small and inspect the result."
 
-**Required lab practice:** Run `/plan`, challenge one assumption, and request a
+**Required lab practice:** Have learners run `/plan`, challenge one assumption, and request a
 `/rubber-duck` critique before approving implementation. Check findings against
 the source, then revise or explain rejected suggestions. Record target files
 and checks. Check the project diff before approval and after implementation.
@@ -269,7 +268,7 @@ copilot -p "Check this Terraform for security issues and fix them" \
 
 ### Fine-grained tool permissions
 
-The permission system uses `Kind(argument)` syntax for precise control:
+Show how `Kind(argument)` syntax restricts individual tool operations:
 
 ```bash
 # Allow all git commands except push
@@ -330,7 +329,7 @@ agent learners must install.
 
 ### Subagent orchestration
 
-The main agent can coordinate subagents:
+Show how the main agent coordinates subagents:
 
 - Main agent delegates tasks to subagents running in **separate context windows**
 - Available concurrency depends on plan and configuration; check it before delivery
@@ -411,7 +410,7 @@ examples below are trainer reference, not extra demonstrations in the hour.
 /limits
 ```
 
-Explain tool approval versus process-level filesystem/network restrictions.
+Explain the difference between tool approval and process-level filesystem/network restrictions.
 Inspect the sandbox; do not disable it, broaden access, or switch permission
 mode to remove a denial.
 
@@ -427,7 +426,7 @@ the command with `Ctrl+X, b`, and inspect `/tasks`. Check its output before
 accepting the queued follow-up's summary. `Ctrl+S` stashes an unsent draft; it does
 not submit it. Background promotion does not detach the process or isolate writes.
 
-Use a committed repair checkpoint for recovery. Let the agent create a disposable
+Demonstrate recovery from a committed repair checkpoint. Let the agent create a disposable
 note, then inspect `/rewind`: conversation-only and conversation-plus-files have
 different effects. Check the restored files. Rewind does not undo external writes
 or replace Git rollback.
@@ -570,7 +569,8 @@ supervised child sessions through `/orchestrate`.
 
 ### Copilot App orientation
 
-The Copilot App gives teams a dedicated place to run agent sessions and manage customizations. Keep this part of Session m2-01 brief. Session m3-01 covers the App in depth.
+Briefly show how teams run agent sessions and manage customizations in the Copilot
+App. Session m3-01 covers the App in depth.
 
 **Key capabilities:**
 
@@ -741,10 +741,10 @@ to Markdown. Sessions can also be resumed across devices.
 
 ## Lab assessment and recovery
 
-The lab stays at 120 minutes: setup 15, plan/repair 40, programmatic/fleet 35,
-and recovery/surface choice 30. Learners choose two command-generation examples
-and one surface-comparison task. Keep the controls, checked critique, recovery,
-and live fleet work; use the remaining examples as reference practice.
+Keep the lab at 120 minutes: setup 15, plan/repair 40, programmatic/fleet 35,
+and recovery/surface choice 30. Ask learners to choose two command-generation
+examples and one surface-comparison task. Keep the controls, checked critique,
+recovery, and live fleet work. Use the remaining examples as reference practice.
 
 Require `workflow-record.md`, passing tests, a reviewed diff, and a checked health
 report. Each accepted child claim needs a file reference or focused test. The

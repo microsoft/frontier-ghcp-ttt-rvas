@@ -9,9 +9,9 @@
 
 ## Overview
 
-This elective uses Brady's Squad to teach role limits, routing, recorded
-decisions, and review. The lab carries one input-validation issue from assignment
-through tests and lead review using Squad.
+Use Brady's Squad to assign roles, route work, and keep a shared decision record.
+In this elective, you carry one input-validation issue from assignment through
+tests and lead review.
 
 ## Learning outcomes
 
@@ -30,8 +30,8 @@ If a requirement is unavailable, stop and resolve it before the lab.
 ## Deliverable
 
 Submit one review packet for the input-validation issue. It must include the
-assignment, implementation within the issue scope, test results, lead decision, and the
-decision record. The reference solution includes both a `.squad/` result and a
+assignment, implementation within the issue scope, test results, lead decision,
+and decision record. The reference solution includes both a `.squad/` result and a
 tabletop equivalent.
 
 ## Materials

@@ -70,7 +70,8 @@ gh auth status
 
 ### Objective
 
-Install the GitHub Copilot standalone CLI, check that it works, and use it to explain and suggest commands.
+Set up the GitHub Copilot standalone CLI and check that it works. Then use it to
+explain and suggest commands.
 
 ### Part A: Installation (5 min)
 
@@ -186,8 +187,8 @@ By the end of Exercise 1:
 
 ### Objective
 
-Use the Copilot CLI's full agent mode for multi-step development tasks in the
-terminal. Fix bugs, add tests, and refactor code without opening an IDE.
+Fix bugs, add tests, and refactor code in the terminal with the Copilot CLI's full
+agent mode. Keep the IDE closed for this exercise.
 
 ### Setup
 
@@ -387,8 +388,8 @@ replace tool permissions or human review.
 
 Run `npm test` and record the result.
 
-**Expected:** Validated, documented utility functions with updated tests. All tests
-pass.
+**Expected:** Your utility functions validate inputs and have documentation.
+The updated tests all pass.
 
 **Exit the CLI:**
 
@@ -425,9 +426,8 @@ By the end of Exercise 2:
 
 ### Objective
 
-Build terminal-first automation, then delegate independent analysis of the same
-project. `/fleet` and `/research` are also available in the app; they are not
-CLI-exclusive.
+Automate a report in the terminal, then delegate independent analysis of the same
+project. You can also use `/fleet` and `/research` in the app.
 
 ### Part A: Programmatic mode (15 min)
 
@@ -441,7 +441,7 @@ Programmatic mode (`-p`) lets you use Copilot in automated pipelines. Review its
    cd ~/copilot-labs/session-m2-01/agent-tasks
    ```
 
-2. **Open `pipeline-script.sh`.** This is a skeleton bash script with TODO comments. Your job is to fill in the Copilot commands.
+2. **Open `pipeline-script.sh`.** Fill in the Copilot commands at its TODO comments.
 
 3. **Try programmatic mode manually first:**
 
@@ -467,9 +467,10 @@ Programmatic mode (`-p`) lets you use Copilot in automated pipelines. Review its
    fi
    ```
 
-   `--output-format=json` emits a **JSONL event stream**, not the requested answer
-   as one JSON array. Inspect the event types and any error result. Parsing each
-   line proves valid JSONL; it does not prove a successful task or correct answer.
+   `--output-format=json` emits a **JSONL event stream**. Do not treat it as one
+   JSON array containing the answer. Inspect the event types and any error result.
+   Parsing each line checks the JSONL format, not whether the task succeeded or
+   the answer is correct.
    Record the CLI exit status immediately after the Copilot command. If it failed,
    stop and inspect the error before running the parser.
 
@@ -591,13 +592,15 @@ cloud delegation.
 | `/fleet` not recognized | Ensure you have the latest CLI version: `npm update -g @github/copilot`       |
 | Programmatic mode hangs | Add `--max-autopilot-continues=5` to cap iterations                           |
 
-### Checkpoint 3: automation evidence captured
+<a id="checkpoint-3-automation-evidence-captured"></a>
+
+### Checkpoint 3: automation results recorded
 
 By the end of Exercise 3:
 
 - [ ] You've run Copilot in programmatic mode (`-p`) with `--silent` and `--allow-tool`
 - [ ] You've completed and executed `pipeline-script.sh`
-- [ ] You've used `/research` and seen the depth difference vs. regular prompts
+- [ ] You've used `/research` and compared its depth with regular prompts
 - [ ] You've used `/plan`, `/fleet`, and `/tasks` and inspected live child results
 - [ ] Each accepted child claim has a source reference or focused check
 - [ ] You recorded usage and explained whether parallel work helped
@@ -727,7 +730,7 @@ Checked October 15, 2026:
 
 2. **Programmatic mode (`-p`) supports automation.** It can generate changelogs, reports, and audit summaries. Start with limited permissions and review the output.
 
-3. **CLI agent mode makes the workflow visible.** Learners can watch the agent plan, act, inspect results, and iterate in the terminal.
+3. **Show the CLI agent loop.** Have learners watch the agent plan, act, inspect results, and iterate in the terminal.
 
 4. **Choose between the CLI and IDE based on the work.** SSH, CI/CD, and automation favor the CLI. Visual development and code navigation favor the IDE.
 

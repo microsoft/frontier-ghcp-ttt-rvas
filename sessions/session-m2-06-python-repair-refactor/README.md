@@ -15,8 +15,8 @@ start, and produces the wrong answer after its startup faults are fixed. Use
 GitHub Copilot as a debugging partner while keeping each change small, testable,
 and recorded.
 
-Follow the order used in repair work: restore parsing, restore imports, recover
-expected behavior, add regression tests, then refactor. The reference solution
+Restore parsing first, then imports and expected behavior. Add regression tests
+before you refactor. The reference solution
 separates file parsing, reconciliation rules, reporting, and the command-line
 entry point.
 
@@ -59,7 +59,7 @@ The starter contains a controlled failure sequence:
 5. process-wide mutable state;
 6. tangled reconciliation and reporting code.
 
-The supplied fixtures and expected outputs define the intended result. Learners do
+The supplied fixtures and expected outputs define the intended result. You do
 not need external systems or private data.
 
 ## Materials

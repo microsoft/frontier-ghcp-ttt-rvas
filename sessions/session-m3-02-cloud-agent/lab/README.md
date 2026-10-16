@@ -10,9 +10,9 @@
 
 ## Objective
 
-Carry one synthetic issue from its fixed contract through setup, implementation,
-tests, and review. Use Copilot cloud agent only when access is approved. Otherwise
-complete the same work manually.
+You will take one synthetic issue from its fixed contract through setup and
+implementation, then test and review the change. Use Copilot cloud agent only
+when you have approval to use it. Otherwise complete the same work manually.
 
 ## Deliverables
 
@@ -25,7 +25,7 @@ Submit:
 
 ## Access policy
 
-Learners need Copilot cloud agent access to the training repository, synthetic
+You need Copilot cloud agent access to the training repository, synthetic
 data, and a reviewer.
 
 If access, policy approval, or reviewer ownership is missing, do not assign the
@@ -189,7 +189,7 @@ part of this lab unless the training repository policy explicitly requires it.
 
 ## Final deliverable
 
-The work is complete when another reviewer can trace:
+Your work is complete when another reviewer can trace:
 
 ```text
 same issue → reviewed setup → proposed change → tests → review outcome
@@ -208,4 +208,4 @@ same issue → reviewed setup → proposed change → tests → review outcome
 
 ## Solution reference
 
-`solution/` contains the completed issue journey, prepared diff, setup workflow, runnable solution project, test evidence, and final review decision.
+`solution/` contains the completed issue journey and final review decision. It also includes the prepared diff, setup workflow, runnable solution project, and test output.

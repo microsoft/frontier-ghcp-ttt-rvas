@@ -10,13 +10,12 @@
 
 ## Overview
 
-Build one todo API by improving prompts as the project evolves. Learners use intent,
-context, constraints, and examples to implement a store and Express routes. They
-then change the accepted behavior to add priority filtering and record how context
-affected the proposal.
+Build one todo API by improving prompts as the project evolves. Use intent,
+context, constraints, and examples to implement a store and Express routes. Then
+add priority filtering and record how context affected the proposal.
 
-The lab ties prompts to tests and API checks. A useful prompt produces work
-that still has to pass the project tests and API checks.
+**A useful prompt is only the start.** The generated work still has to pass the
+project tests and API checks.
 
 ## Learning outcomes
 

@@ -16,7 +16,8 @@ Session m7-04 | Product and Delivery Teams | Intermediate
 
 # Use visible state when chat stops being enough
 
-A canvas helps when work has several records, repeated updates, named actions, and a review view that must survive the conversation.
+A canvas helps you review several records and make repeated updates through named
+actions. Keep that view available after the conversation ends.
 
 The source is the live Session m7-03 parent issue and its linked child issues, not
 the previous chat.
@@ -64,7 +65,7 @@ Review the affected record
 Accept, revise, or reject
 ```
 
-This loop protects against stale data and confident but unsupported updates.
+Use this loop to catch stale data and updates that lack supporting sources.
 
 ---
 

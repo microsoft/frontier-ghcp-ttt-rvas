@@ -10,12 +10,12 @@
 
 ## Overview
 
-This session follows one synthetic issue from contract through human decision.
-Learners prepare the repository, start a Copilot cloud agent session,
-inspect the proposed change, run the required tests, and decide whether to approve,
+You will take one synthetic issue from its contract to a human review decision.
+Prepare the repository and start a Copilot cloud agent session. Then inspect the
+proposed change and run the required tests before deciding whether to approve,
 request changes, or pause.
 
-The issue stays fixed throughout the journey: reject blank or whitespace-only task titles while preserving valid task creation.
+Keep the issue fixed throughout the work: reject blank or whitespace-only task titles while preserving valid task creation.
 
 ## Learning outcomes
 
@@ -28,7 +28,7 @@ The issue stays fixed throughout the journey: reject blank or whitespace-only ta
 
 ## Deliverables
 
-Learners finish with:
+You will finish with:
 
 1. the fixed issue contract;
 2. the proposed change;

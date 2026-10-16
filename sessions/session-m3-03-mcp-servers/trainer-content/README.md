@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Show one MCP tool from its contract through tests and Inspector output. Learners should see the schema, handler,
-good input, bad input, automated test, and Inspector call before the server grows
-to three tools.
+Show one MCP tool from its contract through tests and Inspector output. Walk
+through the schema and handler, then demonstrate good and bad input. Run the
+automated test and Inspector call before expanding the server to three tools.
 
 ## One-hour plan
 
@@ -129,7 +129,7 @@ npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
 
 Then call `get_weather`. Keep test results and Inspector output separate:
 
-| Evidence | Proves |
+| Check | Proves |
 | --- | --- |
 | Unit test | Handler behavior for known inputs |
 | `tools/list` | The server exposes the expected catalog |
@@ -151,8 +151,8 @@ Review the constraints:
 - unknown tools return a visible error;
 - output remains deterministic and synthetic.
 
-Hand learners to the staged lab. They must keep the first tool passing while they
-add the other two.
+Point learners to the staged lab. Remind them to keep the first tool passing while
+they add the other two.
 
 ## Prepared demonstration
 
@@ -176,10 +176,10 @@ tests, and protocol calls.
 
 ## Lab handoff
 
-Learners start with the one-tool server, add one test, inspect good and bad calls,
-then add the remaining tools. The final deliverable includes lockfiles, passing
-tests, Inspector output or **not executed**, and exact request and response
-records.
+Explain the lab sequence: start with the one-tool server, add one test, and
+inspect good and bad calls before adding the remaining tools. Ask learners to
+submit lockfiles and passing tests, plus Inspector output or **not executed**.
+They must also record the exact requests and responses.
 
 ## References
 

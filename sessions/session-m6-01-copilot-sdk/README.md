@@ -14,15 +14,14 @@ description: "Build and check a reliable TypeScript agent application with the G
 
 ## Overview
 
-This session moves from using an agent to building an application around one.
-Learners create a TypeScript CLI that assesses whether a synthetic software change
-is ready to proceed.
+Build a TypeScript CLI around an agent to assess whether a synthetic software
+change is ready to proceed.
 
-The session treats reliability as application code. The CLI owns the client and
-session lifecycle, streams progress, limits tool use, exposes denied actions,
-records failures, and closes resources. Tests check the control path. An
-OpenTelemetry Collector sends traces to Jaeger so learners can inspect the same
-run outside the terminal.
+You write the reliability controls in application code. The CLI manages the client
+and session lifecycle, streams progress, and limits tool use. It also shows denied
+actions, records failures, and closes resources. Tests check that control path.
+An OpenTelemetry Collector sends traces to Jaeger so you can inspect the same run
+outside the terminal.
 
 ## Learning outcomes
 

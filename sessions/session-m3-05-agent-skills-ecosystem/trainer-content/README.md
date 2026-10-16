@@ -2,10 +2,10 @@
 
 ## Delivery objective
 
-Teach the skill as a selection contract plus a procedure. The demonstration must
-show one matching task, one task that stays out of scope, and one matching task
-that stops because a precondition is missing. Learners also load skills live and
-compare two decision interviews before moving into `/plan`.
+Show how a skill selects a task and then guides the work. Demonstrate a matching
+task and a task that stays out of scope. Then show a matching task that stops
+because a precondition is missing. Have learners load skills live and compare two
+decision interviews before moving into `/plan`.
 
 ## One-hour plan
 
@@ -106,8 +106,8 @@ result is:
 }
 ```
 
-This is correct application. The skill selected itself, checked its preconditions,
-and stopped.
+Explain why this is the correct result: the skill matched the task, checked its
+preconditions, and stopped.
 
 ### 0:26 to 0:36: Validate and invoke
 
@@ -130,7 +130,7 @@ Separate the claims:
 
 The local runner only handles the supplied scenarios. It is a teaching harness.
 
-The learner validator and demo now read the project-local API skill. The harness
+The learner validator and demo read the project-local API skill. The harness
 unit tests retain a fixed reference fixture. Neither claims that an LLM followed
 the Markdown procedure. Show actual `/skills info` and live invocation separately.
 
@@ -185,16 +185,17 @@ during delivery.
 - No negative trigger.
 - Preconditions hidden inside a long procedure.
 - Returning success after a command failed or did not run.
-- Treating a popular community skill as approved.
+- Assuming popularity means a community skill has approval for use.
 - Installing only `grill-me` without `grilling`.
 - Keeping Plan mode on while the interview is still settling decisions.
 - Calling the author's second answer an independent interview run.
 
 ## Lab handoff
 
-The lab stays at 120 minutes: 25/15/10/10/15 minutes for the API skill checks, then
-45 for the live interview comparison, plan handoff, and five-minute retrospective. Keep the live comparison
-and reduce discussion if the first half runs long.
+Keep the lab at 120 minutes. Allow 25/15/10/10/15 minutes for the API skill checks.
+Use the remaining 45 minutes for the live interview comparison, plan handoff, and
+five-minute retrospective. If the first half runs long, shorten discussion rather
+than the live comparison.
 
 Require correct skill application, visible missing-reviewer failure, actual live
 loading, and the decision-to-plan comparison. A manual checklist or copied model

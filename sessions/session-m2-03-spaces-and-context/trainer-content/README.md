@@ -59,8 +59,8 @@ Exclude:
 
 > "Select the fewest files needed to explain and check the result."
 
-> "If source eligibility or product behavior is unclear, stop and resolve the
-> access or policy question before the lab."
+> "If you are unsure whether you may use a source or how the product handles it,
+> stop and resolve the access or policy question before the lab."
 
 > "For metered work, stop at the usage limit."
 
@@ -96,7 +96,7 @@ Ask learners to identify a task that would be easier to review with fewer files.
 - At 0:18, keep the hierarchy diagram and omit secondary surface examples.
 - At 0:30, describe sharing rather than navigating a changing UI.
 - At 0:42, create one instruction excerpt and one prompt file, not a library.
-- At 0:50, mention memory only as an availability-dependent concept requiring verification.
+- At 0:50, mention memory only after noting that learners must check its availability.
 - At 0:55, compare plans rather than waiting for generated code.
 - Never cut source approval, maintenance ownership, access checks, or lab boundaries.
 
@@ -108,8 +108,8 @@ Ask learners to identify a task that would be easier to review with fewer files.
 - Missing contracts cause invented assumptions.
 - Broad, stale, or conflicting sources can obscure the decisive rule.
 - Restricted data must not be added merely because it seems relevant.
-- A confident answer is not evidence that the right source was used.
-- The lasting skill is selecting the fewest files needed for review.
+- A confident answer does not show that the right source was used.
+- Teach learners to select the fewest files needed for review.
 
 ### Opening exercise
 
@@ -206,11 +206,13 @@ Exclude:
 
 ### Observable outcome
 
-Learners can explain why every included source is necessary and why every excluded source is unnecessary or unsuitable.
+Ask learners to explain why they need each included source and why they excluded
+the others.
 
 ### Transition
 
-> "Curated evidence answers what the project says; repository instructions state how work should proceed."
+> "Use the selected sources to understand the project. Repository instructions
+> tell you how to work in it."
 
 ## Segment 4: Instructions and reusable prompts (0:30 to 0:42)
 
@@ -277,7 +279,7 @@ For every source or remembered fact, ask:
 
 1. **Source:** Where did this fact come from?
 2. **Scope:** Which repository, audience, and task does it apply to?
-3. **Freshness:** Which event or date triggers revalidation?
+3. **Freshness:** When, or after which change, should you check it again?
 
 ### Maintenance table
 
@@ -286,7 +288,7 @@ For every source or remembered fact, ask:
 | API contract changes | Update packet sources and retest a known question. |
 | Repository convention changes | Review instruction and prompt files. |
 | Source owner changes | Assign a new accountable maintainer. |
-| Output conflicts with evidence | Remove stale sources and clarify authority. |
+| Output conflicts with source files | Remove stale sources and identify which source governs the task. |
 | Product behavior changes | Recheck current official documentation. |
 | Policy or audience changes | Reapprove source eligibility and sharing. |
 
@@ -296,7 +298,7 @@ For every source or remembered fact, ask:
 
 ### Transition
 
-> "We will now test whether a smaller grounded packet produces a more reviewable plan."
+> "Now compare the plans with and without the selected source files."
 
 ## Scripted demo: Low-stock reporting with and without grounding (0:50 to 0:58)
 
@@ -348,7 +350,8 @@ Add a low-stock report endpoint.
 
 ### Expected observation for Pass A
 
-The response may place the route after `/:id`, accept invalid thresholds, invent an error, or omit verification.
+Look for a route placed after `/:id`, invalid thresholds accepted, invented errors,
+or missing checks.
 
 Results may vary. The request lacks the source files needed to judge the proposal.
 
@@ -487,15 +490,15 @@ Check current metering information and use the organization's usage limit.
 
 ### Closing script
 
-> "Good context is small enough to explain, safe to share, tied to source files,
-> and maintained by an owner. Better output starts with better source decisions."
+> "Keep only the sources the task needs. Check that you may share them, and name
+> who will keep them current."
 
 ### Lab handoff
 
 Open `lab/README.md`.
 
-Learners keep one Storefront API through source selection, repository
-instructions, a context comparison, and reusable prompts.
+Explain that learners will use the same Storefront API to select sources, add
+repository instructions, compare context, and test reusable prompts.
 
 Check current support before using a changing UI, path, setting, sharing control,
 or memory feature.

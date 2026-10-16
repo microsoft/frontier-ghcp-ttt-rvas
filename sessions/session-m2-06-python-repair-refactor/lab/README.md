@@ -190,7 +190,8 @@ Run:
 pytest -q
 ```
 
-The tests should now collect and expose deterministic behavior defects.
+The tests should now collect. Use their failures to identify the repeatable
+behavior defects.
 
 Compare the inputs with:
 
@@ -238,7 +239,7 @@ Commit or save this green state before changing structure.
 
 Remove `DESIGN-01`.
 
-Target these boundaries:
+Separate the responsibilities as follows:
 
 | File | Owns |
 | --- | --- |
@@ -267,8 +268,8 @@ would not appear as a reference to that function. Do not edit files.
 ```
 
 Inspect the actual operation or `/lsp logs`, then check its locations against
-the source. Record the result in the repair log. A successful server-start test
-or a plain text search does not prove an LSP lookup.
+the source. Record the result in the repair log. Check that you inspected an LSP lookup,
+rather than only a successful server-start test or a plain text search.
 
 Keep duplicated behavior separate from symbol references: inline classification
 can duplicate a rule without calling its function. Do not ask for a bulk rename

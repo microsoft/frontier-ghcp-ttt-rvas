@@ -4,10 +4,9 @@
 
 ## Delivery objective
 
-Teach learners to use GitHub MCP as a controlled work interface in the Delivery
-Decision Studio path: plan first,
-approve the write, then check the stored result. The live issues become the
-source of record.
+Show learners how to plan a GitHub MCP write, approve it, and check what GitHub
+stored. This continues the Delivery Decision Studio path. Once created, the live
+issues become the source of record.
 
 ## One-hour plan
 
@@ -46,7 +45,7 @@ Explain these rules:
 - a read operation can still expose restricted information;
 - a write operation must name its target and proposed values;
 - Copilot can propose an action, but the learner approves it;
-- verification must use a new read rather than the generated confirmation text.
+- check the saved result with a new read; generated confirmation text is not enough.
 
 Do not explain server protocols, transports, or SDKs.
 
@@ -66,7 +65,8 @@ Ask Copilot to:
 - report any permission or context uncertainty.
 
 Use `lab/starter/existing-issues.json` when the training repository does not
-already contain the seeded records. Learners must make a real disposition:
+already contain the seeded records. Have learners decide what to do with each
+candidate:
 
 - reuse `#241` because it partially overlaps the requester view;
 - leave `#256` unchanged because notifications are out of scope;
@@ -105,9 +105,10 @@ The learner records **Approve**, **Revise**, or **Reject** before the write.
 
 ### 5. Check and correct
 
-After creation, start a fresh read. Retrieve the issues and compare them with the
-approved plan. Add the verification owner and source-decision path to one child
-issue through another preview, approval, write, and fresh read.
+After creation, retrieve the issues in a fresh read and compare them with the
+approved plan. Demonstrate a correction by adding the verification owner and
+source-decision path to one child issue. Preview the update, get approval, write
+it, and read it back.
 
 Check that the live parent issue links the complete child set. Session m7-04 reads
 those issues directly.

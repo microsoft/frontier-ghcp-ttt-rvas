@@ -10,11 +10,10 @@
 
 ## Overview
 
-Session m7-02 continues the **Delivery Decision Studio** path. Learners use the
-Session m7-01 context brief, install a supplied project skill, and run a
-dependency-ordered interview. They turn approved answers into a decision brief
-and issue proposal, then revise the affected decisions when a late constraint
-arrives.
+Continue the **Delivery Decision Studio** path with your Session m7-01 context
+brief. Install the supplied project skill and use it to ask questions in
+dependency order. Turn the approved answers into a decision brief and issue
+proposal. When a late constraint arrives, revise only the affected decisions.
 
 The fictional Service Request Portal remains the initiative. Do not use customer
 requests or source organization names in the standard lab.

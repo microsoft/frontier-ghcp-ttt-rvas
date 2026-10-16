@@ -2,7 +2,7 @@
 
 ## Overall learning objectives
 
-By completing this curriculum, trainers will be able to:
+After this curriculum, you should be able to:
 
 1. **Explain** GitHub Copilot's architecture, capabilities, model ecosystem, and limitations to technical audiences
 2. **Demonstrate** inline suggestions, Chat, agent mode, and Spaces in live coding sessions
@@ -23,7 +23,8 @@ By completing this curriculum, trainers will be able to:
 
 ### Modules and tracks
 
-The curriculum is organized into **7 modules**. Modules 1 to 3 form the technical core. Modules 4 to 7 are role-based or technical electives that trainers can combine for their audience.
+The curriculum has **7 modules**. Use Modules 1 to 3 as the technical core.
+Combine the role-based and technical electives in Modules 4 to 7 to suit your audience.
 
 ```
 Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
@@ -151,7 +152,9 @@ GitHub issues and does not branch into an alternate platform exercise.
 **Module:** Copilot Fundamentals
 
 **Description:**
-Trainers learn what GitHub Copilot is, how the underlying LLM works at a high level, which data policies apply, and how to set up the development environment. Trainees install and configure Copilot, then use it to write their first code.
+Start with what GitHub Copilot does and how the underlying LLM works at a high
+level. Explain the data policies before setting up the development environment.
+Trainees then install and configure Copilot and use it to write their first code.
 
 **Trainer Content Outline (1 hour):**
 
@@ -164,7 +167,7 @@ Trainers learn what GitHub Copilot is, how the underlying LLM works at a high le
 - First demo: writing a function with Copilot suggestions
 - Next Edit Suggestions (NES): predictive follow-up edits
 - Setting expectations: what Copilot does well, where it struggles
-- Q&A framework for common objections
+- Prepare answers to common objections
 
 **Lab Outline (2 hours 30 minutes):**
 
@@ -193,7 +196,9 @@ Trainers learn what GitHub Copilot is, how the underlying LLM works at a high le
 **Module:** Copilot Fundamentals
 
 **Description:**
-Covers Copilot Chat in the sidebar, inline, and quick chat, plus slash commands, chat participants, and model selection. Trainees use @workspace, @terminal, and @vscode in routine development tasks.
+Show how sidebar, inline, and quick chat fit daily development tasks. Trainees try
+slash commands and chat participants, including @workspace, @terminal, and @vscode.
+They also learn how to choose a model.
 
 **Trainer Content Outline (1 hour):**
 
@@ -232,7 +237,9 @@ Covers Copilot Chat in the sidebar, inline, and quick chat, plus slash commands,
 **Module:** Copilot Fundamentals
 
 **Description:**
-Teaches trainees to write effective prompts for Copilot. Covers prompt structure, context selection, revision, and common mistakes. Later sessions use these methods.
+Have trainees write a prompt, inspect the result, and revise it. Teach prompt
+structure and context selection through common mistakes. Later sessions use
+the same methods.
 
 **Trainer Content Outline (1 hour):**
 
@@ -276,9 +283,9 @@ Prepare it before delivery; Session m2-01 is not a prerequisite.
 **Module:** Copilot in Practice
 
 **Description:**
-Introduces the standalone `copilot` CLI through terminal assistance, required
-planning and revision, programmatic output, and supervised `/fleet` analysis.
-Learners check generated work against local files and tests before accepting it.
+Use the standalone `copilot` CLI for terminal tasks. Learners must review and revise
+a plan before implementation, inspect programmatic output, and supervise `/fleet`
+analysis. They check generated work against local files and tests before accepting it.
 
 **Trainer Content Outline (1 hour):**
 
@@ -338,7 +345,9 @@ Learners check generated work against local files and tests before accepting it.
 **Module:** Copilot in Practice
 
 **Description:**
-This session introduces agent mode in VS Code and JetBrains. Agent mode plans work, edits files, runs terminal commands, responds to errors, and connects to MCP servers. Trainees learn how it handles related changes across files. Later sessions assume this knowledge.
+Give agent mode a task that needs related changes across files in VS Code or
+JetBrains. Follow its planning, edits, terminal commands, and response to errors.
+Explain how it connects to MCP servers. Later sessions assume this knowledge.
 
 **Trainer Content Outline (1 hour):**
 
@@ -381,7 +390,10 @@ This session introduces agent mode in VS Code and JetBrains. Agent mode plans wo
 **Module:** Copilot in Practice
 
 **Description:**
-Covers how to select code, docs, and specifications as context for Copilot Spaces. Also covers custom instructions in `.github/copilot-instructions.md`, reusable prompt files in `.github/prompts/`, Copilot Memory, and VS Code instruction settings.
+Help trainees choose code, docs, and specifications as context for Copilot Spaces.
+Then add project instructions in `.github/copilot-instructions.md` and reusable
+prompts in `.github/prompts/`. Explain where Copilot Memory and VS Code instruction
+settings fit.
 
 **Trainer Content Outline (1 hour):**
 
@@ -427,8 +439,8 @@ Covers how to select code, docs, and specifications as context for Copilot Space
 **Description:**
 Learners review a synthetic change themselves, run `/review` and
 `/security-review` on the same uncommitted diff, then compare the results with
-Copilot pull-request review. They reproduce findings, correct the code, and
-retain the human merge decision.
+Copilot pull-request review. They reproduce findings and correct the code.
+A person still decides whether to merge.
 
 **Trainer Content Outline (1 hour):**
 
@@ -474,9 +486,9 @@ retain the human merge decision.
 **Duration:** 3 hours
 
 **Description:**
-Learners use the GitHub Copilot app to plan a small engineering change, critique
-the plan with `/rubber-duck`, and approve a revision before implementation. They
-review the resulting diff and record pull-request readiness.
+In the GitHub Copilot app, learners plan a small engineering change and challenge
+the plan with `/rubber-duck`. They approve a revision before implementation, then
+review the diff and record whether the change is ready for a pull request.
 
 **Trainer Content Outline (1 hour):**
 
@@ -526,7 +538,9 @@ review the resulting diff and record pull-request readiness.
 **Duration:** 3 hours
 
 **Description:**
-Learners diagnose a broken Python application, restore its expected behavior, and refactor it behind a stable test suite.
+Fix the Python application before changing its design. Learners diagnose the
+failures and restore the expected behavior, then use the test suite to check
+that refactoring preserves it.
 
 **Trainer Content Outline (1 hour):**
 
@@ -556,7 +570,8 @@ Learners diagnose a broken Python application, restore its expected behavior, an
 **Duration:** 3 hours
 
 **Description:**
-Learners inspect a legacy Java service, capture its required behavior, and migrate it to modern .NET without losing compatibility.
+Establish how the legacy Java service must behave before migrating it to modern
+.NET. Learners use that behavior to check compatibility throughout the migration.
 
 **Trainer Content Outline (1 hour):**
 
@@ -582,7 +597,9 @@ Learners inspect a legacy Java service, capture its required behavior, and migra
 **Module:** Agentic Workflows
 
 **Description:**
-Trainers use the GitHub Copilot App Customize area to explain plugins, skills, MCP servers, and canvases. Learners create a small canvas for a synthetic workflow, then review its state, actions, data boundary, ownership, and failure handling.
+Use the GitHub Copilot App Customize area to explain plugins, skills, MCP servers,
+and canvases. Learners then create a small canvas for a synthetic workflow. Review
+its state, actions, data boundary, ownership, and failure handling with them.
 
 **Trainer Content Outline (1 hour):**
 
@@ -621,7 +638,10 @@ Trainers use the GitHub Copilot App Customize area to explain plugins, skills, M
 **Module:** Agentic Workflows
 
 **Description:**
-Covers the GitHub Copilot cloud agent and how to assign GitHub issues to it. Copilot creates a branch, writes code, runs builds and tests in an isolated environment, and opens a draft PR. The session also covers third-party coding agents such as Claude and Codex, plus agent session management.
+Assign a GitHub issue to the Copilot cloud agent and follow the work it returns.
+Copilot creates a branch, writes code, runs builds and tests in an isolated
+environment, and opens a draft PR. Also cover session management and third-party
+coding agents such as Claude and Codex.
 
 **Trainer Content Outline (1 hour):**
 
@@ -634,7 +654,7 @@ Covers the GitHub Copilot cloud agent and how to assign GitHub issues to it. Cop
 - Agent session management: tracking progress across sessions
 - Demo: assign an issue, watch the agent work, review the PR
 - Security: network firewall, toolset restrictions, shell controls
-- Team workflow: the cloud agent as a junior developer on the team
+- Team workflow: assign work to the cloud agent and review its changes
 
 **Lab Outline (2 hours):**
 
@@ -663,7 +683,12 @@ Covers the GitHub Copilot cloud agent and how to assign GitHub issues to it. Cop
 **Module:** Agentic Workflows
 
 **Description:**
-Introduces the Model Context Protocol (MCP), an open standard for connecting AI models to external tools and data sources. Covers MCP server architecture, configuration in VS Code and GitHub, and custom MCP servers. Trainers must check enterprise registry, allowlist, data-handling, and approval requirements against current documentation and customer policy.
+Explain how Model Context Protocol (MCP) connects AI models to external tools and
+data through an open standard. Show the server architecture and configuration in
+VS Code and GitHub before building a custom server.
+
+Before delivery, check enterprise registry, allowlist, data-handling, and approval
+requirements against current documentation and customer policy.
 
 **Trainer Content Outline (1 hour):**
 
@@ -702,11 +727,13 @@ Introduces the Model Context Protocol (MCP), an open standard for connecting AI 
 **Module:** Agentic Workflows
 
 **Description:**
-Covers custom GitHub agents, which are defined in Markdown files with YAML frontmatter. Custom agents live in `.github/agents/`, specify their own instructions, tools, and MCP servers, and can be invoked by name in Copilot Chat, cloud agent, and CLI.
+Build a custom GitHub agent as a Markdown file with YAML frontmatter in
+`.github/agents/`. Define its instructions, tools, and MCP servers, then show how
+to invoke it by name in Copilot Chat, cloud agent, and CLI.
 
 **Trainer Content Outline (1 hour):**
 
-- What are custom agents? Specialized AI teammates via `.github/agents/`
+- Custom agent profiles and their instructions in `.github/agents/`
 - Agent profile anatomy: name, description, prompt, tools, MCP servers
 - Repository, organization, and enterprise-level agents
 - Creating agents for specific domains: test-writer, readme-creator, security-reviewer
@@ -754,7 +781,7 @@ decisions to `/plan`.
 
 **Trainer Content Outline (1 hour):**
 
-- What are agent skills? Specialized knowledge packs for Copilot
+- How skill instructions and supporting files guide Copilot
 - Skills specification: `.github/skills/` for versioned team delivery
 - Project-shared skills: `.github/skills/`: versioned team guidance
 - Skill anatomy: SKILL.md format, when skills are loaded, confidence levels
@@ -796,7 +823,9 @@ decisions to `/plan`.
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
-Covers using Copilot to generate, explain, and debug GitHub Actions workflows. Trainers use agent mode to create CI/CD pipelines, custom Actions, and workflow automation from natural-language descriptions.
+Use a natural-language description to create a GitHub Actions workflow with
+Copilot. Explain and debug the result, then show how agent mode helps build CI/CD
+pipelines, custom Actions, and workflow automation.
 
 **Trainer Content Outline (1 hour):**
 
@@ -837,9 +866,9 @@ Covers using Copilot to generate, explain, and debug GitHub Actions workflows. T
 **Duration:** 2 hours 30 minutes
 
 **Description:**
-Uses Copilot to build and connect one modular Terraform architecture, validate it
-locally, and repair a configuration that fails a deterministic security gate.
-Bicep remains a short trainer comparison and optional extension.
+Build and connect one modular Terraform architecture with Copilot. Validate it
+locally, then repair a configuration that fails a deterministic security gate.
+Keep Bicep as a short trainer comparison and optional extension.
 
 **Trainer Content Outline (1 hour):**
 
@@ -877,7 +906,9 @@ Bicep remains a short trainer comparison and optional extension.
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
-Covers advanced CI/CD debugging with Copilot assistance and an approved, reviewable agentic remediation workflow for security findings. Trainers learn to diagnose pipeline failures, optimize build times, and safely route remediation work through the organization's controls.
+Diagnose CI/CD failures with Copilot and check changes intended to reduce build
+times. For security findings, use the organization's approved agentic remediation
+workflow. Keep the proposed fix reviewable and follow the organization's controls.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1108,7 +1139,8 @@ In this two-hour capstone, trainees use a governed specification to complete one
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners open the GitHub Copilot app, choose repository context, inspect the capabilities available in their environment, and create a reviewed working brief.
+Start in the GitHub Copilot app with repository context. Learners check which
+tools they can use, then create and review a working brief.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1134,7 +1166,9 @@ Learners open the GitHub Copilot app, choose repository context, inspect the cap
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners run a decision-tree interview in the GitHub Copilot app. They turn approved answers into a repository decision brief and issue proposal.
+Use a decision-tree interview in the GitHub Copilot app to settle an unclear
+request. Learners save the approved answers in a repository decision brief and
+issue proposal.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1161,7 +1195,9 @@ Learners run a decision-tree interview in the GitHub Copilot app. They turn appr
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners use the GitHub MCP server to inspect existing work, propose an issue hierarchy, create the approved issues, and check the result through a fresh read.
+Read the existing work through GitHub MCP before proposing an issue hierarchy.
+Learners review the proposed write, create the approved issues, and read them
+back to check the result.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1188,7 +1224,9 @@ Learners use the GitHub MCP server to inspect existing work, propose an issue hi
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners create a planning canvas from a plain-language request, load the Session m7-03 issues, and keep visible planning state aligned with GitHub and Copilot.
+Create a planning canvas from a plain-language request and load the issues from
+Session m7-03. Learners check that the canvas shows the same planning state as
+GitHub and Copilot.
 
 **Trainer Content Outline (1 hour):**
 

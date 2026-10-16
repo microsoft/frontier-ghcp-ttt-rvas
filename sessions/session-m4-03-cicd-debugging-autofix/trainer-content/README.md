@@ -2,8 +2,9 @@
 
 ## Delivery objective
 
-Teach a repeatable debugging sequence: observe, reproduce, form a hypothesis,
-repair, then prove. Keep the reference answer hidden until learners record their
+Demonstrate a repeatable debugging sequence. Observe and reproduce the failure
+before forming a hypothesis. Make the repair, then run the check that proves it
+worked. Keep the reference answer hidden until learners record their
 investigation. Case 3 adds a second failure after the first repair.
 
 ## One-hour plan
@@ -81,8 +82,9 @@ files and local commands when those routes are unavailable.
 
 ## Lab handoff
 
-Learners must keep solutions closed until each checkpoint. Case 3 requires two
-investigation records in sequence. Submit the investigation trail and fixed files.
+Tell learners to keep solutions closed until each checkpoint. Case 3 requires two
+investigation records in sequence. Ask them to submit their investigation records
+and fixed files.
 
 ## Facilitator answer key
 
@@ -101,5 +103,5 @@ hypotheses. Learners still need local proof before changing the workflow.
 **Why keep the second log hidden?** The first failed job prevents the later stage
 from running. Showing both logs early gives away the sequence.
 
-**What if a different repair works?** Accept it when it explains the evidence,
-keeps scope small, and passes the same proof.
+**Accept a different repair** when it explains the observed output and keeps the
+change small. It must pass the same checks.

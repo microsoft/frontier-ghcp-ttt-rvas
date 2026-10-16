@@ -42,7 +42,7 @@ npm install
 npm test
 ```
 
-The starter suite should pass. Issue 001's validation cases do not exist yet.
+The starter suite should pass. You will add Issue 001's validation cases later.
 
 Check the installation:
 
@@ -83,7 +83,7 @@ assigned. Tabletop learners record the same roles in
 Open Issue 001 in `lab/starter/sample-issues.md`. This is the only implementation
 issue used in the required lab path.
 
-The lead assigns it with this work order:
+As the lead, assign it with this work order:
 
 ```text
 Assign Issue 001 to the backend role.
@@ -105,10 +105,10 @@ scope before implementation starts.
 
 ## Exercise 3: Implement and test (45 min)
 
-The backend role updates `src/routes/api.js`. Keep validation inline and add no
-package.
+Have the backend role update `src/routes/api.js`. Keep validation inline and add
+no package.
 
-The tester adds focused cases to `tests/api.test.js` for:
+Have the tester add focused cases to `tests/api.test.js` for:
 
 - a trimmed non-empty name;
 - an empty or non-string name;
@@ -132,7 +132,7 @@ run.
 
 ## Exercise 4: Review, decide, and monitor (30 min)
 
-The lead checks the implementation against every acceptance criterion and records
+As the lead, check the implementation against every acceptance criterion. Record
 one outcome: **approve**, **request changes**, or **pause**.
 
 The review packet must include:

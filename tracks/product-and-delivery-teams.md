@@ -9,12 +9,13 @@
 
 ## Description
 
-This track teaches product and delivery teams to use the GitHub Copilot app as a
-working environment. The six-session path is called **Delivery Decision
-Studio**. This is the curriculum's name, not a GitHub product or app mode.
+Use the GitHub Copilot app to work through one product initiative across six
+sessions. The path is called **Delivery Decision Studio**. That is the curriculum's
+name, not a GitHub product or app mode.
 
-Learners carry one initiative through context gathering, decision shaping, issue
-planning, a planning canvas, parallel review, and a follow-up draft with defined limits.
+Gather context and settle product decisions first. Then plan the issues, build a
+planning canvas, supervise parallel reviews, and draft a follow-up within the
+agreed limits.
 
 The initiative is the fictional **Service Request Portal**. Do not replace it
 with customer work in the standard path. Trainer-approved substitutions must be
@@ -29,7 +30,8 @@ synthetic, sanitized, and free of customer or source organization names.
 - Canvas creation, orchestration, and Automations access
 - Basic knowledge of the learner's product or delivery process
 
-Programming experience, Git command-line knowledge, and repository administration are not required.
+You do not need programming experience, Git command-line knowledge, or repository
+administration skills.
 
 **GitHub Copilot access is required for Sessions m7-01 to m7-06.** Learners without access
 should not take this track. Stop and reschedule their training after access is
@@ -37,8 +39,8 @@ available.
 
 ## Capability setup
 
-Complete this setup before Session m7-01. Recheck the relevant capability before each
-later session because organizational policy can change what the app exposes.
+Complete this setup before Session m7-01. Check the tools again before each later
+session. Organizational policy can change which tools the app makes available.
 
 ### 1. Open the training project
 
@@ -59,13 +61,14 @@ Open **Customize**, then **Installed**. Record the available:
 
 Use only capabilities approved for the training repository.
 
-Keep these terms separate:
+An MCP server and a plugin do different jobs:
 
 - **MCP server:** exposes named tools and data sources to Copilot.
 - **Plugin:** installs a reusable package that may include skills, agents, hooks,
   MCP servers, or canvases.
 
-Installing a plugin is not the same as verifying the GitHub MCP connection.
+A plugin installation does not tell you whether GitHub MCP can read the training
+repository. Test the connection separately.
 
 ### 3. Check skills
 
@@ -164,8 +167,8 @@ Save and reuse these results:
 | m7-05 | `orchestration-plan.md`, live issues, reviewed parent result | Authoritative inputs for Session m7-06 |
 | m7-06 | `automation-definition.md`, `stakeholder-update.md` | Human-owned operating decision |
 
-At each step, keep the next action and open questions in the authoritative
-artifact.
+At each step, record the next action and open questions in the file or work system
+listed above.
 
 ## What learners should bring
 
@@ -201,7 +204,7 @@ The supplied scenario covers every exercise and is the default learner path.
 
 ## Learning outcomes
 
-By completing this track, learners will be able to:
+After this track, you should be able to:
 
 1. Compare unscoped and repository-grounded Copilot work.
 2. Install and use a project skill to create and revise a decision brief.
@@ -216,7 +219,8 @@ By completing this track, learners will be able to:
 - Use the supplied Service Request Portal path in standard delivery.
 - Keep customer and source organization names out of prompts, artifacts, issues,
   screenshots, and demonstrations.
-- Teach the product through one continuous delivery workflow. Avoid a disconnected feature tour.
+- Keep using the same initiative so learners can see how each session uses the
+  previous session's work.
 - Check current official GitHub documentation and organizational policy before every live delivery.
 - Treat generated output as a proposal. The accountable person accepts, rejects, or revises it.
 - Keep the path no-code. Learners review generated extensions and tool calls but

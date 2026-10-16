@@ -75,7 +75,7 @@ Assignment waits until every answer is clear.
 ---
 # Repository instructions
 
-Repository instructions help the agent work efficiently:
+Tell the agent how to work in this repository:
 
 - project shape;
 - coding conventions;
@@ -145,7 +145,7 @@ if (typeof title !== "string" || title.trim() === "") {
 }
 ```
 
-The exact code may differ. The observable behavior and constraints may not.
+The code may differ, but it must preserve the required behavior and constraints.
 
 ---
 # Checkpoint 4: Tests
@@ -209,7 +209,7 @@ The solution folder contains:
 - reviewed setup workflow;
 - proposed diff;
 - runnable solution project;
-- test evidence;
+- test output;
 - completed human decision.
 
 Use it only when the trainer demonstration is delayed. Learners still need a live

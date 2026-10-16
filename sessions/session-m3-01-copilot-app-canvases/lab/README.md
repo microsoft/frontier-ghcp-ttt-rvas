@@ -7,7 +7,7 @@
 
 ## Objective
 
-Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, create or simulate the canvas, and make visible and agent-requested changes. Check that an invalid change is rejected, then recover without changing the rule.
+You will use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create or simulate the canvas. Make visible and agent-requested changes against the same state. Check that an invalid change is rejected, then recover without changing the rule.
 
 ## Deliverables
 
@@ -99,7 +99,7 @@ Record:
 
 Do not continue with a failing harness. Fix only a mismatch caused by your edits, or reset your working copy from `lab/starter/`.
 
-**Checkpoint 2:** The local harness passes and the group can identify the planned rejection.
+**Checkpoint 2:** Your local harness passes, and your group can identify the planned rejection.
 
 ## Part 3: Create the canvas (25 minutes)
 
@@ -208,7 +208,7 @@ unresolved. Then compare the final state with `../solution/final-state.json`.
 
 ## Final deliverable
 
-The work is complete when another person can identify:
+Your work is complete when another person can identify:
 
 - the selected extension scope;
 - the fixed canvas contract;

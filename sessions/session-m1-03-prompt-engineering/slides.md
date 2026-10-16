@@ -40,7 +40,8 @@ Weak:
 Build the todo feature.
 ```
 
-The model must guess the file, behavior, errors, dependencies, and finish line.
+The model must guess which file to change, how it should behave, how to handle
+errors, which dependencies it may use, and when the work is done.
 
 **A useful prompt states the decisions that affect the result.**
 
@@ -85,7 +86,7 @@ Useful context can include:
 - an accepted design decision;
 - repository instructions.
 
-Context should reduce guessing, not bury the task.
+Include enough context to reduce guessing. Leave out files that obscure the task.
 
 ---
 
@@ -242,7 +243,7 @@ Start a new request when:
 | Many unrelated asks | Split the work |
 | No project context | Add the relevant file or test |
 | Every line dictated | State requirements, not implementation trivia |
-| No verification | Name the command or review |
+| No check | Name the command or review |
 
 ---
 
@@ -297,7 +298,7 @@ Priority adds:
 - list filtering;
 - an invalid-input decision.
 
-Do not hide new behavior inside an old conversation assumption.
+State the new behavior before asking for another change.
 
 ---
 
@@ -310,7 +311,7 @@ Keep <constraints and non-goals>.
 Verify with <command or review>.
 ```
 
-Short. Specific. Testable.
+State enough detail to make the task testable without dictating the implementation.
 
 ---
 

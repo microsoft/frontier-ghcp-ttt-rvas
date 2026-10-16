@@ -10,10 +10,10 @@
 
 ## Overview
 
-Session m7-01 opens the **Delivery Decision Studio** path. Learners compare
-unscoped and repository-grounded answers, save an initiative context
-brief, check context usage, request an independent critique, and check the
-brief in a fresh session.
+Start the **Delivery Decision Studio** path by comparing answers with and without
+repository context. Save what you learn in an initiative context brief. You will
+check context usage, request an independent critique, and test whether a fresh
+session can use the brief without the original chat.
 
 The fictional **Service Request Portal** provides the shared scenario. Learners
 may use approved, sanitized work from their own team.

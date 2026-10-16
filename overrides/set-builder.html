@@ -3,7 +3,7 @@
 {% block content %}
 <div class="set-builder" data-set-builder data-set-url="{{ session_set_url }}">
   <h1 id="build-your-set">Build your set</h1>
-  <p class="set-lead">Choose sessions for your group. Add a title and introduction, arrange the order, then share a page.</p>
+  <p class="set-lead">Choose what your group needs to learn. Put the sessions in teaching order, add a title and introduction, then share the page.</p>
   <p data-set-loading>Loading the builder. If it does not appear, enable JavaScript and reload. You can also <a href="{{ nav.homepage.url | url }}">browse the curriculum</a>.</p>
   <p class="set-message" role="alert" data-set-error hidden></p>
   <div class="set-workspace" data-set-workspace hidden>
@@ -65,7 +65,7 @@
         <textarea rows="3" maxlength="400" data-set-intro placeholder="Who this is for and what to prepare"></textarea>
       </label>
       <p class="set-summary" data-set-summary aria-live="polite"></p>
-      <p data-set-selection-empty>Select sessions from the catalog to start your set.</p>
+      <p data-set-selection-empty>Choose your first session from the catalog.</p>
       <ol class="set-selected" data-set-selected aria-label="Sessions in delivery order"></ol>
       <div class="set-actions">
         <button class="rvap-action rvap-action--primary" type="button" data-set-create disabled>Create page</button>

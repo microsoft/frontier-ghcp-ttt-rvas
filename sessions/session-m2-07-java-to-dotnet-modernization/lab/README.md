@@ -7,7 +7,7 @@
 **Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and the Session m2-07 trainer content
 
 **Deliverable:** A working .NET 10 order-pricing endpoint, shared contract-test
-evidence, architecture notes, an HTTP parity check, and a reviewed migration
+output, architecture notes, an HTTP parity check, and a reviewed migration
 backlog
 
 ## Lab outcome
@@ -201,7 +201,7 @@ point, JSON parsing, validation, pricing calculation, response mapping, and test
 evidence. Cite file and symbol names. Do not propose .NET code and do not edit.
 ```
 
-Check every row against the files.
+Check every row against the files before using it in your notes.
 
 Complete the request path and pricing-rule tables in `architecture-notes.md`.
 
@@ -267,7 +267,7 @@ Do not change the shared fixture yet.
 
 ### Review point 2
 
-Before coding, a partner or trainer should be able to answer:
+Before coding, check that your notes let a partner or trainer answer:
 
 - Why is the coupon based on `after tier`?
 - Why does the free-shipping check use discounted merchandise?
@@ -358,8 +358,8 @@ operation order, rounding, validation, overflow, shipping threshold, tax base,
 and response fields. Return findings with file and symbol names. Do not edit.
 ```
 
-Resolve each valid finding. Record rejected suggestions and why they did not match
-the contract.
+Check each finding and fix the ones supported by the contract. Record rejected
+suggestions and why they did not match it.
 
 ## Part 5: Add and run shared contract tests (20 minutes)
 
@@ -485,7 +485,7 @@ Include:
 - error-contract coverage;
 - one operational concern such as concurrency or observability.
 
-Under **Keep in Java for now**, list behavior that has not been characterized.
+Under **Keep in Java for now**, list behavior you have not yet traced and checked.
 
 Under **Remove only after**, require:
 

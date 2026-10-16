@@ -10,12 +10,12 @@
 
 ## Overview
 
-Introduce GitHub Copilot through one engineering loop: define behavior,
+Learn to use GitHub Copilot through one engineering loop: define behavior,
 inspect a proposal, run focused checks, and decide whether to accept the change.
-Learners complete a small Python utility module, handle an ambiguous text rule, and
-review a follow-up rename.
+You will complete a small Python utility module, resolve an ambiguous text rule,
+then review a follow-up rename.
 
-The session uses synthetic data and standard-library tests. Learners need GitHub
+The session uses synthetic data and standard-library tests. You need GitHub
 Copilot and Python 3.10 or later.
 
 ## Learning outcomes

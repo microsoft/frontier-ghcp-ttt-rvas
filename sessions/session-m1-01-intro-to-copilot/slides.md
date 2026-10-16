@@ -59,7 +59,7 @@ Accept, revise, or reject
 | Explains its reasoning | A reviewer can reproduce the result |
 | Matches one example | Edge and failure behavior are checked |
 
-Fluent output can still be incomplete or wrong.
+Code that reads well can still be incomplete or wrong.
 
 ---
 
@@ -75,7 +75,7 @@ Proposed output
 Local checks + human review
 ```
 
-Use this as a review model, not a fixed service diagram.
+Use this to guide review. It does not describe a fixed service architecture.
 
 ---
 
@@ -148,7 +148,7 @@ def normalize_username(value: str) -> str:
 assert normalize_username("  River Team  ") == "river-team"
 ```
 
-The test makes repeated whitespace observable.
+The test checks how repeated whitespace is handled.
 
 ---
 
@@ -172,7 +172,7 @@ This version looks reasonable but mishandles repeated spaces:
 return value.strip().lower().replace(" ", "-")
 ```
 
-The failure exposes a hidden assumption while the change is still small.
+The failing test catches the whitespace assumption while the change is still small.
 
 ---
 

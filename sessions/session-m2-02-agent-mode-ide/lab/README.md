@@ -7,7 +7,7 @@
 
 ## Lab overview
 
-Build one Todo API and keep it for the full lab. Scaffold the project from a brief,
+You will build one Todo API and keep it for the full lab. Scaffold the project from a brief,
 then compare Ask and Agent mode on the same feature. Redirect the agent when the
 requirement changes. Finish with an accept, revise, or stop decision.
 
@@ -16,7 +16,7 @@ requirement changes. Finish with an accept, revise, or stop decision.
 | 1 | Prepare and scaffold the Todo API | 30 min |
 | 2 | Compare Ask and Agent mode on one feature | 35 min |
 | 3 | Redirect a multi-file change | 35 min |
-| 4 | Review evidence and finish the handoff | 20 min |
+| 4 | Review the diff and test results, then finish the handoff | 20 min |
 
 ## Before you start
 
@@ -173,7 +173,7 @@ npm test
 
 Add the comparison to `lab-notes.md`:
 
-| Evidence | Ask mode | Agent mode |
+| What you observed | Ask mode | Agent mode |
 | --- | --- | --- |
 | Prompts or messages | | |
 | Manual edits | | |
@@ -220,7 +220,8 @@ Pause. Apply the new constraints in course-correction.md. Revise the plan before
 editing. Keep completed work only when it still fits the new requirement.
 ```
 
-Reject any plan that rewrites the project without need. The agent should adjust the repository boundary, validation, and tests while preserving the API.
+Reject any plan that rewrites the project without need. Check that the agent
+adjusts the repository boundary, validation, and tests while preserving the API.
 
 Run the full suite:
 

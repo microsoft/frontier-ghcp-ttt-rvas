@@ -55,7 +55,7 @@ typed variables and outputs. Keep the database password sensitive. Do not add
 credentials, a backend, plan, or apply command.
 ```
 
-The architecture owns the boundaries. Copilot drafts the files.
+Use the architecture to set the boundaries before Copilot drafts the files.
 
 ---
 # Validate in stages
@@ -87,8 +87,8 @@ A reviewed plan needs an approved identity and target environment.
 bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
 ```
 
-The gate must fail. Learners investigate the cited lines, repair the file, and
-prove the rerun passes.
+The gate must fail. Inspect the cited lines, repair the file, and check that the
+rerun passes.
 
 ---
 # Bicep is a comparison

@@ -203,8 +203,8 @@ For the archive feature, clarification must settle:
 | Historical access? | Support `include_archived=True` |
 | Title during archive? | Preserve it unchanged |
 
-Clarification updates the specification. It does not create a separate pile of
-decisions that future readers must reconcile.
+Record clarification decisions in the specification so future readers have one
+place to check the agreed behavior.
 
 ---
 
@@ -264,7 +264,7 @@ the code has been implemented or tested.
 /speckit-tasks
 ```
 
-Useful tasks are ordered, traceable, and specific:
+Each task needs a place in the dependency order, a source requirement, and an exact file:
 
 ```text
 T001 [US1] Add archive state to new tasks in src/task_store.py
@@ -309,8 +309,8 @@ Before implementation:
 3. Commit the accepted artifacts.
 4. Check the implementation scope.
 
-During implementation, tests and source code should point back to user stories and
-requirements rather than to a vague original prompt.
+During implementation, connect tests and source code to the accepted user stories
+and requirements. The original prompt alone is not enough.
 
 ---
 

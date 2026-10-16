@@ -9,10 +9,12 @@
 
 ## Description
 
-This track covers suggestions, Chat, prompting, CLI, agent mode, context,
-review, and the GitHub Copilot app. Session m2-05 teaches isolated implementation and
-plan critique. Session m7-05's developer route adds supervised child sessions over
-local code and a synthetic PR snapshot.
+Use this track to practice Copilot during daily development. Work with suggestions,
+Chat, prompts, the CLI, and agent mode, then add shared context and code review.
+
+In Session m2-05, you critique a plan and implement the change in an isolated app
+session. In Session m7-05's developer route, you supervise child sessions that
+review local code and a synthetic PR snapshot.
 
 ## Prerequisites
 
@@ -70,19 +72,19 @@ normal delivery.
 
 ## Learning outcomes
 
-By completing this track, trainees will be able to:
+After this track, you should be able to:
 
 1. Use inline suggestions, Chat, CLI, and agent mode in daily work
-2. Write effective prompts and apply context management strategies
+2. Write effective prompts and choose the context each task needs
 3. Configure Copilot Spaces and custom instructions for team workflows
 4. Use Copilot for PR summaries, code review, and merge conflict resolution
 5. Combine Copilot tools in a daily development workflow
 6. Choose the right Copilot tool for a task
-7. Set up project-level and personal context that improves Copilot's output quality
+7. Set up project-level and personal context to guide Copilot's output
 8. Use isolated Copilot App sessions for implementation and independent critique
-9. Revise a plan before implementation and triage local code/security findings
+9. Revise a plan before implementation and triage local code and security findings
 10. Direct read-only child sessions and distinguish local success from PR readiness
-11. Inspect loaded instructions, manage queued/background work, and check recovery state
+11. Inspect loaded instructions, manage queued and background work, and check recovery state
 
 ## Next steps
 

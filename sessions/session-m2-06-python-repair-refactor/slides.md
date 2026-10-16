@@ -22,7 +22,7 @@ Session m2-06 | Intermediate | 3 hours
 
 | Segment | Time |
 | --- | ---: |
-| Repair as evidence gathering | 8 min |
+| Start from the failure output | 8 min |
 | Python failure order | 10 min |
 | Prepared repair demonstration | 12 min |
 | Recover behavior from fixtures | 12 min |
@@ -175,7 +175,7 @@ Do not edit the contract to hide a defect.
 | `-1` to `-5` or `1` to `5` | `SHORT` or `OVER` | `review` |
 | absolute value `6+` | `SHORT` or `OVER` | `urgent` |
 
-Duplicated rules drift. The starter proves it.
+The starter's duplicated rules disagree. Keep one implementation.
 
 ---
 
@@ -199,7 +199,7 @@ Keep the fixture-level checks. Add focused tests for:
 - severity at absolute variance `6`;
 - negative quantity rejection with row context.
 
-The refactor starts only after behavior is pinned down.
+Refactor only after the tests establish the expected behavior.
 
 ---
 
@@ -299,7 +299,7 @@ Check generated code against tests and fixtures.
 | Recover behavior | 30 min |
 | Add regression tests | 20 min |
 | Refactor and check | 25 min |
-| Final evidence | 5 min |
+| Final output comparison and tests | 5 min |
 
 ---
 

@@ -15,7 +15,7 @@ footer: 'Session m3-01: Copilot App & Canvases'
 
 Build or simulate one delivery-readiness canvas.
 
-The demo record must show:
+Record these in the demo:
 
 - the approved contract;
 - one direct update;
@@ -165,7 +165,7 @@ A safe canvas keeps the state unchanged and explains the rule.
 3. Check that `ready` is now accepted.
 4. Record before, rejection, correction, and after state.
 
-Do not "fix" the demo by removing validation.
+Keep validation in place when you fix the demo.
 
 ---
 # Review the generated extension
@@ -197,7 +197,7 @@ If another system owns the data:
 
 The reviewer chooses:
 
-- **approve** when the contract and evidence match;
+- **approve** when the recorded results match the contract;
 - **revise** when the correction fits the contract;
 - **pause** when access, ownership, data, or behavior is unresolved.
 

@@ -23,13 +23,14 @@ trainer demonstration, but it does not count as learner completion.
 
 ## Session objective
 
-Teach the agent loop as an engineering review practice.
+Show learners how to review work at each step of the agent loop.
 
 ```text
 Plan → Act → Observe → Review → Revise or stop
 ```
 
-Learners own the task definition and approvals. The assistant proposes work within those boundaries.
+Have learners define the task and approve actions. The assistant proposes work
+within those boundaries.
 
 ## Suggested agenda
 
@@ -89,7 +90,7 @@ would reduce risk.
 | Time | Segment | Result |
 | --- | --- | --- |
 | 0:00 to 0:08 | Assistant-to-agent shift | Learners distinguish a continuation, answer, and goal-driven task. |
-| 0:08 to 0:18 | Agent loop and tools | The group identifies evidence at every loop stage. |
+| 0:08 to 0:18 | Agent loop and tools | The group identifies what to check at every loop stage. |
 | 0:18 to 0:28 | Task contracts and trust | The contract and stop rules are visible. |
 | 0:28 to 0:43 | Scripted multi-file demo | The group reviews the plan, tool decisions, diff, and test output. |
 | 0:43 to 0:50 | Chat, agent, or manual decision | Learners select a workflow from task characteristics. |
@@ -104,7 +105,7 @@ would reduce risk.
 - At 0:38, stop after route and test review; describe the service edit.
 - At 0:43, skip the mode table and state the decision rule.
 - At 0:50, run one redirect rather than two.
-- Never cut preflight, independent verification, or stop rules.
+- Never cut preflight, independent checks, or stop rules.
 
 ## Segment 1: From assistant to agent (0:00 to 0:08)
 
@@ -125,12 +126,12 @@ Present three fictional tasks:
 - change one error message;
 - add an optional filter across route, service, and tests.
 
-Ask learners to choose Chat, manual edit, or agent workflow and justify the review burden.
+Ask learners to choose Chat, a manual edit, or an agent workflow. Have them explain
+how much review their choice needs.
 
 ### Transition
 
-> "A multi-step task is safe to direct only when every loop produces output the
-> learner can check."
+> "At each step, you need output you can check before the agent continues."
 
 ## Segment 2: Plan, act, observe, review (0:08 to 0:18)
 
@@ -317,7 +318,8 @@ for the lab.
 
 ### Transition
 
-> "Agent mode was suitable because the goal crossed related files and tests could drive the loop; that is not true for every task."
+> "Agent mode fit this task because the change crossed related files and tests
+> could guide each step. Other tasks may need a different workflow."
 
 ## Segment 5: Choose Chat, agent, or manual work (0:43 to 0:50)
 
@@ -342,7 +344,7 @@ Pause when permissions, data handling, policy, or a destructive action is unreso
 
 ### Transition
 
-> "Choosing an agent does not lock us into its first direction; intervention is part of the workflow."
+> "You can redirect the agent or stop it. You do not have to follow its first plan."
 
 ## Scripted exercise: Redirect and stop (0:50 to 0:57)
 
@@ -383,7 +385,9 @@ continue until the permission is resolved.
 
 ### "Should I approve every tool call so the agent can finish?"
 
-No. Understand necessity, scope, reversibility, data, and permission first. Reject or stop when the action is not required by the contract.
+No. Check why the action is needed, what it affects, whether you can undo it, and
+whether you may use the data and tools. Reject or stop when the contract does not
+require the action.
 
 ### "Is agent mode always better for multi-file work?"
 
@@ -437,14 +441,16 @@ who can approve more.
 
 ### Closing script
 
-> "A well-directed agent task is a chain of reviewable decisions. The task
-> contract limits the goal, tests check the result, and a human closes the loop."
+> "Define the task before the agent starts. Use tests to check the result, then
+> decide whether to accept it."
 
 ### Lab handoff
 
 Open `lab/README.md`.
 
-Learners will keep one Todo API through four stages: scaffold it, compare Ask and Agent mode on one feature, redirect a repository refactor, and make a final human decision.
+Explain the four lab stages. Learners scaffold one Todo API, compare Ask and Agent
+mode on a feature, then redirect a repository refactor. They finish by deciding
+whether to accept the work.
 
 Use only synthetic credentials and data. Stop the lab if Agent mode or the
 required repository permissions are unavailable.

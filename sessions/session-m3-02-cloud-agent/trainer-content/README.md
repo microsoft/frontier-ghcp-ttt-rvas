@@ -6,7 +6,7 @@
 
 ## Teaching goal
 
-Teach one issue from assignment through review. At each checkpoint, learners should show the relevant files or test output and name the human who decides what happens next.
+Demonstrate one issue from assignment through review. At each checkpoint, ask learners to show the relevant files or test output and name the human who decides what happens next.
 
 ## Required preparation
 
@@ -43,7 +43,7 @@ broaden access, or paste credentials into an issue or instruction file.**
 
 ## One-hour plan
 
-| Time | Segment | Checkpoint evidence |
+| Time | Segment | What to check |
 | --- | --- | --- |
 | 0:00 to 0:05 | Frame and access decision | Live route confirmed |
 | 0:05 to 0:16 | Checkpoint 1: issue contract | Approved issue |
@@ -122,7 +122,7 @@ npm test
 
 Assign only `../lab/starter/issue.md` through a currently supported entry point allowed by repository policy.
 
-Monitor observed facts:
+Watch the session and record what it shows:
 
 - planned files;
 - commands;
@@ -229,7 +229,7 @@ Recovery succeeds when the proposal returns to the fixed issue and the full suit
 | Baseline tests fail | Diagnose before assignment; do not hide the failure. |
 | Session changes extra files | Stop or request a scoped correction. |
 | Learners rewrite the issue mid-run | Stop and create a separate future issue. |
-| Trainer demo work is delayed | Show prepared evidence at 0:35. |
+| Trainer demo work is delayed | Show the prepared diff at 0:35. |
 | Tests pass but the diff violates scope | Request changes or pause. |
 
 ## Product notes checked September 24, 2026

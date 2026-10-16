@@ -43,7 +43,7 @@ Accept, request revision, or implement manually
 # Review rubric
 
 - Correctness against acceptance criteria
-- Tests and validation evidence
+- Tests and check results
 - Security, dependency, and permission implications
 - Scope and maintainability
 - Repository conventions and human approval
@@ -139,7 +139,7 @@ Human review and author response
 Approval, revision, or close
 ```
 
-Each stage gives the accountable reviewer evidence.
+At each stage, save the output the reviewer needs to check the change.
 
 ---
 
@@ -149,7 +149,7 @@ Copilot can draft text from the visible change, but authors must check:
 
 - the user-visible behavior is accurate;
 - tests and results are not invented;
-- breaking changes and migrations are explicit;
+- breaking changes and migrations are named;
 - security and dependency implications are named;
 - issue links and acceptance criteria match the work;
 - no sensitive details appear in generated prose.
@@ -187,7 +187,7 @@ For a manual request:
 3. Request the Copilot review through the supported PR control.
 4. Wait for comments and review them as hypotheses.
 5. Resolve, reject with rationale, or implement a checked fix.
-6. Request human review with the complete evidence.
+6. Request human review with the diff, findings, and check results.
 
 Do not use Copilot review to bypass required reviewers.
 
@@ -237,7 +237,7 @@ if (user.status === "suspended") return false;
 return user.role === "admin" || user.id === invoice.ownerId;
 ```
 
-Ask which tests and policy evidence should accompany this suggestion.
+Ask which tests and policy requirements should accompany this suggestion.
 
 ---
 
@@ -331,11 +331,11 @@ repositories.
 
 # Lab handoff
 
-Learners will:
+You will:
 
 1. follow one pull request from a flawed change brief;
 2. classify human and Copilot findings;
-3. apply only fixes supported by evidence;
+3. apply only fixes supported by code references or test results;
 4. resolve the prepared conflict without losing either branch goal;
 5. record the final human decision.
 
@@ -359,7 +359,7 @@ the final decision. Include initial and correction outputs from `/review` and
 
 # Questions and lab readiness
 
-Which review decision must never be delegated without human evidence?
+Which review decision needs a human, and what should they check?
 
 - Who is the final reviewer?
 - Which check is required before requesting review?

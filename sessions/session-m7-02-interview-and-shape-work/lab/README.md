@@ -12,8 +12,8 @@ repeatable project skill
 ## What you will learn
 
 Install a repository skill and use it to interview the request owner. Turn the
-decisions into a brief and issue proposal, revise the affected decisions when a
-late constraint arrives, and check that both files still agree.
+decisions into a brief and issue proposal. When a late constraint arrives, revise
+the affected decisions and check that both files still agree.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -50,8 +50,8 @@ Open a new GitHub Copilot app session for the project. Open
 `decision-interview` appears.
 
 Select **Interactive** mode for the interview. Use **Plan** only when Copilot
-proposes the artifact changes. Do not use **Autopilot** because the request owner
-must answer each frontier.
+proposes file changes. Do not use **Autopilot** because the request owner must
+answer each frontier.
 
 Run a short test:
 
@@ -100,10 +100,10 @@ Stop when each branch has a decision or a named open question.
 After each round, run `/context`. Use `/compact` only if the interview must remain
 in the same session and context pressure is high. If the interview has drifted,
 use `/clear` or `/reset`, attach the approved context brief, and provide only the
-confirmed decisions and open questions needed to continue.
+decisions the owner has settled and the open questions needed to continue.
 
-**Checkpoint:** The request owner can state the confirmed decisions, reasons, and
-open questions without relying on the chat transcript.
+**Checkpoint:** As the request owner, you can state the settled decisions,
+their reasons, and the open questions without relying on the chat transcript.
 
 ## Part 3: Create the decision brief and issue proposal (25 minutes)
 
@@ -155,8 +155,8 @@ Review the diff:
 
 Commit the revision separately.
 
-**Checkpoint:** The repository history shows a focused decision change, not a
-complete rewrite.
+**Checkpoint:** Your repository history shows which decisions changed without
+rewriting the rest of the brief and proposal.
 
 ## Part 5: Check readiness in a fresh session (15 minutes)
 

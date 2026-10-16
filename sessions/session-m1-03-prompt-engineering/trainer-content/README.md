@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Teach prompting as task design. Learners should be able to state the work, choose
-relevant context, set boundaries, give a useful example, and refine one concern at
-a time.
+Teach learners to design the task before writing the prompt. Show how to state
+the work, choose relevant context, set boundaries, and give a useful example.
+Refine one concern at a time.
 
 ## One-hour plan
 
@@ -47,8 +47,8 @@ Build the todo feature.
 Ask learners what the model must guess. Expected answers include file, behavior,
 input, errors, dependencies, and completion criteria.
 
-Prompting does not remove engineering decisions. It makes those decisions visible
-earlier in the interaction.
+Explain that learners still make the engineering decisions. Writing a prompt
+brings those decisions forward.
 
 ### 0:07 to 0:20: Four prompt components
 
@@ -85,7 +85,7 @@ Show how a route comment can provide intent and constraints. Then request the sa
 handler with the response-shape example closed and open. Do not promise the result
 will differ.
 
-The accepted API contract still decides which proposal to keep.
+Compare both proposals with the accepted API contract before choosing one.
 
 ### 0:29 to 0:39: Iterative refinement
 
@@ -109,8 +109,8 @@ Use this progression:
 4. Ask for that change only.
 5. Rerun the focused test.
 
-An iteration should preserve the useful work and target the mismatch. Restart when
-the design or task frame is wrong.
+Show how each iteration keeps the useful work and targets the mismatch. Restart
+when the design or task is wrong.
 
 ### 0:39 to 0:48: Anti-patterns and untrusted instructions
 
@@ -146,7 +146,7 @@ Compare three prompts:
 2. `Implement TodoStore.create using the test.`
 3. The prompt with behavior, file limits, and checks from the earlier slide.
 
-Review which prompt states scope, behavior, dependency limits, and verification.
+Ask learners which prompt states scope, behavior, dependency limits, and checks.
 Use the third prompt or implement manually. Run the focused test.
 
 Open the change request and show why adding priority requires a new accepted

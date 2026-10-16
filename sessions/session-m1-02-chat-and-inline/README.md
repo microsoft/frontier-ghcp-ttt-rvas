@@ -11,12 +11,11 @@
 ## Overview
 
 Use Copilot Chat to understand, diagnose, fix, test, and review one calculator
-module. Learners move between sidebar Chat, inline Chat, terminal context, and
-workspace context without losing the engineering contract established in Session
-1.
+module. You will move between sidebar Chat, inline Chat, terminal context, and
+workspace context. The requirements and checks from Session 1 still apply.
 
 The project contains a weighted-average defect and a later zero-total-weight change
-request. Learners record the context and prompts that helped, then check every
+request. Record the context and prompts that helped, then check every
 change with standard-library tests.
 
 ## Learning outcomes

@@ -2,10 +2,10 @@
 
 ## Delivery objective
 
-The capstone ends with one reviewed `POST /api/bookmarks` change or patch plan.
-The accepted GitHub issue holds the scope decisions. The learner must use Session m5-02
-specification standards. Do not let the exercise expand into a full API, deployment,
-or tool tour.
+Guide learners through one reviewed `POST /api/bookmarks` change or patch plan.
+Keep scope decisions in the accepted GitHub issue and require the Session m5-02
+specification standards. Do not let the exercise expand into a full API,
+deployment, or tool tour.
 
 ## One-hour plan
 
@@ -62,8 +62,9 @@ another endpoint, live data, deployment, tool configuration, or a new dependency
 Report changed files, test results, deviations, and deferred scope for review.
 ```
 
-After 30 minutes of implementation, move unfinished work to a patch plan. The
-learner still reviews tests by inspection and completes the decision and handoff.
+After 30 minutes of implementation, have learners move unfinished work to a patch
+plan. They still need to inspect the tests, record a decision, and complete the
+handoff.
 
 ## Review gate
 
@@ -94,6 +95,6 @@ scope.
 **What if agent access fails?** Stop the lab. Do not count a
 patch plan as capstone completion.
 
-**What if the tests cannot run?** Record the command, failure, static evidence, and
-owner for the next action. The decision cannot be approve without executable
-verification.
+**What if the tests cannot run?** Record the command, failure, findings from
+inspection, and owner for the next action. Do not approve without executable
+test results.

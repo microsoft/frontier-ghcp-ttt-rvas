@@ -100,7 +100,7 @@ Next, use a tests shortcut or a direct prompt to propose tests for:
 - history recording;
 - a zero total weight.
 
-Do not accept tests that invent behavior. The zero-total-weight rule belongs to the
+Do not accept tests that invent behavior. Leave the zero-total-weight rule for the
 change request in Part 5.
 
 **Checkpoint:** The original four tests pass. Proposed new tests are separated from
@@ -135,8 +135,8 @@ interpretation.
 
 Open `change-request.md`.
 
-The request requires rejection when the total weight is zero but does not define
-the exception type or message. Choose both. The reference path uses:
+The request says to reject a zero total weight but leaves the exception type and
+message to you. Choose both. The reference path uses:
 
 ```text
 ValueError("Total weight must not be zero")
@@ -157,7 +157,7 @@ total weight, and history.
 
 ## Part 6: Compare and check (10 minutes)
 
-If two approved model choices are available, send both the same prompt:
+If you may use two model choices, send both the same prompt:
 
 ```text
 Review weighted_average and its tests. List any accepted behavior that lacks a
@@ -179,7 +179,7 @@ python -m unittest -v
 
 1. `calculator.py` uses total weight and rejects invalid weighted-average inputs.
 2. `test_calculator.py` covers the accepted behavior.
-3. `chat-notes.md` records the chosen surfaces, prompts, verification, judgment
+3. `chat-notes.md` records the chosen surfaces, prompts, check results, judgment
    call, and comparison path.
 
 ## Verification

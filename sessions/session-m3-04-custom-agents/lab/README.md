@@ -10,8 +10,8 @@ test-only run that stops at a source-code conflict
 
 ## Lab overview
 
-Start with a profile that does not restrict source edits. Show the problem,
-tighten the profile, and rerun the same checks.
+You will start with a profile that does not restrict source edits. Show the
+problem, tighten the profile, and rerun the same checks.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ git init
 
 Read `.github/lsp.json` and `jsconfig.json` before opening this copied project.
 Keep the full lab copy: the harness unit tests use its reference profile fixture.
-The learner's `check:tight` command checks the profile you create locally.
+Your `check:tight` command checks the profile you create locally.
 
 Do not push, merge, open an issue, or attach MCP. This lab tests the profile
 contract, not repository authority.
@@ -64,7 +64,7 @@ A repository profile lives under `.github/agents/` and uses Markdown with YAML
 frontmatter. `description` is required. Omitting `tools` enables all available
 tools, so this lab declares `read`, `search`, `edit`, and `execute`.
 
-The profile body owns the behavioral boundary:
+The profile body tells the agent what it may do:
 
 - the matching task;
 - paths it may read and edit;
@@ -157,7 +157,7 @@ pass 3
 fail 0
 ```
 
-Load the learner's profile through `/agent` and repeat the conflict scenario.
+Load your profile through `/agent` and repeat the conflict scenario.
 The correct result is a stop report:
 
 ```text
@@ -208,7 +208,7 @@ Review:
 - [ ] A production conflict produces a visible stop.
 - [ ] `npm test` passes.
 - [ ] The LSP definition/reference lookup was inspected and checked against source.
-- [ ] The learner's profile was loaded and the conflict stopped without source edits.
+- [ ] Your profile was loaded and the conflict stopped without source edits.
 - [ ] The profile has a synthetic owner and reviewable version marker.
 
 ## References

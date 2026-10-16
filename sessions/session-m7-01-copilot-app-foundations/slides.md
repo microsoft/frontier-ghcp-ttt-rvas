@@ -16,8 +16,8 @@ Session m7-01 | Product and Delivery Teams | Beginner
 
 # The app is the classroom
 
-Learners work in the GitHub Copilot app with repository context and reviewable
-artifacts.
+Work in the GitHub Copilot app with repository context. Save work that others can
+review.
 
 **Delivery Decision Studio** is the six-session path. **Service Request Portal**
 is the initiative.
@@ -26,8 +26,8 @@ is the initiative.
 
 # Save work beyond the chat
 
-The chat is one place to work. Projects, source references, issues, and saved
-artifacts make the work reviewable after the conversation ends.
+Use the chat to work through an idea. Keep project context, source references,
+issues, and saved artifacts available for review after the conversation ends.
 
 ```text
 Gather evidence → form a proposal → review it → save the decision → verify it

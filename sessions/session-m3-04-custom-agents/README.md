@@ -7,10 +7,11 @@
 
 ## Overview
 
-Custom agents define narrow roles in Markdown that teams can review. Learners start
+Custom agents define narrow roles in Markdown that teams can review. You will start
 with a weak test-writer profile that enables every tool and permits source edits.
-The boundary test fails. They then replace it with a profile that may read source,
-edit tests, run one known command, and stop when production code must change.
+After its boundary test fails, replace it with a profile that may read source,
+edit tests, and run one known command. The profile must stop when production code
+needs to change.
 
 ## Learning outcomes
 
@@ -25,7 +26,7 @@ edit tests, run one known command, and stop when production code must change.
 
 ## Required access
 
-Learners need Node.js 22.22.2 or later, Git, the standalone Copilot CLI with live
+You need Node.js 22.22.2 or later, Git, the standalone Copilot CLI with live
 custom-agent loading, and a working JavaScript LSP server. Stop if any required
 access is missing. A manual scenario does not replace the live run or lookup.
 

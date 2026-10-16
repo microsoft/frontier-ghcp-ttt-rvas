@@ -37,7 +37,7 @@ POST /api/bookmarks
 
 # Keep the boundary in the issue
 
-The accepted GitHub issue holds every scope decision. Implement only
+Keep every scope decision in the accepted GitHub issue. Implement only
 `POST /api/bookmarks`, use synthetic data, and keep the existing dependencies.
 
 **Stop if the work requires another endpoint, live data, deployment, tool
@@ -104,8 +104,9 @@ The suite checks success, defaults, field validation, and duplicate URLs.
 
 # Review and handover
 
-Check the specification trace, diff, test output, dependency change, and scope
-decisions in the issue. Record any deviation in the handoff.
+Trace the change back to the specification. Review the diff, test output,
+dependency change, and scope decisions in the issue. Record any deviation in the
+handoff.
 
 Record one decision: approve, request changes, or pause.
 

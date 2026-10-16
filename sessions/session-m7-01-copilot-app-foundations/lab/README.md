@@ -9,9 +9,9 @@ original chat
 
 ## What you will learn
 
-See how project context changes Copilot's answer. Then turn sourced information
-into a saved brief, update it when new source information arrives, and check it in a fresh
-session.
+Compare Copilot's answers with and without project context. Use the sourced
+information to write a brief, then revise it when new information arrives.
+Finally, check whether a fresh session can use the brief on its own.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -46,14 +46,14 @@ access is unavailable, **stop**. Do not continue in a generic chatbot.
 6. Run `/context`.
 
 Use **Interactive** for the comparison. Switch to **Plan** before asking Copilot
-to propose repository changes. Do not use **Autopilot** for this lab because each
-write needs a learner review.
+to propose repository changes. Do not use **Autopilot** for this lab because you
+need to review each write.
 
 `@` adds files, `#` references issues, and `/` opens commands in the app. Type the
 character and select the item from the picker. A typed file token alone does not
 show that the app attached the source.
 
-**Checkpoint:** Copilot can read the supplied file and the learner knows which
+**Checkpoint:** Copilot can read the supplied file, and you can identify which
 capabilities are available.
 
 ## Part 2: Compare weak and grounded context (25 minutes)
@@ -115,8 +115,8 @@ git add docs/discovery/initiative-context-brief.md
 git commit -m "Create grounded initiative working brief"
 ```
 
-**Checkpoint:** A reader can distinguish source facts, assumptions, unknowns, and
-the next decision without reading the chat.
+**Checkpoint:** Your brief separates source facts, assumptions, unknowns, and the
+next decision clearly enough for someone to use it without reading the chat.
 
 ## Part 4: Update the brief with new evidence (25 minutes)
 
@@ -161,8 +161,8 @@ Using only this working brief, report:
 Do not infer missing information.
 ```
 
-Compare the answer with the file. Correct the brief if the fresh session cannot
-recover the intended state.
+Compare the answer with the file. If it cannot recover the intended state,
+correct the brief so it contains what the new session needs.
 
 Run an independent critique:
 

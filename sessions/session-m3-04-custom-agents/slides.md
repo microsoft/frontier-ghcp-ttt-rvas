@@ -185,7 +185,7 @@ Blocked: the requested assertion requires a production-code change under src/.
 Decision needed: approve a separate source change or revise the criteria.
 ```
 
-The stop result is useful output. It names the conflict and the next human decision.
+The stop report names the conflict and tells a human which decision is needed.
 
 ---
 
@@ -205,7 +205,7 @@ pass 3
 fail 0
 ```
 
-The weak profile fails. The tightened profile passes.
+The tightened profile must pass the same contract that failed the weak profile.
 
 ---
 

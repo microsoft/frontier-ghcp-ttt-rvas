@@ -5,9 +5,9 @@
 
 ## Delivery objective
 
-Learners open the GitHub Copilot app, choose a session mode, attach approved
-context, compare grounded and ungrounded answers, and create the first Delivery
-Decision Studio brief.
+Show learners how to choose a session mode and attach approved source material in
+the GitHub Copilot app. Compare answers with and without those sources before
+creating the first Delivery Decision Studio brief.
 
 ## One-hour plan
 
@@ -91,8 +91,8 @@ Open **Customize** and identify what is available in the learner's environment. 
 - a **canvas** provides visible shared state;
 - an **automation** repeats a task with a defined scope.
 
-Do not teach construction in this session. Learners only need to recognize these
-capabilities and know that availability depends on plan, policy, and installation.
+Do not build these customizations in this session. Show learners how to recognize
+them and explain that availability depends on plan, policy, and installation.
 
 ## Demo: Create and revise a saved brief
 
@@ -114,7 +114,7 @@ Stress the pattern:
 Read -> propose -> review -> write -> verify
 ```
 
-The pattern returns in every later session.
+Point out that learners will use this same pattern in every later session.
 
 ## Product notes verified October 5, 2026
 

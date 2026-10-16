@@ -15,7 +15,7 @@ into production code, tighten the profile, and rerun the same test.
 | 0:18 to 0:30 | Weak profile and boundary violation |
 | 0:30 to 0:43 | Least-privilege tools and path rules |
 | 0:43 to 0:52 | Stop, validation, and human handoff |
-| 0:52 to 1:00 | Rerun evidence and lab handoff |
+| 0:52 to 1:00 | Rerun checks and lab handoff |
 
 ## Preflight
 
@@ -67,7 +67,7 @@ Explain:
 - `user-invocable` keeps the profile selectable;
 - `metadata` can record a synthetic owner and contract version.
 
-The Markdown body carries the operational boundary.
+Show where the Markdown body tells the agent what it may do and when to stop.
 
 Use five minutes of this segment to distinguish tools from code intelligence.
 `/lsp show` reports configured servers; `/lsp test typescript` checks startup.
@@ -114,9 +114,8 @@ tools:
   - execute
 ```
 
-This allowlist is necessary but insufficient. `edit` can still affect the wrong
-file. The body therefore permits edits under `tests/` only and names forbidden
-paths.
+Explain why the allowlist is not enough: `edit` can still affect the wrong file.
+Show how the body limits edits to `tests/` and names forbidden paths.
 
 Ask learners to distinguish:
 
@@ -182,10 +181,11 @@ Finish with the extension choice:
 
 ## Lab handoff
 
-Learners inspect the current structure, fail the weak profile, tighten it, rerun the
-contract, and record a stop report with no source edits. They then review the documentation and
-read-only data analyst examples with the same structure. The 25-minute weak-profile
-block includes ten minutes for the LSP lookup. Keep the lab at 120 minutes.
+Explain the sequence: inspect the current structure, run the failing weak profile,
+then tighten it and rerun the contract. Learners must record a stop report with no
+source edits. They then review the documentation and read-only data analyst
+examples using the same structure. Allow ten minutes for the LSP lookup within
+the 25-minute weak-profile block. Keep the lab at 120 minutes.
 
 ## References
 

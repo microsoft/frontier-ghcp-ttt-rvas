@@ -48,8 +48,8 @@ migrations:
 - tax applies to discounted merchandise, not shipping;
 - invalid enum-like values and line items return clear errors.
 
-Learners migrate this slice. The health and sample-order endpoints stay in Java
-and become backlog items.
+You will migrate this slice. Leave the health and sample-order endpoints in Java
+and record them as backlog items.
 
 ## Session structure
 

@@ -122,8 +122,8 @@ Check the actual snapshot:
 - required `integration-tests` failed;
 - blocking thread `R1` is unresolved.
 
-Require a source-backed parent decision. Do not manufacture conflicting child
-answers. Local success does not override PR blockers.
+Check the parent's decision against the snapshot. Do not manufacture conflicting
+child answers. Local success does not override PR blockers.
 
 ---
 
@@ -200,7 +200,8 @@ publication, or release statement.
 2. Live child-session results
 3. Reviewed parent result linked to live issues
 
-No manual delivery-status form. No copied session identifiers.
+Keep progress on the orchestration surface. Do not copy it into a delivery-status
+form or copy session identifiers.
 
 For developers, use the developer plan and reviewed parent result instead of
 live issues. Include the actual redirection, rejected or unresolved claims, and

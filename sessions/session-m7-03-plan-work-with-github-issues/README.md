@@ -11,10 +11,10 @@
 ## Overview
 
 Continue the **Delivery Decision Studio** path by turning the approved Session m7-02
-decision brief into a GitHub issue hierarchy. Check the GitHub
-MCP connection, inspect the repository, use Markdown to preview the full write,
-create the approved issues, then check and correct them through fresh reads.
-The created GitHub issues are authoritative.
+decision brief into a GitHub issue hierarchy. Check the GitHub MCP connection and
+inspect the repository before you plan any writes. Use Markdown to preview the
+full issue set, then create the approved issues. Read them back from GitHub to
+check and correct the result. **The created GitHub issues are authoritative.**
 
 The session teaches safe tool use. Learners do not develop an MCP server.
 
@@ -23,7 +23,7 @@ The session teaches safe tool use. Learners do not develop an MCP server.
 
 ## Learning outcomes
 
-Learners practice how to:
+In this session, you will:
 
 1. Explain what an MCP server lets Copilot do.
 2. Inspect the GitHub tools available to the current session.

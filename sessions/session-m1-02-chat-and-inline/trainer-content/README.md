@@ -37,8 +37,9 @@ always sees a particular context source.
 
 **Slides:** *Copilot Chat & Inline Suggestions*, *Agenda*, *Two interaction modes*
 
-Session m1-01 used suggestions at the cursor. This session adds explicit
-conversation. Both paths still require a task, review, and checks.
+Remind learners that Session m1-01 used suggestions at the cursor. Now show how
+to ask for work in a conversation. Both paths still require a task, review, and
+checks.
 
 ### 0:06 to 0:16: Choose a surface
 
@@ -71,7 +72,8 @@ The weighted-average test expects 95 but receives 140. Inspect the selected meth
 and the focused test. Identify the defect without changing other methods.
 ```
 
-The second request names the symptom, expected behavior, scope, and evidence.
+Point out that the second request names the symptom, expected behavior, scope,
+and failing test.
 
 Explain the role of:
 
@@ -113,7 +115,7 @@ when stale context is steering the answer.
 
 **Slides:** *Compare against the task*, *Access policy*
 
-Use the approved default unless the exercise permits another choice. If comparison
+Use the default model allowed by policy unless the exercise permits another choice. If comparison
 is allowed, send the same synthetic prompt and judge the responses against the
 same tests. If it is not allowed, compare with the manual reference.
 
@@ -143,12 +145,12 @@ Demo sequence:
 ## Teaching points
 
 - A surface changes interaction and available context.
-- Explicit context reduces guessing.
+- Naming the context reduces guessing.
 - A shortcut can draft work, but accepted behavior still comes from the task and
   tests.
 - Generated tests can encode the wrong requirement.
 - Model comparison is useful only when the task, prompt, and checks stay constant.
-- Terminal context summarizes evidence; it is not the evidence itself.
+- Read the terminal output yourself rather than relying on its summary.
 
 ## Common questions
 
@@ -174,5 +176,5 @@ Use a direct prompt with the same task and context.
 - [ ] The starter failure is reproducible.
 - [ ] Required Copilot Chat access is checked.
 - [ ] The permitted comparison path is known.
-- [ ] Learners know where to record prompts and verification.
+- [ ] Learners know where to record prompts and check results.
 - [ ] The change request remains closed until Part 5.

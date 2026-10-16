@@ -59,7 +59,7 @@ Change request lookup tool
 ready or needs-review
 ```
 
-The data is fixed. The interesting work is the boundary around the model.
+The data is fixed. You build the controls around the model.
 
 ---
 
@@ -219,8 +219,8 @@ onPermissionRequest: async (request) => {
 },
 ```
 
-Handle unknown request kinds with a deny path. New capability should require a
-code review, not inherit approval by accident.
+Deny unknown request kinds. Review new capabilities before approving them so
+they do not inherit permission by accident.
 
 ---
 
@@ -378,8 +378,8 @@ Trace data can contain prompts and tool details. Keep this lab synthetic.
 | Deterministic tool data | Stable tests and demos | Less realism |
 | Local tracing stack | Inspectable evidence | Docker setup and local resource use |
 
-Choose controls that make failure clear. Avoid controls that only make the code
-look guarded.
+Choose controls that show what failed and why. Extra checks that only make the
+code look guarded do not help.
 
 ---
 

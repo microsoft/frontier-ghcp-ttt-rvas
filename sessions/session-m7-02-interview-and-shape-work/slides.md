@@ -32,9 +32,8 @@ Before the session:
 
 > "Make request status clearer so people stop asking support."
 
-This is an idea. It is not sprint-ready work.
-
-It hides choices about users, scope, data, behavior, ownership, and approval.
+Before this idea can enter a sprint, decide who it serves and what it changes.
+You also need decisions about data, scope, ownership, and approval.
 
 The **Delivery Decision Studio** path carries the Session m7-01 context brief into
 this interview. Service Request Portal remains the initiative.
@@ -195,7 +194,8 @@ Give a new session only:
 Ask it to find contradictions, unresolved owners, and acceptance criteria with no
 source decision.
 
-This check exposes assumptions that existed only in the original conversation.
+The fresh session shows which assumptions you left in the conversation instead
+of recording in the files.
 
 Then use `/rubber-duck` to challenge unsupported criteria, hidden scope, and
 missing owners.

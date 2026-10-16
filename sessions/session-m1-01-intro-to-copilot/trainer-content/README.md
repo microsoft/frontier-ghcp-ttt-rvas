@@ -3,7 +3,7 @@
 ## Delivery objective
 
 Teach one habit: **define, inspect, test, decide**. Learners should leave
-able to review an inline suggestion without treating fluency as correctness.
+able to review an inline suggestion without assuming that plausible code is correct.
 
 ## One-hour plan
 
@@ -45,7 +45,7 @@ State the session rule:
 > Copilot can draft a change. The developer defines intent, checks the result, and
 > owns the decision.
 
-Ask what evidence learners require before merging ten generated lines. Listen for
+Ask what checks learners require before merging ten generated lines. Listen for
 tests, review, scope, and repository conventions.
 
 ### 0:07 to 0:17: Context shapes suggestions
@@ -68,7 +68,7 @@ with the docstring and test. The second version gives reviewers a clear contract
 
 **Slides:** *Preflight before use*, *Access policy*
 
-Check four boundaries:
+Before handing off the lab, ask:
 
 1. **Access:** Is the selected account and surface enabled?
 2. **Data:** Is every file and value approved for this workflow?
@@ -107,7 +107,8 @@ Open `lab/starter/utils.py` and `test_utils.py`.
 7. Show the failure for repeated whitespace.
 8. Restore the reviewed implementation and rerun the test.
 
-The failing check exposes the whitespace bug before the change grows.
+Point out how the failing check exposes the whitespace bug while the change is
+still small.
 
 ### 0:50 to 0:56: Follow-up edits
 
@@ -125,7 +126,7 @@ run an independent search for the old name. A prediction can miss a reference.
 Check that learners can request an inline suggestion. If they cannot, fix access
 before starting the lab.
 
-The lab continues in one module. Learners complete two simple functions, settle
+Explain that the lab continues in one module. Learners complete two simple functions, settle
 the apostrophe rule, add the summary, and review the rename.
 
 ## Prepared demo commands

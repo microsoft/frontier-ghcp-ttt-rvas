@@ -78,7 +78,7 @@ Start with stdio and synthetic data. Keep the first review small.
 }
 ```
 
-The tool name, description, and schema are part of the interface.
+Clients use the tool name, description, and schema as part of the interface.
 
 Start with one tool because every exposed capability adds risk and maintenance.
 
@@ -144,7 +144,7 @@ Do not assume every caller reaches the handler through the same client-side chec
 
 # Each check proves a different claim
 
-| Evidence | Claim |
+| Check | Claim |
 | --- | --- |
 | Unit test | Handler behavior is correct for known inputs |
 | `tools/list` | The expected catalog is exposed |

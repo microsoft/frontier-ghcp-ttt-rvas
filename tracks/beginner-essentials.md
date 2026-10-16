@@ -9,8 +9,8 @@
 
 ## Description
 
-This track covers installation, core features, prompt engineering, and the CLI.
-Trainees practice using Copilot in the IDE and terminal.
+Start here if your team is new to Copilot. Set it up, try its core features, and
+practice writing prompts before using it in the terminal and IDE agent mode.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ Trainees practice using Copilot in the IDE and terminal.
 
 ## Learning outcomes
 
-By completing this track, trainees will be able to:
+After this track, you should be able to:
 
 1. Install, configure, and use GitHub Copilot in the IDE and CLI
 2. Use Copilot Chat, inline suggestions, and Next Edit Suggestions in daily workflows

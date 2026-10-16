@@ -35,7 +35,7 @@
       "slug": "session-m1-01-intro-to-copilot",
       "module": "1",
       "title": "Introduction to GitHub Copilot",
-      "description": "What Copilot is, how the LLM works, plan tiers, privacy, and getting it running in the IDE for the first time.",
+      "description": "Learn what Copilot does, how the LLM works, and what plan tiers and privacy rules apply. Then set it up in the IDE.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -53,7 +53,7 @@
       "slug": "session-m1-03-prompt-engineering",
       "module": "1",
       "title": "Prompt Engineering Fundamentals",
-      "description": "Build a todo API with focused prompts, check a CLI /refine rewrite, and compare context before accepting changes.",
+      "description": "Build a todo API with focused prompts. Check what CLI /refine changed and compare context before accepting the result.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -62,7 +62,7 @@
       "slug": "session-m2-01-copilot-cli",
       "module": "2",
       "title": "GitHub Copilot CLI & App",
-      "description": "Critique a repair plan, inspect controls and fleet results, practise queueing and recovery, and check terminal automation.",
+      "description": "Critique a repair plan and check CLI controls and fleet results. Practise queueing, recovery, and terminal automation.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -71,7 +71,7 @@
       "slug": "session-m2-02-agent-mode-ide",
       "module": "2",
       "title": "Agent Mode in the IDE",
-      "description": "Use Copilot in VS Code to complete multi-step tasks by reading files, running commands, and responding to errors.",
+      "description": "Give Copilot a multi-step task in VS Code. Follow how it reads files, runs commands, and responds to errors.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -80,7 +80,7 @@
       "slug": "session-m2-03-spaces-and-context",
       "module": "2",
       "title": "Copilot Spaces & Context Management",
-      "description": "Curate Storefront context, inspect loaded CLI instructions, correct a stale rule, and compare resulting behavior.",
+      "description": "Choose context for the Storefront project and inspect the CLI's loaded instructions. Correct a stale rule and compare the results.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -89,7 +89,7 @@
       "slug": "session-m2-04-code-review-prs",
       "module": "2",
       "title": "Copilot for Code Review & PRs",
-      "description": "Compare human review, local /review and /security-review, and Copilot PR review; triage findings and check focused fixes.",
+      "description": "Review a change yourself, then compare local /review and /security-review with Copilot PR review. Check the findings and test focused fixes.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -98,7 +98,7 @@
       "slug": "session-m2-05-copilot-app-for-developers",
       "module": "2",
       "title": "GitHub Copilot App for Developers",
-      "description": "Check app workspace setup, compare rubber-duck and spar critiques, return a forked plan note, review the repair, and assess PR readiness.",
+      "description": "Check the app workspace and compare rubber-duck and spar critiques. Return a forked plan note, then review the repair and decide if it is ready for a PR.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -107,7 +107,7 @@
       "slug": "session-m2-06-python-repair-refactor",
       "module": "2",
       "title": "Repair and Refactor a Broken Python Application",
-      "description": "Repair Python in failure order, check LSP references against inline rules, and refactor from an accepted plan without changing reports.",
+      "description": "Fix the Python application in failure order and check LSP references against inline rules. Refactor from an accepted plan while keeping reports unchanged.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -116,7 +116,7 @@
       "slug": "session-m2-07-java-to-dotnet-modernization",
       "module": "2",
       "title": "Migrate a Legacy Java Service to Modern .NET",
-      "description": "Map the behavior of a legacy Java service, port it to modern .NET, and check compatibility with focused tests.",
+      "description": "Establish how the legacy Java service behaves before porting it to modern .NET. Use focused tests to check compatibility.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -125,7 +125,7 @@
       "slug": "session-m3-01-copilot-app-canvases",
       "module": "3",
       "title": "Copilot App, Plugins & Canvas Extensions",
-      "description": "Use Copilot App customization to build a shared canvas with state limits, defined actions, and a review record.",
+      "description": "Build a shared canvas through Copilot App customization. Define its state limits and actions, then record your review.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -152,7 +152,7 @@
       "slug": "session-m3-04-custom-agents",
       "module": "3",
       "title": "Custom Agents & Agent Profiles",
-      "description": "Check a JavaScript LSP lookup, tighten a custom-agent profile, and require a live stop before an out-of-scope source change.",
+      "description": "Check a JavaScript LSP lookup and tighten a custom-agent profile. Run the agent and check that it stops before an out-of-scope source change.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -161,7 +161,7 @@
       "slug": "session-m3-05-agent-skills-ecosystem",
       "module": "3",
       "title": "Agent Skills & the Copilot Ecosystem",
-      "description": "Test live repository skills, compare pinned interviews before planning, and review scoped Chronicle suggestions without auto-applying them.",
+      "description": "Run repository skills and compare interviews from pinned skill versions before planning. Review Chronicle suggestions for the selected sessions without applying them automatically.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -170,7 +170,7 @@
       "slug": "session-m4-01-actions-workflows",
       "module": "4",
       "title": "GitHub Actions & Workflow Generation",
-      "description": "Generate CI, design deployment, repair workflows, and validate a custom action for one Node.js application. Save local check results.",
+      "description": "Generate CI and design deployment for one Node.js application. Repair its workflows, validate a custom action, and save the local check results.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -188,7 +188,7 @@
       "slug": "session-m4-03-cicd-debugging-autofix",
       "module": "4",
       "title": "CI/CD Pipeline Debugging & Agentic Remediation",
-      "description": "Diagnose pipeline failures from logs and local checks, including a staged failure and reviewed security remediation.",
+      "description": "Use logs and local checks to diagnose pipeline failures. Reproduce a staged failure and review the proposed security fix.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -197,7 +197,7 @@
       "slug": "session-m5-01-squad-orchestration",
       "module": "5",
       "title": "Brady's Squad: Human-Led AI Teams",
-      "description": "Use Brady's Squad to assign scoped work to persistent roles and save decisions and results for review.",
+      "description": "Assign scoped work to persistent roles with Brady's Squad. Save the team's decisions and results so a person can review them.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -206,7 +206,7 @@
       "slug": "session-m5-02-spec-kit",
       "module": "5",
       "title": "Spec Kit: Specification-Driven Development",
-      "description": "Use Spec Kit to convert tasks to issues, implement in stages, run convergence checks, and update the specification as requirements change.",
+      "description": "Turn Spec Kit tasks into issues and implement them in stages. Run convergence checks and update the specification when requirements change.",
       "difficulty": "Advanced",
       "duration_minutes": 210
     },
@@ -215,7 +215,7 @@
       "slug": "session-m5-03-hve-core-challenge",
       "module": "5",
       "title": "HVE Core: Evidence-Led Delivery with RPI",
-      "description": "Use HVE Research, Plan, Implement, Review, and Follow-up to develop one API feature and submit it for a human delivery decision.",
+      "description": "Develop one API feature through HVE Research, Plan, Implement, Review, and Follow-up. A person reviews the results and makes the delivery decision.",
       "difficulty": "Advanced",
       "duration_minutes": 240
     },
@@ -224,7 +224,7 @@
       "slug": "session-m6-01-copilot-sdk",
       "module": "6",
       "title": "Build Reliable Agent Applications with the GitHub Copilot SDK",
-      "description": "Build a TypeScript agent application with streaming, a deterministic custom tool, permission decisions, blocking hooks, tests, and OpenTelemetry traces.",
+      "description": "Build and test a TypeScript agent with streaming and a deterministic custom tool. Handle permissions, block disallowed calls with hooks, and inspect OpenTelemetry traces.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -233,7 +233,7 @@
       "slug": "session-m6-02-capstone",
       "module": "6",
       "title": "End-to-End Capstone Project",
-      "description": "Connect governance, specification, agentic delivery, review, and handover in one integration scenario.",
+      "description": "Complete one agentic implementation task from a governed specification. Review the result and make the handover decision.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -242,7 +242,7 @@
       "slug": "session-m7-01-copilot-app-foundations",
       "module": "7",
       "title": "Work Effectively in the GitHub Copilot App",
-      "description": "Compare unscoped and repository-grounded answers, revise a working brief when source material changes, and check it in a fresh session.",
+      "description": "Compare answers with and without repository context. Revise a working brief when source material changes, then check it in a fresh session.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -251,7 +251,7 @@
       "slug": "session-m7-02-interview-and-shape-work",
       "module": "7",
       "title": "Interview Ideas and Shape Better Work",
-      "description": "Install a project interview skill, shape an unclear request, reopen affected decisions when constraints change, and check the resulting brief.",
+      "description": "Install and use a project interview skill to turn an unclear request into a decision brief. Revisit affected decisions when constraints change, then check the brief.",
       "difficulty": "Beginner",
       "duration_minutes": 180
     },
@@ -260,7 +260,7 @@
       "slug": "session-m7-03-plan-work-with-github-issues",
       "module": "7",
       "title": "Plan Work with GitHub Issues and MCP",
-      "description": "Use GitHub MCP to inspect existing work, preview and create an issue hierarchy, then check and correct it through fresh reads.",
+      "description": "Inspect existing work through GitHub MCP before proposing an issue hierarchy. Preview the write, create the issues, and read them back to check and correct the result.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -269,7 +269,7 @@
       "slug": "session-m7-04-plan-and-steer-with-canvases",
       "module": "7",
       "title": "Build and Use a Planning Canvas",
-      "description": "Create and simplify a planning canvas, detect when it differs from live GitHub state, and update it to match.",
+      "description": "Create a planning canvas and simplify it. Detect when its state differs from GitHub, then update it to match.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -278,7 +278,7 @@
       "slug": "session-m7-05-orchestrate-workstreams",
       "module": "7",
       "title": "Orchestrate Agents and Workstreams",
-      "description": "Supervise live child sessions over GitHub issues or local developer inputs; redirect work and reconcile checked findings.",
+      "description": "Supervise child sessions that review GitHub issues or local developer inputs. Redirect the work when needed, then check and reconcile the findings.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -287,7 +287,7 @@
       "slug": "session-m7-06-automate-delivery-follow-up",
       "module": "7",
       "title": "Automate Delivery Follow-up and Connect Work Systems",
-      "description": "Create a manual draft-only Automation, compare two runs after an approved input change, and make a system-of-record decision.",
+      "description": "Run a manual, draft-only Automation twice, changing an approved input between runs. Compare the results and decide which work system remains authoritative.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     }

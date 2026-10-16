@@ -10,7 +10,7 @@ footer: 'Session m2-05. GitHub Copilot App for Developers'
 
 # GitHub Copilot App for developers
 
-Isolated work, visible evidence, reviewable handoffs
+Isolate work, check results, and hand off the next step
 
 Session m2-05 | Module 2 | Intermediate
 
@@ -37,8 +37,8 @@ Session m2-05 | Module 2 | Intermediate
 | Chat | Questions, comparison, early exploration | No dedicated branch or working tree |
 | Project session | Code changes, commands, tests, PR work | Runs in a selected project workspace |
 
-**Decision:** Start in chat when the output is understanding. Start a project
-session when the output should change files or produce branch-backed evidence.
+**Decision:** Start in chat to understand the task. Start a project session when
+you need file changes or results tied to a branch.
 
 ---
 
@@ -57,7 +57,7 @@ Read issue-brief.md and the failing tests. Explain the current behavior, propose
 the smallest change, then run the focused test command. Do not edit unrelated files.
 ```
 
-The second prompt gives the agent a boundary and tells it what checks to return.
+The second prompt names the scope and the checks the agent must return.
 
 ---
 
@@ -67,7 +67,7 @@ The second prompt gives the agent a boundary and tells it what checks to return.
 | --- | --- | --- |
 | Interactive | Scope is unclear or decisions need discussion | Frequent steering |
 | Plan | The task spans files or has review risk | Approve the plan before edits |
-| Autopilot | Scope and checks are explicit, and rollback is cheap | Review the result and evidence |
+| Autopilot | Scope and checks are clear, and rollback is cheap | Review the diff and check results |
 
 Mode is a risk control. It is not a ranking of model quality.
 
@@ -235,7 +235,8 @@ Issue acceptance criteria
   → human readiness decision
 ```
 
-A green local test is one piece of evidence. It does not settle the PR decision.
+A passing local test checks part of the change. Review threads and required
+checks still affect PR readiness.
 
 ---
 
@@ -261,7 +262,7 @@ It may:
 - read issue and PR metadata;
 - inspect review and check status;
 - return blockers, unknowns, and a suggested verdict;
-- link each statement to evidence.
+- link each statement to its source.
 
 It must not comment, label, push, approve, merge, or resolve threads.
 
@@ -277,13 +278,13 @@ It must not comment, label, push, approve, merge, or resolve threads.
 6. Run checks, inspect the diff, and run `/review`.
 7. Show the synthetic PR snapshot and readiness report.
 
-If the live app fails, switch to the captured evidence at the same step.
+If the live app fails, show the saved session output at the same step.
 
 ---
 
 # Completion evidence
 
-Learners submit:
+You will submit:
 
 - an implementation with passing tests;
 - a session handoff;
@@ -301,7 +302,7 @@ Learners submit:
 # Lab handoff
 
 Check live app access before the lab. If access is unavailable, stop the lab.
-Supplied evidence may recover the trainer demonstration, but it does
+Saved session output may recover the trainer demonstration, but it does
 not replace learner app practice.
 
 The work is synthetic. Keep it that way.

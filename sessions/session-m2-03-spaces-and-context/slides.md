@@ -55,7 +55,7 @@ Ask learners to explain why each source is needed and what is excluded.
 
 # Evaluate the result
 
-- Does it cite or follow the selected repository evidence?
+- Does it cite or follow the selected repository files?
 - Is the scope limited to the task?
 - Are assumptions listed for human review?
 - Do relevant tests pass?
@@ -101,7 +101,7 @@ Common failure modes:
 - local preferences are mistaken for team standards;
 - restricted data is included without approval.
 
-Context selection is an engineering and governance decision. Keep the packet focused.
+Check both relevance and permission when selecting context. Keep the packet focused.
 
 ---
 
@@ -165,7 +165,7 @@ Before sharing:
 2. Check that every source is approved for that audience.
 3. Add purpose-specific instructions.
 4. Assign an owner and review date.
-5. Test with a known question and compare against source evidence.
+5. Test with a known question and compare against the source files.
 6. Remove or replace stale sources.
 
 Check current access controls and sharing behavior before the demo.
@@ -186,7 +186,7 @@ Create `.github/copilot-instructions.md` for project-wide guidance:
 - Do not add dependencies without reviewer approval.
 ```
 
-Write rules that can be observed. Avoid vague goals such as "produce high-quality code."
+Write rules a reviewer can check. Avoid vague goals such as "produce high-quality code."
 
 ---
 
@@ -290,7 +290,8 @@ First list acceptance criteria and assumptions. Do not add dependencies.
 End with two verification requests and cite the evidence used.
 ```
 
-Compare outputs for correctness, scope, assumptions, evidence, and testability.
+Check correctness and scope. Compare assumptions, source references, and the
+checks each response proposes.
 
 ---
 
@@ -318,7 +319,7 @@ action may be clarification rather than code generation.
 | API contract changes | Update Space sources and prompts |
 | Repository convention changes | Review instruction files |
 | Ownership changes | Assign a new maintainer |
-| Output contradicts source | Remove stale evidence and retest |
+| Output contradicts source | Remove stale sources and retest |
 | Feature behavior changes | Recheck official documentation |
 
 Schedule reviews; do not wait for failures.
@@ -327,7 +328,7 @@ Schedule reviews; do not wait for failures.
 
 # Lab handoff
 
-Learners will:
+You will:
 
 1. keep one Storefront API for the full lab;
 2. select the smallest approved source set;
@@ -335,14 +336,15 @@ Learners will:
 4. compare one logging task across context levels;
 5. store and test three reusable prompt files.
 
-**Final deliverable:** A reviewable Storefront API context package with comparison and verification evidence.
+**Final deliverable:** A Storefront API context package with comparison results
+and the checks you ran.
 
 ---
 
 # Remember
 
 1. Relevant context matters more than a large context packet.
-2. Spaces curate evidence for a purpose and audience.
+2. Select Space sources for a named purpose and audience.
 3. Instructions state project-wide rules; prompt files define reusable tasks.
 4. Memory requires source, scope, freshness, and current policy checks.
 5. Every context source needs an owner and maintenance path.

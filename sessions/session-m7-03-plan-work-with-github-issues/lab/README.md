@@ -14,8 +14,9 @@ fresh read, and corrected through a second approved write
 
 ## Lab outcome
 
-Create a reviewed GitHub issue hierarchy through MCP. Check it with a fresh read,
-then make and check one focused correction.
+Create a reviewed GitHub issue hierarchy through MCP. Read the issues back from
+GitHub to check what was saved. Then make one focused correction and read it back
+again.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -56,7 +57,7 @@ or repository file.**
 Stop if the read test or issue-write check fails.
 
 GitHub MCP is the tool connection used in this lab. A plugin can bundle an MCP
-server with other customizations, but the learner must still check the active
+server with other customizations, but you must still check the active
 connection and its tools.
 
 ## Part 2: Read the source and existing GitHub state (20 minutes)
@@ -73,8 +74,8 @@ Ask Copilot to:
 4. report every GitHub MCP read it used;
 5. identify any decision in the proposal that is absent from the brief.
 
-Classify each concrete candidate as **duplicate**, **partial overlap**,
-**conflict**, or **unrelated**. Add the disposition and reason to the issue plan.
+Classify each candidate as **duplicate**, **partial overlap**, **conflict**, or
+**unrelated**. Record what you will do with it and why in the issue plan.
 
 **Checkpoint:** No issue is proposed until the source and existing repository state
 have both been read.
@@ -143,7 +144,8 @@ state with the approved plan:
 - source links and relationships;
 - ownership fields.
 
-Choose one child issue and add a missing verification section:
+Choose one child issue and add the missing section that names who will check the
+work and which decision it follows:
 
 ```text
 Verification owner: Delivery reviewer
@@ -151,14 +153,14 @@ Source decision: docs/discovery/decision-brief.md
 ```
 
 Require a full update preview. Approve the focused write, then retrieve the issue
-again and check the new section is present. No separate verification document
-is needed.
+again and check the new section is present. Keep the check in the issue; you do
+not need a separate document.
 
 **Checkpoint:** A fresh read proves that both the original create and the correction
 reached GitHub.
 
-The parent issue must link every child issue and record dependency order,
-unresolved ownership, the existing-work decisions, and the verified correction.
+Link every child issue from the parent. Record dependency order, unresolved
+ownership, your decisions about existing work, and the correction you checked.
 Session m7-04 reads this live issue set through GitHub MCP.
 
 ## Verification

@@ -14,15 +14,15 @@ description: "Overview of the HVE Core RPI, customization, and product delivery 
 
 ## Overview
 
-This session teaches Hypervelocity Engineering (HVE) as a structured engineering
-framework for GitHub Copilot. Learners use its file-based Research, Plan,
-Implement, Review (RPI) workflow, then extend that workflow with repository
-instructions, targeted coding standards, and a custom review agent.
+Use Hypervelocity Engineering (HVE), a structured engineering framework for
+GitHub Copilot, to take a feature from research to reviewed code. You start with
+its file-based Research, Plan, Implement, Review (RPI) workflow. Then you add
+repository instructions, targeted coding standards, and a custom review agent.
 
-Product Manager Advisor then tests the value and
-scope of an Engineering Decision API feature. Agile Coach turns the result into
-an outcome-oriented story with acceptance criteria. Those artifacts feed back into
-the HVE plan before implementation and review.
+Use Product Manager Advisor to test the value and scope of an Engineering Decision
+API feature. Agile Coach turns the result into an outcome-oriented story with
+acceptance criteria. Feed those artifacts back into the HVE plan before
+implementation and review.
 
 ## Learning outcomes
 
@@ -49,8 +49,8 @@ Use synthetic records in a sandbox permitted by the customer. Get approval for
 package downloads. When local downloads are restricted, use existing
 dependencies and a trainer-managed remote container build.
 
-Keep `.copilot-tracking/` local and ignored by Git. Learners inspect and grade those
-files directly. The challenge handoff only indexes the four phase artifacts and
+Keep `.copilot-tracking/` local and ignored by Git. Inspect and grade those files
+directly. The challenge handoff only indexes the four phase artifacts and
 records the final decision, unresolved risks, and next action.
 
 ## HVE version and references

@@ -26,8 +26,8 @@ replace the local commands and pull-request review.
 
 ## Session objective
 
-Teach automation as review input, not review authority. Learners check the diff,
-tests, and comments before making the decision.
+Show learners how to use automated findings in a review. Have them check the diff,
+tests, and comments before making their own decision.
 
 ## Suggested agenda
 
@@ -72,7 +72,10 @@ Describe the user-visible behavior and allowed scope.
 
 ## Conflict-resolution exercise
 
-Have learners read both branch intentions, write the desired merged behavior, resolve the conflict manually, run tests, and review the result. An assisted demonstration is optional and may occur only when current documentation and policy permit it.
+Have learners read what each branch intends to change. Before they edit, ask them
+to write the behavior the merge must preserve. Then have them resolve the conflict
+manually, run tests, and review the result. An assisted demonstration is optional
+and may occur only when current documentation and policy permit it.
 
 ## Close
 
@@ -85,11 +88,11 @@ Ask learners what they need to see before approving a change.
 | Time | Segment | Result |
 | --- | --- | --- |
 | 0:00 to 0:08 | Review roles and accountability | Author, automation, checks, and reviewer roles are named. |
-| 0:08 to 0:18 | PR summaries and review contracts | Learners separate generated prose from diff evidence. |
+| 0:08 to 0:18 | PR summaries and review contracts | Learners compare generated prose with the diff. |
 | 0:18 to 0:28 | Local commands and PR review | The group distinguishes diff review from PR review. |
 | 0:28 to 0:43 | Intentional-defect and triage demo | Findings connect to behavior; unsupported exploit claims are rejected. |
 | 0:43 to 0:51 | Suggested fixes and conflicts | Learners preserve intent before editing. |
-| 0:51 to 0:58 | Limits, adoption, and Q&A | Learners design reversible human gates. |
+| 0:51 to 0:58 | Limits, adoption, and Q&A | Learners decide where people must review and how to pause automation. |
 | 0:58 to 1:00 | Close and lab handoff | Reviewer roles and access are checked. |
 
 ### Time-pressure cutpoints
@@ -97,7 +100,7 @@ Ask learners what they need to see before approving a change.
 - At 0:08, reduce lifecycle discussion to issue, diff, checks, and human decision.
 - At 0:18, draft only the Validation and Risk sections of the PR template.
 - At 0:28, describe automatic review governance without navigating settings.
-- At 0:38, use the prepared fix and focus on verification.
+- At 0:38, use the prepared fix and focus on checking it.
 - At 0:43, omit optional assisted fix application.
 - At 0:51, run the conflict decision statement without editing code.
 - Never cut the learner's human review, either local command, test output, or
@@ -167,7 +170,8 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 
 ### Transition
 
-> "Once the contract and evidence are ready, an assisted review can be requested as a first pass when approved."
+> "Once the contract, diff, and test output are ready, request an assisted first
+> pass if you have permission."
 
 ## Segment 3: Review request and quality gates (0:18 to 0:28)
 
@@ -315,7 +319,7 @@ Do not propose unrelated refactoring.
 - Active administrator behavior remains `true`.
 - An unrelated active user remains denied.
 - The diff contains one guard plus focused test changes.
-- The final decision cites requirement and test evidence.
+- The final decision cites the requirement and test results.
 
 ### Verification prompts
 
@@ -402,7 +406,8 @@ Ask for four checks:
 
 ### Talking points
 
-Assisted review may help surface localized correctness, missing tests, error handling, or convention mismatches.
+Explain that assisted review may find local correctness issues, missing tests,
+error-handling problems, or convention mismatches.
 
 It may miss unstated product intent, cross-system behavior, subtle authorization issues, operational risk, or misleading but plausible changes.
 
@@ -478,9 +483,9 @@ allowances.
 
 ### Closing script
 
-> "Automation can broaden a first pass, but the reviewer owns the decision. A
-> useful review connects intent, the diff, test output, the smallest correction,
-> and the reviewer's rationale."
+> "Use automation for another first pass. Check its findings against the intended
+> behavior, diff, and test output. The reviewer still decides whether to accept
+> the correction."
 
 ### Lab handoff
 

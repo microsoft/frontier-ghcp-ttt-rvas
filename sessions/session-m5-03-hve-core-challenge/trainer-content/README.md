@@ -6,9 +6,9 @@ description: "Trainer guide for HVE Core RPI, customization, and product deliver
 
 ## Delivery objective
 
-Learners should leave able to explain HVE and use it. They practice on the API.
-Assess how they move from product intent to reviewed code through
-HVE agents, prompts, instructions, and saved tracking artifacts.
+Use the API challenge to teach learners how HVE works. Assess how they move from
+product intent to reviewed code, using HVE agents, prompts, instructions, and
+saved tracking artifacts.
 
 ## Indicative trainer pacing
 
@@ -56,8 +56,8 @@ things learners must distinguish:
 * `.copilot-tracking/` stores local handoff files between phases and must stay
   ignored by Git.
 
-Research writes a file that Plan can use. A person can inspect, diff, attach,
-and approve it.
+Open the file Research writes for Plan. Show how a person can inspect its contents,
+review a diff, attach it to the next phase, and approve it.
 
 ## Demonstrate direct RPI phases
 
@@ -102,8 +102,8 @@ Explain HVE's additive model. Repository context reaches every agent. Targeted
 instructions activate only for matching files. A custom agent adds a repository-owned
 role with its own mission, tools, protocol, and output contract.
 
-Ask for activation evidence. A path match plus an observed effect on Research,
-Plan, code, or Review is evidence. File existence is not.
+Ask learners to show which path matched and what changed in Research, Plan, code,
+or Review. Creating an instruction file alone does not show that it activated.
 
 ## Demonstrate the product-to-engineering handoff
 
@@ -149,8 +149,8 @@ Use short questions that force a decision:
 
 Use the 100-point rubric in `lab/solution/reference-evidence.md`. Grade Research,
 Plan, Implement, and Review at their generated paths. Use platform output only
-when an HVE artifact cites it. Grade the handoff as an index and final human
-decision, not as a duplicate evidence record.
+when an HVE artifact cites it. Grade the handoff for its artifact index and final human
+decision. It should not duplicate the phase records.
 
 Require a human decision at the end: approve, request changes, or pause. Missing
 evidence should reduce the score even when the endpoint appears to work. One

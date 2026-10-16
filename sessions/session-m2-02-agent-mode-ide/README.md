@@ -7,9 +7,9 @@
 
 ## Overview
 
-Use agent mode for multi-step work with clear limits in an IDE. Learners build and
-extend one Todo API. They compare Ask and Agent mode on the same feature, redirect
-a multi-file change, and decide whether to accept, revise, or stop.
+Build and extend one Todo API with agent mode in an IDE. Compare Ask and Agent
+mode on the same feature, then redirect a multi-file change. At each checkpoint,
+decide whether to accept the work, revise it, or stop.
 
 ## Learning outcomes
 

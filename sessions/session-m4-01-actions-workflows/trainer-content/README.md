@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Use `copilot-webapp` from start to finish. Learners first prove the application
-works locally. They then create CI, design deployment, repair workflow failures,
-and validate a JavaScript action against that same codebase.
+Use `copilot-webapp` from start to finish. First, show that the application works
+locally. Then demonstrate CI creation and deployment design, followed by workflow
+repairs and JavaScript action validation against the same codebase.
 
 ## One-hour plan
 
@@ -96,10 +96,10 @@ Review:
 - approved action references;
 - secret references and environment gates;
 - artifact contents and retention;
-- exact local proof for each claim.
+- the local command output that supports each claim.
 
-Point learners to `lab/evidence.md`. The lab is complete when the workflow files,
-action, command results, and reviewer decisions agree.
+Point learners to `lab/evidence.md`. Ask them to check that their workflow files
+and action agree with the command results and reviewer decisions before submitting.
 
 ## Access policy
 
@@ -112,8 +112,8 @@ no credentials or deployment target.
 **Valid YAML only proves that the file parses.** Run the application commands
 and review what the workflow does.
 
-**Use one application throughout.** The same facts support every decision. Learners do
-not waste time reconstructing a new project for each exercise.
+**Use one application throughout.** Learners can use the same repository facts
+for each decision instead of reconstructing a new project for every exercise.
 
 **Test an action failure too.** A custom action that always exits successfully
 has not shown that it enforces the threshold.

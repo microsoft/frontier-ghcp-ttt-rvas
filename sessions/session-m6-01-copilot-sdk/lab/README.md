@@ -11,9 +11,10 @@ description: "Two-hour TypeScript lab for a reliable GitHub Copilot SDK readines
 ## Objective
 
 Complete a TypeScript CLI that uses the GitHub Copilot SDK to assess deterministic
-synthetic change records. The finished application must stream its response, call
-one tool limited to readiness lookups, deny a restricted lookup, record failures, pass focused tests,
-and export traces through an OpenTelemetry Collector to Jaeger.
+synthetic change records. Your application must stream its response and call one
+tool limited to readiness lookups. It must also deny a restricted lookup, record
+failures, pass focused tests, and export traces through an OpenTelemetry Collector
+to Jaeger.
 
 ## Final deliverables
 
@@ -50,9 +51,8 @@ Work from:
 sessions/session-m6-01-copilot-sdk/lab/starter/sdk-readiness-assistant/
 ```
 
-You need authenticated GitHub Copilot SDK access and these local tools and permissions:
+Authenticated GitHub Copilot SDK access is required. You also need:
 
-- authenticated GitHub Copilot SDK access;
 - Node.js and npm versions accepted by `package.json`;
 - Docker Engine;
 - Docker Compose;
@@ -73,8 +73,8 @@ npm run check
 npm test
 ```
 
-Some focused tests should fail because the reliability controls are incomplete.
-The project must compile far enough to show the intended gaps. Use the
+Some focused tests should fail because you have not completed the reliability
+controls yet. The project must compile far enough to show those gaps. Use the
 instructor-provided authentication check in `src/live-demo.ts` before starting the
 live exercises. If `client.getAuthStatus()` reports that the user is not
 authenticated, stop.
@@ -183,7 +183,8 @@ and deny the restricted synthetic record before the handler runs.
 
 12. Record whether the handler ran. The denied test must prove that it did not.
 
-Do not use an approve-all helper. The lab is about a narrow permission boundary.
+Do not use an approve-all helper. You need to show that unrelated requests are
+rejected while the readiness lookup is permitted.
 
 Run the focused tool and policy tests:
 
@@ -383,8 +384,8 @@ Review these areas in order:
 5. `tests/` for stable control-path assertions;
 6. `compose.yaml` and `otel-collector-config.yaml` for trace routing.
 
-Do not copy the solution before the checkpoints. Use it to compare boundaries and
-test results and traces.
+Do not copy the solution before the checkpoints. Use it to compare your control
+boundaries, test results, and traces.
 
 ## Official references
 

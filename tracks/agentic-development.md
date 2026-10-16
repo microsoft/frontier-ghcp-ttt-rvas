@@ -9,11 +9,14 @@
 
 ## Description
 
-This track starts with Copilot fundamentals, then teaches agentic workflows. It covers
-daily assistance, the GitHub Copilot app, cloud agents, MCP servers, custom
-agents, and skills. Sessions m2-05 and m7-05 teach isolated app work, plan critique, and
-supervision of independent child sessions. Session m3-05 compares a local interview
-skill with pinned community skills before turning decisions into `/plan`.
+Start with daily Copilot use, then learn to assign and review agent work.
+The track covers the GitHub Copilot app, cloud agents, MCP servers, custom agents,
+and skills.
+
+Sessions m2-05 and m7-05 give you practice critiquing plans, isolating app work,
+and supervising independent child sessions. In Session m3-05, compare a local
+interview skill with pinned community skills, then use the accepted decisions
+as input to `/plan`.
 
 ## Prerequisites
 
@@ -76,7 +79,7 @@ Sessions m7-01 to m7-04 or GitHub MCP. Session m3-05 requires live CLI skill inv
 
 ## Learning outcomes
 
-By completing this track, trainees will be able to:
+After this track, you should be able to:
 
 1. Use inline suggestions, Chat, CLI, agent mode, Copilot App, and cloud agent
 2. Build and configure Copilot Spaces for team context management
@@ -85,7 +88,7 @@ By completing this track, trainees will be able to:
 5. Build custom MCP servers that extend Copilot's capabilities
 6. Create custom agent profiles with specialized instructions and tools
 7. Develop and share agent skills for team workflows
-8. Design end-to-end agentic workflows: issue → agent → PR → review → merge
+8. Plan an agent workflow that starts with an issue and requires PR review before merge
 9. Evaluate third-party coding agents (Claude, Codex) alongside Copilot
 10. Choose agent workflows for a development team
 11. Use isolated Copilot App sessions to implement and critique a scoped change

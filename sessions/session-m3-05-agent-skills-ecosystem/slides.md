@@ -36,8 +36,9 @@ Session m3-05 | 3 hours
 1. **Select the right task.**
 2. **Guide the work after selection.**
 
-A good procedure with a broad description still creates noise. A precise
-description with no failure behavior still creates unsafe success claims.
+A broad description can select the wrong task even when the procedure is good.
+The procedure also needs failure rules so it does not claim success after a
+required check fails.
 
 ---
 
@@ -64,7 +65,7 @@ description: Use for creating or reviewing REST routes under src/api/ when accep
 ---
 ```
 
-The `name` matches the directory. The `description` carries the trigger.
+Match `name` to the directory. Use `description` to tell Copilot when to select the skill.
 
 ---
 
@@ -196,7 +197,7 @@ The local runner is a teaching harness, not a replacement skill platform.
 
 | Check | What it shows |
 | --- | --- |
-| Local directory validator | The learner's file has the required structure |
+| Local directory validator | Your file has the required structure |
 | Harness unit tests | The fixed scenario contract behaves as expected |
 | `/skills info` and actual invocation | Copilot discovered and used the skill |
 

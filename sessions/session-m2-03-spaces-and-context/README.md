@@ -7,9 +7,10 @@
 
 ## Overview
 
-Give Copilot the context a task needs. Learners use one Storefront API to select Space sources, add repository instructions, compare context levels, and store reusable prompts.
-They inspect CLI `/env` and `/instructions` to find and correct a stale
-module-style instruction before implementation.
+Give Copilot the context a task needs. Use one Storefront API to select Space
+sources, add repository instructions, compare context levels, and store reusable
+prompts. Before implementation, inspect CLI `/env` and `/instructions` to find
+and correct a stale module-style instruction.
 
 ## Learning outcomes
 

@@ -6,9 +6,9 @@ Teach learners to repair a deliberately broken inventory-reconciliation
 application, then improve its design without changing its output. Keep each repair
 small enough to explain and check.
 
-Each learner finishes with a working command-line application, added regression
-tests, a completed repair log, and file comparisons showing that the refactor preserved the
-supplied text and JSON outputs.
+Check that each learner finishes with a working command-line application, added
+regression tests, and a completed repair log. Use file comparisons to check that
+the refactor preserved the supplied text and JSON outputs.
 
 > [!IMPORTANT]
 > Check GitHub Copilot access before the session. If Copilot access is missing or
@@ -18,7 +18,7 @@ supplied text and JSON outputs.
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:08 | Frame repair work as evidence gathering |
+| 0:00-0:08 | Start repairs from the failure output |
 | 0:08-0:18 | Read Python failures in execution order |
 | 0:18-0:30 | Demonstrate syntax and import recovery |
 | 0:30-0:42 | Use fixtures to recover behavior |
@@ -60,7 +60,7 @@ Do not fix later faults during this demonstration.
 
 ### The repair ladder
 
-Work from the lowest layer that blocks evidence:
+Start at the first layer that prevents you from checking the next:
 
 | Layer | Question | Check |
 | --- | --- | --- |
@@ -84,8 +84,8 @@ Teach this loop:
 5. Run the narrowest useful check.
 6. Record the result in the repair log.
 
-The learner owns the diagnosis. Copilot can suggest a path. Command output decides
-whether the hypothesis was right.
+Have learners make the diagnosis rather than accept Copilot's suggestion without
+checking it. Use command output to test each hypothesis.
 
 ## Controlled starter sequence
 
@@ -152,7 +152,7 @@ Show how to add an entry to `repair-log.md`:
 | Field | Example |
 | --- | --- |
 | Failure | `SYN-01` |
-| Evidence | `SyntaxError` in `cli.py` |
+| Failure output | `SyntaxError` in `cli.py` |
 | Hypothesis | Function header is incomplete |
 | Change | Small syntax-only edit |
 | Check | Re-run compile command |
@@ -180,8 +180,8 @@ The intended rules are:
 8. Sort report rows by SKU.
 9. Keep repeated runs isolated.
 
-The expected text and JSON files are executable requirements. Learners should not
-change them to make broken code pass.
+Show learners how the expected text and JSON files define the result. Do not let
+them change those files to make broken code pass.
 
 ## Regression tests before refactoring
 
@@ -205,9 +205,9 @@ The clean design has five boundaries:
 | `reporting.py` | Render stable text and JSON output |
 | `cli.py` | Parse arguments, call the service, write files |
 
-The starter violates these boundaries on purpose. Learners should remove the
-module-level result list, call one rule implementation, and turn nested branches
-into named functions.
+Explain that the starter mixes these responsibilities on purpose. Have learners
+remove the module-level result list, call one rule implementation, and turn
+nested branches into named functions.
 
 Do not ask for a large rewrite. First lock behavior with tests. Then make one
 structural change at a time.
@@ -259,7 +259,7 @@ expected outputs, and tests. Call out any unproved assumption.
 - Keep learners on the current failure. Later defects are distractions until the
   program reaches them.
 - Require repair-log entries before broad edits.
-- Treat a new failure after a repair as useful evidence.
+- Use a new failure after a repair to decide what to investigate next.
 - Reject changes to expected outputs unless the class first proves the contract
   is wrong.
 - Ask learners to explain each Copilot suggestion before they accept it.

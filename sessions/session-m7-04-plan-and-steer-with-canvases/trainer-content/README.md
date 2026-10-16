@@ -4,10 +4,9 @@
 
 ## Delivery objective
 
-Teach learners to create and review a project-scoped planning canvas in the
-Delivery Decision Studio path. Keep the
-distinction clear: the canvas projects GitHub state; GitHub remains the source of
-record.
+Show learners how to create and review a project-scoped planning canvas in the
+Delivery Decision Studio path. Explain that the canvas displays GitHub state
+alongside planning information. GitHub remains the source of record.
 
 ## One-hour plan
 
@@ -45,7 +44,8 @@ Use a canvas when work needs:
 - named actions;
 - a review view that survives the chat.
 
-Stay in chat when the learner needs one answer, one draft, or a short interview.
+Show that a single answer, draft, or short interview can stay in chat without
+adding a canvas.
 
 ## Translate the plan into requirements
 
@@ -108,7 +108,7 @@ Check:
 7. Show the mismatch and last-refresh time.
 8. Refresh the canvas and check the blocker and next action.
 
-The live canvas and linked GitHub issues are the saved result. Do not create a
+Leave learners with the live canvas and linked GitHub issues. Do not create a
 separate transfer file.
 
 ## Product notes verified October 5, 2026

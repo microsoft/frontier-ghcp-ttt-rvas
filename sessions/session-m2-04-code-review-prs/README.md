@@ -7,10 +7,10 @@
 
 ## Overview
 
-Follow one pull request from change brief to final human decision. Learners inspect
+Follow one pull request from change brief to final human decision. Inspect
 a flawed change, run `/review` and `/security-review` on its local diff, and compare
-those findings with Copilot PR review. They correct the code,
-resolve a conflict, and record the diff, test output, and reviewer decision.
+those findings with Copilot PR review. Then correct the code and resolve a
+conflict. Record the diff, test output, and reviewer decision.
 
 ## Learning outcomes
 

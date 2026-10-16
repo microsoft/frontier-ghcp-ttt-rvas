@@ -7,6 +7,9 @@
 
 ## Lab overview
 
+You will connect Terraform modules, validate the project locally, and repair an
+intentional security failure.
+
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Inspect and format the Terraform project | 10 min |
@@ -105,8 +108,8 @@ Expected failure: the command exits with code 1 and reports prohibited public
 access, a hardcoded password, wildcard IAM access, missing database encryption,
 or missing load-balancer logging.
 
-Investigate the file before opening the solution. Repair the findings supported
-by the stated architecture, then run:
+Inspect the file before opening the solution. Use the stated architecture to
+decide which reported findings to repair, then run:
 
 ```bash
 bash lab/starter/check-security.sh lab/solution/secure-iac/main.tf
@@ -118,7 +121,7 @@ terraform -chdir=lab/solution/secure-iac validate
 Expected result: the security gate and Terraform validation pass.
 
 **Checkpoint:** Record the failing exit code, each cited line, the repaired file,
-and the passing rerun. A quiet gate does not approve a deployment.
+and the passing rerun. Passing this gate does not give you approval to deploy.
 
 ## Final deliverable
 

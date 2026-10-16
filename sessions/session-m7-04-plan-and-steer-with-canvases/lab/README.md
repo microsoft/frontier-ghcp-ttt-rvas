@@ -17,8 +17,8 @@ real GitHub state change
 ## Lab outcome
 
 Create and review a planning canvas with the official `/create-canvas` skill.
-Load live issue state through GitHub MCP, create a controlled state change, detect
-stale canvas data, and reconcile it.
+Load live issue state through GitHub MCP. Then make a controlled change in GitHub
+so you can detect stale canvas data and refresh it.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -96,8 +96,8 @@ Review:
 - the capabilities exposed to Copilot;
 - any package or dependency added by the extension.
 
-This review is no-code. Learners inspect generated files and request specific
-changes through Copilot. They do not hand-edit extension code.
+Inspect the generated files and ask Copilot for specific changes. Do not hand-edit
+extension code; this is a no-code review.
 
 Ask Copilot to remove generated state or actions that exceed the approved contract.
 
@@ -143,7 +143,7 @@ Do not refresh the canvas yet. Ask Copilot to compare:
 - the fresh GitHub issue;
 - the canvas's last-refresh time.
 
-The canvas should now be visibly stale.
+You should now see that the canvas is stale compared with the issue you just read.
 
 ## Part 6: Reconcile and record ownership (15 minutes)
 
@@ -157,9 +157,9 @@ Check that:
 - the GitHub state and planning state remain distinct;
 - the last-refresh time changed.
 
-Record the owner, refresh procedure, recovery procedure, retirement trigger, and
-next safe action in the live canvas. Check that the canvas links the four
-status-visibility issues for Session m7-05.
+In the live canvas, record who owns it, how to refresh it, and how to recover after
+an interruption. Also record when to retire it and the next safe action. Check
+that it links the four status-visibility issues for Session m7-05.
 
 Run `/context`. If the creation thread is crowded, start a fresh session and
 retrieve the live GitHub issues and open the canvas. Then run:

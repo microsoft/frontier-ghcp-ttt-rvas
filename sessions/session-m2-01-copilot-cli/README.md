@@ -7,11 +7,11 @@
 
 ## Overview
 
-Use the standalone `copilot` CLI to take over one small Node.js project. Learners
-inspect commands, revise an implementation plan, and fix the project. They also
-inspect live fleet results and automate a project health report. Finally, they
-compare terminal and IDE workflows. The `agent-tasks` project ties the lab together
-from the first command through the final handoff.
+Use the standalone `copilot` CLI to take over one small Node.js project. Inspect
+commands, revise an implementation plan, then fix the project. You will also
+inspect live fleet results and automate a project health report before comparing
+terminal and IDE workflows. Work in `agent-tasks` from the first command through
+the final handoff.
 
 ## Learning outcomes
 

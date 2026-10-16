@@ -9,10 +9,10 @@
 
 ## Description
 
-This track includes all 29 sessions in the GitHub Copilot & Agentic Workflows
-curriculum. It prepares trainers to teach technical teams and non-developer
-product or delivery audiences. Topics include first-time setup, agentic delivery,
-DevOps automation, and supervision of agent work.
+Choose this track if you need to teach the full curriculum. It includes all 29
+sessions, covering first-time setup, agentic delivery, DevOps automation, and
+supervision of agent work. You will prepare to teach technical teams as well as
+product and delivery teams that do not write code.
 
 ## Prerequisites
 
@@ -131,7 +131,7 @@ DevOps automation, and supervision of agent work.
 
 ## Learning outcomes
 
-By completing this track, trainees will be able to:
+After this track, you should be able to:
 
 1. Deliver any session using its trainer materials
 2. Customize delivery for developer, DevOps, enterprise, product, and delivery audiences

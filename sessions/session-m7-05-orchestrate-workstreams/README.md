@@ -13,13 +13,14 @@ the product route, or Sessions m1-01 to m1-03, m2-01 to m2-04 and m2-05 for the 
 
 ## Overview
 
-Session m7-05 teaches parent-led orchestration for one delivery objective. Learners
-split four live GitHub issues into independent workstreams, monitor the child
-sessions, and review the results.
+Use parent-led orchestration for one delivery objective. Split four live GitHub
+issues into independent workstreams, then monitor the child sessions and review
+their results.
 
-Developers can instead review a local readiness evaluator, its tests, and a
-synthetic PR snapshot. That route follows Session m2-05 and needs no GitHub MCP
-connection or product-track artifacts. Both routes take the same two-hour lab.
+If you are following the developer route after Session m2-05, review a local
+readiness evaluator, its tests, and a synthetic PR snapshot instead. You do not
+need a GitHub MCP connection or product-track artifacts for that route. Both
+routes use the same two-hour lab.
 
 The plan stays small. Each workstream needs a question, input paths or issues,
 a stop condition, and a reviewer. GitHub Copilot keeps session status,
@@ -30,7 +31,7 @@ route.
 
 ## Learning objectives
 
-Learners practice how to:
+In this session, you will:
 
 1. Split one objective into independent workstreams.
 2. Set approved inputs and hard stop conditions.

@@ -10,8 +10,8 @@ output, and recorded good and bad requests
 
 ## Lab overview
 
-Build one tool completely before adding the next two. This keeps the protocol
-surface small enough to review.
+You will build and test one tool before adding the next two. That gives you a
+small protocol surface to review first.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -140,9 +140,9 @@ Use the Inspector web client when a browser is available:
 npx --yes @modelcontextprotocol/inspector@2.5.0 node src/index.js
 ```
 
-Record the tool name, description, input schema, request, response, and error
-shape. If Inspector cannot run but `npm test` passes, record Inspector as **not
-executed**. Do not invent output.
+Record the tool name, description, and input schema. Include the request,
+response, and error shape. If Inspector cannot run but `npm test` passes, record
+Inspector as **not executed**. Do not invent output.
 
 ## Part 4: Add the remaining tools
 
@@ -153,8 +153,8 @@ Add these definitions and handlers:
 | `get_forecast` | `city` is required; `days` defaults to 3 and accepts integers from 1 to 7 |
 | `convert_temperature` | `value` is finite; `from` is `celsius` or `fahrenheit` |
 
-Keep the output deterministic so the tests can assert exact values. Add focused
-tests before broad integration prompts.
+Keep your output deterministic so the tests can assert exact values. Add focused
+tests before trying broad integration prompts.
 
 Compare your result with
 [`lab/solution/custom-mcp/`](solution/custom-mcp/) only after the staged tests pass.

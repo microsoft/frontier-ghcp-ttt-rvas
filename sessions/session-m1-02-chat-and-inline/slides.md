@@ -81,7 +81,7 @@ Terminal context is useful for:
 
 - a failed test command;
 - an unfamiliar error;
-- the next verification command.
+- the next command to check the result.
 
 Read the actual output before acting on the summary.
 
@@ -114,7 +114,7 @@ Identify the defect without changing other methods.
 | Workspace search | Broad structure or usage |
 | Terminal output | Recent command results |
 
-Relevant context beats large context.
+Include the context the task needs.
 
 ---
 
@@ -153,7 +153,8 @@ Check whether each test:
 - avoids invented requirements;
 - uses existing tools.
 
-Tests generated from a wrong assumption preserve the wrong assumption.
+Check the expected behavior too. A generated test can encode the same mistake as
+the code.
 
 ---
 
@@ -189,14 +190,14 @@ Start fresh when stale assumptions keep returning.
 
 # Compare against the task
 
-If two approved model choices are available:
+If policy allows two available model choices:
 
 1. use the same synthetic prompt;
 2. keep the same context;
 3. run the same tests;
 4. compare correctness and useful citations.
 
-Style alone is weak evidence.
+Judge the results by the checks, not how well they read.
 
 ---
 

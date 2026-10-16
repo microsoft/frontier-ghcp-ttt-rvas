@@ -9,17 +9,17 @@
 
 ## Lab overview
 
-Review AI-assisted work within the named files. Support comments with code
-references and test results. Apply targeted fixes and make a human decision. The
-starter project includes deliberate defects for comparing human review and
-Copilot-assisted review.
+You will review AI-assisted work within the named files. Support your comments
+with code references and test results, then apply targeted fixes and decide
+whether to accept the change. The starter contains deliberate defects so you can
+compare your own review with Copilot-assisted review.
 
 | Exercise | Topic | Time |
 | --- | --- | --- |
 | 1 | Human, code, and security review of one diff | 40 min |
 | 2 | Validate and correct the starter project | 35 min |
-| 3 | Resolve a conflict with review evidence | 25 min |
-| 4 | Evaluate review evidence and final decision | 20 min |
+| 3 | Resolve a conflict and check the result | 25 min |
+| 4 | Review the results and make a final decision | 20 min |
 
 ---
 
@@ -40,7 +40,7 @@ Before you start, record these decisions in your notes:
 > **Success criteria:** You can explain what is allowed, what is out of scope, who
 > reviews the work, and which check validates the change.
 
-Learners need the standalone Copilot CLI with `/review` and `/security-review`,
+You need the standalone Copilot CLI with `/review` and `/security-review`,
 Copilot pull-request review, a private training repository they may push to, Git,
 the authenticated GitHub CLI (`gh`), Node.js, and npm. Check both Copilot commands
 in `/help` and repository access with `gh auth status` before starting.
@@ -118,7 +118,7 @@ or test result and an acceptance criterion.
 
 2. **Create a review table in your notes.** Use these columns:
 
-   | Change | Expected behavior | Risk | Evidence to inspect | Review decision |
+   | Change | Expected behavior | Risk | Code or output to inspect | Review decision |
    | --- | --- | --- | --- | --- |
    | User search | Safe filtering | Injection risk | query construction | Request changes |
    | User list | No sensitive fields | data exposure | response payload | Request changes |
@@ -148,7 +148,7 @@ or test result and an acceptance criterion.
    the two findings that matter most before opening an assisted review.
 
    > **Success criteria:** Your initial review cites the relevant file or
-   > function and explains what evidence supports the verdict.
+   > function and explains how the code or test output supports your verdict.
 
 7. **Run the general code review.** Start `copilot` in the working repository:
 
@@ -200,7 +200,7 @@ You are ready to continue when you can answer:
 - Which findings block approval?
 - Which findings are suggestions only?
 - Which defects were not covered by the existing tests?
-- What evidence would convince you that the fixes are complete?
+- Which code checks or test results would show that the fixes are complete?
 - What changed after the assisted review, if anything?
 - What did `/review` and `/security-review` each report?
 - Which claim was supported by actual behavior rather than an assumed backend?
@@ -217,7 +217,7 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
 1. **Prioritize blocking findings.** Start with issues that can leak sensitive data, allow injection, crash the server, or produce incorrect behavior.
 
-   > **Success criteria:** Your fix plan lists each blocking defect, the target file, and the expected verification.
+   > **Success criteria:** Your fix plan lists each blocking defect, the target file, and the check you will run.
 
 2. **Fix input handling in `src/api.js`.** Replace unsafe string interpolation and fragile parsing with validated inputs and safe response shapes appropriate for the starter project.
 
@@ -265,7 +265,8 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
 ### Objective
 
-Resolve a merge conflict by preserving intent and adding verification. Do not blindly accept one side.
+Resolve a merge conflict so both branches' intended behavior survives. Check the
+result rather than accepting one side without review.
 
 ### Steps
 
@@ -316,7 +317,8 @@ Resolve a merge conflict by preserving intent and adding verification. Do not bl
 
 ### Objective
 
-Make the final review decision from evidence, not an automated suggestion.
+Use the code and test results to make your final review decision. An automated
+suggestion alone is not enough.
 
 ### Steps
 
@@ -324,9 +326,9 @@ Make the final review decision from evidence, not an automated suggestion.
 
    > **Success criteria:** The finding includes a file reference, impact, and acceptance criterion.
 
-2. **Record the fix evidence.** Include before/after behavior, test names, and command output.
+2. **Record how you checked the fix.** Include before/after behavior, test names, and command output.
 
-   > **Expected output:** A reviewer can reproduce the result from the recorded evidence.
+   > **Expected output:** A reviewer can reproduce the result from your notes and command output.
 
 3. **Classify remaining risk.** Use these categories:
 
@@ -336,7 +338,7 @@ Make the final review decision from evidence, not an automated suggestion.
    | Dependency | Did the change add or update packages? |
    | Permission | Did the workflow require a new permission? |
    | Security | Did validation, error handling, or secrets handling change? |
-   | Quality | Are tests and review evidence sufficient? |
+   | Quality | Do the tests and review results support the decision? |
 
 4. **Write the final decision.** Choose approve, request changes, or pause. Include the human reviewer and rationale.
 
@@ -348,12 +350,12 @@ Make the final review decision from evidence, not an automated suggestion.
    assessment accepted, revised, or rejected it.
 
    > **Expected output:** The comparison table identifies differences, false
-   positives, added evidence, and any finding that changed the final verdict.
+   positives, new code references or test results, and any finding that changed the final verdict.
 
 ### Checkpoint 4: final decision is evidence-based
 
 - [ ] The decision is approve, request changes, or pause.
-- [ ] The rationale cites findings, fixes, and verification.
+- [ ] The rationale cites findings, fixes, and check results.
 - [ ] Automated findings were accepted only after human review.
 - [ ] Remaining risk and the reviewer are named.
 
@@ -375,7 +377,7 @@ Submit one folder or document containing:
 
 ## Verification checklist
 
-- [ ] Findings are tied to evidence and acceptance criteria.
+- [ ] Findings cite code or test results and acceptance criteria.
 - [ ] A human reviewer made the final decision.
 - [ ] Both local commands ran before the initial change was committed.
 - [ ] Findings name their review source and a file/line or reproduction.

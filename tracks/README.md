@@ -1,7 +1,8 @@
 # Learning tracks
 
-Choose a learning path based on your team's Copilot experience, role, and goals.
-Each track lists sessions from the GitHub Copilot & Agentic Workflows curriculum.
+Start with your team's role and Copilot experience. The tracks below group
+sessions from the GitHub Copilot & Agentic Workflows curriculum, so you can
+choose a teaching order without planning from scratch.
 
 ## Track comparison
 
@@ -57,16 +58,17 @@ Copilot Essentials → Developer Productivity → Agentic Development → Full M
 
 ## Notes for trainers
 
-- Each track lists exact session numbers and titles: cross-reference with [`curriculum-plan.md`](../curriculum-plan.md) for full session details
-- All tracks assume trainees meet the stated prerequisites
+- Use the session IDs in each track to find the full lesson in
+  [`curriculum-plan.md`](../curriculum-plan.md).
+- Check that learners meet the track's prerequisites before scheduling.
 - Add or remove sessions to match customer needs
 - Most sessions use the standard 3-hour format. Session m5-03 uses a 1-hour trainer
   segment and a 3-hour lab.
 - Developer Productivity and Agentic Development include Sessions m2-05 and m7-05's
   developer route. Both require live app access; prepared outputs do not complete
   the labs. Session m3-05's interview comparison requires live CLI skill loading.
-- Prepare CLI `/refine` before Session m1-03, not after it. Session m2-01 needs local
-  sandbox support and checked limit behavior. Session m3-04 needs JavaScript LSP;
+- Set up CLI `/refine` before Session m1-03. For Session m2-01, check local
+  sandbox support and how the installed version applies limits. Session m3-04 needs JavaScript LSP;
   Session m2-06 needs Python LSP. Check the session preflights before scheduling.
 - Session m2-05 also requires `/fork`, `/merge-to-parent`, and `/spar`. These app
   commands do not replace the CLI's worktree and recovery exercise.

@@ -108,7 +108,7 @@ Custom agents add repository-owned roles and output contracts.
 
 # Activation needs evidence
 
-An instruction file existing is not proof.
+Creating an instruction file does not show that HVE used it.
 
 Show:
 
@@ -147,7 +147,7 @@ outcome-oriented story and acceptance criteria.
 
 Deliver `POST /api/decisions` within the supplied product intent and API contract.
 
-The endpoint is small on purpose. Scope control is part of the score.
+Keep the endpoint within the supplied contract. Scope control is part of the score.
 
 ---
 

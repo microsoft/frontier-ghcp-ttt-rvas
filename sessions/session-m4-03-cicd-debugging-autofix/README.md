@@ -7,12 +7,12 @@
 
 ## Overview
 
-Debug CI/CD failures with workflow files, failed-step output, and local checks.
-Learners must record an observation and hypothesis before opening a reference fix.
+You will debug CI/CD failures using workflow files, failed-step output, and local checks.
+Record an observation and hypothesis before opening a reference fix.
 One case has a second failure that appears only after the first repair.
 
-The security exercise uses a deliberately vulnerable training app. Learners review
-the smallest patch through an approved route or work locally.
+The security exercise uses a deliberately vulnerable training app. Review
+the smallest patch through a route you have approval to use, or work locally.
 
 ## Learning outcomes
 
@@ -24,7 +24,7 @@ the smallest patch through an approved route or work locally.
 
 ## Required access
 
-Learners need **GitHub Copilot and Node.js 20.x**. Repository Actions, code
+You need **GitHub Copilot and Node.js 20.x**. Repository Actions, code
 scanning, and remote remediation routes are optional. The required path uses the
 supplied files and local commands.
 

@@ -6,9 +6,9 @@
 
 ## Delivery goal
 
-Teach learners to direct four issue-based workstreams through live GitHub Copilot
-orchestration. The orchestration surface holds operational state. The plan holds
-only the decisions needed before work starts.
+Show learners how to direct four issue-based workstreams through live GitHub
+Copilot orchestration. Use the orchestration surface to track the running work.
+Keep only the decisions needed before work starts in the plan.
 
 For developers after Session m2-05, use the local PR-readiness route instead. It
 reviews implementation behavior, tests, and a supplied snapshot without GitHub
@@ -68,13 +68,14 @@ Use the current session management surface.
 | The result lacks support | Reject |
 | Human authority is required | Escalate |
 
-Show a wait, redirect, stop, accept, reject, or escalate decision when the work calls for it.
+As you inspect the work, show learners why you choose to wait, redirect, stop,
+accept, reject, or escalate.
 
 ## Review the parent result
 
-The parent result should link findings to live issues, show rejected claims, name
-open gaps, and recommend the next follow-up. It must not publish or change source
-systems without approval.
+Review how the parent connects findings to live issues. Check that it shows
+rejected claims, names open gaps, and recommends the next follow-up. It must not
+publish or change source systems without approval.
 
 Session m7-06 reads the live issues and the reviewed parent result. There is no manual
 delivery-status record or static handoff.
@@ -102,9 +103,10 @@ tests make the PR ready. The supplied snapshot has a failed required integration
 check and unresolved blocking thread `R1`. Those remain blockers even when local
 tests pass. Children may agree; never fabricate a disagreement.
 
-The developer lab spends 25 minutes on the work split, 30 on live inspection,
-35 on steering and reconciliation, and 30 on parent review. Grade checked
-findings and the redirection, not an exact child count or speedup.
+Allow 25 minutes for the developer work split, 30 for live inspection, 35 for
+steering and reconciliation, and 30 for parent review. Grade the findings learners
+checked and how they redirected the work. Do not grade an exact child count or
+speedup.
 
 Use `lab/solution/developer-review-reference.md` after the human review. It
 explains the source facts but cannot replace live child results.

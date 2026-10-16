@@ -7,6 +7,9 @@
 
 ## Lab overview
 
+You will investigate three pipeline failures, review a security repair, and
+improve feedback speed without removing checks.
+
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Prove the local application baseline | 10 min |
@@ -31,7 +34,7 @@ For Case 3, do not open `error-log-3-stage-2.txt` until the first repair is comp
 
 Run all commands from this session directory unless a command changes directory.
 
-Prove the application works before you inspect the pipeline:
+Check that the application works before you inspect the pipeline:
 
 ```bash
 cd lab/starter/pipeline-app
@@ -114,7 +117,7 @@ npm ci
 ```
 
 Expected failure: npm cannot find the project package metadata in the session root.
-Prove that the application command works:
+Now check the same command in the application directory:
 
 ```bash
 npm --prefix lab/starter/pipeline-app ci
@@ -184,9 +187,9 @@ npm ci --prefix lab/solution/secure-app
 npm test --prefix lab/solution/secure-app
 ```
 
-Record why parameterized queries, output encoding, and resolved-path containment
-address the observed code paths. The three tests must pass. Do not accept scanner
-silence as the only proof.
+Explain how each repair protects its code path: parameterized queries for SQL,
+output encoding for HTML, and resolved-path containment for file access.
+The three tests must pass. Do not rely only on an absence of scanner findings.
 
 ## Part 3: Improve feedback speed
 

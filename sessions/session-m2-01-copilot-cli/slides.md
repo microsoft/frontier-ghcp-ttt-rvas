@@ -131,7 +131,7 @@ Do not automate an unclear request.
 copilot -p "Summarize the failing test output"
 ```
 
-A script needs more than a useful answer. Define:
+Before another script consumes the answer, define:
 
 - stable input;
 - a predictable output format;
@@ -264,7 +264,8 @@ Keep:
 - the prompt and stated limits;
 - the final human decision.
 
-Conversation history alone is not a delivery record.
+Save these files and results so another engineer can check the work without the
+conversation.
 
 ---
 
@@ -274,7 +275,8 @@ Conversation history alone is not a delivery record.
 
 Use `/plan`, challenge an assumption, and approve the revision before repair.
 Inspect live `/fleet` results through `/tasks` and check the accepted claims.
-Check the critic, controls, queue/background result, and recovery/worktree state.
+Check the critique against the source. Record the controls, queue/background
+result, and recovery/worktree state.
 
 **120 minutes:** setup 15; repair 40; programmatic/fleet 35; recovery/choice 30.
 

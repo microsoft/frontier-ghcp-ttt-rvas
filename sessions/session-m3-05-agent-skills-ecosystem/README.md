@@ -7,13 +7,14 @@
 
 ## Overview
 
-Skills capture reusable procedures owned by the repository. Learners build one
-skill under `.github/skills/` and test matching, non-matching, and missing-reviewer
-scenarios. They then check live loading and compare the local `decision-interview`
+Skills capture reusable procedures owned by the repository. You will build one
+skill under `.github/skills/`. Test when it should run, when it should stay out of
+scope, and when a missing reviewer should stop it. Then check live loading and
+compare the local `decision-interview`
 skill with a pinned copy of Matt Pocock's `grill-me` and its `grilling` dependency.
 The accepted interview decisions become inputs to `/plan`.
-Learners finish with scoped `/chronicle improve` suggestions and check whether
-actual session friction belongs in instructions, a skill, or neither.
+Finish by reviewing scoped `/chronicle improve` suggestions. Use actual session
+corrections to decide whether a rule belongs in instructions, a skill, or neither.
 
 ## Learning outcomes
 
@@ -29,7 +30,7 @@ actual session friction belongs in instructions, a skill, or neither.
 
 ## Required access
 
-Learners need Node.js 22 or later and the standalone Copilot CLI with project
+You need Node.js 22 or later and the standalone Copilot CLI with project
 skill loading, `/plan`, and `/chronicle improve`. **Stop if required access is unavailable.**
 The deterministic runner checks its own contract; it does not replace live skill
 invocation. Session m7-02 supplies reusable interview assets but is not a prerequisite.

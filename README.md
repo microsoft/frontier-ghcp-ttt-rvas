@@ -1,6 +1,12 @@
 # GitHub Copilot & Agentic Workflows: Train-the-Trainer
 
-A curriculum for trainers teaching GitHub Copilot and GitHub Agentic Workflows. It contains 29 sessions across 7 modules, including paths for product and delivery teams and HVE engineering. Most sessions have 1 hour of trainer content and a 2-hour hands-on lab. Session m4-02 uses a 90-minute lab, Session m5-02 uses a 2-hour 30-minute lab, and Session m5-03 uses a 3-hour lab.
+Use this curriculum to teach GitHub Copilot and GitHub Agentic Workflows.
+Choose from **29 sessions across 7 modules**, including paths for product and
+delivery teams and HVE engineering.
+
+Most sessions pair 1 hour of trainer content with a 2-hour hands-on lab.
+Session m4-02 has a 90-minute lab, Session m5-02 has a 2-hour 30-minute lab,
+and Session m5-03 has a 3-hour lab.
 
 ## Who this is for
 
@@ -37,11 +43,11 @@ A curriculum for trainers teaching GitHub Copilot and GitHub Agentic Workflows. 
 - The GitHub Copilot app
 - The approved GitHub MCP server and a writable training repository
 
-Programming experience, Git command-line knowledge, and repository administration are not required.
+Product and delivery learners do not need programming experience, Git command-line
+knowledge, or repository administration skills.
 
-**GitHub Copilot access is required for Sessions m7-01 to m7-06.** Learners without access
-should not take these sessions. Stop and reschedule their Module 7 training after
-access is available.
+**GitHub Copilot access is required for Sessions m7-01 to m7-06.** If a learner
+does not have access, stop and reschedule their Module 7 training once they do.
 
 ## Curriculum overview
 
@@ -49,7 +55,7 @@ access is available.
 Numbers restart at `01` in each module. Directories use the same ID, such as
 `sessions/session-m2-01-copilot-cli/`.
 
-The catalog in `data/session-catalog.json` records the teaching order.
+Use `data/session-catalog.json` for the teaching order.
 **Use the full module-local ID** in saved sets and session links.
 
 ### Module 1: Copilot Fundamentals (Beginner)
@@ -123,12 +129,16 @@ the required commands before delivery. Prepared outputs do not replace live work
 
 ## Getting started
 
-1. **Review the curriculum plan**. Read [`curriculum-plan.md`](curriculum-plan.md) for full session details, learning objectives, and progression. Use the [`glossary`](sessions/glossary.md) for shared product and workflow terms.
+1. Read the [`curriculum plan`](curriculum-plan.md) to see what each session teaches
+   and which sessions come first. Use the [`glossary`](sessions/glossary.md) for
+   product and workflow terms.
 
-2. **Understand the template**. Check [`track-template/`](track-template/) for the standard session structure. Every session follows the same format.
+2. Check [`track-template/`](track-template/) to see how a session is organized.
+   Every session follows the same format.
 
-3. **Browse learning tracks**. See [`tracks/`](tracks/) for paths based on role,
-   maturity, and goals, including Product and Delivery Teams and HVE Engineering.
+3. Browse the [`learning tracks`](tracks/) and choose one that fits your audience's
+   role and experience. Product and Delivery Teams and HVE Engineering have
+   dedicated paths.
 
 4. **Pick your path:**
 
@@ -149,7 +159,8 @@ the required commands before delivery. Prepared outputs do not replace live work
    - VS Code with GitHub Copilot and GitHub Copilot Chat extensions
    - GitHub Copilot app for sessions that use canvases or orchestration
 
-6. **Deliver and iterate**. Each session has trainer notes. After delivering, update the materials based on what worked.
+6. Use the trainer notes to teach each session. Afterwards, update the materials
+   based on what worked and where learners needed help.
 
 ## Repository structure
 

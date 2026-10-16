@@ -7,7 +7,7 @@
 
 ## Lab overview
 
-Use one Storefront API for the full lab. First select the sources for a Copilot
+You will use one Storefront API for the full lab. First select the sources for a Copilot
 Space. Then add repository instructions and compare the same task across context
 levels. Store reusable prompt files beside the project.
 
@@ -161,9 +161,10 @@ products whose stock is at or below the threshold. Follow repository instruction
 Do not edit files.
 ```
 
-Review the plan against the API spec, architecture, model, and existing route order. A static route must not be hidden behind `/:id`.
+Review the plan against the API spec, architecture, and model. Check the route
+order too: a static route must not be hidden behind `/:id`.
 
-Then ask for a minimal implementation and verification:
+Then ask for the smallest implementation and a check:
 
 ```text
 Implement the accepted low-stock endpoint plan. Keep the current API behavior.
@@ -214,7 +215,8 @@ Record:
 - number of corrections;
 - claims that cite or clearly follow a source.
 
-Score usefulness against the project, not fluency. More context is only better when it removes wrong assumptions.
+Score the response against the project requirements rather than how well it reads.
+Keep extra context only when it removes wrong assumptions.
 
 ### Checkpoint 3: comparison uses evidence
 
@@ -253,7 +255,7 @@ Compare with `lab/solution/ecommerce-project/.github/prompts/`.
 
 - [ ] All three prompt files appear in `.github/prompts/`.
 - [ ] Each prompt was tested on the Storefront API.
-- [ ] Each output includes verification.
+- [ ] Each output includes a check to run.
 - [ ] The migration prompt stops before package changes.
 - [ ] Stale or duplicate instructions were removed.
 
@@ -265,7 +267,7 @@ Submit the `storefront-api/` workspace with:
 2. `.github/copilot-instructions.md`.
 3. The completed `context-comparison.md`.
 4. Three tested prompt files under `.github/prompts/`.
-5. Low-stock endpoint verification and the final context choice.
+5. Low-stock endpoint check results and the final context choice.
 
 **Done:** Another engineer can see which sources were selected, how each context layer changed the result, and how to check the project-specific output.
 

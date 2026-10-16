@@ -7,7 +7,7 @@
 
 ## Lab overview
 
-Use the same application for every part of the lab.
+You will use the same application for every part of the lab.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -113,8 +113,9 @@ grep -nE 'environment: (staging|production)|needs:|permissions:' \
 Expected result: YAML parsing succeeds. The output shows both environments, job
 ordering, and a permissions block.
 
-Compare with `lab/solution/workflows/cd.yml`. Repository settings own production
-reviewers. The workflow only references the `production` environment.
+Compare your design with `lab/solution/workflows/cd.yml`. Production reviewers are
+configured in repository settings. The workflow only references the `production`
+environment.
 
 **Checkpoint:** Record the secret names, the production gate, the health-check
 behavior, and the rollback steps. Do not claim that a deployment occurred.
@@ -123,7 +124,7 @@ behavior, and the rollback steps. Do not claim that a deployment occurred.
 
 The two broken workflows both target `copilot-webapp`.
 
-First prove the CI file has a syntax failure:
+First, run the parser to see the CI file's syntax failure:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
@@ -201,5 +202,5 @@ Submit:
 3. The completed JavaScript action.
 4. `lab/evidence.md` with commands, results, changed files, and reviewer decisions.
 
-The deliverable must not contain credentials, real deployment endpoints, or a
+Keep credentials and real deployment endpoints out of your deliverable. Do not
 claim that local syntax checks prove a production deployment is safe.
