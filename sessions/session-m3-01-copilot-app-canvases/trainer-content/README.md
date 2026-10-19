@@ -49,7 +49,7 @@ The live demo requires all of these:
 - the trainer can inspect generated files and capabilities;
 - synthetic data is used.
 
-If one condition fails, use the prepared manual demo. **Do not bypass a policy, install a community replacement, or claim that a generated extension ran when it did not.**
+If any condition fails, use the prepared manual demo. **Do not bypass a policy, install a community replacement, or claim that a generated extension ran when it did not.**
 
 ## One-hour plan
 
@@ -248,4 +248,4 @@ valid only after the sample state contains a passing required check.
 
 ## Product notes checked October 5, 2026
 
-Official GitHub documentation describes canvas extensions as shared interactive surfaces in the GitHub Copilot app. It documents `/create-canvas`, project scope at `.github/extensions`, user scope at `~/.copilot/extensions`, visible canvas controls, and agent-callable capabilities. Availability and policy can still differ, so the preflight remains mandatory.
+Official GitHub documentation describes canvas extensions as shared interactive surfaces in the GitHub Copilot app. It documents `/create-canvas`, project scope at `.github/extensions`, user scope at `~/.copilot/extensions`, visible canvas controls, and agent-callable capabilities. Availability and policy can still differ, so complete the required preparation before class.

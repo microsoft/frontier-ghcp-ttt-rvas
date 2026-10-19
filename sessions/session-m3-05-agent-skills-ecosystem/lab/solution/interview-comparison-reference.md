@@ -23,6 +23,6 @@ Grade correct loading, checked assumptions, and a useful decision-to-plan handof
 No interview result authorizes implementation.
 
 The final `/chronicle improve` check uses this training repository's history.
-Require a recommendation linked to an actual correction, or an honest
-insufficient-history result. Cancel before application and check Git status.
+Require a recommendation linked to an actual correction, or an accurate report
+that there is not enough history. Cancel before applying changes and check Git status.
 Do not accept an unrelated session anecdote or an unreviewed instruction update.

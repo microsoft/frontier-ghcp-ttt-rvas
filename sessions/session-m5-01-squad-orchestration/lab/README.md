@@ -80,8 +80,8 @@ assigned. Tabletop learners record the same roles in
 
 ## Exercise 2: Assign Issue 001 (20 min)
 
-Open Issue 001 in `lab/starter/sample-issues.md`. This is the only implementation
-issue used in the required lab path.
+Open Issue 001 in `lab/starter/sample-issues.md`. It is the only issue you
+implement in the required lab.
 
 As the lead, assign it with this work order:
 
@@ -145,7 +145,7 @@ The review packet must include:
 - committed decision-record entry.
 
 Use `lab/starter/ralph-guide.md` to simulate the monitor after review. The monitor
-may surface Issue 001 as ready for closure only after the lead approves it. A human
+may mark Issue 001 as ready to close only after the lead approves it. A human
 still closes or merges the work.
 
 The items in `lab/starter/backlog-items.md` are optional discussion prompts.

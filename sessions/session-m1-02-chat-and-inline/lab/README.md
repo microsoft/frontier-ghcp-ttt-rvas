@@ -136,7 +136,7 @@ interpretation.
 Open `change-request.md`.
 
 The request says to reject a zero total weight but leaves the exception type and
-message to you. Choose both. The reference path uses:
+message to you. Choose both. The reference solution uses:
 
 ```text
 ValueError("Total weight must not be zero")
@@ -164,8 +164,8 @@ Review weighted_average and its tests. List any accepted behavior that lacks a
 test. Do not change code.
 ```
 
-Compare only observable accuracy and useful citations. Otherwise compare the live
-or manual result with `lab/solution/`.
+Compare only accuracy you can check and useful citations. Otherwise compare the
+Chat-assisted or manual result with `lab/solution/`.
 
 Inspect the final diff:
 

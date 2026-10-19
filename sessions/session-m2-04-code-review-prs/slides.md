@@ -186,7 +186,7 @@ For a manual request:
 2. Check current availability, permissions, and repository policy.
 3. Request the Copilot review through the supported PR control.
 4. Wait for comments and review them as hypotheses.
-5. Resolve, reject with rationale, or implement a checked fix.
+5. Resolve them, reject them with a reason, or implement a checked fix.
 6. Request human review with the diff, findings, and check results.
 
 Do not use Copilot review to bypass required reviewers.
@@ -312,8 +312,8 @@ If an approved cloud-agent workflow is available, compare its proposal with the 
 
 **Expand:** Only when quality, security, and developer experience meet team criteria.
 
-Keep a documented pause or disable path for unavailable features and exceptional
-repositories.
+Document how to pause or disable reviews when a feature is unavailable or a
+repository needs an exception.
 
 ---
 

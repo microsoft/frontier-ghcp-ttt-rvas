@@ -78,7 +78,7 @@ and dependency commands. Keep the supplied fixture files unchanged.
 ## Scenario
 
 The application compares physical warehouse counts with ledger quantities. The
-starter is broken on purpose. Fault names mark a controlled sequence:
+starter is broken on purpose. The named faults appear in this order:
 
 ```text
 SYN-01 → SYN-02 → IMP-01 → IMP-02
@@ -239,7 +239,7 @@ Commit or save this green state before changing structure.
 
 Remove `DESIGN-01`.
 
-Separate the responsibilities as follows:
+Give each file one job:
 
 | File | Owns |
 | --- | --- |

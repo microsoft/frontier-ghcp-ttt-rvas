@@ -83,7 +83,7 @@ Then show the passing command against `lab/solution/secure-iac/main.tf`.
 
 Use the final six minutes to show the prepared Bicep module calls, `@secure()`
 parameter, and outputs. The comparison helps learners transfer the design ideas.
-It does not create another required lab path.
+It does not create another required lab.
 
 ## Access policy
 
@@ -94,8 +94,8 @@ any is unavailable. No cloud account or credentials are needed.
 
 Give learners 90 minutes to complete the Terraform modules, run staged checks,
 and investigate the security failure. Ask them to submit command output.
-Explain that the session now lasts 2 hours 30 minutes because the second,
-required Bicep build was removed.
+Explain that the session lasts 2 hours 30 minutes because learners no longer need
+to build the Bicep project as well.
 
 ## Common questions
 

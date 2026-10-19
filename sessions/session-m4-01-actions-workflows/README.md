@@ -26,8 +26,8 @@ which file changed, and the review decision.
 ## Required access
 
 You need Node.js 20 or later and GitHub Copilot in the selected coding
-environment. Repository and GitHub Actions access are optional. The required path
-uses local tests, YAML parsing, and peer review.
+environment. Repository and GitHub Actions access are optional. Complete the lab
+with local tests, YAML parsing, and peer review.
 
 | Resource | Location |
 | --- | --- |

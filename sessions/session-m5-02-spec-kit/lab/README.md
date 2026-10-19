@@ -203,8 +203,8 @@ Open the created issues and check:
 
 ## Part 5: Implement in stages and run tests (25 minutes)
 
-Use Spec Kit's scoped implementation support. Do not implement everything in one
-agent run.
+Use Spec Kit to implement one set of tasks at a time. Do not implement everything
+in one agent run.
 
 First implement the primary archive behavior:
 
@@ -252,8 +252,7 @@ it leaves `tasks.md` unchanged.
 
 ## Part 7: Evolve the living specification (30 minutes)
 
-Open `change-request.md`. You now need to support restoring archived tasks as
-part of the accepted behavior.
+Open `change-request.md`. Add restoring archived tasks to the accepted behavior.
 
 Use the documented living-spec sequence:
 

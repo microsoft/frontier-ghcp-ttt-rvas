@@ -119,7 +119,7 @@ those issues directly.
 | --- | --- |
 | Copilot targets the wrong repository | Reject the operation and restate the repository |
 | Duplicate issue exists | Link or update the existing issue instead of creating another |
-| Partial overlap exists | Reuse the owned slice and create only the missing outcomes |
+| Partial overlap exists | Reuse the work already covered and create only the missing outcomes |
 | Child issue is too broad | Split it before the write |
 | Labels do not exist | Use approved existing labels or leave the field unset |
 | Tool output claims success without a returned issue | Run a fresh repository read |

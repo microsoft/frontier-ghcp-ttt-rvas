@@ -263,7 +263,7 @@ Complete or repair tests for:
 - streamed deltas rendered once;
 - client shutdown after an exception.
 
-Mock the SDK boundary where the starter already provides seams. Do not call a live
+Mock the SDK at the boundaries the starter provides. Do not call a live
 model from unit tests.
 
 Run:
@@ -384,8 +384,8 @@ Review these areas in order:
 5. `tests/` for stable control-path assertions;
 6. `compose.yaml` and `otel-collector-config.yaml` for trace routing.
 
-Do not copy the solution before the checkpoints. Use it to compare your control
-boundaries, test results, and traces.
+Do not copy the solution before the checkpoints. Compare its controls,
+test results, and traces with yours.
 
 ## Official references
 

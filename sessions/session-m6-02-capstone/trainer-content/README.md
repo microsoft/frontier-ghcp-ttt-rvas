@@ -41,7 +41,7 @@ endpoint, live data, deployment, tool configuration, or a new dependency.
 
 ## Apply Session m5-02
 
-Use `lab/starter/bookmark-create-spec.md` as the accepted behavior source. Ask
+Use `lab/starter/bookmark-create-spec.md` as the source for accepted behavior. Ask
 learners to check that each requirement is observable, technology choices stay in
 the constraints section, and non-goals are named. They must map each issue
 criterion to a specification ID and a test.

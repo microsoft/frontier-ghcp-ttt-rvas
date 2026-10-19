@@ -38,7 +38,7 @@ By the end of this session, learners can:
 
 ## Required access
 
-Learners need all of the following:
+Learners need:
 
 - authenticated GitHub Copilot SDK access;
 - Node.js and npm;
@@ -46,8 +46,7 @@ Learners need all of the following:
 - a terminal that can run the supplied TypeScript project.
 
 If GitHub Copilot access, Node.js, npm, Docker, or Docker Compose is unavailable,
-stop before the lab. Fix the environment
-or reschedule the hands-on work.
+stop before the lab. Fix the environment or reschedule the hands-on work.
 
 ## Scenario
 

@@ -2,11 +2,11 @@
 
 ## Inputs
 
-An approved issue with acceptance criteria and a named source boundary.
+An approved issue with acceptance criteria and a named source file.
 
 ## Outputs
 
-A bounded source diff and result summary.
+A source diff limited to the assigned file and a result summary.
 
 ## Limits
 

@@ -24,5 +24,5 @@ The suite should pass all baseline and input-validation tests.
 | Committed decision | `.squad/decisions.md` |
 | Prepared trainer example | `tabletop/issue-001-review-packet.md` |
 
-The prepared packet supports trainer demonstration recovery. It does not replace a
-learner Squad run.
+Use the prepared packet if the trainer demonstration stalls. It does not replace
+a learner Squad run.

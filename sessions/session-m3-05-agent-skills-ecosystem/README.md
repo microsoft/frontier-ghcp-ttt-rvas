@@ -7,7 +7,7 @@
 
 ## Overview
 
-Skills capture reusable procedures owned by the repository. You will build one
+Skills capture reusable procedures owned by the repository. Build one
 skill under `.github/skills/`. Test when it should run, when it should stay out of
 scope, and when a missing reviewer should stop it. Then check live loading and
 compare the local `decision-interview`
@@ -19,11 +19,11 @@ corrections to decide whether a rule belongs in instructions, a skill, or neithe
 ## Learning outcomes
 
 - Create a valid skill directory and `SKILL.md`.
-- Write a description that carries positive and negative trigger conditions.
+- Write a description that states when to use the skill and when not to use it.
 - Test matching, non-matching, and failed-precondition behavior.
 - Stop visibly when required evidence or approval is missing.
 - Run the named API scenario and inspect its result.
-- Maintain skills through an owner and repository review.
+- Assign an owner and review skill changes in the repository.
 - Inspect community skill dependencies and license before loading them.
 - Compare two live interviews, then trace owner decisions into an implementation plan.
 - Review repository-scoped session suggestions without applying them automatically.

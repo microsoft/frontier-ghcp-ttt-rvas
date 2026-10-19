@@ -23,8 +23,9 @@ Read the [course safety baseline](../../learning-safety-baseline.md). You must h
 
 GitHub repository access is optional. Do not push, run Actions, install an external
 action, or use a deployment target unless the instructor confirms that route.
-When repository access or Actions is unavailable, complete the full local path
-below. If GitHub Copilot access is unavailable, stop and do not continue the lab.
+When repository access or Actions is unavailable, complete all the work locally
+as described below. If GitHub Copilot access is unavailable, stop and do not
+continue the lab.
 
 Do not use real credentials or deployment endpoints. The supplied deployment work
 is a reviewed design exercise.
@@ -157,7 +158,7 @@ Do not accept a broad rewrite unless each change addresses a recorded failure.
 Complete the metadata and implementation in `lab/starter/custom-action/`. The
 action scans the same application used by the workflows.
 
-Use the reference implementation to prove both outcomes:
+Use the reference implementation to check both pass and fail outcomes:
 
 ```bash
 npm ci --prefix lab/solution/custom-action

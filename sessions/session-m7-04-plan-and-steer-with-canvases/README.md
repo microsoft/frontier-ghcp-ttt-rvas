@@ -19,7 +19,7 @@ and refresh it.
 You describe and operate the canvas without hand-coding the extension.
 
 The GitHub MCP connection supplies issue tools. A plugin may package MCP and
-canvas capabilities, but it does not replace connection or capability review.
+canvas capabilities, but you must still review the connection and capabilities.
 Keep the lab no-code and free of customer or source organization names.
 
 > [!IMPORTANT]

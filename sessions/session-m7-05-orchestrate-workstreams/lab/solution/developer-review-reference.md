@@ -1,7 +1,7 @@
 # Developer orchestration reference
 
-This reference explains source facts. It does not stand in for a live
-`/orchestrate` run or prescribe the wording of child results.
+This reference explains facts from the sources. It does not replace a live
+`/orchestrate` run or dictate the wording of child results.
 
 ## Separate conclusions
 
@@ -30,5 +30,5 @@ The reviewer decides whether a test gap needs more work and who owns the failed
 integration check and blocking thread. This read-only lab does not fix those
 items, post a comment, approve, or merge.
 
-Keep actual child results and usage on the app surface. Grade supported claims
-and meaningful steering, not the number of agents or an assumed speedup.
+Keep child results and usage in the app. Grade claims supported by sources
+and how learners steer the work, not the number of agents or an assumed speedup.

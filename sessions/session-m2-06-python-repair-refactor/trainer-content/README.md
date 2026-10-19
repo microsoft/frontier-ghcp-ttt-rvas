@@ -195,7 +195,7 @@ They may add more. Each test should name one rule and fail for one reason.
 
 ## Refactoring targets
 
-The clean design has five boundaries:
+Keep these five jobs in separate files:
 
 | Boundary | Responsibility |
 | --- | --- |

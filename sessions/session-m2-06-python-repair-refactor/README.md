@@ -50,7 +50,7 @@ The synthetic application compares warehouse counts with ledger counts. It
 normalizes SKU values, aggregates duplicate rows, calculates variances, assigns a
 status and severity, then writes text and JSON reports.
 
-The starter contains a controlled failure sequence:
+The starter deliberately fails in this order:
 
 1. named syntax errors;
 2. import and startup failures;

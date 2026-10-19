@@ -35,4 +35,4 @@ FROM customers c JOIN orders o ON c.id = o.customer_id
 GROUP BY c.id ORDER BY order_count DESC;
 ```
 
-Orders #3 and #7 intentionally have `total_amount` values that differ from their `order_items` totals. You should report that discrepancy.
+Orders #3 and #7 intentionally have `total_amount` values that differ from their `order_items` totals. Report that discrepancy.

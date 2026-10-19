@@ -96,7 +96,7 @@ Focused checks and human review
 Decision record, merge, follow-up, or pause
 ```
 
-The coordinator routes work with a defined scope. Clarify an ambiguous request before implementation.
+The coordinator assigns work with a defined scope. Clarify an ambiguous request before implementation.
 
 ---
 
@@ -108,7 +108,7 @@ The coordinator routes work with a defined scope. Clarify an ambiguous request b
 | Implementer | A defined product area or file set |
 | Tester | Focused checks and reported gaps |
 | Scribe | Shared decisions and history |
-| Work monitor | Surface ready, approved work |
+| Work monitor | Flag ready, approved work |
 
 Agents need charters that state inputs, outputs, and limits. Avoid concurrent writes to the same files.
 

@@ -38,8 +38,8 @@ database, cloud service, or production data.
 
 The legacy service prices synthetic orders through `POST /orders/price`.
 
-The rules are small enough to inspect, but they contain the traps that break real
-migrations:
+The rules are small enough to inspect. Pay attention to the details that can
+break a migration:
 
 - discounts run in a fixed order;
 - all amounts use integer cents;

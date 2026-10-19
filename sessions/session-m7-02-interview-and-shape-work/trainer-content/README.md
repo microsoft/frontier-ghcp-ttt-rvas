@@ -82,7 +82,7 @@ a question for the owner to decide.
 
 Run `/context` after each interview round. Compact only when the same thread must
 continue. Start fresh when old recommendations begin to leak into new decisions.
-When starting fresh, carry only confirmed decisions and open questions. The
+When starting fresh, carry only the owner's settled decisions and open questions. The
 decision brief becomes the saved record.
 
 ### Use an independent critic
@@ -98,7 +98,7 @@ Start with:
 > Make request status clearer so people stop asking support.
 
 Run the demonstration through `/decision-interview`. The skill must ask a numbered
-frontier and wait for owner decisions instead of drafting the final artifact.
+frontier and wait for owner decisions instead of drafting the final brief.
 
 ### Round 1: Define the problem
 
@@ -143,12 +143,12 @@ Ask:
 3. Who validates service behavior and access rules?
 4. Who can approve release?
 
-Recommended direction: the portal product owner owns the work item. The service operations manager approves wording and state mapping. The privacy reviewer checks data exposure. The product owner accepts the completed work after evidence is attached.
+Recommended direction: the portal product owner owns the work item. The service operations manager approves wording and state mapping. The privacy reviewer checks data exposure. The product owner accepts the completed work after test or review results are attached.
 
 ## Build the decision brief
 
-Ask GitHub Copilot to create `docs/discovery/decision-brief.md` from confirmed
-answers. Then review:
+Ask GitHub Copilot to create `docs/discovery/decision-brief.md` from answers the
+owner accepted. Then review:
 
 - problem and target outcome;
 - users and scope;
@@ -169,7 +169,7 @@ Ask GitHub Copilot to convert the approved brief into an issue proposal:
 3. Turn success and failure cases into observable acceptance criteria.
 4. Add dependencies and open risks.
 5. Name the owner and reviewer.
-6. Add a definition of done that covers evidence and approval.
+6. Add a definition of done that covers test or review results and approval.
 
 Have learners check every field Copilot drafts against the approved brief.
 Session m7-03 creates the approved issue set through GitHub MCP.
@@ -186,7 +186,7 @@ stay unchanged while role-specific acceptance criteria are revised.
 - Let the request owner reject recommendations. A visible correction helps the
   class see who owns the decision.
 - Keep unresolved items in an open-questions table with an owner and due point.
-- Push back when criteria use words such as "easy," "fast," or "clear" without observable evidence.
+- Push back when criteria use words such as "easy," "fast," or "clear" without a result someone can check.
 - Keep estimation outside the exercise. The goal is readiness.
 
 ## Lab launch

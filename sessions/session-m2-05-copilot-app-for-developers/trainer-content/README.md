@@ -25,7 +25,7 @@ PR readiness, have them check tests, diffs, and review threads.
 
 ## Trainer preflight
 
-Complete this check on the delivery machine:
+Run these checks on the delivery machine:
 
 1. Open the GitHub Copilot app and sign in with a training account your organization allows.
 2. Add `lab/starter` as a local project or copy it to a training sandbox your organization allows.
@@ -224,7 +224,7 @@ sources and names uncertainty. It does not act as a reviewer of record.
 ## Trainer demo recovery
 
 If the trainer demonstration fails, use the saved session output to explain
-the remaining decisions. Do not use this pack as the learner lab or count it as
+the remaining decisions. Do not use that output as the learner lab or count it as
 hands-on app practice.
 
 ## Official references

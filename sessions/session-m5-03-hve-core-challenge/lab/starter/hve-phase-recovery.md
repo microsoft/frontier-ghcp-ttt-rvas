@@ -17,7 +17,7 @@ cannot complete the challenge.
 2. Record the failed execution in the next HVE artifact. Add it to unresolved risks
    in the challenge handoff if it remains open.
 3. Inspect the trainer-provided artifact for that phase.
-4. Name the decisions and constraints the next phase must consume.
+4. Name the decisions and constraints the next phase must use.
 5. Continue with the next HVE agent and cite the supplied artifact path.
 6. Do not claim execution credit for the recovered phase.
 

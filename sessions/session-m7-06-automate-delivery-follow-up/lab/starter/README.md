@@ -10,7 +10,7 @@ result.
 | `stakeholder-update-template.md` | Holds the stakeholder-ready draft |
 
 Do not copy platform run state into new forms. Use the Automations surface for run
-status and evidence.
+status, tool calls, and output.
 
 **GitHub Copilot and GitHub MCP access are required.** Fix access before using
 these files.

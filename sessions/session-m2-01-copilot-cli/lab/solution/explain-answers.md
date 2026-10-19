@@ -101,6 +101,6 @@ Reference points for the five explain challenges. Copilot output will vary; use 
 
 ## Patterns to watch for
 
-- Copilot typically excels at: simple commands, git commands, common Unix utilities
+- Copilot typically explains well: simple commands, git commands, common Unix utilities
 - Copilot sometimes struggles with: complex `awk`/`sed` pipelines, subtle flag interactions, safety implications
 - The `explain` command is most useful for: commands you find in scripts or Stack Overflow that you need to understand before running

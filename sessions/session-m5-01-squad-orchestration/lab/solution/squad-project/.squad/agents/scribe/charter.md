@@ -2,11 +2,11 @@
 
 ## Inputs
 
-An accepted lead review with cited evidence.
+An accepted lead review that cites test results.
 
 ## Outputs
 
-A durable decision entry with owner, boundary, evidence, and date.
+A committed decision entry with owner, boundary, test results, and date.
 
 ## Limits
 

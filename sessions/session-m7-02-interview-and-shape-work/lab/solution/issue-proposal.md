@@ -71,7 +71,7 @@ checked the draft before marking it ready.
 - [ ] The portal guidance explains the public statuses and contact route.
 - [ ] No notification channel or additional request type entered the change.
 - [ ] The delivery reviewer checks that the Copilot draft matches the approved brief.
-- [ ] The portal product owner reviews the evidence and records approval or required changes.
+- [ ] The portal product owner reviews the test or review results and records approval or required changes.
 
 ## Ownership
 

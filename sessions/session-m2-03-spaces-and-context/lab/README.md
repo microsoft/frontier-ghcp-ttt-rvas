@@ -25,7 +25,7 @@ Read the [course safety baseline](../../learning-safety-baseline.md). Use only t
 You need:
 
 - required GitHub Copilot access in the editor;
-- Copilot Spaces access if you will use the live Space path;
+- Copilot Spaces access if you will use a live Space;
 - a repository or sandbox you may use for the Storefront API;
 - Node.js and npm;
 - permission to add repository instructions and prompt files;
@@ -233,8 +233,8 @@ Create these files in `storefront-api/.github/prompts/`:
 2. `generate-api-docs.prompt.md`
 3. `migration-checklist.prompt.md`
 
-Each prompt needs front matter with a short description. State which inputs it
-accepts, its output sections, and a check to run.
+Each prompt needs front matter with a short description. Name the inputs it
+accepts, the sections it should return, and a check to run.
 
 ### Test the prompts on the same project
 

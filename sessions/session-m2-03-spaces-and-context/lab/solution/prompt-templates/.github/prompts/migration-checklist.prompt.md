@@ -22,7 +22,7 @@ List each file that imports or uses this package. For each file, identify:
 
 - Which APIs/features are used
 - Whether those APIs have breaking changes
-- What code modifications are needed
+- What code needs to change
 
 ## 3. Change the code
 
@@ -50,7 +50,7 @@ For every breaking change:
 - [ ] Create a feature branch
 - [ ] Update package.json
 - [ ] Run npm install
-- [ ] Apply code modifications
+- [ ] Make the code changes
 - [ ] Run full test suite
 - [ ] Manual verification
 - [ ] Create PR with migration notes

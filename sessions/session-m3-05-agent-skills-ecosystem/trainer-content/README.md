@@ -126,7 +126,7 @@ Separate the claims:
 | Directory validator | Required file, frontmatter, and sections exist |
 | Scenario tests | The local harness behaves as its fixed contract specifies |
 | Two-scenario demo | A reviewer can see the applied and blocked outputs |
-| Live surface | The selected product discovers and uses the skill |
+| Live invocation | The selected product discovers and uses the skill |
 
 The local runner only handles the supplied scenarios. It is a teaching harness.
 

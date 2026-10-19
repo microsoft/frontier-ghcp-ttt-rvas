@@ -1,6 +1,6 @@
 # Workflow scenarios: CLI or IDE?
 
-For each scenario, choose the **CLI**, the **IDE**, or both. Explain the choice from the task constraints. Several answers can work; the reason matters.
+For each scenario, choose the **CLI**, the **IDE**, or both. Explain which task constraints led to your choice. Several answers can work; the reason matters.
 
 ---
 

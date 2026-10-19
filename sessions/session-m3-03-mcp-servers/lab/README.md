@@ -10,8 +10,8 @@ output, and recorded good and bad requests
 
 ## Lab overview
 
-You will build and test one tool before adding the next two. That gives you a
-small protocol surface to review first.
+Build and test one tool before adding the next two. That keeps the first protocol
+review small.
 
 | Part | Work | Time |
 | --- | --- | --- |

@@ -241,7 +241,7 @@ Keep Plan mode off while decisions are unsettled.
 3. Start a fresh `/plan` session from that brief.
 4. Name two decisions that change plan steps or acceptance checks.
 
-No implementation or live work-item creation is part of this comparison.
+Do not implement or create live work items during this comparison.
 
 ---
 

@@ -155,7 +155,7 @@ decision. It should not duplicate the phase records.
 Require a human decision at the end: approve, request changes, or pause. Missing
 evidence should reduce the score even when the endpoint appears to work. One
 trainer-provided recovery artifact can keep the lab moving, but it earns no
-execution credit for the replaced phase. Do not infer a pass from the thin handoff.
+execution credit for the replaced phase. Do not infer a pass from the handoff alone.
 
 ## Official references
 

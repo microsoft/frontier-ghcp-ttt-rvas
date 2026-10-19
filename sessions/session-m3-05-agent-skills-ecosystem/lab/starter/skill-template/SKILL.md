@@ -13,19 +13,19 @@ description: State the matching task, paths, required preconditions, and importa
 ## Procedure
 
 1. Read the named source and tests.
-2. Map acceptance criteria to observable evidence.
+2. Map acceptance criteria to results you can inspect.
 3. Make the smallest permitted change.
 4. Run the verified focused check.
 5. Report results and request review.
 
 ## Validation
 
-Name the exact test, manual check, and evidence needed for success.
+Name the exact test, manual check, and results needed for success.
 
 ## Failure behavior
 
 - Stop outside the stated scope.
-- Surface command failures.
+- Report command failures.
 - Do not claim success when validation did not run.
 
 ## Maintenance

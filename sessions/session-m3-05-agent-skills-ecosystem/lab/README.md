@@ -10,7 +10,7 @@ and a local-versus-community interview comparison that feeds `/plan`
 
 ## Lab overview
 
-You will test both parts of a skill: how its description selects work and how its
+Test both parts of a skill: how its description selects work and how its
 procedure handles that work. Check that missing preconditions stop the run.
 
 | Part | Work | Time |
@@ -282,7 +282,7 @@ has already improved the workflow.
 4. A visible missing-precondition result.
 5. Live API-skill loading and missing-reviewer stop results.
 6. `interview-comparison.md`, the accepted decision brief, and `/plan` output.
-7. The scoped `/chronicle improve` result and a human decision without auto-application.
+7. The scoped `/chronicle improve` result and a human decision, without applying suggestions automatically.
 
 ## Verification
 

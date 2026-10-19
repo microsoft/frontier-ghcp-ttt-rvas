@@ -144,7 +144,7 @@ Read feature-spec.md and explain the exact code and tests needed to add this fea
 to todo-api. Give changes file by file. Do not assume files that are not present.
 ```
 
-Apply enough of the answer to test the workflow. Track:
+Apply enough of the suggested changes to test the workflow. Track:
 
 - messages sent;
 - manual file edits;
@@ -220,7 +220,7 @@ Pause. Apply the new constraints in course-correction.md. Revise the plan before
 editing. Keep completed work only when it still fits the new requirement.
 ```
 
-Reject any plan that rewrites the project without need. Check that the agent
+Reject any plan that needlessly rewrites the project. Check that the agent
 adjusts the repository boundary, validation, and tests while preserving the API.
 
 Run the full suite:

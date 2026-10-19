@@ -38,7 +38,7 @@ The live route requires:
 - a human reviewer is named;
 - the stop condition is visible.
 
-If one condition is missing, stop and resolve it. **Do not assign the issue,
+If any condition is missing, stop and resolve it. **Do not assign the issue,
 broaden access, or paste credentials into an issue or instruction file.**
 
 ## One-hour plan
@@ -105,7 +105,7 @@ Explain that the asset is intended for:
 .github/workflows/copilot-setup-steps.yml
 ```
 
-Point out the single job named `copilot-setup-steps`, least required permissions, dependency install, and baseline test.
+Point out the single job named `copilot-setup-steps`, minimum required permissions, dependency install, and baseline test.
 
 Run the local baseline:
 
@@ -227,7 +227,7 @@ Recovery succeeds when the proposal returns to the fixed issue and the full suit
 | Cloud agent access is unavailable | Stop the lab. |
 | Setup workflow is not on the default branch | Stop and prepare the repository. |
 | Baseline tests fail | Diagnose before assignment; do not hide the failure. |
-| Session changes extra files | Stop or request a scoped correction. |
+| Session changes extra files | Stop or ask the agent to change only the allowed files. |
 | Learners rewrite the issue mid-run | Stop and create a separate future issue. |
 | Trainer demo work is delayed | Show the prepared diff at 0:35. |
 | Tests pass but the diff violates scope | Request changes or pause. |

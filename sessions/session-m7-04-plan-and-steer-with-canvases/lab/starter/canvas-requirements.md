@@ -19,8 +19,8 @@
 | GitHub state | Shows the source-system state |
 | Planning status | Shows the team's current planning view |
 | Owner or gap | Makes responsibility visible |
-| Dependency | Shows blocked sequencing |
-| Risk | Records delivery concern |
+| Dependency | Shows which work must wait |
+| Risk | Records a delivery concern |
 | Decision | Records an approved change |
 | Next action | Shows what happens next |
 

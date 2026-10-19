@@ -34,7 +34,7 @@ Make Service Request Portal status information understandable without exposing i
 
 - Email and chat notifications.
 - Changes to the internal service workflow.
-- Exposure of internal notes or staff-only details.
+- Showing internal notes or staff-only details.
 
 ## Relevant GitHub artifacts
 

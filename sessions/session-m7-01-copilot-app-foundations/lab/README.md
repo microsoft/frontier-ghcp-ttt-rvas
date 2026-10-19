@@ -161,8 +161,8 @@ Using only this working brief, report:
 Do not infer missing information.
 ```
 
-Compare the answer with the file. If it cannot recover the intended state,
-correct the brief so it contains what the new session needs.
+Compare the answer with the file. If the answer misses or misstates any of these
+items, correct the brief so the new session has what it needs.
 
 Run an independent critique:
 

@@ -34,6 +34,6 @@ Provide 3 curl examples:
 
 ## Notes
 
-- Rate limits (if applicable)
-- Pagination details (if applicable)
+- Rate limits, if the endpoint has them
+- Pagination details, if the endpoint uses pagination
 - Related endpoints

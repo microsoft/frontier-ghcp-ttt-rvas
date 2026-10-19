@@ -98,7 +98,7 @@ Check that:
 - the output is one draft stakeholder update.
 
 Choose **Keep**, **Revise**, **Disable**, or **Pause**. Update the definition's
-current state to match that decision. Do not create a second status artifact.
+current state to match that decision. Do not create a separate status record.
 
 ## Part 5: Update one issue and rerun
 
@@ -124,7 +124,7 @@ The update must state:
 - the next action.
 
 Name GitHub or Azure Boards as the authoritative planning system. Leave
-distribution to a person outside the automation.
+sharing the update to a person, not the automation.
 
 ## Verification
 

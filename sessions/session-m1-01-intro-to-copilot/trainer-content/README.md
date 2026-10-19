@@ -126,8 +126,9 @@ run an independent search for the old name. A prediction can miss a reference.
 Check that learners can request an inline suggestion. If they cannot, fix access
 before starting the lab.
 
-Explain that the lab continues in one module. Learners complete two simple functions, settle
-the apostrophe rule, add the summary, and review the rename.
+Explain that learners will keep working in the same module. They will complete
+two simple functions, settle the apostrophe rule, add the summary, and review the
+rename.
 
 ## Prepared demo commands
 
@@ -141,9 +142,9 @@ python -m unittest -v test_utils.UtilityTests.test_normalize_username
 
 - A clear function contract improves both suggestions and review.
 - A passing test supports a stated behavior. It does not prove every behavior.
-- Ambiguity belongs in a decision and a test, not in an unreviewed guess.
+- Resolve ambiguity with a decision and a test, not an unreviewed guess.
 - Predicted follow-up edits are proposals.
-- Learners need the live surface to practice suggestion review.
+- Learners need Copilot in their editor to practice suggestion review.
 
 ## Common questions
 
@@ -158,8 +159,7 @@ Only after they also inspect scope, edge cases, dependencies, and readability.
 
 **What if access disappears during the lab?**
 
-Stop the live path. Continue manually from the same file and keep the same
-verification.
+Stop using Copilot. Continue manually from the same file and run the same checks.
 
 **Which editor shortcut should I teach?**
 

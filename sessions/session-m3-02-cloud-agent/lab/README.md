@@ -10,7 +10,7 @@
 
 ## Objective
 
-You will take one synthetic issue from its fixed contract through setup and
+Take one synthetic issue from its fixed contract through setup and
 implementation, then test and review the change. Use Copilot cloud agent only
 when you have approval to use it. Otherwise complete the same work manually.
 
@@ -63,7 +63,7 @@ Open:
 - `../copilot-setup-steps.yml`
 - `../pr-review-checklist.md`
 
-The setup workflow asset is intended for `.github/workflows/copilot-setup-steps.yml` in a live training repository.
+The setup workflow belongs at `.github/workflows/copilot-setup-steps.yml` in a live training repository.
 
 ## Time plan
 
@@ -88,7 +88,7 @@ Have a peer answer:
 - Which command proves completion?
 - What is out of scope?
 
-Resolve any ambiguity in the issue text before implementation.
+Clarify any ambiguous issue text before implementation.
 
 **Result:** The issue has fixed acceptance criteria, allowed files, non-goals, and
 a stop condition.
@@ -168,7 +168,7 @@ The test output must cover:
 | Valid title `" Weekly plan "` | HTTP 201 with the existing response fields |
 | Existing endpoints | Existing tests still pass |
 
-If a required case is missing, request that focused change. Do not add a new issue or unrelated cleanup.
+If a required case is missing, request a test for that case. Do not add a new issue or unrelated cleanup.
 
 **Result:** The reviewed proposal has focused test output.
 
@@ -201,9 +201,9 @@ same issue → reviewed setup → proposed change → tests → review outcome
 | --- | --- |
 | Copilot cloud agent access is missing | Stop the lab. |
 | Setup workflow is not active on the default branch | Stop the lab. |
-| Session edits extra files | Stop or request a scoped correction. |
+| Session edits extra files | Stop or ask the agent to change only the allowed files. |
 | Test output is missing | Run the required test command before deciding. |
-| A test passes but response shape changed | Request changes and cite the preserved-behavior criterion. |
+| A test passes but response shape changed | Request changes and cite the criterion for preserving the response shape. |
 | Review suggests a second feature | Record it as future work, outside this issue. |
 
 ## Solution reference

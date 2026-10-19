@@ -70,8 +70,8 @@ check from an actual image build.
 **Expected path:** `.copilot-tracking/reviews/<date>/decision-create-plan-review.md`
 
 The review should map every acceptance criterion to implementation and test
-evidence, list findings by severity, and record the human decision. Missing command
-evidence is `not run`, never inferred as a pass.
+results, list findings by severity, and record the human decision. Mark missing
+command results as `not run`; never infer a pass.
 
 ## Combined RPI comparison
 

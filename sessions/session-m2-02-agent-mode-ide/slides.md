@@ -238,7 +238,7 @@ Implement manually when policy, risk, or ambiguity makes an agent unsuitable.
 
 # TODO code actions
 
-A TODO can become a concise delegation point:
+A TODO can define a short task to delegate:
 
 ```ts
 // TODO: reject duplicate task titles within the same project.

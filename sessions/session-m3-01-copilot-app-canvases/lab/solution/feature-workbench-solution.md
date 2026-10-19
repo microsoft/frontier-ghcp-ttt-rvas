@@ -11,13 +11,13 @@
 ## Rationale
 
 All three required checks are present, but one failed. The workbench must not
-propose `pass`. The reviewer should request a focused correction and a rerun of
+propose `pass`. The reviewer should request a fix for the failure and a rerun of
 the integration suite.
 
 ## Safe next action
 
 Keep the feature out of the gate. After a synthetic rerun reports all required
-checks as passed, request a new evaluation. Preserve both result records.
+checks as passed, request a new evaluation. Keep both result records.
 
 ## Boundary review
 

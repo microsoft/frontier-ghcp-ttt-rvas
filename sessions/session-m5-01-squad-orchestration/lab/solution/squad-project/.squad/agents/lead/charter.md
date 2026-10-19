@@ -2,7 +2,7 @@
 
 ## Inputs
 
-Issue contract, role boundaries, test evidence, and implementation diff.
+Issue contract, role boundaries, test results, and implementation diff.
 
 ## Outputs
 

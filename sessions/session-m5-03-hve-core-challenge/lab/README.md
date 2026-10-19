@@ -30,7 +30,7 @@ the next. Keep the handoff to an index of those artifacts and the final decision
 5. Check Node.js 20 or later and whether local package downloads are approved.
 6. Run `npm test` when dependencies already exist. Run `npm ci` first only when
    package downloads are approved.
-7. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and the thin
+7. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and the
    artifact index in `starter/challenge-handoff.md`.
 8. Check whether container validation will use an approved local engine or a
    trainer-managed remote build.
@@ -181,7 +181,7 @@ Submit or demonstrate:
 
 You may use a trainer-provided recovery artifact to unblock one failed phase, but
 you do not earn execution points for that phase. A fully manual submission does
-not pass this HVE challenge. You must provide the thin handoff for review; it
+not pass this HVE challenge. You must provide the handoff for review; it
 cannot replace missing phase artifacts or results.
 
 ## Official references

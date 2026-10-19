@@ -5,7 +5,7 @@
 A user archives a completed task so it no longer appears in the normal working
 list while its history remains available.
 
-**Independent test:** Create one task, archive it, and verify that the default list
+**Independent test:** Create one task, archive it, and check that the default list
 is empty while the archived-inclusive list still contains the task.
 
 ### Acceptance scenarios
@@ -35,7 +35,7 @@ task that does not exist.
 
 A user restores an archived task so it returns to the normal working list.
 
-**Independent test:** Archive one task, restore it, and verify that the default list
+**Independent test:** Archive one task, restore it, and check that the default list
 contains the task again.
 
 ### Acceptance scenarios

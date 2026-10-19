@@ -114,7 +114,7 @@ would reduce risk.
 1. Inline assistance proposes a local continuation.
 2. Chat commonly answers or proposes a small edit.
 3. An agent can pursue a defined goal through multiple actions.
-4. More actions create more review points, not less accountability.
+4. More actions need more review; they do not reduce accountability.
 5. A tool's capabilities do not grant permission to use it. Check current documentation and organizational policy.
 6. Check current product modes, controls, models, and availability before delivery.
 
@@ -325,11 +325,11 @@ for the lab.
 
 ### Decision framework
 
-Use Chat for explanation, option generation, or one surgical proposal.
+Use Chat to explain a problem, suggest options, or propose one small edit.
 
 Use an agent workflow for clear multi-file outcomes with named tools and tests.
 
-Use manual work when the change is tiny, requirements remain unclear, or autonomy adds review burden.
+Work manually when the change is tiny, requirements remain unclear, or autonomy adds review work.
 
 Pause when permissions, data handling, policy, or a destructive action is unresolved.
 
@@ -378,7 +378,7 @@ continue until the permission is resolved.
 
 - The revised file list matches the contract.
 - No unrelated action remains queued.
-- The stop rationale names the boundary crossed.
+- The reason for stopping names the boundary crossed.
 - The reason for stopping is clear.
 
 ## Common trainee Q&A

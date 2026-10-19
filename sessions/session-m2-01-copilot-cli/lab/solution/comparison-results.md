@@ -64,7 +64,7 @@ project, but you see only the code and output it shows you.
 
 ## The decision framework
 
-Based on these results, the pattern is:
+These results suggest the following choices:
 
 | Factor                     | Favors CLI      | Favors IDE     |
 | -------------------------- | --------------- | -------------- |

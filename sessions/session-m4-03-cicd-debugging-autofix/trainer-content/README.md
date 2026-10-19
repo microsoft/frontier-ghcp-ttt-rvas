@@ -70,7 +70,7 @@ Keep each repair focused on the observed failure.
 Open one vulnerable route at a time. Ask learners to identify the source, sink,
 and expected protection before showing the secure file.
 
-Use local syntax checks as the minimum executable proof. If an approved scan is
+At minimum, run the local syntax checks. If an approved scan is
 available, include its findings. A clean scan alone does not prove that the repair
 preserves behavior or covers the intended path.
 
@@ -78,7 +78,7 @@ preserves behavior or covers the intended path.
 
 GitHub Copilot and Node.js 20.x are required. Stop if either is unavailable.
 Actions, code scanning, and remote remediation are optional. Use the supplied
-files and local commands when those routes are unavailable.
+files and local commands when those tools are unavailable.
 
 ## Lab handoff
 

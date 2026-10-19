@@ -145,7 +145,7 @@ Repair the evaluator with a plan that names the files and tests.
 Rubber duck is a built-in, read-only agent in the app and CLI. Copilot chooses a
 contrasting model automatically when a suitable model is available. Record the
 model only if the client shows it; do not infer it from the wording. Another
-answer by the authoring session is not the same second opinion.
+answer from the session that wrote the plan is not the same second opinion.
 
 Check the critique before changing the plan. The critic adds model usage and
 latency, and its conclusion is not an approval. Session m2-01 also explains the
@@ -253,7 +253,7 @@ to create a repeatable read-only readiness report.
    - the human decision still required.
 6. Open `automation-prompt-template.md`.
 7. Define a **manual trigger** and read-only tools.
-8. In the live route, create the automation if policy and repository access allow.
+8. When using the live app, create the automation if policy and repository access allow.
    Run it manually against a synthetic repository you may use or keep it as a saved
    specification when no repository is available.
 9. Check that the automation cannot comment, label, push, approve, merge, or
@@ -297,7 +297,7 @@ Submit or demonstrate:
 | App access is missing | Stop the lab |
 | Working-tree option or a required command is unavailable | Stop and resolve app, version, or policy access |
 | Python is unavailable | Stop the lab |
-| Automation is unavailable by policy | Complete the specification and permission review |
+| Automation is unavailable by policy | Write the specification and review permissions |
 | Fork return flow includes unexpected source changes | Stop; do not accept the merge or overwrite the parent's repair |
 | Agent proposes GitHub writes | Remove write tools and restate the read-only contract |
 

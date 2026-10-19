@@ -25,8 +25,8 @@ the smallest patch through a route you have approval to use, or work locally.
 ## Required access
 
 You need **GitHub Copilot and Node.js 20.x**. Repository Actions, code
-scanning, and remote remediation routes are optional. The required path uses the
-supplied files and local commands.
+scanning, and remote remediation are optional. Complete the lab with the supplied
+files and local commands.
 
 | Resource | Location |
 | --- | --- |

@@ -74,7 +74,7 @@ The coordinator receives a work request, chooses the relevant role, and gathers 
 | Scribe or decision owner | Committed decisions and change history |
 | Work monitor | Triage of approved, ready work |
 
-Charters should state the role's responsibilities, inputs, outputs, and boundaries. Assign file ownership or dependency order before running tasks in parallel. Two agents editing the same route or dependency manifest is a coordination failure waiting to happen.
+Charters should state the role's responsibilities, inputs, outputs, and boundaries. Assign file ownership or dependency order before running tasks in parallel. Two agents editing the same route or dependency manifest risk conflicting changes.
 
 Use an issue as the work contract. It needs acceptance criteria, non-goals, constraints, required tests, and a reviewer. The coordinator can then choose a single agent, fan out read-only research, or defer the work.
 
@@ -95,7 +95,7 @@ The "drop-box" pattern prevents conflicting writes:
 
 ## 4. Ralph, issues, and review (0:27 to 0:35)
 
-Treat Ralph as a work monitor. It can inspect ready issues, select work that meets its rules, and surface the result for review. A human still approves delivery. Check its current behavior before teaching implementation details.
+Treat Ralph as a work monitor. It can inspect ready issues, select work that meets its rules, and present the result for review. A human still approves delivery. Check its current behavior before teaching implementation details.
 
 Use this lifecycle:
 

@@ -9,8 +9,7 @@
 ## Before you start
 
 Before the lab, check repository or sandbox permissions, GitHub Copilot access,
-Node.js 20 or later, and a human reviewer. Use only synthetic
-bookmark data.
+and Node.js 20 or later. Name a human reviewer. Use only synthetic bookmark data.
 
 If GitHub Copilot, repository access, Node.js, or dependency installation is
 unavailable, stop the lab. **Do not create a public repository, add
@@ -116,7 +115,7 @@ Ask your reviewer to record one decision: **approve**, **request changes**, or
 
 Submit one `capstone-handoff.md` containing:
 
-1. The implementation-ready issue with specification trace.
+1. The implementation-ready issue mapped to specification IDs.
 2. The patch summary.
 3. Executable test results.
 4. The human review decision and reviewer.

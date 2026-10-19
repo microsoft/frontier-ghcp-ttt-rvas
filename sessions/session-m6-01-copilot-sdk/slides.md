@@ -376,10 +376,10 @@ Trace data can contain prompts and tool details. Keep this lab synthetic.
 | Deny by default | Smaller execution boundary | More permission code |
 | Hooks for audit | One lifecycle view | Inline latency if hooks do too much |
 | Deterministic tool data | Stable tests and demos | Less realism |
-| Local tracing stack | Inspectable evidence | Docker setup and local resource use |
+| Local tracing stack | Traces you can inspect | Docker setup and local resource use |
 
-Choose controls that show what failed and why. Extra checks that only make the
-code look guarded do not help.
+Choose controls that show what failed and why. Checks that only make the
+code look safer do not help.
 
 ---
 

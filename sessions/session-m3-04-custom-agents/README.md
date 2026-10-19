@@ -7,7 +7,7 @@
 
 ## Overview
 
-Custom agents define narrow roles in Markdown that teams can review. You will start
+Custom agents define narrow roles in Markdown that teams can review. Start
 with a weak test-writer profile that enables every tool and permits source edits.
 After its boundary test fails, replace it with a profile that may read source,
 edit tests, and run one known command. The profile must stop when production code

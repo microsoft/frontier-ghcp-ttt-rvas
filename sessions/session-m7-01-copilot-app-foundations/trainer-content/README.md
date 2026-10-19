@@ -105,8 +105,8 @@ them and explain that availability depends on plan, policy, and installation.
 6. Reveal `lab/starter/late-evidence.md`.
 7. Ask Copilot for a focused update and review the diff.
 8. Run `/rubber-duck` for an independent critique.
-9. Start a fresh session with only the saved brief and check that it can recover
-   the intended state.
+9. Start a fresh session with only the saved brief and check that it can identify
+   the outcome, facts, unresolved decisions, non-goals, and next owner action.
 
 Stress the pattern:
 

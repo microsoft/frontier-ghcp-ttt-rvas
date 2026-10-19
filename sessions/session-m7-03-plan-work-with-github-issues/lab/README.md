@@ -106,7 +106,7 @@ Reject or revise an issue that:
 
 - combines unrelated outcomes;
 - duplicates existing work;
-- has no observable acceptance evidence;
+- gives reviewers no way to check acceptance;
 - invents an assignee, label, milestone, or date;
 - includes work excluded by the decision brief.
 
@@ -167,7 +167,7 @@ Session m7-04 reads this live issue set through GitHub MCP.
 
 - [ ] GitHub MCP read and write access passed.
 - [ ] Existing issues were searched before creation.
-- [ ] Concrete duplicate and partial-overlap candidates received a disposition.
+- [ ] Each duplicate and partial-overlap candidate has a recorded decision.
 - [ ] The complete write was previewed before approval.
 - [ ] Created issues match the approved decision brief.
 - [ ] A fresh read matched the created state to the approved plan.

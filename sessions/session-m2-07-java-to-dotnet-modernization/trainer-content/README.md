@@ -101,8 +101,8 @@ Keep these Java routes in place:
 - `GET /health`
 - `GET /orders/samples`
 
-They become backlog candidates. This makes the migration boundary visible and
-keeps the lab inside two hours.
+Keep them as backlog candidates. Leaving them in Java makes the migration
+boundary clear and keeps the lab inside two hours.
 
 ### 2. Separate contract from structure
 

@@ -151,7 +151,7 @@ The lab creates `initiative-context-brief.md` with:
 - useful GitHub artifacts;
 - the next decision and owner.
 
-The artifact must make sense without the chat history.
+The brief must make sense without the chat history.
 
 ---
 

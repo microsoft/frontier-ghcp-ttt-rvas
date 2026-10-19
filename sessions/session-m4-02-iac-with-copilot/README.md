@@ -20,7 +20,7 @@ required learner deliverable.
 - Connect module inputs and outputs without copying values between layers.
 - Run formatting, initialization, validation, and a local security gate in order.
 - Explain what local validation proves and what still needs a reviewed plan.
-- Review the equivalent Bicep structure without building a second required path.
+- Review the equivalent Bicep structure without requiring a second implementation.
 
 ## Required access
 

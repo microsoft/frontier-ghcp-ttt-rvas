@@ -401,7 +401,7 @@ replace the required local fleet run.
 ### Inspect controls and recover work
 
 Use this block for the required controls. The provider, hooks, ACP, and telemetry
-examples below are trainer reference, not extra demonstrations in the hour.
+examples below are for trainer reference, not extra demonstrations in the hour.
 
 ```text
 /permissions show

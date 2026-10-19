@@ -36,7 +36,7 @@ Read src/app.js and tests/app.test.js. There are 3 bugs in app.js causing test f
 
 **Difficulty:** Medium
 
-The `src/utils.js` file exports four functions and has no tests. Use the CLI agent to create a full test file.
+The `src/utils.js` file exports four functions and has no tests. Use the CLI agent to write a test file covering all four.
 
 **Tell the agent:**
 

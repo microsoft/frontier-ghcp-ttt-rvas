@@ -112,7 +112,7 @@ Ask learners what they need to see before approving a change.
 
 1. The author explains intent and supplies the diff and test output.
 2. Automated checks report configured results.
-3. An assisted review can surface hypotheses.
+3. An assisted review can suggest issues to investigate.
 4. A human reviewer evaluates intent, results, and risk.
 5. Branch rules and required approvals still apply.
 6. A generated summary, comment, or suggested fix is never proof by itself.
@@ -419,7 +419,7 @@ Assign an owner for triage and escalation.
 
 Expand only when the organization's quality and risk criteria are met.
 
-Keep a documented disable or pause decision.
+Record the decision to disable or pause reviews.
 
 ## Common trainee Q&A
 

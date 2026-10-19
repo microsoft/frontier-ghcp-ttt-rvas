@@ -143,8 +143,7 @@ git --no-pager diff -- utils.py test_utils.py lab-notes.md
 python -m unittest -v
 ```
 
-If the working tree contains other changes, limit the review to the three lab
-files.
+If the working tree contains other changes, review only the three lab files.
 
 ## Final deliverable
 

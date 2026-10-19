@@ -91,7 +91,7 @@ Before delivery:
 1. Copy the supplied reference implementation and six tests from Session m2-05.
 2. Run the documented unittest command and retain the actual result.
 3. Read `developer-review-brief.md` and `pr-snapshot.json`.
-4. Check that child sessions can read the shared files without editing or network use.
+4. Check that child sessions can read the shared files without editing them or using the network.
 5. Agree a usage limit and identify the human reviewer.
 
 Run `/orchestrate` with the accepted questions. Open each child on the app

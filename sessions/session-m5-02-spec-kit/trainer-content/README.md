@@ -39,8 +39,6 @@ request is a starting point*, and *Specification changes when decisions happen*
 4. **Compare the two development paths.** Specification-driven development moves
    decisions earlier. It does not add documents for their own sake.
 
-The next slides show where Spec Kit stores those decisions.
-
 ### 0:08 to 0:18: Spec Kit project and artifact model
 
 **Slides:** *What Spec Kit provides*, *Initialize an existing project*, *Two
@@ -102,7 +100,7 @@ executable work*, and *Analyze before code makes mistakes expensive*
 4. **Read the sample tasks as a dependency sequence.** Point out the task ID,
    user-story reference, action, and exact file. "Implement the feature" is too
    broad to review or assign.
-5. **Position analysis as a read-only consistency check.** Fix a finding in the
+5. **Explain analysis as a read-only consistency check.** Fix a finding in the
    artifact that owns the decision, then analyze again. Do not edit the code to
    hide a specification or planning contradiction.
 
@@ -132,7 +130,7 @@ GitHub Issues*
 5. **Show how accepted behavior changes.** Restore behavior starts in `spec.md`.
    The plan, tasks, code, and tests then return to agreement through analysis,
    implementation, and convergence.
-6. **Explain task-to-issue conversion as distribution.** GitHub Issues preserve the
+6. **Show how task-to-issue conversion distributes work.** GitHub Issues preserve the
    accepted task IDs, dependencies, parallel markers, file paths, and scope. They
    do not become a second requirements source.
 

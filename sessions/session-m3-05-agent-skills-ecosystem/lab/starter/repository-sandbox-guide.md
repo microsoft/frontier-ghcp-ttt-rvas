@@ -1,6 +1,6 @@
 # Repository sandbox skill guide
 
-This curriculum uses `.github/skills/` as its only delivery and training location. Keep skills with the code so teams can review and version them.
+This curriculum uses `.github/skills/` as its only location for distributing and teaching skills. Keep skills with the code so teams can review and version them.
 
 ```bash
 mkdir -p .github/skills/development-workflow
@@ -9,7 +9,7 @@ touch .github/skills/development-workflow/SKILL.md
 
 Before use, name the task and allowed files, required permissions and data,
 reviewer, test command, recovery step, and stop condition. Check current
-documentation and customer policy before a live demonstration.
+documentation and customer policy before a live demo.
 
 ```markdown
 ---

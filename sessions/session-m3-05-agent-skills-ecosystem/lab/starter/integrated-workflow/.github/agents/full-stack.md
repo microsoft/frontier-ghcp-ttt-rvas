@@ -10,6 +10,6 @@ description: "TODO: Write a description of this agent's capabilities."
 
 # Full Stack Development Agent
 
-Define one bounded feature workflow. State permitted paths, approved skills,
+Define one feature workflow with a clear scope. State permitted paths, approved skills,
 validation, stop conditions, and human review. Do not enable MCP until its server,
 tools, data flow, and permissions have been approved.

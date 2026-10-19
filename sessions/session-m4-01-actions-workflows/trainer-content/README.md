@@ -65,8 +65,8 @@ Open `lab/starter/deployment-spec.md`. Ask learners to find the required trigger
 environments, secret names, health checks, and rollback rule before generating
 YAML.
 
-Keep this at design level. Repository settings enforce production reviewers, and
-the supplied endpoints are placeholders. No live deployment occurs.
+Review the design without deploying it. Repository settings enforce production
+reviewers, and the supplied endpoints are placeholders. No live deployment occurs.
 
 ## 0:28 to 0:40: Diagnose failures
 
@@ -104,7 +104,7 @@ and action agree with the command results and reviewer decisions before submitti
 ## Access policy
 
 GitHub Copilot access is required. Stop if it is unavailable. Repository access,
-Actions, and `act` are optional. The local path remains the required path and uses
+Actions, and `act` are optional. Learners must complete the local work, which uses
 no credentials or deployment target.
 
 ## Common questions

@@ -6,7 +6,13 @@ Run daily at 9:00 AM UTC or through `workflow_dispatch`.
 
 ## Instructions
 
-Report PRs that have been open for more than three days, including failing checks; failed workflow runs from the last 24 hours with their branch and run link; commits by author from the last 24 hours; TODO or FIXME comments added in the last seven days with file and line; and open Dependabot alerts with severity and package name.
+Report:
+
+- PRs open for more than three days, including failing checks;
+- failed workflow runs from the last 24 hours, with branch and run link;
+- commits by author from the last 24 hours;
+- TODO or FIXME comments added in the last seven days, with file and line;
+- open Dependabot alerts, with severity and package name.
 
 ## Output and guardrails
 

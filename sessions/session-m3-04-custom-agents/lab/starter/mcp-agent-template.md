@@ -1,6 +1,6 @@
 # Data analyst agent profile template
 
-Use MCP only when a bounded task needs an approved external capability. Review the
+Use MCP only when a task with a defined scope needs an approved external capability. Review the
 server owner, tool list, permissions, authentication, data flow, and failure
 behavior first.
 
@@ -38,4 +38,4 @@ metadata:
 ````
 
 Repository paths are normally relative to the workspace root. The Session m3-03
-server is local and synthetic. Confirm the command and tool names before use.
+server is local and synthetic. Check the command and tool names before use.

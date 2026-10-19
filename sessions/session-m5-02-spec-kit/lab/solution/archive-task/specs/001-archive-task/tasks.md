@@ -19,7 +19,7 @@
 ## Phase 3: Verification
 
 - [x] T008 Run `python -m unittest discover -s tests -v`.
-- [x] T009 Confirm FR-001 through FR-007 map to passing tests.
+- [x] T009 Check that FR-001 through FR-007 map to passing tests.
 
 ## Phase 4: Living-spec restore change
 
@@ -35,4 +35,4 @@
 ## Phase 5: Final convergence
 
 - [x] T015 Run `python -m unittest discover -s tests -v`.
-- [x] T016 Confirm FR-001 through FR-010 map to passing tests.
+- [x] T016 Check that FR-001 through FR-010 map to passing tests.

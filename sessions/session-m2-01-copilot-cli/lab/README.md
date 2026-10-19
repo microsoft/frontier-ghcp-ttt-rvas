@@ -40,7 +40,7 @@ In the CLI, check `/plan`, `/rubber-duck`, `/subagents`, `/fleet`, `/tasks`,
 `/permissions`, `/sandbox`, `/limits`, `/rewind`, `/fork`, `/move`, and `/resume`
 in `/help`. Check the queue and background shortcuts in quick help. Install and
 authenticate before delivery; the lab setup block checks an existing installation.
-Agree a usage limit with the trainer before starting parallel work.
+Agree on a usage limit with the trainer before starting parallel work.
 
 **If CLI access or a required command is unavailable, stop the lab.** Fix access
 before continuing. Normal shell work or a cloud delegation does not replace the
@@ -131,7 +131,7 @@ explain and suggest commands.
 Open `lab/starter/explain-challenges.md`. The file has five commands, from simple to complex. For each one:
 
 1. Launch the CLI with `copilot` and ask it to explain the command (e.g., "Explain what this command does: `<command>`")
-2. Read the explanation Copilot provides
+2. Read Copilot's explanation
 3. Rate the explanation from 1 to 5. Check its accuracy and coverage of edge cases.
 4. Note anything the explanation missed or got wrong
 
@@ -263,8 +263,8 @@ Run:
 
 Record the permission mode and effective filesystem/network restrictions.
 Permission approval controls whether a tool may run; the local sandbox restricts
-what a sandboxed process can reach. Neither an instruction nor a worktree grants
-repository authority.
+what a sandboxed process can reach. Neither instructions nor a worktree give you
+permission to use a repository.
 
 Inspect policy for a harmless command without running it:
 
@@ -286,8 +286,8 @@ trainer, choose a permitted AI-credit value and set it through the dialog or:
 **This is a soft limit, not a guaranteed spending ceiling.** GitHub's command
 reference describes response limits that reset per message; its session-limit
 guide describes a cumulative session limit. Record the installed version's UI
-wording and the trainer's checked reset behavior. If scope is unclear, stop before
-the metered task. Do not assume a new prompt resets the limit, force exhaustion,
+wording and the reset behavior checked with the trainer. If scope is unclear,
+stop before the metered task. Do not assume a new prompt resets the limit, force exhaustion,
 or raise a limit to make the lab pass. Keep the overall workshop usage limit too.
 
 **Start in Plan mode:**
@@ -316,8 +316,8 @@ Do not edit files.
 Rubber duck is a built-in, read-only critic in the CLI and app. Copilot chooses a
 contrasting model automatically when one is available; do not guess its identity
 or treat the author's second answer as an independent critique. Check each
-finding yourself. Revise for supported findings, explain rejected suggestions,
-and record no findings honestly.
+finding yourself. Revise the plan for supported findings, explain rejected
+suggestions, and record no findings honestly.
 
 Open `/subagents`, select rubber duck, and inspect **Proactive invocation**.
 Manual use is the default. The opt-in setting persists across CLI sessions and

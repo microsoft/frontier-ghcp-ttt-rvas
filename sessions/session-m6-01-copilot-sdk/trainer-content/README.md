@@ -77,7 +77,7 @@ send request → await completion → close session state → stop client
 ```
 
 The session-end hook records what the agent runtime reports. The outer `finally`
-block protects the process-level cleanup path. Both are needed.
+block handles process-level cleanup. Both are needed.
 
 ### Streaming
 

@@ -10,7 +10,7 @@
 
 ## Overview
 
-You will design a canvas extension for one synthetic delivery-readiness board. Start with the contract, then create the canvas in the GitHub Copilot app with the required access. Test direct and agent-requested updates, including a rejected update and recovery. Compare the final canvas with the contract.
+Design a canvas extension for one synthetic delivery-readiness board. Start with the contract, then create the canvas in the GitHub Copilot app with the required access. Test direct and agent-requested updates, including a rejected update and recovery. Compare the final canvas with the contract.
 
 A canvas is a shared interactive surface. People use visible controls while an agent uses named capabilities against the same state. The canvas does not replace the system that owns the work.
 

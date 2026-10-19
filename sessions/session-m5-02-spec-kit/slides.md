@@ -56,7 +56,7 @@ This sounds clear until implementation starts:
 | Scope additions appear as code | Non-goals make additions visible |
 | Review starts with implementation details | Review starts with intent and evidence |
 
-The goal is to resolve decisions before implementation.
+The goal is to make decisions before implementation.
 
 ---
 
@@ -161,7 +161,7 @@ If a principle cannot affect a plan or review, delete it.
 - Who needs the behavior?
 - What outcome do they need?
 - Which scenarios prove it works?
-- What is explicitly outside scope?
+- What is outside scope?
 - Which requirements are measurable?
 
 Avoid class names, database choices, package names, and file paths at this stage.
@@ -347,7 +347,7 @@ It does **not**:
 
 - compare source code with a YAML specification;
 - enforce content-exclusion patterns;
-- verify performance or test coverage;
+- check performance or test coverage;
 - approve an implementation.
 
 Use tests, review, `/speckit-analyze`, and `/speckit-converge` for those jobs.

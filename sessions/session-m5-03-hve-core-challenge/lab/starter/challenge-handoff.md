@@ -5,7 +5,7 @@ description: "Index and final human handoff for the HVE core challenge"
 # HVE challenge handoff
 
 Keep the detailed evidence in the HVE artifacts and platform output. This file
-only points reviewers to that evidence and records the final handoff.
+only points reviewers to those records and captures the final handoff.
 
 ## Artifact index
 

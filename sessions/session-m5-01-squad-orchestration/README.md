@@ -29,7 +29,7 @@ If a requirement is unavailable, stop and resolve it before the lab.
 
 ## Deliverable
 
-Submit one review packet for the input-validation issue. It must include the
+Submit one review packet for the input-validation issue. Include the
 assignment, implementation within the issue scope, test results, lead decision,
 and decision record. The reference solution includes both a `.squad/` result and a
 tabletop equivalent.

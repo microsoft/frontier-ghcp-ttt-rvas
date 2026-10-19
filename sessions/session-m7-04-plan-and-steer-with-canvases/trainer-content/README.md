@@ -42,7 +42,7 @@ Use a canvas when work needs:
 - repeated updates;
 - several related records;
 - named actions;
-- a review view that survives the chat.
+- a view people can review after the chat ends.
 
 Show that a single answer, draft, or short interview can stay in chat without
 adding a canvas.
@@ -93,7 +93,7 @@ Check:
 1. Does every state field support a real decision?
 2. Can each action be explained in one sentence?
 3. Does the canvas distinguish planning state from GitHub issue state?
-4. Are external writes excluded or separately confirmed?
+4. Are external writes excluded or separately approved?
 5. Can the owner recover after an interrupted update?
 6. Is there a clear reason to retire the canvas?
 

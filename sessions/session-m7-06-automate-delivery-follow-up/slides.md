@@ -92,7 +92,7 @@ State:
 - the review decision;
 - the next action.
 
-Distribution remains a human action.
+A person shares the update.
 
 ---
 
@@ -121,4 +121,4 @@ automation is enabled or disabled.
 2. Reviewed stakeholder update
 
 Use the live Session m7-05 result and platform run records. Do not copy them into
-a status file or second run-status artifact.
+a status file or second run-status record.

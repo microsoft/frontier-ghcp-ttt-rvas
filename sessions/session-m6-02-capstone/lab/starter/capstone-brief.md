@@ -8,8 +8,8 @@ Implement one endpoint that creates a bookmark in memory.
 POST /api/bookmarks
 ```
 
-The supplied specification owns the accepted behavior. The issue, patch, tests,
-and review must trace to it.
+The supplied specification defines the accepted behavior. The issue, patch, tests,
+and review must trace back to it.
 
 ## Example request
 

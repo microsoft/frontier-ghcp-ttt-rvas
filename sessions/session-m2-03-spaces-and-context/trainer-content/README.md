@@ -230,7 +230,7 @@ the others.
 
 ### Trainer talking points
 
-- Use observable instructions rather than "write high-quality code."
+- Write instructions a reviewer can check rather than "write high-quality code."
 - Show `/env` and `/instructions` in the CLI. Inspect the source and file scope;
   discovery alone does not prove an instruction was applied.
 - Use the supplied stale CommonJS note in the copied project only. Compare it
@@ -290,7 +290,7 @@ For every source or remembered fact, ask:
 | Source owner changes | Assign a new accountable maintainer. |
 | Output conflicts with source files | Remove stale sources and identify which source governs the task. |
 | Product behavior changes | Recheck current official documentation. |
-| Policy or audience changes | Reapprove source eligibility and sharing. |
+| Policy or audience changes | Get approval again for using and sharing the sources. |
 
 ### Safe delivery wording
 
@@ -445,7 +445,7 @@ rules.
 
 ### "Which source wins when docs and code disagree?"
 
-Do not guess. Identify the accountable source owner, record the conflict, and clarify before implementation.
+Do not guess. Find the source owner, record the conflict, and ask them to clarify it before implementation.
 
 ### "Can we include issue comments or meeting notes?"
 

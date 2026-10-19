@@ -8,4 +8,4 @@ These files show one completed draft-only automation.
 | `stakeholder-update.md` | Final stakeholder-ready update |
 
 Use these files only after completing the live runs. The Automations surface is
-the source for run status and evidence.
+the source for run status, tool calls, and output.

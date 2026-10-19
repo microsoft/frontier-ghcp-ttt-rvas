@@ -79,7 +79,7 @@ For each selected child:
 
 1. Move the item to the mapped active state.
 2. Add the question, scope, and stop condition to the description or a comment.
-3. Keep the parent item as the owner of shared decisions.
+3. Keep shared decisions in the parent item.
 
 Use the project's existing state mapping. Check the item ID before every MCP or browser write.
 

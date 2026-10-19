@@ -10,7 +10,7 @@
 
 ## Overview
 
-You will take one synthetic issue from its contract to a human review decision.
+Take one synthetic issue from its contract to a human review decision.
 Prepare the repository and start a Copilot cloud agent session. Then inspect the
 proposed change and run the required tests before deciding whether to approve,
 request changes, or pause.
@@ -28,7 +28,7 @@ Keep the issue fixed throughout the work: reject blank or whitespace-only task t
 
 ## Deliverables
 
-You will finish with:
+Submit:
 
 1. the fixed issue contract;
 2. the proposed change;

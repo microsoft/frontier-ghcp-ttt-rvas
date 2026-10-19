@@ -9,7 +9,14 @@
 
 Use `NODE_ENV=staging` or `NODE_ENV=production`. Read `DATABASE_URL` and `API_KEY` from `STAGING_DATABASE_URL`, `STAGING_API_KEY`, `PROD_DATABASE_URL`, and `PROD_API_KEY` GitHub Secrets.
 
-Build with `npm ci --production`, run `npm run build` when it exists, and package a tarball or zip. Each deployment uploads the artifact, applies migrations when present, restarts the application, calls `GET /health` and expects `{ "status": "ok" }`, waits 30 seconds, then checks health again.
+Build with `npm ci --production`, run `npm run build` when it exists, and package a
+tarball or zip. Each deployment:
+
+1. Uploads the artifact.
+2. Applies migrations when present.
+3. Restarts the application.
+4. Calls `GET /health` and expects `{ "status": "ok" }`.
+5. Waits 30 seconds, then checks health again.
 
 Keep the previous three artifacts. If production health fails, redeploy the last known-good artifact and notify the team through a workflow annotation.
 

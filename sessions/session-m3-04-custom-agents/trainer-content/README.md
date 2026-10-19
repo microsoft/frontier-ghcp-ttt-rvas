@@ -27,7 +27,7 @@ into production code, tighten the profile, and rerun the same test.
   startup and an actual `getOrdersByUser` reference lookup.
 - Stop the learner lab if live profile loading is unavailable.
 
-Do not push, merge, open issues, or attach MCP during the core demonstration.
+Do not push, merge, open issues, or attach MCP during the core demo.
 
 ## Teaching sequence
 
@@ -136,7 +136,7 @@ Read the production-conflict rule aloud. The correct output names:
 - the decision a human must make.
 
 Then show that `npm test` runs in the project. If the command does not run, the
-profile reports **not run**. It must not fill the gap with a success claim.
+profile reports **not run**. It must not claim success instead.
 
 ### 0:52 to 1:00: Rerun
 

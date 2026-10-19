@@ -27,7 +27,7 @@ metadata:
 
 1. List tables and inspect columns before querying.
 2. State the interpretation when a request is ambiguous.
-3. Use explicit columns, verified joins, NULL handling, and stable ordering.
+3. Name columns, check joins, handle NULL values, and use stable ordering.
 4. Return the SQL, result, and row limit.
 5. Ask for human review before the result informs another action.
 

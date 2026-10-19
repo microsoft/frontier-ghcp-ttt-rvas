@@ -24,7 +24,7 @@ Read the [course safety baseline](../../learning-safety-baseline.md). You must h
 and workflow files.
 
 Remote workflow runs and security products are optional. Use them only when the
-instructor confirms access and policy. **The local path is required.** If GitHub
+instructor confirms access and policy. **You must complete the local work.** If GitHub
 Copilot access is unavailable, stop.
 
 Do not open `lab/solution/fixed-pipelines/` until a checkpoint tells you to compare.
@@ -163,7 +163,7 @@ stage. Then compare with `lab/solution/fixed-pipelines/pipeline-3.yml`.
 
 ## Part 2: Review a security remediation
 
-Open `lab/starter/vulnerable-app/src/app.js`. Run local syntax proof:
+Open `lab/starter/vulnerable-app/src/app.js`. Check its syntax locally:
 
 ```bash
 node --check lab/starter/vulnerable-app/src/app.js
@@ -179,7 +179,7 @@ Investigate these sinks without opening the secure solution:
 - file path resolution.
 
 Ask for one repair at a time. Review the diff, then compare with
-`lab/solution/secure-app/src/app.js`. Run the focused proof:
+`lab/solution/secure-app/src/app.js`. Run the focused checks:
 
 ```bash
 node --check lab/solution/secure-app/src/app.js
@@ -212,7 +212,7 @@ Submit:
 
 1. Three fixed workflows.
 2. Three investigation records, with two stages for Case 3.
-3. A reviewed security patch and local syntax proof.
+3. A reviewed security patch and local syntax-check output.
 4. The optimized workflow review.
 
 Write the root-cause statement after the observation and local proof. Keep the

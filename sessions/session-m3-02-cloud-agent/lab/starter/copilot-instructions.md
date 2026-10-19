@@ -27,4 +27,4 @@ Run:
 npm test
 ```
 
-Report the command result accurately. Stop and ask for clarification if the issue requires broader scope.
+Report the command result accurately. Stop and ask for clarification if the issue requires work outside this scope.

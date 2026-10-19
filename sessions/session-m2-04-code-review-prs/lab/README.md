@@ -107,8 +107,8 @@ public repository.
 
 ### Objective
 
-Review a deliberately flawed change set. Connect each risk to a code reference
-or test result and an acceptance criterion.
+Review a deliberately flawed change set. Support each risk with a code reference
+or test result and name the acceptance criterion it affects.
 
 ### Steps
 
@@ -219,11 +219,11 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
    > **Success criteria:** Your fix plan lists each blocking defect, the target file, and the check you will run.
 
-2. **Fix input handling in `src/api.js`.** Replace unsafe string interpolation and fragile parsing with validated inputs and safe response shapes appropriate for the starter project.
+2. **Fix input handling in `src/api.js`.** Replace unsafe string interpolation and fragile parsing with validated inputs and safe response shapes that fit the starter project.
 
    > **Expected:** The endpoint handles empty, missing, malformed, and valid inputs predictably. Tests or manual requests show the error responses.
 
-3. **Fix sensitive response data.** Ensure user-facing responses do not expose password-like or token-like fields.
+3. **Fix sensitive response data.** Remove password-like or token-like fields from user-facing responses.
 
    > **Success criteria:** Inspecting the JSON response shows only fields needed by the API contract.
 
@@ -340,7 +340,7 @@ suggestion alone is not enough.
    | Security | Did validation, error handling, or secrets handling change? |
    | Quality | Do the tests and review results support the decision? |
 
-4. **Write the final decision.** Choose approve, request changes, or pause. Include the human reviewer and rationale.
+4. **Write the final decision.** Choose approve, request changes, or pause. Name the human reviewer and explain the decision.
 
    > **Success criteria:** The decision is understandable without seeing the entire lab conversation.
 

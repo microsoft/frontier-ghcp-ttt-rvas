@@ -76,7 +76,8 @@ Output:
 
 Implement follows the approved plan and writes a changes log.
 
-Review checks request fulfillment, code quality, tests, and instruction compliance.
+Review checks whether the result meets the request, code quality standards, tests,
+and instructions.
 
 The human still decides: approve, request changes, or pause.
 

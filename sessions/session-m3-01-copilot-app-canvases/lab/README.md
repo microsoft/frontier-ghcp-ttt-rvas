@@ -7,7 +7,7 @@
 
 ## Objective
 
-You will use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create or simulate the canvas. Make visible and agent-requested changes against the same state. Check that an invalid change is rejected, then recover without changing the rule.
+Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create or simulate the canvas. Make visible and agent-requested changes to the same state. Check that an invalid change is rejected, then recover without changing the rule.
 
 ## Deliverables
 
@@ -152,7 +152,7 @@ Check:
 
 Compare the before and after values in the canvas state.
 
-**Checkpoint 4:** One human action and one agent-requested capability changed the same state model within the contract.
+**Checkpoint 4:** One human action and one agent-requested capability changed the same state model without breaking the contract.
 
 ## Part 5: Check rejection and recovery (20 minutes)
 

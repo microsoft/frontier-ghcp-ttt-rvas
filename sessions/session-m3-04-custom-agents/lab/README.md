@@ -10,7 +10,7 @@ test-only run that stops at a source-code conflict
 
 ## Lab overview
 
-You will start with a profile that does not restrict source edits. Show the
+Start with a profile that does not restrict source edits. Show the
 problem, tighten the profile, and rerun the same checks.
 
 | Part | Work | Time |
@@ -167,7 +167,7 @@ Decision needed: approve a separate source change or revise the acceptance crite
 ```
 
 Record the actual selected profile and result in `agent-run.md`. A manual trace
-can help diagnosis but does not complete the live run. The profile should report
+can help diagnose problems but does not complete the live run. The profile should report
 that new source behavior needs a separate decision; it must not silently change
 the criterion or edit `src/`.
 

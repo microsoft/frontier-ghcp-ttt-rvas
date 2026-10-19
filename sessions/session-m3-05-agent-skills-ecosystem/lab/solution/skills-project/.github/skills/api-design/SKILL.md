@@ -10,7 +10,7 @@ description: Use for creating or reviewing REST routes under src/api/ when accep
 - The task names one REST route under `src/api/`.
 - Acceptance criteria define success and failure behavior.
 - A human reviewer is assigned.
-- The repository has a verified focused test command.
+- The repository has a focused test command that has been checked.
 
 If any precondition is missing, stop and report the missing item. Do not infer a
 repository convention or claim that validation ran.
@@ -18,11 +18,11 @@ repository convention or claim that validation ran.
 ## Procedure
 
 1. Read the target route and adjacent tests.
-2. Map each acceptance criterion to success or failure evidence.
+2. Map each acceptance criterion to a result that shows success or failure.
 3. Preserve the repository's current response and error shapes.
 4. Validate input at the route boundary.
 5. Make the smallest route and focused-test change.
-6. Run the verified focused test command.
+6. Run the checked focused test command.
 7. Report changed files, test output, and unresolved gaps.
 8. Request human review.
 
@@ -44,5 +44,5 @@ failure and do not report success.
 Owner: `training-maintainers`
 
 Review this skill when route conventions, test commands, or supported skill
-frontmatter change. Use the same procedure as a manual checklist when an approved
-surface cannot load the skill.
+frontmatter change. Use the same procedure as a manual checklist when a client
+approved for use cannot load the skill.

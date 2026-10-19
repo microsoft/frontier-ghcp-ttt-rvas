@@ -16,7 +16,7 @@ metadata:
 
 # Test-only writer
 
-Use this profile for a bounded request to add or update JavaScript tests under
+Use this profile to add or update JavaScript tests under
 `tests/`. The request must name the target source file and acceptance criteria.
 
 ## Allowed work

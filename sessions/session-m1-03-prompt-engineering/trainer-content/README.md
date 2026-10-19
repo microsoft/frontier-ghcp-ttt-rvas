@@ -29,7 +29,7 @@ The timings match [`slides.md`](../slides.md).
 - Check GitHub Copilot Chat and inline-suggestion access.
 - Check `/refine` in CLI `/help`; do not substitute an editor command.
 - Check current context controls in official product documentation.
-- Keep `change-request.md` closed until the lab evolution stage.
+- Keep `change-request.md` closed until learners reach the change request.
 
 ## Slide delivery map
 
@@ -55,7 +55,7 @@ brings those decisions forward.
 **Slides:** *Four useful components*, *Intent*, *Context*, *Constraints*,
 *Examples*
 
-Teach the components as a diagnostic tool, not a mandatory long template.
+Use the components to find missing detail, not as a mandatory long template.
 
 **Intent** names the action and scope.
 

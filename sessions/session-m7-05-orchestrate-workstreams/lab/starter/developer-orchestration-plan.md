@@ -25,6 +25,6 @@ test proves ordering, the exact complete reason list, or both.
 
 ## Parent result requirements
 
-Keep actual child-session links and operational state on the app surface.
+Keep child-session links, status, timing, and usage in the app.
 The parent result must name accepted findings, rejected or unresolved claims, and
 the human decision. Check the provisional author note against the PR fields.

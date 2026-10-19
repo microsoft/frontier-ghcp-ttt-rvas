@@ -104,7 +104,7 @@ Use this sequence:
 
 1. Explain the current formula.
 2. Identify the denominator defect.
-3. Fix only that line of behavior.
+3. Fix only the denominator.
 4. Add tests for accepted edge cases.
 5. Review the whole method.
 
@@ -115,9 +115,9 @@ when stale context is steering the answer.
 
 **Slides:** *Compare against the task*, *Access policy*
 
-Use the default model allowed by policy unless the exercise permits another choice. If comparison
-is allowed, send the same synthetic prompt and judge the responses against the
-same tests. If it is not allowed, compare with the manual reference.
+Use the default model allowed by policy unless the exercise permits another
+choice. If comparison is allowed, send the same synthetic prompt and judge the
+responses against the same tests. Otherwise, compare with the reference solution.
 
 Do not infer access, cost, or data behavior from a label.
 

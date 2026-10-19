@@ -11,7 +11,7 @@
 ## Overview
 
 Implement and review one Bookmark API slice: `POST /api/bookmarks`. Keep the
-accepted GitHub issue as your scope boundary and apply the Session m5-02
+accepted GitHub issue as the limit on what you change and apply the Session m5-02
 specification standards. Finish with test results and a handoff that another
 engineer can use.
 

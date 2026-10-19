@@ -80,7 +80,7 @@ Round 3: success, failure, edge cases
 Round 4: owner, reviewer, approval, rollout
 ```
 
-Ask GitHub Copilot to recompute the next frontier from the confirmed answers.
+Ask GitHub Copilot to work out the next frontier from the answers the owner accepted.
 
 Use **Interactive** mode for each frontier. Switch to **Plan** before proposed
 file changes. Autopilot is outside this interview.
@@ -92,7 +92,7 @@ file changes. Autopilot is outside this interview.
 - Run `/context`.
 - Use `/compact` only when the same thread must continue.
 - Use `/clear` or `/reset` when old assumptions are polluting the interview.
-- Resume with the approved context and confirmed decisions, not a transcript.
+- Resume with the approved context and the owner's settled decisions, not a transcript.
 
 ---
 
@@ -225,7 +225,7 @@ Definition of done covers the work needed to release and hand over safely:
 - criteria reviewed;
 - permissions checked;
 - supported states documented;
-- validation evidence attached;
+- test or review results attached;
 - product and service owners approve.
 
 ---
@@ -237,7 +237,7 @@ The interview always runs with **GitHub Copilot**.
 | Azure Boards path | Method |
 | --- | --- |
 | MCP | Copilot prepares and reviews the approved update before the MCP tool sends it |
-| Browser | Copilot prepares the exact values, then the learner enters and verifies them |
+| Browser | Copilot prepares the exact values, then the learner enters and checks them |
 
 **There is no static or no-Copilot route.**
 

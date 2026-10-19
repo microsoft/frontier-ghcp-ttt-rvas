@@ -18,19 +18,19 @@ automated test and Inspector call before expanding the server to three tools.
 | 0:52 to 1:00 | Add tools without weakening the contract; lab handoff |
 
 The timings match [`slides.md`](../slides.md). Stop live Inspector troubleshooting
-at 0:50. Use the recorded expected output and protect the lab handoff.
+at 0:50. Use the recorded expected output and keep time for the lab handoff.
 
 ## Preflight
 
 - Use Node.js 20 or later and the approved npm registry.
 - Run `npm ci && npm test` in both custom MCP projects.
 - Check that no `node_modules` directory is tracked.
-- Pin MCP Inspector 2.5.0 for the demonstration.
+- Pin MCP Inspector 2.5.0 for the demo.
 - Keep [`lab/solution/custom-mcp/EVIDENCE.md`](../lab/solution/custom-mcp/EVIDENCE.md)
   open for trainer demo recovery.
 - Do not attach a credential, network service, or source-system data.
 
-If approved package access is unavailable, stop the executable demonstration. A
+If approved package access is unavailable, stop the executable demo. A
 static code walkthrough is acceptable, but mark Inspector and tests as **not
 executed**.
 
@@ -163,7 +163,7 @@ they add the other two.
 5. Open the solution catalog and show the two added tools.
 6. Run the five solution tests.
 
-Do not type the full server from scratch during delivery. Focus on the contract,
+Do not type the full server from scratch during class. Focus on the contract,
 tests, and protocol calls.
 
 ## Review prompts

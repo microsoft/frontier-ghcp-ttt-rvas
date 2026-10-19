@@ -4,7 +4,7 @@
 
 Show learners how to build one draft-only automation from live GitHub issues and
 the reviewed Session m7-05 parent result. It drafts a stakeholder update, but a
-person must review every run and control distribution.
+person must review every run and control how the update is shared.
 
 ## One-hour plan
 

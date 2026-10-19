@@ -37,7 +37,7 @@ The live route requires:
 - a named reviewer;
 - an issue with a file scope and stop condition.
 
-If one requirement is missing, stop the lab. Do not bypass policy.
+If any requirement is missing, stop the lab. Do not bypass policy.
 
 ---
 # The fixed issue
@@ -70,7 +70,7 @@ The reviewer must answer:
 - What proves completion?
 - What is out of scope?
 
-Assignment waits until every answer is clear.
+Do not assign the issue until every answer is clear.
 
 ---
 # Repository instructions
@@ -212,7 +212,7 @@ The solution folder contains:
 - test output;
 - completed human decision.
 
-Use it only when the trainer demonstration is delayed. Learners still need a live
+Use it only when the trainer demo is delayed. Learners still need a live
 cloud-agent run for lab completion.
 
 ---

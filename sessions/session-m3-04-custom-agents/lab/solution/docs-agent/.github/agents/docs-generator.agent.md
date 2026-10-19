@@ -15,12 +15,12 @@ metadata:
 
 # Documentation verifier
 
-Use for one bounded documentation request with named source and output paths.
+Use for one documentation request with named source and output paths.
 
 ## Procedure
 
 1. Read the relevant source and adjacent tests.
-2. List the public behavior supported by that evidence.
+2. List the public behavior supported by the source and tests.
 3. Edit only the requested Markdown or JSDoc path.
 4. Check every example against the source.
 5. Report changed files, unverified claims, and the human review decision.
@@ -29,7 +29,7 @@ Use for one bounded documentation request with named source and output paths.
 
 Do not edit production code, tests, manifests, or workflows. Do not invent
 interfaces, parameters, examples, or test results. Stop when the requested text
-depends on behavior that cannot be verified.
+depends on behavior that cannot be checked.
 
 ## Failure behavior
 

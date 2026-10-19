@@ -102,7 +102,8 @@ status, timing, or usage into the plan.
 | The result is unsupported or outside scope | Reject |
 | Human authority is required | Escalate |
 
-Redirect only when a specific scope or evidence problem can be fixed safely.
+Redirect only when the child can safely fix a specific problem with scope or
+supporting sources.
 
 ## Exercise 3: Review results
 
@@ -119,7 +120,7 @@ crosses a hard boundary.
 
 ## Exercise 4: Return the parent result
 
-Ask the parent orchestration to summarize only the reviewed child results.
+Ask the parent to summarize only the reviewed child results.
 
 The parent result must:
 
@@ -186,8 +187,8 @@ cd ~/copilot-labs/session-m7-05-developer
 PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
 ```
 
-The supplied reference implementation's six tests should pass. This route reviews
-it; do not repair it or install packages. Attach this folder as an app project.
+The supplied reference implementation's six tests should pass. You will review
+the implementation; do not repair it or install packages. Attach this folder as an app project.
 Keep the children read-only and restrict tool access to the named files and test
 command. Do not grant network or GitHub write access.
 
@@ -254,8 +255,8 @@ Require the parent to return:
 Check that the parent explains why passing local tests cannot override a failed
 required PR check or unresolved blocking thread. Review the result yourself and
 keep it in the app session. Do not copy session identifiers or a second progress
-log into the plan. Inspect the app's usage display and explain whether the work
-justified orchestration.
+log into the plan. Inspect the app's usage display and explain whether
+orchestration was worth using for this work.
 
 ### Developer completion check
 

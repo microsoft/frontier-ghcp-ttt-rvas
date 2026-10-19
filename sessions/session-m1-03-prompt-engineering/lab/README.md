@@ -175,7 +175,7 @@ Delete or undo one route handler so it can be proposed again.
 The context may change the proposal, or it may not. Record either result.
 Keep the implementation that matches the route contract.
 
-**Checkpoint:** `prompt-log.md` records the two contexts and the observable result.
+**Checkpoint:** `prompt-log.md` records the two contexts and what you observed.
 
 ## Part 5: Apply the priority change (25 minutes)
 

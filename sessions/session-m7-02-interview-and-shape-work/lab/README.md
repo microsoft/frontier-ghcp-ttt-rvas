@@ -51,7 +51,7 @@ Open a new GitHub Copilot app session for the project. Open
 
 Select **Interactive** mode for the interview. Use **Plan** only when Copilot
 proposes file changes. Do not use **Autopilot** because the request owner must
-answer each frontier.
+answer each round of questions.
 
 Run a short test:
 

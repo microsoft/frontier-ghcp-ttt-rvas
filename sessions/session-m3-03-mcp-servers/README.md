@@ -8,7 +8,7 @@
 ## Overview
 
 Model Context Protocol (MCP) gives AI clients a standard way to discover and call
-tools. You will build a local stdio server in two stages. First, trace
+tools. Build a local stdio server in two stages. First, trace
 `get_weather` from its JSON Schema through the handler. Test good and bad input,
 then call it with MCP Inspector. Only then add `get_forecast` and
 `convert_temperature`.
@@ -41,7 +41,7 @@ plugin terminology.
 
 You need Node.js 20 or later and npm. GitHub Copilot is
 useful for the final integration check but is not required. The local tests and
-Inspector route prove the server contract.
+Inspector calls prove the server contract.
 
 If package installation is blocked, stop before the executable lab. Do not use an
 unapproved registry or copied `node_modules` directory.
