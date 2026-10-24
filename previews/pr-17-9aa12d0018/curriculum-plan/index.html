@@ -1,0 +1,8029 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Teach GitHub Copilot and GitHub Agentic Workflows with trainer guides and hands-on labs for 29 sessions across 7 modules.">
+      
+      
+        <meta name="author" content="GitHub Copilot TTT">
+      
+      
+      
+        <link rel="prev" href="../build-set/">
+      
+      
+        <link rel="next" href="../sessions/glossary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Curriculum - GitHub Copilot Train-the-Trainer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../overrides/rvap-brand.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
+    
+      <link rel="stylesheet" href="../overrides/set-builder.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-copilot-agentic-workflows-train-the-trainer-curriculum-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <header class="md-header" data-md-component="header">
+  <div class="md-header__inner md-grid">
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Open navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a href=".." class="md-header__button md-logo"
+       aria-label="RVAP - GitHub Copilot Train-the-Trainer home" data-md-component="logo">
+      <img src="../assets/logos/rvap-full.png" alt="RVAP" width="1058" height="376">
+    </a>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">GitHub Copilot Train-the-Trainer</span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">Curriculum</span>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="md-tabs" aria-label="Primary">
+      <ul class="md-tabs__list">
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../build-set/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Build your set
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Curriculum
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sessions/glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tracks/" class="md-tabs__link">
+          
+  
+  
+  Tracks
+
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sessions/session-m1-01-intro-to-copilot/" class="md-tabs__link">
+          
+  
+  
+  Sessions
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+        
+      </ul>
+    </nav>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Open search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+  </div>
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+
+
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GitHub Copilot Train-the-Trainer" class="md-nav__button md-logo" aria-label="GitHub Copilot Train-the-Trainer" data-md-component="logo">
+      <img src="../assets/logos/rvap-full.png" alt="RVAP" width="1058" height="376">
+    </a>
+    GitHub Copilot Train-the-Trainer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build your set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curriculum-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curriculum structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curriculum structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-and-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules and tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-1-copilot-fundamentals-beginner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 1: Copilot Fundamentals (Beginner)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-2-copilot-in-practice-intermediate-to-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 2: Copilot in Practice (Intermediate to Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-3-agentic-workflows-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 3: Agentic Workflows (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-4-devops-infrastructure-with-copilot-intermediate-to-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 4: DevOps &amp; Infrastructure with Copilot (Intermediate to Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-5-specification-driven-frameworks-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 5: Specification-Driven Frameworks (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-6-advanced-topics-capstone-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: Advanced Topics &amp; Capstone (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-7-product-and-delivery-teams-beginner-to-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7: Product and Delivery Teams (Beginner to Intermediate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-m1-01-introduction-to-github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M1-01: Introduction to GitHub Copilot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m1-02-copilot-chat-inline-suggestions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M1-02: Copilot Chat &amp; Inline Suggestions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m1-03-prompt-engineering-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M1-03: Prompt Engineering Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-01-github-copilot-in-the-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-01: GitHub Copilot in the CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-02-agent-mode-in-the-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-02: Agent Mode in the IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-03-copilot-spaces-context-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-03: Copilot Spaces &amp; Context Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-04-copilot-for-code-review-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-04: Copilot for Code Review &amp; Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-05-github-copilot-app-for-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-05: GitHub Copilot App for Developers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-06-repair-and-refactor-a-broken-python-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-06: Repair and Refactor a Broken Python Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-07-migrate-a-legacy-java-service-to-modern-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-07: Migrate a Legacy Java Service to Modern .NET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-01-copilot-app-plugins-canvas-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-01: Copilot App, Plugins &amp; Canvas Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-02-copilot-cloud-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-02: Copilot Cloud Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-03-mcp-servers-custom-tool-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-03: MCP Servers &amp; Custom Tool Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-04-custom-agents-agent-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-04: Custom Agents &amp; Agent Profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-05-agent-skills-the-copilot-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-05: Agent Skills &amp; the Copilot Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m4-01-github-actions-workflow-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M4-01: GitHub Actions &amp; Workflow Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m4-02-infrastructure-as-code-with-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M4-02: Infrastructure as Code with Copilot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m4-03-cicd-pipeline-debugging-agentic-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M4-03: CI/CD Pipeline Debugging &amp; Agentic Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m5-01-bradys-squad-human-led-ai-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M5-01: Brady's Squad: Human-Led AI Teams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m5-02-spec-kit-specification-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M5-02: Spec Kit: Specification-Driven Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m5-03-hve-core-evidence-led-delivery-with-rpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M5-03: HVE Core: Evidence-Led Delivery with RPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m6-01-build-reliable-agent-applications-with-the-github-copilot-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M6-01: Build Reliable Agent Applications with the GitHub Copilot SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m6-02-end-to-end-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M6-02: End-to-End Capstone Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-01-work-effectively-in-the-github-copilot-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-01: Work Effectively in the GitHub Copilot App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-02-interview-ideas-and-shape-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-02: Interview Ideas and Shape Better Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-03-plan-work-with-github-issues-and-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-03: Plan Work with GitHub Issues and MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-04-build-and-use-a-planning-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-04: Build and Use a Planning Canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-05-orchestrate-agents-and-workstreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-05: Orchestrate Agents and Workstreams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-06-automate-delivery-follow-up-and-connect-work-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-06: Automate Delivery Follow-up and Connect Work Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delivery-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tracks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/beginner-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/developer-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Productivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/agentic-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/devops-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps & Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/product-and-delivery-teams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product & Delivery Teams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/hve-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HVE Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracks/full-mastery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Mastery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Copilot Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 — Copilot Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_1" id="__nav_6_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1-01 — Intro to Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M1-01 — Intro to Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-01-intro-to-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-01-intro-to-copilot/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-01-intro-to-copilot/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_2" id="__nav_6_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1-02 — Chat & Inline Suggestions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M1-02 — Chat & Inline Suggestions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-02-chat-and-inline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-02-chat-and-inline/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-02-chat-and-inline/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_3" id="__nav_6_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1-03 — Prompt Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M1-03 — Prompt Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-03-prompt-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-03-prompt-engineering/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m1-03-prompt-engineering/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Copilot in Practice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 — Copilot in Practice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-01 — Copilot CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-01 — Copilot CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-01-copilot-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-01-copilot-cli/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-01-copilot-cli/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-02 — Agent Mode in the IDE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-02 — Agent Mode in the IDE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-02-agent-mode-ide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-02-agent-mode-ide/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-02-agent-mode-ide/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3" id="__nav_6_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-03 — Spaces & Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-03 — Spaces & Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-03-spaces-and-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-03-spaces-and-context/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-03-spaces-and-context/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_4" id="__nav_6_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-04 — Code Review & PRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-04 — Code Review & PRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-04-code-review-prs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-04-code-review-prs/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-04-code-review-prs/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_5" id="__nav_6_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-05 — Copilot App for Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-05 — Copilot App for Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-05-copilot-app-for-developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-05-copilot-app-for-developers/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-05-copilot-app-for-developers/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_6" id="__nav_6_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-06 — Python Repair & Refactor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-06 — Python Repair & Refactor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-06-python-repair-refactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-06-python-repair-refactor/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-06-python-repair-refactor/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_7" id="__nav_6_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2-07 — Java to .NET Modernization
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M2-07 — Java to .NET Modernization
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-07-java-to-dotnet-modernization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-07-java-to-dotnet-modernization/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m2-07-java-to-dotnet-modernization/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Agentic Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 — Agentic Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3-01 — Copilot App & Canvases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M3-01 — Copilot App & Canvases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-01-copilot-app-canvases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-01-copilot-app-canvases/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-01-copilot-app-canvases/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3-02 — Cloud Agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M3-02 — Cloud Agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-02-cloud-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-02-cloud-agent/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-02-cloud-agent/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3-03 — MCP Servers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M3-03 — MCP Servers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-03-mcp-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-03-mcp-servers/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-03-mcp-servers/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_4" id="__nav_6_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3-04 — Custom Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M3-04 — Custom Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-04-custom-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-04-custom-agents/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-04-custom-agents/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_5" id="__nav_6_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3-05 — Agent Skills & Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M3-05 — Agent Skills & Ecosystem
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-05-agent-skills-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-05-agent-skills-ecosystem/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m3-05-agent-skills-ecosystem/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — DevOps & Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 4 — DevOps & Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_1" id="__nav_6_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4-01 — Actions & Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M4-01 — Actions & Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-01-actions-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-01-actions-workflows/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-01-actions-workflows/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_2" id="__nav_6_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4-02 — IaC with Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M4-02 — IaC with Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-02-iac-with-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-02-iac-with-copilot/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-02-iac-with-copilot/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3" id="__nav_6_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4-03 — CI/CD & Debugging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M4-03 — CI/CD & Debugging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-03-cicd-debugging-autofix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-03-cicd-debugging-autofix/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m4-03-cicd-debugging-autofix/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Specification-Driven Frameworks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 5 — Specification-Driven Frameworks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_1" id="__nav_6_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5-01 — Brady's Squad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M5-01 — Brady's Squad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-01-squad-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-01-squad-orchestration/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-01-squad-orchestration/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5-02 — Spec Kit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M5-02 — Spec Kit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-02-spec-kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-02-spec-kit/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-02-spec-kit/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_3" id="__nav_6_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5-03 — HVE Core
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M5-03 — HVE Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-03-hve-core-challenge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-03-hve-core-challenge/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m5-03-hve-core-challenge/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Advanced Topics & Capstone
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 6 — Advanced Topics & Capstone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_1" id="__nav_6_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6-01 — Copilot SDK
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M6-01 — Copilot SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m6-01-copilot-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m6-01-copilot-sdk/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m6-01-copilot-sdk/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_2" id="__nav_6_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6-02 — Capstone
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M6-02 — Capstone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m6-02-capstone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m6-02-capstone/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m6-02-capstone/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 7 — Product and Delivery Teams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 7 — Product and Delivery Teams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7_1" id="__nav_6_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7-01 — Copilot App Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M7-01 — Copilot App Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-01-copilot-app-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-01-copilot-app-foundations/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-01-copilot-app-foundations/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7_2" id="__nav_6_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7-02 — Interview and Shape Work
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M7-02 — Interview and Shape Work
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-02-interview-and-shape-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-02-interview-and-shape-work/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-02-interview-and-shape-work/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7_3" id="__nav_6_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7-03 — GitHub Issues & MCP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M7-03 — GitHub Issues & MCP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-03-plan-work-with-github-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-03-plan-work-with-github-issues/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-03-plan-work-with-github-issues/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7_4" id="__nav_6_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7-04 — Planning Canvas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M7-04 — Planning Canvas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-04-plan-and-steer-with-canvases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-04-plan-and-steer-with-canvases/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-04-plan-and-steer-with-canvases/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7_5" id="__nav_6_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7-05 — Orchestrate Workstreams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M7-05 — Orchestrate Workstreams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-05-orchestrate-workstreams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-05-orchestrate-workstreams/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-05-orchestrate-workstreams/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7_6" id="__nav_6_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7-06 — Automate Delivery Follow-up
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M7-06 — Automate Delivery Follow-up
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-06-automate-delivery-follow-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-06-automate-delivery-follow-up/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/session-m7-06-automate-delivery-follow-up/trainer-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curriculum-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curriculum structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curriculum structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-and-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules and tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-1-copilot-fundamentals-beginner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 1: Copilot Fundamentals (Beginner)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-2-copilot-in-practice-intermediate-to-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 2: Copilot in Practice (Intermediate to Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-3-agentic-workflows-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 3: Agentic Workflows (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-4-devops-infrastructure-with-copilot-intermediate-to-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 4: DevOps &amp; Infrastructure with Copilot (Intermediate to Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-5-specification-driven-frameworks-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 5: Specification-Driven Frameworks (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-6-advanced-topics-capstone-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: Advanced Topics &amp; Capstone (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-7-product-and-delivery-teams-beginner-to-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7: Product and Delivery Teams (Beginner to Intermediate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-m1-01-introduction-to-github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M1-01: Introduction to GitHub Copilot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m1-02-copilot-chat-inline-suggestions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M1-02: Copilot Chat &amp; Inline Suggestions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m1-03-prompt-engineering-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M1-03: Prompt Engineering Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-01-github-copilot-in-the-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-01: GitHub Copilot in the CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-02-agent-mode-in-the-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-02: Agent Mode in the IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-03-copilot-spaces-context-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-03: Copilot Spaces &amp; Context Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-04-copilot-for-code-review-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-04: Copilot for Code Review &amp; Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-05-github-copilot-app-for-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-05: GitHub Copilot App for Developers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-06-repair-and-refactor-a-broken-python-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-06: Repair and Refactor a Broken Python Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m2-07-migrate-a-legacy-java-service-to-modern-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M2-07: Migrate a Legacy Java Service to Modern .NET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-01-copilot-app-plugins-canvas-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-01: Copilot App, Plugins &amp; Canvas Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-02-copilot-cloud-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-02: Copilot Cloud Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-03-mcp-servers-custom-tool-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-03: MCP Servers &amp; Custom Tool Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-04-custom-agents-agent-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-04: Custom Agents &amp; Agent Profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m3-05-agent-skills-the-copilot-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M3-05: Agent Skills &amp; the Copilot Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m4-01-github-actions-workflow-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M4-01: GitHub Actions &amp; Workflow Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m4-02-infrastructure-as-code-with-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M4-02: Infrastructure as Code with Copilot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m4-03-cicd-pipeline-debugging-agentic-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M4-03: CI/CD Pipeline Debugging &amp; Agentic Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m5-01-bradys-squad-human-led-ai-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M5-01: Brady's Squad: Human-Led AI Teams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m5-02-spec-kit-specification-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M5-02: Spec Kit: Specification-Driven Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m5-03-hve-core-evidence-led-delivery-with-rpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M5-03: HVE Core: Evidence-Led Delivery with RPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m6-01-build-reliable-agent-applications-with-the-github-copilot-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M6-01: Build Reliable Agent Applications with the GitHub Copilot SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m6-02-end-to-end-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M6-02: End-to-End Capstone Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-01-work-effectively-in-the-github-copilot-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-01: Work Effectively in the GitHub Copilot App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-02-interview-ideas-and-shape-better-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-02: Interview Ideas and Shape Better Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-03-plan-work-with-github-issues-and-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-03: Plan Work with GitHub Issues and MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-04-build-and-use-a-planning-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-04: Build and Use a Planning Canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-05-orchestrate-agents-and-workstreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-05: Orchestrate Agents and Workstreams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-m7-06-automate-delivery-follow-up-and-connect-work-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session M7-06: Automate Delivery Follow-up and Connect Work Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delivery-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+
+  
+                  
+
+
+
+<h1 id="github-copilot-agentic-workflows-train-the-trainer-curriculum-plan">GitHub Copilot &amp; Agentic Workflows: Train-the-Trainer Curriculum Plan<a class="headerlink" href="#github-copilot-agentic-workflows-train-the-trainer-curriculum-plan" title="Permanent link">&para;</a></h1>
+<h2 id="overall-learning-objectives">Overall learning objectives<a class="headerlink" href="#overall-learning-objectives" title="Permanent link">&para;</a></h2>
+<p>After this curriculum, you should be able to:</p>
+<ol>
+<li><strong>Explain</strong> GitHub Copilot's architecture, capabilities, model ecosystem, and limitations to technical audiences</li>
+<li><strong>Demonstrate</strong> inline suggestions, Chat, agent mode, and Spaces in live coding sessions</li>
+<li><strong>Teach</strong> prompt engineering techniques for Copilot's IDE, CLI, and app workflows</li>
+<li><strong>Guide</strong> teams through agentic workflows: IDE agent mode, canvases, cloud agent, custom agents, and MCP integration</li>
+<li><strong>Build</strong> custom agents (<code>.github/agents/</code>), agent skills (<code>.github/skills/</code>), canvas extensions, and MCP server integrations</li>
+<li><strong>Automate</strong> GitHub Actions, IaC (Terraform/Bicep), and CI/CD workflows with Copilot assistance</li>
+<li><strong>Orchestrate</strong> multi-agent teams using optional tools such as Squad for advanced agentic automation</li>
+<li><strong>Apply</strong> specification-driven development to keep requirements, plans, code, and tests aligned</li>
+<li><strong>Run</strong> hands-on labs where trainees build real projects using the full Copilot toolchain</li>
+<li><strong>Assess</strong> trainee progress and adapt delivery based on audience skill level and domain focus</li>
+<li><strong>Teach</strong> product and delivery teams to use the GitHub Copilot app, save plans in repository files, and supervise agent work without programming</li>
+<li><strong>Use</strong> GitHub MCP, canvases, orchestration, and Automations with human review and result checks</li>
+</ol>
+<hr />
+<h2 id="curriculum-structure">Curriculum structure<a class="headerlink" href="#curriculum-structure" title="Permanent link">&para;</a></h2>
+<h3 id="modules-and-tracks">Modules and tracks<a class="headerlink" href="#modules-and-tracks" title="Permanent link">&para;</a></h3>
+<p>The curriculum has <strong>7 modules</strong>. Use Modules 1 to 3 as the technical core.
+Combine the role-based and technical electives in Modules 4 to 7 to suit your audience.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Module 1: Copilot Fundamentals ──────────────── (Beginner, 3 sessions)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Module 2: Copilot in Practice ──────────────── (Intermediate to Advanced, 7 sessions)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    ├── Module 4: DevOps &amp; Infrastructure ──── (Intermediate to Advanced, 3 sessions)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    │   └── Requires: Module 1 + Sessions M2-01 to M2-02
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    └── Module 6: Advanced Topics &amp; Capstone ─────── (Advanced, 2 sessions)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        └── Session M6-01 is independent; Session M5-02 is required before the capstone
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Module 7: Product and Delivery Teams ─────────────── (Beginner to Intermediate, 6 sessions)
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    └── Standalone role-based path; no programming prerequisite
+</code></pre></div>
+<h3 id="delivery-options">Delivery options<a class="headerlink" href="#delivery-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Audience</th>
+<th>Recommended Path</th>
+<th>Sessions</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Copilot Beginners</strong></td>
+<td>Module 1 only</td>
+<td>M1-01 to M1-03</td>
+<td>9 hrs</td>
+</tr>
+<tr>
+<td><strong>Copilot Practitioners</strong></td>
+<td>Modules 1 to 2 + developer orchestration</td>
+<td>M1-01 to M1-03, M2-01 to M2-04, M2-05, M7-05, M2-06, M2-07</td>
+<td>33 hrs</td>
+</tr>
+<tr>
+<td><strong>Agentic Developers</strong></td>
+<td>Agentic Development</td>
+<td>M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-05</td>
+<td>42 hrs</td>
+</tr>
+<tr>
+<td><strong>DevOps Engineers</strong></td>
+<td>DevOps &amp; Automation</td>
+<td>M1-01 to M1-03, M2-01 to M2-02, M4-01 to M4-03</td>
+<td>23 hrs 30 min</td>
+</tr>
+<tr>
+<td><strong>SDK Application Developers</strong></td>
+<td>SDK application development</td>
+<td>M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05, M6-01</td>
+<td>39 hrs</td>
+</tr>
+<tr>
+<td><strong>Product and Delivery Teams</strong></td>
+<td>Module 7</td>
+<td>M7-01 to M7-06</td>
+<td>18 hrs</td>
+</tr>
+<tr>
+<td><strong>HVE Practitioners</strong></td>
+<td>HVE Engineering</td>
+<td>M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, M5-03</td>
+<td>31 hrs</td>
+</tr>
+<tr>
+<td><strong>Full Track</strong></td>
+<td>All Modules</td>
+<td>All available sessions</td>
+<td>88 hrs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="session-plan">Session plan<a class="headerlink" href="#session-plan" title="Permanent link">&para;</a></h2>
+<h3 id="module-1-copilot-fundamentals-beginner">Module 1: Copilot Fundamentals (Beginner)<a class="headerlink" href="#module-1-copilot-fundamentals-beginner" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1-01</td>
+<td>Introduction to GitHub Copilot</td>
+<td>Beginner</td>
+<td>None</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M1-02</td>
+<td>Copilot Chat &amp; Inline Suggestions</td>
+<td>Beginner</td>
+<td>Session M1-01</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M1-03</td>
+<td>Prompt Engineering Fundamentals</td>
+<td>Beginner</td>
+<td>Sessions M1-01 to M1-02</td>
+<td>3 hrs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-2-copilot-in-practice-intermediate-to-advanced">Module 2: Copilot in Practice (Intermediate to Advanced)<a class="headerlink" href="#module-2-copilot-in-practice-intermediate-to-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M2-01</td>
+<td>GitHub Copilot in the CLI</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M2-02</td>
+<td>Agent Mode in the IDE</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03, M2-01</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M2-03</td>
+<td>Copilot Spaces &amp; Context Management</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-02</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M2-04</td>
+<td>Copilot for Code Review &amp; Pull Requests</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-03</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M2-05</td>
+<td>GitHub Copilot App for Developers</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M2-06</td>
+<td>Repair and Refactor a Broken Python Application</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M2-07</td>
+<td>Migrate a Legacy Java Service to Modern .NET</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04</td>
+<td>3 hrs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>App access:</strong> Session M2-05 requires GitHub Copilot app access. The developer
+tracks then use Session M7-05's developer route, which needs <code>/orchestrate</code> but does
+not require Sessions M7-01 to M7-04 or GitHub MCP. Check access before scheduling.</p>
+<h3 id="module-3-agentic-workflows-advanced">Module 3: Agentic Workflows (Advanced)<a class="headerlink" href="#module-3-agentic-workflows-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M3-01</td>
+<td>Copilot App, Plugins &amp; Canvas Extensions</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M3-02</td>
+<td>Copilot Cloud Agent</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M3-03</td>
+<td>MCP Servers &amp; Custom Tool Integration</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M3-04</td>
+<td>Custom Agents &amp; Agent Profiles</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M3-05</td>
+<td>Agent Skills &amp; the Copilot Ecosystem</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-04</td>
+<td>3 hrs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-4-devops-infrastructure-with-copilot-intermediate-to-advanced">Module 4: DevOps &amp; Infrastructure with Copilot (Intermediate to Advanced)<a class="headerlink" href="#module-4-devops-infrastructure-with-copilot-intermediate-to-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M4-01</td>
+<td>GitHub Actions &amp; Workflow Generation</td>
+<td>Intermediate</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-02</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M4-02</td>
+<td>Infrastructure as Code with Copilot</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01</td>
+<td>2 hrs 30 min</td>
+</tr>
+<tr>
+<td>M4-03</td>
+<td>CI/CD Pipeline Debugging &amp; Agentic Remediation</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01</td>
+<td>3 hrs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-5-specification-driven-frameworks-advanced">Module 5: Specification-Driven Frameworks (Advanced)<a class="headerlink" href="#module-5-specification-driven-frameworks-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M5-01</td>
+<td>Brady's Squad: Human-Led AI Teams</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M5-02</td>
+<td>Spec Kit: Specification-Driven Development</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05</td>
+<td>3 hrs 30 min</td>
+</tr>
+<tr>
+<td>M5-03</td>
+<td>HVE Core: Evidence-Led Delivery with RPI</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04</td>
+<td>4 hrs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-6-advanced-topics-capstone-advanced">Module 6: Advanced Topics &amp; Capstone (Advanced)<a class="headerlink" href="#module-6-advanced-topics-capstone-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M6-01</td>
+<td>Build Reliable Agent Applications with the GitHub Copilot SDK</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M6-02</td>
+<td>End-to-End Capstone Project</td>
+<td>Advanced</td>
+<td>Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and M5-02</td>
+<td>3 hrs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-7-product-and-delivery-teams-beginner-to-intermediate">Module 7: Product and Delivery Teams (Beginner to Intermediate)<a class="headerlink" href="#module-7-product-and-delivery-teams-beginner-to-intermediate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Session</th>
+<th>Difficulty</th>
+<th>Prerequisites</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M7-01</td>
+<td>Work Effectively in the GitHub Copilot App</td>
+<td>Beginner</td>
+<td>GitHub Copilot app access</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M7-02</td>
+<td>Interview Ideas and Shape Better Work</td>
+<td>Beginner</td>
+<td>Session M7-01</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M7-03</td>
+<td>Plan Work with GitHub Issues and MCP</td>
+<td>Intermediate</td>
+<td>Sessions M7-01 to M7-02; GitHub MCP write access</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M7-04</td>
+<td>Build and Use a Planning Canvas</td>
+<td>Intermediate</td>
+<td>Sessions M7-01 to M7-03; canvas creation access</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M7-05</td>
+<td>Orchestrate Agents and Workstreams</td>
+<td>Intermediate</td>
+<td>Product route: Sessions M7-01 to M7-04; developer route: Session M2-05; app orchestration access</td>
+<td>3 hrs</td>
+</tr>
+<tr>
+<td>M7-06</td>
+<td>Automate Delivery Follow-up and Connect Work Systems</td>
+<td>Intermediate</td>
+<td>Sessions M7-01 to M7-05; Automations and GitHub MCP access</td>
+<td>3 hrs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Access requirement:</strong> GitHub Copilot access is required for Sessions M7-01 to M7-06.
+Learners without access should not start Module 7. Stop and reschedule their
+training after access is available.</p>
+<p><strong>Trainer-only supplement:</strong> A trainer may prepare the Azure Boards route before
+the workshop when the delivery plan requires it. The standard learner path uses
+GitHub issues and does not branch into an alternate platform exercise.</p>
+<hr />
+<h2 id="session-details">Session details<a class="headerlink" href="#session-details" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="session-m1-01-introduction-to-github-copilot">Session M1-01: Introduction to GitHub Copilot<a class="headerlink" href="#session-m1-01-introduction-to-github-copilot" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Beginner
+<strong>Prerequisites:</strong> None
+<strong>Module:</strong> Copilot Fundamentals</p>
+<p><strong>Description:</strong>
+Start with what GitHub Copilot does and how the underlying LLM works at a high
+level. Explain the data policies before setting up the development environment.
+Trainees then install and configure Copilot and use it to write their first code.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>What is GitHub Copilot? Architecture overview, LLM basics</li>
+<li>Enterprise Cloud access, policy controls, and the delivery preflight</li>
+<li>Usage and billing fundamentals using live official GitHub documentation, not static prices, allowances, or model tables</li>
+<li>Privacy, data handling, and telemetry: what code is sent, what isn't</li>
+<li>Supported IDEs and language coverage</li>
+<li>Installation and activation walkthrough</li>
+<li>First demo: writing a function with Copilot suggestions</li>
+<li>Next Edit Suggestions (NES): predictive follow-up edits</li>
+<li>Setting expectations: what Copilot does well, where it struggles</li>
+<li>Prepare answers to common objections</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Install and configure GitHub Copilot in VS Code</li>
+<li>Review inline suggestions while completing the supplied Python utility module</li>
+<li>Resolve the word-parsing rules, add a summary, and rename a parameter</li>
+<li>Run the supplied tests and record the decisions behind accepted or rejected suggestions</li>
+<li><strong>Deliverable:</strong> The utility module, five passing tests, and <code>lab-notes.md</code></li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Explain what GitHub Copilot is and how it generates suggestions</li>
+<li>Explain Enterprise access, delivery preflight, and usage-based billing basics using current official documentation</li>
+<li>Install and configure Copilot in VS Code</li>
+<li>Accept, reject, and navigate inline suggestions and NES</li>
+<li>Identify tasks Copilot handles well and those that need human judgment</li>
+</ul>
+<hr />
+<h3 id="session-m1-02-copilot-chat-inline-suggestions">Session M1-02: Copilot Chat &amp; Inline Suggestions<a class="headerlink" href="#session-m1-02-copilot-chat-inline-suggestions" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Beginner
+<strong>Prerequisites:</strong> Session M1-01
+<strong>Module:</strong> Copilot Fundamentals</p>
+<p><strong>Description:</strong>
+Show how sidebar, inline, and quick chat fit daily development tasks. Trainees try
+slash commands and chat participants, including @workspace, @terminal, and @vscode.
+They also learn how to choose a model.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Copilot Chat UI surfaces: sidebar, inline, quick chat, terminal</li>
+<li>Chat participants: @workspace, @terminal, @vscode: when to use each</li>
+<li>Slash commands: /explain, /fix, /tests, /doc, /new</li>
+<li>Context management: #file, #selection, #editor references</li>
+<li>Model selection: a task, quality, governance, and cost framework backed by the current official model reference</li>
+<li>Auto selection and metered-usage tradeoffs without hard-coded rates</li>
+<li>Conversational workflows: iterating on code through dialogue</li>
+<li>Demo: debugging a bug using Chat + inline suggestions together</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Diagnose the supplied Calculator's weighted-average defect with Copilot Chat</li>
+<li>Fix the defect and expand the tests</li>
+<li>Inspect the context used for the answer</li>
+<li>Implement and test the supplied change request</li>
+<li><strong>Deliverable:</strong> The tested Calculator and <code>chat-notes.md</code></li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Use all Copilot Chat surfaces effectively</li>
+<li>Apply slash commands for common tasks (explain, fix, test, document)</li>
+<li>Reference specific files and selections in Chat context</li>
+<li>Choose models with the live-doc selection framework</li>
+</ul>
+<hr />
+<h3 id="session-m1-03-prompt-engineering-fundamentals">Session M1-03: Prompt Engineering Fundamentals<a class="headerlink" href="#session-m1-03-prompt-engineering-fundamentals" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Beginner
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-02
+<strong>Module:</strong> Copilot Fundamentals</p>
+<p><strong>Description:</strong>
+Have trainees write a prompt, inspect the result, and revise it. Teach prompt
+structure and context selection through common mistakes. Later sessions use
+the same methods.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>How prompt detail affects the result</li>
+<li>Anatomy of a good prompt: intent, context, constraints, examples</li>
+<li>The "neighboring tabs" effect: how open files influence suggestions</li>
+<li>Comment-driven development: using comments as prompts</li>
+<li>Iterative prompting: refining output through follow-up instructions</li>
+<li>CLI <code>/refine</code>: review the rewrite against the task before submitting it</li>
+<li>Anti-patterns: vague prompts, over-specified prompts, prompt injection risks</li>
+<li>Demo: same task, three prompt strategies: compare results</li>
+<li>Prompt libraries and team-shared prompt patterns</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Run <code>/refine</code> on the rough todo-store request and correct its rewrite before implementation</li>
+<li>Build the Todo API's store and routes through focused prompts</li>
+<li>Compare results with different context</li>
+<li>Add priority support from the supplied change request and run the tests</li>
+<li>Save one reusable prompt in the prompt log</li>
+<li><strong>Deliverable:</strong> The Todo API, six passing tests, and <code>prompt-log.md</code></li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Write clear, structured prompts that produce accurate Copilot output</li>
+<li>Use context strategically (open files, comments, naming conventions)</li>
+<li>Identify and fix common prompting anti-patterns</li>
+<li>Create reusable prompt templates for repeated tasks</li>
+<li>Distinguish prompt rewriting from task execution and test results</li>
+</ul>
+<p><strong>Access:</strong> Session M1-03 needs standalone CLI <code>/refine</code> and Node.js 22 or later.
+Prepare it before delivery; Session M2-01 is not a prerequisite.</p>
+<hr />
+<h3 id="session-m2-01-github-copilot-in-the-cli">Session M2-01: GitHub Copilot in the CLI<a class="headerlink" href="#session-m2-01-github-copilot-in-the-cli" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03
+<strong>Module:</strong> Copilot in Practice</p>
+<p><strong>Description:</strong>
+Use the standalone <code>copilot</code> CLI for terminal tasks. Learners must review and revise
+a plan before implementation, inspect programmatic output, and supervise <code>/fleet</code>
+analysis. They check generated work against local files and tests before accepting it.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Compare Copilot in the IDE, Chat, and CLI</li>
+<li>Installing standalone <code>copilot</code> (<code>npm install -g @github/copilot</code>): prerequisites, authentication, terminal setup</li>
+<li>Interactive <code>copilot</code> mode: conversational terminal assistance for commands, code, and errors</li>
+<li>Non-interactive <code>copilot -p "&lt;prompt&gt;"</code>: generating answers, commands, and scripts from prompts</li>
+<li>Slash commands: <code>/plan</code>, <code>/agent</code>, <code>/skills</code>, <code>/mcp</code>, <code>/model</code>, and when to use each</li>
+<li>Plan mode: challenge an assumption, revise the plan, then approve implementation</li>
+<li>Rubber duck: a read-only contrasting-model critic; inspect the persistent proactive opt-in</li>
+<li>Terminal-first workflows: piping output, log analysis, and environment debugging</li>
+<li><code>/fleet</code> task independence, <code>/tasks</code> inspection, usage limits, and parent reconciliation</li>
+<li>Programmatic output: distinguish plain text from a JSONL event stream</li>
+<li>Permission and sandbox inspection; check the installed version's soft-limit scope</li>
+<li>Queue/background controls and checked recovery/worktree transitions</li>
+<li>Remote/SSH workflows: when the CLI is your only Copilot surface</li>
+<li>Demo: compare the same task (set up a Docker compose project) done via CLI vs. IDE</li>
+<li>CLI vs. IDE decision framework: when each surface is most effective</li>
+<li>Security considerations: what context the CLI sends, command execution trust boundaries</li>
+<li>Scripting with Copilot: generating, debugging, and iterating on shell scripts</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Install standalone <code>copilot</code> and authenticate it for terminal use</li>
+<li>Use interactive <code>copilot</code> to explain a simple command, a pipeline, and a script</li>
+<li>Use <code>copilot -p "&lt;prompt&gt;"</code> to generate commands for file operations, git workflows, Docker, and cloud CLIs</li>
+<li>Generate a multi-step shell script using Copilot CLI, then debug and refine it</li>
+<li>Repair the starter project from an accepted <code>/plan</code> revision and run its tests</li>
+<li>Check <code>/rubber-duck</code> findings before approving the repair plan</li>
+<li>Inspect <code>/permissions show</code>, sandbox policy, and <code>/limits</code> before a metered run</li>
+<li>Queue a follow-up, background the harmless timed command, and check <code>/tasks</code></li>
+<li>Pipe real command output (error logs, test results) to Copilot for analysis</li>
+<li>Parse JSONL output and check the CLI exit status separately from answer correctness</li>
+<li>Run live read-only <code>/fleet</code> tasks, check child claims, and reconcile disagreements</li>
+<li>Rewind a disposable edit; check <code>/fork worktree</code>, <code>/move</code>, and parent <code>/resume</code></li>
+<li>Side-by-side comparison: complete the same task in CLI and IDE, document tradeoffs</li>
+<li>Create a cheat sheet that matches common developer tasks to the right Copilot tool</li>
+<li><strong>Deliverable:</strong> A CLI cheat sheet, repaired project, pipeline script, and
+  workflow record with plan revisions and checked child-task results</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Install and configure standalone <code>copilot</code> for terminal workflows</li>
+<li>Use interactive and non-interactive <code>copilot -p "&lt;prompt&gt;"</code> workflows effectively for daily terminal work</li>
+<li>Revise and approve a plan before implementation</li>
+<li>Supervise independent fleet tasks and check the parent's synthesis</li>
+<li>Distinguish terminal-first workflows from commands also available in the app</li>
+<li>Apply the CLI vs. IDE decision framework to advise teams on surface selection</li>
+<li>Generate and iterate on shell scripts using Copilot CLI assistance</li>
+</ul>
+<hr />
+<h3 id="session-m2-02-agent-mode-in-the-ide">Session M2-02: Agent Mode in the IDE<a class="headerlink" href="#session-m2-02-agent-mode-in-the-ide" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01
+<strong>Module:</strong> Copilot in Practice</p>
+<p><strong>Description:</strong>
+Give agent mode a task that needs related changes across files in VS Code or
+JetBrains. Follow its planning, edits, terminal commands, and response to errors.
+Explain how it connects to MCP servers. Later sessions assume this knowledge.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Compare autocomplete, assistant responses, and agent execution</li>
+<li>Agent mode in VS Code: how it works, what it can do</li>
+<li>The agent loop: plan → act → observe → iterate</li>
+<li>Tool use: terminal commands, file operations, web search</li>
+<li>Multi-file changes: how agent mode handles cross-file edits autonomously</li>
+<li>Trust boundaries: what agents should and shouldn't do autonomously</li>
+<li>Demo: agent mode solving a multi-step task (create feature, write tests, fix build)</li>
+<li>Comparison: same task done via Chat vs. Agent mode</li>
+<li>When to use agent mode vs. when to stay in Chat</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Scaffold and extend one Todo API in IDE agent mode</li>
+<li>Compare Ask and Agent responses to the same task</li>
+<li>Follow the agent's file edits, terminal commands, and response to errors</li>
+<li>Redirect the agent when the supplied change alters the task</li>
+<li>Test the API and review the final diff</li>
+<li><strong>Deliverable:</strong> The Todo API, tests, two API checks, and decision notes</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Explain the difference between assistant and agentic AI</li>
+<li>Use agent mode in VS Code for multi-step, multi-file tasks</li>
+<li>Understand the agent loop (plan, act, observe, iterate)</li>
+<li>Know when to use agent mode vs. Chat vs. inline suggestions</li>
+</ul>
+<hr />
+<h3 id="session-m2-03-copilot-spaces-context-management">Session M2-03: Copilot Spaces &amp; Context Management<a class="headerlink" href="#session-m2-03-copilot-spaces-context-management" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-02
+<strong>Module:</strong> Copilot in Practice</p>
+<p><strong>Description:</strong>
+Help trainees choose code, docs, and specifications as context for Copilot Spaces.
+Then add project instructions in <code>.github/copilot-instructions.md</code> and reusable
+prompts in <code>.github/prompts/</code>. Explain where Copilot Memory and VS Code instruction
+settings fit.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>The context problem: why Copilot needs grounding</li>
+<li>Copilot Spaces: organizing code, docs, issues, and specs into curated sets</li>
+<li>Creating and sharing Spaces across teams</li>
+<li>Custom instructions per Space for specialized workflows</li>
+<li><code>.github/copilot-instructions.md</code>: project-level instructions</li>
+<li><code>.github/prompts/*.md</code>: reusable prompt files for team tasks</li>
+<li>CLI <code>/env</code> and <code>/instructions</code>: discovery, file-match scope, and actual behavior</li>
+<li>VS Code settings: <code>github.copilot.chat.codeGeneration.useInstructionFiles</code></li>
+<li>Copilot Memory: how the agent remembers and validates knowledge (Preview)</li>
+<li>Demo: before/after: same prompt with and without Space context</li>
+<li>Maintenance: keeping Spaces and instructions current as projects evolve</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Create a Copilot Space for a provided multi-repo project</li>
+<li>Add relevant files, docs, and specs to the Space</li>
+<li>Set custom instructions for the Space and observe behavior changes</li>
+<li>Create a <code>copilot-instructions.md</code> for a provided project with specific coding standards</li>
+<li>Inspect and correct the copied stale module-style instruction, then restart and inspect again</li>
+<li>Build 3 reusable prompt files for common team tasks</li>
+<li>Compare Copilot's responses: no context vs. instructions vs. Space</li>
+<li><strong>Deliverable:</strong> A complete Copilot Space + custom instructions setup with before/after comparison</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Create and configure Copilot Spaces for team workflows</li>
+<li>Write project-level and user-level custom instructions</li>
+<li>Create reusable prompt files for team standards</li>
+<li>Explain the context hierarchy: instructions → Spaces → Memory</li>
+<li>Maintain and iterate on context configurations as projects evolve</li>
+</ul>
+<hr />
+<h3 id="session-m2-04-copilot-for-code-review-pull-requests">Session M2-04: Copilot for Code Review &amp; Pull Requests<a class="headerlink" href="#session-m2-04-copilot-for-code-review-pull-requests" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-03
+<strong>Module:</strong> Copilot in Practice</p>
+<p><strong>Description:</strong>
+Learners review a synthetic change themselves, run <code>/review</code> and
+<code>/security-review</code> on the same uncommitted diff, then compare the results with
+Copilot pull-request review. They reproduce findings and correct the code.
+A person still decides whether to merge.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Copilot in the PR workflow: summaries, review comments, suggestions</li>
+<li>Requesting Copilot review on a PR (manual and automatic)</li>
+<li>Configuring automatic reviews at repo and org level</li>
+<li>Copilot-generated commit messages and PR descriptions</li>
+<li>Human review before assisted review to preserve an independent initial verdict</li>
+<li>Local <code>/review</code> and <code>/security-review</code>: scope, claim checking, and false positives</li>
+<li>Security review limits: the command does not replace repository scanners</li>
+<li>Merge conflict resolution with tests</li>
+<li>Demo: a complete PR lifecycle with Copilot assistance</li>
+<li>Limitations: what Copilot review catches vs. what it misses</li>
+<li>Team adoption patterns for Copilot-assisted review</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Create a feature branch with intentional defects and record a human review</li>
+<li>Run both local commands before committing the change</li>
+<li>Open a private training PR and compare its Copilot review with the local results</li>
+<li>Accept, reject, or leave findings unresolved with file references and reasons</li>
+<li>Fix defects, add focused tests, and rerun local review on the correction diff</li>
+<li>Resolve a conflict without losing either branch's intent</li>
+<li><strong>Deliverable:</strong> The reviewed training PR, corrected project, and finding-to-test
+  record with the final human decision</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Use Copilot to generate PR summaries and review comments</li>
+<li>Configure automatic Copilot reviews at repo/org level</li>
+<li>Evaluate Copilot review quality and identify blind spots</li>
+<li>Run local code and security review and distinguish demonstrated impact from speculation</li>
+<li>Resolve merge conflicts and test the result</li>
+<li>Integrate Copilot into a team code review workflow</li>
+</ul>
+<hr />
+<h3 id="session-m2-05-github-copilot-app-for-developers">Session M2-05: GitHub Copilot App for Developers<a class="headerlink" href="#session-m2-05-github-copilot-app-for-developers" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04
+<strong>Module:</strong> Copilot in Practice
+<strong>Duration:</strong> 3 hours</p>
+<p><strong>Description:</strong>
+In the GitHub Copilot app, learners plan a small engineering change and challenge
+the plan with <code>/rubber-duck</code>. They approve a revision before implementation, then
+review the diff and record whether the change is ready for a pull request.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Choose between chat, project sessions, and the repository workflow</li>
+<li>Keep parallel work isolated and give each session a clear stop condition</li>
+<li>Challenge a plan with <code>/rubber-duck</code> before approving implementation</li>
+<li>Explain automatic contrasting-model selection and the critic's read-only role</li>
+<li>App <code>/fork</code>, checked <code>/spar</code> reasoning, and reviewed <code>/merge-to-parent</code></li>
+<li>Separate implementation from independent code critique</li>
+<li>Run app <code>/review</code> on the active diff and check its findings</li>
+<li>Gather test results and review findings before a pull request decision</li>
+<li>Use a manual read-only automation without expanding repository access</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Start from a small engineering change with testable acceptance criteria</li>
+<li>Use <code>/plan</code>, critique it, and approve a revised plan</li>
+<li>Before implementation, compare a forked <code>/spar</code> argument and return only the checked plan note</li>
+<li>Run the implementation in an isolated project session</li>
+<li>Ask a separate session to critique the change, test results, and review findings</li>
+<li>Resolve findings and prepare a pull-request readiness record</li>
+<li>Triage active-diff code-review findings before committing</li>
+<li>Run the supplied manual read-only automation</li>
+<li><strong>Deliverable:</strong> A tested change, independent critique, pull-request readiness
+  record, and automation run output</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Select the right Copilot App surface for a development task</li>
+<li>Isolate parallel sessions and define useful stop conditions</li>
+<li>Use independent critique to find gaps in code, tests, or review findings</li>
+<li>Revise a plan before implementation and check active-diff review claims</li>
+<li>Distinguish a local fork return from merging a GitHub pull request</li>
+<li>Decide pull-request readiness from test results and review findings</li>
+<li>Run and review a manual read-only automation</li>
+</ul>
+<blockquote>
+<p><strong>App access is required.</strong> Stop if a required command is unavailable.
+Developer tracks continue with Session M7-05's developer orchestration route.</p>
+</blockquote>
+<hr />
+<h3 id="session-m2-06-repair-and-refactor-a-broken-python-application">Session M2-06: Repair and Refactor a Broken Python Application<a class="headerlink" href="#session-m2-06-repair-and-refactor-a-broken-python-application" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04
+<strong>Module:</strong> Copilot in Practice
+<strong>Duration:</strong> 3 hours</p>
+<p><strong>Description:</strong>
+Fix the Python application before changing its design. Learners diagnose the
+failures and restore the expected behavior, then use the test suite to check
+that refactoring preserves it.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Separate repair work from structural refactoring</li>
+<li>Trace failures from symptoms to root causes</li>
+<li>Strengthen tests before changing design</li>
+<li>Inspect Python LSP references and check inline copies of rules separately</li>
+<li>Refactor in small steps and run tests after each change</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Reproduce the supplied failures</li>
+<li>Repair the application until the baseline tests pass</li>
+<li>Add focused tests for uncovered behavior</li>
+<li>With tests green, inspect <code>severity_for</code> references and inline classification</li>
+<li>Approve CLI <code>/plan</code> before the refactor</li>
+<li>Refactor the repaired code and rerun the full suite</li>
+<li><strong>Deliverable:</strong> A repaired Python application with passing tests and documented refactoring decisions</li>
+</ul>
+<hr />
+<h3 id="session-m2-07-migrate-a-legacy-java-service-to-modern-net">Session M2-07: Migrate a Legacy Java Service to Modern .NET<a class="headerlink" href="#session-m2-07-migrate-a-legacy-java-service-to-modern-net" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04
+<strong>Module:</strong> Copilot in Practice
+<strong>Duration:</strong> 3 hours</p>
+<p><strong>Description:</strong>
+Establish how the legacy Java service must behave before migrating it to modern
+.NET. Learners use that behavior to check compatibility throughout the migration.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Define the migration boundary before changing code</li>
+<li>Map Java structures and dependencies to .NET equivalents</li>
+<li>Preserve API behavior and error handling</li>
+<li>Use tests to compare the old and new implementations</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Inspect the legacy service and its tests</li>
+<li>Build the modern .NET replacement in stages</li>
+<li>Fix compatibility gaps found by the test suite</li>
+<li>Record migration decisions and compatibility test results</li>
+<li><strong>Deliverable:</strong> A working .NET service with passing compatibility tests and a concise migration record</li>
+</ul>
+<hr />
+<h3 id="session-m3-01-copilot-app-plugins-canvas-extensions">Session M3-01: Copilot App, Plugins &amp; Canvas Extensions<a class="headerlink" href="#session-m3-01-copilot-app-plugins-canvas-extensions" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04
+<strong>Module:</strong> Agentic Workflows</p>
+<p><strong>Description:</strong>
+Use the GitHub Copilot App Customize area to explain plugins, skills, MCP servers,
+and canvases. Learners then create a small canvas for a synthetic workflow. Review
+its state, actions, data boundary, ownership, and failure handling with them.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Copilot App sessions and the Customize area</li>
+<li>Plugins, skills, MCP servers, and canvases: separate responsibilities</li>
+<li>Canvas model: a shared artifact with direct user actions and agent-callable capabilities</li>
+<li>Choosing a canvas for visible state, steering, or a handoff artifact</li>
+<li>Project scope (<code>.github/extensions/</code>) and personal scope (<code>~/.copilot/extensions/</code>)</li>
+<li>Demo: create a delivery-readiness canvas with <code>/create-canvas</code></li>
+<li>Design review: state, user actions, agent capabilities, validation, and ownership</li>
+<li>Security: synthetic data, approved actions, least privilege, and access checks</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Review a synthetic delivery-readiness workflow and its data boundary</li>
+<li>Define the canvas state, user actions, agent capabilities, and checks</li>
+<li>Create the canvas with <code>/create-canvas</code> in the Copilot App</li>
+<li>Add one user action with defined limits and one agent-callable capability</li>
+<li>Test direct edits and agent updates against the same shared artifact</li>
+<li>Complete a peer review of scope, data, actions, and owner</li>
+<li><strong>Deliverable:</strong> A reviewed canvas brief and a canvas created in the training sandbox</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Explain how a canvas differs from instructions, skills, custom agents, and MCP servers</li>
+<li>Build a canvas with defined state and action limits in the Copilot App</li>
+<li>Define user actions and agent capabilities around shared state</li>
+<li>Review canvas scope, data handling, ownership, and failure handling before use</li>
+</ul>
+<hr />
+<h3 id="session-m3-02-copilot-cloud-agent">Session M3-02: Copilot Cloud Agent<a class="headerlink" href="#session-m3-02-copilot-cloud-agent" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04
+<strong>Module:</strong> Agentic Workflows</p>
+<p><strong>Description:</strong>
+Assign one GitHub issue to the Copilot cloud agent and review its proposed change.
+Check the diff and test results before giving feedback or making a merge decision.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>What is the cloud agent? Cloud-based, issue-driven, async</li>
+<li>How it works: assign issue → agent creates branch → writes code → opens draft PR</li>
+<li>Configuring the cloud agent: <code>copilot-setup-steps.yml</code>, firewall rules, runner config</li>
+<li>Writing good issues for the cloud agent (specificity, acceptance criteria)</li>
+<li>The <code>copilot-instructions.md</code> role in guiding agent behavior</li>
+<li>Agent session management: tracking progress across sessions</li>
+<li>Demo: assign an issue, watch the agent work, review the PR</li>
+<li>Security: network firewall, toolset restrictions, shell controls</li>
+<li>Team workflow: assign work to the cloud agent and review its changes</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Configure a repository for the Copilot cloud agent (<code>copilot-setup-steps.yml</code>)</li>
+<li>Write the supplied issue with clear acceptance criteria and assign it to Copilot</li>
+<li>Monitor agent progress via the Agent Sessions view</li>
+<li>Review the proposed change: quality, correctness, test coverage</li>
+<li>Iterate: provide feedback via PR comments, watch the agent respond</li>
+<li><strong>Deliverable:</strong> One reviewed agent proposal with test results, feedback, and a human decision</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Configure a repository for the Copilot cloud agent</li>
+<li>Write effective issues that the cloud agent can resolve</li>
+<li>Manage agent sessions and track progress</li>
+<li>Review and iterate on agent-generated PRs</li>
+</ul>
+<hr />
+<h3 id="session-m3-03-mcp-servers-custom-tool-integration">Session M3-03: MCP Servers &amp; Custom Tool Integration<a class="headerlink" href="#session-m3-03-mcp-servers-custom-tool-integration" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04
+<strong>Module:</strong> Agentic Workflows</p>
+<p><strong>Description:</strong>
+Explain how Model Context Protocol (MCP) connects AI models to external tools and
+data through an open standard. Show the server architecture and configuration in
+VS Code and GitHub before building a custom server.</p>
+<p>Before delivery, check enterprise registry, allowlist, data-handling, and approval
+requirements against current documentation and customer policy.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>How MCP connects agents to tools through a standard protocol</li>
+<li>MCP architecture: clients, servers, transports (stdio, SSE, streamable HTTP)</li>
+<li>Built-in MCP support in VS Code, GitHub.com, and cloud agent</li>
+<li>Configuring MCP servers: <code>mcp.json</code>, workspace vs. user settings</li>
+<li>Organization-level MCP registry management</li>
+<li>Available MCP servers: GitHub, filesystem, databases, APIs</li>
+<li>Demo: connect an MCP server and use it via Copilot agent mode</li>
+<li>Building a custom MCP server (Node.js / Python)</li>
+<li>Security considerations: tool approval, transport security, org policies</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Configure the GitHub MCP server and use it to query issues/PRs from agent mode</li>
+<li>Connect a database MCP server and query data conversationally</li>
+<li>Build a simple custom MCP server that exposes a REST API as tools</li>
+<li>Test the custom server in VS Code with Copilot agent mode</li>
+<li>Add tool descriptions and parameter schemas for better Copilot interaction</li>
+<li><strong>Deliverable:</strong> A working custom MCP server with 2 to 3 tools, integrated into VS Code</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Explain MCP architecture and the client-server model</li>
+<li>Configure existing MCP servers in VS Code and at the org level</li>
+<li>Build a custom MCP server with typed tools</li>
+<li>Understand security and trust boundaries for MCP tools</li>
+</ul>
+<hr />
+<h3 id="session-m3-04-custom-agents-agent-profiles">Session M3-04: Custom Agents &amp; Agent Profiles<a class="headerlink" href="#session-m3-04-custom-agents-agent-profiles" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03
+<strong>Module:</strong> Agentic Workflows</p>
+<p><strong>Description:</strong>
+Build a custom GitHub agent as a Markdown file with YAML frontmatter in
+<code>.github/agents/</code>. Define its instructions, tools, and MCP servers, then show how
+to invoke it by name in Copilot Chat, cloud agent, and CLI.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Custom agent profiles and their instructions in <code>.github/agents/</code></li>
+<li>Agent profile anatomy: name, description, prompt, tools, MCP servers</li>
+<li>Repository, organization, and enterprise-level agents</li>
+<li>Creating agents for specific domains: test-writer, readme-creator, security-reviewer</li>
+<li>Agent tool configuration: which tools and MCP servers each agent can use</li>
+<li>CLI LSP setup, server-start checks, and inspected definition/reference operations</li>
+<li>Invoking custom agents: Chat, cloud agent, CLI</li>
+<li>Comparison: custom agents vs. MCP servers vs. custom instructions: when to use each</li>
+<li>Demo: build a custom agent and assign it work</li>
+<li>Enterprise distribution: sharing agents across an organization</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Inspect JavaScript LSP references and distinguish a caller from a CommonJS export</li>
+<li>Fail the weak test-writer contract and create <code>.github/agents/test-writer.agent.md</code></li>
+<li>Check the learner's local profile with the same contract</li>
+<li>Load it through CLI <code>/agent</code> and request behavior that would require a source edit</li>
+<li>Check that the test-only agent stops without changing production code</li>
+<li><strong>Deliverable:</strong> The tightened profile, contract results, and actual LSP/live-run record</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Create custom agent profiles using <code>.github/agents/</code> Markdown files</li>
+<li>Configure agent-specific tools, MCP servers, and instructions</li>
+<li>Invoke custom agents across Copilot Chat, cloud agent, and CLI</li>
+<li>Evaluate when to build a custom agent vs. use MCP vs. use custom instructions</li>
+<li>Distribute agents at the organization level</li>
+<li>Distinguish language-server startup from a checked symbol lookup</li>
+</ul>
+<p><strong>Access:</strong> Session M3-04 requires the standalone CLI and working JavaScript LSP
+server. Static tests or manual traces do not replace the live run.</p>
+<hr />
+<h3 id="session-m3-05-agent-skills-the-copilot-ecosystem">Session M3-05: Agent Skills &amp; the Copilot Ecosystem<a class="headerlink" href="#session-m3-05-agent-skills-the-copilot-ecosystem" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04, M3-04
+<strong>Module:</strong> Agentic Workflows</p>
+<p><strong>Description:</strong>
+Learners build and test a repository skill, then check its actual loading in
+Copilot. They compare the local <code>decision-interview</code> skill with a pinned copy of
+Matt Pocock's <code>grill-me</code> and its <code>grilling</code> dependency before passing accepted
+decisions to <code>/plan</code>.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>How skill instructions and supporting files guide Copilot</li>
+<li>Skills specification: <code>.github/skills/</code> for versioned team delivery</li>
+<li>Project-shared skills: <code>.github/skills/</code>: versioned team guidance</li>
+<li>Skill anatomy: SKILL.md format, when skills are loaded, confidence levels</li>
+<li>Creating skills for common workflows: deployment, testing, code review</li>
+<li>Community ecosystem: <code>github/awesome-copilot</code>, <code>anthropics/skills</code></li>
+<li>Community source review, pinned revisions, dependency inspection, and licensing</li>
+<li>Demo: create a skill, observe behavior change, share it</li>
+<li>Combine agents, skills, and MCP in one workflow</li>
+<li>Interview first in Interactive mode; start planning from accepted decisions</li>
+<li>Scoped <code>/chronicle improve</code>: inspect friction and cancel before applying suggestions</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Create a project skill (<code>.github/skills/api-design/SKILL.md</code>) for API design patterns</li>
+<li>Test matching, non-matching, and missing-precondition scenarios locally</li>
+<li>Check live skill loading and the missing-reviewer stop in Copilot</li>
+<li>Inspect and load pinned <code>grill-me</code> plus <code>grilling</code></li>
+<li>Run both interview skills in fresh sessions with the same request and late constraint</li>
+<li>Save accepted decisions and trace at least two into <code>/plan</code> steps or checks</li>
+<li>Check a Chronicle recommendation against an actual correction, or record insufficient history</li>
+<li><strong>Deliverable:</strong> A validated repository skill, live loading results, and an
+  interview comparison with the resulting plan</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Create and test a repository skill</li>
+<li>Understand the Agent Skills specification and SKILL.md format</li>
+<li>Discover and install community skills</li>
+<li>Distinguish local contract tests from live skill behavior</li>
+<li>Compare interview skills and carry accepted decisions into a plan</li>
+<li>Decide whether session friction belongs in instructions, a skill, or neither</li>
+</ul>
+<hr />
+<h3 id="session-m4-01-github-actions-workflow-generation">Session M4-01: GitHub Actions &amp; Workflow Generation<a class="headerlink" href="#session-m4-01-github-actions-workflow-generation" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-02
+<strong>Module:</strong> DevOps &amp; Infrastructure with Copilot</p>
+<p><strong>Description:</strong>
+Carry one Node.js application through CI generation, deployment design, workflow
+repair, and custom-action checks. The required lab runs locally and does not deploy.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>GitHub Actions fundamentals recap (for context)</li>
+<li>Using Copilot Chat to generate workflow YAML</li>
+<li>Agent mode for Actions: generating CI and designing deployment steps</li>
+<li>Workflow debugging with Copilot: reading logs, fixing failures</li>
+<li>Creating custom Actions with Copilot assistance</li>
+<li>Reusable workflows and composite actions</li>
+<li>Demo: generate CI and review a deployment design from a project description</li>
+<li>Best practices: workflow security, secrets management, caching</li>
+<li>Copilot cloud agent + Actions: how the agent uses Actions for build/test</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Generate a CI workflow for a provided Node.js project using agent mode</li>
+<li>Design deployment steps from the supplied specification without deploying</li>
+<li>Debug 2 intentionally broken workflows using Copilot</li>
+<li>Create a custom Action that runs a specific tool</li>
+<li>Run local checks against the repaired application, workflows, and custom action</li>
+<li><strong>Deliverable:</strong> CI and deployment workflow files, a checked custom action, and local check results</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Generate GitHub Actions workflows using Copilot agent mode and Chat</li>
+<li>Debug failing workflows with Copilot assistance</li>
+<li>Create custom Actions with Copilot</li>
+<li>Understand the relationship between Copilot cloud agent and GitHub Actions</li>
+<li>Apply security best practices to generated workflows</li>
+</ul>
+<hr />
+<h3 id="session-m4-02-infrastructure-as-code-with-copilot">Session M4-02: Infrastructure as Code with Copilot<a class="headerlink" href="#session-m4-02-infrastructure-as-code-with-copilot" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
+<strong>Module:</strong> DevOps &amp; Infrastructure with Copilot
+<strong>Duration:</strong> 2 hours 30 minutes</p>
+<p><strong>Description:</strong>
+Build and connect one modular Terraform architecture with Copilot. Validate it
+locally, then repair a configuration that fails a deterministic security gate.
+Keep Bicep as a short trainer comparison and optional extension.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Read architecture requirements as module contracts.</li>
+<li>Separate root inputs, module inputs, and narrow outputs.</li>
+<li>Generate and review network, compute, and database modules.</li>
+<li>Run formatting, initialization, and validation in order.</li>
+<li>Investigate one intentional security-gate failure.</li>
+<li>Explain what local checks prove and what still needs a reviewed plan.</li>
+<li>Compare the equivalent Bicep structure without creating a second required build.</li>
+</ul>
+<p><strong>Lab Outline (1 hour 30 minutes):</strong></p>
+<ul>
+<li>Inspect the supplied architecture and module contracts.</li>
+<li>Build and connect the Terraform modules.</li>
+<li>Run <code>terraform fmt</code>, <code>terraform init -backend=false</code>, and <code>terraform validate</code>.</li>
+<li>Reproduce and investigate the supplied security-gate failure.</li>
+<li>Repair the security case and save the passing check output.</li>
+<li><strong>Deliverable:</strong> Validated Terraform modules, a repaired security case, and command output.</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Generate Terraform modules from fixed architecture constraints.</li>
+<li>Connect module inputs and outputs without copying values between layers.</li>
+<li>Run local Terraform checks in the correct order.</li>
+<li>Identify and fix security problems supported by the architecture.</li>
+<li>Explain why local validation does not approve a deployment.</li>
+</ul>
+<hr />
+<h3 id="session-m4-03-cicd-pipeline-debugging-agentic-remediation">Session M4-03: CI/CD Pipeline Debugging &amp; Agentic Remediation<a class="headerlink" href="#session-m4-03-cicd-pipeline-debugging-agentic-remediation" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
+<strong>Module:</strong> DevOps &amp; Infrastructure with Copilot</p>
+<p><strong>Description:</strong>
+Diagnose CI/CD failures with Copilot and check changes intended to reduce build
+times. Repair the supplied security case and test the result locally. Remote
+scanning and agentic remediation are optional extensions that require repository
+access and the organization's review controls.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Diagnosing pipeline failures: logs, error messages, Copilot analysis</li>
+<li>Code scanning findings and the "Assign to Copilot" remediation workflow</li>
+<li>Required review, branch protection, and security-owner gates before merge</li>
+<li>Availability, policy, and licensing checks using live official documentation</li>
+<li>Pipeline optimization: caching, parallel jobs, conditional execution</li>
+<li>Demo: debug a complex pipeline failure using Copilot</li>
+<li>Optional demo: review a code-scanning finding and the proposed remediation</li>
+<li>Security-first CI/CD: integrating scanning into every pipeline</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Debug 3 failing CI/CD pipelines of increasing complexity using Copilot</li>
+<li>Review the supplied security case, repair it, and run the local regression check</li>
+<li>Optionally enable remote CodeQL scanning and request remediation when access and policy permit</li>
+<li>Optimize a slow pipeline: add caching, parallelize jobs</li>
+<li>(Stretch) Compare a manual and agentic remediation path under the same review policy</li>
+<li><strong>Deliverable:</strong> Three repaired pipelines, a tested security fix, and checked workflow improvements</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Diagnose and fix CI/CD pipeline failures with Copilot assistance</li>
+<li>Review and test a proposed security fix; use remote code scanning when access permits</li>
+<li>Optimize pipeline performance with Copilot suggestions</li>
+<li>Integrate security scanning into CI/CD workflows</li>
+<li>Apply human review and policy controls to agentic security remediation</li>
+</ul>
+<hr />
+<h3 id="session-m5-01-bradys-squad-human-led-ai-teams">Session M5-01: Brady's Squad: Human-Led AI Teams<a class="headerlink" href="#session-m5-01-bradys-squad-human-led-ai-teams" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
+<strong>Module:</strong> Specification-Driven Frameworks</p>
+<p><strong>Description:</strong>
+An optional advanced session on the <a href="https://github.com/bradygaster/squad">Brady's Squad</a> framework. Learners define the work in an issue, assign roles, route tasks, and review the saved decisions. Squad is a worked example, not a required product dependency.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>When multi-agent orchestration is warranted, and when it is not</li>
+<li>Squad as a community-tool example, with a vendor-neutral orchestration model</li>
+<li>Team composition: casting agents, assigning roles, defining charters</li>
+<li>The coordinator pattern: routing work to the right agent</li>
+<li>Shared memory: decisions, history, skills, orchestration logs</li>
+<li>Ralph: the work monitor: continuous development loops</li>
+<li>GitHub Issues integration: issue-driven agent development</li>
+<li>MCP integration with Squad: extending agent capabilities</li>
+<li>Demo: initialize a Squad team, assign work, observe agent collaboration</li>
+<li>Advanced patterns: reviewer gates, parallel fan-out, worktree management</li>
+<li>When Squad adds value vs. when individual agents suffice</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Use the approved Squad installation and provided example</li>
+<li>Set up the lead, backend, tester, and scribe roles</li>
+<li>Have the lead assign Issue 001's <code>POST /api/users</code> input-validation change</li>
+<li>Let the backend implement the change and the tester add and run tests</li>
+<li>Have the lead review the result and the scribe record the decision</li>
+<li>Inspect Ralph's monitoring output after review; backlog implementation is optional</li>
+<li><strong>Deliverable:</strong> One packet with the team structure, assignment, code and tests,
+  passing <code>npm test</code> output, lead review, and committed decision record</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Evaluate and configure a multi-agent orchestration approach for a development project</li>
+<li>Cast agent teams with appropriate roles and charters</li>
+<li>Route work to agents and manage multi-agent collaboration</li>
+<li>Use Ralph for continuous development monitoring</li>
+<li>Integrate Squad with GitHub Issues for issue-driven development</li>
+</ul>
+<hr />
+<h3 id="session-m5-02-spec-kit-specification-driven-development">Session M5-02: Spec Kit: Specification-Driven Development<a class="headerlink" href="#session-m5-02-spec-kit-specification-driven-development" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05
+<strong>Module:</strong> Specification-Driven Frameworks
+<strong>Duration:</strong> 3 hours 30 minutes</p>
+<p><strong>Description:</strong>
+Uses Spec Kit to implement one feature from a source request. Trainees convert tasks into GitHub Issues, implement in stages, run convergence checks, then update the specification to add restore behavior.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Why requirements should be reviewed before implementation</li>
+<li>Specification-driven flow: constitution → specify → clarify → plan → checklist → tasks → analyze → implement → converge</li>
+<li>The generated <code>.specify/</code>, <code>specs/</code>, and Copilot integration files</li>
+<li>The difference between behavior in <a href="https://github.com/microsoft/frontier-ghcp-ttt-rvas/blob/main/sessions/session-m5-02-spec-kit/lab/solution/archive-task/specs/001-archive-task/spec.md"><code>spec.md</code></a> and technical choices in <code>plan.md</code></li>
+<li>How analysis and convergence expose gaps</li>
+<li>Task-to-issue conversion and staged implementation</li>
+<li>Living-spec evolution and approved installation paths</li>
+</ul>
+<p><strong>Lab Outline (2 hours 30 minutes):</strong></p>
+<ul>
+<li>Initialize Spec Kit in a runnable Python starter project</li>
+<li>Specify and clarify archive behavior</li>
+<li>Generate a plan, checklist, and dependency-ordered tasks</li>
+<li>Convert tasks into GitHub Issues</li>
+<li>Implement in stages, run unit tests, and converge</li>
+<li>Evolve the specification, plan, tasks, code, and tests for restore behavior</li>
+<li><strong>Deliverable:</strong> Working archive and restore behavior with traceable artifacts, issues, passing tests, and a final convergence result</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Apply specification-driven development to one scoped feature</li>
+<li>Identify the files that Spec Kit creates and the decisions the team owns</li>
+<li>Produce requirements, design artifacts, and tasks that trace to tests</li>
+<li>Use task-to-issue conversion and scoped implementation runs</li>
+<li>Use analysis before implementation and repeat the implement/converge loop</li>
+<li>Evolve a living specification without leaving downstream artifacts behind</li>
+</ul>
+<hr />
+<h3 id="session-m5-03-hve-core-evidence-led-delivery-with-rpi">Session M5-03: HVE Core: Evidence-Led Delivery with RPI<a class="headerlink" href="#session-m5-03-hve-core-evidence-led-delivery-with-rpi" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-03 to M3-04, or equivalent experience
+<strong>Module:</strong> Specification-Driven Frameworks
+<strong>Duration:</strong> 4 hours</p>
+<p><strong>Description:</strong>
+Learners use HVE Core to develop one Engineering Decision API feature through
+Research, Plan, Implement, Review, and Follow-up. A person makes the delivery decision.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>HVE agents, prompts, instructions, and local tracking artifacts</li>
+<li>Direct RPI phase prompts and combined <code>/rpi</code> orchestration</li>
+<li>Repository context, targeted instructions, and custom agents with defined scope</li>
+<li>Product Manager Advisor and Agile Coach handoffs</li>
+<li>Review findings, Follow-up routing, and the final human decision</li>
+</ul>
+<p><strong>Lab Outline (3 hours):</strong></p>
+<ul>
+<li>Run Research and Plan before changing code</li>
+<li>Add repository context, a targeted JavaScript instruction, and a custom reviewer</li>
+<li>Refine the supplied intent with Product Manager Advisor and Agile Coach</li>
+<li>Implement and test the specified API endpoint and container contract</li>
+<li>Run Review, check its links to earlier phase results, and record the human decision</li>
+<li><strong>Deliverable:</strong> A tested API feature with linked HVE artifacts, records of
+  customization use, product and Agile decisions, and a reviewed handoff</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Explain how HVE components and tracking artifacts support RPI handoffs</li>
+<li>Run and inspect each direct RPI phase</li>
+<li>Prove that repository customizations changed a later phase</li>
+<li>Feed product and Agile decisions back into the implementation plan</li>
+<li>Use Follow-up to route defects or missing check results without expanding scope</li>
+<li>Support a human approval, change request, or pause decision</li>
+</ul>
+<hr />
+<h3 id="session-m6-01-build-reliable-agent-applications-with-the-github-copilot-sdk">Session M6-01: Build Reliable Agent Applications with the GitHub Copilot SDK<a class="headerlink" href="#session-m6-01-build-reliable-agent-applications-with-the-github-copilot-sdk" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05
+<strong>Module:</strong> Advanced Topics &amp; Capstone</p>
+<p><strong>Description:</strong>
+Learners build a TypeScript command-line application on the GitHub Copilot SDK. The application streams session events and calls one deterministic custom tool. It handles permission and hook decisions, reports failures, and exports OpenTelemetry traces to a local collector and Jaeger.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>SDK architecture: application, SDK client, Copilot CLI server, and agent session</li>
+<li>Session lifecycle and streaming events</li>
+<li>Custom tools with constrained schemas and deterministic handlers</li>
+<li>Permission requests and pre-tool decisions</li>
+<li>Failure, error, and session-end hooks</li>
+<li>OpenTelemetry trace propagation through the SDK and CLI</li>
+<li>Demo: accept one read-only request and deny one out-of-bound action</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Inspect the staged TypeScript assistant and synthetic change data</li>
+<li>Complete and test the custom readiness tool</li>
+<li>Add permission decisions and blocking hooks</li>
+<li>Run one accepted request and one denied request</li>
+<li>Start the local OpenTelemetry Collector and Jaeger stack</li>
+<li>Save test results, audit records, and traces</li>
+<li><strong>Deliverable:</strong> A tested TypeScript SDK application with a custom tool, permission and hook controls, live accepted and denied runs, and recorded traces</li>
+</ul>
+<p><strong>Expected Learning Outcomes:</strong></p>
+<ul>
+<li>Create and close a Copilot SDK client and a session with defined tool access</li>
+<li>Consume streaming events without treating partial output as a final result</li>
+<li>Define and test a deterministic custom tool</li>
+<li>Enforce tool and argument boundaries through permissions and hooks</li>
+<li>Return visible errors for invalid input and failed tool execution</li>
+<li>Trace one session from application request through tool decision and completion</li>
+</ul>
+<hr />
+<h3 id="session-m6-02-end-to-end-capstone-project">Session M6-02: End-to-End Capstone Project<a class="headerlink" href="#session-m6-02-end-to-end-capstone-project" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Advanced
+<strong>Prerequisites:</strong> Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and M5-02; Session M5-01 is optional
+<strong>Module:</strong> Advanced Topics &amp; Capstone</p>
+<p><strong>Description:</strong>
+In this two-hour capstone, trainees use a governed specification to complete one agentic implementation task. They review the results and make a handover decision. The lab does not require a full production build.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Recap: work boundaries and specification before implementation</li>
+<li>Selecting the smallest safe toolchain for a customer scenario</li>
+<li>Issue → agent → review → handover, with required human gates</li>
+<li>How to adapt the scenario for customer access and policy limits</li>
+<li>Trainer readiness and delivery debrief</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Use the provided feature brief and governance constraints</li>
+<li>Select or consume a prepared specification artifact from Session M5-02</li>
+<li>Create one implementation-ready issue and complete the scoped agentic task</li>
+<li>Review the change against acceptance criteria and policy constraints</li>
+<li>Record the handover decision and retrospective</li>
+<li><strong>Deliverable:</strong> A reviewed feature change ready for handoff, with records of the governance checks</li>
+</ul>
+<hr />
+<h3 id="session-m7-01-work-effectively-in-the-github-copilot-app">Session M7-01: Work Effectively in the GitHub Copilot App<a class="headerlink" href="#session-m7-01-work-effectively-in-the-github-copilot-app" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Beginner
+<strong>Prerequisites:</strong> GitHub Copilot app access
+<strong>Module:</strong> Product and Delivery Teams</p>
+<p><strong>Description:</strong>
+Start in the GitHub Copilot app with repository context. Learners check which
+tools they can use, then create and review a working brief.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Chats, Projects, My work, Search, Automations, and Customize</li>
+<li>Choose only the context approved for the task</li>
+<li>Skills, agents, MCP servers, canvases, and Automations</li>
+<li>Read, propose, review, write, and check the result</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Compare an unscoped answer with a repository-grounded answer</li>
+<li>Create and commit a sourced working brief</li>
+<li>Revise the brief using the supplied new source material</li>
+<li>Check the saved brief in a fresh Copilot session</li>
+<li><strong>Deliverable:</strong> A revised working brief with an answer comparison and a fresh-session check</li>
+</ul>
+<hr />
+<h3 id="session-m7-02-interview-ideas-and-shape-better-work">Session M7-02: Interview Ideas and Shape Better Work<a class="headerlink" href="#session-m7-02-interview-ideas-and-shape-better-work" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Beginner
+<strong>Prerequisites:</strong> Session M7-01
+<strong>Module:</strong> Product and Delivery Teams</p>
+<p><strong>Description:</strong>
+Use a decision-tree interview in the GitHub Copilot app to settle an unclear
+request. Learners save the approved answers in a repository decision brief and
+issue proposal.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Ask questions in an order that resolves dependent decisions</li>
+<li>Facts, recommendations, and owner decisions</li>
+<li>Markdown decision briefs saved in the repository</li>
+<li>Issue proposals with testable acceptance criteria</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Install and check the supplied <code>decision-interview</code> project skill</li>
+<li>Run a dependency-ordered Copilot interview</li>
+<li>Create the decision brief and issue proposal</li>
+<li>Reopen one decision branch after a late visibility constraint</li>
+<li>Check the revised files in a fresh session</li>
+<li><strong>Deliverable:</strong> An installed project skill, revised decision brief, aligned issue proposal, and readiness result</li>
+</ul>
+<hr />
+<h3 id="session-m7-03-plan-work-with-github-issues-and-mcp">Session M7-03: Plan Work with GitHub Issues and MCP<a class="headerlink" href="#session-m7-03-plan-work-with-github-issues-and-mcp" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M7-01 to M7-02; GitHub MCP write access
+<strong>Module:</strong> Product and Delivery Teams</p>
+<p><strong>Description:</strong>
+Read the existing work through GitHub MCP before proposing an issue hierarchy.
+Learners review the proposed write, create the approved issues, and read them
+back to check the result.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>MCP from the tool user's point of view</li>
+<li>Read and write boundaries</li>
+<li>Outcome-based decomposition</li>
+<li>Preview and approve changes, then read the issues again to check the result</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Read the approved decision brief</li>
+<li>Search for duplicate issues and existing labels</li>
+<li>Plan one parent issue and four child issues: public status mapping, requester
+  status view, empty and stale states, and requester-access verification</li>
+<li>Keep any fifth issue optional and separate from those four workstreams</li>
+<li>Review and approve the complete GitHub write</li>
+<li>Retrieve the issues, apply one reviewed correction, and check it through another fresh read</li>
+<li><strong>Deliverable:</strong> A live issue hierarchy with records of issue creation and correction</li>
+</ul>
+<hr />
+<h3 id="session-m7-04-build-and-use-a-planning-canvas">Session M7-04: Build and Use a Planning Canvas<a class="headerlink" href="#session-m7-04-build-and-use-a-planning-canvas" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M7-01 to M7-03; canvas creation access
+<strong>Module:</strong> Product and Delivery Teams</p>
+<p><strong>Description:</strong>
+Create a planning canvas from a plain-language request and load the issues from
+Session M7-03. Learners check that the canvas shows the same planning state as
+GitHub and Copilot.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>When visible state is better than another chat</li>
+<li><code>/create-canvas</code></li>
+<li>Reviewing generated state and actions</li>
+<li>Ownership, recovery, and retirement</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Define the minimum planning state</li>
+<li>Create and simplify the canvas</li>
+<li>Load issues through GitHub MCP</li>
+<li>Make one visible update and one Copilot-requested update</li>
+<li>Create a controlled GitHub state change and detect that the canvas is stale</li>
+<li>Refresh and reconcile the visible planning state</li>
+<li><strong>Deliverable:</strong> A planning canvas with recorded stale-state detection and reconciliation</li>
+</ul>
+<hr />
+<h3 id="session-m7-05-orchestrate-agents-and-workstreams">Session M7-05: Orchestrate Agents and Workstreams<a class="headerlink" href="#session-m7-05-orchestrate-agents-and-workstreams" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Product route: Sessions M7-01 to M7-04; developer route: Session M2-05.
+Both routes require live app orchestration access.
+<strong>Module:</strong> Product and Delivery Teams</p>
+<p><strong>Description:</strong>
+Learners start independent child sessions, intervene when needed, and check the
+parent's result. The product route uses live issues. The developer route uses
+local Session M2-05 code and a synthetic PR snapshot, without GitHub MCP.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Parent objectives and independent workstreams</li>
+<li>Input paths, independent questions, stop conditions, and reviewers</li>
+<li>Monitoring, redirecting, and stopping sessions</li>
+<li>Reviewing the parent result against live issues</li>
+<li>Developer route: reconcile local test success with a blocked PR snapshot</li>
+<li>Keep <code>/fleet</code> task parallelism distinct from app <code>/orchestrate</code> child sessions</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Select independent workstreams from live issues or the developer review brief</li>
+<li>Run live GitHub Copilot orchestration</li>
+<li>Wait, redirect, stop, accept, or reject live child-session work</li>
+<li>Review the parent result and check any approved GitHub issue update</li>
+<li>Developer route: run read-only child reviews, check their claims, and resolve
+  conflicting release-readiness conclusions without writing code or updating GitHub</li>
+<li><strong>Deliverable:</strong> An orchestration plan, checked child results, and a reviewed
+  parent decision with issue references or local file and PR-field references</li>
+</ul>
+<hr />
+<h3 id="session-m7-06-automate-delivery-follow-up-and-connect-work-systems">Session M7-06: Automate Delivery Follow-up and Connect Work Systems<a class="headerlink" href="#session-m7-06-automate-delivery-follow-up-and-connect-work-systems" title="Permanent link">&para;</a></h3>
+<p><strong>Difficulty:</strong> Intermediate
+<strong>Prerequisites:</strong> Sessions M7-01 to M7-05; Automations and GitHub MCP access
+<strong>Module:</strong> Product and Delivery Teams</p>
+<p><strong>Description:</strong>
+Learners turn the Session M7-05 parent result and live issues into a draft-only
+GitHub Copilot Automation. They review two runs and decide whether GitHub or Azure
+Boards remains authoritative.</p>
+<p><strong>Trainer Content Outline (1 hour):</strong></p>
+<ul>
+<li>Choosing a useful recurring task</li>
+<li>Concise Automation definition</li>
+<li>Authoritative inputs, side-effect boundaries, and stop conditions</li>
+<li>GitHub and Azure Boards system-of-record decisions</li>
+</ul>
+<p><strong>Lab Outline (2 hours):</strong></p>
+<ul>
+<li>Create the concise automation definition</li>
+<li>Configure a manual, draft-only Automation</li>
+<li>Run it against live issues and the Session M7-05 parent result</li>
+<li>Apply one approved issue change and run the same Automation again</li>
+<li>Compare both runs on the platform and record keep, revise, disable, or pause</li>
+<li>Produce a stakeholder update</li>
+<li><strong>Deliverable:</strong> A concise automation definition and reviewed stakeholder update</li>
+</ul>
+<hr />
+<h2 id="delivery-notes">Delivery notes<a class="headerlink" href="#delivery-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Total track duration:</strong> 88 hours across 29 sessions</li>
+<li><strong>Recommended delivery schedules:</strong></li>
+<li>Standard: 1 to 2 sessions/day across 15 days, with up to 7 teaching hours per day before breaks</li>
+<li>Extended: 1 session/day across 29 days</li>
+<li><strong>Group size:</strong> 8 to 15 trainees per cohort for optimal lab support</li>
+<li><strong>Module independence:</strong></li>
+<li>Modules 1 to 3 form the technical core</li>
+<li>Module 4 (DevOps) can be delivered independently after Module 1 and Sessions M2-01 to M2-02</li>
+<li>Session M5-01 is optional; it is not a prerequisite for Session M5-02 or Session M6-02</li>
+<li>Session M6-01 is an independent SDK specialization and is not a prerequisite for Session M6-02</li>
+<li>Developer tracks require Session M2-05 and Session M7-05's developer route.
+    Check their app commands before scheduling</li>
+<li>Prepare standalone CLI access before Session M1-03, JavaScript LSP before
+    Session M3-04, and Python LSP before Session M2-06</li>
+<li>Session M5-03 is the final session in the HVE Engineering track and should run
+    after Sessions M3-03 to M3-04</li>
+<li>Module 7 is a standalone role-based path and does not require programming experience</li>
+<li><strong>Trainer prep time:</strong> Allocate 2 hours prep per session for first-time delivery</li>
+<li><strong>Feature status notes:</strong> Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../build-set/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Build your set">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Build your set
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sessions/glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.pruning", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../overrides/session.js"></script>
+      
+        <script src="../overrides/sets.js"></script>
+      
+    
+  </body>
+</html>
