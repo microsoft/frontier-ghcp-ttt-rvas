@@ -175,14 +175,14 @@ if (typeof document !== "undefined") {
           const session = byId.get(id);
           const item = element("li");
           item.dataset.selectedId = id;
-          item.append(element("strong", `Session ${id}: ${session.title}`, "set-selected-title"));
+          item.append(element("strong", `Session ${id.toUpperCase()}: ${session.title}`, "set-selected-title"));
           item.append(categoryBadges(session));
           const actions = element("div", undefined, "set-order-actions");
           for (const [action, text] of [["up", "Up"], ["down", "Down"], ["remove", "Remove"]]) {
             const button = element("button", text, "rvap-action");
             button.type = "button";
             button.dataset.action = action;
-            button.setAttribute("aria-label", `${text === "Remove" ? "Remove" : "Move"} session ${id}${text === "Remove" ? "" : ` ${action}`}`);
+            button.setAttribute("aria-label", `${text === "Remove" ? "Remove" : "Move"} session ${id.toUpperCase()}${text === "Remove" ? "" : ` ${action}`}`);
             button.disabled = (action === "up" && index === 0) || (action === "down" && index === state.ids.length - 1);
             actions.append(button);
           }
@@ -252,8 +252,8 @@ if (typeof document !== "undefined") {
         const sameAction = item?.querySelector(`[data-action="${action}"]:not(:disabled)`);
         (sameAction || item?.querySelector("button:not(:disabled)") || name).focus();
         status.textContent = action === "remove"
-          ? `Removed session ${id}.`
-          : `Moved session ${id} to position ${state.ids.indexOf(id) + 1}.`;
+          ? `Removed session ${id.toUpperCase()}.`
+          : `Moved session ${id.toUpperCase()} to position ${state.ids.indexOf(id) + 1}.`;
       });
       [search, module, level].forEach(field => field.addEventListener("input", filter));
       root.querySelector("[data-set-clear-filters]").addEventListener("click", () => {
@@ -326,7 +326,7 @@ if (typeof document !== "undefined") {
           const body = element("div");
           body.append(
             element("h2", session.title),
-            element("p", `Session ${id} / ${SessionSets.durationLabel(session.duration_minutes)}`, "set-session-meta"),
+            element("p", `Session ${id.toUpperCase()} / ${SessionSets.durationLabel(session.duration_minutes)}`, "set-session-meta"),
             categoryBadges(session),
             element("p", session.description)
           );
@@ -334,7 +334,7 @@ if (typeof document !== "undefined") {
           for (const [text, target] of [["Overview", session.url], ["Lab", session.lab_url], ["Trainer Guide", session.trainer_url]]) {
             const link = element("a", text);
             link.href = target;
-            link.setAttribute("aria-label", `${text} for session ${id}`);
+            link.setAttribute("aria-label", `${text} for session ${id.toUpperCase()}`);
             materials.append(link);
           }
           body.append(materials);

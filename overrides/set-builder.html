@@ -40,10 +40,10 @@
         {% for session in session_catalog.sessions %}
         <div class="set-catalog-row" data-session-id="{{ session.id }}">
           <label class="set-session-choice">
-            <input type="checkbox" value="{{ session.id }}" aria-label="Include session {{ session.id }}: {{ session.title }}">
+            <input type="checkbox" value="{{ session.id }}" aria-label="Include session {{ session.id | upper }}: {{ session.title }}">
             <span class="set-session-copy">
               <span class="set-session-meta ghcp-session-card__badges">
-                <span>Session {{ session.id }}</span>
+                <span>Session {{ session.id | upper }}</span>
                 {% include "partials/session-badges.html" %}
               </span>
               <strong>{{ session.title }}</strong>
@@ -51,7 +51,7 @@
               <span class="set-session-meta">{{ session.duration_minutes // 60 }} hours{% if session.duration_minutes % 60 %} {{ session.duration_minutes % 60 }} min{% endif %}</span>
             </span>
           </label>
-          <a class="set-preview-link" href="{{ session.url }}">Overview<span class="set-sr-only"> of session {{ session.id }}</span></a>
+          <a class="set-preview-link" href="{{ session.url }}">Overview<span class="set-sr-only"> of session {{ session.id | upper }}</span></a>
         </div>
         {% endfor %}
       </div>

@@ -1,10 +1,10 @@
-# Session m3-01: Copilot app, plugins & canvas extensions
+# Session M3-01: Copilot app, plugins & canvas extensions
 
 **Module:** Agentic Workflows
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 

@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m7-06: Automate Delivery Follow-up'
+footer: 'Session M7-06: Automate Delivery Follow-up'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m7-06: Automate Delivery Follow-up'
 
 ## Product and Delivery Teams | Intermediate
 
-Session m7-06 | 3 hours
+Session M7-06 | 3 hours
 
 ---
 
@@ -21,7 +21,7 @@ Session m7-06 | 3 hours
 Use:
 
 - the approved live GitHub issues;
-- the reviewed Session m7-05 parent result.
+- the reviewed Session M7-05 parent result.
 
 Do not copy platform state into a static handoff.
 
@@ -53,7 +53,7 @@ platform. Do not recreate those fields in a form.
 # Create one manual automation
 
 ```text
-Read the approved status-visibility GitHub issues and the reviewed Session m7-05
+Read the approved status-visibility GitHub issues and the reviewed Session M7-05
 parent result. Draft one stakeholder update from supported issue state. Name
 unresolved exceptions and owners. Do not publish or change systems.
 ```
@@ -120,5 +120,5 @@ automation is enabled or disabled.
 1. Concise automation definition
 2. Reviewed stakeholder update
 
-Use the live Session m7-05 result and platform run records. Do not copy them into
+Use the live Session M7-05 result and platform run records. Do not copy them into
 a status file or second run-status record.

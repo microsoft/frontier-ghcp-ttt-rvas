@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m3-03: MCP Servers & Custom Tool Integration'
+footer: 'Session M3-03: MCP Servers & Custom Tool Integration'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m3-03: MCP Servers & Custom Tool Integration'
 
 ## Prove one tool before adding the next
 
-Session m3-03 | 3 hours
+Session M3-03 | 3 hours
 
 ---
 

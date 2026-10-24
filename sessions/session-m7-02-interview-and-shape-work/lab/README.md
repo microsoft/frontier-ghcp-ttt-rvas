@@ -1,10 +1,10 @@
-# Session m7-02 lab: Interview a request and revise the decision brief
+# Session M7-02 lab: Interview a request and revise the decision brief
 
 **Duration:** 2 hours
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Session m7-01 and working GitHub Copilot app access
+**Prerequisites:** Session M7-01 and working GitHub Copilot app access
 
 **Deliverable:** An approved decision brief and issue proposal produced through a
 repeatable project skill
@@ -27,8 +27,8 @@ the affected decisions and check that both files still agree.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Use the Session m7-01 `initiative-context-brief.md`. If the trainer is delivering
-Session m7-02 alone, use `starter/vague-request.md`.
+Use the Session M7-01 `initiative-context-brief.md`. If the trainer is delivering
+Session M7-02 alone, use `starter/vague-request.md`.
 
 Check GitHub Copilot access before starting. If access is unavailable, **stop**.
 Also stop if Copilot cannot read the training repository or load project skills.
@@ -77,7 +77,7 @@ frontier instead of drafting a work item.
 
 ## Part 2: Run the first decision interview (35 minutes)
 
-Attach the Session m7-01 working brief or `starter/vague-request.md`, then run:
+Attach the Session M7-01 working brief or `starter/vague-request.md`, then run:
 
 ```text
 /decision-interview
@@ -192,7 +192,7 @@ Submit:
 3. the aligned issue proposal;
 4. any fixes made after the fresh-session check.
 
-Session m7-03 uses the approved brief and issue proposal to create live GitHub issues.
+Session M7-03 uses the approved brief and issue proposal to create live GitHub issues.
 
 ## Verification
 

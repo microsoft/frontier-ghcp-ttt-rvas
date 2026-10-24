@@ -1,4 +1,4 @@
-# Session m4-03 trainer guide: Evidence before repair
+# Session M4-03 trainer guide: Evidence before repair
 
 ## Delivery objective
 

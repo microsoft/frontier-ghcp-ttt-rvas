@@ -1,4 +1,4 @@
-# Session m7-03 trainer guide: Plan work with GitHub Issues and MCP
+# Session M7-03 trainer guide: Plan work with GitHub Issues and MCP
 
 **Duration:** 1 hour
 
@@ -78,7 +78,7 @@ candidate:
 
 Use one parent issue and four child roles: public status mapping, requester status
 view, empty and stale states, and requester-access verification. These roles feed
-Sessions m7-04 and m7-05. A fifth child is optional and stays outside those four
+Sessions M7-04 and M7-05. A fifth child is optional and stays outside those four
 workstreams. Each issue should have:
 
 - a clear outcome;
@@ -113,7 +113,7 @@ approved plan. Demonstrate a correction by adding the verification owner and
 source-decision path to one child issue. Preview the update, get approval, write
 it, and read it back.
 
-Check that the live parent issue links the complete child set. Session m7-04 reads
+Check that the live parent issue links the complete child set. Session M7-04 reads
 those issues directly.
 
 ## Common failure modes

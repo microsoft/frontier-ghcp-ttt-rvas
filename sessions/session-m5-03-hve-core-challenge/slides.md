@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m5-03: HVE Core Challenge'
+footer: 'Session M5-03: HVE Core Challenge'
 ---
 
 <!-- _class: lead -->

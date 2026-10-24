@@ -128,12 +128,12 @@ def validate_metadata(root: Path, session_path: Path) -> list[dict[str, str]]:
         return findings
 
     overview_text = read_text(overview)
-    if not re.search(rf"^# Session {session_id}\b", overview_text, re.MULTILINE):
+    if not re.search(rf"^# Session {session_id.upper()}\b", overview_text, re.MULTILINE):
         findings.append(
             finding(
                 "metadata",
                 overview,
-                f"Overview heading must begin with '# Session {session_id}'.",
+                f"Overview heading must begin with '# Session {session_id.upper()}'.",
             )
         )
 
@@ -213,8 +213,8 @@ def validate_navigation(root: Path, session_path: Path) -> list[dict[str, str]]:
             f"sessions/{session_path.name}/trainer-content/README.md",
         ),
         root / "README.md": (f"sessions/{session_path.name}/",),
-        root / "curriculum-plan.md": (f"Session {session_id}",),
-        root / "tracks/full-mastery.md": (f"| {session_id}",),
+        root / "curriculum-plan.md": (f"Session {session_id.upper()}",),
+        root / "tracks/full-mastery.md": (f"| {session_id.upper()}",),
     }
 
     for path, required_texts in required_navigation.items():

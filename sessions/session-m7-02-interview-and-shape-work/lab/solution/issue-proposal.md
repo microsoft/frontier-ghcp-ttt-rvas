@@ -76,7 +76,7 @@ checked the draft before marking it ready.
 
 **Work item owner:** Portal product owner
 
-## Session m7-03 input
+## Session M7-03 input
 
 - **Decision brief path:** `decision-brief.md`
 - **Proposal status:** Approved with one owned release question

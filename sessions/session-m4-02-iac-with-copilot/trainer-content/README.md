@@ -1,4 +1,4 @@
-# Session m4-02 trainer guide: Terraform as the required path
+# Session M4-02 trainer guide: Terraform as the required path
 
 ## Delivery objective
 

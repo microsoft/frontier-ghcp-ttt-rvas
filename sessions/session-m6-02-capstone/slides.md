@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m6-02: Bounded End-to-End Capstone'
+footer: 'Session M6-02: Bounded End-to-End Capstone'
 ---
 
 <!-- _class: lead -->
 
 # End-to-end capstone for one endpoint
 
-Session m6-02 | 3 hours
+Session M6-02 | 3 hours
 
 ---
 
@@ -45,7 +45,7 @@ configuration, or a new dependency.**
 
 ---
 
-# Session m5-02 is an input
+# Session M5-02 is an input
 
 The accepted specification must separate:
 

@@ -1,9 +1,9 @@
-# Session m7-02 trainer guide: Interview ideas and shape better work
+# Session M7-02 trainer guide: Interview ideas and shape better work
 
 ## Delivery objective
 
 Demonstrate how the supplied `decision-interview` project skill uses the Session
-m7-01 context brief to turn an unclear request into a reviewed decision brief and
+M7-01 context brief to turn an unclear request into a reviewed decision brief and
 issue proposal.
 
 ## One-hour plan
@@ -172,7 +172,7 @@ Ask GitHub Copilot to convert the approved brief into an issue proposal:
 6. Add a definition of done that covers test or review results and approval.
 
 Have learners check every field Copilot drafts against the approved brief.
-Session m7-03 creates the approved issue set through GitHub MCP.
+Session M7-03 creates the approved issue set through GitHub MCP.
 
 ## Reopen an affected branch
 
@@ -193,7 +193,7 @@ unchanged while revising the affected criteria.
 
 ## Lab launch
 
-Learners use the Service Request Portal context from Session m7-01 or
+Learners use the Service Request Portal context from Session M7-01 or
 [`../lab/starter/vague-request.md`](../lab/starter/vague-request.md).
 
 Each learner or pair needs a request owner and delivery reviewer. The request owner

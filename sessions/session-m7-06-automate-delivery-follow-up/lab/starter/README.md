@@ -1,6 +1,6 @@
 # Starter files
 
-Use these files with the live GitHub issues and the reviewed Session m7-05 parent
+Use these files with the live GitHub issues and the reviewed Session M7-05 parent
 result.
 
 | File | Purpose |

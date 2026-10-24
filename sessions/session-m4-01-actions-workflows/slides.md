@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m4-01: GitHub Actions & Workflow Generation'
+footer: 'Session M4-01: GitHub Actions & Workflow Generation'
 ---
 
 <!-- _class: lead -->
 # One application through GitHub Actions
 ## DevOps & infrastructure | Intermediate
 
-Session m4-01 | 3 hours
+Session M4-01 | 3 hours
 
 ---
 # Agenda

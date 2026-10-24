@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m3-05: Agent Skills Ecosystem'
+footer: 'Session M3-05: Agent Skills Ecosystem'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m3-05: Agent Skills Ecosystem'
 
 ## Test selection, non-selection, and visible failure
 
-Session m3-05 | 3 hours
+Session M3-05 | 3 hours
 
 ---
 
@@ -224,7 +224,7 @@ Use separate fresh Interactive sessions:
 
 | Run | Skill |
 | --- | --- |
-| Local | `/decision-interview` from Session m7-02 |
+| Local | `/decision-interview` from Session M7-02 |
 | Community | `/grill-me` with its `grilling` dependency |
 
 Use the same request, owner decisions, and late visibility constraint.

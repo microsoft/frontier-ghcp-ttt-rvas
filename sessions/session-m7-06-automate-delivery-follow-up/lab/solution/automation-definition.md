@@ -3,7 +3,7 @@
 | Field | Definition |
 | --- | --- |
 | Trigger and cadence | Manual for the core lab. No schedule. |
-| Authoritative inputs | The four approved live GitHub issues and the reviewed Session m7-05 parent orchestration result. |
+| Authoritative inputs | The four approved live GitHub issues and the reviewed Session M7-05 parent orchestration result. |
 | Permitted output | One draft stakeholder update for human review. |
 | Prohibited side effects | No publishing, messages, issue edits, label changes, repository writes, or external-system writes. |
 | Reviewer | Delivery lead |

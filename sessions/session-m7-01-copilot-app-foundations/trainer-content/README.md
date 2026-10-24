@@ -1,4 +1,4 @@
-# Session m7-01 trainer guide: Work effectively in the GitHub Copilot app
+# Session M7-01 trainer guide: Work effectively in the GitHub Copilot app
 
 **Duration:** 1 hour  
 **Audience:** Product managers, product owners, business analysts, project managers, and delivery leads
@@ -50,7 +50,7 @@ Labels can move. Teach what each area is for rather than a fixed click path.
 - **Interactive:** use for interviews, source checks, and reviewed drafts.
 - **Plan:** use before a multi-step change so the learner can approve the plan.
 - **Autopilot:** reserve for work with agreed scope and permission to act without review of every action. It is not used
-  for the Session m7-01 write.
+  for the Session M7-01 write.
 
 GitHub documents `@` for files, `#` for issues, and `/` for commands. Check the
 picker in the current app. Run `/context` before the first draft. Use `/compact`

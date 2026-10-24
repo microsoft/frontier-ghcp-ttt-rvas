@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-04: Code Review'
+footer: 'Session M2-04: Code Review'
 ---
 
 <!-- _class: lead -->

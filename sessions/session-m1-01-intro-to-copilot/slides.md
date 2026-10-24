@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m1-01: Introduction to GitHub Copilot'
+footer: 'Session M1-01: Introduction to GitHub Copilot'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m1-01: Introduction to GitHub Copilot'
 
 ## Define, inspect, test, decide
 
-Session m1-01 | 3 hours
+Session M1-01 | 3 hours
 
 ---
 

@@ -1,4 +1,4 @@
-# Session m5-02 trainer guide: Spec Kit
+# Session M5-02 trainer guide: Spec Kit
 
 ## Delivery objective
 

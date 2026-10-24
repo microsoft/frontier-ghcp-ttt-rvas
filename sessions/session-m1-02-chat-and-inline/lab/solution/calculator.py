@@ -1,4 +1,4 @@
-"""Reference calculator for the Session m1-02 Chat lab."""
+"""Reference calculator for the Session M1-02 Chat lab."""
 
 
 class Calculator:

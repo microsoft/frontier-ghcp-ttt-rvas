@@ -1,11 +1,11 @@
-# Session m7-05: Orchestrate agents and workstreams
+# Session M7-05: Orchestrate agents and workstreams
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Live GitHub Copilot app orchestration access; Sessions m7-01 to m7-04 for
-the product route, or Sessions m1-01 to m1-03, m2-01 to m2-04 and m2-05 for the developer route
+**Prerequisites:** Live GitHub Copilot app orchestration access; Sessions M7-01 to M7-04 for
+the product route, or Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 for the developer route
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
@@ -17,7 +17,7 @@ Use parent-led orchestration for one delivery objective. Split four live GitHub
 issues into independent workstreams, then monitor the child sessions and review
 their results.
 
-If you are following the developer route after Session m2-05, review a local
+If you are following the developer route after Session M2-05, review a local
 readiness evaluator, its tests, and a synthetic PR snapshot instead. You do not
 need a GitHub MCP connection or product-track artifacts for that route. Both
 routes use the same two-hour lab.
@@ -40,9 +40,9 @@ In this session, you will:
 5. Return a reviewed parent result backed by the selected route's sources.
 6. Separate local test success from PR readiness in the developer route.
 
-## Session m5-01 distinction
+## Session M5-01 distinction
 
-Session m5-01 uses an optional framework for persistent roles and routing. Session m7-05
+Session M5-01 uses an optional framework for persistent roles and routing. Session M7-05
 uses built-in orchestration for temporary workstreams. The parent reviews every
 result and keeps decision authority.
 

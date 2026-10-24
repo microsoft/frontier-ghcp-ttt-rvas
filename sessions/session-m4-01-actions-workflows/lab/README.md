@@ -1,8 +1,8 @@
-# Session m4-01 lab: One application, four workflow tasks
+# Session M4-01 lab: One application, four workflow tasks
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02
 **Deliverable:** Reviewed workflows, command output, and review notes for `copilot-webapp`
 
 ## Lab overview

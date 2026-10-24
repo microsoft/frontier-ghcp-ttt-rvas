@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m1-03: Prompt Engineering Fundamentals'
+footer: 'Session M1-03: Prompt Engineering Fundamentals'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m1-03: Prompt Engineering Fundamentals'
 
 ## Make the work reviewable before asking for code
 
-Session m1-03 | 3 hours
+Session M1-03 | 3 hours
 
 ---
 

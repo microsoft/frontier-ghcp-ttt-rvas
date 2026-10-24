@@ -38,8 +38,8 @@ claim hands-on fleet completion.
 | --- | --- |
 | `/fleet` | Parallel subagents for suitable parts of one task; available in CLI and app |
 | `/tasks` | Inspect CLI child-task details and stop a task |
-| `/delegate` | Cloud changes and a pull request; taught in Session m3-02 |
-| `/orchestrate` | App built-in skill for steerable sessions; taught in Session m7-05 |
+| `/delegate` | Cloud changes and a pull request; taught in Session M3-02 |
+| `/orchestrate` | App built-in skill for steerable sessions; taught in Session M7-05 |
 
 Finish with `/usage`. Record the observed usage and explain whether this task
 justified parallel work. Never estimate a sequential runtime you did not measure.

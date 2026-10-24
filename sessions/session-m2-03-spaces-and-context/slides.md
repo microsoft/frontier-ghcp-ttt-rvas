@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-03: Context Workflows'
+footer: 'Session M2-03: Context Workflows'
 ---
 
 <!-- _class: lead -->

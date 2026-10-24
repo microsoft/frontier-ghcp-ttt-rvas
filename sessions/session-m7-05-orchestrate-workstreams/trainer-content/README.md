@@ -1,4 +1,4 @@
-# Trainer content: Session m7-05, orchestrate agents and workstreams
+# Trainer content: Session M7-05, orchestrate agents and workstreams
 
 **Duration:** 1 hour
 
@@ -10,9 +10,9 @@ Show learners how to direct four issue-based workstreams through live GitHub
 Copilot orchestration. Use the orchestration surface to track the running work.
 Keep only the decisions needed before work starts in the plan.
 
-For developers after Session m2-05, use the local PR-readiness route instead. It
+For developers after Session M2-05, use the local PR-readiness route instead. It
 reviews implementation behavior, tests, and a supplied snapshot without GitHub
-MCP access. Preserve the product route's live issue workflow and Session m7-06 handoff.
+MCP access. Preserve the product route's live issue workflow and Session M7-06 handoff.
 
 ## One-hour plan
 
@@ -77,7 +77,7 @@ Review how the parent connects findings to live issues. Check that it shows
 rejected claims, names open gaps, and recommends the next follow-up. It must not
 publish or change source systems without approval.
 
-Session m7-06 reads the live issues and the reviewed parent result. There is no manual
+Session M7-06 reads the live issues and the reviewed parent result. There is no manual
 delivery-status record or static handoff.
 
 ## Developer demonstration
@@ -88,7 +88,7 @@ questions from `developer-orchestration-plan.md`.
 
 Before delivery:
 
-1. Copy the supplied reference implementation and six tests from Session m2-05.
+1. Copy the supplied reference implementation and six tests from Session M2-05.
 2. Run the documented unittest command and retain the actual result.
 3. Read `developer-review-brief.md` and `pr-snapshot.json`.
 4. Check that child sessions can read the shared files without editing them or using the network.
@@ -111,9 +111,9 @@ speedup.
 Use `lab/solution/developer-review-reference.md` after the human review. It
 explains the source facts but cannot replace live child results.
 
-## Session m5-01 distinction
+## Session M5-01 distinction
 
-Session m5-01 covers an optional persistent-team framework. Session m7-05 covers
+Session M5-01 covers an optional persistent-team framework. Session M7-05 covers
 temporary built-in orchestration for one objective.
 
 ## Lab handoff
@@ -126,7 +126,7 @@ Learners submit:
 
 For the developer route, require the accepted developer plan and the app's
 reviewed parent result, including the redirection, rejected readiness claim, and
-observed usage. Do not require an issue update or Session m7-06 handoff.
+observed usage. Do not require an issue update or Session M7-06 handoff.
 
 For an Azure Boards delivery, use the
 [trainer supplement](../lab/azure-boards/README.md). GitHub Copilot still performs

@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m5-02: Spec Kit: Specification-Driven Development'
+footer: 'Session M5-02: Spec Kit: Specification-Driven Development'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m5-02: Spec Kit: Specification-Driven Development'
 
 ## Make the work clear before asking an agent to build it
 
-Session m5-02 | 3 hours 30 minutes
+Session M5-02 | 3 hours 30 minutes
 
 ---
 

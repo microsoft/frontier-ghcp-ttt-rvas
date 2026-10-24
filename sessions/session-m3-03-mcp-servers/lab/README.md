@@ -1,10 +1,10 @@
-# Session m3-03 lab: Build and test an MCP server
+# Session M3-03 lab: Build and test an MCP server
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Deliverable:** A three-tool local MCP server with automated tests, Inspector
 output, and recorded good and bad requests
 

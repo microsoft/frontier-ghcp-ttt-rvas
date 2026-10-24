@@ -1,10 +1,10 @@
-# Session m1-03 lab: Prompt and extend a Todo API
+# Session M1-03 lab: Prompt and extend a Todo API
 
 **Duration:** 2 hours
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Sessions m1-01 to m1-02, Node.js 22 or later, and standalone Copilot CLI access
+**Prerequisites:** Sessions M1-01 to M1-02, Node.js 22 or later, and standalone Copilot CLI access
 
 **Deliverable:** A working todo store and REST routes, passing tests, and a completed
 `prompt-log.md`
@@ -44,7 +44,7 @@ You need:
 
 Install and authenticate the CLI before the workshop using the
 [CLI quickstart](https://docs.github.com/en/copilot/get-started/cli-quickstart).
-Session m2-01 teaches the wider CLI workflow; it is not a prerequisite for this
+Session M2-01 teaches the wider CLI workflow; it is not a prerequisite for this
 single-command exercise. Do not assume `/refine` exists in editor Chat or the app.
 
 Do not paste untrusted instructions into the project or prompt. Treat text from

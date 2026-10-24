@@ -1,11 +1,11 @@
-# Session m7-05 lab: Orchestrate agents and workstreams
+# Session M7-05 lab: Orchestrate agents and workstreams
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Live app orchestration access; Sessions m7-01 to m7-04 and GitHub MCP
-read access for the product route, or Sessions m1-01 to m1-03, m2-01 to m2-04 and m2-05 for the developer route
+**Prerequisites:** Live app orchestration access; Sessions M7-01 to M7-04 and GitHub MCP
+read access for the product route, or Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 for the developer route
 
 **Deliverable:** An accepted orchestration plan and a reviewed parent result from
 live child sessions
@@ -24,8 +24,8 @@ answers do not complete the lab.
 
 | Route | Use after | Inputs | Lab time |
 | --- | --- | --- | --- |
-| [Product and delivery](#product-and-delivery-route) | Sessions m7-01 to m7-04 | Live GitHub issues through MCP | 120 min |
-| [Developer](#developer-route-review-pr-readiness) | Sessions m1-01 to m1-03, m2-01 to m2-04 and m2-05 | Local Python code and a synthetic PR snapshot | 120 min |
+| [Product and delivery](#product-and-delivery-route) | Sessions M7-01 to M7-04 | Live GitHub issues through MCP | 120 min |
+| [Developer](#developer-route-review-pr-readiness) | Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 | Local Python code and a synthetic PR snapshot | 120 min |
 
 Complete one route. Developers do not need the product route's GitHub issues,
 canvases, or MCP access.
@@ -38,7 +38,7 @@ The GitHub access requirements below apply to this route only.
 
 You will work with four live GitHub issues: public status mapping, requester
 status, empty and stale states, and requester access. Orchestrate one workstream
-per issue. Session m7-06 will use your reviewed parent result as an authoritative
+per issue. Session M7-06 will use your reviewed parent result as an authoritative
 input.
 
 Select the four required roles from the parent issue's child links. Any optional
@@ -136,7 +136,7 @@ The parent result must:
 Add the reviewed result to the approved parent GitHub issue if the trainer has
 approved that write. Retrieve the issue again to check the update.
 
-Session m7-06 uses the live GitHub issues and this parent result. Do not create a
+Session M7-06 uses the live GitHub issues and this parent result. Do not create a
 separate handoff form.
 
 ## Completion check

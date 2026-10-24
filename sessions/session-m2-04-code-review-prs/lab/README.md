@@ -1,8 +1,8 @@
-# Session m2-04 lab: Code review workflows
+# Session M2-04 lab: Code review workflows
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-03 completed
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-03 completed
 **Deliverable:** A human-reviewed change record, corrected starter project, and conflict review
 
 ---

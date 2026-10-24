@@ -98,5 +98,5 @@ included request.
 ## Next step
 
 - **Next action and owner:** The portal product owner creates the work item.
-- **Open questions carried to Session m7-03:** Service operations confirms the stale
+- **Open questions carried to Session M7-03:** Service operations confirms the stale
   threshold before release approval.

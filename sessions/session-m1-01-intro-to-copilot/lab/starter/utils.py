@@ -1,4 +1,4 @@
-"""Small text utilities for the Session m1-01 inline-suggestions lab."""
+"""Small text utilities for the Session M1-01 inline-suggestions lab."""
 
 
 def normalize_username(value: str) -> str:

@@ -1,4 +1,4 @@
-# Session m1-01 trainer guide: Introduction to GitHub Copilot
+# Session M1-01 trainer guide: Introduction to GitHub Copilot
 
 ## Delivery objective
 

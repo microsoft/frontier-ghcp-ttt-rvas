@@ -1,4 +1,4 @@
-# Session m1-01 lab: Review inline suggestions
+# Session M1-01 lab: Review inline suggestions
 
 **Duration:** 2 hours
 

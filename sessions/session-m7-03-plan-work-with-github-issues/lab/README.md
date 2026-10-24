@@ -1,4 +1,4 @@
-# Session m7-03 lab: Create, check, and correct a GitHub issue plan
+# Session M7-03 lab: Create, check, and correct a GitHub issue plan
 
 **Duration:** 2 hours
 
@@ -62,7 +62,7 @@ connection and its tools.
 
 ## Part 2: Read the source and existing GitHub state (20 minutes)
 
-Attach the approved Session m7-02 decision brief and issue proposal. Use
+Attach the approved Session M7-02 decision brief and issue proposal. Use
 `starter/approved-decision-brief.md` when those artifacts are unavailable.
 
 Ask Copilot to:
@@ -100,7 +100,7 @@ Ask Copilot to propose:
 
 Review the plan before any write.
 
-These four roles feed Sessions m7-04 and m7-05. A fifth issue is optional and stays
+These four roles feed Sessions M7-04 and M7-05. A fifth issue is optional and stays
 outside the four orchestration workstreams.
 
 Reuse or update an existing issue when it owns part of the approved outcome. Link
@@ -165,10 +165,10 @@ not need a separate document.
 reached GitHub.
 
 Link every child issue from the parent. Identify the four required roles and
-label any optional fifth child as outside the Session m7-05 workstreams.
+label any optional fifth child as outside the Session M7-05 workstreams.
 Record dependency order, unresolved ownership, your decisions about existing work,
 and the correction you checked.
-Session m7-04 reads this live issue set through GitHub MCP.
+Session M7-04 reads this live issue set through GitHub MCP.
 
 ## Verification
 

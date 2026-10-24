@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m3-04: Custom Agents & Agent Profiles'
+footer: 'Session M3-04: Custom Agents & Agent Profiles'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m3-04: Custom Agents & Agent Profiles'
 
 ## Fail the weak profile, tighten it, rerun the same test
 
-Session m3-04 | 3 hours
+Session M3-04 | 3 hours
 
 ---
 

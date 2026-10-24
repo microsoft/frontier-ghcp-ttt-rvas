@@ -1,4 +1,4 @@
-# Session m2-07 starter
+# Session M2-07 starter
 
 The starter contains three pieces:
 

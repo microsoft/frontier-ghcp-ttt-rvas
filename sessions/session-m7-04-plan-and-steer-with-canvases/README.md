@@ -1,17 +1,17 @@
-# Session m7-04: Build and use a planning canvas
+# Session M7-04: Build and use a planning canvas
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m7-01 to m7-03, GitHub Copilot app access, GitHub MCP access, and canvas creation access
+**Prerequisites:** Sessions M7-01 to M7-03, GitHub Copilot app access, GitHub MCP access, and canvas creation access
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
 Continue the **Delivery Decision Studio** path. Use the built-in
-`/create-canvas` skill to turn the live Session m7-03 issues into a visible delivery
+`/create-canvas` skill to turn the live Session M7-03 issues into a visible delivery
 workspace. Review the generated extension and remove capabilities you do not need.
 Then change GitHub state and compare it with the canvas. Detect the stale data
 and refresh it.
@@ -37,7 +37,7 @@ In this session, you will:
 6. Detect drift between visible canvas state and a fresh GitHub read.
 7. Refresh and reconcile the canvas.
 8. Record ownership, refresh, recovery, and retirement conditions.
-9. Leave a live canvas linked to the GitHub issues for Session m7-05.
+9. Leave a live canvas linked to the GitHub issues for Session M7-05.
 
 ## Session structure
 
@@ -53,6 +53,6 @@ In this session, you will:
 | Slides | [`slides.md`](slides.md) |
 | Canvas requirements | [`lab/starter/`](lab/starter/) |
 
-## Session m3-01 distinction
+## Session M3-01 distinction
 
-Session m3-01 teaches canvas extension design and implementation. Session m7-04 teaches product and delivery teams to request, review, and operate a canvas through the GitHub Copilot app.
+Session M3-01 teaches canvas extension design and implementation. Session M7-04 teaches product and delivery teams to request, review, and operate a canvas through the GitHub Copilot app.

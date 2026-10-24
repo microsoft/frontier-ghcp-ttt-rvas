@@ -1,10 +1,10 @@
-# Session m2-06: Repair and refactor a broken Python application
+# Session M2-06: Repair and refactor a broken Python application
 
 **Module:** Module 2: Copilot in Practice
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 
 **Duration:** 3 hours (1 hour trainer content + 2 hour lab)
 

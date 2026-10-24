@@ -2,11 +2,11 @@
 description: "Two-hour TypeScript lab for a reliable GitHub Copilot SDK readiness assistant"
 ---
 
-# Session m6-01 lab: Build a traced change readiness assistant
+# Session M6-01 lab: Build a traced change readiness assistant
 
 **Duration:** 120 minutes  
 **Difficulty:** Advanced  
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and the Session m6-01 trainer content
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and the Session M6-01 trainer content
 
 ## Objective
 

@@ -2,13 +2,13 @@
 description: "Overview of the HVE Core RPI, customization, and product delivery challenge"
 ---
 
-# Session m5-03: HVE Core: Evidence-led delivery with RPI
+# Session M5-03: HVE Core: Evidence-led delivery with RPI
 
 **Module:** Specification-Driven Frameworks
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-04, or equivalent Copilot and custom-agent experience
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-04, or equivalent Copilot and custom-agent experience
 
 **Duration:** 4 hours (1 hour trainer content, 3 hours lab)
 

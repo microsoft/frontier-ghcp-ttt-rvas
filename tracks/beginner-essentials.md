@@ -18,18 +18,18 @@ practice writing prompts before using it in the terminal and IDE agent mode.
 - GitHub account with Copilot access
 - VS Code installed
 - Basic Git proficiency
-- Node.js 22 or later and standalone CLI authentication before Session m1-03's `/refine` exercise
-- CLI commands and local sandbox support listed in Session m2-01's preflight
+- Node.js 22 or later and standalone CLI authentication before Session M1-03's `/refine` exercise
+- CLI commands and local sandbox support listed in Session M2-01's preflight
 
 ## Sessions
 
 | Order   | Session ID   | Title                             | Difficulty   | Duration   |
 | ------- | ----------- | --------------------------------- | ------------ | ---------- |
-| 1       | m1-01          | Introduction to GitHub Copilot    | Beginner     | 3 hrs      |
-| 2       | m1-02          | Copilot Chat & Inline Suggestions | Beginner     | 3 hrs      |
-| 3       | m1-03          | Prompt Engineering Fundamentals   | Beginner     | 3 hrs      |
-| 4       | m2-01          | GitHub Copilot in the CLI         | Intermediate | 3 hrs      |
-| 5       | m2-02          | Agent Mode in the IDE             | Intermediate | 3 hrs      |
+| 1       | M1-01          | Introduction to GitHub Copilot    | Beginner     | 3 hrs      |
+| 2       | M1-02          | Copilot Chat & Inline Suggestions | Beginner     | 3 hrs      |
+| 3       | M1-03          | Prompt Engineering Fundamentals   | Beginner     | 3 hrs      |
+| 4       | M2-01          | GitHub Copilot in the CLI         | Intermediate | 3 hrs      |
+| 5       | M2-02          | Agent Mode in the IDE             | Intermediate | 3 hrs      |
 
 ## Recommended delivery schedule
 
@@ -37,16 +37,16 @@ practice writing prompts before using it in the terminal and IDE agent mode.
 
 | Day   | Sessions            | Focus                               |
 | ----- | ------------------- | ----------------------------------- |
-| Day 1 | Sessions m1-01, m1-02, m1-03 | Foundations: setup, Chat, prompting |
-| Day 2 | Sessions m2-01, m2-02     | Surfaces: CLI and agent mode        |
+| Day 1 | Sessions M1-01, M1-02, M1-03 | Foundations: setup, Chat, prompting |
+| Day 2 | Sessions M2-01, M2-02     | Surfaces: CLI and agent mode        |
 
 ### 3-day relaxed
 
 | Day   | Sessions        | Focus                        |
 | ----- | --------------- | ---------------------------- |
-| Day 1 | Sessions m1-01, m1-02 | Setup and Chat workflows     |
-| Day 2 | Session m1-03      | Prompt engineering practice  |
-| Day 3 | Sessions m2-01, m2-02 | CLI and agent mode           |
+| Day 1 | Sessions M1-01, M1-02 | Setup and Chat workflows     |
+| Day 2 | Session M1-03      | Prompt engineering practice  |
+| Day 3 | Sessions M2-01, M2-02 | CLI and agent mode           |
 
 ## Learning outcomes
 

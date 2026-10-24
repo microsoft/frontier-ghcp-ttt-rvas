@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-01: GitHub Copilot in the CLI'
+footer: 'Session M2-01: GitHub Copilot in the CLI'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m2-01: GitHub Copilot in the CLI'
 
 ## Choose the surface that fits the work
 
-Session m2-01 | 3 hours
+Session M2-01 | 3 hours
 
 ---
 
@@ -103,9 +103,9 @@ Do not promise an agent count or speedup. Extra agents can use more credits.
 | Workflow | Surface |
 | --- | --- |
 | `/plan`, `/fleet`, `/review` | CLI and app |
-| `/orchestrate` | App built-in skill; Session m7-05 |
+| `/orchestrate` | App built-in skill; Session M7-05 |
 | `copilot -p` and shell pipelines | CLI |
-| Cloud changes through `/delegate` | Session m3-02 |
+| Cloud changes through `/delegate` | Session M3-02 |
 
 Check the current command picker before delivery.
 

@@ -2,8 +2,9 @@
 
 ## Adding or moving sessions
 
-Use **module-local session IDs**: `m1-01` through `m7-NN`. The number after the
-hyphen starts at `01` in each module. Directories use
+Use **uppercase module and session labels**: `M1` through `M7`, and `M1-01`
+through `M7-NN`. The number after the hyphen starts at `01` in each module.
+Keep catalog IDs, saved-set IDs, and directory names lowercase. Directories use
 `sessions/session-m2-01-copilot-cli/`.
 
 Add a new session after the last ID in its module. Keep catalog entries and

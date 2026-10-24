@@ -3,7 +3,7 @@
 {% macro track_modules(ids) %}
 <div class="ghcp-track-modules">
   {% for module in session_catalog.modules if module.id in ids %}
-  <span class="ghcp-badge ghcp-badge--module" data-module="{{ module.id }}" title="{{ module.title | e }}">m{{ module.id }}</span>
+  <span class="ghcp-badge ghcp-badge--module" data-module="{{ module.id }}" title="{{ module.title | e }}">M{{ module.id }}</span>
   {% endfor %}
 </div>
 {% endmacro %}
@@ -28,7 +28,7 @@
     then use the trainer guides and labs to teach it.
   </p>
   <div class="ghcp-hero__actions">
-    <a class="rvap-action rvap-action--primary" href="{{ session_catalog.sessions[0].url }}">Start with session {{ session_catalog.sessions[0].id }}</a>
+    <a class="rvap-action rvap-action--primary" href="{{ session_catalog.sessions[0].url }}">Start with session {{ session_catalog.sessions[0].id | upper }}</a>
     <a class="rvap-action" href="#learning-tracks">Choose a learning track</a>
   </div>
  </div>
@@ -62,14 +62,14 @@
   <div class="ghcp-sessions">
 
     {% for session in session_catalog.sessions if session.module == module.id %}
-    <a href="{{ session.url | e }}" class="ghcp-session-card" data-number="{{ session.id }}">
+    <a href="{{ session.url | e }}" class="ghcp-session-card" data-number="{{ session.id | upper }}">
       <div class="ghcp-session-card__badges">
         {% include "partials/session-badges.html" %}
         <span class="ghcp-badge ghcp-badge--duration">{% if session.duration_minutes % 60 == 0 %}{{ session.duration_minutes // 60 }}h{% else %}{{ session.duration_minutes }}m{% endif %}</span>
       </div>
       <div class="ghcp-session-card__title">{{ session.title | e }}</div>
       <div class="ghcp-session-card__desc">{{ session.description | e }}</div>
-      <span class="ghcp-session-card__arrow">Open session {{ session.id }}</span>
+      <span class="ghcp-session-card__arrow">Open session {{ session.id | upper }}</span>
     </a>
     {% endfor %}
 
@@ -85,37 +85,37 @@
     <a href="tracks/beginner-essentials/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Copilot Essentials</div>
       {{ track_modules(["1", "2"]) }}
-      <div class="ghcp-track-card__desc">Start with setup and prompting, then practise Copilot in the terminal and IDE. Includes Sessions m1-01 to m1-03 and m2-01 to m2-02.</div>
+      <div class="ghcp-track-card__desc">Start with setup and prompting, then practise Copilot in the terminal and IDE. Includes Sessions M1-01 to M1-03 and M2-01 to M2-02.</div>
     </a>
 
     <a href="tracks/developer-productivity/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Developer Productivity</div>
       {{ track_modules(["1", "2", "7"]) }}
-      <div class="ghcp-track-card__desc">Use Copilot in daily development, including review and app orchestration. Includes Sessions m1-01 to m1-03, m2-01 to m2-05, and m7-05.</div>
+      <div class="ghcp-track-card__desc">Use Copilot in daily development, including review and app orchestration. Includes Sessions M1-01 to M1-03, M2-01 to M2-05, and M7-05.</div>
     </a>
 
     <a href="tracks/agentic-development/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Agentic Development</div>
       {{ track_modules(["1", "2", "3", "7"]) }}
-      <div class="ghcp-track-card__desc">Add canvases, cloud agents, and custom tools to the developer path with Sessions m3-01 to m3-05.</div>
+      <div class="ghcp-track-card__desc">Add canvases, cloud agents, and custom tools to the developer path with Sessions M3-01 to M3-05.</div>
     </a>
 
     <a href="tracks/devops-automation/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">DevOps &amp; Automation</div>
       {{ track_modules(["1", "2", "4"]) }}
-      <div class="ghcp-track-card__desc">Generate workflows, debug pipelines, and work on infrastructure. Includes Sessions m1-01 to m1-03, m2-01 to m2-02, and m4-01 to m4-03.</div>
+      <div class="ghcp-track-card__desc">Generate workflows, debug pipelines, and work on infrastructure. Includes Sessions M1-01 to M1-03, M2-01 to M2-02, and M4-01 to M4-03.</div>
     </a>
 
     <a href="tracks/product-and-delivery-teams/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">Product and Delivery Teams</div>
       {{ track_modules(["7"]) }}
-      <div class="ghcp-track-card__desc">Carry one initiative through planning, agent supervision, and follow-up in the Copilot app. Includes Sessions m7-01 to m7-06.</div>
+      <div class="ghcp-track-card__desc">Carry one initiative through planning, agent supervision, and follow-up in the Copilot app. Includes Sessions M7-01 to M7-06.</div>
     </a>
 
     <a href="tracks/hve-engineering/" class="ghcp-track-card">
       <div class="ghcp-track-card__title">HVE Engineering</div>
       {{ track_modules(["1", "2", "3", "5"]) }}
-      <div class="ghcp-track-card__desc">Learn the Copilot workflows needed for the HVE Core challenge. Includes Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, and m5-03.</div>
+      <div class="ghcp-track-card__desc">Learn the Copilot workflows needed for the HVE Core challenge. Includes Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, and M5-03.</div>
     </a>
 
     <a href="tracks/full-mastery/" class="ghcp-track-card">

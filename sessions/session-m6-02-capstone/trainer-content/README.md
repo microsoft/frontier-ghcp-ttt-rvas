@@ -1,9 +1,9 @@
-# Session m6-02 trainer guide: End-to-end capstone for one endpoint
+# Session M6-02 trainer guide: End-to-end capstone for one endpoint
 
 ## Delivery objective
 
 Guide learners through one reviewed `POST /api/bookmarks` change with GitHub Copilot.
-Keep scope decisions in the accepted GitHub issue and require the Session m5-02
+Keep scope decisions in the accepted GitHub issue and require the Session M5-02
 specification standards. Do not let the exercise expand into a full API,
 deployment, or tool tour.
 
@@ -39,7 +39,7 @@ separate form. They must implement only `POST /api/bookmarks`, use synthetic dat
 and keep the existing dependencies. They must stop if the work requires another
 endpoint, live data, deployment, tool configuration, or a new dependency.
 
-## Apply Session m5-02
+## Apply Session M5-02
 
 Use `lab/starter/bookmark-create-spec.md` as the source for accepted behavior. Ask
 learners to check that each requirement is observable, technology choices stay in

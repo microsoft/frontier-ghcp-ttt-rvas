@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m5-01: AI Team Orchestration & Coordination Patterns'
+footer: 'Session M5-01: AI Team Orchestration & Coordination Patterns'
 ---
 
 <!-- _class: lead -->
@@ -11,9 +11,9 @@ footer: 'Session m5-01: AI Team Orchestration & Coordination Patterns'
 # Brady's Squad: Human-led AI teams
 ## Module 5: Specification-driven frameworks | Advanced
 
-Session m5-01 | 3 hours | Optional
+Session M5-01 | 3 hours | Optional
 
-Prerequisites: Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05
+Prerequisites: Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
 
 ---
 

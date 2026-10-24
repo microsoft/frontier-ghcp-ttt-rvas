@@ -1,8 +1,8 @@
-# Session m3-05: Agent Skills and repository guidance
+# Session M3-05: Agent Skills and repository guidance
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-04
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
@@ -33,7 +33,7 @@ corrections to decide whether a rule belongs in instructions, a skill, or neithe
 You need Node.js 22 or later and the standalone Copilot CLI with project
 skill loading, `/plan`, and `/chronicle improve`. **Stop if required access is unavailable.**
 The deterministic runner checks its own contract; it does not replace live skill
-invocation. Session m7-02 supplies reusable interview assets but is not a prerequisite.
+invocation. Session M7-02 supplies reusable interview assets but is not a prerequisite.
 
 | Resource | Location |
 | --- | --- |

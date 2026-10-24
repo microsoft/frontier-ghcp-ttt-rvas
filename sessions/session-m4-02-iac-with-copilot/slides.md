@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m4-02: Infrastructure as Code with Copilot'
+footer: 'Session M4-02: Infrastructure as Code with Copilot'
 ---
 
 <!-- _class: lead -->
 # Terraform from modules to security gate
 ## DevOps & infrastructure | Advanced
 
-Session m4-02 | 2 hours 30 minutes
+Session M4-02 | 2 hours 30 minutes
 
 ---
 # Agenda

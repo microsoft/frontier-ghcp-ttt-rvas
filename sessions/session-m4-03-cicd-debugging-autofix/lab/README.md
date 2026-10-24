@@ -1,8 +1,8 @@
-# Session m4-03 lab: Evidence-led pipeline debugging
+# Session M4-03 lab: Evidence-led pipeline debugging
 
 **Duration:** 2 hours
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02 and m4-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02 and M4-01
 **Deliverable:** Three investigation records, fixed workflows, and a reviewed security patch
 
 ## Lab overview

@@ -1,10 +1,10 @@
-# Session m2-07 lab: Migrate one order-pricing slice to .NET 10
+# Session M2-07 lab: Migrate one order-pricing slice to .NET 10
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and the Session m2-07 trainer content
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and the Session M2-07 trainer content
 
 **Deliverable:** A working .NET 10 order-pricing endpoint, shared contract-test
 output, architecture notes, an HTTP parity check, and a reviewed migration

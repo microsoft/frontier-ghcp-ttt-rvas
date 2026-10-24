@@ -1,17 +1,17 @@
-# Session m6-02: End-to-end capstone project
+# Session M6-02: End-to-end capstone project
 
 **Module:** Advanced Topics & Capstone (Module 6)
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and m5-02; Session m5-01 is optional
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and M5-02; Session M5-01 is optional
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 
 ## Overview
 
 Implement and review one Bookmark API slice: `POST /api/bookmarks`. Keep the
-accepted GitHub issue as the limit on what you change and apply the Session m5-02
+accepted GitHub issue as the limit on what you change and apply the Session M5-02
 specification standards. Finish with test results and a handoff that another
 engineer can use.
 

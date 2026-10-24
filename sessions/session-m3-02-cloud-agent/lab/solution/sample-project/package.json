@@ -2,7 +2,7 @@
   "name": "copilot-cloud-agent-lab-solution",
   "version": "1.0.0",
   "private": true,
-  "description": "Synthetic task API solution for Session m3-02",
+  "description": "Synthetic task API solution for Session M3-02",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

@@ -1,4 +1,4 @@
-# Session m2-07 trainer guide: Migrate a legacy Java service to modern .NET
+# Session M2-07 trainer guide: Migrate a legacy Java service to modern .NET
 
 ## Delivery objective
 

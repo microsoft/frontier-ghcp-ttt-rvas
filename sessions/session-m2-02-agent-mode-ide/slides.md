@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-02: IDE Agent Workflows'
+footer: 'Session M2-02: IDE Agent Workflows'
 ---
 
 <!-- _class: lead -->

@@ -1,4 +1,4 @@
-# Session m3-05 trainer guide: Skill selection and failure
+# Session M3-05 trainer guide: Skill selection and failure
 
 ## Delivery objective
 
@@ -140,7 +140,7 @@ Open `community-interview/README.md`. The snapshot pins upstream revision
 `49dd158d1076134a641b33efb035946536778336` and contains unchanged, MIT-licensed
 `grill-me` and `grilling` files. Read both; the entry point needs the dependency.
 
-Use the Session m7-02 synthetic request and late constraint. Compare local
+Use the Session M7-02 synthetic request and late constraint. Compare local
 `decision-interview` with `/grill-me` in separate fresh Interactive sessions.
 Use the same owner decisions and inspect actual skill loading. Keep the interview
 out of Plan mode, as the pinned upstream guide recommends.

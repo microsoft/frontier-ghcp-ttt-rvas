@@ -1,8 +1,8 @@
-# Session m2-02: Agent mode in the IDE
+# Session M2-02: Agent mode in the IDE
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01
 **Duration:** 3 hours (1 hr trainer content + 2 hr lab)
 
 ## Overview

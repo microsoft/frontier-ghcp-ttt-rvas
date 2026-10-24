@@ -2,7 +2,7 @@
 description: "Trainer guide for GitHub Copilot app engineering sessions and PR readiness"
 ---
 
-# Session m2-05 trainer guide: GitHub Copilot App for developers
+# Session M2-05 trainer guide: GitHub Copilot App for developers
 
 **Duration:** 60 minutes  
 **Format:** Concept teaching, prepared demo, lab briefing
@@ -167,7 +167,7 @@ revision. If the command is unavailable, stop and resolve access before the lab.
 Explain why this is a second opinion: rubber duck is built in and read-only;
 Copilot automatically chooses a contrasting model when one is available. Do not
 promise a fixed vendor or report a model the client did not show. Manual use
-adds a reasoning pass. Session m2-01 covers CLI `/subagents` and the persistent
+adds a reasoning pass. Session M2-01 covers CLI `/subagents` and the persistent
 Proactive invocation opt-in; do not present that CLI picker as an app command.
 
 Before implementation, fork the plan with app `/fork`, check the fork's actual
@@ -234,9 +234,9 @@ The 120-minute lab allocates 15 minutes to isolation, 55 to plan/fork/repair/rev
 critique, fork result, and code review if discussion runs long; reduce the app
 tour instead.
 
-Session m7-05's developer route continues with live `/orchestrate` work over local
+Session M7-05's developer route continues with live `/orchestrate` work over local
 synthetic files. It does not require the product track's GitHub issues or MCP
-access. Do not start a fleet inside this Session m2-05 lab.
+access. Do not start a fleet inside this Session M2-05 lab.
 
 Checked on **October 15, 2026**:
 

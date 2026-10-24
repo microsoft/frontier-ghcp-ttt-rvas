@@ -3,16 +3,16 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m7-05: Orchestrate Agents and Workstreams'
+footer: 'Session M7-05: Orchestrate Agents and Workstreams'
 ---
 
 <!-- _class: lead -->
 
 # Orchestrate agents and workstreams
 
-## Product and delivery teams, or developers after Session m2-05
+## Product and delivery teams, or developers after Session M2-05
 
-Session m7-05 | 3 hours
+Session M7-05 | 3 hours
 
 ---
 
@@ -45,10 +45,10 @@ Session m7-05 | 3 hours
 
 | Route | Inputs | Result |
 | --- | --- | --- |
-| Product and delivery | Four live GitHub issues | Parent result used by Session m7-06 |
+| Product and delivery | Four live GitHub issues | Parent result used by Session M7-06 |
 | Developer | Local evaluator, tests, synthetic PR snapshot | Separate implementation, coverage, and PR conclusions |
 
-Each route takes 120 minutes. Developers need Session m2-05, not Sessions m7-01 to m7-04.
+Each route takes 120 minutes. Developers need Session M2-05, not Sessions M7-01 to M7-04.
 
 ---
 
@@ -173,7 +173,7 @@ The reviewed result:
 - names gaps and owners;
 - recommends the next follow-up.
 
-Session m7-06 reads this result and the live issues.
+Session M7-06 reads this result and the live issues.
 
 ---
 
@@ -184,9 +184,9 @@ publication, or release statement.
 
 ---
 
-# Session m5-01 is different
+# Session M5-01 is different
 
-| Session m5-01 | Session m7-05 |
+| Session M5-01 | Session M7-05 |
 | --- | --- |
 | Persistent roles and routing | Temporary workstreams |
 | Optional framework setup | Built-in orchestration |

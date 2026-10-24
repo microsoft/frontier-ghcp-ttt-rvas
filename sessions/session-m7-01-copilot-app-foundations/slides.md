@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m7-01: Work Effectively in the GitHub Copilot App'
+footer: 'Session M7-01: Work Effectively in the GitHub Copilot App'
 ---
 
 <!-- _class: lead -->
 
 # Work effectively in the GitHub Copilot app
 
-Session m7-01 | Product and Delivery Teams | Beginner
+Session M7-01 | Product and Delivery Teams | Beginner
 
 ---
 
@@ -91,7 +91,7 @@ Name the files, issues, or repository that should support the answer.
 | Plan | Review a multi-step approach before changes |
 | Autopilot | Work with agreed scope and permission to act without review of every action |
 
-Session m7-01 uses Interactive, then Plan. The learner reviews every write.
+Session M7-01 uses Interactive, then Plan. The learner reviews every write.
 
 ---
 

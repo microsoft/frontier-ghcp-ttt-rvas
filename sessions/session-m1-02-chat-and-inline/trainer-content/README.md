@@ -1,4 +1,4 @@
-# Session m1-02 trainer guide: Copilot Chat & inline suggestions
+# Session M1-02 trainer guide: Copilot Chat & inline suggestions
 
 ## Delivery objective
 
@@ -37,7 +37,7 @@ always sees a particular context source.
 
 **Slides:** *Copilot Chat & Inline Suggestions*, *Agenda*, *Two interaction modes*
 
-Remind learners that Session m1-01 used suggestions at the cursor. Now show how
+Remind learners that Session M1-01 used suggestions at the cursor. Now show how
 to ask for work in a conversation. Both paths still require a task, review, and
 checks.
 

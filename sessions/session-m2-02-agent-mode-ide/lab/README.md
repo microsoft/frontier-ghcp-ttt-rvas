@@ -1,8 +1,8 @@
-# Session m2-02 lab: Agent mode in the IDE
+# Session M2-02 lab: Agent mode in the IDE
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 completed
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 completed
 **Deliverable:** A tested Todo API built and extended with human review at each stage
 
 ## Lab overview
@@ -50,7 +50,7 @@ cd ~/copilot-labs/session-m2-02
 Create `lab-notes.md` with these headings:
 
 ```markdown
-# Session m2-02 Lab Notes
+# Session M2-02 Lab Notes
 
 ## Task contract
 ## Agent plan

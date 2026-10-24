@@ -34,13 +34,13 @@ Module 2: Copilot in Practice ──────────────── (
 Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
     │
     ├── Module 4: DevOps & Infrastructure ──── (Intermediate to Advanced, 3 sessions)
-    │   └── Requires: Module 1 + Sessions m2-01 to m2-02
+    │   └── Requires: Module 1 + Sessions M2-01 to M2-02
     │
     ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
     │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
     │
     └── Module 6: Advanced Topics & Capstone ─────── (Advanced, 2 sessions)
-        └── Session m6-01 is independent; Session m5-02 is required before the capstone
+        └── Session M6-01 is independent; Session M5-02 is required before the capstone
 
 Module 7: Product and Delivery Teams ─────────────── (Beginner to Intermediate, 6 sessions)
     └── Standalone role-based path; no programming prerequisite
@@ -50,13 +50,13 @@ Module 7: Product and Delivery Teams ──────────────�
 
 | Audience                  | Recommended Path                 | Sessions     | Duration   |
 | ------------------------- | -------------------------------- | ------------ | ---------- |
-| **Copilot Beginners**     | Module 1 only                    | m1-01 to m1-03        | 9 hrs      |
-| **Copilot Practitioners** | Modules 1 to 2 + developer orchestration | m1-01 to m1-03, m2-01 to m2-04, m2-05, m7-05, m2-06, m2-07 | 33 hrs |
-| **Agentic Developers**    | Agentic Development | m1-01 to m1-03, m2-01 to m2-05, m7-05, m3-01 to m3-05 | 42 hrs |
-| **DevOps Engineers**      | DevOps & Automation | m1-01 to m1-03, m2-01 to m2-02, m4-01 to m4-03 | 23 hrs 30 min |
-| **SDK Application Developers** | SDK application development | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m6-01 | 39 hrs |
-| **Product and Delivery Teams** | Module 7                    | m7-01 to m7-06        | 18 hrs     |
-| **HVE Practitioners**     | HVE Engineering                  | m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, m5-03 | 31 hrs |
+| **Copilot Beginners**     | Module 1 only                    | M1-01 to M1-03        | 9 hrs      |
+| **Copilot Practitioners** | Modules 1 to 2 + developer orchestration | M1-01 to M1-03, M2-01 to M2-04, M2-05, M7-05, M2-06, M2-07 | 33 hrs |
+| **Agentic Developers**    | Agentic Development | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-05 | 42 hrs |
+| **DevOps Engineers**      | DevOps & Automation | M1-01 to M1-03, M2-01 to M2-02, M4-01 to M4-03 | 23 hrs 30 min |
+| **SDK Application Developers** | SDK application development | M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05, M6-01 | 39 hrs |
+| **Product and Delivery Teams** | Module 7                    | M7-01 to M7-06        | 18 hrs     |
+| **HVE Practitioners**     | HVE Engineering                  | M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, M5-03 | 31 hrs |
 | **Full Track**            | All Modules                      | All available sessions | 88 hrs |
 
 ---
@@ -67,71 +67,71 @@ Module 7: Product and Delivery Teams ──────────────�
 
 | #   | Session                           | Difficulty  | Prerequisites   | Duration   |
 | --- | --------------------------------- | ----------- | --------------- | ---------- |
-| m1-01  | Introduction to GitHub Copilot    | Beginner    | None            | 3 hrs      |
-| m1-02  | Copilot Chat & Inline Suggestions | Beginner    | Session m1-01      | 3 hrs      |
-| m1-03  | Prompt Engineering Fundamentals   | Beginner    | Sessions m1-01 to m1-02  | 3 hrs      |
+| M1-01  | Introduction to GitHub Copilot    | Beginner    | None            | 3 hrs      |
+| M1-02  | Copilot Chat & Inline Suggestions | Beginner    | Session M1-01      | 3 hrs      |
+| M1-03  | Prompt Engineering Fundamentals   | Beginner    | Sessions M1-01 to M1-02  | 3 hrs      |
 
 ### Module 2: Copilot in Practice (Intermediate to Advanced)
 
 | #   | Session                                   | Difficulty   | Prerequisites   | Duration   |
 | --- | ----------------------------------------- | ------------ | --------------- | ---------- |
-| m2-01  | GitHub Copilot in the CLI                 | Intermediate | Sessions m1-01 to m1-03  | 3 hrs      |
-| m2-02  | Agent Mode in the IDE                     | Intermediate | Sessions m1-01 to m1-03, m2-01  | 3 hrs      |
-| m2-03  | Copilot Spaces & Context Management       | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-02  | 3 hrs      |
-| m2-04  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-03  | 3 hrs      |
-| m2-05  | GitHub Copilot App for Developers         | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-04  | 3 hrs      |
-| m2-06  | Repair and Refactor a Broken Python Application | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-04 | 3 hrs |
-| m2-07  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04 | 3 hrs |
+| M2-01  | GitHub Copilot in the CLI                 | Intermediate | Sessions M1-01 to M1-03  | 3 hrs      |
+| M2-02  | Agent Mode in the IDE                     | Intermediate | Sessions M1-01 to M1-03, M2-01  | 3 hrs      |
+| M2-03  | Copilot Spaces & Context Management       | Intermediate | Sessions M1-01 to M1-03, M2-01 to M2-02  | 3 hrs      |
+| M2-04  | Copilot for Code Review & Pull Requests   | Intermediate | Sessions M1-01 to M1-03, M2-01 to M2-03  | 3 hrs      |
+| M2-05  | GitHub Copilot App for Developers         | Intermediate | Sessions M1-01 to M1-03, M2-01 to M2-04  | 3 hrs      |
+| M2-06  | Repair and Refactor a Broken Python Application | Intermediate | Sessions M1-01 to M1-03, M2-01 to M2-04 | 3 hrs |
+| M2-07  | Migrate a Legacy Java Service to Modern .NET | Advanced | Sessions M1-01 to M1-03, M2-01 to M2-04 | 3 hrs |
 
-**App access:** Session m2-05 requires GitHub Copilot app access. The developer
-tracks then use Session m7-05's developer route, which needs `/orchestrate` but does
-not require Sessions m7-01 to m7-04 or GitHub MCP. Check access before scheduling.
+**App access:** Session M2-05 requires GitHub Copilot app access. The developer
+tracks then use Session M7-05's developer route, which needs `/orchestrate` but does
+not require Sessions M7-01 to M7-04 or GitHub MCP. Check access before scheduling.
 
 ### Module 3: Agentic Workflows (Advanced)
 
 | #   | Session                               | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------- | ----------- | ------------------ | ---------- |
-| m3-01  | Copilot App, Plugins & Canvas Extensions | Advanced  | Sessions m1-01 to m1-03, m2-01 to m2-04     | 3 hrs      |
-| m3-02  | Copilot Cloud Agent                   | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04     | 3 hrs      |
-| m3-03  | MCP Servers & Custom Tool Integration | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04     | 3 hrs      |
-| m3-04  | Custom Agents & Agent Profiles        | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 | 3 hrs      |
-| m3-05  | Agent Skills & the Copilot Ecosystem  | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-04 | 3 hrs      |
+| M3-01  | Copilot App, Plugins & Canvas Extensions | Advanced  | Sessions M1-01 to M1-03, M2-01 to M2-04     | 3 hrs      |
+| M3-02  | Copilot Cloud Agent                   | Advanced    | Sessions M1-01 to M1-03, M2-01 to M2-04     | 3 hrs      |
+| M3-03  | MCP Servers & Custom Tool Integration | Advanced    | Sessions M1-01 to M1-03, M2-01 to M2-04     | 3 hrs      |
+| M3-04  | Custom Agents & Agent Profiles        | Advanced    | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03 | 3 hrs      |
+| M3-05  | Agent Skills & the Copilot Ecosystem  | Advanced    | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-04 | 3 hrs      |
 
 ### Module 4: DevOps & Infrastructure with Copilot (Intermediate to Advanced)
 
 | #   | Session                                    | Difficulty   | Prerequisites      | Duration   |
 | --- | ------------------------------------------ | ------------ | ------------------ | ---------- |
-| m4-01  | GitHub Actions & Workflow Generation       | Intermediate | Sessions m1-01 to m1-03, m2-01 to m2-02     | 3 hrs      |
-| m4-02  | Infrastructure as Code with Copilot        | Advanced     | Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01 | 2 hrs 30 min |
-| m4-03  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01 | 3 hrs      |
+| M4-01  | GitHub Actions & Workflow Generation       | Intermediate | Sessions M1-01 to M1-03, M2-01 to M2-02     | 3 hrs      |
+| M4-02  | Infrastructure as Code with Copilot        | Advanced     | Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01 | 2 hrs 30 min |
+| M4-03  | CI/CD Pipeline Debugging & Agentic Remediation | Advanced | Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01 | 3 hrs      |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| m5-01  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs   |
-| m5-02  | Spec Kit: Specification-Driven Development | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs 30 min |
-| m5-03  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04 | 4 hrs |
+| M5-01  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 | 3 hrs   |
+| M5-02  | Spec Kit: Specification-Driven Development | Advanced | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 | 3 hrs 30 min |
+| M5-03  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
 
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
-| m6-01  | Build Reliable Agent Applications with the GitHub Copilot SDK | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs |
-| m6-02  | End-to-End Capstone Project                 | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and m5-02 | 3 hrs |
+| M6-01  | Build Reliable Agent Applications with the GitHub Copilot SDK | Advanced | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 | 3 hrs |
+| M6-02  | End-to-End Capstone Project                 | Advanced    | Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and M5-02 | 3 hrs |
 
 ### Module 7: Product and Delivery Teams (Beginner to Intermediate)
 
 | # | Session | Difficulty | Prerequisites | Duration |
 | --- | --- | --- | --- | --- |
-| m7-01 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
-| m7-02 | Interview Ideas and Shape Better Work | Beginner | Session m7-01 | 3 hrs |
-| m7-03 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions m7-01 to m7-02; GitHub MCP write access | 3 hrs |
-| m7-04 | Build and Use a Planning Canvas | Intermediate | Sessions m7-01 to m7-03; canvas creation access | 3 hrs |
-| m7-05 | Orchestrate Agents and Workstreams | Intermediate | Product route: Sessions m7-01 to m7-04; developer route: Session m2-05; app orchestration access | 3 hrs |
-| m7-06 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions m7-01 to m7-05; Automations and GitHub MCP access | 3 hrs |
+| M7-01 | Work Effectively in the GitHub Copilot App | Beginner | GitHub Copilot app access | 3 hrs |
+| M7-02 | Interview Ideas and Shape Better Work | Beginner | Session M7-01 | 3 hrs |
+| M7-03 | Plan Work with GitHub Issues and MCP | Intermediate | Sessions M7-01 to M7-02; GitHub MCP write access | 3 hrs |
+| M7-04 | Build and Use a Planning Canvas | Intermediate | Sessions M7-01 to M7-03; canvas creation access | 3 hrs |
+| M7-05 | Orchestrate Agents and Workstreams | Intermediate | Product route: Sessions M7-01 to M7-04; developer route: Session M2-05; app orchestration access | 3 hrs |
+| M7-06 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | Sessions M7-01 to M7-05; Automations and GitHub MCP access | 3 hrs |
 
-**Access requirement:** GitHub Copilot access is required for Sessions m7-01 to m7-06.
+**Access requirement:** GitHub Copilot access is required for Sessions M7-01 to M7-06.
 Learners without access should not start Module 7. Stop and reschedule their
 training after access is available.
 
@@ -145,7 +145,7 @@ GitHub issues and does not branch into an alternate platform exercise.
 
 ---
 
-### Session m1-01: Introduction to GitHub Copilot
+### Session M1-01: Introduction to GitHub Copilot
 
 **Difficulty:** Beginner
 **Prerequisites:** None
@@ -187,10 +187,10 @@ Trainees then install and configure Copilot and use it to write their first code
 
 ---
 
-### Session m1-02: Copilot Chat & Inline Suggestions
+### Session M1-02: Copilot Chat & Inline Suggestions
 
 **Difficulty:** Beginner
-**Prerequisites:** Session m1-01
+**Prerequisites:** Session M1-01
 **Module:** Copilot Fundamentals
 
 **Description:**
@@ -226,10 +226,10 @@ They also learn how to choose a model.
 
 ---
 
-### Session m1-03: Prompt Engineering Fundamentals
+### Session M1-03: Prompt Engineering Fundamentals
 
 **Difficulty:** Beginner
-**Prerequisites:** Sessions m1-01 to m1-02
+**Prerequisites:** Sessions M1-01 to M1-02
 **Module:** Copilot Fundamentals
 
 **Description:**
@@ -266,15 +266,15 @@ the same methods.
 - Create reusable prompt templates for repeated tasks
 - Distinguish prompt rewriting from task execution and test results
 
-**Access:** Session m1-03 needs standalone CLI `/refine` and Node.js 22 or later.
-Prepare it before delivery; Session m2-01 is not a prerequisite.
+**Access:** Session M1-03 needs standalone CLI `/refine` and Node.js 22 or later.
+Prepare it before delivery; Session M2-01 is not a prerequisite.
 
 ---
 
-### Session m2-01: GitHub Copilot in the CLI
+### Session M2-01: GitHub Copilot in the CLI
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03
+**Prerequisites:** Sessions M1-01 to M1-03
 **Module:** Copilot in Practice
 
 **Description:**
@@ -333,10 +333,10 @@ analysis. They check generated work against local files and tests before accepti
 
 ---
 
-### Session m2-02: Agent Mode in the IDE
+### Session M2-02: Agent Mode in the IDE
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01
 **Module:** Copilot in Practice
 
 **Description:**
@@ -374,10 +374,10 @@ Explain how it connects to MCP servers. Later sessions assume this knowledge.
 
 ---
 
-### Session m2-03: Copilot Spaces & Context Management
+### Session M2-03: Copilot Spaces & Context Management
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02
 **Module:** Copilot in Practice
 
 **Description:**
@@ -421,10 +421,10 @@ settings fit.
 
 ---
 
-### Session m2-04: Copilot for Code Review & Pull Requests
+### Session M2-04: Copilot for Code Review & Pull Requests
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-03
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-03
 **Module:** Copilot in Practice
 
 **Description:**
@@ -469,10 +469,10 @@ A person still decides whether to merge.
 
 ---
 
-### Session m2-05: GitHub Copilot App for Developers
+### Session M2-05: GitHub Copilot App for Developers
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Module:** Copilot in Practice
 **Duration:** 3 hours
 
@@ -517,14 +517,14 @@ review the diff and record whether the change is ready for a pull request.
 - Run and review a manual read-only automation
 
 > **App access is required.** Stop if a required command is unavailable.
-> Developer tracks continue with Session m7-05's developer orchestration route.
+> Developer tracks continue with Session M7-05's developer orchestration route.
 
 ---
 
-### Session m2-06: Repair and Refactor a Broken Python Application
+### Session M2-06: Repair and Refactor a Broken Python Application
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Module:** Copilot in Practice
 **Duration:** 3 hours
 
@@ -553,10 +553,10 @@ that refactoring preserves it.
 
 ---
 
-### Session m2-07: Migrate a Legacy Java Service to Modern .NET
+### Session M2-07: Migrate a Legacy Java Service to Modern .NET
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Module:** Copilot in Practice
 **Duration:** 3 hours
 
@@ -581,10 +581,10 @@ Establish how the legacy Java service must behave before migrating it to modern
 
 ---
 
-### Session m3-01: Copilot App, Plugins & Canvas Extensions
+### Session M3-01: Copilot App, Plugins & Canvas Extensions
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -622,10 +622,10 @@ its state, actions, data boundary, ownership, and failure handling with them.
 
 ---
 
-### Session m3-02: Copilot Cloud Agent
+### Session M3-02: Copilot Cloud Agent
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -662,10 +662,10 @@ Check the diff and test results before giving feedback or making a merge decisio
 
 ---
 
-### Session m3-03: MCP Servers & Custom Tool Integration
+### Session M3-03: MCP Servers & Custom Tool Integration
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -706,10 +706,10 @@ requirements against current documentation and customer policy.
 
 ---
 
-### Session m3-04: Custom Agents & Agent Profiles
+### Session M3-04: Custom Agents & Agent Profiles
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-03
 **Module:** Agentic Workflows
 
 **Description:**
@@ -748,15 +748,15 @@ to invoke it by name in Copilot Chat, cloud agent, and CLI.
 - Distribute agents at the organization level
 - Distinguish language-server startup from a checked symbol lookup
 
-**Access:** Session m3-04 requires the standalone CLI and working JavaScript LSP
+**Access:** Session M3-04 requires the standalone CLI and working JavaScript LSP
 server. Static tests or manual traces do not replace the live run.
 
 ---
 
-### Session m3-05: Agent Skills & the Copilot Ecosystem
+### Session M3-05: Agent Skills & the Copilot Ecosystem
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-04
 **Module:** Agentic Workflows
 
 **Description:**
@@ -802,10 +802,10 @@ decisions to `/plan`.
 
 ---
 
-### Session m4-01: GitHub Actions & Workflow Generation
+### Session M4-01: GitHub Actions & Workflow Generation
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
@@ -843,10 +843,10 @@ repair, and custom-action checks. The required lab runs locally and does not dep
 
 ---
 
-### Session m4-02: Infrastructure as Code with Copilot
+### Session M4-02: Infrastructure as Code with Copilot
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
 **Module:** DevOps & Infrastructure with Copilot
 **Duration:** 2 hours 30 minutes
 
@@ -884,10 +884,10 @@ Keep Bicep as a short trainer comparison and optional extension.
 
 ---
 
-### Session m4-03: CI/CD Pipeline Debugging & Agentic Remediation
+### Session M4-03: CI/CD Pipeline Debugging & Agentic Remediation
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
@@ -926,10 +926,10 @@ access and the organization's review controls.
 
 ---
 
-### Session m5-01: Brady's Squad: Human-Led AI Teams
+### Session M5-01: Brady's Squad: Human-Led AI Teams
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
 **Module:** Specification-Driven Frameworks
 
 **Description:**
@@ -970,10 +970,10 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 
 ---
 
-### Session m5-02: Spec Kit: Specification-Driven Development
+### Session M5-02: Spec Kit: Specification-Driven Development
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05
 **Module:** Specification-Driven Frameworks
 **Duration:** 3 hours 30 minutes
 
@@ -1011,10 +1011,10 @@ Uses Spec Kit to implement one feature from a source request. Trainees convert t
 
 ---
 
-### Session m5-03: HVE Core: Evidence-Led Delivery with RPI
+### Session M5-03: HVE Core: Evidence-Led Delivery with RPI
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-03 to m3-04, or equivalent experience
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-03 to M3-04, or equivalent experience
 **Module:** Specification-Driven Frameworks
 **Duration:** 4 hours
 
@@ -1051,10 +1051,10 @@ Research, Plan, Implement, Review, and Follow-up. A person makes the delivery de
 
 ---
 
-### Session m6-01: Build Reliable Agent Applications with the GitHub Copilot SDK
+### Session M6-01: Build Reliable Agent Applications with the GitHub Copilot SDK
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -1091,10 +1091,10 @@ Learners build a TypeScript command-line application on the GitHub Copilot SDK. 
 
 ---
 
-### Session m6-02: End-to-End Capstone Project
+### Session M6-02: End-to-End Capstone Project
 
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and m5-02; Session m5-01 is optional
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and M5-02; Session M5-01 is optional
 **Module:** Advanced Topics & Capstone
 
 **Description:**
@@ -1111,7 +1111,7 @@ In this two-hour capstone, trainees use a governed specification to complete one
 **Lab Outline (2 hours):**
 
 - Use the provided feature brief and governance constraints
-- Select or consume a prepared specification artifact from Session m5-02
+- Select or consume a prepared specification artifact from Session M5-02
 - Create one implementation-ready issue and complete the scoped agentic task
 - Review the change against acceptance criteria and policy constraints
 - Record the handover decision and retrospective
@@ -1119,7 +1119,7 @@ In this two-hour capstone, trainees use a governed specification to complete one
 
 ---
 
-### Session m7-01: Work Effectively in the GitHub Copilot App
+### Session M7-01: Work Effectively in the GitHub Copilot App
 
 **Difficulty:** Beginner
 **Prerequisites:** GitHub Copilot app access
@@ -1146,10 +1146,10 @@ tools they can use, then create and review a working brief.
 
 ---
 
-### Session m7-02: Interview Ideas and Shape Better Work
+### Session M7-02: Interview Ideas and Shape Better Work
 
 **Difficulty:** Beginner
-**Prerequisites:** Session m7-01
+**Prerequisites:** Session M7-01
 **Module:** Product and Delivery Teams
 
 **Description:**
@@ -1175,10 +1175,10 @@ issue proposal.
 
 ---
 
-### Session m7-03: Plan Work with GitHub Issues and MCP
+### Session M7-03: Plan Work with GitHub Issues and MCP
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m7-01 to m7-02; GitHub MCP write access
+**Prerequisites:** Sessions M7-01 to M7-02; GitHub MCP write access
 **Module:** Product and Delivery Teams
 
 **Description:**
@@ -1206,15 +1206,15 @@ back to check the result.
 
 ---
 
-### Session m7-04: Build and Use a Planning Canvas
+### Session M7-04: Build and Use a Planning Canvas
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m7-01 to m7-03; canvas creation access
+**Prerequisites:** Sessions M7-01 to M7-03; canvas creation access
 **Module:** Product and Delivery Teams
 
 **Description:**
 Create a planning canvas from a plain-language request and load the issues from
-Session m7-03. Learners check that the canvas shows the same planning state as
+Session M7-03. Learners check that the canvas shows the same planning state as
 GitHub and Copilot.
 
 **Trainer Content Outline (1 hour):**
@@ -1236,17 +1236,17 @@ GitHub and Copilot.
 
 ---
 
-### Session m7-05: Orchestrate Agents and Workstreams
+### Session M7-05: Orchestrate Agents and Workstreams
 
 **Difficulty:** Intermediate
-**Prerequisites:** Product route: Sessions m7-01 to m7-04; developer route: Session m2-05.
+**Prerequisites:** Product route: Sessions M7-01 to M7-04; developer route: Session M2-05.
 Both routes require live app orchestration access.
 **Module:** Product and Delivery Teams
 
 **Description:**
 Learners start independent child sessions, intervene when needed, and check the
 parent's result. The product route uses live issues. The developer route uses
-local Session m2-05 code and a synthetic PR snapshot, without GitHub MCP.
+local Session M2-05 code and a synthetic PR snapshot, without GitHub MCP.
 
 **Trainer Content Outline (1 hour):**
 
@@ -1270,14 +1270,14 @@ local Session m2-05 code and a synthetic PR snapshot, without GitHub MCP.
 
 ---
 
-### Session m7-06: Automate Delivery Follow-up and Connect Work Systems
+### Session M7-06: Automate Delivery Follow-up and Connect Work Systems
 
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m7-01 to m7-05; Automations and GitHub MCP access
+**Prerequisites:** Sessions M7-01 to M7-05; Automations and GitHub MCP access
 **Module:** Product and Delivery Teams
 
 **Description:**
-Learners turn the Session m7-05 parent result and live issues into a draft-only
+Learners turn the Session M7-05 parent result and live issues into a draft-only
 GitHub Copilot Automation. They review two runs and decide whether GitHub or Azure
 Boards remains authoritative.
 
@@ -1292,7 +1292,7 @@ Boards remains authoritative.
 
 - Create the concise automation definition
 - Configure a manual, draft-only Automation
-- Run it against live issues and the Session m7-05 parent result
+- Run it against live issues and the Session M7-05 parent result
 - Apply one approved issue change and run the same Automation again
 - Compare both runs on the platform and record keep, revise, disable, or pause
 - Produce a stakeholder update
@@ -1309,15 +1309,15 @@ Boards remains authoritative.
 - **Group size:** 8 to 15 trainees per cohort for optimal lab support
 - **Module independence:**
   - Modules 1 to 3 form the technical core
-  - Module 4 (DevOps) can be delivered independently after Module 1 and Sessions m2-01 to m2-02
-  - Session m5-01 is optional; it is not a prerequisite for Session m5-02 or Session m6-02
-  - Session m6-01 is an independent SDK specialization and is not a prerequisite for Session m6-02
-  - Developer tracks require Session m2-05 and Session m7-05's developer route.
+  - Module 4 (DevOps) can be delivered independently after Module 1 and Sessions M2-01 to M2-02
+  - Session M5-01 is optional; it is not a prerequisite for Session M5-02 or Session M6-02
+  - Session M6-01 is an independent SDK specialization and is not a prerequisite for Session M6-02
+  - Developer tracks require Session M2-05 and Session M7-05's developer route.
     Check their app commands before scheduling
-  - Prepare standalone CLI access before Session m1-03, JavaScript LSP before
-    Session m3-04, and Python LSP before Session m2-06
-  - Session m5-03 is the final session in the HVE Engineering track and should run
-    after Sessions m3-03 to m3-04
+  - Prepare standalone CLI access before Session M1-03, JavaScript LSP before
+    Session M3-04, and Python LSP before Session M2-06
+  - Session M5-03 is the final session in the HVE Engineering track and should run
+    after Sessions M3-03 to M3-04
   - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
 - **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.

@@ -579,7 +579,7 @@ Hover adds a light fill and RVAP Blue border. The action label uses Microsoft
 Blue on white, then navy on hover. Track cards start on `surface` and change to
 `navy-light` on hover/focus. Duration labels remain neutral. Difficulty and module
 labels use the category palette above; `badge-module` is the M1 default.
-The tracks comparison and home-page track cards show `m1`–`m7` badges for
+The tracks comparison and home-page track cards show `M1`–`M7` badges for
 the modules each track includes. They use the same module colors as the map.
 The hero map and home cards share module classes with the builder catalog,
 selected composer, and shared reader. Difficulty classes are shared wherever

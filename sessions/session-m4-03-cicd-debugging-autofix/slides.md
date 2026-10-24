@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m4-03: CI/CD Debugging & Agentic Remediation'
+footer: 'Session M4-03: CI/CD Debugging & Agentic Remediation'
 ---
 
 <!-- _class: lead -->
 # Evidence before repair
 ## DevOps & infrastructure | Advanced
 
-Session m4-03 | 3 hours
+Session M4-03 | 3 hours
 
 ---
 # Agenda

@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m1-02: Copilot Chat & Inline Suggestions'
+footer: 'Session M1-02: Copilot Chat & Inline Suggestions'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m1-02: Copilot Chat & Inline Suggestions'
 
 ## Use the right context, then check the change
 
-Session m1-02 | 3 hours
+Session M1-02 | 3 hours
 
 ---
 

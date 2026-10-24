@@ -1,4 +1,4 @@
-"""Reference implementation for the Session m1-01 inline-suggestions lab."""
+"""Reference implementation for the Session M1-01 inline-suggestions lab."""
 
 import re
 

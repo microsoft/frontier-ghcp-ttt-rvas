@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session mN-NN. [Session Title]'
+footer: 'Session MN-NN. [Session Title]'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session mN-NN. [Session Title]'
 
 ## [The practical lesson learners need before the lab]
 
-Session mN-NN | [Module] | [Difficulty]
+Session MN-NN | [Module] | [Difficulty]
 
 ---
 

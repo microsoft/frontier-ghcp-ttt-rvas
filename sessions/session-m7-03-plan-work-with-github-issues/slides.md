@@ -3,22 +3,22 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m7-03: Plan Work with GitHub Issues and MCP'
+footer: 'Session M7-03: Plan Work with GitHub Issues and MCP'
 ---
 
 <!-- _class: lead -->
 
 # Plan work with GitHub Issues and MCP
 
-Session m7-03 | Product and Delivery Teams | Intermediate
+Session M7-03 | Product and Delivery Teams | Intermediate
 
 ---
 
 # Turn the brief into GitHub issues
 
-Session m7-02 produced an approved decision brief.
+Session M7-02 produced an approved decision brief.
 
-Session m7-03 turns it into real GitHub issues.
+Session M7-03 turns it into real GitHub issues.
 
 This is the third step in **Delivery Decision Studio**.
 
@@ -160,8 +160,8 @@ After the write:
 - Temporary reviewed issue preview
 - Authoritative live issue set
 - One parent issue
-- Four required child roles; an optional fifth stays outside Session m7-05
+- Four required child roles; an optional fifth stays outside Session M7-05
 - Fresh-read verification
-- Parent-to-child links that Session m7-04 reads directly
+- Parent-to-child links that Session M7-04 reads directly
 
 **Stop if tool review or verification is unavailable.**

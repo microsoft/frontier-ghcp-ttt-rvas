@@ -1,10 +1,10 @@
-# Session m1-03: Prompt engineering fundamentals
+# Session M1-03: Prompt engineering fundamentals
 
 **Module:** Copilot Fundamentals
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Sessions m1-01 to m1-02
+**Prerequisites:** Sessions M1-01 to M1-02
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 
@@ -30,7 +30,7 @@ project tests and API checks.
 
 Learners need GitHub Copilot Chat, inline suggestions, the standalone CLI with
 `/refine`, Node.js 22 or later, and the declared npm dependency. Set up the CLI
-before delivery; Session m2-01 is not a prerequisite. If a requirement is
+before delivery; Session M2-01 is not a prerequisite. If a requirement is
 unavailable, stop the lab.
 
 ## Materials

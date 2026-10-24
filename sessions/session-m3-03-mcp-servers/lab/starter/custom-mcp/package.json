@@ -1,7 +1,7 @@
 {
   "name": "weather-mcp-server",
   "version": "1.0.0",
-  "description": "Staged MCP weather server for the Session m3-03 lab",
+  "description": "Staged MCP weather server for the Session M3-03 lab",
   "private": true,
   "main": "src/index.js",
   "scripts": {

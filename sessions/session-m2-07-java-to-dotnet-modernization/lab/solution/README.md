@@ -1,4 +1,4 @@
-# Session m2-07 reference solution
+# Session M2-07 reference solution
 
 The reference solution implements the .NET 10 vertical slice and runs a
 package-free contract test executable against

@@ -39,6 +39,8 @@ def assert_category_colors(page):
     assert len(set(modules.values())) == len(modules)
     assert len(set(levels.values())) == len(levels)
     for badge in badges:
+        if badge.get("module"):
+            assert badge["text"] == f"M{badge['module']}", badge
         assert badge["background"].startswith("rgb("), badge
         assert contrast(badge["color"], badge["background"]) >= 4.5, badge
 
@@ -64,7 +66,8 @@ def run():
             page.locator('[data-session-id="m3-03"] input').check()
             page.locator("[data-set-name]").fill("Team A & B")
             page.locator("[data-set-intro]").fill("Prepare your environment.\nBring your own repository.")
-            page.get_by_role("button", name="Move session m3-03 up").click()
+            page.get_by_role("button", name="Move session M3-03 up").click()
+            expect(page.locator("[data-set-status]")).to_have_text("Moved session M3-03 to position 2.")
             selected = page.locator("[data-set-selected] > li")
             assert selected.evaluate_all("nodes => nodes.map(n => n.dataset.selectedId)") == ["m1-01", "m3-03", "m2-01"]
             page.locator("[data-set-search]").fill("no matching session here")
@@ -126,7 +129,7 @@ def run():
             expect(page.locator("[data-set-title]")).to_have_text("Updated set")
             expect(page.locator("[data-set-delivery] > li")).to_have_count(3)
             assert [item.split(" / ")[0] for item in page.locator(".set-delivery .set-session-meta").all_text_contents()] == [
-                "Session m1-01", "Session m3-03", "Session m2-01"
+                "Session M1-01", "Session M3-03", "Session M2-01"
             ]
             expect(page.locator("[data-set-description]")).to_contain_text("Bring your own repository.")
             expect(page.locator(".set-materials a")).to_have_count(9)
@@ -142,7 +145,7 @@ def run():
             page.wait_for_url("**/build-set/?**")
             expect(page.locator("[data-set-name]")).to_have_value("Updated set")
             expect(page.locator("[data-set-selected] > li")).to_have_count(3)
-            page.get_by_role("button", name="Remove session m3-03").click()
+            page.get_by_role("button", name="Remove session M3-03").click()
             expect(page.locator("[data-set-selected] > li")).to_have_count(2)
             page.locator("[data-set-clear]").click()
             expect(page.locator("[data-set-create]")).to_be_disabled()

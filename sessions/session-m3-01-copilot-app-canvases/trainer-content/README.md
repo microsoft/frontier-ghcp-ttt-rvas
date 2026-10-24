@@ -1,4 +1,4 @@
-# Session m3-01: Trainer guide
+# Session M3-01: Trainer guide
 
 **Teaching time:** 60 minutes
 

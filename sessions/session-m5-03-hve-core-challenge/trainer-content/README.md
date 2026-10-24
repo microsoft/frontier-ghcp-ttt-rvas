@@ -2,7 +2,7 @@
 description: "Trainer guide for HVE Core RPI, customization, and product delivery"
 ---
 
-# Session m5-03 trainer guide: HVE from product intent to reviewed code
+# Session M5-03 trainer guide: HVE from product intent to reviewed code
 
 ## Delivery objective
 

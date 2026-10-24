@@ -1,16 +1,16 @@
-# Session m7-06: Automate delivery follow-up and connect work systems
+# Session M7-06: Automate delivery follow-up and connect work systems
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m7-01 to m7-05, GitHub Copilot app Automations access, and GitHub MCP access
+**Prerequisites:** Sessions M7-01 to M7-05, GitHub Copilot app Automations access, and GitHub MCP access
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-Build one draft-only automation from the reviewed Session m7-05 result. It reads
+Build one draft-only automation from the reviewed Session M7-05 result. It reads
 live GitHub issues and the parent orchestration result, then drafts a stakeholder
 update for human review.
 
@@ -40,7 +40,7 @@ disabled unless the trainer approves it.
 
 ## Boundaries
 
-- The automation may read only approved GitHub issues and the Session m7-05 parent result.
+- The automation may read only approved GitHub issues and the Session M7-05 parent result.
 - Its only permitted output is a draft stakeholder update.
 - It may not publish, message people, edit issues, change labels, or write to external systems.
 - A person reviews every draft.
@@ -48,6 +48,6 @@ disabled unless the trainer approves it.
 
 ## Optional Azure Boards route
 
-When Azure Boards is authoritative, use approved Boards items and the Session m7-05
+When Azure Boards is authoritative, use approved Boards items and the Session M7-05
 parent result as inputs. Keep the output draft only. Do not maintain competing
 status fields in GitHub and Azure Boards.

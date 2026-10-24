@@ -70,4 +70,4 @@ State the observable change for the user or service.
 ## Next step
 
 - **Next action and owner:**
-- **Open questions carried to Session m7-03:**
+- **Open questions carried to Session M7-03:**

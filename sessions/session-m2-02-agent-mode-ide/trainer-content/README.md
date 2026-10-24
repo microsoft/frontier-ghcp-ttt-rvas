@@ -1,4 +1,4 @@
-# Session m2-02: IDE agent workflows
+# Session M2-02: IDE agent workflows
 
 ## Before teaching
 

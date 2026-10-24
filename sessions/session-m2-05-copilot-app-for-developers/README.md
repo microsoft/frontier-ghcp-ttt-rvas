@@ -2,13 +2,13 @@
 description: "Use the GitHub Copilot app for isolated, evidence-backed engineering work"
 ---
 
-# Session m2-05: GitHub Copilot App for developers
+# Session M2-05: GitHub Copilot App for developers
 
 **Module:** Module 2: Copilot in Practice
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 
 **Duration:** 180 minutes (1 hour trainer content, 2 hour lab)
 
@@ -52,8 +52,8 @@ If app access is unavailable, learners must not improvise with customer reposito
 or paste protected code into another service. Stop the lab if app access or a
 required command is unavailable.
 
-After this session, use the [Session m7-05 developer route](../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
-to practise supervising independent child sessions. Sessions m7-01 to m7-04 are not
+After this session, use the [Session M7-05 developer route](../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
+to practise supervising independent child sessions. Sessions M7-01 to M7-04 are not
 prerequisites for that route.
 
 ## Session structure

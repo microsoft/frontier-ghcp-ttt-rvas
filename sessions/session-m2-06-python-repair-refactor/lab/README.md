@@ -1,10 +1,10 @@
-# Session m2-06 lab: Repair and refactor a broken Python application
+# Session M2-06 lab: Repair and refactor a broken Python application
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, Python 3.11 or later, standalone Copilot CLI,
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, Python 3.11 or later, standalone Copilot CLI,
 and a working Python language server
 
 ## Objective
@@ -50,7 +50,7 @@ git init
 Use a fresh destination if that folder exists. Read `.github/lsp.json` before
 opening the copy in the CLI. Before delivery, prepare `pyright-langserver` using
 the [LSP setup guide](../../session-m3-04-custom-agents/lab/lsp-setup.md#python-session-m2-06).
-Session m3-04 is not a prerequisite; the setup commands are self-contained.
+Session M3-04 is not a prerequisite; the setup commands are self-contained.
 Check `/plan`, `/lsp show`, and `/lsp test python`.
 **Stop if the CLI, required command, or Python server is unavailable.**
 

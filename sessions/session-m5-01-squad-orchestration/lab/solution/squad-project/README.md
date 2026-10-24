@@ -1,4 +1,4 @@
-# Session m5-01 reference result
+# Session M5-01 reference result
 
 This project shows the completed Issue 001 workflow: assignment, implementation,
 tests, lead review, and decision record.

@@ -1,4 +1,4 @@
-# Session m2-01: GitHub Copilot in the CLI trainer content
+# Session M2-01: GitHub Copilot in the CLI trainer content
 
 > **Duration:** 1 hour | **Difficulty:** Intermediate | **Module:** Copilot in Practice
 
@@ -166,7 +166,7 @@ The CLI has **40+ slash commands** for session, agent, and configuration control
 - `/plan`: create an implementation plan before coding
 - `/research`: deep research using GitHub search and the web
 - `/review`: run the code review agent
-- `/security-review`: review current local changes for high-confidence vulnerabilities; practised in Session m2-04
+- `/security-review`: review current local changes for high-confidence vulnerabilities; practised in Session M2-04
 - `/pr`: PR operations (view, create, fix, auto)
 - `/diff`: review changes
 
@@ -353,7 +353,7 @@ network. Stop on scope growth or the agreed usage limit.
 
 Copilot decides how to split the work. Do not promise one agent per bullet or a
 speedup. Keep shared decisions with the parent and inspect every accepted claim.
-The app also supports `/fleet`; its `/orchestrate` skill is taught in Session m7-05.
+The app also supports `/fleet`; its `/orchestrate` skill is taught in Session M7-05.
 
 **`/research`:** Start deep research mode:
 
@@ -387,7 +387,7 @@ copilot
 /usage
 ```
 
-Cloud delegation is explained here and practised in Session m3-02. It does not
+Cloud delegation is explained here and practised in Session M3-02. It does not
 replace the required local fleet run.
 
 ### Transition
@@ -561,8 +561,8 @@ editor. It can use open-file context.
 **IDE Agent Mode:** Use it for multi-step coding tasks that need visual control.
 Review diffs before accepting complex edits or refactors.
 
-**Copilot App:** Use Session m2-05 for isolated developer sessions and review.
-Session m3-01 covers customization and canvas extensions. Session m7-05 adds
+**Copilot App:** Use Session M2-05 for isolated developer sessions and review.
+Session M3-01 covers customization and canvas extensions. Session M7-05 adds
 supervised child sessions through `/orchestrate`.
 
 > "Use the IDE for daily coding, the CLI for terminal automation, Chat for short questions, and the App when shared state helps people steer the work."
@@ -570,7 +570,7 @@ supervised child sessions through `/orchestrate`.
 ### Copilot App orientation
 
 Briefly show how teams run agent sessions and manage customizations in the Copilot
-App. Session m3-01 covers the App in depth.
+App. Session M3-01 covers the App in depth.
 
 **Key capabilities:**
 
@@ -583,11 +583,11 @@ App. Session m3-01 covers the App in depth.
 
 - Inspecting or steering work that benefits from a shared artifact
 - Discovering approved plugins and other app customizations
-- Starting a canvas workflow after Session m3-01
+- Starting a canvas workflow after Session M3-01
 
 **Trainer talking point:**
 
-> "The Copilot App is another Copilot surface. It is also where people can work with shared canvases and manage customizations. We will use the CLI for terminal work today. Session m3-01 covers the App and canvas extensions."
+> "The Copilot App is another Copilot surface. It is also where people can work with shared canvases and manage customizations. We will use the CLI for terminal work today. Session M3-01 covers the App and canvas extensions."
 
 ### Cross-IDE comparison
 
@@ -659,7 +659,7 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 
 ---
 
-## Section 8: Wrap-up & transition to Session m2-02 (5 min)
+## Section 8: Wrap-up & transition to Session M2-02 (5 min)
 
 ### What to remember
 
@@ -672,7 +672,7 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 
 ### Connection to next session
 
-> "Session m2-02 covers agent mode in the IDE. It uses visual diffs and inline changes
+> "Session M2-02 covers agent mode in the IDE. It uses visual diffs and inline changes
 > for a tighter edit-and-review loop. The CLI remains the terminal automation
 > surface."
 
@@ -690,7 +690,7 @@ agreed usage limit.
 
 **Q: Can I use the CLI in GitHub Actions?**
 A: Use programmatic mode with task-specific permissions and the documented
-authentication for your organization. Session m4-01 covers workflow setup.
+authentication for your organization. Session M4-01 covers workflow setup.
 
 **Q: Is the CLI safe for production servers?**
 A: This lab uses a synthetic local project. Production use needs a separate

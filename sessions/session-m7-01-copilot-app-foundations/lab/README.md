@@ -1,10 +1,10 @@
-# Session m7-01 lab: Build and check a grounded working brief
+# Session M7-01 lab: Build and check a grounded working brief
 
 **Duration:** 2 hours
 
 **Difficulty:** Beginner
 
-**Deliverable:** `initiative-context-brief.md`, ready for Session m7-02 without the
+**Deliverable:** `initiative-context-brief.md`, ready for Session M7-02 without the
 original chat
 
 ## What you will learn
@@ -184,7 +184,7 @@ Submit:
 1. `docs/discovery/initiative-context-brief.md`;
 2. two commits showing the first brief and the revision based on the new source.
 
-Session m7-02 uses this brief as the source for its decision interview.
+Session M7-02 uses this brief as the source for its decision interview.
 
 ## Verification
 

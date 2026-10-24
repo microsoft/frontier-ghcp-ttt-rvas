@@ -2,7 +2,7 @@
 description: "Trainer guide and prepared demo for a reliable GitHub Copilot SDK application"
 ---
 
-# Session m6-01 trainer guide: Build reliable agent applications with the GitHub Copilot SDK
+# Session M6-01 trainer guide: Build reliable agent applications with the GitHub Copilot SDK
 
 **Duration:** 60 minutes  
 **Format:** Concept teaching, prepared live demo, lab briefing

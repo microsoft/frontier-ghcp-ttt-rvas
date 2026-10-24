@@ -1,10 +1,10 @@
-# Session m6-02 lab: End-to-end capstone for one endpoint
+# Session M6-02 lab: End-to-end capstone for one endpoint
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 and m5-02; Session m5-01 is optional
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05 and M5-02; Session M5-01 is optional
 
 ## Before you start
 
@@ -26,7 +26,7 @@ The only implementation slice is `POST /api/bookmarks`.
 
 ## Phase 1: Accept the specification and scope (25 min)
 
-Read `starter/bookmark-create-spec.md`. Check it against the Session m5-02 standard:
+Read `starter/bookmark-create-spec.md`. Check it against the Session M5-02 standard:
 
 - requirements describe observable behavior;
 - acceptance scenarios are testable;

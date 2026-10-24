@@ -1,9 +1,9 @@
-# Session m7-06 trainer guide: Automate delivery follow-up
+# Session M7-06 trainer guide: Automate delivery follow-up
 
 ## Delivery objective
 
 Show learners how to build one draft-only automation from live GitHub issues and
-the reviewed Session m7-05 parent result. It drafts a stakeholder update, but a
+the reviewed Session M7-05 parent result. It drafts a stakeholder update, but a
 person must review every run and control how the update is shared.
 
 ## One-hour plan
@@ -41,9 +41,9 @@ The core lab uses a manual trigger. Scheduling stays disabled.
 The automation reads:
 
 1. the approved live GitHub issues;
-2. the reviewed Session m7-05 parent orchestration result.
+2. the reviewed Session M7-05 parent orchestration result.
 
-Do not add copied status files or a static Session m7-05 handoff. They can drift from
+Do not add copied status files or a static Session M7-05 handoff. They can drift from
 the platform state.
 
 ## Review the run on the platform
@@ -57,7 +57,7 @@ the definition's current state to match.
 
 ## Demo
 
-1. Retrieve the live issues and Session m7-05 parent result.
+1. Retrieve the live issues and Session M7-05 parent result.
 2. Complete the automation definition.
 3. Create a manual automation with minimum GitHub read tools.
 4. Run it and review the stakeholder draft.

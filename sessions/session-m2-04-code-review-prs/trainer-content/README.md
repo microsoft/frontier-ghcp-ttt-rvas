@@ -1,4 +1,4 @@
-# Session m2-04: Code review workflows
+# Session M2-04: Code review workflows
 
 ## Before teaching
 

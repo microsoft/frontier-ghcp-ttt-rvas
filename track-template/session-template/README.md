@@ -1,15 +1,15 @@
-# Session mN-NN: [Session Title]
+# Session MN-NN: [Session Title]
 
 ## Overview
 
 | Field             | Value                                        |
 | ----------------- | -------------------------------------------- |
-| **Session ID**    | mN-NN                                        |
+| **Session ID**    | MN-NN                                        |
 | **Title**         | [Session Title]                              |
 | **Difficulty**    | [Beginner / Intermediate / Advanced]         |
 | **Topic Area**    | [e.g., Foundations, Daily Workflow, Agentic] |
 | **Duration**      | 3 hours (1 hr trainer content + 2 hr lab)    |
-| **Prerequisites** | [e.g., Sessions m1-01 to m1-03, or None]              |
+| **Prerequisites** | [e.g., Sessions M1-01 to M1-03, or None]              |
 
 ## Description
 

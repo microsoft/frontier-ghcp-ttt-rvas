@@ -1,4 +1,4 @@
-# Session m2-03: Context workflows
+# Session M2-03: Context workflows
 
 ## Before teaching
 

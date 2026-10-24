@@ -2,13 +2,13 @@
 description: "HVE Core challenge covering RPI, customization, product agents, and reviewed delivery"
 ---
 
-# Session m5-03 lab: HVE from product intent to reviewed code
+# Session M5-03 lab: HVE from product intent to reviewed code
 
 **Duration:** 3 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** HVE Core installed; Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-04 or equivalent experience
+**Prerequisites:** HVE Core installed; Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-04 or equivalent experience
 
 ## Objective
 

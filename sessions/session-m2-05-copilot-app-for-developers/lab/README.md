@@ -2,11 +2,11 @@
 description: "Lab for isolated GitHub Copilot app sessions and PR-readiness evidence"
 ---
 
-# Session m2-05 lab: From isolated session to PR-readiness report
+# Session M2-05 lab: From isolated session to PR-readiness report
 
 **Duration:** 120 minutes  
 **Difficulty:** Intermediate  
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and the Session m2-05 trainer content
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and the Session M2-05 trainer content
 
 ## Objective
 
@@ -148,7 +148,7 @@ model only if the client shows it; do not infer it from the wording. Another
 answer from the session that wrote the plan is not the same second opinion.
 
 Check the critique before changing the plan. The critic adds model usage and
-latency, and its conclusion is not an approval. Session m2-01 also explains the
+latency, and its conclusion is not an approval. Session M2-01 also explains the
 CLI's opt-in **Proactive invocation** setting in `/subagents`; it persists.
 This lab uses a manual invocation rather than assuming an automatic run occurred.
 
@@ -225,7 +225,7 @@ Check that a fresh session can continue from a concise handoff.
    session, rerun the tests and `/review`, and update the handoff.
 
 Keep the fresh reader read-only. Do not start a second implementation in a
-different worktree. Session m7-05 teaches coordinating several child sessions.
+different worktree. Session M7-05 teaches coordinating several child sessions.
 
 ### Checkpoint
 
@@ -307,7 +307,7 @@ After making the final decision, compare your work with `../solution/`.
 
 ## Continue with developer orchestration
 
-Session m7-05's [developer route](../../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
+Session M7-05's [developer route](../../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
 uses independent read-only child sessions to review implementation and PR
 readiness. Passing local tests still does not decide whether a PR is ready.
 

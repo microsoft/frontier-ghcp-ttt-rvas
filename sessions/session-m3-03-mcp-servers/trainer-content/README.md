@@ -1,4 +1,4 @@
-# Session m3-03 trainer guide: MCP servers
+# Session M3-03 trainer guide: MCP servers
 
 ## Delivery objective
 

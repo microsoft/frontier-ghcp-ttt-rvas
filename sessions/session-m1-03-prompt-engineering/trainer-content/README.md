@@ -1,4 +1,4 @@
-# Session m1-03 trainer guide: Prompt engineering fundamentals
+# Session M1-03 trainer guide: Prompt engineering fundamentals
 
 ## Delivery objective
 

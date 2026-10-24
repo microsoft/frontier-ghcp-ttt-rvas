@@ -1,8 +1,8 @@
-# Session m4-03: CI/CD debugging & agentic remediation
+# Session M4-03: CI/CD debugging & agentic remediation
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02 and m4-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02 and M4-01
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview

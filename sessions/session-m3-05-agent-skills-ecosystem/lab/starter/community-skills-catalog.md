@@ -1,7 +1,7 @@
 # Repository sandbox examples
 
 These examples are for review, not installation. The required live comparison
-uses the separate pinned `community-interview/` snapshot and the local Session m7-02
+uses the separate pinned `community-interview/` snapshot and the local Session M7-02
 skill. Deliver skills only through the training project's `.github/skills/`.
 
 ```markdown

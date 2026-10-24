@@ -1,6 +1,6 @@
 # GitHub issue proposal: <Outcome-focused title>
 
-> Session m7-03 creates the live GitHub issue after review and decomposition.
+> Session M7-03 creates the live GitHub issue after review and decomposition.
 
 ## User and outcome
 
@@ -53,7 +53,7 @@ against the brief.
 
 **Work item owner:**
 
-## Session m7-03 input
+## Session M7-03 input
 
 - **Decision brief path:** `decision-brief.md`
 - **Proposal status:** Approved / Revise / Blocked

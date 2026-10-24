@@ -1,8 +1,8 @@
-# Session m2-03 lab: Spaces and context management
+# Session M2-03 lab: Spaces and context management
 
 **Duration:** 2 hours
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02 completed
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02 completed
 **Deliverable:** A context package for one Storefront API, with recorded comparison results
 
 ## Lab overview

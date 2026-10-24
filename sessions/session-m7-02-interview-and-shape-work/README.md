@@ -1,16 +1,16 @@
-# Session m7-02: Interview ideas and shape better work
+# Session M7-02: Interview ideas and shape better work
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Session m7-01 and working GitHub Copilot access
+**Prerequisites:** Session M7-01 and working GitHub Copilot access
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-Continue the **Delivery Decision Studio** path with your Session m7-01 context
+Continue the **Delivery Decision Studio** path with your Session M7-01 context
 brief. Install the supplied project skill and use it to ask questions in
 dependency order. Turn the approved answers into a decision brief and issue
 proposal. When a late constraint arrives, revise only the affected decisions.
@@ -79,5 +79,5 @@ Vague request
 - Do not create or update a live work item until the request owner approves the brief.
 - Keep the lab no-code. Learners install and use the supplied skill; they do not
   author or edit it.
-- Session m7-03 creates the approved GitHub issues. Session m7-02 prepares the source
+- Session M7-03 creates the approved GitHub issues. Session M7-02 prepares the source
   brief and issue proposal.

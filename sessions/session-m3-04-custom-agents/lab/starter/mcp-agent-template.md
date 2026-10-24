@@ -37,5 +37,5 @@ metadata:
 5. Stop when the data scope is unclear.
 ````
 
-Repository paths are normally relative to the workspace root. The Session m3-03
+Repository paths are normally relative to the workspace root. The Session M3-03
 server is local and synthetic. Check the command and tool names before use.

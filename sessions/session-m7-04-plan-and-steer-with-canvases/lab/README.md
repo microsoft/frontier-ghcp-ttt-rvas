@@ -1,4 +1,4 @@
-# Session m7-04 lab: Build a planning canvas and reconcile stale state
+# Session M7-04 lab: Build a planning canvas and reconcile stale state
 
 **Duration:** 2 hours
 
@@ -41,13 +41,13 @@ Check GitHub Copilot access before starting. **Stop if access is unavailable.**
 2. Type `/` and check that `/create-canvas` appears.
 3. Open **Customize** → **Canvas** and inspect installed canvases.
 4. Open **Customize** → **MCP** → **Installed** and check GitHub MCP.
-5. Ask Copilot to retrieve the Session m7-03 parent issue and child issues.
+5. Ask Copilot to retrieve the Session M7-03 parent issue and child issues.
 
 `/create-canvas` is a built-in app skill. Do not install a community replacement.
 Stop if the skill or GitHub reads are unavailable.
 
 Use a fresh GitHub MCP read as the authoritative issue list. Start from the live
-Session m7-03 parent issue and follow its child links. Do not reconstruct the set
+Session M7-03 parent issue and follow its child links. Do not reconstruct the set
 from chat history or a separate Markdown file.
 
 ## Part 2: Define the minimum canvas contract (20 minutes)
@@ -106,7 +106,7 @@ action.
 
 ## Part 4: Load and operate live issue state (25 minutes)
 
-Ask Copilot to retrieve the Session m7-03 issues through GitHub MCP and load:
+Ask Copilot to retrieve the Session M7-03 issues through GitHub MCP and load:
 
 - issue number and title;
 - GitHub state;
@@ -159,7 +159,7 @@ Check that:
 
 In the live canvas, record who owns it, how to refresh it, and how to recover after
 an interruption. Also record when to retire it and the next safe action. Check
-that it links the four status-visibility issues for Session m7-05.
+that it links the four status-visibility issues for Session M7-05.
 Keep any optional fifth issue linked for context, but outside those workstreams.
 
 Run `/context`. If the creation thread is crowded, start a fresh session and
@@ -184,5 +184,5 @@ Apply useful findings directly to the canvas.
 - [ ] A fresh read detected the mismatch.
 - [ ] Refresh reconciled the canvas without hiding the source difference.
 - [ ] The live canvas contains the owner, recovery, refresh, and retirement rules.
-- [ ] The live canvas links the four Session m7-05 issue roles.
+- [ ] The live canvas links the four Session M7-05 issue roles.
 - [ ] No customer or source organization names appear.

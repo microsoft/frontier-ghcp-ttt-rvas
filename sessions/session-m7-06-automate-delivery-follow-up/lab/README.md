@@ -1,10 +1,10 @@
-# Session m7-06 lab: Create and review a delivery automation
+# Session M7-06 lab: Create and review a delivery automation
 
 **Duration:** 2 hours
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m7-01 to m7-05, Automations access, and GitHub MCP access
+**Prerequisites:** Sessions M7-01 to M7-05, Automations access, and GitHub MCP access
 
 **Deliverable:** One reviewed stakeholder update from a draft-only automation
 
@@ -16,7 +16,7 @@
 ## Outcome
 
 Create one automation that reads the live GitHub issues and the reviewed Session
-m7-05 parent result. Review its first draft, then apply one approved issue change
+M7-05 parent result. Review its first draft, then apply one approved issue change
 and run it again. Compare the drafts to see how that change affected the update.
 
 The core lab uses a manual trigger and draft-only output. Scheduling stays
@@ -46,7 +46,7 @@ unavailable.** Fix access before continuing.
 1. Open **Automations** in the GitHub Copilot app.
 2. Check that **New automation** is available.
 3. Retrieve the approved parent and child GitHub issues through GitHub MCP.
-4. Open the reviewed Session m7-05 parent orchestration result.
+4. Open the reviewed Session M7-05 parent orchestration result.
 5. Check that issue state and the parent result agree on the four workstreams.
 
 Do not copy platform state into local handoff files.
@@ -75,7 +75,7 @@ Create a local automation with the minimum GitHub read tools.
 Use this prompt:
 
 ```text
-Read the approved status-visibility GitHub issues and the reviewed Session m7-05
+Read the approved status-visibility GitHub issues and the reviewed Session M7-05
 parent orchestration result. Follow @automation-definition-template.md. Draft one
 stakeholder update from supported issue state. Name unresolved exceptions and
 owners. Do not publish, message people, edit issues, change labels, call
@@ -128,7 +128,7 @@ sharing the update to a person, not the automation.
 
 ## Verification
 
-- [ ] Live issues and the Session m7-05 parent result were the only status inputs.
+- [ ] Live issues and the Session M7-05 parent result were the only status inputs.
 - [ ] The concise automation definition is complete.
 - [ ] The automation produced one draft stakeholder update.
 - [ ] The platform holds run status, tool calls, and output.

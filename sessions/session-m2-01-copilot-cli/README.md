@@ -1,8 +1,8 @@
-# Session m2-01: GitHub Copilot in the CLI
+# Session M2-01: GitHub Copilot in the CLI
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03
+**Prerequisites:** Sessions M1-01 to M1-03
 **Duration:** 3 hours (1 hr trainer content + 2 hr lab)
 
 ## Overview
@@ -46,7 +46,7 @@ the final handoff.
 - Shell integrations: aliases, shell completion, inline invocation
 - CLI agent mode: autonomous multi-step terminal tasks
 - Terminal automation and shared CLI/app commands
-- Copilot App orientation and handoff to Session m3-01 for plugins and canvas extensions
+- Copilot App orientation and handoff to Session M3-01 for plugins and canvas extensions
 - Cross-IDE comparison: VS Code, Visual Studio, JetBrains, Eclipse, Xcode, and others
 - Decision framework: when to use CLI vs. IDE Chat vs. IDE Agent Mode vs. Copilot App
 - SSH and remote workflows where CLI is the only option

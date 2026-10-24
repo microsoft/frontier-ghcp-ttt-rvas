@@ -11,7 +11,7 @@ planning updates
 > The trainer must select and prepare this route before the workshop. It is not
 > part of the standard learner path.
 
-Use a seeded Azure Boards Epic or Feature for the same four Session m7-03 issue
+Use a seeded Azure Boards Epic or Feature for the same four Session M7-03 issue
 roles. Keep the authoritative plan and status in Azure Boards, and repository
 work in GitHub.
 
@@ -31,7 +31,7 @@ You need:
 
 ## Required preflight
 
-1. Open the seeded parent and check that it is tagged for Session m7-05 training.
+1. Open the seeded parent and check that it is tagged for Session M7-05 training.
 2. Record the parent ID, process type, starting state, and selected child IDs.
 3. Type `/` in the GitHub Copilot app and check that `/orchestrate` is available.
 4. Open **Customize** → **Skills** → **Installed** and check the built-in
@@ -60,7 +60,7 @@ children. Give each a separate question and approved inputs.
 
 Mirror the standard lab wording:
 
-| Session m7-03 issue role | Azure Boards child wording |
+| Session M7-03 issue role | Azure Boards child wording |
 | --- | --- |
 | Public status mapping | Public status mapping approval |
 | Requester status view | Requester view field review |

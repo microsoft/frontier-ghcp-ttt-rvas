@@ -1,8 +1,8 @@
-# Session m2-01 lab: GitHub Copilot in the CLI
+# Session M2-01 lab: GitHub Copilot in the CLI
 
 **Duration:** 2 hours  
 **Difficulty:** Intermediate  
-**Prerequisites:** Sessions m1-01 to m1-03 completed, GitHub CLI (`gh`) installed
+**Prerequisites:** Sessions M1-01 to M1-03 completed, GitHub CLI (`gh`) installed
 **Deliverable:** A reviewed `agent-tasks` project, a project health script, and a CLI workflow cheat sheet
 
 ---
@@ -254,7 +254,7 @@ copilot
 Run:
 
 ```text
-/rename Session m2-01 takeover
+/rename Session M2-01 takeover
 /permissions show
 /sandbox status
 /sandbox policy
@@ -580,7 +580,7 @@ shared snapshot for independent read-only analysis.
 **Completion requires live child-task results.** Do not require exactly three
 agents or a speedup. If Copilot keeps the analysis sequential, record that result
 and ask the trainer to adjust the task split before retrying within the usage
-limit. A `/delegate` attempt does not count as fleet practice; Session m3-02 covers
+limit. A `/delegate` attempt does not count as fleet practice; Session M3-02 covers
 cloud delegation.
 
 ### Troubleshooting

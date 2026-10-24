@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m6-01. Build Reliable Agent Applications with the GitHub Copilot SDK'
+footer: 'Session M6-01. Build Reliable Agent Applications with the GitHub Copilot SDK'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m6-01. Build Reliable Agent Applications with the GitHub Copilo
 
 Own the lifecycle, policy, run records, and failure path
 
-Session m6-01 | Module 6 | Advanced
+Session M6-01 | Module 6 | Advanced
 
 ---
 

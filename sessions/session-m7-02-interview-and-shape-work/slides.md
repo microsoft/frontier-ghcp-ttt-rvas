@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m7-02: Interview Ideas and Shape Better Work'
+footer: 'Session M7-02: Interview Ideas and Shape Better Work'
 ---
 
 <!-- _class: lead -->
 
 # Interview ideas and shape better work
 
-Session m7-02 | Product and Delivery Teams | 3 hours
+Session M7-02 | Product and Delivery Teams | 3 hours
 
 ---
 
@@ -35,7 +35,7 @@ Before the session:
 Before this idea can enter a sprint, decide who it serves and what it changes.
 You also need decisions about data, scope, ownership, and approval.
 
-The **Delivery Decision Studio** path carries the Session m7-01 context brief into
+The **Delivery Decision Studio** path carries the Session M7-01 context brief into
 this interview. Service Request Portal remains the initiative.
 
 ---
@@ -164,7 +164,7 @@ Ask GitHub Copilot to draft:
 Compare the draft with the approved brief.
 Each field should trace to an approved answer or an open question.
 
-Session m7-03 creates the approved issues through GitHub MCP.
+Session M7-03 creates the approved issues through GitHub MCP.
 
 ---
 

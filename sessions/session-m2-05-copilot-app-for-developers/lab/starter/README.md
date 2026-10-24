@@ -1,4 +1,4 @@
-# Session m2-05 starter
+# Session M2-05 starter
 
 This folder is a synthetic project for the GitHub Copilot app lab.
 

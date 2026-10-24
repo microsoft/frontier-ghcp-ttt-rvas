@@ -12,7 +12,7 @@ one reviewed result for each.
 | WS-03 |  |  |  |  |
 | WS-04 |  |  |  |  |
 
-Use the four Session m7-03 issue roles: public status mapping, requester status view,
+Use the four Session M7-03 issue roles: public status mapping, requester status view,
 empty and stale states, and access-boundary verification.
 
 ## Parent instructions

@@ -1,16 +1,16 @@
-# Session m7-03: Plan work with GitHub Issues and MCP
+# Session M7-03: Plan work with GitHub Issues and MCP
 
 **Module:** Product and Delivery Teams
 
 **Difficulty:** Intermediate
 
-**Prerequisites:** Sessions m7-01 to m7-02, GitHub Copilot app access, and an approved GitHub MCP connection
+**Prerequisites:** Sessions M7-01 to M7-02, GitHub Copilot app access, and an approved GitHub MCP connection
 
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-Continue the **Delivery Decision Studio** path by turning the approved Session m7-02
+Continue the **Delivery Decision Studio** path by turning the approved Session M7-02
 decision brief into a GitHub issue hierarchy. Check the GitHub MCP connection and
 inspect the repository before you plan any writes. Use Markdown to preview the
 full issue set, then create the approved issues. Read them back from GitHub to
@@ -34,7 +34,7 @@ In this session, you will:
 7. Preview, apply, and check a focused correction.
 8. Classify concrete existing issues as duplicate, partial overlap, conflict, or
    unrelated.
-9. Leave a checked live issue set that Session m7-04 can read directly.
+9. Leave a checked live issue set that Session M7-04 can read directly.
 
 ## Session structure
 

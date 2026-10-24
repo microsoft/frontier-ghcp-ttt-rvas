@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-05. GitHub Copilot App for Developers'
+footer: 'Session M2-05. GitHub Copilot App for Developers'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m2-05. GitHub Copilot App for Developers'
 
 Isolate work, check results, and hand off the next step
 
-Session m2-05 | Module 2 | Intermediate
+Session M2-05 | Module 2 | Intermediate
 
 ---
 
@@ -203,7 +203,7 @@ Copilot selects a contrasting model automatically when one is available.
 Record the model only if the client shows it. Check the feedback yourself.
 An extra reasoning pass adds usage; it does not approve the change.
 
-Session m2-01 covers the CLI's persistent Proactive invocation opt-in.
+Session M2-01 covers the CLI's persistent Proactive invocation opt-in.
 This lab requires a manual invocation.
 
 ---
@@ -309,7 +309,7 @@ The work is synthetic. Keep it that way.
 
 ---
 
-# Continue with Session m7-05
+# Continue with Session M7-05
 
 The developer route uses `/orchestrate` for independent read-only reviews of:
 
@@ -318,4 +318,4 @@ The developer route uses `/orchestrate` for independent read-only reviews of:
 - the supplied PR snapshot.
 
 Redirect a child and reconcile conflicting readiness claims.
-The product track's Sessions m7-01 to m7-04 and GitHub issue access are not required.
+The product track's Sessions M7-01 to M7-04 and GitHub issue access are not required.

@@ -1,10 +1,10 @@
-# Session m1-02: Copilot Chat & inline suggestions
+# Session M1-02: Copilot Chat & inline suggestions
 
 **Module:** Copilot Fundamentals
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Session m1-01
+**Prerequisites:** Session M1-01
 
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 

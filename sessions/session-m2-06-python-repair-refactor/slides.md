@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-06: Repair and Refactor a Broken Python Application'
+footer: 'Session M2-06: Repair and Refactor a Broken Python Application'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m2-06: Repair and Refactor a Broken Python Application'
 
 ## Copilot in Practice
 
-Session m2-06 | Intermediate | 3 hours
+Session M2-06 | Intermediate | 3 hours
 
 ---
 

@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m2-07: Migrate a Legacy Java Service to Modern .NET'
+footer: 'Session M2-07: Migrate a Legacy Java Service to Modern .NET'
 ---
 
 <!-- _class: lead -->
@@ -12,7 +12,7 @@ footer: 'Session m2-07: Migrate a Legacy Java Service to Modern .NET'
 
 ## Preserve behavior one vertical slice at a time
 
-Session m2-07 | Copilot in Practice | Advanced | 3 hours
+Session M2-07 | Copilot in Practice | Advanced | 3 hours
 
 ---
 

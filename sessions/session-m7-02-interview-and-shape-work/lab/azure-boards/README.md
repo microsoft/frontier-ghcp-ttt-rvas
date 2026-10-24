@@ -3,7 +3,7 @@
 Use GitHub Copilot to interview the request owner, review a seeded Azure Boards
 requirement, and prepare approved updates.
 
-**Time:** Use the two-hour Session m7-02 lab plan. This companion replaces Phases 4 and 5.
+**Time:** Use the two-hour Session M7-02 lab plan. This companion replaces Phases 4 and 5.
 
 > [!IMPORTANT]
 > The trainer must select and prepare this route before the workshop. It is not

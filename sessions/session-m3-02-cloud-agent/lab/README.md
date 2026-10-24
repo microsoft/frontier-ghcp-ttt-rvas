@@ -1,10 +1,10 @@
-# Session m3-02 lab: One issue from contract to review
+# Session M3-02 lab: One issue from contract to review
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
 
 **Deliverable:** One reviewed change with passing focused tests
 

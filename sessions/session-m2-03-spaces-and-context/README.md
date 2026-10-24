@@ -1,8 +1,8 @@
-# Session m2-03: Copilot Spaces & context management
+# Session M2-03: Copilot Spaces & context management
 
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02
 **Duration:** 3 hours (1 hr trainer content + 2 hr lab)
 
 ## Overview

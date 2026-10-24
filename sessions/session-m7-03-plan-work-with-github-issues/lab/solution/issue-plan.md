@@ -45,12 +45,12 @@ The parent closes only after the public mapping, requester view, empty and stale
 | 3 | Handle unavailable and stale status | Safe fallback behavior | Issue 1 | Implementation owner unset |
 | 4 | Check requester access boundaries | Recorded checks show users see only their requests | Issues 2-3 | Access reviewer |
 
-The four required rows map to the four Session m7-05 workstreams.
+The four required rows map to the four Session M7-05 workstreams.
 
 ### Optional fifth child
 
 If the owner approves a separate service handoff issue, it depends on Issues 2-4.
-Keep it outside the four Session m7-05 workstreams.
+Keep it outside the four Session M7-05 workstreams.
 
 ## Proposed labels and milestone
 

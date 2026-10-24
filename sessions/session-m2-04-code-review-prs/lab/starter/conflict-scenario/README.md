@@ -1,6 +1,6 @@
 # Merge conflict scenario: Trainer setup guide
 
-**Used in:** Session m2-04 conflict-resolution exercise
+**Used in:** Session M2-04 conflict-resolution exercise
 
 ## Access and cost preflight
 

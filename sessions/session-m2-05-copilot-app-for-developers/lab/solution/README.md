@@ -1,4 +1,4 @@
-# Session m2-05 reference solution
+# Session M2-05 reference solution
 
 The solution shows one acceptable implementation and completed reports for the
 supplied PR snapshot.

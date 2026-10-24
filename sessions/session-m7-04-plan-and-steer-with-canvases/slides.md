@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session m7-04: Build and Use a Planning Canvas'
+footer: 'Session M7-04: Build and Use a Planning Canvas'
 ---
 
 <!-- _class: lead -->
 
 # Build and use a planning canvas
 
-Session m7-04 | Product and Delivery Teams | Intermediate
+Session M7-04 | Product and Delivery Teams | Intermediate
 
 ---
 
@@ -19,7 +19,7 @@ Session m7-04 | Product and Delivery Teams | Intermediate
 A canvas helps you review several records and make repeated updates through named
 actions. Keep that view available after the conversation ends.
 
-The source is the live Session m7-03 parent issue and its linked child issues, not
+The source is the live Session M7-03 parent issue and its linked child issues, not
 the previous chat.
 
 ---
@@ -114,7 +114,7 @@ Remove generated fields and actions that do not help the team decide or act.
 
 # Load live GitHub issues
 
-Use GitHub MCP to retrieve the Session m7-03 issues.
+Use GitHub MCP to retrieve the Session M7-03 issues.
 
 Copilot can move the approved fields into the canvas. GitHub remains the source for issue state.
 
@@ -171,7 +171,7 @@ Run `/context`, then use a fresh session when needed.
 Ask `/rubber-duck` to find stale claims, mixed state labels, unsafe actions, and
 missing owners.
 
-The live canvas and linked issues are authoritative for Session m7-05.
+The live canvas and linked issues are authoritative for Session M7-05.
 
 ---
 

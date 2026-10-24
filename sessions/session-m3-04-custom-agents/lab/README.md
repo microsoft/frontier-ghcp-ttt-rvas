@@ -1,10 +1,10 @@
-# Session m3-04 lab: Tighten a custom agent boundary
+# Session M3-04 lab: Tighten a custom agent boundary
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-03
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-03
 **Deliverable:** A tested `.agent.md` profile, a checked LSP lookup, and a live
 test-only run that stops at a source-code conflict
 

@@ -65,15 +65,15 @@ class CatalogTests(unittest.TestCase):
 
     def assert_track_modules(self, slug, html):
         source = (ROOT / "tracks" / f"{slug}.md").read_text(encoding="utf-8")
-        session_ids = re.findall(r"^\|\s*\d+\s*\|\s*(m[1-7]-\d{2})\s*\|", source, re.MULTILINE)
+        session_ids = re.findall(r"^\|\s*\d+\s*\|\s*(M[1-7]-\d{2})\s*\|", source, re.MULTILINE)
         self.assertTrue(session_ids, slug)
         expected = [
             module["id"] for module in self.catalog["modules"]
-            if any(session_id.startswith(f"m{module['id']}-") for session_id in session_ids)
+            if any(session_id.startswith(f"M{module['id']}-") for session_id in session_ids)
         ]
         badges = Tags(html).with_class("ghcp-badge--module")
         self.assertEqual([badge["data-module"] for badge in badges], expected, slug)
-        self.assertEqual(re.findall(r">m([1-7])</span>", html), expected, slug)
+        self.assertEqual(re.findall(r">M([1-7])</span>", html), expected, slug)
         for badge in badges:
             module = next(module for module in self.catalog["modules"] if module["id"] == badge["data-module"])
             self.assertEqual(badge["title"], module["title"])
@@ -354,6 +354,9 @@ class CatalogTests(unittest.TestCase):
         ):
             with self.subTest(session_id=session_id):
                 self.assertIn(f'<span class="set-session-meta">{duration}</span>', rows[session_id])
+                self.assertIn(f"<span>Session {session_id.upper()}</span>", rows[session_id])
+                self.assertIn(f'value="{session_id}"', rows[session_id])
+                self.assertIn(f'aria-label="Include session {session_id.upper()}:', rows[session_id])
 
     def test_home_renders_catalog_cards_and_preserves_module_anchors_and_tracks(self):
         for directory_urls in (True, False):
@@ -389,7 +392,9 @@ class CatalogTests(unittest.TestCase):
             ]
             for card, session in zip(cards, page_sessions):
                 self.assertEqual(card["href"], session["url"])
-                self.assertEqual(card["data-number"], session["id"])
+                self.assertEqual(card["data-number"], session["id"].upper())
+                self.assertIn(f"Open session {session['id'].upper()}</span>", rendered)
+            self.assertIn("Start with session M1-01</a>", rendered)
             headings = {
                 attrs["id"]: attrs for tag, attrs in tags.tags
                 if tag == "h2" and "id" in attrs

@@ -39,4 +39,4 @@
 
 <!-- One decision that should happen next -->
 
-**Next action:** Run the Session m7-02 decision interview with this brief.
+**Next action:** Run the Session M7-02 decision interview with this brief.

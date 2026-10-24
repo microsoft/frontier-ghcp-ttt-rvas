@@ -24,6 +24,7 @@ Train-the-Trainer curriculum.
 
 3. **Register** the session in `data/session-catalog.json`, in module-local order.
    Set `id` to `m2-08`, `module` to `2`, and `slug` to the directory name.
+   Use `M2-08` in headings and other visible labels.
 
 4. **Link** the session in the top-level `README.md` session table, `curriculum-plan.md`,
    `mkdocs.yml`, and the relevant tracks. Home-page cards come from the catalog.
@@ -57,7 +58,7 @@ session-template/
 
 - **Difficulty levels:** Beginner, Intermediate, Advanced
 - **Duration:** Each session is 3 hours total (1 hr trainer content + 2 hr lab)
-- **Prerequisites:** Use full module-local IDs (e.g., "Sessions m1-01 to m1-03").
+- **Prerequisites:** Use full module-local IDs (e.g., "Sessions M1-01 to M1-03").
   Split ranges at module boundaries so they do not imply unrelated sessions.
 - **Naming:** Use kebab-case slugs derived from the session title
 - **Enterprise delivery:** Add an access and cost preflight, state the required

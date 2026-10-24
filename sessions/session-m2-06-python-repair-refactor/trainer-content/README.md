@@ -1,4 +1,4 @@
-# Session m2-06 trainer guide: Repair and refactor a broken Python application
+# Session M2-06 trainer guide: Repair and refactor a broken Python application
 
 ## Delivery objective
 

@@ -1,4 +1,4 @@
-# Lab: Session mN-NN: [Session Title]
+# Lab: Session MN-NN: [Session Title]
 
 **Duration:** 2 hours  
 **Difficulty:** [Beginner / Intermediate / Advanced]

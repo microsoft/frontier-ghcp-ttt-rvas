@@ -1,4 +1,4 @@
-# Session m7-01: Work effectively in the GitHub Copilot app
+# Session M7-01: Work effectively in the GitHub Copilot app
 
 **Module:** Product and Delivery Teams
 

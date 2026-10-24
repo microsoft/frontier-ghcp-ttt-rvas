@@ -1,4 +1,4 @@
-"""Calculator project used throughout the Session m1-02 Chat lab."""
+"""Calculator project used throughout the Session M1-02 Chat lab."""
 
 
 class Calculator:

@@ -1,4 +1,4 @@
-# Session m2-04 lab: Solution reference
+# Session M2-04 lab: Solution reference
 
 **For trainers only.** This directory contains a corrected review project for the
 six changes in `lab/starter/code-changes.md`. It is a code reference, not a

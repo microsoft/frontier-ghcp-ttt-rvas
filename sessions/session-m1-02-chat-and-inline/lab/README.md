@@ -1,10 +1,10 @@
-# Session m1-02 lab: Diagnose and extend a calculator with Chat
+# Session M1-02 lab: Diagnose and extend a calculator with Chat
 
 **Duration:** 2 hours
 
 **Difficulty:** Beginner
 
-**Prerequisites:** Session m1-01 and Python 3.10 or later
+**Prerequisites:** Session M1-01 and Python 3.10 or later
 
 **Deliverable:** A corrected and extended calculator, a passing test suite, and a
 completed `chat-notes.md`

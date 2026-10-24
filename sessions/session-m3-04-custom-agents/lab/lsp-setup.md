@@ -5,7 +5,7 @@ machine's package policy and keep tool permissions in place. A language-server
 process is executable software; read the project configuration before opening
 the workspace in Copilot.
 
-## JavaScript: Session m3-04
+## JavaScript: Session M3-04
 
 Use Node.js 22.22.2 or later for the JavaScript server used in this lab.
 
@@ -31,7 +31,7 @@ copied `agent-project` directory and run:
 `test` starts a temporary server to check startup. You must also run an actual
 definition/reference lookup in the lab.
 
-## Python: Session m2-06
+## Python: Session M2-06
 
 Check for `pyright-langserver` on `PATH`. If it is missing:
 
@@ -39,7 +39,7 @@ Check for `pyright-langserver` on `PATH`. If it is missing:
 npm install --global pyright
 ```
 
-Session m2-06 supplies a project `.github/lsp.json` with the server name `python`.
+Session M2-06 supplies a project `.github/lsp.json` with the server name `python`.
 Start the CLI in the copied inventory project and run:
 
 ```text

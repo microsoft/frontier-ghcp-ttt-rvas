@@ -1,8 +1,8 @@
-# Session m4-02: Infrastructure as code with Copilot
+# Session M4-02: Infrastructure as code with Copilot
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-02, m4-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
 **Duration:** 2 hours 30 minutes (1 hour trainer content + 1 hour 30 minutes lab)
 
 ## Overview

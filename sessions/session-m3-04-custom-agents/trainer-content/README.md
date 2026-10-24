@@ -1,4 +1,4 @@
-# Session m3-04 trainer guide: Custom agent boundaries
+# Session M3-04 trainer guide: Custom agent boundaries
 
 ## Delivery objective
 

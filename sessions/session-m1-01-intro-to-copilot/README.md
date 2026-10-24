@@ -1,4 +1,4 @@
-# Session m1-01: Introduction to GitHub Copilot
+# Session M1-01: Introduction to GitHub Copilot
 
 **Module:** Copilot Fundamentals
 

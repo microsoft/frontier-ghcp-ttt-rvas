@@ -1,10 +1,10 @@
-# Session m5-01 lab: Carry one issue through a Squad
+# Session M5-01 lab: Carry one issue through a Squad
 
 **Duration:** 2 hours
 
 **Difficulty:** Advanced
 
-**Prerequisites:** Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
 
 **Deliverable:** One input-validation issue carried through assignment,
 implementation, tests, review, and a committed decision record
@@ -162,7 +162,7 @@ Submit one folder or pull request containing:
 
 ## Verification
 
-- [ ] Local prerequisites match Sessions m1-01 to m1-03, m2-01 to m2-04 and m3-02 to m3-05.
+- [ ] Local prerequisites match Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05.
 - [ ] The trainer signed off on the team boundaries before work began.
 - [ ] One role owned each write boundary.
 - [ ] Issue 001 kept the same acceptance criteria through review.

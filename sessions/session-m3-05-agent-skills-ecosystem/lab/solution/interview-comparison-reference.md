@@ -5,7 +5,7 @@ runner cannot supply them.
 
 ## Checks to make
 
-- `decision-interview` is loaded from the Session m7-02 repository skill.
+- `decision-interview` is loaded from the Session M7-02 repository skill.
 - `grill-me` and `grilling` match the pinned checksums and both load.
 - Each interview starts fresh in Interactive mode with the same synthetic request.
 - The learner answers as the owner and records reasons instead of accepting every recommendation.

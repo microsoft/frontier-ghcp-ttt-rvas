@@ -53,4 +53,4 @@ or automations.
 
 Approve the public status vocabulary for the first release.
 
-**Next action:** Run the Session m7-02 `decision-interview` skill with this brief.
+**Next action:** Run the Session M7-02 `decision-interview` skill with this brief.

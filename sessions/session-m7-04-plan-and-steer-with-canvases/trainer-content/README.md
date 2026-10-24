@@ -1,4 +1,4 @@
-# Session m7-04 trainer guide: Build and use a planning canvas
+# Session M7-04 trainer guide: Build and use a planning canvas
 
 **Duration:** 1 hour
 
@@ -25,10 +25,10 @@ alongside planning information. GitHub remains the source of record.
 - Check that `/create-canvas` is available.
 - Open **Customize** → **Skills** → **Installed** and show that `create-canvas` is
   a built-in skill.
-- Check that the learner can read the Session m7-03 issues through GitHub MCP.
+- Check that the learner can read the Session M7-03 issues through GitHub MCP.
 - Use a training repository and synthetic issue data.
 - Name the canvas owner and reviewer.
-- Retrieve the Session m7-03 parent issue and linked child issues.
+- Retrieve the Session M7-03 parent issue and linked child issues.
 - Check `/context`, `/clear` or `/reset`, and `/rubber-duck`.
 
 > [!IMPORTANT]
@@ -99,7 +99,7 @@ Check:
 
 ## Demo update and drift
 
-1. Ask Copilot to retrieve the Session m7-03 issues through GitHub MCP.
+1. Ask Copilot to retrieve the Session M7-03 issues through GitHub MCP.
 2. Load the approved issue fields into the canvas.
 3. Change one status through the visible controls.
 4. Ask Copilot to record one decision.

@@ -1,4 +1,4 @@
-# Session m4-01 trainer guide: One application through GitHub Actions
+# Session M4-01 trainer guide: One application through GitHub Actions
 
 ## Delivery objective
 
