@@ -330,6 +330,31 @@ class CatalogTests(unittest.TestCase):
             HOOK.on_env(env, config, files)
         self.assertEqual(env.globals["session_catalog"], self.catalog)
 
+    def test_builder_preserves_partial_hour_session_durations(self):
+        config, _, env = self.fixture()
+        env.loader = ChoiceLoader([
+            DictLoader({"main.html": "{% block content %}{% endblock %}"}),
+            FileSystemLoader(ROOT / "overrides"),
+        ])
+        env.filters["url"] = lambda value: value
+        page = self.page("build-set.md")
+        context = HOOK.on_page_context({
+            "page": page,
+            "nav": SimpleNamespace(homepage=SimpleNamespace(url=".")),
+        }, page, config, None)
+        rendered = env.get_template("set-builder.html").render(context)
+        rows = dict(re.findall(
+            r'data-session-id="([^"]+)">(.*?)</label>',
+            rendered, re.DOTALL,
+        ))
+        for session_id, duration in (
+            ("m4-02", "2 hours 30 min"),
+            ("m5-02", "3 hours 30 min"),
+            ("m1-01", "3 hours"),
+        ):
+            with self.subTest(session_id=session_id):
+                self.assertIn(f'<span class="set-session-meta">{duration}</span>', rows[session_id])
+
     def test_home_renders_catalog_cards_and_preserves_module_anchors_and_tracks(self):
         for directory_urls in (True, False):
             config, _, env = self.fixture(directory_urls)

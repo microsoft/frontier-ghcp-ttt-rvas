@@ -207,7 +207,7 @@ still violates the contract.
 Assign four roles. One person may hold two roles in a small group:
 
 - contract owner;
-- app operator or manual simulator;
+- app operator;
 - contract tester;
 - handoff owner.
 

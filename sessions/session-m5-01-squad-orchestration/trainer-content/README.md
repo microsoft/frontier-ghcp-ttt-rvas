@@ -17,8 +17,8 @@ coordination, role limits, shared decisions, and review. Before a live
 demonstration, check current availability, requirements, and customer approval.
 
 Show learners how to decide whether a task needs an agent team and assign owners
-without conflicting changes. Explain the manual workflow for when the tool is
-unavailable.
+without conflicting changes. Use the prepared walkthrough if the demonstration
+stalls. Learners need working Squad access to complete the lab.
 
 ## One-hour plan
 
@@ -31,9 +31,6 @@ unavailable.
 | 0:35 to 0:47 | Prepared demo | Initialize or inspect a small team and assign Issue 001. |
 | 0:47 to 0:55 | Decision framework | Learners select individual or team delivery. |
 | 0:55 to 1:00 | Lab handoff | Check tool approval and required access. |
-
-The original guide budgeted 85 minutes. This version fits the architecture and
-demonstration into one hour.
 
 ## Prepare
 

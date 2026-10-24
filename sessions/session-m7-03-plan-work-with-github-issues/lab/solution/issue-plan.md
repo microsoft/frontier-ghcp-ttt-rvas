@@ -25,7 +25,8 @@ Make request status understandable to requesters
 
 ### Outcome
 
-Requesters can understand the current public status and next step for supported requests.
+Requesters can see the public status label and latest update date for supported
+requests.
 
 ### Scope and non-goals
 
@@ -40,10 +41,16 @@ The parent closes only after the public mapping, requester view, empty and stale
 | Order | Title | Independent outcome | Dependency | Owner or gap |
 | --- | --- | --- | --- | --- |
 | 1 | Approve the public status mapping | Approved mapping and wording | None | Product owner |
-| 2 | Extend #241 with public status and next step | Requester-facing status view | Issue 1 | Implementation owner unset |
+| 2 | Extend #241 with the public status label | Requester status view with only the public label and latest update date | Issue 1 | Implementation owner unset |
 | 3 | Handle unavailable and stale status | Safe fallback behavior | Issue 1 | Implementation owner unset |
 | 4 | Check requester access boundaries | Recorded checks show users see only their requests | Issues 2-3 | Access reviewer |
-| 5 | Prepare service handoff evidence | Reviewed support and release notes | Issues 2-4 | Delivery lead |
+
+The four required rows map to the four Session m7-05 workstreams.
+
+### Optional fifth child
+
+If the owner approves a separate service handoff issue, it depends on Issues 2-4.
+Keep it outside the four Session m7-05 workstreams.
 
 ## Proposed labels and milestone
 

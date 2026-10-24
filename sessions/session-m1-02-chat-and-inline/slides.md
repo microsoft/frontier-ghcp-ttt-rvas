@@ -98,7 +98,7 @@ Fix this.
 Reviewable:
 
 ```text
-The weighted-average test expects 95 but receives 140.
+The weighted-average test expects 95 but receives 190.
 Inspect the selected method and focused test.
 Identify the defect without changing other methods.
 ```
@@ -203,14 +203,13 @@ Judge the results by the checks, not how well they read.
 
 # Access policy
 
-The live path requires Chat access allowed by your organization.
+The lab requires Chat access allowed by your organization.
 
-When access or comparison is unavailable:
+If Chat is unavailable, **stop the lab and restore access**.
+Manual work does not replace the Chat and inline-suggestion practice.
 
-- inspect the code manually;
-- write the intended prompts in `chat-notes.md`;
-- implement and test the same change;
-- compare with the reference solution.
+If only a second model is unavailable, continue with Chat and compare the
+assisted result with the reference solution.
 
 ---
 
@@ -232,7 +231,7 @@ For `[80, 100]` with weights `[1, 3]`, the denominator must be `4`.
 
 ```text
 Expected: 95
-Actual:   140
+Actual:   190
 ```
 
 The focused test gives Chat a concrete symptom. The reviewed fix changes the

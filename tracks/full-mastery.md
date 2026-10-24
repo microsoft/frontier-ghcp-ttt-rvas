@@ -3,7 +3,7 @@
 **Target Audience:** Trainers delivering the complete curriculum
 **Duration:** 88 hours across 29 sessions
 **Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 10-day intensive or 15-day standard
+**Recommended Delivery:** 15 days, with up to 7 teaching hours per day before breaks
 
 ---
 
@@ -20,10 +20,11 @@ product and delivery teams that do not write code.
 - Familiarity with GitHub (repos, PRs, issues, Actions, org administration)
 - GitHub Copilot Enterprise Cloud access
 - Experience with CI/CD and at least one IaC tool (Terraform or Bicep)
-- Node.js or Python installed (for MCP server and agent development)
+- Node.js 22.22.2 or later and Python 3.10 or later
+- Standalone CLI access and working JavaScript and Python language servers
 - Docker for the Copilot SDK observability lab
 - Comfort with live coding, demos, and running technical workshops
-- Access to a cloud environment (Azure, AWS, or GCP) for infrastructure labs
+- Optional cloud access for infrastructure extensions; the required IaC lab runs locally
 - GitHub Copilot app access for canvas and orchestration labs
 
 ## Sessions
@@ -44,7 +45,7 @@ product and delivery teams that do not write code.
 | 5       | m2-02          | Agent Mode in the IDE                     | Intermediate | 3 hrs      |
 | 6       | m2-03          | Copilot Spaces & Context Management       | Intermediate | 3 hrs      |
 | 7       | m2-04          | Copilot for Code Review & Pull Requests   | Intermediate | 3 hrs      |
-| 8      | m2-05          | GitHub Copilot App for Developers (optional specialization) | Intermediate | 3 hrs |
+| 8      | m2-05          | GitHub Copilot App for Developers | Intermediate | 3 hrs |
 | 9      | m2-06          | Repair and Refactor a Broken Python Application | Intermediate | 3 hrs |
 | 10      | m2-07          | Migrate a Legacy Java Service to Modern .NET | Advanced | 3 hrs |
 
@@ -93,21 +94,6 @@ product and delivery teams that do not write code.
 | 29 | m7-06 | Automate Delivery Follow-up and Connect Work Systems | Intermediate | 3 hrs |
 
 ## Recommended delivery schedule
-
-### 10-day intensive
-
-| Day | Sessions | Focus |
-| --- | --- | --- |
-| Day 1 | Sessions m1-01, m1-02, m1-03 | Introduction + Chat + Prompting |
-| Day 2 | Sessions m2-01, m2-02, m2-03 | CLI + IDE agent mode + Context |
-| Day 3 | Sessions m2-04, m2-05, m2-06 | Code review + Developer app + Python repair |
-| Day 4 | Sessions m2-07, m3-01, m3-02 | Java migration + App canvases + Cloud agent |
-| Day 5 | Sessions m3-03, m3-04, m3-05 | MCP + Custom agents + Skills |
-| Day 6 | Sessions m4-01, m4-02, m4-03 | Actions + IaC + CI/CD |
-| Day 7 | Sessions m5-01, m5-02, m5-03 | Squad + Spec Kit + HVE |
-| Day 8 | Sessions m6-01, m6-02, m7-01 | Copilot SDK + Capstone + App foundations |
-| Day 9 | Sessions m7-02, m7-03, m7-04 | Interviewing + GitHub planning + Planning canvas |
-| Day 10 | Sessions m7-05, m7-06 | Orchestration + Automation |
 
 ### 15-day standard
 

@@ -13,7 +13,7 @@ Use this sheet for the Squad run.
 | Lead | Assignment and final review | Edit implementation or test files |
 | Backend | `src/routes/api.js` | Add packages or edit unrelated routes |
 | Tester | `tests/api.test.js` and test results | Change source to make a test pass |
-| Scribe | `.squad/decisions.md` or tabletop decision record | Change the lead's decision |
+| Scribe | `.squad/decisions.md` | Change the lead's decision |
 
 ## Assignment
 

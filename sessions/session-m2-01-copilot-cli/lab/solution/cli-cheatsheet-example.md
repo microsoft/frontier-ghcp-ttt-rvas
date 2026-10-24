@@ -135,6 +135,7 @@ alias cr='copilot -p "Review my staged git changes. Focus on bugs, security issu
 2. **Autopilot can make several changes without stopping.** Set `--max-autopilot-continues` until you understand its behavior for a task.
 3. **Commands can be shared across surfaces.** The app also supports `/plan`,
    `/fleet`, and `/research`. Terminal automation is the reason to choose the CLI.
-4. **Use the IDE to debug and the CLI to automate.** That is the rule I will start with.
-5. **`/research` produces more detailed output than regular chat.** Use the extra
-   time when the decision needs that depth.
+4. **Choose from the task results.** Visual navigation may favor the IDE;
+   terminal automation may favor the CLI.
+5. **Check `/research` claims and sources.** Compare its usefulness with regular
+   chat rather than judging the answer by its length.

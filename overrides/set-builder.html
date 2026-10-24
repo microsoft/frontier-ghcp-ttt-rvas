@@ -48,7 +48,7 @@
               </span>
               <strong>{{ session.title }}</strong>
               <span class="set-session-description">{{ session.description }}</span>
-              <span class="set-session-meta">{{ session.duration_minutes // 60 }} hours</span>
+              <span class="set-session-meta">{{ session.duration_minutes // 60 }} hours{% if session.duration_minutes % 60 %} {{ session.duration_minutes % 60 }} min{% endif %}</span>
             </span>
           </label>
           <a class="set-preview-link" href="{{ session.url }}">Overview<span class="set-sr-only"> of session {{ session.id }}</span></a>

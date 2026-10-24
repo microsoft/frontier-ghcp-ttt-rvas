@@ -48,7 +48,7 @@ broaden access, or paste credentials into an issue or instruction file.**
 | 0:00 to 0:05 | Frame and access decision | Live route confirmed |
 | 0:05 to 0:16 | Checkpoint 1: issue contract | Approved issue |
 | 0:16 to 0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
-| 0:27 to 0:39 | Start or simulate one session | Planned files, commands, and edits stay within the issue |
+| 0:27 to 0:39 | Start one session | Planned files, commands, and edits stay within the issue |
 | 0:39 to 0:47 | Checkpoint 3: proposed change | Scoped diff review |
 | 0:47 to 0:54 | Checkpoint 4: tests | Recorded test result |
 | 0:54 to 0:58 | Checkpoint 5: human decision | Approve, request changes, or pause |
@@ -116,7 +116,7 @@ npm test
 
 **Gate:** Stop when the baseline fails without an explanation, setup requests a credential, or the reviewer cannot identify the allowed files.
 
-## 0:27 to 0:39: Start or simulate one session
+## 0:27 to 0:39: Start one session
 
 ### Live route
 
@@ -201,7 +201,7 @@ Do not turn the decision into a new implementation request.
 Assign:
 
 - issue owner;
-- live operator or manual implementer;
+- cloud agent operator;
 - reviewer;
 - test runner.
 

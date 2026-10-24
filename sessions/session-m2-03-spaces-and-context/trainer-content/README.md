@@ -1,8 +1,6 @@
 # Session m2-03: Context workflows
 
-## Trainer content guide
-
-### Delivery baseline
+## Before teaching
 
 Read the [course safety baseline](../../learning-safety-baseline.md). Before the
 demo, check the current GitHub docs and your organization's rules. Product
@@ -13,7 +11,7 @@ behavior and availability can change.
 1. Choose the training repository and synthetic data.
 2. Check which sources learners may add or share.
 3. Choose a small question and the files needed to answer it.
-4. Set a usage limit if the work is metered.
+4. Set a usage limit if the work is metered and name who can approve more.
 5. Check Spaces and GitHub Copilot access before the lab.
 6. Check standalone CLI `/env` and `/instructions` in the copied Storefront project.
 
@@ -27,57 +25,6 @@ trainer demonstration, but it does not count as learner completion.
 Teach learners to select the few files needed for a task and check the answer
 against those files.
 
-## Suggested agenda
-
-| Segment | Activity |
-| --- | --- |
-| Preflight | Check data, sources, usage limits, and access. |
-| Source selection | Select only relevant repository instructions, code, tests, and docs. |
-| Context packet | Explain why every included source is necessary. |
-| Small task | Use the packet to plan a small change. |
-| Review | Check the output against the source files and tests. |
-| Access gate | Stop when required Spaces or Copilot access is missing. |
-
-## Context packet pattern
-
-```text
-Task: make one API behavior change
-
-Include:
-- route or service file
-- focused tests
-- relevant API contract
-- repository conventions
-
-Exclude:
-- unrelated repositories
-- sensitive data
-- broad documentation that does not affect the task
-```
-
-## Trainer talking points
-
-> "Select the fewest files needed to explain and check the result."
-
-> "If you are unsure whether you may use a source or how the product handles it,
-> stop and resolve the access or policy question before the lab."
-
-> "For metered work, stop at the usage limit."
-
-## Review rubric
-
-- Does every source have a clear relationship to the task?
-- Is all included data allowed for the lab?
-- Does the result follow the source files and acceptance criteria?
-- Are assumptions identified for human review?
-- Can the task be completed manually from the packet?
-
-## Close
-
-Ask learners to identify a task that would be easier to review with fewer files.
-
----
-
 ## Minute-mapped delivery plan (60 minutes)
 
 | Time | Segment | Trainer outcome |
@@ -88,7 +35,7 @@ Ask learners to identify a task that would be easier to review with fewer files.
 | 0:30 to 0:42 | Instructions and reusable prompts | Learners separate project-wide rules from repeatable tasks. |
 | 0:42 to 0:50 | Source governance and maintenance | Each source receives scope and freshness checks. |
 | 0:50 to 0:58 | Scripted before/after demo | The group compares two responses with the source files. |
-| 0:58 to 1:00 | Close and lab handoff | Learners begin with the context packet. |
+| 0:58 to 1:00 | Close and lab handoff | Learners begin by selecting sources for their Space. |
 
 ### Time-pressure cutpoints
 
@@ -166,12 +113,10 @@ Exclude the unrelated roadmap and production log.
 
 ### Access and governance check
 
-1. Revisit the Delivery baseline.
-2. Check the current GitHub docs for Spaces.
-3. Check repository access and use only synthetic data.
-4. Check the rules for adding and sharing sources.
-5. Set a usage limit and name who can approve more.
-6. Stop if the required sources are missing.
+1. Use the source permissions and usage limit checked
+   [before teaching](#before-teaching).
+2. Select the files needed to answer the question.
+3. Stop if required sources are missing or permission to use them is unclear.
 
 ### Trainer-created context card
 

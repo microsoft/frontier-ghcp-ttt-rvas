@@ -19,7 +19,8 @@ Service agents then repeat information already present in the internal queue.
 
 ## Target outcome
 
-A requester can see a plain-language public status, the last updated time, and a safe summary for each included request.
+A requester can see the public status label and latest update date for each
+included request.
 
 ## Scope
 
@@ -28,8 +29,7 @@ A requester can see a plain-language public status, the last updated time, and a
 - Facilities and equipment requests.
 - The signed-in requester's web view.
 - A public status mapped from the existing internal state.
-- Last updated time.
-- A short summary approved for requester visibility.
+- Latest update date.
 - A detailed status reason for authorized support staff.
 - Safe fallback behavior for stale or unmapped states.
 
@@ -47,8 +47,8 @@ A requester can see a plain-language public status, the last updated time, and a
 | --- | --- | --- |
 | Existing internal states | Public wording must map to current states without changing the queue | Service operations manager |
 | Existing updated timestamp | The portal can show freshness without a new data source | Portal team |
-| Role-based visibility | Requesters see public fields; authorized support staff may see the detailed status reason | Privacy reviewer |
-| Public wording review | State labels and summaries need service approval | Service operations manager |
+| Role-based visibility | Requesters see only the public status label and latest update date; authorized support staff may see the detailed status reason | Privacy reviewer |
+| Public wording review | State labels need service approval | Service operations manager |
 
 ## Success
 
@@ -65,7 +65,7 @@ A requester can see a plain-language public status, the last updated time, and a
 | Signed-in user does not own the request | Show no request details | Permission test |
 | Internal state has no approved public mapping | Show "Status unavailable" and a contact route | Mapping test |
 | Source timestamp exceeds the approved threshold | Show "Update pending" rather than implying fresh progress | Stale-state test |
-| Safe summary is empty | Show the public status and omit the summary block | Empty-state test |
+| Requester response contains a summary | Omit the summary; show only the public status label and latest update date | Visible-field test |
 | Requester asks for support-only detail | Return no internal reason, notes, queue names, staff identities, or escalation details | Role-boundary test |
 
 ## Decisions
@@ -74,7 +74,7 @@ A requester can see a plain-language public status, the last updated time, and a
 | --- | --- | --- | --- |
 | First-release users | Employees who submitted included requests | They create the update contacts | Portal product owner |
 | First-release request types | Facilities and equipment | High contact volume and shared workflow | Portal product owner |
-| Visible fields | Public status, updated time, safe summary | Enough context without exposing internal work | Portal product owner |
+| Visible fields | Public status label and latest update date only | The late visibility constraint excludes the earlier requester summary | Portal product owner |
 | Support-only detail | Detailed status reason remains limited to the authorized support view | Support needs diagnostic context that requesters must not receive | Portal product owner |
 | Notifications | Excluded | They add channels and delivery rules before the view is proven | Portal product owner |
 | Approval path | Service review, privacy review, product approval | Wording and access need separate checks | Portal product owner |

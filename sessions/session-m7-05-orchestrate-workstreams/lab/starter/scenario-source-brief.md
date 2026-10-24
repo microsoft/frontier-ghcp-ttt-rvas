@@ -19,7 +19,7 @@ for each. Do not change production systems or publish claims.
 ### SV-02: Requester status view
 
 - Session m7-03 reuses issue `#241`.
-- The view may show public status, last public update time, and expected next step.
+- The view may show only the public status label and latest update date.
 - No approved source supports a completion forecast.
 
 ### SV-03: Empty and stale states

@@ -58,7 +58,9 @@ capabilities are available.
 
 ## Part 2: Compare weak and grounded context (25 minutes)
 
-Start with a deliberately weak prompt without attaching a file:
+Start a fresh session with `/clear` or `/reset` so the file read in Part 1 is
+not carried into the comparison. Do not attach the initiative file yet.
+Start with this deliberately weak prompt:
 
 ```text
 Explain the Service Request Portal initiative, its users, constraints, and next

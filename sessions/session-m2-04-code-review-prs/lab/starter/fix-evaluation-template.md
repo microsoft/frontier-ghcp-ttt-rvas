@@ -3,7 +3,8 @@
 ## Copilot review analysis
 
 Use this template for the local reviews and the private training PR. Preserve
-your initial human verdict before running either local command.
+your initial human verdict in `partner-review-checklist.md` before running either
+local command. Record findings once in the table below.
 
 ## Review runs
 
@@ -17,69 +18,21 @@ your initial human verdict before running either local command.
 
 ## Finding triage
 
-| Source | File and line | Claimed impact | Reproduction or code reference | Accept, reject, or unresolved | Reason | Fix and regression test |
-| --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | |
+| Source | File and line | Claimed impact | Acceptance criterion | Reproduction or code reference | Accept, reject, or unresolved | Reason | Fix and regression test |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | | |
 
 Record overlapping findings once and name each source. A maintainability comment
 is not automatically a security vulnerability. A zero-findings result is not
 proof that the change is secure.
 
----
+Use `Human` for findings from the initial independent review. Keep those findings
+unchanged; add later review sources, decisions, and fixes in the other columns.
+State whether a suggested fix was used as written, revised, or rejected.
 
-### Comment 1
+## Check coverage of the six intentional issues
 
-- **File & line:**
-- **Issue Copilot found:**
-- **Copilot's suggested fix:**
-- **Is the diagnosis accurate?** (Yes / Partial / No)
-- **Is the fix correct?** (Yes / Partial / No)
-- **Would you apply this fix?** (Apply as-is / Modify then apply / Reject)
-- **Notes:**
-
----
-
-### Comment 2
-
-- **File & line:**
-- **Issue Copilot found:**
-- **Copilot's suggested fix:**
-- **Is the diagnosis accurate?** (Yes / Partial / No)
-- **Is the fix correct?** (Yes / Partial / No)
-- **Would you apply this fix?** (Apply as-is / Modify then apply / Reject)
-- **Notes:**
-
----
-
-### Comment 3
-
-- **File & line:**
-- **Issue Copilot found:**
-- **Copilot's suggested fix:**
-- **Is the diagnosis accurate?** (Yes / Partial / No)
-- **Is the fix correct?** (Yes / Partial / No)
-- **Would you apply this fix?** (Apply as-is / Modify then apply / Reject)
-- **Notes:**
-
----
-
-_(Copy this block for additional comments)_
-
----
-
-## Summary
-
-| Metric                                        | Count   |
-| --------------------------------------------- | ------- |
-| Total Copilot comments                        |         |
-| Accurate diagnoses                            |         |
-| Correct fixes (apply as written)              |         |
-| Partially correct fixes (needed changes)      |         |
-| Incorrect or unhelpful comments               |         |
-| **False positives** (flagged non-issues)      |         |
-| **False negatives** (missed real issues)      |         |
-
-## Issues Copilot found (of the 6 intentional)
+Compare these with the triage table to identify missed issues:
 
 - [ ] Unsafe SQL construction, distinguished from actual SQL execution
 - [ ] Password exposure in API response
@@ -88,19 +41,8 @@ _(Copy this block for additional comments)_
 - [ ] Synthetic hardcoded configuration, distinguished from a real credential leak
 - [ ] Duplicate code (DRY violation)
 
-## Overall assessment
-
-**Copilot as a first-pass reviewer (1 to 5):** ___
-
-**Would you recommend automated Copilot review for your team?** (Yes / With limits / No)
-
-**Key observations:**
-
-_(Write your assessment.)_
-
 ## Human decision
 
-- Initial human verdict:
 - What changed after the local reviews:
 - What changed after PR review:
 - Final test command and result:

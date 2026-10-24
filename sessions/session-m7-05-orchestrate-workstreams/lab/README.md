@@ -41,6 +41,9 @@ status, empty and stale states, and requester access. Orchestrate one workstream
 per issue. Session m7-06 will use your reviewed parent result as an authoritative
 input.
 
+Select the four required roles from the parent issue's child links. Any optional
+fifth child stays outside this orchestration.
+
 ## Preflight
 
 - Check GitHub Copilot access before the lab.

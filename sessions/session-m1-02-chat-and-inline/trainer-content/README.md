@@ -68,7 +68,7 @@ Fix this.
 with:
 
 ```text
-The weighted-average test expects 95 but receives 140. Inspect the selected method
+The weighted-average test expects 95 but receives 190. Inspect the selected method
 and the focused test. Identify the defect without changing other methods.
 ```
 

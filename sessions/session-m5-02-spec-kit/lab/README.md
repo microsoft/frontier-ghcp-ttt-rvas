@@ -83,7 +83,7 @@ find .github -maxdepth 3 -type f | sort
 ```
 
 **Checkpoint:** `.specify/memory/constitution.md`, templates, scripts, and
-Copilot integration files exist. There is no `.specify.yml`.
+Copilot integration files exist.
 
 ## Part 2: Specify and clarify archive behavior (25 minutes)
 
@@ -318,7 +318,6 @@ If convergence appends work, repeat the implement and converge loop.
 
 ## Verification
 
-- [ ] No `.specify.yml` file was added.
 - [ ] `spec.md` contains the accepted archive and restore behavior.
 - [ ] `plan.md` uses the required Python files and adds no dependency.
 - [ ] `tasks.md` maps implementation work to user stories and exact file paths.

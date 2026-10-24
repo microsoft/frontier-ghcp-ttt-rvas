@@ -75,8 +75,7 @@ tree .squad/ -L 3
 | Stop rule | Overlapping ownership, failed tests, scope growth, or an unclear data boundary pauses work. |
 
 **Checkpoint:** The trainer signs off on the team boundary before Issue 001 is
-assigned. Tabletop learners record the same roles in
-`lab/starter/work-assignments.md`.
+assigned. Use `lab/starter/work-assignments.md` to check the role boundaries.
 
 ## Exercise 2: Assign Issue 001 (20 min)
 
@@ -96,7 +95,7 @@ The tester owns focused evidence in tests/api.test.js.
 The lead reviews the final packet.
 ```
 
-Record the assignment in the live `.squad/` log or the tabletop worksheet. It must
+Record the assignment in the live `.squad/` log. It must
 include the issue, owner, permitted files, non-goals, tests, reviewer, and stop
 conditions.
 
@@ -155,7 +154,7 @@ The items in `lab/starter/backlog-items.md` are optional discussion prompts.
 
 Submit one folder or pull request containing:
 
-1. the reviewed team structure or tabletop role sheet;
+1. the reviewed Squad team structure;
 2. the Issue 001 assignment;
 3. the code and test changes for Issue 001;
 4. passing `npm test` output;

@@ -77,7 +77,8 @@ bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
 Let learners inspect the output before showing the solution. The gate should fail.
 Each repair must connect a reported pattern to the architecture or security rule.
 
-Then show the passing command against `lab/solution/secure-iac/main.tf`.
+Rerun the gate and Terraform validation against the repaired working file.
+Then compare it with `lab/solution/secure-iac/main.tf`.
 
 ## Bicep comparison
 

@@ -30,11 +30,15 @@ A thorough `/research` result for this topic should include:
 - Dependency vulnerability scanning (npm audit, Snyk)
 - Error handling that doesn't leak stack traces
 
-**3. Depth indicators (research vs. regular chat):**
+**3. Compare the actual outputs:**
 
-- Regular chat: Generic advice, ~500 words, no sources
-- `/research`: Specific package versions, examples from GitHub repositories, 1500+
-  words, cited sources, current best practices
+- Which claims have sources that support them?
+- Do the examples match the package versions and task?
+- Which unsupported or outdated claims need correction?
+- Did either result change the decision?
+
+Word count does not show accuracy or usefulness. Do not assume regular chat lacks
+sources or that `/research` produces a better answer.
 
 ### Sample research output structure
 
@@ -80,6 +84,6 @@ Rate your `/research` output:
 | Source citations present            | ___           |
 | Actionable code examples            | ___           |
 | Current/up-to-date advice           | ___           |
-| Better than a regular chat response | ___           |
+| Usefulness compared with regular chat | ___         |
 
 **Overall:** Would you use `/research` as part of your regular workflow? Why or why not?

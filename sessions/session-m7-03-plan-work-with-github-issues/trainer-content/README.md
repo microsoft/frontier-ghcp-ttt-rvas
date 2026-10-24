@@ -76,7 +76,10 @@ candidate:
 
 ### 3. Propose the issue set
 
-Use one parent issue and three to five child issues. Each issue should have:
+Use one parent issue and four child roles: public status mapping, requester status
+view, empty and stale states, and requester-access verification. These roles feed
+Sessions m7-04 and m7-05. A fifth child is optional and stays outside those four
+workstreams. Each issue should have:
 
 - a clear outcome;
 - defined scope;

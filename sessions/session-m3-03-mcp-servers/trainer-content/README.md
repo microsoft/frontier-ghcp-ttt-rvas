@@ -32,7 +32,8 @@ at 0:50. Use the recorded expected output and keep time for the lab handoff.
 
 If approved package access is unavailable, stop the executable demo. A
 static code walkthrough is acceptable, but mark Inspector and tests as **not
-executed**.
+executed**. This only recovers the trainer demo. Stop the learner lab until tests
+and Inspector can run.
 
 ## Teaching sequence
 
@@ -178,8 +179,10 @@ tests, and protocol calls.
 
 Explain the lab sequence: start with the one-tool server, add one test, and
 inspect good and bad calls before adding the remaining tools. Ask learners to
-submit lockfiles and passing tests, plus Inspector output or **not executed**.
-They must also record the exact requests and responses.
+update the original one-tool catalog assertion when they add the other tools.
+They must run tests and Inspector against their edited working copy, not the
+reference solution, and submit the lockfile, test output, and protocol requests
+and responses. Stop the lab if Inspector cannot run.
 
 ## References
 

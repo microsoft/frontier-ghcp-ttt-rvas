@@ -24,10 +24,11 @@ current behavior and get approval before using a live command.
 Use the status view to check the issue, active work, pull request, and review state.
 The exact output can vary.
 
-## Tabletop equivalent
+## Trainer walkthrough
 
 Use four columns: **assigned**, **implemented**, **tested**, and **reviewed**. Move
 Issue 001 one column at a time and attach the assignment, changes, tests, or review.
+This view illustrates the monitor; it does not replace the learner's Squad run.
 
 ## Stop conditions
 

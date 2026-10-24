@@ -24,6 +24,10 @@
 
 ## Child issues
 
+Cover public status mapping, requester status view, empty and stale states, and
+requester-access verification. Mark any optional fifth child separately; it is
+not a Session m7-05 workstream.
+
 | Order | Title | Independent outcome | Dependency | Owner or gap |
 | --- | --- | --- | --- | --- |
 | | | | | |

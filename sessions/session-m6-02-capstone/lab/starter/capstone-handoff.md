@@ -17,11 +17,9 @@
 | --- | --- | --- |
 |  |  |  |
 
-## Patch or patch plan
+## Patch
 
-**Path used:** Copilot / manual / patch plan
-
-| File | Implemented or planned change | Requirement |
+| File | Implemented change | Requirement |
 | --- | --- | --- |
 |  |  |  |
 

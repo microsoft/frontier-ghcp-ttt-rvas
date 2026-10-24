@@ -15,8 +15,8 @@ supporting resources. See [Session m3-05](session-m3-05-agent-skills-ecosystem/R
 
 ## Automation
 
-A scheduled or event-driven Copilot task with defined tools, required run records,
-and review rules. See [Session m7-06](session-m7-06-automate-delivery-follow-up/README.md).
+A reusable Copilot task that runs manually or on a schedule. See
+[Session m7-06](session-m7-06-automate-delivery-follow-up/README.md).
 
 ## Canvas
 

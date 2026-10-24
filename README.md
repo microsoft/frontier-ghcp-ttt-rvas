@@ -63,7 +63,7 @@ Use `data/session-catalog.json` for the teaching order.
 | #   | Session                                                                    | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | -------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | m1-01  | [Introduction to GitHub Copilot](sessions/session-m1-01-intro-to-copilot/)    | Beginner    | 3 hrs      | Explains what Copilot is, how the LLM and billing model work, data privacy, and how to install and configure it.   |
-| m1-02  | [Copilot Chat & Inline Suggestions](sessions/session-m1-02-chat-and-inline/)  | Beginner    | 3 hrs      | Covers Copilot Chat surfaces, slash commands, chat participants, model selection, and the CLI for daily development. |
+| m1-02  | [Copilot Chat & Inline Suggestions](sessions/session-m1-02-chat-and-inline/)  | Beginner    | 3 hrs      | Uses Chat to diagnose a Calculator defect, add tests, inspect context, and implement a change request. |
 | m1-03  | [Prompt Engineering Fundamentals](sessions/session-m1-03-prompt-engineering/) | Beginner    | 3 hrs      | Builds a todo API with focused prompts and a checked CLI `/refine` rewrite. |
 
 ### Module 2: Copilot in Practice (Intermediate to Advanced)
@@ -71,7 +71,7 @@ Use `data/session-catalog.json` for the teaching order.
 | #   | Session                                                                        | Difficulty   | Duration   | Summary                                                                                                              |
 | --- | ------------------------------------------------------------------------------ | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | m2-01  | [GitHub Copilot in the CLI](sessions/session-m2-01-copilot-cli/)                   | Intermediate | 3 hrs      | Checks plan critique, CLI controls, queued/background work, recovery, and live fleet results. |
-| m2-02  | [Agent Mode in the IDE](sessions/session-m2-02-agent-mode-ide/)                   | Intermediate | 3 hrs      | Introduces agent mode, Copilot's autonomous plan-act-observe loop for multi-step, multi-file coding tasks in the IDE. |
+| m2-02  | [Agent Mode in the IDE](sessions/session-m2-02-agent-mode-ide/)                   | Intermediate | 3 hrs      | Builds and extends one Todo API in IDE agent mode, then tests and reviews the changes. |
 | m2-03  | [Copilot Spaces & Context Management](sessions/session-m2-03-spaces-and-context/) | Intermediate | 3 hrs      | Curates context and inspects loaded CLI instructions to correct a stale rule before implementation. |
 | m2-04  | [Copilot for Code Review & PRs](sessions/session-m2-04-code-review-prs/)          | Intermediate | 3 hrs      | Compares human review, local `/review` and `/security-review`, and Copilot PR findings before focused fixes. |
 | m2-05  | [GitHub Copilot App for Developers](sessions/session-m2-05-copilot-app-for-developers/) | Intermediate | 3 hrs | Compares checked rubber-duck and `/spar` critiques, returns a forked plan note, and reviews repair and PR readiness. |
@@ -86,7 +86,7 @@ the required commands before delivery. Prepared outputs do not replace live work
 | #   | Session                                                                             | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | m3-01  | [Copilot App, Plugins & Canvas Extensions](sessions/session-m3-01-copilot-app-canvases/) | Advanced  | 3 hrs      | Uses the Copilot App Customize area to build a shared canvas with state limits, defined actions, and a review record. |
-| m3-02  | [Copilot Cloud Agent](sessions/session-m3-02-cloud-agent/)                             | Advanced    | 3 hrs      | Covers assigning GitHub issues to the cloud agent for autonomous resolution, branch, code, tests, and draft PR.   |
+| m3-02  | [Copilot Cloud Agent](sessions/session-m3-02-cloud-agent/)                             | Advanced    | 3 hrs      | Follows one issue from assignment to a proposed change, test results, and human review. |
 | m3-03  | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/)           | Advanced    | 3 hrs      | Introduces the Model Context Protocol, server architecture, configuration, and building custom MCP servers.       |
 | m3-04  | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/)                | Advanced    | 3 hrs      | Checks JavaScript LSP results and a live test-only agent that stops at a source-code conflict. |
 | m3-05  | [Agent Skills & the Copilot Ecosystem](sessions/session-m3-05-agent-skills-ecosystem/) | Advanced    | 3 hrs      | Tests live skills, compares interviews before `/plan`, and reviews scoped Chronicle suggestions. |
@@ -144,13 +144,13 @@ the required commands before delivery. Prepared outputs do not replace live work
 
    | Audience              | Recommended Path                 | Sessions     | Duration   |
    | --------------------- | -------------------------------- | ------------ | ---------- |
-   | Copilot Beginners     | Module 1                         | 01 to 03        | 9 hrs      |
-   | Copilot Practitioners | Modules 1 to 2 + developer orchestration | 01 to 07, 29, 24, 27, 26 | 33 hrs |
-   | Agentic Developers    | Modules 1 to 3 + developer orchestration | 01 to 12, 29, 24 | 42 hrs |
-   | DevOps Engineers      | Module 1 + Session m2-02 + Module 4 | 01 to 05, 13 to 15 | 21 hrs     |
-   | SDK Application Developers | Modules 1 to 3 + Session m6-01 | 01 to 12, 17 | 39 hrs |
-   | Product and Delivery Teams | Module 7                   | 20 to 25        | 18 hrs     |
-   | HVE Practitioners     | HVE Engineering                  | 01 to 07, 10 to 11, 28 | 31 hrs |
+   | Copilot Beginners     | Module 1                         | m1-01 to m1-03 | 9 hrs |
+   | Copilot Practitioners | Modules 1 to 2 + developer orchestration | m1-01 to m1-03, m2-01 to m2-05, m7-05, m2-06 to m2-07 | 33 hrs |
+   | Agentic Developers    | Agentic Development | m1-01 to m1-03, m2-01 to m2-05, m7-05, m3-01 to m3-05 | 42 hrs |
+   | DevOps Engineers      | DevOps & Automation | m1-01 to m1-03, m2-01 to m2-02, m4-01 to m4-03 | 23 hrs 30 min |
+   | SDK Application Developers | SDK application development | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m6-01 | 39 hrs |
+   | Product and Delivery Teams | Module 7                   | m7-01 to m7-06 | 18 hrs |
+   | HVE Practitioners     | HVE Engineering                  | m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, m5-03 | 31 hrs |
    | Full Track            | All Modules                      | All available sessions | 88 hrs |
 
 5. **Prepare your environment:**

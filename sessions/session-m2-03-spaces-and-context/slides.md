@@ -82,7 +82,7 @@ creation, reuse, or behavior.
 | 0:30 | Instructions and prompt files | Show repository artifacts |
 | 0:42 | Memory and maintenance | Separate preview from policy |
 | 0:50 | Before/after demo | Compare with a rubric |
-| 0:58 | Lab handoff | Assign context packet |
+| 0:58 | Lab handoff | Select sources for the live Space |
 
 **Transition:** "Choose sources that answer the task before adding more prompt text."
 

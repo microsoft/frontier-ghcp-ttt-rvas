@@ -28,7 +28,7 @@ POST /api/bookmarks
 # The result is a handoff
 
 - implementation-ready issue;
-- patch or patch plan;
+- implemented patch;
 - executable test results;
 - review decision;
 - deferred scope and next action.
@@ -84,11 +84,12 @@ packages.
 
 ---
 
-| Path | Use |
-| --- | --- |
-| Copilot | Implement the single issue |
-| Manual | Implement the same files and tests |
-| Blocked | Produce a reviewable patch plan |
+# When work is blocked
+
+Use GitHub Copilot for the implementation.
+
+Record the blocker and a request-changes or pause decision in the handoff.
+Resume the work before claiming completion.
 
 ---
 
@@ -118,5 +119,5 @@ Record one decision: approve, request changes, or pause.
 | --- | --- |
 | Accept the specification and scope | 25 min |
 | Write the issue and establish the baseline | 25 min |
-| Implement or write the patch plan | 35 min |
+| Implement the accepted slice | 35 min |
 | Verify, review, and hand off | 35 min |

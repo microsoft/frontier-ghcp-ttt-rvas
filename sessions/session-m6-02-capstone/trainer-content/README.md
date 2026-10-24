@@ -2,7 +2,7 @@
 
 ## Delivery objective
 
-Guide learners through one reviewed `POST /api/bookmarks` change or patch plan.
+Guide learners through one reviewed `POST /api/bookmarks` change with GitHub Copilot.
 Keep scope decisions in the accepted GitHub issue and require the Session m5-02
 specification standards. Do not let the exercise expand into a full API,
 deployment, or tool tour.
@@ -20,9 +20,9 @@ deployment, or tool tour.
 
 ## Teach the boundary
 
-The required slice is `POST /api/bookmarks`. Learners may implement it with
-Copilot or manually. They may also produce a patch plan when execution is
-blocked. All paths use the same issue, checks, review gate, and handoff.
+The required slice is `POST /api/bookmarks`. Learners use GitHub Copilot to
+implement it, run the tests, and review the result with a person.
+**Unfinished work does not count as capstone completion.**
 
 Write these non-goals where everyone can see them:
 
@@ -62,9 +62,9 @@ another endpoint, live data, deployment, tool configuration, or a new dependency
 Report changed files, test results, deviations, and deferred scope for review.
 ```
 
-After 30 minutes of implementation, have learners move unfinished work to a patch
-plan. They still need to inspect the tests, record a decision, and complete the
-handoff.
+After 30 minutes of implementation, check whether learners can finish within the
+segment. If blocked, record the blocker and a request-changes or pause decision
+in the handoff. Resume implementation before claiming completion.
 
 ## Review gate
 

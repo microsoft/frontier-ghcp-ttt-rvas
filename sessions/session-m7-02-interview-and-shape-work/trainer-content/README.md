@@ -177,8 +177,10 @@ Session m7-03 creates the approved issue set through GitHub MCP.
 ## Reopen an affected branch
 
 Reveal `lab/starter/late-constraint.md`. Ask the skill to reopen only visibility
-decisions. Show that scope, request types, notification exclusion, and ownership
-stay unchanged while role-specific acceptance criteria are revised.
+decisions. Remove the earlier requester summary: requesters may now see only the
+public status label and latest update date. Authorized support staff may see the
+detailed status reason. Keep request types, notification exclusion, and ownership
+unchanged while revising the affected criteria.
 
 ## Facilitation notes
 

@@ -1,8 +1,6 @@
 # Session m2-02: IDE agent workflows
 
-## Trainer content guide
-
-### Delivery baseline
+## Before teaching
 
 Read the [course safety baseline](../../learning-safety-baseline.md). Before the
 demo, check the current GitHub docs and your organization's rules. Editor modes,
@@ -13,7 +11,7 @@ permissions, and model choices can change.
 1. Choose the training repository and synthetic data.
 2. Check which tools and commands learners may use.
 3. Choose a small task with clear acceptance criteria.
-4. Set a usage limit if the work is metered.
+4. Set a usage limit if the work is metered and name who can approve more.
 5. Check Agent mode access before the lab.
 
 ### Access failure
@@ -31,59 +29,6 @@ Plan → Act → Observe → Review → Revise or stop
 
 Have learners define the task and approve actions. The assistant proposes work
 within those boundaries.
-
-## Suggested agenda
-
-| Segment | Activity |
-| --- | --- |
-| Preflight | Check scope, data, tools, usage limits, and access. |
-| Plan | Write the goal, constraints, and acceptance criteria. |
-| Act | Inspect proposed changes and commands before approval. |
-| Observe | Read test output, diffs, and unexpected effects. |
-| Review | Check correctness, safety, scope, and maintainability. |
-| Access gate | Stop when required Agent mode access is missing. |
-
-## Trainer talking points
-
-> "The agent loop does not delegate judgment. Plan before the change, inspect each
-> action, check the result, and stop when the task leaves its stated scope."
-
-> "Use only the tools allowed for the training repository."
-
-> "For metered work, set a usage limit and name who can approve more."
-
-## Task template
-
-```markdown
-## Goal
-Describe one user-visible, testable change.
-
-## Constraints
-- Named repository paths and synthetic data only
-- Required checks and repository conventions
-- No new dependencies or external access
-
-## Completion
-- Acceptance criteria are satisfied
-- Test output is recorded
-- A human reviewer approves the result
-```
-
-## Review rubric
-
-- Is the plan small enough to check?
-- Does each proposed change stay within the planned files?
-- Are commands, dependencies, and data access understood before approval?
-- Do relevant checks pass?
-- Does a reviewer accept the outcome?
-- Did the work stay within the usage limit?
-
-## Close
-
-Ask learners to identify one point in their workflow where a plan or review check
-would reduce risk.
-
----
 
 ## Minute-mapped delivery plan (60 minutes)
 
@@ -162,14 +107,10 @@ After **Review**, ask: "Would the reviewer accept this result?"
 
 ### Exact trainer actions
 
-1. Re-display the Delivery baseline and Access and cost preflight.
-2. Check that the repository contains only synthetic data.
-3. Check the current GitHub docs for Agent mode.
-4. Check the rules for file access, commands, network use, and tools.
-5. Identify the human reviewer.
-6. Set a usage limit and name who can approve more.
-7. Open the starter task before the first request.
-8. Write this contract:
+1. Use the repository, tool permissions, and usage limit checked
+   [before teaching](#before-teaching).
+2. Identify the human reviewer and open the starter task.
+3. Write this contract:
 
 ```markdown
 Goal: add optional completed filtering to a fictional task list.

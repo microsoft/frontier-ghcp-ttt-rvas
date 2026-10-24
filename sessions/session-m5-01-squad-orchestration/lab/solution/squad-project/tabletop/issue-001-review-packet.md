@@ -1,6 +1,7 @@
-# Issue 001 tabletop review packet
+# Issue 001 prepared trainer review packet
 
-This packet is the no-tool equivalent of the reference `.squad/` workflow.
+Use this packet when the trainer demonstration stalls. It illustrates the
+reference `.squad/` workflow but does not replace a learner Squad run.
 
 ## Assignment
 

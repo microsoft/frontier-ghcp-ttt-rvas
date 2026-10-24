@@ -178,18 +178,25 @@ Investigate these sinks without opening the secure solution:
 - HTML response construction;
 - file path resolution.
 
-Ask for one repair at a time. Review the diff, then compare with
-`lab/solution/secure-app/src/app.js`. Run the focused checks:
+Ask for one repair at a time in `lab/starter/vulnerable-app/src/app.js`.
+Review the diff. Copy only the supplied test harness and dependency manifests,
+not the solution source, into your working app:
 
 ```bash
-node --check lab/solution/secure-app/src/app.js
-npm ci --prefix lab/solution/secure-app
-npm test --prefix lab/solution/secure-app
+mkdir -p lab/starter/vulnerable-app/test
+cp lab/solution/secure-app/package.json lab/solution/secure-app/package-lock.json \
+  lab/starter/vulnerable-app/
+cp lab/solution/secure-app/test/security.test.js \
+  lab/starter/vulnerable-app/test/
+node --check lab/starter/vulnerable-app/src/app.js
+npm ci --prefix lab/starter/vulnerable-app
+npm test --prefix lab/starter/vulnerable-app
 ```
 
 Explain how each repair protects its code path: parameterized queries for SQL,
 output encoding for HTML, and resolved-path containment for file access.
 The three tests must pass. Do not rely only on an absence of scanner findings.
+Then compare your repair with `lab/solution/secure-app/src/app.js`.
 
 ## Part 3: Improve feedback speed
 
@@ -201,10 +208,12 @@ Validate:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
-  lab/solution/optimized-pipeline/workflow.yml
+  lab/starter/slow-pipeline/workflow.yml
 grep -nE "cache: 'npm'|needs: \\[lint, test\\]|fetch-depth: 1|github.event_name" \
-  lab/solution/optimized-pipeline/workflow.yml
+  lab/starter/slow-pipeline/workflow.yml
 ```
+
+Then compare your workflow with `lab/solution/optimized-pipeline/workflow.yml`.
 
 ## Final deliverable
 

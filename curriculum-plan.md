@@ -11,7 +11,7 @@ After this curriculum, you should be able to:
 5. **Build** custom agents (`.github/agents/`), agent skills (`.github/skills/`), canvas extensions, and MCP server integrations
 6. **Automate** GitHub Actions, IaC (Terraform/Bicep), and CI/CD workflows with Copilot assistance
 7. **Orchestrate** multi-agent teams using optional tools such as Squad for advanced agentic automation
-8. **Apply** specification-driven development to turn enterprise requirements into governed delivery artifacts
+8. **Apply** specification-driven development to keep requirements, plans, code, and tests aligned
 9. **Run** hands-on labs where trainees build real projects using the full Copilot toolchain
 10. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
 11. **Teach** product and delivery teams to use the GitHub Copilot app, save plans in repository files, and supervise agent work without programming
@@ -34,7 +34,7 @@ Module 2: Copilot in Practice ──────────────── (
 Module 3: Agentic Workflows ───────────────── (Advanced, 5 sessions)
     │
     ├── Module 4: DevOps & Infrastructure ──── (Intermediate to Advanced, 3 sessions)
-    │   └── Requires: Module 1 + Session m2-02
+    │   └── Requires: Module 1 + Sessions m2-01 to m2-02
     │
     ├── Module 5: Specification-Driven Frameworks ─ (Advanced, 3 sessions)
     │   └── Uses Squad, Spec Kit, and HVE as worked framework examples
@@ -52,9 +52,9 @@ Module 7: Product and Delivery Teams ──────────────�
 | ------------------------- | -------------------------------- | ------------ | ---------- |
 | **Copilot Beginners**     | Module 1 only                    | m1-01 to m1-03        | 9 hrs      |
 | **Copilot Practitioners** | Modules 1 to 2 + developer orchestration | m1-01 to m1-03, m2-01 to m2-04, m2-05, m7-05, m2-06, m2-07 | 33 hrs |
-| **Agentic Developers**    | Modules 1 to 3 + developer orchestration | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m2-05, m7-05 | 42 hrs |
-| **DevOps Engineers**      | Module 1 + Session m2-02 + Module 4 | m1-01 to m1-03, m2-01 to m2-02, m4-01 to m4-03 | 21 hrs     |
-| **SDK Application Developers** | Modules 1 to 3 + Session m6-01 | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m6-01 | 39 hrs |
+| **Agentic Developers**    | Agentic Development | m1-01 to m1-03, m2-01 to m2-05, m7-05, m3-01 to m3-05 | 42 hrs |
+| **DevOps Engineers**      | DevOps & Automation | m1-01 to m1-03, m2-01 to m2-02, m4-01 to m4-03 | 23 hrs 30 min |
+| **SDK Application Developers** | SDK application development | m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05, m6-01 | 39 hrs |
 | **Product and Delivery Teams** | Module 7                    | m7-01 to m7-06        | 18 hrs     |
 | **HVE Practitioners**     | HVE Engineering                  | m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04, m5-03 | 31 hrs |
 | **Full Track**            | All Modules                      | All available sessions | 88 hrs |
@@ -110,7 +110,7 @@ not require Sessions m7-01 to m7-04 or GitHub MCP. Check access before schedulin
 | #   | Session                                     | Difficulty  | Prerequisites      | Duration   |
 | --- | ------------------------------------------- | ----------- | ------------------ | ---------- |
 | m5-01  | Brady's Squad: Human-Led AI Teams           | Advanced    | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs   |
-| m5-02  | Spec Kit: Enterprise Specification-Driven Development | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs |
+| m5-02  | Spec Kit: Specification-Driven Development | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-01 to m3-05 | 3 hrs 30 min |
 | m5-03  | HVE Core: Evidence-Led Delivery with RPI | Advanced | Sessions m1-01 to m1-03, m2-01 to m2-04, m3-03 to m3-04 | 4 hrs |
 
 ### Module 6: Advanced Topics & Capstone (Advanced)
@@ -169,15 +169,13 @@ Trainees then install and configure Copilot and use it to write their first code
 - Setting expectations: what Copilot does well, where it struggles
 - Prepare answers to common objections
 
-**Lab Outline (2 hours 30 minutes):**
+**Lab Outline (2 hours):**
 
 - Install and configure GitHub Copilot in VS Code
-- Accept, reject, and cycle through inline suggestions
-- Enable and experiment with Next Edit Suggestions
-- Write 3 to 5 functions across different languages (Python, JavaScript, TypeScript)
-- Compare Copilot output with manually written code
-- Document observations: where was Copilot helpful? Where did it miss?
-- **Deliverable:** A small multi-function utility file generated with Copilot assistance
+- Review inline suggestions while completing the supplied Python utility module
+- Resolve the word-parsing rules, add a summary, and rename a parameter
+- Run the supplied tests and record the decisions behind accepted or rejected suggestions
+- **Deliverable:** The utility module, five passing tests, and `lab-notes.md`
 
 **Expected Learning Outcomes:**
 
@@ -213,13 +211,11 @@ They also learn how to choose a model.
 
 **Lab Outline (2 hours):**
 
-- Use Copilot Chat to explain unfamiliar code in a provided repository
-- Debug 3 intentionally broken functions using /fix and conversational Chat
-- Generate unit tests with /tests for an existing module
-- Use @workspace to answer questions about a multi-file project
-- Use @terminal to troubleshoot a failing build command
-- Compare available models only when the customer's policy and current official reference allow them
-- **Deliverable:** A debugged and tested module with Chat conversation history documented
+- Diagnose the supplied Calculator's weighted-average defect with Copilot Chat
+- Fix the defect and expand the tests
+- Inspect the context used for the answer
+- Implement and test the supplied change request
+- **Deliverable:** The tested Calculator and `chat-notes.md`
 
 **Expected Learning Outcomes:**
 
@@ -255,13 +251,12 @@ the same methods.
 
 **Lab Outline (2 hours):**
 
-- Prompt challenge round: given a task, write the best prompt (timed exercises)
-- Refactor a poorly prompted Copilot session into a well-prompted one
 - Run `/refine` on the rough todo-store request and correct its rewrite before implementation
-- Build a small REST API endpoint using only comment-driven prompting
-- Experiment with context manipulation: open/close files, see how suggestions change
-- Create a personal prompt cheat sheet for common development tasks
-- **Deliverable:** A prompt engineering cheat sheet + a fully prompted REST endpoint
+- Build the Todo API's store and routes through focused prompts
+- Compare results with different context
+- Add priority support from the supplied change request and run the tests
+- Save one reusable prompt in the prompt log
+- **Deliverable:** The Todo API, six passing tests, and `prompt-log.md`
 
 **Expected Learning Outcomes:**
 
@@ -360,18 +355,15 @@ Explain how it connects to MCP servers. Later sessions assume this knowledge.
 - Demo: agent mode solving a multi-step task (create feature, write tests, fix build)
 - Comparison: same task done via Chat vs. Agent mode
 - When to use agent mode vs. when to stay in Chat
-- TODO code actions: delegate tasks to the cloud agent from comments
 
 **Lab Outline (2 hours):**
 
-- Use agent mode to scaffold a new project from a description
-- Have the agent create, test, and debug a feature end-to-end
-- Refactor a module across 4 to 5 files using agent mode (multi-file editing)
-- Observe the agent's tool use: terminal commands, file edits, iterations
-- Intervene mid-task: redirect the agent, add constraints, correct course
-- Use TODO code actions to delegate a task to the cloud agent
-- Compare: complete the same task manually vs. with agent mode: document differences
-- **Deliverable:** A feature built entirely via agent mode, with a reflection on the agent's decision-making
+- Scaffold and extend one Todo API in IDE agent mode
+- Compare Ask and Agent responses to the same task
+- Follow the agent's file edits, terminal commands, and response to errors
+- Redirect the agent when the supplied change alters the task
+- Test the API and review the final diff
+- **Deliverable:** The Todo API, tests, two API checks, and decision notes
 
 **Expected Learning Outcomes:**
 
@@ -379,7 +371,6 @@ Explain how it connects to MCP servers. Later sessions assume this knowledge.
 - Use agent mode in VS Code for multi-step, multi-file tasks
 - Understand the agent loop (plan, act, observe, iterate)
 - Know when to use agent mode vs. Chat vs. inline suggestions
-- Use TODO code actions to bridge IDE and cloud agent workflows
 
 ---
 
@@ -638,10 +629,8 @@ its state, actions, data boundary, ownership, and failure handling with them.
 **Module:** Agentic Workflows
 
 **Description:**
-Assign a GitHub issue to the Copilot cloud agent and follow the work it returns.
-Copilot creates a branch, writes code, runs builds and tests in an isolated
-environment, and opens a draft PR. Also cover session management and third-party
-coding agents such as Claude and Codex.
+Assign one GitHub issue to the Copilot cloud agent and review its proposed change.
+Check the diff and test results before giving feedback or making a merge decision.
 
 **Trainer Content Outline (1 hour):**
 
@@ -650,7 +639,6 @@ coding agents such as Claude and Codex.
 - Configuring the cloud agent: `copilot-setup-steps.yml`, firewall rules, runner config
 - Writing good issues for the cloud agent (specificity, acceptance criteria)
 - The `copilot-instructions.md` role in guiding agent behavior
-- Third-party agents: Claude (@claude) and Codex (@codex): assigning and comparing
 - Agent session management: tracking progress across sessions
 - Demo: assign an issue, watch the agent work, review the PR
 - Security: network firewall, toolset restrictions, shell controls
@@ -659,18 +647,16 @@ coding agents such as Claude and Codex.
 **Lab Outline (2 hours):**
 
 - Configure a repository for the Copilot cloud agent (`copilot-setup-steps.yml`)
-- Write 3 issues of varying complexity and assign them to Copilot
-- Assign the same issue to Copilot and a third-party agent: compare results
+- Write the supplied issue with clear acceptance criteria and assign it to Copilot
 - Monitor agent progress via the Agent Sessions view
-- Review the draft PRs: quality, correctness, test coverage
+- Review the proposed change: quality, correctness, test coverage
 - Iterate: provide feedback via PR comments, watch the agent respond
-- **Deliverable:** 3+ agent-completed PRs with review feedback documented
+- **Deliverable:** One reviewed agent proposal with test results, feedback, and a human decision
 
 **Expected Learning Outcomes:**
 
 - Configure a repository for the Copilot cloud agent
 - Write effective issues that the cloud agent can resolve
-- Use third-party coding agents (Claude, Codex) alongside Copilot
 - Manage agent sessions and track progress
 - Review and iterate on agent-generated PRs
 
@@ -823,30 +809,29 @@ decisions to `/plan`.
 **Module:** DevOps & Infrastructure with Copilot
 
 **Description:**
-Use a natural-language description to create a GitHub Actions workflow with
-Copilot. Explain and debug the result, then show how agent mode helps build CI/CD
-pipelines, custom Actions, and workflow automation.
+Carry one Node.js application through CI generation, deployment design, workflow
+repair, and custom-action checks. The required lab runs locally and does not deploy.
 
 **Trainer Content Outline (1 hour):**
 
 - GitHub Actions fundamentals recap (for context)
 - Using Copilot Chat to generate workflow YAML
-- Agent mode for Actions: creating complete CI/CD pipelines
+- Agent mode for Actions: generating CI and designing deployment steps
 - Workflow debugging with Copilot: reading logs, fixing failures
 - Creating custom Actions with Copilot assistance
 - Reusable workflows and composite actions
-- Demo: generate a complete CI/CD pipeline from a project description
+- Demo: generate CI and review a deployment design from a project description
 - Best practices: workflow security, secrets management, caching
 - Copilot cloud agent + Actions: how the agent uses Actions for build/test
 
 **Lab Outline (2 hours):**
 
 - Generate a CI workflow for a provided Node.js project using agent mode
-- Add CD (deployment) steps to the workflow via Copilot Chat
+- Design deployment steps from the supplied specification without deploying
 - Debug 2 intentionally broken workflows using Copilot
 - Create a custom Action that runs a specific tool
-- Set up branch protection rules that require CI to pass
-- **Deliverable:** A complete CI/CD pipeline with custom Action, tested and passing
+- Run local checks against the repaired application, workflows, and custom action
+- **Deliverable:** CI and deployment workflow files, a checked custom action, and local check results
 
 **Expected Learning Outcomes:**
 
@@ -907,8 +892,9 @@ Keep Bicep as a short trainer comparison and optional extension.
 
 **Description:**
 Diagnose CI/CD failures with Copilot and check changes intended to reduce build
-times. For security findings, use the organization's approved agentic remediation
-workflow. Keep the proposed fix reviewable and follow the organization's controls.
+times. Repair the supplied security case and test the result locally. Remote
+scanning and agentic remediation are optional extensions that require repository
+access and the organization's review controls.
 
 **Trainer Content Outline (1 hour):**
 
@@ -918,22 +904,22 @@ workflow. Keep the proposed fix reviewable and follow the organization's control
 - Availability, policy, and licensing checks using live official documentation
 - Pipeline optimization: caching, parallel jobs, conditional execution
 - Demo: debug a complex pipeline failure using Copilot
-- Demo: review a code-scanning finding, limit the remediation scope, and review the resulting change
+- Optional demo: review a code-scanning finding and the proposed remediation
 - Security-first CI/CD: integrating scanning into every pipeline
 
 **Lab Outline (2 hours):**
 
 - Debug 3 failing CI/CD pipelines of increasing complexity using Copilot
-- Enable CodeQL scanning on a repository with known vulnerabilities
-- Route a security finding through the approved agentic remediation workflow and review the proposed change
+- Review the supplied security case, repair it, and run the local regression check
+- Optionally enable remote CodeQL scanning and request remediation when access and policy permit
 - Optimize a slow pipeline: add caching, parallelize jobs
 - (Stretch) Compare a manual and agentic remediation path under the same review policy
-- **Deliverable:** 3 fixed pipelines and a reviewed remediation proposal with the required approval records
+- **Deliverable:** Three repaired pipelines, a tested security fix, and checked workflow improvements
 
 **Expected Learning Outcomes:**
 
 - Diagnose and fix CI/CD pipeline failures with Copilot assistance
-- Configure code scanning and use the approved agentic remediation workflow
+- Review and test a proposed security fix; use remote code scanning when access permits
 - Optimize pipeline performance with Copilot suggestions
 - Integrate security scanning into CI/CD workflows
 - Apply human review and policy controls to agentic security remediation
@@ -966,12 +952,13 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 **Lab Outline (2 hours):**
 
 - Use the approved Squad installation and provided example
-- Cast a team: lead, frontend, backend, tester, scribe
-- Assign work to individual agents and observe output
-- Set up GitHub Issues integration: watch agents pick up and complete issues
-- Configure custom ceremonies (design meetings, retros)
-- Run Ralph's work-check loop on a backlog of issues
-- **Deliverable:** A fully configured Squad team with completed issues, decision log, and agent memories
+- Set up the lead, backend, tester, and scribe roles
+- Have the lead assign Issue 001's `POST /api/users` input-validation change
+- Let the backend implement the change and the tester add and run tests
+- Have the lead review the result and the scribe record the decision
+- Inspect Ralph's monitoring output after review; backlog implementation is optional
+- **Deliverable:** One packet with the team structure, assignment, code and tests,
+  passing `npm test` output, lead review, and committed decision record
 
 **Expected Learning Outcomes:**
 
@@ -1003,7 +990,7 @@ Uses Spec Kit to implement one feature from a source request. Trainees convert t
 - Task-to-issue conversion and staged implementation
 - Living-spec evolution and approved installation paths
 
-**Lab Outline (2 hours):**
+**Lab Outline (2 hours 30 minutes):**
 
 - Initialize Spec Kit in a runnable Python starter project
 - Specify and clarify archive behavior
@@ -1153,9 +1140,9 @@ tools they can use, then create and review a working brief.
 
 - Compare an unscoped answer with a repository-grounded answer
 - Create and commit a sourced working brief
-- Revise the brief using the approved new source material
+- Revise the brief using the supplied new source material
 - Check the saved brief in a fresh Copilot session
-- **Deliverable:** A revised working brief with context comparison and fresh-session verification
+- **Deliverable:** A revised working brief with an answer comparison and a fresh-session check
 
 ---
 
@@ -1172,7 +1159,7 @@ issue proposal.
 
 **Trainer Content Outline (1 hour):**
 
-- Decision-tree interviews and question frontiers
+- Ask questions in an order that resolves dependent decisions
 - Facts, recommendations, and owner decisions
 - Markdown decision briefs saved in the repository
 - Issue proposals with testable acceptance criteria
@@ -1204,13 +1191,15 @@ back to check the result.
 - MCP from the tool user's point of view
 - Read and write boundaries
 - Outcome-based decomposition
-- Preview, approval, and fresh-read verification
+- Preview and approve changes, then read the issues again to check the result
 
 **Lab Outline (2 hours):**
 
 - Read the approved decision brief
-- Search for duplicate issues and approved labels
-- Plan one parent issue and three to five child issues
+- Search for duplicate issues and existing labels
+- Plan one parent issue and four child issues: public status mapping, requester
+  status view, empty and stale states, and requester-access verification
+- Keep any fifth issue optional and separate from those four workstreams
 - Review and approve the complete GitHub write
 - Retrieve the issues, apply one reviewed correction, and check it through another fresh read
 - **Deliverable:** A live issue hierarchy with records of issue creation and correction
@@ -1315,13 +1304,12 @@ Boards remains authoritative.
 
 - **Total track duration:** 88 hours across 29 sessions
 - **Recommended delivery schedules:**
-  - Intensive: Up to 3 sessions/day across 10 days
-  - Standard: 1 to 2 sessions/day across 15 days
+  - Standard: 1 to 2 sessions/day across 15 days, with up to 7 teaching hours per day before breaks
   - Extended: 1 session/day across 29 days
 - **Group size:** 8 to 15 trainees per cohort for optimal lab support
 - **Module independence:**
-  - Modules 1 to 3 form the core track (required for full certification)
-  - Module 4 (DevOps) can be delivered independently with Module 1 + Session m2-02 as prereqs
+  - Modules 1 to 3 form the technical core
+  - Module 4 (DevOps) can be delivered independently after Module 1 and Sessions m2-01 to m2-02
   - Session m5-01 is optional; it is not a prerequisite for Session m5-02 or Session m6-02
   - Session m6-01 is an independent SDK specialization and is not a prerequisite for Session m6-02
   - Developer tracks require Session m2-05 and Session m7-05's developer route.

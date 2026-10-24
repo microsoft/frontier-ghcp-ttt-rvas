@@ -69,7 +69,7 @@ Compare the response with the failing test. Then ask:
 
 ```text
 The test expects weighted_average([80, 100], [1, 3]) to equal 95, but the method
-returns 140. Identify the defect. Limit the answer to this method.
+returns 190. Identify the defect. Limit the answer to this method.
 ```
 
 If the surface supports an explain shortcut, try it with the same selection.
@@ -165,7 +165,7 @@ test. Do not change code.
 ```
 
 Compare only accuracy you can check and useful citations. Otherwise compare the
-Chat-assisted or manual result with `lab/solution/`.
+Chat-assisted result with `lab/solution/`.
 
 Inspect the final diff:
 

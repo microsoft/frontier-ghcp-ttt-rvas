@@ -91,13 +91,17 @@ preview.
 Ask Copilot to propose:
 
 - one parent issue for the approved outcome;
-- three to five child issues with independently reviewable results;
+- four child issues: public status mapping, requester status view, empty and
+  stale states, and requester-access verification;
 - dependencies and parallel work;
 - acceptance criteria and non-goals;
 - source links to the decision brief;
 - ownership gaps left unassigned.
 
 Review the plan before any write.
+
+These four roles feed Sessions m7-04 and m7-05. A fifth issue is optional and stays
+outside the four orchestration workstreams.
 
 Reuse or update an existing issue when it owns part of the approved outcome. Link
 a closed duplicate for context. Do not merge conflicting or out-of-scope work.
@@ -128,8 +132,9 @@ Compare the preview with the issue plan. Revise it until it is safe to approve.
 After approval, ask Copilot to create the issues through GitHub MCP. Save each
 returned issue number and URL in the parent issue or its linked child issues.
 
-**Checkpoint:** The write result contains one parent and no more than five child
-issues in the approved repository.
+**Checkpoint:** The live hierarchy contains one parent and the four required child
+roles in the approved repository. Reuse existing issues that cover a required
+role. The hierarchy may also contain one optional fifth child.
 
 ## Part 5: Check and correct one issue (15 minutes)
 
@@ -159,8 +164,10 @@ not need a separate document.
 **Checkpoint:** A fresh read proves that both the original create and the correction
 reached GitHub.
 
-Link every child issue from the parent. Record dependency order, unresolved
-ownership, your decisions about existing work, and the correction you checked.
+Link every child issue from the parent. Identify the four required roles and
+label any optional fifth child as outside the Session m7-05 workstreams.
+Record dependency order, unresolved ownership, your decisions about existing work,
+and the correction you checked.
 Session m7-04 reads this live issue set through GitHub MCP.
 
 ## Verification

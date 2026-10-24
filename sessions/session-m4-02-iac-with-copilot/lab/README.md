@@ -108,17 +108,19 @@ Expected failure: the command exits with code 1 and reports prohibited public
 access, a hardcoded password, wildcard IAM access, missing database encryption,
 or missing load-balancer logging.
 
-Inspect the file before opening the solution. Use the stated architecture to
-decide which reported findings to repair, then run:
+Repair `lab/starter/insecure-iac/main.tf` before opening the solution. Use the
+stated architecture to address the findings, then check your repaired file:
 
 ```bash
-bash lab/starter/check-security.sh lab/solution/secure-iac/main.tf
-terraform fmt -check lab/solution/secure-iac/main.tf
-terraform -chdir=lab/solution/secure-iac init -backend=false
-terraform -chdir=lab/solution/secure-iac validate
+bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
+terraform fmt lab/starter/insecure-iac/main.tf
+terraform fmt -check lab/starter/insecure-iac/main.tf
+terraform -chdir=lab/starter/insecure-iac init -backend=false
+terraform -chdir=lab/starter/insecure-iac validate
 ```
 
 Expected result: the security gate and Terraform validation pass.
+Then compare your repair with `lab/solution/secure-iac/main.tf`.
 
 **Checkpoint:** Record the failing exit code, each cited line, the repaired file,
 and the passing rerun. Passing this gate does not give you approval to deploy.

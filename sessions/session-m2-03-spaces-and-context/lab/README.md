@@ -106,7 +106,7 @@ Check every claim against the selected sources.
 - [ ] Every selected source has a reason to be present.
 - [ ] Unrelated or restricted sources are excluded.
 - [ ] Claims in the first answer trace to a selected file.
-- [ ] The live Space or local context packet is ready for reuse.
+- [ ] The live Space contains the selected sources and is ready for reuse.
 
 ## Stage 2: Add repository instructions (30 minutes)
 
@@ -203,7 +203,7 @@ Run four experiments without changing the task:
 
 1. **No project context:** Ask from an empty window.
 2. **Repository context:** Open the Storefront API with `copilot-instructions.md`.
-3. **Space or context packet:** Ask with the selected project sources.
+3. **Space:** Ask in the live Space with the selected project sources.
 4. **Prompt file:** Use a structured repository prompt for the task.
 
 Record:
@@ -263,7 +263,7 @@ Compare with `lab/solution/ecommerce-project/.github/prompts/`.
 
 Submit the `storefront-api/` workspace with:
 
-1. `context-notes.md` and either the Space source list or `context-packet.md`.
+1. `context-notes.md` and the live Space's source list.
 2. `.github/copilot-instructions.md`.
 3. The completed `context-comparison.md`.
 4. Three tested prompt files under `.github/prompts/`.

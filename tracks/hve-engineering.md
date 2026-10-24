@@ -22,7 +22,8 @@ Plan, Implement, Review, and Follow-up.
 ## Prerequisites
 
 - GitHub Copilot access in an environment that meets the organization's policy
-- Node.js 20 or later
+- Node.js 22.22.2 or later and a working JavaScript language server for Session m3-04
+- Standalone CLI access, including `/refine` for Session m1-03 and the commands and sandbox support in Session m2-01's preflight
 - HVE Core installed through an approved extension or Copilot CLI plugin
 - Permission to download the supplied Node.js dependencies or use a prepared copy
 
@@ -30,10 +31,10 @@ Plan, Implement, Review, and Follow-up.
 
 | Phase | Sessions | Focus | Duration |
 |---|---|---|---:|
-| 1. Copilot foundations | 01 to 03 | Chat, prompting, context, and verification | 9 hrs |
-| 2. Guided engineering | 04 to 07 | CLI, agent mode, shared context, and review | 12 hrs |
-| 3. Agent integration | 10 to 11 | MCP tools and custom agents with defined scope | 6 hrs |
-| 4. HVE delivery | 28 | Evidence-led RPI challenge and human decision | 4 hrs |
+| 1. Copilot foundations | m1-01 to m1-03 | Chat, prompting, context, and result checks | 9 hrs |
+| 2. Guided engineering | m2-01 to m2-04 | CLI, agent mode, shared context, and review | 12 hrs |
+| 3. Agent integration | m3-03 to m3-04 | MCP tools and custom agents with defined scope | 6 hrs |
+| 4. HVE delivery | m5-03 | Evidence-led RPI challenge and human decision | 4 hrs |
 
 ## Sessions
 

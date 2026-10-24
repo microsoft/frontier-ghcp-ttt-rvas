@@ -173,7 +173,7 @@ Keep the brief consistent with source information the owner has approved.
 
 1. Open the repository as a Copilot project.
 2. Inspect the available capabilities.
-3. Compare an unscoped answer with a grounded answer.
+3. Start fresh without the source, then compare an unscoped answer with a grounded answer.
 4. Create and commit the initiative context brief.
 5. Apply approved late evidence.
 6. Review and commit the focused revision.

@@ -159,7 +159,8 @@ Only after they also inspect scope, edge cases, dependencies, and readability.
 
 **What if access disappears during the lab?**
 
-Stop using Copilot. Continue manually from the same file and run the same checks.
+Stop the lab and restore Copilot access. Manual work does not replace the
+inline-suggestion practice.
 
 **Which editor shortcut should I teach?**
 

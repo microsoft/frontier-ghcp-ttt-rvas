@@ -141,8 +141,8 @@ npx --yes @modelcontextprotocol/inspector@2.5.0 node src/index.js
 ```
 
 Record the tool name, description, and input schema. Include the request,
-response, and error shape. If Inspector cannot run but `npm test` passes, record
-Inspector as **not executed**. Do not invent output.
+response, and error shape. If Inspector cannot run, stop and fix access before
+continuing. Passing unit tests do not replace the protocol calls.
 
 ## Part 4: Add the remaining tools
 
@@ -154,32 +154,44 @@ Add these definitions and handlers:
 | `convert_temperature` | `value` is finite; `from` is `celsius` or `fahrenheit` |
 
 Keep your output deterministic so the tests can assert exact values. Add focused
-tests before trying broad integration prompts.
+tests for the forecast default and invalid range, both conversion directions and
+bad units, and an unknown tool.
 
-Compare your result with
-[`lab/solution/custom-mcp/`](solution/custom-mcp/) only after the staged tests pass.
+Update the catalog assertion in `test/get-weather.test.js`: it should now expect
+`get_weather`, `get_forecast`, and `convert_temperature`, in that order. Keep the
+existing weather schema and handler checks.
 
-Run the completed suite:
+**Stay in your edited `lab/starter/custom-mcp` working copy.** Run your completed suite:
 
 ```bash
-cd ../../solution/custom-mcp
-npm ci
 npm test
 ```
 
-**Checkpoint:** five tests pass. Bad forecast ranges, bad units, and unknown tools
-return visible errors.
+**Checkpoint:** all your tests pass. Bad forecast ranges, bad units, and unknown
+tools return visible errors. Compare with
+[`lab/solution/custom-mcp/`](solution/custom-mcp/) afterward; passing reference
+tests does not check your implementation.
 
-## Part 5: Record request and response evidence
+## Part 5: Record requests and responses
 
-Run the commands in
-[`solution/custom-mcp/EVIDENCE.md`](solution/custom-mcp/EVIDENCE.md). Record actual
-output for:
+Run these commands against the server in your edited working copy:
 
-1. `tools/list`;
-2. a good `get_weather` call;
-3. a bad `get_forecast` call;
-4. `npm test`.
+```bash
+npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
+  node src/index.js --method tools/list
+npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
+  node src/index.js --method tools/call \
+  --tool-name get_weather --tool-arg city=Oslo
+npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
+  node src/index.js --method tools/call \
+  --tool-name get_forecast --tool-arg city=Lima --tool-arg days=8
+```
+
+The catalog must list all three tools. The bad forecast call must return
+`isError: true` and exit status `5`; that nonzero status is expected.
+Keep the actual protocol output and your passing `npm test` output from Part 4.
+Use [`solution/custom-mcp/EVIDENCE.md`](solution/custom-mcp/EVIDENCE.md) to compare
+response shapes, not as a substitute for running your server.
 
 If repository policy allows a Copilot client, attach the local server and ask for a
 three-day forecast in Fahrenheit. Check each tool call against the recorded
@@ -190,7 +202,7 @@ contract. Use the local tests and Inspector output to judge completion.
 1. A staged commit or diff showing `get_weather` before the other tools.
 2. A completed server with three tool schemas and handlers.
 3. Passing automated tests.
-4. Inspector output or a **not executed** record.
+4. Inspector output from your server.
 5. One good request and one bad request with expected and actual responses.
 
 ## Verification
@@ -201,8 +213,8 @@ contract. Use the local tests and Inspector output to judge completion.
 - [ ] Good input returns deterministic synthetic data.
 - [ ] Bad input and unknown tools return `isError: true`.
 - [ ] The completed tool catalog contains exactly three tools.
-- [ ] `npm test` passes in the starter and solution projects.
-- [ ] Inspector output is captured or marked **not executed**.
+- [ ] `npm test` passes in the edited working copy.
+- [ ] Inspector output from the edited server is captured.
 - [ ] No credential, network service, or source-system data was used.
 
 ## References

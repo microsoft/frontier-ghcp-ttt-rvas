@@ -13,7 +13,7 @@ footer: 'Session m3-01: Copilot App & Canvases'
 ---
 # Today's outcome
 
-Build or simulate one delivery-readiness canvas.
+Build one delivery-readiness canvas in the Copilot app.
 
 Record these in the demo:
 
@@ -69,7 +69,7 @@ The contract names all four parts before implementation starts.
 | --- | --- |
 | State | item, status, review flag, evidence |
 | Status | `planned`, `in-progress`, `review`, `ready` |
-| Human actions | add item, set status, flag review, add evidence |
+| Human actions | set status, flag review, add evidence |
 | Agent capabilities | read board, update one named item, list flagged items |
 | Validation | known item, accepted status, evidence before `ready` |
 

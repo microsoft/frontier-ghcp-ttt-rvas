@@ -43,5 +43,5 @@ tool configuration, or a new dependency.
 ## Final deliverable
 
 A reviewed handoff for `POST /api/bookmarks` containing the issue, implementation
-patch or patch plan, test results, review decision, deviations, deferred scope, and
+patch, test results, review decision, deviations, deferred scope, and
 next action.

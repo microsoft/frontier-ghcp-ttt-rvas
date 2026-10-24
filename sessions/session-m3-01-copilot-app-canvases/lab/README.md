@@ -7,7 +7,7 @@
 
 ## Objective
 
-Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create or simulate the canvas. Make visible and agent-requested changes to the same state. Check that an invalid change is rejected, then recover without changing the rule.
+Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create the canvas in the Copilot app. Make visible and agent-requested changes to the same state. Check that an invalid change is rejected, then recover without changing the rule.
 
 ## Deliverables
 

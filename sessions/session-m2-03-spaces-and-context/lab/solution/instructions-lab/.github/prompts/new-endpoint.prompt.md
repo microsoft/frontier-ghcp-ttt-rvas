@@ -9,8 +9,8 @@ Create a REST endpoint with:
 3. The correct HTTP status: 200 for success, 201 for creation, 400 for validation, 404 when absent, and 500 for a server error
 4. Errors shaped as `{ error: { code, message, details } }`
 5. `{ data: ... }` for one item and `{ data: [...], total: N }` for a list
-6. At least three Vitest cases: success, validation error, and not found
+6. Success, validation-error, and not-found tests using Node.js's built-in test runner in `test/*.test.js`
 
-Use ES module imports. Use kebab-case file names and camelCase functions.
+Use CommonJS (`require`/`module.exports`). Use kebab-case file names and camelCase functions.
 
 The endpoint should be for: {{ endpoint_description }}

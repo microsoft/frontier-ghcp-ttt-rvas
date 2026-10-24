@@ -96,7 +96,8 @@ them and explain that availability depends on plan, policy, and installation.
 
 ## Demo: Create and revise a saved brief
 
-1. Ask for an initiative summary without attaching the source.
+1. Start a fresh session, then ask for an initiative summary without attaching
+   the source. Do not reuse the capability-check session that already read it.
 2. Mark unsupported statements.
 3. Attach `lab/starter/initiative-overview.md` and ask again with source
    references.

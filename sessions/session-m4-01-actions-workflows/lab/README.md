@@ -158,15 +158,19 @@ Do not accept a broad rewrite unless each change addresses a recorded failure.
 Complete the metadata and implementation in `lab/starter/custom-action/`. The
 action scans the same application used by the workflows.
 
-Use the reference implementation to check both pass and fail outcomes:
+Copy the supplied dependency manifests into your action directory. Install the
+dependencies, then check your implementation against the application:
 
 ```bash
-npm ci --prefix lab/solution/custom-action
+cp lab/solution/custom-action/package.json \
+  lab/solution/custom-action/package-lock.json lab/starter/custom-action/
+npm ci --prefix lab/starter/custom-action
 cd lab/starter/webapp
+: > ../custom-action/summary.md
 env INPUT_THRESHOLD=0 'INPUT_REPORT-FORMAT=markdown' \
-  GITHUB_STEP_SUMMARY=/tmp/session-m4-01-summary.md \
-  node ../../solution/custom-action/src/main.js
-test -s /tmp/session-m4-01-summary.md
+  GITHUB_STEP_SUMMARY="$PWD/../custom-action/summary.md" \
+  node ../custom-action/src/main.js
+test -s ../custom-action/summary.md
 cd ../../..
 ```
 
@@ -177,15 +181,20 @@ Now run the intentional failure:
 
 ```bash
 cd lab/starter/webapp
+action_status=0
 env INPUT_THRESHOLD=101 'INPUT_REPORT-FORMAT=json' \
-  node ../../solution/custom-action/src/main.js
+  node ../custom-action/src/main.js || action_status=$?
+printf 'Action exit code: %s\n' "$action_status"
+test "$action_status" -eq 1
 cd ../../..
 ```
 
 Expected failure: the action reports a score below 101 and exits with code 1.
 This proves that the threshold changes the job result.
 
-If `act` is already installed and local runner use is approved, you may also run:
+After your checks pass, compare with `lab/solution/custom-action/`.
+If `act` is already installed and local runner use is approved, you may also run
+this reference-only demonstration. It does not validate your action:
 
 ```bash
 act -W lab/solution/custom-action/.github/workflows/quality-check.yml -j quality-check

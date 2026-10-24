@@ -109,8 +109,6 @@ accept every generated change without review.
 The constitution applies across features. Each feature gets its own specification,
 design, tasks, and review trail.
 
-**Do not store feature status in an invented `.specify.yml`.**
-
 ---
 
 # The full workflow
@@ -343,28 +341,9 @@ specify check
 
 Use it to inspect the local Spec Kit environment and available tools.
 
-It does **not**:
-
-- compare source code with a YAML specification;
-- enforce content-exclusion patterns;
-- check performance or test coverage;
-- approve an implementation.
-
-Use tests, review, `/speckit-analyze`, and `/speckit-converge` for those jobs.
-
----
-
-# Keep the project model honest
-
-This session deliberately removes:
-
-- `.specify.yml` phase tracking;
-- model-selection and fallback-model YAML;
-- fictional `--verify-code` or `--against` flags;
-- made-up exclusion enforcement;
-- custom skills presented as generated Spec Kit files.
-
-Invented artifacts teach learners to trust controls that do not exist.
+It does not check whether the implementation meets the specification.
+Use tests, review, `/speckit-analyze`, and `/speckit-converge` to compare the
+accepted artifacts and implementation.
 
 ---
 

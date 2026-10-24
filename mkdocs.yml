@@ -29,6 +29,7 @@ exclude_docs: |
   PRODUCT.md
   DESIGN.md
   AGENTS.md
+  TONE-OF-VOICE.md
   skills-lock.json
   requirements.txt
   overrides/main.html

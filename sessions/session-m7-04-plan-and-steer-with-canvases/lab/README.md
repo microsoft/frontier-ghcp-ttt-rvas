@@ -160,6 +160,7 @@ Check that:
 In the live canvas, record who owns it, how to refresh it, and how to recover after
 an interruption. Also record when to retire it and the next safe action. Check
 that it links the four status-visibility issues for Session m7-05.
+Keep any optional fifth issue linked for context, but outside those workstreams.
 
 Run `/context`. If the creation thread is crowded, start a fresh session and
 retrieve the live GitHub issues and open the canvas. Then run:

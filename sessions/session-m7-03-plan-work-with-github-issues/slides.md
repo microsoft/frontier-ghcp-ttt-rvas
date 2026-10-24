@@ -59,9 +59,10 @@ issue owns one independently reviewable result.
 
 ```text
 Parent: Improve request-status visibility
-  ├─ Child: Define the status data contract
-  ├─ Child: Implement the API response
-  └─ Child: Add the client status view
+  ├─ Child: Public status mapping
+  ├─ Child: Requester status view
+  ├─ Child: Empty and stale states
+  └─ Child: Requester-access verification
 ```
 
 If two child issues must edit the same behavior at the same time, sequence them or
@@ -159,7 +160,7 @@ After the write:
 - Temporary reviewed issue preview
 - Authoritative live issue set
 - One parent issue
-- Three to five child issues
+- Four required child roles; an optional fifth stays outside Session m7-05
 - Fresh-read verification
 - Parent-to-child links that Session m7-04 reads directly
 

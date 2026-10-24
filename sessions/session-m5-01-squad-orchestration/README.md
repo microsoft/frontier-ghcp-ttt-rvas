@@ -31,8 +31,8 @@ If a requirement is unavailable, stop and resolve it before the lab.
 
 Submit one review packet for the input-validation issue. Include the
 assignment, implementation within the issue scope, test results, lead decision,
-and decision record. The reference solution includes both a `.squad/` result and a
-tabletop equivalent.
+and decision record. The reference solution includes a `.squad/` result and a
+prepared trainer walkthrough. The walkthrough does not replace the learner run.
 
 ## Materials
 

@@ -3,7 +3,7 @@
 ## User and outcome
 
 As an employee who submitted a facilities or equipment request, I want to see its
-current public status and last updated time so that I can understand progress
+current public status label and latest update date so that I can understand progress
 without contacting the service desk.
 
 ## Context
@@ -18,8 +18,8 @@ checked the draft before marking it ready.
 ### In scope
 
 - Show an approved public status for facilities and equipment requests.
-- Show the source last updated time.
-- Show a safe summary when one is available.
+- Show the source latest update date.
+- Limit requester-visible fields to the public status label and latest update date.
 - Preserve the detailed status reason for authorized support staff.
 - Apply safe fallback behavior for unmapped or stale states.
 - Enforce requester-only access.
@@ -34,16 +34,15 @@ checked the draft before marking it ready.
 
 ## Acceptance criteria
 
-- [ ] A signed-in requester can view the approved public status and last updated time for each facilities or equipment request they submitted.
-- [ ] A request with an approved safe summary shows that summary without internal notes, agent names, or security details.
-- [ ] A user who does not own a request cannot see its status, timestamp, summary, or identifying details.
+- [ ] A signed-in requester can view only the approved public status label and latest update date for each facilities or equipment request they submitted.
+- [ ] The requester view contains no summary or additional status fields.
+- [ ] A user who does not own a request cannot see its status, update date, or identifying details.
 - [ ] A requester cannot see the detailed status reason, internal notes, queue
       names, staff identities, or escalation details.
 - [ ] An authorized support user can view the detailed status reason through the
       existing support view.
 - [ ] An internal state without an approved public mapping shows `Status unavailable` and the standard contact route.
 - [ ] A request older than the approved freshness threshold shows `Update pending` and does not present the existing state as current.
-- [ ] A request with no safe summary still shows its public status and last updated time without an empty summary panel.
 - [ ] Request types outside facilities and equipment keep their current experience.
 
 ## Dependencies and risks
@@ -66,7 +65,7 @@ checked the draft before marking it ready.
 - [ ] Every acceptance criterion has test or review results.
 - [ ] The service operations manager approves the public state mapping and fallback wording.
 - [ ] The privacy reviewer checks requester-only access and the visible field set.
-- [ ] Supported, unmapped, stale, empty-summary, and unauthorized states are covered.
+- [ ] Supported, unmapped, stale, and unauthorized states are covered.
 - [ ] Focused checks record requester and support visibility results.
 - [ ] The portal guidance explains the public statuses and contact route.
 - [ ] No notification channel or additional request type entered the change.

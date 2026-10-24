@@ -15,8 +15,8 @@ Complete this short section before opening an assisted review.
 
 - **Change intent in one sentence:**
 - **Initial verdict:** Approve / Request changes / Pause
-- **Most important finding:**
-- **Second finding or missing evidence:**
+- **Initial findings:** Record the two most important findings or missing checks
+  in `fix-evaluation-template.md`, with `Human` as the source.
 
 ---
 
@@ -60,47 +60,9 @@ Complete this short section before opening an assisted review.
 
 ## Review comments
 
-### Comment 1
+Use the single triage table in `fix-evaluation-template.md` for human and assisted
+findings. Record each source, location, impact, check, decision, and fix there;
+do not copy the comments into this checklist.
 
-- **File:**
-- **Line:**
-- **Severity:** Critical / Warning / Suggestion
-- **Found by:** Human / Copilot / Both
-- **Issue:**
-- **Suggested fix:**
-
-### Comment 2
-
-- **File:**
-- **Line:**
-- **Severity:** Critical / Warning / Suggestion
-- **Found by:** Human / Copilot / Both
-- **Issue:**
-- **Suggested fix:**
-
-_(Add more as needed)_
-
----
-
-## Assisted review notes
-
-- **Tool or review surface:**
-- **Prompt or review scope:**
-
-## What changed after the assisted review?
-
-- **Useful new finding, after checking:**
-- **Unsupported or irrelevant finding rejected:**
-- **Did the final verdict change? Why or why not?**
-
-## Verdict
-
-- [ ] **Approve**: ready to merge
-- [ ] **Request changes**: blocking issues need correction
-- [ ] **Pause**: evidence, access, or scope remains unresolved
-
-## Short reflection
-
-**What, if anything, did the assisted review add to your decision?**
-
-_(Write one or two sentences.)_
+Record the review runs, what changed after assistance, remaining risk, and final
+human decision in that same template. Keep the initial verdict above unchanged.

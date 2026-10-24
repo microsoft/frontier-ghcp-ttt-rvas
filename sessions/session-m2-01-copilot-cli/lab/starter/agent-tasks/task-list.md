@@ -1,10 +1,12 @@
 # Agent mode task list
 
-Complete these three tasks with Copilot CLI agent mode. Run the tests after each task; the next task uses the result of the previous one.
+Complete these three tasks in the main lab's order. Keep its permission checks
+and usage limit in place. Run the tests after each task; the next task uses the
+result of the previous one.
 
 ---
 
-## Task 1: Fix the bugs (10 min)
+## Task 1: Plan and repair the bugs (15 min)
 
 **Difficulty:** Easy
 
@@ -16,11 +18,17 @@ The file `src/app.js` has **3 bugs** that cause test failures. Use the Copilot C
 copilot
 ```
 
-Then tell the agent:
+Start in Plan mode:
 
+```text
+/plan Read src/app.js and tests/app.test.js. Explain the three failing behaviors.
+Plan the smallest fixes. Map each behavior to a target file and an existing test.
+Do not edit project files, add dependencies, or refactor unrelated code.
 ```
-Read src/app.js and tests/app.test.js. There are 3 bugs in app.js causing test failures. Find and fix all of them. Run the tests after fixing to verify.
-```
+
+Follow the main lab's Task 1 to revise the plan, run `/rubber-duck`, and check its
+critique. Approve the revised plan before leaving Plan mode and implementing it.
+Inspect the diff and run `npm test` yourself.
 
 **Hints (only if you're stuck):**
 
@@ -53,20 +61,22 @@ The utils.js file has 4 exported functions but no tests. Create a full test file
 
 ---
 
-## Task 3: Refactor with validation (10 min)
+## Task 3: Refactor from an accepted plan (15 min)
 
 **Difficulty:** Hard
 
-Refactor `src/utils.js` to add validation and JSDoc comments. Use **autopilot mode** (press `Shift+Tab` until you see "autopilot").
+Plan the validation and JSDoc changes to `src/utils.js`, then approve only the
+listed behavior changes. Continue in **Standard mode** and inspect the diff.
 
-**Tell the agent:**
+**Start in Plan mode:**
 
-```
-Refactor src/utils.js:
+```text
+/plan Refactor src/utils.js:
 1. Add input validation to all functions (throw TypeError for invalid arguments)
 2. Add JSDoc comments to every function
 3. Update the tests to cover the new validation behavior (expect throws for bad input)
 4. Make sure all tests still pass
+Name the files and checks for each step. Do not implement yet.
 ```
 
 **Success criteria:**

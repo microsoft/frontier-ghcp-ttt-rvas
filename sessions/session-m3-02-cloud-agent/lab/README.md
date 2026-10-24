@@ -11,8 +11,9 @@
 ## Objective
 
 Take one synthetic issue from its fixed contract through setup and
-implementation, then test and review the change. Use Copilot cloud agent only
-when you have approval to use it. Otherwise complete the same work manually.
+implementation with Copilot cloud agent, then test and review the change.
+If access or permission is missing, stop the lab and resolve it before assigning
+the issue. Manual work does not complete this lab.
 
 ## Deliverables
 

@@ -61,7 +61,7 @@
       "id": "m2-01",
       "slug": "session-m2-01-copilot-cli",
       "module": "2",
-      "title": "GitHub Copilot CLI & App",
+      "title": "GitHub Copilot in the CLI",
       "description": "Critique a repair plan and check CLI controls and fleet results. Practise queueing, recovery, and terminal automation.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
@@ -134,7 +134,7 @@
       "slug": "session-m3-02-cloud-agent",
       "module": "3",
       "title": "Copilot Cloud Agent",
-      "description": "Assign issues to Copilot's cloud agent. It creates a branch, writes code, runs tests, and opens a PR.",
+      "description": "Assign one issue to Copilot's cloud agent. Check the proposed change and test results before giving feedback or making a merge decision.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },

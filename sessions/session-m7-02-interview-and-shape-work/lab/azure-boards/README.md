@@ -95,8 +95,8 @@ For the supplied scenario, use these expected changes to review the draft:
 
 | Field | Proposed direction |
 | --- | --- |
-| Description | Cover facilities and equipment requesters, public status, last updated time, safe summary, and named exclusions. |
-| Acceptance criteria | Add requester-only access, mapped status, stale and unmapped application behavior, safe summary behavior, and unchanged behavior for excluded request types. |
+| Description | Cover facilities and equipment requesters, the public status label and latest update date, and named exclusions. |
+| Acceptance criteria | Add requester-only access, the two permitted requester fields, stale and unmapped application behavior, support-only detail, and unchanged behavior for excluded request types. |
 | Priority | Propose `1` and record the 20% contact-reduction target as the reason. The request owner may choose another value. |
 | State | Use the team's approved state for an item that can enter planning. |
 | Board column | Move from `New` only after approval. Use the team's existing ready-for-planning column. |

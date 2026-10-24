@@ -24,8 +24,7 @@ The lab uses Spec Kit's real project model:
 - `/speckit-converge` compares the implementation with the accepted artifacts.
 - `/speckit-taskstoissues` converts the generated task list into GitHub Issues.
 
-Spec Kit generates its own Copilot skills during `specify init`. **This session
-does not ship substitute skills or a `.specify.yml` configuration file.**
+Spec Kit generates its Copilot skills during `specify init`.
 
 ## Learning outcomes
 

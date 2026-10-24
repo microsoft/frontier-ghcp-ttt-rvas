@@ -33,7 +33,7 @@ Which artifacts will learners submit?
 
 - [ ] Accepted specification trace
 - [ ] Implementation-ready issue
-- [ ] Patch or patch plan
+- [ ] Implemented patch
 - [ ] Test results
 - [ ] Review decision and next action
 

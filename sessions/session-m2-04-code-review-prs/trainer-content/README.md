@@ -1,8 +1,6 @@
 # Session m2-04: Code review workflows
 
-## Trainer content guide
-
-### Delivery baseline
+## Before teaching
 
 Read the [course safety baseline](../../learning-safety-baseline.md). Before the
 demo, check the current GitHub docs and your organization's rules. Review controls
@@ -13,7 +11,7 @@ and availability can change.
 1. Choose the training repository, synthetic data, reviewer, and test command.
 2. Check the current docs for the review tools.
 3. Choose a small pull request with clear acceptance criteria.
-4. Set a usage limit if the work is metered.
+4. Set a usage limit if the work is metered and name who can approve more.
 5. Check CLI `/review` and `/security-review`, Copilot PR review, and a private
    training remote with the baseline `main` branch before the lab.
 6. Ask learners to write their first verdict before assisted review.
@@ -28,60 +26,6 @@ replace the local commands and pull-request review.
 
 Show learners how to use automated findings in a review. Have them check the diff,
 tests, and comments before making their own decision.
-
-## Suggested agenda
-
-| Segment | Activity |
-| --- | --- |
-| Preflight | Check data, roles, usage limits, and access. |
-| Review contract | Define acceptance criteria and required checks. |
-| Findings | Separate facts from assumptions. |
-| Human decision | Accept, request changes, or reject with rationale. |
-| Conflict exercise | Resolve intent and tests manually before editing. |
-| Access gate | Stop when the required review surface is missing. |
-
-## Trainer talking points
-
-> "A review tool can raise questions, but it cannot replace the reviewer. The
-> reviewer owns the decision and needs the diff and test results."
-
-> "Check the current workflow before the demo."
-
-> "For metered work, stop at the usage limit."
-
-## Review contract
-
-```markdown
-## Change intent
-Describe the user-visible behavior and allowed scope.
-
-## Acceptance criteria
-- [ ] Expected and failure behavior are testable.
-- [ ] Relevant tests and checks pass.
-- [ ] Data, dependencies, and permissions are reviewed.
-- [ ] A human reviewer accepts the change.
-```
-
-## Review rubric
-
-- Does the implementation meet the stated intent?
-- Do the tests cover the change?
-- Did the change introduce data, dependency, security, or permission questions?
-- Does the diff stay within the planned files?
-- Can the reviewer explain the decision to accept or request revision?
-
-## Conflict-resolution exercise
-
-Have learners read what each branch intends to change. Before they edit, ask them
-to write the behavior the merge must preserve. Then have them resolve the conflict
-manually, run tests, and review the result. An assisted demonstration is optional
-and may occur only when current documentation and policy permit it.
-
-## Close
-
-Ask learners what they need to see before approving a change.
-
----
 
 ## Minute-mapped delivery plan (60 minutes)
 
@@ -177,14 +121,10 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 
 ### Exact preflight actions
 
-1. Revisit the Delivery baseline.
-2. Check repository, data classification, author, reviewer, and required checks.
-3. Check current official documentation for the selected review workflow.
-4. Check organization and repository rules.
-5. Set a usage limit and name who can approve more.
-6. Prepare the human-only review worksheet.
-7. Use a small synthetic diff.
-8. Check the review tool before opening it.
+1. Use the repository, reviewer, checks, and usage limit checked
+   [before teaching](#before-teaching).
+2. Open the small synthetic diff.
+3. Prepare the human-only review worksheet before opening assisted review.
 
 ### Quality gates
 
@@ -200,10 +140,11 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 
 > "We demonstrate only the currently documented and approved controls. An assisted review is input to, not a replacement for, required reviewers."
 
-Before the assisted prompt, have learners write their initial verdict and two
-important findings in `lab/starter/partner-review-checklist.md`. Afterward, they
-can compare missed findings, false positives, and anything that changed the final
-decision.
+Before the assisted prompt, have learners write their initial verdict in
+`lab/starter/partner-review-checklist.md` and their two important findings in
+`lab/starter/fix-evaluation-template.md`, with `Human` as the source. Afterward,
+they can compare missed findings, false positives, and anything that changed the
+final decision without copying findings into a second record.
 
 ### Demonstrate the two local commands
 
@@ -397,6 +338,10 @@ Ask for four checks:
 - date example;
 - default currency example;
 - explicit currency example.
+
+Learners resolve the lab conflict manually, run tests, and review the result.
+An assisted trainer demonstration is optional and requires permission to use
+the chosen workflow.
 
 ### Transition
 

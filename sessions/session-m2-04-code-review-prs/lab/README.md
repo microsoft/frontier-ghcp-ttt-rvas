@@ -116,14 +116,11 @@ or test result and name the acceptance criterion it affects.
 
    > **Check:** The brief lists changes to `src/api.js` and `src/utils.js`. Each has an intended defect.
 
-2. **Create a review table in your notes.** Use these columns:
+2. **Open `lab/starter/fix-evaluation-template.md`.** Use its single triage table
+   for human, local-command, and PR findings throughout the lab.
 
-   | Change | Expected behavior | Risk | Code or output to inspect | Review decision |
-   | --- | --- | --- | --- | --- |
-   | User search | Safe filtering | Injection risk | query construction | Request changes |
-   | User list | No sensitive fields | data exposure | response payload | Request changes |
-
-   > **Success criteria:** Every row names a file or function to inspect before you comment.
+   > **Success criteria:** Each finding names a file or function, the affected
+   > acceptance criterion, and the code or test output that supports it.
 
 3. **Inspect the current starter project before applying changes.** Open `src/api.js`, `src/utils.js`, and `tests/api.test.js`.
 
@@ -144,8 +141,9 @@ or test result and name the acceptance criterion it affects.
    > **Expected output:** Some existing tests may still pass because the defects are not fully covered. Record both pass/fail output and any missing coverage you notice.
 
 6. **Review the change yourself first.** Use
-   `lab/starter/partner-review-checklist.md` to record your initial verdict and
-   the two findings that matter most before opening an assisted review.
+   `lab/starter/partner-review-checklist.md` to record your initial verdict.
+   Record the two findings that matter most in the triage table with `Human`
+   as their source before opening an assisted review.
 
    > **Success criteria:** Your initial review cites the relevant file or
    > function and explains how the code or test output supports your verdict.
@@ -243,7 +241,9 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
    > **Expected output:** All tests pass. If tests fail, record the failing assertion and correct only the related implementation or test expectation.
 
-7. **Fill in `lab/starter/fix-evaluation-template.md`.** Record the finding, fix, test result, reviewer decision, and residual risk.
+7. **Update the existing triage rows in `lab/starter/fix-evaluation-template.md`.**
+   Add the fix and regression test to each accepted finding. Record residual risk
+   in its Human decision section.
 
    > **Success criteria:** A reviewer can trace every fix back to an original finding.
 
@@ -326,7 +326,8 @@ suggestion alone is not enough.
 
    > **Success criteria:** The finding includes a file reference, impact, and acceptance criterion.
 
-2. **Record how you checked the fix.** Include before/after behavior, test names, and command output.
+2. **Check the selected finding's triage row.** Add any missing before/after
+   behavior, test names, or command output; do not create a second record.
 
    > **Expected output:** A reviewer can reproduce the result from your notes and command output.
 
@@ -340,16 +341,17 @@ suggestion alone is not enough.
    | Security | Did validation, error handling, or secrets handling change? |
    | Quality | Do the tests and review results support the decision? |
 
-4. **Write the final decision.** Choose approve, request changes, or pause. Name the human reviewer and explain the decision.
+4. **Complete Human decision in `fix-evaluation-template.md`.** Choose approve,
+   request changes, or pause. Name the human reviewer and explain the decision.
 
    > **Success criteria:** The decision is understandable without seeing the entire lab conversation.
 
 5. **Compare the initial human review with both local command outputs and the
-   PR review.** Complete all comparison fields. Preserve the original critique,
+   PR review.** Complete the remaining fields in the same template. Preserve the original critique,
    record which source raised each finding, and state why the final human
    assessment accepted, revised, or rejected it.
 
-   > **Expected output:** The comparison table identifies differences, false
+   > **Expected output:** The triage table identifies differences, false
    positives, new code references or test results, and any finding that changed the final verdict.
 
 ### Checkpoint 4: final decision is evidence-based
@@ -363,13 +365,12 @@ suggestion alone is not enough.
 
 Submit one folder or document containing:
 
-1. The completed `partner-review-checklist.md` or equivalent review notes.
-2. A list of blocking findings and the smallest fix for each.
-3. Test output for the corrected project.
+1. `partner-review-checklist.md` with the unchanged initial human verdict.
+2. `fix-evaluation-template.md` with the review runs, finding triage, fixes, test
+   results, remaining risk, reviewer, and final human decision.
+3. Initial and correction outputs from `/review` and `/security-review`, the
+   private training PR reference, and test output for the corrected project.
 4. The resolved conflict decision and its test results.
-5. A final human review decision: approve, request changes, or pause.
-6. Initial and correction outputs from `/review` and `/security-review`, their
-   triage decisions, and the private training PR reference.
 
 > **Done:** A reviewer can reconstruct the original risk, fix, validation, and final decision without undocumented tool behavior.
 
