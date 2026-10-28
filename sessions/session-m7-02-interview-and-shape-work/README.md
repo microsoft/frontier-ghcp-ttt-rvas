@@ -27,8 +27,7 @@ requests or source organization names in the standard lab.
 By the end of this session, learners will be able to:
 
 - Install and check the supplied `decision-interview` project skill.
-- Run a dependency-ordered interview with GitHub Copilot.
-- Ask only questions whose prerequisites are settled.
+- Run a GitHub Copilot interview that asks only questions whose prerequisites are settled.
 - Resolve scope, constraints, success, failure, ownership, and approval.
 - Review Copilot recommendations before accepting or revising them.
 - Create a reviewed Markdown decision brief in the repository.
@@ -72,12 +71,11 @@ Vague request
 ## Boundaries
 
 - Teach the interview pattern, not skill authoring.
-- Use the supplied project skill; learners do not author a new skill in this session.
 - Use only approved, sanitized material.
 - Treat Copilot questions, recommendations, and drafts as proposals.
 - Keep product and approval decisions with named people.
 - Do not create or update a live work item until the request owner approves the brief.
-- Keep the lab no-code. Learners install and use the supplied skill; they do not
+- Keep the lab no-code. Learners install and use the supplied project skill; they do not
   author or edit it.
 - Session M7-03 creates the approved GitHub issues. Session M7-02 prepares the source
   brief and issue proposal.

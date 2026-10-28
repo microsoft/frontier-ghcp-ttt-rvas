@@ -70,7 +70,7 @@ clarify the design first.
 
 ---
 
-# Writing through MCP is still an operation
+# Review each MCP write
 
 Copilot can prepare the issue plan. A person approves the write only after seeing
 the target repository and expected result.
@@ -93,7 +93,7 @@ authoritative.**
 
 ---
 
-# Existing work needs a disposition
+# Decide what to do with existing work
 
 | Candidate | Decision |
 | --- | --- |
@@ -143,7 +143,7 @@ No silent batch creation.
 
 ---
 
-# Generated confirmation is not verification
+# Check what GitHub saved
 
 After the write:
 
@@ -161,7 +161,7 @@ After the write:
 - Authoritative live issue set
 - One parent issue
 - Four required child roles; an optional fifth stays outside Session M7-05
-- Fresh-read verification
+- Saved issues checked through a fresh GitHub read
 - Parent-to-child links that Session M7-04 reads directly
 
-**Stop if tool review or verification is unavailable.**
+**Stop if you cannot review the tool call or check the saved issues.**

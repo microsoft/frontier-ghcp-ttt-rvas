@@ -2,9 +2,9 @@
 
 ## Delivery objective
 
-Show how a skill selects a task and then guides the work. Demonstrate a matching
-task and a task that stays out of scope. Then show a matching task that stops
-because a precondition is missing. Have learners load skills live and compare two
+Demonstrate three skill outcomes: a matching task runs, an out-of-scope task does
+not, and a matching task stops because a precondition is missing.
+Have learners load skills live and compare two
 decision interviews before moving into `/plan`.
 
 ## One-hour plan
@@ -128,7 +128,7 @@ Separate the claims:
 | Two-scenario demo | A reviewer can see the applied and blocked outputs |
 | Live invocation | The selected product discovers and uses the skill |
 
-The local runner only handles the supplied scenarios. It is a teaching harness.
+The local runner only handles the supplied scenarios.
 
 The learner validator and demo read the project-local API skill. The harness
 unit tests retain a fixed reference fixture. Neither claims that an LLM followed

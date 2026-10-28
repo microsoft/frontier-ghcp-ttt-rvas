@@ -1,6 +1,6 @@
 # Research results: Expected format
 
-This example shows a useful `/research` result. Your result will depend on the topic and sources, so check its claims before you use them.
+Your `/research` result will depend on the topic and sources. Check its claims before you use them.
 
 ---
 

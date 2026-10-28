@@ -182,7 +182,7 @@ Add the comparison to `lab-notes.md`:
 | Corrections needed | | |
 | Final test result | | |
 
-### Checkpoint 2: feature and comparison are observable
+### Checkpoint 2: feature works and comparison is recorded
 
 - [ ] Existing tests still pass.
 - [ ] New tests cover owner and due-date behavior.
@@ -240,7 +240,7 @@ If the agent requests an unexpected dependency, network access, or broader file 
 - [ ] Tests prove the changed behavior.
 - [ ] `lab-notes.md` records whether you accepted, revised, or stopped the run and why.
 
-## Stage 4: Review evidence and finish the handoff (20 minutes)
+## Stage 4: Review the diff and test results, then finish the handoff (20 minutes)
 
 Review the final project as if another engineer submitted it.
 

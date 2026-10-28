@@ -25,8 +25,6 @@ outside the terminal.
 
 ## Learning outcomes
 
-By the end of this session, learners can:
-
 - manage `CopilotClient` and session startup, use, and shutdown;
 - subscribe to streaming session events without printing duplicate final output;
 - define a typed custom tool over deterministic synthetic data;

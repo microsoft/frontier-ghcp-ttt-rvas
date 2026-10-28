@@ -1,4 +1,4 @@
-# MCP test and Inspector evidence
+# MCP test results and Inspector output
 
 Run these commands from `lab/solution/custom-mcp`.
 

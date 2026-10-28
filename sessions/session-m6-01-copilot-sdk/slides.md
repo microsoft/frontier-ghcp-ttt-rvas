@@ -25,7 +25,7 @@ Session M6-01 | Module 6 | Advanced
 | The application reliability boundary | 8 min |
 | Client, session, and streaming lifecycle | 12 min |
 | Tools, permissions, and hooks | 17 min |
-| Tests and trace evidence | 10 min |
+| Tests and traces | 10 min |
 | Prepared demo and lab handoff | 13 min |
 
 ---
@@ -63,7 +63,7 @@ The data is fixed. You build the controls around the model.
 
 ---
 
-# Start with an explicit lifecycle
+# Manage startup and cleanup
 
 ```ts
 import { CopilotClient } from "@github/copilot-sdk";
@@ -121,7 +121,7 @@ the final message, or both in different places. Printing both produces duplicate
 
 ---
 
-# Events are evidence, not business truth
+# Events do not decide readiness
 
 Session events can show:
 
@@ -393,9 +393,6 @@ code look safer do not help.
 6. Show the denial in the terminal.
 7. Open the same run in Jaeger.
 8. Trigger an unknown ID and show the failure path.
-
-Show one denied tool call in the CLI, then find
-the same policy decision inside the trace.
 
 ---
 

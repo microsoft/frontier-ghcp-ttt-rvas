@@ -93,7 +93,7 @@ Resume the work before claiming completion.
 
 ---
 
-# Executable verification
+# Run the tests
 
 ```bash
 npm test
@@ -120,4 +120,4 @@ Record one decision: approve, request changes, or pause.
 | Accept the specification and scope | 25 min |
 | Write the issue and establish the baseline | 25 min |
 | Implement the accepted slice | 35 min |
-| Verify, review, and hand off | 35 min |
+| Test, review, and hand off | 35 min |

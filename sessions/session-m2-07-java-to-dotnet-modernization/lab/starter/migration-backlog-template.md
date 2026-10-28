@@ -15,6 +15,6 @@ dependencies are understood.
 
 ## Remove only after
 
-State the evidence required before deleting the Java pricing path.
+List the checks required before deleting the Java pricing path.
 
 - _Add removal conditions here._

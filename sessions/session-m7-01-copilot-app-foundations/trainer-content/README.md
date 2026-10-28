@@ -15,12 +15,12 @@ creating the first Delivery Decision Studio brief.
 | --- | --- |
 | 0:00-0:08 | Orient learners to the app |
 | 0:08-0:18 | Choose mode and context |
-| 0:18-0:28 | Inspect capabilities and context health |
+| 0:18-0:28 | Inspect capabilities and context usage |
 | 0:28-0:40 | Compare unscoped and grounded answers |
 | 0:40-0:53 | Create, revise, and check a working brief |
 | 0:53-1:00 | Explain boundaries and launch the lab |
 
-## Required preflight
+## Before the session
 
 - Check that every learner can open the GitHub Copilot app.
 - Check that the learner can start a chat and open the training repository as a project.
@@ -45,7 +45,7 @@ Show the current locations for:
 
 Labels can move. Teach what each area is for rather than a fixed click path.
 
-## Modes and verified context syntax
+## Modes and context syntax
 
 - **Interactive:** use for interviews, source checks, and reviewed drafts.
 - **Plan:** use before a multi-step change so the learner can approve the plan.

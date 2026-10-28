@@ -87,9 +87,7 @@ SYN-01 → SYN-02 → IMP-01 → IMP-02
 
 Fix the current failure before investigating the next one.
 
-## Explicit assumptions
-
-Use these rules as the behavioral contract:
+## Behavioral contract
 
 - CSV files have `sku` and `quantity` headers.
 - SKU values are trimmed and converted to uppercase.

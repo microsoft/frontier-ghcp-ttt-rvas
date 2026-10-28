@@ -24,4 +24,4 @@
 
 If policy allows two model choices, run the same weighted-average review
 prompt with both. Otherwise compare the assisted response with the reference
-solution. Record only observable differences.
+solution. Record only differences you can check.

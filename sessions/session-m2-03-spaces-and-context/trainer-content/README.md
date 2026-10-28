@@ -149,7 +149,7 @@ Exclude:
 - Assign an owner and review trigger before sharing.
 - Test the packet with a known question whose answer exists in the sources.
 
-### Observable outcome
+### Check the source choices
 
 Ask learners to explain why they need each included source and why they excluded
 the others.
@@ -301,8 +301,6 @@ or missing checks.
 Results may vary. The request lacks the source files needed to judge the proposal.
 
 ### Pass B: Grounded prompt
-
-#### Exact trainer prompt
 
 Exact prompt:
 

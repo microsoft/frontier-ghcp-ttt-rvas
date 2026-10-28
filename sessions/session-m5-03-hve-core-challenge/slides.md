@@ -148,7 +148,7 @@ outcome-oriented story and acceptance criteria.
 
 Deliver `POST /api/decisions` within the supplied product intent and API contract.
 
-Keep the endpoint within the supplied contract. Scope control is part of the score.
+Scope control is part of the score.
 
 ---
 

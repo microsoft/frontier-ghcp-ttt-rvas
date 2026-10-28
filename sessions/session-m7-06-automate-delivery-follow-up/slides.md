@@ -41,9 +41,7 @@ Do not copy platform state into a static handoff.
 
 ---
 
-# Keep the output real
-
-The automation produces one stakeholder update.
+# Review run details on the platform
 
 Inspect run status, identifiers, timing, usage, and supporting results on the
 platform. Do not recreate those fields in a form.

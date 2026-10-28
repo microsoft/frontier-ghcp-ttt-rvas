@@ -179,7 +179,7 @@ By the end of Exercise 1:
 - [ ] You can start an interactive session with `copilot`
 - [ ] You've explained 5 commands and understand what Copilot covers well vs. misses
 - [ ] You've generated commands for two tasks and checked them
-- [ ] Your notes connect each command to the `agent-tasks` takeover story
+- [ ] Your notes explain how each command could help you work on `agent-tasks`
 
 ---
 
@@ -474,7 +474,7 @@ Programmatic mode (`-p`) lets you use Copilot in automated pipelines. Review its
    Record the CLI exit status immediately after the Copilot command. If it failed,
    stop and inspect the error before running the parser.
 
-5. **Complete the pipeline script.** Open `pipeline-script.sh` in a text editor or the Copilot CLI and fill in the TODO sections:
+5. **Complete the TODO sections** in `pipeline-script.sh` with a text editor or the Copilot CLI:
 
    ```bash
    # You can even use Copilot to help you complete the script:
@@ -680,8 +680,6 @@ Open `lab/starter/cli-cheatsheet-template.md`. Fill in the template with:
 - Shortcuts and aliases you've set up
 - Notes from today's exercises
 
-Customize the sheet for how you work.
-
 Restore the original `/limits` setting after recording the exercise results.
 Do not remove a cap that was present before the lab.
 
@@ -732,6 +730,4 @@ Checked October 15, 2026:
 
 3. **Show the CLI agent loop.** Have learners watch the agent plan, act, inspect results, and iterate in the terminal.
 
-4. **Choose between the CLI and IDE based on the work.** SSH, CI/CD, and automation favor the CLI. Visual development and code navigation favor the IDE.
-
-5. **Choose the surface deliberately.** Use current official documentation and your organization's policy to decide whether CLI, IDE, or web workflows fit the task.
+4. **Choose between the CLI and IDE based on the work.** SSH, CI/CD, and automation favor the CLI. Visual development and code navigation favor the IDE. Check current official documentation and your organization's policy before choosing CLI, IDE, or web workflows.

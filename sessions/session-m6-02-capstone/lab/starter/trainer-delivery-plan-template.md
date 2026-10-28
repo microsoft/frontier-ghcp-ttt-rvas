@@ -27,7 +27,7 @@ endpoint, live data, deployment, tool configuration, or a new dependency.
 
 **Who can approve a scope change:**
 
-## Evidence
+## Learner deliverables
 
 Which artifacts will learners submit?
 

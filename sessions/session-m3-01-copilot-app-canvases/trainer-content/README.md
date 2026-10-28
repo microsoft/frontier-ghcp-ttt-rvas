@@ -6,7 +6,7 @@
 
 ## Teaching goal
 
-Teach learners to define a canvas contract and explain each action. Demonstrate a safe rejection, then show how to check whether the final state is safe to share.
+Teach learners to define a canvas contract and explain each action. Show a rejected update, then check whether the final state matches the contract.
 
 ## Required preparation
 
@@ -64,7 +64,7 @@ If any condition fails, use the prepared manual demo. **Do not bypass a policy, 
 | 0:50 to 0:56 | Generated extension review | Keep, revise, or remove decisions |
 | 0:56 to 1:00 | Lab handoff | Roles, deliverables, and checkpoints clear |
 
-## 0:00 to 0:05: Set the outcome and access gate
+## 0:00 to 0:05: Set the outcome and check access
 
 Say:
 

@@ -12,7 +12,7 @@ Keep only the decisions needed before work starts in the plan.
 
 For developers after Session M2-05, use the local PR-readiness route instead. It
 reviews implementation behavior, tests, and a supplied snapshot without GitHub
-MCP access. Preserve the product route's live issue workflow and Session M7-06 handoff.
+MCP access.
 
 ## One-hour plan
 
@@ -77,8 +77,8 @@ Review how the parent connects findings to live issues. Check that it shows
 rejected claims, names open gaps, and recommends the next follow-up. It must not
 publish or change source systems without approval.
 
-Session M7-06 reads the live issues and the reviewed parent result. There is no manual
-delivery-status record or static handoff.
+Session M7-06 reads the live issues and the reviewed parent result. Do not copy
+them into a separate delivery-status record or handoff file.
 
 ## Developer demonstration
 
@@ -122,7 +122,7 @@ Learners submit:
 
 1. the approved orchestration plan;
 2. the live orchestration result;
-3. fresh-read proof for any approved GitHub issue update.
+3. the result of a fresh GitHub read for any approved issue update.
 
 For the developer route, require the accepted developer plan and the app's
 reviewed parent result, including the redirection, rejected readiness claim, and

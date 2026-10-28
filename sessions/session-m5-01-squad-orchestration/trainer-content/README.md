@@ -159,8 +159,7 @@ Choose the lightest path that can produce a reviewable result.
 | Restricted access, unclear data boundary, or unapproved tool | Manual workflow with prepared artifacts |
 | Repeated operational work with stable acceptance checks | A monitored team may be useful |
 
-Success means a smaller queue of clear, reviewed changes. Agent count does not
-measure success.
+Judge the team by the changes it completes and reviews, not its agent count.
 
 ## Lab handoff (0:55 to 1:00)
 

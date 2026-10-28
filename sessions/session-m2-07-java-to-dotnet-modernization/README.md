@@ -84,7 +84,7 @@ container. A global Maven installation is not required.
 - local HTTP services;
 - synthetic JSON;
 - behavior extraction;
-- one production-shaped pricing slice;
+- one pricing endpoint with validation, calculation, and response handling;
 - package-free .NET contract tests;
 - a reviewed migration backlog.
 

@@ -142,7 +142,7 @@ Every later Module 7 session uses this pattern.
 
 ---
 
-# Conversation should become an artifact
+# Save the working brief
 
 The lab creates `initiative-context-brief.md` with:
 
@@ -155,7 +155,7 @@ The brief must make sense without the chat history.
 
 ---
 
-# Evidence changes the brief
+# Revise the brief when sources change
 
 ```text
 Initial source

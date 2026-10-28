@@ -23,5 +23,5 @@ decision.
 
 ## Comparison
 
-The comparison used the same review prompt for both approved paths. The result was
-judged against the test suite rather than response style.
+The comparison used the same review prompt for both permitted model choices.
+The result was judged against the test suite rather than response style.

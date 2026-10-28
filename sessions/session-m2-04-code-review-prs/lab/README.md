@@ -41,7 +41,7 @@ Before you start, record these decisions in your notes:
 > reviews the work, and which check validates the change.
 
 You need the standalone Copilot CLI with `/review` and `/security-review`,
-Copilot pull-request review, a private training repository they may push to, Git,
+Copilot pull-request review, a private training repository you may push to, Git,
 the authenticated GitHub CLI (`gh`), Node.js, and npm. Check both Copilot commands
 in `/help` and repository access with `gh auth status` before starting.
 
@@ -313,7 +313,7 @@ result rather than accepting one side without review.
 
 ---
 
-## Exercise 4: Evaluate review evidence (20 minutes)
+## Exercise 4: Review the code and test results (20 minutes)
 
 ### Objective
 
@@ -354,7 +354,7 @@ suggestion alone is not enough.
    > **Expected output:** The triage table identifies differences, false
    positives, new code references or test results, and any finding that changed the final verdict.
 
-### Checkpoint 4: final decision is evidence-based
+### Checkpoint 4: final decision cites findings and checks
 
 - [ ] The decision is approve, request changes, or pause.
 - [ ] The rationale cites findings, fixes, and check results.

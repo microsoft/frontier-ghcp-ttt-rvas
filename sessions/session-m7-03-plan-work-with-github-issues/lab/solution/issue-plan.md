@@ -8,7 +8,7 @@
 
 ## Existing-work check
 
-The concrete seeded records were reviewed before planning:
+The seeded issues were reviewed before planning:
 
 | Existing issue | Classification | Decision | Reason |
 | --- | --- | --- | --- |

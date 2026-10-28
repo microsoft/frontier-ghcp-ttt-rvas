@@ -23,7 +23,7 @@ so you can detect stale canvas data and refresh it.
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Check canvas and MCP capabilities | 15 min |
-| 2 | Define the minimum canvas contract | 20 min |
+| 2 | Define the minimum canvas requirements | 20 min |
 | 3 | Create and simplify the canvas | 30 min |
 | 4 | Load and operate live issue state | 25 min |
 | 5 | Create and detect state drift | 15 min |
@@ -50,7 +50,7 @@ Use a fresh GitHub MCP read as the authoritative issue list. Start from the live
 Session M7-03 parent issue and follow its child links. Do not reconstruct the set
 from chat history or a separate Markdown file.
 
-## Part 2: Define the minimum canvas contract (20 minutes)
+## Part 2: Define the minimum canvas requirements (20 minutes)
 
 Complete `starter/canvas-requirements.md`.
 
@@ -99,7 +99,7 @@ Review:
 Inspect the generated files and ask Copilot for specific changes. Do not hand-edit
 extension code; this is a no-code review.
 
-Ask Copilot to remove generated state or actions that exceed the approved contract.
+Ask Copilot to remove generated state or actions that exceed the approved requirements.
 
 **Checkpoint:** The canvas is smaller after review and contains no GitHub write
 action.
@@ -143,7 +143,7 @@ Do not refresh the canvas yet. Ask Copilot to compare:
 - the fresh GitHub issue;
 - the canvas's last-refresh time.
 
-You should now see that the canvas is stale compared with the issue you just read.
+Identify what changed in GitHub but has not yet appeared in the canvas.
 
 ## Part 6: Reconcile and record ownership (15 minutes)
 

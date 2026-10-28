@@ -74,7 +74,7 @@ Open `starter/orchestration-plan-template.md`.
 
 1. Retrieve the approved parent and child issues through GitHub MCP.
 2. Define one question with a clear scope for each child issue.
-3. Name the approved issue and linked evidence for each workstream.
+3. Name the approved issue and its linked sources for each workstream.
 4. Add a hard stop condition and reviewer.
 5. Check that no child depends on another child result.
 6. Submit the plan through `/orchestrate`.
@@ -101,7 +101,7 @@ status, timing, or usage into the plan.
 | Safe and on scope | Wait |
 | A safe result needs a precise correction | Redirect |
 | A boundary is crossed | Stop |
-| The result answers the question with evidence | Accept |
+| The result's answer is supported by its sources | Accept |
 | The result is unsupported or outside scope | Reject |
 | Human authority is required | Escalate |
 
@@ -113,7 +113,7 @@ supporting sources.
 Review each child result against its workstream:
 
 - Does it answer the assigned question?
-- Does it use only the approved issue and linked evidence?
+- Does it use only the approved issue and its linked sources?
 - Did it obey the stop condition?
 - Are unresolved gaps listed?
 - Is the recommendation supported?
@@ -145,7 +145,7 @@ separate handoff form.
 - [ ] Live child results on the orchestration surface.
 - [ ] At least one deliberate wait, redirect, stop, accept, or reject decision.
 - [ ] Reviewed parent result linked to the live GitHub issues.
-- [ ] Fresh-read verification after any approved issue update.
+- [ ] Any approved issue update checked through a fresh GitHub read.
 
 ## Troubleshooting
 
@@ -153,7 +153,7 @@ separate handoff form.
 | --- | --- |
 | `/orchestrate` is missing | Stop and resolve license, policy, client, or command access. |
 | A child requests restricted data | Stop the child and record the boundary in the parent result. |
-| A result cites no issue evidence | Reject it or redirect the child. |
+| A result cites no supporting issue content | Reject it or redirect the child. |
 | Two workstreams overlap | Pause one and move the shared question to the parent. |
 | An issue cannot be retrieved | Stop that workstream until approved issue access is restored. |
 

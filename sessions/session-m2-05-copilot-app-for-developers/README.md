@@ -70,7 +70,7 @@ prerequisites for that route.
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab guide | [`lab/README.md`](lab/README.md) |
-| Starter project and evidence | [`lab/starter/`](lab/starter/) |
+| Starter project and sample results | [`lab/starter/`](lab/starter/) |
 | Reference solution | [`lab/solution/`](lab/solution/) |
 | Shared glossary | [`../glossary.md`](../glossary.md) |
 

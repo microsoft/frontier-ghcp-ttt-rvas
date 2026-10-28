@@ -119,7 +119,7 @@ Compare this with two weak patterns:
 
 The caller needs an error response it can report without crashing.
 
-### 0:43 to 0:52: Inspector and test evidence
+### 0:43 to 0:52: Inspector output and test results
 
 Run:
 

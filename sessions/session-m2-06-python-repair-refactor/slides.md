@@ -179,7 +179,7 @@ The starter's duplicated rules disagree. Keep one implementation.
 
 ---
 
-# Deterministic defects give stable evidence
+# Reproduce each defect with the same fixtures
 
 The same fixtures always expose:
 

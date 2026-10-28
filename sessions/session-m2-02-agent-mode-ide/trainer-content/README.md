@@ -320,7 +320,6 @@ continue until the permission is resolved.
 - The revised file list matches the contract.
 - No unrelated action remains queued.
 - The reason for stopping names the boundary crossed.
-- The reason for stopping is clear.
 
 ## Common trainee Q&A
 

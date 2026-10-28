@@ -38,7 +38,7 @@ Place them in the project's `.github/prompts/` directory.
 
 ## Tips
 
-- Be specific. Vague prompts produce vague results.
+- Name the task, inputs, and constraints.
 - Include examples of the output format you want
 - Use numbered steps for procedural workflows
 - State the criteria the result must meet

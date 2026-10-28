@@ -28,7 +28,7 @@ the final handoff.
 - Compare CLI, IDE Chat, IDE Agent Mode, and Copilot App workflows.
 - Identify CLI-specific features and when the CLI fits better than the IDE.
 - Check Copilot App and cross-IDE support in the training environment.
-- Produce test output, an automation artifact, and a surface-choice record at clear review checkpoints.
+- Save test output, the health report, and your CLI-versus-IDE comparison at review checkpoints.
 
 ## Session materials
 

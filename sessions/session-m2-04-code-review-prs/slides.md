@@ -112,7 +112,7 @@ The human reviewer still decides.
 | Time | Topic | Trainer move |
 | --- | --- | --- |
 | 0:00 | Review workflow and roles | Define accountability |
-| 0:08 | Summaries and descriptions | Separate draft from evidence |
+| 0:08 | Summaries and descriptions | Check the draft against the diff |
 | 0:18 | Local commands and PR review | Keep the patch uncommitted |
 | 0:28 | Defect and triage demo | Check behavior and reject unsupported claims |
 | 0:43 | Suggestions and conflicts | Preserve author intent |
@@ -211,7 +211,7 @@ Before enabling:
 
 # Quality gates
 
-| Gate | Evidence |
+| Gate | Checks |
 | --- | --- |
 | Ready for first pass | Clear description, focused diff, tests available |
 | Ready for human review | Checks pass; AI comments triaged |
@@ -320,7 +320,7 @@ repository needs an exception.
 # Facilitation prompts
 
 - Which comment needs domain expertise to evaluate?
-- What evidence would turn an uncertain comment into a decision?
+- Which code reference or test would resolve an uncertain comment?
 - Who resolves review noise?
 - Which repositories should not use automatic review?
 - How will the team detect over-reliance?

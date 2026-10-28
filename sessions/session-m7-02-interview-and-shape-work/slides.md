@@ -111,7 +111,7 @@ GitHub Copilot frames the choice. **A person owns the choice.**
 
 # Facts and decisions are different
 
-| Use approved evidence for facts | Ask people for decisions |
+| Use approved sources for facts | Ask people for decisions |
 | --- | --- |
 | Existing workflow | Which users are in scope |
 | Current labels or fields | Which behavior should change |
@@ -202,7 +202,7 @@ missing owners.
 
 ---
 
-# Acceptance criteria describe evidence
+# Acceptance criteria describe testable behavior
 
 Weak:
 

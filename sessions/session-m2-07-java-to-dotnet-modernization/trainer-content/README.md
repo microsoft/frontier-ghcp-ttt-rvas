@@ -152,7 +152,7 @@ The operation order is fixed:
 Changing the order changes the result. Floating-point arithmetic can also change
 the result. The `round-half-up` fixture exists to catch both mistakes.
 
-### 4. Treat fixtures as executable migration evidence
+### 4. Test both implementations with the same fixtures
 
 Open `lab/starter/contracts/order-pricing-cases.jsonl`.
 
@@ -201,7 +201,7 @@ Do not add:
 - a database abstraction;
 - a repository interface for fixture data.
 
-Those additions hide the lesson under scaffolding.
+Those additions do not support this pricing slice.
 
 ## Copilot working agreement
 
@@ -249,7 +249,7 @@ and response fields. Return findings before editing.
 - a new contract because the C# model looks cleaner;
 - decimal or floating-point calculations without a parity decision;
 - tests generated from the .NET implementation instead of the accepted fixtures;
-- deletion of the Java path before the replacement has evidence.
+- deletion of the Java path before tests and review support the replacement.
 
 ## Prepared demonstration
 
@@ -356,7 +356,7 @@ Before learners accept Copilot output, ask:
 - Did it move the shipping threshold?
 - Did it calculate tax on shipping?
 
-### Review point 4: parity evidence
+### Review point 4: compare test and HTTP results
 
 Require these results at the final review:
 

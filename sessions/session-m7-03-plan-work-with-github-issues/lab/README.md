@@ -140,8 +140,8 @@ role. The hierarchy may also contain one optional fifth child.
 
 Start a new Copilot request. Do not reuse the create response.
 
-Ask Copilot to retrieve the created issues through GitHub MCP. Compare the fresh
-state with the approved plan:
+Ask Copilot to retrieve the created issues through GitHub MCP. Compare the saved
+issues with the approved plan:
 
 - title and body;
 - acceptance criteria and non-goals;
@@ -161,8 +161,7 @@ Require a full update preview. Approve the focused write, then retrieve the issu
 again and check the new section is present. Keep the check in the issue; you do
 not need a separate document.
 
-**Checkpoint:** A fresh read proves that both the original create and the correction
-reached GitHub.
+**Checkpoint:** Fresh reads show that GitHub saved both the issues and the correction.
 
 Link every child issue from the parent. Identify the four required roles and
 label any optional fifth child as outside the Session M7-05 workstreams.

@@ -56,13 +56,9 @@ This sounds clear until implementation starts:
 | Scope additions appear as code | Non-goals make additions visible |
 | Review starts with implementation details | Review starts with intent and evidence |
 
-The goal is to make decisions before implementation.
-
 ---
 
 # What Spec Kit provides
-
-Spec Kit combines three things:
 
 | Layer | Purpose |
 | --- | --- |

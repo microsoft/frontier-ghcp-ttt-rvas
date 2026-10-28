@@ -131,9 +131,6 @@ GitHub Issues*
    accepted task IDs, dependencies, parallel markers, file paths, and scope. They
    do not become a second requirements source.
 
-Use the final slides to explain installation approval, demonstrate one real gap,
-and introduce the lab.
-
 ### 0:52 to 1:00: Installation, demonstration, and lab handoff
 
 **Slides:** *Approved installation paths*, *Prepared demonstration*, and *Lab
@@ -215,9 +212,6 @@ tasks by default, but omit the test for `include_archived=True`. Run convergence
 and show the appended test task. Then add the test, run the suite, and converge
 again. Then reveal `change-request.md` and show how restore behavior flows through
 clarification, planning, tasks, analysis, implementation, and convergence.
-
-Point out how the missing test creates a task and how the restore request changes
-the specification. Learners should see the artifacts change the work.
 
 ## Delivery controls
 

@@ -30,7 +30,7 @@ Keep the same issue and acceptance criteria at every step.
 ---
 # Access policy
 
-The live route requires:
+The lab requires:
 
 - approved Copilot cloud agent access;
 - a training repository with synthetic data;
@@ -191,7 +191,7 @@ The agent does not make this decision.
 ---
 # Stop conditions
 
-Stop the live route when:
+Stop the lab when:
 
 - the requested files expand;
 - a new dependency appears;

@@ -20,8 +20,6 @@ issue proposal.
 
 ## Required preflight
 
-Complete this check before learners begin:
-
 - Check that every learner can open the GitHub Copilot app and the training repository project.
 - Copy the supplied skill to
   `.github/skills/decision-interview/SKILL.md`.
@@ -78,7 +76,7 @@ product behavior, tradeoffs, ownership, and approval.
 When a source is unavailable, mark the claim as unverified. Do not turn it into
 a question for the owner to decide.
 
-### Keep context healthy
+### Check context between rounds
 
 Run `/context` after each interview round. Compact only when the same thread must
 continue. Start fresh when old recommendations begin to leak into new decisions.

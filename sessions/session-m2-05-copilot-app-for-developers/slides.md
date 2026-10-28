@@ -24,7 +24,7 @@ Session M2-05 | Module 2 | Intermediate
 | --- | ---: |
 | App mental model and engineering surfaces | 10 min |
 | Chats, sessions, modes, and isolation | 15 min |
-| Evidence-led inner loop | 12 min |
+| Tests, diffs, and handoffs | 12 min |
 | Issue-to-PR outer loop and critique | 13 min |
 | Prepared demo and lab handoff | 10 min |
 
@@ -42,7 +42,7 @@ you need file changes or results tied to a branch.
 
 ---
 
-# A useful prompt names the evidence
+# A useful prompt names the files and checks
 
 Weak:
 
@@ -141,7 +141,7 @@ session cannot continue, the handoff is incomplete.
 
 ---
 
-# The inner loop is evidence first
+# Check behavior before editing
 
 ```text
 Observe failing behavior
@@ -157,7 +157,7 @@ Check the result with a command, diff, test, or reproducible manual check.
 
 # Check only what supports the decision
 
-| Claim | Evidence | Result |
+| Claim | Check | Result |
 | --- | --- | --- |
 | Failed checks block readiness | focused unit test | pass |
 | Unresolved blocking review blocks readiness | snapshot fixture + test | pass |
@@ -282,7 +282,7 @@ If the live app fails, show the saved session output at the same step.
 
 ---
 
-# Completion evidence
+# Deliverables
 
 You will submit:
 

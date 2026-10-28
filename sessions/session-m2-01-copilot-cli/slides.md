@@ -180,7 +180,7 @@ That context helps Copilot reason. It does not decide:
 
 ---
 
-# Put gates around side effects
+# Check before changing files or systems
 
 Before a command changes files or external systems:
 
@@ -254,7 +254,7 @@ Move only the analysis note. Do not merge the alternative in this lab.
 
 ---
 
-# Evidence should survive the session
+# Save the work for review
 
 Keep:
 

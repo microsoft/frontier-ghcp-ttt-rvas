@@ -1,4 +1,4 @@
-# Session M4-03 lab: Evidence-led pipeline debugging
+# Session M4-03 lab: Debug pipelines from logs and local checks
 
 **Duration:** 2 hours
 **Difficulty:** Advanced

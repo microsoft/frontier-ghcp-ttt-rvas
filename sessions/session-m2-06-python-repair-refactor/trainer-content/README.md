@@ -142,8 +142,7 @@ Run:
 python -m compileall inventory_reconciliation
 ```
 
-The command should expose `SYN-02`. This is progress. The application has moved
-one step further through startup.
+The command should expose `SYN-02`, the next startup fault.
 
 ### 4. Stop before solving the lab
 

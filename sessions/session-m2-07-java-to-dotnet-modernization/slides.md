@@ -54,14 +54,14 @@ The slice includes:
 | --- | --- |
 | Scope grows before behavior is known | One route defines the boundary |
 | New code becomes the assumed truth | Existing behavior is captured first |
-| Cutover evidence arrives late | Each slice carries its own proof |
+| Cutover checks arrive late | Each slice is checked before replacement |
 | Java structure leaks into C# | Target design follows the contract |
 
 Record unknown behavior before expanding the slice.
 
 ---
 
-# The legacy service is runnable evidence
+# Run the legacy service first
 
 ```bash
 cd lab/starter/legacy-java-order-service
@@ -198,8 +198,6 @@ Also review:
 - overflow behavior;
 - method, path, status, and error JSON.
 
-Review the edges separately.
-
 ---
 
 # Map responsibilities, not classes
@@ -264,7 +262,7 @@ The first prompt builds a map. It does not ask for a rewrite.
 
 ---
 
-# Make the behavior prompt explicit
+# Ask for the behavior rules
 
 ```text
 Compare the Java pricing code with the shared JSON cases.
@@ -367,7 +365,7 @@ Class names alone are not an architecture explanation.
 
 ---
 
-# Review point: parity evidence
+# Review point: compare test and HTTP results
 
 Save these results:
 

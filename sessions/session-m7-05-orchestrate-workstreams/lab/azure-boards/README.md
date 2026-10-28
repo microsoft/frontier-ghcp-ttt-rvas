@@ -73,7 +73,7 @@ condition, and reviewer.
 Check that each selected child can work without waiting for another child's
 result. Keep shared dependencies with the parent or run dependent work in sequence.
 
-## Step 2: Record the contracts
+## Step 2: Record the questions and limits
 
 For each selected child:
 

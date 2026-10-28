@@ -2,7 +2,7 @@
 
 ## Delivery objective
 
-Demonstrate one complete IaC workflow. Show how to build and connect Terraform
+Show how to build and connect Terraform
 modules, validate them locally, and investigate a security-gate failure. Keep
 Bicep as a short trainer comparison or optional extension.
 
@@ -83,8 +83,7 @@ Then compare it with `lab/solution/secure-iac/main.tf`.
 ## Bicep comparison
 
 Use the final six minutes to show the prepared Bicep module calls, `@secure()`
-parameter, and outputs. The comparison helps learners transfer the design ideas.
-It does not create another required lab.
+parameter, and outputs. Learners do not need to build a second project.
 
 ## Access policy
 
@@ -95,8 +94,6 @@ any is unavailable. No cloud account or credentials are needed.
 
 Give learners 90 minutes to complete the Terraform modules, run staged checks,
 and investigate the security failure. Ask them to submit command output.
-Explain that the session lasts 2 hours 30 minutes because learners no longer need
-to build the Bicep project as well.
 
 ## Common questions
 

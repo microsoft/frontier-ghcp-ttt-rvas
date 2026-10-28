@@ -489,7 +489,7 @@ Under **Keep in Java for now**, list behavior you have not yet traced and checke
 
 Under **Remove only after**, require:
 
-- accepted contract evidence;
+- accepted contract-test results;
 - HTTP comparison;
 - code review;
 - deployment and rollback ownership;

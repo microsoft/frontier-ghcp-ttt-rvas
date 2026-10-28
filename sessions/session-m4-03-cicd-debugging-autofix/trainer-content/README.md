@@ -1,8 +1,8 @@
-# Session M4-03 trainer guide: Evidence before repair
+# Session M4-03 trainer guide: Reproduce before repair
 
 ## Delivery objective
 
-Demonstrate a repeatable debugging sequence. Observe and reproduce the failure
+Observe and reproduce the failure
 before forming a hypothesis. Make the repair, then run the check that proves it
 worked. Keep the reference answer hidden until learners record their
 investigation. Case 3 adds a second failure after the first repair.

@@ -19,7 +19,7 @@ PR readiness, have them check tests, diffs, and review threads.
 | --- | ---: | --- |
 | App surfaces and engineering layout | 10 min | Learners can find Projects, Chats, My work, sessions, and Automations |
 | Chats, sessions, modes, and worktrees | 15 min | Learners can justify a surface, mode, and workspace |
-| Context, handoffs, and inner-loop evidence | 12 min | A fresh session could continue from the written handoff |
+| Context, handoffs, and local checks | 12 min | A fresh session could continue from the written handoff |
 | Issue, PR, review, checks, and critique | 13 min | Learners can state why local success is not PR readiness |
 | Demo close and lab route | 10 min | Each learner has checked app access |
 
@@ -93,8 +93,7 @@ more checkpoints, not fewer.
 ## Explain workspace choice
 
 The app can start a session in a working tree, the local repository, or a cloud
-sandbox when that option is available. This lab uses a local working tree for the
-live route.
+sandbox when that option is available. This lab uses a local working tree.
 
 Show the difference between separation and restriction:
 
@@ -184,7 +183,7 @@ and review after any correction.
 
 ## Teach the outer loop
 
-Open `prepared-evidence/05-pr-snapshot.json` during the live route. It gives
+Open `prepared-evidence/05-pr-snapshot.json` during the demonstration. It gives
 every learner the same issue, diff, review, and check state.
 
 Ask these questions in order:

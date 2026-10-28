@@ -73,7 +73,8 @@ Copilot CLI users can run `/skills reload` and
 `/skills info decision-interview`.
 
 **Checkpoint:** Copilot invokes the supplied skill and returns a numbered first
-frontier instead of drafting a work item.
+round of questions whose prerequisites are settled, rather than drafting a work
+item.
 
 ## Part 2: Run the first decision interview (35 minutes)
 
@@ -87,7 +88,7 @@ scope, users, success, failure, ownership, approval, and non-goals are decided o
 assigned as open questions.
 ```
 
-For each frontier:
+For each frontier (the decisions whose prerequisites are settled):
 
 1. answer as the request owner;
 2. accept, reject, or revise each recommendation;

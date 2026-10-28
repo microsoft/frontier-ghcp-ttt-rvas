@@ -12,7 +12,7 @@ Use this reference to review the learner's result. The exact file layout may dif
 - Route handlers use a repository module instead of mutating storage directly.
 - Repository reads return copies rather than stored object references.
 
-## Required evidence
+## Review checks
 
 - The original API tests pass.
 - Focused tests cover owner, due date, overdue filtering, and repository copies.

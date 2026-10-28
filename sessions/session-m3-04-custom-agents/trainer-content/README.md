@@ -2,7 +2,7 @@
 
 ## Delivery objective
 
-Make the boundary failure visible. Start with a profile that enables every tool and
+Start with a profile that enables every tool and
 permits any needed change. Run the contract, show why a test-only task can drift
 into production code, tighten the profile, and rerun the same test.
 

@@ -8,8 +8,7 @@ Use this recovery guide when one HVE agent invocation or one validation command 
 complete. The trainer supplies the missing phase artifact so the learner can
 inspect its handoff and continue with the next HVE agent.
 
-Use this guide to recover one phase. A learner who does not run HVE
-cannot complete the challenge.
+A learner who does not run HVE cannot complete the challenge.
 
 ## Recovery protocol
 

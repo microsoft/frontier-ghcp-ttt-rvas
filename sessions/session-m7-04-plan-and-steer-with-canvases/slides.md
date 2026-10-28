@@ -24,7 +24,7 @@ the previous chat.
 
 ---
 
-# The canvas is a planning projection
+# Keep GitHub state and planning information distinct
 
 GitHub owns issue state. The canvas groups that state with planning information that
 helps people decide what to do next.
@@ -151,7 +151,7 @@ The canvas should show that its last refresh is older than the source change.
 
 ---
 
-# Reconcile the projection
+# Refresh the canvas
 
 Use the approved refresh capability.
 

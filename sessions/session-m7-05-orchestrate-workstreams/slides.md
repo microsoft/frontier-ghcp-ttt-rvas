@@ -155,7 +155,7 @@ Do not maintain a second status log.
 # Review each result
 
 - Does it answer the assigned question?
-- Does it use only approved issue evidence?
+- Does it use only the approved issues and their linked sources?
 - Did it obey the stop condition?
 - Are gaps listed?
 - Is the recommendation supported?

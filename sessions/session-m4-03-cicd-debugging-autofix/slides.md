@@ -7,7 +7,7 @@ footer: 'Session M4-03: CI/CD Debugging & Agentic Remediation'
 ---
 
 <!-- _class: lead -->
-# Evidence before repair
+# Reproduce before repair
 ## DevOps & infrastructure | Advanced
 
 Session M4-03 | 3 hours
@@ -25,7 +25,7 @@ Session M4-03 | 3 hours
 | 0:54 to 1:00 | Lab handoff |
 
 ---
-# Start with evidence
+# Record logs and local results
 
 Record:
 
@@ -90,7 +90,7 @@ Use the new log to diagnose the next failure. Keep the repair you already checke
 and avoid speculative changes.
 
 ---
-# Security findings need path evidence
+# Check the affected code path
 
 For each finding, identify:
 

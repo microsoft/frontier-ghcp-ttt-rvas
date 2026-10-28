@@ -81,7 +81,7 @@ Add a low-stock report endpoint.
 
 For this task, keep the source set small. Do not add unrelated repositories, private discussions, or production data.
 
-### Live Space path
+### Create the Space
 
 Create a Space named `Storefront API Lab`. Add the five reviewed files and these instructions:
 
@@ -100,7 +100,7 @@ Do not write code yet.
 
 Check every claim against the selected sources.
 
-### Checkpoint 1: context scope is visible
+### Checkpoint 1: sources are selected and checked
 
 - [ ] `context-notes.md` names the task and acceptance criteria.
 - [ ] Every selected source has a reason to be present.
@@ -180,7 +180,7 @@ curl "http://localhost:3000/api/products/reports/low-stock?threshold=-1"
 
 Compare your instruction file with `lab/solution/ecommerce-project/.github/copilot-instructions.md`.
 
-### Checkpoint 2: instructions changed observable behavior
+### Checkpoint 2: check the implementation against the instructions
 
 - [ ] The plan uses ES modules and existing response envelopes.
 - [ ] The route is placed before `/:id`.
@@ -218,7 +218,7 @@ Record:
 Score the response against the project requirements rather than how well it reads.
 Keep extra context only when it removes wrong assumptions.
 
-### Checkpoint 3: comparison uses evidence
+### Checkpoint 3: comparison cites output differences
 
 - [ ] All four experiments use the same task text.
 - [ ] Each score cites a concrete output difference.

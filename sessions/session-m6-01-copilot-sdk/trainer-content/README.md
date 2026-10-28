@@ -23,7 +23,7 @@ BYOK, packaging, deployment, external systems, or another language.
 | 0:00 to 0:08 | Application reliability boundary | Learners can name what the application owns |
 | 0:08 to 0:20 | Client, session, and streaming | Learners can draw the startup and cleanup path |
 | 0:20 to 0:37 | Tool, permissions, and hooks | Learners can explain where a call is denied |
-| 0:37 to 0:47 | Tests and trace evidence | Learners can name a stable assertion for each path |
+| 0:37 to 0:47 | Tests and traces | Learners can name a stable assertion for each path |
 | 0:47 to 0:57 | Prepared live demo | The denied action is visible in the CLI and Jaeger |
 | 0:57 to 1:00 | Lab transition | Every learner has passed preflight |
 

@@ -9,9 +9,6 @@
 Demonstrate GitHub Copilot's standalone CLI in terminal workflows. Show when it
 fits better than an IDE, and keep product claims within what you can demonstrate.
 
-**Session focus:** The CLI supports scriptable workflows in headless environments.
-It fits DevOps engineers, SREs, and other terminal-focused developers.
-
 ---
 
 ## Preparation checklist
@@ -591,7 +588,7 @@ App. Session M3-01 covers the App in depth.
 
 ### Cross-IDE comparison
 
-Copilot works across multiple IDEs, though the IDE environment affects which features are available:
+Copilot features vary by IDE:
 
 | IDE | Completions | Chat | Agent Mode | Notes |
 | --- | --- | --- | --- | --- |

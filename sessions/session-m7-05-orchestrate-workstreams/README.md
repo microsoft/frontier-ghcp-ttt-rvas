@@ -22,7 +22,7 @@ readiness evaluator, its tests, and a synthetic PR snapshot instead. You do not
 need a GitHub MCP connection or product-track artifacts for that route. Both
 routes use the same two-hour lab.
 
-The plan stays small. Each workstream needs a question, input paths or issues,
+Each workstream needs a question, input paths or issues,
 a stop condition, and a reviewer. GitHub Copilot keeps session status,
 links, timing, and usage on the orchestration surface.
 

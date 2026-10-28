@@ -47,8 +47,8 @@ Build the todo feature.
 Ask learners what the model must guess. Expected answers include file, behavior,
 input, errors, dependencies, and completion criteria.
 
-Explain that learners still make the engineering decisions. Writing a prompt
-brings those decisions forward.
+Explain that learners still make the engineering decisions. The prompt states
+those decisions before code changes.
 
 ### 0:07 to 0:20: Four prompt components
 

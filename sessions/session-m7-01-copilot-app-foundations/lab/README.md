@@ -18,7 +18,7 @@ Finally, check whether a fresh session can use the brief on its own.
 | 1 | Check the app, mode, and project | 15 min |
 | 2 | Compare weak and grounded context | 25 min |
 | 3 | Create the first working brief | 30 min |
-| 4 | Update the brief with new evidence | 25 min |
+| 4 | Update the brief with new source information | 25 min |
 | 5 | Check the brief in a fresh session | 25 min |
 
 ## Before you start
@@ -120,7 +120,7 @@ git commit -m "Create grounded initiative working brief"
 **Checkpoint:** Your brief separates source facts, assumptions, unknowns, and the
 next decision clearly enough for someone to use it without reading the chat.
 
-## Part 4: Update the brief with new evidence (25 minutes)
+## Part 4: Update the brief with new source information (25 minutes)
 
 Open `starter/late-evidence.md`. Treat it as source information the owner approved
 after the first brief was committed.
@@ -193,5 +193,5 @@ Session M7-02 uses this brief as the source for its decision interview.
 - [ ] Every fact in the brief points to a source section.
 - [ ] Assumptions and unknowns remain separate.
 - [ ] New source information produced a focused revision.
-- [ ] A fresh session recovered the intended state from the brief alone.
+- [ ] A fresh session identified the outcome, facts, unresolved decisions, non-goals, and next owner action from the brief alone.
 - [ ] No customer or source organization names appear.

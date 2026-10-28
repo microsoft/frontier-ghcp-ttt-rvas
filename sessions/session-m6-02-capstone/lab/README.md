@@ -22,7 +22,7 @@ The only implementation slice is `POST /api/bookmarks`.
 | 1 | Set the boundary and accept the specification | 25 min |
 | 2 | Write the issue and establish the baseline | 25 min |
 | 3 | Implement the accepted slice | 35 min |
-| 4 | Verify, review, and hand off | 35 min |
+| 4 | Test, review, and hand off | 35 min |
 
 ## Phase 1: Accept the specification and scope (25 min)
 
@@ -86,7 +86,7 @@ deployment, tool configuration, or a new dependency.
 When blocked or out of time, stop implementation and record the blocker in
 `starter/capstone-handoff.md`. Do not claim completion without test results.
 
-## Phase 4: Verify, review, and hand off (35 min)
+## Phase 4: Test, review, and hand off (35 min)
 
 Run:
 

@@ -278,9 +278,9 @@ You will scaffold, implement, test, and refactor features with clear limits whil
 4. trying a TODO delegation only when access is approved;
 5. recording the checks used to accept or reject output.
 
-**Continuing story:** Build one Todo API, add ownership and due dates, then redirect its repository refactor.
+Build one Todo API, add ownership and due dates, then redirect its repository refactor.
 
-**Final deliverable:** The tested API plus a traceable plan, comparison, course correction, and human decision.
+**Final deliverable:** The tested API, plan, comparison, course correction, and human decision.
 
 ---
 
