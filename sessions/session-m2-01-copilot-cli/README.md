@@ -48,7 +48,7 @@ the final handoff.
 - Terminal automation and shared CLI/app commands
 - Copilot App orientation and handoff to Session M3-01 for plugins and canvas extensions
 - Cross-IDE comparison: VS Code, Visual Studio, JetBrains, Eclipse, Xcode, and others
-- Decision framework: when to use CLI vs. IDE Chat vs. IDE Agent Mode vs. Copilot App
+- When to use CLI, IDE Chat, IDE Agent Mode, or Copilot App
 - SSH and remote workflows where CLI is the only option
 - Scripting with Copilot: generating and debugging shell scripts
 - Security considerations: what context the CLI sends, privacy implications

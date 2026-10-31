@@ -105,7 +105,7 @@ Check every claim against the selected sources.
 - [ ] `context-notes.md` names the task and acceptance criteria.
 - [ ] Every selected source has a reason to be present.
 - [ ] Unrelated or restricted sources are excluded.
-- [ ] Claims in the first answer trace to a selected file.
+- [ ] Each claim in the first answer is supported by a selected file.
 - [ ] The live Space contains the selected sources and is ready for reuse.
 
 ## Stage 2: Add repository instructions (30 minutes)
@@ -269,7 +269,7 @@ Submit the `storefront-api/` workspace with:
 4. Three tested prompt files under `.github/prompts/`.
 5. Low-stock endpoint check results and the final context choice.
 
-**Done:** Another engineer can see which sources were selected, how each context layer changed the result, and how to check the project-specific output.
+**Done:** Another engineer can see which sources you selected, how each context layer affected the result, and how to check the project-specific output.
 
 ## Command reference
 

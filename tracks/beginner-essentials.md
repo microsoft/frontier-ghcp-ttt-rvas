@@ -54,10 +54,10 @@ After this track, you should be able to:
 
 1. Install, configure, and use GitHub Copilot in the IDE and CLI
 2. Use Copilot Chat, inline suggestions, and Next Edit Suggestions in daily workflows
-3. Write effective prompts that produce accurate, useful Copilot output
+3. Write clear prompts and check Copilot's output for accuracy and usefulness
 4. Use standalone `copilot` in the terminal for command explanation and generation
 5. Use agent mode for multi-step, multi-file coding tasks
-6. Explain Copilot's capabilities and limitations to their teams
+6. Explain Copilot's capabilities and limitations to your team
 
 ## Next steps
 

@@ -14,7 +14,7 @@ Session M7-01 | Product and Delivery Teams | Beginner
 
 ---
 
-# The app is the classroom
+# Work in the GitHub Copilot app
 
 Work in the GitHub Copilot app with repository context. Save work that others can
 review.
@@ -27,13 +27,13 @@ is the initiative.
 # Save work beyond the chat
 
 Use the chat to work through an idea. Keep project context, source references,
-issues, and saved artifacts available for review after the conversation ends.
+issues, and saved work available for review after the conversation ends.
 
 ```text
 Gather evidence → form a proposal → review it → save the decision → verify it
 ```
 
-This separates the model's narrative from facts the team can check.
+Check Copilot's explanation against the source facts.
 
 ---
 
@@ -58,7 +58,7 @@ Tell Copilot why each source matters. **Do not make it guess.**
 | Assumption | "The mobile client uses the documented endpoint." |
 | Decision | "The product owner will confirm the client behavior." |
 
-This makes uncertainty visible. A polished paragraph can hide all three.
+Separating these categories makes uncertainty visible.
 
 ---
 
@@ -95,7 +95,7 @@ Session M7-01 uses Interactive, then Plan. The learner reviews every write.
 
 ---
 
-# Use verified context controls
+# Use context controls
 
 - `@` adds a file.
 - `#` references an issue.

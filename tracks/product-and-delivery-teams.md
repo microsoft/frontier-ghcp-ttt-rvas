@@ -127,8 +127,8 @@ personal access tokens into prompts or repository files.
 | M7-05 | Built-in `/orchestrate`, child-session steering, and GitHub MCP |
 | M7-06 | Automations and GitHub MCP |
 
-When a required tool is unavailable, stop that lab. Do not replace hands-on work
-with role-play or claim that a static artifact proves the workflow ran.
+**Stop the lab if a required tool is unavailable.** Role-play and prepared files
+do not replace hands-on work.
 
 ### 6. Check session controls and context syntax
 
@@ -154,13 +154,13 @@ Use these roles throughout the path:
 | Decision owner | Makes product and scope decisions |
 | Delivery reviewer | Checks results, readiness, and handoffs |
 | Work-system steward | Checks the authoritative GitHub or Azure Boards state |
-| Trainer | Checks access and teaches optional maturity guidance |
+| Trainer | Checks access and teaches optional practices |
 
 Save and reuse these results:
 
 | Session | Authoritative result | Used next |
 | --- | --- | --- |
-| M7-01 | `initiative-context-brief.md` | Grounded context for Session M7-02 |
+| M7-01 | `initiative-context-brief.md` | Repository context for Session M7-02 |
 | M7-02 | `decision-brief.md`, `issue-proposal.md` | Product decisions for Session M7-03 |
 | M7-03 | Live parent and child GitHub issues | Issue state for Session M7-04 |
 | M7-04 | Live canvas linked to GitHub issues | Reconciled planning view for Session M7-05 |
@@ -212,15 +212,14 @@ After this track, you should be able to:
 4. Create a planning canvas and reconcile it after GitHub state changes.
 5. Use built-in orchestration to supervise, redirect, and review child sessions.
 6. Run a draft-only Automation twice and compare the recorded results.
-7. Decide which approved work system remains authoritative.
+7. Decide which work system approved by the organization remains authoritative.
 
 ## Trainer guidance
 
 - Use the supplied Service Request Portal path in standard delivery.
 - Keep customer and source organization names out of prompts, artifacts, issues,
   screenshots, and demonstrations.
-- Keep using the same initiative so learners can see how each session uses the
-  previous session's work.
+- Reuse the initiative so learners can follow the work between sessions.
 - Check current official GitHub documentation and organizational policy before every live delivery.
 - Treat generated output as a proposal. The accountable person accepts, rejects, or revises it.
 - Keep the path no-code. Learners review generated extensions and tool calls but

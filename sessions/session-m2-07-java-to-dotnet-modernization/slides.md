@@ -188,7 +188,7 @@ Add cases when you discover behavior. Do not invent them after migration.
 
 # Contract tests cover selected behavior
 
-Shared cases prove selected successful calculations.
+Shared cases check only the selected successful calculations.
 
 Also review:
 
@@ -381,7 +381,7 @@ Also record checks that were not run.
 
 # Write the next backlog as slices
 
-| Priority | Slice | Proof before removal |
+| Priority | Slice | Checks before removal |
 | --- | --- | --- |
 | P0 | Order pricing | Contract and HTTP parity |
 | P1 | Sample orders | Response contract |

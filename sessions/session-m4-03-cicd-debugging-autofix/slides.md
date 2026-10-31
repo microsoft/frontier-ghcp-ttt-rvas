@@ -17,7 +17,7 @@ Session M4-03 | 3 hours
 
 | Time | Topic |
 | --- | --- |
-| 0:00 to 0:08 | Observation, hypothesis, proof |
+| 0:00 to 0:08 | Observation, hypothesis, check results |
 | 0:08 to 0:18 | Local baseline |
 | 0:18 to 0:34 | Pipeline investigation |
 | 0:34 to 0:44 | Multi-stage failure |
@@ -40,7 +40,7 @@ Proof after repair:
 Do not put a root-cause answer in the observation field.
 
 ---
-# Prove the application first
+# Check the application first
 
 ```bash
 npm ci
@@ -72,7 +72,7 @@ proof command. Do not change unrelated jobs.
 3. Reproduce the relevant command.
 4. State one hypothesis.
 5. Repair one cause.
-6. Prove the rerun.
+6. Check the rerun.
 7. Open the reference fix.
 
 ---
@@ -97,7 +97,7 @@ For each finding, identify:
 - input source;
 - dangerous sink;
 - expected protection;
-- focused proof;
+- focused test results;
 - approval decision.
 
 An absence of scanner findings is not enough.

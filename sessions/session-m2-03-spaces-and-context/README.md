@@ -36,6 +36,6 @@ and correct a stale module-style instruction.
 - `.github/copilot-instructions.md`: project-level instructions
 - `.github/prompts/*.md`: reusable prompt files
 - VS Code instruction settings
-- Context selection as a policy-approved workflow
+- Policy checks before selecting context
 - Before/after context comparison
 - Runtime instruction inspection in the standalone CLI; stop if it is unavailable

@@ -19,7 +19,7 @@ and availability can change.
 ### Access failure
 
 Stop the learner lab if a required command or review surface is unavailable.
-The intentional defects can recover a trainer demonstration, but they do not
+Use the intentional defects for a prepared trainer demonstration. They do not
 replace the local commands and pull-request review.
 
 ## Session objective
@@ -133,7 +133,7 @@ Expected response: "improves" needs defined behavior; "all tests pass" needs nam
 | Ready for independent critique | Clear intent, a small diff, and focused checks. |
 | Ready for assisted review | The learner has written an initial verdict and the findings that matter most. |
 | Ready for human review | Local and PR findings are classified and checks reported. |
-| Ready for approval | Acceptance criteria and risks are reviewed by an accountable human. |
+| Ready for approval | A human reviewer has checked acceptance criteria and risks. |
 | Ready for merge | Required approvals and repository protections are satisfied. |
 
 ### Safe wording
@@ -170,8 +170,8 @@ changed the project.
 Use the triage table in `fix-evaluation-template.md`. Require a source, claimed
 impact, and reproduction or code reference for each accepted finding. The mock
 search route does not execute SQL. The training strings are not live credentials.
-Do not teach those as proven exploits. Show the observable password response
-defect separately.
+Do not teach those as proven exploits. Inspect the response to show the password
+exposure defect separately.
 
 After the initial local review, commit and push only the training patch, request
 Copilot PR review, and compare results. Repeat both local commands on the
@@ -185,9 +185,8 @@ uncommitted correction diff before committing fixes.
 
 ### Purpose
 
-Show a complete review lifecycle using synthetic code and a localized authorization defect.
-
-This example teaches review discipline. It does not prescribe production authorization design.
+Use synthetic code and a local authorization defect to show the steps in a review.
+This example does not prescribe production authorization design.
 
 ### Setup
 
@@ -370,7 +369,7 @@ Record the decision to disable or pause reviews.
 
 ### "Can Copilot approve a PR?"
 
-Do not treat an assisted response as accountable approval. Follow current repository rules, required reviewers, and organizational policy.
+An assisted response is not human approval. Follow current repository rules, required reviewers, and organizational policy.
 
 ### "Should we apply every suggested fix?"
 
@@ -416,7 +415,7 @@ allowances.
 | Reviewing the summary before the diff | Read intent, diff, and checks first. |
 | Treating comments as findings without proof | Reproduce the issue or tie the comment to a criterion. |
 | Applying a patch from the highlighted lines only | Inspect the entire proposed patch. |
-| Approving because checks are green | Review coverage, intent, risk, and scope. |
+| Approving because checks pass | Review coverage, intent, risk, and scope. |
 | Blindly choosing "ours" in a conflict | Write merged behavior before editing. |
 | Mixing style noise with blockers | Classify severity and approval impact. |
 | Claiming tests passed without output | Name and rerun the relevant command. |

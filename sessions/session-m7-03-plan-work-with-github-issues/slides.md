@@ -35,7 +35,7 @@ active GitHub MCP connection itself before reading or writing issues.
 
 ---
 
-# An issue is a contract for the next person
+# Write issues others can act on
 
 The issue should let a contributor decide whether they can start, what success
 looks like, and who will review it.
@@ -43,7 +43,7 @@ looks like, and who will review it.
 | Issue element | What it prevents |
 | --- | --- |
 | Outcome | Work that repeats a vague request |
-| Acceptance evidence | "Done" without a way to prove it |
+| Results needed for acceptance | "Done" without a way to prove it |
 | Non-goal | Scope growth during implementation |
 | Dependency | Work that starts before a needed decision |
 | Ownership gap | Silent assumptions about who decides |
@@ -113,7 +113,7 @@ Create one parent issue and child issues with defined scope.
 Each child needs:
 
 - an independently reviewable result;
-- acceptance evidence;
+- results needed for acceptance;
 - a non-goal;
 - dependencies;
 - an owner or visible ownership gap.
@@ -139,7 +139,7 @@ Copilot proposes the action.
 
 Record **Approve**, **Revise**, or **Reject** before the write.
 
-No silent batch creation.
+Do not create issues without approval.
 
 ---
 

@@ -354,7 +354,7 @@ reason for one run.
 
 ---
 
-# Traces answer questions logs cannot answer quickly
+# Inspect the run in Jaeger
 
 Use Jaeger to check:
 

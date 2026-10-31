@@ -30,7 +30,7 @@ Before class:
 
 ## Access decision
 
-The live route requires:
+The live demo requires:
 
 - Copilot cloud agent is enabled for the repository;
 - the repository and synthetic data are approved;
@@ -45,16 +45,16 @@ broaden access, or paste credentials into an issue or instruction file.**
 
 | Time | Segment | What to check |
 | --- | --- | --- |
-| 0:00 to 0:05 | Frame and access decision | Live route confirmed |
+| 0:00 to 0:05 | Introduce the workflow and check access | Live demo access checked |
 | 0:05 to 0:16 | Checkpoint 1: issue contract | Approved issue |
 | 0:16 to 0:27 | Checkpoint 2: setup | Passing baseline and reviewed setup |
 | 0:27 to 0:39 | Start one session | Planned files, commands, and edits stay within the issue |
-| 0:39 to 0:47 | Checkpoint 3: proposed change | Scoped diff review |
+| 0:39 to 0:47 | Checkpoint 3: proposed change | Diff checked against allowed files |
 | 0:47 to 0:54 | Checkpoint 4: tests | Recorded test result |
 | 0:54 to 0:58 | Checkpoint 5: human decision | Approve, request changes, or pause |
 | 0:58 to 1:00 | Lab handoff | Roles and records ready |
 
-## 0:00 to 0:05: Frame the journey
+## 0:00 to 0:05: Introduce the workflow
 
 Show the five-checkpoint sequence.
 
@@ -118,7 +118,7 @@ npm test
 
 ## 0:27 to 0:39: Start one session
 
-### Live route
+### Live demo
 
 Assign only `../lab/starter/issue.md` through a currently supported entry point allowed by repository policy.
 

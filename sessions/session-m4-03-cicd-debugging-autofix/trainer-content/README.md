@@ -1,17 +1,17 @@
 # Session M4-03 trainer guide: Reproduce before repair
 
-## Delivery objective
+## Teaching goal
 
 Observe and reproduce the failure
-before forming a hypothesis. Make the repair, then run the check that proves it
-worked. Keep the reference answer hidden until learners record their
+before forming a hypothesis. Make the repair, then check the result.
+Keep the reference answer hidden until learners record their
 investigation. Case 3 adds a second failure after the first repair.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:08 | Observation, hypothesis, and proof |
+| 0:00 to 0:08 | Observation, hypothesis, and check results |
 | 0:08 to 0:18 | Local application baseline |
 | 0:18 to 0:34 | Prepared pipeline investigation |
 | 0:34 to 0:44 | Multi-stage failure |
@@ -60,7 +60,7 @@ For Case 3:
 4. Announce that the next run reached another stage.
 5. Reveal `error-log-3-stage-2.txt`.
 6. Repeat the investigation sequence.
-7. Compare with the solution after both proofs pass.
+7. Compare with the solution after both checks pass.
 
 The first failure can hide another fault. Use the new log to update the diagnosis.
 Keep each repair focused on the observed failure.
@@ -98,7 +98,7 @@ Reveal this section only after the matching investigation:
 ## Common questions
 
 **Can Copilot name the cause first?** Ask it to separate observations from
-hypotheses. Learners still need local proof before changing the workflow.
+hypotheses. Learners still need local command results before changing the workflow.
 
 **Why keep the second log hidden?** The first failed job prevents the later stage
 from running. Showing both logs early gives away the sequence.

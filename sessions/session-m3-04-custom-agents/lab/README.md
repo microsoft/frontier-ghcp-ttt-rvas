@@ -198,7 +198,7 @@ Review:
 5. A human accept, revise, or reject decision.
 6. `agent-run.md` with the actual LSP lookup and live selected-profile result.
 
-## Verification
+## Final checks
 
 - [ ] The weak profile fails for broad tools and a missing source boundary.
 - [ ] The tightened profile uses current `.agent.md` structure.

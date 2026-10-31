@@ -47,14 +47,14 @@ This sounds clear until implementation starts:
 
 ---
 
-# Specification changes when decisions happen
+# Resolve decisions before implementation
 
 | Code-first path | Specification-driven path |
 | --- | --- |
 | The agent fills gaps while coding | The team resolves gaps before planning |
 | Tests inherit hidden assumptions | Acceptance scenarios state expected behavior |
 | Scope additions appear as code | Non-goals make additions visible |
-| Review starts with implementation details | Review starts with intent and evidence |
+| Review starts with implementation details | Review starts with requirements and test results |
 
 ---
 
@@ -154,7 +154,7 @@ If a principle cannot affect a plan or review, delete it.
 
 - Who needs the behavior?
 - What outcome do they need?
-- Which scenarios prove it works?
+- Which scenarios test the behavior?
 - What is outside scope?
 - Which requirements are measurable?
 
@@ -271,7 +271,7 @@ T004 [US2] Test repeated archive requests in tests/test_task_store.py
 
 ---
 
-# Analyze before code makes mistakes expensive
+# Analyze artifacts before implementation
 
 ```text
 /speckit-analyze
@@ -308,7 +308,7 @@ and requirements. The original prompt alone is not enough.
 
 ---
 
-# Convergence closes the loop
+# Compare implementation with accepted artifacts
 
 ```text
 /speckit-converge

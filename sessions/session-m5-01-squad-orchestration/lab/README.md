@@ -14,8 +14,8 @@ implementation, tests, review, and a committed decision record
 Read the [course safety baseline](../../learning-safety-baseline.md). Use synthetic
 data only.
 
-Check GitHub Copilot access, the orchestration tool, the GitHub training
-repository, integrations, and the metered-work limit. If any requirement is
+Check GitHub Copilot access, Squad, the GitHub training
+repository, integrations, and the usage limit. If any requirement is
 unavailable, stop the lab. Do not improvise installation commands
 or replace orchestration with a tabletop simulation.
 
@@ -160,11 +160,11 @@ Submit one folder or pull request containing:
 4. passing `npm test` output;
 5. the lead review and recorded decision.
 
-## Verification
+## Final checks
 
 - [ ] Local prerequisites match Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05.
 - [ ] The trainer signed off on the team boundaries before work began.
-- [ ] One role owned each write boundary.
+- [ ] Each file or shared record had one role responsible for edits.
 - [ ] Issue 001 kept the same acceptance criteria through review.
 - [ ] No dependency or unrelated route was changed.
 - [ ] Existing and focused tests pass.

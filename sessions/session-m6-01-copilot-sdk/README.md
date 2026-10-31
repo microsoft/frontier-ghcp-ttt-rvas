@@ -75,7 +75,7 @@ repository, or external business system is used.
 
 ## Scope
 
-The required path covers:
+The lab covers:
 
 - local `CopilotClient` and session lifecycle;
 - TypeScript streaming event handlers;
@@ -93,7 +93,7 @@ implementations in other languages.
 
 ## Product references
 
-These official GitHub sources were verified on **October 5, 2026**. The GitHub
+These official GitHub sources were checked on **October 5, 2026**. The GitHub
 Copilot SDK became generally available on June 2, 2026. Trainers should still
 recheck API names and package requirements before delivery.
 

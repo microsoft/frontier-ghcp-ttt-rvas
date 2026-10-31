@@ -68,7 +68,7 @@ the definition's current state to match.
 
 ## Stop conditions
 
-Stop when an authoritative input is unavailable, evidence conflicts, restricted
+Stop when an authoritative input is unavailable, sources conflict, restricted
 data is requested, a prohibited side effect is required, or the reviewer is
 unavailable.
 

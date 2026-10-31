@@ -1,6 +1,6 @@
 # Session M4-01 trainer guide: One application through GitHub Actions
 
-## Delivery objective
+## Teaching goal
 
 Use `copilot-webapp` from start to finish. First, show that the application works
 locally. Then demonstrate CI creation and deployment design, followed by workflow
@@ -81,12 +81,12 @@ requirement.
 
 ## 0:40 to 0:52: Validate the action
 
-Explain why custom action validation needs two outcomes. A passing run proves the
-action can scan the application and emit outputs. The threshold-101 run proves the
+Explain why custom action validation needs two outcomes. A passing run shows the
+action can scan the application and emit outputs. The threshold-101 run shows the
 action can fail the job.
 
 Run the exact commands in the lab. Show the generated step summary and exit code.
-Do not use a repository workflow run as the only proof.
+Do not rely on a repository workflow run alone.
 
 ## 0:52 to 1:00: Review and handoff
 

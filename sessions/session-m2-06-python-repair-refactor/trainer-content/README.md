@@ -208,8 +208,8 @@ Explain that the starter mixes these responsibilities on purpose. Have learners
 remove the module-level result list, call one rule implementation, and turn
 nested branches into named functions.
 
-Do not ask for a large rewrite. First lock behavior with tests. Then make one
-structural change at a time.
+Do not ask for a large rewrite. First add tests for the expected behavior. Then
+make one structural change at a time.
 
 Spend five minutes of the refactor lab block on an actual Python LSP lookup.
 Ask for the definition and references of `severity_for`; inspect the operation

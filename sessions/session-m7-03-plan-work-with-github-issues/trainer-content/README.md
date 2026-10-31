@@ -45,7 +45,7 @@ Explain these rules:
 - a read operation can still expose restricted information;
 - a write operation must name its target and proposed values;
 - Copilot can propose an action, but the learner approves it;
-- check the saved result with a new read; generated confirmation text is not enough.
+- check the saved result with a new read; Copilot's success message is not enough.
 
 Do not explain server protocols, transports, or SDKs.
 
@@ -53,7 +53,8 @@ Do not explain server protocols, transports, or SDKs.
 
 ### 1. Read the approved source
 
-Open `lab/starter/approved-decision-brief.md`. Ask Copilot to identify the outcome, constraints, non-goals, owners, and acceptance evidence.
+Open `lab/starter/approved-decision-brief.md`. Ask Copilot to identify the outcome,
+constraints, non-goals, owners, and results needed for acceptance.
 
 ### 2. Inspect GitHub
 

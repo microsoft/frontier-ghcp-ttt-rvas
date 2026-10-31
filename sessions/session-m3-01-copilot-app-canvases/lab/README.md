@@ -204,7 +204,7 @@ Exchange canvases with another group. Inspect:
 Fix contract mismatches. Pause if access, behavior, data, or ownership remains
 unresolved. Then compare the final state with `../solution/final-state.json`.
 
-**Checkpoint 6:** The canvas matches the contract and is safe to hand off.
+**Checkpoint 6:** The canvas matches the contract, with no unresolved access, behavior, data, or ownership issues.
 
 ## Final deliverable
 

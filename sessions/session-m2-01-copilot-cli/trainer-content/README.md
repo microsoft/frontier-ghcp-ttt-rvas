@@ -62,12 +62,6 @@ Explain where the CLI fits:
 
 > **Slide suggestion:** Use a Venn diagram to show IDE-only, shared, and CLI-only features.
 
-### Transition
-
-> "Start with installation and the first commands."
-
----
-
 ## Section 2: Installation & setup (5 min)
 
 ### Talking points
@@ -105,12 +99,6 @@ copilot
 ```
 
 > **Trainer tip:** Run through installation live if time permits. If the audience already has it installed, skip to the interactive interface and show the three sub-modes.
-
-### Transition
-
-> "Next, review the interactive experience."
-
----
 
 ## Section 3: Core interactive modes (10 min)
 
@@ -198,12 +186,6 @@ copilot
 Show where the learner records both plan versions in `workflow-record.md`.
 An ordinary "plan first" prompt does not demonstrate selecting Plan mode.
 
-### Transition
-
-> "The CLI can also run **without interaction.**"
-
----
-
 ## Section 4: Programmatic mode and scriptable AI (10 min)
 
 ### Talking points
@@ -281,8 +263,6 @@ copilot --deny-tool='read(.env)' --deny-tool='read(**/secrets/*)'
 copilot --available-tools='view,grep,glob'
 ```
 
-> **Trainer tip:** The permission system lets you restrict what Copilot can access in CI/CD.
-
 ### Demo: Programmatic mode
 
 ```bash
@@ -297,12 +277,6 @@ copilot -p "Create a Python script that reads a CSV and outputs summary statisti
 copilot -p "List all TODO comments in this project" \
   --allow-tool='shell(grep)' --silent | sort | uniq -c | sort -rn
 ```
-
-### Transition
-
-> "Programmatic mode supports scripting. The CLI also includes specialized agents."
-
----
 
 ## Section 5: Built-in agents & subagent architecture (10 min)
 
@@ -358,7 +332,7 @@ The app also supports `/fleet`; its `/orchestrate` skill is taught in Session M7
 /research What are the best practices for rate limiting in Express.js?
 ```
 
-Uses a research agent to consult sources and produce a report. Check citations
+The research agent consults sources and produces a report. Check citations
 against the source; do not teach a fixed underlying model.
 
 **`/tasks`:** Monitor background subagents:
@@ -387,17 +361,11 @@ copilot
 Cloud delegation is explained here and practised in Session M3-02. It does not
 replace the required local fleet run.
 
-### Transition
-
-> "The CLI also lets you connect other AI models."
-
----
-
 ## Section 6: Terminal automation and session control (10 min)
 
 ### Inspect controls and recover work
 
-Use this block for the required controls. The provider, hooks, ACP, and telemetry
+Show these controls. The provider, hooks, ACP, and telemetry
 examples below are for trainer reference, not extra demonstrations in the hour.
 
 ```text
@@ -520,17 +488,11 @@ the same thread needs to continue. Explain what might be lost in a summary.
 Keep the accepted plan and test output in the workflow record before starting a
 fresh session. Export locally unless external sharing is permitted.
 
-### Transition
-
-> "Choose the CLI or IDE based on the work."
-
----
-
 ## Section 7: CLI vs IDE decision framework (5 min)
 
 ### Talking points
 
-Present this decision framework for CLI, IDE Chat, IDE Agent Mode, and Copilot App:
+Use this table to compare CLI, IDE Chat, IDE Agent Mode, and Copilot App:
 
 | Scenario                              | CLI | IDE Chat | IDE Agent | Copilot App |
 | ------------------------------------- | --- | --- | --- | --- |
@@ -609,13 +571,6 @@ Copilot features vary by IDE:
 
 ### CLI vs IDE: The complementary approach
 
-**Teaching point:** The CLI and IDE support different parts of the workflow.
-
-- **Use the IDE** when you're actively writing and editing code in a graphical editor
-- **Use the CLI** when you're automating, scripting, operating in headless environments, or need to orchestrate parallel agents
-- **Use Copilot App** when a shared canvas or app-managed session fits the work
-- **Use IDE Chat** for rapid Q&A without leaving your editor
-
 > "A team may use the IDE for feature work, the CLI for deployment automation, and
 > Copilot App for an app-managed review session. Pick the surface for the task."
 
@@ -660,7 +615,7 @@ copilot -p "Explain the schema in migrations/ and suggest indexes for common que
 
 ### What to remember
 
-1. **The CLI is a standalone agentic system**
+1. **The CLI is a standalone agent**
 2. **Programmatic mode (`-p`)** makes AI scriptable for CI/CD and automation
 3. **Built-in agents and /fleet** enable parallel multi-agent orchestration
 4. **Custom model providers** let you use local/private AI models
@@ -745,7 +700,7 @@ recovery, and live fleet work. Use the remaining examples as reference practice.
 
 Require `workflow-record.md`, passing tests, a reviewed diff, and a checked health
 report. Each accepted child claim needs a file reference or focused test. The
-completion check must not accept `/delegate` instead of `/fleet`.
+lab requires `/fleet`; `/delegate` does not replace it.
 
 If a required command or CLI access is unavailable, stop and resolve access.
 Screenshots can explain the UI but do not complete the learner exercise.

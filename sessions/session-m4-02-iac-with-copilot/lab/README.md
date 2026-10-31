@@ -24,7 +24,7 @@ Read the [course safety baseline](../../learning-safety-baseline.md). You must h
 This lab does not need a cloud account, credentials, state backend, plan, or apply.
 
 If GitHub Copilot access or the approved provider source is unavailable, stop and
-do not continue the required lab. The instructor may still show the prepared files.
+do not continue the lab. The instructor may still show the prepared files.
 
 ## Setup
 

@@ -1,6 +1,6 @@
 # Session M3-05 trainer guide: Skill selection and failure
 
-## Delivery objective
+## Teaching goal
 
 Demonstrate three skill outcomes: a matching task runs, an out-of-scope task does
 not, and a matching task stops because a precondition is missing.
@@ -82,7 +82,7 @@ Rewrite the installation section in README.md.
 ```
 
 The first task matches the work and path. The second does not. A skill that triggers
-for both is noisy and unsafe.
+for both applies the API procedure outside its scope.
 
 Open `trigger.json` and `non-trigger.json`. Ask learners which fields make the
 decision visible in the output.
@@ -121,7 +121,7 @@ npm run demo
 
 Separate the claims:
 
-| Check | Proves |
+| Check | Shows |
 | --- | --- |
 | Directory validator | Required file, frontmatter, and sections exist |
 | Scenario tests | The local harness behaves as its fixed contract specifies |

@@ -12,11 +12,11 @@ Record an observation and hypothesis before opening a reference fix.
 One case has a second failure that appears only after the first repair.
 
 The security exercise uses a deliberately vulnerable training app. Review
-the smallest patch through a route you have approval to use, or work locally.
+the smallest patch using a tool you have approval to use, or work locally.
 
 ## Learning outcomes
 
-- Separate observations, hypotheses, repairs, and proof.
+- Separate observations, hypotheses, repairs, and check results.
 - Reproduce relevant pipeline commands locally.
 - Handle a second-stage failure without stacking speculative fixes.
 - Review a security patch for scope and focused protection.

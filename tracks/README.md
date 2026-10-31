@@ -1,15 +1,14 @@
 # Learning tracks
 
-Start with your team's role and Copilot experience. The tracks below group
-sessions from the GitHub Copilot & Agentic Workflows curriculum, so you can
-choose a teaching order without planning from scratch.
+Choose a track based on your team's role and Copilot experience. Each track
+lists the sessions in teaching order.
 
 ## Track comparison
 
 | Track | Target Audience | Modules | Sessions | Duration | Difficulty |
 | ----- | --------------- | ------- | -------- | -------- | ---------- |
 | [Copilot Essentials](beginner-essentials.md) | Teams just starting with Copilot | <div class="ghcp-track-modules"><span class="ghcp-badge ghcp-badge--module" data-module="1" title="Copilot Fundamentals">M1</span><span class="ghcp-badge ghcp-badge--module" data-module="2" title="Copilot in Practice">M2</span></div> | 5 | 15 hrs | Beginner |
-| [Developer Productivity](developer-productivity.md) | Individual developers maximizing daily output | <div class="ghcp-track-modules"><span class="ghcp-badge ghcp-badge--module" data-module="1" title="Copilot Fundamentals">M1</span><span class="ghcp-badge ghcp-badge--module" data-module="2" title="Copilot in Practice">M2</span><span class="ghcp-badge ghcp-badge--module" data-module="7" title="Product and Delivery Teams">M7</span></div> | 9 | 27 hrs | Beginner to Intermediate |
+| [Developer Productivity](developer-productivity.md) | Developers using Copilot in daily work | <div class="ghcp-track-modules"><span class="ghcp-badge ghcp-badge--module" data-module="1" title="Copilot Fundamentals">M1</span><span class="ghcp-badge ghcp-badge--module" data-module="2" title="Copilot in Practice">M2</span><span class="ghcp-badge ghcp-badge--module" data-module="7" title="Product and Delivery Teams">M7</span></div> | 9 | 27 hrs | Beginner to Intermediate |
 | [Agentic Development](agentic-development.md) | Teams adopting agentic workflows | <div class="ghcp-track-modules"><span class="ghcp-badge ghcp-badge--module" data-module="1" title="Copilot Fundamentals">M1</span><span class="ghcp-badge ghcp-badge--module" data-module="2" title="Copilot in Practice">M2</span><span class="ghcp-badge ghcp-badge--module" data-module="3" title="Agentic Workflows">M3</span><span class="ghcp-badge ghcp-badge--module" data-module="7" title="Product and Delivery Teams">M7</span></div> | 14 | 42 hrs | Beginner to Advanced |
 | [DevOps & Automation](devops-automation.md) | DevOps / Platform engineers | <div class="ghcp-track-modules"><span class="ghcp-badge ghcp-badge--module" data-module="1" title="Copilot Fundamentals">M1</span><span class="ghcp-badge ghcp-badge--module" data-module="2" title="Copilot in Practice">M2</span><span class="ghcp-badge ghcp-badge--module" data-module="4" title="DevOps &amp; Infrastructure">M4</span></div> | 8 | 23 hrs 30 min | Beginner to Advanced |
 | [Product and Delivery Teams](product-and-delivery-teams.md) | PMs, POs, BAs, project managers, delivery leads | <div class="ghcp-track-modules"><span class="ghcp-badge ghcp-badge--module" data-module="7" title="Product and Delivery Teams">M7</span></div> | 6 | 18 hrs | Beginner to Intermediate |

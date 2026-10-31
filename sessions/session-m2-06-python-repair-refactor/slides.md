@@ -97,7 +97,7 @@ Identify the smallest syntax repair.
 Do not refactor or change behavior.
 ```
 
-**The prompt limits the size of the proposed change.**
+**The prompt asks for a syntax-only change.** Check that the proposal stays in scope.
 
 ---
 
@@ -228,7 +228,7 @@ read rows
   + retain state
 ```
 
-Separate these jobs so each rule has one home.
+Separate these jobs so each rule has one implementation.
 
 ---
 

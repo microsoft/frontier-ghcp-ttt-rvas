@@ -92,7 +92,7 @@ Inspect the run on the Automations surface.
 Check that:
 
 - each status claim traces to a live issue or the reviewed parent result;
-- unresolved evidence remains visible;
+- gaps or conflicts in the source information remain visible;
 - no unsupported cause or forecast appears;
 - no prohibited side effect occurred;
 - the output is one draft stakeholder update.
@@ -104,7 +104,7 @@ current state to match that decision. Do not create a separate status record.
 
 Open `starter/approved-input-change.md`.
 
-1. Apply the approved synthetic evidence update to the named training issue
+1. Apply the approved synthetic update to the named training issue
    through a reviewed GitHub MCP write.
 2. Retrieve the issue again and check the new state.
 3. Run the same automation. Do not create a second automation.

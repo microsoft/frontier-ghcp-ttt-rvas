@@ -37,9 +37,6 @@ Before you start, record these decisions in your notes:
 4. **Required checks:** Which command proves the starter project still works?
 5. **Stop condition:** What requires you to stop automated work?
 
-> **Success criteria:** You can explain what is allowed, what is out of scope, who
-> reviews the work, and which check validates the change.
-
 You need the standalone Copilot CLI with `/review` and `/security-review`,
 Copilot pull-request review, a private training repository you may push to, Git,
 the authenticated GitHub CLI (`gh`), Node.js, and npm. Check both Copilot commands
@@ -169,7 +166,7 @@ or test result and name the acceptance criterion it affects.
 9. **Triage both outputs** in `fix-evaluation-template.md`. Keep your original
    human review unchanged. For each finding, name the source, file/line, claimed
    impact, and reproduction or code reference. Accept, reject, or leave unresolved
-   with a reason. Record a zero-findings result honestly.
+   with a reason. If a review reports no findings, record that.
 
    The search route builds SQL text but connects to no database. Reject a claim
    that this lab proves database compromise. Synthetic key-shaped strings also
@@ -245,8 +242,6 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
    Add the fix and regression test to each accepted finding. Record residual risk
    in its Human decision section.
 
-   > **Success criteria:** A reviewer can trace every fix back to an original finding.
-
 8. **Before committing the fixes**, rerun `/review` and `/security-review` on the
    correction diff. Compare the results with the initial findings. Rerun
    `npm test`, then commit and push only the reviewed fixes to the same training
@@ -298,7 +293,7 @@ result rather than accepting one side without review.
 
 6. **Run the project test command.**
 
-   > **Expected output:** The check passes and produces output you can use in the review.
+   > **Expected output:** The tests pass. Save the output for review.
 
 7. **Peer review the resolution.** Ask a partner to review only the conflict resolution and tests.
 
@@ -348,8 +343,8 @@ suggestion alone is not enough.
 
 5. **Compare the initial human review with both local command outputs and the
    PR review.** Complete the remaining fields in the same template. Preserve the original critique,
-   record which source raised each finding, and state why the final human
-   assessment accepted, revised, or rejected it.
+   record which source raised each finding, and explain why the human reviewer
+   accepted, revised, or rejected it.
 
    > **Expected output:** The triage table identifies differences, false
    positives, new code references or test results, and any finding that changed the final verdict.
@@ -372,7 +367,7 @@ Submit one folder or document containing:
    private training PR reference, and test output for the corrected project.
 4. The resolved conflict decision and its test results.
 
-> **Done:** A reviewer can reconstruct the original risk, fix, validation, and final decision without undocumented tool behavior.
+> **Done:** A reviewer can reconstruct the original risk, fix, checks, and final decision from your notes and command output.
 
 ---
 
@@ -382,7 +377,7 @@ Submit one folder or document containing:
 - [ ] A human reviewer made the final decision.
 - [ ] Both local commands ran before the initial change was committed.
 - [ ] Findings name their review source and a file/line or reproduction.
-- [ ] Unsupported exploit claims and zero-findings results are recorded honestly.
+- [ ] Unsupported exploit claims are rejected or left unresolved with a reason; no-findings results are recorded.
 - [ ] Both commands ran again on the correction diff before it was committed.
 - [ ] The private training PR received Copilot review; it was not merged.
 - [ ] Required checks were run.

@@ -27,8 +27,8 @@ Before class:
 6. Name the demo owner and reviewer.
 7. Keep `../lab/solution/demo-evidence.md` ready for a delayed or unavailable live run.
 
-The delivery-readiness board is the default. For an early-finisher, follow-up, or
-CI-focused audience, prepare the optional Feature Workbench files:
+The delivery-readiness board is the default. For early finishers, follow-up
+practice, or a CI-focused audience, prepare the optional Feature Workbench files:
 
 - `../lab/starter/feature-workbench-contract.md`
 - `../lab/starter/feature-workbench-sample.json`
@@ -129,7 +129,7 @@ Show these results:
 
 ## 0:30 to 0:43: Prepared or live demo
 
-### Live route
+### Live demo
 
 Start an app session with the required access and use:
 
@@ -154,7 +154,7 @@ After generation:
 4. ask Copilot to move `API-204` from `in-progress` to `review`;
 5. compare the visible board with the agent response.
 
-### Prepared route
+### Prepared demo
 
 Open `../lab/solution/demo-evidence.md` and `../lab/solution/final-state.json`.
 

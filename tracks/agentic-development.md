@@ -92,9 +92,9 @@ After this track, you should be able to:
 9. Evaluate third-party coding agents (Claude, Codex) alongside Copilot
 10. Choose agent workflows for a development team
 11. Use isolated Copilot App sessions to implement and critique a scoped change
-12. Supervise native orchestration and check claims against local code and PR fields
+12. Supervise app orchestration and check findings against local code and PR fields
 13. Compare live interview skills and trace accepted decisions into a plan
-14. Inspect LSP results and runtime instructions; review scoped Chronicle suggestions
+14. Inspect LSP results and loaded instructions; review Chronicle suggestions for selected sessions
 
 ## Next steps
 

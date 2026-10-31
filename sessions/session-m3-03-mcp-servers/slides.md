@@ -10,7 +10,7 @@ footer: 'Session M3-03: MCP Servers & Custom Tool Integration'
 
 # MCP servers & custom tool integration
 
-## Prove one tool before adding the next
+## Test one tool before adding the next
 
 Session M3-03 | 3 hours
 
@@ -142,11 +142,11 @@ Do not assume every caller reaches the handler through the same client-side chec
 
 ---
 
-# Each check proves a different claim
+# What each check shows
 
 | Check | Claim |
 | --- | --- |
-| Unit test | Handler behavior is correct for known inputs |
+| Unit test | Handler behavior matches expectations for tested inputs |
 | `tools/list` | The expected catalog is exposed |
 | `tools/call` | The stdio protocol path reaches the handler |
 | Copilot call | One client allowed by repository policy can discover and choose the tool |

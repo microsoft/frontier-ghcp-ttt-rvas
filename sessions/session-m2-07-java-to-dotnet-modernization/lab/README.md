@@ -475,7 +475,7 @@ Complete at least four rows. Keep slices small. Each row must state:
 
 - current Java entry point;
 - proposed .NET boundary;
-- proof required before cutover;
+- checks required before cutover;
 - one risk or dependency.
 
 Include:
@@ -520,7 +520,7 @@ Submit or demonstrate:
 - [ ] The .NET contract runner passed the same five fixture lines.
 - [ ] The Java and .NET HTTP responses matched by value.
 - [ ] Invalid .NET input returned HTTP 400.
-- [ ] The backlog says what remains in Java and what proof each next slice needs.
+- [ ] The backlog says what remains in Java and which checks each next slice needs.
 
 ## Troubleshooting
 

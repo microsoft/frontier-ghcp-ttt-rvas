@@ -29,7 +29,7 @@ stalls. Learners need working Squad access to complete the lab.
 | 0:17 to 0:27 | Shared memory | Learners can separate committed decisions from temporary work. |
 | 0:27 to 0:35 | Work monitoring and issues | Learners can map an issue to assignment, review, and closure. |
 | 0:35 to 0:47 | Prepared demo | Initialize or inspect a small team and assign Issue 001. |
-| 0:47 to 0:55 | Decision framework | Learners select individual or team delivery. |
+| 0:47 to 0:55 | Decision framework | Learners choose one agent or a team. |
 | 0:55 to 1:00 | Lab handoff | Check tool approval and required access. |
 
 ## Prepare
@@ -83,7 +83,7 @@ not have to rediscover in every session.
 
 Personal history can record role-specific lessons. Temporary inboxes, drafts, and task output do not belong in the decision record.
 
-The "drop-box" pattern prevents conflicting writes:
+Use separate proposal files to avoid conflicting writes:
 
 1. Each agent writes its proposal or result to its own location.
 2. The lead or scribe reviews the proposals.
@@ -101,7 +101,7 @@ Issue with acceptance criteria → assignment → bounded change →
 focused checks → human review → merge or follow-up issue
 ```
 
-Set clear stop conditions: missing policy approval, unclear ownership, a meter
+Set clear stop conditions: missing policy approval, unclear ownership, a usage
 threshold, a failing test, an unexpected dependency, or a task that expands beyond
 its issue.
 
@@ -143,13 +143,13 @@ Stop if ownership or the data boundary is unclear.
 
 Make the review trail visible: one charter and assignment, the change within the
 issue scope, focused test results, and the lead's decision. At 0:41, switch to the
-reference `.squad/` example if the live path has not produced the assignment.
+reference `.squad/` example if the live run has not produced the assignment.
 At 0:44, switch to the
 tabletop packet if implementation or tests are still blocked.
 
 ## 6. When a team helps (0:47 to 0:55)
 
-Choose the lightest path that can produce a reviewable result.
+Choose the simplest workflow that produces a result you can review.
 
 | Situation | Recommended path |
 | --- | --- |

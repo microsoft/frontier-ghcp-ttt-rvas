@@ -112,7 +112,7 @@ Do not rename or edit code during this step.
 
 ---
 
-# Use a hostile example
+# Test a source-code conflict
 
 ```text
 Add tests for updateOrderStatus.
@@ -209,7 +209,7 @@ The tightened profile must pass the same contract that failed the weak profile.
 
 ---
 
-# Pick the smallest extension
+# Choose the right customization
 
 | Need | Use |
 | --- | --- |
@@ -226,7 +226,7 @@ Do not add MCP to a role that only needs repository files.
 
 1. Inspect the exact `.agent.md` structure.
 2. Run the weak contract.
-3. Record the permitted boundary violation.
+3. Record the source edit the weak profile permits.
 4. Tighten tools, paths, validation, and stop behavior.
 5. Rerun the contract.
 6. Produce a no-change stop report.

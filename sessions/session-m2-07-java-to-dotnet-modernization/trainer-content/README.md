@@ -175,8 +175,8 @@ The five cases cover:
 | `gold-international` | international shipping |
 | `round-half-up` | integer rounding |
 
-Contract fixtures do not replace all tests. They prove the selected shared
-behavior. Validation errors and HTTP behavior still need focused checks.
+Contract fixtures check only the selected shared behavior. Validation errors and
+HTTP behavior still need focused checks.
 
 ### 5. Map responsibilities to .NET
 
@@ -319,8 +319,8 @@ dotnet run --project OrderPricing.Api -- --urls http://localhost:5080
 
 Send the same request to ports 8080 and 5080. Compare the JSON field values.
 
-Do not claim full service parity. The demo proves one route and five accepted
-pricing cases.
+Do not claim full service parity. The demo checks one HTTP request and five
+accepted pricing cases.
 
 ## Review points
 
@@ -363,13 +363,13 @@ Require these results at the final review:
 - Java contract test output;
 - .NET contract test output;
 - one matching HTTP response;
-- a migration backlog with proof required for each next slice.
+- a migration backlog with checks required for each next slice.
 
 ## Migration backlog model
 
 Use a slice-first backlog:
 
-| Priority | Slice | Proof before cutover |
+| Priority | Slice | Checks before cutover |
 | --- | --- | --- |
 | P0 | Order pricing | Shared contract cases, validation checks, HTTP comparison |
 | P1 | Sample-order query | Response contract and synthetic catalog checks |

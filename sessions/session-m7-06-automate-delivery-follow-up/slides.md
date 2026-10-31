@@ -63,7 +63,7 @@ Use the minimum GitHub read tools.
 # Review the first run
 
 - Trace every claim to an issue or the parent result.
-- Keep unresolved evidence visible.
+- Keep gaps or conflicts in the source information visible.
 - Reject unsupported causes and forecasts.
 - Check that no prohibited side effect occurred.
 - Choose Keep, Revise, Disable, or Pause.
@@ -72,7 +72,7 @@ Use the minimum GitHub read tools.
 
 # Change one approved input
 
-Update the requester-access training issue with the approved synthetic evidence.
+Update the requester-access training issue with the approved synthetic results.
 
 Retrieve the issue again. Then run the same automation.
 

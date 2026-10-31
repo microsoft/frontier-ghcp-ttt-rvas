@@ -107,7 +107,7 @@ Custom agents add repository-owned roles and output contracts.
 
 ---
 
-# Activation needs evidence
+# Show that instructions were used
 
 Creating an instruction file does not show that HVE used it.
 
@@ -134,7 +134,7 @@ outcome-oriented story and acceptance criteria.
 
 ---
 
-# The challenge ramp
+# Challenge sequence
 
 1. Run direct Research and Plan prompts.
 2. Add repository context, coding practices, and a custom reviewer.
@@ -144,7 +144,7 @@ outcome-oriented story and acceptance criteria.
 
 ---
 
-# The implementation surface
+# Build the endpoint
 
 Deliver `POST /api/decisions` within the supplied product intent and API contract.
 
@@ -180,7 +180,7 @@ These checks test invalid inputs and container build boundaries.
 
 ---
 
-# Completion evidence
+# Scoring
 
 | Area | Weight | Grade from |
 |------|-------:|------------|
@@ -193,7 +193,7 @@ A manual implementation does not complete an HVE challenge.
 
 ---
 
-# Keep the handoff thin
+# Keep the handoff short
 
 `challenge-handoff.md` contains only:
 

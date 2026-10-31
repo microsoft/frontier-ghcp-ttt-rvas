@@ -297,7 +297,7 @@ Use the documented living-spec sequence:
    /speckit-converge
    ```
 
-The final suite should prove:
+The final suite should check that:
 
 - archive and restore preserve the task ID and title;
 - repeated archive and restore requests are idempotent;
@@ -316,7 +316,7 @@ If convergence appends work, repeat the implement and converge loop.
 4. Working archive and restore behavior with passing tests.
 5. A final **Converged** result.
 
-## Verification
+## Final checks
 
 - [ ] `spec.md` contains the accepted archive and restore behavior.
 - [ ] `plan.md` uses the required Python files and adds no dependency.

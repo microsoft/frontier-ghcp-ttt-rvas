@@ -120,7 +120,7 @@ Submit one `capstone-handoff.md` containing:
 3. Executable test results.
 4. The human review decision and reviewer.
 5. Deferred scope, deviations, and known risks.
-6. One owned next action.
+6. One next action with an owner.
 
 **Your deliverable is incomplete** without executable test results or a review
 decision.

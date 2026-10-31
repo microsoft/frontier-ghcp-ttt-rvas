@@ -65,7 +65,7 @@ Mirror the standard lab wording:
 | Public status mapping | Public status mapping approval |
 | Requester status view | Requester view field review |
 | Empty and stale states | Empty and stale state validation |
-| Requester access verification | Requester-only access evidence |
+| Requester access verification | Requester-only access results |
 
 For each selected item, record the question and its scope, approved inputs, hard stop
 condition, and reviewer.
@@ -125,7 +125,7 @@ check the change.
 
 - Work only with the seeded training hierarchy.
 - Do not change project process settings, team configuration, area paths, or iteration paths.
-- Do not create service commitments or release claims without evidence.
+- Do not create service commitments or release claims without supporting results.
 - Do not place secrets, personal data, production records, or real organization names in work items.
 - Do not let an agent approve, merge, deploy, contact people, or close the parent decision.
 - Stop when an item requests restricted data or needs authority the learner does

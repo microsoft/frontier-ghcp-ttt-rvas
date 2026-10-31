@@ -41,7 +41,7 @@ Submit or demonstrate:
 | 3 | Readiness tool and policy | 30 min |
 | 4 | Failure hooks and cleanup | 20 min |
 | 5 | Tests | 15 min |
-| 6 | Collector, Jaeger, and final verification | 20 min |
+| 6 | Collector, Jaeger, and final checks | 20 min |
 
 ## Required preflight
 
@@ -181,7 +181,7 @@ and deny the restricted synthetic record before the handler runs.
     Restricted change requests cannot be read by this assistant.
     ```
 
-12. Record whether the handler ran. The denied test must prove that it did not.
+12. Record whether the handler ran. The denial test must check that it did not.
 
 Do not use an approve-all helper. You need to show that unrelated requests are
 rejected while the readiness lookup is permitted.
@@ -248,7 +248,7 @@ Session state is empty after the end hook.
 
 ### Goal
 
-Prove the control path without depending on model wording or a live trace backend.
+Test the control path without depending on model wording or a live trace backend.
 
 Complete or repair tests for:
 
@@ -335,7 +335,7 @@ Show the trainer:
 - the session end reason;
 - passing tests and type checks.
 
-## Verification checklist
+## Final checks
 
 - [ ] Authenticated GitHub Copilot SDK preflight passed.
 - [ ] Node.js, npm, Docker, and Docker Compose preflight passed.
@@ -389,7 +389,7 @@ test results, and traces with yours.
 
 ## Official references
 
-Verified on **October 5, 2026**:
+Checked on **October 5, 2026**:
 
 - [Authentication](https://docs.github.com/en/copilot/how-tos/copilot-sdk/auth/authenticate)
 - [Streaming session events](https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/streaming-events)

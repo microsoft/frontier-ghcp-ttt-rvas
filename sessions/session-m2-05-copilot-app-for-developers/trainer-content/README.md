@@ -45,7 +45,7 @@ stop the lab. Stop if a required command is missing too. Do not spend lab time
 bypassing policy or moving code
 to an unapproved assistant.
 
-## Teach the app layout as an engineering map
+## Tie the app layout to engineering decisions
 
 Avoid a feature tour. Tie each area to a decision:
 
@@ -58,8 +58,8 @@ Avoid a feature tour. Tie each area to a decision:
 | Automations | Save a repeatable task with named triggers and tools |
 | Settings | Control project instructions, sandboxing, and session defaults |
 
-After each action, ask learners where they saved its output. If it exists only
-in the conversation, ask them to record it for the next session.
+Ask learners to save output the next session needs rather than leave it only
+in the conversation.
 
 ## Explain chat versus project session
 
@@ -205,7 +205,7 @@ when cloud automation is unavailable, writes the same specification.
 
 Use only read tools. The prompt must forbid comments, labels, pushes, approvals,
 merges, and thread resolution. Have learners check that the report cites its
-sources and names uncertainty. It does not act as a reviewer of record.
+sources and names uncertainty. The automation is not the responsible reviewer.
 
 ## Common coaching corrections
 

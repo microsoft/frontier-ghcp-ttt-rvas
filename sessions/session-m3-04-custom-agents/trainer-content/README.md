@@ -1,6 +1,6 @@
 # Session M3-04 trainer guide: Custom agent boundaries
 
-## Delivery objective
+## Teaching goal
 
 Start with a profile that enables every tool and
 permits any needed change. Run the contract, show why a test-only task can drift
@@ -34,7 +34,7 @@ Do not push, merge, open issues, or attach MCP during the core demo.
 ### 0:00 to 0:08: What the profile controls
 
 A profile supplies instructions and filters the tools presented to the agent. It
-does not create repository authority.
+does not grant repository permissions.
 
 ```text
 Profile: role, available tools, procedure, stop rules
@@ -71,7 +71,7 @@ Show where the Markdown body tells the agent what it may do and when to stop.
 
 Use five minutes of this segment to distinguish tools from code intelligence.
 `/lsp show` reports configured servers; `/lsp test typescript` checks startup.
-Neither proves a lookup. Ask for `getOrdersByUser` references and inspect the LSP
+Neither performs a lookup. Ask for `getOrdersByUser` references and inspect the LSP
 call or logs. Check that `getUserOrderStats` is a caller and the export is not.
 Keep this lookup read-only and separate from the test-writing role.
 

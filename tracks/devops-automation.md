@@ -12,7 +12,7 @@
 Use this track if you work on pipelines or infrastructure. Start with Copilot
 fundamentals and agent mode, then generate GitHub Actions workflows, work with
 Terraform and Bicep, and debug CI/CD failures. Review proposed security fixes
-before they become changes.
+before applying them.
 
 ## Prerequisites
 

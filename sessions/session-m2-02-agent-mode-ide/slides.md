@@ -34,7 +34,7 @@ Use the loop to review the work. Check current controls and behavior before a li
 
 ---
 
-# A safe task contract
+# Task contract
 
 ```markdown
 ## Goal
@@ -290,7 +290,7 @@ Build one Todo API, add ownership and due dates, then redirect its repository re
 2. Write the task limits before the agent starts.
 3. Tool approval and file scope are trust decisions.
 4. Redirect or stop the agent when needed.
-5. Human review closes the loop.
+5. A human reviewer decides whether to accept the work.
 
 ---
 

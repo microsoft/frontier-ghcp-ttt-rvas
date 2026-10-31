@@ -7,7 +7,7 @@ description: "Trainer guide and prepared demo for a reliable GitHub Copilot SDK 
 **Duration:** 60 minutes  
 **Format:** Concept teaching, prepared live demo, lab briefing
 
-## Delivery objective
+## Teaching goal
 
 Show where the model's work ends and application code takes over. The model
 produces an assessment. TypeScript code manages the lifecycle, limits tools,
@@ -18,7 +18,7 @@ BYOK, packaging, deployment, external systems, or another language.
 
 ## One-hour plan
 
-| Time | Segment | Exit signal |
+| Time | Segment | What learners should show |
 | --- | --- | --- |
 | 0:00 to 0:08 | Application reliability boundary | Learners can name what the application owns |
 | 0:08 to 0:20 | Client, session, and streaming | Learners can draw the startup and cleanup path |
@@ -94,7 +94,7 @@ Use the table from the slides. Registration, permission requests, pre-tool polic
 and handler validation are separate controls.
 
 The lookup tool accepts one synthetic request ID. Normal `CR-####` values reach
-the handler. IDs beginning with `RESTRICTED-` prove the denial path. The pre-tool
+the handler. IDs beginning with `RESTRICTED-` test the denial path. The pre-tool
 hook blocks them before the handler runs.
 
 ### Failure and error hooks
@@ -151,7 +151,7 @@ Learners can compare what the user sees with what the operator can inspect.
    > one fixed record. TypeScript decides which capability exists and whether the
    > exact call may run."
 
-2. **Prove the baseline.**
+2. **Check the baseline.**
 
    Run:
 
@@ -254,14 +254,14 @@ Point learners to [`lab/README.md`](../lab/README.md).
 | --- | --- |
 | Preflight | Did every required tool and authenticated SDK call pass? |
 | Lifecycle and streaming | Where does cleanup run if `sendAndWait` throws? |
-| Tool and denial | Can the learner prove the handler did not run? |
+| Tool and denial | Do the test results show that the handler did not run? |
 | Failure hooks | Is unknown data reported without invention or broad retry? |
 | Tests | Are assertions stable without matching model prose? |
 | Traces | Can the learner connect terminal output to one Jaeger trace? |
 
 ## Official references
 
-Verified on **October 5, 2026**:
+Checked on **October 5, 2026**:
 
 - [GitHub Copilot SDK documentation](https://docs.github.com/en/copilot/how-tos/copilot-sdk)
 - [Authentication](https://docs.github.com/en/copilot/how-tos/copilot-sdk/auth/authenticate)

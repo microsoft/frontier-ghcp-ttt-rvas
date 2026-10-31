@@ -28,7 +28,7 @@ issue proposal.
 - Run `/decision-interview` with the short test request from the lab.
 - Test one prompt and one follow-up answer.
 - Check Interactive, Plan, and Autopilot modes are visible. The interview uses
-  Interactive; artifact changes use Plan.
+  Interactive; file changes use Plan.
 - Check `/context`, `/compact`, `/clear` or `/reset`, and `/rubber-duck` in the
   current command picker.
 - Use only the supplied fictional scenario during the demonstration.
@@ -154,7 +154,7 @@ owner accepted. Then review:
 - constraints and dependencies;
 - success and failure measures;
 - decisions and open questions;
-- owner, reviewers, and approval gate.
+- owner, reviewers, and who approves the brief and when.
 
 Keep it short enough to review in one sitting. Review the proposed repository change before accepting it.
 
@@ -164,7 +164,7 @@ Ask GitHub Copilot to convert the approved brief into an issue proposal:
 
 1. Write one user outcome.
 2. Copy the agreed scope and non-goals.
-3. Turn success and failure cases into observable acceptance criteria.
+3. Turn success and failure cases into testable acceptance criteria.
 4. Add dependencies and open risks.
 5. Name the owner and reviewer.
 6. Add a definition of done that covers test or review results and approval.

@@ -138,7 +138,7 @@ Repair the evaluator with a plan that names the files and tests.
 
 9. Triage findings in `engineering-review.md`. Link each accepted finding to a
    test or code reference. Fix supported defects, rerun the focused tests, and
-   rerun `/review` on any correction. Record no-findings results honestly.
+   rerun `/review` on any correction. If a review reports no findings, record that.
 
 ### What the critic does
 
@@ -173,7 +173,7 @@ committed baseline:
    adversarial reasoning; do not assume it has rubber duck's model-selection or
    read-only tool guarantees. Keep permissions restricted and inspect the diff.
 5. Switch the fork to Interactive mode to write only `planning-alternative.md`, with the checked
-   counterexample or an honest no-findings result and its effect on the plan.
+   counterexample or no-findings result and its effect on the plan.
    Inspect the note and the entire fork diff.
 6. Run `/merge-to-parent` from the fork. Review the app's return/merge flow and
    accept only the analysis note. If it asks for a commit, commit only that note
@@ -264,7 +264,7 @@ The supplied PR snapshot should produce `NOT_READY`.
 ### Checkpoint
 
 The report names the failing required check and the unresolved blocking thread.
-The automation gathers evidence but cannot change repository state.
+The automation gathers check results and review-thread status without changing repository state.
 
 ## Final deliverables
 

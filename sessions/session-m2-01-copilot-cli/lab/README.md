@@ -128,7 +128,7 @@ explain and suggest commands.
 
 ### Part B: Explain commands (5 min)
 
-Open `lab/starter/explain-challenges.md`. The file has five commands, from simple to complex. For each one:
+Open `lab/starter/explain-challenges.md`. For each of its five commands:
 
 1. Launch the CLI with `copilot` and ask it to explain the command (e.g., "Explain what this command does: `<command>`")
 2. Read Copilot's explanation
@@ -145,13 +145,13 @@ Open `lab/starter/explain-challenges.md`. The file has five commands, from simpl
 | 4   | `tar czf backup.tar.gz --exclude='node_modules' --exclude='.git' ./src`                | Multi-flag       | Does it explain the compression and exclusions?      |
 | 5   | `awk -F',' '{sum[$1]+=$3; count[$1]++} END {for (k in sum) print k, sum[k]/count[k]}'` | Complex pipeline | Does it explain the associative arrays and the math? |
 
-**After completing all 5, compare your notes with `lab/solution/explain-answers.md`.**
+Compare your notes with `lab/solution/explain-answers.md`.
 
 ---
 
 ### Part C: Suggest commands (5 min)
 
-Open `lab/starter/suggest-challenges.md`. The file has five tasks written in plain language. For each one:
+Open `lab/starter/suggest-challenges.md`. For each task you choose:
 
 1. In the Copilot CLI session, describe the task and ask for a command. For
    example: "Give me a command to find all Python files larger than 1MB."
@@ -317,7 +317,7 @@ Rubber duck is a built-in, read-only critic in the CLI and app. Copilot chooses 
 contrasting model automatically when one is available; do not guess its identity
 or treat the author's second answer as an independent critique. Check each
 finding yourself. Revise the plan for supported findings, explain rejected
-suggestions, and record no findings honestly.
+suggestions. If the critic finds no issue, record that.
 
 Open `/subagents`, select rubber duck, and inspect **Proactive invocation**.
 Manual use is the default. The opt-in setting persists across CLI sessions and

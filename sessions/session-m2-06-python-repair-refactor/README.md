@@ -33,7 +33,7 @@ entry point.
 - add regression tests before changing structure;
 - remove duplicated rules and global state;
 - replace tangled control flow with small, named functions;
-- prove that a refactor preserved behavior.
+- check that a refactor preserved the supplied behavior;
 - inspect Python LSP references and distinguish them from duplicated inline rules;
 - approve a CLI `/plan` before structural changes.
 

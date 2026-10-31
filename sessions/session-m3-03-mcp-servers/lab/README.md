@@ -16,7 +16,7 @@ review small.
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Preflight and inspect the staged server | 15 min |
-| 2 | Prove `get_weather` from schema through handler | 30 min |
+| 2 | Test `get_weather` from schema through handler | 30 min |
 | 3 | Inspect good and bad protocol calls | 25 min |
 | 4 | Add `get_forecast` and `convert_temperature` | 35 min |
 | 5 | Run all checks and record output | 15 min |
@@ -33,7 +33,7 @@ You need:
 - a writable copy of this repository;
 - MCP Inspector 2.5.0 through the approved npm source.
 
-The required lab route uses local tests and MCP Inspector. GitHub Copilot is
+The lab uses local tests and MCP Inspector. GitHub Copilot is
 optional and may assist with review. If Node.js, MCP Inspector, or package registry
 access is unavailable, stop the lab.
 
@@ -65,7 +65,7 @@ The staged server exposes one tool. Find these four parts:
 **Checkpoint:** `npm test` reports three passing tests. The tool catalog contains
 only `get_weather`.
 
-## Part 2: Prove `get_weather` from schema through handler
+## Part 2: Test `get_weather` from schema through handler
 
 Trace this request:
 
@@ -205,7 +205,7 @@ contract. Use the local tests and Inspector output to judge completion.
 4. Inspector output from your server.
 5. One good request and one bad request with expected and actual responses.
 
-## Verification
+## Final checks
 
 - [ ] No `node_modules` directory is tracked.
 - [ ] Package manifests and lockfiles are present.

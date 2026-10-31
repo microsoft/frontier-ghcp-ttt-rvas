@@ -36,4 +36,4 @@ decide whether to accept the work, revise it, or stop.
 - Multi-file changes in agent mode
 - Trust boundaries and when to intervene
 - TODO code actions for cloud agent delegation
-- Chat vs. Agent mode decision framework
+- When to use Chat or Agent mode

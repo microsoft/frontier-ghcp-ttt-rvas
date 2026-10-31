@@ -26,7 +26,7 @@ the previous chat.
 
 # Keep GitHub state and planning information distinct
 
-GitHub owns issue state. The canvas groups that state with planning information that
+GitHub records issue state. The canvas groups that state with planning information that
 helps people decide what to do next.
 
 | GitHub fact | Canvas planning view |
@@ -53,7 +53,7 @@ The canvas should expose important work without becoming a second backlog.
 
 ---
 
-# Steering needs a review loop
+# Review canvas updates
 
 ```text
 Observe source state

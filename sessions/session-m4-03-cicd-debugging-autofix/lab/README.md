@@ -12,7 +12,7 @@ improve feedback speed without removing checks.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Prove the local application baseline | 10 min |
+| 1 | Check the local application baseline | 10 min |
 | 2 | Investigate three pipeline cases | 50 min |
 | 3 | Review a security remediation | 30 min |
 | 4 | Improve feedback speed | 20 min |
@@ -24,7 +24,7 @@ Read the [course safety baseline](../../learning-safety-baseline.md). You must h
 and workflow files.
 
 Remote workflow runs and security products are optional. Use them only when the
-instructor confirms access and policy. **You must complete the local work.** If GitHub
+instructor checks access and permits their use. **You must complete the local work.** If GitHub
 Copilot access is unavailable, stop.
 
 Do not open `lab/solution/fixed-pipelines/` until a checkpoint tells you to compare.
@@ -65,7 +65,7 @@ For every case:
 
 1. Read the workflow and failed-step output.
 2. Record observations without naming a root cause.
-3. Run the local proof command.
+3. Run the local command and record its result.
 4. State one hypothesis.
 5. Ask Copilot to challenge the hypothesis and propose the smallest repair.
 6. Validate the repaired YAML.
@@ -103,7 +103,7 @@ ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
   lab/starter/failing-pipelines/pipeline-1.yml
 ```
 
-**Checkpoint:** Record the proof, then compare with
+**Checkpoint:** Record the parser result, then compare with
 `lab/solution/fixed-pipelines/pipeline-1.yml`.
 
 ### Case 2
@@ -158,7 +158,7 @@ npm --prefix lab/starter/pipeline-app run build
 test -f lab/starter/pipeline-app/dist/index.js
 ```
 
-**Checkpoint:** Record two observations, two repairs, and separate proof for each
+**Checkpoint:** Record two observations, two repairs, and separate check results for each
 stage. Then compare with `lab/solution/fixed-pipelines/pipeline-3.yml`.
 
 ## Part 2: Review a security remediation
@@ -224,5 +224,5 @@ Submit:
 3. A reviewed security patch and local syntax-check output.
 4. The optimized workflow review.
 
-Write the root-cause statement after the observation and local proof. Keep the
+Write the root-cause statement after the observation and local check results. Keep the
 original logs unchanged with the investigation records.

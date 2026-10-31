@@ -48,13 +48,13 @@ Use these ranges to pace your work, not as deadlines. Move on when you have the
 artifacts or results listed for that stage. If one agent stalls, use the
 phase-recovery guide so you still have time for Review.
 
-| Stage | Indicative range | Evidence gate |
+| Stage | Indicative range | Required results |
 |-------|------------------|---------------|
 | HVE preflight and artifact model | 10 to 15 min | Required agents are visible; tracking paths are understood |
 | Research and Plan | 30 to 40 min | Research, plan, critique, and human approval exist |
-| HVE customization | 20 to 25 min | Three customization layers have activation evidence |
+| HVE customization | 20 to 25 min | The artifacts show how each of the three customization layers affected the work |
 | Product and Agile refinement | 20 to 25 min | Advisor decision, story, criteria, and exclusions exist |
-| Implement and validate | 35 to 45 min | Changes log, code, tests, and container evidence exist |
+| Implement and validate | 35 to 45 min | Changes log, code, test results, and container results exist |
 | Review and combined-RPI comparison | 20 to 30 min | Review artifact, human decision, and comparison are recorded |
 
 Do not add the ranges together as deadlines. If a phase finishes early, spend more
@@ -125,7 +125,7 @@ The finished behavior must:
 * reject a stored title after trimmed, case-insensitive comparison;
 * generate a unique string ID and UTC `createdAt` value;
 * return stable success and error envelopes;
-* leave the health route green;
+* keep the health route test passing;
 * run tests in a container build stage;
 * ship only production dependencies and tested source in the runtime stage;
 * run as a non-root user with a health check for `GET /health`.
@@ -145,7 +145,7 @@ not start another implementation cycle during the lab.
 
 ## Scenario-to-task map
 
-| HVE capability | Required task | Evidence |
+| HVE capability | Required task | What to show |
 |----------------|---------------|----------|
 | Direct RPI phases | Run Research, Plan, Implement, and Review in order | Tracking artifact from each phase |
 | Combined RPI | Explain `/rpi` orchestration and Follow-up | Direct-to-combined comparison |
@@ -155,8 +155,8 @@ not start another implementation cycle during the lab.
 | Product planning | Use Product Manager Advisor | Value, assumptions, priority, and human question |
 | Agile refinement | Use Agile Coach | User story, acceptance criteria, and exclusions |
 
-Stretch work starts only after the core review decision. It cannot replace risk or
-handoff evidence.
+Stretch work starts only after the core review decision. It cannot replace the
+required risk notes or handoff.
 
 ## Final deliverable
 
@@ -172,10 +172,10 @@ Submit or demonstrate:
 
 ## Scoring rubric
 
-| Area | Points | Authoritative evidence |
+| Area | Points | Grade from |
 |------|-------:|------------------------|
-| HVE RPI evidence | 40 | Research, Plan, Implement, and Review artifacts |
-| HVE customization | 25 | Repository files plus activation evidence in the HVE artifacts |
+| HVE RPI artifacts | 40 | Research, Plan, Implement, and Review artifacts |
+| HVE customization | 25 | Repository files plus examples of their use in the HVE artifacts |
 | Product and Agile agents | 20 | Platform outputs cited by the Plan artifact |
 | Feature validation | 15 | Test and container output cited by Implement or Review |
 

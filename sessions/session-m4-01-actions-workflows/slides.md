@@ -91,7 +91,7 @@ secret name, and no checkout.
 Ask for the failed-step output before the repair.
 
 ---
-# A repair is a claim plus proof
+# Tie each repair to a failure
 
 ```text
 Observation: the parser fails near Setup Node.js.
@@ -99,7 +99,7 @@ Change: align the step indentation.
 Proof: parse the file again.
 ```
 
-For behavior faults, cite the deployment specification or repository facts.
+For behavior faults, cite the deployment specification or repository facts, then check the repair.
 
 ---
 # Validate both action outcomes

@@ -129,10 +129,10 @@ After this track, you should be able to:
 8. Orchestrate multi-agent teams with optional tools such as Squad
 9. Design and execute end-to-end agentic development workflows
 10. Assess trainee progress and adapt delivery based on audience needs
-11. Create a personal trainer delivery plan for their organization
+11. Create a teaching plan for your organization
 12. Teach non-developers to create briefs, issues, canvases, orchestrated work, and Automations with defined limits
 13. Teach HVE Research, Plan, Implement, Review, and Follow-up using linked phase results
-14. Teach developers to use isolated Copilot App sessions, independent critique, and test and review records for pull-request decisions
+14. Teach developers to use isolated Copilot App sessions and independent critique, then decide pull-request readiness from test results and review findings
 
 **Live app access is required for Session M2-05 and either Session M7-05 route.**
 Prepared outputs support trainer explanation only. The schedule above uses

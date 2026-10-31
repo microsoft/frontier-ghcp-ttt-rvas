@@ -67,7 +67,7 @@ Attach the approved Session M7-02 decision brief and issue proposal. Use
 
 Ask Copilot to:
 
-1. summarize the approved outcome, non-goals, acceptance evidence, and owners;
+1. summarize the approved outcome, non-goals, results needed for acceptance, and owners;
 2. retrieve available labels and milestones;
 3. read `starter/existing-issues.json`, then search open and closed issues for
    matching live work;

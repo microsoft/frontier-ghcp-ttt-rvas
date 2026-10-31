@@ -11,7 +11,7 @@ footer: 'Session M3-02: Cloud Agent'
 ## Keep the Copilot cloud agent within the issue
 
 ---
-# Today's journey
+# Issue-to-review workflow
 
 ```text
 issue contract
@@ -113,7 +113,7 @@ Record:
 - allowed files;
 - reviewer and stop condition.
 
-Stop when the baseline is unexplained or setup requires unapproved access.
+Stop when you cannot explain the baseline test result or setup requires unapproved access.
 
 ---
 # Start the session

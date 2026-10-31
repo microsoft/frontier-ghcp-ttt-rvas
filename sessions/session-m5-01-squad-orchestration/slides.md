@@ -55,7 +55,7 @@ Splitting an ambiguous task across agents spreads the ambiguity.
 ---
 # The coordinator owns the integration risk
 
-A coordinator does more than hand out tasks. It needs to know:
+A coordinator needs to know:
 
 1. Which decision makes the workstreams compatible.
 2. Which files or systems only one role may change.
@@ -67,7 +67,7 @@ The coordinator stays human-led even when agents do the initial work.
 ---
 # Return a result summary
 
-Each workstream should return a short result summary:
+Use:
 
 ```text
 Scope completed:
@@ -116,7 +116,7 @@ Agents need charters that state inputs, outputs, and limits. Avoid concurrent wr
 
 # Shared memory
 
-Commit decision records: the choice, supporting results, owner, and date. Keep temporary drafts separate.
+Commit decision records with the choice, supporting results, owner, and date. Keep temporary drafts separate.
 
 Agents can write individual proposals. A designated owner reviews and merges the shared record. Git history keeps the trail.
 

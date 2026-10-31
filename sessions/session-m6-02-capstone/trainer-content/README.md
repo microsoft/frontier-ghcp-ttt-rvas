@@ -1,6 +1,6 @@
 # Session M6-02 trainer guide: End-to-end capstone for one endpoint
 
-## Delivery objective
+## Teaching goal
 
 Guide learners through one reviewed `POST /api/bookmarks` change with GitHub Copilot.
 Keep scope decisions in the accepted GitHub issue and require the Session M5-02
@@ -76,8 +76,8 @@ Review in this order:
 4. Stop conditions and deviations from the accepted issue.
 5. Handoff owner and next action.
 
-Record one decision: approve, request changes, or pause. **Do not approve a serious
-issue because time ran out.**
+Record one decision: approve, request changes, or pause. **Do not approve a change
+with a serious issue because time ran out.**
 
 ## Reference assets
 

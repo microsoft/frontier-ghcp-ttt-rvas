@@ -11,7 +11,7 @@ You will use the same application for every part of the lab.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Prove the application baseline and create CI | 30 min |
+| 1 | Check the application baseline and create CI | 30 min |
 | 2 | Design staged deployment jobs | 25 min |
 | 3 | Repair two supplied workflow failures | 30 min |
 | 4 | Validate a JavaScript action | 25 min |
@@ -22,7 +22,7 @@ You will use the same application for every part of the lab.
 Read the [course safety baseline](../../learning-safety-baseline.md). You must have GitHub Copilot access in the selected coding environment and Node.js 20 or later.
 
 GitHub repository access is optional. Do not push, run Actions, install an external
-action, or use a deployment target unless the instructor confirms that route.
+action, or use a deployment target unless the instructor permits it.
 When repository access or Actions is unavailable, complete all the work locally
 as described below. If GitHub Copilot access is unavailable, stop and do not
 continue the lab.
@@ -190,7 +190,7 @@ cd ../../..
 ```
 
 Expected failure: the action reports a score below 101 and exits with code 1.
-This proves that the threshold changes the job result.
+This shows that the threshold changes the result for this run.
 
 After your checks pass, compare with `lab/solution/custom-action/`.
 If `act` is already installed and local runner use is approved, you may also run

@@ -16,8 +16,8 @@ permissions, and model choices can change.
 
 ### Access failure
 
-Stop the learner lab and fix access. A prepared recording may preserve the
-trainer demonstration, but it does not count as learner completion.
+Stop the learner lab and fix access. Use a prepared recording for the
+trainer demonstration only; it does not count as learner completion.
 
 ## Session objective
 
@@ -279,7 +279,7 @@ Pause when permissions, data handling, policy, or a destructive action is unreso
 | Task | Preferred starting point | Reason |
 | --- | --- | --- |
 | Explain a failing assertion | Chat or human inspection | No multi-file action is required. |
-| Rename a local variable | Manual or inline | The edit is small and directly observable. |
+| Rename a local variable | Manual or inline | You can inspect the small edit directly. |
 | Add a route plus service tests | Agent | The files and tests are closely related. |
 | Decide an authorization policy | Human owners | This is an accountable policy decision. |
 
@@ -373,7 +373,7 @@ who can approve more.
 | Trusting the agent's test summary | Run the focused check independently. |
 | Reviewing only the final message | Inspect complete diff and command output. |
 | Endless self-correction | Stop after repeated cycles without a better result. |
-| Treating intervention as failure | Normalize redirect, rollback, and stopping. |
+| Treating intervention as failure | Show when to redirect, roll back, or stop. |
 | Using sensitive examples | Replace with synthetic fictional tasks. |
 | Teaching fixed UI or entitlement | Check current docs before delivery. |
 

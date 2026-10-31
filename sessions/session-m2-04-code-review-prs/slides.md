@@ -348,7 +348,7 @@ the final decision. Include initial and correction outputs from `/review` and
 # Remember
 
 1. Check generated summaries against the diff.
-2. AI review is a first pass before accountable human review.
+2. AI review is a first pass; a human reviewer makes the decision.
 3. Suggested fixes require reproduction, inspection, and tests.
 4. Conflict resolution starts from intended merged behavior.
 5. Adoption should be measured and reversible.

@@ -1,6 +1,6 @@
-# Session M4-02 trainer guide: Terraform as the required path
+# Session M4-02 trainer guide: Terraform modules and security checks
 
-## Delivery objective
+## Teaching goal
 
 Show how to build and connect Terraform
 modules, validate them locally, and investigate a security-gate failure. Keep
@@ -64,7 +64,7 @@ Validation checks the configuration against the installed provider schema. None 
 these commands compares the configuration with a cloud environment.
 
 Do not run a plan during the required session. A plan needs an approved identity,
-target environment, backend decision, and review boundary.
+target environment, backend decision, and human review.
 
 ## Intentional security failure
 

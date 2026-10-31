@@ -81,7 +81,7 @@ The orchestration surface already holds session links, status, timing, and usage
 | Public mapping | Is the mapping ready for approval? |
 | Requester status | Is the issue ready for implementation review? |
 | Empty and stale states | Are fallback states testable? |
-| Access boundary | Is the approved evidence ready? |
+| Access boundary | Are the approved requester-access results ready? |
 
 Move shared questions back to the parent.
 
@@ -190,7 +190,7 @@ publication, or release statement.
 | --- | --- |
 | Persistent roles and routing | Temporary workstreams |
 | Optional framework setup | Built-in orchestration |
-| Shared memory | Live issue evidence |
+| Shared memory | Live issues and their supporting sources |
 
 ---
 

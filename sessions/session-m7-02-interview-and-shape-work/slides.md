@@ -122,16 +122,16 @@ Mark unsupported claims as unverified. Do not present them as facts.
 
 ---
 
-# Six branches must close
+# Settle six decision areas
 
 - **Scope:** who and what are included?
 - **Constraints:** what limits the solution?
-- **Success:** what observable result matters?
+- **Success:** what result will show that the change helped?
 - **Failure:** what can go wrong, and what should happen?
 - **Ownership:** who decides and who maintains it?
 - **Approval:** who reviews the brief and accepts the work?
 
-An open branch stays visible.
+Keep unresolved decisions visible.
 
 ---
 
@@ -144,7 +144,7 @@ A useful brief records:
 - constraints and dependencies;
 - success and failure measures;
 - settled decisions and open questions;
-- owner, reviewer, and approval gate.
+- owner, reviewer, and who approves the brief and when.
 
 Keep it short enough to review in one sitting.
 
@@ -170,7 +170,7 @@ Session M7-03 creates the approved issues through GitHub MCP.
 
 # Reopen only the affected branch
 
-Late evidence changes requester and support visibility.
+New source information changes requester and support visibility.
 
 ```text
 Approved brief
@@ -180,7 +180,7 @@ Approved brief
   → preserve unrelated decisions
 ```
 
-Do not restart the interview or rewrite settled scope without evidence.
+Do not restart the interview or rewrite settled scope without new source information.
 
 ---
 
@@ -216,7 +216,7 @@ Include a failure case when the feature can mislead, expose data, or block progr
 
 ---
 
-# Definition of done closes delivery
+# Define what the team needs before release
 
 Acceptance criteria describe product behavior.
 
@@ -262,6 +262,6 @@ Stop when:
 - the input is not approved or sanitized;
 - a required decision owner is absent;
 - policy or data boundaries are unclear;
-- the team cannot state how success or failure will be observed.
+- the team cannot state how it will check success or failure.
 
 Record content blockers. Resolve Copilot access before starting the exercise.

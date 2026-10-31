@@ -27,7 +27,7 @@ review local code and a synthetic PR snapshot.
 - Copilot app access with `/rubber-duck` and `/orchestrate`
 - Node.js 22 or later and CLI `/refine` before Session M1-03
 - App `/fork`, `/merge-to-parent`, and `/spar` for Session M2-05
-- Local sandbox and installed-version limit checks for Session M2-01
+- Local sandbox support and checks on how the installed CLI version applies limits for Session M2-01
 - Python 3.10 or later for Sessions M2-05 and M7-05
 
 ## Sessions
@@ -58,8 +58,7 @@ only. The Session M7-05 developer route does not require Sessions M7-01 to M7-04
 | Day 2 | Sessions M2-01, M2-02, M2-03 | CLI, agent mode, and context |
 | Day 3 | Sessions M2-04, M2-05, M7-05 | Code review, app workflow, and orchestration |
 
-Each day has nine teaching hours before breaks. Use the four-day schedule for
-normal delivery.
+Each day has nine teaching hours before breaks. **Prefer the four-day schedule.**
 
 ### 4-day relaxed
 
@@ -82,7 +81,7 @@ After this track, you should be able to:
 6. Choose the right Copilot tool for a task
 7. Set up project-level and personal context to guide Copilot's output
 8. Use isolated Copilot App sessions for implementation and independent critique
-9. Revise a plan before implementation and triage local code and security findings
+9. Revise a plan before implementation and assess local code and security findings
 10. Direct read-only child sessions and distinguish local success from PR readiness
 11. Inspect loaded instructions, manage queued and background work, and check recovery state
 

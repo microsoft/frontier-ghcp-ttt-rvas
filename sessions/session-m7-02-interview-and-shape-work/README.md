@@ -24,7 +24,7 @@ requests or source organization names in the standard lab.
 
 ## Learning outcomes
 
-By the end of this session, learners will be able to:
+By the end of this session, learners can:
 
 - Install and check the supplied `decision-interview` project skill.
 - Run a GitHub Copilot interview that asks only questions whose prerequisites are settled.
@@ -33,7 +33,7 @@ By the end of this session, learners will be able to:
 - Create a reviewed Markdown decision brief in the repository.
 - Draft an issue proposal with testable acceptance criteria and a practical
   definition of done.
-- Reopen only the decisions affected by new evidence.
+- Reopen only the decisions affected by new source information.
 - Check that the revised brief and issue proposal agree.
 - Check context usage before each interview round and start fresh for the final
   review.

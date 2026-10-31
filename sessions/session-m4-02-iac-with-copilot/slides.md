@@ -25,9 +25,9 @@ Session M4-02 | 2 hours 30 minutes
 | 0:54 to 1:00 | Bicep comparison and lab handoff |
 
 ---
-# One required path
+# Terraform is required
 
-The learner path is Terraform:
+Use Terraform for the lab:
 
 ```text
 architecture → modules → root composition → format → init → validate → security gate

@@ -53,7 +53,7 @@ against those files.
 
 - Context is an engineering input. It does not authorize collecting everything available.
 - Missing contracts cause invented assumptions.
-- Broad, stale, or conflicting sources can obscure the decisive rule.
+- Broad, stale, or conflicting sources can hide the rule the task needs.
 - Restricted data must not be added merely because it seems relevant.
 - A confident answer does not show that the right source was used.
 - Teach learners to select the fewest files needed for review.
@@ -232,7 +232,7 @@ For every source or remembered fact, ask:
 | --- | --- |
 | API contract changes | Update packet sources and retest a known question. |
 | Repository convention changes | Review instruction and prompt files. |
-| Source owner changes | Assign a new accountable maintainer. |
+| Source owner changes | Assign a new maintainer. |
 | Output conflicts with source files | Remove stale sources and identify which source governs the task. |
 | Product behavior changes | Recheck current official documentation. |
 | Policy or audience changes | Get approval again for using and sharing the sources. |
@@ -383,8 +383,8 @@ the answer is missing specific information.
 
 ### "Do instructions guarantee compliance?"
 
-No. They guide output. Tests, repository checks, and human review enforce the
-rules.
+No. They guide output. Use tests, repository checks, and human review to check
+whether the result follows the rules.
 
 ### "Which source wins when docs and code disagree?"
 
@@ -427,7 +427,7 @@ Check current metering information and use the organization's usage limit.
 | No review date | Add event-based and scheduled maintenance triggers. |
 | Assuming instructions loaded | Test the expected behavior. |
 | Teaching fixed paths or UI | Check current docs before delivery. |
-| Context changes without review | Manage shared artifacts through normal repository review. |
+| Context changes without review | Review shared source lists, instructions, and prompts through the normal repository process. |
 
 ## Closing and lab handoff (0:58 to 1:00)
 

@@ -1,6 +1,6 @@
 # Session M3-03 trainer guide: MCP servers
 
-## Delivery objective
+## Teaching goal
 
 Show one MCP tool from its contract through tests and Inspector output. Walk
 through the schema and handler, then demonstrate good and bad input. Run the
@@ -30,7 +30,7 @@ at 0:50. Use the recorded expected output and keep time for the lab handoff.
   open for trainer demo recovery.
 - Do not attach a credential, network service, or source-system data.
 
-If approved package access is unavailable, stop the executable demo. A
+If you cannot access the approved package source, stop the executable demo. A
 static code walkthrough is acceptable, but mark Inspector and tests as **not
 executed**. This only recovers the trainer demo. Stop the learner lab until tests
 and Inspector can run.
@@ -130,7 +130,7 @@ npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
 
 Then call `get_weather`. Keep test results and Inspector output separate:
 
-| Check | Proves |
+| Check | Shows |
 | --- | --- |
 | Unit test | Handler behavior for known inputs |
 | `tools/list` | The server exposes the expected catalog |

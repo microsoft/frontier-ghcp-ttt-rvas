@@ -123,7 +123,7 @@ The brief must separate:
 - request-owner decisions;
 - unresolved questions and owners;
 - in-scope and out-of-scope behavior;
-- success and failure evidence;
+- results that show success or failure;
 - approval state.
 
 The issue proposal must trace each acceptance criterion to the approved brief.
@@ -181,8 +181,8 @@ Then request independent critique:
 criteria, hidden scope, missing owners, and conflicts with the late constraint.
 ```
 
-If the command is unavailable, stop this step and follow a trainer-verified
-documented critique route. Do not invent a command.
+If the command is unavailable, stop this step. Use a documented critique option
+that the trainer has checked. Do not invent a command.
 
 ## Final deliverable
 

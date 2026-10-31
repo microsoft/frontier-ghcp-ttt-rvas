@@ -59,7 +59,7 @@ Keep these records as you work:
 - Repository context, targeted instructions, and a custom reviewer, with records
   showing that Copilot used each customization
 - Product Manager Advisor and Agile Coach outputs that shape or support the plan
-- A tested API slice and container contract
+- A tested API feature and container contract
 - A human decision to approve, request changes, or pause
 
 ## Optional comparison

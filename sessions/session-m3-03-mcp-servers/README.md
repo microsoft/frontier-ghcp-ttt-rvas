@@ -41,7 +41,7 @@ plugin terminology.
 
 You need Node.js 20 or later and npm. GitHub Copilot is
 useful for the final integration check but is not required. The local tests and
-Inspector calls prove the server contract.
+Inspector calls check the server contract.
 
 If package installation is blocked, stop before the executable lab. Do not use an
 unapproved registry or copied `node_modules` directory.

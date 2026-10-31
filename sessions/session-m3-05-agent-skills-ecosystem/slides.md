@@ -169,7 +169,7 @@ The validator checks:
 npm test
 ```
 
-The suite proves:
+The suite checks that:
 
 - a route task applies the skill;
 - a documentation task does not;
@@ -193,7 +193,7 @@ The local runner is a teaching harness, not a replacement skill platform.
 
 ---
 
-# Local tests and live skills prove different things
+# What local tests and live invocation show
 
 | Check | What it shows |
 | --- | --- |
@@ -260,7 +260,7 @@ Do not run an unfamiliar script just to inspect it.
 
 ---
 
-# Learn from actual session friction
+# Review recurring session corrections
 
 ```text
 /chronicle improve

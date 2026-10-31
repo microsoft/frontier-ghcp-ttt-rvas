@@ -43,14 +43,14 @@ Core extension or Copilot CLI plugin exposes the RPI prompts, agents, and
 customizations before the lab starts. Add the tested HVE version or channel to the
 Research artifact.
 If HVE cannot run, learners may inspect trainer-provided HVE artifacts and observe
-the workflow, but that route does not count as challenge completion.
+the workflow, but the walkthrough does not count as challenge completion.
 
 Use synthetic records in a sandbox permitted by the customer. Get approval for
 package downloads. When local downloads are restricted, use existing
 dependencies and a trainer-managed remote container build.
 
 Keep `.copilot-tracking/` local and ignored by Git. Inspect and grade those files
-directly. The challenge handoff only indexes the four phase artifacts and
+directly. The challenge handoff only lists the four phase artifacts and
 records the final decision, unresolved risks, and next action.
 
 ## HVE version and references

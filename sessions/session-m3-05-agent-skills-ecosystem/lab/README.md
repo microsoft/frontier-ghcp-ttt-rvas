@@ -20,7 +20,7 @@ procedure handles that work. Check that missing preconditions stop the run.
 | 3 | Test a non-matching task | 10 min |
 | 4 | Test visible precondition failure | 10 min |
 | 5 | Check the local harness and live loading | 15 min |
-| 6 | Compare interviews, plan, and review session friction | 45 min |
+| 6 | Compare interviews, plan, and review session corrections | 45 min |
 
 ## Before you start
 
@@ -253,7 +253,7 @@ Name at least two decisions that changed a plan step or acceptance check. Compar
 the skills' actual behavior and choose which fits this task. Different phrasing
 or one model run does not prove a universal winner.
 
-### Review repeated friction with `/chronicle` (last 5 minutes)
+### Review recurring corrections with `/chronicle` (last 5 minutes)
 
 After the interviews and plan, run:
 
@@ -284,7 +284,7 @@ has already improved the workflow.
 6. `interview-comparison.md`, the accepted decision brief, and `/plan` output.
 7. The scoped `/chronicle improve` result and a human decision, without applying suggestions automatically.
 
-## Verification
+## Final checks
 
 - [ ] The directory is lowercase and uses hyphens.
 - [ ] The file is named exactly `SKILL.md`.

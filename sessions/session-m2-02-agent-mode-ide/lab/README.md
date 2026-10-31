@@ -7,7 +7,7 @@
 
 ## Lab overview
 
-You will build one Todo API and keep it for the full lab. Scaffold the project from a brief,
+You will build one Todo API throughout the lab. Scaffold it from a brief,
 then compare Ask and Agent mode on the same feature. Redirect the agent when the
 requirement changes. Finish with an accept, revise, or stop decision.
 
@@ -245,7 +245,7 @@ If the agent requests an unexpected dependency, network access, or broader file 
 Review the final project as if another engineer submitted it.
 
 1. Inspect `git diff --stat` and `git diff`, or use the editor's change view.
-2. Check that each changed file traces to the brief, feature spec, or course correction.
+2. Check that each changed file meets a requirement in the brief, feature spec, or course correction.
 3. Run `npm test` again.
 4. Start the service and make one create request and one filtered list request.
 5. Write the final decision: **accept**, **revise**, or **stop**.

@@ -119,11 +119,12 @@ Use `@` references or `/attach-files` for:
 - the implementation file;
 - the session handoff.
 
-Do not attach the whole repository by habit. More context can hide the signal.
+Do not attach the whole repository by habit. Unrelated context can obscure the
+files the task needs.
 
 ---
 
-# A handoff must survive a fresh session
+# Make the handoff usable in a fresh session
 
 Write a short handoff that includes:
 
@@ -305,7 +306,7 @@ Check live app access before the lab. If access is unavailable, stop the lab.
 Saved session output may recover the trainer demonstration, but it does
 not replace learner app practice.
 
-The work is synthetic. Keep it that way.
+Use only the synthetic training files.
 
 ---
 

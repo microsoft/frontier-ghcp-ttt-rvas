@@ -10,9 +10,9 @@ After this curriculum, you should be able to:
 4. **Guide** teams through agentic workflows: IDE agent mode, canvases, cloud agent, custom agents, and MCP integration
 5. **Build** custom agents (`.github/agents/`), agent skills (`.github/skills/`), canvas extensions, and MCP server integrations
 6. **Automate** GitHub Actions, IaC (Terraform/Bicep), and CI/CD workflows with Copilot assistance
-7. **Orchestrate** multi-agent teams using optional tools such as Squad for advanced agentic automation
+7. **Orchestrate** multi-agent teams using optional tools such as Squad
 8. **Apply** specification-driven development to keep requirements, plans, code, and tests aligned
-9. **Run** hands-on labs where trainees build real projects using the full Copilot toolchain
+9. **Run** hands-on labs where trainees build projects using the Copilot toolchain
 10. **Assess** trainee progress and adapt delivery based on audience skill level and domain focus
 11. **Teach** product and delivery teams to use the GitHub Copilot app, save plans in repository files, and supervise agent work without programming
 12. **Use** GitHub MCP, canvases, orchestration, and Automations with human review and result checks
@@ -159,8 +159,8 @@ Trainees then install and configure Copilot and use it to write their first code
 **Trainer Content Outline (1 hour):**
 
 - What is GitHub Copilot? Architecture overview, LLM basics
-- Enterprise Cloud access, policy controls, and the delivery preflight
-- Usage and billing fundamentals using live official GitHub documentation, not static prices, allowances, or model tables
+- Enterprise Cloud access, policy controls, and checks before the lab
+- Usage and billing fundamentals using current official GitHub documentation, not static prices, allowances, or model tables
 - Privacy, data handling, and telemetry: what code is sent, what isn't
 - Supported IDEs and language coverage
 - Installation and activation walkthrough
@@ -180,7 +180,7 @@ Trainees then install and configure Copilot and use it to write their first code
 **Expected Learning Outcomes:**
 
 - Explain what GitHub Copilot is and how it generates suggestions
-- Explain Enterprise access, delivery preflight, and usage-based billing basics using current official documentation
+- Explain Enterprise access, checks before the lab, and usage-based billing basics using current official documentation
 - Install and configure Copilot in VS Code
 - Accept, reject, and navigate inline suggestions and NES
 - Identify tasks Copilot handles well and those that need human judgment
@@ -222,7 +222,7 @@ They also learn how to choose a model.
 - Use all Copilot Chat surfaces effectively
 - Apply slash commands for common tasks (explain, fix, test, document)
 - Reference specific files and selections in Chat context
-- Choose models with the live-doc selection framework
+- Choose models using the selection criteria and current documentation
 
 ---
 
@@ -260,7 +260,7 @@ the same methods.
 
 **Expected Learning Outcomes:**
 
-- Write clear, structured prompts that produce accurate Copilot output
+- Write clear, structured prompts and check Copilot's output for accuracy
 - Use context strategically (open files, comments, naming conventions)
 - Identify and fix common prompting anti-patterns
 - Create reusable prompt templates for repeated tasks
@@ -292,10 +292,10 @@ analysis. They check generated work against local files and tests before accepti
 - Plan mode: challenge an assumption, revise the plan, then approve implementation
 - Rubber duck: a read-only contrasting-model critic; inspect the persistent proactive opt-in
 - Terminal-first workflows: piping output, log analysis, and environment debugging
-- `/fleet` task independence, `/tasks` inspection, usage limits, and parent reconciliation
+- Independent `/fleet` tasks, `/tasks` inspection, usage limits, and resolving conflicting child results
 - Programmatic output: distinguish plain text from a JSONL event stream
 - Permission and sandbox inspection; check the installed version's soft-limit scope
-- Queue/background controls and checked recovery/worktree transitions
+- Queue and background controls; checking recovery and worktree changes
 - Remote/SSH workflows: when the CLI is your only Copilot surface
 - Demo: compare the same task (set up a Docker compose project) done via CLI vs. IDE
 - CLI vs. IDE decision framework: when each surface is most effective
@@ -326,9 +326,9 @@ analysis. They check generated work against local files and tests before accepti
 - Install and configure standalone `copilot` for terminal workflows
 - Use interactive and non-interactive `copilot -p "<prompt>"` workflows effectively for daily terminal work
 - Revise and approve a plan before implementation
-- Supervise independent fleet tasks and check the parent's synthesis
+- Supervise independent fleet tasks and check the parent's combined result
 - Distinguish terminal-first workflows from commands also available in the app
-- Apply the CLI vs. IDE decision framework to advise teams on surface selection
+- Help teams choose between the CLI and IDE for a task
 - Generate and iterate on shell scripts using Copilot CLI assistance
 
 ---
@@ -350,7 +350,7 @@ Explain how it connects to MCP servers. Later sessions assume this knowledge.
 - Agent mode in VS Code: how it works, what it can do
 - The agent loop: plan → act → observe → iterate
 - Tool use: terminal commands, file operations, web search
-- Multi-file changes: how agent mode handles cross-file edits autonomously
+- Multi-file changes: how agent mode edits related files
 - Trust boundaries: what agents should and shouldn't do autonomously
 - Demo: agent mode solving a multi-step task (create feature, write tests, fix build)
 - Comparison: same task done via Chat vs. Agent mode
@@ -409,7 +409,7 @@ settings fit.
 - Inspect and correct the copied stale module-style instruction, then restart and inspect again
 - Build 3 reusable prompt files for common team tasks
 - Compare Copilot's responses: no context vs. instructions vs. Space
-- **Deliverable:** A complete Copilot Space + custom instructions setup with before/after comparison
+- **Deliverable:** A configured Copilot Space and custom instructions, with a before/after comparison
 
 **Expected Learning Outcomes:**
 
@@ -439,8 +439,8 @@ A person still decides whether to merge.
 - Requesting Copilot review on a PR (manual and automatic)
 - Configuring automatic reviews at repo and org level
 - Copilot-generated commit messages and PR descriptions
-- Human review before assisted review to preserve an independent initial verdict
-- Local `/review` and `/security-review`: scope, claim checking, and false positives
+- Human review before assisted review, so reviewers form their own initial judgment
+- Local `/review` and `/security-review`: scope, checking findings, and false positives
 - Security review limits: the command does not replace repository scanners
 - Merge conflict resolution with tests
 - Demo: a complete PR lifecycle with Copilot assistance
@@ -463,7 +463,7 @@ A person still decides whether to merge.
 - Use Copilot to generate PR summaries and review comments
 - Configure automatic Copilot reviews at repo/org level
 - Evaluate Copilot review quality and identify blind spots
-- Run local code and security review and distinguish demonstrated impact from speculation
+- Run local code and security review and distinguish reproduced problems from speculation
 - Resolve merge conflicts and test the result
 - Integrate Copilot into a team code review workflow
 
@@ -487,7 +487,7 @@ review the diff and record whether the change is ready for a pull request.
 - Keep parallel work isolated and give each session a clear stop condition
 - Challenge a plan with `/rubber-duck` before approving implementation
 - Explain automatic contrasting-model selection and the critic's read-only role
-- App `/fork`, checked `/spar` reasoning, and reviewed `/merge-to-parent`
+- App `/fork`, checking `/spar` arguments, and reviewing `/merge-to-parent`
 - Separate implementation from independent code critique
 - Run app `/review` on the active diff and check its findings
 - Gather test results and review findings before a pull request decision
@@ -500,7 +500,7 @@ review the diff and record whether the change is ready for a pull request.
 - Before implementation, compare a forked `/spar` argument and return only the checked plan note
 - Run the implementation in an isolated project session
 - Ask a separate session to critique the change, test results, and review findings
-- Resolve findings and prepare a pull-request readiness record
+- Resolve findings and record whether the change is ready for a pull request
 - Triage active-diff code-review findings before committing
 - Run the supplied manual read-only automation
 - **Deliverable:** A tested change, independent critique, pull-request readiness
@@ -724,7 +724,7 @@ to invoke it by name in Copilot Chat, cloud agent, and CLI.
 - Repository, organization, and enterprise-level agents
 - Creating agents for specific domains: test-writer, readme-creator, security-reviewer
 - Agent tool configuration: which tools and MCP servers each agent can use
-- CLI LSP setup, server-start checks, and inspected definition/reference operations
+- CLI LSP setup, checking server startup, and inspecting definitions and references
 - Invoking custom agents: Chat, cloud agent, CLI
 - Comparison: custom agents vs. MCP servers vs. custom instructions: when to use each
 - Demo: build a custom agent and assign it work
@@ -737,7 +737,7 @@ to invoke it by name in Copilot Chat, cloud agent, and CLI.
 - Check the learner's local profile with the same contract
 - Load it through CLI `/agent` and request behavior that would require a source edit
 - Check that the test-only agent stops without changing production code
-- **Deliverable:** The tightened profile, contract results, and actual LSP/live-run record
+- **Deliverable:** The tightened profile, contract results, and records of the LSP lookup and live agent run
 
 **Expected Learning Outcomes:**
 
@@ -768,8 +768,7 @@ decisions to `/plan`.
 **Trainer Content Outline (1 hour):**
 
 - How skill instructions and supporting files guide Copilot
-- Skills specification: `.github/skills/` for versioned team delivery
-- Project-shared skills: `.github/skills/`: versioned team guidance
+- Project-shared skills: `.github/skills/` for versioned team guidance
 - Skill anatomy: SKILL.md format, when skills are loaded, confidence levels
 - Creating skills for common workflows: deployment, testing, code review
 - Community ecosystem: `github/awesome-copilot`, `anthropics/skills`
@@ -777,7 +776,7 @@ decisions to `/plan`.
 - Demo: create a skill, observe behavior change, share it
 - Combine agents, skills, and MCP in one workflow
 - Interview first in Interactive mode; start planning from accepted decisions
-- Scoped `/chronicle improve`: inspect friction and cancel before applying suggestions
+- `/chronicle improve`: select sessions, inspect repeated problems, and cancel before applying suggestions
 
 **Lab Outline (2 hours):**
 
@@ -852,7 +851,7 @@ repair, and custom-action checks. The required lab runs locally and does not dep
 
 **Description:**
 Build and connect one modular Terraform architecture with Copilot. Validate it
-locally, then repair a configuration that fails a deterministic security gate.
+locally, then repair a configuration that fails the security check.
 Keep Bicep as a short trainer comparison and optional extension.
 
 **Trainer Content Outline (1 hour):**
@@ -861,7 +860,7 @@ Keep Bicep as a short trainer comparison and optional extension.
 - Separate root inputs, module inputs, and narrow outputs.
 - Generate and review network, compute, and database modules.
 - Run formatting, initialization, and validation in order.
-- Investigate one intentional security-gate failure.
+- Investigate one intentional security-check failure.
 - Explain what local checks prove and what still needs a reviewed plan.
 - Compare the equivalent Bicep structure without creating a second required build.
 
@@ -870,7 +869,7 @@ Keep Bicep as a short trainer comparison and optional extension.
 - Inspect the supplied architecture and module contracts.
 - Build and connect the Terraform modules.
 - Run `terraform fmt`, `terraform init -backend=false`, and `terraform validate`.
-- Reproduce and investigate the supplied security-gate failure.
+- Reproduce and investigate the supplied security-check failure.
 - Repair the security case and save the passing check output.
 - **Deliverable:** Validated Terraform modules, a repaired security case, and command output.
 
@@ -939,7 +938,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 
 - When multi-agent orchestration is warranted, and when it is not
 - Squad as a community-tool example, with a vendor-neutral orchestration model
-- Team composition: casting agents, assigning roles, defining charters
+- Team composition: choosing agents, assigning roles, defining charters
 - The coordinator pattern: routing work to the right agent
 - Shared memory: decisions, history, skills, orchestration logs
 - Ralph: the work monitor: continuous development loops
@@ -947,7 +946,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 - MCP integration with Squad: extending agent capabilities
 - Demo: initialize a Squad team, assign work, observe agent collaboration
 - Advanced patterns: reviewer gates, parallel fan-out, worktree management
-- When Squad adds value vs. when individual agents suffice
+- When to use Squad rather than individual agents
 
 **Lab Outline (2 hours):**
 
@@ -957,7 +956,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 - Let the backend implement the change and the tester add and run tests
 - Have the lead review the result and the scribe record the decision
 - Inspect Ralph's monitoring output after review; backlog implementation is optional
-- **Deliverable:** One packet with the team structure, assignment, code and tests,
+- **Deliverable:** The team structure, assignment, code and tests,
   passing `npm test` output, lead review, and committed decision record
 
 **Expected Learning Outcomes:**
@@ -978,7 +977,7 @@ An optional advanced session on the [Brady's Squad](https://github.com/bradygast
 **Duration:** 3 hours 30 minutes
 
 **Description:**
-Uses Spec Kit to implement one feature from a source request. Trainees convert tasks into GitHub Issues, implement in stages, run convergence checks, then update the specification to add restore behavior.
+Use Spec Kit to implement one feature from a source request. Trainees convert tasks into GitHub Issues, implement in stages, run convergence checks, then update the specification to add restore behavior.
 
 **Trainer Content Outline (1 hour):**
 
@@ -988,7 +987,7 @@ Uses Spec Kit to implement one feature from a source request. Trainees convert t
 - The difference between behavior in `spec.md` and technical choices in `plan.md`
 - How analysis and convergence expose gaps
 - Task-to-issue conversion and staged implementation
-- Living-spec evolution and approved installation paths
+- Updating the specification and using installation methods approved by the organization
 
 **Lab Outline (2 hours 30 minutes):**
 
@@ -1007,7 +1006,7 @@ Uses Spec Kit to implement one feature from a source request. Trainees convert t
 - Produce requirements, design artifacts, and tasks that trace to tests
 - Use task-to-issue conversion and scoped implementation runs
 - Use analysis before implementation and repeat the implement/converge loop
-- Evolve a living specification without leaving downstream artifacts behind
+- Update the specification and keep the plan, tasks, code, and tests aligned
 
 ---
 
@@ -1044,9 +1043,9 @@ Research, Plan, Implement, Review, and Follow-up. A person makes the delivery de
 
 - Explain how HVE components and tracking artifacts support RPI handoffs
 - Run and inspect each direct RPI phase
-- Prove that repository customizations changed a later phase
+- Show how repository customizations changed a later phase
 - Feed product and Agile decisions back into the implementation plan
-- Use Follow-up to route defects or missing check results without expanding scope
+- Use Follow-up to assign defects or missing checks without expanding scope
 - Support a human approval, change request, or pause decision
 
 ---
@@ -1251,7 +1250,7 @@ local Session M2-05 code and a synthetic PR snapshot, without GitHub MCP.
 **Trainer Content Outline (1 hour):**
 
 - Parent objectives and independent workstreams
-- Input paths, independent questions, stop conditions, and reviewers
+- Input files, independent questions, stop conditions, and reviewers
 - Monitoring, redirecting, and stopping sessions
 - Reviewing the parent result against live issues
 - Developer route: reconcile local test success with a blocked PR snapshot
@@ -1306,7 +1305,7 @@ Boards remains authoritative.
 - **Recommended delivery schedules:**
   - Standard: 1 to 2 sessions/day across 15 days, with up to 7 teaching hours per day before breaks
   - Extended: 1 session/day across 29 days
-- **Group size:** 8 to 15 trainees per cohort for optimal lab support
+- **Group size:** 8 to 15 trainees per cohort to support learners during labs
 - **Module independence:**
   - Modules 1 to 3 form the technical core
   - Module 4 (DevOps) can be delivered independently after Module 1 and Sessions M2-01 to M2-02
@@ -1320,4 +1319,4 @@ Boards remains authoritative.
     after Sessions M3-03 to M3-04
   - Module 7 is a standalone role-based path and does not require programming experience
 - **Trainer prep time:** Allocate 2 hours prep per session for first-time delivery
-- **Feature status notes:** Sessions covering Preview features (Copilot Memory, third-party agents) should include availability disclaimers and be updated as features reach GA.
+- **Feature status notes:** Check availability for Preview features (Copilot Memory, third-party agents). Update those sessions as features reach GA.

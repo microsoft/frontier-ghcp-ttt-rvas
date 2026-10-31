@@ -19,7 +19,7 @@ required learner deliverable.
 - Generate Terraform modules from fixed architecture constraints.
 - Connect module inputs and outputs without copying values between layers.
 - Run formatting, initialization, validation, and a local security gate in order.
-- Explain what local validation proves and what still needs a reviewed plan.
+- Explain what local validation checks and what still needs a reviewed plan.
 - Review the equivalent Bicep structure without requiring a second implementation.
 
 ## Required access

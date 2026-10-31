@@ -50,10 +50,10 @@ Copilot already holds that state.
 
 | Workstream | Question | Approved input | Stop condition | Reviewer |
 | --- | --- | --- | --- | --- |
-| Public mapping | Is the public mapping ready for approval? | Mapping issue and linked evidence | Restricted data or invented states are required | Product owner |
-| Requester status | Is the issue ready for implementation review? | Requester-status issue and linked evidence | An unsupported field or forecast is required | Delivery reviewer |
-| Empty and stale states | Are fallback states testable? | Fallback-state issue and linked evidence | An unsupported commitment is required | Service reviewer |
-| Access boundary | Is requester access evidence ready? | Access issue and linked synthetic evidence | Production or personal data is requested | Privacy reviewer |
+| Public mapping | Is the public mapping ready for approval? | Mapping issue and linked sources | Restricted data or invented states are required | Product owner |
+| Requester status | Is the issue ready for implementation review? | Requester-status issue and linked sources | An unsupported field or forecast is required | Delivery reviewer |
+| Empty and stale states | Are fallback states testable? | Fallback-state issue and linked sources | An unsupported commitment is required | Service reviewer |
+| Access boundary | Are requester-access results ready for review? | Access issue and linked synthetic results | Production or personal data is requested | Privacy reviewer |
 
 ## Monitor the live work
 

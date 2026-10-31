@@ -4,7 +4,7 @@ description: "Trainer guide for HVE Core RPI, customization, and product deliver
 
 # Session M5-03 trainer guide: HVE from product intent to reviewed code
 
-## Delivery objective
+## Teaching goal
 
 Use the API challenge to teach learners how HVE works. Assess how they move from
 product intent to reviewed code, using HVE agents, prompts, instructions, and
@@ -15,12 +15,12 @@ saved tracking artifacts.
 Model response time and audience questions will change the pace. Use ranges rather
 than fixed clock slots, and shorten demonstrations before cutting artifact review.
 
-| Segment | Indicative range | Exit signal |
+| Segment | Indicative range | What learners should show |
 |---------|------------------|-------------|
 | What HVE is and why it exists | 5 to 10 min | Learners can distinguish agents, prompts, instructions, and tracking artifacts |
 | Direct RPI phases and their handoffs | 15 to 20 min | Each phase has an owner, artifact, and gate |
 | Combined `/rpi`, Follow-up, and checkpoints | 5 to 10 min | Learners can choose direct prompts or combined mode |
-| Additive instructions and custom agents | 8 to 12 min | Learners can explain activation evidence |
+| Additive instructions and custom agents | 8 to 12 min | Learners can explain how instructions or a custom agent changed the work |
 | Product and Agile agent flow | 8 to 12 min | Learners can place Advisor, Coach, BRD, and PRD before RPI |
 | Challenge gates, recovery, and scoring | 4 to 6 min | Learners know what completion requires |
 
@@ -37,7 +37,7 @@ substitute generic agent mode for an HVE phase.
 Keep these items ready:
 
 * A clean copy of the starter
-* Completed reference RPI, product, and Agile evidence
+* Completed reference RPI artifacts and product and Agile outputs
 * A captured test output and container-build result
 * A trainer-provided artifact for each RPI phase in case one invocation fails
 
@@ -70,10 +70,10 @@ Use the starter product intent and show the first two phases live:
 
 Pause on the artifacts, not the chat narration. Show what each phase owns:
 
-| Phase | Question | Evidence |
+| Phase | Question | Output |
 |-------|----------|----------|
-| Research | What is true, constrained, and uncertain? | Research findings and alternatives |
-| Plan | What will change, in what order, and how will we disprove mistakes? | Plan and critique |
+| Research | What do we know, what limits apply, and what is uncertain? | Research findings and alternatives |
+| Plan | What will change, in what order, and which checks will catch mistakes? | Plan and critique |
 | Implement | Did the changes follow the approved plan? | Code, tests, and changes log |
 | Review | Does the result satisfy the request and quality bar? | Findings, criterion verdicts, decision |
 
@@ -139,7 +139,7 @@ Use short questions that force a decision:
 * Which file controls the behavior you need to change?
 * Which HVE phase owns that decision?
 * What check could disprove your current plan fastest?
-* Which acceptance criterion lacks test evidence?
+* Which acceptance criterion lacks test results?
 * Does the image build test the exact source copied into the runtime stage?
 * Did an instruction change the review, or did you only create the file?
 * Did Product Manager Advisor or Agile Coach change the plan?
@@ -153,7 +153,7 @@ when an HVE artifact cites it. Grade the handoff for its artifact index and fina
 decision. It should not duplicate the phase records.
 
 Require a human decision at the end: approve, request changes, or pause. Missing
-evidence should reduce the score even when the endpoint appears to work. One
+artifacts or results should reduce the score even when the endpoint appears to work. One
 trainer-provided recovery artifact can keep the lab moving, but it earns no
 execution credit for the replaced phase. Do not infer a pass from the handoff alone.
 

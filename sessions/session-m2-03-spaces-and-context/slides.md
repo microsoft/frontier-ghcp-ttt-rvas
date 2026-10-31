@@ -151,7 +151,7 @@ Space: Storefront API
 ```
 
 Exclude unrelated services, production data, secrets, abandoned proposals, and
-documents with no accountable owner.
+documents with no owner to keep them current.
 
 **Trainer cue:** Ask learners what they would remove first if the answer became noisy.
 
@@ -347,7 +347,7 @@ and the checks you ran.
 2. Select Space sources for a named purpose and audience.
 3. Instructions state project-wide rules; prompt files define reusable tasks.
 4. Memory requires source, scope, freshness, and current policy checks.
-5. Every context source needs an owner and maintenance path.
+5. Name who will keep each context source current.
 
 ---
 

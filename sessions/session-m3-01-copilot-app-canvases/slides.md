@@ -15,7 +15,7 @@ footer: 'Session M3-01: Copilot App & Canvases'
 
 Build one delivery-readiness canvas in the Copilot app.
 
-Record these in the demo:
+Record:
 
 - the approved contract;
 - one direct update;
@@ -37,7 +37,7 @@ unavailable, use user scope. Do not install a replacement or
 move data to an unapproved surface.
 
 ---
-# Pick the smallest fit
+# Choose the right customization
 
 | Need | Use |
 | --- | --- |
