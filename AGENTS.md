@@ -5,18 +5,17 @@
 ### Writing gate
 
 Before drafting, editing, or returning repository prose, invoke
-`/humanize-writing`. This includes technical documentation, session kits,
+`/humanize-content`. This includes technical documentation, session kits,
 runbooks, Markdown, slide content, and user-facing explanations.
 
 In this repository, use the skill to simplify wording and remove AI-patterns from
-technical content. Its general technical-writing exclusion does not apply here.
+technical content.
 
 Use the `clear-thinker` voice unless the user requests another voice.
 
 Before finishing, complete both checks:
 1. Apply the prose simplification rules in this file.
-2. Apply the `/humanize-writing` AI-pattern dictionary and revise the draft until
-   it passes.
+2. Apply the `/humanize-content` prose checks and revise the draft until it passes.
 
 ### Default writing style
 
@@ -148,6 +147,6 @@ For each sentence ask:
 
 Rewrite or delete sentences that fail this test.
 
-Then apply the `/humanize-writing` AI-pattern dictionary.
+Then apply the `/humanize-content` prose checks.
 
 Preserve technical facts, Microsoft product names, dates, citations, and governance terminology exactly.
