@@ -23,8 +23,7 @@ review small.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use only the
-supplied synthetic data.
+Use only the supplied synthetic data.
 
 You need:
 

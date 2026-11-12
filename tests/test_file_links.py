@@ -22,8 +22,8 @@ class FileLinkTests(unittest.TestCase):
             )
         )
         site_files = {
-            "sessions/learning-safety-baseline.md": SimpleNamespace(
-                url="sessions/learning-safety-baseline/",
+            "sessions/glossary.md": SimpleNamespace(
+                url="sessions/glossary/",
                 inclusion=SimpleNamespace(is_excluded=lambda: False),
             ),
         }
@@ -54,15 +54,15 @@ class FileLinkTests(unittest.TestCase):
             )
         )
         result = FILE_LINKS.on_page_markdown(
-            "Read `../../learning-safety-baseline.md`.\n",
+            "Read `../../glossary.md`.\n",
             page,
             self.config,
             self.files,
         )
         self.assertEqual(
             result,
-            "Read [`../../learning-safety-baseline.md`]"
-            "(../../../sessions/learning-safety-baseline/).\n",
+            "Read [`../../glossary.md`]"
+            "(../../../sessions/glossary/).\n",
         )
 
     def test_rewrites_explicit_asset_file_and_directory_links(self):

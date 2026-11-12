@@ -25,8 +25,7 @@ compare your own review with Copilot-assisted review.
 
 ## Access and cost preflight
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Before the
-lab, check the repository, synthetic data, reviewer, test command, and any usage
+Before the lab, check the repository, synthetic data, reviewer, test command, and any usage
 limit.
 
 Before you start, record these decisions in your notes:

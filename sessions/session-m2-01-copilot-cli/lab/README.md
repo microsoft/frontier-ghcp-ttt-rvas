@@ -23,7 +23,7 @@ project.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Check that you may use the [Copilot CLI](https://docs.github.com/en/copilot/get-started/cli-quickstart), its authentication method, and terminal access.
+Check that you may use the [Copilot CLI](https://docs.github.com/en/copilot/get-started/cli-quickstart), its authentication method, and terminal access.
 
 ### Required access
 

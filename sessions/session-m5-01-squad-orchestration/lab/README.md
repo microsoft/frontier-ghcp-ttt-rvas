@@ -11,8 +11,7 @@ implementation, tests, review, and a committed decision record
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use synthetic
-data only.
+Use synthetic data only.
 
 Check GitHub Copilot access, Squad, the GitHub training
 repository, integrations, and the usage limit. If any requirement is

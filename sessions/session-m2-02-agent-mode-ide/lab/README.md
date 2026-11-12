@@ -20,7 +20,7 @@ requirement changes. Finish with an accept, revise, or stop decision.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use a disposable workspace and synthetic data.
+Use a disposable workspace and synthetic data.
 
 You need:
 

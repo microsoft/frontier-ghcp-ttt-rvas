@@ -23,8 +23,7 @@ problem, tighten the profile, and rerun the same checks.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use the
-synthetic JavaScript project only.
+Use the synthetic JavaScript project only.
 
 You need Node.js 22.22.2 or later, Git, a writable repository copy, standalone Copilot
 CLI custom-agent support, and the JavaScript language server described in

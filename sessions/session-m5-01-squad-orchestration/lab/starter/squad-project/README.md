@@ -7,8 +7,7 @@ the baseline route and tests. It does not contain the validation result.
 
 ## Access and cost preflight
 
-Follow the [course safety baseline](../../../../learning-safety-baseline.md). Set a
-usage limit if the work is metered.
+Set a usage limit if the work is metered.
 
 GitHub Copilot and Squad are required for the lab. If either is unavailable, stop
 the lab.

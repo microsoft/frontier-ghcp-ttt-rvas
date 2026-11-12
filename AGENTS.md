@@ -104,10 +104,6 @@ instead of "evidence" when one of those is what you mean.
 Use one checking verb. Prefer **check**. Use **verify** or **confirm** only when
 they describe a different action.
 
-Session files should link to `sessions/learning-safety-baseline.md` instead of
-copying its policy text. Add session-specific rules only when that session needs
-them.
-
 Before finishing curriculum prose, search the changed text for these words:
 `approved`, `applicable`, `bounded`, `durable`, `evidence`, `explicit`, `verify`,
 and `confirm`. Keep each use only when a simpler, more concrete phrase would lose

@@ -20,7 +20,7 @@ levels. Store reusable prompt files beside the project.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use only the synthetic Storefront API files supplied with this lab.
+Use only the synthetic Storefront API files supplied with this lab.
 
 You need:
 

@@ -24,8 +24,7 @@ procedure handles that work. Check that missing preconditions stop the run.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use the
-synthetic repository sandbox.
+Use the synthetic repository sandbox.
 
 You need Node.js 22 or later, a writable training workspace, and the standalone
 Copilot CLI from Session M2-01. Check `/skills`, `/plan`, and loading of project

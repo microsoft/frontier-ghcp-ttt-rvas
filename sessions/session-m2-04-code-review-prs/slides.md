@@ -15,8 +15,6 @@ footer: 'Session M2-04: Code Review'
 
 # Access and cost preflight
 
-Follow the course safety baseline.
-
 1. Check the current GitHub docs and your organization's rules.
 2. Check the repository, data, and review permissions.
 3. Use a small pull request with clear acceptance criteria.

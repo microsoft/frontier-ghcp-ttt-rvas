@@ -20,7 +20,7 @@ intentional security failure.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). You must have GitHub Copilot access, Terraform 1.5 or later, and the approved provider source.
+You must have GitHub Copilot access, Terraform 1.5 or later, and the approved provider source.
 This lab does not need a cloud account, credentials, state backend, plan, or apply.
 
 If GitHub Copilot access or the approved provider source is unavailable, stop and

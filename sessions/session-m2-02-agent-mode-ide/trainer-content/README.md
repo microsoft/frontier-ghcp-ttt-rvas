@@ -2,8 +2,7 @@
 
 ## Before teaching
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Before the
-demo, check the current GitHub docs and your organization's rules. Editor modes,
+Before the demo, check the current GitHub docs and your organization's rules. Editor modes,
 permissions, and model choices can change.
 
 ### Access and cost preflight

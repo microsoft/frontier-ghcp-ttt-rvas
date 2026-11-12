@@ -4,8 +4,7 @@
 
 ## Access and cost preflight
 
-Follow the [course safety baseline](../../../../learning-safety-baseline.md). Set a
-usage limit if the demonstration is metered.
+Set a usage limit if the demonstration is metered.
 
 GitHub pull-request and Copilot review access are required for the lab. Use this
 scenario for the planned conflict-resolution exercise.

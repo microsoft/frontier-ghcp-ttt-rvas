@@ -27,8 +27,7 @@ to handle invalid priority input.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Use synthetic
-data in a writable training copy.
+Use synthetic data in a writable training copy.
 
 Check GitHub Copilot Chat and inline suggestions in your editor. Also start the
 standalone `copilot` CLI and check `/refine` in `/help`. **If a required surface or

@@ -19,7 +19,7 @@ You will use the same application for every part of the lab.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). You must have GitHub Copilot access in the selected coding environment and Node.js 20 or later.
+You must have GitHub Copilot access in the selected coding environment and Node.js 20 or later.
 
 GitHub repository access is optional. Do not push, run Actions, install an external
 action, or use a deployment target unless the instructor permits it.

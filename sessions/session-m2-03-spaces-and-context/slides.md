@@ -15,8 +15,6 @@ footer: 'Session M2-03: Context Workflows'
 
 # Access and cost preflight
 
-Follow the course safety baseline.
-
 1. Check the current GitHub docs and your organization's rules.
 2. Check the repository and data sources.
 3. Use a small question and synthetic data.

@@ -20,7 +20,7 @@ improve feedback speed without removing checks.
 
 ## Before you start
 
-Read the [course safety baseline](../../learning-safety-baseline.md). You must have GitHub Copilot access and Node.js 20.x. Use only the supplied application, logs,
+You must have GitHub Copilot access and Node.js 20.x. Use only the supplied application, logs,
 and workflow files.
 
 Remote workflow runs and security products are optional. Use them only when the

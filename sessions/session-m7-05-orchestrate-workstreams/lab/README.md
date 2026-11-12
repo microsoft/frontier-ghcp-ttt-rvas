@@ -17,8 +17,7 @@ live child sessions
 
 ## Choose one route
 
-Read the [course safety baseline](../../learning-safety-baseline.md). Both routes
-require the app's built-in `/orchestrate` skill and live child sessions.
+Both routes require the app's built-in `/orchestrate` skill and live child sessions.
 **Stop if orchestration access is unavailable.** Separate prompts and prepared
 answers do not complete the lab.
 

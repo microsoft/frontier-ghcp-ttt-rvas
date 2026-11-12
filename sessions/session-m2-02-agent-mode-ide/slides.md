@@ -15,8 +15,6 @@ footer: 'Session M2-02: IDE Agent Workflows'
 
 # Access and cost preflight
 
-Follow the course safety baseline.
-
 1. Check the current GitHub docs and your organization's rules.
 2. Check the repository, data, and tools.
 3. Use a small task with tests.
