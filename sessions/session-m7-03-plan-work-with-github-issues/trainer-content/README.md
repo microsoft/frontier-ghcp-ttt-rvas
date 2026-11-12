@@ -130,10 +130,10 @@ those issues directly.
 | Tool output claims success without a returned issue | Run a fresh repository read |
 | No GitHub tools listed | Check **Customize** → **MCP** → **Installed**; restart the session |
 | Read works, write fails | The account lacks issue-write access. Get access or stop |
-| Write rejected on labels, milestone, or sub-issue link | Check the name exists and the relationship method is supported |
+| Write rejected on labels, milestone, or sub-issue link | Check the name exists. Sub-issue links use the `sub_issue_write` tool (add, remove, reprioritize); check that your toolset lists it |
 
 ## References
 
-- [About the GitHub MCP server](https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp/about-mcp)
-- [Using the GitHub MCP server](https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp/using-the-github-mcp-server)
+- [About Model Context Protocol (MCP)](https://docs.github.com/en/copilot/concepts/customizations/mcp)
+- [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)
 - [Planning a project with GitHub Copilot](https://docs.github.com/en/copilot/tutorials/plan-a-project)

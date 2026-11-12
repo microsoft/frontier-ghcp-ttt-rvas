@@ -21,7 +21,7 @@ provider "aws" {
   skip_region_validation      = true
 }
 
-# Copilot writes ./modules/baseline in Part 3 of the lab.
+# Copilot writes ./modules/baseline in Part 2 of the lab.
 module "baseline" {
   source = "./modules/baseline"
 

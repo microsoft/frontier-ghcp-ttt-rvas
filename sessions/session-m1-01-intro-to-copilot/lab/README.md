@@ -9,7 +9,7 @@ your notes in `lab-notes.md`
 
 You complete one Python utility module in stages. The tests define the expected
 behavior. Inspect each suggestion, settle one ambiguous word-parsing rule, then
-review a parameter rename as a separate change. Use synthetic data only.
+rename a parameter. Use synthetic data only.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -95,17 +95,14 @@ python -m unittest -v test_utils.UtilityTests.test_profile_summary
 Open `change-request.md` and rename the first parameter from `username` to
 `handle`.
 
-If Next Edit Suggestions are available, review each predicted change on its own.
-It can miss a caller, so search after the rename:
+If Next Edit Suggestions are available, review each proposed change. Then search
+for the old name and run the test again:
 
 ```bash
 grep -R --include='*.py' "username" .
 ```
 
-The search should find no stale parameter or caller. Run the focused test again.
-
-**Checkpoint:** The rename changed the parameter and caller, and the output is
-the same.
+**Checkpoint:** The search finds no stale `username`, and the test passes.
 
 ## Part 5: Review the diff (15 minutes)
 

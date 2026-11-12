@@ -25,7 +25,7 @@ database, cloud service, or production data.
 - capture pricing rules in shared contract fixtures;
 - migrate one vertical slice to a .NET 10 Minimal API and keep rounding, validation, shipping, discount, and tax behavior;
 - compare Java and .NET results with repeatable tests;
-- write a migration backlog instead of a full rewrite.
+- list the next slices instead of planning a full rewrite.
 
 ## Scenario
 
@@ -47,7 +47,7 @@ record them as backlog items.
 | Block | Duration | Work |
 | --- | --- | --- |
 | Trainer content | 1 hour | Migration boundaries, behavior capture, contract tests, .NET mapping, and prepared demo |
-| Lab | 2 hours | Inspect the Java service, implement the .NET slice, prove parity, and write the next backlog |
+| Lab | 2 hours | Inspect the Java service, implement the .NET slice, and prove parity |
 
 ## Materials
 
@@ -71,7 +71,7 @@ The lab includes a short native setup route for learners who can't use the conta
 
 **In scope:** local HTTP services, synthetic JSON, behavior extraction, one pricing
 endpoint with validation, calculation, and response handling, package-free .NET
-contract tests, and a migration backlog.
+contract tests, and a short list of next slices.
 
 **Out of scope:** databases, messaging, authentication, cloud hosting, a
 whole-service rewrite, and production performance claims.

@@ -27,7 +27,8 @@ project, and permission to create a branch or working copy for the brief.
 
 ## Part 1: Check the app, context, and project (15 minutes)
 
-1. Open the training repository under **Projects**.
+1. Open the training repository from the sidebar. Repositories are listed under
+   **Sessions**; a **Project** can also include them.
 2. Start an interactive session.
 3. Select **Interactive** mode. Type `@` and add
    `lab/starter/initiative-overview.md`.

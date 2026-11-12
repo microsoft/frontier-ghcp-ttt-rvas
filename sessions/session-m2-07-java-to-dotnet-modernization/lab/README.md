@@ -3,7 +3,7 @@
 **Duration:** 2 hours
 
 **Deliverable:** A working .NET 10 order-pricing endpoint, shared contract-test
-output, architecture notes, an HTTP parity check, and a migration backlog
+output, and an HTTP parity check. Short migration notes are optional.
 
 ## Lab outcome
 
@@ -16,11 +16,11 @@ Keep the scope narrow. Don't migrate the health or sample-order routes.
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Run the Java baseline | 15 min |
-| 2 | Extract behavior and architecture | 20 min |
+| 2 | Extract behavior and architecture | 15 min |
 | 3 | Review the shared contract | 15 min |
-| 4 | Implement the .NET pricing slice | 35 min |
+| 4 | Implement the .NET pricing slice | 40 min |
 | 5 | Add and run contract tests | 20 min |
-| 6 | Compare HTTP behavior and write the backlog | 15 min |
+| 6 | Compare HTTP behavior | 15 min |
 
 ## You need
 
@@ -133,11 +133,10 @@ Invoke-RestMethod -Method Post `
 
 **Checkpoint:** The Java tests pass and the service returns the expected pricing fields.
 
-## Part 2: Extract behavior and architecture (20 minutes)
+## Part 2: Extract behavior and architecture (15 minutes)
 
-```bash
-cp architecture-notes-template.md architecture-notes.md
-```
+Optional: `cp architecture-notes-template.md migration-notes.md` and use it for
+the tables below.
 
 Read the Java files in this order:
 
@@ -156,8 +155,8 @@ point, JSON parsing, validation, pricing calculation, response mapping, and test
 evidence. Cite file and symbol names. Do not propose .NET code and do not edit.
 ```
 
-Check every row against the files before using it. Complete the request path and
-pricing-rule tables in `architecture-notes.md`.
+Check every row against the files before using it. If you keep notes, fill in
+the request path and pricing-rule tables.
 
 Record these behaviors:
 
@@ -170,8 +169,8 @@ Record these behaviors:
 - invalid input behavior;
 - overflow handling.
 
-Then list Java details that don't need to survive: `HttpHandler` classes, getter
-methods, the hand-written JSON codec, and the package and file layout.
+Java details such as `HttpHandler` classes, getters, the hand-written JSON codec,
+and the package layout don't need to survive.
 
 ### Review point 1
 
@@ -202,13 +201,12 @@ tax = round(86 × 8.25%) = 7
 total = 86 + 795 + 7 = 888
 ```
 
-Add a row to `architecture-notes.md` for behavior no successful fixture covers, such
-as an invalid tier, empty items, or an unsupported coupon. Don't change the shared
-fixture yet.
+Note any behavior no successful fixture covers, such as an invalid tier, empty
+items, or an unsupported coupon. Don't change the shared fixture yet.
 
 ### Review point 2
 
-Before coding, your notes should let a partner answer:
+Before coding, you should be able to tell a partner:
 
 - Why is the coupon based on `after tier`?
 - Why does the free-shipping check use discounted merchandise?
@@ -340,7 +338,7 @@ Both should report five passing cases.
 **Checkpoint:** The Java baseline and .NET replacement read the same fixture file
 and agree on every response field.
 
-## Part 6: Compare HTTP behavior and write the backlog (15 minutes)
+## Part 6: Compare HTTP behavior (15 minutes)
 
 Keep the Java service on port 8080. Start the .NET API on port 5080:
 
@@ -375,37 +373,18 @@ curl -i -X POST http://localhost:5080/orders/price \
 
 Expect an HTTP 400 response with a clear error.
 
-Copy the backlog template:
-
-```bash
-cd ~/copilot-labs/session-m2-07
-cp migration-backlog-template.md migration-backlog.md
-```
-
-Complete at least four small rows. Each states the current Java entry point, the
-proposed .NET boundary, the checks required before cutover, and one risk or
-dependency. Include the sample-order query, health and diagnostics, error-contract
-coverage, and one operational concern such as concurrency or observability.
-
-Under **Keep in Java for now**, list behavior you haven't traced and checked.
-
-Under **Remove only after**, require:
-
-- contract-test results;
-- HTTP comparison;
-- code review;
-- deployment and rollback ownership;
-- a plan for moving callers to the new route.
+**Optional next slices.** In `migration-notes.md`, list up to three slices to
+migrate next, such as the sample-order query, health, or error responses. For
+each, name the Java entry point and the check needed before the Java code goes
+away. Everything you haven't traced stays in Java.
 
 ## Final deliverable
 
-1. `architecture-notes.md` with the request path and pricing rules.
-2. The completed .NET 10 `PricingEngine`.
-3. A package-free .NET contract test executable.
-4. Java and .NET output showing five shared cases passed.
-5. One matching Java and .NET HTTP response, and one .NET HTTP 400 validation example.
-6. `migration-backlog.md` with at least four next slices and removal conditions.
-7. A short note listing any Copilot suggestion you rejected.
+1. The completed .NET 10 `PricingEngine`.
+2. A package-free .NET contract test executable.
+3. Java and .NET output showing five shared cases passed.
+4. One matching Java and .NET HTTP response, and one .NET HTTP 400 validation example.
+5. Optional: `migration-notes.md` and a line on any Copilot suggestion you rejected.
 
 ## Troubleshooting
 

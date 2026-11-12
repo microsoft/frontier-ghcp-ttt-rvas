@@ -124,7 +124,7 @@ Type `/` in the app for the current list. The ones this session uses:
 | `/pr-open`, `/pr-fix-checks`, `/pr-resolve-comments`, `/pr-merge` | PR steps, each needing an open PR or changes |
 | `/terminal`, `/sandbox`, `/rename` | Terminal, sandbox, naming |
 
-Anything the docs don't list or that your picker lacks: **check `/help` in your version**.
+Anything the docs don't list or that your picker lacks: **type `/` and check your version's list**.
 
 **Handing off work.** Pick by what you need:
 

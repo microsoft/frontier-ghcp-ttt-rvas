@@ -23,7 +23,7 @@ Custom agents define narrow roles in Markdown that teams can review. Start with 
 
 ## You need
 
-Node.js 22.22.2 or later, Git, the standalone Copilot CLI with custom-agent support, and and, for the optional stretch, a working JavaScript language server ([setup](lab/lsp-setup.md)).
+Node.js 22.22.2 or later, Git, the standalone Copilot CLI with custom-agent support, and, for the optional stretch, a working JavaScript language server ([setup](lab/lsp-setup.md)).
 
 | Resource | Location |
 | --- | --- |

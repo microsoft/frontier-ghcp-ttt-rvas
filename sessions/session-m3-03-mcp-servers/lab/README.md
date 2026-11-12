@@ -49,7 +49,7 @@ Add the Microsoft Learn MCP server. It is remote (HTTP) and needs no sign-in. Ch
 copilot mcp add --transport http microsoft-learn https://learn.microsoft.com/api/mcp
 ```
 
-You can do the same inside Copilot with `/mcp add`. It opens a form with name, type (STDIO or HTTP), command or URL, and **Tools**.
+You can do the same inside Copilot with `/mcp add`. It opens a form with name, type (STDIO, HTTP, or SSE), command or URL, and **Tools**. Press Ctrl+S to save. The server is available without a restart.
 
 Open `~/.copilot/mcp-config.json`. Find the new entry. Compare it with [`starter/mcp-config/mcp-config.example.json`](starter/mcp-config/mcp-config.example.json).
 
@@ -111,7 +111,7 @@ Add `convert_temperature` to `src/index.js`. It takes `value` (number) and `from
 
 Add two tests. Run `npm test`.
 
-Restart Copilot so it reloads the tool list. Ask:
+Restart Copilot so it starts the changed server and reloads the tool list. (`/mcp reload` may also work. Check `/help` in your version.) Ask:
 
 ```text
 It's 30 degrees in Oslo. What is that in Fahrenheit? Use the weather server.

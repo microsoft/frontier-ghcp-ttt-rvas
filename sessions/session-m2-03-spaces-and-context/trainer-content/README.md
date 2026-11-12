@@ -75,7 +75,7 @@ Key points:
 - **Instructions** are short and always on. About a page at most. Skip what the code already shows.
 - `applyTo` takes globs, comma-separated: `**/*.ts,**/*.tsx`. Use it to keep the main file small.
 - The CLI also reads `AGENTS.md` and user-level files in `~/.copilot/`. Don't write conflicting rules in several files. Copilot combines them and defines no precedence.
-- **Prompt files** differ by tool. VS Code, Visual Studio, and JetBrains support them. Check the docs for the CLI.
+- **Prompt files** differ by tool. GitHub lists VS Code, Visual Studio, JetBrains IDEs, and Xcode. The CLI docs don't list them, so check `/help` in your version. VS Code docs now tie prompt files to the Local harness and suggest skills for new work.
 - **Memory** is written by Copilot, not you. Repository facts are shared with people who can use Memory there. User preferences follow you. Show learners where to review and delete.
 - **@-mention** is the cheapest option. It doesn't last past the chat.
 

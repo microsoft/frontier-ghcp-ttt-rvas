@@ -116,7 +116,7 @@ Say what you'd edit by hand. The tool drafts; you own the result.
 
 ## Lab handoff (0:54 to 1:00)
 
-Open `lab/README.md`. Walk through the seven parts. Tell learners to run the baseline first so they can see what the skill changes.
+Open `lab/README.md`. Walk through the eight parts. Tell learners to run the baseline first so they can see what the skill changes.
 
 ## Common mistakes
 

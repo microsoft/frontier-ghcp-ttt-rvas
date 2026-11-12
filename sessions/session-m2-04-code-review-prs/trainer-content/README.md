@@ -3,8 +3,9 @@
 ## Before teaching
 
 Prepare a small synthetic pull request, a reviewer, and a test command. Check that
-CLI `/review` and `/security-review`, Copilot PR review, and a private training
-remote with the baseline `main` branch work before the lab.
+CLI `/review`, `/security-review`, and Copilot PR review work for you. Learners
+create their own empty private repository for the PR step. If they can't, they
+skip that step.
 
 ## Session objective
 
@@ -86,11 +87,28 @@ Open the small synthetic diff. Prepare the human-only review worksheet before op
 | Ready for approval | A human reviewer has checked acceptance criteria and risks. |
 | Ready for merge | Required approvals and repository protections are satisfied. |
 
-Before the assisted prompt, have learners write their initial verdict in
-`lab/starter/partner-review-checklist.md` and their two important findings in
-`lab/starter/fix-evaluation-template.md`, with `Human` as the source. Afterward,
+Before the assisted prompt, have learners write their initial verdict and their
+two important findings in `lab/starter/fix-evaluation-template.md`, with `Human`
+as the source. Afterward,
 they compare missed findings, false positives, and anything that changed the
 final decision.
+
+### What the local commands run
+
+Say this before the demo:
+
+- `/review` and `/security-review` run inside the Copilot CLI session, on the
+  working repository on your machine. They read your staged and unstaged changes
+  before any commit or push. Nothing appears on GitHub.
+- `/review` looks for correctness problems and missing tests.
+  `/security-review` looks only for high-confidence vulnerabilities in that
+  patch. Both only read; they don't edit files.
+- Copilot PR review runs on GitHub against the pushed PR diff. It leaves
+  comments in the PR, some with a suggested fix, and can run automatically.
+  Teammates see it.
+- Use the local commands for a private first pass. Use PR review where the
+  team already reviews. Their findings overlap but differ, so triage both.
+  Neither approves a change.
 
 ### Demonstrate the two local commands
 
@@ -109,7 +127,8 @@ Then run:
 ```
 
 Both commands must see the same staged or unstaged patch. Committing it first
-removes it from the security command's scope. Keep the output even if there are
+leaves nothing for `/review` to examine, and `/security-review` falls back to the
+branch diff. Keep the output even if there are
 no findings. Check `git diff` afterward; review should not change the project.
 
 Use the triage table in `fix-evaluation-template.md`. Each accepted finding needs
@@ -118,9 +137,11 @@ route doesn't execute SQL, and the training strings aren't live credentials, so
 don't teach them as proven exploits. Show the password exposure defect separately
 by inspecting the response.
 
-After the local review, commit and push only the training patch, request
-Copilot PR review, and compare results. Repeat both local commands on the
-uncommitted correction diff before you commit fixes.
+After the local review, have learners stage the patch and ask Copilot to draft
+the commit message and PR description from the diff. They delete any claim the
+diff doesn't show. Then they push, request Copilot PR review, and compare
+results. Repeat both local commands on the uncommitted correction diff before
+they commit fixes.
 
 ## Scripted demo: Suspended invoice viewer (0:28 to 0:43)
 
@@ -259,7 +280,9 @@ automatic review.
 
 ### "Can Copilot approve a PR?"
 
-No. Required reviewers and branch rules still apply.
+Not by default. Copilot reviews don't count toward required approvals unless an
+admin turns on Copilot approvals in the repository, organization, and enterprise
+settings. Required human reviewers and branch rules still apply.
 
 ### "Should we apply every suggested fix?"
 
@@ -283,8 +306,8 @@ diff and command output.
 
 `/review` checks general code issues. `/security-review` targets high-confidence
 vulnerabilities in current changes. It's a focused, read-only check. It doesn't
-replace code scanning, secret scanning, or dependency checks. It's a preview
-feature, so check access before teaching.
+replace code scanning, secret scanning, or dependency checks. Check
+`/help` in your Copilot CLI version before teaching.
 
 ### "Which repositories should enable automatic review?"
 
@@ -307,12 +330,11 @@ Use automation as a first pass. Check its findings against the intended
 behavior, diff, and test output. The reviewer decides.
 
 Open `lab/README.md` and assign author and reviewer roles. Learners use
-`code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`,
-the local review project, and the conflict scenario. The demo worksheet doesn't
-replace the learner pull-request workflow.
+`code-changes.md`, `fix-evaluation-template.md`, the local review project, and
+the conflict scenario. `partner-review-checklist.md` is optional. The demo
+worksheet doesn't replace the learner pull-request workflow.
 
-Make sure the private remote has the baseline branch before learners open a PR,
-and that no learner commits the initial patch before the local reviews.
+Remind learners not to commit the initial patch before the local reviews.
 
 ## Product references
 

@@ -23,9 +23,9 @@ Session M2-07 | Copilot in Practice | Advanced | 3 hours
 | Segment | Time |
 | --- | --- |
 | Define the migration boundary | 8 min |
-| Read the Java request path | 10 min |
-| Extract behavior and contract cases | 12 min |
-| Map the slice to .NET 10 | 12 min |
+| Read the Java request path | 8 min |
+| Extract behavior and contract cases | 10 min |
+| Compare Java and .NET 10 | 16 min |
 | Use Copilot with review gates | 10 min |
 | Prepared demo and lab handoff | 8 min |
 
@@ -214,6 +214,48 @@ The target can be smaller than the source.
 
 ---
 
+# Java and .NET, side by side
+
+| Idea | Java baseline | .NET 10 |
+| --- | --- | --- |
+| Minimal API | `HttpServer`, one `HttpHandler` class per route, body read and written by hand | `app.MapPost(path, lambda)`. The framework binds JSON to a record and injects `PricingEngine`. |
+| Vertical slice | Route, parsing, rules, errors, and test | The same unit moves as a whole |
+| JSONL fixtures | One case per line, read by a hand-written codec | The same file, read with `System.Text.Json` |
+| Basis points | `(amount × bp + 5000) / 10000` | The same integer formula, with checked arithmetic |
+
+---
+
+# Basis points in one example
+
+1 basis point is 0.01%. `SILVER` is 500, `GOLD` is 1000, and tax is 825.
+
+```text
+SILVER on 101 cents: (101 × 500 + 5000) / 10000 = 5
+```
+
+Adding 5000 before dividing by 10000 rounds half up. No floating point.
+
+---
+
+# The test project must copy the fixture
+
+The Java test gets the fixture path from a system property. A .NET executable runs
+from `bin/`, so the file must be copied next to it.
+
+```xml
+<None Include="../../contracts/order-pricing-cases.jsonl"
+      Link="contracts/order-pricing-cases.jsonl"
+      CopyToOutputDirectory="PreserveNewest" />
+```
+
+- `None Include`: a file the compiler ignores but the project tracks
+- `Link`: where it appears under the output folder
+- `CopyToOutputDirectory`: copy it on build
+
+The test reads it from `AppContext.BaseDirectory`.
+
+---
+
 # The Minimal API boundary
 
 ```csharp
@@ -361,7 +403,7 @@ HTTP:  matching field values for one shared request
 
 ---
 
-# Write the next backlog as slices
+# Optional: list the next slices
 
 | Priority | Slice | Checks before removal |
 | --- | --- | --- |
@@ -391,8 +433,7 @@ Native alternative: JDK 17 or 21, .NET 10 SDK, Git, and `curl`.
 
 # Lab handoff
 
-Inspect the Java service, complete architecture notes, implement the .NET pricing
-slice, run shared contract cases, compare HTTP responses, and write the migration
-backlog.
+Inspect the Java service, implement the .NET pricing slice, run shared contract
+cases, and compare HTTP responses. Short migration notes are optional.
 
 **Complete one route and show its test results.**

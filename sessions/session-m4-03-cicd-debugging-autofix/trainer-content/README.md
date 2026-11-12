@@ -87,7 +87,7 @@ Say aloud when Copilot is wrong. If it isn't, ask it to defend the answer agains
 | Explain error | Chat about one failed run | Copilot access |
 | Copilot cloud agent | You assign an issue (or a code scanning alert) to Copilot. It works in a GitHub Actions environment and opens a pull request. | Paid Copilot plan |
 | Copilot Autofix | One suggested fix for a CodeQL alert. You review and apply it. | Public repo, or a private repo with GitHub Code Security. No Copilot subscription. |
-| Agentic autofix (public preview) | Assigning an alert to Copilot runs a cloud agent session that explores, fixes, re-runs CodeQL, and opens a PR. | Cloud agent; uses AI credits |
+| Agentic autofix | Assigning an alert to Copilot runs an agent session that explores, fixes, re-runs CodeQL, and opens a draft PR. Default-branch alerts only. | Enabled for the repository. No Copilot license needed. Uses AI credits and Actions minutes. |
 
 What is **not** a feature: a Copilot that watches your pipeline and fixes it by itself. Learners can build loops with the CLI or a workflow, but that is their own automation. Nothing merges without a human.
 
@@ -122,7 +122,7 @@ What is **not** a feature: a Copilot that watches your pipeline and fixes it by 
 - **Broadening permissions.** `permissions: write-all` fixes a 403 and creates a risk.
 - **Pasting real secrets into a prompt.** Use synthetic values in the lab.
 - **Treating "alert gone" as "fixed".** Read the patch and run the tests.
-- **Expecting agentic autofix on a private repo without Code Security.** It won't be there.
+- **Expecting agentic autofix to be on by default.** A repository admin must enable it, and an organization owner may have to allow it first.
 
 ## Lab handoff (0:58 to 1:00)
 
@@ -142,7 +142,7 @@ Accept a different fix for the matrix case if the learner changes the code to ru
 ## Reference
 
 - [Troubleshooting workflows](https://docs.github.com/en/actions/how-tos/troubleshoot-workflows)
-- [About Copilot Autofix for code scanning](https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/about-autofix-for-codeql-code-scanning)
+- [About autofix for code scanning](https://docs.github.com/en/code-security/concepts/code-scanning/autofix-for-code-scanning)
 - [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
 - [Using workflow run logs](https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs)
 - [`gh run` manual](https://cli.github.com/manual/gh_run)

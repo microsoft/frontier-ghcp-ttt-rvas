@@ -83,7 +83,7 @@ description: Interview a request owner ... Use when ...
 ---
 ```
 
-- `name` is the folder name and the `/` command.
+- `name` is the skill's identifier, usually the folder name. Typing `/name` runs it.
 - **The description triggers the skill.** Copilot compares your request with it.
   It should say when to use the skill and when not to.
 - The body is the method Copilot follows once the skill loads.

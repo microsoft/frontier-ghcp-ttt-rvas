@@ -33,9 +33,11 @@ Keep these apart. You change the second column; you can't change the first.
 | A `telemetry` client option | Endpoint, source name, and `captureContent: false` |
 
 The SDK is `@github/copilot-sdk`, pinned to **1.0.16** in `package.json` and the
-lock file. That is the version this lab was tested with. The latest version when
-this was written was 1.0.31. If you upgrade, check the SDK README for your
-version, because hook and event shapes can change.
+lock file. That is the version this lab was tested with end to end. On 12 November
+2026 the latest version on npm was 1.0.31. The offline build and unit tests also
+pass on 1.0.31 if you add `"types": ["node"]` to `tsconfig.json`; the live demo
+wasn't run on it. If you upgrade, add that line and check the SDK release notes
+for hook and event changes.
 
 ## Glossary
 

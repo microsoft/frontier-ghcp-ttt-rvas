@@ -85,7 +85,7 @@ Reject unknown items or statuses. Require evidence before ready.
 Do not connect external systems.
 ```
 
-Choose **project scope** if you can create files under `.github/extensions`. Otherwise choose **user scope**.
+Choose **project scope** (the docs call it repository scope) if you can create files under `.github/extensions`. Otherwise choose **user scope**.
 
 Find the generated directory (`.github/extensions/<name>/` or `~/.copilot/extensions/<name>/`). Expect a `package.json` and an entry file such as `extension.mjs`, and possibly JSON state. The exact layout can differ, so write down what you see.
 

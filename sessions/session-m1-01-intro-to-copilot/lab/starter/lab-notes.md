@@ -1,9 +1,5 @@
 # Lab notes
 
-## Access path
-
-- [ ] Required Copilot access checked
-
 ## Suggestion decisions
 
 | Function | Accepted, revised, or rejected | Reason |

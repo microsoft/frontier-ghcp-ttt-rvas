@@ -103,7 +103,7 @@ Show `lab/solution/bicep/main.bicep` next to the Terraform module. Map `param` t
 | 1 | CIDR is in `variables.tf`. Inputs come from the module call. Outputs return to the root `outputs.tf`. No secrets, no `apply`. |
 | 3 | `Plan: 9 to add` with the solution. Your count varies with how Copilot splits resources. |
 | 4 | Common catches: bucket settings inline, hardcoded CIDRs, missing tags, old provider pin. |
-| 5 | AWS-0107 on open SSH. AWS-0132 on bucket encryption without a customer-managed key. Fix with `ssh_allowed_cidrs` and `aws_kms_key`. |
+| 5 | AWS-0107 on open SSH. Older Trivy versions also report AWS-0132 on bucket encryption without a customer-managed key. Fix with `ssh_allowed_cidrs` and `aws_kms_key`. |
 | 6 | `az bicep build` passes. Terraform `variable` maps to `param`. No provider block or state in Bicep. |
 
 LOW and MEDIUM findings left in the solution: bucket access logging (AWS-0089) and VPC flow logs (AWS-0178). Use them to discuss accepting a risk versus fixing it.

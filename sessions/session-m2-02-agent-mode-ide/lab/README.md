@@ -132,7 +132,7 @@ Check the new diff. Did it change `validate.js` to reject uppercase tags? That c
 You need the GitHub Pull Requests extension and a GitHub repository you own with the cloud agent enabled. Never use a repository that holds real work or data.
 
 1. Create a private repo and push your project to it.
-2. Put the cursor on the TODO comment. Open the lightbulb (code action) and choose **Delegate to coding agent**.
+2. Put the cursor on the TODO comment. Open the lightbulb (code action) and choose **Delegate to coding agent**. Newer versions may say "cloud agent".
 3. If asked about local changes, push them so the agent starts from your current code.
 4. Open the pull request link Copilot gives you. Don't wait for it to finish. Come back in Part 8 or after the lab.
 

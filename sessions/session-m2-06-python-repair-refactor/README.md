@@ -12,7 +12,7 @@
 
 Repair a small inventory-reconciliation application that doesn't parse, doesn't
 start, and gives the wrong answer once the startup faults are fixed. Use
-GitHub Copilot as a debugging partner. Keep each change small, tested, and logged.
+GitHub Copilot as a debugging partner. Keep each change small and tested.
 
 Restore parsing first, then imports and expected behavior. Add regression tests
 before you refactor. The reference solution separates file parsing, reconciliation
@@ -73,5 +73,4 @@ the lab. The LSP exercise runs after the parsing and behavior checks pass.
 ## Trainer note
 
 Don't reveal the source-level fixes at the start. Reveal the failure names and
-the repair order. The habit to teach is **one failure, one hypothesis, one
-small change, one check**.
+the repair order.

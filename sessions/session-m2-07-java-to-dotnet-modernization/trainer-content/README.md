@@ -6,16 +6,16 @@ Teach learners to preserve behavior during migration. They inspect a runnable
 Java service and define the pricing contract before moving one HTTP slice to
 .NET 10. Then they compare both implementations with the same JSON cases.
 
-Keep the slice narrow: one reviewed route and a backlog for the rest of the service.
+Keep the slice narrow: one reviewed route. The rest of the service stays in Java.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
 | 0:00 to 0:08 | Define the migration boundary |
-| 0:08 to 0:18 | Read the Java request path |
-| 0:18 to 0:30 | Extract behavior and contract cases |
-| 0:30 to 0:42 | Map the slice to .NET 10 |
+| 0:08 to 0:16 | Read the Java request path |
+| 0:16 to 0:26 | Extract behavior and contract cases |
+| 0:26 to 0:42 | Compare Java and .NET 10 |
 | 0:42 to 0:52 | Use Copilot without surrendering decisions |
 | 0:52 to 1:00 | Prepared demo and lab handoff |
 
@@ -154,7 +154,20 @@ without a JSON package. The .NET test executable uses `System.Text.Json`.
 The fixtures cover shared pricing behavior only. Validation errors and HTTP
 behavior need focused checks.
 
-### 5. Map responsibilities to .NET
+### 5. Compare Java and .NET (16 minutes)
+
+Learners may not know .NET. Walk through five ideas with the side-by-side slides.
+Open `Program.cs` from the scaffold next to `App.java`.
+
+| Idea | Java baseline | .NET 10 | Say this |
+| --- | --- | --- | --- |
+| Minimal API | `HttpServer` with a handler class per route that reads and writes JSON by hand | `app.MapPost("/orders/price", ...)` in `Program.cs` | The framework binds the JSON body to a record and injects `PricingEngine`. `try/catch` maps errors to HTTP 400. |
+| Vertical slice | Route, parsing, rules, errors, and fixture test | The same pieces, in one API project and one test project | Migrate all of it together, not only the calculation class. |
+| JSONL contract fixtures | `ContractFixtureTest` reads the file path from a `contract.fixture` system property | The test project reads the same file | One object per line. Both languages read the same cases, so the fixture, not the C#, defines the result. |
+| Basis points | Integer formula with `+ 5000` | Same formula with checked arithmetic | 1 basis point is 0.01%. `SILVER` is 500. Work `SILVER` on 101 cents: (101 × 500 + 5000) / 10000 = 5. |
+| `None Include` and `CopyToOutputDirectory` | Not needed | In the test `.csproj` | The test runs from `bin/`. `None Include` tracks a non-code file, `Link` sets its path in the output, and `CopyToOutputDirectory` copies it on build. The test reads it from `AppContext.BaseDirectory`. A "cannot find JSONL" error usually means this item is wrong. |
+
+Then map the pieces:
 
 | Java baseline | .NET 10 target | Review question |
 | --- | --- | --- |
@@ -273,9 +286,9 @@ This shows one HTTP request and five pricing cases, not full service parity.
 
 Pause the lab at these points.
 
-1. **Architecture notes.** Learners identify one HTTP entry point, one parsing
+1. **Request path.** Learners identify one HTTP entry point, one parsing
    boundary, one domain calculation, one response mapping, and one contract test.
-   If the notes describe only classes, ask which observable behavior each class
+   If they describe only classes, ask which observable behavior each class
    supports.
 2. **Contract before code.** Learners explain the `round-half-up` case without
    reading the expected value. Ask them to calculate the tier and coupon discounts
@@ -284,7 +297,7 @@ Pause the lab at these points.
    packages? Change JSON names? Use floating point? Drop checked arithmetic? Move
    the shipping threshold? Tax shipping?
 4. **Compare test and HTTP results.** Require the Java contract test output, the
-   .NET contract test output, one matching HTTP response, and a migration backlog.
+   .NET contract test output, and one matching HTTP response.
 
 ## Migration backlog model
 
@@ -296,8 +309,8 @@ Pause the lab at these points.
 | P2 | Error consistency | Status and JSON error matrix |
 | P2 | Load and concurrency | Measured target and repeatable test |
 
-Learners state what stays in Java, what they don't yet know, and when each legacy
-slice can go.
+Learners may list up to three next slices and what must pass before the Java path
+goes. This is optional and the lab doesn't require it.
 
 ## Common mistakes
 
@@ -318,9 +331,9 @@ is the source. Don't regenerate it from the migration.
 
 ## Lab handoff
 
-Learners run and inspect the Java baseline, complete the architecture notes, review
-the shared contract cases, implement the .NET pricing engine, add package-free
-contract tests, compare Java and .NET HTTP responses, and write the next backlog.
+Learners run and inspect the Java baseline, review the shared contract cases,
+implement the .NET pricing engine, add package-free contract tests, and compare
+Java and .NET HTTP responses. Migration notes are optional.
 
 **One route must pass the contract and HTTP checks.** The rest of the Java service stays
 until its own slices have contracts and review.

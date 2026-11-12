@@ -4,13 +4,12 @@
 
 ## Objective
 
-Repair a synthetic inventory-reconciliation application one failure at a time.
-Recover its intended behavior from fixtures, add regression tests, then refactor
+Repair a synthetic inventory-reconciliation application. Recover its intended behavior from fixtures, add regression tests, then refactor
 without changing the reports.
 
 ## Deliverables
 
-- a completed `repair-log.md`;
+- a `repair-log.md` with an entry for each core repair;
 - a command that writes the expected text and JSON reports;
 - at least two new focused regression tests;
 - unchanged files under `fixtures/expected/`;
@@ -37,7 +36,8 @@ git init
 Use a fresh destination if that folder exists. Read `.github/lsp.json` before
 opening the copy in the CLI. Set up `pyright-langserver` with the
 [LSP setup guide](../../session-m3-04-custom-agents/lab/lsp-setup.md#python-session-m2-06).
-Session M3-04 isn't a prerequisite. Check `/plan`, `/lsp show`, and `/lsp test python`.
+Session M3-04 isn't a prerequisite. Then check `/plan`, `/lsp show`, and
+`/lsp test python` (see [Python concepts and the LSP config](#python-concepts-and-the-lsp-config)).
 
 Create the environment:
 
@@ -57,6 +57,27 @@ On Windows PowerShell, activate with:
 Outside the Dev Container, copy `lab/starter/` to a writable folder and run the
 same commands. Keep the fixture files unchanged.
 
+## Python concepts and the LSP config
+
+| Term | What you need to know |
+| --- | --- |
+| Import | `from .rules import severity_for` loads one name from `rules.py` in the same package. A missing file raises `ModuleNotFoundError`. A missing name raises `ImportError`. |
+| Package entry point | `python -m inventory_reconciliation` runs `inventory_reconciliation/__main__.py`, which calls `main()` in `cli.py`. Python reads `cli.py` and everything it imports before running anything. |
+| pytest | Finds `tests/test_*.py` and runs each `test_*` function. A plain `assert` is the check. If a file fails to parse or import, pytest stops during collection, before any test runs. |
+| CSV | Plain text with a header row. Python's `csv` module returns every value as a string, so `quantity` needs an `int()` conversion and a validity check. |
+| Module-level state | A variable defined at the top of a module lives as long as the process. A function that appends to it leaks results from one call into the next. |
+
+**The LSP config.** A language server (LSP) answers code questions such as
+"where is this function defined, and who calls it?" from the parsed code, not
+from text search. `.github/lsp.json` tells the Copilot CLI to start
+`pyright-langserver --stdio`, Pyright's server, for `.py` files under the name
+`python`. The CLI starts the process, so read the file before you open the copy.
+
+- `/lsp show` lists the configured servers.
+- `/lsp test python` starts a temporary server and checks that it responds.
+  This proves startup only. It doesn't look up any code.
+- A real lookup is a request for definition or references. You run one in Part 5.
+
 ## Scenario
 
 The application compares physical warehouse counts with ledger quantities. The
@@ -67,7 +88,14 @@ SYN-01 → SYN-02 → IMP-01 → IMP-02
        → LOG-01/02/03 → STATE-01 → DESIGN-01
 ```
 
-Fix the current failure before investigating the next one.
+Each fault blocks the next, so fix them in order. You must repair all nine for
+the tests and reports to pass. **Core** repairs use the full loop: a Copilot
+prompt, one check, and one repair-log entry. **Quick** repairs repeat a pattern
+you just did. Fix them directly and log them only if time allows.
+
+| Core | Quick |
+| --- | --- |
+| `SYN-01`, `IMP-01`, `LOG-01`, `LOG-03`, `STATE-01`, `DESIGN-01` | `SYN-02` (same as `SYN-01`), `IMP-02` (same as `IMP-01`), `LOG-02` |
 
 ## Behavioral contract
 
@@ -98,7 +126,8 @@ python -m inventory_reconciliation \
 `inventory_reconciliation/cli.py`.
 
 Record the command, exception type, file and line, one hypothesis, and the next
-narrow check. Don't ask Copilot to repair the whole project.
+narrow check in `repair-log-working.md`. Keep each Copilot request to one failure
+in one file. Don't ask it to repair the whole project.
 
 ## Part 2: Restore parsing and imports (30 minutes)
 
@@ -117,9 +146,9 @@ python -m compileall inventory_reconciliation
 
 Record the result. The next fault is `SYN-02`.
 
-### 2.2 Repair `SYN-02`
+### 2.2 Repair `SYN-02` (quick)
 
-Repeat. When the package compiles, check imports:
+Repeat the same steps without a log entry. When the package compiles, check imports:
 
 ```bash
 python -c "import inventory_reconciliation.cli"
@@ -127,7 +156,7 @@ python -c "import inventory_reconciliation.cli"
 
 The next fault is `IMP-01`.
 
-### 2.3 Repair `IMP-01` and `IMP-02`
+### 2.3 Repair `IMP-01` (core) and `IMP-02` (quick)
 
 For each import failure:
 
@@ -135,7 +164,8 @@ For each import failure:
 2. Search the package for the intended implementation.
 3. Decide whether the import path or exported name is wrong.
 4. Make one import-only change and re-run the import command.
-5. Add a repair-log entry.
+
+Log `IMP-01`. Log `IMP-02` only if time allows.
 
 Then run:
 
@@ -155,18 +185,18 @@ The tests should now collect. Use their failures to find the behavior defects, a
 compare the inputs with `fixtures/expected/report.txt` and
 `fixtures/expected/reconciliation.json`.
 
-Repair one rule at a time:
+Repair these in order:
 
-1. **`LOG-01`:** duplicate normalized SKUs must sum.
-2. **`LOG-02`:** reconcile the union of warehouse and ledger SKUs.
-3. **`LOG-03`:** apply the stated severity boundary.
-4. **`STATE-01`:** repeated calls must not retain prior results.
+1. **`LOG-01` (core):** duplicate normalized SKUs must sum.
+2. **`LOG-02` (quick):** reconcile the union of warehouse and ledger SKUs.
+3. **`LOG-03` (core):** apply the stated severity boundary.
+4. **`STATE-01` (core):** repeated calls must not retain prior results.
 
 After each change, run the narrowest failing test, then the full suite.
 
 ```text
 The failing test and expected fixture define the behavior. Find the smallest
-production-code change for this one failure. Do not refactor unrelated code or
+production-code change for this failure. Do not refactor unrelated code or
 edit expected outputs.
 ```
 
@@ -213,8 +243,8 @@ would not appear as a reference to that function. Do not edit files.
 ```
 
 Inspect the actual operation or `/lsp logs` and check its locations against the
-source. A successful server-start test or a plain text search isn't a lookup.
-Record the result in the repair log.
+source. `/lsp test python` and a plain text search aren't lookups. Record the
+result in the repair log.
 
 Inline classification can duplicate a rule without calling its function, so
 track duplicates separately from references. Don't ask for a bulk rename while
@@ -248,7 +278,7 @@ On Windows, compare the files in the editor if `diff` is unavailable.
 
 ## Final deliverable
 
-- `repair-log-working.md` with one entry per named failure;
+- `repair-log-working.md` with entries for the six core repairs;
 - repaired and refactored source files;
 - the added regression tests;
 - `build/report.txt` and `build/reconciliation.json`;
@@ -256,7 +286,7 @@ On Windows, compare the files in the editor if `diff` is unavailable.
 
 ## Checklist
 
-- [ ] `SYN-01`, `SYN-02`, `IMP-01`, and `IMP-02` are each recorded and repaired separately.
+- [ ] All nine faults are repaired. The six core ones are in the repair log.
 - [ ] Duplicate rows aggregate after SKU normalization.
 - [ ] Ledger-only and warehouse-only SKUs appear.
 - [ ] Severity changes from `review` to `urgent` at absolute variance 6.
@@ -277,7 +307,7 @@ On Windows, compare the files in the editor if `diff` is unavailable.
 | Package import fails from another directory | Run commands from the copied starter root |
 | JSON diff shows only formatting changes | Use the provided JSON writer settings and final newline |
 | A test passes alone but fails in the suite | Look for module-level mutable state |
-| Copilot proposes a rewrite | Reject it and ask for one-file, one-failure scope |
+| Copilot proposes a rewrite | Reject it and narrow the request to one file |
 | Native setup uses the wrong Python | Recreate `.venv` with a Python 3.11+ executable |
 
 ## Solution reference

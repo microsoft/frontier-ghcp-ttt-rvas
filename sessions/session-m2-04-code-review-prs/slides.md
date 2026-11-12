@@ -73,6 +73,19 @@ Keep the original verdict. Record no-findings results.
 
 ---
 
+# Local review vs PR review
+
+| | `/review`, `/security-review` | Copilot PR review |
+| --- | --- | --- |
+| Runs | In the Copilot CLI, in your repo | On GitHub |
+| Examines | Staged and unstaged changes | The pushed PR diff |
+| Shows | Findings in your terminal; read-only | Comments on the PR, some with suggested fixes |
+| Use | Private first pass before you commit | The pass teammates see |
+
+Their findings overlap but differ. Triage both. Neither approves.
+
+---
+
 # Security review has a narrow scope
 
 `/security-review` examines current local changes. It's read-only and doesn't
@@ -118,7 +131,8 @@ Approval, revision, or close
 
 # Commit messages and PR descriptions
 
-Copilot drafts text from the visible change. Authors check that:
+Copilot drafts text from the visible change. In the lab, you draft one from a
+staged diff and delete what the diff doesn't show. Authors check that:
 
 - the user-visible behavior is accurate;
 - tests and results aren't invented;
@@ -300,9 +314,8 @@ You will:
 4. resolve the prepared conflict without losing either branch goal;
 5. record the final human decision.
 
-**Deliverable:** Review notes, the corrected project, conflict results, the
-initial and correction outputs from `/review` and `/security-review`, and the
-private training PR reference.
+**Deliverable:** The completed fix evaluation template, the corrected project
+with passing tests, and the conflict result.
 
 ---
 

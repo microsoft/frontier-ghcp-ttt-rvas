@@ -40,7 +40,7 @@ Session M2-02 | 3 hours
 | **Agent** | Finds files, edits, runs commands, loops | Yes, and runs things |
 | **Plan** | Researches and writes a plan | No, until you approve |
 
-Pick the **smallest mode** that does the job.
+Pick the **smallest mode** that does the job. Current VS Code lists Ask, Agent, and Plan. Check what your picker shows for Edit.
 
 ---
 
@@ -99,12 +99,12 @@ You are the **review step**. Nothing else is.
 Agent mode asks before it runs a command. You can:
 
 - Allow once.
-- Allow for this session or workspace.
-- Turn on auto-approve for chosen commands in settings.
+- Allow a command prefix for this session, or always.
+- Auto-approve chosen commands with `chat.tools.terminal.autoApprove`.
 
 **Tip:** auto-approve `npm test`. Keep asking for anything that deletes, installs, or pushes.
 
-Check current docs for the exact setting names.
+Menu labels vary by version. Check the current docs.
 
 ---
 

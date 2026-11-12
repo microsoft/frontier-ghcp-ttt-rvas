@@ -22,7 +22,7 @@ The lab uses Spec Kit's real project model:
 - `plan.md`, supporting design files, and `tasks.md` drive implementation.
 - `/speckit-analyze` checks artifact consistency.
 - `/speckit-converge` compares the implementation with the accepted artifacts.
-- `/speckit-taskstoissues` converts the generated task list into GitHub Issues (optional). It comes from Spec Kit's GitHub extension, so it may not exist in your install.
+- `/speckit-github-taskstoissues` converts the generated task list into GitHub Issues (optional). It comes from Spec Kit's opt-in GitHub extension. `specify init` doesn't install it, so run `specify extension add github` first.
 
 `specify init` generates the Copilot skills. Each skill is a folder under `.github/skills/` with instructions for one slash command, so `/speckit-plan` runs the instructions in `.github/skills/speckit-plan/`.
 

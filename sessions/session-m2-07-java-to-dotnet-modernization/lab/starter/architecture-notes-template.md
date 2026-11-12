@@ -1,4 +1,7 @@
-# Legacy architecture notes
+# Migration notes (optional)
+
+Keep these short. Fill in the tables as you read the Java code, then add up to
+three next slices at the end.
 
 ## Request path
 
@@ -20,15 +23,16 @@
 | Rounding |  |  |
 | Validation |  |  |
 
-## Incidental Java details
-
-List Java structures that do not belong in the external contract.
-
-- _Add Java-only details here._
-
 ## Open questions
 
-Record questions that need a trainer or product decision. **Do not let Copilot
+Behavior you couldn't confirm from the code or fixtures. **Don't let Copilot
 choose business behavior silently.**
 
-- _Add unresolved behavior questions here._
+- _Add questions here._
+
+## Next slices
+
+For each, name the Java entry point and the check needed before the Java code goes
+away. Candidates: sample-order query, health, error responses, concurrency.
+
+- _Slice, entry point, check._

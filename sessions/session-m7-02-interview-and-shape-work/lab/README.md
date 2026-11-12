@@ -68,8 +68,9 @@ Ask only the first question, then stop.
 
 If the skill doesn't appear, check the file is at
 `.github/skills/decision-interview/SKILL.md`, then reopen the project or start a
-new session. Copilot CLI users can run `/skills reload` and
-`/skills info decision-interview`.
+new session. Project skills also load from `.claude/skills` and `.agents/skills`;
+personal skills load from `~/.copilot/skills` and `~/.agents/skills`. Copilot CLI
+users can run `/skills reload` and `/skills info decision-interview`.
 
 **Checkpoint:** The skill asks one numbered question with a recommended answer and
 no draft. You can name two things the plain prompt guessed that the skill asked.

@@ -91,7 +91,7 @@ Skip planning for a one-line fix. Use it for anything that touches several files
 
 # Permissions
 
-Copilot asks before tools that can change things.
+Copilot asks before tools that can change things. Prompt labels vary by version.
 
 | Answer | When |
 | --- | --- |

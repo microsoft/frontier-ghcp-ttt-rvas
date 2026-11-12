@@ -46,7 +46,8 @@ hook names and return shapes, permission result kinds. The sample defines the
 policy: the tool name, the `RESTRICTED-` rule, the retry count, and the
 allow-list. If a learner changes a policy value, tests change. If they change an
 SDK name, the code stops compiling. The lab pins `@github/copilot-sdk` 1.0.16.
-For other versions, check the SDK README.
+For 1.0.31 (latest on 12 November 2026), add `"types": ["node"]` to `tsconfig.json`
+and check the SDK release notes.
 
 Cover the glossary in the lab README before the streaming segment: delta, hook
 return shape, OTLP, span. Skip OTLP and span unless you teach the extension.

@@ -23,8 +23,8 @@ Learners need Automations and GitHub MCP access.
 ## Define the terms
 
 - **Automation:** a saved prompt with a trigger, tools, and an enabled state. The agent runs the prompt when the trigger fires.
-- **Trigger and cadence:** manual, a schedule (hourly, daily, weekly, cron), or a repository event.
-- **Local scope:** runs from the learner's machine. Cloud automations are a separate type.
+- **Trigger and cadence:** manual, a schedule (hourly, daily, or weekly), or a repository event such as a new issue or pull request. Cloud and local automations offer different triggers.
+- **Local scope:** runs from the learner's machine. Cloud automations are a separate type that need Copilot cloud agent enabled for the repository. Their prompts and session logs are visible to everyone with read access to the repository.
 - **Enabled state:** enabled can fire; disabled can't.
 
 Based on [Using automations in the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations).

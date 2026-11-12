@@ -1,7 +1,7 @@
 # Session M2-04 lab: Code review workflows
 
 **Duration:** 2 hours
-**Deliverable:** A reviewed change record, corrected starter project, and conflict review
+**Deliverable:** A completed `fix-evaluation-template.md`, a corrected project with passing tests, and a resolved conflict
 
 ---
 
@@ -24,8 +24,23 @@ Compare your own review with Copilot-assisted review. Use only synthetic data.
 
 - the standalone Copilot CLI with `/review` and `/security-review` (check `/help`);
 - Copilot pull-request review;
-- a private training repository you may push to (the trainer provides an empty one);
+- an empty private GitHub repository you can push to (create one with `gh repo create --private`, or use the one the trainer gives you);
 - Git, the authenticated GitHub CLI (`gh auth status`), Node.js, and npm.
+
+---
+
+## What the review commands do
+
+| | `/review` and `/security-review` | Copilot PR review |
+| --- | --- | --- |
+| Where | In your Copilot CLI session, in your working repository | On GitHub, on the pull request |
+| What it examines | Your staged and unstaged changes, before you commit | The PR diff, after you push |
+| Output | Findings in the terminal. Both commands only read; they don't edit files. | Review comments on the PR, some with a suggested fix to apply |
+| Focus | `/review`: correctness and missing tests. `/security-review`: high-confidence vulnerabilities in the change. | General review of the PR. You can also set it to run automatically. |
+
+Committing the patch removes it from `/review`'s scope. Local findings
+are private and quick, so use them before you push. PR review is the one your
+teammates see. Neither approves anything.
 
 ---
 
@@ -59,7 +74,7 @@ git switch -c feature/add-user-management
 >
 > **If install or tests fail:** Fix the environment. Don't change package versions to hide a failure.
 
-Add the trainer's private repository as `origin` and push the baseline:
+Add your private repository as `origin` and push the baseline:
 
 ```bash
 git remote add origin <private-training-repository-url>
@@ -67,8 +82,11 @@ git push -u origin main
 ```
 
 The baseline must be the same commit locally and remotely, so the PR contains
-only the intended change. If the remote already has commits, ask for an empty
+only the intended change. If the remote already has commits, use an empty
 repository. Never force-push or push the intentional defects to a public repository.
+
+> **No private repository?** Skip step 11 of Exercise 1 and compare `/review`
+> with `/security-review` instead.
 
 ---
 
@@ -78,10 +96,9 @@ repository. Never force-push or push the intentional defects to a public reposit
 
 1. **Read the change brief.** Open `lab/starter/code-changes.md`. It lists changes to `src/api.js` and `src/utils.js`, each with an intended defect.
 
-2. **Open `lab/starter/fix-evaluation-template.md`.** Use its single triage table
-   for human, local-command, and PR findings throughout the lab. Each finding
-   names a file or function, the affected acceptance criterion, and the code or
-   test output that supports it.
+2. **Open `lab/starter/fix-evaluation-template.md`.** Use its one triage table
+   for human, local, and PR findings. Each row names a file or function and the
+   code or test output that supports it.
 
 3. **Read the baseline.** Open `src/api.js`, `src/utils.js`, and `tests/api.test.js`. Note the existing behavior so you can separate it from introduced defects.
 
@@ -97,10 +114,10 @@ repository. Never force-push or push the intentional defects to a public reposit
 
    Some tests may still pass because the defects aren't fully covered. Note the output and any missing coverage.
 
-6. **Review the change yourself first.** Record your initial verdict in
-   `lab/starter/partner-review-checklist.md`. Record the two findings that matter
-   most in the triage table with `Human` as the source, before you open an
-   assisted review. Cite the file or function and the code or test output.
+6. **Review the change yourself first.** Write your initial verdict in the
+   template and add your two most important findings to the triage table with
+   `Human` as the source. Use `partner-review-checklist.md` for prompts if you
+   want them.
 
 7. **Run the general code review.** Start `copilot` in the working repository:
 
@@ -117,37 +134,45 @@ repository. Never force-push or push the intentional defects to a public reposit
    ```
 
    Both commands review staged and unstaged changes. Committing the patch first
-   removes it from that scope.
+   removes it from that scope. (With a clean tree, `/security-review` reviews
+   the branch diff instead.)
 
-9. **Triage both outputs** in `fix-evaluation-template.md`. Leave your human
-   review unchanged. For each finding, record the source, file/line, claimed
-   impact, and reproduction or code reference. Accept, reject, or leave it
-   unresolved with a reason. If a review reports no findings, record that.
+9. **Triage both outputs** in the template. Leave your human findings
+   unchanged. Accept, reject, or leave each finding unresolved, with a reason.
+   If a review reports no findings, write that in the Review runs table.
 
    The search route builds SQL text but connects to no database, so reject a claim
    that the lab proves database compromise. Synthetic key-shaped strings aren't a
    leaked real credential. Keep actual data exposure separate from unsafe patterns
    and maintainability suggestions.
 
-10. **Open the training PR.** Commit only the intended files, push to the private
-    remote, and open a PR:
+10. **Draft the commit message and PR description with Copilot.** Stage the
+    two files, then in `copilot`:
+
+    ```text
+    Write a commit message and a PR description (problem, change, validation,
+    risk) for the staged diff. Use only what the diff shows.
+    ```
+
+    Compare every claim with the diff. Delete any test result or benefit the
+    diff doesn't show. Commit with the corrected message.
+
+11. **Open the training PR.** Push to your private remote and open a PR:
 
     ```bash
-    git add src/api.js src/utils.js
-    git commit -m "Add synthetic user-management change for review"
     git push -u origin feature/add-user-management
     gh pr create --base main --title "Review synthetic user management" \
       --body "Training-only change. Contains intentional defects; do not merge."
     ```
 
-    Request Copilot review from the PR page and record at least one comparison
-    with the local results. Don't merge the flawed change.
+    Request Copilot review from the PR page. In the template, record one
+    finding that differs from the local results. Don't merge the flawed change.
 
 ### Checkpoint
 
 - Which findings block approval, and which are suggestions only?
 - Which defects did the existing tests miss?
-- What did `/review` and `/security-review` each report?
+- What did `/review`, `/security-review`, and PR review each report, and what did only one of them find?
 - What changed after the assisted review?
 - Which claim rests on actual behavior rather than an assumed backend?
 
@@ -181,7 +206,7 @@ Fix the defects with the smallest safe changes, then show the corrected project 
 
 8. **Review the correction diff before committing.** Rerun `/review` and
    `/security-review` on it and compare with the initial findings. Rerun
-   `npm test`, then commit and push only the reviewed fixes to the same PR. A clean
+   `npm test`, then commit and push only the reviewed fixes to the same PR (or just commit if you have no remote). A clean
    automated review doesn't approve the PR.
 
 ### Checkpoint 2
@@ -251,11 +276,9 @@ Use the code and test results to make your final decision. An automated suggesti
    request changes, or pause, and explain why. Someone reading it should understand
    the decision without seeing your lab conversation.
 
-5. **Compare your initial review with both local outputs and the PR review.**
-   Complete the remaining template fields. Keep the original critique, record which
-   source raised each finding, and say why you accepted, revised, or rejected it.
-   The table should show differences, false positives, new code references or test
-   results, and any finding that changed the verdict.
+5. **Compare your initial review with the local and PR results.** In the
+   triage table, mark differences, false positives, and any finding that changed
+   your verdict. Keep your original findings.
 
 ### Checkpoint 4
 
@@ -265,11 +288,9 @@ Use the code and test results to make your final decision. An automated suggesti
 
 ## Final deliverable
 
-One folder or document containing:
-
-1. `partner-review-checklist.md` with the unchanged initial verdict.
-2. `fix-evaluation-template.md` with the review runs, finding triage, fixes, test results, remaining risk, and final decision.
-3. Initial and correction outputs from `/review` and `/security-review`, the private training PR reference, and test output for the corrected project.
-4. The resolved conflict decision and its test results.
+1. `fix-evaluation-template.md`, completed. It holds your initial verdict, the review runs, the triage table, test results, remaining risk, and decision.
+2. The corrected project, with `npm test` passing.
+3. The resolved conflict and its test output.
+4. The PR link, if you opened one.
 
 Don't merge the training PR.

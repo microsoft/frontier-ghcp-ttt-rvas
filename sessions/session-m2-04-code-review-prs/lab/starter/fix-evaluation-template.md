@@ -2,9 +2,14 @@
 
 ## Copilot review analysis
 
-Use this template for the local reviews and the private training PR. Preserve
-your initial human verdict in `partner-review-checklist.md` before running either
-local command. Record findings once in the table below.
+Use this template for the local reviews and the training PR. Fill in the initial
+verdict before you run either local command. Record each finding once.
+
+## Initial verdict (before any Copilot review)
+
+- **Change intent in one sentence:**
+- **Verdict:** Approve / Request changes / Pause
+- **Two most important findings:** add them to the triage table with `Human` as the source.
 
 ## Review runs
 
@@ -12,7 +17,7 @@ local command. Record findings once in the table below.
 | --- | --- | --- | --- |
 | Initial | `/review` | | |
 | Initial | `/security-review` | | |
-| Initial | Copilot PR review | | |
+| Initial | Copilot PR review (skip if no remote) | | |
 | Correction | `/review` | | |
 | Correction | `/security-review` | | |
 

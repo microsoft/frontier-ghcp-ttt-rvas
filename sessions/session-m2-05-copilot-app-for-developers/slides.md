@@ -155,7 +155,7 @@ Common pairing: **Plan**, then **Autopilot** with **Assisted** permissions.
 | `/pr-open`, `/pr-fix-checks`, `/pr-resolve-comments`, `/pr-merge` | PR steps |
 | `/compact`, `/clear`, `/context` | Manage context |
 
-Names change. **Check `/help` in your version.**
+Names change. **Type `/` to see your version's list.**
 
 ---
 

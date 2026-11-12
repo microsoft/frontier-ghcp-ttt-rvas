@@ -7,7 +7,7 @@ application, then improve its design without changing its output. Keep each repa
 small enough to explain and check.
 
 Each learner finishes with a working command-line application, added regression
-tests, and a completed repair log. File comparisons show that the refactor kept the
+tests, and a repair log for the six core repairs. File comparisons show that the refactor kept the
 supplied text and JSON outputs.
 
 ## One-hour plan
@@ -15,7 +15,7 @@ supplied text and JSON outputs.
 | Time | Segment |
 | --- | --- |
 | 0:00-0:08 | Start repairs from the failure output |
-| 0:08-0:18 | Read Python failures in execution order |
+| 0:08-0:18 | Python concepts, then failures in execution order |
 | 0:18-0:30 | Demonstrate syntax and import recovery |
 | 0:30-0:42 | Use fixtures to recover behavior |
 | 0:42-0:52 | Add regression tests before refactoring |
@@ -64,7 +64,7 @@ Start at the first layer that stops you from checking the next:
 Skipping a layer hides the current failure. A syntax error blocks test collection,
 so tests can't check business logic.
 
-### One failure at a time
+### Repair loop
 
 1. Capture the exact command and failure.
 2. State one hypothesis.
@@ -73,24 +73,42 @@ so tests can't check business logic.
 5. Run the narrowest useful check.
 6. Record the result in the repair log.
 
-Learners make the diagnosis. Command output tests each hypothesis.
+Learners make the diagnosis. Command output tests each hypothesis. Use the full
+loop on the six core repairs. `SYN-02`, `IMP-02`, and `LOG-02` repeat earlier
+patterns, so learners fix them directly. All nine must be repaired.
+
+### Prerequisites to cover in the first segment
+
+One minute each, with the slide "Python concepts you need":
+
+- **Imports:** `ModuleNotFoundError` means the file is missing. `ImportError`
+  means the name is missing.
+- **Entry point:** `python -m pkg` runs `pkg/__main__.py`. Python parses
+  `cli.py` and its imports first, so one syntax error stops startup.
+- **pytest:** collects `test_*` functions. A parse or import failure stops
+  collection, so no test runs.
+- **CSV and module-level state:** `csv` gives strings, and a top-level list
+  survives across calls.
+- **Pyright LSP:** `.github/lsp.json` makes the CLI start `pyright-langserver`
+  for `.py` files. `/lsp show` lists servers. `/lsp test python` only proves
+  the server starts. Only a definition or references request looks up code.
 
 ## Controlled starter sequence
 
 The starter uses named faults so learners can compare progress without sharing
 source-level answers.
 
-| Order | Fault | Surface | Intended signal |
-| ---: | --- | --- | --- |
-| 1 | `SYN-01` | `cli.py` | Parser stops at the first malformed function definition |
-| 2 | `SYN-02` | `service.py` | The next imported module cannot parse |
-| 3 | `IMP-01` | `cli.py` | Startup imports a module that does not exist |
-| 4 | `IMP-02` | `reporting.py` | Startup imports a symbol that does not exist |
-| 5 | `LOG-01` | parsing | Duplicate SKU rows overwrite earlier quantities |
-| 6 | `LOG-02` | reconciliation | SKUs present only in the ledger disappear |
-| 7 | `LOG-03` | rules | Severity thresholds do not match the contract |
-| 8 | `STATE-01` | service | Repeated runs leak results through global state |
-| 9 | `DESIGN-01` | service/reporting | Rules are duplicated and control flow is tangled |
+| Order | Fault | Tier | Surface | Intended signal |
+| ---: | --- | --- | --- | --- |
+| 1 | `SYN-01` | Core | `cli.py` | Parser stops at the first malformed function definition |
+| 2 | `SYN-02` | Quick | `service.py` | The next imported module cannot parse |
+| 3 | `IMP-01` | Core | `cli.py` | Startup imports a module that does not exist |
+| 4 | `IMP-02` | Quick | `reporting.py` | Startup imports a symbol that does not exist |
+| 5 | `LOG-01` | Core | parsing | Duplicate SKU rows overwrite earlier quantities |
+| 6 | `LOG-02` | Quick | reconciliation | SKUs present only in the ledger disappear |
+| 7 | `LOG-03` | Core | rules | Severity thresholds do not match the contract |
+| 8 | `STATE-01` | Core | service | Repeated runs leak results through global state |
+| 9 | `DESIGN-01` | Core | service/reporting | Rules are duplicated and control flow is tangled |
 
 The first four faults appear in order when learners use the lab's checks. The
 supplied fixtures expose the behavior defects.
@@ -121,7 +139,7 @@ The command should expose `SYN-02`.
 
 ### 4. Log it, then stop
 
-Show how to add an entry to `repair-log.md`:
+Show one entry in `repair-log.md`:
 
 | Field | Example |
 | --- | --- |
@@ -224,7 +242,6 @@ expected outputs, and tests. Call out any unproved assumption.
 ## Facilitation notes
 
 - Keep learners on the current failure. Later defects are distractions.
-- Require a repair-log entry before broad edits.
 - Reject changes to expected outputs unless the class first proves the contract is wrong.
 - Ask learners to explain each Copilot suggestion before they accept it.
 - Pair learners when one is stuck for more than eight minutes.
@@ -234,7 +251,7 @@ expected outputs, and tests. Call out any unproved assumption.
 | Wrong turn | Coaching response |
 | --- | --- |
 | Rewrite the application from scratch | Return to the first failing command and keep the supplied interface |
-| Ask Copilot to "fix everything" | Narrow the prompt to one failure and one file |
+| Ask Copilot to "fix everything" | Narrow the prompt to one file |
 | Change fixtures to match broken output | Fixtures are the contract |
 | Refactor while imports still fail | Restore startup first |
 | Remove the repeated-run test | Global state often passes once and fails in a process |
@@ -242,7 +259,7 @@ expected outputs, and tests. Call out any unproved assumption.
 
 ## Lab handoff
 
-Learners finish with a completed repair log, a working command-line application, at
+Learners finish with a repair log for the core repairs, a working command-line application, at
 least two added regression tests, unchanged expected-output fixtures, a design with
 no process-wide result state, and passing pytest output with generated reports. The
 same inputs must produce the supplied outputs before and after the refactor.

@@ -107,7 +107,7 @@ Name the failure class. Two apply here.
 
 Look at **Test on several Node versions**. Open the run page. One leg is red and the others are cancelled.
 
-Try **Explain error**. In the pull request, click the failed check in the merge box and choose it. Or open the run summary page and click **Explain error**. If you don't see it, check current docs. It may be off for your account.
+Try **Explain error**. In the pull request, open the menu (the three dots) next to the failed check in the merge box and choose **Explain error**. Or click the failed check and use the button at the top of the run summary page. If you don't see it, check current docs. It may be off for your account.
 
 Does its answer explain why Node 18 fails but 20 and 22 don't? If it doesn't, say what is missing.
 
@@ -156,7 +156,7 @@ Let Copilot propose the change. **Reject** any fix that uses `write-all`. The st
 
 ## Part 5: Fix code scanning alerts and review the patch
 
-`src/server.js` has two deliberate vulnerabilities. CodeQL analyzed `main` in Part 1. Open the **Security** tab of your repo, then **Code scanning**. If there are no alerts yet, wait a few minutes and refresh. The alerts you get depend on CodeQL's current rules.
+`src/server.js` has two deliberate vulnerabilities. CodeQL analyzed `main` in Part 1. Open the **Security** tab of your repo (it may be labeled **Security and quality**), then **Code scanning**. If there are no alerts yet, wait a few minutes and refresh. The alerts you get depend on CodeQL's current rules.
 
 For one alert, open its page and use **Generate fix** (Copilot Autofix). Read the suggested change. It's a **suggestion**, not a commit.
 
@@ -182,7 +182,7 @@ npm test
 
 Both security tests should pass.
 
-Optional: try **agentic autofix** (public preview). Assign an alert to Copilot. It starts a cloud agent session, checks its fix with CodeQL, and opens a pull request. It uses cloud agent quota. Compare its patch with the Autofix suggestion.
+Optional: try **agentic autofix**. It must be enabled for your repository, and it only handles alerts on the default branch. Assign an alert to Copilot. It starts an agent session, checks its fix with CodeQL, and opens a draft pull request. It uses AI credits and Actions minutes. Compare its patch with the Autofix suggestion.
 
 **Checkpoint:** both vulnerabilities are fixed, tests pass, and you can say what each fix protects.
 
@@ -213,5 +213,5 @@ Keep this before you delete the repo:
 ## References
 
 - [Troubleshooting workflows](https://docs.github.com/en/actions/how-tos/troubleshoot-workflows)
-- [About Copilot Autofix for code scanning](https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/about-autofix-for-codeql-code-scanning)
+- [About autofix for code scanning](https://docs.github.com/en/code-security/concepts/code-scanning/autofix-for-code-scanning)
 - [Fixed workflows](solution/fixed-workflows/) and [secure server](solution/secure-src/server.js)

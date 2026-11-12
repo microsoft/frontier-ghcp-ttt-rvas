@@ -1,6 +1,7 @@
 # Repair log
 
-Copy this file to `repair-log-working.md`.
+Copy this file to `repair-log-working.md`. Log the six core repairs: `SYN-01`,
+`IMP-01`, `LOG-01`, `LOG-03`, `STATE-01`, and `DESIGN-01`. The rest are optional.
 
 | Order | Failure | Error or output | Hypothesis | Small change | Check command | Result |
 | ---: | --- | --- | --- | --- | --- | --- |
@@ -17,7 +18,6 @@ Copy this file to `repair-log-working.md`.
 ## Assumptions checked
 
 - [ ] Expected output files remained unchanged.
-- [ ] Each repair addressed one named failure.
 - [ ] Added tests cover a boundary or past defect.
 - [ ] Refactoring started only after tests passed.
 

@@ -35,7 +35,7 @@ Complete the track
 ## Part 1: Check access and retrieve inputs
 
 1. Open **Automations** in the GitHub Copilot app.
-2. Check that **New automation** is available.
+2. Check that **Create automation** is available. (Earlier builds may label it differently; check your version.)
 3. Retrieve the parent and child GitHub issues through GitHub MCP.
 4. Open the reviewed Session M7-05 parent orchestration result.
 5. Check that issue state and the parent result agree on the four workstreams.
@@ -59,7 +59,10 @@ stakeholder update. Enable the automation only for supervised lab runs.
 
 ## Part 3: Create and run the automation
 
-Create a local automation with the minimum GitHub read tools.
+Create a local automation with the minimum GitHub read tools. In the docs'
+manual flow, choose **Create manually** and leave **Run in the cloud** off. Run it
+with the play button on its card, or use **Create and run**. Check the labels in
+your app version.
 
 Use this prompt:
 

@@ -1,4 +1,7 @@
-# Peer review checklist
+# Peer review checklist (optional)
+
+Use these prompts while you review. Write your verdict and findings in
+`fix-evaluation-template.md`, not here.
 
 ## Review information
 
@@ -6,17 +9,6 @@
 - **Author:**
 - **Reviewer:**
 - **Date:**
-
----
-
-## Review before assistance
-
-Complete this short section before opening an assisted review.
-
-- **Change intent in one sentence:**
-- **Initial verdict:** Approve / Request changes / Pause
-- **Initial findings:** Record the two most important findings or missing checks
-  in `fix-evaluation-template.md`, with `Human` as the source.
 
 ---
 
@@ -57,12 +49,3 @@ Complete this short section before opening an assisted review.
 - [ ] Existing tests still pass
 
 ---
-
-## Review comments
-
-Use the single triage table in `fix-evaluation-template.md` for human and assisted
-findings. Record each source, location, impact, check, decision, and fix there;
-do not copy the comments into this checklist.
-
-Record the review runs, what changed after assistance, remaining risk, and final
-human decision in that same template. Keep the initial verdict above unchanged.

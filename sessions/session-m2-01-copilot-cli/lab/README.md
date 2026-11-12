@@ -22,7 +22,7 @@ Install the CLI. Pick one:
 
 ```bash
 npm install -g @github/copilot
-# or: brew install copilot-cli
+# or: brew install --cask copilot-cli
 # or: winget install GitHub.Copilot
 ```
 
@@ -126,7 +126,7 @@ Don't approve yet. If a step confuses you, ask about it.
 
 ## Part 5: Implement and handle permissions (20 min)
 
-Approve the plan and let Copilot implement it. Copilot asks before it runs a tool that can change things, such as editing a file or running a shell command. You can answer three ways:
+Approve the plan and let Copilot implement it. Copilot asks before it runs a tool that can change things, such as editing a file or running a shell command. You can answer three ways. The exact button labels change between versions, so read the options your version shows:
 
 - **Allow once.** The safe default. Use it while you learn what Copilot runs.
 - **Allow for the session.** Stops the prompts for that tool until you exit. Use it for commands you trust, such as `npm test`.

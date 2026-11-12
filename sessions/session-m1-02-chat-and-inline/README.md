@@ -17,7 +17,8 @@ workspace context.
 The project has a weighted-average defect and a later zero-total-weight change
 request. Check every change with standard-library tests.
 
-You need GitHub Copilot Chat and Python 3.10 or later.
+You need **VS Code** with GitHub Copilot Chat, and Python 3.10 or later. Chat
+labels, commands, and shortcuts change between versions, so check yours.
 
 ## Learning outcomes
 
@@ -25,7 +26,8 @@ You need GitHub Copilot Chat and Python 3.10 or later.
 - Use selected code, files, terminal output, and workspace search as context.
 - Use explain, fix, tests, and documentation shortcuts.
 - Refine a conversation without broadening the change.
-- Compare two models against the same tests, if you have a choice.
+- Weigh what Chat does well and badly, and apply a few habits that help.
+- Optional: compare two models against the same tests.
 
 ## Materials
 

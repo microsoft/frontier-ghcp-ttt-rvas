@@ -169,8 +169,14 @@ accepted user story.
 
 ## Part 4 (optional): Convert tasks to GitHub Issues (15 minutes)
 
-`/speckit-taskstoissues` comes from Spec Kit's GitHub extension. If your install
-doesn't have it, skip this part. Parts 5 and 6 don't depend on it.
+`/speckit-github-taskstoissues` comes from Spec Kit's opt-in GitHub extension.
+`specify init` doesn't install it. From the project root, run:
+
+```bash
+specify extension add github
+```
+
+If the extension isn't available, skip this part. Parts 5 and 6 don't depend on it.
 
 Commit and push the artifacts so far:
 
@@ -183,7 +189,7 @@ git push
 Convert the generated task list into GitHub Issues:
 
 ```text
-/speckit-taskstoissues
+/speckit-github-taskstoissues
 
 Create issues from the unchecked tasks in tasks.md. Preserve task IDs, user-story
 references, dependencies, and file paths.
@@ -279,7 +285,7 @@ Use the documented living-spec sequence:
 4. If you did Part 4, convert only the new unchecked restore tasks into issues:
 
    ```text
-   /speckit-taskstoissues
+   /speckit-github-taskstoissues
 
    Create issues only for new restore tasks that do not already have an issue.
    Preserve their task IDs and dependencies.

@@ -26,7 +26,7 @@ Do this before M7-01 and check the tools again before each session.
 1. **Open the project.** In the app, add the training repository under **Projects**, start a session, and ask Copilot to read one file.
 2. **Check customizations.** Open **Customize** → **Installed** and list the skills, MCP servers, plugins, and canvases. Installing a plugin doesn't prove GitHub MCP can read the repository, so test that separately.
 3. **Check skills.** M7-04 and M7-05 use the built-in `/create-canvas` and `/orchestrate`. Type `/` and confirm both appear. For M7-02, copy `.github/skills/decision-interview/SKILL.md` into the training repository, open a new session, and run `/decision-interview` with a test request. In the CLI, use `/skills reload` and `/skills info decision-interview`.
-4. **Check GitHub MCP** (M7-03 to M7-06). Open **Customize** → **MCP** → **Installed**, ask Copilot to list its GitHub tools, and read one thing from the repository. Don't start a write lab until the read works. In the CLI, use `/mcp list` and `/mcp show github`. Never paste tokens into prompts or files.
+4. **Check GitHub MCP** (M7-03 to M7-06). Open **Customize** → **MCP** → **Installed**, ask Copilot to list its GitHub tools, and read one thing from the repository. Don't start a write lab until the read works. In the CLI, use `/mcp` (check `/help` for subcommands in your version). Never paste tokens into prompts or files.
 5. **Check session controls.** Confirm the Interactive, Plan, and Autopilot modes; `@`, `#`, and `/` references; `/context`, `/compact`, `/clear`, and `/rubber-duck`. If a command is missing, note it and teach only what works.
 
 | Session | Needs |

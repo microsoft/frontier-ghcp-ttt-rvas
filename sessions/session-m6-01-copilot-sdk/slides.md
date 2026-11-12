@@ -55,8 +55,8 @@ The SDK provides an agent session. Your application still owns:
 | Permission result kinds | Approve only `lookup_change_request` |
 | `onPostToolUseFailure` skips denied calls | Treat denial as policy, not error |
 
-The package is `@github/copilot-sdk`, pinned to 1.0.16. For other versions, check
-the SDK README.
+The package is `@github/copilot-sdk`, pinned to 1.0.16 (latest on npm: 1.0.31). If you
+upgrade, add `"types": ["node"]` to `tsconfig.json` and check the SDK release notes.
 
 ---
 

@@ -1,9 +1,5 @@
 # Prompt log
 
-## Access path
-
-- [x] Required Copilot access checked
-
 ## Prompt iterations
 
 | Stage | Prompt | Missing or wrong behavior | Revision |

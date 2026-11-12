@@ -67,7 +67,7 @@ Separating these categories makes uncertainty visible.
 | Area | Use it for |
 | --- | --- |
 | Chats | Exploration and interviews |
-| Projects | Repository-grounded work |
+| Projects | Ongoing goals across repositories (public preview) |
 | My work | Issues, pull requests, and sessions |
 | Search | Finding repository information |
 | Automations | Recurring or on-demand tasks |

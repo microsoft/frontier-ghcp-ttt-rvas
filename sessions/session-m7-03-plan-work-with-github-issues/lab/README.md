@@ -38,9 +38,10 @@ In the GitHub Copilot app:
 GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
 
 ```text
-/mcp list
-/mcp show github
+/mcp
 ```
+
+If `/mcp` differs in your version, run `/help` or `copilot mcp list` in a terminal.
 
 If the connection is missing, use **Customize** → **MCP** to install or configure
 the GitHub server. **Never paste a token into a prompt or repository file.**

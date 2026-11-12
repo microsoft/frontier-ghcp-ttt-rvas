@@ -214,7 +214,7 @@ Compare your table with `lab/solution/expected-comparison.md`. Model output vari
 Pick one if you finish early.
 
 - **See what the CLI loaded.** Run `/instructions` in the Copilot CLI to list the instruction files it found, and switch one off. Run `/env` to see what else is loaded. Check the current CLI docs for details.
-- **Prompt file.** In VS Code, create `.github/prompts/low-stock-report.prompt.md` that holds the task prompt, and run it from chat. Prompt-file support differs by tool, so check the current docs.
+- **Prompt file.** In VS Code, create `.github/prompts/low-stock-report.prompt.md` that holds the task prompt, and run it from chat. Prompt-file support differs by tool and VS Code version, so check the current docs. If it doesn't run, skip this task.
 - **Stale instruction.** Add a rule to `routes.instructions.md` that contradicts the code, such as "use CommonJS". Rerun and see what happens. Delete it.
 - **Share a Space.** Create a Space under an organization you can use and compare its sharing options with your personal one.
 

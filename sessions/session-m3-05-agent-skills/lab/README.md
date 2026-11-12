@@ -1,7 +1,7 @@
 # Session M3-05 lab: Write, test, and fix a skill
 
 **Duration:** 2 hours
-**Deliverable:** A working `release-notes` skill, your live test results, and an interview skill, and a decision table
+**Deliverable:** A working `release-notes` skill, your live test results, an interview skill, and a decision table
 
 ## Lab overview
 

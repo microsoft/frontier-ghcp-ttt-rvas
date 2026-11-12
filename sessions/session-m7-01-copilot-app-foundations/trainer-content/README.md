@@ -32,13 +32,13 @@ A generic chatbot doesn't meet this session's goal. Use the app and the reposito
 ## Teach the app as a work environment
 
 - **Chats:** exploratory work and interviews;
-- **Projects:** repository-grounded work;
+- **Projects:** ongoing goals that can span repositories (public preview). Repositories and their sessions are listed under **Sessions**;
 - **My work:** issues, pull requests, and active agent sessions;
 - **Search:** finding repository information;
 - **Automations:** recurring or on-demand tasks;
 - **Customize:** skills, agents, MCP servers, plugins, and canvases.
 
-Labels move. Teach what each area is for, not a fixed click path.
+Labels move. Teach what each area is for, not a fixed click path. The current docs list the sidebar as New, Pull requests, Issues, Automations, Customize, Search, Projects, Sessions, and Chats. They don't list **My work**, so check which label your build shows.
 
 ## Scope against M2-05 and M3-01
 

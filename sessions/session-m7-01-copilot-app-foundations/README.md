@@ -26,12 +26,12 @@ sanitized work from your own team instead.
 
 Learners can:
 
-1. Find and use Chats, Projects, My work, Search, Automations, and Customize.
+1. Find and use Chats, Projects, My work, Search, Automations, and Customize. Sidebar labels change between app versions.
 2. Choose Interactive, Plan, or Autopilot for a task, and say why.
 3. Add files with `@`, reference issues with `#`, and open commands with `/`.
 4. Explain what the app sees when you ask a question, and what it can't see.
 5. Choose repository, issue, file, or uploaded-document context for a question.
-6. Run `/context`, then decide between `/compact`, `/clear`, and `/reset`.
+6. Run `/context`, then decide between `/compact` (keep the thread) and `/clear` (start fresh; `/reset` is the same command).
 7. Find the skills, agents, MCP servers, plugins, and canvases available to you.
 8. Review and revise a proposed Markdown change.
 9. Update a context brief when new source information arrives.

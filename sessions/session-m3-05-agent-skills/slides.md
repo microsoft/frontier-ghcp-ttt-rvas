@@ -126,7 +126,7 @@ description: Write release notes or a CHANGELOG entry from merged PRs.
 
 - `name`: lowercase with hyphens, same as the directory
 - `description`: **what it does and when to use it**
-- Optional: `license`, `allowed-tools`
+- Optional: `allowed-tools`, `argument-hint`, `user-invocable`, `disable-model-invocation`, `license`. Check the current docs
 
 ---
 

@@ -23,11 +23,11 @@ Session M1-02 | 3 hours
 | Segment | Time |
 | --- | --- |
 | Inline suggestions and Chat | 6 min |
-| Choose a Chat surface | 10 min |
-| Select context deliberately | 11 min |
+| Choose a Chat surface | 9 min |
+| What each context supplies | 14 min |
 | Explain, fix, test, document | 10 min |
-| Conversational refinement | 8 min |
-| Model comparison | 7 min |
+| Conversational refinement | 6 min |
+| Pros, cons, tips, optional model comparison | 7 min |
 | Debugging demo and handoff | 8 min |
 
 ---
@@ -105,16 +105,27 @@ Identify the defect without changing other methods.
 
 ---
 
-# Workspace, file, selection, terminal
+# What each context supplies
 
-| Context | Use it for |
-| --- | --- |
-| Selection | One function or block |
-| Named file | Known cross-file dependency |
-| Workspace search | Broad structure or usage |
-| Terminal output | Recent command results |
+Examples are for **VS Code**. **Check your version**: names and defaults change.
 
-Include the context the task needs.
+| Context | Supplies | Does not supply |
+| --- | --- | --- |
+| Open file | The active file, usually attached automatically | Other files, test output |
+| Selection | The selected lines, marked as the focus | Callers, tests, anything unselected |
+| `#file` | The full named file (type `#` and pick the file) | Files you didn't name |
+| `#codebase` | Snippets found by searching the workspace | Every file. It can miss some |
+| Terminal (`#terminalLastCommand`) | Recent command and its output | Your intent, the source files |
+| `#problems` | Errors and warnings from the Problems panel | Test failures, runtime bugs |
+
+---
+
+# Context in practice
+
+- **No context, no guarantee.** If a file isn't attached, Chat may guess.
+- Check what Chat used. The reply lists its references. Missing one? Name it.
+- Add the least that answers the question. Extra files dilute it.
+- Test failures live in the terminal. Paste or attach the output.
 
 ---
 
@@ -188,16 +199,33 @@ Start fresh when stale assumptions keep returning.
 
 ---
 
-# Compare against the task
+# Chat: pros and cons
 
-If you have two models:
+| Pros | Cons |
+| --- | --- |
+| Explains unfamiliar code fast | Can answer confidently and be wrong |
+| Works across files when you name them | Misses context you didn't give |
+| Drafts tests and docs quickly | Tests can encode the same mistake |
+| Takes follow-up questions | Long threads drift |
 
-1. use the same synthetic prompt;
-2. keep the same context;
-3. run the same tests;
-4. compare correctness and useful citations.
+---
 
-Judge the results by the tests, not how well they read.
+# Tips
+
+- Name the symptom, the scope, and the check.
+- Give it the failing output, not a summary.
+- Ask for an explanation before a change.
+- Review the diff. Run the tests.
+- Start a new thread when answers go stale.
+
+---
+
+# Optional: compare two models
+
+Skip this if you have one model. Nothing replaces it.
+
+With two models: same prompt, same context, same tests. Judge by the tests, not by
+how well the answer reads.
 
 ---
 

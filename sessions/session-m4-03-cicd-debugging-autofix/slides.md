@@ -115,7 +115,7 @@ Fix one cause per push. Read the next log fresh.
 | Feature | What it does |
 | --- | --- |
 | **Copilot Autofix** | One suggested fix for a CodeQL alert. You apply it. Free for public repos. |
-| **Agentic autofix** (public preview) | Assign an alert to the cloud agent. It validates, iterates, opens a PR. |
+| **Agentic autofix** | Assign a default-branch alert to Copilot. It validates the fix and opens a draft PR. Must be enabled per repo. |
 | **Cloud agent** | Works an issue you assign to Copilot and opens a PR |
 
 None of them merges for you. **You review the PR.**

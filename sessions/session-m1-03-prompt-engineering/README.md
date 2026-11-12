@@ -11,7 +11,7 @@
 ## Overview
 
 Build one todo API by improving prompts as the project grows. Use intent,
-context, constraints, and examples to implement a store and Express routes. Then
+context, constraints, and examples to implement a store and two Express routes. Then
 add priority filtering and note how context changed the suggestion.
 
 **A good prompt is only the start.** The result still has to pass the tests and
@@ -21,7 +21,8 @@ API checks.
 
 - Write prompts that state the task, context, boundaries, and examples.
 - Refine a useful result without mixing unrelated concerns.
-- Use CLI `/refine` and check that its rewrite keeps your intent.
+- Use CLI `/refine` (check `/help` in your version) and check that its rewrite
+  keeps your intent.
 - Use comments and neighboring files as context.
 - Recognize vague, overloaded, and untrusted instructions.
 - Turn a successful prompt into a reusable pattern.

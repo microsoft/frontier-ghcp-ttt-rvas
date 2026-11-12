@@ -117,7 +117,7 @@ Copilot's Terraform often looks right and is not. Check your module:
 | **Old style** | Bucket settings written inside `aws_s3_bucket` (`acl`, `versioning`, `server_side_encryption_configuration` blocks). In provider 5.x they are separate resources. |
 | **Hardcoded value** | Search for quoted `10.`, `eu-west`, or a literal bucket name. |
 | **Missing tags or names** | Read `terraform show tfplan` against the naming rule. |
-| **Old provider version** | Compare the `version` line in `main.tf` with the [provider docs](https://registry.terraform.io/providers/hashicorp/aws/latest). |
+| **Old provider version** | Compare the `version` line in `main.tf` with the [provider docs](https://registry.terraform.io/providers/hashicorp/aws/latest). The lab pins `~> 5.0` on purpose, so a newer major version is not a Copilot mistake. |
 
 If you find a problem, name it when you ask Copilot to fix it. If you find none, ask:
 
@@ -145,7 +145,7 @@ Scan it:
 trivy config --severity HIGH,CRITICAL .
 ```
 
-Trivy reads the `.tf` files. It needs no `init` and no cloud account. Expect **AWS-0107: unrestricted ingress from any IP address**. You may also see **AWS-0132**: the bucket is not encrypted with a customer-managed key. Rule IDs and severities change between Trivy versions, so fix what your run reports.
+Trivy reads the `.tf` files. It needs no `init` and no cloud account. Expect **AWS-0107** (HIGH): unrestricted ingress from any IP address. Older Trivy versions may also report **AWS-0132**: the bucket isn't encrypted with a customer-managed key. Rule IDs and severities change between Trivy versions, so fix what your run reports.
 
 Ask Copilot to fix each finding:
 
@@ -156,7 +156,7 @@ default of ["10.0.0.0/16"]. Use it in the security group. Show me the diff.
 <paste the finding>
 ```
 
-For AWS-0132, ask for an `aws_kms_key` with key rotation, used in the bucket's encryption rule.
+If your run reports AWS-0132, ask for an `aws_kms_key` with key rotation, used in the bucket's encryption rule.
 
 Run until clean:
 

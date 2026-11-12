@@ -1,9 +1,5 @@
 # Chat notes
 
-## Access path
-
-- [x] Required Copilot Chat access checked
-
 ## Conversation record
 
 | Stage | Surface or command | Prompt | What you checked |
@@ -12,7 +8,7 @@
 | Diagnose | Sidebar with `#file` | Compare the failing test with `weighted_average`. | The implementation divides by the item count. |
 | Fix | Inline Chat, `/fix` | Fix only the denominator and preserve the public API. | The focused test passes. |
 | Generate tests | Sidebar, `/tests` | Add mismatch, empty input, zero total weight, and history tests. | Each test checks stated behavior. |
-| Review workspace | `@workspace` | Summarize calculator behavior and test coverage. | The response cited both project files. |
+| Review workspace | `#codebase` | Summarize calculator behavior and test coverage. | The response cited both project files. |
 
 ## Judgment call
 
@@ -21,7 +17,6 @@
 **Why:** A numeric fallback would hide invalid input. A focused test preserves the
 decision.
 
-## Comparison
+## Comparison (optional)
 
-The comparison used the same review prompt for both permitted model choices.
-The result was judged against the test suite rather than response style.
+Skipped. One model was available.

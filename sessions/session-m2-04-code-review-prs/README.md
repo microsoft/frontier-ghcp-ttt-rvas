@@ -10,7 +10,7 @@
 Follow one pull request from change brief to final human decision. Inspect
 a flawed change, run `/review` and `/security-review` on its local diff, and compare
 those findings with Copilot PR review. Then correct the code and resolve a
-conflict. Keep the diff, test output, and reviewer decision.
+conflict. Keep the completed review template and the test output.
 
 ## Learning outcomes
 

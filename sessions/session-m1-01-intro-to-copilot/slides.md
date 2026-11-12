@@ -24,10 +24,10 @@ Session M1-01 | 3 hours
 | --- | --- |
 | Suggestion-and-tests model | 7 min |
 | How context shapes a suggestion | 10 min |
-| Inline suggestion controls | 15 min |
-| Prepared utility demonstration | 18 min |
-| Follow-up edits | 6 min |
-| Access check and lab handoff | 4 min |
+| Inline suggestion controls | 18 min |
+| Prepared utility demonstration | 17 min |
+| Follow-up edits | 5 min |
+| Lab handoff | 3 min |
 
 ---
 
@@ -79,6 +79,42 @@ Useful context includes:
 - docstrings and examples;
 - selected code and nearby files;
 - tests and repository instructions.
+
+---
+
+# How inline suggestions work
+
+**Trigger:** type, or pause after a comment or function signature. Copilot shows
+the suggestion as grey ghost text. You can also request one by hand.
+
+**Inline vs Chat:** inline completes the code at your cursor as you type. Chat
+answers a question you ask, and can explain or edit code. Use inline for the next
+few lines. Use Chat when you need to ask or explain.
+
+---
+
+# Take, change, or dismiss a suggestion
+
+| Action | Default in VS Code |
+| --- | --- |
+| Accept all | `Tab` |
+| Accept next word | `Ctrl+Right` |
+| Accept next line | No default key. Use the Command Palette, or bind a key |
+| Cycle alternatives | `Alt+]` and `Alt+[`, or the hover toolbar |
+| Dismiss | `Esc`, or keep typing |
+
+**Check your version.** Shortcuts differ by editor, OS, and version. The editor
+shows the ones that apply to you.
+
+---
+
+# Suggested code is not tested code
+
+Copilot predicts likely code. It does not run it.
+
+- A suggestion can compile and still be wrong.
+- A suggestion can pass the one example you thought of.
+- **Only your tests and your review show it is correct.**
 
 ---
 
@@ -159,12 +195,6 @@ Run the focused test
 ```
 
 A predicted edit can miss a reference.
-
----
-
-# Access check
-
-Every learner must be able to request an inline suggestion before the lab starts.
 
 ---
 

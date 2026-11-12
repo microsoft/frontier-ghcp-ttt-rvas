@@ -23,7 +23,7 @@ Session M2-06 | Intermediate | 3 hours
 | Segment | Time |
 | --- | ---: |
 | Start from the failure output | 8 min |
-| Python failure order | 10 min |
+| Python concepts and failure order | 10 min |
 | Prepared repair demonstration | 12 min |
 | Recover behavior from fixtures | 12 min |
 | Lock behavior with tests | 10 min |
@@ -44,6 +44,16 @@ It currently does none of this reliably.
 
 ---
 
+# Python concepts you need
+
+- **Import:** `from .rules import severity_for` loads a name from a module in the same package. A missing file or name stops startup.
+- **Entry point:** `python -m inventory_reconciliation` runs `__main__.py`, which calls `main()` in `cli.py`.
+- **pytest:** runs `test_*` functions with plain `assert`. A file that can't parse or import stops collection.
+- **CSV:** every value is a string. Convert and validate `quantity`.
+- **Module-level state:** a top-level variable lives as long as the process, so calls can leak into each other.
+
+---
+
 # The broken-state contract
 
 | Stage | Named fault |
@@ -55,6 +65,9 @@ It currently does none of this reliably.
 | Design | `DESIGN-01` |
 
 Each repaired fault lets execution reach the next failure.
+
+**Core** (full loop and log entry): `SYN-01`, `IMP-01`, `LOG-01`, `LOG-03`, `STATE-01`, `DESIGN-01`.
+**Quick** (repeat a pattern, log if time allows): `SYN-02`, `IMP-02`, `LOG-02`.
 
 ---
 
@@ -260,11 +273,15 @@ Keep public behavior stable.
 
 # Use Python LSP after the tests are green
 
+`.github/lsp.json` tells the CLI to start `pyright-langserver --stdio` for `.py` files.
+An LSP answers "where is this defined, who calls it?" from parsed code.
+
 ```text
-/lsp show
-/lsp test python
+/lsp show           list configured servers
+/lsp test python    check that the server starts
 ```
 
+`/lsp test python` proves startup only. It doesn't look up code.
 Ask for the definition and references of `severity_for`.
 Inspect the actual LSP operation and check its locations.
 
@@ -303,7 +320,7 @@ Check generated code against tests and fixtures.
 
 # Final deliverable
 
-- completed repair log;
+- repair log with the six core repairs;
 - runnable inventory command;
 - added regression tests;
 - unchanged expected outputs;
@@ -316,7 +333,7 @@ Check generated code against tests and fixtures.
 
 # Lab handoff
 
-Work in failure order. Record every repair.
+Work in failure order. Log the six core repairs.
 
 Your solution must produce the supplied text and JSON outputs,
 pass all tests, and return the same result on repeated runs.

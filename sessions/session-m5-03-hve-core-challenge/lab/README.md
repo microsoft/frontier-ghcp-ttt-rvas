@@ -38,7 +38,9 @@ your installed version. This lab uses the names below. If yours differ, use your
 
 1. Check that `/rpi-research`, `/rpi-plan`, `/rpi-implement`, `/rpi-review`, and `/rpi`
    are available. For the optional exercises, also check `@Product Manager Advisor`
-   and `@Agile Coach`. Type the command in chat. If it appears in the picker or
+   and `@Agile Coach`. Current HVE Core `main` replaced these agents with skills
+   (`requirements-author` and the backlog skills), so use whatever your install
+   offers. Type the command in chat. If it appears in the picker or
    runs, it's available. In Copilot CLI, `/skills` and `/agent` list what's loaded.
 2. Check that `.copilot-tracking/` is ignored by Git.
 3. Run `npm test` (run `npm ci` first if dependencies are missing).

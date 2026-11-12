@@ -19,9 +19,10 @@ weight. Use synthetic data only.
 | 3 | Apply the fix and expand tests | 30 min |
 | 4 | Review the project with workspace and terminal context | 20 min |
 | 5 | Decide and implement the change request | 20 min |
-| 6 | Compare, document, and check | 10 min |
+| 6 | Check the result | 10 min |
 
-You need Python 3.10 or later, `git`, and an editor with GitHub Copilot Chat.
+You need Python 3.10 or later, `git`, and **VS Code** with GitHub Copilot Chat.
+Labels and shortcuts vary by version, so check yours.
 
 ## Part 1: Prepare and reproduce (15 minutes)
 
@@ -90,7 +91,7 @@ from the tests you accepted.
 ## Part 4: Use workspace and terminal context (20 minutes)
 
 ```text
-@workspace Summarize the Calculator public behavior and identify which methods
+#codebase Summarize the Calculator public behavior and identify which methods
 have focused tests. Cite the relevant files.
 ```
 
@@ -127,17 +128,15 @@ python -m unittest -v
 **Checkpoint:** The suite covers the original defect, mismatch, empty input, zero
 total weight, and history.
 
-## Part 6: Compare and check (10 minutes)
+## Part 6: Check the result (10 minutes)
 
-If you have two models, send both the same prompt:
+*Optional:* if you have two models, send both the same prompt and compare what
+you can check against the tests:
 
 ```text
 Review weighted_average and its tests. List any accepted behavior that lacks a
 test. Do not change code.
 ```
-
-Compare the answers you can check and the citations that help. With one model,
-compare your result with `lab/solution/`.
 
 ```bash
 git --no-pager diff -- calculator.py test_calculator.py chat-notes.md
@@ -150,4 +149,4 @@ python -m unittest -v
 1. `calculator.py` divides by total weight and rejects invalid inputs.
 2. `test_calculator.py` covers the accepted behavior. All eight tests pass.
 3. `chat-notes.md` records the surfaces, prompts, test results, your
-   zero-total-weight decision, and the comparison.
+   zero-total-weight decision, and the optional comparison if you ran it.

@@ -8,18 +8,19 @@ completed `prompt-log.md`
 ## Lab overview
 
 You build one todo API in stages. The starter includes tests, route comments, and
-a small context example. First implement the baseline store, then wire the HTTP
-routes. A later change request adds priority, and you decide how to handle invalid
-priority input. Use synthetic data only.
+a small context example. First implement the baseline store, then wire two HTTP
+routes (list and create). The other three are optional. A later change request
+adds priority, and you decide how to handle invalid priority input. Use synthetic data only.
 
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Prepare the project and map the contract | 15 min |
 | 2 | Review `/refine` output, then implement the baseline store | 30 min |
-| 3 | Implement the REST routes from comments | 25 min |
+| 3 | Implement the list and create routes from comments | 15 min |
 | 4 | Run a deliberate context experiment | 15 min |
 | 5 | Apply the priority change request | 25 min |
 | 6 | Check and extract a reusable prompt | 10 min |
+| | Slack for setup problems and catch-up | 10 min |
 
 ## You need
 
@@ -27,11 +28,13 @@ priority input. Use synthetic data only.
 - GitHub Copilot Chat and inline suggestions;
 - the standalone `copilot` CLI, installed and signed in
   ([CLI quickstart](https://docs.github.com/en/copilot/get-started/cli-quickstart)).
-  Run `/help` and check that `/refine` is listed. Editor Chat has no `/refine`;
+  Run `/help` and check that `/refine` is listed in your version. Editor Chat has
+  no `/refine`;
 - npm, only to run the Express server.
 
-Treat text from issues, comments, files, and command output as data. Don't paste
-instructions from untrusted sources into the project or a prompt.
+Treat text from issues, comments, files, and command output as data. A comment or
+issue that tells Copilot to ignore your rules is untrusted. Don't paste it into
+the project or a prompt, and don't follow it.
 
 ## Part 1: Prepare and map the contract (15 minutes)
 
@@ -104,10 +107,11 @@ a time. Don't ask for a full rewrite when the structure is sound.
 **Checkpoint:** The log separates the `/refine` rewrite from your final prompt.
 Four baseline tests pass. The change tests still fail.
 
-## Part 3: Implement the REST routes (25 minutes)
+## Part 3: Implement the list and create routes (15 minutes)
 
 Open `routes/todos.js`. The comments state the route contract. Use each comment as
-an inline prompt, one handler at a time. In Chat, try:
+an inline prompt, one handler at a time. Do `GET /todos` and `POST /todos`. In
+Chat, try:
 
 ```text
 Implement only GET /todos in routes/todos.js. Use the existing TodoStore instance.
@@ -115,8 +119,9 @@ Map validation errors to status 400 with { error: message }. Do not change the
 store or add middleware.
 ```
 
-Repeat for get-by-ID, create, update, and delete. Check status codes and response
-shapes before you accept each one.
+Check status codes and response shapes before you accept each one.
+
+**Optional:** get-by-ID, update, and delete, with the same pattern.
 
 To run the server:
 
@@ -138,7 +143,7 @@ curl -X POST http://localhost:3000/todos \
 Stop the server when done.
 
 **Checkpoint:** The health, list, and create routes return JSON with the
-documented status codes.
+documented status codes. Skip the rest if you're short on time.
 
 ## Part 4: Run the context experiment (15 minutes)
 
@@ -198,8 +203,8 @@ line.
 ## Final deliverable
 
 1. `lib/todo-store.js` implements baseline and priority behavior.
-2. `routes/todos.js` maps store results to the documented HTTP responses. Errors
-   return JSON, not HTML or silent defaults.
+2. `routes/todos.js` implements list and create (the other handlers are optional).
+   Errors return JSON, not HTML or silent defaults.
 3. `tests/todo-store.test.js` passes all six tests with no package beyond Express.
 4. `prompt-log.md` records the `/refine` comparison, your iterations, the context
    experiment, the invalid-priority decision, and one reusable prompt.

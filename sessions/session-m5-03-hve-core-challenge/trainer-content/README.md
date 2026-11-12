@@ -29,7 +29,8 @@ If an agent response is slow, switch to the reference artifact and keep talking.
 ## Prepare
 
 - Install Node.js 20 or later and the HVE Core extension or Copilot CLI plugin. Open Copilot Chat and check the RPI prompts and agents appear.
-- HVE Core releases often and command names, docs, and output paths move. Read the HVE Core README for your installed version and run the demo once. Adjust names in the slides and lab if they differ.
+- HVE Core releases often and command names, docs, and output paths move. This session's names (`/rpi-research`, `/rpi-plan`, `/rpi-implement`, `/rpi-review`, Follow-up, `.copilot-tracking/reviews/logs/`) match the `main` docs checked on 12 November 2026. The plugin follows `main`. The latest tagged release, v3.2.2 (March 2026), uses older names. Install the version you teach, read its docs, and run the demo once. Adjust names in the slides and lab if they differ.
+- On `main`, `Product Manager Advisor` and `Agile Coach` are no longer agents. Their questioning and story-quality guidance moved into the `requirements-author` and backlog skills. If your install has no such agents, run optional exercise 3 through those skills or demonstrate it.
 - A clean copy of the starter.
 - Reference RPI artifacts and product and Agile outputs.
 - Captured test output and container-build result.

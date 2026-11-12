@@ -51,11 +51,13 @@ answer is a fact in the source. Use the skill when a person must decide.
 
 ### Frontmatter and the description
 
-Open `SKILL.md`. `name` matches the folder and the `/` command. Copilot compares
+Open `SKILL.md`. `name` is the skill's identifier, usually the folder name, and
+`/name` runs it. Copilot compares
 the `description` with the user's request, so it should say when to use the skill
 and when not to ("Do not use for questions that have a factual answer"). The body
-loads after that. Check current docs for skill discovery rules in your app
-version.
+loads after that. Project skills load from `.github/skills`, `.claude/skills`, or
+`.agents/skills`; personal skills from `~/.copilot/skills` or `~/.agents/skills`.
+Check current docs for discovery rules in your app version.
 
 ### The frontier controls question order
 

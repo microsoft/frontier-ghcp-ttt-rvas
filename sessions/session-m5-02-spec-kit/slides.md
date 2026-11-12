@@ -379,14 +379,14 @@ the contract.
 # Optional: convert tasks into GitHub Issues
 
 ```text
-/speckit-taskstoissues
+/speckit-github-taskstoissues
 ```
 
 Each issue keeps its task ID, dependencies, and file paths. Issues distribute the
 work. **They are not a second requirements source.**
 
-The command comes from Spec Kit's GitHub extension. Skip it if your install
-doesn't have it.
+The command comes from Spec Kit's opt-in GitHub extension. Install it with
+`specify extension add github`, or skip this step.
 
 ---
 

@@ -64,7 +64,7 @@ You do this yourself, in your training repository.
 
 1. Copy the contents of `starter/sample-project/` to the repository root. The setup workflow expects `package.json`, `package-lock.json`, `src/`, and `tests/` there.
 2. Add `starter/copilot-instructions.md` as `.github/copilot-instructions.md`.
-3. Add `starter/copilot-setup-steps.yml` as `.github/workflows/copilot-setup-steps.yml`. Check that it has one job named `copilot-setup-steps`.
+3. Add `starter/copilot-setup-steps.yml` as `.github/workflows/copilot-setup-steps.yml`. Check that it has one job named `copilot-setup-steps`. Only Actions-based sessions run it. Cloud sandbox sessions don't, so check which environment your session uses.
 4. Commit and **merge to the default branch**. The workflow doesn't run from any other branch.
 5. In the **Actions** tab, run the setup workflow and check that it passes.
 6. Run the baseline locally:

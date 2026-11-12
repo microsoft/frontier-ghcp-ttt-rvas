@@ -19,7 +19,7 @@ Everything is real. You use a **throwaway GitHub repo** you create for this lab,
 | 6 | Open and check the PR | 20 min |
 | 7 | Compare with another surface | 15 min |
 
-Command names in the app change. If a command below isn't in your picker, type `/` and look. **Check `/help` in your version** and use the closest match.
+Command names in the app change. If a command below isn't in your picker, type `/` and look. Check the list in your version and use the closest match.
 
 ## Part 1: Create the throwaway repo and issue
 

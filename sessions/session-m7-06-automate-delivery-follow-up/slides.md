@@ -21,8 +21,8 @@ Session M7-06 | 3 hours
 An **automation** is a saved prompt plus a **trigger**, a set of **tools**, and an
 **enabled** state. When the trigger fires, the agent runs the prompt.
 
-- **Trigger and cadence:** manual (you click run), a schedule (hourly, daily, weekly, cron), or a repository event.
-- **Local scope:** runs on your machine, only while the app can run it. Cloud automations are a separate type; check current docs.
+- **Trigger and cadence:** manual (you click run), a schedule (hourly, daily, or weekly), or a repository event such as a new issue or pull request. Cloud and local automations offer different triggers; check current docs.
+- **Local scope:** runs on your machine, only while the app can run it. Cloud automations are a separate type that need Copilot cloud agent enabled for the repository.
 - **Enabled state:** an enabled automation can fire. A disabled one can't.
 
 ---

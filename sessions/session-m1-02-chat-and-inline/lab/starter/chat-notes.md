@@ -1,9 +1,5 @@
 # Chat notes
 
-## Access path
-
-- [ ] Required Copilot Chat access checked
-
 ## Conversation record
 
 | Stage | Surface or command | Prompt | What you checked |
@@ -20,8 +16,7 @@
 
 **Why:**
 
-## Comparison
+## Comparison (optional)
 
-If policy allows two model choices, run the same weighted-average review
-prompt with both. Otherwise compare the assisted response with the reference
-solution. Record only differences you can check.
+If you have two models, note differences you can check against the tests.
+Otherwise leave this blank.
