@@ -7,54 +7,36 @@
 **Prerequisites:** Live app orchestration access; Sessions M7-01 to M7-04 and GitHub MCP
 read access for the product route, or Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 for the developer route
 
-**Deliverable:** An accepted orchestration plan and a reviewed parent result from
-live child sessions
-
-## Deliverables
-
-- An accepted orchestration plan
-- A reviewed parent result backed by the selected route's source files or issues
-
 ## Choose one route
 
-Both routes require the app's built-in `/orchestrate` skill and live child sessions.
-Separate prompts and prepared answers do not complete the lab.
+Both routes use the built-in `/orchestrate` skill and live child sessions.
+Separate prompts and prepared answers don't complete the lab.
 
 | Route | Use after | Inputs | Lab time |
 | --- | --- | --- | --- |
 | [Product and delivery](#product-and-delivery-route) | Sessions M7-01 to M7-04 | Live GitHub issues through MCP | 120 min |
 | [Developer](#developer-route-review-pr-readiness) | Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 | Local Python code and a synthetic PR snapshot | 120 min |
 
-Complete one route. Developers do not need the product route's GitHub issues,
-canvases, or MCP access.
+Complete one route. Developers don't need GitHub issues, canvases, or MCP.
 
 ## Product and delivery route
 
-The GitHub access requirements below apply to this route only.
-
 ## Scenario
 
-You will work with four live GitHub issues: public status mapping, requester
-status, empty and stale states, and requester access. Orchestrate one workstream
-per issue. Session M7-06 will use your reviewed parent result as an authoritative
-input.
+You work with four live GitHub issues: public status mapping, requester status,
+empty and stale states, and requester access. Orchestrate one workstream per
+issue. Session M7-06 uses your reviewed parent result.
 
 Select the four required roles from the parent issue's child links. Any optional
 fifth child stays outside this orchestration.
 
-## Preflight
+## Before you start
 
-- Check GitHub Copilot access before the lab.
-- Check `/orchestrate` is available.
-- Check GitHub MCP can retrieve the approved parent and child issues.
-- Check that you can open, redirect, and stop child sessions.
-- Use only supplied synthetic material or approved sanitized work.
+- `/orchestrate` is available.
+- GitHub MCP can retrieve the parent and child issues.
+- You can open, redirect, and stop child sessions.
 - Stop any work that requests production data, personal data, secrets, external
   contact, publication, or unapproved changes.
-
-> [!IMPORTANT]
-> Do not replace the live run with separate prompts, role-play, or prepared
-> outputs.
 
 ## Schedule
 
@@ -90,7 +72,7 @@ inputs, stop condition, and reviewer.
 
 ## Exercise 2: Monitor and intervene
 
-Use the orchestration surface as the live record. Do not copy session identifiers,
+Use the orchestration surface as the live record. Don't copy session identifiers,
 status, timing, or usage into the plan.
 
 | Signal | Action |
@@ -130,19 +112,18 @@ The parent result must:
 - state which issues are ready for follow-up;
 - avoid publication or source-system changes.
 
-Add the reviewed result to the approved parent GitHub issue if the trainer has
-approved that write. Retrieve the issue again to check the update.
+Add the reviewed result to the parent GitHub issue if the trainer allows that
+write. Retrieve the issue again to check the update.
 
-Session M7-06 uses the live GitHub issues and this parent result. Do not create a
-separate handoff form.
+Session M7-06 uses the live GitHub issues and this parent result.
 
 ## Completion check
 
-- [ ] Approved plan with four workstreams, each with a defined scope.
+- [ ] Plan with four workstreams, each with a defined scope.
 - [ ] Live child results on the orchestration surface.
 - [ ] At least one deliberate wait, redirect, stop, accept, or reject decision.
 - [ ] Reviewed parent result linked to the live GitHub issues.
-- [ ] Any approved issue update checked through a fresh GitHub read.
+- [ ] Any issue update checked through a fresh GitHub read.
 
 ## Troubleshooting
 
@@ -161,9 +142,8 @@ Supervise independent read-only reviews of a readiness evaluator, its tests, and
 a supplied PR snapshot. Passing local tests and PR readiness are different claims.
 
 You need the GitHub Copilot app with `/orchestrate`, local project read access,
-and Python 3.10 or later. Check that you can open, redirect, and stop child
-sessions. No GitHub
-connection, MCP server, or remote write is needed.
+and Python 3.10 or later. No GitHub connection, MCP server, or remote write is
+needed.
 
 ### Prepare the local project
 
@@ -186,10 +166,10 @@ cd ~/copilot-labs/session-m7-05-developer
 PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
 ```
 
-The supplied reference implementation's six tests should pass. You will review
-the implementation; do not repair it or install packages. Attach this folder as an app project.
-Keep the children read-only and restrict tool access to the named files and test
-command. Do not grant network or GitHub write access.
+The supplied reference implementation's six tests should pass. You review the
+implementation; don't repair it or install packages. Attach this folder as an app
+project. Keep the children read-only and restrict tool access to the named files
+and test command. Grant no network or GitHub write access.
 
 ### Exercise D1: Accept the work split (25 minutes)
 
@@ -232,13 +212,13 @@ issue-brief.md. Explain whether sorted reason codes are tested and whether the
 test also proves the exact complete reason list. Do not edit or broaden the task.
 ```
 
-Compare the child's original and revised answers. This is a planned follow-up
-question, not proof that the first answer was wrong. Stop a child if it crosses
-scope; do not stage a harmful action merely to demonstrate stopping.
+Compare the child's original and revised answers. The redirect is a planned
+follow-up, not proof that the first answer was wrong. Stop a child if it crosses
+scope; don't stage a harmful action to demonstrate stopping.
 
 Then ask the parent to reconcile all results with the provisional `READY` note in
 `developer-review-brief.md`. Check any disagreement against the source files.
-If children agree, say so; do not fabricate conflicting child conclusions.
+If children agree, say so.
 
 ### Exercise D4: Review the parent result (30 minutes)
 
@@ -252,13 +232,12 @@ Require the parent to return:
 
 Check that the parent explains why passing local tests cannot override a failed
 required PR check or unresolved blocking thread. Review the result yourself and
-keep it in the app session. Do not copy session identifiers or a second progress
-log into the plan. Inspect the app's usage display and explain whether
+keep it in the app session. Inspect the app's usage display and explain whether
 orchestration was worth using for this work.
 
 ### Developer completion check
 
-- [ ] Accepted plan with independent questions and a usage limit.
+- [ ] Plan with independent questions and a usage limit.
 - [ ] Live child sessions inspected on the orchestration surface.
 - [ ] Test reviewer redirected and its revised answer checked.
 - [ ] Provisional `READY` note accepted or rejected using the actual PR fields.
@@ -266,6 +245,6 @@ orchestration was worth using for this work.
 - [ ] No source files, packages, or external systems changed.
 - [ ] A human decision and observed usage are recorded in the parent result.
 
-Compare your reviewed result with
+Compare your result with
 [`solution/developer-review-reference.md`](solution/developer-review-reference.md).
-That reference cannot replace live child-session work.
+That reference can't replace live child-session work.

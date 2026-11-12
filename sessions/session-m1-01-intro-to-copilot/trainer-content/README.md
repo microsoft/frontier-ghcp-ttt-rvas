@@ -2,98 +2,69 @@
 
 ## Delivery objective
 
-Teach one habit: **define, inspect, test, decide**. Learners should leave
-able to review an inline suggestion without assuming that plausible code is correct.
+Teach one habit: **define, inspect, test, decide**. Learners should leave able to
+review an inline suggestion without assuming plausible code is correct.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:07 | The proposal-and-evidence model |
+| 0:00 to 0:07 | The suggestion-and-tests model |
 | 0:07 to 0:17 | How context shapes a suggestion |
-| 0:17 to 0:27 | Access, data, repository, and metering preflight |
-| 0:27 to 0:38 | Inline suggestion controls |
-| 0:38 to 0:50 | Prepared utility-function demonstration |
+| 0:17 to 0:32 | Inline suggestion controls |
+| 0:32 to 0:50 | Prepared utility-function demonstration |
 | 0:50 to 0:56 | Follow-up edits and Next Edit Suggestions |
-| 0:56 to 1:00 | Access decision and lab handoff |
+| 0:56 to 1:00 | Access check and lab handoff |
 
 The timings match [`slides.md`](../slides.md).
 
 ## Before delivery
 
-- Check that the training repository uses synthetic content.
-- Check that Python 3.10 or later is available.
-- Check current product setup in official documentation.
-- Check that learners may use the selected editor and account.
-- If the exercise can create metered use, name the owner, threshold, and stop
-  condition.
-- Check access before delivery and prepare screenshots only for demo recovery.
 - Run the starter syntax check and the solution tests.
-
-Do not teach fixed prices, model lists, shortcuts, or data-handling claims. Show the
-controls available in the training environment.
+- Check that Python 3.10 or later and Copilot work in the training editor.
+- Use the shortcuts the editor shows. Don't teach fixed shortcuts or model lists.
 
 ## Slide delivery map
 
-### 0:00 to 0:07: Proposal and evidence
+### 0:00 to 0:07: Suggestion and tests
 
-**Slides:** *Introduction to GitHub Copilot*, *The review workflow*, *Proposal is
-not proof*
-
-State the session rule:
+**Slides:** *Introduction to GitHub Copilot*, *The review workflow*, *Plausible is
+not correct*
 
 > Copilot can draft a change. The developer defines intent, checks the result, and
 > owns the decision.
 
-Ask what checks learners require before merging ten generated lines. Listen for
+Ask what checks learners want before merging ten generated lines. Listen for
 tests, review, scope, and repository conventions.
 
 ### 0:07 to 0:17: Context shapes suggestions
 
-**Slides:** *A practical system model*, *Context changes the proposal*
-
-Draw this model:
+**Slides:** *A practical system model*, *Context changes the suggestion*
 
 ```text
-task + approved context -> product surface -> proposal -> checks + review
+task + context -> Copilot surface -> suggestion -> tests + review
 ```
 
-Explain that names, types, docstrings, nearby code, selected text, and repository
-instructions can influence a proposal. Avoid claims about hidden service internals.
+Names, types, docstrings, nearby code, selected text, and repository instructions
+can all influence a suggestion.
 
-Use two versions of `normalize_username`: one with only the function name, then one
-with the docstring and test. The second version gives reviewers a clear contract.
+Show two versions of `normalize_username`: one with only the function name, one
+with the docstring and test. The second gives the reviewer a contract.
 
-### 0:17 to 0:27: Preflight
-
-**Slides:** *Preflight before use*, *Access policy*
-
-Before handing off the lab, ask:
-
-1. **Access:** Is the selected account and surface enabled?
-2. **Data:** Is every file and value approved for this workflow?
-3. **Scope:** Which repository and files may change?
-4. **Metering:** Who owns any limit and stop decision?
-
-Resolve any missing answer before the lab handoff. Do not
-troubleshoot policy by trial and error.
-
-### 0:27 to 0:38: Inline controls
+### 0:17 to 0:32: Inline controls
 
 **Slides:** *Accept, revise, reject*, *Review one suggestion*
 
-Use the key bindings shown by the editor. Demonstrate:
+Show:
 
-- reading the full proposal before accepting;
+- reading the whole suggestion before accepting;
 - rejecting an implementation that changes behavior;
-- accepting a useful portion and editing the rest;
+- accepting part of a suggestion and editing the rest;
 - rerunning a focused test after each decision.
 
-The control names matter less than the review loop.
+### 0:32 to 0:50: Prepared demonstration
 
-### 0:38 to 0:50: Prepared demonstration
-
-**Slides:** *Demo contract*, *Demo: inspect before accepting*, *A failing check is
+**Slides:** *Demo contract*, *Demo: inspect before accepting*, *A failing test is
 useful*
 
 Open `lab/starter/utils.py` and `test_utils.py`.
@@ -101,36 +72,13 @@ Open `lab/starter/utils.py` and `test_utils.py`.
 1. Read the `normalize_username` docstring and test.
 2. Request an inline suggestion.
 3. Ask which line handles outer whitespace, case, and repeated spaces.
-4. Reject any proposal that deletes internal word boundaries.
+4. Reject any suggestion that deletes internal word boundaries.
 5. Run the focused test.
-6. Deliberately replace `split()` with a single-space split.
-7. Show the failure for repeated whitespace.
+6. Replace `split()` with a single-space split.
+7. Show the failure on repeated whitespace.
 8. Restore the reviewed implementation and rerun the test.
 
-Point out how the failing check exposes the whitespace bug while the change is
-still small.
-
-### 0:50 to 0:56: Follow-up edits
-
-**Slides:** *Predicted follow-up edits still need review*
-
-Show the `profile_summary` rename from `username` to `handle`.
-
-If Next Edit Suggestions are available, inspect each proposed caller update. Then
-run an independent search for the old name. A prediction can miss a reference.
-
-### 0:56 to 1:00: Access decision and handoff
-
-**Slides:** *Access check*, *Lab handoff*
-
-Check that learners can request an inline suggestion. If they cannot, fix access
-before starting the lab.
-
-Explain that learners will keep working in the same module. They will complete
-two simple functions, settle the apostrophe rule, add the summary, and review the
-rename.
-
-## Prepared demo commands
+The failing test exposes the whitespace bug while the change is still small.
 
 ```bash
 cd sessions/session-m1-01-intro-to-copilot/lab/starter
@@ -138,33 +86,36 @@ python -m py_compile utils.py test_utils.py
 python -m unittest -v test_utils.UtilityTests.test_normalize_username
 ```
 
+### 0:50 to 0:56: Follow-up edits
+
+**Slides:** *Predicted follow-up edits still need review*
+
+Show the `profile_summary` rename from `username` to `handle`. If Next Edit
+Suggestions are available, inspect each proposed caller update, then search for
+the old name. A prediction can miss a reference.
+
+### 0:56 to 1:00: Access check and handoff
+
+**Slides:** *Access check*, *Lab handoff*
+
+Check that every learner can request an inline suggestion. Fix access before the
+lab starts. Then preview the lab: two simple functions, the apostrophe rule, the
+summary, and the rename.
+
 ## Teaching points
 
 - A clear function contract improves both suggestions and review.
-- A passing test supports a stated behavior. It does not prove every behavior.
-- Resolve ambiguity with a decision and a test, not an unreviewed guess.
-- Predicted follow-up edits are proposals.
-- Learners need Copilot in their editor to practice suggestion review.
+- A passing test covers one stated behavior, not every behavior.
+- Settle ambiguity with a decision and a test, not a guess.
+- Predicted follow-up edits are suggestions.
 
 ## Common questions
 
-**Why did two learners receive different suggestions?**
+**Why did two learners get different suggestions?**
+Their context or the generated output differed. Run both against the same tests.
 
-Their context or generated output differed. Compare both results with the same
-tests.
+**Should learners accept a suggestion that passes one test?**
+Only after they check scope, edge cases, dependencies, and readability.
 
-**Should learners accept a proposal that passes one test?**
-
-Only after they also inspect scope, edge cases, dependencies, and readability.
-
-**Which editor shortcut should I teach?**
-
-Use the shortcut displayed by the editor.
-
-## Lab readiness check
-
-- [ ] The starter files are open.
-- [ ] The five expected baseline failures are understood.
-- [ ] Required Copilot access is checked.
-- [ ] Learners know where to record decisions.
-- [ ] The solution is available but closed.
+**Which shortcut should I teach?**
+The one the editor displays.

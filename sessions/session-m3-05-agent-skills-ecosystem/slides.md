@@ -27,7 +27,7 @@ Session M3-05 | 3 hours
 | Selection and visible failure | 10 min |
 | Validation versus live invocation | 10 min |
 | Pinned interview comparison and plan handoff | 18 min |
-| Access check and lab handoff | 6 min |
+| Lab handoff | 6 min |
 
 ---
 
@@ -36,9 +36,7 @@ Session M3-05 | 3 hours
 1. **Select the right task.**
 2. **Guide the work after selection.**
 
-A broad description can select the wrong task even when the procedure is good.
-The procedure also needs failure rules so it does not claim success after a
-required check fails.
+A broad description selects the wrong task even when the procedure is good. The procedure also needs failure rules so it doesn't claim success after a required check fails.
 
 ---
 
@@ -51,8 +49,7 @@ required check fails.
         └── SKILL.md
 ```
 
-The directory uses lowercase words and hyphens. The instruction file is named
-exactly `SKILL.md`.
+The directory uses lowercase words and hyphens. The file is named exactly `SKILL.md`.
 
 ---
 
@@ -81,7 +78,7 @@ Required context:
 - acceptance criteria;
 - named paths;
 - reviewer;
-- focused test command that runs in this project.
+- a focused test command that runs in this project.
 
 Expected status: `applied`.
 
@@ -103,8 +100,6 @@ Expected:
 }
 ```
 
-A skill should not run on tasks outside its scope.
-
 ---
 
 # Matching work can still be blocked
@@ -115,7 +110,7 @@ Acceptance criteria exist.
 No reviewer is assigned.
 ```
 
-The trigger matches. The precondition does not.
+The trigger matches. The precondition doesn't.
 
 ---
 
@@ -129,7 +124,7 @@ The trigger matches. The precondition does not.
 }
 ```
 
-Do not invent a reviewer, skip the check, or return success.
+Don't invent a reviewer, skip the check, or return success.
 
 ---
 
@@ -143,8 +138,7 @@ Failure behavior
 Maintenance
 ```
 
-Each section answers a different question. Keep the procedure short enough that a
-human can apply it as a checklist.
+Keep the procedure short enough that a human can apply it as a checklist.
 
 ---
 
@@ -154,7 +148,7 @@ human can apply it as a checklist.
 npm run validate:skill
 ```
 
-The validator checks:
+The validator checks that:
 
 - `SKILL.md` exists;
 - frontmatter has `name` and `description`;
@@ -172,7 +166,7 @@ npm test
 The suite checks that:
 
 - a route task applies the skill;
-- a documentation task does not;
+- a documentation task doesn't;
 - a missing reviewer blocks;
 - valid and invalid directories are distinguishable.
 
@@ -189,7 +183,7 @@ The output shows:
 1. correct application to named API files;
 2. a visible missing-reviewer failure.
 
-The local runner is a teaching harness, not a replacement skill platform.
+The local runner is a teaching harness, not a skill platform.
 
 ---
 
@@ -212,9 +206,6 @@ Matt Pocock's `grill-me` is a community entry point that invokes `grilling`.
 - Check the recorded revision and SHA-256 hashes.
 - Read both files and the retained MIT license.
 - Load only the reviewed project-local copy.
-- Keep permissions and the agreed usage limit in place.
-
-No marketplace installer or live download is needed for this lab.
 
 ---
 
@@ -227,8 +218,7 @@ Use separate fresh Interactive sessions:
 | Local | `/decision-interview` from Session M7-02 |
 | Community | `/grill-me` with its `grilling` dependency |
 
-Use the same request, owner decisions, and late visibility constraint.
-Record actual loading and changes to the decisions.
+Use the same request, owner decisions, and late visibility constraint. Record actual loading and changes to the decisions.
 
 ---
 
@@ -241,7 +231,7 @@ Keep Plan mode off while decisions are unsettled.
 3. Start a fresh `/plan` session from that brief.
 4. Name two decisions that change plan steps or acceptance checks.
 
-Do not implement or create live work items during this comparison.
+Don't implement or create live work items.
 
 ---
 
@@ -253,10 +243,9 @@ Check:
 - files and scripts;
 - dependencies and network use;
 - data flow;
-- repository fit;
-- owner and retirement condition.
+- repository fit.
 
-Do not run an unfamiliar script just to inspect it.
+Don't run an unfamiliar script just to inspect it.
 
 ---
 
@@ -266,14 +255,9 @@ Do not run an unfamiliar script just to inspect it.
 /chronicle improve
 ```
 
-This subcommand scopes history to the current repository or working directory.
-Check a recommendation against an actual correction.
+This scopes history to the current repository or working directory. Check a recommendation against an actual correction.
 
-Choose instructions, a skill, or neither. Cancel the apply step; suggestions may
-start selected. Do not reindex or inspect unrelated history for this lab.
-
-Too little history is a valid result. This uses the last five minutes of the
-45-minute comparison block.
+Choose instructions, a skill, or neither. Cancel the apply step: suggestions may start selected. Too little history is a valid result. This uses the last five minutes of the 45-minute comparison block.
 
 ---
 
@@ -281,13 +265,10 @@ Too little history is a valid result. This uses the last five minutes of the
 
 1. Create `api-design/SKILL.md`.
 2. Validate the directory and frontmatter.
-3. Run the trigger scenario.
-4. Run the non-trigger scenario.
-5. Run the missing-reviewer scenario.
-6. Finish with the two-scenario demo.
-7. Check live API-skill invocation and the missing-reviewer stop.
-8. Compare both live interviews and trace decisions into `/plan`.
-9. Check scoped Chronicle suggestions without auto-applying them.
+3. Run the trigger, non-trigger, and missing-reviewer scenarios.
+4. Finish with the two-scenario demo.
+5. Check live API-skill invocation and the missing-reviewer stop.
+6. Compare both live interviews and trace decisions into `/plan`.
+7. Check scoped Chronicle suggestions without auto-applying them.
 
-**Submit actual outputs.** The harness or prepared transcripts cannot replace
-live loading, either interview, or the plan handoff.
+**Submit actual outputs.** The harness or prepared transcripts can't replace live loading, either interview, or the plan handoff.

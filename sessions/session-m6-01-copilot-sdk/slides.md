@@ -84,8 +84,7 @@ try {
 }
 ```
 
-Cleanup belongs in `finally`. A successful response is not proof that resources
-were released.
+Cleanup belongs in `finally`.
 
 ---
 
@@ -378,8 +377,7 @@ Trace data can contain prompts and tool details. Keep this lab synthetic.
 | Deterministic tool data | Stable tests and demos | Less realism |
 | Local tracing stack | Traces you can inspect | Docker setup and local resource use |
 
-Choose controls that show what failed and why. Checks that only make the
-code look safer do not help.
+Choose controls that show what failed and why.
 
 ---
 
@@ -393,22 +391,6 @@ code look safer do not help.
 6. Show the denial in the terminal.
 7. Open the same run in Jaeger.
 8. Trigger an unknown ID and show the failure path.
-
----
-
-# Keep the boundary tight
-
-This session does not use:
-
-- dynamic workflows or fleet;
-- cloud or remote sessions;
-- BYOK;
-- plugin packaging;
-- production deployment;
-- external business systems;
-- a second implementation language.
-
-The lab is about one local TypeScript application's control path.
 
 ---
 

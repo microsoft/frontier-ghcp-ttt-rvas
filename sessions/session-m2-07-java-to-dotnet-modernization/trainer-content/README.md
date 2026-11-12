@@ -2,16 +2,11 @@
 
 ## Delivery objective
 
-Teach learners to preserve behavior during migration. Have them inspect a runnable
-Java service and define the pricing contract before moving one complete HTTP
-slice to .NET 10. Then compare both implementations using the same JSON cases.
+Teach learners to preserve behavior during migration. They inspect a runnable
+Java service and define the pricing contract before moving one HTTP slice to
+.NET 10. Then they compare both implementations with the same JSON cases.
 
-Keep the slice narrow. Aim for one reviewed route and a backlog for the rest of
-the service. Do not build a rewrite plan on untested assumptions.
-
-> [!IMPORTANT]
-> Check GitHub Copilot access before delivery. Do not replace
-> the session with an unreviewed public tool or personal account.
+Keep the slice narrow: one reviewed route and a backlog for the rest of the service.
 
 ## One-hour plan
 
@@ -26,9 +21,7 @@ the service. Do not build a rewrite plan on untested assumptions.
 
 ## Trainer preflight
 
-Prefer the repository Dev Container or Codespaces.
-
-Run:
+Use the repository Dev Container or Codespaces.
 
 ```bash
 java -version
@@ -60,7 +53,7 @@ curl http://localhost:8080/health
 curl http://localhost:8080/orders/samples
 ```
 
-Also prepare the completed .NET solution:
+Also build the completed .NET solution:
 
 ```bash
 cd ../../solution/modern-dotnet-order-service
@@ -68,9 +61,8 @@ dotnet build
 dotnet run --project OrderPricing.ContractTests
 ```
 
-Do not rely on a network connection during the teaching segment after the Maven
-Wrapper has downloaded Maven and its plugins. The code itself uses only JDK and
-.NET platform APIs.
+After the Maven Wrapper downloads Maven and its plugins, the demo needs no
+network. The code uses only JDK and .NET platform APIs.
 
 ## Teaching model
 
@@ -91,32 +83,25 @@ Pricing rules
 JSON response
 ```
 
-This is a vertical slice because it includes the entry point, contract, domain
-logic, failure behavior, and verification. Moving only the calculation class would
-leave the risky edges behind.
+This vertical slice includes the entry point, contract, domain logic, failure
+behavior, and verification. Moving only the calculation class would leave the
+risky edges behind.
 
-Keep these Java routes in place:
-
-- `GET /health`
-- `GET /orders/samples`
-
-Keep them as backlog candidates. Leaving them in Java makes the migration
-boundary clear and keeps the lab inside two hours.
+Keep `GET /health` and `GET /orders/samples` in Java as backlog candidates. That
+keeps the boundary clear and the lab inside two hours.
 
 ### 2. Separate contract from structure
 
-The Java service contains classes and JDK HTTP plumbing. Those are implementation
-choices. The contract is smaller:
+The Java classes and JDK HTTP plumbing are implementation choices. The contract is
+smaller:
 
 - method and path;
-- request JSON fields;
-- accepted values;
-- calculation order;
-- rounding rule;
+- request JSON fields and accepted values;
+- calculation order and rounding rule;
 - response JSON fields;
 - status codes and error shape.
 
-Ask learners to mark each finding as one of:
+Ask learners to classify each finding:
 
 | Classification | Example | Migration treatment |
 | --- | --- | --- |
@@ -124,10 +109,9 @@ Ask learners to mark each finding as one of:
 | Calculation rule | coupon runs after tier discount | Preserve and test |
 | Transport choice | JDK `HttpServer` | Replace with Minimal API |
 | Language structure | getters and nested item class | Redesign in C# |
-| Unknown behavior | concurrent request limit | Record, do not invent |
+| Unknown behavior | concurrent request limit | Record, don't invent |
 
-Use this classification to show which Java structures can change. Copilot may
-reproduce them in C#. Check behavior to establish parity.
+Copilot may reproduce Java structure in C#. Behavior tests establish parity.
 
 ### 3. Use integer money and explicit rounding
 
@@ -148,23 +132,16 @@ The operation order is fixed:
 5. calculate tax on discounted merchandise;
 6. add discounted merchandise, shipping, and tax.
 
-Changing the order changes the result. Floating-point arithmetic can also change
-the result. The `round-half-up` fixture exists to catch both mistakes.
+Changing the order changes the result, and so does floating-point arithmetic. The
+`round-half-up` fixture catches both mistakes.
 
 ### 4. Test both implementations with the same fixtures
 
-Open `lab/starter/contracts/order-pricing-cases.jsonl`.
+Open `lab/starter/contracts/order-pricing-cases.jsonl`. Each line holds a case
+name, one request, and the expected response fields.
 
-Each line contains:
-
-- a case name;
-- one request;
-- the expected response fields.
-
-JSON Lines keeps each case readable and lets the Java 8 baseline consume the file
-without adding a JSON package. The .NET test executable uses `System.Text.Json`.
-
-The five cases cover:
+JSON Lines keeps each case readable and lets the Java 8 baseline read the file
+without a JSON package. The .NET test executable uses `System.Text.Json`.
 
 | Case | Main risk |
 | --- | --- |
@@ -174,12 +151,10 @@ The five cases cover:
 | `gold-international` | international shipping |
 | `round-half-up` | integer rounding |
 
-Contract fixtures check only the selected shared behavior. Validation errors and
-HTTP behavior still need focused checks.
+The fixtures cover shared pricing behavior only. Validation errors and HTTP
+behavior need focused checks.
 
 ### 5. Map responsibilities to .NET
-
-Use a small mapping:
 
 | Java baseline | .NET 10 target | Review question |
 | --- | --- | --- |
@@ -189,27 +164,17 @@ Use a small mapping:
 | `PriceQuote` | response record | Are all fields present and in cents? |
 | `ContractFixtureTest` | console contract test project | Does it read the same fixture file? |
 
-The target has one API project and one package-free executable test project.
-Minimal APIs and `System.Text.Json` come with ASP.NET Core and .NET.
+The target is one API project and one package-free executable test project.
+Minimal APIs and `System.Text.Json` ship with ASP.NET Core and .NET.
 
-Do not add:
-
-- an object mapper;
-- a validation framework;
-- a mediator package;
-- a database abstraction;
-- a repository interface for fixture data.
-
-Those additions do not support this pricing slice.
+Don't add an object mapper, a validation framework, a mediator package, a database
+abstraction, or a repository interface for fixture data. This slice doesn't need them.
 
 ## Copilot working agreement
 
-Give Copilot a specific route and contract. Do not ask it to infer the business
-contract.
+Give Copilot a specific route and contract. Don't ask it to infer the business contract.
 
-### Good prompt sequence
-
-Start with inspection:
+Inspect:
 
 ```text
 Trace POST /orders/price through the Java starter. Return a table with the entry
@@ -217,7 +182,7 @@ point, parsing, validation, pricing rules, response mapping, and tests. Cite fil
 and symbol names. Do not propose .NET code yet.
 ```
 
-Then check behavior:
+Check behavior:
 
 ```text
 Compare the Java pricing code with contracts/order-pricing-cases.jsonl. List the
@@ -225,7 +190,7 @@ calculation order, rounding rule, shipping threshold, accepted values, and any
 behavior not covered by a fixture. Do not change files.
 ```
 
-Only then implement:
+Implement:
 
 ```text
 Implement PricingEngine.Price in the .NET 10 scaffold. Preserve the shared JSON
@@ -233,7 +198,7 @@ contract exactly. Use integer cents, checked arithmetic, and platform APIs only.
 Do not add packages or change the endpoint shape.
 ```
 
-Finish with review:
+Review:
 
 ```text
 Review the Java and .NET pricing implementations for behavior drift. Focus on
@@ -247,16 +212,12 @@ and response fields. Return findings before editing.
 - generated packages without a stated need;
 - a new contract because the C# model looks cleaner;
 - decimal or floating-point calculations without a parity decision;
-- tests generated from the .NET implementation instead of the accepted fixtures;
-- deletion of the Java path before tests and review support the replacement.
+- tests generated from the .NET implementation instead of the shared fixtures;
+- deleting the Java path before tests and review support the replacement.
 
 ## Prepared demonstration
 
-Use the tested starter and solution.
-
 ### Step 1: establish the Java behavior
-
-Run:
 
 ```bash
 cd sessions/session-m2-07-java-to-dotnet-modernization/lab/starter/legacy-java-order-service
@@ -265,7 +226,7 @@ cd sessions/session-m2-07-java-to-dotnet-modernization/lab/starter/legacy-java-o
 java -jar target/legacy-order-service-1.0.0.jar
 ```
 
-Send the `gold-save10-domestic` request. Point out the response:
+Send the `gold-save10-domestic` request. The response:
 
 ```json
 {
@@ -280,93 +241,52 @@ Send the `gold-save10-domestic` request. Point out the response:
 
 ### Step 2: trace the request
 
-Open these files in order:
+Open in order: `App.java`, `JsonCodec.java`, `OrderRequest.java`,
+`OrderPricingService.java`, `PriceQuote.java`, `ContractFixtureTest.java`.
 
-1. `App.java`
-2. `JsonCodec.java`
-3. `OrderRequest.java`
-4. `OrderPricingService.java`
-5. `PriceQuote.java`
-6. `ContractFixtureTest.java`
-
-Show that the HTTP handler is thin. Most behavior sits in the pricing service and
-the fixture-backed test.
+The HTTP handler is thin. Most behavior sits in the pricing service and the
+fixture-backed test.
 
 ### Step 3: show a plausible wrong migration
 
 In a temporary demo copy, change the .NET coupon calculation to use `subtotal`
-instead of `afterTier`.
-
-Run:
+instead of `afterTier`, then run:
 
 ```bash
 dotnet run --project OrderPricing.ContractTests
 ```
 
-The `gold-save10-domestic` case should fail. Use the failure to show that clean C#
-can still produce the wrong result.
+The `gold-save10-domestic` case fails. Clean C# can still produce the wrong result.
 
-Restore the reference code. Run the test again and show all five cases passing.
+Restore the reference code, run the test again, and show all five cases passing.
 
 ### Step 4: compare HTTP results
-
-Run the .NET API on port 5080:
 
 ```bash
 dotnet run --project OrderPricing.Api -- --urls http://localhost:5080
 ```
 
-Send the same request to ports 8080 and 5080. Compare the JSON field values.
-
-Do not claim full service parity. The demo checks one HTTP request and five
-accepted pricing cases.
+Send the same request to ports 8080 and 5080 and compare the JSON field values.
+This shows one HTTP request and five pricing cases, not full service parity.
 
 ## Review points
 
 Pause the lab at these points.
 
-### Review point 1: architecture notes
-
-Learners should identify:
-
-- one HTTP entry point;
-- one parsing boundary;
-- one domain calculation;
-- one response mapping;
-- one existing contract test.
-
-If the notes describe only classes, ask which observable behavior each class
-supports.
-
-### Review point 2: contract before code
-
-Learners should explain the `round-half-up` case without reading the expected
-value from the fixture. Ask them to calculate the tier and coupon discounts in
-order.
-
-### Review point 3: generated change
-
-Before learners accept Copilot output, ask:
-
-- Did it add packages?
-- Did it change JSON names?
-- Did it use floating point?
-- Did it preserve checked arithmetic?
-- Did it move the shipping threshold?
-- Did it calculate tax on shipping?
-
-### Review point 4: compare test and HTTP results
-
-Require these results at the final review:
-
-- Java contract test output;
-- .NET contract test output;
-- one matching HTTP response;
-- a migration backlog with checks required for each next slice.
+1. **Architecture notes.** Learners identify one HTTP entry point, one parsing
+   boundary, one domain calculation, one response mapping, and one contract test.
+   If the notes describe only classes, ask which observable behavior each class
+   supports.
+2. **Contract before code.** Learners explain the `round-half-up` case without
+   reading the expected value. Ask them to calculate the tier and coupon discounts
+   in order.
+3. **Generated change.** Before learners accept Copilot output, ask: Did it add
+   packages? Change JSON names? Use floating point? Drop checked arithmetic? Move
+   the shipping threshold? Tax shipping?
+4. **Compare test and HTTP results.** Require the Java contract test output, the
+   .NET contract test output, one matching HTTP response, and a migration backlog.
 
 ## Migration backlog model
-
-Use a slice-first backlog:
 
 | Priority | Slice | Checks before cutover |
 | --- | --- | --- |
@@ -376,40 +296,31 @@ Use a slice-first backlog:
 | P2 | Error consistency | Status and JSON error matrix |
 | P2 | Load and concurrency | Measured target and repeatable test |
 
-Have learners state what remains in Java, what they do not yet know, and when they
-can remove each legacy slice.
+Learners state what stays in Java, what they don't yet know, and when each legacy
+slice can go.
 
 ## Common mistakes
 
-**The learner translates every Java class.** Bring them back to the route and
-contract. A class-by-class rewrite preserves structure that may not matter.
+**The learner translates every Java class.** Return to the route and contract.
 
 **The .NET output is off by one cent.** Check the operation order and the `+ 5000`
 round-half-up step.
 
-**Free shipping triggers too early.** The threshold uses merchandise after both
-discounts.
+**Free shipping triggers too early.** The threshold uses merchandise after both discounts.
 
-**Tax includes shipping.** The accepted Java behavior taxes discounted merchandise
-only.
+**Tax includes shipping.** The Java behavior taxes discounted merchandise only.
 
 **The generated API adds packages.** Remove them unless the learner can name a
-requirement that platform APIs cannot meet.
+requirement platform APIs can't meet.
 
 **Tests pass because expected values were copied from new code.** The shared fixture
-is the accepted source. Do not regenerate it from the migration.
+is the source. Don't regenerate it from the migration.
 
 ## Lab handoff
 
-Learners:
+Learners run and inspect the Java baseline, complete the architecture notes, review
+the shared contract cases, implement the .NET pricing engine, add package-free
+contract tests, compare Java and .NET HTTP responses, and write the next backlog.
 
-1. run and inspect the Java baseline;
-2. complete the architecture notes;
-3. review the shared contract cases;
-4. implement the .NET pricing engine;
-5. add package-free contract tests;
-6. compare Java and .NET HTTP responses;
-7. write the next migration backlog.
-
-**One route must pass the contract and HTTP checks.** The rest of the Java service stays in
-place until its own slices have contracts and review.
+**One route must pass the contract and HTTP checks.** The rest of the Java service stays
+until its own slices have contracts and review.

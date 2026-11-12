@@ -4,9 +4,6 @@
 
 **Difficulty:** Beginner
 
-**Deliverable:** `initiative-context-brief.md`, ready for Session M7-02 without the
-original chat
-
 ## What you will learn
 
 Compare Copilot's answers with and without project context. Use the sourced
@@ -25,13 +22,8 @@ Finally, check whether a fresh session can use the brief on its own.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-You need:
-
-- GitHub Copilot app access;
-- read access to the training repository project;
-- permission to create a branch or working copy for the brief.
-
-Check GitHub Copilot access before starting. Do not continue in a generic chatbot.
+You need GitHub Copilot app access, read access to the training repository
+project, and permission to create a branch or working copy for the brief.
 
 ## Part 1: Check the app and project (15 minutes)
 
@@ -45,21 +37,21 @@ Check GitHub Copilot access before starting. Do not continue in a generic chatbo
 6. Run `/context`.
 
 Use **Interactive** for the comparison. Switch to **Plan** before asking Copilot
-to propose repository changes. Do not use **Autopilot** for this lab because you
-need to review each write.
+to propose repository changes. Don't use **Autopilot** here, because you review
+each write.
 
-`@` adds files, `#` references issues, and `/` opens commands in the app. Type the
-character and select the item from the picker. A typed file token alone does not
-show that the app attached the source.
+`@` adds files, `#` references issues, and `/` opens commands. Type the character
+and select the item from the picker. A typed file token alone doesn't attach the
+source.
 
 **Checkpoint:** Copilot can read the supplied file, and you can identify which
 capabilities are available.
 
 ## Part 2: Compare weak and grounded context (25 minutes)
 
-Start a fresh session with `/clear` or `/reset` so the file read in Part 1 is
-not carried into the comparison. Do not attach the initiative file yet.
-Start with this deliberately weak prompt:
+Start a fresh session with `/clear` or `/reset` so the file read in Part 1 isn't
+carried over. Don't attach the initiative file yet. Start with this deliberately
+weak prompt:
 
 ```text
 Explain the Service Request Portal initiative, its users, constraints, and next
@@ -121,8 +113,8 @@ next decision clearly enough for someone to use it without reading the chat.
 
 ## Part 4: Update the brief with new source information (25 minutes)
 
-Open `starter/late-evidence.md`. Treat it as source information the owner approved
-after the first brief was committed.
+Open `starter/late-evidence.md`. Treat it as source information that arrived after
+the first brief was committed.
 
 Ask Copilot to:
 
@@ -162,8 +154,8 @@ Using only this working brief, report:
 Do not infer missing information.
 ```
 
-Compare the answer with the file. If the answer misses or misstates any of these
-items, correct the brief so the new session has what it needs.
+Compare the answer with the file. If it misses or misstates any item, correct the
+brief so the new session has what it needs.
 
 Run an independent critique:
 
@@ -171,10 +163,6 @@ Run an independent critique:
 /rubber-duck Review the initiative context brief for unsupported claims,
 ambiguous ownership, hidden customer references, and decisions presented as facts.
 ```
-
-Before delivery, the trainer must check the
-current documented critique option rather than inventing a
-replacement command.
 
 ## Final deliverable
 
@@ -184,13 +172,3 @@ Submit:
 2. two commits showing the first brief and the revision based on the new source.
 
 Session M7-02 uses this brief as the source for its decision interview.
-
-## Verification
-
-- [ ] Copilot read the repository project successfully.
-- [ ] The unscoped and grounded answers were compared.
-- [ ] Every fact in the brief points to a source section.
-- [ ] Assumptions and unknowns remain separate.
-- [ ] New source information produced a focused revision.
-- [ ] A fresh session identified the outcome, facts, unresolved decisions, non-goals, and next owner action from the brief alone.
-- [ ] No customer or source organization names appear.

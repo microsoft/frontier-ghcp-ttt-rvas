@@ -46,7 +46,7 @@ Check Copilot's explanation against the source facts.
 | An issue or pull request | The task needs delivery history and discussion |
 | No repository context | The work is general and contains no project facts |
 
-Tell Copilot why each source matters. **Do not make it guess.**
+Tell Copilot why each source matters. **Don't make it guess.**
 
 ---
 
@@ -77,7 +77,7 @@ Separating these categories makes uncertainty visible.
 
 # Context comes before the prompt
 
-Use only permitted sources. Attach the smallest set that answers the question.
+Attach the smallest set of sources that answers the question.
 
 Name the files, issues, or repository that should support the answer.
 
@@ -165,7 +165,7 @@ Initial source
   → fresh-session verification
 ```
 
-Keep the brief consistent with source information the owner has approved.
+Keep the brief consistent with the new source information.
 
 ---
 

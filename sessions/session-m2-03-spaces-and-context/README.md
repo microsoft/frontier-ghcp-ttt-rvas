@@ -14,13 +14,10 @@ and correct a stale module-style instruction.
 
 ## Learning outcomes
 
-- Create Copilot Spaces for team workflows
-- Write project-level and user-level custom instructions
-- Create reusable prompt files for team standards
-- Explain how instructions, Spaces, and Memory work together
-- Review and update context as a project changes
-- Distinguish instruction discovery, file scope, and observed model behavior
-- Choose the smallest source set that supports a task and check claims against it
+- Create a Copilot Space and choose the smallest source set for a task
+- Write repository instructions and reusable prompt files
+- Tell instruction discovery apart from the model following an instruction
+- Compare the same task across context levels
 
 ## Session materials
 
@@ -36,6 +33,5 @@ and correct a stale module-style instruction.
 - `.github/copilot-instructions.md`: project-level instructions
 - `.github/prompts/*.md`: reusable prompt files
 - VS Code instruction settings
-- Policy checks before selecting context
 - Before/after context comparison
 - Runtime instruction inspection in the standalone CLI

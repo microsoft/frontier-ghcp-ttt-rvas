@@ -6,16 +6,10 @@
 
 **Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
 
-**Deliverable:** One input-validation issue carried through assignment,
-implementation, tests, review, and a committed decision record
-
 ## Before you start
 
-Use synthetic data only.
-
-Check GitHub Copilot access, Squad, the GitHub training
-repository, integrations, and the usage limit. Do not improvise installation
-commands or replace orchestration with a tabletop simulation.
+Use synthetic data only. You need Node.js 20 or later, Git, authenticated `gh`,
+GitHub Copilot, Squad, and a training repository you can push to.
 
 | Exercise | Work | Time |
 | --- | --- | --- |
@@ -23,13 +17,6 @@ commands or replace orchestration with a tabletop simulation.
 | 2 | Assign Issue 001 | 20 min |
 | 3 | Implement and test | 45 min |
 | 4 | Review, decide, and monitor | 30 min |
-
-## Setup
-
-- Node.js 20 or later
-- Git
-- Authenticated `gh`, GitHub Copilot, Squad, and a
-  training repository that you may push to
 
 ## Exercise 1: Prepare the project and team (25 min)
 
@@ -72,8 +59,8 @@ tree .squad/ -L 3
 | Decisions | The shared record names the scribe as its editor. |
 | Stop rule | Overlapping ownership, failed tests, scope growth, or an unclear data boundary pauses work. |
 
-**Checkpoint:** The trainer signs off on the team boundary before Issue 001 is
-assigned. Use `lab/starter/work-assignments.md` to check the role boundaries.
+**Checkpoint:** Check the role boundaries against `lab/starter/work-assignments.md`
+before you assign Issue 001.
 
 ## Exercise 2: Assign Issue 001 (20 min)
 
@@ -157,14 +144,3 @@ Submit one folder or pull request containing:
 3. the code and test changes for Issue 001;
 4. passing `npm test` output;
 5. the lead review and recorded decision.
-
-## Final checks
-
-- [ ] Local prerequisites match Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05.
-- [ ] The trainer signed off on the team boundaries before work began.
-- [ ] Each file or shared record had one role responsible for edits.
-- [ ] Issue 001 kept the same acceptance criteria through review.
-- [ ] No dependency or unrelated route was changed.
-- [ ] Existing and focused tests pass.
-- [ ] The lead decision cites test results.
-- [ ] The Squad run produces a complete review packet.

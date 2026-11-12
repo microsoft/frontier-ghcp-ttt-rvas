@@ -1,69 +1,44 @@
 # Track: DevOps & Automation
 
-**Target Audience:** DevOps engineers, Platform engineers, SRE teams
-**Duration:** 23 hours 30 minutes across 8 sessions
-**Difficulty:** Beginner → Advanced
-**Recommended Delivery:** 4 days (2 sessions per day)
+**For:** DevOps, platform, and SRE engineers
+**Time:** 23 hours 30 minutes, 8 sessions
+**Delivery:** 4 days
 
----
+Cover Copilot fundamentals and agent mode, then generate GitHub Actions workflows, write Terraform (with an optional Bicep comparison), and debug CI/CD failures. Learners review proposed security fixes before applying them.
 
-## Description
+## Before you start
 
-Use this track if you work on pipelines or infrastructure. Start with Copilot
-fundamentals and agent mode, then generate GitHub Actions workflows, work with
-Terraform and Bicep, and debug CI/CD failures. Review proposed security fixes
-before applying them.
-
-## Prerequisites
-
-- Experience with CI/CD concepts and GitHub Actions (basic familiarity)
-- Familiarity with at least one IaC tool (Terraform, Bicep, CloudFormation): helpful but not required
-- GitHub account with Copilot access
-- VS Code installed with GitHub Copilot extension
-- Node.js 22 or later and standalone CLI access for Sessions M1-03 and M2-01
-- The CLI commands and local sandbox support listed in Session M2-01's preflight
-- Access to a cloud environment for IaC testing (Azure, AWS, or GCP): optional for labs
+- Basic CI/CD and GitHub Actions experience
+- A GitHub account with Copilot access
+- Node.js 22 or later and CLI access for M1-03 and M2-01
+- Local sandbox support for M2-01
+- Terraform, Bicep, or CloudFormation experience helps. A cloud account is optional; the IaC lab runs locally.
 
 ## Sessions
 
-| Order   | Session ID   | Title                                      | Difficulty   | Duration   |
-| ------- | ----------- | ------------------------------------------ | ------------ | ---------- |
-| 1       | M1-01          | Introduction to GitHub Copilot             | Beginner     | 3 hrs      |
-| 2       | M1-02          | Copilot Chat & Inline Suggestions          | Beginner     | 3 hrs      |
-| 3       | M1-03          | Prompt Engineering Fundamentals            | Beginner     | 3 hrs      |
-| 4       | M2-01          | GitHub Copilot in the CLI                  | Intermediate | 3 hrs      |
-| 5       | M2-02          | Agent Mode in the IDE                      | Intermediate | 3 hrs      |
-| 6       | M4-01          | GitHub Actions & Workflow Generation       | Intermediate | 3 hrs      |
-| 7       | M4-02          | Infrastructure as Code with Copilot        | Advanced     | 2 hrs 30 min |
-| 8       | M4-03          | CI/CD Pipeline Debugging & Agentic Remediation | Advanced  | 3 hrs      |
+| # | ID | Session | Time |
+| ---: | --- | --- | --- |
+| 1 | M1-01 | [Introduction to GitHub Copilot](../sessions/session-m1-01-intro-to-copilot/README.md) | 3 hrs |
+| 2 | M1-02 | [Copilot Chat & Inline Suggestions](../sessions/session-m1-02-chat-and-inline/README.md) | 3 hrs |
+| 3 | M1-03 | [Prompt Engineering Fundamentals](../sessions/session-m1-03-prompt-engineering/README.md) | 3 hrs |
+| 4 | M2-01 | [GitHub Copilot in the CLI](../sessions/session-m2-01-copilot-cli/README.md) | 3 hrs |
+| 5 | M2-02 | [Agent Mode in the IDE](../sessions/session-m2-02-agent-mode-ide/README.md) | 3 hrs |
+| 6 | M4-01 | [GitHub Actions & Workflow Generation](../sessions/session-m4-01-actions-workflows/README.md) | 3 hrs |
+| 7 | M4-02 | [Infrastructure as Code with Copilot](../sessions/session-m4-02-iac-with-copilot/README.md) | 2 hrs 30 min |
+| 8 | M4-03 | [CI/CD Pipeline Debugging & Agentic Remediation](../sessions/session-m4-03-cicd-debugging-autofix/README.md) | 3 hrs |
 
-> Add Session M2-03 to practice giving Copilot cloud documentation through Spaces.
+Add [M2-03](../sessions/session-m2-03-spaces-and-context/README.md) to teach giving Copilot cloud documentation through Spaces.
 
-## Recommended delivery schedule
+## Schedule
 
-### 4-day standard
+| Day | Sessions |
+| --- | --- |
+| 1 | M1-01, M1-02 |
+| 2 | M1-03, M2-01 |
+| 3 | M2-02, M4-01 |
+| 4 | M4-02, M4-03 |
 
-| Day   | Sessions        | Focus                 |
-| ----- | --------------- | --------------------- |
-| Day 1 | Sessions M1-01, M1-02 | Setup and Chat        |
-| Day 2 | Sessions M1-03, M2-01 | Prompting + CLI       |
-| Day 3 | Sessions M2-02, M4-01 | Agent mode + Actions  |
-| Day 4 | Sessions M4-02, M4-03 | IaC + CI/CD debugging |
+## Next
 
-## Learning outcomes
-
-After this track, you should be able to:
-
-1. Use Copilot effectively across IDE, Chat, and agent mode for DevOps tasks
-2. Generate GitHub Actions workflows from natural language descriptions
-3. Create custom Actions with Copilot assistance
-4. Generate and validate Terraform infrastructure definitions; compare Bicep in the optional exercise
-5. Debug failing CI/CD pipelines using Copilot analysis
-6. Review a proposed security fix and its test results; configure remote CodeQL scanning when access permits
-7. Optimize pipeline performance (caching, parallelization, conditional execution)
-8. Choose where security checks belong in a CI/CD pipeline
-
-## Next steps
-
-- **Agentic Development**. Learn to build custom agents and MCP servers that automate infrastructure workflows
-- **Developer Productivity**. Add the intermediate sessions on Spaces and code review
+- **Agentic Development** builds custom agents and MCP servers.
+- **Developer Productivity** adds Spaces and code review.

@@ -1,9 +1,8 @@
 # Track template
 
-Use this template to create sessions for the GitHub Copilot & Agentic Workflows
-Train-the-Trainer curriculum.
+Copy this template to add a session.
 
-## How to use
+## Steps
 
 1. **Copy** the `session-template/` folder into `sessions/` with the naming convention:
 
@@ -15,23 +14,22 @@ Train-the-Trainer curriculum.
    Use a two-digit number that starts at `01` within each module.
 
 2. **Fill in** each template file with session-specific content:
-   - `README.md`: Session overview (title, objectives, prerequisites, difficulty)
-   - `slides.md`: Trainer-facing concept deck that explains the lesson before the lab
-   - `trainer-content/README.md`: Trainer presentation outline (1-hour block)
-   - `lab/README.md`: Lab exercise outline (2-hour block)
-   - `lab/starter/`: Starter files trainees begin with
-   - `lab/solution/`: Reference solution for trainers
+   - `README.md`: overview, objectives, prerequisites, difficulty
+   - `slides.md`: concept deck that teaches the lesson before the lab
+   - `trainer-content/README.md`: 1-hour presentation outline
+   - `lab/README.md`: 2-hour lab
+   - `lab/starter/`: starter files for learners
+   - `lab/solution/`: reference solution for trainers
 
 3. **Register** the session in `data/session-catalog.json`, in module-local order.
    Set `id` to `m2-08`, `module` to `2`, and `slug` to the directory name.
    Use `M2-08` in headings and other visible labels.
 
-4. **Link** the session in the top-level `README.md` session table, `curriculum-plan.md`,
-   `mkdocs.yml`, and the relevant tracks. Home-page cards come from the catalog.
-   Keep each module's sessions together. Add new sessions at the end of their
-   module rather than renumbering existing IDs.
+4. **Link** the session in `README.md`, `curriculum-plan.md`, `mkdocs.yml`, and
+   the relevant tracks. Home-page cards come from the catalog. Add new sessions
+   at the end of their module and don't renumber existing IDs.
 
-5. **Check** the session:
+5. **Validate** the session:
 
    ```bash
    python .github/skills/session-format-validator/scripts/validate_session.py \
@@ -56,15 +54,9 @@ session-template/
 
 ## Conventions
 
-- **Difficulty levels:** Beginner, Intermediate, Advanced
-- **Duration:** Each session is 3 hours total (1 hr trainer content + 2 hr lab)
-- **Prerequisites:** Use full module-local IDs (e.g., "Sessions M1-01 to M1-03").
-  Split ranges at module boundaries so they do not imply unrelated sessions.
-- **Naming:** Use kebab-case slugs derived from the session title
-- **Enterprise delivery:** Add an access and cost preflight, state the required
-  tools and permissions, and tell learners to stop when a required tool is
-  missing. Put demo recovery in the trainer guide. Add another learner setup only
-  when it preserves the same objective and completion checks.
-- **Trainer slides:** Teach the concepts before the lab. Include an agenda, enough
-  explanation for the trainer to introduce each concept, concrete examples or
-  decision tables, a prepared demonstration where relevant, and a clear lab handoff.
+- **Difficulty:** Beginner, Intermediate, or Advanced.
+- **Duration:** 3 hours: 1 hour of trainer content and a 2-hour lab.
+- **Prerequisites:** Use module-local IDs, such as "Sessions M1-01 to M1-03". Split ranges at module boundaries.
+- **Slugs:** kebab-case, from the session title.
+- **Labs:** Name the required tools and permissions. Put demo recovery in the trainer guide.
+- **Slides:** Teach the concepts before the lab. Include an agenda, examples or decision tables, a demo where it helps, and a lab handoff.

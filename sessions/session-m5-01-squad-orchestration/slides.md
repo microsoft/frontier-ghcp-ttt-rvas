@@ -79,7 +79,7 @@ Recommendation:
 ```
 
 The parent can compare these summaries without reading each agent's full conversation.
-**Report missing results. Do not guess.**
+**Report missing results.**
 
 ---
 # Coordinator pattern
@@ -131,7 +131,7 @@ Ready issue → assignment → bounded change → focused checks →
 human review → merge or follow-up issue
 ```
 
-Treat Ralph as a monitored queue. Stop when approval, ownership, policy, test status, scope, or usage limits are unclear.
+Treat Ralph as a monitored queue. Stop when ownership, test status, or scope is unclear.
 
 ---
 
@@ -142,7 +142,7 @@ Treat Ralph as a monitored queue. Stop when approval, ownership, policy, test st
 | One small repair | Individual agent or manual work |
 | Separate work with defined interfaces | Coordinated team |
 | Overlapping ownership or unclear design | Plan before implementation |
-| Restricted path or unapproved tool | Manual workflow |
+| No tool access | Manual workflow |
 
 ---
 
@@ -159,8 +159,7 @@ Issue contract
   → durable decision
 ```
 
-Keep the same acceptance criteria through every step. A role may add supporting
-results, but it must not quietly expand the issue.
+Keep the same acceptance criteria through every step. A role may add test results but must not expand the issue.
 
 ---
 
@@ -181,17 +180,9 @@ The reference project also includes the implemented route and passing tests.
 
 ---
 
-# Required access
-
-Check GitHub Copilot, Squad, repository integration,
-and the network path before the lab. A tabletop simulation does not demonstrate
-orchestration.
-
----
-
 # Lab handoff
 
-Copy the starter project and check Squad access before work begins.
+Copy the starter project and check Squad access.
 
 Submit:
 

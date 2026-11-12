@@ -5,13 +5,14 @@
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05
+
 **Duration:** 3 hours 30 minutes (1 hour trainer content, 2 hours 30 minutes lab)
 
 ## Overview
 
 Use Spec Kit to turn one feature request into tested code.
-You initialize an existing Python project and create the Spec Kit artifacts.
-Then you implement an archive operation and run convergence review. A later
+You initialize an existing Python project, create the Spec Kit artifacts,
+implement an archive operation, and run convergence review. A later
 restore requirement prompts you to update the living specification and repeat
 the workflow.
 
@@ -36,24 +37,20 @@ Spec Kit generates its Copilot skills during `specify init`.
 - Evolve a living specification and update the plan, tasks, and code to match.
 - Explain which files come from Spec Kit and which records belong to the team.
 
-## Required access
+## You need
 
-Learners need a GitHub training repository with issue permissions, Python 3.10 or
-later, Git, GitHub Copilot in the selected coding environment, and an approved Spec
-Kit source and version. For disconnected environments, prepare the official
+A GitHub training repository where you can create issues, Python 3.10 or later,
+Git, `uv`, and GitHub Copilot. For disconnected environments, prepare the official
 air-gapped package before the session.
 
-## Approved installation pattern
+## Install
 
 ```bash
-export SPECKIT_TAG='<approved-release-tag>'
+export SPECKIT_TAG='<release-tag>'
 uv tool install specify-cli --force \
   --from "git+https://github.com/github/spec-kit.git@${SPECKIT_TAG}"
 specify version
 ```
-
-Use the approved internal package source when policy requires it. Before
-installation, record the source, tag, and approval.
 
 ## Materials
 

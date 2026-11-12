@@ -36,15 +36,8 @@ outside the terminal.
 
 ## Required access
 
-Learners need:
-
-- authenticated GitHub Copilot SDK access;
-- Node.js and npm;
-- Docker with Docker Compose;
-- a terminal that can run the supplied TypeScript project.
-
-If GitHub Copilot access, Node.js, npm, Docker, or Docker Compose is unavailable,
-stop before the lab. Fix the environment or reschedule the hands-on work.
+Learners need authenticated GitHub Copilot SDK access, Node.js and npm, Docker
+with Docker Compose, and a terminal.
 
 ## Scenario
 
@@ -53,8 +46,7 @@ synthetic change records, asks Copilot to assess the selected change, and return
 `ready` or `needs-review` with the supporting gaps.
 
 One request targets a restricted synthetic record. The application denies that
-lookup before execution and shows the reason. No customer data, production
-repository, or external business system is used.
+lookup before execution and shows the reason.
 
 ## Session structure
 
@@ -87,15 +79,13 @@ The lab covers:
 - OTLP export through an OpenTelemetry Collector;
 - trace inspection in Jaeger.
 
-The session does not cover dynamic workflows, fleet, cloud or remote sessions,
+The session doesn't cover dynamic workflows, fleet, cloud or remote sessions,
 BYOK, plugin packaging, production deployment, external business systems, or
-implementations in other languages.
+other languages.
 
 ## Product references
 
-These official GitHub sources were checked on **October 5, 2026**. The GitHub
-Copilot SDK became generally available on June 2, 2026. Trainers should still
-recheck API names and package requirements before delivery.
+The GitHub Copilot SDK became generally available on June 2, 2026.
 
 - [General availability announcement](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/)
 - [GitHub Copilot SDK documentation](https://docs.github.com/en/copilot/how-tos/copilot-sdk)
@@ -107,8 +97,3 @@ recheck API names and package requirements before delivery.
 - [Session lifecycle hooks](https://docs.github.com/en/copilot/how-tos/copilot-sdk/hooks/session-lifecycle)
 - [OpenTelemetry instrumentation](https://docs.github.com/en/copilot/how-tos/copilot-sdk/observability/opentelemetry)
 - [TypeScript SDK reference and examples](https://github.com/github/copilot-sdk/blob/main/nodejs/README.md)
-
-## Trainer note
-
-Keep the lesson on application reliability. Do not expand the demo into
-orchestration, remote execution, provider selection, or deployment.

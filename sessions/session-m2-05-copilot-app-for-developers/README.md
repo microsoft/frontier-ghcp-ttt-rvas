@@ -25,31 +25,19 @@ a manual read-only automation that reports PR readiness without changing GitHub.
 
 ## Learning outcomes
 
-- Choose between a chat and a project session.
-- Explain when to use Interactive, Plan, or Autopilot.
-- Start isolated work and check the branch or working-tree boundary.
-- Attach only the files needed for the next decision.
-- Hand a task to a fresh session without relying on hidden conversation history.
-- Use tests, diffs, and command output to check work in the inner loop.
-- Challenge `/plan` with `/rubber-duck` before implementation and record the revision.
-- Explain the critic's read-only role and automatic contrasting-model selection.
-- Compare a `/spar` argument in a checked fork and review `/merge-to-parent`.
-- Run `/review` on the uncommitted repair and check its findings.
+- Choose between a chat and a project session, and between Interactive, Plan, and Autopilot.
+- Start isolated work and check the working-tree boundary.
+- Hand a task to a fresh session through a written handoff.
+- Challenge `/plan` with `/rubber-duck`, compare a `/spar` fork, and run `/review` on the uncommitted repair.
 - Connect issue intent, pull-request changes, review threads, and checks.
-- Request an independent critique before declaring work ready.
 - Define and run a manual read-only PR-readiness automation.
 
-## Access policy
+## You need
 
-**GitHub Copilot app access is required.** Before the session,
-check that each learner can open the app, sign in, connect the local Git training
-project, and start a working-tree session. Check `/plan`, `/review`, and
-`/rubber-duck` in the command picker.
-The lab also requires `/fork`, `/merge-to-parent`, and `/spar`. Check local
-sandbox and approval settings before the run; do not weaken them for the exercise.
-
-If app access is unavailable, learners must not improvise with customer repositories
-or paste protected code into another service.
+**GitHub Copilot app access.** Each learner must be able to open the app, sign in,
+connect the local Git training project, and start a working-tree session. Check
+that `/plan`, `/review`, `/rubber-duck`, `/fork`, `/merge-to-parent`, and `/spar`
+appear in the command picker. Keep the local sandbox and approval settings as they are.
 
 After this session, use the [Session M7-05 developer route](../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
 to practise supervising independent child sessions. Sessions M7-01 to M7-04 are not
@@ -73,16 +61,13 @@ prerequisites for that route.
 | Reference solution | [`lab/solution/`](lab/solution/) |
 | Shared glossary | [`../glossary.md`](../glossary.md) |
 
-## Data boundary
-
-All issue text, code, pull-request metadata, checks, and review comments in this
-session are synthetic. Do not replace them with customer names, tenant details,
-private repository URLs, secrets, or production logs.
+All issue text, code, pull-request metadata, checks, and review comments are
+synthetic. Don't replace them with customer data, private repository URLs,
+secrets, or production logs.
 
 ## Product references
 
-These references were checked on **October 15, 2026**. The app is evolving, so
-trainers should recheck command names and preview labels before delivery.
+The app is evolving. Recheck command names and preview labels before you teach.
 
 - [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
 - [Get started with the GitHub Copilot app](https://docs.github.com/en/copilot/get-started/quickstart-copilot-app)

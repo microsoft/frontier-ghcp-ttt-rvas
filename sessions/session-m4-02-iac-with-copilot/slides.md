@@ -27,13 +27,11 @@ Session M4-02 | 2 hours 30 minutes
 ---
 # Terraform is required
 
-Use Terraform for the lab:
-
 ```text
 architecture → modules → root composition → format → init → validate → security gate
 ```
 
-Bicep appears as a prepared comparison. Learners do not build both projects.
+Bicep appears as a prepared comparison. Learners don't build both projects.
 
 ---
 # Modules define contracts
@@ -44,7 +42,7 @@ Bicep appears as a prepared comparison. Learners do not build both projects.
 | Compute | VPC and subnet IDs | Load balancer DNS and app security group |
 | Database | Private subnets and app security group | Database endpoint |
 
-Keep secrets in sensitive inputs. Do not copy values between layers.
+Keep secrets in sensitive inputs. Don't copy values between layers.
 
 ---
 # Prompt from fixed constraints
@@ -55,7 +53,7 @@ typed variables and outputs. Keep the database password sensitive. Do not add
 credentials, a backend, plan, or apply command.
 ```
 
-Use the architecture to set the boundaries before Copilot drafts the files.
+Set the boundaries from the architecture before Copilot drafts the files.
 
 ---
 # Validate in stages
@@ -69,16 +67,14 @@ terraform validate
 Fix the first failure before moving on. Each stage answers a different question.
 
 ---
-# What local validation does not prove
-
-It does not check:
+# What local validation doesn't check
 
 - the current cloud state;
 - organization policy;
 - quota or regional availability;
 - the effect of an apply.
 
-A reviewed plan needs an approved identity and target environment.
+A reviewed plan needs an identity and a target environment.
 
 ---
 # One intentional security failure
@@ -87,20 +83,16 @@ A reviewed plan needs an approved identity and target environment.
 bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
 ```
 
-The gate must fail. Inspect the cited lines, repair the file, and check that the
-rerun passes.
+The gate fails. Inspect the cited lines, repair the file, and check that the rerun passes.
 
 ---
 # Bicep is a comparison
 
-Show:
-
 - module inputs and outputs;
 - `@secure()` parameters;
-- `az bicep build`;
-- the same human review boundary.
+- `az bicep build`.
 
-Six minutes. No second required build.
+Six minutes. No second build.
 
 ---
 <!-- _class: divider -->

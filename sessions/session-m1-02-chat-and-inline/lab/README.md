@@ -2,19 +2,15 @@
 
 **Duration:** 2 hours
 
-**Difficulty:** Beginner
-
-**Prerequisites:** Session M1-01 and Python 3.10 or later
-
 **Deliverable:** A corrected and extended calculator, a passing test suite, and a
 completed `chat-notes.md`
 
 ## Lab overview
 
-You will use different Chat surfaces on one Python calculator project. A focused
-test exposes a weighted-average bug. After fixing it, you will add missing tests,
-answer a workspace question, and handle a change request that requires a judgment
-about zero total weight.
+You use different Chat surfaces on one Python calculator. A focused test exposes
+a weighted-average bug. After the fix, you add missing tests, answer a workspace
+question, and handle a change request that needs a decision about zero total
+weight. Use synthetic data only.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -25,16 +21,7 @@ about zero total weight.
 | 5 | Decide and implement the change request | 20 min |
 | 6 | Compare, document, and check | 10 min |
 
-## Before you start
-
-Use synthetic data in a training repository you may use for the exercise.
-
-Before starting, check GitHub Copilot Chat access in your editor. Manual
-implementation does not replace the Chat and inline-suggestion practice.
-
-If model comparison is allowed, use only choices approved for the exercise and set
-any required metered-work stop condition. If no second choice is available, compare
-the assisted result with the reference solution.
+You need Python 3.10 or later, `git`, and an editor with GitHub Copilot Chat.
 
 ## Part 1: Prepare and reproduce (15 minutes)
 
@@ -44,48 +31,44 @@ python -m py_compile calculator.py test_calculator.py
 python -m unittest -v
 ```
 
-Three tests should pass. The weighted-average test should fail because the result
-is `190` instead of `95`.
+Three tests pass. The weighted-average test fails: the result is `190` instead of
+`95`.
 
 Read `calculator.py`, `test_calculator.py`, `change-request.md`, and
 `chat-notes.md`.
 
-**Checkpoint:** You can state the failing input, actual result, and expected result
-without asking Chat to guess them.
+**Checkpoint:** You can state the failing input, actual result, and expected
+result yourself.
 
 ## Part 2: Explain and diagnose (25 minutes)
 
 Use inline Chat or the sidebar with the `weighted_average` selection.
-
-Start with an explanation request:
 
 ```text
 Explain the weighted_average method line by line. State the mathematical formula
 it implements. Do not propose a fix yet.
 ```
 
-Compare the response with the failing test. Then ask:
+Compare the answer with the failing test. Then ask:
 
 ```text
 The test expects weighted_average([80, 100], [1, 3]) to equal 95, but the method
 returns 190. Identify the defect. Limit the answer to this method.
 ```
 
-If the surface supports an explain shortcut, try it with the same selection.
-Record the useful context and the diagnosis in `chat-notes.md`.
+If your surface has an explain shortcut, try it on the same selection. Note the
+useful context and the diagnosis in `chat-notes.md`.
 
-**Checkpoint:** The diagnosis identifies `sum(weights)` as the denominator.
+**Checkpoint:** The diagnosis names `sum(weights)` as the missing denominator.
 
 ## Part 3: Fix and expand tests (30 minutes)
-
-Request a narrow fix:
 
 ```text
 Fix only weighted_average so it divides by the total weight. Preserve the public
 method signature and the existing length check. Add no dependency.
 ```
 
-Review the proposed diff before accepting it. Run:
+Review the diff before you accept it. Run:
 
 ```bash
 python -m unittest -v \
@@ -99,53 +82,43 @@ Next, use a tests shortcut or a direct prompt to propose tests for:
 - history recording;
 - a zero total weight.
 
-Do not accept tests that invent behavior. Leave the zero-total-weight rule for the
-change request in Part 5.
+Reject tests that invent behavior. Leave the zero-total-weight rule for Part 5.
 
-**Checkpoint:** The original four tests pass. Proposed new tests are separated from
-the accepted contract.
+**Checkpoint:** The original four tests pass. Proposed new tests stay separate
+from the tests you accepted.
 
 ## Part 4: Use workspace and terminal context (20 minutes)
-
-Ask a workspace-level question:
 
 ```text
 @workspace Summarize the Calculator public behavior and identify which methods
 have focused tests. Cite the relevant files.
 ```
 
-If the current surface uses a different workspace-context mechanism, use its
-documented equivalent.
+If your surface names workspace context differently, use its equivalent.
 
-Run the tests again. Then use terminal context, if available:
+Run the tests again, then use terminal context if you have it:
 
 ```text
 Explain the most recent test result. Which behavior failed or passed, and which
 file owns the next change?
 ```
 
-Check the response yourself. Terminal context can summarize output; it does not
-replace reading the failure.
+Read the failure yourself. The summary doesn't replace it.
 
-**Checkpoint:** Your notes distinguish code behavior, test output, and Chat
+**Checkpoint:** Your notes separate code behavior, test output, and Chat's
 interpretation.
 
 ## Part 5: Decide the change request (20 minutes)
 
-Open `change-request.md`.
-
-The request says to reject a zero total weight but leaves the exception type and
-message to you. Choose both. The reference solution uses:
+Open `change-request.md`. It says to reject a zero total weight but leaves the
+exception type and message to you. The reference solution uses:
 
 ```text
 ValueError("Total weight must not be zero")
 ```
 
-Add a focused test first. Then update `weighted_average`. While reviewing the
-method, also decide how empty inputs should behave. Record both decisions in
-`chat-notes.md`.
-
-Run:
+Write a focused test first, then update `weighted_average`. Also decide how empty
+inputs behave. Note both decisions in `chat-notes.md`.
 
 ```bash
 python -m unittest -v
@@ -156,17 +129,15 @@ total weight, and history.
 
 ## Part 6: Compare and check (10 minutes)
 
-If you may use two model choices, send both the same prompt:
+If you have two models, send both the same prompt:
 
 ```text
 Review weighted_average and its tests. List any accepted behavior that lacks a
 test. Do not change code.
 ```
 
-Compare only accuracy you can check and useful citations. Otherwise compare the
-Chat-assisted result with `lab/solution/`.
-
-Inspect the final diff:
+Compare the answers you can check and the citations that help. With one model,
+compare your result with `lab/solution/`.
 
 ```bash
 git --no-pager diff -- calculator.py test_calculator.py chat-notes.md
@@ -176,15 +147,7 @@ python -m unittest -v
 
 ## Final deliverable
 
-1. `calculator.py` uses total weight and rejects invalid weighted-average inputs.
-2. `test_calculator.py` covers the accepted behavior.
-3. `chat-notes.md` records the chosen surfaces, prompts, check results, judgment
-   call, and comparison path.
-
-## Verification
-
-- [ ] Both Python files compile.
-- [ ] All eight reference tests pass.
-- [ ] The code, test, and notes state the zero-total-weight decision.
-- [ ] Chat changes stayed inside the calculator project.
-- [ ] No new dependency was added.
+1. `calculator.py` divides by total weight and rejects invalid inputs.
+2. `test_calculator.py` covers the accepted behavior. All eight tests pass.
+3. `chat-notes.md` records the surfaces, prompts, test results, your
+   zero-total-weight decision, and the comparison.

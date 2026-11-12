@@ -52,7 +52,7 @@ Use the IDE when visual navigation and diff review matter more.
 | **Plan** | You want to review the approach before edits |
 | **Autopilot** | The task has clear limits and a recovery plan |
 
-Permissions still apply. More autonomy requires a narrower task.
+Permissions still apply. More autonomy needs a narrower task.
 
 ---
 
@@ -77,11 +77,11 @@ Ask which steps change. Check the diff before approval.
 Look for a hidden defect or response-contract change. Do not edit files.
 ```
 
-Rubber duck is built in and read-only. Copilot automatically selects a contrasting
-model when one is available. Check the findings yourself.
+Rubber duck is built in and read-only. Copilot selects a contrasting model when
+one is available. Check the findings yourself.
 
-Inspect `/subagents` Proactive invocation; leave the existing setting unchanged.
-That opt-in persists and adds usage. This lab requires a manual invocation.
+Inspect `/subagents` Proactive invocation and leave it unchanged. The opt-in
+persists and adds usage.
 
 ---
 
@@ -90,11 +90,11 @@ That opt-in persists and adds usage. This lab requires a manual invocation.
 Plan separate read-only questions about routes, utilities, and test gaps.
 
 1. Leave Plan mode and run `/fleet` with that breakdown.
-2. Open `/tasks` and inspect actual child-task results.
+2. Open `/tasks` and read the child-task results.
 3. Check claims against files or focused tests.
 4. Reconcile disagreements and inspect `/usage`.
 
-Do not promise an agent count or speedup. Extra agents can use more credits.
+Extra agents can use more credits.
 
 ---
 
@@ -107,21 +107,15 @@ Do not promise an agent count or speedup. Extra agents can use more credits.
 | `copilot -p` and shell pipelines | CLI |
 | Cloud changes through `/delegate` | Session M3-02 |
 
-Check the current command picker before delivery.
-
 ---
 
-# A task with clear limits is easier to review
-
-State:
+# State the limits of an automated task
 
 - the working directory;
 - the files or commands in scope;
 - the expected result;
 - the checks to run;
 - when Copilot must stop.
-
-Do not automate an unclear request.
 
 ---
 
@@ -131,17 +125,15 @@ Do not automate an unclear request.
 copilot -p "Summarize the failing test output"
 ```
 
-Before another script consumes the answer, define:
+Before another script uses the answer, define:
 
 - stable input;
 - a predictable output format;
 - a failure signal;
 - limited permissions.
 
-Free-form output is not a reliable pipeline interface.
-
-`--output-format=json` emits **JSONL events**. Parsing each line does not prove
-that the task succeeded or that the answer meets the requested schema.
+`--output-format=json` emits **JSONL events**. Parsing each line doesn't show that
+the task succeeded or that the answer fits your schema.
 
 ---
 
@@ -150,7 +142,7 @@ that the task succeeded or that the answer meets the requested schema.
 ```text
 CLI
   reproduce the failure
-  capture focused evidence
+  capture focused test output
         ↓
 IDE
   inspect the code and diff
@@ -165,35 +157,6 @@ Switch surfaces when the work changes.
 
 ---
 
-# Context is not authority
-
-The CLI can see terminal state, files, Git state, and command output.
-
-That context helps Copilot reason. It does not decide:
-
-- which data is approved;
-- which commands are safe;
-- whether the change is correct;
-- whether the result should ship.
-
-**A person owns those decisions.**
-
----
-
-# Check before changing files or systems
-
-Before a command changes files or external systems:
-
-1. check the directory and scope;
-2. inspect the proposed action;
-3. limit tools and credentials;
-4. define a rollback or stop rule;
-5. check the result outside the conversation.
-
-Use the smallest permission that completes the task.
-
----
-
 # Inspect approval, sandbox, and limit separately
 
 ```text
@@ -203,12 +166,11 @@ Use the smallest permission that completes the task.
 /limits
 ```
 
-Approval controls whether a tool may run. The sandbox limits process access.
+Approval decides whether a tool may run. The sandbox limits process access.
 Inspect both without weakening them.
 
-AI-credit caps are soft. GitHub's references disagree about reset scope.
-Check the installed UI with the trainer; stop before metered work if unclear.
-Do not force exhaustion or treat a cap as a hard budget.
+AI-credit caps are soft. GitHub's references differ on reset scope, so check what
+your installed UI shows.
 
 ---
 
@@ -216,15 +178,13 @@ Do not force exhaustion or treat a cap as a hard budget.
 
 | Control | Result |
 | --- | --- |
-| `Ctrl+Q` | Queue a follow-up while busy; check the pending label |
+| `Ctrl+Q` | Queue a follow-up while busy |
 | `Ctrl+S` | Stash or restore an unsent draft |
-| `Ctrl+X, b` | Promote a running command/task to background |
-| `/tasks` | Inspect its actual state, output, and exit status |
+| `Ctrl+X, b` | Move a running command to the background |
+| `/tasks` | Show its state, output, and exit status |
 
-Use the lab's harmless 15-second command.
-Check the queued summary against the real result.
-
-Background work remains in the CLI session. It is not file isolation.
+Use the lab's harmless 15-second command. Compare the queued summary with the real
+result. Background work stays in the CLI session and doesn't isolate files.
 
 ---
 
@@ -232,25 +192,24 @@ Background work remains in the CLI session. It is not file isolation.
 
 1. Commit the checked repair.
 2. Let Copilot create only a disposable note.
-3. Inspect `/rewind` choices; restore conversation **and files**.
+3. Open `/rewind` and restore conversation **and files**.
 4. Check the note is gone and the repair remains.
 
-Rewind does not undo external actions or replace Git rollback.
-Later manual edits may be skipped; inspect the result.
+Rewind doesn't undo external actions or replace Git rollback.
 
 ---
 
 # Context fork is not file isolation
 
-| Command | Check |
+| Command | Result |
 | --- | --- |
-| `/fork` | Conversation fork; do not infer a separate checkout |
+| `/fork` | Conversation fork, same files |
 | `/fork worktree` | Context plus a new checkout of `HEAD` |
 | `/worktree` | New checkout; uncommitted edits stay behind |
-| `/move` | Transfer the uncommitted draft into a new worktree |
-| `/resume` | Return to the parent and check its path/branch/status |
+| `/move` | Move the uncommitted draft into a new worktree |
+| `/resume` | Return to the parent; check its path, branch, and status |
 
-Move only the analysis note. Do not merge the alternative in this lab.
+Move only the analysis note. Don't merge the alternative.
 
 ---
 
@@ -261,11 +220,9 @@ Keep:
 - the final diff;
 - test output and exit status;
 - generated reports;
-- the prompt and stated limits;
-- the final human decision.
+- the prompts you used.
 
-Save these files and results so another engineer can check the work without the
-conversation.
+Another engineer should be able to check the work without the conversation.
 
 ---
 
@@ -273,12 +230,13 @@ conversation.
 
 # Lab handoff
 
-Use `/plan`, challenge an assumption, and approve the revision before repair.
-Inspect live `/fleet` results through `/tasks` and check the accepted claims.
-Check the critique against the source. Record the controls, queue/background
-result, and recovery/worktree state.
+Use `/plan`, challenge an assumption, and approve the revision before the repair.
+Read `/fleet` results through `/tasks` and check the claims you accept. Check the
+critique against the source. Note the controls, the queue and background result,
+and the recovery and worktree state.
 
-**120 minutes:** setup 15; repair 40; programmatic/fleet 35; recovery/choice 30.
+**120 minutes:** setup 15; repair 40; programmatic and fleet 35; recovery and
+choice 30.
 
-**Submit:** passing checks, a reviewed diff, the health report, and
-`workflow-record.md` with the plan revision and observed usage.
+**Submit:** passing tests, a reviewed diff, the health report, and
+`workflow-record.md` with the plan revision and usage.

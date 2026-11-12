@@ -7,9 +7,8 @@
 
 ### 1. Introduction (5 min)
 
-- Welcome and session objectives
-- Connection to previous sessions
-- What we'll cover today
+- Session objectives
+- Link to previous sessions
 
 ### 2. Core concepts (20 min)
 
@@ -31,9 +30,9 @@
 
 ### 5. Review and lab introduction (5 min)
 
-- Review the lesson's main points
-- Lab overview and expectations
-- Questions before lab starts
+- Main points
+- Lab overview
+- Questions
 
 ## Demo setup
 
@@ -41,17 +40,7 @@
 
 ## Slide deck
 
-[Open the trainer-facing concept deck](../slides.md). Use it to explain the lesson
-before the lab. Do not use a short agenda-only deck as a substitute for the teaching
-content.
-
-The deck should include:
-
-- a timed agenda and the lesson goal;
-- concept slides that explain terms, trade-offs, and decisions;
-- concrete examples, diagrams, or tables a trainer can teach from;
-- a prepared demonstration when it helps learners connect the concept to the lab;
-- a lab handoff that states what learners will build and how it proves the lesson.
+Teach from the [concept deck](../slides.md): a timed agenda, concept slides with examples or decision tables, a demo where it helps, and a lab handoff that states what learners build.
 
 ## Talking points
 

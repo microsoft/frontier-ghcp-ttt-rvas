@@ -11,26 +11,21 @@
 ## Overview
 
 Use Copilot Chat to understand, diagnose, fix, test, and review one calculator
-module. You will move between sidebar Chat, inline Chat, terminal context, and
-workspace context. The requirements and checks from Session 1 still apply.
+module. You move between sidebar Chat, inline Chat, terminal context, and
+workspace context.
 
-The project contains a weighted-average defect and a later zero-total-weight change
-request. Record the context and prompts that helped, then check every
-change with standard-library tests.
+The project has a weighted-average defect and a later zero-total-weight change
+request. Check every change with standard-library tests.
+
+You need GitHub Copilot Chat and Python 3.10 or later.
 
 ## Learning outcomes
 
 - Choose a Chat surface that matches the task.
 - Use selected code, files, terminal output, and workspace search as context.
-- Use task shortcuts such as explain, fix, tests, and documentation when the
-  current surface offers them.
-- Refine a conversation without broadening the requested change.
-- Compare model choices allowed by policy against the same tests when more than
-  one choice is available.
-
-## Required access
-
-Learners need GitHub Copilot Chat and Python 3.10 or later.
+- Use explain, fix, tests, and documentation shortcuts.
+- Refine a conversation without broadening the change.
+- Compare two models against the same tests, if you have a choice.
 
 ## Materials
 

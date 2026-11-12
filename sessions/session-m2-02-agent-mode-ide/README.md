@@ -13,11 +13,10 @@ decide whether to accept the work, revise it, or stop.
 
 ## Learning outcomes
 
-- Explain the difference between assistant and agent workflows
+- Explain how assistant and agent workflows differ
 - Use agent mode in VS Code for multi-step, multi-file tasks
-- Use the agent loop: plan, act, observe, review, and revise
-- Know when to use agent mode, Chat, or inline suggestions
-- Use TODO code actions to bridge IDE and cloud agent workflows
+- Choose between agent mode, Chat, and inline suggestions
+- Use TODO code actions to hand work to the cloud agent
 - Review plans, diffs, commands, and test output at each checkpoint
 
 ## Session materials

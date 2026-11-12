@@ -45,22 +45,21 @@ Handler
 Success or visible error
 ```
 
-MCP standardizes discovery and calls. It does not approve the server or make its
-result correct.
+MCP standardizes discovery and calls. It doesn't make a result correct.
 
 ---
 
-# Five boundaries to review
+# Five boundaries
 
 | Boundary | Review question |
 | --- | --- |
 | Catalog | Which capabilities can the client discover? |
 | Schema | Which arguments are accepted? |
 | Handler | What work happens after a call? |
-| Result | Can the caller distinguish failure from success? |
+| Result | Can the caller tell failure from success? |
 | Transport | Which process or endpoint carries the request? |
 
-Start with stdio and synthetic data. Keep the first review small.
+Start with stdio and synthetic data.
 
 ---
 
@@ -78,9 +77,7 @@ Start with stdio and synthetic data. Keep the first review small.
 }
 ```
 
-Clients use the tool name, description, and schema as part of the interface.
-
-Start with one tool because every exposed capability adds risk and maintenance.
+Clients use the name, description, and schema as part of the interface. Start with one tool: every exposed capability adds risk and upkeep.
 
 ---
 
@@ -104,7 +101,7 @@ Start with one tool because every exposed capability adds risk and maintenance.
 }
 ```
 
-Deterministic synthetic output makes exact tests possible.
+Deterministic output makes exact tests possible.
 
 ---
 
@@ -125,12 +122,11 @@ Deterministic synthetic output makes exact tests possible.
 }
 ```
 
-The MCP result sets `isError: true`. An invalid request must not look like an empty
-success response.
+The MCP result sets `isError: true`. An invalid request must not look like an empty success.
 
 ---
 
-# Schema and handler checks work together
+# Schema and handler work together
 
 | Schema | Handler |
 | --- | --- |
@@ -138,18 +134,18 @@ success response.
 | Documents required fields | Applies business limits |
 | Rejects extra properties | Returns a stable error shape |
 
-Do not assume every caller reaches the handler through the same client-side check.
+Not every caller reaches the handler through a client-side check.
 
 ---
 
 # What each check shows
 
-| Check | Claim |
+| Check | Shows |
 | --- | --- |
-| Unit test | Handler behavior matches expectations for tested inputs |
+| Unit test | Handler behavior for tested inputs |
 | `tools/list` | The expected catalog is exposed |
 | `tools/call` | The stdio protocol path reaches the handler |
-| Copilot call | One client allowed by repository policy can discover and choose the tool |
+| Copilot call | A client can discover and choose the tool |
 
 Keep the deterministic tests even when the client integration works.
 
@@ -157,7 +153,6 @@ Keep the deterministic tests even when the client integration works.
 
 # Lab handoff
 
-Apply the same contract to three tools. Check discovery, valid input, invalid input,
-and visible errors through tests and the MCP Inspector.
+Apply the same contract to three tools. Check discovery, valid input, invalid input, and visible errors through tests and MCP Inspector.
 
 **Submit a three-tool server with recorded requests, responses, and errors.**

@@ -109,7 +109,7 @@ Custom agents add repository-owned roles and output contracts.
 
 # Show that instructions were used
 
-Creating an instruction file does not show that HVE used it.
+Creating an instruction file doesn't show that HVE used it.
 
 Show:
 

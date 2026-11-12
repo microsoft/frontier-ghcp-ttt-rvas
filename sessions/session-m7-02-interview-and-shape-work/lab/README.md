@@ -6,9 +6,6 @@
 
 **Prerequisites:** Session M7-01 and working GitHub Copilot app access
 
-**Deliverable:** An approved decision brief and issue proposal produced through a
-repeatable project skill
-
 ## What you will learn
 
 Install a repository skill and use it to interview the request owner. Turn the
@@ -30,9 +27,6 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 Use the Session M7-01 `initiative-context-brief.md`. If the trainer is delivering
 Session M7-02 alone, use `starter/vague-request.md`.
 
-Check that GitHub Copilot can read the training repository and load project
-skills.
-
 ## Part 1: Install and check the interview skill (20 minutes)
 
 Copy the supplied project skill into the root of the training repository:
@@ -50,8 +44,8 @@ Open a new GitHub Copilot app session for the project. Open
 `decision-interview` appears.
 
 Select **Interactive** mode for the interview. Use **Plan** only when Copilot
-proposes file changes. Do not use **Autopilot** because the request owner must
-answer each round of questions.
+proposes file changes. Don't use **Autopilot**: the request owner answers each
+round.
 
 Run a short test:
 
@@ -72,8 +66,7 @@ Copilot CLI users can run `/skills reload` and
 `/skills info decision-interview`.
 
 **Checkpoint:** Copilot invokes the supplied skill and returns a numbered first
-round of questions whose prerequisites are settled, rather than drafting a work
-item.
+round of questions, not a drafted work item.
 
 ## Part 2: Run the first decision interview (35 minutes)
 
@@ -180,9 +173,6 @@ Then request independent critique:
 criteria, hidden scope, missing owners, and conflicts with the late constraint.
 ```
 
-Use a documented critique option
-that the trainer has checked. Do not invent a command.
-
 ## Final deliverable
 
 Submit:
@@ -193,14 +183,3 @@ Submit:
 4. any fixes made after the fresh-session check.
 
 Session M7-03 uses the approved brief and issue proposal to create live GitHub issues.
-
-## Verification
-
-- [ ] The project skill was installed and its invocation passed.
-- [ ] Questions followed dependency order.
-- [ ] Owner decisions and reasons are recorded.
-- [ ] A late constraint reopened only affected branches.
-- [ ] The brief and issue proposal were revised together.
-- [ ] A fresh session found no contradiction.
-- [ ] Any useful critique was applied to the brief or proposal.
-- [ ] No customer or source organization names appear.

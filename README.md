@@ -1,62 +1,34 @@
 # GitHub Copilot & Agentic Workflows: Train-the-Trainer
 
-Use this curriculum to teach GitHub Copilot and GitHub Agentic Workflows.
-Choose from **29 sessions across 7 modules**, including paths for product and
-delivery teams and HVE engineering.
+Teach GitHub Copilot and GitHub Agentic Workflows with **29 sessions in 7 modules**, including paths for product and delivery teams and HVE engineering.
 
-Most sessions pair 1 hour of trainer content with a 2-hour hands-on lab.
-Session M4-02 has a 90-minute lab, Session M5-02 has a 2-hour 30-minute lab,
-and Session M5-03 has a 3-hour lab.
+Most sessions pair 1 hour of trainer content with a 2-hour lab. M4-02 has a 90-minute lab, M5-02 a 2-hour 30-minute lab, and M5-03 a 3-hour lab.
 
 ## Who this is for
 
-- **Trainers** teaching development teams to use GitHub Copilot
-- **Developer advocates** building Copilot adoption programs
-- **Engineering leads** teaching Copilot skills within their teams
-- **DevOps engineers** integrating Copilot into CI/CD and infrastructure workflows
-- **Product and delivery leaders** teaching non-developers to understand, steer, and review agent work
+Trainers, developer advocates, engineering leads, and DevOps engineers who teach Copilot to developers. Product and delivery leaders can teach non-developers to steer and review agent work.
 
 ## Prerequisites
 
-### For technical-track trainers
+**Technical trainers and learners**
 
-- Strong software development background (any language)
-- Familiarity with GitHub (repos, PRs, issues, Actions)
-- GitHub Copilot Enterprise Cloud access
-- Comfort with live coding and demos
-- Docker for the Session M6-01 observability lab
+- Working knowledge of one programming language, Git, and GitHub (repos, PRs, issues, Actions)
+- A GitHub account with Copilot access; trainers need Copilot Enterprise Cloud
+- VS Code with the GitHub Copilot extension
+- Node.js 22 or later and standalone CLI `/refine` access before M1-03
+- Working language servers for M3-04 (JavaScript) and M2-06 (Python)
+- Docker for the M6-01 observability lab
 
-### For technical-track trainees
+**Product and delivery learners** (M7-01 to M7-06)
 
-- Working knowledge of at least one programming language
-- GitHub account with Copilot access
-- VS Code installed with GitHub Copilot extension
-- Basic Git proficiency
-- Node.js 22 or later and standalone CLI `/refine` access before Session M1-03
-- Working language servers for Session M3-04 (JavaScript) and Session M2-06 (Python)
+- A GitHub account with Copilot access, the GitHub Copilot app, browser access to the training repository, and the GitHub MCP server
+- No programming, Git command line, or repository administration skills
 
-### For product and delivery trainees
-
-- Basic knowledge of their product or delivery process
-- **A GitHub account with GitHub Copilot access**
-- Browser access to the training repository
-- The GitHub Copilot app
-- The approved GitHub MCP server and a writable training repository
-
-Product and delivery learners do not need programming experience, Git command-line
-knowledge, or repository administration skills.
-
-**GitHub Copilot access is required for Sessions M7-01 to M7-06.** If a learner
-does not have access, reschedule their Module 7 training once they do.
+Learners without Copilot access should start Module 7 once they have it.
 
 ## Curriculum overview
 
-**Session IDs start with their module:** `M2-01` is the first session in Module 2.
-Numbers restart at `01` in each module. Directories use lowercase IDs, such as
-`sessions/session-m2-01-copilot-cli/`.
-
-Use `data/session-catalog.json` for the teaching order.
-**Use the full module-local ID** in saved sets and session links.
+**Session IDs start with their module:** `M2-01` is the first session in Module 2. Numbers restart at `01` in each module. Directories use lowercase IDs, such as `sessions/session-m2-01-copilot-cli/`. `data/session-catalog.json` holds the teaching order. Use the full module-local ID in saved sets and links.
 
 ### Module 1: Copilot Fundamentals (Beginner)
 
@@ -78,8 +50,7 @@ Use `data/session-catalog.json` for the teaching order.
 | M2-06  | [Repair and Refactor a Broken Python Application](sessions/session-m2-06-python-repair-refactor/) | Intermediate | 3 hrs | Fixes Python failures in order, checks LSP references, then refactors from an accepted plan without changing reports. |
 | M2-07  | [Migrate a Legacy Java Service to Modern .NET](sessions/session-m2-07-java-to-dotnet-modernization/) | Advanced | 3 hrs | Ports a legacy Java service to modern .NET while preserving behavior through focused tests. |
 
-**App access is required for Session M2-05 and Session M7-05's developer route.** Check
-the required commands before teaching. Prepared outputs do not replace live work.
+**M2-05 and M7-05's developer route need Copilot app access.**
 
 ### Module 3: Agentic Workflows (Advanced)
 
@@ -129,86 +100,30 @@ the required commands before teaching. Prepared outputs do not replace live work
 
 ## Getting started
 
-1. Read the [`curriculum plan`](curriculum-plan.md) to see what each session teaches
-   and which sessions come first. Use the [`glossary`](sessions/glossary.md) for
-   product and workflow terms.
+1. Read the [curriculum plan](curriculum-plan.md) to pick and order sessions. The [glossary](sessions/glossary.md) defines product and workflow terms.
+2. Choose a [learning track](tracks/) for your audience, or build your own [session set](build-set.md).
+3. Set up your environment: a GitHub Enterprise Cloud organization with Copilot enabled, the lab repositories (listed in each session README), VS Code with GitHub Copilot and Copilot Chat, and the GitHub Copilot app for canvas and orchestration sessions.
 
-2. Check [`track-template/`](track-template/) for the shared session format.
-
-3. Choose from the [`learning tracks`](tracks/) for your audience's role and experience.
-   Product and Delivery Teams and HVE Engineering have dedicated paths.
-
-4. **Pick your path:**
-
-   | Audience              | Recommended Path                 | Sessions     | Duration   |
-   | --------------------- | -------------------------------- | ------------ | ---------- |
-   | Copilot Beginners     | Module 1                         | M1-01 to M1-03 | 9 hrs |
-   | Copilot Practitioners | Modules 1 to 2 + developer orchestration | M1-01 to M1-03, M2-01 to M2-05, M7-05, M2-06 to M2-07 | 33 hrs |
-   | Agentic Developers    | Agentic Development | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-05 | 42 hrs |
-   | DevOps Engineers      | DevOps & Automation | M1-01 to M1-03, M2-01 to M2-02, M4-01 to M4-03 | 23 hrs 30 min |
-   | SDK Application Developers | SDK application development | M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05, M6-01 | 39 hrs |
-   | Product and Delivery Teams | Module 7                   | M7-01 to M7-06 | 18 hrs |
-   | HVE Practitioners     | HVE Engineering                  | M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, M5-03 | 31 hrs |
-   | Full Track            | All Modules                      | All available sessions | 88 hrs |
-
-5. **Prepare your environment:**
-   - GitHub Enterprise Cloud organization with Copilot enabled according to customer policy
-   - Pre-configured repositories for each lab (see individual session READMEs)
-   - VS Code with GitHub Copilot and GitHub Copilot Chat extensions
-   - GitHub Copilot app for sessions that use canvases or orchestration
-
-6. Use the trainer notes to teach each session. Afterwards, update the materials
-   based on what worked and where learners needed help.
+| Audience | Track | Sessions | Time |
+| --- | --- | --- | --- |
+| Copilot beginners | Module 1 | M1-01 to M1-03 | 9 hrs |
+| Copilot practitioners | Modules 1 to 2 + developer orchestration | M1-01 to M1-03, M2-01 to M2-05, M7-05, M2-06 to M2-07 | 33 hrs |
+| Agentic developers | Agentic Development | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-05 | 42 hrs |
+| DevOps engineers | DevOps & Automation | M1-01 to M1-03, M2-01 to M2-02, M4-01 to M4-03 | 23 hrs 30 min |
+| SDK application developers | SDK application development | M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05, M6-01 | 39 hrs |
+| Product and delivery teams | Module 7 | M7-01 to M7-06 | 18 hrs |
+| HVE practitioners | HVE Engineering | M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, M5-03 | 31 hrs |
+| Everything | All modules | All 29 sessions | 88 hrs |
 
 ## Repository structure
 
 ```
 ghcp-ttt/
-├── README.md                              # This file
-├── curriculum-plan.md                     # Full curriculum with session details
-├── tracks/                                # Pre-defined learning tracks
-│   ├── README.md                          # Track index and comparison
-│   ├── beginner-essentials.md
-│   ├── developer-productivity.md
-│   ├── agentic-development.md
-│   ├── devops-automation.md
-│   ├── product-and-delivery-teams.md
-│   ├── hve-engineering.md
-│   └── full-mastery.md
-├── track-template/                        # Reusable session template
-│   └── session-template/
-│       ├── README.md
-│       ├── trainer-content/
-│       └── lab/ (starter/ + solution/)
-└── sessions/                              # All 29 sessions
-    ├── glossary.md                        # Shared product and workflow terms
-    ├── session-m1-01-intro-to-copilot/       # Module 1: Fundamentals
-    ├── session-m1-02-chat-and-inline/
-    ├── session-m1-03-prompt-engineering/
-    ├── session-m2-01-copilot-cli/            # Module 2: In Practice
-    ├── session-m2-02-agent-mode-ide/
-    ├── session-m2-03-spaces-and-context/
-    ├── session-m2-04-code-review-prs/
-    ├── session-m2-05-copilot-app-for-developers/   # Module 2: In Practice
-    ├── session-m2-06-python-repair-refactor/       # Module 2: In Practice
-    ├── session-m2-07-java-to-dotnet-modernization/ # Module 2: In Practice
-    ├── session-m3-01-copilot-app-canvases/   # Module 3: Agentic Workflows
-    ├── session-m3-02-cloud-agent/            # Module 3: Agentic Workflows
-    ├── session-m3-03-mcp-servers/
-    ├── session-m3-04-custom-agents/
-    ├── session-m3-05-agent-skills-ecosystem/
-    ├── session-m4-01-actions-workflows/      # Module 4: DevOps & Infrastructure
-    ├── session-m4-02-iac-with-copilot/
-    ├── session-m4-03-cicd-debugging-autofix/
-    ├── session-m5-01-squad-orchestration/    # Module 5: Specification-Driven Frameworks
-    ├── session-m5-02-spec-kit/
-    ├── session-m5-03-hve-core-challenge/           # Module 5: Specification-Driven Frameworks
-    ├── session-m6-01-copilot-sdk/            # Module 6: Advanced & Capstone
-    ├── session-m6-02-capstone/               # Module 6: Advanced & Capstone
-    ├── session-m7-01-copilot-app-foundations/ # Module 7: Product & Delivery
-    ├── session-m7-02-interview-and-shape-work/
-    ├── session-m7-03-plan-work-with-github-issues/
-    ├── session-m7-04-plan-and-steer-with-canvases/
-    ├── session-m7-05-orchestrate-workstreams/
-    └── session-m7-06-automate-delivery-follow-up/
+├── README.md
+├── curriculum-plan.md      # Session order and prerequisites
+├── tracks/                 # Learning tracks
+├── track-template/         # Template for new sessions
+└── sessions/               # 29 sessions, one directory each
+    ├── glossary.md
+    └── session-mN-NN-slug/ # README, slides, trainer-content/, lab/
 ```

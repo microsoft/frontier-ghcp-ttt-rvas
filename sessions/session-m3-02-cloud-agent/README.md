@@ -10,37 +10,30 @@
 
 ## Overview
 
-Take one synthetic issue from its contract to a human review decision.
-Prepare the repository and start a Copilot cloud agent session. Then inspect the
-proposed change and run the required tests before deciding whether to approve,
-request changes, or pause.
+Take one synthetic issue from its contract to a review decision. Prepare the repository, start a Copilot cloud agent session, inspect the proposed change, and run the tests. Then approve, request changes, or pause.
 
-Keep the issue fixed throughout the work: reject blank or whitespace-only task titles while preserving valid task creation.
+The issue stays fixed throughout: reject blank or whitespace-only task titles and keep valid task creation working.
 
 ## Learning outcomes
 
 - Write an issue with testable acceptance criteria, allowed files, and non-goals.
 - Review repository instructions and Copilot setup steps before assignment.
-- Monitor an agent session without expanding the issue or its repository access.
-- Compare a proposed change with the issue and allowed file scope.
+- Monitor an agent session without expanding the issue.
+- Compare a proposed change with the issue and its file scope.
 - Run and record focused tests.
-- Name the human reviewer and record their decision.
+
+## You need
+
+- Copilot cloud agent access to a training repository.
+- A human reviewer.
+- Node.js and npm.
 
 ## Deliverables
 
-Submit:
-
-1. the fixed issue contract;
-2. the proposed change;
-3. focused test output;
-4. the review outcome.
-
-## Access policy
-
-Learners need Copilot cloud agent access to the training repository, synthetic
-data, and a human reviewer.
-
-If anything is missing, **do not assign the issue**.
+1. The fixed issue.
+2. The proposed change.
+3. Focused test output.
+4. The review outcome.
 
 ## Session materials
 
@@ -52,10 +45,7 @@ If anything is missing, **do not assign the issue**.
 | [`lab/starter/`](lab/starter/) | Issue, setup, sample project, and review guide |
 | [`lab/solution/`](lab/solution/) | Completed issue journey and runnable solution |
 
-## Current product references
-
-Product notes were checked against official GitHub documentation on October 5,
-2026. Trainers must recheck access and policy before delivery:
+## References
 
 - [Get started with Copilot agents on GitHub](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/overview)
 - [Managing agent sessions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents)

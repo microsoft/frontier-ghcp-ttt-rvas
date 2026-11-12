@@ -6,18 +6,12 @@
 
 **Prerequisites:** Sessions M7-01 to M7-05, Automations access, and GitHub MCP access
 
-**Deliverable:** One reviewed stakeholder update from a draft-only automation
-
-## Deliverables
-
-- A concise automation definition
-- One reviewed stakeholder update
-
 ## Outcome
 
 Create one automation that reads the live GitHub issues and the reviewed Session
-M7-05 parent result. Review its first draft, then apply one approved issue change
-and run it again. Compare the drafts to see how that change affected the update.
+M7-05 parent result. Review its first draft, apply one issue change, and run it
+again. Compare the drafts to see how that change affected the update. You end with
+the automation definition and one reviewed stakeholder update.
 
 The core lab uses a manual trigger and draft-only output. Scheduling stays
 disabled.
@@ -31,22 +25,18 @@ disabled.
 | 5 | Update one issue and rerun | 20 min |
 | 6 | Finalize the stakeholder update | 10 min |
 
-## Preflight
+## Before you start
 
 Complete the track
 [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
-
-Check GitHub Copilot Automations access and GitHub MCP access before the lab.
 
 ## Part 1: Check access and retrieve inputs
 
 1. Open **Automations** in the GitHub Copilot app.
 2. Check that **New automation** is available.
-3. Retrieve the approved parent and child GitHub issues through GitHub MCP.
+3. Retrieve the parent and child GitHub issues through GitHub MCP.
 4. Open the reviewed Session M7-05 parent orchestration result.
 5. Check that issue state and the parent result agree on the four workstreams.
-
-Do not copy platform state into local handoff files.
 
 ## Part 2: Complete the automation definition
 
@@ -95,13 +85,13 @@ Check that:
 - the output is one draft stakeholder update.
 
 Choose **Keep**, **Revise**, **Disable**, or **Pause**. Update the definition's
-current state to match that decision. Do not create a separate status record.
+current state to match that decision.
 
 ## Part 5: Update one issue and rerun
 
 Open `starter/approved-input-change.md`.
 
-1. Apply the approved synthetic update to the named training issue
+1. Apply the synthetic update to the named training issue
    through a reviewed GitHub MCP write.
 2. Retrieve the issue again and check the new state.
 3. Run the same automation. Do not create a second automation.
@@ -120,17 +110,5 @@ The update must state:
 - the review decision;
 - the next action.
 
-Name GitHub or Azure Boards as the authoritative planning system. Leave
-sharing the update to a person, not the automation.
-
-## Verification
-
-- [ ] Live issues and the Session M7-05 parent result were the only status inputs.
-- [ ] The concise automation definition is complete.
-- [ ] The automation produced one draft stakeholder update.
-- [ ] The platform holds run status, tool calls, and output.
-- [ ] One approved issue change was checked with a fresh read.
-- [ ] The same automation ran again.
-- [ ] A person chose Keep, Revise, Disable, or Pause.
-- [ ] Scheduling remains disabled.
-- [ ] No prohibited side effect occurred.
+Name GitHub or Azure Boards as the authoritative planning system. A person shares
+the update, not the automation.

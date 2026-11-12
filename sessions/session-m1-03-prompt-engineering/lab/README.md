@@ -2,19 +2,15 @@
 
 **Duration:** 2 hours
 
-**Difficulty:** Beginner
-
-**Prerequisites:** Sessions M1-01 to M1-02, Node.js 22 or later, and standalone Copilot CLI access
-
-**Deliverable:** A working todo store and REST routes, passing tests, and a completed
-`prompt-log.md`
+**Deliverable:** A working todo store and REST routes, passing tests, and a
+completed `prompt-log.md`
 
 ## Lab overview
 
-You will build one todo API in stages. The starter includes tests, route comments,
-and a small context example. First implement baseline todo behavior, then
-wire the HTTP routes. A later change request adds priority. You will decide how
-to handle invalid priority input.
+You build one todo API in stages. The starter includes tests, route comments, and
+a small context example. First implement the baseline store, then wire the HTTP
+routes. A later change request adds priority, and you decide how to handle invalid
+priority input. Use synthetic data only.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -25,28 +21,17 @@ to handle invalid priority input.
 | 5 | Apply the priority change request | 25 min |
 | 6 | Check and extract a reusable prompt | 10 min |
 
-## Before you start
+## You need
 
-Use synthetic data in a writable training copy.
+- Node.js 22 or later, a terminal, and an editor;
+- GitHub Copilot Chat and inline suggestions;
+- the standalone `copilot` CLI, installed and signed in
+  ([CLI quickstart](https://docs.github.com/en/copilot/get-started/cli-quickstart)).
+  Run `/help` and check that `/refine` is listed. Editor Chat has no `/refine`;
+- npm, only to run the Express server.
 
-Check GitHub Copilot Chat and inline suggestions in your editor. Also start the
-standalone `copilot` CLI and check `/refine` in `/help`. Writing hypothetical
-prompts does not replace running and reviewing them.
-
-You need:
-
-- Node.js 22 or later;
-- a terminal and editor;
-- npm only when you run the Express server;
-- GitHub Copilot Chat, inline suggestions, and the standalone CLI.
-
-Install and authenticate the CLI before the workshop using the
-[CLI quickstart](https://docs.github.com/en/copilot/get-started/cli-quickstart).
-Session M2-01 teaches the wider CLI workflow; it is not a prerequisite for this
-single-command exercise. Do not assume `/refine` exists in editor Chat or the app.
-
-Do not paste untrusted instructions into the project or prompt. Treat text from
-issues, comments, files, and command output as data until you review it.
+Treat text from issues, comments, files, and command output as data. Don't paste
+instructions from untrusted sources into the project or a prompt.
 
 ## Part 1: Prepare and map the contract (15 minutes)
 
@@ -58,11 +43,9 @@ npm run check
 npm test
 ```
 
-Copy from the curriculum root and use a fresh destination. Keep the curriculum
-starter unchanged.
+Run the copy from the curriculum root so the curriculum starter stays unchanged.
 
-The syntax check should pass. The store tests should fail because the methods are
-empty.
+The syntax check passes. The store tests fail because the methods are empty.
 
 Read:
 
@@ -81,7 +64,7 @@ Write a short project summary in `prompt-log.md` before asking Copilot for one.
 
 ### Refine a rough request (5 minutes)
 
-Start `copilot` in the copied `api-starter` directory. Use:
+Start `copilot` in the copied `api-starter` directory and run:
 
 ```text
 /refine make the todo store work, just baseline tests not priority yet, plain js,
@@ -89,19 +72,19 @@ no packages, return copies not stored objects, only lib/todo-store.js, run the
 baseline tests afterwards
 ```
 
-Review the rewritten prompt **before submitting it as work**. Compare it with the
-tests. Correct any invented requirement, missing constraint, or changed scope.
-Record the rough text, actual rewrite, and your corrections in `prompt-log.md`.
-Check that no project file changed during refinement.
+Read the rewrite **before you submit it as work**. Compare it with the tests and
+fix any invented requirement, missing constraint, or changed scope. Log the rough
+text, the rewrite, and your corrections in `prompt-log.md`. Check that no project
+file changed.
 
-`/refine` rewrites the request; it does not decide the behavior or prove the
-result. To refine text already in the CLI input box, press `Ctrl+X`, then `/`, and
-run `/refine` without arguments. Inspect the result before sending it.
+`/refine` rewrites the request. It doesn't decide the behavior. To refine text
+already in the CLI input box, press `Ctrl+X`, then `/`, and run `/refine` with no
+arguments.
 
 ### Implement and check (25 minutes)
 
-Use the accepted prompt in editor Chat or the CLI. Work only on
-`lib/todo-store.js`. Compare your accepted version with this example:
+Use your corrected prompt in editor Chat or the CLI. Work only on
+`lib/todo-store.js`. Compare your prompt with this example:
 
 ```text
 Implement only the baseline TodoStore behavior covered by tests whose names start
@@ -116,17 +99,15 @@ node --test --test-name-pattern="baseline" tests/todo-store.test.js
 ```
 
 If a test fails, name the exact mismatch in the next prompt. Change one concern at
-a time. Do not ask for a complete rewrite when the structure is already sound.
+a time. Don't ask for a full rewrite when the structure is sound.
 
-**Checkpoint:** The log separates the `/refine` rewrite from your accepted prompt.
+**Checkpoint:** The log separates the `/refine` rewrite from your final prompt.
 Four baseline tests pass. The change tests still fail.
 
 ## Part 3: Implement the REST routes (25 minutes)
 
 Open `routes/todos.js`. The comments state the route contract. Use each comment as
-an inline prompt, one handler at a time.
-
-For Chat, use a prompt such as:
+an inline prompt, one handler at a time. In Chat, try:
 
 ```text
 Implement only GET /todos in routes/todos.js. Use the existing TodoStore instance.
@@ -134,10 +115,10 @@ Map validation errors to status 400 with { error: message }. Do not change the
 store or add middleware.
 ```
 
-Repeat for get-by-ID, create, update, and delete. Review status codes and response
-shapes before accepting.
+Repeat for get-by-ID, create, update, and delete. Check status codes and response
+shapes before you accept each one.
 
-Install the declared dependency only if you will run the server:
+To run the server:
 
 ```bash
 npm install
@@ -154,34 +135,32 @@ curl -X POST http://localhost:3000/todos \
   -d '{"title":"Review the API"}'
 ```
 
-Stop the server after the checks.
+Stop the server when done.
 
-**Checkpoint:** The health route, list route, and create route return JSON with the
+**Checkpoint:** The health, list, and create routes return JSON with the
 documented status codes.
 
 ## Part 4: Run the context experiment (15 minutes)
 
-Delete or undo one route handler so it can be proposed again.
+Delete or undo one route handler so Copilot can propose it again.
 
 1. Close `examples/response-shapes.js`.
 2. Request the handler with only the route comment visible.
-3. Record the proposed error shape without accepting it.
+3. Note the error shape it proposes. Don't accept it.
 4. Open `examples/response-shapes.js`.
-5. Request the same handler again with the same wording.
-6. Record any difference.
+5. Request the same handler with the same wording.
+6. Note any difference.
 
-The context may change the proposal, or it may not. Record either result.
-Keep the implementation that matches the route contract.
+The context may or may not change the suggestion. Log either result, and keep the
+implementation that matches the route contract.
 
-**Checkpoint:** `prompt-log.md` records the two contexts and what you observed.
+**Checkpoint:** `prompt-log.md` records both contexts and what you saw.
 
 ## Part 5: Apply the priority change (25 minutes)
 
-Open `../change-request.md`.
-
-The request defines allowed values and filtering. Decide how to handle invalid
-priority values before editing. The reference solution rejects invalid
-priority with:
+Open `../change-request.md`. It defines the allowed values and filtering. Decide
+how to handle invalid priority values before you edit. The reference solution
+rejects them with:
 
 ```text
 Priority must be one of: low, normal, high
@@ -195,19 +174,15 @@ baseline behavior. Default new todos to normal. Reject other values with the exa
 message in the test. Add no package.
 ```
 
-Run:
-
 ```bash
 npm test
 npm run check
 ```
 
-**Checkpoint:** All six tests pass, and the route supports a `priority` query
+**Checkpoint:** All six tests pass, and the list route supports a `priority` query
 filter.
 
 ## Part 6: Check and extract a reusable prompt (10 minutes)
-
-Inspect the complete project diff:
 
 ```bash
 git --no-pager diff -- \
@@ -216,29 +191,18 @@ npm run check
 npm test
 ```
 
-Write one reusable prompt in `prompt-log.md`. It should state the exact file, task,
-constraints, accepted behavior, and check command without restating the
-implementation line by line.
+Write one reusable prompt in `prompt-log.md`. Name the file, task, constraints,
+accepted behavior, and check command. Don't dictate the implementation line by
+line.
 
 ## Final deliverable
 
 1. `lib/todo-store.js` implements baseline and priority behavior.
-2. `routes/todos.js` maps store results to the documented HTTP responses.
-3. `tests/todo-store.test.js` passes all six tests.
-4. `prompt-log.md` records the `/refine` comparison, iterations, the context
+2. `routes/todos.js` maps store results to the documented HTTP responses. Errors
+   return JSON, not HTML or silent defaults.
+3. `tests/todo-store.test.js` passes all six tests with no package beyond Express.
+4. `prompt-log.md` records the `/refine` comparison, your iterations, the context
    experiment, the invalid-priority decision, and one reusable prompt.
 
-## Verification
-
-- [ ] `npm run check` succeeds.
-- [ ] `npm test` passes six tests.
-- [ ] `/refine` ran in the CLI; its rewrite was checked before implementation.
-- [ ] Baseline behavior still passes after the priority change.
-- [ ] The code, tests, and notes state the invalid-priority behavior.
-- [ ] No package beyond the declared Express dependency was added.
-- [ ] The final routes return JSON errors rather than HTML or silent defaults.
-
-## Command reference
-
-Checked October 15, 2026:
+Reference:
 [Copilot CLI commands and shortcuts](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference).

@@ -6,12 +6,9 @@ Teach learners to repair a deliberately broken inventory-reconciliation
 application, then improve its design without changing its output. Keep each repair
 small enough to explain and check.
 
-Check that each learner finishes with a working command-line application, added
-regression tests, and a completed repair log. Use file comparisons to check that
-the refactor preserved the supplied text and JSON outputs.
-
-> [!IMPORTANT]
-> Check GitHub Copilot access before the session.
+Each learner finishes with a working command-line application, added regression
+tests, and a completed repair log. File comparisons show that the refactor kept the
+supplied text and JSON outputs.
 
 ## One-hour plan
 
@@ -26,20 +23,15 @@ the refactor preserved the supplied text and JSON outputs.
 
 ## Trainer preparation
 
-Before delivery:
-
-1. Open the repository in its Dev Container or a Codespace.
-2. Check Python 3.11 or later.
-3. Check that GitHub Copilot Chat and inline suggestions work.
-4. Create a private working copy of `lab/starter/`.
-5. Install `requirements-dev.txt` in that copy.
-6. Run the starter command and preserve the first failure.
-7. Run the solution tests.
-8. Keep `lab/solution/` closed until the lab review.
-9. Read the supplied `.github/lsp.json`, prepare `pyright-langserver`, and check
+1. Open the repository in its Dev Container or a Codespace, with Python 3.11 or later.
+2. Check that GitHub Copilot Chat and inline suggestions work.
+3. Create a private working copy of `lab/starter/` and install `requirements-dev.txt` in it.
+4. Run the starter command and keep the first failure.
+5. Run the solution tests, then keep `lab/solution/` closed until the lab review.
+6. Read the supplied `.github/lsp.json`, prepare `pyright-langserver`, and check
    CLI `/plan` and `/lsp test python` in the copied repository.
 
-Use these commands from the session directory:
+From the session directory:
 
 ```bash
 cd lab/starter
@@ -52,14 +44,14 @@ python -m inventory_reconciliation \
   --output-dir build
 ```
 
-The expected first failure is `SYN-01` in `inventory_reconciliation/cli.py`.
-Do not fix later faults during this demonstration.
+The first failure is `SYN-01` in `inventory_reconciliation/cli.py`. Don't fix
+later faults in the demo.
 
 ## Teaching model
 
 ### The repair ladder
 
-Start at the first layer that prevents you from checking the next:
+Start at the first layer that stops you from checking the next:
 
 | Layer | Question | Check |
 | --- | --- | --- |
@@ -69,12 +61,10 @@ Start at the first layer that prevents you from checking the next:
 | Behavior | Does the output match the contract? | `pytest -q` and fixture comparison |
 | Structure | Can the code change safely? | regression tests stay green |
 
-Skipping a layer obscures the current failure. A test suite cannot check business
-logic while test collection is blocked by a syntax error.
+Skipping a layer hides the current failure. A syntax error blocks test collection,
+so tests can't check business logic.
 
 ### One failure at a time
-
-Teach this loop:
 
 1. Capture the exact command and failure.
 2. State one hypothesis.
@@ -83,13 +73,12 @@ Teach this loop:
 5. Run the narrowest useful check.
 6. Record the result in the repair log.
 
-Have learners make the diagnosis rather than accept Copilot's suggestion without
-checking it. Use command output to test each hypothesis.
+Learners make the diagnosis. Command output tests each hypothesis.
 
 ## Controlled starter sequence
 
-The starter uses named faults so every learner can compare progress without
-sharing source-level answers.
+The starter uses named faults so learners can compare progress without sharing
+source-level answers.
 
 | Order | Fault | Surface | Intended signal |
 | ---: | --- | --- | --- |
@@ -103,47 +92,34 @@ sharing source-level answers.
 | 8 | `STATE-01` | service | Repeated runs leak results through global state |
 | 9 | `DESIGN-01` | service/reporting | Rules are duplicated and control flow is tangled |
 
-The first four faults should appear in order when learners use the checks in the
-lab. The behavior defects are deterministic and exposed by the supplied fixtures.
+The first four faults appear in order when learners use the lab's checks. The
+supplied fixtures expose the behavior defects.
 
 ## Prepared demonstration
 
 ### 1. Capture the first failure
 
-Run:
-
-```bash
-python -m inventory_reconciliation \
-  --warehouse fixtures/input/warehouse.csv \
-  --ledger fixtures/input/ledger.csv \
-  --output-dir build
-```
-
-Read the traceback from the bottom. Point out the file, line, exception type, and
-source line. Ignore every later concern until Python can parse that file.
+Run the starter command above. Read the traceback from the bottom: file, line,
+exception type, source line. Ignore every later concern until Python can parse that file.
 
 ### 2. Ask Copilot about one failure
-
-Use a prompt such as:
 
 ```text
 Explain this SyntaxError using only the shown file and traceback. Identify the
 smallest syntax repair. Do not refactor or change behavior.
 ```
 
-Show that a good repair prompt includes the traceback and names what may change.
+A good repair prompt includes the traceback and names what may change.
 
 ### 3. Check the repair
-
-Run:
 
 ```bash
 python -m compileall inventory_reconciliation
 ```
 
-The command should expose `SYN-02`, the next startup fault.
+The command should expose `SYN-02`.
 
-### 4. Stop before solving the lab
+### 4. Log it, then stop
 
 Show how to add an entry to `repair-log.md`:
 
@@ -156,7 +132,7 @@ Show how to add an entry to `repair-log.md`:
 | Check | Re-run compile command |
 | Result | Parser advances to `SYN-02` |
 
-Do not demonstrate the behavior fixes.
+Don't demonstrate the behavior fixes.
 
 ## Behavioral contract
 
@@ -165,7 +141,7 @@ The fixture pair represents two views of stock:
 - `warehouse.csv` contains physical counts;
 - `ledger.csv` contains expected counts.
 
-The intended rules are:
+The rules:
 
 1. Trim surrounding whitespace and uppercase each SKU.
 2. Sum duplicate rows after normalization.
@@ -178,18 +154,18 @@ The intended rules are:
 8. Sort report rows by SKU.
 9. Keep repeated runs isolated.
 
-Show learners how the expected text and JSON files define the result. Do not let
-them change those files to make broken code pass.
+The expected text and JSON files define the result. Learners must not change them
+to make broken code pass.
 
 ## Regression tests before refactoring
 
 The starter tests cover the fixture-level contract and repeated-run isolation.
-Learners must add at least two focused tests:
+Learners add at least two focused tests:
 
 - the boundary between `review` and `urgent`;
 - rejection of a negative quantity with file and row context.
 
-They may add more. Each test should name one rule and fail for one reason.
+Each test names one rule and fails for one reason.
 
 ## Refactoring targets
 
@@ -203,41 +179,34 @@ Keep these five jobs in separate files:
 | `reporting.py` | Render stable text and JSON output |
 | `cli.py` | Parse arguments, call the service, write files |
 
-Explain that the starter mixes these responsibilities on purpose. Have learners
-remove the module-level result list, call one rule implementation, and turn
-nested branches into named functions.
+The starter mixes these on purpose. Learners remove the module-level result list,
+call one rule implementation, and turn nested branches into named functions. No
+large rewrite: add tests first, then make one structural change at a time.
 
-Do not ask for a large rewrite. First add tests for the expected behavior. Then
-make one structural change at a time.
-
-Spend five minutes of the refactor lab block on an actual Python LSP lookup.
-Ask for the definition and references of `severity_for`; inspect the operation
-or `/lsp logs` and check the returned locations. Then inspect `service.py` for
-inline copies of the same rule. Those copies need not appear as symbol references.
-Record both before approving `/plan`. Do not use LSP diagnostics to skip the
-ordered syntax and import repairs.
-
-A startup check or text search
-does not replace the operation. Keep the lab at 120 minutes by using this lookup
-inside the existing 25-minute refactor block.
+Spend five minutes of the 25-minute refactor block on a real Python LSP lookup.
+Ask for the definition and references of `severity_for`, and check the returned
+locations in the operation output or `/lsp logs`. Then inspect `service.py` for
+inline copies of the same rule. Those copies may not show up as symbol references.
+Record both before approving `/plan`. Don't use LSP diagnostics to skip the
+syntax and import repairs.
 
 ## Useful Copilot prompts
 
-Repair prompt:
+Repair:
 
 ```text
 Use the traceback and this file only. Suggest the smallest change that resolves
 the current failure. Preserve behavior and do not refactor.
 ```
 
-Test prompt:
+Test:
 
 ```text
 Write one pytest test for the severity boundary at absolute variance 6. Follow
 the existing test style. Do not change production code.
 ```
 
-Refactor prompt:
+Refactor:
 
 ```text
 /plan The tests are green. Plan removal of global state and duplicated
@@ -245,7 +214,7 @@ classification logic using the checked references and inline duplicates.
 Preserve public signatures and output order. Name protecting tests. Do not edit.
 ```
 
-Review prompt:
+Review:
 
 ```text
 Review the diff for behavior changes. Compare it with the supplied fixtures,
@@ -254,37 +223,26 @@ expected outputs, and tests. Call out any unproved assumption.
 
 ## Facilitation notes
 
-- Keep learners on the current failure. Later defects are distractions until the
-  program reaches them.
-- Require repair-log entries before broad edits.
-- Use a new failure after a repair to decide what to investigate next.
-- Reject changes to expected outputs unless the class first proves the contract
-  is wrong.
+- Keep learners on the current failure. Later defects are distractions.
+- Require a repair-log entry before broad edits.
+- Reject changes to expected outputs unless the class first proves the contract is wrong.
 - Ask learners to explain each Copilot suggestion before they accept it.
 - Pair learners when one is stuck for more than eight minutes.
-- Keep the solution hidden until the review.
 
 ## Common wrong turns
 
 | Wrong turn | Coaching response |
 | --- | --- |
-| Rewrite the application from scratch | Return to the first failing command and preserve the supplied interface |
+| Rewrite the application from scratch | Return to the first failing command and keep the supplied interface |
 | Ask Copilot to "fix everything" | Narrow the prompt to one failure and one file |
-| Change fixtures to match broken output | Restate that fixtures are the contract |
+| Change fixtures to match broken output | Fixtures are the contract |
 | Refactor while imports still fail | Restore startup first |
-| Remove the repeated-run test | Explain that global state often passes once and fails in a process |
+| Remove the repeated-run test | Global state often passes once and fails in a process |
 | Mock all file reads | Keep at least one fixture-level test through the real parser |
 
 ## Lab handoff
 
-Learners submit:
-
-- a completed repair log;
-- a working command-line application;
-- at least two added regression tests;
-- unchanged expected-output fixtures;
-- a refactored design with no process-wide result state;
-- passing pytest output and generated reports.
-
-**Success means the same inputs produce the supplied outputs before and after the
-refactor.**
+Learners finish with a completed repair log, a working command-line application, at
+least two added regression tests, unchanged expected-output fixtures, a design with
+no process-wide result state, and passing pytest output with generated reports. The
+same inputs must produce the supplied outputs before and after the refactor.

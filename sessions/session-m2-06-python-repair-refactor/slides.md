@@ -268,11 +268,10 @@ Keep public behavior stable.
 Ask for the definition and references of `severity_for`.
 Inspect the actual LSP operation and check its locations.
 
-Then read `service.py` for inline duplicate rules: they are not necessarily
+Then read `service.py` for inline duplicate rules. They may not show up as
 references to that function.
 
-Approve `/plan` before structural edits. The lookup uses five minutes of the
-existing 25-minute refactor block.
+Approve `/plan` before structural edits.
 
 ---
 
@@ -284,7 +283,6 @@ Ask:
 - Which test proves the claimed behavior?
 - Did a rule move or get copied?
 - Does output order stay deterministic?
-- What assumption is still unproved?
 
 Check generated code against tests and fixtures.
 
@@ -320,5 +318,5 @@ Check generated code against tests and fixtures.
 
 Work in failure order. Record every repair.
 
-**The solution must** produce the supplied text and JSON outputs,
+Your solution must produce the supplied text and JSON outputs,
 pass all tests, and return the same result on repeated runs.

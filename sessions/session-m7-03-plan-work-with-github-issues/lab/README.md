@@ -4,19 +4,11 @@
 
 **Difficulty:** Intermediate
 
-**Deliverable:** A live GitHub issue hierarchy created through MCP, checked by a
-fresh read, and corrected through a second approved write
-
-## Deliverables
-
-- Live parent and child issues
-- The corrected issue
-
 ## Lab outcome
 
-Create a reviewed GitHub issue hierarchy through MCP. Read the issues back from
-GitHub to check what was saved. Then make one focused correction and read it back
-again.
+Create a reviewed GitHub issue hierarchy through MCP. Read the issues back to check
+what was saved. Make one focused correction and read it back again. You end with
+live parent and child issues and the corrected issue.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -26,11 +18,9 @@ again.
 | 4 | Preview and create the issues | 35 min |
 | 5 | Check and correct one issue | 20 min |
 
-## Preflight
+## Before you start
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
-
-Check GitHub Copilot access.
 
 ## Part 1: Check GitHub MCP and write access (15 minutes)
 
@@ -50,13 +40,8 @@ GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
 /mcp show github
 ```
 
-If the approved connection is missing, use **Customize** → **MCP** to install or
-configure the organization-approved server. **Never paste a token into a prompt
-or repository file.**
-
-GitHub MCP is the tool connection used in this lab. A plugin can bundle an MCP
-server with other customizations, but you must still check the active
-connection and its tools.
+If the connection is missing, use **Customize** → **MCP** to install or configure
+the GitHub server. **Never paste a token into a prompt or repository file.**
 
 ## Part 2: Read the source and existing GitHub state (20 minutes)
 
@@ -82,9 +67,7 @@ have both been read.
 
 Copy `starter/issue-plan-template.md` into your working folder.
 
-Use this Markdown file only as a temporary preview. Do not submit or commit it.
-Once GitHub creates the issues, the live parent and child issues replace the
-preview.
+This file is a temporary preview. Don't commit it. The live issues replace it.
 
 Ask Copilot to propose:
 
@@ -136,7 +119,7 @@ role. The hierarchy may also contain one optional fifth child.
 
 ## Part 5: Check and correct one issue (15 minutes)
 
-Start a new Copilot request. Do not reuse the create response.
+Start a new Copilot request. Don't reuse the create response.
 
 Ask Copilot to retrieve the created issues through GitHub MCP. Compare the saved
 issues with the approved plan:
@@ -156,26 +139,11 @@ Source decision: docs/discovery/decision-brief.md
 ```
 
 Require a full update preview. Approve the focused write, then retrieve the issue
-again and check the new section is present. Keep the check in the issue; you do
-not need a separate document.
+again and check the new section is present.
 
 **Checkpoint:** Fresh reads show that GitHub saved both the issues and the correction.
 
-Link every child issue from the parent. Identify the four required roles and
-label any optional fifth child as outside the Session M7-05 workstreams.
-Record dependency order, unresolved ownership, your decisions about existing work,
-and the correction you checked.
-Session M7-04 reads this live issue set through GitHub MCP.
-
-## Verification
-
-- [ ] GitHub MCP read and write access passed.
-- [ ] Existing issues were searched before creation.
-- [ ] Each duplicate and partial-overlap candidate has a recorded decision.
-- [ ] The complete write was previewed before approval.
-- [ ] Created issues match the approved decision brief.
-- [ ] A fresh read matched the created state to the approved plan.
-- [ ] A second preview, write, and fresh read checked the correction.
-- [ ] The parent issue links the child issues and records the planning decisions.
-- [ ] No invented owner, date, label, or milestone was added.
-- [ ] No customer or source organization names appear.
+Link every child issue from the parent. Mark the four required roles and label any
+optional fifth child as outside the Session M7-05 workstreams. Record dependency
+order, unresolved ownership, your decisions about existing work, and the
+correction you checked. Session M7-04 reads this live issue set through GitHub MCP.

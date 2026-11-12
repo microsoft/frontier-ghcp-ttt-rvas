@@ -10,27 +10,27 @@
 
 ## Overview
 
-Build one todo API by improving prompts as the project evolves. Use intent,
+Build one todo API by improving prompts as the project grows. Use intent,
 context, constraints, and examples to implement a store and Express routes. Then
-add priority filtering and record how context affected the proposal.
+add priority filtering and note how context changed the suggestion.
 
-**A useful prompt is only the start.** The generated work still has to pass the
-project tests and API checks.
+**A good prompt is only the start.** The result still has to pass the tests and
+API checks.
 
 ## Learning outcomes
 
-- Write prompts that state the task, relevant context, boundaries, and examples.
+- Write prompts that state the task, context, boundaries, and examples.
 - Refine a useful result without mixing unrelated concerns.
-- Use CLI `/refine` and check that its rewrite preserves the intended task.
-- Use comments and neighboring files as deliberate context.
+- Use CLI `/refine` and check that its rewrite keeps your intent.
+- Use comments and neighboring files as context.
 - Recognize vague, overloaded, and untrusted instructions.
-- Turn a successful project prompt into a reusable pattern.
+- Turn a successful prompt into a reusable pattern.
 
-## Required access
+## You need
 
-Learners need GitHub Copilot Chat, inline suggestions, the standalone CLI with
-`/refine`, Node.js 22 or later, and the declared npm dependency. Set up the CLI
-before delivery; Session M2-01 is not a prerequisite.
+GitHub Copilot Chat, inline suggestions, the standalone CLI with `/refine`,
+Node.js 22 or later, and the declared npm dependency. Install the CLI before the
+session. M2-01 is not a prerequisite.
 
 ## Materials
 

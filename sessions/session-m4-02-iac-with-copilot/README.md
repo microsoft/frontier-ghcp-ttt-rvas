@@ -7,12 +7,9 @@
 
 ## Overview
 
-You will use Terraform to build and review one modular infrastructure project.
-Connect the network, compute, and database modules, then validate each stage.
-Finally, repair a supplied configuration that fails the local security gate.
+You use Terraform to build one modular infrastructure project. Connect the network, compute, and database modules and validate each stage. Then repair a supplied configuration that fails the local security gate.
 
-Bicep is a trainer comparison and optional extension. It is not part of the
-required learner deliverable.
+Bicep is a trainer comparison and optional extension, not a learner deliverable.
 
 ## Learning outcomes
 
@@ -20,12 +17,11 @@ required learner deliverable.
 - Connect module inputs and outputs without copying values between layers.
 - Run formatting, initialization, validation, and a local security gate in order.
 - Explain what local validation checks and what still needs a reviewed plan.
-- Review the equivalent Bicep structure without requiring a second implementation.
+- Read the equivalent Bicep structure.
 
-## Required access
+## You need
 
-You need GitHub Copilot, Terraform 1.5 or later, and network access to the
-approved Terraform provider source. No cloud account or credentials are required.
+GitHub Copilot, Terraform 1.5 or later, and network access to the Terraform provider source. No cloud account or credentials.
 
 | Resource | Location |
 | --- | --- |

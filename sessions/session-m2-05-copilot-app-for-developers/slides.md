@@ -84,8 +84,8 @@ Project
 
 A working tree separates branches and files for concurrent sessions.
 
-Local sandboxing can also restrict filesystem, network, and credential access.
-Working-tree isolation does not provide that security boundary by itself.
+Local sandboxing restricts filesystem, network, and credential access.
+A working tree doesn't.
 
 ---
 
@@ -198,14 +198,13 @@ tests and review. Keep the patch uncommitted until this is complete.
 
 # Why rubber duck is a second opinion
 
-It is a built-in, read-only critic in the CLI and app.
-Copilot selects a contrasting model automatically when one is available.
+It's a built-in, read-only critic in the CLI and app.
+Copilot picks a contrasting model automatically when one is available.
 
-Record the model only if the client shows it. Check the feedback yourself.
-An extra reasoning pass adds usage; it does not approve the change.
+Check the feedback yourself. An extra reasoning pass doesn't approve the change.
 
-Session M2-01 covers the CLI's persistent Proactive invocation opt-in.
-This lab requires a manual invocation.
+Session M2-01 covers the CLI's Proactive invocation opt-in.
+This lab invokes the critic manually.
 
 ---
 
@@ -217,11 +216,11 @@ This lab requires a manual invocation.
 Use the same brief and tests. Reason only; do not implement.
 ```
 
-Check the actual fork workspace and argument. Write only the checked
-`planning-alternative.md`, then inspect `/merge-to-parent`.
+Check the fork's workspace and the argument. Write only `planning-alternative.md`,
+then inspect `/merge-to-parent`.
 
-Accept only the note; check parent source is unchanged before plan approval.
-Do not assume `/spar` has rubber duck's model policy or read-only guarantees.
+Accept only the note. Check that parent source is unchanged before you approve the plan.
+`/spar` has no read-only guarantee, so keep permissions restricted.
 
 ---
 
@@ -294,7 +293,7 @@ You will submit:
 - a PR-readiness report;
 - a manual read-only automation specification.
 
-**Another engineer should be able to check the decision from the saved files and results.**
+**Another engineer should be able to check your decision from these files.**
 
 ---
 
@@ -303,10 +302,6 @@ You will submit:
 # Lab handoff
 
 Check live app access before the lab.
-Saved session output may recover the trainer demonstration, but it does
-not replace learner app practice.
-
-Use only the synthetic training files.
 
 ---
 
@@ -319,4 +314,4 @@ The developer route uses `/orchestrate` for independent read-only reviews of:
 - the supplied PR snapshot.
 
 Redirect a child and reconcile conflicting readiness claims.
-The product track's Sessions M7-01 to M7-04 and GitHub issue access are not required.
+Sessions M7-01 to M7-04 aren't required.

@@ -51,10 +51,9 @@ Vague request
   -> definition of done
 ```
 
-Do not jump from one sentence to an issue template.
+Don't jump from one sentence to an issue template.
 
-The project skill keeps this method consistent across requests. It does not make
-the decisions.
+The project skill keeps this method consistent. It doesn't make the decisions.
 
 ---
 
@@ -116,7 +115,7 @@ GitHub Copilot frames the choice. **A person owns the choice.**
 | Known technical limits | Which tradeoff to accept |
 | Policy and data rules | Who approves release |
 
-Mark unsupported claims as unverified. Do not present them as facts.
+Mark unsupported claims as unverified.
 
 ---
 
@@ -249,17 +248,3 @@ The interview always runs with **GitHub Copilot**.
 4. Any fixes made after the fresh-session check.
 
 The request owner decides whether the brief is ready for issue planning.
-
----
-
-# Stop conditions
-
-Stop when:
-
-- GitHub Copilot access does not pass preflight;
-- the input is not approved or sanitized;
-- a required decision owner is absent;
-- policy or data boundaries are unclear;
-- the team cannot state how it will check success or failure.
-
-Record content blockers. Resolve Copilot access before starting the exercise.

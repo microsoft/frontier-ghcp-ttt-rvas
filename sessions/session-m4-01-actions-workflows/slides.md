@@ -37,8 +37,7 @@ npm run build
 test -f dist/app.js
 ```
 
-The workflow should call these commands. It should not invent another build,
-artifact path, or runtime.
+The workflow calls these commands. It doesn't invent another build, artifact path, or runtime.
 
 ---
 # A workflow is code with an execution boundary
@@ -61,7 +60,7 @@ and pushes to main. Use Node.js 20, npm ci, existing lint, test, and build scrip
 npm caching, contents: read, and a seven-day dist artifact.
 ```
 
-Then check both YAML syntax and application behavior:
+Then check YAML syntax and application behavior:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' ci.yml
@@ -71,24 +70,20 @@ npm test && npm run lint && npm run build
 ---
 # Deployment stays a design exercise
 
-The same application moves through:
-
 ```text
 build → staging → production
 ```
 
-The workflow references environments and secrets. Production reviewers are
-configured in repository settings. Placeholder commands must not imply that a deployment ran.
+The workflow references environments and secrets. Production reviewers are set in repository settings. Placeholder commands must not imply a deployment ran.
 
 ---
 # Syntax and behavior fail differently
 
-`broken-ci.yml` does not parse.
+`broken-ci.yml` doesn't parse.
 
-`broken-deploy.yml` parses but contains a stale runner, a bad Git ref, a wrong
-secret name, and no checkout.
+`broken-deploy.yml` parses but has a stale runner, a bad Git ref, a wrong secret name, and no checkout.
 
-Ask for the failed-step output before the repair.
+Get the failed-step output before the repair.
 
 ---
 # Tie each repair to a failure
@@ -99,7 +94,7 @@ Change: align the step indentation.
 Proof: parse the file again.
 ```
 
-For behavior faults, cite the deployment specification or repository facts, then check the repair.
+For behavior faults, cite the deployment spec or repository facts, then check the repair.
 
 ---
 # Validate both action outcomes
@@ -109,25 +104,12 @@ env INPUT_THRESHOLD=0 ... node src/main.js
 env INPUT_THRESHOLD=101 ... node src/main.js
 ```
 
-The first run must pass and write a summary. The second must exit with code 1.
+The first run passes and writes a summary. The second exits with code 1.
 
-One successful run does not show that the action enforces the threshold.
-
----
-# Access and checks
-
-GitHub Copilot access is required. Repository access and Actions are optional.
-
-For each case, inspect:
-
-- command or review;
-- result;
-- changed files;
-- the next action.
+One successful run doesn't show the action enforces the threshold.
 
 ---
 <!-- _class: divider -->
 # Lab
 
-Create CI, design deployment, repair failures, and validate the action against
-`copilot-webapp`.
+Create CI, design deployment, repair failures, and validate the action against `copilot-webapp`.

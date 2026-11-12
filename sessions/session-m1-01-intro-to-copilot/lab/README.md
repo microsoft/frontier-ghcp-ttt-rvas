@@ -2,18 +2,14 @@
 
 **Duration:** 2 hours
 
-**Difficulty:** Beginner
-
-**Prerequisites:** Python 3.10 or later
-
-**Deliverable:** A completed and tested `utils.py`, the focused test suite, and a
-decision record in `lab-notes.md`
+**Deliverable:** A completed and tested `utils.py`, the focused test suite, and
+your notes in `lab-notes.md`
 
 ## Lab overview
 
-You will complete one Python utility module in stages. The tests define the
-expected behavior. Inspect each proposed implementation and settle one ambiguous
-word-parsing rule. Then review a parameter rename as a separate change.
+You complete one Python utility module in stages. The tests define the expected
+behavior. Inspect each suggestion, settle one ambiguous word-parsing rule, then
+review a parameter rename as a separate change. Use synthetic data only.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -21,26 +17,12 @@ word-parsing rule. Then review a parameter rename as a separate change.
 | 2 | Complete two functions | 30 min |
 | 3 | Resolve the word-parsing ambiguity | 30 min |
 | 4 | Add the profile summary and apply the rename | 30 min |
-| 5 | Review the diff and check the deliverable | 15 min |
+| 5 | Review the diff and run all tests | 15 min |
 
-## Before you start
-
-Use only synthetic data. Check that you may use the repository and editor for the
-exercise.
-
-Before starting, check GitHub Copilot access in your editor.
-Manual implementation does not replace the inline-suggestion practice.
-
-You need:
-
-- Python 3.10 or later;
-- a terminal;
-- an editor;
-- GitHub Copilot.
+You need Python 3.10 or later, a terminal, an editor with GitHub Copilot, and
+`git`. Writing the code by hand skips the inline-suggestion practice.
 
 ## Part 1: Prepare the project (15 minutes)
-
-Open the starter directory:
 
 ```bash
 cd sessions/session-m1-01-intro-to-copilot/lab/starter
@@ -48,14 +30,13 @@ python -m py_compile utils.py test_utils.py
 python -m unittest -v
 ```
 
-The syntax check should pass. The five tests should fail because the functions do
-not return results yet.
+The syntax check passes. The five tests fail because the functions return
+nothing yet.
 
-Read `utils.py`, `test_utils.py`, `change-request.md`, and `lab-notes.md`. Do not
-open the solution until the final comparison.
+Read `utils.py`, `test_utils.py`, `change-request.md`, and `lab-notes.md`. Keep
+the solution closed until the final comparison.
 
-**Checkpoint:** You can name the expected result for every test before requesting
-a suggestion.
+**Checkpoint:** You can name the expected result for every test.
 
 ## Part 2: Complete two functions (30 minutes)
 
@@ -64,40 +45,34 @@ Start with `normalize_username`.
 1. Read its docstring and focused test.
 2. Place the cursor in the function body.
 3. Request or wait for an inline suggestion.
-4. Read the complete proposal before accepting it.
-5. Accept, revise, or reject it.
-6. Run:
+4. Read the whole suggestion, then accept, revise, or reject it.
+5. Run:
 
    ```bash
    python -m unittest -v test_utils.UtilityTests.test_normalize_username
    ```
 
-Repeat the process for `is_palindrome`:
+Repeat for `is_palindrome`:
 
 ```bash
 python -m unittest -v \
   test_utils.UtilityTests.test_palindrome_ignores_spacing_and_case
 ```
 
-Record both decisions in `lab-notes.md`.
+Note both decisions in `lab-notes.md`.
 
 **Checkpoint:** Two focused tests pass. The module has no new dependency.
 
 ## Part 3: Resolve the word-parsing ambiguity (30 minutes)
 
-Before implementing "count words," you need to decide whether an apostrophe
-splits a word.
+Before implementing "count words," decide whether an apostrophe splits a word.
+Read `test_word_frequency_preserves_apostrophes`. The rule is:
 
-Read `test_word_frequency_preserves_apostrophes`. The accepted rule is:
+> Keep an apostrophe inside a word. `don't` counts as one word.
 
-> Preserve an apostrophe when it appears inside a word. `don't` counts as one
-> word.
-
-Use that decision to complete `word_frequency`. A simple `split()` or punctuation
-removal may break the rule. If you cannot follow the proposed expression, ask
-for an explanation before accepting it.
-
-Run:
+Complete `word_frequency` with that rule. A plain `split()` or punctuation
+removal can break it. If you can't follow a suggested expression, ask Copilot to
+explain it before you accept it.
 
 ```bash
 python -m unittest -v \
@@ -107,22 +82,21 @@ python -m unittest -v \
 
 Update the ambiguity section in `lab-notes.md`.
 
-**Checkpoint:** Both word-frequency tests pass, and the input string remains
-unchanged.
+**Checkpoint:** Both tests pass, and the input string stays unchanged.
 
 ## Part 4: Add the summary and apply the rename (30 minutes)
 
-Complete `profile_summary` and run its focused test:
+Complete `profile_summary`, then run its test:
 
 ```bash
 python -m unittest -v test_utils.UtilityTests.test_profile_summary
 ```
 
-Now open `change-request.md`. Rename the first parameter from `username` to
+Open `change-request.md` and rename the first parameter from `username` to
 `handle`.
 
-If Next Edit Suggestions are available, review each predicted change separately.
-Do not assume every caller was found. Search after the rename:
+If Next Edit Suggestions are available, review each predicted change on its own.
+It can miss a caller, so search after the rename:
 
 ```bash
 grep -R --include='*.py' "username" .
@@ -130,31 +104,21 @@ grep -R --include='*.py' "username" .
 
 The search should find no stale parameter or caller. Run the focused test again.
 
-**Checkpoint:** The rename changed the parameter and caller without changing the
-output.
+**Checkpoint:** The rename changed the parameter and caller, and the output is
+the same.
 
-## Part 5: Review and check (15 minutes)
-
-Inspect the complete change:
+## Part 5: Review the diff (15 minutes)
 
 ```bash
 git --no-pager diff -- utils.py test_utils.py lab-notes.md
 python -m unittest -v
 ```
 
-If the working tree contains other changes, review only the three lab files.
+If the working tree has other changes, review only these three files.
 
 ## Final deliverable
 
 1. `utils.py` implements all four functions.
 2. `test_utils.py` passes all five tests.
-3. `lab-notes.md` records the access path, suggestion decisions, ambiguity
-   decision, rename search, and final test result.
-
-## Verification
-
-- [ ] `python -m py_compile utils.py test_utils.py` succeeds.
-- [ ] `python -m unittest -v` passes five tests.
-- [ ] `grep -R --include='*.py' "username" .` finds no stale parameter or caller.
-- [ ] No dependency or unrelated file was added.
-- [ ] The final diff matches the stated behavior.
+3. `lab-notes.md` records your suggestion decisions, the apostrophe decision,
+   the rename search, and the final test result.

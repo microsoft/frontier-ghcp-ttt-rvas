@@ -2,48 +2,39 @@
 
 **Time:** 45 to 60 minutes inside the existing two-hour lab
 
-**Use:** Use Azure Boards as the approved issue source for the main lab.
-
-**Deliverable:** Live child-session results, reviewed parent result, and checked
-planning updates
+**Use:** Azure Boards is the issue source for the main lab.
 
 > [!IMPORTANT]
-> The trainer must select and prepare this route before the workshop. It is not
+> The trainer selects and prepares this route before the workshop. It isn't
 > part of the standard learner path.
 
 Use a seeded Azure Boards Epic or Feature for the same four Session M7-03 issue
-roles. Keep the authoritative plan and status in Azure Boards, and repository
-work in GitHub.
+roles. Keep the plan and status in Azure Boards, and repository work in GitHub.
 
-**GitHub Copilot must perform the orchestration.** Azure Boards MCP and the browser
-are planning interfaces. They do not replace the built-in `/orchestrate` skill.
+**GitHub Copilot performs the orchestration.** Azure Boards MCP and the browser
+are planning interfaces. They don't replace the built-in `/orchestrate` skill.
 
-## Prerequisites
+## Prepare
 
 You need:
 
-- access to a training Azure DevOps project with the seeded status-visibility Epic or Feature;
+- a training Azure DevOps project with the seeded status-visibility Epic or Feature;
 - permission to read and update the seeded child work items;
-- an approved Azure Boards MCP connection or browser access;
-- the work item IDs or seed tag supplied by the trainer;
-- live GitHub Copilot orchestration through `/orchestrate`;
-- access to the fictional GitHub repository when a selected item requires repository evidence.
+- an Azure Boards MCP connection or browser access;
+- the work item IDs or seed tag from the trainer;
+- `/orchestrate` in the GitHub Copilot app;
+- the fictional GitHub repository when a selected item needs repository evidence.
 
-## Required preflight
+Before starting:
 
-1. Open the seeded parent and check that it is tagged for Session M7-05 training.
+1. Open the seeded parent and check it is tagged for Session M7-05 training.
 2. Record the parent ID, process type, starting state, and selected child IDs.
-3. Type `/` in the GitHub Copilot app and check that `/orchestrate` is available.
-4. Open **Customize** → **Skills** → **Installed** and check the built-in
-   `orchestrate` skill.
-5. Check that you can open, steer, and stop those sessions.
-6. Name who reviews the parent result and who may approve Boards updates.
+3. Check `/orchestrate` appears and the built-in `orchestrate` skill is under **Customize** → **Skills** → **Installed**.
+4. Check you can open, steer, and stop child sessions.
+5. Name who reviews the parent result and who approves Boards updates.
 
-> [!IMPORTANT]
-> Do not use separate prompts, role-play, exports, or prepared results
-> as a substitute for the live run.
-
-Use only the seeded fictional items. Do not open production work items, add real organization data, or change project settings.
+Separate prompts, role-play, exports, and prepared results don't replace the live
+run. Use only the seeded fictional items.
 
 ## Parent objective
 
@@ -123,12 +114,10 @@ check the change.
 ## Safety boundaries
 
 - Work only with the seeded training hierarchy.
-- Do not change project process settings, team configuration, area paths, or iteration paths.
-- Do not create service commitments or release claims without supporting results.
-- Do not place secrets, personal data, production records, or real organization names in work items.
-- Do not let an agent approve, merge, deploy, contact people, or close the parent decision.
-- Stop when an item requests restricted data or needs authority the learner does
-  not have.
+- Don't change process settings, team configuration, area paths, or iteration paths.
+- Don't put secrets, personal data, production records, or real organization names in work items.
+- Don't let an agent approve, merge, deploy, contact people, or close the parent decision.
+- Stop when an item requests restricted data or needs authority you don't have.
 
 ## Reset and cleanup
 
@@ -138,4 +127,4 @@ check the change.
 4. Close the GitHub Copilot child sessions and follow the repository's branch or pull-request cleanup policy.
 5. Do not delete the seeded hierarchy unless the trainer gives a reset instruction for those exact item IDs.
 
-If the trainer supplied a seed/reset tool, follow that tool's README. This lab does not run reset commands.
+If the trainer supplied a seed/reset tool, follow its README.

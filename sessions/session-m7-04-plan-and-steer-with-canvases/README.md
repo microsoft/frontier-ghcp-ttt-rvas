@@ -14,16 +14,11 @@ Continue the **Delivery Decision Studio** path. Use the built-in
 `/create-canvas` skill to turn the live Session M7-03 issues into a visible delivery
 workspace. Review the generated extension and remove capabilities you do not need.
 Then change GitHub state and compare it with the canvas. Detect the stale data
-and refresh it.
-
-You describe and operate the canvas without hand-coding the extension.
-
-The GitHub MCP connection supplies issue tools. A plugin may package MCP and
-canvas capabilities, but you must still review the connection and capabilities.
-Keep the lab no-code and free of customer or source organization names.
+and refresh it. You describe and operate the canvas without hand-coding the
+extension.
 
 > [!IMPORTANT]
-> **Live canvas creation is required.** You need `/create-canvas`, GitHub MCP, and the approved canvas actions.
+> **You need `/create-canvas`, GitHub MCP, and canvas creation access.**
 
 ## Learning outcomes
 
@@ -55,4 +50,5 @@ In this session, you will:
 
 ## Session M3-01 distinction
 
-Session M3-01 teaches canvas extension design and implementation. Session M7-04 teaches product and delivery teams to request, review, and operate a canvas through the GitHub Copilot app.
+Session M3-01 teaches canvas extension design and implementation. Session M7-04
+teaches you to request, review, and operate a canvas through the GitHub Copilot app.

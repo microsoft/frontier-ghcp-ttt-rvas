@@ -284,7 +284,7 @@ Use integer cents, checked arithmetic, and platform APIs.
 Do not add packages or change the endpoint shape.
 ```
 
-Name the limits so you can check whether Copilot stayed within them.
+Name the limits so you can check Copilot stayed within them.
 
 ---
 
@@ -347,35 +347,17 @@ No single layer proves the whole service.
 5. Watch the shared case fail.
 6. restore the accepted code and rerun.
 
-Use the failing case to show why the calculation order matters.
+The failing case shows why calculation order matters.
 
 ---
 
-# Review point: architecture notes
-
-Learners should name:
-
-- the HTTP entry point;
-- the parsing boundary;
-- the domain calculation;
-- the response mapping;
-- the existing checks.
-
-Class names alone are not an architecture explanation.
-
----
-
-# Review point: compare test and HTTP results
-
-Save these results:
+# Compare test and HTTP results
 
 ```text
 Java:  Contract fixture tests passed: 5
 .NET:  Contract fixture tests passed: 5
 HTTP:  matching field values for one shared request
 ```
-
-Also record checks that were not run.
 
 ---
 
@@ -393,30 +375,15 @@ Keep the Java behavior until tests and review support its replacement.
 
 ---
 
-# Environment boundary
+# Environment
 
-**Primary:** repository Dev Container or Codespaces
+Use the repository Dev Container or Codespaces:
 
 - Java 21 compiling Java 8-compatible source
 - Maven 3.9.9 through `mvnw`
 - .NET 10 SDK
 
-**Native setup alternative:** JDK 17 or 21, .NET 10 SDK, Git, and `curl`.
-
----
-
-# Access stop
-
-Before the lab, check that GitHub Copilot works in the training environment.
-
-If access is missing:
-
-1. stop;
-2. preserve the starter files;
-3. resolve account, extension, or policy access;
-4. restart from preflight.
-
-Do not switch to an unapproved tool.
+Native alternative: JDK 17 or 21, .NET 10 SDK, Git, and `curl`.
 
 ---
 

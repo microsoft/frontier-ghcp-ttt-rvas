@@ -1,91 +1,51 @@
 # Track: Developer Productivity
 
-**Target Audience:** Developers using Copilot in daily work
-**Duration:** 27 hours (9 sessions × 3 hrs)
-**Difficulty:** Beginner → Intermediate
-**Recommended Delivery:** 3 to 4 days (2 to 3 sessions per day)
+**For:** developers using Copilot in daily work
+**Time:** 27 hours, 9 sessions
+**Delivery:** 3 to 4 days
 
----
+Practice suggestions, Chat, prompts, the CLI, and agent mode. Then add shared context, code review, and the Copilot app. In M2-05 learners critique a plan and implement it in an isolated app session. In M7-05 they supervise child sessions that review local code and a synthetic PR snapshot.
 
-## Description
+## Before you start
 
-Use this track to practice Copilot during daily development. Work with suggestions,
-Chat, prompts, the CLI, and agent mode, then add shared context and code review.
+- Working knowledge of one programming language, Git, pull requests, and VS Code
+- A GitHub account with Copilot access
+- Copilot CLI with `/plan`, `/fleet`, `/review`, and `/security-review`
+- Copilot app with `/rubber-duck`, `/orchestrate`, `/fork`, `/merge-to-parent`, and `/spar`
+- Node.js 22 or later and `/refine` before M1-03
+- Local sandbox support for M2-01
+- Python 3.10 or later for M2-05 and M7-05
 
-In Session M2-05, you critique a plan and implement the change in an isolated app
-session. In Session M7-05's developer route, you supervise child sessions that
-review local code and a synthetic PR snapshot.
-
-## Prerequisites
-
-- Working knowledge of at least one programming language
-- GitHub account with Copilot access
-- VS Code installed with GitHub Copilot extension
-- Basic Git proficiency
-- Familiarity with pull request workflows
-- Copilot CLI access, including `/plan`, `/fleet`, `/review`, and `/security-review`
-- Copilot app access with `/rubber-duck` and `/orchestrate`
-- Node.js 22 or later and CLI `/refine` before Session M1-03
-- App `/fork`, `/merge-to-parent`, and `/spar` for Session M2-05
-- Local sandbox support and checks on how the installed CLI version applies limits for Session M2-01
-- Python 3.10 or later for Sessions M2-05 and M7-05
+M2-05 and M7-05 need live app access. For M7-05, use the **developer route**. It doesn't need M7-01 to M7-04 or GitHub MCP.
 
 ## Sessions
 
-| Order   | Session ID   | Title                                   | Difficulty   | Duration   |
-| ------- | ----------- | --------------------------------------- | ------------ | ---------- |
-| 1       | M1-01          | Introduction to GitHub Copilot          | Beginner     | 3 hrs      |
-| 2       | M1-02          | Copilot Chat & Inline Suggestions       | Beginner     | 3 hrs      |
-| 3       | M1-03          | Prompt Engineering Fundamentals         | Beginner     | 3 hrs      |
-| 4       | M2-01          | GitHub Copilot in the CLI               | Intermediate | 3 hrs      |
-| 5       | M2-02          | Agent Mode in the IDE                   | Intermediate | 3 hrs      |
-| 6       | M2-03          | Copilot Spaces & Context Management     | Intermediate | 3 hrs      |
-| 7       | M2-04          | Copilot for Code Review & Pull Requests | Intermediate | 3 hrs      |
-| 8       | M2-05          | GitHub Copilot App for Developers       | Intermediate | 3 hrs      |
-| 9       | M7-05          | Orchestrate Agents and Workstreams: developer route | Intermediate | 3 hrs |
+| # | ID | Session | Time |
+| ---: | --- | --- | --- |
+| 1 | M1-01 | [Introduction to GitHub Copilot](../sessions/session-m1-01-intro-to-copilot/README.md) | 3 hrs |
+| 2 | M1-02 | [Copilot Chat & Inline Suggestions](../sessions/session-m1-02-chat-and-inline/README.md) | 3 hrs |
+| 3 | M1-03 | [Prompt Engineering Fundamentals](../sessions/session-m1-03-prompt-engineering/README.md) | 3 hrs |
+| 4 | M2-01 | [GitHub Copilot in the CLI](../sessions/session-m2-01-copilot-cli/README.md) | 3 hrs |
+| 5 | M2-02 | [Agent Mode in the IDE](../sessions/session-m2-02-agent-mode-ide/README.md) | 3 hrs |
+| 6 | M2-03 | [Copilot Spaces & Context Management](../sessions/session-m2-03-spaces-and-context/README.md) | 3 hrs |
+| 7 | M2-04 | [Copilot for Code Review & Pull Requests](../sessions/session-m2-04-code-review-prs/README.md) | 3 hrs |
+| 8 | M2-05 | [GitHub Copilot App for Developers](../sessions/session-m2-05-copilot-app-for-developers/README.md) | 3 hrs |
+| 9 | M7-05 | [Orchestrate Agents and Workstreams](../sessions/session-m7-05-orchestrate-workstreams/README.md) (developer route) | 3 hrs |
 
-**App access is required for Sessions M2-05 and M7-05.** Stop those labs if access or a
-required command is unavailable. Prepared outputs support trainer explanation
-only. The Session M7-05 developer route does not require Sessions M7-01 to M7-04 or MCP.
+## Schedule
 
-## Recommended delivery schedule
+**Four days (recommended):**
 
-### 3-day standard
+| Day | Sessions |
+| --- | --- |
+| 1 | M1-01, M1-02 |
+| 2 | M1-03, M2-01 |
+| 3 | M2-02, M2-03 |
+| 4 | M2-04, M2-05, M7-05 |
 
-| Day   | Sessions            | Focus                               |
-| ----- | ------------------- | ----------------------------------- |
-| Day 1 | Sessions M1-01, M1-02, M1-03 | Foundations: setup, Chat, prompting |
-| Day 2 | Sessions M2-01, M2-02, M2-03 | CLI, agent mode, and context |
-| Day 3 | Sessions M2-04, M2-05, M7-05 | Code review, app workflow, and orchestration |
+Three days works too, but runs 9 teaching hours a day: M1-01 to M1-03, then M2-01 to M2-03, then M2-04, M2-05, M7-05.
 
-Each day has nine teaching hours before breaks. **Prefer the four-day schedule.**
+## Next
 
-### 4-day relaxed
-
-| Day   | Sessions        | Focus                          |
-| ----- | --------------- | ------------------------------ |
-| Day 1 | Sessions M1-01, M1-02 | Setup and Chat workflows       |
-| Day 2 | Sessions M1-03, M2-01 | Prompting + CLI                |
-| Day 3 | Sessions M2-02, M2-03 | Agent mode + context           |
-| Day 4 | Sessions M2-04, M2-05, M7-05 | Code review, app workflow, and developer orchestration |
-
-## Learning outcomes
-
-After this track, you should be able to:
-
-1. Use inline suggestions, Chat, CLI, and agent mode in daily work
-2. Write effective prompts and choose the context each task needs
-3. Configure Copilot Spaces and custom instructions for team workflows
-4. Use Copilot for PR summaries, code review, and merge conflict resolution
-5. Combine Copilot tools in a daily development workflow
-6. Choose the right Copilot tool for a task
-7. Set up project-level and personal context to guide Copilot's output
-8. Use isolated Copilot App sessions for implementation and independent critique
-9. Revise a plan before implementation and assess local code and security findings
-10. Direct read-only child sessions and distinguish local success from PR readiness
-11. Inspect loaded instructions, manage queued and background work, and check recovery state
-
-## Next steps
-
-- **Agentic Development**. Move into Copilot App canvases, autonomous agents, MCP servers, and custom agents
-- **DevOps & Automation**. Apply Copilot to CI/CD pipelines, GitHub Actions, and Infrastructure as Code
+- **Agentic Development** adds canvases, the cloud agent, MCP, and custom agents.
+- **DevOps & Automation** covers CI/CD and infrastructure.

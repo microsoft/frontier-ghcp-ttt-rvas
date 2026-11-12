@@ -9,16 +9,13 @@
 
 ## Prerequisites
 
-- Completed trainer content for this session
+- Trainer content for this session
 - [Any prior sessions required]
 - [Any tools or accounts needed]
 
 ## Required access
 
-Check that [required Copilot tool] is available and that you are signed in.
-
-Do not
-replace it with another assistant or a manual simulation.
+You need [required Copilot tool] and a signed-in account. Stop the lab if the tool is missing.
 
 ## Setup
 
@@ -93,4 +90,4 @@ replace it with another assistant or a manual simulation.
 
 ## Solution reference
 
-See the `solution/` directory for the reference implementation. Trainers should review this before the session but not distribute it to trainees until after lab completion.
+The `solution/` directory has the reference implementation. Share it with learners after the lab.

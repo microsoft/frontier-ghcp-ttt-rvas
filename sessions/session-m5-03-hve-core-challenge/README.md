@@ -19,9 +19,9 @@ GitHub Copilot, to take a feature from research to reviewed code. You start with
 its file-based Research, Plan, Implement, Review (RPI) workflow. Then you add
 repository instructions, targeted coding standards, and a custom review agent.
 
-Use Product Manager Advisor to test the value and scope of an Engineering Decision
-API feature. Agile Coach turns the result into an outcome-oriented story with
-acceptance criteria. Feed those artifacts back into the HVE plan before
+Product Manager Advisor tests the value and scope of an Engineering Decision API
+feature. Agile Coach turns the result into an outcome-oriented story with
+acceptance criteria. You feed those artifacts back into the HVE plan before
 implementation and review.
 
 ## Learning outcomes
@@ -36,27 +36,17 @@ implementation and review.
   and acceptance criteria.
 * Deliver and review one containerized API slice through the customized HVE workflow.
 
-## Delivery boundary
+## HVE Core requirement
 
-HVE Core is required for the hands-on challenge. Check that the approved HVE
-Core extension or Copilot CLI plugin exposes the RPI prompts, agents, and
-customizations before the lab starts. Add the tested HVE version or channel to the
-Research artifact.
-If HVE cannot run, learners may inspect trainer-provided HVE artifacts and observe
-the workflow, but the walkthrough does not count as challenge completion.
+The hands-on challenge requires HVE Core (the extension or Copilot CLI plugin).
+Without it, learners can inspect trainer-provided artifacts but can't complete the
+challenge. Keep `.copilot-tracking/` local and ignored by Git. The challenge
+handoff lists the four phase artifacts, the final decision, unresolved risks, and
+the next action.
 
-Use synthetic records in a sandbox permitted by the customer. Get approval for
-package downloads. When local downloads are restricted, use existing
-dependencies and a trainer-managed remote container build.
+## HVE references
 
-Keep `.copilot-tracking/` local and ignored by Git. Inspect and grade those files
-directly. The challenge handoff only lists the four phase artifacts and
-records the final decision, unresolved risks, and next action.
-
-## HVE version and references
-
-This session was last checked against HVE Core documentation on **September 24,
-2026**. HVE commands and generated artifacts can change between versions.
+HVE commands and generated artifacts change between versions.
 
 * [HVE Core repository and framework overview](https://github.com/microsoft/hve-core)
 * [Install HVE Core](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)

@@ -8,13 +8,9 @@
 
 ## Before you start
 
-Before the lab, check repository or sandbox permissions, GitHub Copilot access,
-and Node.js 20 or later. Name a human reviewer. Use only synthetic bookmark data.
-
-**Do not create a public repository, add
-a package, configure an MCP server, or use production data.**
-
-The only implementation slice is `POST /api/bookmarks`.
+You need repository or sandbox access, GitHub Copilot, Node.js 20 or later, a
+human reviewer, and synthetic bookmark data. Don't add a package, configure an MCP
+server, or use production data. The only slice is `POST /api/bookmarks`.
 
 | Phase | Work | Time |
 | --- | --- | --- |
@@ -68,8 +64,8 @@ Record that baseline. The missing-route failures are expected at this stage.
 
 ## Phase 3: Implement the accepted slice (35 min)
 
-Use Copilot and treat the issue as the work order. Before
-editing, list the expected files and map each file to a specification ID.
+Use Copilot and treat the issue as the work order. Before editing, list the
+expected files and map each file to a specification ID.
 
 Implement only:
 
@@ -78,12 +74,10 @@ Implement only:
 - accepted field validation;
 - documented success and error responses.
 
-Implement only the accepted `POST /api/bookmarks` endpoint. Use synthetic data and
-the existing dependencies. Stop if the work requires another endpoint, live data,
-deployment, tool configuration, or a new dependency.
-
-When blocked or out of time, stop implementation and record the blocker in
-`starter/capstone-handoff.md`. Do not claim completion without test results.
+Stop if the work requires another endpoint, live data, deployment, tool
+configuration, or a new dependency. If you are blocked or out of time, record the
+blocker in `starter/capstone-handoff.md`. Don't claim completion without test
+results.
 
 ## Phase 4: Test, review, and hand off (35 min)
 
@@ -120,6 +114,3 @@ Submit one `capstone-handoff.md` containing:
 4. The human review decision and reviewer.
 5. Deferred scope, deviations, and known risks.
 6. One next action with an owner.
-
-**Your deliverable is incomplete** without executable test results or a review
-decision.

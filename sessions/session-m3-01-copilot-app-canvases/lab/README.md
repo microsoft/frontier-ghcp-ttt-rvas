@@ -1,30 +1,16 @@
 # Session M3-01 lab: Build and review a canvas contract
 
-**Duration:** 2 hours  
-**Difficulty:** Advanced  
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04
-**Deliverable:** A tested canvas and its final state
-
 ## Objective
 
-Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create the canvas in the Copilot app. Make visible and agent-requested changes to the same state. Check that an invalid change is rejected, then recover without changing the rule.
+Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create the canvas in the Copilot app. Make a visible change and an agent-requested change to the same state. Check that an invalid change is rejected, then recover without changing the rule.
+
+You need the Copilot app and `/create-canvas`. Use synthetic data only.
 
 ## Deliverables
 
-Submit:
-
-1. your completed `canvas-contract.md`;
-2. the generated extension location;
-3. final state that matches the accepted transitions.
-
-## Access policy
-
-The lab requires GitHub Copilot app access and the built-in `/create-canvas` skill.
-Project scope requires approval to create files under `.github/extensions`.
-
-If project scope is not
-available, use user scope. Do not install a replacement or
-copy the synthetic workflow into another external service.
+1. Your completed `canvas-contract.md`.
+2. The generated extension location.
+3. A final state that matches the accepted transitions.
 
 ## Setup
 
@@ -43,37 +29,31 @@ pass 4
 fail 0
 ```
 
-Open these files:
-
-- `canvas-contract.md`
-- `prepared-items.json`
-- `demo-runbook.md`
-
-Copy the record files to a writable working folder if you do not want to edit the starter assets.
+Open `canvas-contract.md`, `prepared-items.json`, and `demo-runbook.md`. Copy them to a working folder if you don't want to edit the starter files.
 
 ## Time plan
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Check access and contract | 20 min |
+| 1 | Check the contract | 20 min |
 | 2 | Run the prepared contract tests | 15 min |
 | 3 | Create the canvas | 25 min |
 | 4 | Make two visible state changes | 20 min |
 | 5 | Check rejection and recovery | 20 min |
 | 6 | Inspect and hand off | 20 min |
 
-## Part 1: Check access and contract (20 minutes)
+## Part 1: Check the contract (20 minutes)
 
-1. Select project or user scope.
+1. Pick project or user scope.
 2. Check that all data comes from `prepared-items.json`.
 3. Review every state field, human action, agent capability, and validation rule in `canvas-contract.md`.
 4. Replace the owner and reviewer placeholders.
 5. Check the retirement trigger.
 
-The contract must retain these rules:
+The contract must keep these rules:
 
 - statuses are `planned`, `in-progress`, `review`, and `ready`;
-- only one named item changes per update;
+- one update changes one named item;
 - `ready` requires non-empty evidence;
 - unknown items and statuses are rejected;
 - no external system is connected.
@@ -82,28 +62,19 @@ The contract must retain these rules:
 
 ## Part 2: Run the prepared contract tests (15 minutes)
 
-Run:
-
 ```bash
 npm test
 ```
 
-Read `test/canvas-contract.test.mjs` and map each test to a contract rule.
+Read `test/canvas-contract.test.mjs` and map each test to a contract rule. Note the command, the result, and any mismatch between code and contract.
 
-Record:
+Don't continue with a failing harness. Fix only a mismatch your edits caused, or reset your copy from `lab/starter/`.
 
-- the command;
-- pass or fail;
-- the four rules tested;
-- any mismatch between code and contract.
-
-Do not continue with a failing harness. Fix only a mismatch caused by your edits, or reset your working copy from `lab/starter/`.
-
-**Checkpoint 2:** Your local harness passes, and your group can identify the planned rejection.
+**Checkpoint 2:** The harness passes, and your group can name the planned rejection.
 
 ## Part 3: Create the canvas (25 minutes)
 
-Open a GitHub Copilot app session with the required access. Run:
+Open a Copilot app session and run:
 
 ```text
 /create-canvas
@@ -116,10 +87,7 @@ Reject unknown items or statuses. Require evidence before ready.
 Do not connect external systems.
 ```
 
-Choose:
-
-- **project scope** only when `.github/extensions` is approved for the training repository;
-- **user scope** when a personal local extension is approved.
+Choose **project scope** if you can create files under `.github/extensions`. Otherwise choose **user scope**.
 
 Inspect the generated directory, metadata, dependencies, state, visible controls, and agent-callable capabilities. Ask Copilot to remove anything outside the contract.
 
@@ -127,32 +95,22 @@ Inspect the generated directory, metadata, dependencies, state, visible controls
 
 ## Part 4: Make two visible state changes (20 minutes)
 
-Use the same state for both paths.
+**Change A, direct action.** Move `WEB-318` from `review` to `ready`. It succeeds because the item already has evidence.
 
-### Change A: direct human action
-
-Move `WEB-318` from `review` to `ready`.
-
-This should succeed because the item already has evidence.
-
-### Change B: agent-requested action
-
-Ask Copilot:
+**Change B, agent-requested action.** Ask Copilot:
 
 ```text
 Move API-204 from in-progress to review. Change only that item.
 ```
 
-Check:
+Check that:
 
 - `WEB-318` is `ready`;
 - `API-204` is `review`;
 - `DOC-101` is still `planned`;
-- the visible state and response agree.
+- the visible state and the response agree.
 
-Compare the before and after values in the canvas state.
-
-**Checkpoint 4:** One human action and one agent-requested capability changed the same state model without breaking the contract.
+**Checkpoint 4:** One human action and one agent request changed the same state without breaking the contract.
 
 ## Part 5: Check rejection and recovery (20 minutes)
 
@@ -168,30 +126,23 @@ Expected result:
 Rejected: evidence is required before ready.
 ```
 
-Check that `DOC-101` remains `planned`.
-
-Now add this synthetic evidence:
+`DOC-101` stays `planned`. Now add this synthetic evidence:
 
 ```text
 docs://operator-guide-review
 ```
 
-Retry the same status change. It should succeed.
+Retry the same status change. It succeeds.
 
-Record:
+Record the state before the request, the rejection text, the evidence you added, and the final accepted state.
 
-1. state before the request;
-2. rejection text;
-3. evidence added;
-4. final accepted state.
-
-If the first request succeeds, stop. Restore the validation rule and repeat the case. Do not approve a canvas that reaches `ready` without evidence.
+If the first request succeeds, stop. Restore the validation rule and repeat the case.
 
 **Checkpoint 5:** Recovery corrected the data and kept the rule.
 
 ## Part 6: Inspect and hand off (20 minutes)
 
-Exchange canvases with another group. Inspect:
+Swap canvases with another group. Inspect:
 
 - artifact location and scope;
 - state and defaults;
@@ -201,20 +152,11 @@ Exchange canvases with another group. Inspect:
 - dependencies and persisted data;
 - owner and retirement trigger.
 
-Fix contract mismatches. Pause if access, behavior, data, or ownership remains
-unresolved. Then compare the final state with `../solution/final-state.json`.
+Fix contract mismatches, then compare the final state with `../solution/final-state.json`.
 
-**Checkpoint 6:** The canvas matches the contract, with no unresolved access, behavior, data, or ownership issues.
+**Checkpoint 6:** The canvas matches the contract.
 
-## Final deliverable
-
-Your work is complete when another person can identify:
-
-- the selected extension scope;
-- the fixed canvas contract;
-- the prepared starting state;
-- both accepted changes;
-- the rejected change and recovery.
+You're done when another person can identify the extension scope, the fixed contract, the starting state, both accepted changes, and the rejected change with its recovery.
 
 ## Troubleshooting
 
@@ -223,25 +165,19 @@ Your work is complete when another person can identify:
 | Project scope is blocked | Use user scope. |
 | Generated actions exceed the contract | Remove them before testing. |
 | State and agent response disagree | Stop and inspect the shared artifact. |
-| Local tests fail before edits | Record the failure and restore the supplied starter files. |
+| Local tests fail before edits | Restore the starter files. |
 | `ready` accepts empty evidence | Fix the rule before review. |
 
-## Solution reference
-
-`../solution/` contains the worked contract and final state.
+The worked contract and final state are in `../solution/`.
 
 ## Optional variant: Feature Workbench
 
-Use this variant only after the default delivery-readiness lab, or when the
-trainer assigns it as follow-up practice. It does not replace the required
-deliverable.
+Try this after the default lab, or when the trainer assigns it as follow-up.
 
 1. Open `starter/feature-workbench-contract.md`.
 2. Load the synthetic checks from `starter/feature-workbench-sample.json`.
 3. Decide whether `FEAT-204` should pass the test gate.
 4. Record the required check that blocks the decision.
-5. Compare your review with `solution/feature-workbench-solution.md` and
-   `solution/feature-workbench-final-state.json`.
+5. Compare your review with `solution/feature-workbench-solution.md` and `solution/feature-workbench-final-state.json`.
 
-The canvas may propose `pass`, `hold`, or `rerun`. A named human reviewer owns the
-final decision. Do not connect a live CI system, merge code, or trigger deployment.
+The canvas may propose `pass`, `hold`, or `rerun`. A human reviewer records the final decision. Don't connect a live CI system, merge code, or trigger deployment.

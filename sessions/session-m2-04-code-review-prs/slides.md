@@ -13,18 +13,9 @@ footer: 'Session M2-04: Code Review'
 
 ---
 
-# Access and cost preflight
-
-1. Check the current GitHub docs and your organization's rules.
-2. Check the repository, data, and review permissions.
-3. Use a small pull request with clear acceptance criteria.
-4. Set a usage limit for metered work.
-
----
-
 # Review is a human responsibility
 
-Automation may raise questions. A reviewer decides whether a change is correct, safe, maintainable, and within scope.
+Automation raises questions. A reviewer decides whether a change is correct, safe, maintainable, and in scope.
 
 ```text
 Issue and acceptance criteria
@@ -52,19 +43,8 @@ Accept, request revision, or implement manually
 
 1. Read both branch intentions.
 2. Write the merged behavior and tests before editing.
-3. Resolve the conflict manually in the repository sandbox.
+3. Resolve the conflict manually in the sandbox.
 4. Run checks and request review.
-5. Demonstrate an approved assisted workflow only after checking current documentation and policy.
-
----
-
-# Required access
-
-Check CLI `/review` and `/security-review`, Copilot PR review, Git, Node.js, and npm.
-Use a private training remote with the baseline branch already present.
-
-A worksheet does not replace
-the required runs.
 
 ---
 
@@ -76,7 +56,7 @@ the required runs.
 4. Triage both outputs, then commit and request Copilot PR review.
 5. Repeat the local commands on the correction diff before committing fixes.
 
-Keep the original verdict. Record no-findings results honestly.
+Keep the original verdict. Record no-findings results.
 
 ---
 
@@ -86,7 +66,7 @@ Keep the original verdict. Record no-findings results honestly.
 | --- | --- |
 | Exposed password field | Inspect the actual response and add a regression test |
 | Database compromise | The mock route never executes SQL; reject that claim |
-| Leaked credential | The strings are fake and unused; do not claim a live leak |
+| Leaked credential | The strings are fake and unused; reject a live-leak claim |
 | Pagination defect | Check page-one behavior separately from security review |
 
 **Record:** review source, file/line, impact, check, and triage decision.
@@ -95,11 +75,10 @@ Keep the original verdict. Record no-findings results honestly.
 
 # Security review has a narrow scope
 
-`/security-review` examines current local changes.
-It is read-only and does not replace repository security scanning.
+`/security-review` examines current local changes. It's read-only and doesn't
+replace repository security scanning.
 
-A clean result does not prove that a change is secure.
-The human reviewer still decides.
+A clean result doesn't make a change secure. The human reviewer decides.
 
 ---
 
@@ -107,17 +86,15 @@ The human reviewer still decides.
 
 # Agenda and time plan
 
-| Time | Topic | Trainer move |
-| --- | --- | --- |
-| 0:00 | Review workflow and roles | Define accountability |
-| 0:08 | Summaries and descriptions | Check the draft against the diff |
-| 0:18 | Local commands and PR review | Keep the patch uncommitted |
-| 0:28 | Defect and triage demo | Check behavior and reject unsupported claims |
-| 0:43 | Suggestions and conflicts | Preserve author intent |
-| 0:51 | Limits and adoption | Design human gates |
-| 0:58 | Lab handoff and Q&A | Assign reviewer roles |
-
-**Transition:** "Copilot can increase review coverage; it cannot own the decision."
+| Time | Topic |
+| --- | --- |
+| 0:00 | Review workflow and roles |
+| 0:08 | Summaries and descriptions |
+| 0:18 | Local commands and PR review |
+| 0:28 | Defect and triage demo |
+| 0:43 | Suggestions and conflicts |
+| 0:51 | Limits and adoption |
+| 0:58 | Lab handoff and Q&A |
 
 ---
 
@@ -137,20 +114,17 @@ Human review and author response
 Approval, revision, or close
 ```
 
-At each stage, save the output the reviewer needs to check the change.
-
 ---
 
 # Commit messages and PR descriptions
 
-Copilot can draft text from the visible change, but authors must check:
+Copilot drafts text from the visible change. Authors check that:
 
 - the user-visible behavior is accurate;
-- tests and results are not invented;
+- tests and results aren't invented;
 - breaking changes and migrations are named;
 - security and dependency implications are named;
-- issue links and acceptance criteria match the work;
-- no sensitive details appear in generated prose.
+- issue links and acceptance criteria match the work.
 
 A polished summary can still be wrong.
 
@@ -178,32 +152,27 @@ Name data, dependency, security, and recovery considerations.
 
 # Requesting Copilot review
 
-For a manual request:
-
 1. Check that the PR is ready for a first pass.
-2. Check current availability, permissions, and repository policy.
-3. Request the Copilot review through the supported PR control.
-4. Wait for comments and review them as hypotheses.
-5. Resolve them, reject them with a reason, or implement a checked fix.
-6. Request human review with the diff, findings, and check results.
+2. Request the Copilot review from the PR.
+3. Treat the comments as hypotheses.
+4. Resolve them, reject them with a reason, or implement a checked fix.
+5. Request human review with the diff, findings, and check results.
 
-Do not use Copilot review to bypass required reviewers.
+Copilot review doesn't replace required reviewers.
 
 ---
 
 # Automatic review configuration
 
-Automatic review can be configured at repository or organization scope when supported.
+You can configure automatic review at repository or organization scope.
 
 Before enabling:
 
-- identify eligible repositories and excluded data;
-- define when reviews run and who owns triage;
-- preserve branch protection and required human approvals;
-- monitor noise, missed findings, and review delay;
-- document an off switch and escalation owner.
-
-**Trainer cue:** Demonstrate navigation, not fixed UI labels that may change.
+- choose eligible repositories;
+- decide who triages comments;
+- keep branch protection and required human approvals;
+- watch noise, missed findings, and review delay;
+- know how to turn it off.
 
 ---
 
@@ -235,7 +204,7 @@ if (user.status === "suspended") return false;
 return user.role === "admin" || user.id === invoice.ownerId;
 ```
 
-Ask which tests and policy requirements should accompany this suggestion.
+Ask which tests should accompany this suggestion.
 
 ---
 
@@ -256,11 +225,10 @@ Ask which tests and policy requirements should accompany this suggestion.
 Before applying:
 
 - restate the finding in your own words;
-- reproduce the defect or identify the violated requirement;
+- reproduce the defect or find the violated requirement;
 - inspect the complete patch, not only highlighted lines;
-- add or update a test that fails before the fix;
-- run broader checks appropriate to the risk;
-- retain author ownership of the resulting code.
+- add a test that fails before the fix;
+- run broader checks in proportion to the risk.
 
 One-click application saves typing. The reviewer still decides.
 
@@ -271,16 +239,15 @@ One-click application saves typing. The reviewer still decides.
 - localized correctness issues;
 - missing error handling or tests;
 - suspicious patterns visible in the diff;
-- inconsistent naming or repository conventions;
-- simple maintainability concerns.
+- inconsistent naming or repository conventions.
 
 # What it may miss
 
 - unstated product intent;
 - cross-system behavior absent from context;
-- runtime, operational, legal, or organizational risk;
+- runtime, operational, or legal risk;
 - subtle authorization and data-boundary flaws;
-- deliberately misleading but plausible changes.
+- plausible but misleading changes.
 
 ---
 
@@ -296,22 +263,21 @@ Base behavior + branch A intent + branch B intent
                  run tests and human review
 ```
 
-If an approved cloud-agent workflow is available, compare its proposal with the manual resolution. Do not blindly choose "ours" or "theirs."
+Don't blindly choose "ours" or "theirs."
 
 ---
 
 # Adoption patterns
 
-**Start:** Optional first-pass review on a small set of repositories.
+**Start:** Optional first-pass review on a few repositories.
 
 **Measure:** Actionable findings, false positives, review time, rework, and defects that reach users.
 
-**Adapt:** Tune scope, guidance, ownership, and escalation.
+**Adapt:** Tune scope, guidance, and escalation.
 
-**Expand:** Only when quality, security, and developer experience meet team criteria.
+**Expand:** Only when quality and developer experience hold up.
 
-Document how to pause or disable reviews when a feature is unavailable or a
-repository needs an exception.
+Know how to pause reviews for a repository that needs an exception.
 
 ---
 
@@ -319,11 +285,8 @@ repository needs an exception.
 
 - Which comment needs domain expertise to evaluate?
 - Which code reference or test would resolve an uncertain comment?
-- Who resolves review noise?
 - Which repositories should not use automatic review?
 - How will the team detect over-reliance?
-
-**Transition:** "Now apply the workflow as both author and reviewer."
 
 ---
 
@@ -337,28 +300,24 @@ You will:
 4. resolve the prepared conflict without losing either branch goal;
 5. record the final human decision.
 
-**Final deliverable:** Review notes, the corrected project, conflict results, and
-the final decision. Include initial and correction outputs from `/review` and
-`/security-review`, with triage and a private training PR reference.
+**Deliverable:** Review notes, the corrected project, conflict results, the
+initial and correction outputs from `/review` and `/security-review`, and the
+private training PR reference.
 
 ---
 
 # Remember
 
 1. Check generated summaries against the diff.
-2. AI review is a first pass; a human reviewer makes the decision.
-3. Suggested fixes require reproduction, inspection, and tests.
-4. Conflict resolution starts from intended merged behavior.
-5. Adoption should be measured and reversible.
+2. AI review is a first pass. A human decides.
+3. Suggested fixes need reproduction, inspection, and tests.
+4. Conflict resolution starts from the intended merged behavior.
+5. Measure adoption and keep it reversible.
 
 ---
 
 <!-- _class: qa -->
 
-# Questions and lab readiness
+# Questions
 
 Which review decision needs a human, and what should they check?
-
-- Who is the final reviewer?
-- Which check is required before requesting review?
-- Is the conflict scenario ready?

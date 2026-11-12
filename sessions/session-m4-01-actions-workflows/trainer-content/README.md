@@ -2,9 +2,7 @@
 
 ## Teaching goal
 
-Use `copilot-webapp` from start to finish. First, show that the application works
-locally. Then demonstrate CI creation and deployment design, followed by workflow
-repairs and JavaScript action validation against the same codebase.
+Use `copilot-webapp` start to finish. Show that the application works locally, then demonstrate CI creation and deployment design, workflow repairs, and JavaScript action validation against the same codebase.
 
 ## One-hour plan
 
@@ -17,20 +15,17 @@ repairs and JavaScript action validation against the same codebase.
 | 0:40 to 0:52 | Validate a JavaScript action |
 | 0:52 to 1:00 | Security review and lab handoff |
 
-The timings match [`slides.md`](../slides.md). Stop a live tool response at the end
-of its segment and use the prepared solution.
+The timings match [`slides.md`](../slides.md). Stop a live tool response at the end of its segment and use the prepared solution.
 
 ## Prepare
 
-- Run the application tests, lint, and build before delivery.
-- Keep the supplied broken workflows unchanged for the investigation.
+- Run the application tests, lint, and build.
+- Keep the supplied broken workflows unchanged.
 - Install the solution action dependencies.
-- Prepare one passing threshold and the intentional threshold-101 failure.
-- Do not configure a live deployment target.
+- Prepare one passing threshold and the threshold-101 failure.
+- Don't configure a deployment target.
 
 ## 0:00 to 0:08: Baseline and model
-
-Run:
 
 ```bash
 cd lab/starter/webapp
@@ -41,13 +36,9 @@ npm run build
 test -f dist/app.js
 ```
 
-Tie each workflow step to a repository fact. `npm test`, `npm run lint`, and
-`npm run build` exist because `package.json` defines them. `dist/` is valid because
-the build command creates it.
+Tie each workflow step to a repository fact. `npm test`, `npm run lint`, and `npm run build` exist because `package.json` defines them. `dist/` is valid because the build creates it.
 
 ## 0:08 to 0:18: Generate CI
-
-Use this request with a fixed scope:
 
 ```text
 Read package.json, tests, and scripts/build.js in copilot-webapp. Create ci.yml
@@ -56,64 +47,41 @@ test, and build scripts, npm caching, contents: read, and a seven-day dist artif
 Do not add dependencies or deployment steps.
 ```
 
-Parse the YAML, then rerun the local application checks. A valid workflow can
-still call a missing script or upload a path that never exists.
+Parse the YAML, then rerun the local checks. A valid workflow can still call a missing script or upload a path that doesn't exist.
 
 ## 0:18 to 0:28: Deployment design
 
-Open `lab/starter/deployment-spec.md`. Ask learners to find the required trigger,
-environments, secret names, health checks, and rollback rule before generating
-YAML.
+Open `lab/starter/deployment-spec.md`. Ask learners to find the trigger, environments, secret names, health checks, and rollback rule before generating YAML.
 
-Review the design without deploying it. Repository settings enforce production
-reviewers, and the supplied endpoints are placeholders. No live deployment occurs.
+Review the design without deploying it. Repository settings enforce production reviewers, and the endpoints are placeholders.
 
 ## 0:28 to 0:40: Diagnose failures
 
-Run the YAML parser against `broken-ci.yml` and let the parser reveal the first
-fault. After learners repair it, inspect action versions, permissions, and package
-commands.
+Run the YAML parser against `broken-ci.yml` and let it reveal the first fault. After learners fix it, inspect action versions, permissions, and package commands.
 
-For `broken-deploy.yml`, parsing succeeds. Use the grep command from the lab to
-separate syntax from behavior. Each repair needs a source: platform support,
-the deployment specification, the Git ref format, or the application checkout
-requirement.
+`broken-deploy.yml` parses. Use the lab's grep command to separate syntax from behavior. Each repair needs a source: platform support, the deployment spec, the Git ref format, or the checkout requirement.
 
 ## 0:40 to 0:52: Validate the action
 
-Explain why custom action validation needs two outcomes. A passing run shows the
-action can scan the application and emit outputs. The threshold-101 run shows the
-action can fail the job.
+A custom action needs two outcomes. A passing run shows it can scan the application and emit outputs. The threshold-101 run shows it can fail the job.
 
-Run the exact commands in the lab. Show the generated step summary and exit code.
-Do not rely on a repository workflow run alone.
+Run the lab's commands. Show the step summary and exit code. A repository workflow run alone isn't enough.
 
 ## 0:52 to 1:00: Review and handoff
 
 Review:
 
 - triggers and token permissions;
-- approved action references;
+- action references;
 - secret references and environment gates;
-- artifact contents and retention;
-- the local command output that supports each claim.
+- artifact contents and retention.
 
-Point learners to `lab/evidence.md`. Ask them to check that their workflow files
-and action agree with the command results and reviewer decisions before submitting.
-
-## Access policy
-
-GitHub Copilot access is required. Repository access,
-Actions, and `act` are optional. Learners must complete the local work, which uses
-no credentials or deployment target.
+Point learners to `lab/evidence.md`. Their workflow files and action should agree with the command results.
 
 ## Common questions
 
-**Valid YAML only proves that the file parses.** Run the application commands
-and review what the workflow does.
+**Valid YAML only proves the file parses.** Run the application commands and review what the workflow does.
 
-**Use one application throughout.** Learners can use the same repository facts
-for each decision instead of reconstructing a new project for every exercise.
+**Why one application?** Learners use the same repository facts for each decision instead of rebuilding a project per exercise.
 
-**Test an action failure too.** A custom action that always exits successfully
-has not shown that it enforces the threshold.
+**Why test an action failure?** An action that always exits successfully hasn't shown it enforces the threshold.

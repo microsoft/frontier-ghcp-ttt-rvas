@@ -2,10 +2,7 @@
 
 ## Teaching goal
 
-Observe and reproduce the failure
-before forming a hypothesis. Make the repair, then check the result.
-Keep the reference answer hidden until learners record their
-investigation. Case 3 adds a second failure after the first repair.
+Learners observe and reproduce the failure before forming a hypothesis, then repair and check. Keep the reference answers closed until they record their investigation. Case 3 adds a second failure after the first repair.
 
 ## One-hour plan
 
@@ -21,14 +18,11 @@ investigation. Case 3 adds a second failure after the first repair.
 ## Prepare
 
 - Run the pipeline application tests, lint, and build.
-- Keep the solution directory closed during the first investigation.
+- Keep the solution directory closed.
 - Hold `error-log-3-stage-2.txt` until the first Case 3 repair.
-- Prepare the vulnerable and secure source side by side.
-- Do not depend on a remote workflow run or security product.
+- Put the vulnerable and secure source side by side.
 
 ## Debugging sequence
-
-Use this record:
 
 ```text
 Observation:
@@ -38,17 +32,13 @@ Smallest repair:
 Proof after repair:
 ```
 
-An observation quotes a file, command, or log. A hypothesis explains those facts.
-Do not let learners write the root cause before they have checked the files and logs.
+An observation quotes a file, command, or log. A hypothesis explains those facts. Don't let learners write the root cause before they've checked the files and logs.
 
 ## Prepared investigation
 
-Start with Case 2 because the tempting dependency fix is wrong. Show the failed
-`npm ci` step and workflow. Run `npm ci` from the session root, then run the same
-operation with `--prefix lab/starter/pipeline-app`.
+Start with Case 2, because the tempting dependency fix is wrong. Show the failed `npm ci` step and workflow. Run `npm ci` from the session root, then again with `--prefix lab/starter/pipeline-app`.
 
-Pause for learner hypotheses. Reveal the reference fix only after the room explains
-why the project location matters.
+Pause for hypotheses. Reveal the reference fix once the room can explain why the project location matters.
 
 ## Multi-stage failure
 
@@ -57,51 +47,34 @@ For Case 3:
 1. Show `error-log-3.txt`.
 2. Record the first observation and local package metadata.
 3. Apply only the first repair.
-4. Announce that the next run reached another stage.
-5. Reveal `error-log-3-stage-2.txt`.
-6. Repeat the investigation sequence.
-7. Compare with the solution after both checks pass.
+4. Say that the next run reached another stage.
+5. Reveal `error-log-3-stage-2.txt` and repeat the investigation.
+6. Compare with the solution after both checks pass.
 
-The first failure can hide another fault. Use the new log to update the diagnosis.
-Keep each repair focused on the observed failure.
+The first failure can hide another. Update the diagnosis from the new log and keep each repair focused.
 
 ## Security review
 
-Open one vulnerable route at a time. Ask learners to identify the source, sink,
-and expected protection before showing the secure file.
+Open one vulnerable route at a time. Ask learners to name the source, sink, and expected protection before you show the secure file.
 
-At minimum, run the local syntax checks. If an approved scan is
-available, include its findings. A clean scan alone does not prove that the repair
-preserves behavior or covers the intended path.
-
-## Access policy
-
-GitHub Copilot and Node.js 20.x are required.
-Actions, code scanning, and remote remediation are optional. Use the supplied
-files and local commands when those tools are unavailable.
+Run the local syntax checks. A clean scan doesn't show the repair preserves behavior or covers the intended path.
 
 ## Lab handoff
 
-Tell learners to keep solutions closed until each checkpoint. Case 3 requires two
-investigation records in sequence. Ask them to submit their investigation records
-and fixed files.
+Learners keep solutions closed until each checkpoint. Case 3 needs two investigation records in sequence. They submit the records and the fixed files.
 
-## Facilitator answer key
+## Answer key
 
-Reveal this section only after the matching investigation:
+Reveal after the matching investigation:
 
 - Case 1 uses a runtime below the application's declared engine.
 - Case 2 runs npm from the wrong directory.
-- Case 3 first includes an unsupported runtime, then reaches a build job that runs
-  outside the application directory.
+- Case 3 first includes an unsupported runtime, then reaches a build job that runs outside the application directory.
 
 ## Common questions
 
-**Can Copilot name the cause first?** Ask it to separate observations from
-hypotheses. Learners still need local command results before changing the workflow.
+**Can Copilot name the cause first?** Ask it to separate observations from hypotheses. Learners still need local command results before changing the workflow.
 
-**Why keep the second log hidden?** The first failed job prevents the later stage
-from running. Showing both logs early gives away the sequence.
+**Why hold back the second log?** The first failure stops the later stage from running. Showing both logs early gives away the sequence.
 
-**Accept a different repair** when it explains the observed output and keeps the
-change small. It must pass the same checks.
+**Accept a different repair** if it explains the observed output, stays small, and passes the same checks.

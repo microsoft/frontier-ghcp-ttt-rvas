@@ -12,18 +12,16 @@
 
 Continue the **Delivery Decision Studio** path by turning the approved Session M7-02
 decision brief into a GitHub issue hierarchy. Check the GitHub MCP connection and
-inspect the repository before you plan any writes. Use Markdown to preview the
-full issue set, then create the approved issues. Read them back from GitHub to
-check and correct the result. **The created GitHub issues are authoritative.**
+inspect the repository before you plan any writes. Preview the full issue set in
+Markdown, create the approved issues, then read them back from GitHub to check
+and correct the result. **The created GitHub issues are authoritative.**
 
-The session teaches safe tool use. Learners do not develop an MCP server.
+Learners use MCP tools. They don't build an MCP server.
 
 > [!IMPORTANT]
-> **The GitHub MCP connection and write access to the training repository are required.** Stop if the learner cannot inspect tools, preview the write, or check the created issues.
+> **You need the GitHub MCP connection and write access to the training repository.**
 
 ## Learning outcomes
-
-In this session, you will:
 
 1. Explain what an MCP server lets Copilot do.
 2. Inspect the GitHub tools available to the current session.
@@ -53,14 +51,8 @@ In this session, you will:
 
 ## Boundaries
 
-- Use only the approved training repository.
-- Read before writing.
-- Ask Copilot to show the complete proposed issue set before creation.
-- Treat issue-plan Markdown as a temporary preview. Do not use it as the source
-  of record after creation.
-- Keep issue creation within the agreed count and labels.
+- Work only in the training repository.
+- Read before writing. Have Copilot show the complete issue set before creation.
+- The issue-plan Markdown is a temporary preview. After creation, the live issues are the record.
 - Check every created issue through a fresh GitHub read.
-- Use an optional Azure Boards route only when it remains the approved system of record.
-- GitHub MCP supplies tools. A plugin may package an MCP server, but plugin
-  installation does not prove that the approved GitHub connection is active.
-- Keep the lab no-code and free of customer or source organization names.
+- A plugin can package an MCP server, but check that the GitHub connection itself is active.

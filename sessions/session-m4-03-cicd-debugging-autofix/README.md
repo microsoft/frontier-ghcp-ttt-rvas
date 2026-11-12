@@ -2,31 +2,25 @@
 
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02 and M4-01
+**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
 **Duration:** 3 hours (1 hour trainer content + 2 hours lab)
 
 ## Overview
 
-You will debug CI/CD failures using workflow files, failed-step output, and local checks.
-Record an observation and hypothesis before opening a reference fix.
-One case has a second failure that appears only after the first repair.
+You debug CI/CD failures from workflow files, failed-step output, and local checks. Record an observation and a hypothesis before you open a reference fix. One case has a second failure that appears only after the first repair.
 
-The security exercise uses a deliberately vulnerable training app. Review
-the smallest patch using a tool you have approval to use, or work locally.
+The security exercise uses a deliberately vulnerable training app. Review the smallest patch locally.
 
 ## Learning outcomes
 
 - Separate observations, hypotheses, repairs, and check results.
-- Reproduce relevant pipeline commands locally.
+- Reproduce pipeline commands locally.
 - Handle a second-stage failure without stacking speculative fixes.
 - Review a security patch for scope and focused protection.
-- Keep remediation behind human approval.
 
-## Required access
+## You need
 
-You need **GitHub Copilot and Node.js 20.x**. Repository Actions, code
-scanning, and remote remediation are optional. Complete the lab with the supplied
-files and local commands.
+GitHub Copilot and Node.js 20.x. Repository Actions, code scanning, and remote remediation are optional. The lab runs on the supplied files and local commands.
 
 | Resource | Location |
 | --- | --- |

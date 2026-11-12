@@ -22,13 +22,12 @@ Session M1-01 | 3 hours
 
 | Segment | Time |
 | --- | --- |
-| Proposal-and-evidence model | 7 min |
+| Suggestion-and-tests model | 7 min |
 | How context shapes a suggestion | 10 min |
-| Access and data preflight | 10 min |
-| Inline suggestion controls | 11 min |
-| Prepared utility demonstration | 12 min |
+| Inline suggestion controls | 15 min |
+| Prepared utility demonstration | 18 min |
 | Follow-up edits | 6 min |
-| Access decision and lab handoff | 4 min |
+| Access check and lab handoff | 4 min |
 
 ---
 
@@ -37,9 +36,7 @@ Session M1-01 | 3 hours
 ```text
 Define observable behavior
           ↓
-Check access, data, and scope
-          ↓
-Inspect the proposed change
+Inspect the suggestion
           ↓
 Run focused checks
           ↓
@@ -50,36 +47,31 @@ Accept, revise, or reject
 
 ---
 
-# Proposal is not proof
+# Plausible is not correct
 
-| Proposal | Evidence |
+| Looks right | Is right |
 | --- | --- |
-| Looks plausible | A focused test passes |
+| Reads well | A focused test passes |
 | Uses familiar syntax | The diff stays in scope |
-| Explains its reasoning | A reviewer can reproduce the result |
-| Matches one example | Edge and failure behavior are checked |
-
-Code that reads well can still be incomplete or wrong.
+| Matches one example | Edge and failure cases are checked |
 
 ---
 
 # A practical system model
 
 ```text
-Task + approved context
+Task + context
           ↓
-Selected Copilot surface
+Copilot surface
           ↓
-Proposed output
+Suggestion
           ↓
-Local checks + human review
+Tests + human review
 ```
-
-Use this to guide review. It does not describe a fixed service architecture.
 
 ---
 
-# Context changes the proposal
+# Context changes the suggestion
 
 Useful context includes:
 
@@ -87,26 +79,6 @@ Useful context includes:
 - docstrings and examples;
 - selected code and nearby files;
 - tests and repository instructions.
-
-Use context only when it is relevant and you may use it for the task.
-
----
-
-# Preflight before use
-
-1. Check the account and surface.
-2. Check the repository and data classification.
-3. Limit the task to named files.
-4. Name any metered-work owner and stop condition.
-
----
-
-# Access policy
-
-The lab requires GitHub Copilot.
-
-Manual implementation does not demonstrate how to
-inspect, accept, revise, or reject an inline suggestion.
 
 ---
 
@@ -162,7 +134,7 @@ Then run the focused test.
 
 ---
 
-# A failing check is useful
+# A failing test is useful
 
 This version looks reasonable but mishandles repeated spaces:
 
@@ -170,7 +142,7 @@ This version looks reasonable but mishandles repeated spaces:
 return value.strip().lower().replace(" ", "-")
 ```
 
-The failing test catches the whitespace assumption while the change is still small.
+The test catches it while the change is still small.
 
 ---
 
@@ -192,8 +164,7 @@ A predicted edit can miss a reference.
 
 # Access check
 
-Check that every learner can request and review an inline suggestion before the
-lab starts. Fix access problems before handing off the exercise.
+Every learner must be able to request an inline suggestion before the lab starts.
 
 ---
 

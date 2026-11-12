@@ -5,13 +5,13 @@
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
+
 **Duration:** 3 hours (1 hour trainer content, 2 hours lab)
 
 ## Overview
 
 Use Brady's Squad to assign roles, route work, and keep a shared decision record.
-In this elective, you carry one input-validation issue from assignment through
-tests and lead review.
+You carry one input-validation issue from assignment through tests and lead review.
 
 ## Learning outcomes
 
@@ -21,17 +21,15 @@ tests and lead review.
 - Use GitHub Issues as reviewable work contracts.
 - Decide when orchestration is worth its cost.
 
-## Required access
+## You need
 
-Learners need **Node.js 20 or later**, Git, a GitHub training repository, GitHub
-Copilot, and Squad.
+**Node.js 20 or later**, Git, a GitHub training repository, GitHub Copilot, and Squad.
 
 ## Deliverable
 
-Submit one review packet for the input-validation issue. Include the
-assignment, implementation within the issue scope, test results, lead decision,
-and decision record. The reference solution includes a `.squad/` result and a
-prepared trainer walkthrough. The walkthrough does not replace the learner run.
+One review packet for the input-validation issue: assignment, implementation,
+test results, lead decision, and decision record. The reference solution includes
+a `.squad/` result and a trainer walkthrough.
 
 ## Materials
 

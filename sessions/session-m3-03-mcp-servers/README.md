@@ -7,26 +7,15 @@
 
 ## Overview
 
-Model Context Protocol (MCP) gives AI clients a standard way to discover and call
-tools. Build a local stdio server in two stages. First, trace
-`get_weather` from its JSON Schema through the handler. Test good and bad input,
-then call it with MCP Inspector. Only then add `get_forecast` and
-`convert_temperature`.
+Model Context Protocol (MCP) gives AI clients a standard way to discover and call tools. You build a local stdio server in two stages. First, trace `get_weather` from its JSON Schema through the handler. Test good and bad input, then call it with MCP Inspector. Then add `get_forecast` and `convert_temperature`.
 
-The server uses deterministic synthetic weather data. No network service,
-credential, or source-system data is needed.
+The server returns deterministic synthetic weather data. It needs no network service or credential.
 
 ### MCP server or plugin?
 
-An **MCP server** exposes tools and context through a protocol. A **plugin** is an
-installable package that can bundle MCP server configuration with skills, agents,
-hooks, or other components. Build the server when you need a protocol endpoint.
-Use a plugin when you need to distribute and version a set of Copilot
-customizations. A plugin may include an MCP server, but the two terms are not
-interchangeable.
+An **MCP server** exposes tools and context through a protocol. A **plugin** is an installable package that can bundle MCP server configuration with skills, agents, hooks, or other components. Build a server when you need a protocol endpoint. Use a plugin to distribute and version a set of Copilot customizations.
 
-See the [curriculum glossary](../glossary.md) for MCP server, tool, transport, and
-plugin terminology.
+See the [curriculum glossary](../glossary.md) for MCP server, tool, transport, and plugin terms.
 
 ## Learning outcomes
 
@@ -37,14 +26,9 @@ plugin terminology.
 - Use MCP Inspector to list and call local tools.
 - Add tools without weakening the first tool's contract.
 
-## Required access
+## You need
 
-You need Node.js 20 or later and npm. GitHub Copilot is
-useful for the final integration check but is not required. The local tests and
-Inspector calls check the server contract.
-
-If package installation is blocked, stop before the executable lab. Do not use an
-unapproved registry or copied `node_modules` directory.
+Node.js 20 or later and npm. GitHub Copilot is useful for a final integration check but isn't required.
 
 ## Materials
 

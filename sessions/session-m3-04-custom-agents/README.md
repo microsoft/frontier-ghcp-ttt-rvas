@@ -7,28 +7,21 @@
 
 ## Overview
 
-Custom agents define narrow roles in Markdown that teams can review. Start
-with a weak test-writer profile that enables every tool and permits source edits.
-After its boundary test fails, replace it with a profile that may read source,
-edit tests, and run one known command. The profile must stop when production code
-needs to change.
+Custom agents define narrow roles in Markdown that teams can review. Start with a weak test-writer profile that enables every tool and permits source edits. After its boundary test fails, replace it with a profile that may read source, edit tests, and run one known command. The profile must stop when production code needs to change.
 
 ## Learning outcomes
 
-- Explain the `.agent.md` profile structure and current frontmatter.
+- Explain the `.agent.md` profile structure and frontmatter.
 - Detect a boundary violation with a repeatable contract test.
-- Use documented tool aliases as a least-privilege allowlist.
+- Use tool aliases as a least-privilege allowlist.
 - Write a stop condition that hands production conflicts to a human.
 - Load the profile in the CLI and check that a source-code conflict stops the run.
 - Choose between instructions, custom agents, skills, and MCP.
-- Inspect an LSP definition/reference lookup and distinguish a caller from an export.
-- Record an owner and version marker for a shared profile.
+- Run an LSP definition/reference lookup and tell a caller from an export.
 
-## Required access
+## You need
 
-You need Node.js 22.22.2 or later, Git, the standalone Copilot CLI with live
-custom-agent loading, and a working JavaScript LSP server. A manual scenario does
-not replace the live run or lookup.
+Node.js 22.22.2 or later, Git, the standalone Copilot CLI with custom-agent support, and a working JavaScript language server ([setup](lab/lsp-setup.md)).
 
 | Resource | Location |
 | --- | --- |

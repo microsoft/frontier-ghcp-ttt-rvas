@@ -383,20 +383,19 @@ Issues distribute the work. **They are not a second requirements source.**
 
 ---
 
-# Approved installation paths
+# Install Spec Kit
 
-Install only from an approved source and pinned release:
+Install from a pinned release:
 
 ```bash
-export SPECKIT_TAG='<approved-release-tag>'
+export SPECKIT_TAG='<release-tag>'
 uv tool install specify-cli --force \
   --from "git+https://github.com/github/spec-kit.git@${SPECKIT_TAG}"
 specify version
 ```
 
-Disconnected environments require the official air-gapped package prepared on a
-compatible connected machine. Stop when the approved installation or selected
-integration is unavailable.
+Disconnected environments need the official air-gapped package prepared on a
+connected machine.
 
 ---
 
@@ -411,8 +410,7 @@ Show one deliberate gap:
 5. Inspect the task it appends.
 6. Add the missing test and converge again.
 
-This shows that passing tests and satisfying the specification are different
-claims.
+This shows that passing tests and satisfying the specification are different.
 
 ---
 

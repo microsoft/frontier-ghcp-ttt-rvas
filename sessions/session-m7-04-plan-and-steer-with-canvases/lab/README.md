@@ -4,21 +4,12 @@
 
 **Difficulty:** Intermediate
 
-**Deliverable:** A project-scoped planning canvas that detects and reconciles a
-real GitHub state change
-
-## Deliverables
-
-- The generated and reviewed canvas extension
-- The live planning canvas
-- One controlled GitHub state change
-- Links from the canvas to the live GitHub issues
-
 ## Lab outcome
 
-Create and review a planning canvas with the official `/create-canvas` skill.
-Load live issue state through GitHub MCP. Then make a controlled change in GitHub
-so you can detect stale canvas data and refresh it.
+Create and review a planning canvas with the built-in `/create-canvas` skill.
+Load live issue state through GitHub MCP. Change an issue in GitHub, detect the
+stale canvas data, and refresh it. You end with a project-scoped canvas linked to
+the live issues.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -29,11 +20,9 @@ so you can detect stale canvas data and refresh it.
 | 5 | Create and detect state drift | 15 min |
 | 6 | Reconcile and record ownership | 15 min |
 
-## Preflight
+## Before you start
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
-
-Check GitHub Copilot access before starting.
 
 ## Part 1: Check canvas and MCP capabilities (15 minutes)
 
@@ -43,11 +32,10 @@ Check GitHub Copilot access before starting.
 4. Open **Customize** → **MCP** → **Installed** and check GitHub MCP.
 5. Ask Copilot to retrieve the Session M7-03 parent issue and child issues.
 
-`/create-canvas` is a built-in app skill. Do not install a community replacement.
+`/create-canvas` is a built-in app skill. Don't install a community replacement.
 
 Use a fresh GitHub MCP read as the authoritative issue list. Start from the live
-Session M7-03 parent issue and follow its child links. Do not reconstruct the set
-from chat history or a separate Markdown file.
+Session M7-03 parent issue and follow its child links, not chat history.
 
 ## Part 2: Define the minimum canvas requirements (20 minutes)
 
@@ -95,10 +83,10 @@ Review:
 - the capabilities exposed to Copilot;
 - any package or dependency added by the extension.
 
-Inspect the generated files and ask Copilot for specific changes. Do not hand-edit
-extension code; this is a no-code review.
+Inspect the generated files and ask Copilot for specific changes. Don't hand-edit
+extension code.
 
-Ask Copilot to remove generated state or actions that exceed the approved requirements.
+Ask Copilot to remove generated state or actions that exceed the requirements.
 
 **Checkpoint:** The canvas is smaller after review and contains no GitHub write
 action.
@@ -171,17 +159,3 @@ missing ownership.
 ```
 
 Apply useful findings directly to the canvas.
-
-## Verification
-
-- [ ] `/create-canvas` created a project-scoped extension.
-- [ ] Generated files and capabilities were reviewed.
-- [ ] Unnecessary state and actions were removed.
-- [ ] Live GitHub issues were loaded through MCP.
-- [ ] One visible and one agent-requested canvas update succeeded.
-- [ ] A reviewed GitHub change made the canvas stale.
-- [ ] A fresh read detected the mismatch.
-- [ ] Refresh reconciled the canvas without hiding the source difference.
-- [ ] The live canvas contains the owner, recovery, refresh, and retirement rules.
-- [ ] The live canvas links the four Session M7-05 issue roles.
-- [ ] No customer or source organization names appear.

@@ -13,7 +13,7 @@
 
 ## Description
 
-[Describe what this session teaches and how it relates to other sessions in 2 to 3 sentences.]
+[What this session teaches and how it connects to other sessions. 2 to 3 sentences.]
 
 ## Learning objectives
 
@@ -33,19 +33,15 @@ By the end of this session, trainees will be able to:
 
 ## Materials needed
 
-- [ ] GitHub account with Copilot access
-- [ ] VS Code with GitHub Copilot extension
-- [ ] [Additional materials specific to this session]
+- GitHub account with Copilot access
+- VS Code with the GitHub Copilot extension
+- [Session-specific materials]
 
-## Current product references
-
-Product notes were checked against official GitHub sources on YYYY-MM-DD.
-Trainers must recheck access, policy, and feature status before delivery:
+## References
 
 - [GitHub Copilot documentation](https://docs.github.com/en/copilot)
-- [GitHub Copilot changelog](https://github.com/changelog?label=github-copilot)
-- [Add a direct official source for each product claim]
+- [Official source for each product claim]
 
 ## Trainer notes
 
-[Add pacing tips, common questions, and topics trainees often find difficult.]
+[Pacing tips, common questions, and hard spots.]

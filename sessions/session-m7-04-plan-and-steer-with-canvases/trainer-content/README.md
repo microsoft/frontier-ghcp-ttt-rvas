@@ -2,11 +2,11 @@
 
 **Duration:** 1 hour
 
-## Delivery objective
+## Goal
 
-Show learners how to create and review a project-scoped planning canvas in the
-Delivery Decision Studio path. Explain that the canvas displays GitHub state
-alongside planning information. GitHub remains the source of record.
+Show learners how to create and review a project-scoped planning canvas. The
+canvas displays GitHub state alongside planning information. GitHub remains the
+source of record.
 
 ## One-hour plan
 
@@ -19,20 +19,15 @@ alongside planning information. GitHub remains the source of record.
 | 0:43-0:53 | Create drift and reconcile the canvas |
 | 0:53-1:00 | Explain ownership and launch the lab |
 
-## Required preflight
+## Prepare
 
-- Check that every learner has the GitHub Copilot app.
-- Check that `/create-canvas` is available.
-- Open **Customize** → **Skills** → **Installed** and show that `create-canvas` is
-  a built-in skill.
-- Check that the learner can read the Session M7-03 issues through GitHub MCP.
+- Every learner has the GitHub Copilot app with `/create-canvas`. Show it under **Customize** → **Skills** → **Installed** as a built-in skill.
+- Learners can read the Session M7-03 parent and child issues through GitHub MCP.
 - Use a training repository and synthetic issue data.
 - Name the canvas owner and reviewer.
-- Retrieve the Session M7-03 parent issue and linked child issues.
-- Check `/context`, `/clear` or `/reset`, and `/rubber-duck`.
+- `/context`, `/clear` or `/reset`, and `/rubber-duck` work.
 
-> [!IMPORTANT]
-> This session needs live canvas creation, GitHub reads, and the required canvas actions. A static JSON edit does not meet its outcome.
+A static JSON edit doesn't meet this session's outcome. It needs live canvas creation.
 
 ## When to use a canvas
 
@@ -44,8 +39,7 @@ Use a canvas when work needs:
 - named actions;
 - a view people can review after the chat ends.
 
-Show that a single answer, draft, or short interview can stay in chat without
-adding a canvas.
+Keep a single answer, draft, or short interview in chat.
 
 ## Translate the plan into requirements
 
@@ -71,7 +65,7 @@ The minimum actions are:
 - add or update a risk;
 - produce a current summary.
 
-Closing issues, changing assignees, or publishing updates stays outside the canvas unless the learner adds and approves those capabilities.
+Closing issues, changing assignees, or publishing updates stays outside the canvas.
 
 ## Demonstration prompt
 
@@ -108,14 +102,9 @@ Check:
 7. Show the mismatch and last-refresh time.
 8. Refresh the canvas and check the blocker and next action.
 
-Leave learners with the live canvas and linked GitHub issues. Do not create a
-separate transfer file.
+Leave learners with the live canvas and linked GitHub issues, not a transfer file.
 
-## Product notes verified October 5, 2026
-
-Check current canvas availability, `/create-canvas`, Customize controls, capability review, and persistence behavior before delivery.
-
-Official references:
+## References
 
 - [Working with canvas extensions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions)
 - [Slash commands for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)

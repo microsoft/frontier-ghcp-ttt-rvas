@@ -10,35 +10,27 @@
 
 ## Overview
 
-Migrate one complete order-pricing slice from a Java 8-compatible HTTP service to
-a .NET 10 ASP.NET Core Minimal API. Run the legacy service, trace its request
-path, record the behavior that must survive, then implement the same contract in
-.NET and prove parity with shared JSON cases.
+Migrate one order-pricing slice from a Java 8-compatible HTTP service to a .NET 10
+ASP.NET Core Minimal API. Run the legacy service, trace its request path, record
+the behavior that must survive, then implement the same contract in .NET and
+prove parity with shared JSON cases.
 
 The exercise uses synthetic orders and integer-cent arithmetic. It needs no
 database, cloud service, or production data.
-
-> [!IMPORTANT]
-> Check GitHub Copilot access in the selected coding environment before the
-> session.
 
 ## Learning outcomes
 
 - map a legacy request from HTTP entry point to domain calculation and response;
 - separate observed behavior from incidental Java structure;
 - capture pricing rules in shared contract fixtures;
-- migrate one vertical slice to a .NET 10 Minimal API;
-- preserve rounding, validation, shipping, discount, and tax behavior;
-- limit Copilot prompts to the pricing slice and review every generated change;
+- migrate one vertical slice to a .NET 10 Minimal API and keep rounding, validation, shipping, discount, and tax behavior;
 - compare Java and .NET results with repeatable tests;
-- create a migration backlog without turning the exercise into a full rewrite.
+- write a migration backlog instead of a full rewrite.
 
 ## Scenario
 
-The legacy service prices synthetic orders through `POST /orders/price`.
-
-The rules are small enough to inspect. Pay attention to the details that can
-break a migration:
+The legacy service prices synthetic orders through `POST /orders/price`. The rules
+are small enough to inspect. These details can break a migration:
 
 - discounts run in a fixed order;
 - all amounts use integer cents;
@@ -47,8 +39,8 @@ break a migration:
 - tax applies to discounted merchandise, not shipping;
 - invalid enum-like values and line items return clear errors.
 
-You will migrate this slice. Leave the health and sample-order endpoints in Java
-and record them as backlog items.
+You migrate this slice. Leave the health and sample-order endpoints in Java and
+record them as backlog items.
 
 ## Session structure
 
@@ -71,27 +63,15 @@ and record them as backlog items.
 
 Use the repository Dev Container or Codespaces. It supplies Java 21, which compiles
 the legacy source for Java 8, and the .NET 10 SDK. The Maven Wrapper pins Maven
-3.9.9 for the baseline.
+3.9.9, so you don't need a global Maven install. You also need GitHub Copilot.
 
-The lab also includes a short native setup route for learners who cannot use the
-container. A global Maven installation is not required.
+The lab includes a short native setup route for learners who can't use the container.
 
 ## Scope
 
-**In scope**
+**In scope:** local HTTP services, synthetic JSON, behavior extraction, one pricing
+endpoint with validation, calculation, and response handling, package-free .NET
+contract tests, and a migration backlog.
 
-- local HTTP services;
-- synthetic JSON;
-- behavior extraction;
-- one pricing endpoint with validation, calculation, and response handling;
-- package-free .NET contract tests;
-- a reviewed migration backlog.
-
-**Out of scope**
-
-- databases and persistence migration;
-- messaging and distributed transactions;
-- authentication and authorization;
-- cloud hosting;
-- a whole-service rewrite;
-- production performance claims.
+**Out of scope:** databases, messaging, authentication, cloud hosting, a
+whole-service rewrite, and production performance claims.

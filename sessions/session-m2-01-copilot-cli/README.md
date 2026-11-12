@@ -8,48 +8,42 @@
 ## Overview
 
 Use the standalone `copilot` CLI to take over one small Node.js project. Inspect
-commands, revise an implementation plan, then fix the project. You will also
-inspect live fleet results and automate a project health report before comparing
-terminal and IDE workflows. Work in `agent-tasks` from the first command through
-the final handoff.
+commands, revise a plan, then fix the project. Then inspect live fleet results,
+automate a health report, and compare terminal and IDE workflows. You work in
+`agent-tasks` throughout.
 
 ## Learning outcomes
 
-- Install and configure the standalone `copilot` CLI and shell workflows.
-- Use interactive `copilot` and `copilot -p "..."` for command-line help.
+- Install and configure the `copilot` CLI.
+- Use interactive `copilot` and `copilot -p "..."`.
 - Use Standard, Plan, and Autopilot modes for multi-step tasks.
-- Revise a `/plan` before approval and trace it to the implementation diff.
-- Check a `/rubber-duck` critique and inspect its persistent proactive-invocation setting.
-- Inspect permissions, sandbox policy, and the installed version's soft-limit scope.
-- Queue a follow-up, background a command, and inspect its actual result.
-- Recover a disposable edit and distinguish fork, worktree, move, and resume.
+- Revise a `/plan` before approval and trace it to the diff.
+- Check a `/rubber-duck` critique.
+- Inspect permissions, sandbox policy, and the soft AI-credit limit.
+- Queue a follow-up, background a command, and read its real result.
+- Recover a disposable edit and tell fork, worktree, move, and resume apart.
 - Use `/fleet` and `/tasks` for independent analysis, then check results and usage.
-- Distinguish JSONL events from an answer payload in programmatic output.
+- Tell JSONL events from an answer payload in programmatic output.
 - Compare CLI, IDE Chat, IDE Agent Mode, and Copilot App workflows.
-- Identify CLI-specific features and when the CLI fits better than the IDE.
-- Check Copilot App and cross-IDE support in the training environment.
-- Save test output, the health report, and your CLI-versus-IDE comparison at review checkpoints.
 
 ## Session materials
 
-| Resource                | Location                               |
-| ----------------------- | -------------------------------------- |
-| Lab exercises           | [`lab/`](lab/)                         |
-| Lab starter files       | `lab/starter/`         |
-| Lab solution files      | `lab/solution/`       |
+| Resource | Location |
+| --- | --- |
+| Lab exercises | [`lab/`](lab/) |
+| Lab starter files | `lab/starter/` |
+| Lab solution files | `lab/solution/` |
 
 ## Key topics
 
 - Standalone `copilot` binary: installation, authentication, configuration
-- Interactive `copilot` prompts for natural-language command explanations
-- `copilot -p "..."` for command generation from intent descriptions
-- Shell integrations: aliases, shell completion, inline invocation
-- CLI agent mode: autonomous multi-step terminal tasks
-- Terminal automation and shared CLI/app commands
-- Copilot App orientation and handoff to Session M3-01 for plugins and canvas extensions
+- Interactive prompts for command explanations; `copilot -p "..."` for command generation
+- Shell integrations: aliases, completion, inline invocation
+- Agent mode for multi-step terminal tasks
+- Copilot App orientation, with plugins and canvas extensions in Session M3-01
 - Cross-IDE comparison: VS Code, Visual Studio, JetBrains, Eclipse, Xcode, and others
-- When to use CLI, IDE Chat, IDE Agent Mode, or Copilot App
-- SSH and remote workflows where CLI is the only option
+- When to use the CLI, IDE Chat, IDE Agent Mode, or the Copilot App
+- SSH and remote workflows where the CLI is the only option
 - Scripting with Copilot: generating and debugging shell scripts
-- Security considerations: what context the CLI sends, privacy implications
+- What context the CLI sends
 - Recovery and session controls without broadening permissions

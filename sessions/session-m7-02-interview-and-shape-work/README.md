@@ -15,23 +15,21 @@ brief. Install the supplied project skill and use it to ask questions in
 dependency order. Turn the approved answers into a decision brief and issue
 proposal. When a late constraint arrives, revise only the affected decisions.
 
-The fictional Service Request Portal remains the initiative. Do not use customer
-requests or source organization names in the standard lab.
+The fictional Service Request Portal remains the initiative.
 
 > [!IMPORTANT]
-> **GitHub Copilot is required.** Check access before the session.
+> **GitHub Copilot is required.**
 
 ## Learning outcomes
 
-By the end of this session, learners can:
+Learners can:
 
 - Install and check the supplied `decision-interview` project skill.
 - Run a GitHub Copilot interview that asks only questions whose prerequisites are settled.
 - Resolve scope, constraints, success, failure, ownership, and approval.
 - Review Copilot recommendations before accepting or revising them.
 - Create a reviewed Markdown decision brief in the repository.
-- Draft an issue proposal with testable acceptance criteria and a practical
-  definition of done.
+- Draft an issue proposal with testable acceptance criteria and a definition of done.
 - Reopen only the decisions affected by new source information.
 - Check that the revised brief and issue proposal agree.
 - Check context usage before each interview round and start fresh for the final
@@ -69,12 +67,7 @@ Vague request
 
 ## Boundaries
 
-- Teach the interview pattern, not skill authoring.
-- Use only approved, sanitized material.
-- Treat Copilot questions, recommendations, and drafts as proposals.
-- Keep product and approval decisions with named people.
-- Do not create or update a live work item until the request owner approves the brief.
-- Keep the lab no-code. Learners install and use the supplied project skill; they do not
-  author or edit it.
-- Session M7-03 creates the approved GitHub issues. Session M7-02 prepares the source
-  brief and issue proposal.
+- Teach the interview pattern, not skill authoring. Learners install and use the supplied skill without editing it.
+- Use sanitized material only. Treat Copilot questions, recommendations, and drafts as proposals.
+- Product and approval decisions stay with named people.
+- Don't create or update a live work item until the request owner approves the brief. Session M7-03 creates the approved GitHub issues.

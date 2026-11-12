@@ -19,43 +19,34 @@ Record these items in [`work-item-update-plan.md`](work-item-update-plan.md):
 - open gaps and next action;
 - the IDs of child Tasks created after the parent update.
 
-## Required preflight
+## Prepare
 
 You need:
 
-- GitHub Copilot access;
 - the supplied `decision-interview` project skill;
 - a request owner and delivery reviewer;
-- the seeded **Show request status in the portal** requirement in an approved training project;
-- either an Azure Boards browser session or an approved MCP connection that can read and update work items.
+- the seeded **Show request status in the portal** requirement in a training project;
+- an Azure Boards browser session or an MCP connection that can read and update work items.
 
 Before starting:
 
 1. Run one prompt and one follow-up in GitHub Copilot.
-2. Open [`../starter/vague-request.md`](../starter/vague-request.md).
-3. Open [`work-item-update-plan.md`](work-item-update-plan.md).
-4. Open the seeded requirement.
-5. Check the title and the `session-m7-02` and `service-request-portal` tags.
-6. Record the current description, acceptance criteria, priority, state, board column, and readiness value.
-7. Check which field, board column, or approved tag represents readiness.
-8. Check the trainer's reset method.
+2. Open [`../starter/vague-request.md`](../starter/vague-request.md) and [`work-item-update-plan.md`](work-item-update-plan.md).
+3. Open the seeded requirement. Check the title and the `session-m7-02` and `service-request-portal` tags.
+4. Record the current description, acceptance criteria, priority, state, board column, and readiness value.
+5. Check which field, board column, or tag represents readiness.
+6. Check the reset method.
 
-> [!IMPORTANT]
-> Check GitHub Copilot access before the exercise starts.
-> If Azure Boards MCP is unavailable, use the browser.
+If Azure Boards MCP is unavailable, use the browser. Don't configure a new
+organization, process, field, or MCP server during the lab.
 
-Do not configure a new organization, process, field, or MCP server during the lab.
-
-## Safety boundaries
+## Boundaries
 
 - Use only the fictional Service Request Portal item.
-- Read the item before proposing an update.
-- Treat every Copilot change as a draft.
-- Do not change area paths, iteration paths, identities, links, process settings, or team settings.
-- Do not create child Tasks until the request owner records approval.
-- Change only the seeded requirement and Tasks created by your pair.
-- Never delete the seeded requirement.
-- Do not paste tokens, credentials, personal data, or live customer material into prompts.
+- Read the item before proposing an update. Treat every Copilot change as a draft.
+- Don't change area paths, iteration paths, identities, links, process settings, or team settings.
+- Don't create child Tasks until the request owner records approval.
+- Change only the seeded requirement and Tasks created by your pair. Never delete the seeded requirement.
 
 ## Phase 1: Run the Copilot interview
 
@@ -118,7 +109,7 @@ The request owner records:
 - **Approved with changes:** revise the proposal, record the changes, then update.
 - **Needs another interview round:** return to the open branches. Do not update the item.
 
-**Silence is not approval.** The delivery reviewer cannot approve for the request
+**Silence isn't approval.** The delivery reviewer can't approve for the request
 owner.
 
 ## Phase 5: Apply the approved update
@@ -161,15 +152,10 @@ leave the child Task table empty.
 
 ## Review and deliver
 
-Before delivery, check:
-
-- saved fields match the update plan;
-- acceptance criteria include positive and failure behavior;
-- readiness did not move while a blocking decision remained open;
-- every created Task links to the parent;
-- the next action has an owner.
-
-Fix mismatches and list unresolved gaps with an owner and next action.
+Check that saved fields match the update plan, acceptance criteria include positive
+and failure behavior, readiness didn't move while a blocking decision was open, and
+every created Task links to the parent. Fix mismatches and list unresolved gaps
+with an owner and next action.
 
 ## Reset and cleanup
 

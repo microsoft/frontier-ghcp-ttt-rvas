@@ -2,9 +2,7 @@
 
 ## Teaching goal
 
-Show one MCP tool from its contract through tests and Inspector output. Walk
-through the schema and handler, then demonstrate good and bad input. Run the
-automated test and Inspector call before expanding the server to three tools.
+Show one MCP tool from its contract through tests and Inspector output. Walk through the schema and handler, then demonstrate good and bad input. Run the automated test and an Inspector call before expanding the server to three tools.
 
 ## One-hour plan
 
@@ -17,42 +15,28 @@ automated test and Inspector call before expanding the server to three tools.
 | 0:43 to 0:52 | Tests and MCP Inspector |
 | 0:52 to 1:00 | Add tools without weakening the contract; lab handoff |
 
-The timings match [`slides.md`](../slides.md). Stop live Inspector troubleshooting
-at 0:50. Use the recorded expected output and keep time for the lab handoff.
+The timings match [`slides.md`](../slides.md). Stop live Inspector troubleshooting at 0:50 and use the recorded output in [`EVIDENCE.md`](../lab/solution/custom-mcp/EVIDENCE.md).
 
-## Preflight
+## Preparation
 
-- Use Node.js 20 or later and the approved npm registry.
+- Use Node.js 20 or later.
 - Run `npm ci && npm test` in both custom MCP projects.
 - Check that no `node_modules` directory is tracked.
 - Pin MCP Inspector 2.5.0 for the demo.
-- Keep [`lab/solution/custom-mcp/EVIDENCE.md`](../lab/solution/custom-mcp/EVIDENCE.md)
-  open for trainer demo recovery.
-- Do not attach a credential, network service, or source-system data.
 
-If you cannot access the approved package source, stop the executable demo. A
-static code walkthrough is acceptable, but mark Inspector and tests as **not
-executed**. This only recovers the trainer demo.
+If you can't install packages, walk through the code and label Inspector and tests as **not executed**.
 
 ## Teaching sequence
 
 ### 0:00 to 0:08: MCP request path
 
-Use this path:
-
 ```text
 Client → tools/list → tool selection → tools/call → handler → result
 ```
 
-The protocol standardizes discovery and calls. It does not approve the server,
-grant permissions, or make a result correct.
+The protocol standardizes discovery and calls. It doesn't grant permissions or make a result correct.
 
-Keep the packaging distinction short: an MCP server provides protocol tools and
-context. A plugin distributes a versioned set of Copilot customizations and may
-include MCP server configuration. Installing a plugin is not the same as running
-or approving the server it references.
-
-Separate the boundaries:
+Keep the packaging distinction short: an MCP server provides protocol tools and context. A plugin distributes a versioned set of Copilot customizations and may include MCP server configuration. Installing a plugin doesn't run the server it references.
 
 | Boundary | Question |
 | --- | --- |
@@ -64,19 +48,14 @@ Separate the boundaries:
 
 ### 0:08 to 0:18: The tool contract
 
-Open `lab/starter/custom-mcp/src/index.js`. Read the `get_weather` definition before
-the handler.
-
-Point out:
+Open `lab/starter/custom-mcp/src/index.js`. Read the `get_weather` definition before the handler. Point out:
 
 - a specific name;
 - a description that says the data is synthetic;
 - a required, non-empty `city`;
 - `additionalProperties: false`.
 
-The schema helps clients form a request. The handler still validates arguments
-because direct tests and future transports may reach it outside a client-side
-validator.
+The schema helps clients form a request. The handler still validates arguments, because direct tests and other transports can reach it without a client-side validator.
 
 ### 0:18 to 0:33: One tool end to end
 
@@ -98,8 +77,7 @@ cd sessions/session-m3-03-mcp-servers/lab/starter/custom-mcp
 npm test
 ```
 
-The deterministic response makes exact assertions useful. Random output would turn
-a small contract test into a flaky one.
+Deterministic output allows exact assertions. Random output would make a small contract test flaky.
 
 ### 0:33 to 0:43: Failure is part of the interface
 
@@ -111,16 +89,9 @@ Trace an empty city. The response sets `isError: true` and carries:
 }
 ```
 
-Compare this with two weak patterns:
-
-- returning an empty success object;
-- throwing an unhandled exception that terminates the server.
-
-The caller needs an error response it can report without crashing.
+Compare two weak patterns: returning an empty success object, and throwing an unhandled exception that kills the server. The caller needs an error it can report without crashing.
 
 ### 0:43 to 0:52: Inspector output and test results
-
-Run:
 
 ```bash
 npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
@@ -134,25 +105,20 @@ Then call `get_weather`. Keep test results and Inspector output separate:
 | Unit test | Handler behavior for known inputs |
 | `tools/list` | The server exposes the expected catalog |
 | `tools/call` | The stdio protocol path reaches the handler |
-| Copilot call | A selected client can discover and choose the tool |
+| Copilot call | A client can discover and choose the tool |
 
-A Copilot call can show that client integration works. Keep the deterministic
-tests too.
+A Copilot call shows client integration works. Keep the deterministic tests anyway.
 
 ### 0:52 to 1:00: Add the remaining tools
 
-Open the completed server. Show that `get_forecast` and
-`convert_temperature` follow the same shape instead of creating special cases.
-
-Review the constraints:
+Open the completed server. `get_forecast` and `convert_temperature` follow the same shape as `get_weather`:
 
 - forecast days are integers from 1 to 7;
 - conversion units are a fixed enum;
 - unknown tools return a visible error;
-- output remains deterministic and synthetic.
+- output stays deterministic and synthetic.
 
-Point learners to the staged lab. Remind them to keep the first tool passing while
-they add the other two.
+Remind learners to keep the first tool passing while they add the other two.
 
 ## Prepared demonstration
 
@@ -163,25 +129,19 @@ they add the other two.
 5. Open the solution catalog and show the two added tools.
 6. Run the five solution tests.
 
-Do not type the full server from scratch during class. Focus on the contract,
-tests, and protocol calls.
+Don't type the full server from scratch in class.
 
 ## Review prompts
 
 - Which file owns the tool description?
 - Which check rejects an empty city?
 - Why does the handler validate input when the schema exists?
-- What does `tools/list` prove that a direct handler test does not?
-- What would make adding a fourth tool unsafe?
+- What does `tools/list` show that a direct handler test doesn't?
+- What would make adding a fourth tool risky?
 
 ## Lab handoff
 
-Explain the lab sequence: start with the one-tool server, add one test, and
-inspect good and bad calls before adding the remaining tools. Ask learners to
-update the original one-tool catalog assertion when they add the other tools.
-They must run tests and Inspector against their edited working copy, not the
-reference solution, and submit the lockfile, test output, and protocol requests
-and responses.
+Learners start with the one-tool server, add one test, and inspect good and bad calls before adding the other tools. They update the one-tool catalog assertion when the catalog grows, run tests and Inspector against their edited copy (not the reference solution), and submit the lockfile, test output, and protocol requests and responses.
 
 ## References
 

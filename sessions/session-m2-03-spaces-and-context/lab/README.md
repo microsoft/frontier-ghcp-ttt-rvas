@@ -1,15 +1,13 @@
 # Session M2-03 lab: Spaces and context management
 
 **Duration:** 2 hours
-**Difficulty:** Intermediate
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02 completed
-**Deliverable:** A context package for one Storefront API, with recorded comparison results
+**Deliverable:** A context package for one Storefront API, with comparison results
 
 ## Lab overview
 
-You will use one Storefront API for the full lab. First select the sources for a Copilot
-Space. Then add repository instructions and compare the same task across context
-levels. Store reusable prompt files beside the project.
+Use one Storefront API for the whole lab. Select sources for a Copilot Space, add
+repository instructions, compare the same task across context levels, and store
+reusable prompt files beside the project.
 
 | Stage | Work | Time |
 | --- | --- | --- |
@@ -24,15 +22,10 @@ Use only the synthetic Storefront API files supplied with this lab.
 
 You need:
 
-- required GitHub Copilot access in the editor;
-- Copilot Spaces access if you will use a live Space;
-- a repository or sandbox you may use for the Storefront API;
+- GitHub Copilot in your editor;
+- Copilot Spaces access;
 - Node.js and npm;
-- permission to add repository instructions and prompt files;
-- standalone Copilot CLI access with `/env` and `/instructions`.
-
-A local context packet does not replace creating a Space or inspecting
-the loaded instructions.
+- the standalone Copilot CLI with `/env` and `/instructions`.
 
 Create a writable copy:
 
@@ -78,11 +71,11 @@ Add a low-stock report endpoint.
 ## Acceptance criteria
 ```
 
-For this task, keep the source set small. Do not add unrelated repositories, private discussions, or production data.
+Keep the source set small. Leave out unrelated repositories, private discussions, and production data.
 
 ### Create the Space
 
-Create a Space named `Storefront API Lab`. Add the five reviewed files and these instructions:
+Create a Space named `Storefront API Lab`. Add the five files and these instructions:
 
 ```text
 Answer from the selected Storefront API sources. Follow docs/api-spec.md and
@@ -97,15 +90,14 @@ What files and acceptance criteria should guide a low-stock report endpoint?
 Do not write code yet.
 ```
 
-Check every claim against the selected sources.
+Check every claim against the sources.
 
-### Checkpoint 1: sources are selected and checked
+### Checkpoint 1
 
 - [ ] `context-notes.md` names the task and acceptance criteria.
 - [ ] Every selected source has a reason to be present.
-- [ ] Unrelated or restricted sources are excluded.
 - [ ] Each claim in the first answer is supported by a selected file.
-- [ ] The live Space contains the selected sources and is ready for reuse.
+- [ ] The Space contains the selected sources.
 
 ## Stage 2: Add repository instructions (30 minutes)
 
@@ -137,19 +129,15 @@ Start `copilot` from the Storefront project and run:
 /instructions
 ```
 
-Inspect instruction source paths and any file-match scope shown by the client.
-Do not toggle or edit personal, organization, or security instructions. In
-`context-comparison.md`, name the project instruction and the stale route note,
-then compare both with `package.json` and an existing route.
+Inspect instruction source paths and any file-match scope. Leave personal,
+organization, and security instructions alone. In `context-comparison.md`, name
+the project instruction and the stale route note, then compare both with
+`package.json` and an existing route.
 
 Ask Copilot to identify the conflict without editing. Correct only the stale
 training note to require ES modules. Restart the CLI and inspect `/env` and
-`/instructions` again before continuing. A file appearing in a list proves
-discovery, not that every scoped instruction applies to every task or that the
-model followed it.
-
-If another source conflicts, stop and ask the trainer who owns it. Do not claim
-that an instruction in the prompt overrides managed rules.
+`/instructions` again. A listed file shows discovery. It doesn't show that the
+model followed the instruction.
 
 Ask Copilot to plan the low-stock endpoint:
 
@@ -179,7 +167,7 @@ curl "http://localhost:3000/api/products/reports/low-stock?threshold=-1"
 
 Compare your instruction file with `lab/solution/ecommerce-project/.github/copilot-instructions.md`.
 
-### Checkpoint 2: check the implementation against the instructions
+### Checkpoint 2
 
 - [ ] The plan uses ES modules and existing response envelopes.
 - [ ] The route is placed before `/:id`.
@@ -214,10 +202,10 @@ Record:
 - number of corrections;
 - claims that cite or clearly follow a source.
 
-Score the response against the project requirements rather than how well it reads.
+Score each response against the project requirements, not how well it reads.
 Keep extra context only when it removes wrong assumptions.
 
-### Checkpoint 3: comparison cites output differences
+### Checkpoint 3
 
 - [ ] All four experiments use the same task text.
 - [ ] Each score cites a concrete output difference.
@@ -250,7 +238,7 @@ Review each result:
 
 Compare with `lab/solution/ecommerce-project/.github/prompts/`.
 
-### Checkpoint 4: prompts define their inputs and checks
+### Checkpoint 4
 
 - [ ] All three prompt files appear in `.github/prompts/`.
 - [ ] Each prompt was tested on the Storefront API.
@@ -268,9 +256,6 @@ Submit the `storefront-api/` workspace with:
 4. Three tested prompt files under `.github/prompts/`.
 5. Low-stock endpoint check results and the final context choice.
 
-**Done:** Another engineer can see which sources you selected, how each context layer affected the result, and how to check the project-specific output.
-
 ## Command reference
 
-Checked October 15, 2026:
 [Copilot CLI environment and instruction commands](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference).

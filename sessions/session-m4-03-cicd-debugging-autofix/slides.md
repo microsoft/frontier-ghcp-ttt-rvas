@@ -27,8 +27,6 @@ Session M4-03 | 3 hours
 ---
 # Record logs and local results
 
-Record:
-
 ```text
 Observation:
 Local proof:
@@ -37,7 +35,7 @@ Smallest repair:
 Proof after repair:
 ```
 
-Do not put a root-cause answer in the observation field.
+Keep the root-cause answer out of the observation field.
 
 ---
 # Check the application first
@@ -50,8 +48,7 @@ npm run build
 test -f dist/index.js
 ```
 
-If these commands pass locally, the workflow may still use the wrong runtime,
-directory, environment, or job order.
+If these pass locally, the workflow may still use the wrong runtime, directory, environment, or job order.
 
 ---
 # Give Copilot the workflow and failed-step output
@@ -65,7 +62,7 @@ proof command. Do not change unrelated jobs.
 **Check every claim against the files.**
 
 ---
-# Do not reveal the answer early
+# Investigate before you open the answer
 
 1. Read the failed step.
 2. Record the exact log output.
@@ -86,8 +83,7 @@ next workflow run
 new failed stage
 ```
 
-Use the new log to diagnose the next failure. Keep the repair you already checked
-and avoid speculative changes.
+Diagnose the next failure from the new log. Keep the repair you already checked and avoid speculative changes.
 
 ---
 # Check the affected code path
@@ -97,18 +93,9 @@ For each finding, identify:
 - input source;
 - dangerous sink;
 - expected protection;
-- focused test results;
-- approval decision.
+- focused test results.
 
-An absence of scanner findings is not enough.
-
----
-# Access policy
-
-GitHub Copilot and Node.js 20.x are required.
-
-Actions, code scanning, and remote remediation are optional. The local path uses
-the supplied application, logs, workflows, and syntax checks.
+No scanner findings isn't enough.
 
 ---
 <!-- _class: divider -->

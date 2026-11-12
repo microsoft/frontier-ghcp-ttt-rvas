@@ -17,24 +17,12 @@ Build one delivery-readiness canvas in the Copilot app.
 
 Record:
 
-- the approved contract;
+- the contract;
 - one direct update;
 - one agent-requested update;
-- one rejected update and recovery;
-- one human review decision.
+- one rejected update and its recovery.
 
----
-# Access policy
-
-The lab requires:
-
-- GitHub Copilot app access;
-- the built-in `/create-canvas` skill;
-- approval for the chosen extension scope.
-
-If project scope is
-unavailable, use user scope. Do not install a replacement or
-move data to an unapproved surface.
+You need the Copilot app and the built-in `/create-canvas` skill. If project scope is unavailable, use user scope.
 
 ---
 # Choose the right customization
@@ -48,7 +36,7 @@ move data to an unapproved surface.
 | Shared interactive artifact | Canvas |
 | Packaged customizations | Plugin |
 
-A canvas is useful when people and an agent need to inspect or change the same visible state.
+Use a canvas when people and an agent need to inspect or change the same visible state.
 
 ---
 # Canvas anatomy
@@ -74,9 +62,9 @@ The contract names all four parts before implementation starts.
 | Validation | known item, accepted status, evidence before `ready` |
 
 ---
-# Authority stays narrow
+# Keep authority narrow
 
-Safe:
+Allowed:
 
 - read the current board;
 - update one named item;
@@ -99,10 +87,8 @@ Out of scope:
 | API-204 | Add retry metric | `in-progress` | test log |
 | WEB-318 | Check empty state | `review` | preview |
 
-All names and evidence are synthetic.
-
 ---
-# Prepared demo sequence
+# Demo sequence
 
 1. Run the local contract tests.
 2. Create the canvas from the worked prompt.
@@ -125,15 +111,12 @@ Reject unknown items or statuses. Require evidence before ready.
 Do not connect external systems.
 ```
 
-Choose project scope only when `.github/extensions` is allowed. Otherwise use user
-scope.
+Use project scope when `.github/extensions` is allowed. Otherwise use user scope.
 
 ---
-# Visible and agent-requested changes
+# Two paths, one state
 
-The same state must change through both paths:
-
-| Path | Evidence |
+| Path | Result |
 | --- | --- |
 | Human control | The item visibly changes in the canvas |
 | Agent capability | The named item changes and the response matches the canvas |
@@ -155,7 +138,7 @@ Expected:
 Rejected: evidence is required before ready.
 ```
 
-A safe canvas keeps the state unchanged and explains the rule.
+The state stays unchanged and the message names the rule.
 
 ---
 # Recovery keeps the rule
@@ -163,9 +146,7 @@ A safe canvas keeps the state unchanged and explains the rule.
 1. Add synthetic evidence to `DOC-101`.
 2. Retry the same transition.
 3. Check that `ready` is now accepted.
-4. Record before, rejection, correction, and after state.
-
-Keep validation in place when you fix the demo.
+4. Record the state before, the rejection, the correction, and the state after.
 
 ---
 # Review the generated extension
@@ -175,31 +156,16 @@ Check:
 - state fields and defaults;
 - visible actions;
 - agent-callable capabilities;
-- dependencies and persisted data;
-- owner and reviewer;
-- retirement trigger.
+- dependencies and persisted data.
 
 Remove anything the contract did not request.
 
 ---
 # Source of truth
 
-The canvas is a working artifact, not an automatic system of record.
+The canvas is a working artifact, not a system of record.
 
-If another system owns the data:
-
-- label the canvas as a projection;
-- record refresh or reconciliation rules;
-- keep external writes outside this lab.
-
----
-# Peer decision
-
-The reviewer chooses:
-
-- **approve** when the recorded results match the contract;
-- **revise** when the correction fits the contract;
-- **pause** when access, ownership, data, or behavior is unresolved.
+If another system owns the data, label the canvas as a projection and keep external writes out of scope.
 
 ---
 <!-- _class: divider -->

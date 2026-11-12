@@ -30,9 +30,6 @@ An MCP server gives Copilot named tools for reading or changing another system.
 
 You use the tools in this session without building the server.
 
-A plugin may bundle an MCP server with skills or other customizations. Check the
-active GitHub MCP connection itself before reading or writing issues.
-
 ---
 
 # Write issues others can act on
@@ -139,7 +136,7 @@ Copilot proposes the action.
 
 Record **Approve**, **Revise**, or **Reject** before the write.
 
-Do not create issues without approval.
+No approval, no issues.
 
 ---
 

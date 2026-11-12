@@ -36,14 +36,14 @@ Submit or demonstrate:
 
 | Part | Work | Time |
 | --- | --- | ---: |
-| 1 | Preflight and baseline | 15 min |
+| 1 | Setup and baseline | 15 min |
 | 2 | Client, session, and streaming | 20 min |
 | 3 | Readiness tool and policy | 30 min |
 | 4 | Failure hooks and cleanup | 20 min |
 | 5 | Tests | 15 min |
 | 6 | Collector, Jaeger, and final checks | 20 min |
 
-## Required preflight
+## Setup
 
 Work from:
 
@@ -51,15 +51,9 @@ Work from:
 sessions/session-m6-01-copilot-sdk/lab/starter/sdk-readiness-assistant/
 ```
 
-Authenticated GitHub Copilot SDK access is required. You also need:
-
-- Node.js and npm versions accepted by `package.json`;
-- Docker Engine;
-- Docker Compose;
-- permission to bind the local ports declared in the Compose file.
-
-Do not switch to BYOK, another model provider, a remote session, or a different
-language.
+You need authenticated GitHub Copilot SDK access, Node.js and npm at the versions
+in `package.json`, Docker with Docker Compose, and free local ports for the
+Compose file. Use Copilot authentication, not BYOK or another provider.
 
 Run the local checks:
 
@@ -73,14 +67,13 @@ npm run check
 npm test
 ```
 
-Some focused tests should fail because you have not completed the reliability
-controls yet. The project must compile far enough to show those gaps. Use the
-instructor-provided authentication check in `src/live-demo.ts` before starting the
-live exercises.
+Some focused tests should fail until you complete the reliability controls. The
+project must compile far enough to show those gaps. Run the authentication check in
+`src/live-demo.ts` before the live exercises.
 
 ### Project map
 
-Use the names present in the starter project. The expected layout is:
+The expected layout:
 
 ```text
 sdk-readiness-assistant/
@@ -334,61 +327,33 @@ Show the trainer:
 - the session end reason;
 - passing tests and type checks.
 
-## Final checks
-
-- [ ] Authenticated GitHub Copilot SDK preflight passed.
-- [ ] Node.js, npm, Docker, and Docker Compose preflight passed.
-- [ ] The client starts before session creation and stops on every exit path.
-- [ ] The session streams parent output without duplicate final text.
-- [ ] The readiness tool reads only deterministic synthetic data.
-- [ ] Permission handling rejects unrelated requests.
-- [ ] The pre-tool hook denies `RESTRICTED-0001` before handler execution.
-- [ ] The denial reason is visible.
-- [ ] Failed-tool, error, and session-end hooks record distinct outcomes.
-- [ ] Per-session state is cleared.
-- [ ] Tests pass.
-- [ ] Type checks pass.
-- [ ] The Collector and Jaeger receive traces.
-- [ ] A Jaeger trace shows the denied path.
-- [ ] No excluded feature or external business system was added.
-
 ## Troubleshooting
 
 | Problem | Fix |
 | --- | --- |
-| `client.getAuthStatus()` reports unauthenticated | Check the GitHub Copilot sign-in and permitted network path. Do not use BYOK or another provider. |
-| `CopilotClient` starts but session creation fails | Check the installed package lock, supported Node.js version, and current GitHub Copilot access. |
+| `client.getAuthStatus()` reports unauthenticated | Check the GitHub Copilot sign-in and network path. |
+| `CopilotClient` starts but session creation fails | Check the package lock, the Node.js version, and your GitHub Copilot access. |
 | Output is duplicated | Print `assistant.message_delta` as live output and keep the final message for records only. |
 | Restricted data reaches the handler | Match the exact tool name and inspect parsed `toolArgs.requestId` in `onPreToolUse`. |
 | Unknown IDs produce an invented answer | Return a failed tool result and add failure-hook context that forbids invention. |
 | Tests call the live model | Mock the SDK session boundary and assert deterministic events or decisions. |
-| Collector cannot bind port 4318 | Stop the conflicting process only if you may do so, or change the supplied local configuration consistently. |
+| Collector cannot bind port 4318 | Stop the conflicting process, or change the local configuration consistently. |
 | Jaeger is empty | Check container health, the Collector export pipeline, service name, and Jaeger time range. |
 | Session state remains after completion | Delete the session ID in `onSessionEnd` and keep outer cleanup in `finally`. |
 
 ## Solution reference
 
-After completing all checkpoints, compare your work with:
+After all checkpoints, compare your work with
+`sessions/session-m6-01-copilot-sdk/lab/solution/sdk-readiness-assistant/`:
 
-```text
-sessions/session-m6-01-copilot-sdk/lab/solution/sdk-readiness-assistant/
-```
+1. `src/live-demo.ts`: client, session, streaming, and hooks;
+2. `src/change-store.ts`: the deterministic lookup;
+3. `src/permission-policy.ts`: permission decisions;
+4. `src/hook-decisions.ts`: prompt and pre-tool policy;
+5. `tests/`: control-path assertions;
+6. `compose.yaml` and `otel-collector-config.yaml`: trace routing.
 
-Review these areas in order:
-
-1. `src/live-demo.ts` for client, session, streaming, and hooks;
-2. `src/change-store.ts` for the deterministic lookup;
-3. `src/permission-policy.ts` for permission decisions;
-4. `src/hook-decisions.ts` for prompt and pre-tool policy;
-5. `tests/` for stable control-path assertions;
-6. `compose.yaml` and `otel-collector-config.yaml` for trace routing.
-
-Do not copy the solution before the checkpoints. Compare its controls,
-test results, and traces with yours.
-
-## Official references
-
-Checked on **October 5, 2026**:
+## References
 
 - [Authentication](https://docs.github.com/en/copilot/how-tos/copilot-sdk/auth/authenticate)
 - [Streaming session events](https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/streaming-events)

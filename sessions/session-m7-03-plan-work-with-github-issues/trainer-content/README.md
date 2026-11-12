@@ -1,12 +1,9 @@
 # Session M7-03 trainer guide: Plan work with GitHub Issues and MCP
 
-**Duration:** 1 hour
-
-## Delivery objective
+## Goal
 
 Show learners how to plan a GitHub MCP write, approve it, and check what GitHub
-stored. This continues the Delivery Decision Studio path. Once created, the live
-issues become the source of record.
+stored. Once created, the live issues become the source of record.
 
 ## One-hour plan
 
@@ -19,121 +16,100 @@ issues become the source of record.
 | 0:43-0:53 | Preview, approve, and check a write |
 | 0:53-1:00 | Explain the lab guardrails |
 
-## Required preflight
+## Prepare
 
-- Check that every learner can open the GitHub Copilot app.
-- Check that the approved GitHub MCP server is available.
-- In the app, open **Customize** → **MCP** → **Installed** and inspect the
-  connection.
+- Every learner can open the GitHub Copilot app.
+- The GitHub MCP server is available: **Customize** → **MCP** → **Installed**.
 - Test one GitHub read before demonstrating a write.
-- Check that learners can read the training repository and create issues in it.
-- Use a repository created for training. Do not use a production backlog.
-- Record the repository owner and name before the demonstration.
+- Learners can read the training repository and create issues in it. Use a training repository, not a production backlog.
+- Note the repository owner and name.
 
-> [!IMPORTANT]
-> Stop if the learner cannot identify the target repository, inspect the tool call, or check the resulting issue.
+Stop if a learner can't identify the target repository, inspect the tool call, or
+check the resulting issue.
 
 ## Explain MCP without implementation detail
 
-Use this definition:
-
 > An MCP server gives Copilot a set of named tools for reading or changing another system.
 
-Explain these rules:
+- The tool runs with the permissions of the connection.
+- A read can still expose restricted information.
+- A write must name its target and proposed values.
+- Copilot proposes an action. The learner approves it.
+- Check the saved result with a new read. Copilot's success message isn't enough.
 
-- the tool runs with the permissions available to the connection;
-- a read operation can still expose restricted information;
-- a write operation must name its target and proposed values;
-- Copilot can propose an action, but the learner approves it;
-- check the saved result with a new read; Copilot's success message is not enough.
-
-Do not explain server protocols, transports, or SDKs.
+Skip server protocols, transports, and SDKs.
 
 ## Demo flow
 
-### 1. Read the approved source
+### 1. Read the source
 
-Open `lab/starter/approved-decision-brief.md`. Ask Copilot to identify the outcome,
+Open `lab/starter/approved-decision-brief.md`. Ask Copilot for the outcome,
 constraints, non-goals, owners, and results needed for acceptance.
 
 ### 2. Inspect GitHub
 
-Ask Copilot to:
+Ask Copilot to identify the target repository, list relevant labels, and search
+for duplicate or overlapping open issues.
 
-- identify the target repository;
-- list existing labels relevant to the plan;
-- search for duplicate or overlapping open issues;
-- report any permission or context uncertainty.
+Use `lab/starter/existing-issues.json` when the training repository lacks the
+seeded records. Have learners decide what to do with each candidate:
 
-Use `lab/starter/existing-issues.json` when the training repository does not
-already contain the seeded records. Have learners decide what to do with each
-candidate:
-
-- reuse `#241` because it partially overlaps the requester view;
-- leave `#256` unchanged because notifications are out of scope;
-- reject `#263` as implementation work because it conflicts with the visibility
-  boundary;
+- reuse `#241`: it partially overlaps the requester view;
+- leave `#256` unchanged: notifications are out of scope;
+- reject `#263`: it is implementation work that conflicts with the visibility boundary;
 - link `#278` only as historical context.
 
 ### 3. Propose the issue set
 
 Use one parent issue and four child roles: public status mapping, requester status
-view, empty and stale states, and requester-access verification. These roles feed
+view, empty and stale states, and requester-access verification. These feed
 Sessions M7-04 and M7-05. A fifth child is optional and stays outside those four
-workstreams. Each issue should have:
+workstreams. Each issue needs:
 
 - a clear outcome;
-- defined scope;
+- scope and a non-goal;
 - acceptance criteria;
-- a non-goal;
 - dependencies;
 - owner or ownership gap;
 - link to the decision brief.
 
-Reject technical subtasks that have no independent outcome or review point.
-The Markdown issue plan is a temporary preview. Do not commit or hand it to the
-next session.
+Reject technical subtasks with no independent outcome or review point. The
+Markdown plan is a temporary preview. Don't commit it or hand it to the next session.
 
 ### 4. Preview the write
 
-Before Copilot calls a write tool, ask it to show:
+Before Copilot calls a write tool, it shows:
 
 - repository owner and name;
 - issue count;
 - each title and body;
 - labels and milestone;
 - parent-child relationship method;
-- fields that remain unset.
+- fields left unset.
 
-The learner records **Approve**, **Revise**, or **Reject** before the write.
+The learner records **Approve**, **Revise**, or **Reject**.
 
 ### 5. Check and correct
 
 After creation, retrieve the issues in a fresh read and compare them with the
-approved plan. Demonstrate a correction by adding the verification owner and
-source-decision path to one child issue. Preview the update, get approval, write
-it, and read it back.
+plan. Demonstrate a correction: add the verification owner and source-decision
+path to one child issue. Preview the update, approve it, write it, and read it back.
 
-Check that the live parent issue links the complete child set. Session M7-04 reads
+Check that the parent issue links the complete child set. Session M7-04 reads
 those issues directly.
 
-## Common failure modes
+## Common failures
 
-| Failure | Trainer response |
+| Failure | Response |
 | --- | --- |
 | Copilot targets the wrong repository | Reject the operation and restate the repository |
-| Duplicate issue exists | Link or update the existing issue instead of creating another |
-| Partial overlap exists | Reuse the work already covered and create only the missing outcomes |
+| Duplicate issue exists | Link or update it instead of creating another |
+| Partial overlap exists | Reuse the covered work and create only the missing outcomes |
 | Child issue is too broad | Split it before the write |
-| Labels do not exist | Use approved existing labels or leave the field unset |
+| Labels don't exist | Use existing labels or leave the field unset |
 | Tool output claims success without a returned issue | Run a fresh repository read |
-| Learner cannot review tool arguments | Stop the lab |
 
-## Product notes verified October 5, 2026
-
-Check current GitHub MCP availability, authentication, tool names, issue hierarchy support, and write confirmations before delivery.
-
-Official references:
+## References
 
 - [About the GitHub MCP server](https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp/about-mcp)
 - [Using the GitHub MCP server](https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp/using-the-github-mcp-server)

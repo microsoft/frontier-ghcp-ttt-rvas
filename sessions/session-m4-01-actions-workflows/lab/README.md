@@ -1,13 +1,10 @@
 # Session M4-01 lab: One application, four workflow tasks
 
-**Duration:** 2 hours
-**Difficulty:** Intermediate
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02
-**Deliverable:** Reviewed workflows, command output, and review notes for `copilot-webapp`
+**Deliverable:** Workflows, command output, and review notes for `copilot-webapp`
 
 ## Lab overview
 
-You will use the same application for every part of the lab.
+You use the same application for every part.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -19,19 +16,11 @@ You will use the same application for every part of the lab.
 
 ## Before you start
 
-You must have GitHub Copilot access in the selected coding environment and Node.js 20 or later.
-
-GitHub repository access is optional. Do not push, run Actions, install an external
-action, or use a deployment target unless the instructor permits it.
-When repository access or Actions is unavailable, complete all the work locally
-as described below. GitHub Copilot access is required.
-
-Do not use real credentials or deployment endpoints. The supplied deployment work
-is a reviewed design exercise.
+You need GitHub Copilot and Node.js 20 or later. Repository access is optional. Unless the instructor says otherwise, don't push, run Actions, install an external action, or use a deployment target. Everything here runs locally. Use no real credentials or deployment endpoints.
 
 ## Setup
 
-Run all commands from this session directory unless a command changes directory.
+Run commands from this session directory unless a command changes directory.
 
 ```bash
 node --version
@@ -44,8 +33,7 @@ test -f dist/app.js
 cd ../../..
 ```
 
-Expected result: Node reports version 20 or later, seven tests pass, lint succeeds,
-the build succeeds, and `dist/app.js` exists.
+Expected: Node 20 or later, seven passing tests, lint and build succeed, and `dist/app.js` exists.
 
 Create `lab/evidence.md` from this table:
 
@@ -59,8 +47,7 @@ Create `lab/evidence.md` from this table:
 
 ## Part 1: Create CI
 
-Ask Copilot to read `lab/starter/webapp/package.json`, the tests, and the build
-script. Create `lab/starter/webapp/.github/workflows/ci.yml` with:
+Ask Copilot to read `lab/starter/webapp/package.json`, the tests, and the build script. Create `lab/starter/webapp/.github/workflows/ci.yml` with:
 
 - pushes to `main` and pull requests;
 - `ubuntu-latest` and Node.js 20;
@@ -69,7 +56,7 @@ script. Create `lab/starter/webapp/.github/workflows/ci.yml` with:
 - `permissions: contents: read`;
 - the `dist/` build artifact with seven-day retention.
 
-Validate the application again:
+Rerun the application checks:
 
 ```bash
 cd lab/starter/webapp
@@ -88,20 +75,13 @@ ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
   lab/starter/webapp/.github/workflows/ci.yml
 ```
 
-Review the generated commands against `package.json`. Compare the result with
-`lab/solution/webapp/.github/workflows/ci.yml`.
+Review the generated commands against `package.json`. Compare with `lab/solution/webapp/.github/workflows/ci.yml`.
 
-**Checkpoint:** Record both command results and explain why the workflow uploads
-`dist/` rather than a path invented by the assistant.
+**Checkpoint:** Record both results and explain why the workflow uploads `dist/` and not a path the assistant invented.
 
 ## Part 2: Design deployment
 
-Read `lab/starter/deployment-spec.md`. Create
-`lab/starter/webapp/.github/workflows/cd.yml`. It must build the same application,
-deploy to staging before production, reference GitHub Environments and secrets,
-run two health checks, and describe rollback without calling a real endpoint.
-
-Run:
+Read `lab/starter/deployment-spec.md`. Create `lab/starter/webapp/.github/workflows/cd.yml`. It must build the same application, deploy to staging before production, reference GitHub Environments and secrets, run two health checks, and describe rollback without calling a real endpoint.
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
@@ -110,31 +90,24 @@ grep -nE 'environment: (staging|production)|needs:|permissions:' \
   lab/starter/webapp/.github/workflows/cd.yml
 ```
 
-Expected result: YAML parsing succeeds. The output shows both environments, job
-ordering, and a permissions block.
+Expected: the YAML parses, and the output shows both environments, job ordering, and a permissions block.
 
-Compare your design with `lab/solution/workflows/cd.yml`. Production reviewers are
-configured in repository settings. The workflow only references the `production`
-environment.
+Compare with `lab/solution/workflows/cd.yml`. Repository settings configure production reviewers. The workflow only references the `production` environment.
 
-**Checkpoint:** Record the secret names, the production gate, the health-check
-behavior, and the rollback steps. Do not claim that a deployment occurred.
+**Checkpoint:** Record the secret names, the production gate, the health-check behavior, and the rollback steps. No deployment occurred.
 
 ## Part 3: Repair workflow failures
 
-The two broken workflows both target `copilot-webapp`.
+Both broken workflows target `copilot-webapp`.
 
-First, run the parser to see the CI file's syntax failure:
+Run the parser on the CI file:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
   lab/starter/broken-workflows/broken-ci.yml
 ```
 
-Expected failure: the parser reports an indentation error near `Setup Node.js`.
-Fix the indentation, update the checkout action, add least-privilege permissions,
-and use the package command intended for CI. Run the parser again and compare with
-`lab/solution/fixed-workflows/fixed-ci.yml`.
+Expected failure: an indentation error near `Setup Node.js`. Fix the indentation, update the checkout action, add least-privilege permissions, and use the package command meant for CI. Parse again and compare with `lab/solution/fixed-workflows/fixed-ci.yml`.
 
 The deployment workflow parses, but its behavior is wrong:
 
@@ -145,20 +118,15 @@ grep -nE 'ubuntu-18.04|refs/head/main|DEPLOY_KEY|checkout' \
   lab/starter/broken-workflows/broken-deploy.yml
 ```
 
-Expected result: parsing succeeds. The second command exposes the stale runner,
-bad ref, wrong secret name, and missing checkout step. Repair those items, parse
-the file again, and compare with the solution.
+Parsing succeeds. The grep exposes the stale runner, bad ref, wrong secret name, and missing checkout step. Repair them, parse again, and compare with the solution.
 
-**Checkpoint:** For each change, cite the observed failure or repository fact.
-Do not accept a broad rewrite unless each change addresses a recorded failure.
+**Checkpoint:** For each change, cite the failure or repository fact behind it. Reject a broad rewrite unless each change answers a recorded failure.
 
 ## Part 4: Validate the custom action
 
-Complete the metadata and implementation in `lab/starter/custom-action/`. The
-action scans the same application used by the workflows.
+Complete the metadata and implementation in `lab/starter/custom-action/`. The action scans the same application.
 
-Copy the supplied dependency manifests into your action directory. Install the
-dependencies, then check your implementation against the application:
+Copy the dependency manifests into your action directory, install, and check against the application:
 
 ```bash
 cp lab/solution/custom-action/package.json \
@@ -173,10 +141,9 @@ test -s ../custom-action/summary.md
 cd ../../..
 ```
 
-Expected result: the action reports `passed: true`, exits with code 0, and writes
-the summary.
+Expected: `passed: true`, exit code 0, and a written summary.
 
-Now run the intentional failure:
+Now the intentional failure:
 
 ```bash
 cd lab/starter/webapp
@@ -188,28 +155,21 @@ test "$action_status" -eq 1
 cd ../../..
 ```
 
-Expected failure: the action reports a score below 101 and exits with code 1.
-This shows that the threshold changes the result for this run.
+Expected: the action reports a score below 101 and exits with code 1. The threshold changes the result.
 
-After your checks pass, compare with `lab/solution/custom-action/`.
-If `act` is already installed and local runner use is approved, you may also run
-this reference-only demonstration. It does not validate your action:
+After your checks pass, compare with `lab/solution/custom-action/`. If `act` is installed, you can run this reference-only demo. It doesn't validate your action:
 
 ```bash
 act -W lab/solution/custom-action/.github/workflows/quality-check.yml -j quality-check
 ```
 
-**Checkpoint:** Record the pass and fail exit codes, score, scanned path, outputs,
-and summary location.
+**Checkpoint:** Record the pass and fail exit codes, score, scanned path, outputs, and summary location.
 
 ## Final deliverable
 
-Submit:
-
 1. CI and deployment workflow files for `copilot-webapp`.
-2. Both repaired workflow files with explanations tied to the recorded failures.
+2. Both repaired workflow files, with explanations tied to the recorded failures.
 3. The completed JavaScript action.
 4. `lab/evidence.md` with commands, results, changed files, and reviewer decisions.
 
-Keep credentials and real deployment endpoints out of your deliverable. Do not
-claim that local syntax checks prove a production deployment is safe.
+Local syntax checks don't show that a production deployment is safe.

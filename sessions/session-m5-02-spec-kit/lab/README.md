@@ -5,15 +5,12 @@
 **Difficulty:** Advanced
 
 **Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05
-**Deliverable:** An implemented and evolved feature with traceable Spec Kit
-artifacts, GitHub Issues, tests, and convergence results
 
-## Lab overview
+## Overview
 
-Add task archiving to a small Python project. You will implement it in stages and
-use convergence review to find missing work. Then add a restore requirement
-through Spec Kit's living-spec workflow, updating the accepted artifacts and
-implementation together.
+Add task archiving to a small Python project. You implement it in stages and
+use convergence review to find missing work. Then you add a restore requirement
+through the living-spec workflow, updating the artifacts and implementation together.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -27,19 +24,9 @@ implementation together.
 
 ## Before you start
 
-Check the approved Spec Kit source and release tag. Do not install an unapproved
-package or use production data.
-
-You need:
-
-- Python 3.10 or later;
-- Git and a local terminal;
-- GitHub Copilot access in your coding environment;
-- `uv` and an approved Spec Kit release;
-- a GitHub training repository where you can create issues.
-
-For a disconnected environment, the instructor must prepare
-the official Spec Kit air-gapped package before the session.
+You need Python 3.10 or later, Git, GitHub Copilot, `uv`, and a GitHub training
+repository where you can create issues. For a disconnected environment, the
+instructor prepares the official Spec Kit air-gapped package beforehand.
 
 ## Part 1: Prepare and initialize the project (15 minutes)
 
@@ -56,17 +43,16 @@ python -m unittest discover -s tests -v
 The two starter tests should pass. Read `feature-request.md`, but do not open
 `change-request.md` yet.
 
-Install the approved Spec Kit release:
+Install the Spec Kit release the instructor gave you:
 
 ```bash
-export SPECKIT_TAG='<approved-release-tag>'
+export SPECKIT_TAG='<release-tag>'
 uv tool install specify-cli --force \
   --from "git+https://github.com/github/spec-kit.git@${SPECKIT_TAG}"
 specify version
 ```
 
-Record the source and reported version in `lab-notes.md`. Initialize the current
-repository:
+Initialize the current repository:
 
 ```bash
 specify init --here --force --integration copilot
@@ -178,7 +164,7 @@ accepted user story.
 Commit and push the accepted artifacts:
 
 ```bash
-git add .specify .github specs lab-notes.md
+git add .specify .github specs
 git commit -m "Specify task archive behavior"
 git push
 ```
@@ -313,13 +299,3 @@ If convergence appends work, repeat the implement and converge loop.
 3. GitHub Issues created from the Spec Kit task list.
 4. Working archive and restore behavior with passing tests.
 5. A final **Converged** result.
-
-## Final checks
-
-- [ ] `spec.md` contains the accepted archive and restore behavior.
-- [ ] `plan.md` uses the required Python files and adds no dependency.
-- [ ] `tasks.md` maps implementation work to user stories and exact file paths.
-- [ ] GitHub Issues preserve task IDs and dependency information.
-- [ ] All unit tests pass.
-- [ ] `/speckit-analyze` has no unresolved material finding.
-- [ ] `/speckit-converge` reports Converged.

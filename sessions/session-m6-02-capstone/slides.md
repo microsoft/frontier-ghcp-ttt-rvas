@@ -35,10 +35,10 @@ POST /api/bookmarks
 
 ---
 
-# Keep the boundary in the issue
+# The scope lives in the issue
 
-Keep every scope decision in the accepted GitHub issue. Implement only
-`POST /api/bookmarks`, use synthetic data, and keep the existing dependencies.
+Implement only `POST /api/bookmarks`, use synthetic data, and keep the existing
+dependencies.
 
 **Stop if the work requires another endpoint, live data, deployment, tool
 configuration, or a new dependency.**

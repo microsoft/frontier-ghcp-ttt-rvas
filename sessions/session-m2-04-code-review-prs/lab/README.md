@@ -1,18 +1,15 @@
 # Session M2-04 lab: Code review workflows
 
-**Duration:** 2 hours  
-**Difficulty:** Intermediate  
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-03 completed
-**Deliverable:** A human-reviewed change record, corrected starter project, and conflict review
+**Duration:** 2 hours
+**Deliverable:** A reviewed change record, corrected starter project, and conflict review
 
 ---
 
 ## Lab overview
 
-You will review AI-assisted work within the named files. Support your comments
-with code references and test results, then apply targeted fixes and decide
-whether to accept the change. The starter contains deliberate defects so you can
-compare your own review with Copilot-assisted review.
+Review a deliberately flawed change. Support each comment with a code reference
+or test result, apply targeted fixes, and decide whether to accept the change.
+Compare your own review with Copilot-assisted review. Use only synthetic data.
 
 | Exercise | Topic | Time |
 | --- | --- | --- |
@@ -23,46 +20,26 @@ compare your own review with Copilot-assisted review.
 
 ---
 
-## Access and cost preflight
+## You need
 
-Before the lab, check the repository, synthetic data, reviewer, test command, and any usage
-limit.
-
-Before you start, record these decisions in your notes:
-
-1. **Repository scope:** Are you using only `lab/starter/review-project/`, a private training fork, or an approved internal sandbox?
-2. **Data boundary:** Are all examples synthetic and allowed for review tooling?
-3. **Review surface:** Is Copilot review available?
-4. **Required checks:** Which command proves the starter project still works?
-5. **Stop condition:** What requires you to stop automated work?
-
-You need the standalone Copilot CLI with `/review` and `/security-review`,
-Copilot pull-request review, a private training repository you may push to, Git,
-the authenticated GitHub CLI (`gh`), Node.js, and npm. Check both Copilot commands
-in `/help` and repository access with `gh auth status` before starting.
-
-A generic
-chat review or worksheet does not replace the local commands and pull-request
-practice. `/security-review` examines current changes; it does not replace
-repository security scanning.
+- the standalone Copilot CLI with `/review` and `/security-review` (check `/help`);
+- Copilot pull-request review;
+- a private training repository you may push to (the trainer provides an empty one);
+- Git, the authenticated GitHub CLI (`gh auth status`), Node.js, and npm.
 
 ---
 
 ## Setup
 
-Use these starter assets:
+Starter assets:
 
-- `lab/starter/review-project/package.json`: project scripts and dependencies
-- `lab/starter/review-project/src/api.js`: Express API under review
-- `lab/starter/review-project/src/utils.js`: utility functions under review
-- `lab/starter/review-project/tests/api.test.js`: existing Jest/Supertest checks
+- `lab/starter/review-project/`: Express API under review, with `src/api.js`, `src/utils.js`, and Jest/Supertest tests in `tests/api.test.js`
 - `lab/starter/code-changes.md`: intentionally flawed changes to review
 - `lab/starter/partner-review-checklist.md`: structured review worksheet
 - `lab/starter/fix-evaluation-template.md`: finding, fix, and test record
-- `lab/starter/conflict-scenario/README.md`: manual merge-conflict scenario
-- `lab/starter/conflict-scenario/utils-with-conflict.js`: conflict exercise source file
+- `lab/starter/conflict-scenario/`: manual merge-conflict scenario (`README.md`, `utils-with-conflict.js`)
 
-Create a workspace outside the curriculum folder. This keeps the source materials unchanged:
+Create a workspace outside the curriculum folder:
 
 ```bash
 mkdir -p ~/copilot-labs/session-m2-04
@@ -78,55 +55,39 @@ git branch -M main
 git switch -c feature/add-user-management
 ```
 
-> **Expected:** `npm install` completes without new dependencies and `npm test` reports that the existing API tests pass.
+> **Expected:** `npm install` adds no new dependencies and `npm test` reports that the existing API tests pass.
 >
-> **If install or tests fail:** Fix the environment. Static review alone
-> does not complete the lab. Do not change package versions to hide a failure.
+> **If install or tests fail:** Fix the environment. Don't change package versions to hide a failure.
 
-Use a fresh folder for this local repository. Ask the trainer for an **empty
-private training repository**. Before applying the change brief, add its URL as
-`origin` and push the baseline:
+Add the trainer's private repository as `origin` and push the baseline:
 
 ```bash
 git remote add origin <private-training-repository-url>
 git push -u origin main
 ```
 
-The baseline must be the same commit locally and remotely so the PR contains
-only the intended change. If the remote already has commits, stop and ask for an
-empty training repository. Do not force-push or push intentional defects to a
-public repository.
+The baseline must be the same commit locally and remotely, so the PR contains
+only the intended change. If the remote already has commits, ask for an empty
+repository. Never force-push or push the intentional defects to a public repository.
 
 ---
 
 ## Exercise 1: Review one diff through three passes (40 minutes)
 
-### Objective
-
-Review a deliberately flawed change set. Support each risk with a code reference
-or test result and name the acceptance criterion it affects.
-
 ### Steps
 
-1. **Open the change brief.** Read `lab/starter/code-changes.md` from start to finish.
-
-   > **Check:** The brief lists changes to `src/api.js` and `src/utils.js`. Each has an intended defect.
+1. **Read the change brief.** Open `lab/starter/code-changes.md`. It lists changes to `src/api.js` and `src/utils.js`, each with an intended defect.
 
 2. **Open `lab/starter/fix-evaluation-template.md`.** Use its single triage table
-   for human, local-command, and PR findings throughout the lab.
+   for human, local-command, and PR findings throughout the lab. Each finding
+   names a file or function, the affected acceptance criterion, and the code or
+   test output that supports it.
 
-   > **Success criteria:** Each finding names a file or function, the affected
-   > acceptance criterion, and the code or test output that supports it.
+3. **Read the baseline.** Open `src/api.js`, `src/utils.js`, and `tests/api.test.js`. Note the existing behavior so you can separate it from introduced defects.
 
-3. **Inspect the current starter project before applying changes.** Open `src/api.js`, `src/utils.js`, and `tests/api.test.js`.
-
-   > **Check:** The baseline has a small API, utility functions, and existing tests. Record its behavior so you can separate existing code from introduced defects.
-
-4. **Apply the change brief on `feature/add-user-management`.** Keep these changes
-   uncommitted until both local reviews have finished. Check
-   `git diff -- src/api.js src/utils.js` against the brief.
-
-   > **Success criteria:** The modified files match the change brief closely enough for review; you have not added unrelated features.
+4. **Apply the change brief on `feature/add-user-management`.** Keep the changes
+   uncommitted until both local reviews finish. Compare
+   `git diff -- src/api.js src/utils.js` with the brief. Add no unrelated features.
 
 5. **Run the existing checks.**
 
@@ -134,15 +95,12 @@ or test result and name the acceptance criterion it affects.
    npm test
    ```
 
-   > **Expected output:** Some existing tests may still pass because the defects are not fully covered. Record both pass/fail output and any missing coverage you notice.
+   Some tests may still pass because the defects aren't fully covered. Note the output and any missing coverage.
 
-6. **Review the change yourself first.** Use
-   `lab/starter/partner-review-checklist.md` to record your initial verdict.
-   Record the two findings that matter most in the triage table with `Human`
-   as their source before opening an assisted review.
-
-   > **Success criteria:** Your initial review cites the relevant file or
-   > function and explains how the code or test output supports your verdict.
+6. **Review the change yourself first.** Record your initial verdict in
+   `lab/starter/partner-review-checklist.md`. Record the two findings that matter
+   most in the triage table with `Human` as the source, before you open an
+   assisted review. Cite the file or function and the code or test output.
 
 7. **Run the general code review.** Start `copilot` in the working repository:
 
@@ -152,28 +110,27 @@ or test result and name the acceptance criterion it affects.
    do not edit files.
    ```
 
-8. **Run the focused security review on the same diff:**
+8. **Run the security review on the same diff:**
 
    ```text
    /security-review
    ```
 
-   Keep `src/api.js` and `src/utils.js` as the only modified project files during
-   these runs. The command reviews staged and unstaged changes; committing the
-   patch first would remove it from that scope.
+   Both commands review staged and unstaged changes. Committing the patch first
+   removes it from that scope.
 
-9. **Triage both outputs** in `fix-evaluation-template.md`. Keep your original
-   human review unchanged. For each finding, name the source, file/line, claimed
-   impact, and reproduction or code reference. Accept, reject, or leave unresolved
-   with a reason. If a review reports no findings, record that.
+9. **Triage both outputs** in `fix-evaluation-template.md`. Leave your human
+   review unchanged. For each finding, record the source, file/line, claimed
+   impact, and reproduction or code reference. Accept, reject, or leave it
+   unresolved with a reason. If a review reports no findings, record that.
 
-   The search route builds SQL text but connects to no database. Reject a claim
-   that this lab proves database compromise. Synthetic key-shaped strings also
-   do not prove a leaked real credential. Keep actual data exposure separate from
-   unsafe patterns and maintainability suggestions.
+   The search route builds SQL text but connects to no database, so reject a claim
+   that the lab proves database compromise. Synthetic key-shaped strings aren't a
+   leaked real credential. Keep actual data exposure separate from unsafe patterns
+   and maintainability suggestions.
 
-10. **Open the training PR after the local reviews.** Commit only the intended
-    files, push to the trainer-provided private remote, and open a PR:
+10. **Open the training PR.** Commit only the intended files, push to the private
+    remote, and open a PR:
 
     ```bash
     git add src/api.js src/utils.js
@@ -183,51 +140,34 @@ or test result and name the acceptance criterion it affects.
       --body "Training-only change. Contains intentional defects; do not merge."
     ```
 
-    The remote must already contain the baseline `main` branch. Request Copilot
-    review from the PR page and record at least one comparison with the local
-    results. Do not merge the intentionally flawed change.
+    Request Copilot review from the PR page and record at least one comparison
+    with the local results. Don't merge the flawed change.
 
 ### Checkpoint
 
-You are ready to continue when you can answer:
-
-- Which findings block approval?
-- Which findings are suggestions only?
-- Which defects were not covered by the existing tests?
-- Which code checks or test results would show that the fixes are complete?
-- What changed after the assisted review, if anything?
+- Which findings block approval, and which are suggestions only?
+- Which defects did the existing tests miss?
 - What did `/review` and `/security-review` each report?
-- Which claim was supported by actual behavior rather than an assumed backend?
+- What changed after the assisted review?
+- Which claim rests on actual behavior rather than an assumed backend?
 
 ---
 
 ## Exercise 2: Validate and correct the starter project (35 minutes)
 
-### Objective
-
-Fix the defects with the smallest safe changes. Then show that the corrected project meets the review criteria.
+Fix the defects with the smallest safe changes, then show the corrected project meets the review criteria.
 
 ### Steps
 
-1. **Prioritize blocking findings.** Start with issues that can leak sensitive data, allow injection, crash the server, or produce incorrect behavior.
+1. **Prioritize blocking findings.** Start with issues that leak sensitive data, allow injection, crash the server, or return incorrect behavior. List each defect, its file, and the check you will run.
 
-   > **Success criteria:** Your fix plan lists each blocking defect, the target file, and the check you will run.
+2. **Fix input handling in `src/api.js`.** Replace unsafe string interpolation and fragile parsing with validated inputs and safe response shapes. The endpoint should handle empty, missing, malformed, and valid inputs predictably. Show the error responses in tests or manual requests.
 
-2. **Fix input handling in `src/api.js`.** Replace unsafe string interpolation and fragile parsing with validated inputs and safe response shapes that fit the starter project.
+3. **Fix sensitive response data.** Remove password-like or token-like fields from responses. The JSON should show only fields the API contract needs.
 
-   > **Expected:** The endpoint handles empty, missing, malformed, and valid inputs predictably. Tests or manual requests show the error responses.
+4. **Fix pagination in `src/utils.js`.** Page 1 starts with the first item, and boundary cases return predictable results. A focused test or Node.js check covers page 1, page 2, and empty collections.
 
-3. **Fix sensitive response data.** Remove password-like or token-like fields from user-facing responses.
-
-   > **Success criteria:** Inspecting the JSON response shows only fields needed by the API contract.
-
-4. **Fix pagination in `src/utils.js`.** Check that page 1 begins with the first item and boundary cases return predictable results.
-
-   > **Expected output:** A focused test or manual Node.js check demonstrates page 1, page 2, and empty collections.
-
-5. **Add or update focused tests in `tests/api.test.js`.** Cover the behavior that was missing from the original test suite.
-
-   > **Success criteria:** New tests fail before the fix and pass after the fix.
+5. **Add or update focused tests in `tests/api.test.js`** for the behavior the original suite missed. New tests fail before the fix and pass after it.
 
 6. **Run checks again.**
 
@@ -235,18 +175,16 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
    npm test
    ```
 
-   > **Expected output:** All tests pass. If tests fail, record the failing assertion and correct only the related implementation or test expectation.
+   All tests should pass. If one fails, record the failing assertion and correct only the related implementation or test expectation.
 
-7. **Update the existing triage rows in `lab/starter/fix-evaluation-template.md`.**
-   Add the fix and regression test to each accepted finding. Record residual risk
-   in its Human decision section.
+7. **Update the triage rows in `fix-evaluation-template.md`.** Add the fix and regression test to each accepted finding. Record residual risk in its Human decision section.
 
-8. **Before committing the fixes**, rerun `/review` and `/security-review` on the
-   correction diff. Compare the results with the initial findings. Rerun
-   `npm test`, then commit and push only the reviewed fixes to the same training
-   PR. A clean automated review does not approve the PR.
+8. **Review the correction diff before committing.** Rerun `/review` and
+   `/security-review` on it and compare with the initial findings. Rerun
+   `npm test`, then commit and push only the reviewed fixes to the same PR. A clean
+   automated review doesn't approve the PR.
 
-### Checkpoint 2: fixes trace to findings
+### Checkpoint 2
 
 - [ ] Every blocking finding maps to a focused fix.
 - [ ] New tests cover the missed behavior.
@@ -257,22 +195,15 @@ Fix the defects with the smallest safe changes. Then show that the corrected pro
 
 ## Exercise 3: Resolve a conflict (25 minutes)
 
-### Objective
-
-Resolve a merge conflict so both branches' intended behavior survives. Check the
-result rather than accepting one side without review.
+Resolve a merge conflict so both branches' intended behavior survives.
 
 ### Steps
 
-1. **Read the scenario.** Open `lab/starter/conflict-scenario/README.md`.
+1. **Read the scenario.** Open `lab/starter/conflict-scenario/README.md`. Two branches modify `src/utils.js`: one adds date formatting, the other changes price formatting.
 
-   > **You should observe:** Two branches modify `src/utils.js`; one adds date formatting and the other changes price formatting.
+2. **Open the conflicting source,** `lab/starter/conflict-scenario/utils-with-conflict.js`. Find the conflicting region and state what each side does.
 
-2. **Open the conflicting source.** Review `lab/starter/conflict-scenario/utils-with-conflict.js`.
-
-   > **Expected output:** You can identify the conflicting region and state what each side is trying to accomplish.
-
-3. **Write the desired merged behavior before editing.** Use a short decision statement:
+3. **Write the merged behavior before editing:**
 
    ```text
    Preserve formatDate for date display and preserve formatPrice with an explicit
@@ -280,105 +211,65 @@ result rather than accepting one side without review.
    intentionally.
    ```
 
-   > **Success criteria:** Your statement names both branch intentions and the behavior that tests must prove.
+4. **Resolve the conflict manually.** Remove the `<<<<<<<`, `=======`, and `>>>>>>>` markers, keep both valid behaviors, and avoid unrelated formatting changes.
 
-4. **Resolve the conflict manually.** Remove conflict markers, keep both valid behaviors, and avoid unrelated formatting changes.
+5. **Add focused tests** for date formatting, default currency, supplied currency, and unchanged helpers.
 
-   > **Expected output:** The file contains no `<<<<<<<`, `=======`, or `>>>>>>>` markers.
+6. **Run the project test command** and save the output.
 
-5. **Add focused tests.** Check date formatting, default currency behavior, the supplied currency behavior, and any unchanged helper behavior.
+7. **Peer review the resolution.** Ask a partner to review only the resolution and tests. They should be able to say why both branch goals appear in the result.
 
-   > **Success criteria:** Tests show that neither branch's intended behavior was lost.
-
-6. **Run the project test command.**
-
-   > **Expected output:** The tests pass. Save the output for review.
-
-7. **Peer review the resolution.** Ask a partner to review only the conflict resolution and tests.
-
-   > **Success criteria:** The reviewer can explain why both original branch goals are represented in the merged result.
-
-### Checkpoint 3: conflict intent is preserved
+### Checkpoint 3
 
 - [ ] No conflict markers remain.
 - [ ] Both branch goals appear in the resolved behavior.
 - [ ] Tests cover date and currency formatting.
-- [ ] A peer can explain the merge decision from the record.
 
 ---
 
 ## Exercise 4: Review the code and test results (20 minutes)
 
-### Objective
-
-Use the code and test results to make your final review decision. An automated
-suggestion alone is not enough.
+Use the code and test results to make your final decision. An automated suggestion alone isn't enough.
 
 ### Steps
 
-1. **Select one blocking finding from Exercise 1.** Choose a security, correctness, or reliability issue.
+1. **Select one blocking finding from Exercise 1** (security, correctness, or reliability). It needs a file reference, impact, and acceptance criterion.
 
-   > **Success criteria:** The finding includes a file reference, impact, and acceptance criterion.
+2. **Check its triage row.** Add any missing before/after behavior, test names, or command output. A reviewer should reproduce the result from your notes.
 
-2. **Check the selected finding's triage row.** Add any missing before/after
-   behavior, test names, or command output; do not create a second record.
-
-   > **Expected output:** A reviewer can reproduce the result from your notes and command output.
-
-3. **Classify remaining risk.** Use these categories:
+3. **Classify remaining risk:**
 
    | Risk type | Question |
    | --- | --- |
    | Data | Did the change expose or process restricted data? |
    | Dependency | Did the change add or update packages? |
-   | Permission | Did the workflow require a new permission? |
+   | Permission | Did the workflow need a new permission? |
    | Security | Did validation, error handling, or secrets handling change? |
    | Quality | Do the tests and review results support the decision? |
 
 4. **Complete Human decision in `fix-evaluation-template.md`.** Choose approve,
-   request changes, or pause. Name the human reviewer and explain the decision.
+   request changes, or pause, and explain why. Someone reading it should understand
+   the decision without seeing your lab conversation.
 
-   > **Success criteria:** The decision is understandable without seeing the entire lab conversation.
+5. **Compare your initial review with both local outputs and the PR review.**
+   Complete the remaining template fields. Keep the original critique, record which
+   source raised each finding, and say why you accepted, revised, or rejected it.
+   The table should show differences, false positives, new code references or test
+   results, and any finding that changed the verdict.
 
-5. **Compare the initial human review with both local command outputs and the
-   PR review.** Complete the remaining fields in the same template. Preserve the original critique,
-   record which source raised each finding, and explain why the human reviewer
-   accepted, revised, or rejected it.
-
-   > **Expected output:** The triage table identifies differences, false
-   positives, new code references or test results, and any finding that changed the final verdict.
-
-### Checkpoint 4: final decision cites findings and checks
+### Checkpoint 4
 
 - [ ] The decision is approve, request changes, or pause.
 - [ ] The rationale cites findings, fixes, and check results.
-- [ ] Automated findings were accepted only after human review.
-- [ ] Remaining risk and the reviewer are named.
+- [ ] You accepted automated findings only after reviewing them.
 
 ## Final deliverable
 
-Submit one folder or document containing:
+One folder or document containing:
 
-1. `partner-review-checklist.md` with the unchanged initial human verdict.
-2. `fix-evaluation-template.md` with the review runs, finding triage, fixes, test
-   results, remaining risk, reviewer, and final human decision.
-3. Initial and correction outputs from `/review` and `/security-review`, the
-   private training PR reference, and test output for the corrected project.
+1. `partner-review-checklist.md` with the unchanged initial verdict.
+2. `fix-evaluation-template.md` with the review runs, finding triage, fixes, test results, remaining risk, and final decision.
+3. Initial and correction outputs from `/review` and `/security-review`, the private training PR reference, and test output for the corrected project.
 4. The resolved conflict decision and its test results.
 
-> **Done:** A reviewer can reconstruct the original risk, fix, checks, and final decision from your notes and command output.
-
----
-
-## Verification checklist
-
-- [ ] Findings cite code or test results and acceptance criteria.
-- [ ] A human reviewer made the final decision.
-- [ ] Both local commands ran before the initial change was committed.
-- [ ] Findings name their review source and a file/line or reproduction.
-- [ ] Unsupported exploit claims are rejected or left unresolved with a reason; no-findings results are recorded.
-- [ ] Both commands ran again on the correction diff before it was committed.
-- [ ] The private training PR received Copilot review; it was not merged.
-- [ ] Required checks were run.
-- [ ] Metered work stayed within the usage limit.
-- [ ] Starter files used: `code-changes.md`, `partner-review-checklist.md`, `fix-evaluation-template.md`, `review-project/`, and `conflict-scenario/`.
+Don't merge the training PR.

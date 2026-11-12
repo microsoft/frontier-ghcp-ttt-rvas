@@ -20,10 +20,10 @@ Session M7-06 | 3 hours
 
 Use:
 
-- the approved live GitHub issues;
+- the live GitHub issues;
 - the reviewed Session M7-05 parent result.
 
-Do not copy platform state into a static handoff.
+Skip static handoffs. They drift from the platform state.
 
 ---
 
@@ -44,7 +44,7 @@ Do not copy platform state into a static handoff.
 # Review run details on the platform
 
 Inspect run status, identifiers, timing, usage, and supporting results on the
-platform. Do not recreate those fields in a form.
+platform.
 
 ---
 
@@ -108,7 +108,7 @@ Do not maintain competing status fields.
 
 The core lab uses supervised manual runs.
 
-Enable a cadence only after separate approval. Update the current state when the
+Enable a cadence only after separate sign-off. Update the current state when the
 automation is enabled or disabled.
 
 ---
@@ -118,5 +118,4 @@ automation is enabled or disabled.
 1. Concise automation definition
 2. Reviewed stakeholder update
 
-Use the live Session M7-05 result and platform run records. Do not copy them into
-a status file or second run-status record.
+Run records stay on the platform.

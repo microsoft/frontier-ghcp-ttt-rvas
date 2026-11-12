@@ -10,17 +10,13 @@
 
 ## Overview
 
-Implement and review one Bookmark API slice: `POST /api/bookmarks`. Keep the
-accepted GitHub issue as the limit on what you change and apply the Session M5-02
-specification standards. Finish with test results and a handoff that another
-engineer can use.
+Implement and review one Bookmark API slice: `POST /api/bookmarks`. The accepted
+GitHub issue limits what you change, and the Session M5-02 specification standards
+apply. You finish with test results and a handoff another engineer can use.
 
 **The capstone stays small on purpose.** Authentication, persistent storage,
-deployment, and every other bookmark endpoint remain out of scope.
-
-Implement only the accepted endpoint. Use synthetic data and the existing
-dependencies. Stop if the work requires another endpoint, live data, deployment,
-tool configuration, or a new dependency.
+deployment, and every other bookmark endpoint are out of scope. Use synthetic data
+and the existing dependencies.
 
 ## Learning outcomes
 

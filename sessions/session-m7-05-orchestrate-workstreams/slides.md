@@ -32,10 +32,10 @@ Session M7-05 | 3 hours
 
 # Required access
 
-- `/orchestrate` must create and coordinate live child sessions.
-- Product route: GitHub MCP must read the selected issues.
+- `/orchestrate` creates and coordinates live child sessions.
+- Product route: GitHub MCP reads the selected issues.
 - Developer route: local project read access and Python 3.10 or later.
-- You must be able to open, redirect, and stop child sessions.
+- You can open, redirect, and stop child sessions.
 
 ---
 
@@ -106,8 +106,7 @@ Check criterion 5. Does the test prove sorted reason codes, the exact complete
 reason list, or both? Do not edit files.
 ```
 
-Inspect the revised answer. A follow-up question does not prove the first answer
-was wrong.
+Inspect the revised answer. A follow-up doesn't prove the first answer was wrong.
 
 ---
 
@@ -120,8 +119,7 @@ Check the actual snapshot:
 - required `integration-tests` failed;
 - blocking thread `R1` is unresolved.
 
-Check the parent's decision against the snapshot. Do not manufacture conflicting
-child answers. Local success does not override PR blockers.
+Check the parent's decision against the snapshot. Local success doesn't override PR blockers.
 
 ---
 
@@ -145,8 +143,6 @@ gaps, and give a recommendation. Obey each stop condition.
 | The result meets the plan | Accept |
 | The result lacks support | Reject |
 | Human authority is required | Escalate |
-
-Do not maintain a second status log.
 
 ---
 
@@ -198,8 +194,7 @@ publication, or release statement.
 2. Live child-session results
 3. Reviewed parent result linked to live issues
 
-Keep progress on the orchestration surface. Do not copy it into a delivery-status
-form or copy session identifiers.
+Keep progress on the orchestration surface, not in a status form.
 
 For developers, use the developer plan and reviewed parent result instead of
 live issues. Include the actual redirection, rejected or unresolved claims, and

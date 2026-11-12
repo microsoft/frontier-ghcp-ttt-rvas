@@ -213,12 +213,12 @@ no packages, return copies, only lib/todo-store.js
 ```
 
 Compare the rewrite with the tests. Correct missing constraints or invented work
-before submitting it for implementation.
+before submitting it.
 
 **Current input:** `Ctrl+X`, then `/`, then `/refine` without arguments.
 
-The lab uses five minutes of the baseline-store block for this comparison.
-CLI access is required; do not assume the same command exists in editor Chat.
+The lab uses five minutes of the baseline-store block for this comparison. Editor
+Chat has no `/refine`.
 
 ---
 

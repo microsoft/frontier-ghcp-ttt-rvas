@@ -1,10 +1,10 @@
 # Session M6-02 trainer guide: End-to-end capstone for one endpoint
 
-## Teaching goal
+## Goal
 
 Guide learners through one reviewed `POST /api/bookmarks` change with GitHub Copilot.
-Keep scope decisions in the accepted GitHub issue and require the Session M5-02
-specification standards. Do not let the exercise expand into a full API,
+Scope decisions live in the accepted GitHub issue, and the Session M5-02
+specification standards apply. Don't let the exercise grow into a full API,
 deployment, or tool tour.
 
 ## One-hour plan
@@ -21,8 +21,8 @@ deployment, or tool tour.
 ## Teach the boundary
 
 The required slice is `POST /api/bookmarks`. Learners use GitHub Copilot to
-implement it, run the tests, and review the result with a person.
-**Unfinished work does not count as capstone completion.**
+implement it, run the tests, and review the result with a person. **Unfinished work
+isn't capstone completion.**
 
 Write these non-goals where everyone can see them:
 
@@ -32,23 +32,20 @@ Write these non-goals where everyone can see them:
 - no deployment or CI redesign;
 - no new dependency.
 
-## Keep the boundary in the issue
-
-Have learners put every scope decision in the accepted GitHub issue. Do not create a
-separate form. They must implement only `POST /api/bookmarks`, use synthetic data,
-and keep the existing dependencies. They must stop if the work requires another
-endpoint, live data, deployment, tool configuration, or a new dependency.
+Learners put every scope decision in the accepted GitHub issue. They stop if the
+work needs another endpoint, live data, deployment, tool configuration, or a new
+dependency.
 
 ## Apply Session M5-02
 
-Use `lab/starter/bookmark-create-spec.md` as the source for accepted behavior. Ask
-learners to check that each requirement is observable, technology choices stay in
-the constraints section, and non-goals are named. They must map each issue
-criterion to a specification ID and a test.
+Use `lab/starter/bookmark-create-spec.md` as the source for accepted behavior.
+Learners check that each requirement is observable, technology choices stay in the
+constraints section, and non-goals are named. They map each issue criterion to a
+specification ID and a test.
 
-The issue should name the exact route, response shapes, validation rules, duplicate
-behavior, expected files, required tests, reviewer, and stop conditions. It must not
-invent behavior absent from the specification.
+The issue names the exact route, response shapes, validation rules, duplicate
+behavior, expected files, required tests, reviewer, and stop conditions. It adds no
+behavior missing from the specification.
 
 ## Implementation walkthrough
 
@@ -62,39 +59,32 @@ another endpoint, live data, deployment, tool configuration, or a new dependency
 Report changed files, test results, deviations, and deferred scope for review.
 ```
 
-After 30 minutes of implementation, check whether learners can finish within the
-segment. If blocked, record the blocker and a request-changes or pause decision
-in the handoff. Resume implementation before claiming completion.
+After 30 minutes, check whether learners can finish in the segment. If blocked,
+they record the blocker and a request-changes or pause decision in the handoff.
 
 ## Review gate
-
-Review in this order:
 
 1. Specification and acceptance criteria.
 2. Scope and deferrals.
 3. Validation, response shape, duplicate handling, and tests.
-4. Stop conditions and deviations from the accepted issue.
-5. Handoff owner and next action.
+4. Deviations from the accepted issue.
+5. Next action and its owner.
 
-Record one decision: approve, request changes, or pause. **Do not approve a change
+Record one decision: approve, request changes, or pause. **Don't approve a change
 with a serious issue because time ran out.**
 
 ## Reference assets
 
-- `lab/solution/capstone-project/` contains the creation endpoint and tests.
-- `lab/solution/reference-handoff.md` shows the full issue-to-handoff record.
-- `lab/starter/capstone-handoff.md` is the learner template.
-- `lab/starter/trainer-delivery-plan-template.md` is an optional trainer
-  reflection. It is not a learner deliverable.
+- `lab/solution/capstone-project/`: the creation endpoint and tests.
+- `lab/solution/reference-handoff.md`: the full issue-to-handoff record.
+- `lab/starter/capstone-handoff.md`: the learner template.
+- `lab/starter/trainer-delivery-plan-template.md`: optional trainer reflection, not a learner deliverable.
 
 ## Common questions
 
-**Should learners add the other Bookmark endpoints?** No. Record them under deferred
-scope.
+**Should learners add the other Bookmark endpoints?** No. Record them under deferred scope.
 
-**What if agent access fails?** Do not count a
-patch plan as capstone completion.
+**What if agent access fails?** A patch plan isn't capstone completion.
 
-**What if the tests cannot run?** Record the command, failure, findings from
-inspection, and owner for the next action. Do not approve without executable
-test results.
+**What if the tests can't run?** Record the command, the failure, findings from
+inspection, and the next action. Don't approve without executable test results.

@@ -2,13 +2,8 @@
 
 **Duration:** 2 hours
 
-**Difficulty:** Advanced
-
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and the Session M2-07 trainer content
-
 **Deliverable:** A working .NET 10 order-pricing endpoint, shared contract-test
-output, architecture notes, an HTTP parity check, and a reviewed migration
-backlog
+output, architecture notes, an HTTP parity check, and a migration backlog
 
 ## Lab outcome
 
@@ -16,33 +11,21 @@ Run a Java 8-compatible order service, trace one request through it, and migrate
 `POST /orders/price` to an ASP.NET Core Minimal API. The Java and .NET
 implementations must pass the same JSON contract cases.
 
-Keep the scope narrow. Do not migrate the health or sample-order routes during the
-main exercise.
+Keep the scope narrow. Don't migrate the health or sample-order routes.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Preflight and run the Java baseline | 15 min |
+| 1 | Run the Java baseline | 15 min |
 | 2 | Extract behavior and architecture | 20 min |
 | 3 | Review the shared contract | 15 min |
 | 4 | Implement the .NET pricing slice | 35 min |
 | 5 | Add and run contract tests | 20 min |
 | 6 | Compare HTTP behavior and write the backlog | 15 min |
 
-## Preflight
+## You need
 
-### Copilot access
-
-Check that GitHub Copilot Chat works in the training environment. Ask it
-to summarize the open file, then check that the answer refers to that file.
-
-Do not paste the exercise into an
-unapproved public assistant.
-
-### Primary environment: Dev Container or Codespaces
-
-Open the repository in its Dev Container or Codespaces.
-
-Run:
+Open the repository in its Dev Container or Codespaces, with GitHub Copilot Chat
+working. Check:
 
 ```bash
 java -version
@@ -51,43 +34,24 @@ git --version
 curl --version
 ```
 
-Expected:
-
-- Java is available. The container uses Java 21 and compiles the legacy project
-  for Java 8.
+- Java is available. The container uses Java 21 and compiles the legacy project for Java 8.
 - `dotnet --version` reports a 10.x SDK.
 - Git and `curl` are available.
 
-The Maven Wrapper downloads the pinned Maven version on first use. You do not need
-a global Maven installation.
+The Maven Wrapper downloads the pinned Maven version on first use.
 
 ### Native setup alternative
 
-Use this route only when the repository container is unavailable.
+Without the container, install JDK 17 or 21, the .NET 10 SDK, Git, and `curl` or
+a comparable HTTP client. Check `java -version` and `dotnet --list-sdks`.
 
-Install:
-
-- JDK 17 or 21;
-- .NET 10 SDK;
-- Git;
-- `curl` or a comparable HTTP client.
-
-Check:
-
-```bash
-java -version
-dotnet --list-sdks
-```
-
-On macOS or Linux, use `./mvnw`. On Windows, use `mvnw.cmd`. PowerShell learners
-can replace `curl` commands with `Invoke-RestMethod`.
-
-Do not change the target framework or Maven compiler level to fit an older local
-machine. Fix the environment instead.
+On macOS or Linux, use `./mvnw`. On Windows, use `mvnw.cmd`. In PowerShell, use
+`Invoke-RestMethod` instead of `curl`. Don't change the target framework or Maven
+compiler level to fit an older machine.
 
 ### Create a working copy
 
-Run from the repository root:
+From the repository root:
 
 ```bash
 mkdir -p ~/copilot-labs/session-m2-07
@@ -96,11 +60,9 @@ cp -R sessions/session-m2-07-java-to-dotnet-modernization/lab/starter/. \
 cd ~/copilot-labs/session-m2-07
 ```
 
-Keep the curriculum files unchanged. Complete the lab in the copied folder.
+Complete the lab in the copied folder.
 
 ## Part 1: Run the Java baseline (15 minutes)
-
-Open the legacy project:
 
 ```bash
 cd ~/copilot-labs/session-m2-07/legacy-java-order-service
@@ -135,7 +97,7 @@ curl -X POST http://localhost:8080/orders/price \
   --data '{"customerTier":"GOLD","destination":"DOMESTIC","couponCode":"SAVE10","items":[{"sku":"SKU-RED","quantity":2,"unitPriceCents":1299},{"sku":"SKU-BLUE","quantity":1,"unitPriceCents":2499}]}'
 ```
 
-Expected field values:
+Expected field values (JSON spacing may differ):
 
 ```json
 {
@@ -148,12 +110,9 @@ Expected field values:
 }
 ```
 
-JSON spacing may differ.
+### Without `curl`
 
-### Manual HTTP route
-
-If `curl` is unavailable, use the VS Code REST Client, a browser for the two GET
-routes, or PowerShell:
+Use the VS Code REST Client, a browser for the two GET routes, or PowerShell:
 
 ```powershell
 $body = @{
@@ -172,12 +131,9 @@ Invoke-RestMethod -Method Post `
   -Body $body
 ```
 
-**Checkpoint:** The Java tests pass and the service returns the expected pricing
-fields.
+**Checkpoint:** The Java tests pass and the service returns the expected pricing fields.
 
 ## Part 2: Extract behavior and architecture (20 minutes)
-
-Copy the notes template:
 
 ```bash
 cp architecture-notes-template.md architecture-notes.md
@@ -200,11 +156,10 @@ point, JSON parsing, validation, pricing calculation, response mapping, and test
 evidence. Cite file and symbol names. Do not propose .NET code and do not edit.
 ```
 
-Check every row against the files before using it in your notes.
+Check every row against the files before using it. Complete the request path and
+pricing-rule tables in `architecture-notes.md`.
 
-Complete the request path and pricing-rule tables in `architecture-notes.md`.
-
-Record these accepted behaviors:
+Record these behaviors:
 
 - `STANDARD`, `SILVER`, and `GOLD` tier values;
 - `SAVE10` coupon behavior;
@@ -215,29 +170,18 @@ Record these accepted behaviors:
 - invalid input behavior;
 - overflow handling.
 
-Then list Java details that do not need to survive:
-
-- `HttpHandler` classes;
-- getter methods;
-- the hand-written JSON codec;
-- the exact package and file layout.
+Then list Java details that don't need to survive: `HttpHandler` classes, getter
+methods, the hand-written JSON codec, and the package and file layout.
 
 ### Review point 1
 
-Explain the route without saying "the service calls the service class." Name what
-each step does and which behavior a replacement must preserve.
+Explain the route step by step. Say what each step does and which behavior a
+replacement must preserve.
 
 ## Part 3: Review the shared contract (15 minutes)
 
-Open:
-
-```text
-~/copilot-labs/session-m2-07/contracts/order-pricing-cases.jsonl
-```
-
-Each line is one complete case. Review the five names and expected fields.
-
-Ask Copilot:
+Open `~/copilot-labs/session-m2-07/contracts/order-pricing-cases.jsonl`. Each line
+is one complete case. Review the five names and expected fields.
 
 ```text
 Compare OrderPricingService.java with contracts/order-pricing-cases.jsonl.
@@ -245,9 +189,7 @@ List the calculation order, rounding formula, shipping threshold, accepted value
 and behavior that is not covered by the fixtures. Do not edit files.
 ```
 
-Check the answer manually.
-
-Calculate the `round-half-up` case:
+Check the answer by hand. Calculate the `round-half-up` case:
 
 ```text
 subtotal = 101
@@ -260,41 +202,26 @@ tax = round(86 × 8.25%) = 7
 total = 86 + 795 + 7 = 888
 ```
 
-Add one row to `architecture-notes.md` for behavior not covered by a successful
-fixture. Examples include an invalid tier, empty items, or an unsupported coupon.
-Do not change the shared fixture yet.
+Add a row to `architecture-notes.md` for behavior no successful fixture covers, such
+as an invalid tier, empty items, or an unsupported coupon. Don't change the shared
+fixture yet.
 
 ### Review point 2
 
-Before coding, check that your notes let a partner or trainer answer:
+Before coding, your notes should let a partner answer:
 
 - Why is the coupon based on `after tier`?
 - Why does the free-shipping check use discounted merchandise?
-- Why is tax not calculated on shipping?
+- Why isn't tax calculated on shipping?
 - Which formula produces round-half-up?
 
 ## Part 4: Implement the .NET pricing slice (35 minutes)
 
-Open:
-
-```text
-~/copilot-labs/session-m2-07/modern-dotnet-order-service/
-```
-
-The scaffold contains:
-
-- `OrderPricing.Api/Program.cs`
-- `OrderPricing.Api/Pricing.cs`
-- `OrderPricing.Api/OrderPricing.Api.csproj`
-
-`Program.cs` already maps:
-
-- `GET /health`
-- `POST /orders/price`
+Open `~/copilot-labs/session-m2-07/modern-dotnet-order-service/`. The scaffold has
+`OrderPricing.Api/Program.cs`, `Pricing.cs`, and `OrderPricing.Api.csproj`.
+`Program.cs` already maps `GET /health` and `POST /orders/price`.
 
 Implement only `PricingEngine.Price` and its private helpers.
-
-Use this prompt:
 
 ```text
 Implement PricingEngine.Price in this .NET 10 scaffold.
@@ -316,11 +243,8 @@ Return a short plan before editing. After editing, explain how each shared case 
 covered.
 ```
 
-Review the proposed plan. Reject package additions and contract changes.
-
-After Copilot edits the file, inspect it line by line.
-
-Check:
+Review the plan. Reject package additions and contract changes. After Copilot
+edits the file, inspect it line by line:
 
 - [ ] Tier discount uses the original subtotal.
 - [ ] Coupon discount uses the amount after tier discount.
@@ -338,14 +262,9 @@ cd ~/copilot-labs/session-m2-07/modern-dotnet-order-service/OrderPricing.Api
 dotnet build
 ```
 
-If the build fails, fix the specific compiler error. Do not weaken nullable checks
-or change the target from `net10.0`.
-
-### Edit-tool recovery
-
-If an edit tool fails after Copilot access passes preflight, type the
-implementation from the accepted rules. Copilot access is still required. Manual
-editing recovers from an edit-tool failure; it is not a no-access route.
+If the build fails, fix the specific compiler error. Don't weaken nullable checks
+or change the target from `net10.0`. If the edit tool fails, type the
+implementation from the accepted rules.
 
 ### Review point 3
 
@@ -357,8 +276,8 @@ operation order, rounding, validation, overflow, shipping threshold, tax base,
 and response fields. Return findings with file and symbol names. Do not edit.
 ```
 
-Check each finding and fix the ones supported by the contract. Record rejected
-suggestions and why they did not match it.
+Check each finding and fix the ones the contract supports. Note rejected
+suggestions and why they didn't match it.
 
 ## Part 5: Add and run shared contract tests (20 minutes)
 
@@ -382,10 +301,7 @@ Update the test project so it copies the shared fixture into its output:
 </ItemGroup>
 ```
 
-Implement the test executable in
-`OrderPricing.ContractTests/Program.cs`.
-
-It must:
+In `OrderPricing.ContractTests/Program.cs`, the test executable must:
 
 1. read every non-empty JSONL line;
 2. deserialize the request and expected quote with `System.Text.Json`;
@@ -394,8 +310,6 @@ It must:
 5. throw with the case name and field when a value differs;
 6. print the number of passing cases.
 
-Suggested prompt:
-
 ```text
 Implement this package-free .NET 10 console project as a contract test runner.
 Read contracts/order-pricing-cases.jsonl from AppContext.BaseDirectory.
@@ -403,8 +317,6 @@ Deserialize each line, call PricingEngine.Price, compare every PriceQuote field,
 and throw a clear exception with case name, field, expected, and actual.
 Do not add a test framework or any package.
 ```
-
-Run:
 
 ```bash
 dotnet run --project OrderPricing.ContractTests
@@ -423,10 +335,10 @@ cd ~/copilot-labs/session-m2-07/legacy-java-order-service
 ./mvnw test
 ```
 
-Both outputs should report five passing cases.
+Both should report five passing cases.
 
-**Checkpoint:** The Java baseline and .NET replacement consume the same fixture
-file and agree on every response field.
+**Checkpoint:** The Java baseline and .NET replacement read the same fixture file
+and agree on every response field.
 
 ## Part 6: Compare HTTP behavior and write the backlog (15 minutes)
 
@@ -451,9 +363,9 @@ curl -s -X POST http://localhost:5080/orders/price \
   --data "$REQUEST"
 ```
 
-Compare field values. JSON property order or whitespace may differ.
+Compare field values. JSON property order and whitespace may differ.
 
-Also send one invalid request:
+Send one invalid request:
 
 ```bash
 curl -i -X POST http://localhost:5080/orders/price \
@@ -461,7 +373,7 @@ curl -i -X POST http://localhost:5080/orders/price \
   --data '{"customerTier":"PLATINUM","destination":"DOMESTIC","couponCode":"","items":[{"sku":"SKU-RED","quantity":1,"unitPriceCents":100}]}'
 ```
 
-Check for an HTTP 400 response with a clear error.
+Expect an HTTP 400 response with a clear error.
 
 Copy the backlog template:
 
@@ -470,63 +382,37 @@ cd ~/copilot-labs/session-m2-07
 cp migration-backlog-template.md migration-backlog.md
 ```
 
-Complete at least four rows. Keep slices small. Each row must state:
+Complete at least four small rows. Each states the current Java entry point, the
+proposed .NET boundary, the checks required before cutover, and one risk or
+dependency. Include the sample-order query, health and diagnostics, error-contract
+coverage, and one operational concern such as concurrency or observability.
 
-- current Java entry point;
-- proposed .NET boundary;
-- checks required before cutover;
-- one risk or dependency.
-
-Include:
-
-- sample-order query;
-- health and diagnostics;
-- error-contract coverage;
-- one operational concern such as concurrency or observability.
-
-Under **Keep in Java for now**, list behavior you have not yet traced and checked.
+Under **Keep in Java for now**, list behavior you haven't traced and checked.
 
 Under **Remove only after**, require:
 
-- accepted contract-test results;
+- contract-test results;
 - HTTP comparison;
 - code review;
 - deployment and rollback ownership;
-- a decision on how callers move to the new route.
+- a plan for moving callers to the new route.
 
 ## Final deliverable
 
-Submit or demonstrate:
-
-1. `architecture-notes.md` with the request path and accepted pricing rules.
-2. The completed `.NET 10` `PricingEngine`.
+1. `architecture-notes.md` with the request path and pricing rules.
+2. The completed .NET 10 `PricingEngine`.
 3. A package-free .NET contract test executable.
 4. Java and .NET output showing five shared cases passed.
-5. One matching Java and .NET HTTP response.
-6. One .NET HTTP 400 validation example.
-7. `migration-backlog.md` with at least four next slices and removal conditions.
-8. A short review note listing any Copilot suggestion you rejected.
-
-## Final verification
-
-- [ ] GitHub Copilot access passed preflight.
-- [ ] Work happened in a copied lab folder.
-- [ ] `./mvnw test` passed five shared cases.
-- [ ] The Java service returned the expected gold plus coupon quote.
-- [ ] Architecture notes separate behavior from Java structure.
-- [ ] The .NET project still targets `net10.0`.
-- [ ] No unnecessary package was added.
-- [ ] The .NET contract runner passed the same five fixture lines.
-- [ ] The Java and .NET HTTP responses matched by value.
-- [ ] Invalid .NET input returned HTTP 400.
-- [ ] The backlog says what remains in Java and which checks each next slice needs.
+5. One matching Java and .NET HTTP response, and one .NET HTTP 400 validation example.
+6. `migration-backlog.md` with at least four next slices and removal conditions.
+7. A short note listing any Copilot suggestion you rejected.
 
 ## Troubleshooting
 
 | Problem | Check |
 | --- | --- |
 | `Permission denied: ./mvnw` | Run `chmod +x mvnw`, then retry |
-| Maven cannot download on first run | Check the network or use the instructor-prepared wrapper cache |
+| Maven cannot download on first run | Check the network or use the trainer-prepared wrapper cache |
 | Port 8080 is in use | Set `PORT=8081` for Java and update the request URL |
 | .NET SDK cannot target `net10.0` | Use the Dev Container/Codespaces or install .NET 10 |
 | Contract test cannot find JSONL | Check the `None Include` path and `CopyToOutputDirectory` |
@@ -536,6 +422,5 @@ Submit or demonstrate:
 
 ## Solution reference
 
-The reference implementation is in [`solution/`](solution/). Review it after you
-have test output or when the trainer ends the implementation timebox. Compare
-behavior and test results before comparing formatting.
+The reference implementation is in [`solution/`](solution/). Compare behavior and
+test results before formatting.

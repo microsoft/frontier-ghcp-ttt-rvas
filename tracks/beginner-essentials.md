@@ -1,66 +1,38 @@
 # Track: Copilot Essentials
 
-**Target Audience:** Teams just starting with GitHub Copilot
-**Duration:** 15 hours (5 sessions × 3 hrs)
-**Difficulty:** Beginner → Intermediate
-**Recommended Delivery:** 2 days (2 to 3 sessions per day)
+**For:** teams new to GitHub Copilot
+**Time:** 15 hours, 5 sessions
+**Delivery:** 2 days
 
----
+Set up Copilot, learn its core features and prompting, then move to the CLI and IDE agent mode.
 
-## Description
+## Before you start
 
-Start here if your team is new to Copilot. Set it up, try its core features, and
-practice writing prompts before using it in the terminal and IDE agent mode.
-
-## Prerequisites
-
-- Working knowledge of at least one programming language
-- GitHub account with Copilot access
-- VS Code installed
-- Basic Git proficiency
-- Node.js 22 or later and standalone CLI authentication before Session M1-03's `/refine` exercise
-- CLI commands and local sandbox support listed in Session M2-01's preflight
+- Working knowledge of one programming language, Git, and VS Code
+- A GitHub account with Copilot access
+- Node.js 22 or later and CLI authentication before M1-03 (`/refine`)
 
 ## Sessions
 
-| Order   | Session ID   | Title                             | Difficulty   | Duration   |
-| ------- | ----------- | --------------------------------- | ------------ | ---------- |
-| 1       | M1-01          | Introduction to GitHub Copilot    | Beginner     | 3 hrs      |
-| 2       | M1-02          | Copilot Chat & Inline Suggestions | Beginner     | 3 hrs      |
-| 3       | M1-03          | Prompt Engineering Fundamentals   | Beginner     | 3 hrs      |
-| 4       | M2-01          | GitHub Copilot in the CLI         | Intermediate | 3 hrs      |
-| 5       | M2-02          | Agent Mode in the IDE             | Intermediate | 3 hrs      |
+| # | ID | Session | Time |
+| ---: | --- | --- | --- |
+| 1 | M1-01 | [Introduction to GitHub Copilot](../sessions/session-m1-01-intro-to-copilot/README.md) | 3 hrs |
+| 2 | M1-02 | [Copilot Chat & Inline Suggestions](../sessions/session-m1-02-chat-and-inline/README.md) | 3 hrs |
+| 3 | M1-03 | [Prompt Engineering Fundamentals](../sessions/session-m1-03-prompt-engineering/README.md) | 3 hrs |
+| 4 | M2-01 | [GitHub Copilot in the CLI](../sessions/session-m2-01-copilot-cli/README.md) | 3 hrs |
+| 5 | M2-02 | [Agent Mode in the IDE](../sessions/session-m2-02-agent-mode-ide/README.md) | 3 hrs |
 
-## Recommended delivery schedule
+## Schedule
 
-### 2-day intensive
+| Day | Sessions |
+| --- | --- |
+| 1 | M1-01, M1-02, M1-03 |
+| 2 | M2-01, M2-02 |
 
-| Day   | Sessions            | Focus                               |
-| ----- | ------------------- | ----------------------------------- |
-| Day 1 | Sessions M1-01, M1-02, M1-03 | Foundations: setup, Chat, prompting |
-| Day 2 | Sessions M2-01, M2-02     | Surfaces: CLI and agent mode        |
+For a slower pace, run three days: M1-01 and M1-02, then M1-03, then M2-01 and M2-02.
 
-### 3-day relaxed
+## Next
 
-| Day   | Sessions        | Focus                        |
-| ----- | --------------- | ---------------------------- |
-| Day 1 | Sessions M1-01, M1-02 | Setup and Chat workflows     |
-| Day 2 | Session M1-03      | Prompt engineering practice  |
-| Day 3 | Sessions M2-01, M2-02 | CLI and agent mode           |
-
-## Learning outcomes
-
-After this track, you should be able to:
-
-1. Install, configure, and use GitHub Copilot in the IDE and CLI
-2. Use Copilot Chat, inline suggestions, and Next Edit Suggestions in daily workflows
-3. Write clear prompts and check Copilot's output for accuracy and usefulness
-4. Use standalone `copilot` in the terminal for command explanation and generation
-5. Use agent mode for multi-step, multi-file coding tasks
-6. Explain Copilot's capabilities and limitations to your team
-
-## Next steps
-
-- **Developer Productivity**. Add code review and Spaces to daily development
-- **Agentic Development**. Learn autonomous workflows, MCP, and custom agents
-- **DevOps & Automation**. Apply Copilot to CI/CD, Actions, and infrastructure
+- **Developer Productivity** adds code review and Spaces.
+- **Agentic Development** adds MCP, custom agents, and the cloud agent.
+- **DevOps & Automation** covers CI/CD and infrastructure.

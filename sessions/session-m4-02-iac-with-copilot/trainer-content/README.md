@@ -2,9 +2,7 @@
 
 ## Teaching goal
 
-Show how to build and connect Terraform
-modules, validate them locally, and investigate a security-gate failure. Keep
-Bicep as a short trainer comparison or optional extension.
+Show how to build and connect Terraform modules, validate them locally, and investigate a security-gate failure. Keep Bicep to a short comparison.
 
 ## One-hour plan
 
@@ -20,24 +18,18 @@ Bicep as a short trainer comparison or optional extension.
 ## Prepare
 
 - Run `terraform fmt -check -recursive` on the solution.
-- Initialize the solution with `-backend=false` and run `terraform validate`.
+- Initialize it with `-backend=false` and run `terraform validate`.
 - Run the security gate once against the insecure file and once against the fix.
-- Keep cloud credentials unset.
-- Prepare the Bicep solution for a six-minute comparison. Do not assign it as
-  required learner work.
+- Leave cloud credentials unset.
+- Prepare the Bicep solution for a six-minute comparison.
 
 ## Architecture and module contracts
 
-Use the supplied three-tier design. Trace address space and subnets through the
-network module. Show how compute uses subnet IDs and exposes the application
-security group, then how database uses that group and its private subnets.
+Use the supplied three-tier design. Trace address space and subnets through the network module. Show how compute uses subnet IDs and exposes the application security group, then how the database uses that group and its private subnets.
 
-Ask learners to state each boundary before generating code. A module is useful
-when its callers depend on a small, stable interface.
+Ask learners to state each boundary before generating code. A module pays off when callers depend on a small, stable interface.
 
 ## Root composition
-
-Use this request:
 
 ```text
 Read the Terraform root module and architecture constraints. Complete the network,
@@ -46,12 +38,9 @@ outputs. Keep the database password sensitive. Do not add credentials, a backend
 plan, or apply command.
 ```
 
-Inspect every added input and output. Reject duplicated CIDRs or values copied
-between modules when an output should carry them.
+Inspect every added input and output. Reject duplicated CIDRs or values copied between modules when an output should carry them.
 
 ## Staged validation
-
-Run checks in this order:
 
 ```bash
 terraform fmt -check -recursive
@@ -59,49 +48,32 @@ terraform init -backend=false
 terraform validate
 ```
 
-Formatting catches style drift. Initialization resolves providers and modules.
-Validation checks the configuration against the installed provider schema. None of
-these commands compares the configuration with a cloud environment.
+Formatting catches style drift. Initialization resolves providers and modules. Validation checks the configuration against the installed provider schema. None of them compares the configuration with a cloud environment.
 
-Do not run a plan during the required session. A plan needs an approved identity,
-target environment, backend decision, and human review.
+Skip `terraform plan` in this session. A plan needs an identity, a target environment, a backend decision, and human review.
 
 ## Intentional security failure
-
-Run:
 
 ```bash
 bash lab/starter/check-security.sh lab/starter/insecure-iac/main.tf
 ```
 
-Let learners inspect the output before showing the solution. The gate should fail.
-Each repair must connect a reported pattern to the architecture or security rule.
+Let learners read the output before you show the solution. The gate fails. Each repair must connect a reported pattern to the architecture or a security rule.
 
-Rerun the gate and Terraform validation against the repaired working file.
-Then compare it with `lab/solution/secure-iac/main.tf`.
+Rerun the gate and `terraform validate` on the repaired file, then compare with `lab/solution/secure-iac/main.tf`.
 
 ## Bicep comparison
 
-Use the final six minutes to show the prepared Bicep module calls, `@secure()`
-parameter, and outputs. Learners do not need to build a second project.
-
-## Access policy
-
-GitHub Copilot, Terraform, and the approved provider source are required. No cloud
-account or credentials are needed.
+Spend six minutes on the prepared Bicep module calls, the `@secure()` parameter, and outputs. Learners don't build a second project.
 
 ## Lab handoff
 
-Give learners 90 minutes to complete the Terraform modules, run staged checks,
-and investigate the security failure. Ask them to submit command output.
+Learners have 90 minutes to complete the modules, run the staged checks, and investigate the security failure. They submit command output.
 
 ## Common questions
 
-**Do not run a plan.** The required exercise has no approved cloud target or identity.
-Local validation is enough for the learning goal.
+**Why no plan?** There's no cloud target or identity. Local validation covers the learning goal.
 
-**Keep Bicep as a comparison.** It shows that the module and validation ideas transfer without
-doubling the required implementation.
+**Why keep Bicep a comparison?** It shows the module and validation ideas transfer without doubling the work.
 
-**Keep policy tooling separate.** The security script is a deterministic
-training gate for the supplied failure. It does not replace policy tooling.
+**Does the security script replace policy tooling?** No. It's a deterministic training gate for the supplied failure.

@@ -8,77 +8,51 @@
 
 Teach learners to define a canvas contract and explain each action. Show a rejected update, then check whether the final state matches the contract.
 
-## Required preparation
+## Preparation
 
-Before class:
-
-1. Check GitHub Copilot app access and the built-in `/create-canvas` skill.
-2. Decide whether project scope under `.github/extensions` is allowed. Use user
-   scope when it is not.
-3. Use only the synthetic files in `../lab/starter/`.
-4. Run:
+1. Check that you have Copilot app access and the built-in `/create-canvas` skill.
+2. Decide on project scope (`.github/extensions`) or user scope.
+3. Run the harness:
 
    ```bash
    cd sessions/session-m3-01-copilot-app-canvases/lab/starter
    npm test
    ```
 
-5. Open `prepared-items.json`, `canvas-contract.md`, and `demo-runbook.md`.
-6. Name the demo owner and reviewer.
-7. Keep `../lab/solution/demo-evidence.md` ready for a delayed or unavailable live run.
+4. Open `prepared-items.json`, `canvas-contract.md`, and `demo-runbook.md`.
+5. Keep `../lab/solution/demo-evidence.md` ready in case the live run is delayed or unavailable. If `/create-canvas` is missing, use this prepared manual demo and say so.
 
-The delivery-readiness board is the default. For early finishers, follow-up
-practice, or a CI-focused audience, prepare the optional Feature Workbench files:
+For early finishers or a CI-focused audience, the optional Feature Workbench variant reuses the same method with a narrower decision: may synthetic feature work pass a test gate?
 
 - `../lab/starter/feature-workbench-contract.md`
 - `../lab/starter/feature-workbench-sample.json`
 - `../lab/solution/feature-workbench-solution.md`
 - `../lab/solution/feature-workbench-final-state.json`
 
-Do not replace the main demo or change the one-hour plan. The variant reuses the
-same contract-first method with a narrower decision: whether synthetic feature
-work may pass a test gate.
-
-## Access decision
-
-The live demo requires all of these:
-
-- GitHub Copilot app access;
-- `/create-canvas` is present;
-- the chosen extension scope is approved;
-- the trainer can inspect generated files and capabilities;
-- synthetic data is used.
-
-If any condition fails, use the prepared manual demo. **Do not bypass a policy, install a community replacement, or claim that a generated extension ran when it did not.**
+Learners review three synthetic CI checks, see a gate decision rejected when a required check fails, then add the evidence that allows a retry. People may acknowledge a result and request a gate evaluation. The agent may propose `pass`, `hold`, or `rerun`. A human reviewer records the decision. The workbench never deploys, merges, or calls a live CI service. The worked solution holds `FEAT-204` because `integration-tests` failed.
 
 ## One-hour plan
 
 | Time | Segment | What learners show |
 | --- | --- | --- |
-| 0:00 to 0:05 | Outcome and access check | Required access checked |
+| 0:00 to 0:05 | Outcome | Deliverables understood |
 | 0:05 to 0:13 | Choose the right customization | Canvas decision explained |
 | 0:13 to 0:23 | Build the contract | State, actions, capabilities, validation |
-| 0:23 to 0:30 | Inspect prepared inputs and harness | Passing local contract tests |
-| 0:30 to 0:43 | Prepared or live canvas demo | Two visible state changes |
+| 0:23 to 0:30 | Prepared inputs and harness | Passing local contract tests |
+| 0:30 to 0:43 | Live or prepared demo | Two visible state changes |
 | 0:43 to 0:50 | Rejection and recovery | Rule preserved through recovery |
-| 0:50 to 0:56 | Generated extension review | Keep, revise, or remove decisions |
-| 0:56 to 1:00 | Lab handoff | Roles, deliverables, and checkpoints clear |
+| 0:50 to 0:56 | Generated extension review | Keep, revise, or remove |
+| 0:56 to 1:00 | Lab handoff | Roles and checkpoints clear |
 
-## 0:00 to 0:05: Set the outcome and check access
+## 0:00 to 0:05: Outcome
 
-Say:
+Frame the session: "We are designing one shared artifact. Judge it by its visible behavior, not by a polished chat response."
 
-> "We are designing one shared artifact. Judge it by its visible behavior, not by a polished chat response."
-
-Show the required deliverables. Tell the class whether you will use the live or prepared demo.
-
-Ask one learner to name a condition that should stop the canvas from being shared.
+Show the deliverables and say whether you'll run the live or prepared demo.
 
 ## 0:05 to 0:13: Choose the right customization
 
-Use the decision table from the slides.
-
-Make the distinction concrete:
+Use the decision table from the slides:
 
 - instructions state conventions;
 - a skill describes a repeatable procedure;
@@ -87,51 +61,41 @@ Make the distinction concrete:
 - a canvas gives people and an agent one interactive artifact;
 - a plugin can package a canvas with other customizations.
 
-Use a canvas when the state must stay visible across several actions or a handoff. Stay in chat for a short answer or one draft.
+Use a canvas when state must stay visible across several actions or a handoff. Stay in chat for a short answer or one draft.
 
-**Checkpoint:** Ask, "What breaks if this remains only in chat?" A valid answer names lost visibility, direct control, or saved state for handoff.
+**Checkpoint:** Ask, "What breaks if this stays in chat?" A good answer names lost visibility, direct control, or saved state for handoff.
 
 ## 0:13 to 0:23: Build the worked contract
 
-Open `../lab/starter/canvas-contract.md`.
-
-Walk through each section:
+Open `../lab/starter/canvas-contract.md` and walk through it:
 
 1. **State:** `id`, `item`, `status`, `reviewFlag`, and `evidence`.
-2. **Human actions:** add evidence, set a status, and set the review flag.
-3. **Agent capabilities:** read the board, update one named item, and list flagged items.
+2. **Human actions:** add evidence, set a status, set the review flag.
+3. **Agent capabilities:** read the board, update one named item, list flagged items.
 4. **Validation:** reject unknown IDs, unknown statuses, and `ready` without evidence.
-5. **Boundary:** synthetic data and no external systems.
-
-Ask who can retire the artifact. Record an owner rather than saying "the team."
+5. **Boundary:** synthetic data, no external systems.
 
 **Teaching test:** Every action must fit in one sentence. A broad verb such as "manage" needs a smaller action.
 
-## 0:23 to 0:30: Inspect prepared inputs and contract harness
+## 0:23 to 0:30: Prepared inputs and harness
 
-Open `prepared-items.json`. Point out the three starting states and which item lacks evidence.
-
-Run:
+Open `prepared-items.json`. Point out the three starting states and which item lacks evidence. Then run:
 
 ```bash
 cd sessions/session-m3-01-copilot-app-canvases/lab/starter
 npm test
 ```
 
-Explain that the harness does not imitate the GitHub Copilot app. It checks the state rules that the generated canvas must preserve.
-
-Show these results:
+The harness doesn't imitate the Copilot app. It checks the state rules the generated canvas must keep:
 
 - an item with evidence can move to `ready`;
 - an agent-requested named update changes the same state model;
 - `DOC-101` cannot move to `ready` without evidence;
 - adding evidence allows the retry.
 
-## 0:30 to 0:43: Prepared or live demo
+## 0:30 to 0:43: Live or prepared demo
 
 ### Live demo
-
-Start an app session with the required access and use:
 
 ```text
 /create-canvas
@@ -144,8 +108,6 @@ Reject unknown items or statuses. Require evidence before ready.
 Do not connect external systems.
 ```
 
-Choose project scope only when repository sharing is approved. Otherwise use user scope.
-
 After generation:
 
 1. inspect the files and declared capabilities;
@@ -156,15 +118,11 @@ After generation:
 
 ### Prepared demo
 
-Open `../lab/solution/demo-evidence.md` and `../lab/solution/final-state.json`.
+Open `../lab/solution/demo-evidence.md` and `../lab/solution/final-state.json`. Trace the same two changes and tell learners these are prepared examples, not a live app call.
 
-Trace the same two changes. Label each statement as an observed result or a prepared example. Do not imply that a live app call occurred.
+If the canvas isn't ready by 0:38, switch to the prepared demo. Keep the rejection, recovery, and review segments.
 
-### Time guard
-
-If the canvas is not ready for review by 0:38, switch to the prepared demo record. Keep the rejection, recovery, and review segments.
-
-## 0:43 to 0:50: Show rejection and recovery
+## 0:43 to 0:50: Rejection and recovery
 
 Request:
 
@@ -172,80 +130,36 @@ Request:
 Move DOC-101 to ready.
 ```
 
-Expected behavior:
+Expected:
 
 - the update is rejected;
 - the message names the missing evidence rule;
-- `DOC-101` remains `planned`.
+- `DOC-101` stays `planned`.
 
-Add the synthetic evidence value `docs://operator-guide-review`, then retry.
+Add the synthetic evidence `docs://operator-guide-review`, then retry. The same transition now succeeds, the rule is unchanged, and the change record shows the state before, the rejection, the correction, and the state after.
 
-Expected behavior:
-
-- the same transition now succeeds;
-- the rule did not change;
-- the change record shows the state before the request, the rejection, the correction, and the state afterward.
-
-If the generated canvas accepts the first request, pause the demo. Restore the rule before continuing. A successful unsafe update is a failed demo.
+If the generated canvas accepts the first request, pause and restore the rule. An accepted unsafe update is a failed demo.
 
 ## 0:50 to 0:56: Inspect the extension
 
-Inspect:
+Check generated files and dependencies, state fields and persisted data, visible human actions, agent-callable capabilities, validation messages, and the retirement trigger. Remove generated features the contract didn't request.
 
-- generated files and dependencies;
-- state fields and persisted data;
-- visible human actions;
-- agent-callable capabilities;
-- validation messages;
-- owner, failure handling, and retirement trigger.
+## 0:56 to 1:00: Lab handoff
 
-Remove generated features that the contract did not request. Pause if the canvas
-still violates the contract.
+Assign four roles. One person may hold two in a small group: contract owner, app operator, contract tester, handoff owner.
 
-## 0:56 to 1:00: Hand off to the lab
+Point to the six lab checkpoints. The same three prepared items stay in use for the whole lab.
 
-Assign four roles. One person may hold two roles in a small group:
+Close with: "Keep the contract fixed while you test the implementation. If the implementation needs broader authority, review the contract first."
 
-- contract owner;
-- app operator;
-- contract tester;
-- handoff owner.
-
-Point learners to the six lab checkpoints. Remind them that the same three prepared items stay in use for the full lab.
-
-End with:
-
-> "Keep the contract fixed while you test the implementation. If the implementation needs broader authority, stop and review the contract first."
-
-## Common failures and recovery
+## Common failures
 
 | Failure | Recovery |
 | --- | --- |
-| `/create-canvas` is missing | Do not install a replacement. |
+| `/create-canvas` is missing | Use the prepared demo. |
 | Project scope is not allowed | Use user scope. |
-| Generation takes too long | Stop the run and show the prepared demo record. |
-| Extra capabilities appear | Remove them and record the review decision. |
-| Agent response and visible state differ | Stop, inspect the artifact, and record the mismatch. |
-| `ready` succeeds without evidence | Treat it as a failed rule, fix it, and rerun the rejection. |
-| A learner proposes real work data | Replace it with the supplied synthetic input. |
-
-## Optional Feature Workbench guidance
-
-Use this variant after the default flow or as a separate practice task. Learners
-review three synthetic CI checks, reject a gate decision when a required check
-fails, then record the evidence that allows a retry.
-
-Keep the authority narrow:
-
-- people may acknowledge a result and request a gate evaluation;
-- the agent may read checks and propose `pass`, `hold`, or `rerun`;
-- only a named human reviewer records the final gate decision;
-- the workbench must not trigger deployment, merge a pull request, or call a live
-  CI service.
-
-The worked solution holds `FEAT-204` because `integration-tests` failed. A retry is
-valid only after the sample state contains a passing required check.
-
-## Product notes checked October 5, 2026
-
-Official GitHub documentation describes canvas extensions as shared interactive surfaces in the GitHub Copilot app. It documents `/create-canvas`, project scope at `.github/extensions`, user scope at `~/.copilot/extensions`, visible canvas controls, and agent-callable capabilities. Availability and policy can still differ, so complete the required preparation before class.
+| Generation takes too long | Stop and show the prepared demo record. |
+| Extra capabilities appear | Remove them. |
+| Agent response and visible state differ | Stop and inspect the artifact. |
+| `ready` succeeds without evidence | Fix the rule and rerun the rejection. |
+| A learner proposes real work data | Use the supplied synthetic input. |

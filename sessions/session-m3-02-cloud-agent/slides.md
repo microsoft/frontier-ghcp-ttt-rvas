@@ -20,24 +20,12 @@ repository setup
     ↓
 proposed change
     ↓
-test evidence
+test output
     ↓
 human decision
 ```
 
 Keep the same issue and acceptance criteria at every step.
-
----
-# Access policy
-
-The lab requires:
-
-- approved Copilot cloud agent access;
-- a training repository with synthetic data;
-- a named reviewer;
-- an issue with a file scope and stop condition.
-
-Do not bypass policy.
 
 ---
 # The fixed issue
@@ -62,15 +50,13 @@ No dependency changes. No unrelated refactor.
 ---
 # Checkpoint 1: Issue contract
 
-The reviewer must answer:
+Before you assign the issue, a reviewer must be able to answer:
 
 - Which behavior changes?
 - Which behavior stays the same?
 - Which files may change?
 - What proves completion?
 - What is out of scope?
-
-Do not assign the issue until every answer is clear.
 
 ---
 # Repository instructions
@@ -83,24 +69,24 @@ Tell the agent how to work in this repository:
 - test command;
 - prohibited changes.
 
-Instructions support the issue. They do not repair a vague issue.
+Instructions support the issue. They don't repair a vague one.
 
 ---
 # Copilot setup steps
 
-The workflow file belongs at:
+The workflow file lives at:
 
 ```text
 .github/workflows/copilot-setup-steps.yml
 ```
 
-It uses one job named:
+It has one job named:
 
 ```text
 copilot-setup-steps
 ```
 
-Review permissions, commands, and secrets before merging it to the default branch.
+Review its permissions, commands, and secrets before merging it to the default branch.
 
 ---
 # Checkpoint 2: Setup
@@ -108,20 +94,19 @@ Review permissions, commands, and secrets before merging it to the default branc
 Record:
 
 - baseline test result;
-- repository instructions location;
-- setup workflow location;
+- where the instructions and setup workflow live;
 - allowed files;
 - reviewer and stop condition.
 
-Stop when you cannot explain the baseline test result or setup requires unapproved access.
+Stop if you can't explain the baseline result or setup needs a credential.
 
 ---
 # Start the session
 
-- assign the fixed issue through an entry point allowed by repository policy;
-- watch the session log;
-- steer only within the issue;
-- stop on scope drift.
+- Assign the fixed issue.
+- Watch the session log.
+- Steer only within the issue.
+- Stop on scope drift.
 
 ---
 # Checkpoint 3: Proposed change
@@ -137,7 +122,7 @@ Inspect before running tests:
 A small diff can still be wrong.
 
 ---
-# The expected behavior
+# Expected behavior
 
 ```js
 if (typeof title !== "string" || title.trim() === "") {
@@ -145,12 +130,10 @@ if (typeof title !== "string" || title.trim() === "") {
 }
 ```
 
-The code may differ, but it must preserve the required behavior and constraints.
+The code may differ. The behavior and constraints must not.
 
 ---
 # Checkpoint 4: Tests
-
-Required cases:
 
 | Case | Expected |
 | --- | --- |
@@ -158,7 +141,7 @@ Required cases:
 | `"   "` | HTTP 400 |
 | `" Weekly plan "` | HTTP 201 with preserved response shape |
 
-Run the full supplied suite and record the command output.
+Run the full suite and save the output.
 
 ---
 # Keep review feedback within the issue
@@ -184,36 +167,20 @@ Choose:
 
 - **approve** when criteria, scope, and tests pass;
 - **request changes** when a correction within the issue remains;
-- **pause** when access, test output, or ownership is unresolved.
+- **pause** when test output or ownership is unresolved.
 
 The agent does not make this decision.
 
 ---
 # Stop conditions
 
-Stop the lab when:
+Stop when:
 
 - the requested files expand;
 - a new dependency appears;
-- credentials or unapproved data are requested;
-- repeated test failures have no recovery plan;
-- the issue changes during implementation;
-- the reviewer is no longer available.
-
----
-# Trainer demo recovery
-
-The solution folder contains:
-
-- the final issue contract;
-- reviewed setup workflow;
-- proposed diff;
-- runnable solution project;
-- test output;
-- completed human decision.
-
-Use it only when the trainer demo is delayed. Learners still need a live
-cloud-agent run for lab completion.
+- the agent asks for credentials;
+- tests keep failing with no recovery plan;
+- the issue changes mid-run.
 
 ---
 <!-- _class: divider -->

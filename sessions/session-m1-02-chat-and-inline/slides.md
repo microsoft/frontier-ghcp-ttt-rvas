@@ -27,7 +27,7 @@ Session M1-02 | 3 hours
 | Select context deliberately | 11 min |
 | Explain, fix, test, document | 10 min |
 | Conversational refinement | 8 min |
-| Model and metering decisions | 7 min |
+| Model comparison | 7 min |
 | Debugging demo and handoff | 8 min |
 
 ---
@@ -40,7 +40,7 @@ Session M1-02 | 3 hours
 | Best for the next small edit | Best for explanation and multi-step work |
 | Context comes from the editing surface | Context can be selected or named |
 
-Both produce proposals that need review.
+Both produce suggestions that need review.
 
 ---
 
@@ -190,25 +190,14 @@ Start fresh when stale assumptions keep returning.
 
 # Compare against the task
 
-If policy allows two available model choices:
+If you have two models:
 
 1. use the same synthetic prompt;
 2. keep the same context;
 3. run the same tests;
 4. compare correctness and useful citations.
 
-Judge the results by the checks, not how well they read.
-
----
-
-# Access policy
-
-The lab requires Chat access allowed by your organization.
-
-Manual work does not replace the Chat and inline-suggestion practice.
-
-If only a second model is unavailable, continue with Chat and compare the
-assisted result with the reference solution.
+Judge the results by the tests, not how well they read.
 
 ---
 

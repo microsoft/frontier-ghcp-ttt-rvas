@@ -10,24 +10,17 @@
 
 ## Overview
 
-Learn to use GitHub Copilot through one engineering loop: define behavior,
-inspect a proposal, run focused checks, and decide whether to accept the change.
-You will complete a small Python utility module, resolve an ambiguous text rule,
-then review a follow-up rename.
+Use GitHub Copilot through one loop: define behavior, inspect the suggestion,
+run focused tests, and decide. You complete a small Python utility module,
+settle an ambiguous text rule, and review a follow-up rename.
 
-The session uses synthetic data and standard-library tests. You need GitHub
-Copilot and Python 3.10 or later.
+You need GitHub Copilot and Python 3.10 or later.
 
 ## Learning outcomes
 
-- Explain why generated output needs tests and review.
-- Check access, data, repository scope, and any usage limit before use.
+- Explain why generated code needs tests and review.
 - Accept, revise, or reject an inline suggestion against the tests.
 - Review a predicted follow-up edit and search for missed references.
-
-## Required access
-
-Learners need GitHub Copilot and Python.
 
 ## Materials
 

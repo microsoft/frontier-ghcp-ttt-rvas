@@ -1,10 +1,10 @@
 # Session M7-06 trainer guide: Automate delivery follow-up
 
-## Delivery objective
+## Goal
 
 Show learners how to build one draft-only automation from live GitHub issues and
-the reviewed Session M7-05 parent result. It drafts a stakeholder update, but a
-person must review every run and control how the update is shared.
+the reviewed Session M7-05 parent result. It drafts a stakeholder update. A person
+reviews every run and shares the update.
 
 ## One-hour plan
 
@@ -17,9 +17,7 @@ person must review every run and control how the update is shared.
 | 0:47-0:55 | Change one issue and rerun |
 | 0:55-1:00 | Decide the authoritative system and current state |
 
-## Required access
-
-Check Automations and GitHub MCP access before the session.
+Learners need Automations and GitHub MCP access.
 
 ## The automation definition
 
@@ -35,21 +33,16 @@ Use `lab/starter/automation-definition-template.md`. It contains only:
 
 The core lab uses a manual trigger. Scheduling stays disabled.
 
-## Authoritative inputs
+## Inputs
 
-The automation reads:
-
-1. the approved live GitHub issues;
-2. the reviewed Session M7-05 parent orchestration result.
-
-Do not add copied status files or a static Session M7-05 handoff. They can drift from
-the platform state.
+The automation reads the live GitHub issues and the reviewed Session M7-05 parent
+orchestration result. Skip copied status files and static handoffs. They drift
+from the platform state.
 
 ## Review the run on the platform
 
-Check the sources behind each claim in the final draft. Review open exceptions,
-tool use, and side effects on the platform. Do not ask learners to copy run
-identifiers, timing, usage, or status into a second record.
+Check the sources behind each claim in the draft. Review open exceptions, tool
+use, and side effects on the platform, not in a second record.
 
 Have learners choose **Keep**, **Revise**, **Disable**, or **Pause**, then update
 the definition's current state to match.
@@ -67,16 +60,13 @@ the definition's current state to match.
 
 ## Stop conditions
 
-Stop when an authoritative input is unavailable, sources conflict, restricted
-data is requested, a prohibited side effect is required, or the reviewer is
-unavailable.
+Stop when an input is unavailable, sources conflict, restricted data is requested,
+a prohibited side effect is required, or the reviewer is unavailable.
 
 ## System-of-record decision
 
 Keep GitHub authoritative when issues and agent work live there. Keep Azure Boards
-authoritative when the delivery backlog lives there. Do not maintain competing
-status fields.
+authoritative when the delivery backlog lives there. Don't keep competing status
+fields.
 
-## Lab handoff
-
-Learners submit the concise automation definition and one stakeholder update.
+Learners submit the automation definition and one stakeholder update.

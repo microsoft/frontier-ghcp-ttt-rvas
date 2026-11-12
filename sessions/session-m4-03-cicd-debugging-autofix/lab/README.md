@@ -1,39 +1,28 @@
 # Session M4-03 lab: Debug pipelines from logs and local checks
 
-**Duration:** 2 hours
-**Difficulty:** Advanced
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02 and M4-01
 **Deliverable:** Three investigation records, fixed workflows, and a reviewed security patch
 
 ## Lab overview
 
-You will investigate three pipeline failures, review a security repair, and
-improve feedback speed without removing checks.
+You investigate three pipeline failures, review a security repair, and speed up feedback without removing checks.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Check the local application baseline | 10 min |
-| 2 | Investigate three pipeline cases | 50 min |
-| 3 | Review a security remediation | 30 min |
-| 4 | Improve feedback speed | 20 min |
-| 5 | Collect investigation records | 10 min |
+| 0 | Check the local application baseline | 10 min |
+| 1 | Investigate three pipeline cases | 50 min |
+| 2 | Review a security remediation | 30 min |
+| 3 | Improve feedback speed | 20 min |
+| 4 | Collect investigation records | 10 min |
 
 ## Before you start
 
-You must have GitHub Copilot access and Node.js 20.x. Use only the supplied application, logs,
-and workflow files.
+You need GitHub Copilot and Node.js 20.x. Use only the supplied application, logs, and workflow files. Remote workflow runs and security products are optional.
 
-Remote workflow runs and security products are optional. Use them only when the
-instructor checks access and permits their use. **You must complete the local work.**
-
-Do not open `lab/solution/fixed-pipelines/` until a checkpoint tells you to compare.
-For Case 3, do not open `error-log-3-stage-2.txt` until the first repair is complete.
+Don't open `lab/solution/fixed-pipelines/` until a checkpoint says to compare. For Case 3, don't open `error-log-3-stage-2.txt` until the first repair is done.
 
 ## Setup
 
-Run all commands from this session directory unless a command changes directory.
-
-Check that the application works before you inspect the pipeline:
+Run commands from this session directory unless a command changes directory.
 
 ```bash
 cd lab/starter/pipeline-app
@@ -45,7 +34,7 @@ test -f dist/index.js
 cd ../../..
 ```
 
-Expected result: install, tests, lint, and build pass.
+Expected: install, tests, lint, and build pass.
 
 Create one investigation record per case:
 
@@ -70,8 +59,6 @@ For every case:
 6. Validate the repaired YAML.
 7. Compare with the solution only after the checkpoint.
 
-Use this prompt:
-
 ```text
 Read this workflow and failed-step output. Separate observations from hypotheses.
 Use the supplied local command as additional evidence. Propose the smallest repair
@@ -82,8 +69,6 @@ and one proof command. Do not change unrelated jobs.
 
 Open `pipeline-1.yml` and `error-log-1.txt`.
 
-Run:
-
 ```bash
 node --version
 cd lab/starter/pipeline-app
@@ -92,31 +77,24 @@ npm test
 cd ../../..
 ```
 
-Record what the log and package metadata say. Edit only after your hypothesis
-explains both.
-
-After the repair:
+Record what the log and package metadata say. Edit only after your hypothesis explains both. After the repair:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
   lab/starter/failing-pipelines/pipeline-1.yml
 ```
 
-**Checkpoint:** Record the parser result, then compare with
-`lab/solution/fixed-pipelines/pipeline-1.yml`.
+**Checkpoint:** Record the parser result, then compare with `lab/solution/fixed-pipelines/pipeline-1.yml`.
 
 ### Case 2
 
-Open `pipeline-2.yml` and `error-log-2.txt`.
-
-Run the failing command from the workflow location:
+Open `pipeline-2.yml` and `error-log-2.txt`. Run the failing command from the workflow location:
 
 ```bash
 npm ci
 ```
 
-Expected failure: npm cannot find the project package metadata in the session root.
-Now check the same command in the application directory:
+Expected failure: npm can't find the project package metadata in the session root. Now run it in the application directory:
 
 ```bash
 npm --prefix lab/starter/pipeline-app ci
@@ -125,15 +103,11 @@ npm --prefix lab/starter/pipeline-app test
 
 After the repair, parse the YAML and compare with the solution.
 
-**Checkpoint:** The repair must explain why changing dependency resolution would
-not address the observed path failure.
+**Checkpoint:** Explain why changing dependency resolution wouldn't fix the observed path failure.
 
 ### Case 3: multi-stage failure
 
-Open `pipeline-3.yml` and `error-log-3.txt`. Investigate only the first failed
-stage.
-
-Run:
+Open `pipeline-3.yml` and `error-log-3.txt`. Investigate only the first failed stage.
 
 ```bash
 cd lab/starter/pipeline-app
@@ -143,12 +117,9 @@ npm test
 cd ../../..
 ```
 
-Repair the first failure and parse the workflow. Then open
-`error-log-3-stage-2.txt`. The second log represents the next run after the first
-repair.
+Repair the first failure and parse the workflow. Then open `error-log-3-stage-2.txt`, the next run after the first repair.
 
-Use the new log. Do not restore the first change or add unrelated fixes.
-After the second repair, run:
+Use the new log. Don't undo the first change or add unrelated fixes. After the second repair:
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
@@ -157,19 +128,17 @@ npm --prefix lab/starter/pipeline-app run build
 test -f lab/starter/pipeline-app/dist/index.js
 ```
 
-**Checkpoint:** Record two observations, two repairs, and separate check results for each
-stage. Then compare with `lab/solution/fixed-pipelines/pipeline-3.yml`.
+**Checkpoint:** Record two observations, two repairs, and separate check results for each stage. Then compare with `lab/solution/fixed-pipelines/pipeline-3.yml`.
 
 ## Part 2: Review a security remediation
 
-Open `lab/starter/vulnerable-app/src/app.js`. Check its syntax locally:
+Open `lab/starter/vulnerable-app/src/app.js` and check its syntax:
 
 ```bash
 node --check lab/starter/vulnerable-app/src/app.js
 ```
 
-Complete the CodeQL workflow template. If an approved remote scan is available,
-inspect its findings. Otherwise use the supplied source as the finding context.
+Complete the CodeQL workflow template. If you have a remote scan, inspect its findings. Otherwise use the source as the finding context.
 
 Investigate these sinks without opening the secure solution:
 
@@ -177,9 +146,7 @@ Investigate these sinks without opening the secure solution:
 - HTML response construction;
 - file path resolution.
 
-Ask for one repair at a time in `lab/starter/vulnerable-app/src/app.js`.
-Review the diff. Copy only the supplied test harness and dependency manifests,
-not the solution source, into your working app:
+Ask for one repair at a time in `lab/starter/vulnerable-app/src/app.js` and review each diff. Copy only the test harness and dependency manifests, not the solution source:
 
 ```bash
 mkdir -p lab/starter/vulnerable-app/test
@@ -192,18 +159,11 @@ npm ci --prefix lab/starter/vulnerable-app
 npm test --prefix lab/starter/vulnerable-app
 ```
 
-Explain how each repair protects its code path: parameterized queries for SQL,
-output encoding for HTML, and resolved-path containment for file access.
-The three tests must pass. Do not rely only on an absence of scanner findings.
-Then compare your repair with `lab/solution/secure-app/src/app.js`.
+Explain how each repair protects its path: parameterized queries for SQL, output encoding for HTML, and resolved-path containment for file access. The three tests must pass. Then compare with `lab/solution/secure-app/src/app.js`.
 
 ## Part 3: Improve feedback speed
 
-Review `lab/starter/slow-pipeline/workflow.yml`. Preserve its checks while adding
-lockfile caching, parallel lint and test jobs, shallow checkout, and a main-push
-deployment condition.
-
-Validate:
+Review `lab/starter/slow-pipeline/workflow.yml`. Keep its checks and add lockfile caching, parallel lint and test jobs, shallow checkout, and a main-push deployment condition.
 
 ```bash
 ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
@@ -212,16 +172,13 @@ grep -nE "cache: 'npm'|needs: \\[lint, test\\]|fetch-depth: 1|github.event_name"
   lab/starter/slow-pipeline/workflow.yml
 ```
 
-Then compare your workflow with `lab/solution/optimized-pipeline/workflow.yml`.
+Then compare with `lab/solution/optimized-pipeline/workflow.yml`.
 
 ## Final deliverable
 
-Submit:
-
 1. Three fixed workflows.
-2. Three investigation records, with two stages for Case 3.
-3. A reviewed security patch and local syntax-check output.
+2. Three investigation records, two stages for Case 3.
+3. A reviewed security patch and syntax-check output.
 4. The optimized workflow review.
 
-Write the root-cause statement after the observation and local check results. Keep the
-original logs unchanged with the investigation records.
+Write the root-cause statement after the observation and local check results. Keep the original logs with your records.

@@ -2,10 +2,7 @@
 
 ## Teaching goal
 
-Demonstrate three skill outcomes: a matching task runs, an out-of-scope task does
-not, and a matching task stops because a precondition is missing.
-Have learners load skills live and compare two
-decision interviews before moving into `/plan`.
+Demonstrate three skill outcomes: a matching task runs, an out-of-scope task doesn't, and a matching task stops because a precondition is missing. Then have learners load skills live and compare two decision interviews before moving into `/plan`.
 
 ## One-hour plan
 
@@ -16,30 +13,22 @@ decision interviews before moving into `/plan`.
 | 0:16 to 0:26 | Trigger, non-trigger, and visible failure |
 | 0:26 to 0:36 | Directory validation versus live invocation |
 | 0:36 to 0:54 | Pinned interview comparison and plan handoff |
-| 0:54 to 1:00 | Access check and lab handoff |
+| 0:54 to 1:00 | Lab handoff |
 
-## Preflight
+## Preparation
 
-- In a scratch copy of the full lab, place the reference API skill at the learner's
-  `.github/skills/api-design` path. Run `npm test`, `npm run validate:skill`, and
-  `npm run demo` there.
-- Open the completed `api-design/SKILL.md`.
-- Keep the three JSON scenarios visible.
-- Do not connect the static MCP configuration.
+- In a scratch copy of the full lab, put the reference API skill at the learner's `.github/skills/api-design` path. Run `npm test`, `npm run validate:skill`, and `npm run demo` there.
+- Open the completed `api-design/SKILL.md` and keep the three JSON scenarios visible.
 - Check CLI `/skills reload`, `/skills info`, and `/plan`.
-- Check the pinned community snapshot's checksums and retained MIT license.
+- Check the community snapshot's checksums and MIT license.
 - Load `decision-interview`, `grill-me`, and `grilling` in the scratch project.
-- Agree a usage limit, including any fact-finding subagent.
-- Check `/chronicle improve` against this copied repository's training history.
+- Check `/chronicle improve` against this copy's training history.
 
-The local harness is useful for teaching deterministic checks, but does not prove
-that Copilot discovered or invoked a skill.
+The local harness teaches deterministic checks. It doesn't show that Copilot discovered or invoked a skill.
 
 ## Teaching sequence
 
 ### 0:00 to 0:08: Directory model
-
-Show:
 
 ```text
 .github/
@@ -48,13 +37,11 @@ Show:
         └── SKILL.md
 ```
 
-The directory name is lowercase with hyphens. The instruction file is named
-exactly `SKILL.md`. Supporting scripts or references may sit beside it when they
-are reviewed and necessary.
+The directory name is lowercase with hyphens. The file is named exactly `SKILL.md`. Supporting scripts or references may sit beside it.
 
 ### 0:08 to 0:16: Frontmatter
 
-The minimum frontmatter has `name` and `description`.
+Minimum frontmatter is `name` and `description`:
 
 ```yaml
 ---
@@ -63,8 +50,7 @@ description: Use for creating or reviewing REST routes under src/api/ when accep
 ---
 ```
 
-The name matches the directory. The description does more than summarize the body:
-it tells Copilot when to select the skill.
+The name matches the directory. The description does more than summarize the body: it tells Copilot when to select the skill.
 
 ### 0:16 to 0:26: Selection and visible failure
 
@@ -80,22 +66,13 @@ with:
 Rewrite the installation section in README.md.
 ```
 
-The first task matches the work and path. The second does not. A skill that triggers
-for both applies the API procedure outside its scope.
+The first matches the work and path. The second doesn't. A skill that triggers on both applies the API procedure outside its scope.
 
-Open `trigger.json` and `non-trigger.json`. Ask learners which fields make the
-decision visible in the output.
+Open `trigger.json` and `non-trigger.json`. Ask which fields make the decision visible in the output.
 
 #### Missing precondition
 
-The API skill requires:
-
-- named acceptance criteria;
-- a human reviewer;
-- a focused test command that runs in this project.
-
-Open `failure.json`. It matches the trigger but has no reviewer. The expected
-result is:
+The API skill requires named acceptance criteria, a human reviewer, and a focused test command that runs in this project. `failure.json` matches the trigger but has no reviewer. The expected result:
 
 ```json
 {
@@ -105,12 +82,9 @@ result is:
 }
 ```
 
-Explain why this is the correct result: the skill matched the task, checked its
-preconditions, and stopped.
+The skill matched, checked its preconditions, and stopped.
 
 ### 0:26 to 0:36: Validate and invoke
-
-Run:
 
 ```bash
 npm run validate:skill
@@ -118,52 +92,30 @@ npm test
 npm run demo
 ```
 
-Separate the claims:
-
 | Check | Shows |
 | --- | --- |
 | Directory validator | Required file, frontmatter, and sections exist |
-| Scenario tests | The local harness behaves as its fixed contract specifies |
-| Two-scenario demo | A reviewer can see the applied and blocked outputs |
-| Live invocation | The selected product discovers and uses the skill |
+| Scenario tests | The local harness follows its fixed contract |
+| Two-scenario demo | The applied and blocked outputs are visible |
+| Live invocation | Copilot discovers and uses the skill |
 
-The local runner only handles the supplied scenarios.
-
-The learner validator and demo read the project-local API skill. The harness
-unit tests retain a fixed reference fixture. Neither claims that an LLM followed
-the Markdown procedure. Show actual `/skills info` and live invocation separately.
+The learner validator and demo read the project-local API skill. The harness unit tests use a fixed reference fixture. Neither shows that an LLM followed the Markdown procedure, so show `/skills info` and live invocation separately.
 
 ### 0:36 to 0:54: Live interview comparison
 
-Open `community-interview/README.md`. The snapshot pins upstream revision
-`49dd158d1076134a641b33efb035946536778336` and contains unchanged, MIT-licensed
-`grill-me` and `grilling` files. Read both; the entry point needs the dependency.
+Open `community-interview/README.md`. The snapshot pins upstream revision `49dd158d1076134a641b33efb035946536778336` and contains unchanged, MIT-licensed `grill-me` and `grilling` files. Read both: the entry point needs the dependency.
 
-Use the Session M7-02 synthetic request and late constraint. Compare local
-`decision-interview` with `/grill-me` in separate fresh Interactive sessions.
-Use the same owner decisions and inspect actual skill loading. Keep the interview
-out of Plan mode, as the pinned upstream guide recommends.
+Use the Session M7-02 synthetic request and late constraint. Run local `decision-interview` and `/grill-me` in separate fresh Interactive sessions with the same owner decisions, and inspect actual skill loading. Keep Plan mode off, as the upstream guide recommends.
 
-`grilling` may delegate fact-finding. That does not authorize a network call or
-broader repository access. Keep permissions and the usage limit in place.
+`grilling` may delegate fact-finding. Don't let that widen network or repository access.
 
-Write a short accepted decision brief, then start `/plan` in a fresh session.
-Require two decisions that change a plan step or acceptance check. Do not implement.
-Question wording can vary; the comparison is not a benchmark or universal ranking.
+Write a short decision brief, then start `/plan` in a fresh session. You need two decisions that change a plan step or acceptance check. Don't implement. Question wording varies, so this is a comparison, not a ranking.
 
-Use the last five minutes of the comparison for `/chronicle improve`. This
-subcommand scopes history to the current repository or working directory.
-Inspect a recommendation against an actual learner correction, then cancel the
-apply step: suggestions may start selected. Decide whether the recurring rule
-belongs in instructions, a skill, or neither. Insufficient history is a valid
-result; do not reindex or query unrelated work to manufacture a pattern.
+Use the last five minutes for `/chronicle improve`, which scopes history to the current repository or directory. Check a recommendation against a real learner correction, then cancel the apply step (suggestions may start selected). Decide whether the rule belongs in instructions, a skill, or neither. Too little history is a valid result. Don't reindex or query unrelated work to find a pattern.
 
 ### 0:54 to 1:00: Handoff
 
-Show `interview-comparison.md`. The final record must contain actual skill
-invocations, owner decisions, the late constraint's effect, and the plan handoff.
-Stop on a missing dependency or checksum mismatch; do not download a new version
-during delivery.
+Show `interview-comparison.md`. The final record needs the actual skill invocations, owner decisions, the late constraint's effect, and the plan handoff. Stop on a missing dependency or checksum mismatch.
 
 ## Prepared demonstration
 
@@ -182,23 +134,17 @@ during delivery.
 - A `name` that differs from the directory.
 - A description that says what the skill is but not when to use it.
 - No negative trigger.
-- Preconditions hidden inside a long procedure.
-- Returning success after a command failed or did not run.
-- Assuming popularity means a community skill has approval for use.
-- Installing only `grill-me` without `grilling`.
-- Keeping Plan mode on while the interview is still settling decisions.
-- Calling the author's second answer an independent interview run.
+- Preconditions buried in a long procedure.
+- Returning success after a command failed or didn't run.
+- Installing `grill-me` without `grilling`.
+- Leaving Plan mode on while the interview is still settling decisions.
+- Treating the author's second answer as an independent interview run.
 
 ## Lab handoff
 
-Keep the lab at 120 minutes. Allow 25/15/10/10/15 minutes for the API skill checks.
-Use the remaining 45 minutes for the live interview comparison, plan handoff, and
-five-minute retrospective. If the first half runs long, shorten discussion rather
-than the live comparison.
+The lab stays at 120 minutes: 25/15/10/10/15 for the API skill, then 45 for the interview comparison, plan handoff, and retrospective. If the first half runs long, shorten discussion, not the live comparison.
 
-Require correct skill application, visible missing-reviewer failure, actual live
-loading, and the decision-to-plan comparison. A manual checklist or copied model
-transcript does not complete the session.
+Learners must show correct skill application, a visible missing-reviewer failure, live loading, and the decision-to-plan comparison. A manual checklist or copied model transcript doesn't count.
 
 ## Reference
 

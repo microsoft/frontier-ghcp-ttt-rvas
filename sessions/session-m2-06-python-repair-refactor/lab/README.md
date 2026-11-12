@@ -2,11 +2,6 @@
 
 **Duration:** 2 hours
 
-**Difficulty:** Intermediate
-
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, Python 3.11 or later, standalone Copilot CLI,
-and a working Python language server
-
 ## Objective
 
 Repair a synthetic inventory-reconciliation application one failure at a time.
@@ -21,23 +16,16 @@ without changing the reports.
 - unchanged files under `fixtures/expected/`;
 - production code with no process-wide result state or duplicated rules;
 - passing `pytest -q` output;
-- an inspected Python LSP lookup and accepted refactor plan.
+- a Python LSP lookup and an accepted refactor plan.
 
-## Preflight
+## You need
 
-Use the repository Dev Container or GitHub Codespaces.
+- GitHub Copilot and the standalone Copilot CLI;
+- Python 3.11 or later;
+- a working Python language server (`pyright-langserver`).
 
-Check GitHub Copilot access before starting.
-
-Run:
-
-```bash
-python --version
-git --version
-```
-
-Check that Python 3.11 or later is installed. Then copy the starter to a scratch directory so the
-original remains available:
+Use the repository Dev Container or GitHub Codespaces. Copy the starter to a
+scratch directory so the original stays available:
 
 ```bash
 cp -R sessions/session-m2-06-python-repair-refactor/lab/starter \
@@ -47,10 +35,9 @@ git init
 ```
 
 Use a fresh destination if that folder exists. Read `.github/lsp.json` before
-opening the copy in the CLI. Before delivery, prepare `pyright-langserver` using
-the [LSP setup guide](../../session-m3-04-custom-agents/lab/lsp-setup.md#python-session-m2-06).
-Session M3-04 is not a prerequisite; the setup commands are self-contained.
-Check `/plan`, `/lsp show`, and `/lsp test python`.
+opening the copy in the CLI. Set up `pyright-langserver` with the
+[LSP setup guide](../../session-m3-04-custom-agents/lab/lsp-setup.md#python-session-m2-06).
+Session M3-04 isn't a prerequisite. Check `/plan`, `/lsp show`, and `/lsp test python`.
 
 Create the environment:
 
@@ -67,11 +54,8 @@ On Windows PowerShell, activate with:
 .\.venv\Scripts\Activate.ps1
 ```
 
-### Native setup alternative
-
-If you cannot use the Dev Container or Codespaces, install Python 3.11 or later,
-copy `lab/starter/` to a writable folder, then run the same virtual-environment
-and dependency commands. Keep the supplied fixture files unchanged.
+Outside the Dev Container, copy `lab/starter/` to a writable folder and run the
+same commands. Keep the fixture files unchanged.
 
 ## Scenario
 
@@ -90,7 +74,7 @@ Fix the current failure before investigating the next one.
 - CSV files have `sku` and `quantity` headers.
 - SKU values are trimmed and converted to uppercase.
 - Duplicate rows are summed after normalization.
-- Quantities are whole numbers and cannot be negative.
+- Quantities are whole numbers and can't be negative.
 - A SKU may appear in only one input. The missing quantity is zero.
 - Variance equals warehouse quantity minus ledger quantity.
 - Zero is `MATCH`; negative is `SHORT`; positive is `OVER`.
@@ -98,19 +82,12 @@ Fix the current failure before investigating the next one.
 - Rows are sorted by SKU.
 - Repeated calls in one Python process return independent results.
 
-The expected files under `fixtures/expected/` are authoritative for this lab.
+The files under `fixtures/expected/` are authoritative.
 
 ## Part 1: Capture the baseline (10 minutes)
 
-Copy the repair log:
-
 ```bash
 cp repair-log.md repair-log-working.md
-```
-
-Run the application:
-
-```bash
 python -m inventory_reconciliation \
   --warehouse fixtures/input/warehouse.csv \
   --ledger fixtures/input/ledger.csv \
@@ -120,21 +97,12 @@ python -m inventory_reconciliation \
 **Expected starter failure:** Python stops at `SYN-01` in
 `inventory_reconciliation/cli.py`.
 
-Record:
-
-- the command;
-- exception type;
-- file and line;
-- one hypothesis;
-- the next narrow check.
-
-Do not ask Copilot to repair the whole project.
+Record the command, exception type, file and line, one hypothesis, and the next
+narrow check. Don't ask Copilot to repair the whole project.
 
 ## Part 2: Restore parsing and imports (30 minutes)
 
 ### 2.1 Repair `SYN-01`
-
-Ask Copilot:
 
 ```text
 Explain the current SyntaxError from this traceback and file. Suggest the
@@ -147,17 +115,17 @@ Inspect the suggestion, make the smallest edit, and run:
 python -m compileall inventory_reconciliation
 ```
 
-Record the result. The next expected fault is `SYN-02`.
+Record the result. The next fault is `SYN-02`.
 
 ### 2.2 Repair `SYN-02`
 
-Repeat the same process. When the package compiles, check imports:
+Repeat. When the package compiles, check imports:
 
 ```bash
 python -c "import inventory_reconciliation.cli"
 ```
 
-The next expected fault is `IMP-01`.
+The next fault is `IMP-01`.
 
 ### 2.3 Repair `IMP-01` and `IMP-02`
 
@@ -165,10 +133,9 @@ For each import failure:
 
 1. Read the missing module or symbol from the traceback.
 2. Search the package for the intended implementation.
-3. State whether the import path or exported name is wrong.
-4. Make one import-only change.
-5. Re-run the import command.
-6. Add a repair-log entry.
+3. Decide whether the import path or exported name is wrong.
+4. Make one import-only change and re-run the import command.
+5. Add a repair-log entry.
 
 Then run:
 
@@ -180,19 +147,13 @@ python -m inventory_reconciliation --help
 
 ## Part 3: Recover intended behavior (30 minutes)
 
-Run:
-
 ```bash
 pytest -q
 ```
 
-The tests should now collect. Use their failures to identify the repeatable
-behavior defects.
-
-Compare the inputs with:
-
-- `fixtures/expected/report.txt`;
-- `fixtures/expected/reconciliation.json`.
+The tests should now collect. Use their failures to find the behavior defects, and
+compare the inputs with `fixtures/expected/report.txt` and
+`fixtures/expected/reconciliation.json`.
 
 Repair one rule at a time:
 
@@ -201,9 +162,7 @@ Repair one rule at a time:
 3. **`LOG-03`:** apply the stated severity boundary.
 4. **`STATE-01`:** repeated calls must not retain prior results.
 
-After each change, run the narrowest failing test. Then run the full suite.
-
-Use a Copilot prompt such as:
+After each change, run the narrowest failing test, then the full suite.
 
 ```text
 The failing test and expected fixture define the behavior. Find the smallest
@@ -211,8 +170,7 @@ production-code change for this one failure. Do not refactor unrelated code or
 edit expected outputs.
 ```
 
-**Checkpoint:** Existing tests pass and generated output matches both expected
-files.
+**Checkpoint:** Existing tests pass and generated output matches both expected files.
 
 ## Part 4: Add regression tests (20 minutes)
 
@@ -221,21 +179,12 @@ Add at least two tests before refactoring:
 1. absolute variance `5` is `review` and `6` is `urgent`;
 2. a negative quantity raises `ValueError` with the file and row number.
 
-Keep each test focused. Use temporary files for invalid CSV input.
-
-Run:
-
-```bash
-pytest -q
-```
-
-Commit or save this green state before changing structure.
+Keep each test focused. Use temporary files for invalid CSV input. Run
+`pytest -q`, then commit or save this green state before changing structure.
 
 ## Part 5: Refactor without behavior changes (25 minutes)
 
-Remove `DESIGN-01`.
-
-Give each file one job:
+Remove `DESIGN-01`. Give each file one job:
 
 | File | Owns |
 | --- | --- |
@@ -250,8 +199,8 @@ Required changes:
 - remove module-level mutable result state;
 - keep one implementation of status and severity rules;
 - replace nested reconciliation branches with named functions;
-- preserve the command arguments and output format;
-- preserve deterministic SKU order.
+- keep the command arguments and output format;
+- keep deterministic SKU order.
 
 ### Inspect references before planning (5 minutes of this block)
 
@@ -263,15 +212,15 @@ Report paths and lines. Then inspect service.py for inline classification that
 would not appear as a reference to that function. Do not edit files.
 ```
 
-Inspect the actual operation or `/lsp logs`, then check its locations against
-the source. Record the result in the repair log. Check that you inspected an LSP lookup,
-rather than only a successful server-start test or a plain text search.
+Inspect the actual operation or `/lsp logs` and check its locations against the
+source. A successful server-start test or a plain text search isn't a lookup.
+Record the result in the repair log.
 
-Keep duplicated behavior separate from symbol references: inline classification
-can duplicate a rule without calling its function. Do not ask for a bulk rename
-or refactor while syntax or behavior checks are still failing.
+Inline classification can duplicate a rule without calling its function, so
+track duplicates separately from references. Don't ask for a bulk rename while
+syntax or behavior checks still fail.
 
-Use Plan mode for the remaining refactor:
+Use Plan mode for the rest of the refactor:
 
 ```text
 /plan The tests are green. Plan a small refactor that removes global result state and
@@ -282,9 +231,7 @@ duplicates separately. Name the tests that protect each step. Do not implement.
 
 Approve the plan, leave Plan mode, and run `pytest -q` after each structural move.
 
-## Part 6: Final verification (5 minutes)
-
-Remove old build output and run:
+## Part 6: Final check (5 minutes)
 
 ```bash
 rm -rf build
@@ -297,34 +244,29 @@ diff -u fixtures/expected/reconciliation.json build/reconciliation.json
 pytest -q
 ```
 
-For Windows, compare the files in the editor if `diff` is unavailable.
+On Windows, compare the files in the editor if `diff` is unavailable.
 
 ## Final deliverable
-
-Submit or demonstrate:
 
 - `repair-log-working.md` with one entry per named failure;
 - repaired and refactored source files;
 - the added regression tests;
-- `build/report.txt`;
-- `build/reconciliation.json`;
+- `build/report.txt` and `build/reconciliation.json`;
 - terminal output showing all tests pass.
 
-## Verification checklist
+## Checklist
 
-- [ ] `SYN-01` and `SYN-02` are recorded and repaired separately.
-- [ ] `IMP-01` and `IMP-02` are recorded and repaired separately.
+- [ ] `SYN-01`, `SYN-02`, `IMP-01`, and `IMP-02` are each recorded and repaired separately.
 - [ ] Duplicate rows aggregate after SKU normalization.
 - [ ] Ledger-only and warehouse-only SKUs appear.
 - [ ] Severity changes from `review` to `urgent` at absolute variance 6.
 - [ ] Negative quantities include file and row context.
-- [ ] Repeated service calls do not leak results.
+- [ ] Repeated service calls don't leak results.
 - [ ] Status and severity rules have one implementation.
-- [ ] Expected fixture files were not changed.
-- [ ] The LSP lookup was inspected; inline duplicate rules were checked separately.
+- [ ] Expected fixture files are unchanged.
+- [ ] You inspected the LSP lookup and checked inline duplicates separately.
 - [ ] An accepted `/plan` preceded the structural changes.
-- [ ] Text and JSON output match the supplied contract.
-- [ ] `pytest -q` passes.
+- [ ] `pytest -q` passes and the text and JSON output match.
 
 ## Troubleshooting
 
@@ -341,9 +283,8 @@ Submit or demonstrate:
 ## Solution reference
 
 The tested reference implementation is in [`solution/`](solution/). Review it
-after the lab or when the trainer starts the solution walkthrough.
+after the lab.
 
 ## Command reference
 
-Checked October 15, 2026:
-[Adding LSP servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers).
+[Adding LSP servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers)

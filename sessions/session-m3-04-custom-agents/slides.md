@@ -23,7 +23,7 @@ Session M3-04 | 3 hours
 | Segment | Time |
 | --- | --- |
 | What a profile controls | 8 min |
-| Current `.agent.md` structure | 10 min |
+| `.agent.md` structure | 10 min |
 | Weak profile and boundary violation | 12 min |
 | Least-privilege tools and paths | 13 min |
 | Stop, validation, and human handoff | 9 min |
@@ -44,7 +44,7 @@ Human
   accept + revise + reject
 ```
 
-The profile guides behavior. It does not grant authority.
+The profile guides behavior. It doesn't grant authority.
 
 ---
 
@@ -56,8 +56,7 @@ The profile guides behavior. It does not grant authority.
     └── test-writer.agent.md
 ```
 
-The file contains YAML frontmatter and a Markdown body. The filename identifies the
-profile across configuration levels.
+YAML frontmatter plus a Markdown body. The filename identifies the profile.
 
 ---
 
@@ -104,11 +103,9 @@ It never says which files may change or when to stop.
 /lsp test typescript
 ```
 
-Ask for the definition and references of `getOrdersByUser`.
-Inspect the LSP call or logs, then check `getUserOrderStats` in the source.
+Ask for the definition and references of `getOrdersByUser`. Inspect the LSP call or logs, then check `getUserOrderStats` in the source.
 
-An export is not a caller. A startup test is not a symbol lookup.
-Do not rename or edit code during this step.
+An export is not a caller. A startup test is not a symbol lookup. Don't edit code in this step.
 
 ---
 
@@ -122,8 +119,7 @@ A new criterion allows reversing shipped to processing.
 The current implementation rejects that transition.
 ```
 
-The weak wording permits a source edit. One lucky run staying in scope does not fix
-the contract.
+The weak wording permits a source edit. One lucky run in scope doesn't fix the contract.
 
 ---
 
@@ -133,12 +129,12 @@ the contract.
 npm run check:weak
 ```
 
-Expected failures include:
+Expected failures:
 
 - every tool is enabled;
 - no test-only path is named;
 - no production-code stop exists;
-- no working test command or human review decision is named.
+- no test command or human review decision is named.
 
 ---
 
@@ -185,7 +181,7 @@ Blocked: the requested assertion requires a production-code change under src/.
 Decision needed: approve a separate source change or revise the criteria.
 ```
 
-The stop report names the conflict and tells a human which decision is needed.
+The stop report names the conflict and the decision a human must make.
 
 ---
 
@@ -205,7 +201,7 @@ pass 3
 fail 0
 ```
 
-The tightened profile must pass the same contract that failed the weak profile.
+The tightened profile passes the contract that failed the weak one.
 
 ---
 
@@ -216,24 +212,19 @@ The tightened profile must pass the same contract that failed the weak profile.
 | Repository-wide convention | Instructions |
 | Repeatable procedure | Skill |
 | Specialist role with a defined scope | Custom agent |
-| External tools or data allowed by policy | MCP |
+| External tools or data | MCP |
 
-Do not add MCP to a role that only needs repository files.
+Don't add MCP to a role that only needs repository files.
 
 ---
 
 # Lab handoff
 
-1. Inspect the exact `.agent.md` structure.
+1. Inspect the `.agent.md` structure.
 2. Run the weak contract.
 3. Record the source edit the weak profile permits.
 4. Tighten tools, paths, validation, and stop behavior.
 5. Rerun the contract.
 6. Produce a no-change stop report.
-7. Record human review.
 
-**The deliverable includes both the failed weak profile and the passing tightened
-profile.**
-
-Submit the actual LSP lookup and live selected-profile stop too.
-CLI and JavaScript LSP access are required; a manual trace does not complete them.
+**Submit both the failed weak profile and the passing tightened profile**, plus the actual LSP lookup and the live stop. A manual trace doesn't complete them.
