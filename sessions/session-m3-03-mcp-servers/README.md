@@ -7,28 +7,25 @@
 
 ## Overview
 
-Model Context Protocol (MCP) gives AI clients a standard way to discover and call tools. You build a local stdio server in two stages. First, trace `get_weather` from its JSON Schema through the handler. Test good and bad input, then call it with MCP Inspector. Then add `get_forecast` and `convert_temperature`.
+Copilot can only see your prompt and your files. An **MCP server** gives it **reach**: live access to GitHub, docs, databases, or your own tools. You learn what MCP is, add servers to the real Copilot CLI with `/mcp` and the config file, and connect a small server you run yourself. You also see how Copilot asks permission before it calls a tool, and how a tool's output can attack the model.
 
-The server returns deterministic synthetic weather data. It needs no network service or credential.
-
-### MCP server or plugin?
-
-An **MCP server** exposes tools and context through a protocol. A **plugin** is an installable package that can bundle MCP server configuration with skills, agents, hooks, or other components. Build a server when you need a protocol endpoint. Use a plugin to distribute and version a set of Copilot customizations.
+This session pairs with two others. [M3-04](../session-m3-04-custom-agents/README.md) covers custom agents (a role). [M3-05](../session-m3-05-agent-skills-ecosystem/README.md) covers skills (know-how). MCP is the third piece: reach.
 
 See the [curriculum glossary](../glossary.md) for MCP server, tool, transport, and plugin terms.
 
 ## Learning outcomes
 
-- Explain the MCP client-server model and transports.
-- Trace one tool from schema to protocol response.
-- Return visible errors for invalid arguments and unknown tools.
-- Test handlers without starting an AI client.
-- Use MCP Inspector to list and call local tools.
-- Add tools without weakening the first tool's contract.
+- Explain MCP in plain words: client, server, tools, resources, prompts, transports, and schemas.
+- Add and manage MCP servers in Copilot CLI with `/mcp`, `copilot mcp add`, and the config file.
+- Use the built-in GitHub MCP server and a remote server.
+- Connect a small local server and watch Copilot call it.
+- Control tool approval with prompts, `--allow-tool`, and `--deny-tool`.
+- Weigh live access against credentials, context cost, and prompt injection.
+- Choose between a skill, a custom agent, and an MCP server.
 
 ## You need
 
-Node.js 20 or later and npm. GitHub Copilot is useful for a final integration check but isn't required.
+A Copilot subscription, Copilot CLI, Node.js 20 or later, and npm. Check your organization's policy first: some organizations restrict MCP servers.
 
 ## Materials
 
@@ -37,6 +34,22 @@ Node.js 20 or later and npm. GitHub Copilot is useful for a final integration ch
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
-| Staged server | [`lab/starter/custom-mcp/`](lab/starter/custom-mcp/) |
-| Completed server | [`lab/solution/custom-mcp/`](lab/solution/custom-mcp/) |
-| Expected test and Inspector output | [`lab/solution/custom-mcp/EVIDENCE.md`](lab/solution/custom-mcp/EVIDENCE.md) |
+| Starter server (one tool) | [`lab/starter/custom-mcp/`](lab/starter/custom-mcp/) |
+| Example config file | [`lab/starter/mcp-config/mcp-config.example.json`](lab/starter/mcp-config/mcp-config.example.json) |
+| Finished server | [`lab/solution/custom-mcp/`](lab/solution/custom-mcp/) |
+
+## Key topics
+
+- What MCP is, and what a server offers: tools, resources, prompts.
+- Transports: stdio for local servers, HTTP for remote servers.
+- Configuring servers: `/mcp`, `copilot mcp add`, `~/.copilot/mcp-config.json`, project `.mcp.json`, VS Code `.vscode/mcp.json`.
+- Tool permissions and approval.
+- Pros, cons, and tips.
+- Skill vs custom agent vs MCP server.
+
+## References
+
+- [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)
+- [Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)
+- [About MCP](https://docs.github.com/en/copilot/concepts/customizations/mcp)
+- [Model Context Protocol](https://modelcontextprotocol.io)

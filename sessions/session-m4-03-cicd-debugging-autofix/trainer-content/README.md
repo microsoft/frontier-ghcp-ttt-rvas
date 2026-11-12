@@ -1,80 +1,148 @@
-# Session M4-03 trainer guide: Reproduce before repair
+# Session M4-03 trainer guide: CI/CD debugging & agentic remediation
 
 ## Teaching goal
 
-Learners observe and reproduce the failure before forming a hypothesis, then repair and check. Keep the reference answers closed until they record their investigation. Case 3 adds a second failure after the first repair.
+Learners leave able to read a real failed Actions run, ask Copilot for a cause, and **prove the cause with a rerun**. They also know exactly which "agentic" fixes GitHub ships, and which are only habits.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:08 | Observation, hypothesis, and check results |
-| 0:08 to 0:18 | Local application baseline |
-| 0:18 to 0:34 | Prepared pipeline investigation |
-| 0:34 to 0:44 | Multi-stage failure |
-| 0:44 to 0:54 | Security remediation review |
-| 0:54 to 1:00 | Lab handoff |
+| 0:00 to 0:10 | Pipeline anatomy |
+| 0:10 to 0:22 | Failure classes |
+| 0:22 to 0:32 | Copilot as a diagnostician |
+| 0:32 to 0:44 | Demo: a real failed run |
+| 0:44 to 0:52 | What "agentic" really means |
+| 0:52 to 1:00 | Pros, cons, tips, lab handoff |
 
-## Prepare
+## Preparation
 
-- Run the pipeline application tests, lint, and build.
-- Keep the solution directory closed.
-- Hold `error-log-3-stage-2.txt` until the first Case 3 repair.
-- Put the vulnerable and secure source side by side.
+- Create your own throwaway repo from `lab/starter/ci-lab-repo/` and run it once, so you know what the failures look like today. Action versions and runner images change.
+- Check that Explain error appears on your failed run page. Docs say it opens from a failed check in the PR merge box or from the run summary page.
+- Check that Autofix shows a **Generate fix** button on a CodeQL alert in your repo. Wait a few minutes for CodeQL to finish.
+- Keep `lab/solution/` closed in the room.
 
-## Debugging sequence
+## Pipeline anatomy (0:00 to 0:10)
 
-```text
-Observation:
-Local proof:
-Hypothesis:
-Smallest repair:
-Proof after repair:
-```
+Draw the chain: **trigger, workflow, job, step**. Then add the runner, context, and artifact.
 
-An observation quotes a file, command, or log. A hypothesis explains those facts. Don't let learners write the root cause before they've checked the files and logs.
+- A **runner** is a fresh virtual machine. Nothing from the last run is there, except what a cache restores.
+- A **context** is data GitHub gives a workflow, like `github.ref` or `secrets.DEPLOY_TOKEN`.
+- An **artifact** is how jobs pass files to each other.
 
-## Prepared investigation
+Open `build.yml` from the starter repo and have learners name each part.
 
-Start with Case 2, because the tempting dependency fix is wrong. Show the failed `npm ci` step and workflow. Run `npm ci` from the session root, then again with `--prefix lab/starter/pipeline-app`.
+## Failure classes (0:10 to 0:22)
 
-Pause for hypotheses. Reveal the reference fix once the room can explain why the project location matters.
+| Class | What happened | Typical clue | Usual fix |
+| --- | --- | --- | --- |
+| Dependency | Lockfile missing or out of sync | `npm ci` error | Commit the lockfile |
+| Environment, secret, permission | Missing secret or too little `GITHUB_TOKEN` access | Empty variable; `403 Resource not accessible by integration` | Add the secret or the permission |
+| Flaky test | Test depends on time, order, or network | Passes on rerun | Fix the test, don't rerun until green |
+| Matrix | One version or OS fails | One leg red, others cancelled | Fix the code or drop an unsupported leg |
+| Cache | Wrong key or missing lockfile | Cache or lockfile error | Fix the key or the path |
 
-## Multi-stage failure
+Two points to stress:
 
-For Case 3:
+- **The first red step is the cause. Later red is often fallout.**
+- A rerun that turns green is not a fix. It hides a flaky test.
 
-1. Show `error-log-3.txt`.
-2. Record the first observation and local package metadata.
-3. Apply only the first repair.
-4. Say that the next run reached another stage.
-5. Reveal `error-log-3-stage-2.txt` and repeat the investigation.
-6. Compare with the solution after both checks pass.
+## Copilot as a diagnostician (0:22 to 0:32)
 
-The first failure can hide another. Update the diagnosis from the new log and keep each repair focused.
+Three entry points, each with a different job:
 
-## Security review
+| Entry point | Strength | Limit |
+| --- | --- | --- |
+| Explain error | One click on a failed check or run page | Reads the log, can't run your code |
+| Copilot CLI | Reads logs with `gh`, runs commands locally, edits files | Needs your permission for each command |
+| Cloud agent | Works alone from an issue and opens a PR | Slower; you review a PR, not a chat |
 
-Open one vulnerable route at a time. Ask learners to name the source, sink, and expected protection before you show the secure file.
+A diagnosis is a **hypothesis**. Show the habit:
 
-Run the local syntax checks. A clean scan doesn't show the repair preserves behavior or covers the intended path.
+1. Quote the first failing line.
+2. Ask Copilot for the most likely cause and what would disprove it.
+3. Reproduce the failing command locally if you can.
+4. Make the smallest fix.
+5. Push and read the new run.
 
-## Lab handoff
+## Demo: a real failed run (0:32 to 0:44)
 
-Learners keep solutions closed until each checkpoint. Case 3 needs two investigation records in sequence. They submit the records and the fixed files.
+Use your own throwaway repo.
+
+1. `gh run list`. Point at the three red runs.
+2. Pick **Build**. Run `gh run view <id> --log-failed` and read the error aloud.
+3. Start `copilot` in the clone and ask: "Read the failed log of the latest Build run with `gh run view --log-failed`. Give me the most likely cause and what would disprove it. Don't change files."
+4. Ask the room: do we believe it? Reproduce: run `npm ci` locally. It fails with the same lockfile message.
+5. Let Copilot fix it. Show the diff. Push. Watch `gh run watch`.
+6. Open **Label good builds**. Fix the first failure (empty secret), push, and let learners see the **second** failure appear (403).
+
+Say aloud when Copilot is wrong. If it isn't, ask it to defend the answer against another cause.
+
+## What "agentic" really means (0:44 to 0:52)
+
+"Agentic" is a word people use loosely. These are the features that exist. **Check the docs before the session, because they change.**
+
+| Feature | What it does | Needs |
+| --- | --- | --- |
+| Explain error | Chat about one failed run | Copilot access |
+| Copilot cloud agent | You assign an issue (or a code scanning alert) to Copilot. It works in a GitHub Actions environment and opens a pull request. | Paid Copilot plan |
+| Copilot Autofix | One suggested fix for a CodeQL alert. You review and apply it. | Public repo, or a private repo with GitHub Code Security. No Copilot subscription. |
+| Agentic autofix (public preview) | Assigning an alert to Copilot runs a cloud agent session that explores, fixes, re-runs CodeQL, and opens a PR. | Cloud agent; uses AI credits |
+
+What is **not** a feature: a Copilot that watches your pipeline and fixes it by itself. Learners can build loops with the CLI or a workflow, but that is their own automation. Nothing merges without a human.
+
+## Pros, cons, and tips (0:52 to 0:58)
+
+**Pros**
+
+- Reads a 2,000-line log in seconds and points at the first real error.
+- Knows common errors: lockfiles, permissions, version mismatches.
+- Drafts the fix and the commit.
+
+**Cons**
+
+- Guesses when the log is thin or the cause is outside the repo, such as a missing secret.
+- Can "fix" by deleting a test, loosening a permission, or adding `continue-on-error`.
+- Sees only the logs and files you give it. It doesn't see your org settings.
+
+**Tips**
+
+- Give it `gh run view --log-failed`, not the whole log.
+- Ask for one cause at a time.
+- Ask what would **disprove** the diagnosis.
+- Work on a branch. Open a PR so checks run before main.
+- Reproduce locally before you push, when the failure isn't environment-only.
+- Pin permissions. Start with `contents: read` and add only what a step needs.
+
+## Common mistakes
+
+- **Rerunning until green.** That hides flaky tests.
+- **Accepting the first diagnosis.** Check it with a rerun.
+- **Fixing three things in one push.** You can't tell which one worked.
+- **Broadening permissions.** `permissions: write-all` fixes a 403 and creates a risk.
+- **Pasting real secrets into a prompt.** Use synthetic values in the lab.
+- **Treating "alert gone" as "fixed".** Read the patch and run the tests.
+- **Expecting agentic autofix on a private repo without Code Security.** It won't be there.
+
+## Lab handoff (0:58 to 1:00)
+
+Learners create their own repo and delete it at the end. Remind them: public repo for Autofix, no real secrets, and one fix per push.
 
 ## Answer key
 
-Reveal after the matching investigation:
+| Workflow | Class | Cause | Fix |
+| --- | --- | --- | --- |
+| Build | Dependency and cache | No `package-lock.json`, and `cache: npm` needs one | Run `npm install`, commit the lockfile |
+| Test on several Node versions | Matrix | `toSorted` needs Node 20; `engines` says 20 or later | Remove Node 18 from the matrix |
+| Label good builds | Secret, then permission | `DEPLOY_TOKEN` empty, then `GITHUB_TOKEN` lacks `issues: write` | `gh secret set`, then add `issues: write` |
+| CodeQL alerts | Security | Reflected XSS and path traversal in `src/server.js` | Escape output; resolve and check the path |
 
-- Case 1 uses a runtime below the application's declared engine.
-- Case 2 runs npm from the wrong directory.
-- Case 3 first includes an unsupported runtime, then reaches a build job that runs outside the application directory.
+Accept a different fix for the matrix case if the learner changes the code to run on Node 18 and `engines` agrees.
 
-## Common questions
+## Reference
 
-**Can Copilot name the cause first?** Ask it to separate observations from hypotheses. Learners still need local command results before changing the workflow.
-
-**Why hold back the second log?** The first failure stops the later stage from running. Showing both logs early gives away the sequence.
-
-**Accept a different repair** if it explains the observed output, stays small, and passes the same checks.
+- [Troubleshooting workflows](https://docs.github.com/en/actions/how-tos/troubleshoot-workflows)
+- [About Copilot Autofix for code scanning](https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/about-autofix-for-codeql-code-scanning)
+- [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
+- [Using workflow run logs](https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs)
+- [`gh run` manual](https://cli.github.com/manual/gh_run)

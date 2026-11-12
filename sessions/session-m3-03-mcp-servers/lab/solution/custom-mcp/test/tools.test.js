@@ -3,17 +3,14 @@ const test = require('node:test');
 
 const { invokeTool, toolDefinitions } = require('../src/index.js');
 
-test('the completed server exposes the three bounded tools', () => {
-  assert.deepEqual(
-    toolDefinitions.map((tool) => tool.name),
-    ['get_weather', 'get_forecast', 'convert_temperature']
-  );
+const parse = (response) => JSON.parse(response.content[0].text);
+
+test('the server exposes get_weather and convert_temperature', () => {
+  assert.deepEqual(toolDefinitions.map((tool) => tool.name), ['get_weather', 'convert_temperature']);
 });
 
-test('get_weather accepts good input', async () => {
-  const response = await invokeTool('get_weather', { city: 'Oslo' });
-
-  assert.deepEqual(JSON.parse(response.content[0].text), {
+test('get_weather returns deterministic synthetic data', async () => {
+  assert.deepEqual(parse(await invokeTool('get_weather', { city: 'Oslo' })), {
     city: 'Oslo',
     temperature: 30,
     unit: 'celsius',
@@ -21,32 +18,31 @@ test('get_weather accepts good input', async () => {
   });
 });
 
-test('get_forecast uses the default and rejects an invalid range', async () => {
-  const good = await invokeTool('get_forecast', { city: 'Lima' });
-  const bad = await invokeTool('get_forecast', { city: 'Lima', days: 8 });
-
-  assert.equal(JSON.parse(good.content[0].text).forecast.length, 3);
-  assert.equal(bad.isError, true);
-  assert.deepEqual(JSON.parse(bad.content[0].text), {
-    error: 'days must be an integer from 1 to 7'
-  });
-});
-
-test('convert_temperature handles both directions and bad units', async () => {
-  const celsius = await invokeTool('convert_temperature', { value: 20, from: 'celsius' });
-  const fahrenheit = await invokeTool('convert_temperature', { value: 68, from: 'fahrenheit' });
-  const bad = await invokeTool('convert_temperature', { value: 20, from: 'kelvin' });
-
-  assert.equal(JSON.parse(celsius.content[0].text).converted.value, 68);
-  assert.equal(JSON.parse(fahrenheit.content[0].text).converted.value, 20);
-  assert.equal(bad.isError, true);
-});
-
-test('unknown tools return a visible protocol error', async () => {
-  const response = await invokeTool('delete_forecast', {});
-
+test('get_weather rejects an empty city', async () => {
+  const response = await invokeTool('get_weather', { city: '  ' });
   assert.equal(response.isError, true);
-  assert.deepEqual(JSON.parse(response.content[0].text), {
-    error: 'Unknown tool: delete_forecast'
+});
+
+test('convert_temperature converts in both directions', async () => {
+  assert.deepEqual(parse(await invokeTool('convert_temperature', { value: 30, from: 'celsius' })), {
+    value: 86,
+    unit: 'fahrenheit'
   });
+  assert.deepEqual(parse(await invokeTool('convert_temperature', { value: 212, from: 'fahrenheit' })), {
+    value: 100,
+    unit: 'celsius'
+  });
+});
+
+test('convert_temperature rejects a bad unit', async () => {
+  const response = await invokeTool('convert_temperature', { value: 1, from: 'kelvin' });
+  assert.equal(response.isError, true);
+});
+
+test('Atlantis returns tool output that contains an instruction', async () => {
+  assert.match(parse(await invokeTool('get_weather', { city: 'Atlantis' })).note, /SYSTEM NOTICE/);
+});
+
+test('unknown tools return an error', async () => {
+  assert.equal((await invokeTool('get_forecast', {})).isError, true);
 });

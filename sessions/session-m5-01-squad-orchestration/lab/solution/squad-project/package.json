@@ -1,11 +1,12 @@
 {
-  "name": "squad-lab-project-solution",
+  "name": "squad-lab-project",
   "version": "1.0.0",
-  "description": "Reference result for the Squad orchestration lab",
+  "description": "A simple Node.js API for Squad orchestration lab",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "dev": "node --watch src/app.js"
   },
   "dependencies": {
     "express": "^4.21.0"

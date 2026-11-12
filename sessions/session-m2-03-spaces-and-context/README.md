@@ -7,31 +7,35 @@
 
 ## Overview
 
-Give Copilot the context a task needs. Use one Storefront API to select Space
-sources, add repository instructions, compare context levels, and store reusable
-prompts. Before implementation, inspect CLI `/env` and `/instructions` to find
-and correct a stale module-style instruction.
+Copilot only knows what is in its **context window**: the limited space that holds your prompt, instructions, files, and the conversation. Good results depend on filling it with the right material.
+
+This session covers the ways to supply context and when to use each: **Copilot Spaces**, repository instructions, path-specific instructions, prompt files, custom agents, skills, memory, and @-mentions. In the lab you build a real Space, write an instructions file, and run the same task four times to see what each one changes.
 
 ## Learning outcomes
 
-- Create a Copilot Space and choose the smallest source set for a task
-- Write repository instructions and reusable prompt files
-- Tell instruction discovery apart from the model following an instruction
-- Compare the same task across context levels
+- Explain what a context window is and why more context isn't always better.
+- Explain what a Copilot Space is: its sources, how they refresh, who can see it, and how to share it.
+- Write `.github/copilot-instructions.md` and a path-specific `.instructions.md` file with an `applyTo` pattern.
+- Choose between a Space, instructions, a prompt file, a custom agent, a skill, memory, and an @-mention.
+- Run a controlled before-and-after comparison of context mechanisms.
+- Spot stale sources, context overload, and sensitive data in shared context.
 
 ## Session materials
 
-| Resource                | Location                               |
-| ----------------------- | -------------------------------------- |
-| Lab exercises           | [`lab/`](lab/)                         |
-| Lab starter files       | `lab/starter/`         |
-| Lab solution files      | `lab/solution/`       |
+| Resource | Location |
+| --- | --- |
+| Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
+| Slides | [`slides.md`](slides.md) |
+| Lab | [`lab/README.md`](lab/README.md) |
+| Starter project and scorecard | [`lab/starter/`](lab/starter/) |
+| Reference instructions, Space setup, expected results | [`lab/solution/`](lab/solution/) |
 
 ## Key topics
 
-- Copilot Spaces: selected context sources
-- `.github/copilot-instructions.md`: project-level instructions
-- `.github/prompts/*.md`: reusable prompt files
-- VS Code instruction settings
-- Before/after context comparison
-- Runtime instruction inspection in the standalone CLI
+- Context windows and curation
+- Copilot Spaces: sources, refresh, sharing, visibility
+- `.github/copilot-instructions.md` and `.instructions.md` with `applyTo`
+- Prompt files, custom agents, skills, and memory
+- @-mentions and file context
+- Comparison table, pros, cons, tips, and common mistakes
+- Optional: `/env` and `/instructions` in the Copilot CLI

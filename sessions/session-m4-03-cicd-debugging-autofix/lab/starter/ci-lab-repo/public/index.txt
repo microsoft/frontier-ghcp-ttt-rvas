@@ -1,0 +1,1 @@
+Public sample file served by the training app.

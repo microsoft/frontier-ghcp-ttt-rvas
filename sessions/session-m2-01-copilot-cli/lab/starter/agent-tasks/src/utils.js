@@ -1,6 +1,6 @@
 /**
  * Utility functions for the task management API.
- * These functions need refactoring: add input validation, JSDoc, and tests.
+ * Helper functions for the task API.
  */
 
 function capitalize(str) {

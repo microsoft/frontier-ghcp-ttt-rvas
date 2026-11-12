@@ -29,12 +29,14 @@ function syntheticWeather(city) {
   const score = [...normalized].reduce((total, character) => total + character.charCodeAt(0), 0);
   const conditions = ['clear', 'cloudy', 'rain'];
 
-  return {
+  const result = {
     city: normalized,
     temperature: 8 + (score % 23),
     unit: 'celsius',
     conditions: conditions[score % conditions.length]
   };
+
+  return result;
 }
 
 function toolError(message) {

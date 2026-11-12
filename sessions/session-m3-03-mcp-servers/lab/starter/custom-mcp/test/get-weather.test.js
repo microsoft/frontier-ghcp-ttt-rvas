@@ -3,7 +3,7 @@ const test = require('node:test');
 
 const { invokeTool, toolDefinitions } = require('../src/index.js');
 
-test('stage one exposes only get_weather with a required city', () => {
+test('the starter exposes only get_weather with a required city', () => {
   assert.deepEqual(toolDefinitions.map((tool) => tool.name), ['get_weather']);
   assert.deepEqual(toolDefinitions[0].inputSchema.required, ['city']);
   assert.equal(toolDefinitions[0].inputSchema.additionalProperties, false);

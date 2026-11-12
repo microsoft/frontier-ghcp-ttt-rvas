@@ -1,34 +1,30 @@
 # Developer orchestration reference
 
-This reference explains facts from the sources. It does not replace a live
-`/orchestrate` run or dictate the wording of child results.
+This reference explains what to expect. It doesn't replace a live `/orchestrate`
+run or dictate the wording of child results.
 
 ## Separate conclusions
 
-| Question | Supported conclusion | Source |
+| Question | Likely conclusion | Source |
 | --- | --- | --- |
-| Does the reference satisfy the supplied focused checks? | All six unittest cases pass | Actual command output from the copied workspace |
-| Does every passing test prove the full contract? | Inspect each assertion; ordering alone does not prove the complete reason list | `test_reason_codes_are_sorted` |
-| Is the supplied PR ready? | `NOT_READY` | Required `integration-tests` failure and unresolved blocking thread `R1` in `pr-snapshot.json` |
+| Does the fix meet `issue-brief.md`? | Yes, if it matches the M2-05 reference fix: `>=` for free shipping, coupon before the shipping decision, `Decimal` with `ROUND_HALF_UP` | `shop/pricing.py`, PR diff |
+| What do the tests prove? | Each of the four symptoms has a test, plus the small-order baseline. Five tests pass | `tests/test_pricing.py`, test output |
+| What do they miss? | Edge cases such as a 0% or 100% coupon, an empty order, or a coupon over 100 | `tests/test_pricing.py` |
+| Is the PR ready? | Decide from the live `tests` check and review threads. A green check with no open threads supports merging. A red check or open thread doesn't, whatever the local run says | `gh pr checks`, review threads |
 
-Reject the provisional author note that passing local tests makes the PR ready.
-The local run does not resolve the recorded review thread or replace the required
-integration check. Non-blocking thread `R2` is not itself a blocker.
-
-The PR snapshot records head `71f5cba`. Do not claim the local training run tested
-that exact commit or that these files describe live GitHub state.
+Local tests passing and a mergeable PR are different claims. The local run doesn't
+resolve a review thread or replace the CI check on the PR head commit. Check that
+the PR head matches the code the children reviewed.
 
 ## Redirection
 
-The planned follow-up should make the test reviewer inspect criterion 5 and the
-ordering assertion. Record what the child actually changed or clarified. Do not
-invent a defect or disagreement.
+The planned follow-up makes the test reviewer map each rule to a test. Record what
+the child changed or clarified. Don't invent a disagreement.
 
-## What remains a human decision
+## Human decision
 
-The reviewer decides whether a test gap needs more work and who owns the failed
-integration check and blocking thread. This read-only lab does not fix those
-items, post a comment, approve, or merge.
+You decide whether a test gap needs another PR and whether to merge. This lab
+doesn't fix anything, comment, approve, or merge.
 
-Keep child results and usage in the app. Grade claims supported by sources
-and how learners steer the work, not the number of agents or an assumed speedup.
+Check claims against sources and how learners steered the work. Don't grade on
+the number of agents or an assumed speedup.

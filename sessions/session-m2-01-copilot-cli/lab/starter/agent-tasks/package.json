@@ -1,7 +1,7 @@
 {
   "name": "agent-tasks",
   "version": "1.0.0",
-  "description": "A simple Express API for managing tasks — used for CLI agent mode exercises",
+  "description": "A simple Express API for managing tasks",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

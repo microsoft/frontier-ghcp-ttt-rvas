@@ -8,9 +8,11 @@ const products = [
   new Product({ name: 'Wireless Mouse', description: 'Ergonomic wireless mouse', price: 29.99, category: 'electronics', stock: 150 }),
   new Product({ name: 'Running Shoes', description: 'Lightweight trail shoes', price: 89.99, category: 'sports', stock: 75 }),
   new Product({ name: 'JavaScript Guide', description: 'Comprehensive JS reference', price: 39.99, category: 'books', stock: 200 }),
+  new Product({ name: 'USB-C Cable', description: 'One metre braided cable', price: 9.99, category: 'electronics', stock: 8 }),
+  new Product({ name: 'Retired Keyboard', description: 'Last units of an old model', price: 19.99, category: 'electronics', stock: 2, status: 'discontinued' }),
 ];
 products.forEach((p, i) => p.id = i + 1);
-let nextId = 4;
+let nextId = 6;
 
 // GET /api/products — list with optional filters
 router.get('/', async (req, res) => {

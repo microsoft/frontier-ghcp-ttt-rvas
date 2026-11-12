@@ -14,11 +14,11 @@ class User {
   }
 
   findById(id) {
-    return this.users.find(user => user.id === id);
+    return this.users.find(u => u.id === id);
   }
 
   findByEmail(email) {
-    return this.users.find(user => user.email === email);
+    return this.users.find(u => u.email === email);
   }
 
   create({ name, email }) {
@@ -33,7 +33,7 @@ class User {
   }
 
   delete(id) {
-    const index = this.users.findIndex(user => user.id === id);
+    const index = this.users.findIndex(u => u.id === id);
     if (index === -1) return false;
     this.users.splice(index, 1);
     return true;

@@ -1,165 +1,176 @@
 # Session M5-01 trainer guide: Brady's Squad
 
-**Module:** 5: Specification-Driven Frameworks
+## Teaching goal
 
-**Difficulty:** Advanced
-
-**Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
-
-**Duration:** 1 hour trainer content + 2 hours lab
-
-## Goal
-
-Squad is an optional open-source example:
-[`bradygaster/squad`](https://github.com/bradygaster/squad). Use it to teach
-coordination, role limits, shared decisions, and review. Learners decide whether a
-task needs an agent team and assign owners without conflicting changes.
+Learners leave knowing what Squad really is, how a team is defined and remembered, what Ralph does, and when a team of agents is worth its cost.
 
 ## One-hour plan
 
-| Time | Segment | Outcome |
-| --- | --- | --- |
-| 0:00 to 0:07 | Why coordinate agents | Learners can name the cost and benefit of orchestration. |
-| 0:07 to 0:17 | Roles and routing | Learners can define a coordinator, agent limits, and a reviewer. |
-| 0:17 to 0:27 | Shared memory | Learners can separate committed decisions from temporary work. |
-| 0:27 to 0:35 | Work monitoring and issues | Learners can map an issue to assignment, review, and closure. |
-| 0:35 to 0:47 | Prepared demo | Initialize or inspect a small team and assign Issue 001. |
-| 0:47 to 0:55 | Decision framework | Learners choose one agent or a team. |
-| 0:55 to 1:00 | Lab handoff | Learners start the lab. |
-
-## Prepare
-
-- Install Node.js 20 or later, the Squad CLI, and sign in to GitHub.
-- Prepare a small repository with several independent issues. Label only the issues used in the demo.
-- Have an exported `.squad/` example or recording ready in case the live run stalls.
-
-## 1. Why coordinate agents (0:00 to 0:07)
-
-Start with a task one agent can finish alone. Contrast it with work that needs
-several specialties and shared decisions beyond one conversation.
-
-Coordination adds state, review work, and cost. Someone still owns scope and the
-final decision.
-
-| Individual agent | Coordinated team |
+| Time | Segment |
 | --- | --- |
-| One focused change | Several independent work items |
-| Context stays in one conversation | Decisions and assignments must be shared |
-| Human routes the work | A coordinator routes the work |
-| Low overhead | Extra review and state-management cost |
+| 0:00 to 0:10 | What Squad is |
+| 0:10 to 0:25 | Charters, routing, and shared memory |
+| 0:25 to 0:35 | How it runs, and Ralph |
+| 0:35 to 0:50 | Demo: a live run |
+| 0:50 to 0:57 | Team or one agent? |
+| 0:57 to 1:00 | Lab handoff |
 
-A team for a typo or a one-file repair is slower and harder to review.
+## Preparation
 
-## 2. Roles and routing (0:07 to 0:17)
+- Install Squad and the Copilot CLI. Run the whole lab once. **Check the Squad README for your version**: install method, file names, and flags change.
+- Keep a finished `squad-run` project to fall back on. A live run takes minutes and can stall.
+- Open [bradygaster/squad](https://github.com/bradygaster/squad) and its `docs/` folder. Read "What is Squad?", "Memory & Knowledge", "Parallel Work & Models", and "Ralph".
+- Prepare a throwaway GitHub repo with three `squad`-labeled issues for the Ralph demo.
+- Warn learners about Node.js 22.5 or later for the npm install.
 
-The coordinator receives a request, picks the role, and gathers the result. It
-should not turn an ambiguous request into a broad implementation.
+## What Squad is (0:00 to 0:10)
 
-| Role | Owns |
+- Squad is an **open-source tool** that gives you a human-led team of AI specialists. Brady Gaster maintains it. It is not a GitHub product, so say so.
+- The team lives in your repo as files, in `.squad/`. Commit them and anyone who clones gets the team.
+- You talk to a **coordinator**. It reads your request, applies routing, and starts specialists as separate sub-agents with their own context.
+- A **Scribe** records decisions. **Ralph** watches the work queue. Both are on every team.
+- It is not "a chatbot wearing hats". Each specialist has its own context window and its own memory file.
+- Humans stay accountable. Squad drafts and coordinates. You review and merge.
+
+Ask: "What would you want a team to do that one agent can't?" Collect answers. Come back to them at 0:50.
+
+## Charters, routing, and shared memory (0:10 to 0:25)
+
+Show each file from a real project.
+
+| File | Job |
 | --- | --- |
-| Lead | Scope, technical decisions, and review gate |
-| Frontend or backend implementer | A defined part of the product |
-| Tester | Test plan, focused checks, and reported gaps |
-| Scribe or decision owner | Committed decisions and change history |
-| Work monitor | Triage of ready work |
+| `team.md` | Roster. Who is on the team. |
+| `routing.md` | Who handles which kind of work. |
+| `agents/<name>/charter.md` | Identity, what the agent owns, what it doesn't handle. |
+| `agents/<name>/history.md` | What this agent learned about your project. Only that agent reads it. |
+| `decisions.md` | Shared rules and choices. **Every agent reads it before working.** |
+| `decisions/inbox/` | Where agents drop new decisions. The Scribe merges them. |
+| `casting/` | Persistent names from a themed universe. |
 
-A charter states a role's responsibilities, inputs, outputs, and boundaries.
-Assign file ownership or dependency order before running tasks in parallel. Two
-agents editing the same route or dependency manifest cause conflicts.
+Teach these points:
 
-Use an issue as the work contract: acceptance criteria, non-goals, constraints,
-required tests, and a reviewer. The coordinator then picks a single agent, fans
-out read-only research, or defers the work.
+- **Charter** = a job description. Narrow charters make routing predictable.
+- **Routing** = a table. Named request beats path rule beats skill match. If nothing matches, the lead triages. You can always name an agent.
+- **Shared decisions** keep agents from re-arguing settled questions. **Personal history** lets an agent get better at its own area.
+- **Directives**: say "always" or "never" and Squad saves it as a team rule.
+- Memory is **plain Markdown in git**. You can read it, diff it, and fix it.
+- Context cost: a long `decisions.md` and long histories get loaded into every spawn. `squad nap` compresses them.
 
-## 3. Saved team decisions (0:17 to 0:27)
+Say clearly: **the folder layout and roles come from Squad. The names, routing rows, and decision text are your team's.** Learners confuse a sample file with a required format.
 
-A committed decision log holds the chosen architecture, the rejected option, the
-owner, supporting results, and the date. Personal history can record role-specific
-lessons. Inboxes, drafts, and task output stay out.
+Version note: docs and README have differed on some names (for example `history.md` or `context.md`). Tell learners to trust what their version wrote.
 
-To avoid conflicting writes:
+## How it runs, and Ralph (0:25 to 0:35)
 
-1. Each agent writes its proposal to its own file.
-2. The lead or scribe reviews the proposals.
-3. One owner updates the shared decision record.
+- Interface: `copilot --agent squad` in the Copilot CLI is the recommended way. In VS Code, pick the **Squad** agent in Copilot Chat. The `squad` command is for setup and checks (`init`, `upgrade`, `doctor`, `watch`). Its interactive shell is deprecated.
+- `squad init` writes the files. Copilot then loads the coordinator as a custom agent.
+- Parallel work: the coordinator checks dependencies, starts independent agents in the background, and runs dependent ones in order. A reviewer gate runs before the result returns.
+- `--yolo` skips tool approvals. Explain why the lab allows it and why a real repo shouldn't.
+- **Ralph** has three forms:
+  1. In a chat session, Ralph checks GitHub for more work after each batch.
+  2. `squad watch` polls on a timer. Without `--execute` it only triages. With it, it starts Copilot sessions.
+  3. A GitHub Actions heartbeat triages labeled issues between sessions.
+- Ralph needs `gh` and a token that can read and write issues and PRs. Check the Squad docs for the current scope advice.
+- Ralph triages from `routing.md`. A weak routing table means weak triage.
 
-Git history is the audit trail.
+## Demo: a live run (0:35 to 0:50)
 
-## 4. Ralph, issues, and review (0:27 to 0:35)
+1. In an empty sample repo, run `squad init`. Show the folder.
+2. `copilot --agent squad --yolo`. Say what you're building. Show the proposed roster. Rename one member. Accept.
+3. Open `routing.md` and one charter. Read three lines aloud.
+4. Give a multi-part task. Use the lab task or something similar with a shared file.
+5. While it runs, narrate: who started, who waits, who is writing to `decisions/inbox/`.
+6. Review as a human. Run the tests. Say "always return errors as `{ error }`" and show the directive land in `decisions.md`.
+7. Show `orchestration-log/` and one `history.md`.
 
-Ralph is a work monitor. It inspects ready issues, picks work that meets its
-rules, and presents the result for review. A human approves delivery.
+If the run stalls, switch to the finished project and walk its files. Tell learners you did.
 
-```text
-Issue with acceptance criteria → assignment → bounded change →
-focused checks → human review → merge or follow-up issue
-```
+## Team or one agent? (0:50 to 0:57)
 
-Stop when ownership is unclear, a test fails, an unexpected dependency appears, or
-the task grows beyond its issue.
+Reveal the answers to the 0:00 question.
 
-## 5. Prepared demonstration (0:35 to 0:47)
-
-Use Issue 001, **Add input validation to `POST /api/users`**, from
-`lab/starter/sample-issues.md`. Keep it on screen.
-
-1. **0:35 to 0:37: Read the contract.** Point to the acceptance criteria, non-goals,
-   permitted files, required tests, and reviewer.
-2. **0:37 to 0:39: Show the team.** Open the reference `.squad/team.md`,
-   `.squad/routing.md`, and the backend charter. The backend role owns the
-   implementation. The tester returns test results without editing source.
-3. **0:39 to 0:41: Assign the issue.** Open
-   `.squad/decisions/inbox/issue-001-proposal.md` and
-   `.squad/orchestration-log/issue-001.md`. The assignment must keep the issue
-   limits.
-4. **0:41 to 0:44: Inspect implementation and tests.** Compare the starter and
-   solution versions of `src/routes/api.js` and `tests/api.test.js`. Run `npm test`
-   from the solution.
-5. **0:44 to 0:46: Review the result.** Open
-   `.squad/reviews/issue-001-review.md`. Check each acceptance criterion against
-   code and test results.
-6. **0:46 to 0:47: Record the decision.** Open `.squad/decisions.md`.
-
-Work order for the live run:
-
-```text
-Assign the approved input-validation issue to one role.
-Do not edit files outside the issue, add dependencies, or start parallel implementation.
-Record the proposal, focused-check evidence, and a lead review decision.
-Stop if ownership or the data boundary is unclear.
-```
-
-If the live run has not produced the assignment by 0:41, switch to the reference
-`.squad/` example. If implementation or tests are still blocked at 0:44, switch to
-the tabletop packet.
-
-## 6. When a team helps (0:47 to 0:55)
-
-| Situation | Recommended path |
+| A team helps when | A single agent is better when |
 | --- | --- |
-| One small, well-understood change | Individual agent or manual work |
-| Separate frontend, backend, and test work with defined interfaces | Coordinated team |
-| Ambiguous architecture or overlapping file ownership | Plan first; do not fan out implementation |
-| No tool access | Manual workflow with prepared artifacts |
-| Repeated operational work with stable acceptance checks | A monitored team may help |
+| Parts are independent (docs, tests, separate modules) | The task is small or tightly coupled |
+| Roles need different context or tools | One file or one idea carries the task |
+| Work spans many sessions and needs memory | It is a one-off |
+| You want a standing review gate | You'd read all of it anyway |
+| A backlog needs triage (Ralph) | You have two issues |
 
-Judge the team by the changes it completes and reviews, not its agent count.
+What a team costs:
 
-## Lab handoff (0:55 to 1:00)
+- **Tokens.** Every specialist starts with its own context and reads `decisions.md` and its history. More agents mean more input tokens, and the coordinator adds its own.
+- **Coordination overhead.** Splitting, routing, and collecting takes time. Small tasks finish slower.
+- **Conflicting edits.** Parallel agents can overwrite the same file. Routing says "split only independent deliverables." When your task isn't independent, don't split it.
+- **Review load.** You read several agents' output plus their memory files.
+- **Memory drift.** Stale decisions mislead every agent. Prune them.
 
-Point learners to `lab/README.md`.
+Rule of thumb: start with one agent. Add a team when you hit a ceiling you can name.
 
-1. Learners run the starter tests.
-2. They check Squad access.
-3. They carry Issue 001 through assignment, implementation, tests, and review.
-4. They compare their packet with `lab/solution/squad-project/`.
+## Lab handoff (0:57 to 1:00)
 
-The deliverable: **one reviewed issue with a matching committed decision record**.
+Show the lab parts. Point at Part 6 (single-agent comparison) and say it's the point of the lab. Remind learners to use the throwaway repo for Ralph and to delete it.
 
-## Common questions
+## Lab timing and tips
 
-**Does Squad replace GitHub Copilot?** No. It coordinates Copilot-powered agents.
+| Part | Common snag |
+| --- | --- |
+| 1 | Node.js below 22.5. Use another install method. |
+| 2 | Learners skip the roster tweak. Make them change one thing. |
+| 3 | The run takes long. Tell learners to read `routing.md` while they wait. |
+| 4 | The team skipped the shared-file conflict. Ask which agent edited `api.js`. |
+| 5 | A file name differs. Ask learners to list `.squad/` and use what is there. |
+| 6 | Usage numbers are hard to find. Accept request counts or wall-clock time. |
+| 7 | `gh` token lacks scope. Check the Squad docs, then use a PAT. |
 
-**How do we control cost?** Limit active tasks, require acceptance criteria, and stop at a set threshold.
+## Answer key
 
-**What happens when two agents disagree?** The decision owner resolves it from test results and review findings. Don't merge competing changes by accident.
+- Part 2 questions: reviewer and ownership are in `routing.md` and charters. Learners cite their own files.
+- Part 4: a correct run has both `api.js` changes, passing tests, and a README that matches. See `lab/solution/README.md`.
+- Part 6: expect the team to cost more and to take longer on this size of task. Some runs show fewer README or test misses from the team. Don't force a winner.
+- Part 7: each issue should get a `squad:<member>` label that fits `routing.md`.
+
+## Pros, cons, and tips
+
+**Pros**
+
+- Memory persists in git and carries across sessions.
+- Charters and routing make roles visible and editable.
+- Parallel work saves time on independent parts.
+- Decisions are written down where everyone, including humans, can read them.
+
+**Cons**
+
+- Higher token and request use.
+- Slower on small tasks.
+- Newer tool that changes quickly. File names and flags move.
+- More output to review.
+- Needs good routing. A vague table sends work to the wrong agent.
+
+**Tips**
+
+- Keep the team small. Three to five specialists is plenty.
+- Write narrow charters, with "I don't handle" lines.
+- Give each agent its own files in the task.
+- Review `decisions.md` like code. Delete what's stale.
+- Run `squad nap` when histories grow.
+- Use `squad doctor` when something breaks.
+
+## Common mistakes
+
+- Treating a sample `.squad/` file as the required format.
+- Using a team for a task one agent finishes in a minute.
+- Splitting work that edits the same file.
+- Running `--yolo` on a repository you care about.
+- Never reading `decisions.md`, then wondering why agents behave oddly.
+- Expecting Ralph to work without `gh` access or without a useful `routing.md`.
+- Leaving `squad watch --execute` running.
+- Assuming the docs match your installed version.
+
+## References
+
+- [bradygaster/squad](https://github.com/bradygaster/squad)
+- Squad docs in the repo: `docs/src/content/docs/concepts/` and `features/ralph.md`
+- [Squad installation guide](https://bradygaster.github.io/squad/docs/get-started/installation/)
+- [GitHub Copilot CLI documentation](https://docs.github.com/en/copilot/how-tos/copilot-cli)

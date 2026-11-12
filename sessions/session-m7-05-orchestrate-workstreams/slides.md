@@ -44,7 +44,7 @@ Session M7-05 | 3 hours
 | Route | Inputs | Result |
 | --- | --- | --- |
 | Product and delivery | Four live GitHub issues | Parent result used by Session M7-06 |
-| Developer | Local evaluator, tests, synthetic PR snapshot | Separate implementation, coverage, and PR conclusions |
+| Developer | Your M2-05 fix, tests, and pull request | Separate implementation, coverage, and PR conclusions |
 
 Each route takes 120 minutes. Developers need Session M2-05, not Sessions M7-01 to M7-04.
 
@@ -89,11 +89,11 @@ Move shared questions back to the parent.
 
 | Question | Input |
 | --- | --- |
-| Does implementation meet the behavior contract? | Brief and evaluator |
-| What do tests prove or miss? | Brief, tests, and evaluator |
-| Is the supplied PR ready? | Brief and PR snapshot |
+| Does the fix meet `issue-brief.md`? | Brief and `shop/pricing.py` |
+| What do tests prove or miss? | Brief, tests, and `shop/pricing.py` |
+| What do the PR's checks and threads say? | The real PR, read with `gh` or GitHub MCP |
 
-Children read the same fixed inputs. They do not wait for one another or edit.
+Children don't wait for one another, and they don't edit.
 
 ---
 
@@ -102,8 +102,8 @@ Children read the same fixed inputs. They do not wait for one another or edit.
 Redirect the test reviewer after its first answer:
 
 ```text
-Check criterion 5. Does the test prove sorted reason codes, the exact complete
-reason list, or both? Do not edit files.
+Map each rule in issue-brief.md to the test that would catch it. Which rules
+have no test? Do not edit files.
 ```
 
 Inspect the revised answer. A follow-up doesn't prove the first answer was wrong.
@@ -112,14 +112,14 @@ Inspect the revised answer. A follow-up doesn't prove the first answer was wrong
 
 # Reconcile the readiness claim
 
-The synthetic author says: "Local tests pass, so the PR is READY."
+The author note says: "Local tests pass, so the PR is ready."
 
-Check the actual snapshot:
+Check the real PR:
 
-- required `integration-tests` failed;
-- blocking thread `R1` is unresolved.
+- is the `tests` check green on the head commit?
+- are any review threads unresolved?
 
-Check the parent's decision against the snapshot. Local success doesn't override PR blockers.
+Local success doesn't override a red check or an open thread.
 
 ---
 

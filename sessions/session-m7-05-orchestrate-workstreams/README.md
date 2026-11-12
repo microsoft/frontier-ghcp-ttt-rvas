@@ -15,9 +15,9 @@ Use parent-led orchestration for one delivery objective. Split four live GitHub
 issues into independent workstreams, then monitor the child sessions and review
 their results.
 
-On the developer route after Session M2-05, you review a local readiness
-evaluator, its tests, and a synthetic PR snapshot instead. You don't need GitHub
-MCP or product-track artifacts. Both routes use the same two-hour lab.
+On the developer route after Session M2-05, you review your own pricing fix, its
+tests, and its real pull request instead. You need `gh` or GitHub MCP, but no
+product-track artifacts. Both routes use the same two-hour lab.
 
 Each workstream needs a question, input paths or issues, a stop condition, and a
 reviewer. GitHub Copilot keeps session status, links, timing, and usage on the

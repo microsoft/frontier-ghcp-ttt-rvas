@@ -1,28 +1,14 @@
-# Session M5-01 reference result
+# Solution project
 
-This project shows the completed Issue 001 workflow: assignment, implementation,
-tests, lead review, and decision record.
+Reference result for the lab task: user validation, a tasks resource, and tests.
 
-## Check the code
+The starter README is the base. Add this section to your own README when you document the new endpoints.
 
-```bash
-npm install
-npm test
-```
+## Endpoints added
 
-The suite should pass all baseline and input-validation tests.
+- `GET /api/tasks`: list tasks. Filter with `?status=todo|doing|done`.
+- `POST /api/tasks`: create a task (`{ title, status? }`). `title` is required, at most 100 characters.
+- `PATCH /api/tasks/:id`: change status (`{ status }`).
+- `DELETE /api/tasks/:id`: delete a task.
 
-## Inspect the review packet
-
-| Record | Path |
-| --- | --- |
-| Team and write boundaries | `.squad/team.md` |
-| Routing rules | `.squad/routing.md` |
-| Assignment proposal | `.squad/decisions/inbox/issue-001-proposal.md` |
-| Work log | `.squad/orchestration-log/issue-001.md` |
-| Test results and lead review | `.squad/reviews/issue-001-review.md` |
-| Committed decision | `.squad/decisions.md` |
-| Prepared trainer example | `tabletop/issue-001-review-packet.md` |
-
-Use the prepared packet if the trainer demonstration stalls. It does not replace
-a learner Squad run.
+`POST /api/users` now returns `400` for a malformed email or a name over 100 characters.

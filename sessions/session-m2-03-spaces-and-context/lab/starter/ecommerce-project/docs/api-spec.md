@@ -138,3 +138,33 @@ DELETE /api/products/:id
 
 **Response (204):** No content
 **Response (404):** Product not found
+
+#### Low-stock report
+
+```
+GET /api/products/low-stock
+```
+
+Lists products that the warehouse team should reorder.
+
+**Query parameters:**
+
+| Param       | Type    | Description                                      |
+| ----------- | ------- | ------------------------------------------------ |
+| `threshold` | integer | Include products with `stock <= threshold`. Must be 0 or more. Default: 10 |
+
+**Rules:**
+
+- Only products with status `active` appear. Inactive and discontinued products never do.
+- Sort by `stock`, lowest first. Break ties by `name`.
+- A `threshold` that is not a whole number of 0 or more returns `400` with code `VALIDATION_ERROR`.
+
+**Response (200):**
+
+```json
+{
+  "data": [ { "id": 4, "name": "USB-C Cable", "stock": 8, "status": "active" } ],
+  "total": 1,
+  "threshold": 10
+}
+```

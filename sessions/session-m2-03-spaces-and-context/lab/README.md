@@ -1,261 +1,233 @@
-# Session M2-03 lab: Spaces and context management
+# Session M2-03 lab: Build a Space, then compare context
 
 **Duration:** 2 hours
-**Deliverable:** A context package for one Storefront API, with comparison results
+**Deliverable:** One working Copilot Space, a short instructions file, and a filled-in comparison of four runs of the same task
 
 ## Lab overview
 
-Use one Storefront API for the whole lab. Select sources for a Copilot Space, add
-repository instructions, compare the same task across context levels, and store
-reusable prompt files beside the project.
+You add one endpoint to a small Storefront API four times. Each run gets different context. You score the results and see which mechanism supplied what.
 
-| Stage | Work | Time |
+| Part | Work | Time |
 | --- | --- | --- |
-| 1 | Prepare the project and select Space sources | 30 min |
-| 2 | Add instructions and inspect what the CLI loaded | 30 min |
-| 3 | Compare one task across context levels | 30 min |
-| 4 | Build and test a prompt library | 30 min |
+| 1 | Set up the project and a private repository | 15 min |
+| 2 | Build the Space | 25 min |
+| 3 | Run the task with no context, then with the Space | 25 min |
+| 4 | Write the instructions | 20 min |
+| 5 | Run with instructions, then with both | 25 min |
+| 6 | Compare and decide | 10 min |
+
+Stretch tasks at the end are optional and sit outside the 2 hours.
 
 ## Before you start
 
-Use only the synthetic Storefront API files supplied with this lab.
-
 You need:
 
-- GitHub Copilot in your editor;
-- Copilot Spaces access;
-- Node.js and npm;
-- the standalone Copilot CLI with `/env` and `/instructions`.
+- a GitHub account with Copilot, and access to [Copilot Spaces](https://github.com/copilot/spaces);
+- the standalone Copilot CLI from Session M2-01;
+- Git, the `gh` CLI (signed in), and Node.js 18 or later.
 
-Create a writable copy:
+Use only the synthetic Storefront files in this lab. Put them in a **private** repository on your personal account. Don't add real company code or data to the Space.
+
+## Part 1: Set up
+
+Make two copies of the project. The full copy goes to GitHub and feeds the Space. The bare copy has only `src/` and `package.json`. You run every task in the bare copy, so Copilot can't read the docs on its own.
 
 ```bash
 mkdir -p ~/copilot-labs/session-m2-03
-cp -R sessions/session-m2-03-spaces-and-context/lab/starter/ecommerce-project \
-  ~/copilot-labs/session-m2-03/storefront-api
-cp sessions/session-m2-03-spaces-and-context/lab/starter/context-comparison.md \
-  sessions/session-m2-03-spaces-and-context/lab/starter/stale-storefront.instructions.md \
-  ~/copilot-labs/session-m2-03/storefront-api/
-cd ~/copilot-labs/session-m2-03/storefront-api
+cd ~/copilot-labs/session-m2-03
+cp -R <path-to-repo>/sessions/session-m2-03-spaces-and-context/lab/starter/ecommerce-project storefront-api
+cp <path-to-repo>/sessions/session-m2-03-spaces-and-context/lab/starter/context-comparison.md .
+
+cd storefront-api
+git init -q -b main && git add -A && git commit -qm "Start"
+gh repo create storefront-api-lab --private --source . --push
+
+cd ..
+mkdir bare-api && cp -R storefront-api/src storefront-api/package.json bare-api/
+cd bare-api
 npm install
-npm start
+printf 'node_modules\n' > .gitignore
+git init -q -b main && git add -A && git commit -qm "Bare start"
 ```
 
-Open `http://localhost:3000/api/products`. The response should contain the seeded products.
+Open `storefront-api/docs/api-spec.md` and read the **Low-stock report** section. Your task needs that behavior, and the code doesn't contain it.
 
-## Stage 1: Prepare the project and select Space sources (30 minutes)
+**Checkpoint:** `storefront-api-lab` exists on GitHub with `docs/` on `main`. `bare-api` has no `docs/` folder.
 
-### Inspect the context before adding it
+## Part 2: Build the Space
 
-Read these files:
+Go to [github.com/copilot/spaces](https://github.com/copilot/spaces).
 
-| Source | Decision it supports |
-| --- | --- |
-| `README.md` | Project purpose, setup, and endpoints |
-| `docs/api-spec.md` | Required HTTP behavior |
-| `docs/architecture.md` | Layers, response envelopes, and naming |
-| `src/models/product.js` | Product fields and validation |
-| `src/routes/products.js` | Current route patterns |
+1. Click **Create space**. Name it `Storefront API reference`. Choose your personal account as owner.
+2. Add **Instructions**. Paste the text from `lab/solution/space-setup.md`, or write your own in five lines or fewer.
+3. Click **Add sources**, then **Add files and repositories**. Pick `storefront-api-lab` and add these four **files**, not the repository:
+   - `docs/api-spec.md`
+   - `docs/architecture.md`
+   - `src/models/product.js`
+   - `src/routes/products.js`
+4. Leave the Space private.
 
-Write `context-notes.md`:
+Why files and not the repository? Copilot loads a file into the context window in full, for every question. It searches a repository and pulls only what looks relevant. For a few key documents, files are more predictable. For a large docs tree, a repository is the better source.
 
-```markdown
-# Storefront API Context Notes
+### Test the Space
 
-## Task
-Add a low-stock report endpoint.
-
-## Required sources
-## Excluded sources
-## Conflicts or stale statements
-## Acceptance criteria
-```
-
-Keep the source set small. Leave out unrelated repositories, private discussions, and production data.
-
-### Create the Space
-
-Create a Space named `Storefront API Lab`. Add the five files and these instructions:
+Ask in the Space chat:
 
 ```text
-Answer from the selected Storefront API sources. Follow docs/api-spec.md and
-docs/architecture.md. Use the Product validation and response patterns already in
-the project. State when a requested behavior is not defined by the sources.
+What is the default low-stock threshold, and which products does the report exclude?
 ```
 
-Ask:
+You should get a threshold of 10, with inactive and discontinued products excluded, taken from `api-spec.md`.
+
+### Watch a source refresh
+
+GitHub files in a Space follow the **`main` branch** of their repository. Check it:
+
+1. In `storefront-api`, change the default threshold in `docs/api-spec.md` from 10 to 20. Commit and push to `main`.
+2. Ask the same question in the Space. The change may take a moment to show up. If it doesn't, check the current docs.
+3. Change the threshold back to 10 and push again.
+
+This helps when docs change. It hurts when someone pushes a bad change. **A Space is only as current and as correct as `main`.**
+
+**Checkpoint:** The Space answers from the spec, and you saw one answer change after a push.
+
+## Part 3: Run the task twice
+
+Use this exact prompt every time:
 
 ```text
-What files and acceptance criteria should guide a low-stock report endpoint?
-Do not write code yet.
+Add GET /api/products/low-stock that lists products running low on stock.
+Put it in its own route file and add tests. Run the tests.
 ```
 
-Check every claim against the sources.
+For each run: branch from `main`, start a **fresh** Copilot session, paste the prompt, save the diff, and go back to `main`.
 
-### Checkpoint 1
-
-- [ ] `context-notes.md` names the task and acceptance criteria.
-- [ ] Every selected source has a reason to be present.
-- [ ] Each claim in the first answer is supported by a selected file.
-- [ ] The Space contains the selected sources.
-
-## Stage 2: Add repository instructions (30 minutes)
-
-Create `.github/copilot-instructions.md` in the Storefront API:
-
-```markdown
-# Storefront API Instructions
-
-- Use ES modules.
-- Keep route handlers under `src/routes/`.
-- Follow the `{ data: ... }` success envelope.
-- Return errors as `{ error: { code, message, details? } }`.
-- Use `Product.validate()` before product data changes.
-- Add no dependency unless the task requires it and a reviewer approves it.
-- Keep examples and tests on synthetic data.
-```
-
-### Inspect a stale instruction before implementation (10 minutes)
-
-In this copied workspace only, create `.github/instructions/` and copy
-`stale-storefront.instructions.md` into it as
-`storefront-style.instructions.md`. Read the file before starting the CLI.
-It deliberately conflicts with the current ES-module contract.
-
-Start `copilot` from the Storefront project and run:
-
-```text
-/env
-/instructions
-```
-
-Inspect instruction source paths and any file-match scope. Leave personal,
-organization, and security instructions alone. In `context-comparison.md`, name
-the project instruction and the stale route note, then compare both with
-`package.json` and an existing route.
-
-Ask Copilot to identify the conflict without editing. Correct only the stale
-training note to require ES modules. Restart the CLI and inspect `/env` and
-`/instructions` again. A listed file shows discovery. It doesn't show that the
-model followed the instruction.
-
-Ask Copilot to plan the low-stock endpoint:
-
-```text
-Plan a GET /api/products/reports/low-stock endpoint for this project. It should
-accept an optional non-negative integer threshold and default to 10. Return only
-products whose stock is at or below the threshold. Follow repository instructions.
-Do not edit files.
-```
-
-Review the plan against the API spec, architecture, and model. Check the route
-order too: a static route must not be hidden behind `/:id`.
-
-Then ask for the smallest implementation and a check:
-
-```text
-Implement the accepted low-stock endpoint plan. Keep the current API behavior.
-Run the smallest useful check and show the result.
-```
-
-Check manually:
+### Run 1: no context
 
 ```bash
-curl "http://localhost:3000/api/products/reports/low-stock?threshold=80"
-curl "http://localhost:3000/api/products/reports/low-stock?threshold=-1"
+cd ~/copilot-labs/session-m2-03/bare-api
+git switch -c run-1-none
+copilot
 ```
 
-Compare your instruction file with `lab/solution/ecommerce-project/.github/copilot-instructions.md`.
+Paste the prompt. Allow file writes and `npm` commands when asked. When it finishes, exit and save the result:
 
-### Checkpoint 2
+```bash
+git add -A && git commit -qm "Run 1" && git diff main > ../run-1.diff
+git switch main
+```
 
-- [ ] The plan uses ES modules and existing response envelopes.
-- [ ] The route is placed before `/:id`.
-- [ ] Invalid thresholds produce a structured `400` response.
-- [ ] Existing product routes still work.
-- [ ] `context-notes.md` records one instruction Copilot followed and one item you still had to review.
-- [ ] CLI inspection identified the stale training source and its corrected text.
+### Run 2: with the Space
 
-## Stage 3: Compare one task across context levels (30 minutes)
+The CLI's built-in GitHub MCP server doesn't include Spaces tools by default. Enable them for the session:
 
-Open `context-comparison.md`. Use the same task in every experiment:
+```bash
+git switch -c run-2-space
+copilot --add-github-mcp-toolset copilot_spaces
+```
+
+Paste the prompt with one extra line:
 
 ```text
-Add request-logging middleware to the Storefront API. Record timestamp, method,
-URL, response time, and status code. Use info for 2xx, warn for 4xx, and error for
-5xx. Add no logging package.
+Use my Copilot Space "Storefront API reference" for behavior and conventions.
 ```
 
-Run four experiments without changing the task:
+Look for a `get_copilot_space` tool call. If Copilot doesn't make one, repeat the request and name the Space owner.
 
-1. **No project context:** Ask from an empty window.
-2. **Repository context:** Open the Storefront API with `copilot-instructions.md`.
-3. **Space:** Ask in the live Space with the selected project sources.
-4. **Prompt file:** Use a structured repository prompt for the task.
+Save the diff as `run-2.diff` the same way, then `git switch main`.
 
-Record:
+If your CLI can't reach Spaces, check the current docs. As a fallback, ask the prompt in the Space chat on github.com and paste the code it returns into the bare copy. The surface differs, so note that in your comparison.
 
-- import style;
-- file placement;
-- response and error conventions;
-- added assumptions;
-- number of corrections;
-- claims that cite or clearly follow a source.
+**Checkpoint:** You have `run-1.diff` and `run-2.diff`. Fill in the first two columns of `context-comparison.md`.
 
-Score each response against the project requirements, not how well it reads.
-Keep extra context only when it removes wrong assumptions.
+## Part 4: Write the instructions
 
-### Checkpoint 3
+Instructions load **every time**, without you asking. Keep them short, so they don't crowd out the task.
 
-- [ ] All four experiments use the same task text.
-- [ ] Each score cites a concrete output difference.
-- [ ] The comparison identifies one useful source and one source that added no value.
-- [ ] The final choice states the smallest context set that supports the task.
+In `bare-api`, create two files. Write them yourself first. Open `lab/solution/.github/` only to compare.
 
-## Stage 4: Build and test a prompt library (30 minutes)
+**`.github/copilot-instructions.md`** applies to the whole repository. Include:
 
-Create these files in `storefront-api/.github/prompts/`:
+- language style: ES modules, file naming;
+- how responses and errors are shaped;
+- how to test: the framework, how to start the app, the command to run;
+- one thing to avoid, such as new dependencies.
 
-1. `investigate-bug.prompt.md`
-2. `generate-api-docs.prompt.md`
-3. `migration-checklist.prompt.md`
+Aim for 12 lines or fewer. Use short imperative bullets. Skip anything the code already shows clearly.
 
-Each prompt needs front matter with a short description. Name the inputs it
-accepts, the sections it should return, and a check to run.
+**`.github/instructions/routes.instructions.md`** applies only to matching files. It needs frontmatter:
 
-### Test the prompts on the same project
+```markdown
+---
+applyTo: "src/routes/**/*.js"
+---
+```
 
-- Run `investigate-bug` against an invalid `minPrice` query scenario.
-- Run `generate-api-docs` against the low-stock endpoint.
-- Run `migration-checklist` for a proposed Express major-version update. Do not install it.
+Add two or three rules that matter only in route files. `applyTo` takes glob patterns, such as `src/routes/**/*.js` or `**/*.ts,**/*.tsx`.
 
-Review each result:
+Commit both files on `main`:
 
-- Did it stay inside the selected Storefront API sources?
-- Did it separate known facts from assumptions?
-- Did it name a check another engineer can run?
-- Did it avoid changing code when the prompt only requested analysis?
+```bash
+git add -A && git commit -qm "Add instructions"
+```
 
-Compare with `lab/solution/ecommerce-project/.github/prompts/`.
+**Checkpoint:** Two files under `.github/`, committed on `main`. Neither repeats the low-stock spec.
 
-### Checkpoint 4
+## Part 5: Run with instructions, then with both
 
-- [ ] All three prompt files appear in `.github/prompts/`.
-- [ ] Each prompt was tested on the Storefront API.
-- [ ] Each output includes a check to run.
-- [ ] The migration prompt stops before package changes.
-- [ ] Stale or duplicate instructions were removed.
+### Run 3: instructions only
+
+```bash
+git switch -c run-3-instructions
+copilot
+```
+
+Paste the plain prompt, with **no** Space line. Save `run-3.diff` and `git switch main`.
+
+### Run 4: instructions and Space
+
+```bash
+git switch -c run-4-both
+copilot --add-github-mcp-toolset copilot_spaces
+```
+
+Paste the prompt with the Space line. Save `run-4.diff` and `git switch main`.
+
+**Checkpoint:** Four diffs. Fill in the last two columns of your comparison.
+
+## Part 6: Compare and decide
+
+Fill in the last two sections of `context-comparison.md`:
+
+1. **What changed between runs.** Name one behavior the Space fixed and one the instructions fixed.
+2. **Which context would you keep.** For each line below, pick Space, repository instructions, path-specific instructions, prompt file, or nothing:
+   - "Our API returns `{ data }` envelopes."
+   - "The spec for the low-stock report."
+   - "Use `node:test` in this repo."
+   - "Summarize this stack trace."
+   - "Review a PR with our checklist, when I ask."
+
+Compare your table with `lab/solution/expected-comparison.md`. Model output varies, so your runs may differ. Rerun a prompt if a result looks odd.
+
+## Stretch tasks
+
+Pick one if you finish early.
+
+- **See what the CLI loaded.** Run `/instructions` in the Copilot CLI to list the instruction files it found, and switch one off. Run `/env` to see what else is loaded. Check the current CLI docs for details.
+- **Prompt file.** In VS Code, create `.github/prompts/low-stock-report.prompt.md` that holds the task prompt, and run it from chat. Prompt-file support differs by tool, so check the current docs.
+- **Stale instruction.** Add a rule to `routes.instructions.md` that contradicts the code, such as "use CommonJS". Rerun and see what happens. Delete it.
+- **Share a Space.** Create a Space under an organization you can use and compare its sharing options with your personal one.
 
 ## Final deliverable
 
-Submit the `storefront-api/` workspace with:
+1. A private `storefront-api-lab` repository and a **Space** with four file sources and short instructions.
+2. `.github/copilot-instructions.md` and one `.instructions.md` file with an `applyTo` pattern.
+3. Four diffs (`run-1.diff` to `run-4.diff`).
+4. A filled-in `context-comparison.md`, including your choices from Part 6.
 
-1. `context-notes.md` and the live Space's source list.
-2. `.github/copilot-instructions.md`.
-3. The completed `context-comparison.md`.
-4. Three tested prompt files under `.github/prompts/`.
-5. Low-stock endpoint check results and the final context choice.
+## References
 
-## Command reference
-
-[Copilot CLI environment and instruction commands](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference).
+- [About GitHub Copilot Spaces](https://docs.github.com/en/copilot/concepts/prompting-and-context/spaces)
+- [Creating GitHub Copilot Spaces](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/copilot-spaces/create-copilot-spaces)
+- [Using Copilot Spaces in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/extend-copilot-with-tools-and-context/use-copilot-spaces)
+- [Adding custom instructions for Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-custom-instructions)

@@ -1,270 +1,180 @@
----
-description: "Lab for isolated GitHub Copilot app sessions and PR-readiness evidence"
----
+# Session M2-05 lab: Fix a bug in the app and open a PR
 
-# Session M2-05 lab: From isolated session to PR-readiness report
+**Duration:** 2 hours
+**Deliverable:** A fixed `checkout-pricing` repo, a pull request (or a local branch) you reviewed, and a short comparison note
 
-**Duration:** 120 minutes
+## Lab overview
 
-## Objective
+You fix a pricing bug in a small sample repo. You work in the GitHub Copilot app the way a developer would: scope in a chat, plan in a session, run two sessions side by side, review the diff, and open a PR. Then you do one more small task in the CLI or your IDE and compare.
 
-Use the GitHub Copilot app to repair a small readiness evaluator. Run focused
-checks, hand the work to a fresh session, and assess a synthetic pull request.
-Finish by defining a manual read-only automation that repeats the readiness
-report without modifying GitHub.
+Everything is real. You use a **throwaway GitHub repo** you create for this lab, so nothing touches your team's code. The data is synthetic.
 
-## You need
+| Part | Work | Time |
+| --- | --- | --- |
+| 1 | Create the throwaway repo and issue | 15 min |
+| 2 | Scope the bug in a chat | 10 min |
+| 3 | Fix it in a Plan-mode session | 25 min |
+| 4 | Run a second session in parallel | 15 min |
+| 5 | Review the result | 20 min |
+| 6 | Open and check the PR | 20 min |
+| 7 | Compare with another surface | 15 min |
 
-- the GitHub Copilot app, with permission to connect a local training folder;
-- a GitHub account and Copilot plan;
-- Python 3.10 or later;
-- Git with a configured local commit identity.
+Command names in the app change. If a command below isn't in your picker, type `/` and look. **Check `/help` in your version** and use the closest match.
 
-Open the app and check that you can create a project session. Interactive, Plan,
-and Autopilot should appear in the mode picker. `/plan`, `/review`, `/rubber-duck`,
-`/fork`, `/merge-to-parent`, and `/spar` should appear in the command picker.
-Keep the trainer's filesystem and network restrictions on. A separate worktree
-isolates files. It isn't a sandbox or a permission grant.
+## Part 1: Create the throwaway repo and issue
 
-Use only the synthetic assets in this session.
-
-### Workspace
-
-Copy `lab/starter` to a writable training folder. If the copy is inside a Git
-repository, create a clean branch before opening it in the app.
+You need Git, Python 3.10 or later, the `gh` CLI signed in to GitHub, and the Copilot app.
 
 ```bash
-cp -R lab/starter ~/copilot-labs/session-m2-05
-cd ~/copilot-labs/session-m2-05
-python -m unittest discover -s tests -v
-git init
-printf '__pycache__/\n*.pyc\n' > .gitignore
-git add .
-git commit -m "Record readiness training baseline"
+mkdir -p ~/copilot-labs/session-m2-05
+cp -R sessions/session-m2-05-copilot-app-for-developers/lab/starter \
+  ~/copilot-labs/session-m2-05/checkout-pricing
+cd ~/copilot-labs/session-m2-05/checkout-pricing
+python -m unittest discover -s tests          # 4 failures expected
+git init -b main && git add -A && git commit -m "Start"
+gh repo create checkout-pricing-lab --private --source . --push
+gh issue create --title "Order totals are wrong" --body-file issue-brief.md
 ```
 
-The starter is intentionally incomplete. Three focused readiness tests should fail.
-Use a fresh folder if `~/copilot-labs/session-m2-05` already exists. The committed
-baseline lets `/review` inspect the repair diff. Keep the repair uncommitted
-until the review and triage finish.
+In the app, click **+** next to **Sessions** and connect the folder (**Open local folder**) or the GitHub repo (**Add GitHub repository**).
 
-## Exercise 1: Choose the surface and establish isolation (15 minutes)
+**No GitHub repo?** Skip `gh repo create` and `gh issue create`. Do everything locally. You can't open a PR in Part 6, so review the branch diff instead.
 
-Use chat for discovery, then start a project session with a named workspace and mode.
+**Checkpoint:** Four tests fail. The repo and issue exist, and the app shows the project in the sidebar.
 
-1. Open a new Chat in the app.
-2. Attach `issue-brief.md` and ask:
+## Part 2: Scope the bug in a chat
 
-   ```text
-   Explain the requested behavior and identify the evidence needed to prove it.
-   Do not edit files.
-   ```
+Open **Chats** (not a project session). A chat has no branch and no worktree, so it can't change your files. Ask:
 
-3. Decide whether Chat was the right surface for discovery.
-4. Add the copied starter as a project.
-5. Start a **Plan** mode session in a new working tree of the training repository.
-6. Ask the session to run:
+```text
+Here is the issue: <paste issue-brief.md>. Which of these four symptoms
+share a root cause? What would you ask the author before coding?
+```
 
-   ```text
-   Report the current path, branch, worktree list, and concise Git status. Do not
-   edit anything.
-   ```
+Chats can't read your repo unless you attach files. Use `/attach-files` or `@` to add `shop/pricing.py`.
 
-### Checkpoint
+Write down one question you would send the issue author. Don't answer it. The rules in the issue are enough.
 
-- The chat produced understanding, not edits.
-- The project session has a named workspace boundary.
-- Plan mode matches the task risk.
+**Checkpoint:** You can say which symptoms look like one bug and which look separate.
 
-## Exercise 2: Challenge the plan, compare an alternative, and repair (55 minutes)
+## Part 3: Fix it in a Plan-mode session
 
-Repair the evaluator with a plan that names the files and tests.
+1. Click **+** next to **Sessions** and pick the `checkout-pricing` project.
+2. Set **Environment** to **This computer**.
+3. Set **Workspace** to **New worktree**. Keep the base branch `main`.
+4. Set the mode to **Plan**. Pick a model. Leave **Tool permissions** on **Ask every time** or **Assisted**.
+5. Reference the issue and prompt:
 
-1. Attach `issue-brief.md`, `readiness_guard/readiness.py`, and
-   `tests/test_readiness.py`.
-2. Ask the session to run:
+```text
+Fix #1 (type # and pick the issue). Don't edit the tests. Run
+python -m unittest discover -s tests before you say you're done.
+```
+
+Read the plan before you approve. Check three things: does it mention all four symptoms, does it say it will leave the tests alone, and does it plan to run the tests? If not, reply in the session and ask it to revise.
+
+Approve the plan and watch. Approve or deny each tool request. Note any command you wouldn't have run yourself.
+
+**Checkpoint:** The session reports passing tests. You have **not** merged or pushed anything yet.
+
+## Part 4: Run a second session in parallel
+
+While you review Part 3, start a second session:
+
+1. **+** next to **Sessions**, same project, **Workspace: New worktree**, mode **Interactive**.
+2. Prompt: `Add a short "Usage" section to README.md that shows how to call order_total.`
+
+Now look at what the app created. In a terminal (the `/terminal` command opens one in the app):
+
+```bash
+cd ~/copilot-labs/session-m2-05/checkout-pricing
+git worktree list
+git branch
+```
+
+You should see your original checkout plus **two more folders**, each on its own branch. Open each folder's `git status`. The README change appears in only one of them. Your original checkout is untouched.
+
+Two questions to answer in your note:
+
+- Which files does each session see? Does the second one see the first one's fix?
+- What would have happened if both sessions had edited `pricing.py` and you merged both?
+
+**Checkpoint:** You can point to the folder and branch of each session, and `git worktree list` shows them.
+
+## Part 5: Review the result
+
+Don't trust the summary. Check the work.
+
+1. Open the Part 3 session's changes and read the **whole diff**.
+2. Run the tests yourself, from that session's worktree folder (or with `/terminal`):
 
    ```bash
    python -m unittest discover -s tests -v
    ```
+3. Run `/review` on the session. Read its findings. Decide which you accept.
+4. Optional: run `/rubber-duck` and ask it to critique the change. It uses a different model from your session, so it may disagree.
+5. Look for these common problems:
+   - The tests changed.
+   - The function signature changed.
+   - A new dependency or unrelated file appeared.
+   - The fix special-cases the test values instead of fixing the rule.
 
-3. Use `/plan` to request a plan that maps each failing test to one issue
-   criterion. Reject unrelated refactoring.
-4. Before implementation, run:
+Compare the diff with [`solution/README.md`](solution/README.md) and [`solution/shop/pricing.py`](solution/shop/pricing.py). Yours doesn't need to match.
 
-   ```text
-   /rubber-duck Critique this plan and its test coverage against issue-brief.md.
-   Look for a way incomplete or contradictory evidence could produce READY.
-   Check the sorted reason-code requirement too. Do not edit files.
-   ```
+If something is wrong, tell the session what to fix and repeat. Don't edit by hand unless it's faster.
 
-5. Check the critique against the brief and tests. Ask the planning session to
-   revise the plan for useful findings and explain rejected suggestions. If the
-   critique finds nothing, don't invent a flaw.
-6. Record the initial plan, critique, and revision in `engineering-review.md`.
-   Inspect the source diff and complete the fork exercise below before approval.
-   Then return here and settle the plan using both critiques. Approve only a plan
-   that names the target file and checks, and leave Plan mode before implementation.
-7. Let the session implement the accepted plan. Run the same test command and
-   inspect every changed line in the diff.
-8. While the repair is still uncommitted, run:
+**Checkpoint:** You can name one thing the agent did well and one thing you changed or would change. Tests pass when you run them.
 
-   ```text
-   /review Review the current repair diff against issue-brief.md. Focus on
-   correctness and regression coverage. Cite files and lines. Do not edit files.
-   ```
+## Part 6: Open and check the PR
 
-9. Triage findings in `engineering-review.md`. Link each accepted finding to a
-   test or code reference. Fix supported defects, rerun the focused tests, and
-   rerun `/review` on any correction. If a review reports no findings, record that.
+In the Part 3 session, run `/pr-open` or ask: `Open a pull request for these changes.` The app creates a branch, pushes it, and opens the PR using the repo's PR template if it has one.
 
-### What the critic does
+Then check on GitHub (or in the app's **Pull requests** view):
 
-Rubber duck is a built-in, read-only agent in the app and CLI. Copilot picks a
-contrasting model automatically when one is available. Record the model only if
-the client shows it. Another answer from the session that wrote the plan isn't a
-second opinion.
+- The PR links to the issue. If it doesn't, add `Closes #1` to the description.
+- The `tests` workflow runs and passes.
+- The diff on GitHub matches what you reviewed.
 
-Check the critique before changing the plan. The critic adds model usage and
-latency, and its conclusion isn't an approval. Session M2-01 covers the CLI's
-opt-in **Proactive invocation** setting in `/subagents`, which persists. This lab
-invokes the critic manually.
+If checks fail, try `/pr-fix-checks`. If you leave a review comment on the diff, try `/pr-resolve-comments`. Both need an open PR.
 
-### Fork a plan and challenge it with `/spar`
+Merge the PR (`/pr-merge`, the app's merge button, or GitHub). Then open the Part 4 session, ask it to rebase or merge `main`, and check that the README change still works with the merged fix.
 
-Do this **before implementation**, while the parent source still matches the
-committed baseline:
+**No GitHub repo?** Run `git log main..HEAD` and `git diff main` in the worktree instead. Skip the merge.
 
-1. Inspect the parent path, branch, and source diff. Run `/fork` in the app.
-2. Inspect the fork's path, branch, and files. The command may not copy
-   uncommitted files or create the workspace you intended. Stop if the fork
-   can't be separated safely from the parent.
-3. Attach the same brief and tests. Run:
+**Checkpoint:** A PR exists with a passing check, or a local branch with a diff you reviewed.
 
-   ```text
-   /spar Challenge the proposed readiness plan. Look for a counterexample where
-   missing or contradictory inputs would incorrectly produce READY. Stay within
-   issue-brief.md. Reason only; do not edit files, run commands, or implement.
-   ```
+## Part 7: Compare with another surface
 
-4. Check the argument against the tests. `/spar` is adversarial reasoning. It
-   doesn't share rubber duck's model selection or read-only tool guarantees, so
-   keep permissions restricted and inspect the diff.
-5. Switch the fork to Interactive mode to write only `planning-alternative.md`,
-   with the counterexample (or no-findings result) and its effect on the plan.
-   Inspect the note and the entire fork diff.
-6. Run `/merge-to-parent` from the fork. Review the return flow and accept only
-   the analysis note. If it asks for a commit, commit only that note in the fork.
-   Stop on an unexpected source change or merge conflict.
-7. Return to the parent. Check that the note arrived and that
-   `readiness_guard/readiness.py` and `tests/` still match the baseline. Reconcile
-   the two critiques, settle the plan, and approve implementation.
+Do one more small task **outside the app**, in the Copilot CLI (`copilot`) or your IDE's agent mode. Use the `checkout-pricing` folder on a new branch:
 
-This is a local fork-to-parent operation. It isn't `/pr-merge`, and it doesn't
-merge a GitHub pull request.
+```text
+Reject negative quantities in order_total with a ValueError. Add a test.
+```
 
-### Required behavior
+Write a note of five sentences or fewer in `comparison.md`:
 
-`evaluate_readiness(snapshot)` must:
+- Which surface did you use, and how long did the task take?
+- What did you review, and how?
+- What was easier or harder than in the app?
+- When would you pick each one?
 
-- return `NOT_READY` when a required check failed;
-- return `NOT_READY` when a blocking review thread is unresolved;
-- return `UNKNOWN` when required evidence is absent;
-- return `READY` only when required checks pass and blocking threads are resolved;
-- return stable, sorted reason codes.
+See [`solution/README.md`](solution/README.md) for a sample note.
 
-### Checkpoint
+**Checkpoint:** `comparison.md` exists and names one real difference you saw.
 
-You can explain the diff from the accepted plan and any revision. Your tests and
-`/review` triage support the behavior claims. The plan critique and the patch
-review stay separate.
+## Final deliverable
 
-## Exercise 3: Create a handoff and request independent critique (20 minutes)
+1. The `checkout-pricing` repo with the fix merged, or the fix on a local branch.
+2. The PR link, or your `git diff main` output.
+3. Your answers from Part 4 (two questions) and the `/review` findings you accepted or rejected.
+4. `comparison.md`.
 
-Check that a fresh session can continue from a concise handoff.
+## Clean up
 
-1. Ask the current session to write a handoff using `session-handoff-template.md`.
-2. Start a fresh project session.
-3. Attach the handoff, issue brief, changed file, and test output.
-4. Ask the fresh session:
+Delete the throwaway repo when you're done: `gh repo delete checkout-pricing-lab` (needs the `delete_repo` scope). Archive or delete the sessions in **Settings → Sessions → Manage sessions**. That also frees the worktree disk space.
 
-   ```text
-   Review this handoff. State what is proven, what remains uncertain, and the next
-   human decision. Do not edit files.
-   ```
+## References
 
-5. Attach `engineering-review.md` and the implementation diff. Ask the fresh
-   reader to separate the plan critique from the code-review findings and name any
-   unresolved concern.
-6. If the fresh reader finds a supported gap, return it to the implementation
-   session, rerun the tests and `/review`, and update the handoff.
-
-Keep the fresh reader read-only, and don't start a second implementation in
-another worktree. Session M7-05 teaches coordinating several child sessions.
-
-### Checkpoint
-
-A fresh reader can name the goal, changed files, checks, remaining risk, and
-next decision without the original conversation.
-
-## Exercise 4: Assess the outer loop and define automation (30 minutes)
-
-Trace the issue's requirements through the PR diff, reviews, and checks. Then create
-a repeatable read-only readiness report.
-
-1. Open `prepared-evidence/05-pr-snapshot.json`.
-2. Trace each issue criterion to changed files and checks.
-3. Inspect review threads. Separate blocking comments from non-blocking notes.
-4. Inspect required check results and their timestamps.
-5. Write `pr-readiness-report.md` with:
-   - suggested verdict;
-   - blocker reason codes;
-   - references to the snapshot data;
-   - missing or stale data;
-   - the human decision still required.
-6. Open `automation-prompt-template.md`.
-7. Define a **manual trigger** and read-only tools.
-8. In the live app, create the automation and run it manually against a synthetic
-   repository. If automation is unavailable or no repository is available, keep it
-   as a saved specification.
-9. Check that the automation can't comment, label, push, approve, merge, or
-   resolve review threads.
-
-The supplied PR snapshot should produce `NOT_READY`.
-
-### Checkpoint
-
-The report names the failing required check and the unresolved blocking thread.
-The automation gathers check results and review-thread status without changing
-repository state.
-
-## Final deliverables
-
-- the repaired `readiness_guard/readiness.py`;
-- passing focused test output;
-- `engineering-review.md` with plan critique, plan revision, and `/review` triage;
-- `planning-alternative.md` returned from the `/spar` fork;
-- `session-handoff-template.md` completed as a handoff;
-- `pr-readiness-report.md`;
-- a completed `automation-prompt-template.md`.
-
-## Troubleshooting
-
-| Problem | Response |
-| --- | --- |
-| Automation is unavailable | Write the specification instead |
-| Fork return flow includes unexpected source changes | Stop. Don't accept the merge or overwrite the parent's repair |
-| Agent proposes GitHub writes | Remove write tools and restate the read-only contract |
-
-## Next steps
-
-Compare your work with `../solution/`.
-
-Session M7-05's [developer route](../../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
-uses independent read-only child sessions to review implementation and PR
-readiness. Passing local tests still doesn't decide whether a PR is ready.
-
-## Command references
-
-- [Rubber duck](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/rubber-duck)
-- [App slash commands](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
+- [Working with agent sessions in the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
+- [Managing issues and pull requests with the app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests)
+- [Slash commands for the app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
+- [`git worktree`](https://git-scm.com/docs/git-worktree)

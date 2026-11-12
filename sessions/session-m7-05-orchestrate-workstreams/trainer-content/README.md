@@ -10,8 +10,8 @@ Show learners how to direct four issue-based workstreams through live GitHub
 Copilot orchestration. The orchestration surface tracks the running work. The
 plan holds only the decisions needed before work starts.
 
-Developers after Session M2-05 use the local PR-readiness route instead. It
-reviews implementation behavior, tests, and a supplied snapshot without GitHub MCP.
+Developers after Session M2-05 use the developer route instead. It
+reviews their M2-05 fix, tests, and real pull request.
 
 ## One-hour plan
 
@@ -82,19 +82,19 @@ the four issue questions with implementation, tests, and PR-state questions from
 
 Before delivery:
 
-1. Copy the reference implementation and six tests from Session M2-05.
-2. Run the documented unittest command and keep the actual result.
-3. Read `developer-review-brief.md` and `pr-snapshot.json`.
-4. Check that child sessions can read the shared files without editing them or using the network.
+1. Check that each learner has their M2-05 repo and PR. If not, they follow the lab's fallback: copy the M2-05 starter, apply the reference fix, and open a PR in a throwaway repo.
+2. Run `python -m unittest discover -s tests -v` and check the PR's `tests` run.
+3. Read `developer-review-brief.md`.
+4. Check that `gh` is signed in (or GitHub MCP works) and that children only read.
 
 Run `/orchestrate` with the accepted questions. Open each child on the app
-surface. Redirect the test reviewer to criterion 5 after its first answer, then
+surface. Redirect the test reviewer to map each issue rule to a test after its first answer, then
 inspect the revised answer rather than assuming the first was wrong.
 
 Have the parent evaluate the provisional author note that green local tests make
-the PR ready. The snapshot has a failed required integration check and unresolved
-blocking thread `R1`. Those remain blockers even when local tests pass. Children
-may agree; never fabricate a disagreement.
+the PR ready. The parent must read the live `tests` check and review threads. A red
+check or open thread blocks the PR even when local tests pass. Children may agree;
+never fabricate a disagreement.
 
 Allow 25 minutes for the work split, 30 for live inspection, 35 for steering and
 reconciliation, and 30 for parent review. Grade the findings learners checked and
@@ -112,7 +112,7 @@ Learners submit:
 3. the result of a fresh GitHub read for any issue update.
 
 For the developer route, require the plan and the app's reviewed parent result,
-including the redirection, rejected readiness claim, and observed usage. No issue
+including the redirection, accepted or rejected readiness claim, and observed usage. No issue
 update or Session M7-06 handoff.
 
 For an Azure Boards delivery, use the

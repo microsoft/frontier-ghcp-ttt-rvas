@@ -1,7 +1,7 @@
 {
   "name": "weather-mcp-server",
   "version": "1.0.0",
-  "description": "Complete MCP weather server for the Session M3-03 lab",
+  "description": "Finished MCP weather server for the Session M3-03 lab",
   "private": true,
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "test": "node --test test/*.test.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.12.0"
+    "@modelcontextprotocol/sdk": "1.32.0"
   },
   "engines": {
     "node": ">=20"

@@ -3,17 +3,16 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session M5-01: AI Team Orchestration & Coordination Patterns'
+footer: 'Session M5-01: Brady''s Squad: Human-led AI teams'
 ---
 
 <!-- _class: lead -->
 
 # Brady's Squad: Human-led AI teams
-## Module 5: Specification-driven frameworks | Advanced
 
-Session M5-01 | 3 hours | Optional
+## Install it, run it, read what it wrote
 
-Prerequisites: Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
+Session M5-01 | 3 hours
 
 ---
 
@@ -23,172 +22,181 @@ Prerequisites: Sessions M1-01 to M1-03, M2-01 to M2-04 and M3-02 to M3-05
 
 | Segment | Time |
 | --- | --- |
-| Coordination trade-offs | 7 min |
-| Roles, routing, and memory | 20 min |
-| Issues and monitored work | 8 min |
-| Prepared team demonstration | 12 min |
-| Decision framework and lab handoff | 13 min |
-| Lab | 2 hours |
+| What Squad is | 10 min |
+| Charters, routing, shared memory | 15 min |
+| How it runs, and Ralph | 10 min |
+| Demo: a live run | 15 min |
+| Team or one agent? | 7 min |
+| Lab handoff | 3 min |
 
 ---
 
-# Coordination has a cost
+# What Squad is
 
-Use a team when work has separate owners, clear interfaces, and a decision record to share. An individual agent is better for a small, well-understood change.
+An **open-source tool** by Brady Gaster. Not a GitHub product.
 
-More agents create more state, review work, and cost.
-
----
-# Parallelism only helps with real independence
-
-Work can run in parallel when each stream has its own inputs, a clear output, and
-no hidden dependency on another stream's decision.
-
-| Work item | Parallel? | Reason |
-| --- | --- | --- |
-| Review separate test files | Often | Each reviewer can return findings |
-| Choose a shared domain model | No | Every implementation depends on the decision |
-| Update unrelated documentation | Often | Output boundaries are clear |
-
-Splitting an ambiguous task across agents spreads the ambiguity.
-
----
-# The coordinator owns the integration risk
-
-A coordinator needs to know:
-
-1. Which decision makes the workstreams compatible.
-2. Which files or systems only one role may change.
-3. Which results each role must return.
-4. When a conflict should stop the workflow rather than be merged automatically.
-
-The coordinator stays human-led even when agents do the initial work.
-
----
-# Return a result summary
-
-Use:
-
-```text
-Scope completed:
-Evidence:
-Files or records changed:
-Checks run:
-Open questions:
-Recommendation:
-```
-
-The parent can compare these summaries without reading each agent's full conversation.
-**Report missing results.**
-
----
-# Coordinator pattern
-
-```text
-Issue with acceptance criteria
-        ↓
-Coordinator selects a bounded role
-        ↓
-Role writes a proposal or change
-        ↓
-Focused checks and human review
-        ↓
-Decision record, merge, follow-up, or pause
-```
-
-The coordinator assigns work with a defined scope. Clarify an ambiguous request before implementation.
+- A team of AI specialists that **live in your repo as files**
+- You talk to one **coordinator**
+- It starts specialists in parallel, each with its own context
+- A **Scribe** records decisions. **Ralph** watches the work queue
+- You review and merge. The human stays accountable
 
 ---
 
-# Team boundaries
+# The team
 
-| Role | Responsibility |
+| Role | Job |
 | --- | --- |
-| Lead | Scope, decisions, review gate |
-| Implementer | A defined product area or file set |
-| Tester | Focused checks and reported gaps |
-| Scribe | Shared decisions and history |
-| Work monitor | Flag ready, approved work |
+| Coordinator | Reads your request, routes it, starts agents |
+| Lead | Triages, reviews, unblocks |
+| Developers, tester | Do the work in their area |
+| Scribe | Merges decisions into one file |
+| Ralph | Monitors issues, PRs, and CI |
 
-Agents need charters that state inputs, outputs, and limits. Avoid concurrent writes to the same files.
-
----
-
-# Shared memory
-
-Commit decision records with the choice, supporting results, owner, and date. Keep temporary drafts separate.
-
-Agents can write individual proposals. A designated owner reviews and merges the shared record. Git history keeps the trail.
+Roles are **proposed from your repo**. You accept or change them.
 
 ---
 
-# Issues and monitored work
-
-An issue is a work contract. It needs acceptance criteria, non-goals, constraints, checks, and a reviewer.
-
-```text
-Ready issue → assignment → bounded change → focused checks →
-human review → merge or follow-up issue
-```
-
-Treat Ralph as a monitored queue. Stop when ownership, test status, or scope is unclear.
-
----
-
-# When orchestration helps
-
-| Situation | Path |
-| --- | --- |
-| One small repair | Individual agent or manual work |
-| Separate work with defined interfaces | Coordinated team |
-| Overlapping ownership or unclear design | Plan before implementation |
-| No tool access | Manual workflow |
-
----
-
-# One issue, one review trail
-
-The worked issue adds validation to `POST /api/users`.
-
-```text
-Issue contract
-  → lead assignment
-  → backend implementation
-  → tester evidence
-  → lead review
-  → durable decision
-```
-
-Keep the same acceptance criteria through every step. A role may add test results but must not expand the issue.
-
----
-
-# Reference `.squad/` result
+# What gets created
 
 ```text
 .squad/
-├── team.md
-├── routing.md
-├── decisions.md
-├── agents/{lead,backend,tester,scribe}/
-├── decisions/inbox/issue-001-proposal.md
-├── orchestration-log/issue-001.md
-└── reviews/issue-001-review.md
+├── team.md          # roster
+├── routing.md       # who handles what
+├── decisions.md     # shared rules, read by all
+├── agents/<name>/
+│   ├── charter.md   # job description
+│   └── history.md   # what this agent learned
+├── casting/         # persistent names
+└── orchestration-log/
 ```
 
-The reference project also includes the implemented route and passing tests.
+Commit it. Anyone who clones gets the team.
+
+**Check the Squad README for your version.** File names move.
+
+---
+
+# Charters and routing
+
+**Charter:** what an agent owns, what it doesn't handle, how it works.
+
+**Routing:** a table the coordinator reads first.
+
+| Pattern | Owner |
+| --- | --- |
+| `src/**` | Developer |
+| `tests/**` | Tester |
+| `docs/**` | Writer |
+
+Order: **named request**, then **path rule**, then **skill match**. No match? The lead triages.
+
+---
+
+# Shared and personal memory
+
+| | Shared | Personal |
+| --- | --- | --- |
+| File | `decisions.md` | `agents/<name>/history.md` |
+| Read by | Every agent | That agent |
+| Holds | Team rules and choices | Project knowledge for one role |
+
+Say "**always**" or "**never**" and it becomes a team rule.
+
+It is Markdown in git. You can read it, diff it, and fix it.
+
+---
+
+# Product format or your choice?
+
+**Squad defines:** the folder layout, roster, routing, charters, decisions.
+
+**Your run chooses:** agent names, routing rows, decision wording, error formats.
+
+A sample `.squad/` file is an example. **Don't copy it as a requirement.**
+
+---
+
+# How it runs
+
+```bash
+npm install -g @bradygaster/squad-cli@latest
+squad init
+copilot --agent squad
+```
+
+- **Copilot CLI** is the main interface. VS Code: pick the **Squad** agent.
+- `squad` is for setup and checks: `init`, `doctor`, `upgrade`, `watch`
+- The coordinator checks dependencies, runs independent work **in parallel**, dependent work in order
+
+---
+
+# Ralph, the work monitor
+
+| Form | What it does |
+| --- | --- |
+| In a chat session | Checks GitHub for more work after each batch |
+| `squad watch` | Polls on a timer. Triage only, or `--execute` |
+| GitHub Actions heartbeat | Triages labeled issues between sessions |
+
+Needs `gh` access. Triages from **`routing.md`**.
+
+Weak routing means weak triage.
+
+---
+
+# Demo
+
+1. `squad init`
+2. `copilot --agent squad`, describe the project
+3. Edit the proposed roster, accept
+4. Give a multi-part task
+5. Watch who starts, who waits
+6. Review. Add a directive
+7. Read `decisions.md` and `orchestration-log/`
+
+---
+
+# A team can help
+
+- Parts are **independent**: docs, tests, separate modules
+- Roles need **different context**
+- Work spans **many sessions** and needs memory
+- A backlog needs **triage**
+
+---
+
+# A team costs
+
+- **Tokens.** Each agent loads its own context, plus the coordinator.
+- **Overhead.** Splitting and collecting takes time. Small tasks get slower.
+- **Conflicting edits.** Two agents, one file.
+- **Review load.** More output, plus memory files.
+- **Memory drift.** Stale decisions mislead every agent.
+
+**Start with one agent.** Add a team when you hit a ceiling you can name.
+
+---
+
+# Common mistakes
+
+- Using a team for a one-minute task
+- Splitting work that edits the same file
+- `--yolo` on a repo you care about
+- Never reading `decisions.md`
+- Ralph without `gh` access or a good routing table
+- Trusting docs over your installed version
 
 ---
 
 # Lab handoff
 
-Copy the starter project and check Squad access.
+| Part | Work |
+| --- | --- |
+| 1 to 2 | Install Squad, create the team |
+| 3 to 4 | Give a four-part task, review, steer |
+| 5 | Read `.squad/` |
+| 6 | Same task with one agent. Compare |
+| 7 | Ralph on real issues |
 
-Submit:
-
-- one issue assignment;
-- the input-validation implementation;
-- passing focused tests;
-- a lead review and decision record.
-
-Use `lab/solution/squad-project/` to check the expected result.
+Use the sample project and a **throwaway repo** for Ralph.

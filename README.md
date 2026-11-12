@@ -42,11 +42,11 @@ Learners without Copilot access should start Module 7 once they have it.
 
 | #   | Session                                                                        | Difficulty   | Duration   | Summary                                                                                                              |
 | --- | ------------------------------------------------------------------------------ | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| M2-01  | [GitHub Copilot in the CLI](sessions/session-m2-01-copilot-cli/)                   | Intermediate | 3 hrs      | Critiques a plan, checks CLI controls and fleet results, and practices queued work, background work, and recovery. |
-| M2-02  | [Agent Mode in the IDE](sessions/session-m2-02-agent-mode-ide/)                   | Intermediate | 3 hrs      | Builds and extends one Todo API in IDE agent mode, then tests and reviews the changes. |
-| M2-03  | [Copilot Spaces & Context Management](sessions/session-m2-03-spaces-and-context/) | Intermediate | 3 hrs      | Chooses context, inspects loaded CLI instructions, and corrects a stale rule before implementation. |
+| M2-01  | [GitHub Copilot in the CLI](sessions/session-m2-01-copilot-cli/)                   | Intermediate | 3 hrs      | Learns the core CLI workflow: plan, approve tools, implement, review, and resume. |
+| M2-02  | [Agent Mode in the IDE](sessions/session-m2-02-agent-mode-ide/)                   | Intermediate | 3 hrs      | Learns Ask, Edit, Agent, and Plan modes and builds a multi-file feature in agent mode. |
+| M2-03  | [Copilot Spaces & Context Management](sessions/session-m2-03-spaces-and-context/) | Intermediate | 3 hrs      | Learns the ways to give Copilot context and builds a Space to compare results. |
 | M2-04  | [Copilot for Code Review & PRs](sessions/session-m2-04-code-review-prs/)          | Intermediate | 3 hrs      | Compares human review, local `/review` and `/security-review`, and Copilot PR findings, then tests focused fixes. |
-| M2-05  | [GitHub Copilot App for Developers](sessions/session-m2-05-copilot-app-for-developers/) | Intermediate | 3 hrs | Checks rubber-duck and `/spar` critiques, returns a plan note from a fork, then reviews the repair and decides if it is ready for a PR. |
+| M2-05  | [GitHub Copilot App for Developers](sessions/session-m2-05-copilot-app-for-developers/) | Intermediate | 3 hrs | Learns sessions, worktrees, and modes in the Copilot app and opens a PR from it. |
 | M2-06  | [Repair and Refactor a Broken Python Application](sessions/session-m2-06-python-repair-refactor/) | Intermediate | 3 hrs | Fixes Python failures in order, checks LSP references, then refactors from an accepted plan without changing reports. |
 | M2-07  | [Migrate a Legacy Java Service to Modern .NET](sessions/session-m2-07-java-to-dotnet-modernization/) | Advanced | 3 hrs | Ports a legacy Java service to modern .NET while preserving behavior through focused tests. |
 
@@ -58,7 +58,7 @@ Learners without Copilot access should start Module 7 once they have it.
 | --- | ----------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | M3-01  | [Copilot App, Plugins & Canvas Extensions](sessions/session-m3-01-copilot-app-canvases/) | Advanced  | 3 hrs      | Uses the Copilot App Customize area to build a shared canvas with state limits, defined actions, and a review record. |
 | M3-02  | [Copilot Cloud Agent](sessions/session-m3-02-cloud-agent/)                             | Advanced    | 3 hrs      | Follows one issue from assignment to a proposed change, test results, and human review. |
-| M3-03  | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/)           | Advanced    | 3 hrs      | Introduces the Model Context Protocol, server architecture, configuration, and building custom MCP servers.       |
+| M3-03  | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/)           | Advanced    | 3 hrs      | Learns what MCP servers are, adds them to Copilot, and connects a small server of your own. |
 | M3-04  | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/)                | Advanced    | 3 hrs      | Checks JavaScript LSP results and a live test-only agent that stops at a source-code conflict. |
 | M3-05  | [Agent Skills & the Copilot Ecosystem](sessions/session-m3-05-agent-skills-ecosystem/) | Advanced    | 3 hrs      | Write a skill with `skill-creator`, test it live, and learn when skills beat instructions or agents. |
 
@@ -67,14 +67,14 @@ Learners without Copilot access should start Module 7 once they have it.
 | #   | Session                                                                                   | Difficulty   | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
 | M4-01  | [GitHub Actions & Workflow Generation](sessions/session-m4-01-actions-workflows/)            | Intermediate | 3 hrs      | Generates CI, designs deployment, repairs workflows, and checks a custom action for one Node.js application. |
-| M4-02  | [Infrastructure as Code with Copilot](sessions/session-m4-02-iac-with-copilot/)              | Advanced     | 2 hrs 30 min | Builds, connects, validates, and security-reviews Terraform modules. Bicep is an optional comparison. |
-| M4-03  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-m4-03-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Diagnoses pipeline failures from logs and local checks, reproduces a staged failure, and reviews a security fix. |
+| M4-02  | [Infrastructure as Code with Copilot](sessions/session-m4-02-iac-with-copilot/)              | Advanced     | 2 hrs 30 min | Learns Terraform basics, prompts Copilot for a small VPC, scans it, and compares Bicep. |
+| M4-03  | [CI/CD Pipeline Debugging & Agentic Remediation](sessions/session-m4-03-cicd-debugging-autofix/) | Advanced     | 3 hrs      | Diagnoses real failing GitHub Actions runs with Copilot and reviews Autofix for code scanning. |
 
 ### Module 5: Specification-Driven Frameworks (Advanced)
 
 | #   | Session                                                                                   | Difficulty  | Duration   | Summary                                                                                                              |
 | --- | ----------------------------------------------------------------------------------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| M5-01  | [Brady's Squad: Human-Led AI Teams](sessions/session-m5-01-squad-orchestration/)             | Advanced    | 3 hrs      | Uses Squad to assign scoped work to persistent roles and save decisions and results for review. |
+| M5-01  | [Brady's Squad: Human-Led AI Teams](sessions/session-m5-01-squad-orchestration/)             | Advanced    | 3 hrs      | Runs Squad in the Copilot CLI, steers a team of agents, and compares it with a single agent. |
 | M5-02  | [Spec Kit: Specification-Driven Development](sessions/session-m5-02-spec-kit/)              | Advanced    | 3.5 hrs    | Turns Spec Kit tasks into issues, implements them in stages, runs convergence checks, and updates the specification. |
 | M5-03  | [HVE Core: Evidence-Led Delivery with RPI](sessions/session-m5-03-hve-core-challenge/)       | Advanced    | 4 hrs      | Uses HVE Research, Plan, Implement, Review, and Follow-up to develop one API feature and submit it for a human decision. |
 

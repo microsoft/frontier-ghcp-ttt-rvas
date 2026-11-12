@@ -7,98 +7,144 @@ footer: 'Session M4-03: CI/CD Debugging & Agentic Remediation'
 ---
 
 <!-- _class: lead -->
-# Reproduce before repair
-## DevOps & infrastructure | Advanced
+
+# CI/CD debugging
+
+## A diagnosis is a hypothesis. A rerun is the proof.
 
 Session M4-03 | 3 hours
 
 ---
+
+<!-- _class: agenda -->
+
 # Agenda
 
-| Time | Topic |
+| Segment | Time |
 | --- | --- |
-| 0:00 to 0:08 | Observation, hypothesis, check results |
-| 0:08 to 0:18 | Local baseline |
-| 0:18 to 0:34 | Pipeline investigation |
-| 0:34 to 0:44 | Multi-stage failure |
-| 0:44 to 0:54 | Security remediation |
-| 0:54 to 1:00 | Lab handoff |
+| Pipeline anatomy | 10 min |
+| Failure classes | 12 min |
+| Copilot as a diagnostician | 10 min |
+| Demo: a real failed run | 12 min |
+| What "agentic" really means | 8 min |
+| Pros, cons, tips, lab handoff | 8 min |
 
 ---
-# Record logs and local results
+
+# Pipeline anatomy
 
 ```text
-Observation:
-Local proof:
-Hypothesis:
-Smallest repair:
-Proof after repair:
+trigger  ->  workflow  ->  job (on a runner)  ->  step
+push, PR     .github/      ubuntu-latest         uses: / run:
+             workflows/
 ```
 
-Keep the root-cause answer out of the observation field.
+- **Trigger:** the event that starts a run.
+- **Job:** steps that share one **runner** (a fresh VM).
+- **Step:** one action or shell command.
+- **Context:** data like `github.ref` and `secrets.NAME`.
+- **Artifact:** a file a job saves for later jobs or download.
+
+Jobs don't share files unless you upload an artifact.
 
 ---
-# Check the application first
+
+# Five failure classes
+
+| Class | Typical log clue |
+| --- | --- |
+| Dependency | `npm ci` can't find or match the lockfile |
+| Environment, secret, permission | empty variable, `Resource not accessible by integration` |
+| Flaky test | passes on rerun, no code change |
+| Matrix | one version fails, others cancelled |
+| Cache | lockfile not found, stale restore |
+
+**Find the first red step.** Later errors are often side effects.
+
+---
+
+# Read a real run
 
 ```bash
-npm ci
-npm test
-npm run lint
-npm run build
-test -f dist/index.js
+gh run list --limit 5
+gh run view <run-id> --log-failed
+gh run rerun <run-id> --failed
 ```
 
-If these pass locally, the workflow may still use the wrong runtime, directory, environment, or job order.
+Works in the same terminal where Copilot CLI runs.
 
 ---
-# Give Copilot the workflow and failed-step output
 
-```text
-Read this workflow and failed-step output. Separate observations from hypotheses.
-Use the local command as additional evidence. Propose the smallest repair and one
-proof command. Do not change unrelated jobs.
-```
+# Three ways to ask Copilot
 
-**Check every claim against the files.**
+| Where | Use it for |
+| --- | --- |
+| **Explain error** on a failed check or run page | A quick read of one failure |
+| **Copilot CLI** in your clone | Read logs, reproduce locally, edit, rerun |
+| **Cloud agent** | Hand off a fix as an issue and review its pull request |
 
----
-# Investigate before you open the answer
-
-1. Read the failed step.
-2. Record the exact log output.
-3. Reproduce the relevant command.
-4. State one hypothesis.
-5. Repair one cause.
-6. Check the rerun.
-7. Open the reference fix.
+Check current docs: Explain error is described for failed checks and the run summary page.
 
 ---
+
+# Hypothesis, then proof
+
+1. Quote the first failing line.
+2. Ask for a cause **and** what would disprove it.
+3. Reproduce the command locally.
+4. Make the smallest fix.
+5. Push and read the new run.
+
+A green run proves the fix. A plausible explanation doesn't.
+
+---
+
 # One failure can hide another
 
 ```text
-first failed stage
-        ↓ repair
-next workflow run
-        ↓
-new failed stage
+run 1: secret empty        -> fix: add the secret
+run 2: 403 on label create -> fix: add issues: write
 ```
 
-Diagnose the next failure from the new log. Keep the repair you already checked and avoid speculative changes.
+Fix one cause per push. Read the next log fresh.
 
 ---
-# Check the affected code path
 
-For each finding, identify:
+# What "agentic" really means
 
-- input source;
-- dangerous sink;
-- expected protection;
-- focused test results.
+| Feature | What it does |
+| --- | --- |
+| **Copilot Autofix** | One suggested fix for a CodeQL alert. You apply it. Free for public repos. |
+| **Agentic autofix** (public preview) | Assign an alert to the cloud agent. It validates, iterates, opens a PR. |
+| **Cloud agent** | Works an issue you assign to Copilot and opens a PR |
 
-No scanner findings isn't enough.
+None of them merges for you. **You review the PR.**
 
 ---
+
+# Review a security patch
+
+- Does it fix the cause or only the alert?
+- Does it change behavior for valid input?
+- Is there a test that fails without the fix?
+- Did it touch unrelated files?
+
+Make the alert disappear and break the feature? That's a failed fix.
+
+---
+
+# Pros, cons, tips
+
+**Pros:** fast first reading of long logs; suggests the right file to open; drafts the fix.
+
+**Cons:** guesses when the log is thin; can "fix" by deleting the check; sees only what you give it.
+
+**Tips:** give it the failed log, not the whole log; ask for one cause at a time; keep fixes on a branch.
+
+---
+
 <!-- _class: divider -->
+
 # Lab
 
-Keep solutions closed until each checkpoint. Case 3 has two investigation stages.
+Push a broken sample repo, watch it fail, and fix it with Copilot.

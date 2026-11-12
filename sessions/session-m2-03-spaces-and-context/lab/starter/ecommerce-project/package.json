@@ -2,10 +2,11 @@
   "name": "ecommerce-project",
   "version": "1.0.0",
   "type": "module",
-  "description": "E-commerce product API for Spaces lab",
+  "description": "Synthetic product API for the Session M2-03 lab",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "dependencies": {
     "express": "^4.21.0"

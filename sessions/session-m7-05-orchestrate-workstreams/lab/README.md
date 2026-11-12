@@ -15,7 +15,7 @@ Separate prompts and prepared answers don't complete the lab.
 | Route | Use after | Inputs | Lab time |
 | --- | --- | --- | --- |
 | [Product and delivery](#product-and-delivery-route) | Sessions M7-01 to M7-04 | Live GitHub issues through MCP | 120 min |
-| [Developer](#developer-route-review-pr-readiness) | Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 | Local Python code and a synthetic PR snapshot | 120 min |
+| [Developer](#developer-route-review-your-m2-05-pull-request) | Sessions M1-01 to M1-03, M2-01 to M2-04 and M2-05 | Your M2-05 repo and PR | 120 min |
 
 Complete one route. Developers don't need GitHub issues, canvases, or MCP.
 
@@ -134,42 +134,54 @@ Session M7-06 uses the live GitHub issues and this parent result.
 | Two workstreams overlap | Pause one and move the shared question to the parent. |
 | An issue cannot be retrieved | Stop that workstream until approved issue access is restored. |
 
-## Developer route: Review PR readiness
+## Developer route: Review your M2-05 pull request
 
 ### Goal and access
 
-Supervise independent read-only reviews of a readiness evaluator, its tests, and
-a supplied PR snapshot. Passing local tests and PR readiness are different claims.
+Use `/orchestrate` to review the fix and PR you made in Session M2-05. Three
+child sessions answer three separate questions. Passing local tests and a
+mergeable PR are different claims.
 
-You need the GitHub Copilot app with `/orchestrate`, local project read access,
-and Python 3.10 or later. No GitHub connection, MCP server, or remote write is
-needed.
+You need the GitHub Copilot app with `/orchestrate`, Python 3.10 or later, and the
+`gh` CLI signed in to GitHub (or the GitHub MCP server). All work is read-only.
 
-### Prepare the local project
+### Prepare the repo
 
-From the curriculum root, copy these files to a fresh workspace:
+**Start from your own M2-05 result:** the repaired `checkout-pricing` repo and
+its pull request in your throwaway GitHub repo. Check out the PR branch:
+
+```bash
+cd ~/copilot-labs/session-m2-05/checkout-pricing
+gh pr checkout <pr-number>
+python -m unittest discover -s tests -v
+```
+
+**If you skipped M2-05**, build the same result. From the curriculum root, copy the
+starter, apply the reference fix, and open a PR in a throwaway repo:
 
 ```bash
 mkdir -p ~/copilot-labs/session-m7-05-developer
-cp -R sessions/session-m2-05-copilot-app-for-developers/lab/solution/readiness_guard \
-  ~/copilot-labs/session-m7-05-developer/
-cp -R sessions/session-m2-05-copilot-app-for-developers/lab/solution/tests \
-  ~/copilot-labs/session-m7-05-developer/
-cp sessions/session-m2-05-copilot-app-for-developers/lab/starter/issue-brief.md \
-  ~/copilot-labs/session-m7-05-developer/
-cp sessions/session-m2-05-copilot-app-for-developers/lab/starter/prepared-evidence/05-pr-snapshot.json \
-  ~/copilot-labs/session-m7-05-developer/pr-snapshot.json
-cp sessions/session-m7-05-orchestrate-workstreams/lab/starter/developer-review-brief.md \
-  sessions/session-m7-05-orchestrate-workstreams/lab/starter/developer-orchestration-plan.md \
-  ~/copilot-labs/session-m7-05-developer/
-cd ~/copilot-labs/session-m7-05-developer
-PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
+cp -R sessions/session-m2-05-copilot-app-for-developers/lab/starter \
+  ~/copilot-labs/session-m7-05-developer/checkout-pricing
+cp sessions/session-m2-05-copilot-app-for-developers/lab/solution/shop/pricing.py \
+  ~/copilot-labs/session-m7-05-developer/fixed-pricing.py
+cd ~/copilot-labs/session-m7-05-developer/checkout-pricing
+git init -b main && git add -A && git commit -m "Start"
+gh repo create checkout-pricing-lab --private --source . --push
+gh issue create --title "Order totals are wrong" --body-file issue-brief.md
+git switch -c fix-pricing
+cp ../fixed-pricing.py shop/pricing.py
+git commit -am "Fix order totals" && git push -u origin fix-pricing
+gh pr create --fill --body "Closes #1"
 ```
 
-The supplied reference implementation's six tests should pass. You review the
-implementation; don't repair it or install packages. Attach this folder as an app
-project. Keep the children read-only and restrict tool access to the named files
-and test command. Grant no network or GitHub write access.
+Wait for the `tests` workflow to finish. From the curriculum root, copy
+`developer-review-brief.md` and `developer-orchestration-plan.md` from
+`sessions/session-m7-05-orchestrate-workstreams/lab/starter/` into the repo folder.
+Don't commit them. Open the folder in the app.
+
+You review. Don't repair the code, push, comment, approve, or merge. Use a
+throwaway repo only.
 
 ### Exercise D1: Accept the work split (25 minutes)
 
@@ -179,24 +191,25 @@ Use independent questions:
 
 | Workstream | Question | Inputs |
 | --- | --- | --- |
-| Implementation | Does the evaluator meet the brief's behavior contract? | `issue-brief.md`, `readiness_guard/` |
-| Tests | What do the tests prove, and what remains untested? | `issue-brief.md`, `tests/`, `readiness_guard/` |
-| PR state | Is the supplied PR ready based on its required checks and threads? | `issue-brief.md`, `pr-snapshot.json` |
+| Implementation | Does the fix meet `issue-brief.md`? | `issue-brief.md`, `shop/pricing.py`, the PR diff |
+| Tests | What do the tests prove, and what do they miss? | `issue-brief.md`, `tests/`, `shop/pricing.py` |
+| PR state | What do the real checks and review threads say? | The PR, read with `gh` or GitHub MCP |
 
-Each child works from its own inputs and does not wait for another child. The
-parent compares the results afterward. Name a reviewer and set stop conditions and a
-usage limit. The test reviewer may run only the supplied test command.
+Each child works from its own inputs and doesn't wait for another child. The
+parent compares the results afterward. Set a usage limit and stop conditions. Only
+the test reviewer may run `python -m unittest discover -s tests -v`. Only the PR
+reviewer may run read-only `gh pr` and `gh api` commands.
 
 ### Exercise D2: Start and inspect live work (30 minutes)
 
-Submit the accepted plan:
+Submit the plan:
 
 ```text
-/orchestrate Use developer-orchestration-plan.md to start independent read-only
-reviews of implementation, tests, and PR state. Each child must answer its
-question, cite files or JSON fields, and state uncertainty. Keep scope limited to
-the named local files and test command. Do not edit, install, use the network, or
-change GitHub. Stop at the agreed usage limit. The parent alone reconciles results.
+/orchestrate Use developer-orchestration-plan.md to start three independent
+read-only reviews: implementation, tests, and PR state. Each child must answer
+its question, cite files, lines, check names, or thread links, and state what it
+is unsure about. Don't edit files, push, comment, approve, or merge. Stop at the
+agreed usage limit. The parent alone reconciles results.
 ```
 
 Open the live children and check their inputs and task boundaries. Do not
@@ -207,44 +220,50 @@ substitute `/fleet`, separate chats, or captured answers.
 After the test reviewer returns its first result, redirect that child:
 
 ```text
-Check your test-coverage conclusion against acceptance criterion 5 in
-issue-brief.md. Explain whether sorted reason codes are tested and whether the
-test also proves the exact complete reason list. Do not edit or broaden the task.
+Check your conclusion against issue-brief.md. Name each rule and symptom, and say
+which test would fail if that rule broke again. Say which rules no test covers.
+Don't edit or broaden the task.
 ```
 
 Compare the child's original and revised answers. The redirect is a planned
 follow-up, not proof that the first answer was wrong. Stop a child if it crosses
 scope; don't stage a harmful action to demonstrate stopping.
 
-Then ask the parent to reconcile all results with the provisional `READY` note in
-`developer-review-brief.md`. Check any disagreement against the source files.
+Then ask the parent to reconcile all results with the provisional note in
+`developer-review-brief.md`. Check any disagreement against the repo and the PR.
 If children agree, say so.
 
 ### Exercise D4: Review the parent result (30 minutes)
 
 Require the parent to return:
 
-- a separate verdict for implementation behavior, test coverage, and PR readiness;
-- accepted findings with file or JSON-field references;
+- a separate verdict for implementation, test coverage, and PR state;
+- accepted findings with file, line, check, or thread references;
 - rejected or unresolved claims and the reason;
 - the effect of the child redirection;
 - remaining gaps and the next human decision.
 
-Check that the parent explains why passing local tests cannot override a failed
-required PR check or unresolved blocking thread. Review the result yourself and
-keep it in the app session. Inspect the app's usage display and explain whether
-orchestration was worth using for this work.
+Check that the parent explains why passing local tests can't override a failing
+required check or an unresolved review thread on the PR. Review the result
+yourself and keep it in the app session. Inspect the app's usage display and
+explain whether orchestration was worth using for this work.
 
 ### Developer completion check
 
 - [ ] Plan with independent questions and a usage limit.
 - [ ] Live child sessions inspected on the orchestration surface.
 - [ ] Test reviewer redirected and its revised answer checked.
-- [ ] Provisional `READY` note accepted or rejected using the actual PR fields.
+- [ ] Provisional note accepted or rejected using the PR's real checks and threads.
 - [ ] Parent result separates implementation, test coverage, and PR state.
-- [ ] No source files, packages, or external systems changed.
+- [ ] No files, pushes, comments, approvals, or merges.
 - [ ] A human decision and observed usage are recorded in the parent result.
 
 Compare your result with
 [`solution/developer-review-reference.md`](solution/developer-review-reference.md).
 That reference can't replace live child-session work.
+
+## Final deliverable
+
+Deliverable: the reviewed parent result from the app session, with separate
+verdicts, accepted and rejected findings, and your human decision. Product route
+learners also link it to the live GitHub issues.

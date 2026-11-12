@@ -7,32 +7,38 @@
 
 ## Overview
 
-Build and extend one Todo API with agent mode in an IDE. Compare Ask and Agent
-mode on the same feature, then redirect a multi-file change. At each checkpoint,
-decide whether to accept the work, revise it, or stop.
+**Agent mode** lets Copilot in VS Code work through a task on its own. It reads files, edits several of them, runs commands, reads the output, and keeps going until the task is done or it needs you.
+
+You learn how Ask, Edit, Agent, and Plan modes differ, what tools agent mode uses, and how to steer it. Then you build one multi-file feature in a small Node.js project: plan first, review the diff, ask for a fix, and hand a TODO comment to the cloud agent.
 
 ## Learning outcomes
 
-- Explain how assistant and agent workflows differ
-- Use agent mode in VS Code for multi-step, multi-file tasks
-- Choose between agent mode, Chat, and inline suggestions
-- Use TODO code actions to hand work to the cloud agent
-- Review plans, diffs, commands, and test output at each checkpoint
+- Pick the right mode for a task: Ask, Edit, Agent, or Plan.
+- Name the tools agent mode uses: read, search, edit, terminal, and MCP.
+- Steer agent mode: plan first, review diffs, undo with checkpoints, approve terminal commands.
+- Explain how agent mode differs from the Copilot CLI (M2-01) and the cloud agent (M3-02).
+- Compare Ask and Agent output on the same prompt.
+- Delegate a TODO comment to the cloud agent from the editor.
+- Spot the common mistakes: vague prompts, skipped review, and blanket auto-approval.
 
-## Session materials
+## You need
 
-| Resource                | Location                               |
-| ----------------------- | -------------------------------------- |
-| Lab exercises           | [`lab/`](lab/)                         |
-| Lab starter files       | `lab/starter/`         |
-| Lab solution files      | `lab/solution/`       |
+VS Code with GitHub Copilot Chat, Node.js 20 or later, and Git. The TODO step also needs the GitHub Pull Requests extension and a GitHub repository you own with the cloud agent enabled.
+
+| Resource | Location |
+| --- | --- |
+| Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
+| Slides | [`slides.md`](slides.md) |
+| Lab | [`lab/README.md`](lab/README.md) |
+| Starter project | [`lab/starter/notes-api/`](lab/starter/notes-api/) |
+| Finished project | [`lab/solution/notes-api/`](lab/solution/notes-api/) |
 
 ## Key topics
 
-- From autocomplete to assistant to agent
-- The agent loop: plan, act, observe, review, revise
-- Tool use: terminal commands, file operations, web search
-- Multi-file changes in agent mode
-- Trust boundaries and when to intervene
-- TODO code actions for cloud agent delegation
-- When to use Chat or Agent mode
+- Ask, Edit, Agent, and Plan modes
+- Tools: read, search, edit, terminal, MCP
+- Steering: plan first, review diffs, checkpoints, command approval
+- Trust: what the agent can touch and what you must read
+- Agent mode vs the CLI and the cloud agent
+- TODO code actions
+- Pros, cons, tips, and common mistakes

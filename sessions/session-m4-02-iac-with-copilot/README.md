@@ -7,27 +7,41 @@
 
 ## Overview
 
-You use Terraform to build one modular infrastructure project. Connect the network, compute, and database modules and validate each stage. Then repair a supplied configuration that fails the local security gate.
+**Infrastructure as code (IaC)** means you describe networks, servers, and storage in files, and a tool builds them. The files can be reviewed, repeated, and scanned.
 
-Bicep is a trainer comparison and optional extension, not a learner deliverable.
+You learn Terraform's vocabulary in plain words, the networking terms you need, and how to prompt Copilot for IaC. You see where Copilot is weak: invented arguments, old provider versions, insecure defaults. Then you build one VPC with two subnets and a bucket, run `init`, `validate`, and `plan`, scan it with Trivy, and fix a finding. You finish by writing the same resources in Bicep. No cloud account needed.
 
 ## Learning outcomes
 
-- Generate Terraform modules from fixed architecture constraints.
-- Connect module inputs and outputs without copying values between layers.
-- Run formatting, initialization, validation, and a local security gate in order.
-- Explain what local validation checks and what still needs a reviewed plan.
-- Read the equivalent Bicep structure.
+- Explain what IaC is and why teams use it.
+- Define resource, variable, output, module, provider, state, and plan.
+- Explain VPC, CIDR, subnet, and security group.
+- Write a Copilot prompt with architecture, constraints, naming, and variables instead of literals.
+- Run `fmt`, `init`, `validate`, and `plan`, and read the plan.
+- Spot invented arguments, outdated syntax, and insecure defaults in Copilot's output.
+- Scan Terraform with Trivy and fix a finding.
+- Write the same resources in Bicep and build them with `az bicep build`.
 
 ## You need
 
-GitHub Copilot, Terraform 1.5 or later, and network access to the Terraform provider source. No cloud account or credentials.
+GitHub Copilot, Terraform 1.5 or later, Trivy, and the Azure CLI with Bicep. No cloud account or credentials. Internet access for the first `init` and scan.
 
 | Resource | Location |
 | --- | --- |
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
-| Terraform starter | [`lab/starter/terraform/`](lab/starter/terraform/) |
-| Terraform solution | [`lab/solution/terraform/`](lab/solution/terraform/) |
-| Optional Bicep extension | [`lab/starter/bicep/`](lab/starter/bicep/) |
+| Starter project | [`lab/starter/`](lab/starter/) |
+| Reference module | [`lab/solution/modules/baseline/`](lab/solution/modules/baseline/) |
+| Reference Bicep | [`lab/solution/bicep/main.bicep`](lab/solution/bicep/main.bicep) |
+
+## Key topics
+
+- What IaC is and why
+- Terraform: resource, variable, output, module, provider, state, plan
+- Networking: VPC, CIDR, subnet, security group
+- Prompting Copilot for IaC, and repository instructions
+- Where Copilot is weak
+- Static scanning with Trivy
+- Bicep compared with Terraform
+- Pros, cons, tips, and common mistakes

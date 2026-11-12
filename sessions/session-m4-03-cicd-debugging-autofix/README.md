@@ -3,30 +3,51 @@
 **Module:** DevOps & Infrastructure with Copilot
 **Difficulty:** Advanced
 **Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-02, M4-01
-**Duration:** 3 hours (1 hour trainer content + 2 hours lab)
+**Duration:** 3 hours (1 hour trainer content + 2 hour lab)
 
 ## Overview
 
-You debug CI/CD failures from workflow files, failed-step output, and local checks. Record an observation and a hypothesis before you open a reference fix. One case has a second failure that appears only after the first repair.
+A failed pipeline is a puzzle with a log attached. Copilot can read the log and suggest a cause. It can be wrong. You treat its answer as a **hypothesis** and prove it with a rerun.
 
-The security exercise uses a deliberately vulnerable training app. Review the smallest patch locally.
+In the lab you push a small sample repo to a throwaway GitHub repository. It holds three broken workflows. You watch them fail in real GitHub Actions, diagnose each with Copilot, fix, push, and rerun until they pass. You also fix two code scanning alerts and review the patches.
+
+You learn what is a real Copilot feature here and what is just a good habit. The session names the features exactly: **Explain error**, the **Copilot CLI**, the **Copilot cloud agent**, and **Copilot Autofix** for code scanning.
 
 ## Learning outcomes
 
-- Separate observations, hypotheses, repairs, and check results.
-- Reproduce pipeline commands locally.
-- Handle a second-stage failure without stacking speculative fixes.
-- Review a security patch for scope and focused protection.
+- Name the parts of a pipeline: trigger, job, step, runner, context, secret, and artifact.
+- Recognize five failure classes: dependency, environment or secret or permission, flaky test, matrix, and cache.
+- Read a real failed run with `gh run view --log-failed`.
+- Use Copilot (CLI, Explain error, cloud agent) to propose a cause, then prove or reject it with a rerun.
+- Handle a second failure that appears only after the first fix.
+- Say which "agentic" remediation features exist and what each one does.
+- Review a security patch for scope and for behavior it might break.
 
 ## You need
 
-GitHub Copilot and Node.js 20.x. Repository Actions, code scanning, and remote remediation are optional. The lab runs on the supplied files and local commands.
+- GitHub Copilot in the Copilot CLI (Session M2-01), the GitHub CLI (`gh`) signed in, Git, and Node.js 20 or later.
+- A personal GitHub account that can create repositories and run Actions. A **public** throwaway repo is easiest, because Copilot Autofix is free for public repositories.
+- A paid Copilot plan for the cloud agent step. Part 3 has a CLI path if you don't have one.
+
+Use only the synthetic sample repo. Delete the throwaway repo when you finish.
 
 | Resource | Location |
 | --- | --- |
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
-| Pipeline application | [`lab/starter/pipeline-app/`](lab/starter/pipeline-app/) |
-| Failure cases | [`lab/starter/failing-pipelines/`](lab/starter/failing-pipelines/) |
-| Reference fixes | [`lab/solution/fixed-pipelines/`](lab/solution/fixed-pipelines/) |
+| Sample repo with broken workflows | [`lab/starter/ci-lab-repo/`](lab/starter/ci-lab-repo/) |
+| Fixed workflows | [`lab/solution/fixed-workflows/`](lab/solution/fixed-workflows/) |
+| Fixed server and its test | [`lab/solution/secure-src/`](lab/solution/secure-src/) |
+| Generated lockfile | [`lab/solution/package-lock.json`](lab/solution/package-lock.json) |
+
+## Key topics
+
+- Pipeline anatomy: trigger, job, step, runner, context, secret, artifact
+- Failure classes and how each looks in a log
+- `gh run list`, `gh run view --log-failed`, `gh run rerun --failed`
+- Explain error, Copilot CLI, and cloud agent for diagnosis
+- A diagnosis is a hypothesis: prove it with a rerun
+- Autofix, agentic autofix, and the cloud agent: what each one is
+- Reviewing a security patch
+- Pros, cons, tips, and common mistakes

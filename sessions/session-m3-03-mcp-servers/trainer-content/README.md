@@ -2,149 +2,115 @@
 
 ## Teaching goal
 
-Show one MCP tool from its contract through tests and Inspector output. Walk through the schema and handler, then demonstrate good and bad input. Run the automated test and an Inspector call before expanding the server to three tools.
+Learners leave knowing what MCP is, how to add a server to the real Copilot CLI, how approvals work, and where the risks are. They have seen Copilot call a server they ran themselves.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:08 | MCP request path and boundaries |
-| 0:08 to 0:18 | Tool names, descriptions, and JSON Schema |
-| 0:18 to 0:33 | Stage-one `get_weather` walkthrough |
-| 0:33 to 0:43 | Bad input and visible errors |
-| 0:43 to 0:52 | Tests and MCP Inspector |
-| 0:52 to 1:00 | Add tools without weakening the contract; lab handoff |
+| 0:00 to 0:10 | What MCP is |
+| 0:10 to 0:22 | Configure servers in Copilot CLI |
+| 0:22 to 0:32 | Demo: GitHub server and approvals |
+| 0:32 to 0:40 | Skill vs custom agent vs MCP |
+| 0:40 to 0:52 | Pros, cons, and tips |
+| 0:52 to 1:00 | Lab handoff |
 
-The timings match [`slides.md`](../slides.md). Stop live Inspector troubleshooting at 0:50 and use the recorded output in [`EVIDENCE.md`](../lab/solution/custom-mcp/EVIDENCE.md).
+The timings match [`slides.md`](../slides.md).
 
 ## Preparation
 
-- Use Node.js 20 or later.
-- Run `npm ci && npm test` in both custom MCP projects.
-- Check that no `node_modules` directory is tracked.
-- Pin MCP Inspector 2.5.0 for the demo.
+- Install Copilot CLI and sign in. Check that `/mcp` opens and lists the GitHub server.
+- Run the lab once. Keep [`lab/solution/custom-mcp/`](../lab/solution/custom-mcp/) open for comparison.
+- Check whether learners' organizations allow MCP servers and the Microsoft Learn URL. Copilot Business and Enterprise policies can block them.
+- Install Node.js 20 or later.
+- Use a public repository for the demo. Never demo with a real token on screen.
+- Check the docs for current command names. The CLI changes often.
 
-If you can't install packages, walk through the code and label Inspector and tests as **not executed**.
+## What MCP is (0:00 to 0:10)
 
-## Teaching sequence
+Use the USB analogy once, then drop it: a standard plug so any client works with any server.
 
-### 0:00 to 0:08: MCP request path
+- **Client and server.** Copilot CLI is the client. The server is a program that lists tools and runs them.
+- **Tools, resources, prompts.** Tools are actions the model calls. Resources are readable data. Prompts are templates you pick. Most servers, and most of this lab, are about tools. Check current docs for which client supports which.
+- **Transports.** stdio starts a local process. HTTP reaches a remote service. SSE is deprecated.
+- **Schema.** Each tool has a JSON Schema for its arguments. The model reads it to fill in a call. The server uses it to reject bad input.
 
-```text
-Client → tools/list → tool selection → tools/call → handler → result
-```
+Walk the five steps on the "How a tool call works" slide. Stress step 4: the user can approve every call.
 
-The protocol standardizes discovery and calls. It doesn't grant permissions or make a result correct.
+## Configure servers (0:10 to 0:22)
 
-Keep the packaging distinction short: an MCP server provides protocol tools and context. A plugin distributes a versioned set of Copilot customizations and may include MCP server configuration. Installing a plugin doesn't run the server it references.
+Show `/mcp`, `/mcp add`, `/mcp show`, and `copilot mcp add`. Open `~/.copilot/mcp-config.json` and point out `type`, `command` or `url`, and `tools`.
 
-| Boundary | Question |
+Mention VS Code in one minute: it uses `.vscode/mcp.json` with a `servers` key. Learners who use both editors need both files. The CLI doesn't read the VS Code file.
+
+Mention project config: `.mcp.json` or `.github/mcp.json`, loaded after folder trust.
+
+## Demo script: GitHub server and approvals (0:22 to 0:32)
+
+1. `/mcp`. Select the GitHub server. Show the tool list.
+2. Ask: `Using the GitHub MCP server, list 5 open issues in github/copilot-cli. Titles and numbers only.`
+3. Read the approval prompt aloud. Explain allow once vs allow for the session vs saved approval.
+4. Quit. Start with `copilot --deny-tool='github-mcp-server(list_issues)'`. Ask again. Show the refusal. **Check the exact server and tool names in `/mcp show` first.** They vary by version.
+5. Ask: what would you allow for a read-only reviewer? What would you deny?
+
+If the demo fails, show the dashboard and the config file instead. Don't debug live for more than two minutes.
+
+## Skill vs custom agent vs MCP server (0:32 to 0:40)
+
+Same table as [M3-05](../../session-m3-05-agent-skills-ecosystem/trainer-content/README.md). **Skill is know-how. Custom agent is a role. MCP is reach.** One sentence each, then the combination: an agent can use skills, and a skill can describe how to use an MCP server's tools. Link to [M3-04](../../session-m3-04-custom-agents/trainer-content/README.md) for agents. Don't re-teach them.
+
+Quick check. Ask where each belongs:
+
+| Need | Best home |
 | --- | --- |
-| Tool catalog | What can the client discover? |
-| Input schema | Which arguments are accepted? |
-| Handler | What work happens? |
-| Result | How does success or failure appear? |
-| Transport | Which process or endpoint carries the request? |
+| Query the issue tracker | MCP server |
+| Release notes in the team format | Skill |
+| Read-only reviewer persona | Custom agent |
+| Always use 2-space indentation | Instructions |
 
-### 0:08 to 0:18: The tool contract
+## Pros, cons, and tips (0:40 to 0:52)
 
-Open `lab/starter/custom-mcp/src/index.js`. Read the `get_weather` definition before the handler. Point out:
+**Pros.** Live data, real actions, one server works in many clients, and a registry of existing servers.
 
-- a specific name;
-- a description that says the data is synthetic;
-- a required, non-empty `city`;
-- `additionalProperties: false`.
+**Cons.**
+- **Credentials.** A token in config acts as you. Use the narrowest scope.
+- **Context cost.** Every tool's name, description, and schema goes into the prompt. Many tools mean less room for your code and worse tool choice.
+- **Prompt injection.** Tool output is untrusted input. Issues, web pages, and files can hold instructions. Approval prompts and least privilege are your defenses.
+- **Trust.** A local server runs code on your machine. Read the source first.
 
-The schema helps clients form a request. The handler still validates arguments, because direct tests and other transports can reach it without a client-side validator.
+**Tips.** Few focused tools. Descriptions written for the model. Read-only by default. Limit `tools` in config. Disable servers you don't need.
 
-### 0:18 to 0:33: One tool end to end
+## Common mistakes
 
-Trace:
+| Mistake | Symptom | Fix |
+| --- | --- | --- |
+| Logging to stdout | Server connects, then fails | Log to stderr |
+| Relative path in `args` | Server not found | Use an absolute path |
+| Vague description | Copilot never calls the tool | Say what it does and when |
+| Forgot to restart | New tool missing | Restart the session or check `/mcp` |
+| Token in a committed file | Leaked secret | Use environment variables; rotate the token |
+| `--yolo` with an unknown server | No approval before a risky call | Allow named tools only |
 
-```json
-{
-  "name": "get_weather",
-  "arguments": {
-    "city": "Oslo"
-  }
-}
-```
+## Lab notes
 
-Show `invokeTool`, `syntheticWeather`, and the protocol registration. Then run:
+- Part 1: the GitHub server needs no setup. A learner whose policy blocks it can read the docs and do Parts 3 to 5.
+- Part 2: the Microsoft Learn URL is `https://learn.microsoft.com/api/mcp`. If it fails, use another HTTP server from the [GitHub MCP Registry](https://github.com/mcp) or `/mcp search`.
+- Part 3: use `copilot mcp add`, so the path stays absolute. Most failures are a relative path or stdout logging.
+- Part 4: results vary by model. A vague description often still works on simple prompts. Have learners try a harder prompt such as a chained question.
+- Part 5: the model may ignore the injected note. That is a valid result. Tell learners that one pass doesn't prove safety.
+- Part 6: remove servers so the next session starts clean.
 
-```bash
-cd sessions/session-m3-03-mcp-servers/lab/starter/custom-mcp
-npm test
-```
+## Answer key
 
-Deterministic output allows exact assertions. Random output would make a small contract test flaky.
-
-### 0:33 to 0:43: Failure is part of the interface
-
-Trace an empty city. The response sets `isError: true` and carries:
-
-```json
-{
-  "error": "city must be a non-empty string"
-}
-```
-
-Compare two weak patterns: returning an empty success object, and throwing an unhandled exception that kills the server. The caller needs an error it can report without crashing.
-
-### 0:43 to 0:52: Inspector output and test results
-
-```bash
-npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
-  node src/index.js --method tools/list
-```
-
-Then call `get_weather`. Keep test results and Inspector output separate:
-
-| Check | Shows |
-| --- | --- |
-| Unit test | Handler behavior for known inputs |
-| `tools/list` | The server exposes the expected catalog |
-| `tools/call` | The stdio protocol path reaches the handler |
-| Copilot call | A client can discover and choose the tool |
-
-A Copilot call shows client integration works. Keep the deterministic tests anyway.
-
-### 0:52 to 1:00: Add the remaining tools
-
-Open the completed server. `get_forecast` and `convert_temperature` follow the same shape as `get_weather`:
-
-- forecast days are integers from 1 to 7;
-- conversion units are a fixed enum;
-- unknown tools return a visible error;
-- output stays deterministic and synthetic.
-
-Remind learners to keep the first tool passing while they add the other two.
-
-## Prepared demonstration
-
-1. Run the starter tests.
-2. Show the good `Oslo` request and exact response.
-3. Change the request to an empty city and show the tool error.
-4. List tools with Inspector.
-5. Open the solution catalog and show the two added tools.
-6. Run the five solution tests.
-
-Don't type the full server from scratch in class.
-
-## Review prompts
-
-- Which file owns the tool description?
-- Which check rejects an empty city?
-- Why does the handler validate input when the schema exists?
-- What does `tools/list` show that a direct handler test doesn't?
-- What would make adding a fourth tool risky?
-
-## Lab handoff
-
-Learners start with the one-tool server, add one test, and inspect good and bad calls before adding the other tools. They update the one-tool catalog assertion when the catalog grows, run tests and Inspector against their edited copy (not the reference solution), and submit the lockfile, test output, and protocol requests and responses.
+- Part 1: the tool name depends on the question, such as `list_issues` or `search_issues`. Arguments include owner, repo, and state.
+- Part 3: Oslo returns 30 °C and rain.
+- Part 4: 30 °C is 86 °F. The finished tool is in `lab/solution/custom-mcp/src/index.js`.
+- Part 5: the finished injection is in the solution. A good answer denies the shell command.
 
 ## References
 
+- [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)
+- [Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)
+- [About MCP](https://docs.github.com/en/copilot/concepts/customizations/mcp)
 - [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector)
-- [MCP Inspector CLI](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md)
-- [Extending GitHub Copilot Chat with MCP](https://docs.github.com/copilot/customizing-copilot/extending-copilot-chat-with-mcp)
+- [GitHub MCP Registry](https://github.com/mcp)

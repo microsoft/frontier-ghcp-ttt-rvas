@@ -3,47 +3,45 @@
 **Module:** Copilot in Practice
 **Difficulty:** Intermediate
 **Prerequisites:** Sessions M1-01 to M1-03
-**Duration:** 3 hours (1 hr trainer content + 2 hr lab)
+**Duration:** 3 hours (1 hour trainer content + 2 hour lab)
 
 ## Overview
 
-Use the standalone `copilot` CLI to take over one small Node.js project. Inspect
-commands, revise a plan, then fix the project. Then inspect live fleet results,
-automate a health report, and compare terminal and IDE workflows. You work in
-`agent-tasks` throughout.
+The **Copilot CLI** is the `copilot` command. It runs Copilot as an agent in your terminal. It reads your files, edits code, and runs commands, and it asks before it does anything risky.
+
+You learn the core workflow: start a session, **plan**, approve tools, implement, **review**, and resume later. You also learn when the terminal beats the IDE and when it doesn't. In the lab you fix three real bugs in a small Node.js API. Advanced features (fleet, Autopilot, worktrees, JSONL output) get one slide each and an optional stretch task.
 
 ## Learning outcomes
 
-- Install and configure the `copilot` CLI.
-- Use interactive `copilot` and `copilot -p "..."`.
-- Use Standard, Plan, and Autopilot modes for multi-step tasks.
-- Revise a `/plan` before approval and trace it to the diff.
-- Check a `/rubber-duck` critique.
-- Inspect permissions, sandbox policy, and the soft AI-credit limit.
-- Queue a follow-up, background a command, and read its real result.
-- Recover a disposable edit and tell fork, worktree, move, and resume apart.
-- Use `/fleet` and `/tasks` for independent analysis, then check results and usage.
-- Tell JSONL events from an answer payload in programmatic output.
-- Compare CLI, IDE Chat, IDE Agent Mode, and Copilot App workflows.
+- Install the CLI, sign in, and start an interactive session.
+- Choose between interactive mode and one-shot `copilot -p`.
+- Use plan mode to agree on a fix before Copilot edits files.
+- Use `/help`, `/model`, `/context`, `/compact`, `/diff`, `/review`, `/resume`, `/skills`, and `/mcp`.
+- Allow or deny tools on purpose, and know what is safe to approve.
+- Add context with `@` file mentions and custom instructions.
+- Resume a session and keep its context small.
+- Decide when to use the CLI and when to use the IDE.
 
-## Session materials
+## You need
+
+Node.js 22 or later, Git, and a GitHub account with Copilot access. Install steps are in the lab.
 
 | Resource | Location |
 | --- | --- |
-| Lab exercises | [`lab/`](lab/) |
-| Lab starter files | `lab/starter/` |
-| Lab solution files | `lab/solution/` |
+| Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
+| Slides | [`slides.md`](slides.md) |
+| Lab | [`lab/README.md`](lab/README.md) |
+| Starter project | [`lab/starter/agent-tasks/`](lab/starter/agent-tasks/) |
+| Fixed project | [`lab/solution/agent-tasks/`](lab/solution/agent-tasks/) |
 
 ## Key topics
 
-- Standalone `copilot` binary: installation, authentication, configuration
-- Interactive prompts for command explanations; `copilot -p "..."` for command generation
-- Shell integrations: aliases, completion, inline invocation
-- Agent mode for multi-step terminal tasks
-- Copilot App orientation, with plugins and canvas extensions in Session M3-01
-- Cross-IDE comparison: VS Code, Visual Studio, JetBrains, Eclipse, Xcode, and others
-- When to use the CLI, IDE Chat, IDE Agent Mode, or the Copilot App
-- SSH and remote workflows where the CLI is the only option
-- Scripting with Copilot: generating and debugging shell scripts
-- What context the CLI sends
-- Recovery and session controls without broadening permissions
+- Install, sign in, and the first session
+- Interactive mode vs `copilot -p`
+- Plan mode: plan, then implement, then review
+- The slash commands that matter
+- Permissions: what to allow, what to deny, and why
+- Context: `@` mentions and custom instructions
+- Resuming sessions
+- CLI vs IDE: pros, cons, tips, and common mistakes
+- Advanced, in one slide each: fleet, Autopilot, worktrees, JSONL output

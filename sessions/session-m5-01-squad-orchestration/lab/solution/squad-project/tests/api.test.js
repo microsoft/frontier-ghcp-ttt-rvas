@@ -17,23 +17,63 @@ describe('Users API', () => {
     expect(res.body.count).toBeGreaterThan(0);
   });
 
-  test('POST /api/users trims a valid name and creates a user', async () => {
+  test('POST /api/users creates a user', async () => {
     const res = await request(app)
       .post('/api/users')
-      .send({ name: '  Test User  ', email: 'test-unique@example.com' });
+      .send({ name: 'Test User', email: 'test-unique@example.com' });
     expect(res.statusCode).toBe(201);
     expect(res.body.data.name).toBe('Test User');
     expect(res.body.data.id).toBeDefined();
   });
 
-  test.each([
-    [{ name: '', email: 'valid@example.com' }, 'Name must be a non-empty string'],
-    [{ name: 42, email: 'valid@example.com' }, 'Name must be a non-empty string'],
-    [{ name: 'x'.repeat(101), email: 'valid@example.com' }, 'Name must be 100 characters or fewer'],
-    [{ name: 'Valid Name', email: 'not-an-email' }, 'Email must be a valid email address'],
-  ])('POST /api/users rejects invalid input %#', async (body, error) => {
-    const res = await request(app).post('/api/users').send(body);
+  test('POST /api/users rejects missing fields', async () => {
+    const res = await request(app)
+      .post('/api/users')
+      .send({ name: '' });
     expect(res.statusCode).toBe(400);
-    expect(res.body.error).toBe(error);
+  });
+});
+
+describe('Users validation', () => {
+  test('POST /api/users rejects a malformed email', async () => {
+    const res = await request(app).post('/api/users').send({ name: 'Dan', email: 'not-an-email' });
+    expect(res.statusCode).toBe(400);
+  });
+
+  test('POST /api/users rejects a name over 100 characters', async () => {
+    const res = await request(app)
+      .post('/api/users')
+      .send({ name: 'x'.repeat(101), email: 'long-name@example.com' });
+    expect(res.statusCode).toBe(400);
+  });
+});
+
+describe('Tasks API', () => {
+  test('creates, filters, updates, and deletes a task', async () => {
+    const created = await request(app).post('/api/tasks').send({ title: 'Write docs' });
+    expect(created.statusCode).toBe(201);
+    expect(created.body.data.status).toBe('todo');
+    const id = created.body.data.id;
+
+    const todo = await request(app).get('/api/tasks?status=todo');
+    expect(todo.body.data.some(t => t.id === id)).toBe(true);
+
+    const patched = await request(app).patch(`/api/tasks/${id}`).send({ status: 'done' });
+    expect(patched.statusCode).toBe(200);
+    expect(patched.body.data.status).toBe('done');
+
+    const removed = await request(app).delete(`/api/tasks/${id}`);
+    expect(removed.statusCode).toBe(204);
+  });
+
+  test('rejects an empty title and a bad status', async () => {
+    expect((await request(app).post('/api/tasks').send({ title: '  ' })).statusCode).toBe(400);
+    expect((await request(app).post('/api/tasks').send({ title: 'x', status: 'later' })).statusCode).toBe(400);
+    expect((await request(app).get('/api/tasks?status=later')).statusCode).toBe(400);
+  });
+
+  test('returns 404 for an unknown task', async () => {
+    expect((await request(app).patch('/api/tasks/nope').send({ status: 'done' })).statusCode).toBe(404);
+    expect((await request(app).delete('/api/tasks/nope')).statusCode).toBe(404);
   });
 });

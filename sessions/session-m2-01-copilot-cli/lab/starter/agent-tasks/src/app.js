@@ -8,7 +8,6 @@ let tasks = [];
 let nextId = 1;
 
 // GET /tasks - List all tasks
-// BUG 1: Filter logic is inverted — returns tasks that DON'T match the status
 app.get('/tasks', (req, res) => {
   const { status } = req.query;
   if (status) {
@@ -19,7 +18,6 @@ app.get('/tasks', (req, res) => {
 });
 
 // GET /tasks/:id - Get a single task
-// BUG 2: ID comparison uses strict equality with string vs number mismatch
 app.get('/tasks/:id', (req, res) => {
   const task = tasks.find(t => t.id === req.params.id);
   if (!task) {
@@ -46,7 +44,6 @@ app.post('/tasks', (req, res) => {
 });
 
 // PUT /tasks/:id - Update a task
-// BUG 3: Spread operator order is wrong — req.body values get overwritten by old task values
 app.put('/tasks/:id', (req, res) => {
   const taskIndex = tasks.findIndex(t => t.id === parseInt(req.params.id));
   if (taskIndex === -1) {

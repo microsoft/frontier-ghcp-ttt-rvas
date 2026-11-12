@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "microsoft-learn": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "tools": ["*"]
+    },
+    "weather": {
+      "type": "local",
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/lab/starter/custom-mcp/src/index.js"],
+      "tools": ["*"]
+    }
+  }
+}

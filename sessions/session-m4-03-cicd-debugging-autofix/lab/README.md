@@ -1,184 +1,217 @@
-# Session M4-03 lab: Debug pipelines from logs and local checks
+# Session M4-03 lab: Fix real failing GitHub Actions runs
 
-**Deliverable:** Three investigation records, fixed workflows, and a reviewed security patch
+**Duration:** 2 hours
+**Deliverable:** A throwaway repo with three fixed workflows and all runs green, two reviewed security fixes, and a short note on each Copilot diagnosis you proved or rejected
 
 ## Lab overview
 
-You investigate three pipeline failures, review a security repair, and speed up feedback without removing checks.
+You push a small Node app with three broken workflows to a new GitHub repository. The runs fail for real. You diagnose each one with Copilot, fix it, and rerun.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 0 | Check the local application baseline | 10 min |
-| 1 | Investigate three pipeline cases | 50 min |
-| 2 | Review a security remediation | 30 min |
-| 3 | Improve feedback speed | 20 min |
-| 4 | Collect investigation records | 10 min |
+| 1 | Create the repo and watch it fail | 15 min |
+| 2 | Dependency and cache failure | 20 min |
+| 3 | Matrix failure | 20 min |
+| 4 | Two-stage secret and permission failure | 20 min |
+| 5 | Fix code scanning alerts and review the patch | 30 min |
+| 6 | Reruns and clean up | 15 min |
 
 ## Before you start
 
-You need GitHub Copilot and Node.js 20.x. Use only the supplied application, logs, and workflow files. Remote workflow runs and security products are optional.
+You need the Copilot CLI, `gh` signed in (`gh auth status`), Git, and Node.js 20 or later. Everything is synthetic. Don't put real secrets in the repo or in a prompt.
 
-Don't open `lab/solution/fixed-pipelines/` until a checkpoint says to compare. For Case 3, don't open `error-log-3-stage-2.txt` until the first repair is done.
+Use a **public** repo so Copilot Autofix works for free. In a private repo, Autofix needs GitHub Code Security. Check current docs.
 
-## Setup
+Keep `lab/solution/` closed until you finish a part.
 
-Run commands from this session directory unless a command changes directory.
+## Part 1: Create the repo and watch it fail
+
+Copy the starter out of the curriculum repo and push it. Run this from the curriculum repo root.
 
 ```bash
-cd lab/starter/pipeline-app
-npm ci
-npm test
-npm run lint
-npm run build
-test -f dist/index.js
-cd ../../..
+mkdir -p ~/copilot-labs/session-m4-03
+cp -R sessions/session-m4-03-cicd-debugging-autofix/lab/starter/ci-lab-repo/. \
+  ~/copilot-labs/session-m4-03/ci-lab
+cd ~/copilot-labs/session-m4-03/ci-lab
+git init -q -b main && git add -A && git commit -qm "Start"
+gh repo create ci-lab-m4-03 --public --source=. --push
 ```
 
-Expected: install, tests, lint, and build pass.
+Pick a different repo name if it's taken. Now watch the runs:
 
-Create one investigation record per case:
+```bash
+gh run list --limit 10
+gh run watch
+```
 
-| Field | Record |
+Expect these results in a minute or two:
+
+| Workflow | Expected |
 | --- | --- |
-| Failed job and step | |
-| Exact observation | |
-| Local proof command | |
-| Hypothesis | |
-| Smallest repair | |
-| Proof after repair | |
+| Build | Fails |
+| Test on several Node versions | Fails |
+| Label good builds | Fails |
+| CodeQL | Passes (alerts come later) |
 
-## Part 1: Investigate the pipeline cases
+Open one run in the browser with `gh run view --web`. Find the **trigger**, the **job**, the **runner**, and the failed **step**. Write each in one line in your notes.
 
-For every case:
+**Checkpoint:** three red runs, one per workflow.
 
-1. Read the workflow and failed-step output.
-2. Record observations without naming a root cause.
-3. Run the local command and record its result.
-4. State one hypothesis.
-5. Ask Copilot to challenge the hypothesis and propose the smallest repair.
-6. Validate the repaired YAML.
-7. Compare with the solution only after the checkpoint.
+## Part 2: Dependency and cache failure
+
+Start with **Build**. Read the failure yourself first.
+
+```bash
+gh run list --workflow build.yml --limit 1
+gh run view RUN_ID --log-failed
+```
+
+Write down the first failing line. Then start Copilot in the clone:
+
+```bash
+copilot
+```
 
 ```text
-Read this workflow and failed-step output. Separate observations from hypotheses.
-Use the supplied local command as additional evidence. Propose the smallest repair
-and one proof command. Do not change unrelated jobs.
+Read the failed log of the latest Build run with `gh run view --log-failed`.
+Give me the most likely cause and one thing that would disprove it.
+Don't change any files yet.
 ```
 
-### Case 1
-
-Open `pipeline-1.yml` and `error-log-1.txt`.
+Treat the answer as a **hypothesis**. Test it locally before you fix anything:
 
 ```bash
-node --version
-cd lab/starter/pipeline-app
-npm pkg get engines.node
-npm test
-cd ../../..
-```
-
-Record what the log and package metadata say. Edit only after your hypothesis explains both. After the repair:
-
-```bash
-ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
-  lab/starter/failing-pipelines/pipeline-1.yml
-```
-
-**Checkpoint:** Record the parser result, then compare with `lab/solution/fixed-pipelines/pipeline-1.yml`.
-
-### Case 2
-
-Open `pipeline-2.yml` and `error-log-2.txt`. Run the failing command from the workflow location:
-
-```bash
+ls package-lock.json
 npm ci
 ```
 
-Expected failure: npm can't find the project package metadata in the session root. Now run it in the application directory:
+Then ask Copilot for the smallest fix on a branch, and read the diff.
 
-```bash
-npm --prefix lab/starter/pipeline-app ci
-npm --prefix lab/starter/pipeline-app test
+```text
+Fix the cause on a new branch called fix/build. Change only what's needed.
 ```
 
-After the repair, parse the YAML and compare with the solution.
-
-**Checkpoint:** Explain why changing dependency resolution wouldn't fix the observed path failure.
-
-### Case 3: multi-stage failure
-
-Open `pipeline-3.yml` and `error-log-3.txt`. Investigate only the first failed stage.
+Push the branch, open a pull request, and watch the checks:
 
 ```bash
-cd lab/starter/pipeline-app
-npm pkg get engines.node
-npm ci
+git push -u origin fix/build
+gh pr create --fill
+gh pr checks --watch
+```
+
+**Checkpoint:** the Build check is green. Other checks may still be red.
+
+Name the failure class. Two apply here.
+
+## Part 3: Matrix failure
+
+Look at **Test on several Node versions**. Open the run page. One leg is red and the others are cancelled.
+
+Try **Explain error**. In the pull request, click the failed check in the merge box and choose it. Or open the run summary page and click **Explain error**. If you don't see it, check current docs. It may be off for your account.
+
+Does its answer explain why Node 18 fails but 20 and 22 don't? If it doesn't, say what is missing.
+
+Now fix it with the cloud agent if your plan includes it.
+
+1. Open an issue in your repo: "Matrix job fails on Node 18".
+2. Paste the first failing line into the issue.
+3. Assign the issue to **Copilot**.
+4. Wait for the pull request. Read the diff and the checks.
+
+No cloud agent? Fix it in the CLI session instead:
+
+```text
+The matrix workflow fails on Node 18. Check package.json and the code, then propose
+the smallest correct fix. Don't change the test to hide the failure.
+```
+
+You have two options: remove Node 18 from the matrix, or change the code to run on 18. Check `engines` in `package.json` before you choose.
+
+Merge the fix after its checks pass.
+
+**Checkpoint:** every matrix leg is green, and you can say why the fix was right.
+
+## Part 4: Two-stage secret and permission failure
+
+Open **Label good builds**. The first failure is a missing secret. Ask Copilot for the cause and what would disprove it.
+
+```text
+Read the failed log of the latest "Label good builds" run. What is the most
+likely cause? Don't edit files. Tell me what I'd need to change outside the repo.
+```
+
+A secret isn't in the code, so a file fix can't solve it. Add a synthetic value:
+
+```bash
+gh secret set DEPLOY_TOKEN --body "synthetic-not-a-real-token"
+gh run rerun --failed
+gh run watch
+```
+
+The run fails again at a **different step**. That's the second failure. Read the new log and repeat: hypothesis, local reasoning, smallest fix.
+
+Let Copilot propose the change. **Reject** any fix that uses `write-all`. The step needs one permission. Push on a branch, open a pull request, and read the checks.
+
+**Checkpoint:** **Label good builds** is green. Your notes say which change fixed which failure.
+
+## Part 5: Fix code scanning alerts and review the patch
+
+`src/server.js` has two deliberate vulnerabilities. CodeQL analyzed `main` in Part 1. Open the **Security** tab of your repo, then **Code scanning**. If there are no alerts yet, wait a few minutes and refresh. The alerts you get depend on CodeQL's current rules.
+
+For one alert, open its page and use **Generate fix** (Copilot Autofix). Read the suggested change. It's a **suggestion**, not a commit.
+
+Review it before you apply it:
+
+- Does it fix the cause or only the alert?
+- Does valid input still work?
+- Did it touch other files?
+
+For the second alert, use the Copilot CLI:
+
+```text
+Explain the second code scanning alert in src/server.js. Then fix it with the
+smallest change and add a test that fails without the fix.
+```
+
+Check both fixes with the reference test. Copy it into your repo and run it. Replace the path with where your curriculum clone lives.
+
+```bash
+cp /path/to/curriculum/sessions/session-m4-03-cicd-debugging-autofix/lab/solution/secure-src/security.test.js test/
 npm test
-cd ../../..
 ```
 
-Repair the first failure and parse the workflow. Then open `error-log-3-stage-2.txt`, the next run after the first repair.
+Both security tests should pass.
 
-Use the new log. Don't undo the first change or add unrelated fixes. After the second repair:
+Optional: try **agentic autofix** (public preview). Assign an alert to Copilot. It starts a cloud agent session, checks its fix with CodeQL, and opens a pull request. It uses cloud agent quota. Compare its patch with the Autofix suggestion.
+
+**Checkpoint:** both vulnerabilities are fixed, tests pass, and you can say what each fix protects.
+
+## Part 6: Reruns and clean up
+
+Answer these in your notes:
+
+1. A rerun turned a run green with no code change. What does that tell you?
+2. Why is "rerun until green" a bad fix?
+3. Where did Copilot's first diagnosis miss or go too far?
+
+Then delete the repo:
 
 ```bash
-ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
-  lab/starter/failing-pipelines/pipeline-3.yml
-npm --prefix lab/starter/pipeline-app run build
-test -f lab/starter/pipeline-app/dist/index.js
+gh repo delete ci-lab-m4-03 --yes
 ```
 
-**Checkpoint:** Record two observations, two repairs, and separate check results for each stage. Then compare with `lab/solution/fixed-pipelines/pipeline-3.yml`.
-
-## Part 2: Review a security remediation
-
-Open `lab/starter/vulnerable-app/src/app.js` and check its syntax:
-
-```bash
-node --check lab/starter/vulnerable-app/src/app.js
-```
-
-Complete the CodeQL workflow template. If you have a remote scan, inspect its findings. Otherwise use the source as the finding context.
-
-Investigate these sinks without opening the secure solution:
-
-- SQL query construction;
-- HTML response construction;
-- file path resolution.
-
-Ask for one repair at a time in `lab/starter/vulnerable-app/src/app.js` and review each diff. Copy only the test harness and dependency manifests, not the solution source:
-
-```bash
-mkdir -p lab/starter/vulnerable-app/test
-cp lab/solution/secure-app/package.json lab/solution/secure-app/package-lock.json \
-  lab/starter/vulnerable-app/
-cp lab/solution/secure-app/test/security.test.js \
-  lab/starter/vulnerable-app/test/
-node --check lab/starter/vulnerable-app/src/app.js
-npm ci --prefix lab/starter/vulnerable-app
-npm test --prefix lab/starter/vulnerable-app
-```
-
-Explain how each repair protects its path: parameterized queries for SQL, output encoding for HTML, and resolved-path containment for file access. The three tests must pass. Then compare with `lab/solution/secure-app/src/app.js`.
-
-## Part 3: Improve feedback speed
-
-Review `lab/starter/slow-pipeline/workflow.yml`. Keep its checks and add lockfile caching, parallel lint and test jobs, shallow checkout, and a main-push deployment condition.
-
-```bash
-ruby -e 'require "yaml"; Psych.parse_stream(File.read(ARGV[0]))' \
-  lab/starter/slow-pipeline/workflow.yml
-grep -nE "cache: 'npm'|needs: \\[lint, test\\]|fetch-depth: 1|github.event_name" \
-  lab/starter/slow-pipeline/workflow.yml
-```
-
-Then compare with `lab/solution/optimized-pipeline/workflow.yml`.
+If `gh` asks for the `delete_repo` scope, run `gh auth refresh -s delete_repo` first. Or delete the repo from its **Settings** page.
 
 ## Final deliverable
 
-1. Three fixed workflows.
-2. Three investigation records, two stages for Case 3.
-3. A reviewed security patch and syntax-check output.
-4. The optimized workflow review.
+Keep this before you delete the repo:
 
-Write the root-cause statement after the observation and local check results. Keep the original logs with your records.
+1. `gh run list` output showing the latest runs green.
+2. Your notes for each of the three workflows: failure class, Copilot's diagnosis, what you tested, and the fix.
+3. One line for each security fix: the alert and what the patch does.
+
+## References
+
+- [Troubleshooting workflows](https://docs.github.com/en/actions/how-tos/troubleshoot-workflows)
+- [About Copilot Autofix for code scanning](https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/about-autofix-for-codeql-code-scanning)
+- [Fixed workflows](solution/fixed-workflows/) and [secure server](solution/secure-src/server.js)

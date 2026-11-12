@@ -1,270 +1,161 @@
-# Session M2-03: Context workflows
+# Session M2-03 trainer guide: Copilot Spaces & context management
 
-## Before teaching
+## Teaching goal
 
-Copy the Storefront project and check that `/env` and `/instructions` work in the
-standalone CLI. Check that learners have Spaces and GitHub Copilot access.
+Learners leave knowing what each context mechanism is, when to use it, and how to tell from a result which one is missing.
 
-## Session objective
+## One-hour plan
 
-Teach learners to select the few files a task needs and check the answer against
-those files.
-
-## Minute-mapped delivery plan (60 minutes)
-
-| Time | Segment | Trainer outcome |
-| --- | --- | --- |
-| 0:00 to 0:08 | Diagnose the context problem | Learners tell missing information from excess noise. |
-| 0:08 to 0:18 | Context hierarchy | Learners rank task, instructions, curated sources, and local references. |
-| 0:18 to 0:30 | Curated context workflows | The group writes a purpose, audience, and source list. |
-| 0:30 to 0:42 | Instructions and reusable prompts | Learners separate project-wide rules from repeatable tasks. |
-| 0:42 to 0:50 | Keeping context fresh | Learners check source, scope, and freshness. |
-| 0:50 to 0:58 | Scripted before/after demo | The group compares two responses with the source files. |
-| 0:58 to 1:00 | Close and lab handoff | Learners start by selecting sources for their Space. |
-
-## Segment 1: Diagnose context quality (0:00 to 0:08)
-
-### Talking points
-
-- Missing contracts make Copilot invent assumptions.
-- Broad, stale, or conflicting sources can hide the rule the task needs.
-- A confident answer does not show that the right source was used.
-- Select the fewest files a reviewer needs to check the answer.
-
-### Opening exercise
-
-Display this request:
-
-```text
-Add validation to the checkout endpoint.
-```
-
-Ask learners what is missing.
-
-Expected answers: endpoint location, input contract, error shape, repository conventions, focused tests.
-
-Then ask what should stay out.
-
-Expected answers: unrelated repositories, production records, secrets, ownerless stale documents.
-
-## Segment 2: Context hierarchy (0:08 to 0:18)
-
-### Talking points
-
-1. Task intent and acceptance criteria define the outcome.
-2. Repository instructions give project-wide conventions.
-3. Reusable prompt files encode repeatable workflows.
-4. Spaces bring code, docs, issues, and specifications together.
-5. Current files and named references supply local context.
-6. Memory needs a source, a scope, and a way to correct it.
-7. Specific task requirements override generic guidance.
-8. Conflicts need clarification. More context does not resolve them.
-
-### Source-ranking exercise
-
-For a fictional quantity-validation change, rank:
-
-- current API contract;
-- focused route tests;
-- architecture note;
-- unrelated product roadmap;
-- production request log.
-
-Include the contract, tests, and architecture note. Exclude the roadmap and the production log.
-
-## Segment 3: Curated context workflow (0:18 to 0:30)
-
-### Trainer-created context card
-
-```markdown
-Purpose: answer questions about the fictional Checkout API validation behavior.
-Audience: workshop participants.
-
-Include:
-- docs/api-contract.md
-- src/routes/checkout.ts
-- src/services/checkout.ts
-- tests/checkout.test.ts
-- .github/copilot-instructions.md
-
-Exclude:
-- production data
-- secrets and credentials
-- unrelated services
-- abandoned proposals
-```
-
-### Talking points
-
-- A Space holds this packet. Check sharing and access settings in the Space before you share it.
-- Test the packet with a known question whose answer exists in the sources.
-- Ask learners why each source is in and why the others are out.
-
-## Segment 4: Instructions and reusable prompts (0:30 to 0:42)
-
-### Repository instruction example
-
-```markdown
-# Repository guidance
-
-- Validate request input at the route boundary.
-- Keep business logic in src/services/.
-- Preserve the documented error response shape.
-- Run the focused test before proposing completion.
-- Do not add dependencies without reviewer approval.
-```
-
-### Talking points
-
-- Write instructions a reviewer can check, not "write high-quality code."
-- Show `/env` and `/instructions` in the CLI. They show which files were found and their scope. They don't show that the model followed them.
-- Use the stale CommonJS note in the copied project only. Compare it with the ES-module contract, correct the note, restart, and inspect again. Don't touch personal, managed, or security rules.
-- Keep project-wide conventions separate from one feature's requirements.
-
-### Reusable prompt example
-
-```markdown
----
-description: Review a low-stock endpoint change
----
-
-Read the selected contract, route, service, tests, and repository guidance.
-List mismatches before proposing changes.
-Do not edit files outside the selected feature.
-End with assumptions, cited evidence, and the focused validation command.
-```
-
-### Pair exercise
-
-Ask pairs to label each sentence as a project-wide instruction, a task-specific
-prompt, an acceptance criterion, or vague guidance. Move feature-specific
-behavior out of repository-wide rules.
-
-## Segment 5: Keeping context fresh (0:42 to 0:50)
-
-For every source or remembered fact, ask:
-
-1. **Source:** Where did this come from?
-2. **Scope:** Which repository, audience, and task does it apply to?
-3. **Freshness:** After which change should you check it again?
-
-| Trigger | Action |
+| Time | Segment |
 | --- | --- |
-| API contract changes | Update packet sources and retest a known question. |
-| Repository convention changes | Review instruction and prompt files. |
-| Output conflicts with source files | Remove the stale source and decide which source governs. |
+| 0:00 to 0:08 | Context windows and curation |
+| 0:08 to 0:23 | Copilot Spaces |
+| 0:23 to 0:38 | The other mechanisms |
+| 0:38 to 0:46 | Which one when |
+| 0:46 to 0:55 | Demo: same task, three contexts |
+| 0:55 to 1:00 | Pros, cons, tips, mistakes, lab handoff |
 
-Memory is a preview feature in some plans. Check that it's available before you
-demo it, and never store secrets in it.
+## Preparation
 
-## Scripted demo: Low-stock reporting with and without grounding (0:50 to 0:58)
+- Run the lab once. Keep your Space, your `bare-api` copy, and `lab/solution/` open.
+- Check the Spaces toolset works in your CLI: `copilot --add-github-mcp-toolset copilot_spaces`, then ask for your Space by name.
+- Have the demo repository pushed to a private repository on your personal account.
+- Open the current Spaces and custom instructions docs. Details change often.
 
-Compare the two responses against clear criteria. Don't claim a product surface
-always cites or follows context.
+## Context windows and curation (0:00 to 0:08)
 
-### Setup
+- The **context window** is everything the model sees for one reply: prompt, chat history, instructions, attached files, tool output. It has a size limit.
+- The model has no other memory of your project. If it isn't in the window, it guesses.
+- Three failures: **missing** context (confident guesses), **too much** (vague, slower, costs more), **wrong** (followed faithfully).
+- Goal: the smallest set of sources that makes the task answerable.
 
-Use four excerpts from the Storefront API lab:
+Ask: "What would a new teammate need on day one for this task?" That list is your context.
 
-`docs/api-spec.md`:
+## Copilot Spaces (0:08 to 0:23)
 
-```text
-Product list responses use the existing data envelope.
-Invalid query values use the existing VALIDATION_ERROR response.
-```
+**What it is.** A named collection of sources plus short instructions that you ask questions against. It lives on GitHub, not in chat history.
 
-`src/routes/products.js`:
+**Sources.** Files, folders, whole repositories, pull requests, issues, uploaded files, pasted text.
 
-```js
-router.get('/:id', async (req, res) => {
-  // Existing dynamic route.
-});
-```
+- An attached **file** loads in full on every question.
+- An attached **repository** is searched. Only relevant parts come back.
+- For a few key documents, use files. For a large docs tree, use the repository.
 
-`src/models/product.js` defines product stock as a non-negative integer.
+**How sources refresh.** GitHub files and other GitHub sources follow the **`main` branch**. A push to `main` updates the Space. Uploads and pasted text don't change on their own.
 
-The lab task requires `GET /api/products/reports/low-stock`, an optional
-non-negative integer threshold, and a default threshold of `10`.
+**Who can see it.**
 
-### Pass A: Minimal prompt
+- Personal Space: private, shared with named users, or public. Public Spaces are view-only by default.
+- Organization Space: org members get admin, editor, or viewer, or no access.
+- **Viewers only see sources they can already access.** Sharing a Space doesn't grant repository access.
+- Spaces that mix private and multi-organization sources may not work in chat. Check the docs.
 
-```text
-Add a low-stock report endpoint.
-```
+**Where you use it.** Copilot Chat on github.com. IDE and CLI access goes through the GitHub MCP server with the `copilot_spaces` toolset, which isn't on by default. In the IDE, whole-repository and uploaded sources aren't available. Check the current docs.
 
-Submit it without project context, or reveal a prepared generic proposal. Record
-assumptions about the route, threshold, error shape, and test command.
+**Cost.** Questions in a Space count as Copilot Chat usage.
 
-Look for a route placed after `/:id`, invalid thresholds accepted, invented
-errors, or missing checks. The request lacks the files needed to judge the proposal.
+Show: create a Space live, add two files, ask a question whose answer is only in them.
 
-### Pass B: Grounded prompt
+## The other mechanisms (0:23 to 0:38)
 
-```text
-Using only the API specification, product route, product model, and
-repository instructions, propose the smallest low-stock endpoint change.
-First list acceptance criteria and assumptions.
-Do not add dependencies. Reject negative or non-integer thresholds.
-End with the source files used and two checks to run.
-```
+Go through them in this order. One minute of "what", one of "when".
 
-Require acceptance criteria before code. Compare the plan with the API
-specification and route order. Ask whether `Number.isInteger(Number(value))`
-would wrongly accept `"2"`.
+| Mechanism | Where it lives | What it is |
+| --- | --- | --- |
+| Repository instructions | `.github/copilot-instructions.md` | Always-on rules for the repository |
+| Path-specific instructions | `.github/instructions/*.instructions.md` with `applyTo` | Rules that load only for matching files |
+| Prompt file | `.github/prompts/*.prompt.md` | A saved prompt you run on purpose |
+| Custom agent | `.github/agents/*.agent.md` | A role with its own tools and rules (M3-04) |
+| Skill | `SKILL.md` in a skills folder | A workflow loaded when the request matches (M3-05) |
+| Memory | Managed by Copilot | Facts and preferences Copilot learned |
+| @-mention, file context | Your chat | Files you point at for one task |
 
-The grounded response should state the threshold rules, place the static route
-before `/:id`, avoid new dependencies, name its source files, and list two checks.
+Key points:
 
-It may include a code proposal such as:
+- **Instructions** are short and always on. About a page at most. Skip what the code already shows.
+- `applyTo` takes globs, comma-separated: `**/*.ts,**/*.tsx`. Use it to keep the main file small.
+- The CLI also reads `AGENTS.md` and user-level files in `~/.copilot/`. Don't write conflicting rules in several files. Copilot combines them and defines no precedence.
+- **Prompt files** differ by tool. VS Code, Visual Studio, and JetBrains support them. Check the docs for the CLI.
+- **Memory** is written by Copilot, not you. Repository facts are shared with people who can use Memory there. User preferences follow you. Show learners where to review and delete.
+- **@-mention** is the cheapest option. It doesn't last past the chat.
 
-```js
-function parseThreshold(value) {
-  if (value === undefined) return 10;
-  if (!/^\d+$/.test(value)) {
-    throw new Error('threshold must be a non-negative integer');
-  }
-  return Number(value);
-}
-```
+## Which one when (0:38 to 0:46)
 
-Check the existing project before choosing the error type and message.
+Ask the room to sort five needs, then reveal.
 
-### Group variant
+| Need | Use |
+| --- | --- |
+| Answer questions from the spec and design docs | Space |
+| "ES modules and `node:test`" everywhere | Repository instructions |
+| A rule only for `src/routes/` | Path-specific instructions |
+| Rerun the same review prompt | Prompt file |
+| Look at one file right now | @-mention |
 
-Give half the room only the minimal request and the other half the four-source
-packet and grounded prompt. Each group writes a plan, not code. Swap plans and
-compare them on correctness, scope, named assumptions, traceability to a source
-file, and test cases. Reveal the code proposal in the debrief.
+Rule of thumb: **facts the code lacks go to a Space. Habits for every task go to instructions.**
 
-If the surface is unavailable, use printed responses. If time runs out, compare
-acceptance criteria and skip code generation.
+## Demo: same task, three contexts (0:46 to 0:55)
 
-## Common trainee Q&A
+Use the lab task. Work in `bare-api` on a branch per run.
 
-### "Should we add the whole repository?"
+1. Run with no context. Read the diff. Point out the guessed threshold and the test framework.
+2. Run with the Space. Show the `get_copilot_space` call. Point out the spec rules in the code.
+3. Run with instructions. Point out `node:test` and the error shape.
 
-No. Start with the fewest files that support the task. Add a file only when the
-answer is missing specific information.
+Keep a scorecard on screen. Say out loud which mechanism caused each change. If a run goes odd, say that model output varies and move on.
 
-### "Do instructions guarantee compliance?"
+## Pros, cons, tips (0:55 to 1:00)
 
-No. Use tests, repository checks, and review to see whether the result follows them.
+**Pros of curated context:** right answers on the first try, shareable, lives in git or on GitHub, saves repeated prompting.
 
-### "Which source wins when docs and code disagree?"
+**Cons and risks:**
 
-Ask the source owner to clarify before implementation.
+- **Stale sources.** A Space follows `main`, so it can also follow a bad change. Uploads never refresh.
+- **Too much context.** Whole repositories and long instruction files dilute the answer.
+- **Sensitive data.** Viewers see what the Space contains. Keep secrets, customer data, and real internal code out unless you know the audience.
+- **Silent failure.** A missing source doesn't raise an error. The answer is just worse.
+- **Conflicting files.** Several instruction files can disagree.
 
-### "Can we store team conventions in memory?"
+**Tips:**
 
-Keep long-lived team rules in reviewed repository files.
+- Start with 3 to 5 sources.
+- Test a new Space with a question whose answer you know.
+- Write instructions as short commands, one idea each.
+- Put a rule in the narrowest place that works.
+- Review Spaces and instructions when the code changes.
 
-### "Why did the grounded response still miss a rule?"
+## Lab handoff
 
-Context gives Copilot more information. It doesn't guarantee correct use. State
-the rule, test it, and review the result.
+Open `lab/README.md`. Tell learners to save each diff, because the comparison depends on them. Tell them the CLI needs the `copilot_spaces` flag for runs 2 and 4. Stretch tasks hold the CLI diagnostics and prompt files.
 
-## Closing and lab handoff (0:58 to 1:00)
+## Common mistakes
 
-Keep only the sources the task needs. Open `lab/README.md`. Learners use the same
-Storefront API to select sources, add repository instructions, compare context,
-and test reusable prompts.
+| Mistake | Fix |
+| --- | --- |
+| Adding the whole repository "just in case" | Add the files the task needs |
+| One long instructions file | Move area-specific rules to `.instructions.md` with `applyTo` |
+| `applyTo` glob matches nothing | Test with the file you expect it to match |
+| Run 2 never calls the Space | Start the CLI with `--add-github-mcp-toolset copilot_spaces` and name the Space |
+| Comparing runs from the same session | Start a fresh session each time |
+| Instructions repeat the spec | Put facts in the Space and habits in instructions |
+| Judging from one run | Rerun once if a result looks odd |
+| Secrets in a Space | Use synthetic data only |
+
+## Answer key for lab Part 6
+
+| Line | Best home |
+| --- | --- |
+| "Our API returns `{ data }` envelopes." | Repository instructions (and it's in the architecture doc for the Space) |
+| "The spec for the low-stock report." | Space |
+| "Use `node:test` in this repo." | Repository instructions |
+| "Summarize this stack trace." | Nothing. Paste it. |
+| "Review a PR with our checklist, when I ask." | Prompt file |
+
+Accept other answers if the reasoning holds.
+
+## References
+
+- [About GitHub Copilot Spaces](https://docs.github.com/en/copilot/concepts/prompting-and-context/spaces)
+- [Creating GitHub Copilot Spaces](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/copilot-spaces/create-copilot-spaces)
+- [Using Copilot Spaces in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/extend-copilot-with-tools-and-context/use-copilot-spaces)
+- [Adding custom instructions for Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-custom-instructions)
+- [About Copilot Memory](https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory)

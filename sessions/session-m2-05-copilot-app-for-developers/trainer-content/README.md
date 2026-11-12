@@ -1,222 +1,191 @@
----
-description: "Trainer guide for GitHub Copilot app engineering sessions and PR readiness"
----
+# Session M2-05 trainer guide: GitHub Copilot app for developers
 
-# Session M2-05 trainer guide: GitHub Copilot App for developers
+## Teaching goal
 
-**Duration:** 60 minutes  
-**Format:** Concept teaching, prepared demo, lab briefing
+Learners leave knowing what a session and a worktree are, how the three modes differ and fail, how to review and ship an agent's work from the app, and when another surface fits better.
 
-## Delivery objective
+Don't tour the app. Session M7-01 does that. Stay on the developer inner loop.
 
-Show how the app's workspaces separate tasks with different risks. Learners
-choose the surface for the task and isolate concurrent work. Before they decide
-PR readiness, they check tests, diffs, and review threads.
+## One-hour plan
 
-## Pacing
-
-| Segment | Time | Exit signal |
-| --- | ---: | --- |
-| App surfaces and engineering layout | 10 min | Learners can find Projects, Chats, My work, sessions, and Automations |
-| Chats, sessions, modes, and worktrees | 15 min | Learners can justify a surface, mode, and workspace |
-| Context, handoffs, and local checks | 12 min | A fresh session could continue from the written handoff |
-| Issue, PR, review, checks, and critique | 13 min | Learners can state why local success is not PR readiness |
-| Demo close and lab route | 10 min | Each learner has checked app access |
-
-The 120-minute lab allocates 15 minutes to isolation, 55 to plan/fork/repair/review,
-20 to the fresh handoff, and 30 to PR readiness and automation. If discussion runs
-long, cut the app tour and keep the critique, fork result, and code review.
-
-## Trainer preflight
-
-On the delivery machine:
-
-1. Open the GitHub Copilot app and sign in with a training account.
-2. Add `lab/starter` as a local project or copy it to a training sandbox.
-3. Check that Chat and a project session both open, and that Interactive, Plan, and Autopilot appear in the mode picker.
-4. Start a working-tree session and check its branch with `git status`.
-5. Check `/plan`, `/review`, `/rubber-duck`, `/fork`, `/merge-to-parent`, and `/spar`.
-6. Commit the training Git baseline and leave the repair uncommitted for local diff review.
-7. Open My work and Automations in a synthetic or training repository.
-8. Keep `lab/starter/prepared-evidence/` open as a fallback for the demo.
-9. Rehearse returning only `planning-alternative.md` from the fork before any repair.
-
-Access is required for the lab. Don't spend lab time working around it, and don't
-move code to another assistant.
-
-## Tie the app layout to engineering decisions
-
-Skip the feature tour. Tie each area to a decision:
-
-| Area | Engineering use |
+| Time | Segment |
 | --- | --- |
-| Chats | Explore an idea without creating a dedicated branch or worktree |
-| Projects | Group local folders or repositories and start agent sessions |
-| Active sessions | Switch between isolated tasks and inspect their state |
-| My work | Read issues, PRs, review activity, and checks |
-| Automations | Save a repeatable task with named triggers and tools |
-| Settings | Control project instructions, sandboxing, and session defaults |
+| 0:00 to 0:08 | What the app is, and how it differs from IDE and CLI |
+| 0:08 to 0:20 | Sessions, chats, and workspaces (worktrees) |
+| 0:20 to 0:35 | Modes, tool permissions, and sandboxes |
+| 0:35 to 0:47 | Demo: bug to PR |
+| 0:47 to 0:55 | Commands, handoff, pros, cons, tips |
+| 0:55 to 1:00 | Lab handoff |
 
-Ask learners to save output the next session needs instead of leaving it in the
-conversation.
+## Preparation
 
-## Explain chat versus project session
+- Install the app and sign in. Type `/` in a session and note which commands from this guide appear.
+- Run the lab once with your own throwaway repo. Keep the PR open as a backup.
+- Have `git worktree list` ready in a terminal for the demo.
+- Make a second small task ready for the comparison (negative quantities).
 
-A chat is useful before the team has decided to change code. It can compare
-approaches, explain a failing test, or tighten issue language.
+## What the app is (0:00 to 0:08)
 
-A project session owns task state and works against repository files. Start one
-when you expect edits, command output, a branch, or a pull request.
+- A desktop app, built on the Copilot CLI, with GitHub integration. It runs on macOS, Linux, and Windows.
+- You direct agents. You don't type code. The center of the app is the **session**.
+- Sessions can run on **This computer** or in a **Cloud** sandbox hosted by GitHub.
 
-```text
-If the next useful artifact is an explanation, start with chat.
-If the next useful artifact is a changed or verified repository, start a session.
-```
+**How it compares.** Use one sentence each.
 
-## Explain the modes
+| | App | IDE agent mode | CLI |
+| --- | --- | --- | --- |
+| **Lives in** | Desktop app | Your editor | Terminal |
+| **Works in** | Its own worktree, or your checkout | Your open checkout | The current folder |
+| **Parallel work** | Built in: many sessions, one worktree each | One at a time, in practice | Many terminals, you manage folders |
+| **Strong at** | Reviewing diffs, issues, PRs, supervising | Edit with you, inline, in context | Scripts, remote boxes, quick tasks |
+| **Weak at** | Heavy for a one-line fix | Easy to collide with your own edits | You build the review flow yourself |
 
-Use the mode names the app shows.
+The app and CLI share an engine, so skills, instructions, and many commands carry over.
 
-- **Interactive:** You expect to steer decisions as the agent works.
-- **Plan:** The work crosses files or carries enough risk to approve a plan before edits.
-- **Autopilot:** Scope, checks, and stop conditions are clear. You still review the output.
+## Sessions, chats, and workspaces (0:08 to 0:20)
 
-Autopilot isn't the default for "hard" work. Complex work often needs more
-checkpoints, not fewer.
+**Chat.** A conversation with no branch and no worktree. Use it to think, compare options, or explain a stack trace. It doesn't edit your repo.
 
-## Explain workspace choice
+**Session.** An agent working in a repo or folder, with history, a branch, and a diff. Start one when you expect edits, commands, or a PR. Start a **new session** when you switch tasks. Old context hurts new work.
 
-The app can start a session in a working tree, the local repository, or a cloud
-sandbox when available. This lab uses a local working tree.
+**Workspace.** Where the session works. The prompt box offers:
 
-Separation and restriction differ:
+- **New worktree.** A separate folder on its own branch.
+- **Current checkout.** Your existing folder.
 
-- A working tree separates branch files from other sessions.
-- Local sandboxing limits the files, network, or credentials that agent-run tools can reach.
-
-Before editing, run:
+**What a git worktree is.** A worktree is a second working folder for the *same* repository. It has its own branch and files, and it shares the repo's history. Two worktrees can't have the same branch checked out. Show it live:
 
 ```bash
-pwd
-git status --short --branch
 git worktree list
 ```
 
-The lab initializes a Git baseline before the working-tree session starts. Don't
-replace it with a non-Git folder: `/review` needs the repair diff.
+**Why it matters.** Two agents editing one folder overwrite each other and mix up `git status`. Two worktrees don't. You also keep working in your checkout while an agent runs.
 
-## Demonstrate context and handoff
+**Trade-offs and failure modes:**
 
-Attach `lab/starter/issue-brief.md` and `lab/starter/tests/test_readiness.py`.
-Ask the session to explain the failing behavior before it edits.
+- A new worktree has only **tracked files**. A `.env`, `node_modules`, or a virtual environment isn't there. The agent's tests may fail for setup reasons. Tell it how to set up.
+- Worktrees use disk. Archive finished sessions (**Settings → Sessions → Manage sessions** shows disk use).
+- Isolation stops overwrites, not merge conflicts. Two sessions that change the same lines still conflict at merge.
+- **Current checkout** is faster but unisolated. Use it for one session on one task.
 
-After the plan is approved, have the session write a handoff:
+## Modes, tool permissions, and sandboxes (0:20 to 0:35)
 
-```text
-Summarize the goal, accepted scope, files changed, checks run with exact results,
-open risks, and the next human decision. Keep the handoff usable in a fresh session.
-```
+Three separate settings. Don't let learners mix them up.
 
-Open a fresh session and attach the handoff. Ask which files or check results
-are missing. If anything is, the handoff wasn't enough.
+| Setting | Controls | Options |
+| --- | --- | --- |
+| **Mode** | How the agent works with you | Interactive, Plan, Autopilot |
+| **Tool permissions** | When it asks before running a tool | Ask every time, Assisted, Approve all |
+| **Sandbox** | What a tool *can* reach | Local sandbox (`/sandbox on` or `/sandbox off`), cloud sandbox |
 
-## Demonstrate the inner loop
+### The modes
 
-The starter has a small Python module with deliberate readiness gaps.
+| Mode | What it does | Choose it when | Trade-off | Failure mode |
+| --- | --- | --- | --- | --- |
+| **Interactive** | Suggests changes and waits for your input | The task is unclear, or you want to steer | You are the bottleneck | You approve without reading, or you stall |
+| **Plan** (`/plan`) | Writes a plan. You approve before it edits | The change crosses files, or a wrong turn is costly | An extra review step | A plausible plan you rubber-stamp, and the plan misses the real problem |
+| **Autopilot** (`/autopilot`) | Works on its own: code, tests, retries | The task is well defined and tests exist | You see the result, not the steps | Runs far on a wrong assumption, burns credits, changes more than asked |
 
-1. Run the focused tests and capture the failure.
-2. Map each failing assertion to the issue criteria.
-3. Use `/plan`, then critique the plan with `/rubber-duck` before implementation.
-4. Record accepted and rejected suggestions and revise the plan.
-5. Check the project diff, approve the plan, and leave Plan mode.
-6. Edit only `readiness_guard/readiness.py` unless a test change is justified.
-7. Run the focused tests and inspect the diff.
-8. Run `/review` before committing and check its findings against code and tests.
+**Autopilot isn't for hard problems.** It is for clear problems. A vague goal plus Autopilot gives a confident wrong answer.
 
-```bash
-python -m unittest discover -s tests -v
-```
+Common pairing: **Plan** to agree the approach, then switch to **Autopilot** to run it, with **Assisted** permissions. You can switch modes at any time.
 
-## Demonstrate independent critique
+Mode and permissions are different. Autopilot with *Ask every time* still stops for each tool. Interactive with *Approve all* still waits for you but runs tools without asking. **Approve all** (also `/allow-all-tools` or `/yolo`) removes your check on each command. Use it only in a sandbox or a throwaway repo.
 
-Ask the rubber duck agent to inspect the plan or tests without editing:
+**Sandboxes.** A local sandbox limits the filesystem, network, and credentials of tools on your machine. A cloud sandbox runs the whole session on GitHub. They're different technologies with different settings.
 
-```text
-/rubber-duck Critique the plan and tests against issue-brief.md before any
-implementation. Look for false READY verdicts and gaps in sorted reason codes.
-Do not edit files or propose unrelated features.
-```
+## Demo: bug to PR (0:35 to 0:47)
 
-Record the critique in `engineering-review.md`. Apply useful findings to the plan
-and explain rejected suggestions. If the critique finds nothing, don't invent a revision.
+Use the lab repo. Narrate your choices.
 
-Rubber duck is built in and read-only. Copilot picks a contrasting model when one
-is available. Report only the model the client shows. Session M2-01 covers CLI
-`/subagents` and the Proactive invocation opt-in. Don't present that CLI picker
-as an app command.
+1. Chat: paste the issue. Ask what's ambiguous. (1 min)
+2. New session, **New worktree**, **Plan**. Prompt with the issue. (2 min)
+3. Read the plan aloud. Ask for one revision, such as "don't change the tests". Approve. (3 min)
+4. While it runs, run `git worktree list` and show the new folder. (1 min)
+5. Open the diff. Run the tests yourself. Run `/review`. (3 min)
+6. `/pr-open`. Show the PR and the check on GitHub. (2 min)
 
-Before implementation, fork the plan with app `/fork`, check the fork's actual
-workspace, and run `/spar` on the same brief and tests. `/spar` is for adversarial
-reasoning. Keep it read-only through the task and permissions, then write only the
-analysis note. Inspect `/merge-to-parent` and accept only that note. Check that
-parent source still matches the baseline before you approve implementation. This
-local return has nothing to do with merging a GitHub PR.
+Say out loud what you check each time: tests changed? signature changed? new files?
 
-After implementation, run `/review` on the uncommitted repair. The critic checks
-the proposed approach. The reviewer checks the actual patch. Repeat tests and
-review after any correction.
+## Commands, handoff, pros, cons, tips (0:47 to 0:55)
 
-## Teach the outer loop
+Type `/` in the app for the current list. The ones this session uses:
 
-Open `prepared-evidence/05-pr-snapshot.json`. It gives every learner the same
-issue, diff, review, and check state.
-
-Ask in order:
-
-1. Which issue criterion does each changed file support?
-2. Did the diff add unrelated scope?
-3. Which review threads still block approval?
-4. Which checks are required?
-5. Which files, review results, or check results are missing or stale?
-6. Who makes the final readiness decision?
-
-The expected verdict for the supplied snapshot is **NOT READY**. One required check
-fails and a blocking review thread is unresolved.
-
-## Demonstrate the automation boundary
-
-Open `automation-prompt-template.md`. The learner creates a manual automation or,
-when cloud automation is unavailable, writes the same specification.
-
-Use read tools only. The prompt must forbid comments, labels, pushes, approvals,
-merges, and thread resolution. Check that the report cites its sources and names
-uncertainty. The automation isn't the reviewer.
-
-## Common coaching corrections
-
-| Learner move | Coach response |
+| Command | Use |
 | --- | --- |
-| Starts Autopilot with a vague request | Ask for scope, checks, and a stop condition first |
-| Opens work in the local repository | Ask whether a parallel session could touch the same files |
-| Attaches the whole project | Ask which files affect the next decision |
-| Treats passing tests as PR approval | Open review threads and required checks |
-| Accepts critique without checking it | Ask which code or test result supports it |
-| Calls the author's second answer independent critique | Use `/rubber-duck` |
-| Commits before `/review` | Keep the repair diff until review and triage finish |
-| Gives the automation write tools | Remove every tool the report doesn't need |
+| `/plan`, `/interactive`, `/autopilot` | Switch mode, optionally with a prompt |
+| `/review` | Review the session's changes |
+| `/rubber-duck` | Critique by a different model |
+| `/spar` | Argue against your approach |
+| `/security-review` | Security-focused review of the diff (public preview) |
+| `/fork`, `/merge-to-parent` | Copy a session at the latest turn. Merge it back |
+| `/spawn` | Start a focused child session |
+| `/compact`, `/clear`, `/context` | Shrink, reset, or inspect context |
+| `/pr-open`, `/pr-fix-checks`, `/pr-resolve-comments`, `/pr-merge` | PR steps, each needing an open PR or changes |
+| `/terminal`, `/sandbox`, `/rename` | Terminal, sandbox, naming |
 
-If the demo fails, use the saved session output to explain the remaining
-decisions. It doesn't replace the learner lab.
+Anything the docs don't list or that your picker lacks: **check `/help` in your version**.
 
-Session M7-05's developer route continues with live `/orchestrate` work over local
-synthetic files. Don't start a fleet inside this lab.
+**Handing off work.** Pick by what you need:
 
-## Official references
+| Need | Use |
+| --- | --- |
+| Try an alternative without losing the current path | `/fork`, then `/merge-to-parent` or discard |
+| Give a side task to a focused agent | `/spawn` |
+| Keep going but shorten history | `/compact` |
+| Switch task | New session. Paste a three-line brief: goal, what's done, what's next |
+| Follow from your phone or browser | Cloud session, or `/remote` if your policy allows it |
 
-- [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
+A written brief beats a long history. Name the branch, the failing test, and the decision you made.
+
+**Pros**
+
+- Parallel work without folder collisions.
+- Diff, checks, and PR in one place.
+- Starts from an issue with context loaded.
+- Choose autonomy per session.
+
+**Cons**
+
+- Heavier than the CLI for a quick edit.
+- Parallel sessions multiply review work. You are the limit.
+- Preview features and commands change.
+- Worktrees need setup and disk.
+
+**Tips**
+
+- Put the finish line in the prompt: "tests pass, don't edit tests".
+- Read the plan as hard as you'd read a design.
+- One task per session. Rename sessions with `/rename`.
+- Use `/rubber-duck` on plans, not just code.
+- Agent Merge can watch a PR, fix checks, and merge. Try it only in a repo you can afford to break.
+
+## Common mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Treating the agent's "done" as proof | Run the tests yourself |
+| Using Autopilot with a vague prompt | Plan first, then Autopilot |
+| Approve all on a real repo | Use Assisted or a sandbox |
+| Two sessions in one checkout | New worktree for each |
+| Agent edits the tests until they pass | Say so in the prompt, and read the diff |
+| Missing `.env` or dependencies in a worktree | Tell the agent how to set up |
+| Letting one session run for days | New session per task, with a short brief |
+
+## Lab handoff (0:55 to 1:00)
+
+Learners need `gh` signed in. Point them to the "No GitHub repo" notes in Parts 1 and 6. Remind them to delete the throwaway repo afterwards.
+
+## Lab answer key
+
+Reference fix: [`lab/solution/shop/pricing.py`](../lab/solution/shop/pricing.py). Three root causes: `>` instead of `>=`, coupon applied to shipping and shipping decided on the pre-coupon subtotal, and `round()` on floats (ties round to even). Common agent slips are editing the tests and changing the function signature.
+
+Part 4 answers: each session sees only its own branch, so the second session doesn't have the first fix until you merge. If both edit `pricing.py`, the second merge conflicts.
+
+## References
+
+- [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app)
 - [Work with agent sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
-- [Configure local sandboxing](https://docs.github.com/en/copilot/how-tos/github-copilot-app/configure-local-sandboxing)
 - [Manage issues and pull requests](https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests)
-- [Use automations](https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations)
-- [Slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
-- [Rubber duck agent](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/rubber-duck)
+- [Slash commands for the app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
+- [`git worktree`](https://git-scm.com/docs/git-worktree)

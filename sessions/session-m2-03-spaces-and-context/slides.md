@@ -3,302 +3,269 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session M2-03: Context Workflows'
+footer: 'Session M2-03: Copilot Spaces & context management'
 ---
 
 <!-- _class: lead -->
 
-# Context workflows
-## Give each task the source files it needs
+# Copilot Spaces and context
+
+## Give Copilot the right material, and only that
+
+Session M2-03 | 3 hours
 
 ---
 
-# Context selection
+<!-- _class: agenda -->
 
-Choose sources a reviewer can explain:
+# Agenda
 
-- repository instructions;
-- relevant source files and tests;
-- architecture or API documents;
-- task notes.
-
----
-
-# Context packet exercise
-
-```text
-Task: add validation to an API endpoint
-
-Packet:
-- route file
-- corresponding tests
-- API contract
-- repository conventions
-```
-
-Ask learners why each source is needed and what is excluded.
-
----
-
-# Evaluate the result
-
-- Does it follow the selected repository files?
-- Is the scope limited to the task?
-- Are assumptions listed for review?
-- Do relevant tests pass?
-
----
-
-<!-- _class: qa -->
-
-# Agenda and time plan
-
-| Time | Topic |
+| Segment | Time |
 | --- | --- |
-| 0:00 | Why context fails |
-| 0:08 | Context layers |
-| 0:18 | Spaces |
-| 0:30 | Instructions and prompt files |
-| 0:42 | Keeping context fresh |
-| 0:50 | Before/after demo |
-| 0:58 | Lab handoff |
+| Context windows | 8 min |
+| Copilot Spaces | 15 min |
+| The other mechanisms | 15 min |
+| Which one when | 8 min |
+| Demo: same task, three contexts | 9 min |
+| Pros, cons, tips, mistakes | 5 min |
 
 ---
 
-# The context problem
+# Context window
 
-Copilot can't apply information it can't see. Extra context adds noise.
+The **context window** is everything the model can see for one reply.
 
-Common failures:
+- your prompt and the chat so far
+- instructions Copilot adds for you
+- files, snippets, and Space sources
+- tool results
 
-- the relevant contract is absent;
-- stale documentation conflicts with source code;
-- broad context hides the key constraint;
-- local preferences are mistaken for team standards.
-
----
-
-# A practical context hierarchy
-
-```text
-Task intent and acceptance criteria
-               ↓
-Repository instructions and prompt workflow
-               ↓
-Curated Space: code, docs, issues, specifications
-               ↓
-Current file and explicit references
-               ↓
-Memory, when available
-```
-
-Specific task constraints override generic guidance. Clarify conflicts.
+It has a size limit. Anything outside it doesn't exist for the model.
 
 ---
 
-# Copilot Spaces
+# Why curation matters
 
-A Space is a selected set of sources for a recurring topic or workflow.
+- **Missing context:** Copilot guesses. Guesses look confident.
+- **Too much context:** the answer gets vague, slower, and more expensive.
+- **Wrong context:** Copilot follows it faithfully.
 
-Good candidates:
-
-- source repositories and key paths;
-- architecture and API documentation;
-- issues and specifications;
-- team guidance for a domain.
+**Goal:** the smallest set of sources that makes the task answerable.
 
 ---
 
-# Curate for a purpose
+# What is a Copilot Space?
 
-```text
-Space: Storefront API
-├── API specification
-├── product route and model
-├── architecture note
-├── error-handling conventions
-└── repository instructions
-```
+A named, saved **collection of context** that you ask questions against.
 
-Exclude unrelated services, production data, secrets, abandoned proposals, and
-documents nobody keeps current.
+- **Sources:** files, folders, repositories, pull requests, issues, uploads, pasted text
+- **Instructions:** a few lines on the Space's job and limits
+- Lives on GitHub, outside any chat history
 
-**Trainer cue:** Ask learners what they would remove first if the answer became noisy.
+Reach it in Copilot Chat on github.com, or in an IDE or the CLI through the GitHub MCP server.
 
 ---
 
-# Sharing Spaces
+# Sources and refresh
 
-Before sharing:
+| Source | How it loads |
+| --- | --- |
+| **File** | Whole file, in the window, every question |
+| **Repository** | Searched. Only relevant parts come back |
+| **Pull request, issue** | Linked by URL |
+| **Upload, pasted text** | Static. It never updates |
 
-1. Name the audience and task.
-2. Add purpose-specific instructions.
-3. Test with a known question and compare against the source files.
-4. Remove or replace stale sources.
-
----
-
-# Repository-level instructions
-
-Create `.github/copilot-instructions.md` for project-wide guidance:
-
-```markdown
-# Repository guidance
-
-- Use TypeScript strict mode.
-- Validate request input at the route boundary.
-- Keep business logic in `src/services/`.
-- Run `npm test` before proposing completion.
-- Do not add dependencies without reviewer approval.
-```
-
-Write rules a reviewer can check. Avoid vague goals such as "produce high-quality code."
+GitHub files follow the **`main` branch**. Push to `main` and the Space updates.
 
 ---
 
-# Reusable prompt files
+# Who can see a Space
 
-Place team prompts under `.github/prompts/`:
+| Owner | Sharing options |
+| --- | --- |
+| **Personal** | Private, specific people, or public (view-only) |
+| **Organization** | Org members as admin, editor, or viewer, or no access |
+
+Viewers only see sources **they** can access. Sharing a Space doesn't open the repository.
+
+Mixing private and multi-org sources can break chat. Check the current docs.
+
+---
+
+# Spaces: where and what it costs
+
+- Any Copilot plan, including Free
+- Questions count as Copilot Chat requests
+- IDE and CLI access needs the GitHub MCP server with the `copilot_spaces` toolset
+- In the IDE, whole-repository and uploaded sources **aren't** available
+
+Check current docs. This area changes.
+
+---
+
+# Repository instructions
+
+`.github/copilot-instructions.md`
+
+- Added to **every** request in the repository
+- Short rules for style, build, test, and what to avoid
+- Lives in git, so the team shares it
+
+Also read by Copilot: `AGENTS.md`, and user-level files in `~/.copilot/`.
+
+---
+
+# Path-specific instructions
+
+`.github/instructions/routes.instructions.md`
 
 ```markdown
 ---
-description: Review an API change against its contract
+applyTo: "src/routes/**/*.js"
 ---
 
-Read the selected route, service, tests, and API contract.
-List mismatches before suggesting changes.
-Do not edit files outside the selected feature.
-End with the focused validation command.
+Register fixed paths before `/:id` routes.
 ```
 
----
-
-# Inspect what the CLI loaded
-
-```text
-/env
-/instructions
-```
-
-Find the copied stale CommonJS note and its route-file scope.
-Compare it with `package.json` and the current ES-module route.
-
-Correct only that training note, restart, and inspect again.
-Leave personal, managed, and security instructions alone.
-
-**Discovery is not proof of application.** Check the proposed code too.
+- Loads only when Copilot works on a **matching file**
+- Comma-separate globs: `**/*.ts,**/*.tsx`
+- Keeps the always-on file small
 
 ---
 
-# VS Code instruction settings
+# Prompt files
 
-```json
-{
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true
-}
-```
+`.github/prompts/low-stock.prompt.md`
 
-Settings change between IDE versions. Check the setting in your learners' version.
+- A **saved prompt** you run on purpose, usually as a slash command
+- Good for a task you repeat: review, scaffold, write docs
+- Support differs by tool. Check the docs for yours.
 
----
-
-# Copilot Memory
-
-Memory can retain knowledge across sessions, where available. Ask three questions:
-
-1. **Source:** Where did this fact come from?
-2. **Scope:** Does it apply to this user, repository, or task?
-3. **Freshness:** How will it be corrected when the code changes?
-
-Never store secrets.
+Instructions are always on. A prompt file runs when you call it.
 
 ---
 
-# Demo: without grounded context
+# Custom agents and skills
 
-Prompt:
+| | Gives Copilot | Loads |
+| --- | --- | --- |
+| **Custom agent** (`.agent.md`) | A role with its own tools and rules | When you pick it or it's delegated to |
+| **Skill** (`SKILL.md`) | A repeatable workflow | When your request matches its description |
 
-```text
-Add a low-stock report endpoint.
-```
-
-Discuss:
-
-- Which endpoint?
-- Which inputs and error schema?
-- Where is validation normally performed?
-- Which tests prove the behavior?
-
-Don't score the response by confidence or length.
+Both are covered in Module 3. Here, know where they sit.
 
 ---
 
-# Demo: with a context packet
+# Memory
 
-```text
-Using the Storefront API specification, product route, product model, architecture
-note, and repository instructions, propose the smallest low-stock endpoint change.
+Copilot can **remember facts** from past work.
 
-First list acceptance criteria and assumptions. Do not add dependencies.
-End with two checks to run and cite the files used.
-```
+- **Repository facts:** conventions, commands. Shared with people who can use Memory in that repository.
+- **User preferences:** how you like to work. Follow you across repositories.
 
-Compare assumptions, source references, and the checks each response proposes.
+Copilot writes them, not you. Review and delete what's wrong.
 
----
-
-# Concrete code target
-
-```js
-function parseThreshold(value) {
-  if (value === undefined) return 10;
-  if (!/^\d+$/.test(value)) {
-    throw new Error("threshold must be a non-negative integer");
-  }
-  return Number(value);
-}
-```
-
-Ask where the static report route must appear relative to `/:id`.
+Available on paid plans. Check the docs for your surface.
 
 ---
 
-# Keep context fresh
+# @-mentions and file context
 
-| Trigger | Action |
+The quickest context: **point at it**.
+
+- Attach a file, selection, or folder in chat
+- In the CLI, `@path/to/file`
+- In the IDE, `#file` and open tabs
+
+Good for one task. Gone when the chat ends.
+
+---
+
+# Comparison
+
+| Mechanism | Scope | Loads | Best for |
+| --- | --- | --- | --- |
+| **Space** | Anyone you share it with | You ask in it | Reference docs and specs |
+| **Repo instructions** | Whole repository | Always | House rules |
+| **Path instructions** | Matching files | When working on them | Rules for one area |
+| **Prompt file** | Repository or user | You run it | Repeated tasks |
+| **Custom agent** | Repository or user | You pick it | A role and tool set |
+| **Skill** | Repository or user | Matches the request | A workflow with files |
+| **Memory** | Repo or you | Automatically | Learned facts |
+| **@-mention** | This chat | You attach it | One-off context |
+
+---
+
+# Which one when
+
+| You want to... | Use |
 | --- | --- |
-| API contract changes | Update Space sources and prompts |
-| Repository convention changes | Review instruction files |
-| Output contradicts source | Remove stale sources and retest |
+| Answer questions from your spec and docs | **Space** |
+| Enforce "ES modules, `node:test`" everywhere | **Repo instructions** |
+| Apply a rule only to `src/routes/` | **Path instructions** |
+| Rerun the same review prompt | **Prompt file** |
+| Look at one file right now | **@-mention** |
+
+Facts the code lacks go to a **Space**. Habits for every task go to **instructions**.
 
 ---
 
-# Lab handoff
+# Demo: one task, three contexts
 
-You will:
+Task: add `GET /api/products/low-stock` with tests.
 
-1. keep one Storefront API for the full lab;
-2. select the smallest source set;
-3. add repository instructions and a low-stock endpoint;
-4. compare one logging task across context levels;
-5. store and test three reusable prompt files.
+1. No context
+2. With the Space
+3. With instructions
 
----
-
-# Remember
-
-1. Relevant context beats a large packet.
-2. Select Space sources for a named purpose and audience.
-3. Instructions state project-wide rules. Prompt files define reusable tasks.
-4. Memory needs a source, a scope, and a way to correct it.
+We score each on the same checklist.
 
 ---
 
-<!-- _class: qa -->
+# Pros and cons of a Space
 
-# Questions
+| Pros | Cons |
+| --- | --- |
+| Context outlives chat | **Stale** if sources aren't kept up |
+| Shareable | **Too much** context hurts answers |
+| Follows `main` | A bad push changes answers |
+| Right sources, not the whole repo | **Sensitive data** can leak to viewers |
 
-Which source would you remove from a context packet, and why?
+---
 
-- Which source is authoritative?
-- What must stay out of the Space?
+# Tips
+
+- Start with 3 to 5 sources.
+- Prefer **files** for key docs. Use a repository for big doc trees.
+- Write Space instructions as the job and its limits.
+- Keep instructions under about a page. Cut what code already shows.
+- Test any context with a question you know the answer to.
+- Date-check sources the way you'd date-check docs.
+
+---
+
+# Common mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Adding a whole repository "just in case" | Add the files that matter |
+| One giant instructions file | Split with `applyTo` |
+| Instructions that contradict the code | Fix the instruction or the code |
+| Secrets or customer data in a shared Space | Synthetic or public data only |
+| Uploads that go stale | Link GitHub files instead |
+| Blaming the model for missing facts | Check what context it had |
+
+---
+
+# Lab
+
+Build a Space. Write instructions. Run one task four times.
+
+| Part | Time |
+| --- | --- |
+| Set up | 15 min |
+| Build the Space | 25 min |
+| No context, then Space | 25 min |
+| Write instructions | 20 min |
+| Instructions, then both | 25 min |
+| Compare | 10 min |

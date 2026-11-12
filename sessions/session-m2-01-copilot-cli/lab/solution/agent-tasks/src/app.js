@@ -8,7 +8,6 @@ let tasks = [];
 let nextId = 1;
 
 // GET /tasks - List all tasks
-// FIX 1: Changed !== to === so the filter returns tasks that MATCH the status
 app.get('/tasks', (req, res) => {
   const { status } = req.query;
   if (status) {
@@ -19,7 +18,6 @@ app.get('/tasks', (req, res) => {
 });
 
 // GET /tasks/:id - Get a single task
-// FIX 2: Added parseInt() to convert the string param to a number for comparison
 app.get('/tasks/:id', (req, res) => {
   const task = tasks.find(t => t.id === parseInt(req.params.id));
   if (!task) {
@@ -46,7 +44,6 @@ app.post('/tasks', (req, res) => {
 });
 
 // PUT /tasks/:id - Update a task
-// FIX 3: Swapped spread operator order so req.body values override old task values
 app.put('/tasks/:id', (req, res) => {
   const taskIndex = tasks.findIndex(t => t.id === parseInt(req.params.id));
   if (taskIndex === -1) {

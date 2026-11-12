@@ -1,34 +1,22 @@
 # Squad lab project
 
-This small Node.js Express API supports the Squad orchestration lab.
+A small Express API with a users resource. You use it as the target for a Squad team in Session M5-01.
 
-The required issue adds input validation to `POST /api/users`. The starter has
-the baseline route and tests. It does not contain the validation result.
-
-## Access and cost preflight
-
-Set a usage limit if the work is metered.
-
-GitHub Copilot and Squad are required for the lab.
-
-## Start the project
+## Run it
 
 ```bash
 npm install
+npm test
 npm start
 ```
 
+The tests pass before the lab starts.
+
 ## Endpoints
 
-- `GET /api/health`: Health check
-- `GET /api/users`: List all users
-- `POST /api/users`: Create a user (body: `{ name, email }`)
-- `DELETE /api/users/:id`: Delete a user
+- `GET /api/health`: health check
+- `GET /api/users`: list users
+- `POST /api/users`: create a user (`{ name, email }`)
+- `DELETE /api/users/:id`: delete a user
 
-## Testing
-
-```bash
-npm test
-```
-
-The baseline tests should pass before Issue 001 begins.
+All routes live in `src/routes/api.js`. The lab asks the team to extend that file twice, so you can see how Squad handles two jobs that touch the same code.

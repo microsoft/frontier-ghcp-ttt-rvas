@@ -1,35 +1,36 @@
-# Review the readiness change
+# Review the M2-05 pull request
 
 ## Parent objective
 
-Decide what the local implementation and tests prove, then assess the supplied
-PR snapshot. Return separate conclusions for those questions.
+Decide whether the pricing fix meets the issue, what the tests prove, and what the
+real pull request says. Return three separate conclusions.
 
 ## Sources
 
-- `issue-brief.md`: the full behavior contract, including sorted reason codes.
-- `readiness_guard/`: the implementation under review.
-- `tests/`: six focused tests for the supplied implementation.
-- `pr-snapshot.json`: the authoritative PR state for this exercise.
+- `issue-brief.md`: the rules and symptoms the fix must satisfy.
+- `shop/pricing.py`: the code under review.
+- `tests/test_pricing.py`: five tests.
+- The pull request in your throwaway repo: its diff, `tests` check, and review
+  threads. Read it with `gh pr view`, `gh pr checks`, and `gh api`, or with GitHub MCP.
 
-The snapshot is synthetic. Its timestamps describe a fixed training scenario;
-they are not current GitHub state.
+The PR is live. Its state may differ from what you saw at the end of M2-05.
 
 ## Provisional author note
 
-> All local unit tests pass, so PR 212 is READY.
+> All local tests pass, so this PR is ready to merge.
 
-Treat that as an unreviewed claim. Check it against the required PR checks and
-blocking review threads before accepting or rejecting it.
+Treat that as unreviewed. Check it against the PR's real checks and review threads.
 
 ## Work limits
 
-Review only. Do not edit the implementation or tests, install packages, use the
-network, or change GitHub. The test reviewer may run:
+Review only. Don't edit files, push, comment, approve, or merge. Only the test
+reviewer runs this command:
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
+python -m unittest discover -s tests -v
 ```
 
-The parent owns shared conclusions. Children must not wait for another child's
-result or turn a test gap into a claimed implementation defect without support.
+Only the PR reviewer calls `gh` or GitHub MCP, and only to read.
+
+The parent owns shared conclusions. Children don't wait for each other. A child
+doesn't report a test gap as a code defect without support.

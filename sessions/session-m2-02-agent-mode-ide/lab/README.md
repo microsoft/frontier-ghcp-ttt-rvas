@@ -1,262 +1,165 @@
-# Session M2-02 lab: Agent mode in the IDE
+# Session M2-02 lab: Add a feature with agent mode
 
 **Duration:** 2 hours
-
-**Deliverable:** A tested Todo API built and extended with your review at each
-stage
+**Deliverable:** Your `notes-api` with the tags feature, a short Ask vs Agent comparison, and a TODO delegated to the cloud agent
 
 ## Lab overview
 
-You build one Todo API throughout the lab. Scaffold it from a brief, compare Ask
-and Agent mode on the same feature, and redirect the agent when the requirement
-changes. Finish with an accept, revise, or stop decision.
+You start with a small, working notes API and add tags to it. You do it once in Ask mode to see what it gives you, then in Agent mode with a plan first. You review the diff, ask for a fix, and hand a TODO comment to the cloud agent.
 
-| Stage | Work | Time |
+| Part | Work | Time |
 | --- | --- | --- |
-| 1 | Prepare and scaffold the Todo API | 30 min |
-| 2 | Compare Ask and Agent mode on one feature | 35 min |
-| 3 | Redirect a multi-file change | 35 min |
-| 4 | Review the diff and test results, then finish the handoff | 20 min |
+| 1 | Set up the project | 10 min |
+| 2 | Ask vs Agent on the same prompt | 20 min |
+| 3 | Plan first | 15 min |
+| 4 | Build in agent mode | 25 min |
+| 5 | Review the diff and undo | 20 min |
+| 6 | Ask for a fix | 10 min |
+| 7 | Delegate a TODO | 15 min |
+| 8 | Compare and wrap up | 5 min |
 
 ## Before you start
 
-You need VS Code with GitHub Copilot Agent mode, Node.js and npm, and a
-disposable workspace. Use synthetic data only. Manual editing skips the practice
-this lab is for: planning, tool approval, steering, and review.
+You need VS Code with GitHub Copilot Chat, Node.js 20 or later, and Git. Mode names and buttons change between VS Code releases. If something differs from this guide, check the current VS Code docs.
 
-Create a workspace outside the curriculum folder:
+## Part 1: Set up the project
 
 ```bash
 mkdir -p ~/copilot-labs/session-m2-02
-cp sessions/session-m2-02-agent-mode-ide/lab/starter/project-brief.md \
-  ~/copilot-labs/session-m2-02/
-cp sessions/session-m2-02-agent-mode-ide/lab/starter/feature-spec.md \
-  ~/copilot-labs/session-m2-02/
-cp sessions/session-m2-02-agent-mode-ide/lab/starter/course-correction.md \
-  ~/copilot-labs/session-m2-02/
-cd ~/copilot-labs/session-m2-02
+cp -R sessions/session-m2-02-agent-mode-ide/lab/starter/notes-api ~/copilot-labs/session-m2-02/
+cd ~/copilot-labs/session-m2-02/notes-api
+git init -q && git add -A && git commit -qm "Start"
+npm install && npm test
+code .
 ```
 
-Create `lab-notes.md` with these headings:
+Four tests pass. Open `src/routes/notes.js`, `src/store.js`, and `src/validate.js` and read them for two minutes.
 
-```markdown
-# Session M2-02 Lab Notes
+In Copilot Chat, open the mode picker and the tools picker. Note which modes you have and which tool groups you can switch off.
 
-## Task contract
-## Agent plan
-## Tool and file review
-## Ask versus Agent comparison
-## Course correction
-## Final decision
-```
+**Checkpoint:** `npm test` passes and you can see the mode and tools pickers.
 
-## Stage 1: Prepare and scaffold the Todo API (30 minutes)
+## Part 2: Ask vs Agent on the same prompt
 
-### Write the task contract
-
-Read `project-brief.md`, then add a short contract to `lab-notes.md`:
-
-```markdown
-Goal: Build the Todo API described in project-brief.md.
-Allowed scope: The session-m2-02 workspace only.
-Commands: npm install, npm test, and npm start.
-Non-goals: No database, front end, deployment, or extra dependencies.
-Completion: Required routes exist and the test suite passes.
-Stop: Pause on network access beyond npm, destructive commands, or work outside scope.
-```
-
-### Ask Agent mode to plan first
-
-Open the workspace in VS Code and select Agent mode:
+Use this prompt in both modes. It is specific on purpose.
 
 ```text
-Read project-brief.md. Before editing, return a plan with the files you expect to
-create, the commands you need, the tests that prove completion, and any decision
-that is missing. Do not edit files yet.
+Add tags to notes. A note gets an optional `tags` list of up to 5 strings,
+each 1 to 20 lowercase letters, digits, or hyphens. The list defaults to
+empty. Accept tags on create and update, validate them, and add a `?tag=`
+filter to GET /api/notes. Add tests and update the README.
 ```
 
-Reject extra features and unexplained dependencies.
+1. Set the mode to **Ask** and send it. Read the answer. Don't apply anything.
+2. Run `git status`. Nothing should have changed.
+3. Open a **new chat**, switch to **Agent**, and send the same prompt. Let it start, but when it asks to run a command, **stop here**. Read the command, then click Cancel or don't allow it.
+4. Run `git restore . && git clean -fd` to return to the starting point.
 
-### Scaffold the project
+Answer in `comparison.md` (3 to 5 lines):
+
+- What did Ask give you that you could act on?
+- What did Agent do that Ask couldn't?
+- Which files did each one mention or touch?
+
+**Checkpoint:** `comparison.md` exists, and `git status` is clean.
+
+## Part 3: Plan first
+
+Open a new chat. Switch to **Plan** mode if your build has it. If not, use Agent mode and start with "Plan only. Don't edit any files."
+
+Send the same prompt. When the plan comes back, read it and edit it. Pick at least one change:
+
+- Add "validate tags in `src/validate.js`, not in the route".
+- Add "write tests before changing the code".
+- Remove a step you don't want.
+
+Tell Copilot to use the revised plan.
+
+**Checkpoint:** you changed the plan before any file was edited.
+
+## Part 4: Build in agent mode
+
+If you used Plan mode, start the plan from there. Otherwise tell Agent mode to go ahead with the plan.
+
+While it works:
+
+- Expand the tool calls. Note which files it reads and searches before it edits.
+- Read each terminal command before you allow it. Allow `npm test`. If it wants to install a package or delete files, say no and ask why.
+- Let it run the tests and react to any failure.
+
+**Checkpoint:** Agent reports the tests pass, and `npm test` also passes when you run it yourself.
+
+## Part 5: Review the diff and undo
+
+Open Source Control and read the diff file by file. For each file, ask:
+
+- Does this change belong to the request?
+- Is anything missing, such as a test for a bad tag or an update to the README?
+- Did it touch something you didn't ask for?
+
+Write down one thing you would change. Then:
+
+1. In chat, find the checkpoint for your request and restore it. Check that your files go back to the starting point.
+2. Redo the request, or use the redo option, to get the changes back.
+3. Keep the changes with the keep or accept control, file by file.
+
+Commit when you're happy: `git add -A && git commit -m "Add tags"`.
+
+**Checkpoint:** you read every changed file, and you used restore at least once.
+
+## Part 6: Ask for a fix
+
+Change a requirement. Tags like `Work` and `work` should be the same tag. Ask in the same chat:
 
 ```text
-Create the Todo API in a todo-api directory. Stay within the approved plan. Pause
-before installing packages. After approval, implement the project and run its tests.
+Tags should be case-insensitive. Normalize them to lowercase when a note
+is created or updated, and make ?tag= match case-insensitively. Add a test.
+Run npm test.
 ```
 
-At each pause:
+Check the new diff. Did it change `validate.js` to reject uppercase tags? That conflicts with the new rule. If it did, say what is wrong and ask it to fix that.
 
-1. Check the command and working directory.
-2. Check that the action supports the brief.
-3. Read the changed files before the next command.
-4. Note any revision in `lab-notes.md`.
+**Checkpoint:** a note created with `["Work"]` is stored as `["work"]`, `?tag=WORK` finds it, and the tests pass.
 
-Then run the tests yourself:
+## Part 7: Delegate a TODO
 
-```bash
-cd todo-api
-npm test
+`src/routes/notes.js` ends with a TODO comment:
+
+```js
+// TODO: Add GET /export that returns all notes as CSV ...
 ```
 
-If the project has no working test script, have the agent add one covering create,
-list, validation, update, and not-found behavior.
+You need the GitHub Pull Requests extension and a GitHub repository you own with the cloud agent enabled. Never use a repository that holds real work or data.
 
-Compare your project with `lab/solution/todo-api/`. It's an example, not a
-file-for-file requirement.
+1. Create a private repo and push your project to it.
+2. Put the cursor on the TODO comment. Open the lightbulb (code action) and choose **Delegate to coding agent**.
+3. If asked about local changes, push them so the agent starts from your current code.
+4. Open the pull request link Copilot gives you. Don't wait for it to finish. Come back in Part 8 or after the lab.
 
-### Checkpoint 1
+If you can't use the cloud agent, read the lightbulb options and note what they offer. Skip the rest of this part.
 
-- [ ] The project lives in `todo-api/` with the routes from `project-brief.md`.
-- [ ] The agent stayed inside the workspace.
-- [ ] You reviewed package changes before installation.
-- [ ] `npm test` passes.
-- [ ] `lab-notes.md` has the accepted plan and any corrections.
+**Checkpoint:** a cloud agent session exists for your repo, or you noted why you skipped.
 
-## Stage 2: Compare Ask and Agent mode on one feature (35 minutes)
+## Part 8: Compare and wrap up
 
-`feature-spec.md` adds ownership and due-date behavior to the same API.
+Add three lines to `comparison.md`:
 
-### Ask mode
+- What did planning first change?
+- What would you do differently with the same prompt next time?
+- Which of these would you give to the CLI, to agent mode, and to the cloud agent? Give one reason each.
 
-Keep the passing baseline:
-
-```bash
-cp -R todo-api todo-api-ask
-```
-
-Open `todo-api-ask/`, switch to Ask mode, and ask:
-
-```text
-Read feature-spec.md and explain the exact code and tests needed to add this feature
-to todo-api. Give changes file by file. Do not assume files that are not present.
-```
-
-Apply enough of the answer to test the workflow. Track messages sent, manual
-edits, copy and paste operations, commands you ran, and missing context or wrong
-assumptions. Stop after 12 minutes and save the result or diff. Keep the original
-`todo-api/` as the clean baseline for Agent mode.
-
-### Agent mode
-
-```text
-Read feature-spec.md and inspect todo-api. Propose the smallest multi-file plan that
-implements the feature without changing existing behavior. Include focused tests.
-Wait for approval before editing.
-```
-
-Approve only the work the plan describes, and watch each file and command. Then:
-
-```bash
-cd todo-api
-npm test
-```
-
-Add this table to `lab-notes.md`:
-
-| What you observed | Ask mode | Agent mode |
-| --- | --- | --- |
-| Prompts or messages | | |
-| Manual edits | | |
-| Files changed | | |
-| Commands run | | |
-| Corrections needed | | |
-| Final test result | | |
-
-### Checkpoint 2
-
-- [ ] Existing tests still pass.
-- [ ] New tests cover owner and due-date behavior.
-- [ ] The implementation follows the existing project structure.
-- [ ] The table uses counts or examples you observed.
-- [ ] You can say why Agent mode did or didn't help.
-
-## Stage 3: Redirect a multi-file change (35 minutes)
-
-Open `course-correction.md`, but don't give it to the agent yet.
-
-### Start the original task
-
-```text
-Refactor todo-api so route handlers delegate storage operations to a small repository
-module. Keep the HTTP contract unchanged. Add or update tests, and stop after the
-repository module and first route integration are complete.
-```
-
-Check the first stage:
-
-- Did it preserve current behavior?
-- Is the module boundary clear?
-- Did it avoid unrelated formatting or dependency changes?
-- Do the focused tests pass?
-
-### Apply the course correction
-
-Read `course-correction.md` and redirect the active task:
-
-```text
-Pause. Apply the new constraints in course-correction.md. Revise the plan before
-editing. Keep completed work only when it still fits the new requirement.
-```
-
-Reject any plan that rewrites the project without need. The agent should adjust
-the repository boundary, validation, and tests while keeping the API intact.
-
-```bash
-cd todo-api
-npm test
-```
-
-If the agent asks for an unexpected dependency, network access, or a wider file
-scope, **stop**. Note the unfinished work and make the smallest safe change by
-hand.
-
-### Checkpoint 3
-
-- [ ] `course-correction.md` changed the plan before more edits.
-- [ ] The final diff stays inside `todo-api/`.
-- [ ] The API contract is still compatible.
-- [ ] Tests cover the changed behavior.
-- [ ] `lab-notes.md` says whether you accepted, revised, or stopped, and why.
-
-## Stage 4: Review the diff and finish the handoff (20 minutes)
-
-Review the project as if another engineer submitted it.
-
-1. Read `git diff --stat` and `git diff`, or use the editor's change view.
-2. Check that each changed file serves a requirement in the brief, feature spec, or
-   course correction.
-3. Run `npm test` again.
-4. Start the service and make one create request and one filtered list request.
-5. Write the final decision: **accept**, **revise**, or **stop**.
-
-```bash
-curl -X POST http://localhost:3000/api/todos \
-  -H "Content-Type: application/json" \
-  -d '{"title":"Review agent work","owner":"learner","dueDate":"2026-10-15"}'
-
-curl "http://localhost:3000/api/todos?owner=learner"
-```
-
-Don't approve the work because the agent says it succeeded. Use the diff, tests,
-and API behavior. `lab/solution/final-review.md` is the trainer's reference.
-
-### Checkpoint 4
-
-- [ ] The final diff matches the scope you accepted.
-- [ ] Package changes are explained.
-- [ ] Test output is saved in `lab-notes.md`.
-- [ ] The manual API check matches the feature spec.
-- [ ] The final decision names remaining risk.
+If the cloud agent pull request is ready, review it like any other pull request.
 
 ## Final deliverable
 
-Submit the `session-m2-02` workspace with:
+1. Your `notes-api` with the tags feature and passing tests, including the case-insensitive fix.
+2. `comparison.md` with your Ask vs Agent notes and your closing lines.
+3. The cloud agent session or pull request from the TODO, or a note on why you skipped it.
 
-1. The completed `todo-api/` project.
-2. Passing test output and two manual API checks.
-3. `lab-notes.md` with the contract, plan, tool and file review, comparison,
-   course correction, and final decision.
-4. A note on any action you stopped or rejected.
+Compare with `lab/solution/notes-api/`. The solution doesn't include the lowercase fix or the CSV export, so your code may go further.
 
-A reviewer should be able to trace the final code to your plan, see where you
-redirected the agent, and reproduce the checks.
+## References
+
+- [Use agent mode in VS Code](https://code.visualstudio.com/docs/copilot/agents/overview)
+- [Copilot smart actions](https://code.visualstudio.com/docs/copilot/copilot-smart-actions)
+- [Using Copilot cloud agent in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-cloud-agent-in-your-ide)

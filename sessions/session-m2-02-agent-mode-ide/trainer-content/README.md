@@ -1,256 +1,124 @@
-# Session M2-02: IDE agent workflows
+# Session M2-02 trainer guide: Agent mode in the IDE
 
-## Before teaching
+## Teaching goal
 
-- Pick a training repository with a small task and clear acceptance criteria.
-- Check that Agent mode works in your editor.
-- Use synthetic data only.
-
-## Session objective
-
-Show learners how to review work at each step of the agent loop.
-
-```text
-Plan → Act → Observe → Review → Revise or stop
-```
-
-Learners define the task and approve actions. The agent proposes work inside
-those limits.
+Learners leave knowing which mode to use, what agent mode can touch, how to steer it, and how it differs from the CLI and the cloud agent.
 
 ## One-hour plan
 
-| Time | Segment | Result |
-| --- | --- | --- |
-| 0:00 to 0:08 | Assistant-to-agent shift | Learners tell a continuation, an answer, and a goal-driven task apart |
-| 0:08 to 0:18 | Agent loop and tools | The group knows what to check at each stage |
-| 0:18 to 0:28 | Task contracts and trust | The contract and stop rules are visible |
-| 0:28 to 0:43 | Multi-file demo | The group reviews the plan, commands, diff, and test output |
-| 0:43 to 0:50 | Chat, agent, or manual | Learners pick a workflow from the task |
-| 0:50 to 0:57 | Redirect and stop | Learners redirect or stop without widening scope |
-| 0:57 to 1:00 | Close and lab handoff | |
-
-If time runs short, use the prepared plan instead of waiting for a generated one,
-stop the demo after the route and test review, and run one redirect instead of two.
-Never cut the independent test run or the stop rules.
-
-## Segment 1: From assistant to agent (0:00 to 0:08)
-
-1. Inline assistance proposes a local continuation.
-2. Chat usually answers or proposes a small edit.
-3. An agent can pursue a goal through several actions.
-4. More actions need more review. You stay accountable.
-
-Present three fictional tasks:
-
-- explain one regular expression;
-- change one error message;
-- add an optional filter across route, service, and tests.
-
-Ask learners to choose Chat, a manual edit, or an agent workflow, and say how much
-review it needs.
-
-> "At each step, you need output you can check before the agent continues."
-
-## Segment 2: Plan, act, observe, review (0:08 to 0:18)
-
-- **Plan:** map acceptance criteria to files, commands, and risks.
-- **Act:** approve only the read, edit, or command the task needs.
-- **Observe:** read command output and changed files.
-- **Review:** compare behavior and scope with the contract.
-- **Revise:** change one assumption at a time and check the new result.
-- **Stop:** end the task when scope, data, permissions, or repeated failures cross
-  a limit.
-
-After each stage, ask:
-
-- **Plan:** Does every step support an acceptance criterion?
-- **Act:** Was this file or command necessary?
-- **Observe:** What changed, and what does the output show?
-- **Review:** Would a reviewer accept this?
-
-## Segment 3: Task contract and trust (0:18 to 0:28)
-
-Open the starter task and write this contract:
-
-```markdown
-Goal: add optional completed filtering to a fictional task list.
-
-Acceptance criteria:
-- completed=true returns only completed tasks.
-- completed=false returns only incomplete tasks.
-- another value produces the existing HTTP 400 error shape.
-- omitting completed preserves current behavior.
-
-Constraints:
-- route, service, and focused tests only.
-- no dependency, network access, or response-schema change.
-- show a plan before editing.
-
-Done:
-- focused tests pass independently.
-- final diff stays in scope.
-- a human reviewer accepts the result.
-```
-
-| Proposed action | Question before approval |
+| Time | Segment |
 | --- | --- |
-| Read a file | Do you need this path and its data? |
-| Edit a file | Which criterion requires the edit? |
-| Run a test | Do you understand the command and its scope? |
-| Add a package | Is it necessary? |
-| Use the network or an external tool | Where does the data go? |
+| 0:00 to 0:10 | Four modes |
+| 0:10 to 0:22 | What agent mode can touch |
+| 0:22 to 0:35 | Steering |
+| 0:35 to 0:43 | Agent mode vs CLI vs cloud agent |
+| 0:43 to 0:55 | Demo |
+| 0:55 to 1:00 | Pros, cons, mistakes, lab handoff |
 
-> "We'll direct one feature and pause at each checkpoint."
+## Preparation
 
-## Demo: optional task filter (0:28 to 0:43)
+- Use a current VS Code with GitHub Copilot Chat. Mode names and settings change often, so open the mode picker and check what you see.
+- Run the lab once on a scratch copy of `lab/starter/notes-api/`. Keep `lab/solution/notes-api/` open for comparison.
+- For the TODO demo, push the scratch copy to a private repo you own. Install the GitHub Pull Requests extension and check that the lightbulb shows **Delegate to coding agent**. If it doesn't, check that the cloud agent is enabled for the repo and for your plan.
+- Have a small MCP server ready only if you want to show an MCP tool. It is not needed for the lab.
 
-Use a disposable fictional TypeScript project or prepared excerpts. Start from a
-clean working tree. Show the focused test command without running it yet. Don't
-install packages or connect to external systems.
+## Four modes (0:00 to 0:10)
 
-```text
-route.ts → task-service.ts
-    └────→ route.test.ts
-```
-
-Opening prompt:
-
-```text
-Implement the attached completed-filter task contract.
-First inspect only the route, service, and focused test.
-Return a three-step plan before editing.
-Do not add dependencies, use the network, or change the response schema.
-Stop if existing behavior is ambiguous.
-```
-
-The plan should:
-
-1. inspect query parsing and the existing error shape;
-2. pass an optional boolean to the service and filter without changing the
-   unfiltered path;
-3. add true, false, invalid, and omitted-parameter tests.
-
-Steps:
-
-1. Compare the plan with the contract. Reject steps that touch other files or add
-   dependencies.
-2. Approve only reads in the named scope.
-3. If your surface can, ask for the proposed diff before broad commands.
-4. Check parsing for exact `"true"` and `"false"`.
-5. Check that `undefined` keeps the existing service behavior.
-6. Check tests for all four criteria.
-7. Run the focused test command yourself.
-8. Read `git diff --stat` and the full diff, and look for response-schema or
-   dependency changes.
-9. Decide: accept, revise, or stop.
-
-Expected code shape (an example, not a required pattern):
-
-```ts
-const value = req.query.completed;
-if (value !== undefined && value !== "true" && value !== "false") {
-  return res.status(400).json({ error: "completed must be true or false" });
-}
-const completed = value === undefined ? undefined : value === "true";
-return res.json(taskService.list({ completed }));
-```
-
-Expected result: four focused cases, correct filtering, the stated 400 shape, an
-unchanged unfiltered list, only three files changed, and no package or external
-access.
-
-Ask learners:
-
-- Which test covers the omitted parameter?
-- Could a truthiness conversion accept `"yes"`?
-- Did the service mutate stored tasks?
-- Does the diff match the accepted plan?
-
-If Agent mode fails during the demo, pairs can write the plan, a query-parsing
-truth table, four test names, and a change list by hand. Reveal the code
-afterward.
-
-If something goes wrong:
-
-- **Plan too broad:** "Stop. Use only the three named files and show a revised plan."
-- **Dependency proposed:** reject it and restate the no-dependency constraint.
-- **Test fails:** ask for an explanation tied to one failing assertion before
-  allowing a revision.
-- **Repeated revisions with no progress:** stop and describe the smallest
-  acceptable correction.
-
-> "Agent mode fit because the change crossed related files and tests could guide
-> each step. Other tasks need a different workflow."
-
-## Segment 5: Chat, agent, or manual (0:43 to 0:50)
-
-Use Chat to explain a problem, suggest options, or propose one small edit. Use an
-agent for clear multi-file outcomes with named tools and tests. Work manually when
-the change is tiny, requirements are unclear, or autonomy adds review work. Pause
-when permissions, data handling, or a destructive action is unresolved.
-
-| Task | Start with | Reason |
-| --- | --- | --- |
-| Explain a failing assertion | Chat or inspection | No multi-file action |
-| Rename a local variable | Manual or inline | The edit is small |
-| Add a route plus service tests | Agent | The files and tests are closely related |
-| Decide an authorization policy | A person | It's a policy decision |
-
-> "You can redirect the agent or stop it. You don't have to follow its first plan."
-
-## Exercise: redirect and stop (0:50 to 0:57)
-
-Tell learners a proposal has started changing the response schema and
-`package.json`. The redirect:
-
-```text
-Stop. Do not change package.json or the response schema.
-Revert those proposed changes.
-Keep the existing service API and add only the optional filter.
-Show the revised plan before editing.
-```
-
-The revised plan returns to route, service, and tests, and the dependency and
-schema changes leave the proposed diff.
-
-Then say an unexpected command requests network access. Learners choose **stop**
-and note the unresolved permission. Check that the revised file list matches the
-contract and nothing unrelated is still queued.
-
-## Common questions
-
-**Should I approve every tool call so the agent can finish?**
-No. Check why the action is needed, what it affects, and whether you can undo it.
-Reject or stop when the contract doesn't require it.
-
-**Is agent mode always better for multi-file work?**
-No. Requirements, tests, risk, and review cost matter. Chat or manual work can give
-you more control.
-
-**What if it keeps fixing its own failures?**
-Iteration helps only when each cycle improves the result. Stop repeated, broad, or
-unexplained changes and inspect the problem.
-
-**How do we know which files it read?**
-Use the product's file list and repository tools. If you can't tell, stop.
-
-**What about MCP or external tools?**
-Check the server, its permissions, and where data goes. The demo needs none.
-
-## Pitfalls
-
-| Pitfall | Recovery |
+| Mode | Use it when |
 | --- | --- |
-| "Fix the project" with no criteria | Write one user-visible goal, non-goals, files, and tests |
-| Trusting the agent's test summary | Run the focused test yourself |
-| Reviewing only the final message | Read the full diff and command output |
-| A surprise dependency | Reject it, restore the manifest, use existing APIs |
+| Ask | You want an answer, an explanation, or a review of an idea. Nothing changes. |
+| Edit | You know which files to change and want a quick, contained edit. |
+| Agent | The task spans files and needs commands, such as running tests. |
+| Plan | The task is big or unclear. You want a reviewed plan before any edit. |
 
-## Close and lab handoff (0:57 to 1:00)
+Key line: **pick the smallest mode that does the job.** Ask is cheaper to review than Agent.
 
-> "Define the task before the agent starts. Use tests to check the result, then
-> decide whether to accept it."
+Edit mode and the mode list have changed between VS Code releases. Show what your build offers. Tell learners to check the current docs if their picker differs.
 
-Open `lab/README.md`. Learners scaffold one Todo API, compare Ask and Agent mode on
-a feature, redirect a repository refactor, and decide whether to accept the work.
-Check that every learner has Agent mode before they start.
+## What agent mode can touch (0:10 to 0:22)
+
+**Tool use** in plain words: the model can't open a file or run a command. It asks the editor to do it, the editor does it, and the result goes back to the model. Agent mode repeats this until the task is done.
+
+Walk through the tool kinds: read, search, edit, terminal, MCP. Open the tools picker and switch one off to show you control the list.
+
+**Trust** in plain words: what the agent can change or reach without asking you.
+
+- Files: edited in place. Git makes it recoverable.
+- Terminal: commands run with your permissions. VS Code asks first.
+- MCP: servers can reach other systems. Add only servers you trust.
+- Untrusted text: a README, issue, or web page can contain instructions aimed at the model. This is **prompt injection**. Tell learners to read what the agent fetched, not just what it wrote.
+
+## Steering (0:22 to 0:35)
+
+1. **Plan first.** Use Plan mode, or write "Plan only. Don't edit files." Edit the plan, then say go.
+2. **Write a good prompt.** Goal, the behavior you want, where to work, how to check it ("run `npm test`").
+3. **Watch the tool calls.** Expand them. If it reads the wrong files, stop and redirect.
+4. **Review the diff.** Open each changed file. Keep or undo per file or per change.
+5. **Checkpoints.** Chat keeps a restore point for each request. Restore to go back and try another prompt. Check the current docs for the exact UI.
+6. **Terminal approval.** Read each command. Allow once for unfamiliar ones. Auto-approving a safe command like `npm test` is reasonable. Auto-approving everything is the mistake. Setting names change, so look them up in the docs.
+
+Say this once: tests are the agent's feedback. A project with tests gets better results.
+
+## Agent mode vs CLI vs cloud agent (0:35 to 0:43)
+
+| | IDE agent mode | Copilot CLI (M2-01) | Cloud agent (M3-02) |
+| --- | --- | --- | --- |
+| Where it runs | Your machine, in VS Code | Your machine, in a terminal | GitHub's environment |
+| Your role | Watch and review as it works | Watch and review as it works | Review the pull request |
+| Output | Edits in your working tree | Edits in your working tree | A branch and a pull request |
+| Strength | Diff view, checkpoints, editor context | Scripts, terminal tasks, any editor | Hand-off while you do other work |
+
+The loop is the same in all three. The **place** and **your involvement** change. Rule of thumb: start in the IDE for work you want to watch. Use the cloud agent for tasks you can describe fully and review later.
+
+## Demo (0:43 to 0:55)
+
+Use `lab/starter/notes-api/`.
+
+1. Open Chat in **Ask** mode. Paste the lab prompt. Read the answer. Nothing changes on disk.
+2. Switch to **Agent** mode in a new chat with the same prompt. Expand the tool calls. Approve `npm test` when asked.
+3. Open the diff. Point out one thing the plan or Ask answer didn't mention.
+4. Restore the checkpoint to show undo.
+5. Put your cursor on the TODO in `src/routes/notes.js`, open the lightbulb, and show **Delegate to coding agent**. Don't wait for the PR.
+
+## Pros, cons, and tips
+
+| Pros | Cons |
+| --- | --- |
+| Handles multi-file changes in one request | Can change more than you asked |
+| Runs tests and reacts to failures | Long runs make big diffs |
+| Works on your real project and context | Can build on a wrong assumption |
+| Every change is visible and undoable | Slower than Ask for small questions |
+
+**Tips**
+
+- Say what "done" means: "all tests pass, README updated".
+- Ask for a plan, then edit the plan, then go.
+- Commit before a big run. Git is the real undo.
+- Give a short list of files to start from with `#file` references.
+- Keep requests small. Two small runs beat one huge one.
+- Add repository instructions (M1-03) for conventions it keeps getting wrong.
+
+## Common mistakes
+
+- **Vague prompt.** "Add tags" leaves the agent to guess limits and format.
+- **Skipping the plan** on a task that touches five files.
+- **Accepting all** without reading the diff.
+- **Auto-approving every command.**
+- **Doing everything in one chat.** Long chats lose focus. Start a new one per task.
+- **Using Agent for a question.** Use Ask.
+- **No tests**, so neither of you can tell if it worked.
+
+## Lab notes
+
+- The Ask vs Agent comparison is qualitative. Ask learners what each output gave them and what it left out. Don't count messages or edits.
+- Part 6 changes a requirement on purpose (lowercase tags). It shows how to steer after a diff.
+- Part 7 needs a GitHub repo. Learners without one read the lightbulb step and skip the PR.
+- The finished project is `lab/solution/notes-api/`. Learners' code will differ. Compare behavior and tests, not lines.
+
+## References
+
+- [Use agent mode in VS Code](https://code.visualstudio.com/docs/copilot/agents/overview)
+- [Chat in VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
+- [Copilot smart actions: implement TODO comments](https://code.visualstudio.com/docs/copilot/copilot-smart-actions)
+- [Using Copilot cloud agent in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-cloud-agent-in-your-ide)
+- Session M2-01 (Copilot CLI) and Session M3-02 (cloud agent)

@@ -1,27 +1,18 @@
-# Issue 184: Stop false READY verdicts
+Order totals are wrong in three cases.
 
-## Problem
+## Rules
 
-The local readiness evaluator reports `READY` when all visible checks pass. It
-does not account for unresolved blocking review threads. It also treats missing
-required evidence as success.
+- Shipping is a flat 4.99. It is free when the **item subtotal after the coupon** is 50.00 or more.
+- A coupon is a percentage off the items. It never reduces shipping.
+- Totals round **half up** to the cent (60.125 becomes 60.13).
 
-## Acceptance criteria
+## Symptoms
 
-1. A failed required check returns `NOT_READY`.
-2. An unresolved review thread marked `blocking` returns `NOT_READY`.
-3. Missing required checks or review data returns `UNKNOWN`.
-4. `READY` requires all required checks to pass and every blocking thread to be
-   resolved.
-5. Reason codes are stable and sorted so another tool can compare reports.
+- An order of exactly 50.00 still pays shipping.
+- A 10% coupon on a 20.00 order also discounts the shipping.
+- A 55.00 order with a 10% coupon ships free, but the discounted items are 49.50, so it should pay shipping.
+- 60.125 rounds to 60.12.
 
-## Scope
+## Done when
 
-Change `readiness_guard/readiness.py`. Add a test only when it proves an uncovered
-criterion. Do not add packages, network calls, or GitHub writes.
-
-## Verification
-
-```bash
-python -m unittest discover -s tests -v
-```
+`python -m unittest discover -s tests` passes. Don't change the tests.

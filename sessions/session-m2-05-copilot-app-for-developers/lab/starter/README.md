@@ -1,28 +1,16 @@
-# Session M2-05 starter
+# Checkout pricing: sample repo
 
-This folder is a synthetic project for the GitHub Copilot app lab.
-
-## Baseline
-
-Run:
+A tiny Python project with four failing tests. Use it as a throwaway repo for the Session M2-05 lab. It has no dependencies. You need Python 3.10 or later.
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-Three tests should fail because `evaluate_readiness` ignores review blockers and
-missing required evidence.
+| File | Purpose |
+| --- | --- |
+| `shop/pricing.py` | Order total with shipping and coupons. It has the bugs. |
+| `tests/test_pricing.py` | Five tests. Four fail. |
+| `issue-brief.md` | Body for the GitHub issue you create in the lab. |
+| `.github/workflows/test.yml` | Runs the tests on every push and pull request. |
 
-## Files
-
-- `issue-brief.md`: engineering request with scope and acceptance criteria
-- `readiness_guard/readiness.py`: incomplete implementation
-- `tests/test_readiness.py`: focused behavior checks
-- `synthetic-pr.json`: local input fixture
-- `session-handoff-template.md`: fresh-session handoff
-- `engineering-review.md`: plan critique, revision, and `/review` triage
-- `pr-readiness-report.md`: outer-loop report template
-- `automation-prompt-template.md`: manual read-only automation contract
-- `prepared-evidence/`: synthetic PR and trainer demonstration evidence
-
-Keep the project dependency-free. Use only Python's standard library.
+All data is synthetic.

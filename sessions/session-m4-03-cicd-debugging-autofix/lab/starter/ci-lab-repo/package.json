@@ -1,0 +1,13 @@
+{
+  "name": "ci-lab-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthetic app for the Session M4-03 CI debugging lab",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

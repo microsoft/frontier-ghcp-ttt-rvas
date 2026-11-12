@@ -62,7 +62,7 @@
       "slug": "session-m2-01-copilot-cli",
       "module": "2",
       "title": "GitHub Copilot in the CLI",
-      "description": "Critique a repair plan and check CLI controls and fleet results. Practise queueing, recovery, and terminal automation.",
+      "description": "Learn the core Copilot CLI workflow: plan, approve tools, implement, review, and resume. Fix three bugs in a small API.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -71,7 +71,7 @@
       "slug": "session-m2-02-agent-mode-ide",
       "module": "2",
       "title": "Agent Mode in the IDE",
-      "description": "Give Copilot a multi-step task in VS Code. Follow how it reads files, runs commands, and responds to errors.",
+      "description": "Learn Ask, Edit, Agent, and Plan modes in VS Code. Plan, build, review, and fix a multi-file feature in agent mode.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -80,7 +80,7 @@
       "slug": "session-m2-03-spaces-and-context",
       "module": "2",
       "title": "Copilot Spaces & Context Management",
-      "description": "Choose context for the Storefront project and inspect the CLI's loaded instructions. Correct a stale rule and compare the results.",
+      "description": "Learn the ways to give Copilot context: Spaces, instructions, prompt files, and memory. Build a Space and compare the same task with and without context.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -98,7 +98,7 @@
       "slug": "session-m2-05-copilot-app-for-developers",
       "module": "2",
       "title": "GitHub Copilot App for Developers",
-      "description": "Check the app workspace and compare rubber-duck and spar critiques. Return a forked plan note, then review the repair and decide if it is ready for a PR.",
+      "description": "Learn the Copilot app: sessions, worktree workspaces, and Interactive, Plan, and Autopilot modes. Repair a bug and open a PR from the app.",
       "difficulty": "Intermediate",
       "duration_minutes": 180
     },
@@ -143,7 +143,7 @@
       "slug": "session-m3-03-mcp-servers",
       "module": "3",
       "title": "MCP Servers & Custom Tool Integration",
-      "description": "Use Model Context Protocol servers to give Copilot access to external tools, APIs, and data sources.",
+      "description": "Learn what MCP servers are and add them to Copilot. Connect a small server you run yourself and see how permissions and prompt injection work.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -179,7 +179,7 @@
       "slug": "session-m4-02-iac-with-copilot",
       "module": "4",
       "title": "Infrastructure as Code with Copilot",
-      "description": "Use Copilot to write, connect, validate, and security-review Terraform modules. Compare Bicep in the trainer demo or optional exercise.",
+      "description": "Learn Terraform basics and how to prompt Copilot for IaC. Build a small VPC, run plan, scan it with Trivy, fix a finding, and write the same resources in Bicep.",
       "difficulty": "Advanced",
       "duration_minutes": 150
     },
@@ -188,7 +188,7 @@
       "slug": "session-m4-03-cicd-debugging-autofix",
       "module": "4",
       "title": "CI/CD Pipeline Debugging & Agentic Remediation",
-      "description": "Use logs and local checks to diagnose pipeline failures. Reproduce a staged failure and review the proposed security fix.",
+      "description": "Diagnose three real failing GitHub Actions runs with Copilot, fix them, and rerun. Review Copilot Autofix for code scanning alerts.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },
@@ -197,7 +197,7 @@
       "slug": "session-m5-01-squad-orchestration",
       "module": "5",
       "title": "Brady's Squad: Human-Led AI Teams",
-      "description": "Assign scoped work to persistent roles with Brady's Squad. Save the team's decisions and results so a person can review them.",
+      "description": "Learn what Brady's Squad is and run it in the Copilot CLI. Give a team of agents a multi-part task, steer it, and compare with a single agent.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },

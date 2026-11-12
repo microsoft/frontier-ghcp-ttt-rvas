@@ -8,249 +8,166 @@ footer: 'Session M2-02: IDE Agent Workflows'
 
 <!-- _class: lead -->
 
-# IDE agent workflows
-## Plan, act, observe, and review
+# Agent mode in the IDE
+
+## Plan first, review the diff, stay in charge
+
+Session M2-02 | 3 hours
 
 ---
 
-# The agent loop
-
-```text
-Plan → Act → Observe → Review → Revise or stop
-```
-
-Use the loop to review the work.
-
----
-
-# Task contract
-
-```markdown
-## Goal
-Add one small, testable behavior.
-
-## Constraints
-- Named files and data only
-- Required tests
-- No new dependencies
-
-## Done
-- Tests pass
-- A human accepts the change
-```
-
----
-
-# Review checkpoints
-
-- Read the proposed file changes.
-- Read every command before it runs.
-- Check test results and side effects.
-- Stop when scope, data, or the stop rule is unclear.
-
----
-
-<!-- _class: qa -->
+<!-- _class: agenda -->
 
 # Agenda
 
-| Time | Topic |
+| Segment | Time |
 | --- | --- |
-| 0:00 | Assistant-to-agent shift |
-| 0:08 | Agent loop and tools |
-| 0:18 | Task contracts and trust |
-| 0:28 | Multi-file live demo |
-| 0:43 | Chat vs. agent mode |
-| 0:50 | Redirect and stop |
-| 0:57 | Lab handoff |
+| Four modes | 10 min |
+| What agent mode can touch | 12 min |
+| Steering | 13 min |
+| Agent mode vs CLI vs cloud agent | 8 min |
+| Demo | 12 min |
+| Pros, cons, mistakes | 5 min |
 
 ---
 
-# From autocomplete to agent
+# Four modes
 
-| Mode | Developer supplies | Surface returns |
+| Mode | What it does | Changes files? |
 | --- | --- | --- |
-| Inline | Local code context | A continuation |
-| Chat | A question and references | Guidance or a proposed edit |
-| Agent | Goal, constraints, and repository | A multi-step change with a diff and check results |
+| **Ask** | Answers questions about your code | No |
+| **Edit** | Edits the files you pick, in one pass | Yes, only those |
+| **Agent** | Finds files, edits, runs commands, loops | Yes, and runs things |
+| **Plan** | Researches and writes a plan | No, until you approve |
 
-More autonomy needs clear file limits, progress checks, and review.
-
----
-
-# What agent mode can do
-
-- inspect repository files and conventions;
-- plan a sequence of changes;
-- edit multiple related files;
-- run terminal commands and tests;
-- observe failures and revise;
-- use tools, including configured MCP tools.
+Pick the **smallest mode** that does the job.
 
 ---
 
-# One loop, many checkpoints
+# What agent mode does
 
 ```text
-Goal and constraints
-        ↓
-Plan ──→ Act ──→ Observe
- ↑                   │
- └──── revise ───────┘
-        ↓
-Human review or stop
+You: prompt
+  → Copilot picks a tool and asks the editor to run it
+  → the editor runs it and returns the result
+  → Copilot reads the result and picks the next tool
+  → ... until done, or it asks you
 ```
+
+A **tool** is an action the editor can run for the model.
 
 ---
 
-# Tool use and trust
+# Tools
 
-| Tool action | Review question |
+| Tool kind | Examples |
 | --- | --- |
-| Read a file | Do you need this path and its data? |
-| Edit a file | Does the task require it? |
-| Run a command | Is it understood, reversible, and scoped? |
-| Add a dependency | Is it necessary? |
-| Search the web | Can repository context leave your environment? |
-| Call an MCP tool | Which server, and what can it do? |
+| **Read** | Open a file, list a folder |
+| **Search** | Find text or symbols in the workspace |
+| **Edit** | Change or create files |
+| **Terminal** | Run `npm test`, `git status` |
+| **MCP** | Tools from servers you add: issues, databases, docs |
+
+Open the **tools picker** in chat to see and switch them off.
 
 ---
 
-# Multi-file work is a graph
+# Trust: what it can touch
 
-```text
-route.ts ──calls──→ service.ts
-   │                    │
-   └──verified by──→ route.test.ts
-                        │
-                  documents behavior
-                        ↓
-                     README.md
+- **Your files.** It edits them directly. Git is your safety net.
+- **Your terminal.** Commands run as you. Each one asks first.
+- **MCP servers.** They can reach outside systems with your credentials.
+- **Text it reads.** A file or web page can contain instructions. Treat it as untrusted.
+
+You are the **review step**. Nothing else is.
+
+---
+
+# Steering
+
+1. **Plan first.** Use Plan mode, or say "plan, don't edit yet".
+2. **Be specific.** Goal, files, how to check it.
+3. **Watch the tool calls.** Stop it if it wanders.
+4. **Review every diff.** Keep or undo per file.
+5. **Undo with checkpoints.** Restore chat to an earlier point.
+6. **Read terminal commands** before you allow them.
+
+---
+
+# Terminal approval
+
+Agent mode asks before it runs a command. You can:
+
+- Allow once.
+- Allow for this session or workspace.
+- Turn on auto-approve for chosen commands in settings.
+
+**Tip:** auto-approve `npm test`. Keep asking for anything that deletes, installs, or pushes.
+
+Check current docs for the exact setting names.
+
+---
+
+# Agent mode, CLI, cloud agent
+
+| | IDE agent mode | Copilot CLI (M2-01) | Cloud agent (M3-02) |
+| --- | --- | --- | --- |
+| **Runs** | Your machine, in VS Code | Your machine, in a terminal | GitHub, in its own environment |
+| **You are** | Watching, in the editor | Watching, in the terminal | Away until the PR |
+| **Result** | Edits in your working tree | Edits in your working tree | A pull request |
+| **Best for** | Feature work with diff review | Terminal tasks, scripts | Well-defined tasks you can hand off |
+
+---
+
+# TODO code action
+
+```js
+// TODO: Add GET /export that returns all notes as CSV.
 ```
 
-Name the behavior you want to change. Review every changed file and check that
-its callers and tests still fit.
+With the **GitHub Pull Requests** extension, a lightbulb appears. Pick **Delegate to coding agent**. The cloud agent opens a pull request.
+
+Good for **small, well-described** tasks. You review the PR.
 
 ---
 
-# Demo brief: one feature, three files
+# Demo
 
-```markdown
-Add `completed` filtering to the task list endpoint.
+Same prompt, two modes. Then agent mode with a plan.
 
-Acceptance criteria:
-- `GET /tasks?completed=true` returns completed tasks only.
-- Invalid values return HTTP 400.
-- Existing behavior without the parameter is unchanged.
-- Focused tests cover true, false, and invalid values.
+- **Ask:** explains what to change.
+- **Agent:** changes it and runs the tests.
 
-Constraints: no new dependencies; edit route, service, and tests only.
-```
+Watch the tool calls, then the diff.
 
 ---
 
-# Concrete demo code
+# Pros and cons
 
-```ts
-const value = req.query.completed;
-if (value !== undefined && value !== "true" && value !== "false") {
-  return res.status(400).json({ error: "completed must be true or false" });
-}
-
-const completed = value === undefined ? undefined : value === "true";
-return res.json(taskService.list({ completed }));
-```
-
-Ask the agent to implement and test the smallest valid change, then explain it.
-
----
-
-# Narrate the demo
-
-1. Show a clean working tree and the focused test command.
-2. Paste the task contract and request a plan before edits.
-3. Check that the plan names route, service, and tests.
-4. Approve only commands needed for the task.
-5. When a test fails, ask the agent to explain before revising.
-6. Read the final diff and run tests yourself.
-
----
-
-# Intervene, redirect, stop
-
-Use a correction that preserves the original contract:
-
-```text
-Stop. Do not change the response schema or add dependencies.
-Keep the existing service API and add only the optional filter.
-Show the revised plan before editing.
-```
-
-Stop for unexpected file scope, destructive commands, sensitive data, unexpected
-network access, or repeated changes with no new test results.
-
----
-
-# Same task: Chat or agent mode?
-
-| Use Chat when… | Use agent mode when… |
+| Pros | Cons |
 | --- | --- |
-| You need explanation or options | The outcome spans related files |
-| You want one surgical edit | Tests can drive iteration |
-| Requirements are still forming | Requirements and constraints are clear |
-| You need to retain manual control | Tool output helps you check the work |
-
-Work manually when risk or ambiguity makes an agent a poor fit.
+| Multi-file changes in one go | Can edit more than you wanted |
+| Runs tests and fixes failures | Long runs are hard to review |
+| Sees your real project | Wrong assumptions hide in big diffs |
+| Easy to undo | Slower than a quick Ask |
 
 ---
 
-# TODO code actions
+# Common mistakes
 
-A TODO can define a short task to delegate:
-
-```ts
-// TODO: reject duplicate task titles within the same project.
-```
-
-Before delegating:
-
-- convert the comment into acceptance criteria;
-- check the target repository and branch;
-- remove sensitive context;
-- define the tests.
+- **Vague prompt.** "Add tags" gets guesses. Name the behavior.
+- **No plan.** Big tasks drift.
+- **Skipping the diff.** Accepting all without reading.
+- **Blanket auto-approve.** One bad command costs more than the clicks.
+- **Giant tasks.** Split them.
+- **No tests.** The agent has nothing to check against.
 
 ---
 
-# Demo debrief
+<!-- _class: lead -->
 
-- Which plan step gave the earliest useful signal?
-- Which command needed the most scrutiny?
-- Did the agent touch exactly the expected files?
-- Would Chat have been faster for this task?
+# Lab
 
----
+## Add a feature with agent mode
 
-# Lab handoff
-
-Build one Todo API, add ownership and due dates, then redirect a repository
-refactor. Along the way you will:
-
-1. watch tool calls and multi-file edits;
-2. redirect the agent after a scope change;
-3. compare Ask and Agent mode;
-4. try a TODO delegation if your account supports it.
-
-**Final deliverable:** The tested API, plan, comparison, course correction, and
-your accept, revise, or stop decision.
-
----
-
-<!-- _class: qa -->
-
-# Remember
-
-1. Agent mode fits defined, testable, multi-step work.
-2. Write the task limits before the agent starts.
-3. Tool approval and file scope are trust decisions.
-4. Redirect or stop the agent when needed.
-5. You decide whether to accept the work.
+Plan, build, review, fix, delegate.
