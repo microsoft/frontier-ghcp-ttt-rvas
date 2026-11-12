@@ -35,8 +35,7 @@ main exercise.
 Check that GitHub Copilot Chat works in the training environment. Ask it
 to summarize the open file, then check that the answer refers to that file.
 
-If GitHub Copilot access is unavailable, **stop the lab**. Resolve the account,
-extension, license, or policy issue first. Do not paste the exercise into an
+Do not paste the exercise into an
 unapproved public assistant.
 
 ### Primary environment: Dev Container or Codespaces

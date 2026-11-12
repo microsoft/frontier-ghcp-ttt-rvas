@@ -38,9 +38,7 @@ You need:
 - `uv` and an approved Spec Kit release;
 - a GitHub training repository where you can create issues.
 
-If GitHub Copilot access is unavailable, **stop the lab**. If the
-environment cannot run Spec Kit or the selected integration, stop and fix the
-installation from the approved source. For a disconnected environment, the instructor must prepare
+For a disconnected environment, the instructor must prepare
 the official Spec Kit air-gapped package before the session.
 
 ## Part 1: Prepare and initialize the project (15 minutes)

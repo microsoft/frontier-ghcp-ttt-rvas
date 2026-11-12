@@ -38,5 +38,4 @@ Track three synthetic work items until their state supports a readiness decision
 - Data: supplied synthetic items only.
 - External systems and writes: none.
 - Owner: Training canvas owner.
-- Access failure: stop the lab.
 - Retirement trigger: end of lab or loss of an accountable owner.

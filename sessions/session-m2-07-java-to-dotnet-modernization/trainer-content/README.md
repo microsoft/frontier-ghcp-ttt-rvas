@@ -10,8 +10,7 @@ Keep the slice narrow. Aim for one reviewed route and a backlog for the rest of
 the service. Do not build a rewrite plan on untested assumptions.
 
 > [!IMPORTANT]
-> Check GitHub Copilot access before delivery. If a learner cannot use Copilot in
-> the training environment, **stop the lab for that learner**. Do not replace
+> Check GitHub Copilot access before delivery. Do not replace
 > the session with an unreviewed public tool or personal account.
 
 ## One-hour plan

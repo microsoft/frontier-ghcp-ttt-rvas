@@ -32,7 +32,7 @@ materials; preserve their structure and working resource links.
   trainer guidance and hands-on labs.
 - Use **Enterprise Cloud as the governance baseline** and follow customer policy.
 - Check required tools, permissions, and accounts before each learner lab.
-- Stop the lab when a required tool is unavailable. Keep demo recovery in
+- Keep demo recovery in
   trainer guidance rather than replacing the learner exercise.
 - Keep human review in the learning workflow.
 

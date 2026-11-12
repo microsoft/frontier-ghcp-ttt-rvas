@@ -30,7 +30,7 @@ again.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Check GitHub Copilot access. **Stop if access is unavailable.**
+Check GitHub Copilot access.
 
 ## Part 1: Check GitHub MCP and write access (15 minutes)
 
@@ -53,8 +53,6 @@ GitHub MCP is built into Copilot CLI. CLI users can inspect it with:
 If the approved connection is missing, use **Customize** → **MCP** to install or
 configure the organization-approved server. **Never paste a token into a prompt
 or repository file.**
-
-Stop if the read test or issue-write check fails.
 
 GitHub MCP is the tool connection used in this lab. A plugin can bundle an MCP
 server with other customizations, but you must still check the active

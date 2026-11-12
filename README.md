@@ -47,7 +47,7 @@ Product and delivery learners do not need programming experience, Git command-li
 knowledge, or repository administration skills.
 
 **GitHub Copilot access is required for Sessions M7-01 to M7-06.** If a learner
-does not have access, stop and reschedule their Module 7 training once they do.
+does not have access, reschedule their Module 7 training once they do.
 
 ## Curriculum overview
 

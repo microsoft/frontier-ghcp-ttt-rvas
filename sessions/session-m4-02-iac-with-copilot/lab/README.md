@@ -23,8 +23,7 @@ intentional security failure.
 You must have GitHub Copilot access, Terraform 1.5 or later, and the approved provider source.
 This lab does not need a cloud account, credentials, state backend, plan, or apply.
 
-If GitHub Copilot access or the approved provider source is unavailable, stop and
-do not continue the lab. The instructor may still show the prepared files.
+The instructor may still show the prepared files.
 
 ## Setup
 

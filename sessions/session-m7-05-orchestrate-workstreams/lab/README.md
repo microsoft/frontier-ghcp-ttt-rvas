@@ -18,8 +18,7 @@ live child sessions
 ## Choose one route
 
 Both routes require the app's built-in `/orchestrate` skill and live child sessions.
-**Stop if orchestration access is unavailable.** Separate prompts and prepared
-answers do not complete the lab.
+Separate prompts and prepared answers do not complete the lab.
 
 | Route | Use after | Inputs | Lab time |
 | --- | --- | --- | --- |
@@ -54,7 +53,6 @@ fifth child stays outside this orchestration.
   contact, publication, or unapproved changes.
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot access, orchestration, or issue access is unavailable.**
 > Do not replace the live run with separate prompts, role-play, or prepared
 > outputs.
 
@@ -150,7 +148,6 @@ separate handoff form.
 
 | Issue | Response |
 | --- | --- |
-| `/orchestrate` is missing | Stop and resolve license, policy, client, or command access. |
 | A child requests restricted data | Stop the child and record the boundary in the parent result. |
 | A result cites no supporting issue content | Reject it or redirect the child. |
 | Two workstreams overlap | Pause one and move the shared question to the parent. |
@@ -165,7 +162,7 @@ a supplied PR snapshot. Passing local tests and PR readiness are different claim
 
 You need the GitHub Copilot app with `/orchestrate`, local project read access,
 and Python 3.10 or later. Check that you can open, redirect, and stop child
-sessions. **If any requirement is unavailable, stop this route.** No GitHub
+sessions. No GitHub
 connection, MCP server, or remote write is needed.
 
 ### Prepare the local project
@@ -222,8 +219,7 @@ the named local files and test command. Do not edit, install, use the network, o
 change GitHub. Stop at the agreed usage limit. The parent alone reconciles results.
 ```
 
-Open the live children and check their inputs and task boundaries. If the command
-does not create live child sessions, stop and resolve the feature or plan. Do not
+Open the live children and check their inputs and task boundaries. Do not
 substitute `/fleet`, separate chats, or captured answers.
 
 ### Exercise D3: Redirect and reconcile (35 minutes)

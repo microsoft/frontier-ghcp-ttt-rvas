@@ -45,8 +45,7 @@ Prepare the delivery machine before learners arrive:
    and trace data.
 8. Keep the solution project open at the files used in the demo.
 
-**Stop if any required access or local tool is unavailable.** Do not replace
-authenticated Copilot access with another model provider.
+Do not replace authenticated Copilot access with another model provider.
 
 ## Teaching notes
 

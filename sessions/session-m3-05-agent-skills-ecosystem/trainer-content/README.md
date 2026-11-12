@@ -32,7 +32,6 @@ decision interviews before moving into `/plan`.
 - Agree a usage limit, including any fact-finding subagent.
 - Check `/chronicle improve` against this copied repository's training history.
 
-**If CLI access or a required skill is unavailable, stop the learner lab.**
 The local harness is useful for teaching deterministic checks, but does not prove
 that Copilot discovered or invoked a skill.
 

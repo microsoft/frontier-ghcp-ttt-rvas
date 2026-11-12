@@ -32,8 +32,7 @@ at 0:50. Use the recorded expected output and keep time for the lab handoff.
 
 If you cannot access the approved package source, stop the executable demo. A
 static code walkthrough is acceptable, but mark Inspector and tests as **not
-executed**. This only recovers the trainer demo. Stop the learner lab until tests
-and Inspector can run.
+executed**. This only recovers the trainer demo.
 
 ## Teaching sequence
 
@@ -182,7 +181,7 @@ inspect good and bad calls before adding the remaining tools. Ask learners to
 update the original one-tool catalog assertion when they add the other tools.
 They must run tests and Inspector against their edited working copy, not the
 reference solution, and submit the lockfile, test output, and protocol requests
-and responses. Stop the lab if Inspector cannot run.
+and responses.
 
 ## References
 

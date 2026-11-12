@@ -27,8 +27,8 @@ needs to change.
 ## Required access
 
 You need Node.js 22.22.2 or later, Git, the standalone Copilot CLI with live
-custom-agent loading, and a working JavaScript LSP server. Stop if any required
-access is missing. A manual scenario does not replace the live run or lookup.
+custom-agent loading, and a working JavaScript LSP server. A manual scenario does
+not replace the live run or lookup.
 
 | Resource | Location |
 | --- | --- |

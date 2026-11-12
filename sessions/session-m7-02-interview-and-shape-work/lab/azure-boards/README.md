@@ -41,9 +41,8 @@ Before starting:
 8. Check the trainer's reset method.
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot access fails.** Fix access before the exercise starts.
-> If Azure Boards MCP is unavailable, use the browser. If neither Azure
-> Boards path works, stop and resolve project access.
+> Check GitHub Copilot access before the exercise starts.
+> If Azure Boards MCP is unavailable, use the browser.
 
 Do not configure a new organization, process, field, or MCP server during the lab.
 

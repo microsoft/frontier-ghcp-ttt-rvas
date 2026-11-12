@@ -25,7 +25,6 @@ into production code, tighten the profile, and rerun the same test.
 - Check profile support in the Copilot client.
 - Prepare the JavaScript LSP server using `lab/lsp-setup.md`; check its
   startup and an actual `getOrdersByUser` reference lookup.
-- Stop the learner lab if live profile loading is unavailable.
 
 Do not push, merge, open issues, or attach MCP during the core demo.
 

@@ -31,7 +31,7 @@ corrections to decide whether a rule belongs in instructions, a skill, or neithe
 ## Required access
 
 You need Node.js 22 or later and the standalone Copilot CLI with project
-skill loading, `/plan`, and `/chronicle improve`. **Stop if required access is unavailable.**
+skill loading, `/plan`, and `/chronicle improve`.
 The deterministic runner checks its own contract; it does not replace live skill
 invocation. Session M7-02 supplies reusable interview assets but is not a prerequisite.
 

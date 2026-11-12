@@ -59,5 +59,5 @@ git commit -m "Initialize Squad team"
 git push origin main
 ```
 
-Commit only the state the team reviewed. If Squad is unavailable, stop the lab
-and resolve access. Prepared files support the trainer walkthrough only.
+Commit only the state the team reviewed. Prepared files support the trainer
+walkthrough only.

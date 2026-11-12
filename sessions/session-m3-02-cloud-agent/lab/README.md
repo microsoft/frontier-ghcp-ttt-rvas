@@ -12,8 +12,7 @@
 
 Take one synthetic issue from its fixed contract through setup and
 implementation with Copilot cloud agent, then test and review the change.
-If access or permission is missing, stop the lab and resolve it before assigning
-the issue. Manual work does not complete this lab.
+Manual work does not complete this lab.
 
 ## Deliverables
 
@@ -30,7 +29,7 @@ You need Copilot cloud agent access to the training repository, synthetic
 data, and a reviewer.
 
 If access, policy approval, or reviewer ownership is missing, do not assign the
-issue. Stop the lab. Do not add credentials to issues, instructions,
+issue. Do not add credentials to issues, instructions,
 setup workflows, or comments.
 
 ## The one issue
@@ -200,8 +199,7 @@ same issue → reviewed setup → proposed change → tests → review outcome
 
 | Issue | Response |
 | --- | --- |
-| Copilot cloud agent access is missing | Stop the lab. |
-| Setup workflow is not active on the default branch | Stop the lab. |
+| Setup workflow is not active on the default branch | Ask the trainer to prepare the repository. |
 | Session edits extra files | Stop or ask the agent to change only the allowed files. |
 | Test output is missing | Run the required test command before deciding. |
 | A test passes but response shape changed | Request changes and cite the criterion for preserving the response shape. |

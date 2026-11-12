@@ -22,7 +22,7 @@ Submit:
 The lab requires GitHub Copilot app access and the built-in `/create-canvas` skill.
 Project scope requires approval to create files under `.github/extensions`.
 
-If app access or the skill is unavailable, stop the lab. If project scope is not
+If project scope is not
 available, use user scope. Do not install a replacement or
 copy the synthetic workflow into another external service.
 
@@ -220,7 +220,6 @@ Your work is complete when another person can identify:
 
 | Issue | Response |
 | --- | --- |
-| `/create-canvas` is unavailable | Stop the lab. |
 | Project scope is blocked | Use user scope. |
 | Generated actions exceed the contract | Remove them before testing. |
 | State and agent response disagree | Stop and inspect the shared artifact. |

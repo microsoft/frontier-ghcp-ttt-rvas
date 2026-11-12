@@ -13,11 +13,6 @@ permissions, and model choices can change.
 4. Set a usage limit if the work is metered and name who can approve more.
 5. Check Agent mode access before the lab.
 
-### Access failure
-
-Stop the learner lab and fix access. Use a prepared recording for the
-trainer demonstration only; it does not count as learner completion.
-
 ## Session objective
 
 Show learners how to review work at each step of the agent loop.
@@ -391,8 +386,7 @@ Explain the four lab stages. Learners scaffold one Todo API, compare Ask and Age
 mode on a feature, then redirect a repository refactor. They finish by deciding
 whether to accept the work.
 
-Use only synthetic credentials and data. Stop the lab if Agent mode or the
-required repository permissions are unavailable.
+Use only synthetic credentials and data.
 
 ### Lab readiness checklist
 

@@ -21,9 +21,7 @@ separates file parsing, reconciliation rules, reporting, and the command-line
 entry point.
 
 > [!IMPORTANT]
-> GitHub Copilot access is required for the guided workflow. If a learner cannot
-> access Copilot in the training environment, stop. Do not continue
-> until access is restored.
+> GitHub Copilot access is required for the guided workflow.
 
 ## Learning outcomes
 

@@ -25,7 +25,6 @@ tests and lead review.
 
 Learners need **Node.js 20 or later**, Git, a GitHub training repository, GitHub
 Copilot, and Squad.
-If a requirement is unavailable, stop and resolve it before the lab.
 
 ## Deliverable
 

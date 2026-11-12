@@ -30,9 +30,8 @@ You need:
 - permission to run the project test command;
 - `lab/starter/project-brief.md`, `feature-spec.md`, and `course-correction.md`.
 
-If Copilot Agent mode is unavailable, stop the lab. Manual
-editing does not replace planning, tool approval, steering, and review in Agent
-mode.
+Manual editing does not replace planning, tool approval, steering, and review in
+Agent mode.
 
 Create a workspace outside the curriculum folder:
 

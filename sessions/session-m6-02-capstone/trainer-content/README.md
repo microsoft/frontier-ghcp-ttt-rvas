@@ -92,7 +92,7 @@ with a serious issue because time ran out.**
 **Should learners add the other Bookmark endpoints?** No. Record them under deferred
 scope.
 
-**What if agent access fails?** Stop the lab. Do not count a
+**What if agent access fails?** Do not count a
 patch plan as capstone completion.
 
 **What if the tests cannot run?** Record the command, failure, findings from

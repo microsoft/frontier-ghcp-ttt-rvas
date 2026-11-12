@@ -41,7 +41,7 @@ Copilot pull-request review, a private training repository you may push to, Git,
 the authenticated GitHub CLI (`gh`), Node.js, and npm. Check both Copilot commands
 in `/help` and repository access with `gh auth status` before starting.
 
-**If a required command or review access is unavailable, stop the lab.** A generic
+A generic
 chat review or worksheet does not replace the local commands and pull-request
 practice. `/security-review` examines current changes; it does not replace
 repository security scanning.
@@ -80,7 +80,7 @@ git switch -c feature/add-user-management
 
 > **Expected:** `npm install` completes without new dependencies and `npm test` reports that the existing API tests pass.
 >
-> **If install or tests fail:** Stop and fix the environment. Static review alone
+> **If install or tests fail:** Fix the environment. Static review alone
 > does not complete the lab. Do not change package versions to hide a failure.
 
 Use a fresh folder for this local repository. Ask the trainer for an **empty

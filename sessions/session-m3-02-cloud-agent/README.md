@@ -40,7 +40,7 @@ Submit:
 Learners need Copilot cloud agent access to the training repository, synthetic
 data, and a human reviewer.
 
-If anything is missing, **do not assign the issue**. Stop the lab.
+If anything is missing, **do not assign the issue**.
 
 ## Session materials
 

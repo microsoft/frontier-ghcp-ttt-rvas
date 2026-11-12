@@ -37,7 +37,7 @@ The lab requires:
 - a named reviewer;
 - an issue with a file scope and stop condition.
 
-If any requirement is missing, stop the lab. Do not bypass policy.
+Do not bypass policy.
 
 ---
 # The fixed issue

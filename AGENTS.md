@@ -83,7 +83,7 @@ Write instructions as actions, not policy summaries.
 Prefer:
 - "Learners need GitHub Copilot and Python 3.10 or later."
 - "Check the current GitHub docs before the demo."
-- "If Agent mode is unavailable, stop the lab."
+- "Use only synthetic data in the lab."
 - "Run `npm test` and save the output."
 
 Avoid:

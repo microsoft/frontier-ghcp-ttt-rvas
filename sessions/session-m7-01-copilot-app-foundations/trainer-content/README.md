@@ -30,7 +30,7 @@ creating the first Delivery Decision Studio brief.
 - Use only the fictional scenario during the demonstration.
 
 > [!IMPORTANT]
-> Stop if the app, repository, or required policy access is unavailable. A generic chatbot does not meet this session's goal.
+> A generic chatbot does not meet this session's goal. Use the app, the repository, and the required policy access.
 
 ## Teach the app as a work environment
 

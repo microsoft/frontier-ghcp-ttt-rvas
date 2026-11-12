@@ -14,9 +14,8 @@ implementation, tests, review, and a committed decision record
 Use synthetic data only.
 
 Check GitHub Copilot access, Squad, the GitHub training
-repository, integrations, and the usage limit. If any requirement is
-unavailable, stop the lab. Do not improvise installation commands
-or replace orchestration with a tabletop simulation.
+repository, integrations, and the usage limit. Do not improvise installation
+commands or replace orchestration with a tabletop simulation.
 
 | Exercise | Work | Time |
 | --- | --- | --- |

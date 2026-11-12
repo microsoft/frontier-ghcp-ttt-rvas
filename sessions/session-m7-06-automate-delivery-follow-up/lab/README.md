@@ -38,9 +38,6 @@ Complete the track
 
 Check GitHub Copilot Automations access and GitHub MCP access before the lab.
 
-**Stop if GitHub Copilot access, Automations, or GitHub MCP access is
-unavailable.** Fix access before continuing.
-
 ## Part 1: Check access and retrieve inputs
 
 1. Open **Automations** in the GitHub Copilot app.

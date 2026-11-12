@@ -6,8 +6,7 @@ Create reusable prompt files in this directory.
 
 Set a usage limit if the work is metered.
 
-GitHub Copilot and Spaces access are required for the lab. If either is
-unavailable, stop the lab.
+GitHub Copilot and Spaces access are required for the lab.
 
 ## Prompt file format
 

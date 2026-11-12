@@ -30,8 +30,8 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 Use the Session M7-01 `initiative-context-brief.md`. If the trainer is delivering
 Session M7-02 alone, use `starter/vague-request.md`.
 
-Check GitHub Copilot access before starting. If access is unavailable, **stop**.
-Also stop if Copilot cannot read the training repository or load project skills.
+Check that GitHub Copilot can read the training repository and load project
+skills.
 
 ## Part 1: Install and check the interview skill (20 minutes)
 
@@ -66,8 +66,7 @@ If the skill does not appear:
 
 1. check the file is at `.github/skills/decision-interview/SKILL.md`;
 2. check the skill name and description are present in its frontmatter;
-3. reopen the project or start a new session;
-4. stop if the project skill still does not load.
+3. reopen the project or start a new session.
 
 Copilot CLI users can run `/skills reload` and
 `/skills info decision-interview`.
@@ -181,7 +180,7 @@ Then request independent critique:
 criteria, hidden scope, missing owners, and conflicts with the late constraint.
 ```
 
-If the command is unavailable, stop this step. Use a documented critique option
+Use a documented critique option
 that the trainer has checked. Do not invent a command.
 
 ## Final deliverable

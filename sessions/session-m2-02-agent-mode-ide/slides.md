@@ -61,9 +61,7 @@ Add one small, testable behavior.
 
 # Required access
 
-Check that Agent mode works before the lab starts. If it does not, stop the lab.
-Manual editing does not demonstrate
-tool approval, steering, or agent review.
+Manual editing does not demonstrate tool approval, steering, or agent review.
 
 ---
 

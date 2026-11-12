@@ -36,7 +36,7 @@ issue proposal.
 - Assign a request owner and delivery reviewer for each pair.
 
 > [!IMPORTANT]
-> **Stop if the GitHub Copilot app or repository project is unavailable.** Resolve licensing, sign-in, policy, client, or repository access before the session starts.
+> **The GitHub Copilot app and repository project are required.** Resolve licensing, sign-in, policy, client, or repository access before the session starts.
 
 For a planned trainer-only Azure Boards delivery, check that learners can use
 either an approved MCP connection or the browser. Azure Boards changes the update

@@ -23,7 +23,7 @@ canvas capabilities, but you must still review the connection and capabilities.
 Keep the lab no-code and free of customer or source organization names.
 
 > [!IMPORTANT]
-> **Live canvas creation is required.** Stop if `/create-canvas`, GitHub MCP, or the approved canvas actions are unavailable.
+> **Live canvas creation is required.** You need `/create-canvas`, GitHub MCP, and the approved canvas actions.
 
 ## Learning outcomes
 

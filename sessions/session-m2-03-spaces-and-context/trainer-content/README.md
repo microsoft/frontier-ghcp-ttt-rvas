@@ -14,11 +14,6 @@ behavior and availability can change.
 5. Check Spaces and GitHub Copilot access before the lab.
 6. Check standalone CLI `/env` and `/instructions` in the copied Storefront project.
 
-### Access failure
-
-Stop the learner lab. A printed context packet may support the
-trainer demonstration, but it does not count as learner completion.
-
 ## Session objective
 
 Teach learners to select the few files needed for a task and check the answer

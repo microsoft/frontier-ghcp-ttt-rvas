@@ -32,7 +32,7 @@ alongside planning information. GitHub remains the source of record.
 - Check `/context`, `/clear` or `/reset`, and `/rubber-duck`.
 
 > [!IMPORTANT]
-> Stop if canvas creation, GitHub reads, or the required canvas actions are unavailable. A static JSON edit does not meet this session's outcome.
+> This session needs live canvas creation, GitHub reads, and the required canvas actions. A static JSON edit does not meet its outcome.
 
 ## When to use a canvas
 

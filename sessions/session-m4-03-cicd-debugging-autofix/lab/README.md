@@ -24,8 +24,7 @@ You must have GitHub Copilot access and Node.js 20.x. Use only the supplied appl
 and workflow files.
 
 Remote workflow runs and security products are optional. Use them only when the
-instructor checks access and permits their use. **You must complete the local work.** If GitHub
-Copilot access is unavailable, stop.
+instructor checks access and permits their use. **You must complete the local work.**
 
 Do not open `lab/solution/fixed-pipelines/` until a checkpoint tells you to compare.
 For Case 3, do not open `error-log-3-stage-2.txt` until the first repair is complete.

@@ -19,8 +19,7 @@ person must review every run and control how the update is shared.
 
 ## Required access
 
-Check Automations and GitHub MCP access before the session. Stop if either is
-unavailable.
+Check Automations and GitHub MCP access before the session.
 
 ## The automation definition
 

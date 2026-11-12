@@ -38,4 +38,4 @@ and correct a stale module-style instruction.
 - VS Code instruction settings
 - Policy checks before selecting context
 - Before/after context comparison
-- Runtime instruction inspection in the standalone CLI; stop if it is unavailable
+- Runtime instruction inspection in the standalone CLI

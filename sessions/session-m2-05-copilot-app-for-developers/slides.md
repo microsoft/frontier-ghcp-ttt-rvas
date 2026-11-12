@@ -302,7 +302,7 @@ You will submit:
 
 # Lab handoff
 
-Check live app access before the lab. If access is unavailable, stop the lab.
+Check live app access before the lab.
 Saved session output may recover the trainer demonstration, but it does
 not replace learner app practice.
 

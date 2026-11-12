@@ -34,7 +34,7 @@ You do not need programming experience, Git command-line knowledge, or repositor
 administration skills.
 
 **GitHub Copilot access is required for Sessions M7-01 to M7-06.** Learners without access
-should not take this track. Stop and reschedule their training after access is
+should not take this track. Reschedule their training after access is
 available.
 
 ## Capability setup
@@ -48,7 +48,6 @@ session. Organizational policy can change which tools the app makes available.
 2. Add or open the approved training repository under **Projects**.
 3. Start an interactive session.
 4. Ask Copilot to read one known file from the repository.
-5. Stop if it cannot read the approved project.
 
 ### 2. Inspect installed customizations
 
@@ -127,7 +126,7 @@ personal access tokens into prompts or repository files.
 | M7-05 | Built-in `/orchestrate`, child-session steering, and GitHub MCP |
 | M7-06 | Automations and GitHub MCP |
 
-**Stop the lab if a required tool is unavailable.** Role-play and prepared files
+Role-play and prepared files
 do not replace hands-on work.
 
 ### 6. Check session controls and context syntax

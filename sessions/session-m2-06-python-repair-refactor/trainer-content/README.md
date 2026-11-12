@@ -11,8 +11,7 @@ regression tests, and a completed repair log. Use file comparisons to check that
 the refactor preserved the supplied text and JSON outputs.
 
 > [!IMPORTANT]
-> Check GitHub Copilot access before the session. If Copilot access is missing or
-> unavailable in the training environment, stop and do not continue.
+> Check GitHub Copilot access before the session.
 
 ## One-hour plan
 
@@ -218,7 +217,7 @@ inline copies of the same rule. Those copies need not appear as symbol reference
 Record both before approving `/plan`. Do not use LSP diagnostics to skip the
 ordered syntax and import repairs.
 
-Stop if the required server or lookup cannot run. A startup check or text search
+A startup check or text search
 does not replace the operation. Keep the lab at 120 minutes by using this lookup
 inside the existing 25-minute refactor block.
 

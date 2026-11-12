@@ -32,7 +32,7 @@ The lab requires:
 - the built-in `/create-canvas` skill;
 - approval for the chosen extension scope.
 
-If app access or the skill is missing, stop the lab. If project scope is
+If project scope is
 unavailable, use user scope. Do not install a replacement or
 move data to an unapproved surface.
 

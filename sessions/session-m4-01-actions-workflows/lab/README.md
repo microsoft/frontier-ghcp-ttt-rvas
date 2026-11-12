@@ -24,8 +24,7 @@ You must have GitHub Copilot access in the selected coding environment and Node.
 GitHub repository access is optional. Do not push, run Actions, install an external
 action, or use a deployment target unless the instructor permits it.
 When repository access or Actions is unavailable, complete all the work locally
-as described below. If GitHub Copilot access is unavailable, stop and do not
-continue the lab.
+as described below. GitHub Copilot access is required.
 
 Do not use real credentials or deployment endpoints. The supplied deployment work
 is a reviewed design exercise.

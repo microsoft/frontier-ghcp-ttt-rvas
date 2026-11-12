@@ -221,7 +221,7 @@ End with:
 
 | Failure | Recovery |
 | --- | --- |
-| `/create-canvas` is missing | Stop the lab. Do not install a replacement. |
+| `/create-canvas` is missing | Do not install a replacement. |
 | Project scope is not allowed | Use user scope. |
 | Generation takes too long | Stop the run and show the prepared demo record. |
 | Extra capabilities appear | Remove them and record the review decision. |

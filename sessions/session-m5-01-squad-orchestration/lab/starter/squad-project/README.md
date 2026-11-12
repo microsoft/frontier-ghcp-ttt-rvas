@@ -9,8 +9,7 @@ the baseline route and tests. It does not contain the validation result.
 
 Set a usage limit if the work is metered.
 
-GitHub Copilot and Squad are required for the lab. If either is unavailable, stop
-the lab.
+GitHub Copilot and Squad are required for the lab.
 
 ## Start the project
 

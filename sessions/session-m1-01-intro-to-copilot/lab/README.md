@@ -28,8 +28,7 @@ word-parsing rule. Then review a parameter rename as a separate change.
 Use only synthetic data. Check that you may use the repository and editor for the
 exercise.
 
-Before starting, check GitHub Copilot access in your editor. If it does not work,
-stop the lab.
+Before starting, check GitHub Copilot access in your editor.
 Manual implementation does not replace the inline-suggestion practice.
 
 You need:

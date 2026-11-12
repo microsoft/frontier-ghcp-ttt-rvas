@@ -30,9 +30,8 @@ to handle invalid priority input.
 Use synthetic data in a writable training copy.
 
 Check GitHub Copilot Chat and inline suggestions in your editor. Also start the
-standalone `copilot` CLI and check `/refine` in `/help`. **If a required surface or
-command is unavailable, stop the lab.** Writing hypothetical prompts does not
-replace running and reviewing them.
+standalone `copilot` CLI and check `/refine` in `/help`. Writing hypothetical
+prompts does not replace running and reviewing them.
 
 You need:
 

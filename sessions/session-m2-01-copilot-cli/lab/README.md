@@ -42,8 +42,7 @@ in `/help`. Check the queue and background shortcuts in quick help. Install and
 authenticate before delivery; the lab setup block checks an existing installation.
 Agree on a usage limit with the trainer before starting parallel work.
 
-**If CLI access or a required command is unavailable, stop the lab.** Fix access
-before continuing. Normal shell work or a cloud delegation does not replace the
+Normal shell work or a cloud delegation does not replace the
 planning and fleet exercises.
 
 ### Check your setup

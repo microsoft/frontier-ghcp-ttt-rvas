@@ -11,8 +11,7 @@
 Before the lab, check repository or sandbox permissions, GitHub Copilot access,
 and Node.js 20 or later. Name a human reviewer. Use only synthetic bookmark data.
 
-If GitHub Copilot, repository access, Node.js, or dependency installation is
-unavailable, stop the lab. **Do not create a public repository, add
+**Do not create a public repository, add
 a package, configure an MCP server, or use production data.**
 
 The only implementation slice is `POST /api/bookmarks`.

@@ -31,8 +31,7 @@ You need:
 - read access to the training repository project;
 - permission to create a branch or working copy for the brief.
 
-Check GitHub Copilot access before starting. If GitHub Copilot access or project
-access is unavailable, **stop**. Do not continue in a generic chatbot.
+Check GitHub Copilot access before starting. Do not continue in a generic chatbot.
 
 ## Part 1: Check the app and project (15 minutes)
 
@@ -173,8 +172,8 @@ Run an independent critique:
 ambiguous ownership, hidden customer references, and decisions presented as facts.
 ```
 
-If `/rubber-duck` is unavailable, stop this step. The trainer must check the
-current documented critique option before delivery rather than inventing a
+Before delivery, the trainer must check the
+current documented critique option rather than inventing a
 replacement command.
 
 ## Final deliverable

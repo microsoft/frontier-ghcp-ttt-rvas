@@ -37,7 +37,7 @@ Submit:
 The lab requires GitHub Copilot app access and the built-in `/create-canvas` skill.
 Project scope also requires approval to create files under `.github/extensions`.
 
-If app access or `/create-canvas` is unavailable, stop the lab. If project scope
+If project scope
 is unavailable, use user scope. **Do not bypass policy
 or install a replacement.**
 

@@ -34,8 +34,6 @@ MCP access.
 - Check that the trainer can open, redirect, and stop child sessions.
 - Decide who may approve issue updates.
 
-**Stop if orchestration or the selected route's source access is unavailable.**
-
 ## Minimal workstream plan
 
 Each workstream needs:

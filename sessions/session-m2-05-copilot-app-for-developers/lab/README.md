@@ -33,7 +33,6 @@ sandbox and tool-approval settings before starting the working-tree session.
 Keep the trainer's filesystem/network restrictions enabled. A separate worktree
 isolates files; it is not a sandbox or permission grant.
 
-**If app access or a required command is unavailable, stop the lab.**
 Do not continue by pasting the files into another assistant or
 by treating the supplied session output as hands-on app work.
 
@@ -294,9 +293,6 @@ Submit or demonstrate:
 
 | Problem | Response |
 | --- | --- |
-| App access is missing | Stop the lab |
-| Working-tree option or a required command is unavailable | Stop and resolve app, version, or policy access |
-| Python is unavailable | Stop the lab |
 | Automation is unavailable by policy | Write the specification and review permissions |
 | Fork return flow includes unexpected source changes | Stop; do not accept the merge or overwrite the parent's repair |
 | Agent proposes GitHub writes | Remove write tools and restate the read-only contract |

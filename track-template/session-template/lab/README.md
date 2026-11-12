@@ -17,7 +17,7 @@
 
 Check that [required Copilot tool] is available and that you are signed in.
 
-If the required tool is unavailable, stop the lab. Do not
+Do not
 replace it with another assistant or a manual simulation.
 
 ## Setup

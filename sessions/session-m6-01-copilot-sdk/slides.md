@@ -421,5 +421,3 @@ Build the CLI in `lab/starter/sdk-readiness-assistant/`.
 You will complete the lifecycle, streaming, readiness tool, permissions, hooks,
 tests, and OTLP export. Then you will run the known, denied, and failed paths and
 inspect the trace in Jaeger.
-
-**Stop if authenticated Copilot access, Node.js/npm, or Docker is unavailable.**

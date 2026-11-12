@@ -20,8 +20,7 @@ database, cloud service, or production data.
 
 > [!IMPORTANT]
 > Check GitHub Copilot access in the selected coding environment before the
-> session. If access is unavailable, **stop and do not start the lab**. Resolve
-> access first.
+> session.
 
 ## Learning outcomes
 

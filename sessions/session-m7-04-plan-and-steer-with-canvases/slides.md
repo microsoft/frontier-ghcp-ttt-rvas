@@ -183,5 +183,3 @@ The live canvas and linked issues are authoritative for Session M7-05.
 - A detected and reconciled state mismatch
 - Owner, refresh, recovery, and retirement rules
 - Four linked status-visibility workstream candidates
-
-**Stop if live canvas creation is unavailable.**

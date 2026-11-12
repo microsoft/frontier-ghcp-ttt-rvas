@@ -27,8 +27,7 @@ without changing the reports.
 
 Use the repository Dev Container or GitHub Codespaces.
 
-Check GitHub Copilot access before starting. If Copilot access is missing, unavailable, or blocked in the training environment,
-**stop the lab**. Fix access first.
+Check GitHub Copilot access before starting.
 
 Run:
 
@@ -52,7 +51,6 @@ opening the copy in the CLI. Before delivery, prepare `pyright-langserver` using
 the [LSP setup guide](../../session-m3-04-custom-agents/lab/lsp-setup.md#python-session-m2-06).
 Session M3-04 is not a prerequisite; the setup commands are self-contained.
 Check `/plan`, `/lsp show`, and `/lsp test python`.
-**Stop if the CLI, required command, or Python server is unavailable.**
 
 Create the environment:
 
@@ -338,7 +336,6 @@ Submit or demonstrate:
 | JSON diff shows only formatting changes | Use the provided JSON writer settings and final newline |
 | A test passes alone but fails in the suite | Look for module-level mutable state |
 | Copilot proposes a rewrite | Reject it and ask for one-file, one-failure scope |
-| Copilot access is unavailable | Stop. Do not continue until access is restored |
 | Native setup uses the wrong Python | Recreate `.venv` with a Python 3.11+ executable |
 
 ## Solution reference

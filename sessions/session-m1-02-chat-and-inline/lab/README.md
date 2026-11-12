@@ -29,9 +29,8 @@ about zero total weight.
 
 Use synthetic data in a training repository you may use for the exercise.
 
-Before starting, check GitHub Copilot Chat access in your editor. If Chat does not
-work, stop the lab. Manual implementation does not replace the Chat and
-inline-suggestion practice.
+Before starting, check GitHub Copilot Chat access in your editor. Manual
+implementation does not replace the Chat and inline-suggestion practice.
 
 If model comparison is allowed, use only choices approved for the exercise and set
 any required metered-work stop condition. If no second choice is available, compare

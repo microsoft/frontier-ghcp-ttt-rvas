@@ -24,8 +24,6 @@ Before the session:
 - Check `decision-interview` under **Customize** → **Skills**.
 - Run `/decision-interview` with the short test request.
 
-**Stop the lab if any check fails.**
-
 ---
 
 # Start with the actual problem

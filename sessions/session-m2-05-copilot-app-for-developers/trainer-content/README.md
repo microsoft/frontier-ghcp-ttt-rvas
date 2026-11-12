@@ -40,8 +40,7 @@ Run these checks on the delivery machine:
 10. Rehearse returning only `planning-alternative.md` from the fork before any
     repair. Check local sandbox settings and tool approvals without weakening them.
 
-**Access is required for the lab.** A learner who cannot open and use the app must
-stop the lab. Stop if a required command is missing too. Do not spend lab time
+**Access is required for the lab.** Do not spend lab time
 bypassing policy or moving code
 to an unapproved assistant.
 
@@ -161,7 +160,7 @@ Do not edit files or propose unrelated features.
 
 Record the critique in `engineering-review.md`. Apply useful findings to the plan
 and explain rejected suggestions. A no-findings result does not need a fabricated
-revision. If the command is unavailable, stop and resolve access before the lab.
+revision.
 
 Explain why this is a second opinion: rubber duck is built in and read-only;
 Copilot automatically chooses a contrasting model when one is available. Do not

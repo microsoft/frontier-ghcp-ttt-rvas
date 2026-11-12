@@ -205,7 +205,6 @@ Judge the results by the checks, not how well they read.
 
 The lab requires Chat access allowed by your organization.
 
-If Chat is unavailable, **stop the lab and restore access**.
 Manual work does not replace the Chat and inline-suggestion practice.
 
 If only a second model is unavailable, continue with Chat and compare the

@@ -76,7 +76,7 @@ preserves behavior or covers the intended path.
 
 ## Access policy
 
-GitHub Copilot and Node.js 20.x are required. Stop if either is unavailable.
+GitHub Copilot and Node.js 20.x are required.
 Actions, code scanning, and remote remediation are optional. Use the supplied
 files and local commands when those tools are unavailable.
 

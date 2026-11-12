@@ -49,8 +49,7 @@ The lab also requires `/fork`, `/merge-to-parent`, and `/spar`. Check local
 sandbox and approval settings before the run; do not weaken them for the exercise.
 
 If app access is unavailable, learners must not improvise with customer repositories
-or paste protected code into another service. Stop the lab if app access or a
-required command is unavailable.
+or paste protected code into another service.
 
 After this session, use the [Session M7-05 developer route](../session-m7-05-orchestrate-workstreams/lab/README.md#developer-route-review-pr-readiness)
 to practise supervising independent child sessions. Sessions M7-01 to M7-04 are not

@@ -30,7 +30,6 @@ CLI custom-agent support, and the JavaScript language server described in
 [`lsp-setup.md`](lsp-setup.md). Check `/agent`, `/lsp show`, and
 `/lsp test typescript` before starting.
 
-**If the CLI, required profile, or language server is unavailable, stop the lab.**
 Contract tests and manual traces do not replace live profile loading or an LSP
 lookup.
 

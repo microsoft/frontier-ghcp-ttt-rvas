@@ -30,8 +30,7 @@ project tests and API checks.
 
 Learners need GitHub Copilot Chat, inline suggestions, the standalone CLI with
 `/refine`, Node.js 22 or later, and the declared npm dependency. Set up the CLI
-before delivery; Session M2-01 is not a prerequisite. If a requirement is
-unavailable, stop the lab.
+before delivery; Session M2-01 is not a prerequisite.
 
 ## Materials
 

@@ -138,7 +138,7 @@ handoff*
 
 1. **State the installation boundary.** Use an approved source and pinned release.
    A disconnected environment needs the official air-gapped package prepared before
-   delivery. Stop when the approved installation or integration is unavailable.
+   delivery.
 2. **Run the prepared convergence demonstration.** Show an implementation that
    filters archived tasks but lacks the `include_archived=True` test. Run the
    existing tests, then run `/speckit-converge`. Inspect the appended task, add the
@@ -212,5 +212,5 @@ installation or selected integration is unavailable.
 
 **Can the tool define the process?** No. The team owns the process and reviews its outputs.
 
-**What if the package is not approved?** Stop. Do not replace Spec Kit with
+**What if the package is not approved?** Do not replace Spec Kit with
 course-created commands.

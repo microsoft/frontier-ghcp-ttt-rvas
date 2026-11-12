@@ -27,7 +27,7 @@ Copilot and Python 3.10 or later.
 
 ## Required access
 
-If GitHub Copilot or Python is unavailable, stop the lab.
+Learners need GitHub Copilot and Python.
 
 ## Materials
 

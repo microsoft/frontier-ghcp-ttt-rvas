@@ -33,8 +33,7 @@ You need:
 - MCP Inspector 2.5.0 through the approved npm source.
 
 The lab uses local tests and MCP Inspector. GitHub Copilot is
-optional and may assist with review. If Node.js, MCP Inspector, or package registry
-access is unavailable, stop the lab.
+optional and may assist with review.
 
 Do not copy or commit `node_modules`. Each project has a package manifest and lockfile.
 
@@ -140,8 +139,7 @@ npx --yes @modelcontextprotocol/inspector@2.5.0 node src/index.js
 ```
 
 Record the tool name, description, and input schema. Include the request,
-response, and error shape. If Inspector cannot run, stop and fix access before
-continuing. Passing unit tests do not replace the protocol calls.
+response, and error shape. Passing unit tests do not replace the protocol calls.
 
 ## Part 4: Add the remaining tools
 

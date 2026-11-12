@@ -63,9 +63,6 @@ Copilot app. Product learners also need GitHub MCP read access to their parent
 and child issues. Developers need Python 3.10 or later and local project read
 access instead.
 
-**Stop if orchestration or the selected route's source access is unavailable.**
-Fix access before the lab.
-
 ## Product-state note
 
 **Checked against official GitHub documentation on October 15, 2026.** Interface

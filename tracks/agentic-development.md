@@ -50,8 +50,7 @@ as input to `/plan`.
 | 13      | M3-04          | Custom Agents & Agent Profiles            | Advanced     | 3 hrs      |
 | 14      | M3-05          | Agent Skills & the Copilot Ecosystem      | Advanced     | 3 hrs      |
 
-**App access is required for Sessions M2-05 and M7-05.** Stop if access or a required
-command is unavailable. Use Session M7-05's developer route; it does not require
+**App access is required for Sessions M2-05 and M7-05.** Use Session M7-05's developer route; it does not require
 Sessions M7-01 to M7-04 or GitHub MCP. Session M3-05 requires live CLI skill invocation.
 
 ## Recommended delivery schedule

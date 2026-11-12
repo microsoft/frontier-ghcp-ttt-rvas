@@ -87,8 +87,8 @@ parameter, and outputs. Learners do not need to build a second project.
 
 ## Access policy
 
-GitHub Copilot, Terraform, and the approved provider source are required. Stop if
-any is unavailable. No cloud account or credentials are needed.
+GitHub Copilot, Terraform, and the approved provider source are required. No cloud
+account or credentials are needed.
 
 ## Lab handoff
 

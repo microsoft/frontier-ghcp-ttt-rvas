@@ -37,8 +37,6 @@ Session M7-05 | 3 hours
 - Developer route: local project read access and Python 3.10 or later.
 - You must be able to open, redirect, and stop child sessions.
 
-**Stop if orchestration or the selected route's inputs are unavailable.**
-
 ---
 
 # Choose one lab route

@@ -179,5 +179,3 @@ Keep the brief consistent with source information the owner has approved.
 6. Review and commit the focused revision.
 7. Ask `/rubber-duck` for independent critique.
 8. Check the brief in a fresh session.
-
-**Stop if the app or repository context is unavailable.**

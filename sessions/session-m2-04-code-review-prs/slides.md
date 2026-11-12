@@ -63,7 +63,7 @@ Accept, request revision, or implement manually
 Check CLI `/review` and `/security-review`, Copilot PR review, Git, Node.js, and npm.
 Use a private training remote with the baseline branch already present.
 
-**Stop if a command or review access is missing.** A worksheet does not replace
+A worksheet does not replace
 the required runs.
 
 ---

@@ -15,12 +15,6 @@ and availability can change.
    training remote with the baseline `main` branch before the lab.
 6. Ask learners to write their first verdict before assisted review.
 
-### Access failure
-
-Stop the learner lab if a required command or review surface is unavailable.
-Use the intentional defects for a prepared trainer demonstration. They do not
-replace the local commands and pull-request review.
-
 ## Session objective
 
 Show learners how to use automated findings in a review. Have them check the diff,
@@ -293,7 +287,7 @@ required review surfaces for the lab.
 - If the assisted review misses the defect, use the worksheet to finish the
   trainer explanation.
 - If it invents broader policy, mark the comment uncertain or out of scope.
-- If tests cannot run, stop the learner lab and fix the environment.
+- If tests cannot run, fix the environment.
 - If a suggested fix rewrites unrelated code, reject it and use the guard only.
 - If review access fails during the demo, use the worksheet and fix access before
   the lab.

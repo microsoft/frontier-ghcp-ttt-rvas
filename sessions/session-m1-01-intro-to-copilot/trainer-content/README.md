@@ -75,7 +75,7 @@ Before handing off the lab, ask:
 3. **Scope:** Which repository and files may change?
 4. **Metering:** Who owns any limit and stop decision?
 
-If any answer is missing, stop the lab handoff and resolve the gap. Do not
+Resolve any missing answer before the lab handoff. Do not
 troubleshoot policy by trial and error.
 
 ### 0:27 to 0:38: Inline controls
@@ -156,11 +156,6 @@ tests.
 **Should learners accept a proposal that passes one test?**
 
 Only after they also inspect scope, edge cases, dependencies, and readability.
-
-**What if access disappears during the lab?**
-
-Stop the lab and restore Copilot access. Manual work does not replace the
-inline-suggestion practice.
 
 **Which editor shortcut should I teach?**
 

@@ -99,15 +99,13 @@ Use context only when it is relevant and you may use it for the task.
 3. Limit the task to named files.
 4. Name any metered-work owner and stop condition.
 
-If access is unclear, stop the lab.
-
 ---
 
 # Access policy
 
 The lab requires GitHub Copilot.
 
-If access is unavailable, stop. Manual implementation does not demonstrate how to
+Manual implementation does not demonstrate how to
 inspect, accept, revise, or reject an inline suggestion.
 
 ---

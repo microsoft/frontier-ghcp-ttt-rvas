@@ -33,7 +33,7 @@ so you can detect stale canvas data and refresh it.
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-Check GitHub Copilot access before starting. **Stop if access is unavailable.**
+Check GitHub Copilot access before starting.
 
 ## Part 1: Check canvas and MCP capabilities (15 minutes)
 
@@ -44,7 +44,6 @@ Check GitHub Copilot access before starting. **Stop if access is unavailable.**
 5. Ask Copilot to retrieve the Session M7-03 parent issue and child issues.
 
 `/create-canvas` is a built-in app skill. Do not install a community replacement.
-Stop if the skill or GitHub reads are unavailable.
 
 Use a fresh GitHub MCP read as the authoritative issue list. Start from the live
 Session M7-03 parent issue and follow its child links. Do not reconstruct the set

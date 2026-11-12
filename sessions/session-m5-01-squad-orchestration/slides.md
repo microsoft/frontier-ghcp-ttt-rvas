@@ -184,8 +184,8 @@ The reference project also includes the implemented route and passing tests.
 # Required access
 
 Check GitHub Copilot, Squad, repository integration,
-and the network path before the lab. If a requirement is unavailable, stop and
-resolve it. A tabletop simulation does not demonstrate orchestration.
+and the network path before the lab. A tabletop simulation does not demonstrate
+orchestration.
 
 ---
 

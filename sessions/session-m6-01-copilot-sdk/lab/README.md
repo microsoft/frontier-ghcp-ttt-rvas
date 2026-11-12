@@ -58,8 +58,8 @@ Authenticated GitHub Copilot SDK access is required. You also need:
 - Docker Compose;
 - permission to bind the local ports declared in the Compose file.
 
-**Stop if any item is unavailable.** Do not switch to
-BYOK, another model provider, a remote session, or a different language.
+Do not switch to BYOK, another model provider, a remote session, or a different
+language.
 
 Run the local checks:
 
@@ -76,8 +76,7 @@ npm test
 Some focused tests should fail because you have not completed the reliability
 controls yet. The project must compile far enough to show those gaps. Use the
 instructor-provided authentication check in `src/live-demo.ts` before starting the
-live exercises. If `client.getAuthStatus()` reports that the user is not
-authenticated, stop.
+live exercises.
 
 ### Project map
 
@@ -357,7 +356,7 @@ Show the trainer:
 
 | Problem | Fix |
 | --- | --- |
-| `client.getAuthStatus()` reports unauthenticated | Stop. Check the GitHub Copilot sign-in and permitted network path. Do not use BYOK or another provider. |
+| `client.getAuthStatus()` reports unauthenticated | Check the GitHub Copilot sign-in and permitted network path. Do not use BYOK or another provider. |
 | `CopilotClient` starts but session creation fails | Check the installed package lock, supported Node.js version, and current GitHub Copilot access. |
 | Output is duplicated | Print `assistant.message_delta` as live output and keep the final message for records only. |
 | Restricted data reaches the handler | Match the exact tool name and inspect parsed `toolArgs.requestId` in `onPreToolUse`. |

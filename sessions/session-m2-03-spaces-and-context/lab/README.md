@@ -31,8 +31,7 @@ You need:
 - permission to add repository instructions and prompt files;
 - standalone Copilot CLI access with `/env` and `/instructions`.
 
-If Copilot Spaces, GitHub Copilot, or a required CLI command is unavailable, stop
-the lab. A local context packet does not replace creating a Space or inspecting
+A local context packet does not replace creating a Space or inspecting
 the loaded instructions.
 
 Create a writable copy:

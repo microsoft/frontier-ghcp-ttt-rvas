@@ -62,9 +62,8 @@ Ask learners to explain why each source is needed and what is excluded.
 
 # Required access
 
-Check Spaces and GitHub Copilot access before the lab. If either is unavailable,
-stop the lab. A manually assembled packet does not demonstrate Space
-creation, reuse, or behavior.
+Check Spaces and GitHub Copilot access before the lab. A manually assembled
+packet does not demonstrate Space creation, reuse, or behavior.
 
 ---
 

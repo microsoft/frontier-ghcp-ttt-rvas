@@ -28,8 +28,7 @@ Use the synthetic repository sandbox.
 
 You need Node.js 22 or later, a writable training workspace, and the standalone
 Copilot CLI from Session M2-01. Check `/skills`, `/plan`, and loading of project
-skills before starting. **If CLI access, a required skill, or package access is
-unavailable, stop the lab.** A local contract runner does not replace live loading.
+skills before starting. A local contract runner does not replace live loading.
 Check `/chronicle improve` too. Use only the synthetic training repository's
 history; do not run account-wide history analysis during this exercise.
 
@@ -202,7 +201,7 @@ In Copilot, run:
 /skills info grilling
 ```
 
-If any skill is missing, stop and correct its project path or client support.
+If any skill is missing, correct its project path or client support.
 Do not install a global copy or drop the dependency.
 
 ### Run the same interview twice

@@ -40,9 +40,8 @@ You need:
 6. Name who reviews the parent result and who may approve Boards updates.
 
 > [!IMPORTANT]
-> **Stop if GitHub Copilot orchestration is unavailable.** Fix access before you
-> continue. Do not use separate prompts, role-play, exports, or prepared results
-> as a substitute.
+> Do not use separate prompts, role-play, exports, or prepared results
+> as a substitute for the live run.
 
 Use only the seeded fictional items. Do not open production work items, add real organization data, or change project settings.
 

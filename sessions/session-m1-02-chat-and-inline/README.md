@@ -30,8 +30,7 @@ change with standard-library tests.
 
 ## Required access
 
-Learners need GitHub Copilot Chat and Python 3.10 or later. If either is
-unavailable, stop the lab.
+Learners need GitHub Copilot Chat and Python 3.10 or later.
 
 ## Materials
 

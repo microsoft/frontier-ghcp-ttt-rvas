@@ -38,7 +38,7 @@ The live demo requires:
 - a human reviewer is named;
 - the stop condition is visible.
 
-If any condition is missing, stop and resolve it. **Do not assign the issue,
+If any condition is missing, **do not assign the issue,
 broaden access, or paste credentials into an issue or instruction file.**
 
 ## One-hour plan
@@ -224,8 +224,7 @@ Recovery succeeds when the proposal returns to the fixed issue and the full suit
 
 | Failure | Recovery |
 | --- | --- |
-| Cloud agent access is unavailable | Stop the lab. |
-| Setup workflow is not on the default branch | Stop and prepare the repository. |
+| Setup workflow is not on the default branch | Prepare the repository. |
 | Baseline tests fail | Diagnose before assignment; do not hide the failure. |
 | Session changes extra files | Stop or ask the agent to change only the allowed files. |
 | Learners rewrite the issue mid-run | Stop and create a separate future issue. |

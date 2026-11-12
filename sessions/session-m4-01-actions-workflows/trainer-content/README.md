@@ -103,7 +103,7 @@ and action agree with the command results and reviewer decisions before submitti
 
 ## Access policy
 
-GitHub Copilot access is required. Stop if it is unavailable. Repository access,
+GitHub Copilot access is required. Repository access,
 Actions, and `act` are optional. Learners must complete the local work, which uses
 no credentials or deployment target.
 

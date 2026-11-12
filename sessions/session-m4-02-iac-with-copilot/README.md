@@ -26,7 +26,6 @@ required learner deliverable.
 
 You need GitHub Copilot, Terraform 1.5 or later, and network access to the
 approved Terraform provider source. No cloud account or credentials are required.
-Stop if the approved provider source is unavailable.
 
 | Resource | Location |
 | --- | --- |

@@ -126,7 +126,7 @@ Rubber duck is a built-in, read-only critic. Copilot chooses a contrasting model
 automatically when one is available. Do not guess its identity or promise a
 particular vendor. Inspect Proactive invocation through CLI `/subagents` and leave
 the learner's setting unchanged. The opt-in persists and adds model usage; this
-lab requires manual invocation. Stop if no suitable critic is available.
+lab requires manual invocation.
 
 Plan mode protects project edits during planning, but it is not a sandbox for
 external or MCP tools. Keep those permissions restricted.
@@ -702,7 +702,6 @@ Require `workflow-record.md`, passing tests, a reviewed diff, and a checked heal
 report. Each accepted child claim needs a file reference or focused test. The
 lab requires `/fleet`; `/delegate` does not replace it.
 
-If a required command or CLI access is unavailable, stop and resolve access.
 Screenshots can explain the UI but do not complete the learner exercise.
 
 ## Current references

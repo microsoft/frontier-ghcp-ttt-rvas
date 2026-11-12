@@ -201,7 +201,7 @@ The local runner is a teaching harness, not a replacement skill platform.
 | Harness unit tests | The fixed scenario contract behaves as expected |
 | `/skills info` and actual invocation | Copilot discovered and used the skill |
 
-**Live CLI access is required.** Stop if a required skill cannot load.
+**Live CLI access is required.**
 
 ---
 
