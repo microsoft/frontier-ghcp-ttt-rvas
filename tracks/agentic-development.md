@@ -4,7 +4,7 @@
 **Time:** 42 hours, 14 sessions
 **Delivery:** 5 to 6 days
 
-Start with daily Copilot use, then learn to assign and review agent work with the Copilot app, cloud agent, MCP servers, custom agents, and skills. In M3-05 learners compare a local interview skill with pinned community skills and feed the accepted decisions into `/plan`.
+Start with daily Copilot use, then learn to assign and review agent work with the Copilot app, cloud agent, MCP servers, custom agents, and skills. In M3-05 learners write a skill with `skill-creator`, test it live, and decide when a skill beats instructions.
 
 ## Before you start
 

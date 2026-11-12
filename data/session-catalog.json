@@ -161,7 +161,7 @@
       "slug": "session-m3-05-agent-skills-ecosystem",
       "module": "3",
       "title": "Agent Skills & the Copilot Ecosystem",
-      "description": "Run repository skills and compare interviews from pinned skill versions before planning. Review Chronicle suggestions for the selected sessions without applying them automatically.",
+      "description": "Learn what skills are and when to use them instead of instructions or agents. Write a skill with skill-creator, test it live in the CLI, and fix it from the results.",
       "difficulty": "Advanced",
       "duration_minutes": 180
     },

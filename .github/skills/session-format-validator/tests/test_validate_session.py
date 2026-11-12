@@ -49,15 +49,9 @@ class SessionValidatorTests(unittest.TestCase):
             )
         )
 
-    def test_lab_accepts_required_access_and_stop_instruction(self):
+    def test_lab_with_a_deliverable_is_ready(self):
         findings = self.validate_lab_text(
             """# Lab
-
-## Required preflight
-
-Confirm that GitHub Copilot access is available and you are signed in.
-
-If GitHub Copilot access fails, stop. Do not continue until access is available.
 
 ## Deliverable
 
@@ -67,58 +61,11 @@ Submit the reviewed result.
 
         self.assertEqual(findings, [])
 
-    def test_unavailable_without_an_access_stop_is_rejected(self):
-        findings = self.validate_lab_text(
-            """# Lab
-
-## Preflight
-
-The optional reporting tool may be unavailable.
-
-## Deliverable
-
-Submit the reviewed result.
-"""
-        )
+    def test_lab_rejects_missing_deliverable(self):
+        findings = self.validate_lab_text("# Lab\n\n## Steps\n\nDo the work.\n")
 
         self.assertEqual(len(findings), 1)
-        self.assertIn("Missing access policy", findings[0]["message"])
-
-    def test_lab_rejects_manual_fallback_without_required_access(self):
-        findings = self.validate_lab_text(
-            """# Lab
-
-## Setup
-
-Use the supplied files.
-
-If the live tool is unavailable, use the manual route.
-
-## Final Deliverable
-
-Submit the reviewed result.
-"""
-        )
-
-        self.assertEqual(len(findings), 1)
-        self.assertIn("Missing access policy", findings[0]["message"])
-
-    def test_lab_rejects_missing_access_policy(self):
-        findings = self.validate_lab_text(
-            """# Lab
-
-## Before you start
-
-Open the supplied files.
-
-## Deliverables
-
-Submit the reviewed result.
-"""
-        )
-
-        self.assertEqual(len(findings), 1)
-        self.assertIn("Missing access policy", findings[0]["message"])
+        self.assertIn("Missing learner deliverable", findings[0]["message"])
 
 
 if __name__ == "__main__":

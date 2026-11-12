@@ -1,221 +1,200 @@
-# Session M3-05 lab: Test skills and compare live interviews
+# Session M3-05 lab: Write, test, and fix a skill
 
-**Deliverable:** A validated repository skill, live trigger and failure results, and a local-versus-community interview comparison that feeds `/plan`
+**Duration:** 2 hours
+**Deliverable:** A working `release-notes` skill, your live test results, and an interview skill, and a decision table
 
 ## Lab overview
 
-Test both parts of a skill: how its description selects work and how its procedure handles that work. Check that missing preconditions stop the run.
+Your team writes changelog entries by hand and each one looks different. You will write a skill that produces them in the project's format, using `skill-creator` to do most of the drafting.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Build and validate the skill directory | 25 min |
-| 2 | Test a matching task | 15 min |
-| 3 | Test a non-matching task | 10 min |
-| 4 | Test visible precondition failure | 10 min |
-| 5 | Check the local harness and live loading | 15 min |
-| 6 | Compare interviews, plan, and review session corrections | 45 min |
+| 1 | Baseline: no skill | 10 min |
+| 2 | Install `skill-creator` | 10 min |
+| 3 | Create the skill | 25 min |
+| 4 | Test it live | 20 min |
+| 5 | Fix it | 15 min |
+| 6 | Example: an interview skill | 25 min |
+| 7 | Skill, custom agent, or MCP server? | 10 min |
+| 8 | Review a third-party skill | 5 min |
 
 ## Before you start
 
-You need Node.js 22 or later, a writable workspace, and the standalone Copilot CLI from Session M2-01. Check `/skills`, `/plan`, `/chronicle improve`, and project skill loading first. Use only the training repository's history. Don't connect the static MCP configuration in `integrated-workflow/`, and don't run unreviewed community scripts.
-
-From the curriculum root, copy the lab and the Session M7-02 inputs:
+You need Git and the standalone Copilot CLI from Session M2-01 with skills support. Use the synthetic project in this lab.
 
 ```bash
 mkdir -p ~/copilot-labs/session-m3-05
-cp -R sessions/session-m3-05-agent-skills-ecosystem/lab \
+cp -R sessions/session-m3-05-agent-skills-ecosystem/lab/starter/release-notes-project \
   ~/copilot-labs/session-m3-05/
-cp sessions/session-m7-02-interview-and-shape-work/lab/starter/vague-request.md \
-  sessions/session-m7-02-interview-and-shape-work/lab/starter/late-constraint.md \
-  ~/copilot-labs/session-m3-05/lab/starter/
-mkdir -p ~/copilot-labs/session-m3-05/lab/starter/skills-project/.github/skills/decision-interview
-cp sessions/session-m7-02-interview-and-shape-work/lab/starter/.github/skills/decision-interview/SKILL.md \
-  ~/copilot-labs/session-m3-05/lab/starter/skills-project/.github/skills/decision-interview/
-cd ~/copilot-labs/session-m3-05/lab/starter/skills-project
+cd ~/copilot-labs/session-m3-05/release-notes-project
+git init -q && git add -A && git commit -qm "Start"
 ```
 
-Use a fresh destination if that folder exists.
+The project has three files: `CHANGELOG.md` with the team's format, `merged-prs.md` with PRs merged since the last release, and `idea.md`, a rough plan you will use in Part 6.
 
-## Part 1: Build and validate the skill directory
+## Part 1: Baseline without a skill
 
-Create:
+Start `copilot` in the project and ask:
 
 ```text
-.github/
-└── skills/
-    └── api-design/
-        └── SKILL.md
+Write release notes for the PRs in merged-prs.md.
 ```
 
-`SKILL.md` must start with:
+Save the answer as `baseline.md`. Compare it with the entries in `CHANGELOG.md`.
 
-```yaml
----
-name: api-design
-description: Use for creating or reviewing REST routes under src/api/ when acceptance criteria, a reviewer, and a verified focused test command are available. Do not use for documentation, UI, deployment, or generated clients.
----
-```
+**Checkpoint:** You can name at least two differences, such as missing sections, internal PRs included, or a different tone.
 
-The body defines preconditions, procedure, validation, failure behavior, and maintenance.
+## Part 2: Install `skill-creator`
+
+`skill-creator` is a skill that helps you write skills. It lives in [anthropics/skills](https://github.com/anthropics/skills).
 
 ```bash
-npm install
-npm run validate:skill
+git clone --depth 1 https://github.com/anthropics/skills ~/copilot-labs/session-m3-05/skills
+mkdir -p ~/.copilot/skills
+cp -R ~/copilot-labs/session-m3-05/skills/skills/skill-creator ~/.copilot/skills/
 ```
 
-The validator checks the directory name, the exact `SKILL.md` file name, required frontmatter, and body sections.
-
-**Checkpoint:** The validator passes. A mismatched directory and frontmatter name fails visibly in the automated suite.
-
-## Part 2: Test the trigger
-
-Open `scenarios/trigger.json`. It names a REST route under `src/api/`, acceptance criteria, a reviewer, and `npm test`.
-
-```bash
-npm test
-```
-
-The matching scenario returns:
-
-```json
-{
-  "status": "applied",
-  "skill": "api-design"
-}
-```
-
-The full result lists the allowed paths and ordered checks. The skill may not expand the task to deployment, documentation, or unrelated refactoring.
-
-## Part 3: Test the non-trigger
-
-Open `scenarios/non-trigger.json`. The request changes `README.md`. Expected:
-
-```json
-{
-  "status": "not_applicable",
-  "skill": "api-design",
-  "reason": "Task is outside REST route work under src/api/."
-}
-```
-
-Don't widen the description to match every software task.
-
-**Checkpoint:** The documentation scenario doesn't apply the API procedure.
-
-## Part 4: Test a missing precondition
-
-Open `scenarios/failure.json`. The task matches the API trigger but has no reviewer. Expected:
-
-```json
-{
-  "status": "blocked",
-  "skill": "api-design",
-  "reason": "Missing precondition: human reviewer."
-}
-```
-
-Don't supply a reviewer, skip the condition, or return an applied result.
-
-## Part 5: Check the local harness and live loading
-
-```bash
-npm run demo
-```
-
-It runs two scenarios: a matching route review that applies the skill to named files, and the same work without a reviewer, which stops. Compare the output with [`solution/skills-project/EXPECTED-OUTPUT.md`](solution/skills-project/EXPECTED-OUTPUT.md).
-
-Start `copilot` in the working `skills-project` directory. Run `/skills reload` and `/skills info api-design`. Submit the same matching and missing-reviewer prompts. Record the actual skill selection and the missing-reviewer stop. The harness tests its own contract. Only these live outputs show what Copilot did.
-
-If the skill doesn't load or doesn't stop correctly, fix it and repeat.
-
-## Part 6: Compare live interviews, then plan
-
-### Inspect and load the pinned skills
-
-Read `../community-interview/README.md`, both upstream `SKILL.md` files, and the license. The snapshot pins Matt Pocock's `grill-me` entry point and its `grilling` dependency. They're community skills, not Copilot built-ins.
-
-From your working `skills-project`:
-
-```bash
-cd ../community-interview
-sha256sum -c SHA256SUMS
-cd ../skills-project
-cp -R ../community-interview/grill-me ../community-interview/grilling .github/skills/
-cp ../community-interview/LICENSE .github/skills/MATT-POCOCK-LICENSE
-```
-
-On macOS use `shasum -a 256 -c SHA256SUMS`. **Stop on a checksum mismatch.** Review both files, including any delegated fact-finding. There are no bundled scripts or downloads to run.
-
-In Copilot, run:
+Restart `copilot`, or run `/skills reload`. Then run:
 
 ```text
-/skills reload
-/skills info decision-interview
-/skills info grill-me
-/skills info grilling
+/skills info skill-creator
 ```
 
-If a skill is missing, fix its project path or client support. Don't install a global copy or drop the dependency.
+You should see its description and location. A skill in `~/.copilot/skills` is personal: it works in every project.
 
-### Run the same interview twice
+Read the first 60 lines of its `SKILL.md` before you use it. Note how it tells Copilot to work: interview first, then draft, then test.
 
-Attach `../vague-request.md`. In a fresh **Interactive** session, run:
+## Part 3: Create the skill
+
+Ask Copilot to use it. Keep the request short and let `skill-creator` interview you:
 
 ```text
-/decision-interview
-Use the attached synthetic request. I am the request owner. Ask the first
-dependency-ordered question round, then wait. Do not draft or implement yet.
+Use /skill-creator to create a project skill called release-notes in
+.github/skills/. It should turn a list of merged PRs into a changelog entry
+in this project's format.
 ```
 
-Answer as the owner. Record decisions and reasons in a copy of `../interview-comparison.md`. Continue until the main scope decisions are settled. Add `../late-constraint.md` and ask the skill to reopen only the affected decisions.
+Answer its questions with these facts:
 
-Start another fresh Interactive session with the same request and run:
+- The entry matches the top entries of `CHANGELOG.md`.
+- Group PRs by label. Leave out chores, dependency bumps, and docs typos.
+- Breaking changes go under **Upgrade notes**.
+- If the version or date is missing, ask for it.
+- It must not trigger for commit messages or PR descriptions.
+
+When `skill-creator` offers formal evals, decline. Its eval and description-optimizer scripts call the `claude` CLI, which you don't use here. You will test by hand in Part 4.
+
+Read what it wrote.
 
 ```text
-/grill-me
-Use the attached synthetic request and only the supplied local inputs. I am the
-request owner. Ask the first question round, then wait. Do not edit, use the
-network, or implement.
+.github/skills/release-notes/
+├── SKILL.md
+└── references/format.md      # may differ
 ```
 
-Use the same owner decisions and the same late constraint, and record the effect. Check that Copilot actually invokes `grilling` through the entry point. It may start a fact-finding subagent. If so, inspect its scope. A subagent isn't required when no fact lookup is needed.
+**Checkpoint:** `SKILL.md` starts with `name` and `description` frontmatter. The directory name matches `name`. Compare it with [`solution/release-notes/SKILL.md`](solution/release-notes/SKILL.md).
 
-**Keep Plan mode off during both interviews.** The upstream guidance recommends a fresh conversation without Plan mode so the interview finishes before the agent drafts a plan.
+## Part 4: Test it live
 
-### Turn decisions into an implementation plan
+Run `/skills reload`, then `/skills info release-notes`. Start a fresh session. Try three prompts and note what happens for each:
 
-Save an accepted `decision-brief.md` with the outcome, non-goals, decisions, and remaining questions. Start a fresh planning session, attach the brief, and run:
+| # | Prompt | You expect |
+| --- | --- | --- |
+| 1 | `Write release notes for the PRs in merged-prs.md. Version 2.4.0, dated 2026-10-21.` | The skill loads. The entry matches the format. |
+| 2 | `Write a commit message for the CSV export change.` | The skill stays out. |
+| 3 | `What changed recently?` | Unclear. Record what you see. |
 
-```text
-/plan Use decision-brief.md to plan the smallest request-status change. Map each
-step and acceptance check to an owner decision. Mark open questions as blockers
-instead of guessing. Do not implement or create a live work item.
-```
+Also try naming the skill: `Use the /release-notes skill for merged-prs.md.`
 
-Name at least two decisions that changed a plan step or acceptance check. Compare how the skills actually behaved and pick the one that fits this task. One run each doesn't make a universal winner.
+Skill selection can vary between runs. Run prompt 1 twice. Record whether it loaded both times.
 
-### Review recurring corrections with `/chronicle` (last 5 minutes)
+Compare prompt 1 with [`solution/expected-output.md`](solution/expected-output.md).
 
-```text
-/chronicle improve
-```
+**Checkpoint:** You have a result for each prompt and know which ones the skill got wrong.
 
-This uses history for the current repository or working directory. Inspect each suggestion before its apply step, since suggestions may be selected by default. Cancel without applying, then check Git status. Don't run `reindex`, broad `tips`, or account-wide history searches to get more recommendations.
+## Part 5: Fix it
 
-Check one suggestion against a real correction from your sessions. Decide whether it belongs in repository instructions, a skill, or neither. Record the source correction and your decision in `interview-comparison.md`. If there's too little history or no useful recommendation, record that.
+Use what you saw in Part 4. Fix one problem at a time and rerun the failing prompt.
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| Skill didn't load for prompt 1 | Description lacks the words you used | Add trigger phrases: "release notes", "changelog entry", "what shipped" |
+| Skill loaded for prompt 2 | Description is too broad | Add "Don't use for commit messages or PR descriptions" |
+| Output ignores a rule | Rule is buried or vague | Move it up, state it as an instruction, and say why it matters |
+| `SKILL.md` is long | Everything is in one file | Move the entry template to `references/format.md` and link it from `SKILL.md` |
+| Skill invents a version | No "ask first" rule | Add one |
+
+You can ask `skill-creator` to apply a fix, or edit the file yourself. Run `/skills reload` after each change.
+
+**Checkpoint:** Prompts 1 and 2 behave as expected on two runs each. Save the final skill under `.github/skills/release-notes/`.
+
+## Part 6: Example: an interview skill
+
+Not every skill produces a file. Some change how Copilot works with you. A popular example is **`grill-me`**: you give Copilot a rough plan, and it interviews you until the gaps are gone.
+
+1. Ask `skill-creator`:
+
+   > Create a skill called `grill-me`. When I share a plan or idea, it should interview me one question at a time, recommend an answer for each question, and finish with a summary of decisions and open questions.
+
+2. Save it under `.github/skills/grill-me/` and run `/skills reload`.
+3. Start a fresh session and run: `Grill me on idea.md.`
+4. Answer at least eight questions. Notice that Copilot reads `idea.md` first and doesn't ask what the file already says.
+5. Compare your skill with [`solution/grill-me/SKILL.md`](solution/grill-me/SKILL.md). Which instructions did yours miss?
+
+Then try the same idea without the skill: `Review idea.md and tell me what's missing.` Copilot will probably return a list of gaps. Compare the two experiences.
+
+**Why a skill works here.** The interview rules ("one question at a time", "recommend an answer", "stop when a colleague could build it") are exactly the kind of instruction you forget to type. The skill stores them. Use the same pattern for design reviews, incident retros, or a spec before you start a `/plan`.
+
+**Checkpoint:** You have a working `grill-me` skill and a summary from your interview of `idea.md`.
+
+## Part 7: Skill, custom agent, or MCP server?
+
+A skill, a custom agent, and an MCP server solve different problems. Sessions M3-03 and M3-04 cover MCP servers and custom agents in depth.
+
+| | Skill | Custom agent | MCP server |
+| --- | --- | --- | --- |
+| **What it is** | Instructions, plus optional scripts and files | A persona with its own prompt, tools, and model | A process that exposes tools and data |
+| **Gives Copilot** | Know-how: how to do a task | A role: who is doing the task | Reach: access to a system |
+| **Loads** | On demand, when the description matches | When you pick it or Copilot delegates | When the server is configured |
+| **Needs code?** | No, a Markdown file | No, a Markdown file | Yes, a server |
+| **Main risk** | Triggers at the wrong time | Too much tool access | Credentials and data leaving the machine |
+
+They combine. A custom agent can use skills. A skill can tell Copilot how to use an MCP server's tools well.
+
+For each task, choose the best home: repository instructions, a skill, a prompt file, a custom agent, an MCP server, or nothing. Write one sentence for each choice in `decisions.md`.
+
+| Task | Your choice |
+| --- | --- |
+| "Use 2-space indentation in this repo." | |
+| Produce release notes in the team format when asked. | |
+| Query the issue tracker for open bugs. | |
+| A reviewer persona with read-only tools. | |
+| A one-off question about a stack trace. | |
+| A weekly report that always starts from the same template and script. | |
+| Interview me about a plan before I write a spec. | |
+
+Compare with a neighbor and discuss where you differ.
+
+## Part 8: Review a third-party skill
+
+Open [github/awesome-copilot skills](https://awesome-copilot.github.com/skills/) and pick one skill. Read its `SKILL.md` and any scripts. Answer in `decisions.md`:
+
+- What does the description promise?
+- Does it run scripts or ask for `allowed-tools`? Would you approve that?
+- Would you install it? Why or why not?
+
+Don't install it into this project.
 
 ## Final deliverable
 
-1. `.github/skills/api-design/SKILL.md`.
-2. Passing validation and `npm test`.
-3. Trigger, non-trigger, and missing-reviewer results.
-4. Live API-skill loading and missing-reviewer stop results.
-5. `interview-comparison.md`, the accepted decision brief, and `/plan` output.
-6. The scoped `/chronicle improve` result and your decision, with nothing applied automatically.
+1. `.github/skills/release-notes/SKILL.md` and any bundled files.
+2. `.github/skills/grill-me/SKILL.md` and your interview summary for `idea.md`.
+3. Your prompt 1, 2, and 3 results, plus what you changed to fix them.
+4. `decisions.md` with the seven choices and your third-party review.
 
 ## References
 
-- [Adding agent skills for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills)
-- [Pinned source and license record](starter/community-interview/README.md)
-- [Comparison reference](solution/interview-comparison-reference.md)
-- [Using CLI session data](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [About agent skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+- [Adding agent skills for Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)
+- [anthropics/skills](https://github.com/anthropics/skills)
+- [github/awesome-copilot](https://github.com/github/awesome-copilot)

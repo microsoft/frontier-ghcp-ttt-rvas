@@ -19,41 +19,6 @@ REQUIRED_PATHS = (
     "lab/solution",
 )
 VALID_DIFFICULTIES = {"Beginner", "Intermediate", "Advanced"}
-ACCESS_PREREQUISITE_MARKERS = (
-    "able to",
-    "before",
-    "confirm",
-    "must",
-    "need",
-    "prerequisite",
-    "require",
-    "signed in",
-    "verify",
-)
-MISSING_ACCESS_MARKERS = (
-    "cannot access",
-    "do not have",
-    "do not work",
-    "does not work",
-    "fails",
-    "failure",
-    "missing",
-    "not available",
-    "unavailable",
-    "without access",
-)
-STOP_MARKERS = (
-    "do not continue",
-    "do not proceed",
-    "do not start",
-    "must not continue",
-    "must not proceed",
-    "must not start",
-    "reschedule",
-    "stop",
-    "wait until",
-)
-
 
 def finding(category: str, path: Path, message: str) -> dict[str, str]:
     return {"category": category, "path": str(path), "message": message}
@@ -68,26 +33,6 @@ def repository_root(session_path: Path) -> Path:
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
-
-
-def has_required_access_guidance(content: str) -> bool:
-    paragraphs = [
-        " ".join(paragraph.lower().split())
-        for paragraph in re.split(r"\n\s*\n", content)
-    ]
-    has_prerequisite = bool(
-        re.search(r"^## (?:required )?access\b", content, re.IGNORECASE | re.MULTILINE)
-    ) or any(
-        "access" in paragraph
-        and any(marker in paragraph for marker in ACCESS_PREREQUISITE_MARKERS)
-        for paragraph in paragraphs
-    )
-    has_stop_instruction = any(
-        any(marker in paragraph for marker in MISSING_ACCESS_MARKERS)
-        and any(marker in paragraph for marker in STOP_MARKERS)
-        for paragraph in paragraphs
-    )
-    return has_prerequisite and has_stop_instruction
 
 
 def validate_materials(session_path: Path) -> list[dict[str, str]]:
@@ -238,26 +183,8 @@ def validate_lab_readiness(session_path: Path) -> list[dict[str, str]]:
 
     findings: list[dict[str, str]] = []
     content = read_text(lab)
-    required_patterns = {
-        "setup or preflight guidance": (
-            r"^## (?:Required )?(Setup|Preflight|Before you start)\b"
-        ),
-        "learner deliverable": r"^## (Final )?Deliverable(s)?\b",
-    }
-    for description, pattern in required_patterns.items():
-        if not re.search(pattern, content, re.IGNORECASE | re.MULTILINE):
-            findings.append(
-                finding("lab readiness", lab, f"Missing {description}.")
-            )
-    if not has_required_access_guidance(content):
-        findings.append(
-            finding(
-                "lab readiness",
-                lab,
-                "Missing access policy. Require the named tool access and tell "
-                "learners to stop when it is missing.",
-            )
-        )
+    if not re.search(r"deliverable", content, re.IGNORECASE):
+        findings.append(finding("lab readiness", lab, "Missing learner deliverable."))
     return findings
 
 

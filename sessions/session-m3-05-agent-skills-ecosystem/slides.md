@@ -3,14 +3,14 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session M3-05: Agent Skills Ecosystem'
+footer: 'Session M3-05: Agent Skills'
 ---
 
 <!-- _class: lead -->
 
 # Agent Skills
 
-## Test selection, non-selection, and visible failure
+## Write one, test it, fix it
 
 Session M3-05 | 3 hours
 
@@ -22,253 +22,208 @@ Session M3-05 | 3 hours
 
 | Segment | Time |
 | --- | --- |
-| Skill directory and loading model | 8 min |
-| Required frontmatter and description | 8 min |
-| Selection and visible failure | 10 min |
-| Validation versus live invocation | 10 min |
-| Pinned interview comparison and plan handoff | 18 min |
-| Lab handoff | 6 min |
+| What a skill is | 10 min |
+| Skill, agent, or MCP server? | 15 min |
+| Writing a good skill | 10 min |
+| Demo: `skill-creator` | 12 min |
+| Pros, cons, and tips | 8 min |
+| Lab handoff | 5 min |
 
 ---
 
-# A skill has two jobs
+# What a skill is
 
-1. **Select the right task.**
-2. **Guide the work after selection.**
-
-A broad description selects the wrong task even when the procedure is good. The procedure also needs failure rules so it doesn't claim success after a required check fails.
-
----
-
-# Repository skill structure
+A **folder** with a `SKILL.md` file. Copilot loads it when your request matches its description.
 
 ```text
-.github/
-└── skills/
-    └── api-design/
-        └── SKILL.md
+.github/skills/release-notes/
+├── SKILL.md          # required: frontmatter + instructions
+├── references/       # optional: read when needed
+└── scripts/          # optional: run, not read
 ```
 
-The directory uses lowercase words and hyphens. The file is named exactly `SKILL.md`.
+- **Project skills:** `.github/skills`, `.claude/skills`, `.agents/skills`
+- **Personal skills:** `~/.copilot/skills`, `~/.agents/skills`
+
+An open standard. Works in the CLI, the Copilot app, cloud agent, and IDE agent mode.
 
 ---
 
-# Required frontmatter
+# How Copilot uses one
+
+1. You send a request.
+2. Copilot compares it with each skill's **description**.
+3. On a match, it loads `SKILL.md` into context.
+4. It follows the instructions and can use files in the folder.
+
+Or call one yourself: `Use the /release-notes skill for this.`
+
+**The description is the trigger.** Get it wrong and nothing else matters.
+
+---
+
+# Skill or something else?
+
+| Need | Use |
+| --- | --- |
+| Rule that always applies | Repository instructions |
+| One saved prompt you run by hand | Prompt file |
+| A workflow Copilot picks up when relevant | **Skill** |
+| A persona with its own tools and scope | Custom agent |
+| Live access to a system | MCP server |
+
+Rule of thumb: instructions are always on. Skills load on demand.
+
+---
+
+# Skill vs custom agent vs MCP server
+
+| | Skill | Custom agent | MCP server |
+| --- | --- | --- | --- |
+| **Gives Copilot** | Know-how | A role | Reach |
+| **Is** | Markdown, plus optional files | Markdown with tools and model | A running server |
+| **Loads** | On demand | When picked or delegated | When configured |
+| **Risk** | Wrong trigger | Too many tools | Credentials, data |
+
+They combine. An agent can use skills. A skill can teach Copilot to use an MCP server well.
+
+---
+
+# Example: `grill-me`
+
+A skill that **interviews you** about a plan.
+
+- Reads your file first, so it doesn't ask what you already wrote.
+- One question at a time, with a recommended answer.
+- Stops when a colleague could build from the plan.
+- Ends with decisions and open questions.
+
+Not every skill makes a file. Some change how Copilot works with you.
+
+---
+
+# More examples
+
+| Skill | What it does |
+| --- | --- |
+| `release-notes` | Writes changelog entries in your format. |
+| `grill-me` | Interviews you before you plan. |
+| `skill-creator` | Helps you write and test skills. |
+| `pdf`, `docx`, `xlsx` | Bundle scripts that read and write files. |
+
+---
+
+# Frontmatter
 
 ```yaml
 ---
-name: api-design
-description: Use for creating or reviewing REST routes under src/api/ when acceptance criteria, a reviewer, and a verified focused test command are available. Do not use for documentation, UI, deployment, or generated clients.
+name: release-notes
+description: Write release notes or a CHANGELOG entry from merged PRs.
+  Use when the user asks for release notes, a changelog entry, or
+  "what shipped". Don't use for commit messages or PR descriptions.
 ---
 ```
 
-Match `name` to the directory. Use `description` to tell Copilot when to select the skill.
+- `name`: lowercase with hyphens, same as the directory
+- `description`: **what it does and when to use it**
+- Optional: `license`, `allowed-tools`
 
 ---
 
-# Test the positive trigger
+# Write the description
+
+**Weak:** `Helps with releases.`
+
+**Better:** says what, when, and when not.
+
+- List the words people actually use.
+- Add a "Don't use for…" line next to look-alike tasks.
+- Be a little pushy. Skills tend to undertrigger.
+
+---
+
+# Write the body
+
+- Use **imperative steps**: "Read the top two entries."
+- Explain **why** a rule matters. The model generalizes better from reasons than from shouting.
+- Show a short example of the output.
+- Say what to do when input is missing: ask.
+- Keep `SKILL.md` short. Move long templates to `references/`.
+
+---
+
+# Bundle files
 
 ```text
-Review GET /api/tasks/:id under src/api/.
-Check identifier handling and the existing not-found response.
+SKILL.md        → "Group PRs using references/format.md"
+references/    → loaded only when the step needs it
+scripts/        → run for deterministic work
 ```
 
-Required context:
-
-- acceptance criteria;
-- named paths;
-- reviewer;
-- a focused test command that runs in this project.
-
-Expected status: `applied`.
+Scripts need `allowed-tools` to run without a prompt. **Don't pre-approve `shell`** unless you've read every script and trust the source.
 
 ---
 
-# Test a non-trigger
+<!-- _class: lead -->
 
-```text
-Rewrite the installation section in README.md.
-```
-
-Expected:
-
-```json
-{
-  "status": "not_applicable",
-  "skill": "api-design",
-  "reason": "Task is outside REST route work under src/api/."
-}
-```
+# Demo: `skill-creator`
 
 ---
 
-# Matching work can still be blocked
+# `skill-creator`
 
-```text
-Add POST /api/tasks under src/api/.
-Acceptance criteria exist.
-No reviewer is assigned.
-```
+A skill that helps you write skills.
 
-The trigger matches. The precondition doesn't.
+1. **Interviews you:** purpose, triggers, output, edge cases.
+2. **Drafts** `SKILL.md` and bundled files.
+3. **Suggests test prompts.**
+4. **Revises** from what you saw.
 
----
-
-# Make the failure visible
-
-```json
-{
-  "status": "blocked",
-  "skill": "api-design",
-  "reason": "Missing precondition: human reviewer."
-}
-```
-
-Don't invent a reviewer, skip the check, or return success.
+Its eval and description-optimizer scripts call the `claude` CLI. Skip them. Test by hand.
 
 ---
 
-# A reviewable skill body
+# Pros
 
-```text
-Preconditions
-Procedure
-Validation
-Failure behavior
-Maintenance
-```
-
-Keep the procedure short enough that a human can apply it as a checklist.
+- **Repeatable:** same workflow every time.
+- **On demand:** loaded only when relevant, unlike always-on instructions.
+- **Shareable:** commit it, review it, version it.
+- **Portable:** an open standard across Copilot surfaces.
+- **Bundles files:** templates, references, scripts.
 
 ---
 
-# Validate the files
+# Cons
 
-```bash
-npm run validate:skill
-```
-
-The validator checks that:
-
-- `SKILL.md` exists;
-- frontmatter has `name` and `description`;
-- `name` matches the directory;
-- required sections are present.
+- **Triggering is probabilistic.** It can miss or misfire.
+- **Failures are quiet.** No error when it doesn't load.
+- **Skills collide.** Overlapping descriptions confuse selection.
+- **They go stale** like any doc.
+- **Third-party skills are code.** Scripts can run.
+- **Support differs by surface.** Check yours.
 
 ---
 
-# Test all three outcomes
+# Tips
 
-```bash
-npm test
-```
-
-The suite checks that:
-
-- a route task applies the skill;
-- a documentation task doesn't;
-- a missing reviewer blocks;
-- valid and invalid directories are distinguishable.
-
----
-
-# Run the two demo scenarios
-
-```bash
-npm run demo
-```
-
-The output shows:
-
-1. correct application to named API files;
-2. a visible missing-reviewer failure.
-
-The local runner is a teaching harness, not a skill platform.
-
----
-
-# What local tests and live invocation show
-
-| Check | What it shows |
-| --- | --- |
-| Local directory validator | Your file has the required structure |
-| Harness unit tests | The fixed scenario contract behaves as expected |
-| `/skills info` and actual invocation | Copilot discovered and used the skill |
-
-**Live CLI access is required.**
-
----
-
-# Inspect the pinned interview skill
-
-Matt Pocock's `grill-me` is a community entry point that invokes `grilling`.
-
-- Check the recorded revision and SHA-256 hashes.
-- Read both files and the retained MIT license.
-- Load only the reviewed project-local copy.
-
----
-
-# Compare the same request twice
-
-Use separate fresh Interactive sessions:
-
-| Run | Skill |
-| --- | --- |
-| Local | `/decision-interview` from Session M7-02 |
-| Community | `/grill-me` with its `grilling` dependency |
-
-Use the same request, owner decisions, and late visibility constraint. Record actual loading and changes to the decisions.
-
----
-
-# Interview first, plan second
-
-Keep Plan mode off while decisions are unsettled.
-
-1. Finish the interview and review the decisions.
-2. Save the accepted brief with open questions.
-3. Start a fresh `/plan` session from that brief.
-4. Name two decisions that change plan steps or acceptance checks.
-
-Don't implement or create live work items.
-
----
-
-# Review candidates before adaptation
-
-Check:
-
-- source and license;
-- files and scripts;
-- dependencies and network use;
-- data flow;
-- repository fit.
-
-Don't run an unfamiliar script just to inspect it.
-
----
-
-# Review recurring session corrections
-
-```text
-/chronicle improve
-```
-
-This scopes history to the current repository or working directory. Check a recommendation against an actual correction.
-
-Choose instructions, a skill, or neither. Cancel the apply step: suggestions may start selected. Too little history is a valid result. This uses the last five minutes of the 45-minute comparison block.
+- Start from a real task you've done by hand.
+- Test three prompts: should trigger, shouldn't, ambiguous.
+- Run each twice. Variance is normal.
+- Fix one thing at a time, then rerun.
+- If it's one always-on rule, write instructions instead.
+- Delete skills nobody uses.
 
 ---
 
 # Lab handoff
 
-1. Create `api-design/SKILL.md`.
-2. Validate the directory and frontmatter.
-3. Run the trigger, non-trigger, and missing-reviewer scenarios.
-4. Finish with the two-scenario demo.
-5. Check live API-skill invocation and the missing-reviewer stop.
-6. Compare both live interviews and trace decisions into `/plan`.
-7. Check scoped Chronicle suggestions without auto-applying them.
+1. Run a baseline with no skill.
+2. Install `skill-creator`.
+3. Create `release-notes` with it.
+4. Test three prompts live.
+5. Fix what failed.
+6. Build `grill-me` and interview yourself about `idea.md`.
+7. Decide: skill, custom agent, or MCP server?
+8. Review one third-party skill.
 
-**Submit actual outputs.** The harness or prepared transcripts can't replace live loading, either interview, or the plan handoff.
+**Submit** your test results, both skills, and `decisions.md`.

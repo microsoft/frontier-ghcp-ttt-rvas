@@ -1,36 +1,46 @@
-# Session M3-05: Agent Skills and repository guidance
+# Session M3-05: Agent Skills
 
 **Module:** Agentic Workflows
 **Difficulty:** Advanced
 **Prerequisites:** Sessions M1-01 to M1-03, M2-01 to M2-04, M3-04
-**Duration:** 3 hours (1 hour trainer content + 2 hours lab)
+**Duration:** 3 hours (1 hour trainer content + 2 hour lab)
 
 ## Overview
 
-Skills capture reusable procedures owned by the repository. Build one skill under `.github/skills/`. Test when it should run, when it should stay out of scope, and when a missing reviewer should stop it. Then check live loading and compare the local `decision-interview` skill with a pinned copy of Matt Pocock's `grill-me` and its `grilling` dependency. The accepted interview decisions feed `/plan`.
+A **skill** is a folder with a `SKILL.md` file that teaches Copilot one repeatable workflow. Copilot loads it only when your request matches its description.
 
-Finish by reviewing `/chronicle improve` suggestions against real session corrections. Decide whether a rule belongs in instructions, a skill, or neither.
+You learn what skills are and how they differ from instructions, prompt files, custom agents, and MCP servers. Then you write one with the `skill-creator` skill, test it live in the Copilot CLI, and fix it from what you see. You finish with the pros, cons, and traps of skills.
 
 ## Learning outcomes
 
-- Create a valid skill directory and `SKILL.md`.
-- Write a description that says when to use the skill and when not to.
-- Test matching, non-matching, and failed-precondition behavior.
-- Stop visibly when a reviewer or other required input is missing.
-- Inspect a community skill's dependencies and license before loading it.
-- Compare two live interviews, then trace owner decisions into an implementation plan.
-- Review repository-scoped session suggestions without applying them automatically.
+- Explain what a skill is, where it lives, and when Copilot loads it.
+- Choose between a skill, instructions, a prompt file, a custom agent, and an MCP server.
+- Use `skill-creator` to interview, draft, and revise a skill.
+- Build an interview skill (`grill-me`) that pressure-tests a plan.
+- Compare skills with custom agents and MCP servers, and pick the right one.
+- Write a description that triggers when it should and stays quiet when it shouldn't.
+- Test a skill live with a matching, a non-matching, and an ambiguous prompt.
+- Judge a skill from someone else before you install it.
 
 ## You need
 
-Node.js 22 or later and the standalone Copilot CLI with project skill loading, `/plan`, and `/chronicle improve`. The local runner checks its own contract. It doesn't replace live skill invocation. Session M7-02 supplies reusable interview assets but isn't a prerequisite.
+The standalone Copilot CLI from Session M2-01 with skills support, and Git.
 
 | Resource | Location |
 | --- | --- |
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
-| Completed skill | [`lab/solution/skills-project/.github/skills/api-design/SKILL.md`](lab/solution/skills-project/.github/skills/api-design/SKILL.md) |
-| Expected output | [`lab/solution/skills-project/EXPECTED-OUTPUT.md`](lab/solution/skills-project/EXPECTED-OUTPUT.md) |
-| Pinned community snapshot | [`lab/starter/community-interview/README.md`](lab/starter/community-interview/README.md) |
-| Interview comparison reference | [`lab/solution/interview-comparison-reference.md`](lab/solution/interview-comparison-reference.md) |
+| Starter project | [`lab/starter/release-notes-project/`](lab/starter/release-notes-project/) |
+| Reference skill | [`lab/solution/release-notes/SKILL.md`](lab/solution/release-notes/SKILL.md) |
+| Expected output | [`lab/solution/expected-output.md`](lab/solution/expected-output.md) |
+
+## Key topics
+
+- Skill anatomy: `SKILL.md`, frontmatter, scripts, references
+- Where skills load from: project and personal locations
+- Skills vs instructions, prompt files, custom agents, and MCP
+- Writing the description, the body, and bundled files
+- `skill-creator`: interview, draft, test prompts
+- Pros, cons, and tips
+- Trusting third-party skills
