@@ -42,7 +42,7 @@ Open `.github/skills/decision-interview/SKILL.md` and read it. The frontmatter h
 a `name` and a `description`. Copilot reads the description to decide whether your
 request needs this skill, so it says when to use the skill and when not to. The
 body is the method: one question at a time, a recommended answer, and a stop
-condition. [Session M3-05](../../session-m3-05-agent-skills-ecosystem/README.md)
+condition. [Session M3-05](../../session-m3-05-agent-skills/README.md)
 teaches how to write one.
 
 Open a new app session for the project. Check that `decision-interview` appears

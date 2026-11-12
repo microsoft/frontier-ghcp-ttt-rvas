@@ -179,7 +179,7 @@ copilot --excluded-tools='...'      # hide tools from the model
 
 They combine. An agent can use skills. A skill can teach Copilot to use an MCP server well. An agent can list which MCP tools it may use.
 
-More: [M3-04 custom agents](../session-m3-04-custom-agents/README.md), [M3-05 skills](../session-m3-05-agent-skills-ecosystem/README.md).
+More: [M3-04 custom agents](../session-m3-04-custom-agents/README.md), [M3-05 skills](../session-m3-05-agent-skills/README.md).
 
 ---
 

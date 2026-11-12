@@ -57,7 +57,7 @@ If the demo fails, show the dashboard and the config file instead. Don't debug l
 
 ## Skill vs custom agent vs MCP server (0:32 to 0:40)
 
-Same table as [M3-05](../../session-m3-05-agent-skills-ecosystem/trainer-content/README.md). **Skill is know-how. Custom agent is a role. MCP is reach.** One sentence each, then the combination: an agent can use skills, and a skill can describe how to use an MCP server's tools. Link to [M3-04](../../session-m3-04-custom-agents/trainer-content/README.md) for agents. Don't re-teach them.
+Same table as [M3-05](../../session-m3-05-agent-skills/trainer-content/README.md). **Skill is know-how. Custom agent is a role. MCP is reach.** One sentence each, then the combination: an agent can use skills, and a skill can describe how to use an MCP server's tools. Link to [M3-04](../../session-m3-04-custom-agents/trainer-content/README.md) for agents. Don't re-teach them.
 
 Quick check. Ask where each belongs:
 

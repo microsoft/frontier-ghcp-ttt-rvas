@@ -34,7 +34,7 @@ M2-05, M7-05, and M3-05 need live app or CLI access. For M7-05, use the **develo
 | 11 | M3-02 | [Copilot Cloud Agent](../sessions/session-m3-02-cloud-agent/README.md) | 3 hrs |
 | 12 | M3-03 | [MCP Servers & Custom Tool Integration](../sessions/session-m3-03-mcp-servers/README.md) | 3 hrs |
 | 13 | M3-04 | [Custom Agents & Agent Profiles](../sessions/session-m3-04-custom-agents/README.md) | 3 hrs |
-| 14 | M3-05 | [Agent Skills & the Copilot Ecosystem](../sessions/session-m3-05-agent-skills-ecosystem/README.md) | 3 hrs |
+| 14 | M3-05 | [Agent Skills](../sessions/session-m3-05-agent-skills/README.md) | 3 hrs |
 
 ## Schedule
 

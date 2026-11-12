@@ -287,7 +287,7 @@ Pick by the need:
 - "Copilot should **reach** this system" → MCP server.
 - "This always applies" → instructions.
 
-They combine. A custom agent can use a skill and list the MCP tools it may call. Don't add MCP to a role that only needs repository files. More: [M3-03](../session-m3-03-mcp-servers/README.md), [M3-05](../session-m3-05-agent-skills-ecosystem/README.md).
+They combine. A custom agent can use a skill and list the MCP tools it may call. Don't add MCP to a role that only needs repository files. More: [M3-03](../session-m3-03-mcp-servers/README.md), [M3-05](../session-m3-05-agent-skills/README.md).
 
 ---
 

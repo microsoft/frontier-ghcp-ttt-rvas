@@ -9,7 +9,7 @@
 
 Copilot can only see your prompt and your files. An **MCP server** gives it **reach**: live access to GitHub, docs, databases, or your own tools. You learn what MCP is, add servers to the real Copilot CLI with `/mcp` and the config file, and connect a small server you run yourself. You also see how Copilot asks permission before it calls a tool, and how a tool's output can attack the model.
 
-This session pairs with two others. [M3-04](../session-m3-04-custom-agents/README.md) covers custom agents (a role). [M3-05](../session-m3-05-agent-skills-ecosystem/README.md) covers skills (know-how). MCP is the third piece: reach.
+This session pairs with two others. [M3-04](../session-m3-04-custom-agents/README.md) covers custom agents (a role). [M3-05](../session-m3-05-agent-skills/README.md) covers skills (know-how). MCP is the third piece: reach.
 
 See the [curriculum glossary](../glossary.md) for MCP server, tool, transport, and plugin terms.
 

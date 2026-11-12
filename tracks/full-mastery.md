@@ -33,7 +33,7 @@ Teach every session, for technical teams and for product and delivery teams that
 | 12 | M3-02 | [Copilot Cloud Agent](../sessions/session-m3-02-cloud-agent/README.md) | 3 hrs |
 | 13 | M3-03 | [MCP Servers & Custom Tool Integration](../sessions/session-m3-03-mcp-servers/README.md) | 3 hrs |
 | 14 | M3-04 | [Custom Agents & Agent Profiles](../sessions/session-m3-04-custom-agents/README.md) | 3 hrs |
-| 15 | M3-05 | [Agent Skills & the Copilot Ecosystem](../sessions/session-m3-05-agent-skills-ecosystem/README.md) | 3 hrs |
+| 15 | M3-05 | [Agent Skills](../sessions/session-m3-05-agent-skills/README.md) | 3 hrs |
 | 16 | M4-01 | [GitHub Actions & Workflow Generation](../sessions/session-m4-01-actions-workflows/README.md) | 3 hrs |
 | 17 | M4-02 | [Infrastructure as Code with Copilot](../sessions/session-m4-02-iac-with-copilot/README.md) | 2 hrs 30 min |
 | 18 | M4-03 | [CI/CD Pipeline Debugging & Agentic Remediation](../sessions/session-m4-03-cicd-debugging-autofix/README.md) | 3 hrs |

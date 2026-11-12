@@ -11,7 +11,7 @@ results. See [Session M2-02](session-m2-02-agent-mode-ide/README.md).
 ## Agent skill
 
 A reusable `SKILL.md` package that gives an agent task-specific instructions and
-supporting resources. See [Session M3-05](session-m3-05-agent-skills-ecosystem/README.md).
+supporting resources. See [Session M3-05](session-m3-05-agent-skills/README.md).
 
 ## Automation
 

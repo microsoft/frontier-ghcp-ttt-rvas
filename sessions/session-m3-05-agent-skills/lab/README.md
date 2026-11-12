@@ -24,7 +24,7 @@ You need Git and the standalone Copilot CLI from Session M2-01 with skills suppo
 
 ```bash
 mkdir -p ~/copilot-labs/session-m3-05
-cp -R sessions/session-m3-05-agent-skills-ecosystem/lab/starter/release-notes-project \
+cp -R sessions/session-m3-05-agent-skills/lab/starter/release-notes-project \
   ~/copilot-labs/session-m3-05/
 cd ~/copilot-labs/session-m3-05/release-notes-project
 git init -q && git add -A && git commit -qm "Start"

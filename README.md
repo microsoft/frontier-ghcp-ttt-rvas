@@ -60,7 +60,7 @@ Learners without Copilot access should start Module 7 once they have it.
 | M3-02  | [Copilot Cloud Agent](sessions/session-m3-02-cloud-agent/)                             | Advanced    | 3 hrs      | Follows one issue from assignment to a proposed change, test results, and human review. |
 | M3-03  | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/)           | Advanced    | 3 hrs      | Learns what MCP servers are, adds them to Copilot, and connects a small server of your own. |
 | M3-04  | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/)                | Advanced    | 3 hrs      | Checks JavaScript LSP results and a live test-only agent that stops at a source-code conflict. |
-| M3-05  | [Agent Skills & the Copilot Ecosystem](sessions/session-m3-05-agent-skills-ecosystem/) | Advanced    | 3 hrs      | Write a skill with `skill-creator`, test it live, and learn when skills beat instructions or agents. |
+| M3-05  | [Agent Skills](sessions/session-m3-05-agent-skills/) | Advanced    | 3 hrs      | Write a skill with `skill-creator`, test it live, and learn when skills beat instructions or agents. |
 
 ### Module 4: DevOps & Infrastructure with Copilot (Intermediate to Advanced)
 

@@ -158,9 +158,9 @@
     },
     {
       "id": "m3-05",
-      "slug": "session-m3-05-agent-skills-ecosystem",
+      "slug": "session-m3-05-agent-skills",
       "module": "3",
-      "title": "Agent Skills & the Copilot Ecosystem",
+      "title": "Agent Skills",
       "description": "Learn what skills are and when to use them instead of instructions or agents. Write a skill with skill-creator, test it live in the CLI, and fix it from the results.",
       "difficulty": "Advanced",
       "duration_minutes": 180

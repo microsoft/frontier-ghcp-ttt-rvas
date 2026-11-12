@@ -16,7 +16,7 @@ it to ask questions in dependency order. Compare it with an ordinary prompt. Tur
 the approved answers into a decision brief and issue proposal. When a late
 constraint arrives, revise only the affected decisions.
 
-**How this differs from M3-05.** [Session M3-05](../session-m3-05-agent-skills-ecosystem/README.md)
+**How this differs from M3-05.** [Session M3-05](../session-m3-05-agent-skills/README.md)
 teaches how to write an interview skill (`grill-me`). This session uses a
 ready-made, decision-focused one to shape real work. Both skills ask one question
 at a time, give a recommended answer, and stop on a stated condition.

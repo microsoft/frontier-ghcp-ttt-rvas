@@ -178,9 +178,9 @@ nav:
         - Lab: sessions/session-m3-04-custom-agents/lab/README.md
         - Trainer Guide: sessions/session-m3-04-custom-agents/trainer-content/README.md
       - "M3-05 — Agent Skills & Ecosystem":
-        - Overview: sessions/session-m3-05-agent-skills-ecosystem/README.md
-        - Lab: sessions/session-m3-05-agent-skills-ecosystem/lab/README.md
-        - Trainer Guide: sessions/session-m3-05-agent-skills-ecosystem/trainer-content/README.md
+        - Overview: sessions/session-m3-05-agent-skills/README.md
+        - Lab: sessions/session-m3-05-agent-skills/lab/README.md
+        - Trainer Guide: sessions/session-m3-05-agent-skills/trainer-content/README.md
     - Module 4 — DevOps & Infrastructure:
       - "M4-01 — Actions & Workflows":
         - Overview: sessions/session-m4-01-actions-workflows/README.md

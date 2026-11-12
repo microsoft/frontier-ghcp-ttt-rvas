@@ -38,7 +38,7 @@ You need the Copilot app and the built-in `/create-canvas` skill. If project sco
 
 Use a canvas when people and an agent need to inspect or change the same visible state.
 
-Compare with [M3-03](../session-m3-03-mcp-servers/README.md), [M3-04](../session-m3-04-custom-agents/README.md), and [M3-05](../session-m3-05-agent-skills-ecosystem/README.md): a skill gives know-how, a custom agent gives a role, an MCP server gives reach. A canvas gives a shared surface.
+Compare with [M3-03](../session-m3-03-mcp-servers/README.md), [M3-04](../session-m3-04-custom-agents/README.md), and [M3-05](../session-m3-05-agent-skills/README.md): a skill gives know-how, a custom agent gives a role, an MCP server gives reach. A canvas gives a shared surface.
 
 ---
 # Terms

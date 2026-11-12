@@ -74,7 +74,7 @@ All Module 3 sessions need M1-01 to M1-03 and M2-01 to M2-04.
 | Session M3-02 | [Copilot Cloud Agent](sessions/session-m3-02-cloud-agent/README.md) | | 3 hrs |
 | Session M3-03 | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/README.md) | | 3 hrs |
 | Session M3-04 | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/README.md) | M3-03 | 3 hrs |
-| Session M3-05 | [Agent Skills & the Copilot Ecosystem](sessions/session-m3-05-agent-skills-ecosystem/README.md) | M3-04 | 3 hrs |
+| Session M3-05 | [Agent Skills](sessions/session-m3-05-agent-skills/README.md) | M3-04 | 3 hrs |
 
 ### Module 4: DevOps & Infrastructure
 
