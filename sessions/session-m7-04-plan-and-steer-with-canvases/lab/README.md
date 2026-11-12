@@ -8,23 +8,25 @@
 
 Create and review a planning canvas with the built-in `/create-canvas` skill.
 Load live issue state through GitHub MCP. Change an issue in GitHub, detect the
-stale canvas data, and refresh it. You end with a project-scoped canvas linked to
-the live issues.
+stale canvas data, and refresh it.
+
+**Boundary:** the canvas reads GitHub and never writes to it. Only the one comment
+in Part 5 is written, after you preview and approve it.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Check canvas and MCP capabilities | 15 min |
-| 2 | Define the minimum canvas requirements | 20 min |
+| 1 | Check canvas and MCP capabilities | 10 min |
+| 2 | Define the minimum canvas requirements | 15 min |
 | 3 | Create and simplify the canvas | 30 min |
 | 4 | Load and operate live issue state | 25 min |
 | 5 | Create and detect state drift | 15 min |
-| 6 | Reconcile and record ownership | 15 min |
+| 6 | Reconcile and record ownership | 25 min |
 
 ## Before you start
 
 Complete the track [capability setup](../../../tracks/product-and-delivery-teams.md#capability-setup).
 
-## Part 1: Check canvas and MCP capabilities (15 minutes)
+## Part 1: Check canvas and MCP capabilities (10 minutes)
 
 1. Open a GitHub Copilot app session for the training repository.
 2. Type `/` and check that `/create-canvas` appears.
@@ -37,26 +39,16 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 Use a fresh GitHub MCP read as the authoritative issue list. Start from the live
 Session M7-03 parent issue and follow its child links, not chat history.
 
-## Part 2: Define the minimum canvas requirements (20 minutes)
+## Part 2: Define the minimum canvas requirements (15 minutes)
 
-Complete `starter/canvas-requirements.md`.
+Fill in the purpose, source issues, and ownership sections of
+`starter/canvas-requirements.md`. The field and action lists are already there.
+Keep only what answers one of these questions:
 
-The canvas must answer:
-
-- What outcome are we delivering?
 - Which issues are planned, active, blocked, or ready for review?
 - Who owns the next action?
 - Which dependency or risk needs attention?
 - When did GitHub state last refresh?
-
-Allow only these actions:
-
-- refresh issue state from GitHub;
-- change planning status in the canvas;
-- record a risk or decision;
-- assign the next planning action.
-
-The canvas must not close issues, change assignees, or publish comments.
 
 **Checkpoint:** Every field and action supports a named planning decision.
 
@@ -76,17 +68,13 @@ to GitHub.
 
 The agent should create the extension and open it in the side panel.
 
-Review:
+Open the extension folder under `.github/extensions` and list its files. Check
+the visible fields, the actions exposed to Copilot, and any dependency in
+`package.json`. If `/create-canvas`, **Customize** → **Canvas**, or the folder
+differ in your app, check current docs.
 
-- the files created under `.github/extensions`;
-- the visible fields and actions;
-- the capabilities exposed to Copilot;
-- any package or dependency added by the extension.
-
-Inspect the generated files and ask Copilot for specific changes. Don't hand-edit
-extension code.
-
-Ask Copilot to remove generated state or actions that exceed the requirements.
+Ask Copilot to remove any field or action beyond the requirements. Don't
+hand-edit extension code.
 
 **Checkpoint:** The canvas is smaller after review and contains no GitHub write
 action.
@@ -124,7 +112,7 @@ vocabulary. Do not start implementation until the decision brief is updated.
 
 Approve the comment, then retrieve the issue in a fresh request.
 
-Do not refresh the canvas yet. Ask Copilot to compare:
+Don't refresh the canvas yet. Ask Copilot to compare:
 
 - the current visible canvas;
 - the fresh GitHub issue;
@@ -132,7 +120,7 @@ Do not refresh the canvas yet. Ask Copilot to compare:
 
 Identify what changed in GitHub but has not yet appeared in the canvas.
 
-## Part 6: Reconcile and record ownership (15 minutes)
+## Part 6: Reconcile and record ownership (25 minutes)
 
 Use the canvas refresh action or ask Copilot to call the approved refresh
 capability.
@@ -159,3 +147,10 @@ missing ownership.
 ```
 
 Apply useful findings directly to the canvas.
+
+## Final deliverable
+
+- A project-scoped canvas under `.github/extensions` that links the four status-visibility issues.
+- A short note that names the drift you detected and the refresh that fixed it.
+- The canvas owner, refresh method, recovery step, and retirement trigger, recorded in the canvas.
+- Your fixes from the `/rubber-duck` critique.

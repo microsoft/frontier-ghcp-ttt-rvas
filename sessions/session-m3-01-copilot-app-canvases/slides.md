@@ -38,6 +38,31 @@ You need the Copilot app and the built-in `/create-canvas` skill. If project sco
 
 Use a canvas when people and an agent need to inspect or change the same visible state.
 
+Compare with [M3-03](../session-m3-03-mcp-servers/README.md), [M3-04](../session-m3-04-custom-agents/README.md), and [M3-05](../session-m3-05-agent-skills-ecosystem/README.md): a skill gives know-how, a custom agent gives a role, an MCP server gives reach. A canvas gives a shared surface.
+
+---
+# Terms
+
+| Term | Meaning |
+| --- | --- |
+| **Canvas extension** | A shared, interactive panel in the Copilot app for one work artifact: a board, plan, checklist, or dashboard |
+| **Agent-callable capability** | A named action the agent can call on the canvas, such as `move_card`. Each has an input schema |
+| **Human action** | A control in the panel: button, card, or filter |
+| **Plugin** | A package that can ship a canvas with skills or MCP servers. You install it from **Customize > Canvas** |
+
+People and the agent change the **same state**. Capabilities are generated from your prompt, and you can ask the agent to add, remove, or revise them.
+
+---
+# Boundaries
+
+| A canvas is | A canvas is not |
+| --- | --- |
+| A visible, shared working surface | The system of record |
+| Limited to the capabilities you list | A way to give the agent broad access |
+| Editable by a person and the agent | A replacement for review |
+
+**A capability is the agent's whole reach.** If the contract does not list it, remove it. Dependencies and persisted data come with the extension, so read them before you keep it.
+
 ---
 # Canvas anatomy
 
@@ -48,7 +73,25 @@ shared state
   └─ validation before every change
 ```
 
-The contract names all four parts before implementation starts.
+The **contract** is a short document you write first. It names all four parts. Copilot generates the extension from the contract, and you check the result against it.
+
+---
+# Generated files
+
+Scope decides where the extension lives:
+
+| Scope | Path |
+| --- | --- |
+| Project (repository) | `.github/extensions/<name>/` |
+| User | `~/.copilot/extensions/<name>/` |
+
+Docs describe a typical layout. **Check what Copilot actually generated.**
+
+- `package.json`: metadata and dependencies
+- an entry file such as `extension.mjs`: canvas behavior, capabilities, validation
+- optional JSON under `artifacts/`: persisted state
+
+Read the entry file against the contract. Check `package.json` for packages you did not ask for.
 
 ---
 # Worked contract
@@ -90,7 +133,7 @@ Out of scope:
 ---
 # Demo sequence
 
-1. Run the local contract tests.
+1. Optional: run the local scaffolding tests (they check the exercise contract, not Copilot).
 2. Create the canvas from the worked prompt.
 3. Move `WEB-318` to `ready` with a visible control.
 4. Ask the agent to move `API-204` to `review`.
@@ -159,6 +202,27 @@ Check:
 - dependencies and persisted data.
 
 Remove anything the contract did not request.
+
+---
+# About the local tests
+
+`lab/starter/src/canvas-contract.mjs` and its tests are **hand-built scaffolding**. They encode this exercise's rules in plain JavaScript.
+
+- They do **not** run, test, or imitate Copilot canvas behavior.
+- They give you a fast check of the rules before you generate anything.
+- The real check is the generated canvas against the contract.
+
+---
+# Pros, cons, and limits
+
+| Pros | Cons and limits |
+| --- | --- |
+| **Visible state** you can inspect and steer | Canvases are new. Behavior and docs may change |
+| People and agent share one artifact | Generated code needs review like any code |
+| State survives turns and handoffs | A canvas is not a system of record |
+| Capabilities limit what the agent can call | Needs the Copilot app. Project scope needs write access to `.github/extensions` |
+
+Stay in chat for a short answer or one draft. Check the current docs before teaching.
 
 ---
 # Source of truth

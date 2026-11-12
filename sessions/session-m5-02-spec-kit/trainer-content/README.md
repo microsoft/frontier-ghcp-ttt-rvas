@@ -4,15 +4,15 @@
 
 Show the complete Spec Kit loop on one small change: request, specification, plan,
 tasks, implementation, tests, and convergence. Learners should know which files
-Spec Kit creates and which decisions the team still owns. The lab then adds
-restore behavior through the living-spec workflow.
+Spec Kit creates and which decisions the team still owns. The lab's required
+parts stop at convergence. Issue conversion and the restore cycle are optional.
 
 ## One-hour plan
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:08 | Why specification-driven development |
-| 0:08 to 0:18 | Spec Kit project and artifact model |
+| 0:00 to 0:06 | Why specification-driven development |
+| 0:06 to 0:18 | Spec Kit project and artifact model |
 | 0:18 to 0:30 | Requirements and clarification |
 | 0:30 to 0:42 | Planning, checklists, tasks, and analysis |
 | 0:42 to 0:52 | Implementation and convergence |
@@ -23,13 +23,14 @@ segments moving so the demonstration and lab handoff get the last eight minutes.
 
 ## Prepare
 
-- Pick the Spec Kit release tag and install it.
+- Install Spec Kit v1.4.0 (latest on 12 November 2026) and check the [releases page](https://github.com/github/spec-kit/releases) for newer ones. If you change the tag, rerun the lab first.
+- Check whether `/speckit-taskstoissues` exists in your install. It comes from the GitHub extension. If it doesn't, tell learners to skip Part 4.
 - Prepare an initialized copy of the archive-task starter. Run its tests first so learners see the baseline.
 - Check that the training repository allows issue creation.
 
 ## Slide-by-slide delivery map
 
-### 0:00 to 0:08: Why specification-driven development
+### 0:00 to 0:06: Why specification-driven development
 
 **Slides:** *Spec Kit: Specification-Driven Development*, *Agenda*, *A feature
 request is a starting point*, and *Resolve decisions before implementation*
@@ -39,10 +40,10 @@ request is a starting point*, and *Resolve decisions before implementation*
 2. Compare the two paths. Specification-driven development moves decisions
    earlier. It doesn't add documents for their own sake.
 
-### 0:08 to 0:18: Spec Kit project and artifact model
+### 0:06 to 0:18: Spec Kit project and artifact model
 
 **Slides:** *What Spec Kit provides*, *Initialize an existing project*, *Two
-artifact scopes*, and *The full workflow*
+artifact scopes*, *Four terms and one file layout*, and *The full workflow*
 
 1. **Separate the three layers.** The CLI creates the project structure, the
    generated skills guide the workflow, and the feature artifacts hold the work.
@@ -51,7 +52,10 @@ artifact scopes*, and *The full workflow*
    initialization in a non-empty directory. It doesn't accept every generated file.
 3. **Distinguish scopes.** The constitution applies to the project. The
    specification, plan, design files, checklists, and tasks belong to one feature.
-4. **Walk through the workflow once.** Clarification, checklist review, and
+4. **Define the four terms.** Constitution, convergence, idempotent, and skill.
+   Say that `/speckit-plan` runs the instructions in `.github/skills/speckit-plan/`.
+   Open that file so learners see a command is just a Markdown instruction file.
+5. **Walk through the workflow once.** Clarification, checklist review, and
    analysis are optional gates for ambiguity or risk.
 
 **Check:** Learners can say where project principles live and where feature
@@ -102,33 +106,32 @@ missing implementation step. Answers: `spec.md`, `plan.md`, `tasks.md`.
 *Living specifications evolve accepted behavior*, and *Convert tasks into
 GitHub Issues*
 
-1. **Set the implementation gate.** The checklist is reviewed, material analysis
-   findings are resolved, and accepted artifacts are committed.
+1. **Set the implementation gate.** Review the checklist, fix the analysis
+   findings, and commit the artifacts.
 2. **Explain convergence.** It compares implementation, tests, specification,
    plan, and tasks. When it finds a gap, it adds work. It doesn't rewrite accepted
    requirements to match the code.
 3. **Correct the `specify check` misconception.** It checks the local Spec Kit
    environment, not implementation compliance, security, performance, or coverage.
-4. **Show how accepted behavior changes.** Restore behavior starts in `spec.md`.
-   Analysis, implementation, and convergence then bring plan, tasks, code, and
-   tests back in line.
-5. **Show task-to-issue conversion.** GitHub Issues keep the accepted task IDs,
-   dependencies, parallel markers, file paths, and scope. They are not a second
-   requirements source.
+4. **Show how accepted behavior changes (optional in the lab).** Restore behavior
+   starts in `spec.md`. Analysis, implementation, and convergence then bring plan,
+   tasks, code, and tests back in line.
+5. **Show task-to-issue conversion (optional in the lab).** Issues keep the task
+   IDs, dependencies, and file paths. They are not a second requirements source.
 
 ### 0:52 to 1:00: Installation, demonstration, and lab handoff
 
 **Slides:** *Install Spec Kit*, *Prepared demonstration*, and *Lab handoff*
 
-1. **Install from a pinned release.** A disconnected environment needs the
+1. **Install a pinned release.** The lab uses v1.4.0. A disconnected environment needs the
    official air-gapped package prepared beforehand.
 2. **Run the convergence demo.** Prepare an implementation that hides archived
    tasks by default but has no test for `include_archived=True`. Run the existing
    tests, then `/speckit-converge`. Inspect the appended task, add the missing
    test, rerun the suite, and converge again.
 3. **Hand off.** Learners initialize the project, define archive behavior, plan,
-   create issues, implement in stages, converge, then add restore behavior.
-   Reveal `change-request.md` to show how restore flows through the workflow.
+   implement in stages, and converge. Learners who finish early convert tasks to
+   issues and add restore behavior. Reveal `change-request.md` only then.
 
 **Final message:** Passing tests and satisfying the accepted specification are
 different things.

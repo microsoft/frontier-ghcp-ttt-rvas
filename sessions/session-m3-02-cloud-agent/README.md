@@ -10,14 +10,17 @@
 
 ## Overview
 
-Take one synthetic issue from its contract to a review decision. Prepare the repository, start a Copilot cloud agent session, inspect the proposed change, and run the tests. Then approve, request changes, or pause.
+The Copilot cloud agent works on GitHub, not on your machine. You assign it an issue. It runs a session in a temporary environment, edits code, runs tests, and opens a draft pull request. You review it.
+
+In this session you take one synthetic issue from its contract to a review decision. Set up a training repository, start a cloud agent session, inspect the pull request, and run the tests. Then approve, request changes, or pause.
 
 The issue stays fixed throughout: reject blank or whitespace-only task titles and keep valid task creation working.
 
 ## Learning outcomes
 
 - Write an issue with testable acceptance criteria, allowed files, and non-goals.
-- Review repository instructions and Copilot setup steps before assignment.
+- Explain how an issue becomes an agent session and a pull request, and how that differs from IDE and CLI agents.
+- Read repository instructions and Copilot setup steps before assignment.
 - Monitor an agent session without expanding the issue.
 - Compare a proposed change with the issue and its file scope.
 - Run and record focused tests.
@@ -25,6 +28,7 @@ The issue stays fixed throughout: reject blank or whitespace-only task titles an
 ## You need
 
 - Copilot cloud agent access to a training repository.
+- A training repository where you have write access and can merge to the default branch.
 - A human reviewer.
 - Node.js and npm.
 
@@ -43,9 +47,11 @@ The issue stays fixed throughout: reject blank or whitespace-only task titles an
 | [`slides.md`](slides.md) | Trainer-facing teaching deck |
 | [`lab/README.md`](lab/README.md) | Two-hour issue-to-review lab |
 | [`lab/starter/`](lab/starter/) | Issue, setup, sample project, and review guide |
-| [`lab/solution/`](lab/solution/) | Completed issue journey and runnable solution |
+| [`lab/solution/`](lab/solution/) | Reference material: completed issue journey, `proposed-change.diff`, and runnable solution |
 
 ## References
+
+Session environments and setup steps are changing. Check current docs.
 
 - [Get started with Copilot agents on GitHub](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/overview)
 - [Managing agent sessions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents)

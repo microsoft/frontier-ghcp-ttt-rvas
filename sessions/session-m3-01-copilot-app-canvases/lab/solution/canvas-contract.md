@@ -33,9 +33,8 @@ Track three synthetic work items until their state supports a readiness decision
 - `ready` without evidence is rejected.
 - Rejected actions leave state unchanged.
 
-## Boundary and ownership
+## Boundary
 
 - Data: supplied synthetic items only.
 - External systems and writes: none.
-- Owner: Training canvas owner.
-- Retirement trigger: end of lab or loss of an accountable owner.
+- Lifetime: training only. Delete the canvas after the lab.

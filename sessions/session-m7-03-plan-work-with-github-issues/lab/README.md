@@ -7,8 +7,10 @@
 ## Lab outcome
 
 Create a reviewed GitHub issue hierarchy through MCP. Read the issues back to check
-what was saved. Make one focused correction and read it back again. You end with
-live parent and child issues and the corrected issue.
+what was saved. Make one focused correction and read it back again.
+
+**Boundary:** Copilot proposes, you approve each write, and a fresh GitHub read
+confirms it. Work only in the training repository.
 
 | Part | Work | Time |
 | --- | --- | --- |
@@ -52,8 +54,8 @@ Ask Copilot to:
 
 1. summarize the approved outcome, non-goals, results needed for acceptance, and owners;
 2. retrieve available labels and milestones;
-3. read `starter/existing-issues.json`, then search open and closed issues for
-   matching live work;
+3. search open and closed issues for matching live work (use
+   `starter/existing-issues.json` only if the repository has no seeded issues);
 4. report every GitHub MCP read it used;
 5. identify any decision in the proposal that is absent from the brief.
 
@@ -100,7 +102,7 @@ independently.
 
 ## Part 4: Preview and create the issues (30 minutes)
 
-Send:
+Send this prompt:
 
 ```text
 Before using a GitHub write tool, show the repository owner and name, issue count,
@@ -144,6 +146,12 @@ again and check the new section is present.
 **Checkpoint:** Fresh reads show that GitHub saved both the issues and the correction.
 
 Link every child issue from the parent. Mark the four required roles and label any
-optional fifth child as outside the Session M7-05 workstreams. Record dependency
-order, unresolved ownership, your decisions about existing work, and the
-correction you checked. Session M7-04 reads this live issue set through GitHub MCP.
+optional fifth child as outside the Session M7-05 workstreams. Session M7-04
+reads this live issue set through GitHub MCP.
+
+## Final deliverable
+
+- One parent issue and four required child issues (plus an optional fifth) in the training repository.
+- A parent issue that links every child and records dependency order, open ownership, and your decisions about existing work.
+- One child issue corrected and read back from GitHub.
+- A short note that names the issue numbers and the correction you checked.

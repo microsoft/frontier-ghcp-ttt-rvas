@@ -12,7 +12,7 @@ Finally, check whether a fresh session can use the brief on its own.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Check the app, mode, and project | 15 min |
+| 1 | Check the app, context, and project | 15 min |
 | 2 | Compare weak and grounded context | 25 min |
 | 3 | Create the first working brief | 30 min |
 | 4 | Update the brief with new source information | 25 min |
@@ -25,33 +25,30 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 You need GitHub Copilot app access, read access to the training repository
 project, and permission to create a branch or working copy for the brief.
 
-## Part 1: Check the app and project (15 minutes)
+## Part 1: Check the app, context, and project (15 minutes)
 
 1. Open the training repository under **Projects**.
 2. Start an interactive session.
 3. Select **Interactive** mode. Type `@` and add
    `lab/starter/initiative-overview.md`.
 4. Ask Copilot to report the file name and its first heading.
-5. Open **Customize** → **Installed** and inspect the visible skills, MCP servers,
-   plugins, and canvases.
-6. Run `/context`.
+5. Run `/context`. Note what is loaded: the file, the conversation, and any
+   instructions the app added.
+6. Open **Customize** → **Installed** and find one skill, one MCP server, and one
+   plugin or canvas. Don't explore further.
 
-Use **Interactive** for the comparison. Switch to **Plan** before asking Copilot
-to propose repository changes. Don't use **Autopilot** here, because you review
-each write.
+**Mode:** stay in **Interactive**. Switch to **Plan** when Copilot proposes
+repository changes. Skip **Autopilot**, because you review every write.
 
-`@` adds files, `#` references issues, and `/` opens commands. Type the character
-and select the item from the picker. A typed file token alone doesn't attach the
-source.
+`@` adds files, `#` references issues, and `/` opens commands. Select the item
+from the picker. A typed file token alone doesn't attach the source.
 
-**Checkpoint:** Copilot can read the supplied file, and you can identify which
-capabilities are available.
+**Checkpoint:** Copilot read the file, and `/context` shows it.
 
 ## Part 2: Compare weak and grounded context (25 minutes)
 
-Start a fresh session with `/clear` or `/reset` so the file read in Part 1 isn't
-carried over. Don't attach the initiative file yet. Start with this deliberately
-weak prompt:
+Run `/clear` (or `/reset`) so the file from Part 1 isn't carried over. Don't attach
+the initiative file yet. Start with this deliberately weak prompt:
 
 ```text
 Explain the Service Request Portal initiative, its users, constraints, and next
@@ -137,9 +134,8 @@ git commit -m "Update working brief with approved evidence"
 
 ## Part 5: Check the brief in a fresh session (25 minutes)
 
-Before starting fresh, run `/context`. If the current session is crowded but the
-thread still matters, use `/compact`. For the fresh-session check, use
-`/clear` or `/reset`, then attach only
+Run `/context`. If the session is crowded but the thread still matters, use
+`/compact`. For the fresh-session check, run `/clear` or `/reset` and attach only
 `docs/discovery/initiative-context-brief.md`.
 
 Ask:

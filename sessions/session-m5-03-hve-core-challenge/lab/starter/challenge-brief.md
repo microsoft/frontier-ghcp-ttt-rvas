@@ -5,9 +5,7 @@ description: "HVE Core challenge contract from product intent through reviewed i
 # HVE Core challenge brief
 
 Use HVE Core to move one Engineering Decision API feature from product intent
-to reviewed code. The API behavior is one part of the challenge. Your evidence
-must also show the HVE RPI handoffs, repository customization, and product-to-Agile
-refinement that shaped the implementation.
+to reviewed code. The API is one part. The RPI files from each phase are the other.
 
 ## Challenge progression
 
@@ -16,10 +14,10 @@ Complete these stages in order:
 1. **Understand and run HVE RPI.** Use direct Research and Plan prompts before changing
   code. Later, run Implement and Review. Inspect the `.copilot-tracking/` artifact
   produced by each phase and record how the next phase used it.
-2. **Customize HVE for the repository.** Add repository context, a targeted
+2. **Optional: customize HVE for the repository.** Add repository context, a targeted
   JavaScript/API coding instruction, and a Decision API Reviewer agent with a defined scope.
-  Prove that each customization changed a later plan, implementation, or review.
-3. **Refine the product intent.** Use Product Manager Advisor to test value,
+  Check that each one is active and changed a later plan, implementation, or review.
+3. **Optional: refine the product intent.** Use Product Manager Advisor to test value,
   assumptions, priority, and non-goals. Use Agile Coach to produce one user story,
   acceptance criteria, and exclusions. Update the HVE plan when needed.
 4. **Implement and review.** Run HVE Implement and Review against the approved plan.
@@ -29,20 +27,15 @@ Complete these stages in order:
 After Review, explain how combined `/rpi` would orchestrate the same phases and
 use Follow-up to route new work. Do not start another implementation cycle.
 
-## Required HVE evidence
+## Required HVE files
 
-Your submission must include:
+Research, plan, changes, and review files, each produced by its HVE phase, and your
+decision to approve, request changes, or pause.
 
-* Research, plan, changes, and review artifacts produced through HVE
-* A clear handoff from each RPI phase to the next in the generated artifacts
-* `.github/copilot-instructions.md` with project context and boundaries
-* `.github/instructions/javascript-api.instructions.md` with targeted practices
-* `.github/agents/decision-api-reviewer.agent.md` with a narrow review contract
-* Product Manager Advisor and Agile Coach outputs that shape or confirm the plan
-* Activation evidence for every repository customization
-* A human decision to approve, request changes, or pause
-
-A correct API implemented without this HVE evidence does not complete the challenge.
+For the optional exercises, add `.github/copilot-instructions.md`,
+`.github/instructions/javascript-api.instructions.md`,
+`.github/agents/decision-api-reviewer.agent.md`, and the Product Manager Advisor and
+Agile Coach outputs.
 
 ## Implementation slice
 
@@ -96,15 +89,12 @@ validation as `not run`; do not infer a pass.
 
 ## Done conditions
 
-The challenge is complete when:
+You're done when:
 
-* the HVE RPI artifact chain is present and traceable;
-* repository context, coding instructions, and the custom reviewer show activation;
-* product and Agile outputs are reflected in the approved plan;
+* the four RPI files exist and each builds on the one before;
 * the health test remains green;
 * focused Jest and Supertest tests prove valid create, default and explicit status,
   invalid fields, duplicate title, generated metadata, and stable errors;
-* the container contract is implemented and validated in an approved environment;
-* the HVE review maps every criterion to evidence and supports a human decision;
-* the challenge handoff links the four HVE artifacts and records the final human
-  decision, unresolved risks, and next action.
+* the container contract is implemented and checked;
+* the review maps every criterion to a result and supports your decision;
+* the handoff lists the four paths, your decision, open risks, and the next action.

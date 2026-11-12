@@ -10,22 +10,21 @@ proposal.
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:06 | Show the vague request and the cost of guessing |
-| 0:06-0:15 | Explain the decision tree, frontier, and rounds |
-| 0:15-0:25 | Model strong Copilot questions and recommendations |
-| 0:25-0:42 | Run the Service Request Portal interview with GitHub Copilot |
-| 0:42-0:51 | Review the answers and build a decision brief |
-| 0:51-0:57 | Convert the brief into a GitHub issue proposal |
-| 0:57-1:00 | Explain the lab and review roles |
+| 0:00-0:05 | Show the vague request and the cost of guessing |
+| 0:05-0:13 | Interview skill vs ordinary prompt; skill frontmatter and description |
+| 0:13-0:21 | Decision frontier, sequencing, useful and leading questions, when to stop |
+| 0:21-0:38 | Run the Service Request Portal interview with GitHub Copilot |
+| 0:38-0:48 | Review the answers and build a decision brief |
+| 0:48-0:56 | Convert the brief into a GitHub issue proposal |
+| 0:56-1:00 | Explain the lab and review roles |
 
 ## Prepare
 
 - Every learner can open the GitHub Copilot app and the training repository project.
-- Copy the supplied skill to `.github/skills/decision-interview/SKILL.md`.
+- Copy the `decision-interview` folder into `.github/skills/`. No commit is needed.
 - In a new app session, check `decision-interview` appears under **Customize** → **Skills** → **Installed**.
 - Run `/decision-interview` with the short test request from the lab, plus one follow-up answer.
-- Interactive, Plan, and Autopilot modes are visible. The interview uses Interactive; file changes use Plan.
-- `/context`, `/compact`, `/clear` or `/reset`, and `/rubber-duck` appear in the command picker.
+- The mode and context commands from M7-01 appear in the picker. The interview uses Interactive; file changes use Plan.
 - Open the starter templates and completed solution in separate windows.
 - Assign a request owner and delivery reviewer for each pair.
 
@@ -35,15 +34,51 @@ the interview.
 
 ## Core teaching points
 
+### Scope against M3-05
+
+M3-05 teaches how to write an interview skill: `grill-me`, with its description,
+one-question-at-a-time rule, recommended answer, and stop condition. M7-02 uses a
+decision-focused skill, `decision-interview`, to shape real work. It uses the same
+behaviors and terms, and adds the decision frontier and a coverage list. Don't
+teach authoring here. Point learners to M3-05.
+
+### Interview skill or ordinary prompt
+
+An ordinary prompt ("write an issue for this request") fills gaps with guesses and
+drafts at once. The skill asks about each gap and drafts only after the owner
+agrees. It also repeats the same method each run. Use a plain prompt when the
+answer is a fact in the source. Use the skill when a person must decide.
+
+### Frontmatter and the description
+
+Open `SKILL.md`. `name` matches the folder and the `/` command. Copilot compares
+the `description` with the user's request, so it should say when to use the skill
+and when not to ("Do not use for questions that have a factual answer"). The body
+loads after that. Check current docs for skill discovery rules in your app
+version.
+
 ### The frontier controls question order
 
-The frontier is the set of decisions the owner can make now because their
-prerequisites are settled. Ask all of them in one round. Hold any question that
-depends on a decision still open.
+The **decision frontier** is the set of decisions the owner can make now because
+the decisions they depend on are settled. Ask them one at a time, each with a
+recommended answer. Hold any question that depends on a decision still open.
 
 Don't ask for notification wording before the group decides whether the first
 release includes notifications. Don't ask for a success target before the group
 agrees on the problem and affected user.
+
+### A useful question
+
+A useful question names one decision, offers real options, and doesn't assume the
+answer. A leading question hides the answer inside it: "Should we show status to
+everyone so support calls drop?" Better: "Which group needs status first:
+requesters, service agents, or both?" Have the group rewrite one leading question.
+
+### When to stop
+
+Stop when every branch has an accepted decision or a named open question with an
+owner. The skill then summarizes, and the owner corrects the summary before
+anything is drafted.
 
 ### Recommendations make choices easier to review
 
@@ -69,9 +104,9 @@ question for the owner.
 
 ### Check context between rounds
 
-Run `/context` after each round. Compact only when the same thread must continue.
-Start fresh when old recommendations leak into new decisions, carrying only the
-settled decisions and open questions. The decision brief becomes the record.
+Use the M7-01 controls. Run `/context` after each round. Start fresh when old
+recommendations leak into new decisions, carrying only the settled decisions and
+open questions. The decision brief becomes the record.
 
 ### Use an independent critic
 
@@ -85,8 +120,10 @@ Start with:
 
 > Make request status clearer so people stop asking support.
 
-Run it through `/decision-interview`. The skill asks a numbered frontier and waits
-for owner decisions instead of drafting the final brief.
+Run it through `/decision-interview`. The skill asks numbered questions one at a
+time and waits for owner decisions instead of drafting the final brief. The rounds
+below show which decisions each frontier holds. Show the plain-prompt answer first
+for contrast.
 
 ### Round 1: Define the problem
 
@@ -171,7 +208,7 @@ unchanged while the affected criteria are revised.
 
 ## Facilitation notes
 
-- Ask no more than four questions in a demonstration round.
+- Ask no more than four questions per frontier in the demonstration.
 - Let the request owner reject recommendations. A visible correction shows who owns the decision.
 - Keep unresolved items in an open-questions table with an owner and due point.
 - Push back on "easy," "fast," or "clear" without a result someone can check.

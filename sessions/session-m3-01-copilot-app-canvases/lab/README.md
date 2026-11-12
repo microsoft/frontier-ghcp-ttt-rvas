@@ -2,9 +2,9 @@
 
 ## Objective
 
-Use one synthetic delivery-readiness contract from setup through handoff. Test the contract locally, then create the canvas in the Copilot app. Make a visible change and an agent-requested change to the same state. Check that an invalid change is rejected, then recover without changing the rule.
+Use one synthetic delivery-readiness contract from setup through handoff. Create the canvas in the Copilot app from the contract. Make a visible change and an agent-requested change to the same state. Check that an invalid change is rejected, then recover without changing the rule.
 
-You need the Copilot app and `/create-canvas`. Use synthetic data only.
+You need the Copilot app and `/create-canvas`. Use synthetic data only. Canvas extensions are new, so check the [current docs](https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions) if a step differs from what you see.
 
 ## Deliverables
 
@@ -12,7 +12,9 @@ You need the Copilot app and `/create-canvas`. Use synthetic data only.
 2. The generated extension location.
 3. A final state that matches the accepted transitions.
 
-## Setup
+## Setup (optional)
+
+The local tests are **scaffolding**: hand-built JavaScript that checks this exercise's rules. They don't test Copilot or the canvas you generate. Run them for a quick sanity check, or skip them.
 
 From the repository root:
 
@@ -35,20 +37,18 @@ Open `canvas-contract.md`, `prepared-items.json`, and `demo-runbook.md`. Copy th
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Check the contract | 20 min |
-| 2 | Run the prepared contract tests | 15 min |
-| 3 | Create the canvas | 25 min |
-| 4 | Make two visible state changes | 20 min |
-| 5 | Check rejection and recovery | 20 min |
+| 1 | Check the contract | 15 min |
+| 2 | Optional scaffolding tests | 5 min |
+| 3 | Create the canvas | 30 min |
+| 4 | Make two visible state changes | 25 min |
+| 5 | Check rejection and recovery | 25 min |
 | 6 | Inspect and hand off | 20 min |
 
-## Part 1: Check the contract (20 minutes)
+## Part 1: Check the contract (15 minutes)
 
 1. Pick project or user scope.
 2. Check that all data comes from `prepared-items.json`.
 3. Review every state field, human action, agent capability, and validation rule in `canvas-contract.md`.
-4. Replace the owner and reviewer placeholders.
-5. Check the retirement trigger.
 
 The contract must keep these rules:
 
@@ -60,19 +60,17 @@ The contract must keep these rules:
 
 **Checkpoint 1:** A peer can explain the contract without adding verbal requirements.
 
-## Part 2: Run the prepared contract tests (15 minutes)
+## Part 2: Optional scaffolding tests (5 minutes)
 
 ```bash
 npm test
 ```
 
-Read `test/canvas-contract.test.mjs` and map each test to a contract rule. Note the command, the result, and any mismatch between code and contract.
+Map each test in `test/canvas-contract.test.mjs` to a contract rule. If the tests fail, reset your copy from `lab/starter/` or skip this part. The canvas doesn't depend on them.
 
-Don't continue with a failing harness. Fix only a mismatch your edits caused, or reset your copy from `lab/starter/`.
+**Checkpoint 2:** Your group can name the planned rejection.
 
-**Checkpoint 2:** The harness passes, and your group can name the planned rejection.
-
-## Part 3: Create the canvas (25 minutes)
+## Part 3: Create the canvas (30 minutes)
 
 Open a Copilot app session and run:
 
@@ -89,11 +87,13 @@ Do not connect external systems.
 
 Choose **project scope** if you can create files under `.github/extensions`. Otherwise choose **user scope**.
 
-Inspect the generated directory, metadata, dependencies, state, visible controls, and agent-callable capabilities. Ask Copilot to remove anything outside the contract.
+Find the generated directory (`.github/extensions/<name>/` or `~/.copilot/extensions/<name>/`). Expect a `package.json` and an entry file such as `extension.mjs`, and possibly JSON state. The exact layout can differ, so write down what you see.
+
+Read the entry file for state, visible controls, and agent-callable capabilities. Check `package.json` for dependencies you didn't ask for. Ask Copilot to remove anything outside the contract.
 
 **Checkpoint 3:** The canvas shows all three prepared items and no extra capability.
 
-## Part 4: Make two visible state changes (20 minutes)
+## Part 4: Make two visible state changes (25 minutes)
 
 **Change A, direct action.** Move `WEB-318` from `review` to `ready`. It succeeds because the item already has evidence.
 
@@ -112,7 +112,7 @@ Check that:
 
 **Checkpoint 4:** One human action and one agent request changed the same state without breaking the contract.
 
-## Part 5: Check rejection and recovery (20 minutes)
+## Part 5: Check rejection and recovery (25 minutes)
 
 Request:
 
@@ -149,8 +149,7 @@ Swap canvases with another group. Inspect:
 - visible human actions;
 - agent-callable capabilities;
 - rejection and recovery records;
-- dependencies and persisted data;
-- owner and retirement trigger.
+- dependencies and persisted data.
 
 Fix contract mismatches, then compare the final state with `../solution/final-state.json`.
 
@@ -165,14 +164,14 @@ You're done when another person can identify the extension scope, the fixed cont
 | Project scope is blocked | Use user scope. |
 | Generated actions exceed the contract | Remove them before testing. |
 | State and agent response disagree | Stop and inspect the shared artifact. |
-| Local tests fail before edits | Restore the starter files. |
+| Local tests fail before edits | Restore the starter files, or skip Part 2. |
 | `ready` accepts empty evidence | Fix the rule before review. |
 
 The worked contract and final state are in `../solution/`.
 
 ## Optional variant: Feature Workbench
 
-Try this after the default lab, or when the trainer assigns it as follow-up.
+Optional. Skip it unless you finish early or your trainer assigns it.
 
 1. Open `starter/feature-workbench-contract.md`.
 2. Load the synthetic checks from `starter/feature-workbench-sample.json`.

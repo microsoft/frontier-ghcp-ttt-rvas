@@ -13,17 +13,19 @@ M7-05 parent result. Review its first draft, apply one issue change, and run it
 again. Compare the drafts to see how that change affected the update. You end with
 the automation definition and one reviewed stakeholder update.
 
-The core lab uses a manual trigger and draft-only output. Scheduling stays
-disabled.
+The core lab uses a manual trigger. Scheduling stays disabled.
+
+**Boundary:** the automation only reads and drafts. A person reviews every draft
+and shares it.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Check access and retrieve inputs | 20 min |
-| 2 | Complete the automation definition | 20 min |
+| 1 | Check access and retrieve inputs | 15 min |
+| 2 | Complete the automation definition | 15 min |
 | 3 | Create and run the automation | 30 min |
 | 4 | Review the draft | 20 min |
-| 5 | Update one issue and rerun | 20 min |
-| 6 | Finalize the stakeholder update | 10 min |
+| 5 | Update one issue and rerun | 25 min |
+| 6 | Finalize the stakeholder update | 15 min |
 
 ## Before you start
 
@@ -65,8 +67,7 @@ Use this prompt:
 Read the approved status-visibility GitHub issues and the reviewed Session M7-05
 parent orchestration result. Follow @automation-definition-template.md. Draft one
 stakeholder update from supported issue state. Name unresolved exceptions and
-owners. Do not publish, message people, edit issues, change labels, call
-unapproved tools, or invent missing values.
+owners. Don't invent missing values.
 ```
 
 Review the trigger, tools, prompt, and enabled state before the run. Keep any
@@ -81,7 +82,6 @@ Check that:
 - each status claim traces to a live issue or the reviewed parent result;
 - gaps or conflicts in the source information remain visible;
 - no unsupported cause or forecast appears;
-- no prohibited side effect occurred;
 - the output is one draft stakeholder update.
 
 Choose **Keep**, **Revise**, **Disable**, or **Pause**. Update the definition's
@@ -112,3 +112,9 @@ The update must state:
 
 Name GitHub or Azure Boards as the authoritative planning system. A person shares
 the update, not the automation.
+
+## Final deliverable
+
+- The completed automation definition, with trigger, inputs, output, reviewer, stop conditions, and current enabled state.
+- One reviewed stakeholder update, finalized from the second run.
+- A short note on how the issue change altered the draft.

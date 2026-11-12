@@ -1,6 +1,6 @@
 # Prepared demo runbook
 
-Run commands from this directory.
+Run commands from this directory. This is a scripted fallback that uses the scaffolding code, not the Copilot app.
 
 ## Initialize the working state
 

@@ -24,11 +24,45 @@ This is the third step in **Delivery Decision Studio**.
 
 ---
 
-# MCP in one sentence
+# MCP in plain words
 
-An MCP server gives Copilot named tools for reading or changing another system.
+**MCP** (Model Context Protocol) is a standard way to plug tools into Copilot.
+An **MCP server** exposes named tools, such as "get issue" or "create issue".
+Copilot calls them for you.
 
-You use the tools in this session without building the server.
+Think of a USB port: one plug shape, many devices.
+
+You use the tools in this session. You don't build a server.
+
+---
+
+# Tool discovery and permissions
+
+**Discovery:** ask Copilot to list the GitHub tools in this session. Only listed
+tools can be called.
+
+**Permissions:** a tool acts with the rights of the connection. If your account
+can't write issues, the write fails. If it can read a private repository,
+Copilot can read it too.
+
+- Read tools: search issues, list labels and milestones.
+- Write tools: create or update an issue.
+
+Never paste a token into a prompt or file.
+
+---
+
+# GitHub MCP or the app's own features?
+
+| | GitHub MCP | App-native (UI, `gh`, built-in context) |
+| --- | --- | --- |
+| Best for | Structured reads and writes Copilot can plan and repeat | One-off clicks, quick looks |
+| Setup | Needs an active connection and permissions | Already there |
+| Review | Tool call shows exact arguments | You see the result, not the call |
+| Risk | A write can run at scale | Slower, manual |
+
+Use MCP when Copilot must read or write GitHub as part of a plan. Use the web UI
+when you just need to look at one issue.
 
 ---
 
@@ -51,6 +85,10 @@ Write enough detail for the next contributor to act.
 
 # Parent and child issues answer different questions
 
+A **parent issue** holds the outcome. **Child issues** (sub-issues) are the
+pieces of work under it. **Labels** classify issues. A **milestone** groups
+issues under a target. Use only labels and milestones that already exist.
+
 The parent issue holds the outcome, shared constraints, and review path. Each child
 issue owns one independently reviewable result.
 
@@ -69,11 +107,10 @@ clarify the design first.
 
 # Review each MCP write
 
-Copilot can prepare the issue plan. A person approves the write only after seeing
-the target repository and expected result.
+Approve a write only after you see the target repository and the full result.
 
-After the write, fetch the issue again. Compare what GitHub stored with the
-approved plan instead of relying on the tool's success message.
+After the write, fetch the issue again. Compare what GitHub stored with the plan,
+not with the tool's success message.
 
 The Markdown plan is a temporary preview. **The created GitHub issues are
 authoritative.**
@@ -91,6 +128,9 @@ authoritative.**
 ---
 
 # Decide what to do with existing work
+
+The lab may ship `existing-issues.json`. It is only a fallback for repositories
+without seeded issues. The lesson is reading live GitHub state.
 
 | Candidate | Decision |
 | --- | --- |
@@ -130,13 +170,15 @@ Before approval, show:
 
 ---
 
-# People approve the operation
+# When MCP fails
 
-Copilot proposes the action.
-
-Record **Approve**, **Revise**, or **Reject** before the write.
-
-No approval, no issues.
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| No GitHub tools listed | Server not installed or not running | **Customize** → **MCP** → **Installed** |
+| Read works, write fails | Account lacks issue-write access | Ask for access or stop |
+| Wrong repository | Prompt didn't name the repo | Reject and restate owner and name |
+| "Success" but no issue | Silent or partial failure | Fresh read of the repository |
+| Label or milestone error | Name doesn't exist | Use an existing one or leave it unset |
 
 ---
 

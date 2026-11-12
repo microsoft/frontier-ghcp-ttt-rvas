@@ -52,4 +52,4 @@ them. The route trims required strings, checks duplicate titles without regard t
 case, creates a UUID, and stores a UTC timestamp.
 
 The tests cover the health route, the complete create contract, and the Dockerfile
-contract. See `../reference-evidence.md` for the criterion map and scoring notes.
+contract. See `../reference-notes.md` for where to find each result.

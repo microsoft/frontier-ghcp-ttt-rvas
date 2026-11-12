@@ -12,12 +12,13 @@ source of record.
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:08 | Decide when visible state helps |
-| 0:08-0:18 | Translate live issues into canvas requirements |
-| 0:18-0:32 | Create the canvas with `/create-canvas` |
-| 0:32-0:43 | Review state, actions, and boundaries |
-| 0:43-0:53 | Create drift and reconcile the canvas |
-| 0:53-1:00 | Explain ownership and launch the lab |
+| 0:00-0:10 | Define canvas, extension, and drift; compare with chat and issues |
+| 0:10-0:17 | Pros, cons, limits, and when not to use one |
+| 0:17-0:25 | Translate live issues into canvas requirements |
+| 0:25-0:37 | Create the canvas with `/create-canvas` |
+| 0:37-0:45 | Review state, actions, and boundaries |
+| 0:45-0:55 | Create drift and reconcile the canvas |
+| 0:55-1:00 | Explain ownership and launch the lab |
 
 ## Prepare
 
@@ -28,6 +29,35 @@ source of record.
 - `/context`, `/clear` or `/reset`, and `/rubber-duck` work.
 
 A static JSON edit doesn't meet this session's outcome. It needs live canvas creation.
+
+## Define the terms
+
+- **Canvas:** a shared panel in the app where you and the agent work on one artifact. Both can edit it.
+- **Project-scoped canvas:** stored under `.github/extensions` and committed with the repository. User scope (`~/.copilot/extensions`) is personal.
+- **Extension:** the code behind the canvas: `package.json`, an entry file such as `extension.mjs`, and optional saved state.
+- **State drift:** the canvas shows older data than the source. Show it in the demo.
+
+Docs checked: [Working with canvas extensions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions)
+confirms `/create-canvas`, **Customize** → **Canvas**, and both folders. Check
+current docs before class; the app UI changes.
+
+## Canvas, chat, and issues
+
+| | Chat | Canvas | GitHub issues |
+| --- | --- | --- | --- |
+| Purpose | Ask and reason | See and steer shared state | Record work |
+| Lasts | The conversation | Until retired | Until closed |
+| Authoritative for | Nothing | Planning fields it owns | Issue state, title, assignee |
+
+**GitHub wins for issue facts.** The canvas wins only for planning status, risk,
+and decision.
+
+## Pros, cons, and limits
+
+- **Pros:** one visible view, repeatable actions, survives the chat, direct editing.
+- **Cons:** generated code needs review; it keeps a copy of data, so it goes stale; it needs an owner.
+- **Refresh:** nothing updates it automatically. A refresh action reads GitHub again and sets the last-refresh time.
+- **Don't use one** for a single answer, a one-off draft, or data nobody revisits.
 
 ## When to use a canvas
 

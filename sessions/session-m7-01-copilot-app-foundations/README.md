@@ -27,15 +27,28 @@ sanitized work from your own team instead.
 Learners can:
 
 1. Find and use Chats, Projects, My work, Search, Automations, and Customize.
-2. Choose Interactive, Plan, or Autopilot mode for a task with a defined scope.
+2. Choose Interactive, Plan, or Autopilot for a task, and say why.
 3. Add files with `@`, reference issues with `#`, and open commands with `/`.
-4. Choose repository, issue, file, or uploaded-document context for a question.
-5. Inspect the skills, agents, MCP servers, plugins, and canvases available to them.
-6. Explain the difference between an MCP connection and a plugin package.
-7. Check context usage and decide whether to compact or start fresh.
+4. Explain what the app sees when you ask a question, and what it can't see.
+5. Choose repository, issue, file, or uploaded-document context for a question.
+6. Run `/context`, then decide between `/compact`, `/clear`, and `/reset`.
+7. Find the skills, agents, MCP servers, plugins, and canvases available to you.
 8. Review and revise a proposed Markdown change.
 9. Update a context brief when new source information arrives.
 10. Request an independent critique before sharing the brief.
+
+## Scope and what this session adds
+
+| Session | Audience | Covers |
+| --- | --- | --- |
+| [M2-05](../session-m2-05-copilot-app-for-developers/README.md) | Developers | Sessions, worktrees, diffs, and pull requests in the coding loop |
+| [M3-01](../session-m3-01-copilot-app-canvases/README.md) | Advanced builders | Designing and creating canvases and plugins |
+| M7-01 | Product and delivery teams | How context reaches the answer, mode choice, context controls, and a saved brief |
+
+M7-01 adds **context assembly**: what Copilot sees, what it can't, and how to
+manage it. It also adds **mode choice for document and decision work**. It
+doesn't teach worktrees, pull requests, or building canvases. Capability
+inspection is a short look, not a tour.
 
 ## Session structure
 

@@ -4,7 +4,7 @@
 
 Take one synthetic issue from its fixed contract through setup and implementation with Copilot cloud agent. Then test and review the change. Manual work doesn't complete this lab.
 
-You need cloud agent access to a training repository and a reviewer. Don't put credentials in issues, instructions, setup workflows, or comments.
+You need cloud agent access to a training repository where you can merge to the default branch, and a reviewer. Don't put credentials in issues, instructions, setup workflows, or comments.
 
 ## Deliverables
 
@@ -23,31 +23,27 @@ Reject blank or whitespace-only task titles.
 
 Don't swap in another issue, add an endpoint, or widen it into API cleanup.
 
-## Setup
+## Where the work happens
 
-From the repository root:
+| Work | Where |
+| --- | --- |
+| Create the issue, assign it, watch the session, review the pull request | **GitHub**, in your training repository |
+| Copy starter files, run `npm test` | Your clone of that repository |
+| Read `solution/` | Reference only. Don't apply `proposed-change.diff`; it is what a good result looks like |
 
-```bash
-cd sessions/session-m3-02-cloud-agent/lab
-npm --prefix starter/sample-project install
-npm --prefix starter/sample-project test
-```
-
-The starter suite passes before you add the validation.
-
-Open `starter/issue.md`, `starter/copilot-instructions.md`, `starter/copilot-setup-steps.yml`, and `starter/pr-review-checklist.md`. In a live training repository the setup workflow goes at `.github/workflows/copilot-setup-steps.yml`.
+The files in `starter/` are your inputs: `issue.md`, `copilot-instructions.md`, `copilot-setup-steps.yml`, `pr-review-checklist.md`, and `sample-project/`.
 
 ## Time plan
 
 | Checkpoint | Work | Time |
 | --- | --- | --- |
-| 1 | Check the issue contract | 20 min |
-| 2 | Check repository setup | 20 min |
-| 3 | Produce and inspect the proposed change | 35 min |
+| 1 | Check the issue contract | 10 min |
+| 2 | Set up the repository | 20 min |
+| 3 | Run the agent and inspect the pull request | 50 min |
 | 4 | Run and review tests | 25 min |
-| 5 | Make the human decision | 20 min |
+| 5 | Make the human decision | 15 min |
 
-## Checkpoint 1: Issue contract (20 minutes)
+## Checkpoint 1: Issue contract (10 minutes)
 
 Read `starter/issue.md`. Have a peer answer:
 
@@ -62,27 +58,29 @@ Fix any ambiguous text before implementation.
 
 **Result:** The issue has acceptance criteria, allowed files, non-goals, and a stop condition.
 
-## Checkpoint 2: Setup (20 minutes)
+## Checkpoint 2: Set up the repository (20 minutes)
 
-1. Read `starter/copilot-instructions.md` and `starter/copilot-setup-steps.yml`.
-2. Check that the workflow targets `.github/workflows/copilot-setup-steps.yml` and has a single job named `copilot-setup-steps`.
-3. Run the baseline:
+You do this yourself, in your training repository.
+
+1. Copy the contents of `starter/sample-project/` to the repository root. The setup workflow expects `package.json`, `package-lock.json`, `src/`, and `tests/` there.
+2. Add `starter/copilot-instructions.md` as `.github/copilot-instructions.md`.
+3. Add `starter/copilot-setup-steps.yml` as `.github/workflows/copilot-setup-steps.yml`. Check that it has one job named `copilot-setup-steps`.
+4. Commit and **merge to the default branch**. The workflow doesn't run from any other branch.
+5. In the **Actions** tab, run the setup workflow and check that it passes.
+6. Run the baseline locally:
 
    ```bash
-   npm --prefix starter/sample-project test
+   npm install
+   npm test
    ```
-
-4. Write down the result and the allowed files: `src/app.js` and `tests/app.test.js`.
 
 Stop if the baseline fails without explanation or setup needs a credential.
 
-**Result:** Passing baseline output, reviewed setup files, a named reviewer, and a stop condition.
+**Result:** Passing baseline, setup merged and run, and a named reviewer.
 
-## Checkpoint 3: Proposed change (35 minutes)
+## Checkpoint 3: Run the agent and inspect the pull request (50 minutes)
 
-Copy the contents of `starter/sample-project/` to the root of the training repository. The setup workflow expects `package.json`, `package-lock.json`, `src/`, and `tests/` there. Add the instructions and setup workflow.
-
-Create the issue from `starter/issue.md` and assign it to Copilot cloud agent.
+On GitHub, create the issue from `starter/issue.md` and assign it to Copilot cloud agent.
 
 Monitor the session. Note the planned files, reported commands, any steering, and the final files. Steer only if the work drifts:
 
@@ -99,11 +97,13 @@ Before running tests, inspect the diff with `starter/pr-review-checklist.md`:
 - valid task creation keeps its response shape;
 - no dependency or unrelated endpoint changed.
 
-If no proposal is ready after 25 minutes, stop the run.
+If no pull request is ready after 35 minutes, stop the run and compare your issue with `solution/issue.md`.
 
-**Result:** A pull request or diff tied to the same issue.
+**Result:** A pull request tied to the same issue.
 
 ## Checkpoint 4: Tests (25 minutes)
+
+Check out the pull request branch, then run:
 
 ```bash
 npm test
@@ -120,25 +120,25 @@ If a case is missing, ask for a test for that case only.
 
 **Result:** Focused test output for the reviewed proposal.
 
-## Checkpoint 5: Human decision (20 minutes)
+## Checkpoint 5: Human decision (15 minutes)
 
 Choose:
 
 - **approve** when the issue, diff, and tests agree;
 - **request changes** when a correction within the issue remains;
-- **pause** when test output or ownership is unresolved.
+- **pause** when test output is unclear.
 
 Compare your decision with `solution/issue-journey.md`. Don't merge unless your training repository requires it.
 
-**Result:** The pull request or local review shows the outcome.
+**Result:** The pull request shows the outcome.
 
 ## Troubleshooting
 
 | Issue | Response |
 | --- | --- |
-| Setup workflow isn't active on the default branch | Ask the trainer to prepare the repository. |
+| Setup workflow isn't active on the default branch | Merge it to the default branch, then run it from the **Actions** tab. |
 | Session edits extra files | Stop it or tell the agent to change only the allowed files. |
 | Test passes but response shape changed | Request changes and cite the response-shape criterion. |
 | Review suggests a second feature | Log it as future work. |
 
-`solution/` has the completed issue journey, prepared diff, setup workflow, runnable solution project, and test output.
+`solution/` is reference material: the completed issue journey, `proposed-change.diff`, the setup workflow, and a runnable solution project.

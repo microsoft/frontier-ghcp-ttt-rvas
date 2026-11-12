@@ -22,17 +22,62 @@ Session M7-05 | 3 hours
 
 | Segment | Time |
 | --- | --- |
-| Parent objective and boundaries | 10 min |
-| Minimal workstream plan | 10 min |
-| Monitor and intervene | 12 min |
-| Live demonstration | 13 min |
-| Review and lab handoff | 15 min |
+| Parent objective, terms, and boundaries | 8 min |
+| When to split, independence, shared dependencies | 10 min |
+| Minimal workstream plan | 8 min |
+| Monitor and intervene; failure modes | 12 min |
+| Live demonstration | 12 min |
+| Review and lab handoff | 10 min |
+
+---
+
+# Three terms
+
+- **Parent-led orchestration:** one parent session owns the objective, starts
+  children, and reviews what they return.
+- **Child session:** a separate session that works one question from its own inputs.
+- **Stop condition:** the one boundary that ends a child's work.
+
+The parent keeps decision authority.
+
+---
+
+# Orchestration, parallel chats, delegation
+
+| Approach | Difference |
+| --- | --- |
+| Parallel chats | You merge answers by hand. No parent reviews. |
+| Delegation (M2-05, M3-02) | One task to one agent. You review one output. |
+| **Orchestration** | A parent splits one objective, runs children, reconciles them. |
+
+---
+
+# When to split
+
+Split when:
+
+- the questions are independent;
+- each child has its own inputs;
+- the parent can check each result.
+
+**Keep it in one session** when each step needs the last answer, or the work is
+small enough that splitting costs more than it saves.
+
+---
+
+# Make workstreams independent
+
+- One question per child, from separate inputs.
+- Children don't read each other's results.
+- **Shared dependency?** Move it to the parent, or settle it before you start.
+- Overlap between two children means the split is wrong. Redraw it.
 
 ---
 
 # Required access
 
-- `/orchestrate` creates and coordinates live child sessions.
+- `/orchestrate` creates and coordinates live child sessions (check current docs
+  for your app version).
 - Product route: GitHub MCP reads the selected issues.
 - Developer route: local project read access and Python 3.10 or later.
 - You can open, redirect, and stop child sessions.
@@ -155,6 +200,19 @@ gaps, and give a recommendation. Obey each stop condition.
 - Is the recommendation supported?
 
 Reject answers that lack supporting sources.
+
+---
+
+# Failure modes
+
+| Failure | Response |
+| --- | --- |
+| Hidden dependency: a child needs another's answer | Pause one; move the question to the parent |
+| Overlap: two children answer the same thing | Merge or redraw |
+| Child drifts past its question | Redirect |
+| Child crosses the stop condition | Stop |
+| Confident answer, no source | Reject |
+| Children agree because they share a source | Check the source, not the count |
 
 ---
 

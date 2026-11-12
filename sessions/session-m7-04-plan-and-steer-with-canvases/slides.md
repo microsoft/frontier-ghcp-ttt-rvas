@@ -14,6 +14,43 @@ Session M7-04 | Product and Delivery Teams | Intermediate
 
 ---
 
+# Key terms
+
+- **Canvas:** a shared panel in the GitHub Copilot app where you and the agent work on the same artifact.
+- **Project-scoped canvas:** a canvas stored in the repository under `.github/extensions`, so the team shares it. (Personal ones live in `~/.copilot/extensions`.)
+- **Extension:** the code behind the canvas: a `package.json`, an entry file such as `extension.mjs`, and optional saved state.
+- **State drift:** the canvas shows older data than the source system.
+
+---
+
+# Canvas, chat, or issues?
+
+| | Chat | Canvas | GitHub issues |
+| --- | --- | --- | --- |
+| Good for | Asking, reasoning | Seeing and steering shared state | Recording work |
+| Lasts | The conversation | Until you retire it | Until closed |
+| Authoritative for | Nothing | Planning notes you add | Issue state, titles, assignees |
+
+**Which state wins:** GitHub wins for issue facts. The canvas wins only for the
+planning fields it owns, such as planning status, risk, and decision.
+
+---
+
+# Canvas trade-offs
+
+**Pros:** one visible view, repeatable actions, survives the chat, you can edit it
+directly.
+
+**Cons and limits:** generated code you must review; it holds a copy of the
+data, so it goes stale; it needs an owner; it runs only in the app.
+
+**Refresh:** the canvas doesn't update itself when GitHub changes. Refresh runs a
+read you trigger and updates the last-refresh time.
+
+**Don't use one** for a single answer, a one-off draft, or data you won't revisit.
+
+---
+
 # Use visible state when chat stops being enough
 
 A canvas helps you review several records and make repeated updates through named
@@ -89,8 +126,9 @@ People can update planning status and record decisions. Copilot can summarize
 and propose updates. Do not close issues, change assignees, or publish content.
 ```
 
-This is a no-code review. Inspect generated files and capabilities, then ask
-Copilot for specific changes.
+This is a no-code review. Check **Customize** → **Canvas** and `.github/extensions`
+(per the current docs; check current docs if the UI differs). Then ask Copilot for
+specific changes.
 
 ---
 

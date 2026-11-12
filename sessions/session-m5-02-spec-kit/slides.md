@@ -22,8 +22,8 @@ Session M5-02 | 3 hours 30 minutes
 
 | Segment | Time |
 | --- | --- |
-| Why specification-driven development | 8 min |
-| Spec Kit project and artifact model | 10 min |
+| Why specification-driven development | 6 min |
+| Spec Kit project and artifact model | 12 min |
 | Requirements and clarification | 12 min |
 | Planning, checklists, tasks, and analysis | 12 min |
 | Implementation and convergence | 10 min |
@@ -107,6 +107,20 @@ design, tasks, and review trail.
 
 ---
 
+# Four terms and one file layout
+
+| Term | Meaning |
+| --- | --- |
+| **Constitution** | The project's rules. Planning and review check against them |
+| **Convergence** | Compare code, tests, and artifacts. Add tasks for any gap. Repeat until none are left |
+| **Idempotent** | Doing it twice has the same result as doing it once |
+| **Skill** | A folder in `.github/skills/` holding the instructions for one command |
+
+`/speckit-plan` runs the instructions in `.github/skills/speckit-plan/`. Edit the
+folder and the command changes.
+
+---
+
 # The full workflow
 
 ```text
@@ -121,8 +135,8 @@ Analyze
 Implement ⇄ Converge
 ```
 
-Clarify, checklist, and analyze are review gates. Use them when ambiguity or risk
-justifies the review.
+Clarify, checklist, and analyze are review gates. Use them when the request is
+ambiguous or risky.
 
 ---
 
@@ -296,15 +310,11 @@ then analyze again.
 /speckit-implement
 ```
 
-Before implementation:
+Before you start: review the checklist, fix the analysis findings, and commit
+the artifacts.
 
-1. Review and approve the requirements checklist.
-2. Resolve material analysis findings.
-3. Commit the accepted artifacts.
-4. Check the implementation scope.
-
-During implementation, connect tests and source code to the accepted user stories
-and requirements. The original prompt alone is not enough.
+Tie tests and code to the user stories in `spec.md`. The original prompt alone is
+not enough.
 
 ---
 
@@ -324,8 +334,8 @@ Converged ───────────────→ Review or pull reques
 Append tasks → Implement → Test → Converge again
 ```
 
-Convergence does not rewrite requirements to match the code. It identifies the
-work needed to make the implementation and accepted artifacts agree.
+Convergence never rewrites requirements to match the code. It adds the tasks
+that close the gap.
 
 ---
 
@@ -343,7 +353,7 @@ accepted artifacts and implementation.
 
 ---
 
-# Living specifications evolve accepted behavior
+# Optional: living specifications evolve accepted behavior
 
 When requirements change, update the current feature artifacts in order:
 
@@ -366,29 +376,26 @@ the contract.
 
 ---
 
-# Convert tasks into GitHub Issues
+# Optional: convert tasks into GitHub Issues
 
 ```text
 /speckit-taskstoissues
 ```
 
-The generated issues should preserve:
+Each issue keeps its task ID, dependencies, and file paths. Issues distribute the
+work. **They are not a second requirements source.**
 
-- task IDs and user-story references;
-- dependencies and parallel markers;
-- exact file paths and expected work;
-- the boundaries already accepted in `spec.md`.
-
-Issues distribute the work. **They are not a second requirements source.**
+The command comes from Spec Kit's GitHub extension. Skip it if your install
+doesn't have it.
 
 ---
 
 # Install Spec Kit
 
-Install from a pinned release:
+Install a pinned release. This session uses v1.4.0, the latest on 12 November 2026. Check the [releases page](https://github.com/github/spec-kit/releases) before you teach:
 
 ```bash
-export SPECKIT_TAG='<release-tag>'
+export SPECKIT_TAG='v1.4.0'
 uv tool install specify-cli --force \
   --from "git+https://github.com/github/spec-kit.git@${SPECKIT_TAG}"
 specify version
@@ -423,10 +430,10 @@ You will:
 3. Specify and clarify task archiving.
 4. Create the plan, checklist, and tasks.
 5. Analyze before implementation.
-6. Convert tasks into GitHub Issues.
-7. Implement in stages and run the unit tests.
-8. Converge until the artifacts and code agree.
-9. Evolve the living specification to add restore behavior.
+6. Implement in stages and run the unit tests.
+7. Converge until the artifacts and code agree.
 
-**The lab ends with evolved artifacts, working code, passing tests, GitHub Issues,
-and a final convergence result.**
+Optional, with time left: convert tasks into GitHub Issues, and add
+restore behavior through the living specification.
+
+**The lab ends with working code, passing tests, and a final convergence result.**

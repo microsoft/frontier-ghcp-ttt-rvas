@@ -8,23 +8,27 @@ Start with a profile that enables every tool and permits any needed change. Run 
 
 | Time | Segment |
 | --- | --- |
-| 0:00 to 0:08 | What a custom agent profile controls |
-| 0:08 to 0:18 | `.agent.md` structure |
-| 0:18 to 0:30 | Weak profile and boundary violation |
-| 0:30 to 0:43 | Least-privilege tools and path rules |
-| 0:43 to 0:52 | Stop, validation, and human handoff |
-| 0:52 to 1:00 | Rerun checks and lab handoff |
+| 0:00 to 0:06 | What a profile controls; custom vs general agent |
+| 0:06 to 0:16 | Frontmatter and tool aliases |
+| 0:16 to 0:23 | Selection; effects of tools, instructions, model |
+| 0:23 to 0:32 | Weak profile and boundary violation |
+| 0:32 to 0:41 | Least-privilege tools and path rules |
+| 0:41 to 0:47 | Stop and handoff |
+| 0:47 to 0:52 | Rerun the contract |
+| 0:52 to 0:58 | Agent vs skill vs MCP |
+| 0:58 to 1:00 | Lab handoff |
 
 ## Preparation
 
 - Open the weak and tightened profiles side by side.
 - Run `npm test` from `lab/starter/agent-project`.
 - Keep `PROFILE-REFERENCE.md` and `BOUNDARY-EVIDENCE.md` open.
-- Set up the JavaScript LSP server with `lab/lsp-setup.md`. Check startup and a real `getOrdersByUser` reference lookup.
+- Check the [custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration) page. Frontmatter fields differ by client and change over time.
+- Optional stretch: set up the JavaScript LSP server with `lab/lsp-setup.md`. Skip it if time is short.
 
 ## Teaching sequence
 
-### 0:00 to 0:08: What the profile controls
+### 0:00 to 0:06: What the profile controls
 
 A profile supplies instructions and filters the tools the agent sees. It doesn't grant repository permissions.
 
@@ -34,7 +38,9 @@ Environment: actual tool permissions and repository access
 Human: accepts, revises, or rejects the result
 ```
 
-### 0:08 to 0:18: Structure
+**Custom agent vs general agent.** Use a custom agent when the same role comes back often, it needs fewer tools than the default, it needs a stop rule or fixed procedure, or the team should get the same behavior. Use the general agent plus repository instructions for one-off work. If instructions are enough, don't make an agent.
+
+### 0:06 to 0:16: Frontmatter and tool aliases
 
 ```text
 .github/
@@ -42,21 +48,35 @@ Human: accepts, revises, or rejects the result
     └── test-writer.agent.md
 ```
 
-Read the frontmatter from `PROFILE-REFERENCE.md`:
+Walk the frontmatter from `PROFILE-REFERENCE.md`:
 
-- `description` is required;
-- `name` is optional but useful;
-- `target` can limit the environment;
-- omitting `tools` enables all available tools;
-- `disable-model-invocation` requires deliberate use;
-- `user-invocable` keeps the profile selectable;
-- `metadata` can record a synthetic owner and contract version.
+- `description` is required. Copilot reads it to choose the agent.
+- `name` is optional.
+- `tools` lists what the agent may use. Omit it or use `["*"]` and it gets everything, including MCP tools. `[]` means none. Unknown names are ignored, so a typo fails quietly.
+- `model` is optional. Unset inherits the default.
+- `target` is `vscode` or `github-copilot`. Unset means both.
+- `disable-model-invocation: true` stops Copilot from picking the agent on its own. A person must select it. It replaces the retired `infer: false`.
+- `user-invocable: false` hides the agent from people. Default is `true`.
 
-The Markdown body tells the agent what it may do and when to stop.
+Aliases, all case-insensitive: `read`, `search`, `edit`, `execute`, `agent`, `web`. MCP tools use `server-name/tool` or `server-name/*`.
 
-Spend five minutes on tools versus code intelligence. `/lsp show` lists configured servers and `/lsp test typescript` checks startup. Neither performs a lookup. Ask for `getOrdersByUser` references and inspect the LSP call or logs. `getUserOrderStats` is a caller and the export isn't. Keep this lookup read-only.
+The Markdown body tells the agent what it may do and when to stop. **Say once: check current docs.** Some fields (`metadata`, `mcp-servers`) don't apply in IDE agents.
 
-### 0:18 to 0:30: Weak profile
+### 0:16 to 0:23: Selection and effects
+
+Three ways to start an agent in the CLI: `/agent`, naming it in a prompt, or `copilot --agent=NAME`. Copilot can also delegate to a custom agent by itself, based on `description`. Set `disable-model-invocation: true` when a wrong auto-pick is costly.
+
+What changes behavior:
+
+| Setting | Effect |
+| --- | --- |
+| Tools | Ceiling on what it can do |
+| Instructions | How it works inside that ceiling, and where it stops |
+| Model | Reasoning quality, speed, cost |
+
+Too many tools means it can edit anything. Vague instructions mean it guesses. A weak model or an expensive one is a bad fit for the wrong task.
+
+### 0:23 to 0:32: Weak profile
 
 Open `weak-test-writer.agent.md`:
 
@@ -80,7 +100,7 @@ rejects it.
 
 Nothing makes the profile stop before editing `src/`. The contract is broken even if one model run happens to stay in bounds.
 
-### 0:30 to 0:43: Tighten tools and paths
+### 0:32 to 0:41: Tighten tools and paths
 
 Open `test-writer.agent.md`:
 
@@ -101,7 +121,7 @@ The allowlist isn't enough: `edit` can still touch the wrong file. The body limi
 | Repository blocks a write | Environment or repository policy |
 | Change is accepted | Human review |
 
-### 0:43 to 0:52: Stop and handoff
+### 0:41 to 0:47: Stop and handoff
 
 Read the production-conflict rule aloud. The correct output names:
 
@@ -112,7 +132,7 @@ Read the production-conflict rule aloud. The correct output names:
 
 Then run `npm test`. If the command can't run, the profile reports **not run** rather than success.
 
-### 0:52 to 1:00: Rerun
+### 0:47 to 0:52: Rerun
 
 ```bash
 npm run check:tight
@@ -121,14 +141,22 @@ npm test
 
 The same contract now passes. Load the learner's profile with CLI `/agent` and run the conflict scenario. You need the actual stop report and unchanged source. A manual trace doesn't count as a live run.
 
-Finish with the extension choice:
+### 0:52 to 0:58: Agent vs skill vs MCP
 
-| Need | Use |
-| --- | --- |
-| Repository-wide rule | Instructions |
-| Repeatable procedure | Skill |
-| Role with a defined scope | Custom agent |
-| External tools or data | MCP |
+This matches M3-03 and M3-05: a skill gives **know-how**, a custom agent gives a **role**, an MCP server gives **reach**.
+
+| Need | Use | Example |
+| --- | --- | --- |
+| Always applies | Instructions | "Use npm test" |
+| How we do this | Skill | `release-notes` writes your changelog format |
+| Act as a role with limits | Custom agent | `test-writer` edits `tests/` only |
+| Reach a system | MCP server | GitHub or Microsoft Learn server |
+
+They combine: an agent can use a skill and list the MCP tools it may call. Don't add MCP to a role that only needs repository files.
+
+### 0:58 to 1:00: Lab handoff
+
+See the lab handoff below. The LSP lookup is an optional stretch at the end of the lab.
 
 ## Prepared demonstration
 
@@ -138,7 +166,7 @@ Finish with the extension choice:
 4. Show the tightened frontmatter and body.
 5. Run `check:tight` and the full tests.
 6. Produce the stop report for the same conflict.
-7. Keep the LSP operation and selected profile in `agent-run.md`.
+7. Keep the selected profile and result in `agent-run.md`.
 
 ## Common mistakes
 
@@ -148,10 +176,12 @@ Finish with the extension choice:
 - Reporting validation as passed when the command didn't run.
 - Assuming the profile grants permission.
 - Adding MCP to a role that doesn't need external data.
+- Making a custom agent when repository instructions would do.
+- Typing a tool name wrong. Unknown names are ignored.
 
 ## Lab handoff
 
-Learners inspect the structure, run the failing weak profile, tighten it, and rerun the contract. They record a stop report with no source edits. Allow ten minutes for the LSP lookup inside the 25-minute weak-profile block. The lab stays at 120 minutes.
+Learners inspect the structure, run the failing weak profile, tighten it, and rerun the contract. They record a stop report with no source edits. The LSP lookup is an optional stretch in the last 15 minutes. The lab stays at 120 minutes.
 
 ## References
 

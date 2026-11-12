@@ -11,24 +11,26 @@ Custom agents define narrow roles in Markdown that teams can review. Start with 
 
 ## Learning outcomes
 
-- Explain the `.agent.md` profile structure and frontmatter.
+- Explain the `.agent.md` structure, key frontmatter fields, tool aliases, and `disable-model-invocation`.
+- Decide when a custom agent beats a general agent, and how an agent is selected.
+- Describe how tools, instructions, and model change behavior.
 - Detect a boundary violation with a repeatable contract test.
 - Use tool aliases as a least-privilege allowlist.
 - Write a stop condition that hands production conflicts to a human.
 - Load the profile in the CLI and check that a source-code conflict stops the run.
-- Choose between instructions, custom agents, skills, and MCP.
-- Run an LSP definition/reference lookup and tell a caller from an export.
+- Choose between instructions, skills, custom agents, and MCP: know-how, a role, or reach.
+- Optional stretch: run an LSP definition/reference lookup and tell a caller from an export.
 
 ## You need
 
-Node.js 22.22.2 or later, Git, the standalone Copilot CLI with custom-agent support, and a working JavaScript language server ([setup](lab/lsp-setup.md)).
+Node.js 22.22.2 or later, Git, the standalone Copilot CLI with custom-agent support, and and, for the optional stretch, a working JavaScript language server ([setup](lab/lsp-setup.md)).
 
 | Resource | Location |
 | --- | --- |
 | Trainer guide | [`trainer-content/README.md`](trainer-content/README.md) |
 | Slides | [`slides.md`](slides.md) |
 | Lab | [`lab/README.md`](lab/README.md) |
-| Language-server setup | [`lab/lsp-setup.md`](lab/lsp-setup.md) |
+| Language-server setup (optional) | [`lab/lsp-setup.md`](lab/lsp-setup.md) |
 | Weak profile | [`lab/starter/agent-project/.github/agents/weak-test-writer.agent.md`](lab/starter/agent-project/.github/agents/weak-test-writer.agent.md) |
 | Tightened profile | [`lab/solution/agent-project/.github/agents/test-writer.agent.md`](lab/solution/agent-project/.github/agents/test-writer.agent.md) |
 | Profile reference | [`lab/solution/agent-project/PROFILE-REFERENCE.md`](lab/solution/agent-project/PROFILE-REFERENCE.md) |

@@ -1,6 +1,8 @@
 # Agent and code-intelligence run
 
-## LSP lookup
+## Optional stretch: LSP lookup
+
+Skip this section unless you finish the main lab early.
 
 - CLI version and project path:
 - Configured server, executable, and startup-test result:

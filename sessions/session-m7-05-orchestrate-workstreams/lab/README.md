@@ -36,27 +36,32 @@ fifth child stays outside this orchestration.
 - GitHub MCP can retrieve the parent and child issues.
 - You can open, redirect, and stop child sessions.
 - Stop any work that requests production data, personal data, secrets, external
-  contact, publication, or unapproved changes.
+  contact, publication, or unapproved changes. This is the boundary for every
+  child.
 
 ## Schedule
 
 | Exercise | Work | Time |
 | --- | --- | --- |
-| 1 | Approve and start the plan | 30 min |
+| 1 | Decide the split and start the plan | 30 min |
 | 2 | Monitor and intervene | 35 min |
 | 3 | Review results | 35 min |
 | 4 | Return the parent result | 20 min |
 
-## Exercise 1: Approve and start the plan
+## Exercise 1: Decide the split and start the plan
 
 Open `starter/orchestration-plan-template.md`.
 
 1. Retrieve the approved parent and child issues through GitHub MCP.
-2. Define one question with a clear scope for each child issue.
-3. Name the approved issue and its linked sources for each workstream.
-4. Add a hard stop condition and reviewer.
-5. Check that no child depends on another child result.
-6. Submit the plan through `/orchestrate`.
+2. Decide whether the work should split. Write one sentence: why four children
+   beat one session here.
+3. Define one question with a clear scope for each child issue.
+4. Name the approved issue and its linked sources for each workstream.
+5. Add a stop condition and reviewer. The lab-wide boundary above applies to
+   every child; add a stop condition only for what is specific to the workstream.
+6. Check that no child depends on another child result. Move any shared question
+   to the parent.
+7. Submit the plan through `/orchestrate`.
 
 Use this prompt:
 
@@ -98,7 +103,7 @@ Review each child result against its workstream:
 - Is the recommendation supported?
 
 Reject unsupported claims. Redirect a safe, repairable result. Stop work that
-crosses a hard boundary.
+crosses the boundary.
 
 ## Exercise 4: Return the parent result
 
@@ -132,6 +137,7 @@ Session M7-06 uses the live GitHub issues and this parent result.
 | A child requests restricted data | Stop the child and record the boundary in the parent result. |
 | A result cites no supporting issue content | Reject it or redirect the child. |
 | Two workstreams overlap | Pause one and move the shared question to the parent. |
+| A child needs another child's answer | Treat it as a shared dependency: stop the child and move the question to the parent. |
 | An issue cannot be retrieved | Stop that workstream until approved issue access is restored. |
 
 ## Developer route: Review your M2-05 pull request

@@ -17,12 +17,13 @@ reviews their M2-05 fix, tests, and real pull request.
 
 | Time | Segment | Outcome |
 | --- | --- | --- |
-| 0:00-0:10 | Parent objective and workstream boundaries | Split work without hidden dependencies. |
-| 0:10-0:20 | Minimal workstream plan | Set questions, inputs, stops, and reviewers. |
-| 0:20-0:32 | Monitor and intervene | Wait, redirect, stop, accept, reject, or escalate. |
-| 0:32-0:45 | Live demonstration | Review child sessions on the orchestration surface. |
-| 0:45-0:55 | Review the parent result | Keep supported findings and visible gaps. |
-| 0:55-1:00 | Lab handoff | Check access and deliverables. |
+| 0:00-0:08 | Parent objective, terms, and boundaries | Define parent, child, and stop condition. |
+| 0:08-0:18 | When to split; independence and shared dependencies | Decide to split, and split without hidden dependencies. |
+| 0:18-0:26 | Minimal workstream plan | Set questions, inputs, stops, and reviewers. |
+| 0:26-0:38 | Monitor and intervene; failure modes | Wait, redirect, stop, accept, reject, or escalate. |
+| 0:38-0:50 | Live demonstration | Review child sessions on the orchestration surface. |
+| 0:50-0:57 | Review the parent result | Keep supported findings and visible gaps. |
+| 0:57-1:00 | Lab handoff | Check access and deliverables. |
 
 ## Prepare
 
@@ -31,6 +32,36 @@ reviews their M2-05 fix, tests, and real pull request.
 - Developer route: the supplied Python tests run and local project read access works.
 - You can open, redirect, and stop child sessions.
 - Use synthetic or sanitized work.
+
+## Teach the concepts
+
+**Terms.** In **parent-led orchestration**, a parent session owns the objective,
+starts child sessions, and reviews their results. A **child session** works one
+question from its own inputs. A **stop condition** is the one boundary that ends a
+child's work.
+
+**Against other approaches.** Parallel chats: you merge answers by hand and no one
+reviews as a parent. Delegation (M2-05, M3-02): one task, one agent, one output to
+review. Orchestration: one objective split across children, reconciled by the
+parent. M5-01 adds persistent roles and a framework; M7-05 uses temporary
+workstreams.
+
+**When to split.** Split when questions are independent, each child has its own
+inputs, and the parent can check each result. Keep one session when each step
+needs the previous answer, or the work is small. Ask learners for one example of
+each.
+
+**Independence and shared dependencies.** A shared dependency, such as a term
+definition two children both need, goes to the parent or is settled before the
+children start. If two children answer the same question, the split is wrong.
+
+**Failure modes.** Hidden dependency, overlap, drift past the question, crossing
+the stop condition, a confident answer with no source, and agreement that comes
+from a shared source rather than independent checks. Responses are in the
+monitor table below.
+
+**Commands.** `/orchestrate` and the `orchestrate` skill are listed in the current
+GitHub Copilot app docs. Check current docs for options in your app version.
 
 ## Minimal workstream plan
 

@@ -10,9 +10,10 @@
 
 ## Overview
 
-Implement and review one Bookmark API slice: `POST /api/bookmarks`. The accepted
-GitHub issue limits what you change, and the Session M5-02 specification standards
-apply. You finish with test results and a handoff another engineer can use.
+Implement and review one Bookmark API slice: `POST /api/bookmarks`. You turn a
+supplied specification into a GitHub issue, prompt Copilot to implement it, and
+review the result against the spec and the tests. You finish with a handoff another
+engineer can use.
 
 **The capstone stays small on purpose.** Authentication, persistent storage,
 deployment, and every other bookmark endpoint are out of scope. Use synthetic data
@@ -20,11 +21,11 @@ and the existing dependencies.
 
 ## Learning outcomes
 
-- Keep scope decisions in the accepted GitHub issue.
-- Check a prepared specification for testable behavior and named non-goals.
-- Turn the accepted specification into one implementation-ready issue.
-- Check the Bookmark creation slice with executable tests.
-- Record a review decision, deferred scope, and the next action.
+- Turn a specification into one implementation-ready issue.
+- Prompt Copilot to implement the issue.
+- Use the failing starter tests as the baseline.
+- Review the patch against the spec and the tests, not only the trace.
+- Hand off the result with a review decision and next action.
 
 ## Materials
 
@@ -38,6 +39,5 @@ and the existing dependencies.
 
 ## Final deliverable
 
-A reviewed handoff for `POST /api/bookmarks` containing the issue, implementation
-patch, test results, review decision, deviations, deferred scope, and
-next action.
+A reviewed handoff for `POST /api/bookmarks` with the issue, patch, test results,
+review decision, and next action.

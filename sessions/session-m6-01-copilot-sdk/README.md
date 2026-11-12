@@ -12,6 +12,8 @@ description: "Build and check a reliable TypeScript agent application with the G
 
 **Duration:** 3 hours (1 hour trainer content, 2 hour lab)
 
+**SDK version:** `@github/copilot-sdk` 1.0.16, pinned in the starter and solution
+
 ## Overview
 
 Build a TypeScript CLI around an agent to assess whether a synthetic software
@@ -20,8 +22,7 @@ change is ready to proceed.
 You write the reliability controls in application code. The CLI manages the client
 and session lifecycle, streams progress, and limits tool use. It also shows denied
 actions, records failures, and closes resources. Tests check that control path.
-An OpenTelemetry Collector sends traces to Jaeger so you can inspect the same run
-outside the terminal.
+An optional extension sends traces through an OpenTelemetry Collector to Jaeger.
 
 ## Learning outcomes
 
@@ -32,12 +33,13 @@ outside the terminal.
 - use pre-tool, failed-tool, error, and session-end hooks;
 - make a denied action visible to the user and trace;
 - test the allowed, denied, failed, and cleanup paths;
-- send SDK traces through an OpenTelemetry Collector to Jaeger.
+- tell what the SDK provides from what the sample app chooses;
+- (optional) send SDK traces through an OpenTelemetry Collector to Jaeger.
 
 ## Required access
 
-Learners need authenticated GitHub Copilot SDK access, Node.js and npm, Docker
-with Docker Compose, and a terminal.
+Learners need authenticated GitHub Copilot SDK access, Node.js and npm, and a
+terminal. The optional tracing extension also needs Docker with Docker Compose.
 
 ## Scenario
 
@@ -76,8 +78,8 @@ The lab covers:
 - pre-tool, post-tool-failure, error, and session-end hooks;
 - a visible denied action;
 - focused automated tests;
-- OTLP export through an OpenTelemetry Collector;
-- trace inspection in Jaeger.
+- optional extension: OTLP export through an OpenTelemetry Collector and trace
+  inspection in Jaeger.
 
 The session doesn't cover dynamic workflows, fleet, cloud or remote sessions,
 BYOK, plugin packaging, production deployment, external business systems, or

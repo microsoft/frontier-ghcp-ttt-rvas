@@ -1,5 +1,5 @@
 ---
-description: "HVE Core challenge covering RPI, customization, product agents, and reviewed delivery"
+description: "HVE Core challenge covering RPI, optional customization and product agents, and reviewed delivery"
 ---
 
 # Session M5-03 lab: HVE from product intent to reviewed code
@@ -12,17 +12,34 @@ description: "HVE Core challenge covering RPI, customization, product agents, an
 
 ## Objective
 
-Use HVE Core to take one Engineering Decision API feature through direct RPI phases,
-repository customization, product and Agile refinement, implementation, and review.
-The handoff is an index of the HVE artifacts and the final decision.
+Use HVE Core to take one Engineering Decision API feature through the four RPI
+phases: Research, Plan, Implement, Review. Customizing HVE for the repository and
+using the product agents are **optional** and fit only if you finish the core
+exercises early.
+
+The handoff is an index of the HVE artifacts and your decision.
+
+## Terms
+
+- **RPI:** Research, Plan, Implement, Review. Four phases, each run by its own prompt. A fifth step, Follow-up, sends defects, decision gaps, and evidence gaps back to the phase that owns them.
+- **File as interface:** each phase writes a Markdown file under `.copilot-tracking/`. The next phase reads that file, not the chat. You can read it, diff it, edit it, and attach it to a fresh chat.
+- **BRD / PRD:** business requirements document (why the business wants this) and product requirements document (what the product must do). `@BRD Builder` and `@PRD Builder` write them. You use them when you start from a business idea. This lab starts from `starter/product-intent.md`.
+- **`applyTo` glob:** a frontmatter line in an `.instructions.md` file, such as `applyTo: "src/**/*.js"`. The instruction loads only when Copilot works on a file that matches the pattern.
 
 ## Before you start
 
 You need Node.js 20 or later, GitHub Copilot, and the HVE Core extension or Copilot
 CLI plugin. Use synthetic decision records.
 
-1. Check that `/rpi-research`, `/rpi-plan`, `/rpi-implement`, `/rpi-review`, `/rpi`,
-   `@Product Manager Advisor`, and `@Agile Coach` are available.
+HVE command names and output paths change between versions. Check the
+[HVE Core README](https://github.com/microsoft/hve-core) and its
+[RPI docs](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md) for
+your installed version. This lab uses the names below. If yours differ, use yours.
+
+1. Check that `/rpi-research`, `/rpi-plan`, `/rpi-implement`, `/rpi-review`, and `/rpi`
+   are available. For the optional exercises, also check `@Product Manager Advisor`
+   and `@Agile Coach`. Type the command in chat. If it appears in the picker or
+   runs, it's available. In Copilot CLI, `/skills` and `/agent` list what's loaded.
 2. Check that `.copilot-tracking/` is ignored by Git.
 3. Run `npm test` (run `npm ci` first if dependencies are missing).
 4. Read `starter/product-intent.md`, `starter/challenge-brief.md`, and the
@@ -30,30 +47,29 @@ CLI plugin. Use synthetic decision records.
 5. Reserve the last 20 to 30 minutes for Review, your decision, and the handoff.
 
 The baseline is one passing health test and no `POST /api/decisions`. If one HVE
-invocation fails, use `starter/hve-phase-recovery.md` and continue with the next
-HVE agent.
+invocation fails, use `starter/hve-phase-recovery.md` and continue with the next phase.
 
 ## Pacing
 
-Agent latency varies. Move on when you have the artifacts listed for the stage.
+Agent latency varies. Move on when the stage's files exist.
 
-| Stage | Range | Required results |
-|-------|-------|------------------|
-| HVE preflight and artifact model | 10 to 15 min | Required agents are visible; tracking paths are understood |
-| Research and Plan | 30 to 40 min | Research, plan, critique, and human approval exist |
-| HVE customization | 20 to 25 min | The artifacts show how each of the three customization layers affected the work |
-| Product and Agile refinement | 20 to 25 min | Advisor decision, story, criteria, and exclusions exist |
-| Implement and validate | 35 to 45 min | Changes log, code, test results, and container results exist |
-| Review and combined-RPI comparison | 20 to 30 min | Review artifact, human decision, and comparison are recorded |
+| Stage | Range | Done when |
+|-------|-------|-----------|
+| Preflight | 10 to 15 min | Commands are available and you can name the four tracking paths |
+| Research and Plan | 30 to 40 min | Research, plan, critique, and your approval exist |
+| Implement and validate | 35 to 45 min | Changes log, code, and test and container results exist |
+| Review and combined-RPI comparison | 20 to 30 min | Review file, your decision, and the comparison note exist |
+| Optional: customization | 20 to 25 min | You can name one change a repository file caused |
+| Optional: product and Agile agents | 20 to 25 min | You have a story, criteria, and exclusions |
 
-## Exercise 1: Understand HVE and run Research
+The required stages take about 1 hour 35 minutes to 2 hours 10 minutes. Do the
+optional stages with the time that remains, between Plan and Implement.
 
-Before changing code, identify HVE's four component types:
+## Exercise 1: Run Research and Plan
 
-* agents define roles and multi-step protocols;
-* prompts provide slash-command entry points;
-* instructions apply standards by file pattern;
-* `.copilot-tracking/` files save state between phases.
+Four kinds of file drive HVE: agents (roles), prompts (slash-command entry points),
+instructions (standards by file pattern), and `.copilot-tracking/` files (state
+between phases).
 
 Run:
 
@@ -61,47 +77,54 @@ Run:
 /rpi-research "Add POST /api/decisions to the starter API using the supplied product intent and feature contract"
 ```
 
-Open the research artifact under `.copilot-tracking/research/`. Check that it
-records the scope, a rejected alternative, a constraint, and the next phase.
+Expect a file like `.copilot-tracking/research/<date>/<task>-research.md`. Open it.
+It should record the scope, a rejected alternative, a constraint, and the next phase.
 
-Clear the chat, attach the research artifact, then run `/rpi-plan`. Inspect the
-plan and critique. Approve the plan only when every acceptance
-criterion maps to an owning file and a focused check.
+Clear the chat, attach the research file, then run `/rpi-plan`. Expect a plan under
+`.copilot-tracking/plans/<date>/` and a plan critique under
+`.copilot-tracking/reviews/plans/<date>/`. Read both. Approve the plan only when every
+acceptance criterion maps to an owning file and a focused check.
 
-## Exercise 2: Customize HVE for the repository
+## Optional exercise 2: Customize HVE for the repository
 
-Create three repository-owned customization layers:
+Create three repository-owned files:
 
 1. `.github/copilot-instructions.md` with the service context, architecture, data
-   boundary, and dependency rule.
+   boundary, and dependency rule. Copilot loads it for every request in the repository.
 2. `.github/instructions/javascript-api.instructions.md` with `description` and
    `applyTo` frontmatter for `src/**/*.js` and `tests/**/*.test.js`. Require stable
    envelopes, app-instance state, and HTTP-level tests.
 3. `.github/agents/decision-api-reviewer.agent.md` with a narrow review mission,
    read/search tools only, and a response format that maps findings to criteria.
 
-Record an activation check for each layer. Then ask HVE to review the current plan
-again and note one concrete change caused by the repository context, coding
-instruction, or custom agent. Creating a file alone doesn't show HVE used it.
+Check that each one is active:
 
-## Exercise 3: Explore HVE product and Agile agents
+| File | How to check |
+|------|--------------|
+| `copilot-instructions.md` | Ask "What rules does this repository give you?" The answer should quote it. In VS Code, the response's References list shows the file. |
+| `*.instructions.md` | Open or edit a file that matches `applyTo`, then ask a question about it. The instruction should appear in References. A file outside the glob should not load it. |
+| `*.agent.md` | The agent appears in the agent picker (`/agent` in Copilot CLI). Run it once and check its answer uses your response format. |
+
+Then re-run `/rpi-plan` or review the plan again, and note one concrete change caused
+by one of the files. Creating a file alone doesn't show HVE used it.
+
+## Optional exercise 3: Product and Agile agents
 
 Give `starter/product-intent.md` to `@Product Manager Advisor`. Ask it to test the
-feature's value, users, assumptions, priority, and non-goals. Keep its output in
-the platform record and cite it from the Plan artifact.
+feature's value, users, assumptions, priority, and non-goals. Cite its output from
+the plan.
 
-Give the advisor output and challenge brief to `@Agile Coach`. Ask it to produce
-one outcome-oriented user story, acceptance criteria, and named exclusions.
-Compare those criteria with the HVE plan. Update the plan when the product or Agile
-artifact exposes a gap, and record that effect in the Plan artifact. Do not copy
-the agent outputs into the handoff. Do not create live work items in this lab.
+Give the advisor output and `starter/challenge-brief.md` to `@Agile Coach`. Ask for
+one outcome-oriented user story, acceptance criteria, and named exclusions. Compare
+those criteria with the plan. Update the plan if they expose a gap, and say so in the
+plan. Don't create live work items.
 
-Use the agent picker to locate `@BRD Builder` and `@PRD Builder`. Record when the
-team would start with each agent instead of the supplied product intent.
+Use the agent picker to find `@BRD Builder` and `@PRD Builder`. Write one sentence on
+when you'd start with each instead of `product-intent.md`.
 
-## Exercise 4: Implement and review with HVE
+## Exercise 4: Implement and review
 
-Attach the approved plan and product/Agile artifact, then run `/rpi-implement`.
+Attach the approved plan (and any product or Agile output), then run `/rpi-implement`.
 The finished behavior must:
 
 * require non-empty string values for `title`, `context`, and `decision`;
@@ -115,63 +138,49 @@ The finished behavior must:
 * ship only production dependencies and tested source in the runtime stage;
 * run as a non-root user with a health check for `GET /health`.
 
-Inspect `.copilot-tracking/changes/`, then run `/rpi-review`. Review every
-criterion as `pass`, `fail`, `deferred`, or `not run`. Check that errors reveal no
+Expect a changes log under `.copilot-tracking/changes/<date>/`. Then run
+`/rpi-review` and expect a review file under `.copilot-tracking/reviews/logs/<date>/`.
+Review every criterion as `pass`, `fail`, `deferred`, or `not run`. Check that errors reveal no
 stack traces, app instances do not share records, and the runtime image excludes
 development dependencies and root execution.
 
 If the platform produces commit or pull-request text, leave it in the platform
 output. Don't commit, push, merge, or create a remote pull request.
 
-Finally, explain how `/rpi task="..."` would orchestrate the same phases and use
-Follow-up to route defects or missing evidence back to the responsible phase. Don't
-start another implementation cycle.
+## Compare direct and combined RPI
 
-## Scenario-to-task map
+You just ran the phases one at a time. Don't start a second feature. Write a short
+note, using the table:
 
-| HVE capability | Required task | What to show |
-|----------------|---------------|----------|
-| Direct RPI phases | Run Research, Plan, Implement, and Review in order | Tracking artifact from each phase |
-| Combined RPI | Explain `/rpi` orchestration and Follow-up | Direct-to-combined comparison |
-| Repository context | Add `.github/copilot-instructions.md` | Later phase cites a project rule |
-| Coding practice | Add a targeted API instruction | Matching source or test file follows the rule |
-| Agent customization | Add a review agent with a defined scope | Agent output uses the required criterion map |
-| Product planning | Use Product Manager Advisor | Value, assumptions, priority, and human question |
-| Agile refinement | Use Agile Coach | User story, acceptance criteria, and exclusions |
+| | Direct prompts (what you ran) | Combined `/rpi task="..."` |
+|-|-------------------------------|----------------------------|
+| You type | One prompt per phase | One prompt for the task |
+| Approval | You approve between phases | Depends on the mode you pick. Some modes check in; some run end to end |
+| Files you get | One file per phase, at the paths above | The same kinds of files, tied to one task name. Some versions also open a workflow canvas |
+| After Review | You decide where defects go | Follow-up routes defects to Implement, decision gaps to Plan, and evidence gaps to Research |
+| Use it when | Learning, demos, explicit approvals | You trust the handoffs |
 
-Stretch work starts after the review decision.
+In your note, say which defect or gap from your own Review Follow-up would send back,
+and to which phase.
 
 ## Final deliverable
 
-Submit or demonstrate:
+Fill in `starter/challenge-handoff.md`:
 
-* Research, Plan, Implement, and Review artifacts from HVE
-* `challenge-handoff.md` with links or paths to those four artifacts, the final
-  human decision, unresolved risks, and the next action
-* Repository context, a targeted JavaScript/API instruction, and a custom reviewer agent
-* Product Manager Advisor and Agile Coach outputs
-* The implemented endpoint, focused tests, and production container definition
-* Exact test and container results in the HVE artifacts or platform output
+* the paths of the four phase files;
+* your decision (approve, request changes, or pause);
+* open risks and the next action.
 
-## Scoring
-
-| Area | Points | Grade from |
-|------|-------:|------------|
-| HVE RPI artifacts | 40 | Research, Plan, Implement, and Review artifacts |
-| HVE customization | 25 | Repository files plus examples of their use in the HVE artifacts |
-| Product and Agile agents | 20 | Platform outputs cited by the Plan artifact |
-| Feature validation | 15 | Test and container output cited by Implement or Review |
-
-A trainer-provided recovery artifact can unblock one failed phase, but that phase
-earns no execution points. A manual submission doesn't pass this challenge.
+If you did the optional exercises, add the paths of the repository files and the
+agent outputs. Keep test and container results in the Implement or Review file.
 
 ## References
 
 * [HVE Core installation](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
 * [RPI workflow](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
-* [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
+* [Using RPI together](https://github.com/microsoft/hve-core/blob/main/docs/rpi/using-together.md)
 
 ## Solution reference
 
 Trainers can compare the result with `solution/decision-api` and
-`solution/reference-evidence.md` after the learner records a review decision.
+`solution/reference-notes.md` after the learner records a review decision.

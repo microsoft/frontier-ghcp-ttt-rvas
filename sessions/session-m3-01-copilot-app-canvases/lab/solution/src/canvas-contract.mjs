@@ -1,3 +1,5 @@
+// Scaffolding: this hand-built code encodes the exercise's rules so you can check them quickly.
+// It does not run or imitate Copilot canvas behavior. The generated canvas is the real test.
 export const allowedStatuses = new Set([
   "planned",
   "in-progress",

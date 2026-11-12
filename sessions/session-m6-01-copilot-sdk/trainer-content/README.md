@@ -11,17 +11,17 @@ description: "Trainer guide and prepared demo for a reliable GitHub Copilot SDK 
 
 Show where the model's work ends and application code takes over. The model
 produces an assessment. TypeScript code manages the lifecycle, limits tools,
-makes permission decisions, handles failures, and records traces.
+makes permission decisions, and handles failures. Tracing is an optional extension.
 
 ## One-hour plan
 
 | Time | Segment | What learners should show |
 | --- | --- | --- |
-| 0:00 to 0:08 | Application reliability boundary | They can name what the application owns |
-| 0:08 to 0:20 | Client, session, and streaming | They can draw the startup and cleanup path |
-| 0:20 to 0:37 | Tool, permissions, and hooks | They can explain where a call is denied |
-| 0:37 to 0:47 | Tests and traces | They can name a stable assertion for each path |
-| 0:47 to 0:57 | Prepared live demo | The denied action is visible in the CLI and Jaeger |
+| 0:00 to 0:10 | Application reliability boundary, SDK guarantees vs sample choices, glossary | They can name what the application owns and what the SDK provides |
+| 0:10 to 0:22 | Client, session, and streaming | They can draw the startup and cleanup path |
+| 0:22 to 0:39 | Tool, permissions, and hooks | They can explain where a call is denied and what each hook returns |
+| 0:39 to 0:47 | Tests | They can name a stable assertion for each path |
+| 0:47 to 0:57 | Prepared live demo | The denied action is visible in the CLI |
 | 0:57 to 1:00 | Lab transition | Every learner has the tools installed |
 
 Use [`slides.md`](../slides.md) for the teaching sequence.
@@ -29,15 +29,27 @@ Use [`slides.md`](../slides.md) for the teaching sequence.
 ## Prepare
 
 1. Install Node.js and npm at the versions the project declares.
-2. Check that Docker Compose starts the supplied local stack.
+2. Optional: check that Docker Compose starts the supplied local stack.
 3. Sign in to GitHub Copilot with the account learners will use.
 4. In the reference solution, run `npm ci`, the tests, and the type check.
-5. Start the OpenTelemetry Collector and Jaeger.
-6. Run one successful assessment and find its trace in Jaeger.
-7. Run the denied action and check the reason appears in the terminal and the trace.
+5. Run one successful assessment.
+6. Run the denied action and check the reason appears in the terminal.
+7. Optional: start the OpenTelemetry Collector and Jaeger, and find both runs as traces.
 8. Keep the solution project open at the demo files.
 
 ## Teaching notes
+
+### What the SDK guarantees and what the sample chooses
+
+Use the table in the slides and the lab. The SDK defines the API: event names,
+hook names and return shapes, permission result kinds. The sample defines the
+policy: the tool name, the `RESTRICTED-` rule, the retry count, and the
+allow-list. If a learner changes a policy value, tests change. If they change an
+SDK name, the code stops compiling. The lab pins `@github/copilot-sdk` 1.0.16.
+For other versions, check the SDK README.
+
+Cover the glossary in the lab README before the streaming segment: delta, hook
+return shape, OTLP, span. Skip OTLP and span unless you teach the extension.
 
 ### The application owns the boundary
 
@@ -89,27 +101,28 @@ blocks them before the handler runs.
 
 A policy denial is not an error. The application did what it was designed to do.
 
-### Tests and traces
+### Tests
 
 The tests assert control decisions and deterministic results, not the model's
 prose.
 
+### Optional extension: traces
+
 Jaeger shows the timing and sequence of a run: whether the restricted call reached
 the handler and where a failed run stopped. Trace payloads can expose prompts and
-tool arguments, so the lab uses synthetic data.
+tool arguments, so the lab uses synthetic data. Teach this only if time allows.
 
-## Demo: trace a denied change request
+## Demo: a denied change request
 
 **Level:** L300  
 **Time:** 10 minutes
 
-Show the denied lookup for `RESTRICTED-0001` in the terminal. Then open Jaeger and
-point to the same blocked tool call in the connected trace.
+Show the denied lookup for `RESTRICTED-0001` in the terminal. If you set up the
+extension, open Jaeger and point to the same blocked tool call.
 
 1. **Show the starting state.** Open `lab/solution/sdk-readiness-assistant/`. Point
    to `fixtures/change-requests.json`, `src/live-demo.ts`,
-   `src/permission-policy.ts`, `src/hook-decisions.ts`, the tests, and the
-   telemetry configuration.
+   `src/permission-policy.ts`, `src/hook-decisions.ts`, and the tests.
 
    > "The model doesn't own this data or policy. TypeScript decides which
    > capability exists and whether the exact call may run."
@@ -125,37 +138,27 @@ point to the same blocked tool call in the connected trace.
    > cover known data, denial, failure handling, streaming, and cleanup. They
    > don't compare natural-language answers."
 
-3. **Start the trace stack.**
-
-   ```bash
-   docker compose -f compose.yaml up -d
-   docker compose -f compose.yaml ps
-   ```
-
-   The SDK exports OTLP data to the Collector on port 4318. The Collector forwards
-   traces to Jaeger.
-
-4. **Run a permitted assessment.** Run `npm run demo`. The first request assesses
+3. **Run a permitted assessment.** Run `npm run demo`. The first request assesses
    `CR-1042`. Let the response stream. The renderer doesn't print the final event
    a second time.
 
-5. **Watch the restricted lookup.** The third prepared prompt requests
+4. **Watch the restricted lookup.** The third prepared prompt requests
    `RESTRICTED-0001`. The tool is known, so the request reaches policy. The
    pre-tool hook checks the request ID and denies it before the handler runs.
 
-6. **Point to the visible denial.** Read the denial reason from the terminal and
+5. **Point to the visible denial.** Read the denial reason from the terminal and
    show the audit entry.
 
-7. **Open Jaeger.** Select the service name from the project and find the latest
-   trace. It shows the session work and the blocked tool call, with no handler
-   span after the denial.
-
-8. **Show invalid input and the failed-tool policy.** Point to the `bad-id` run,
+6. **Show invalid input and the failed-tool policy.** Point to the `bad-id` run,
    then the failed-tool hook test and the session-end hook test. Invalid input
    returns a fixed validation result. A failed tool execution uses its own hook.
 
-9. **Close the demo.** Stop the application. Leave the trace stack running for the
-   lab if the machine is shared.
+7. **Optional: show the trace.** Start the stack with
+   `docker compose -f compose.yaml up -d`, rerun `npm run demo`, and open Jaeger at
+   `http://localhost:16686`. Select the project's service name. The latest trace
+   shows the blocked tool call with no handler span after the denial.
+
+8. **Close the demo.** Stop the application.
 
 ### Demo troubleshooting
 
@@ -164,24 +167,24 @@ point to the same blocked tool call in the connected trace.
 | SDK authentication fails | Stop. Check the GitHub Copilot sign-in and network path. |
 | No streamed text appears | Check the session enables streaming and the handler listens for parent `assistant.message_delta` events. |
 | Restricted data reaches the handler | Stop. Check the exact tool name and parsed `requestId` in `onPreToolUse`, then rerun the denial test. |
-| Collector is unreachable | Check Docker Compose health and the OTLP HTTP endpoint `http://localhost:4318`. |
-| Jaeger shows no trace | Check the Collector exports to Jaeger, select the configured service name, and widen the time range. |
+| Collector is unreachable (extension) | Check Docker Compose health and the OTLP HTTP endpoint `http://localhost:4318`. |
+| Jaeger shows no trace (extension) | Check the Collector exports to Jaeger, select the configured service name, and widen the time range. |
 | Output appears twice | Check whether both message deltas and the final assistant message are printed as primary output. |
 
 Point learners to [`lab/README.md`](../lab/README.md). They add the same controls
 to the starter project one layer at a time and run the focused checks at each
-checkpoint.
+checkpoint. Tracing is an optional extension at the end.
 
 ## Lab coaching map
 
 | Lab checkpoint | Coach question |
 | --- | --- |
-| Setup | Did every tool and the authenticated SDK call pass? |
+| Setup | Did the install and the authenticated SDK call pass? Do the starter tests fail where expected? |
 | Lifecycle and streaming | Where does cleanup run if `sendAndWait` throws? |
 | Tool and denial | Do the test results show the handler did not run? |
 | Failure hooks | Is unknown data reported without invention or broad retry? |
 | Tests | Are assertions stable without matching model prose? |
-| Traces | Can the learner connect terminal output to one Jaeger trace? |
+| Extension: traces | Can the learner connect terminal output to one Jaeger trace? |
 
 ## References
 

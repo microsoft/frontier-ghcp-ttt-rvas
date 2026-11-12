@@ -67,7 +67,7 @@ check from an actual image build.
 
 ## Review reference
 
-**Expected path:** `.copilot-tracking/reviews/<date>/decision-create-plan-review.md`
+**Expected path:** `.copilot-tracking/reviews/logs/<date>/decision-create-review.md`
 
 The review should map every acceptance criterion to implementation and test
 results, list findings by severity, and record the human decision. Mark missing

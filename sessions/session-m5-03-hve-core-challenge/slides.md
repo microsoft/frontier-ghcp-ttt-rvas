@@ -19,7 +19,25 @@ From product intent to reviewed code
 Hypervelocity Engineering is a structured engineering framework for GitHub Copilot.
 
 It gives agent work defined roles, standards, human review gates, and
-saved phase artifacts.
+saved phase files.
+
+Command names change between versions. **Check the HVE Core README for your version.**
+
+---
+
+# RPI in one slide
+
+**R**esearch → **P**lan → **I**mplement → **R**eview, then Follow-up.
+
+| Phase | Prompt | Writes |
+|-------|--------|--------|
+| Research | `/rpi-research` | What exists, limits, rejected options |
+| Plan | `/rpi-plan` | Tasks, acceptance criteria, checks, critique |
+| Implement | `/rpi-implement` | Code and a changes log |
+| Review | `/rpi-review` | Per-criterion verdicts and a decision |
+
+Follow-up sends defects to Implement, decision gaps to Plan, and evidence gaps to
+Research.
 
 ---
 
@@ -34,16 +52,19 @@ saved phase artifacts.
 
 ---
 
-# HVE uses files as interfaces
+# File as interface
+
+Each phase writes a Markdown file. The next phase reads that file, not the chat.
 
 ```text
-Research artifact
-  → Plan + critique
-  → Changes log
-  → Review findings and decision
+.copilot-tracking/research/<date>/<task>-research.md
+  → plans/<date>/<task>-plan.md  (+ critique under reviews/plans/)
+  → changes/<date>/<task>-changes.md
+  → reviews/logs/<date>/<task>-review.md
 ```
 
-Reviewers can inspect and diff each handoff, then resume work from it.
+You can read, diff, and edit a file, then attach it to a fresh chat and carry on.
+Paths vary by version.
 
 ---
 
@@ -85,16 +106,19 @@ The human still decides: approve, request changes, or pause.
 
 # Direct and combined RPI
 
-| Mode | Entry points | Use it when |
-|------|--------------|-------------|
-| Direct prompts | `/rpi-research`, `/rpi-plan`, `/rpi-implement`, `/rpi-review` | Learning, demos, explicit approvals |
-| Combined | `/rpi task="..."` | The team understands and trusts the handoffs |
+| | Direct prompts | Combined `/rpi task="..."` |
+|-|----------------|----------------------------|
+| You type | One prompt per phase | One prompt for the task |
+| Approval | You approve each phase | Depends on the mode you pick |
+| Output | One file per phase | The same kinds of files, one task name |
+| After Review | You route defects | Follow-up routes them |
+| Use it when | Learning, demos, approvals | The team trusts the handoffs |
 
-Combined RPI uses Follow-up after Review to route defects or missing evidence.
+Both write the same files. Combined only changes who drives.
 
 ---
 
-# HVE customization is additive
+# Optional: HVE customization is additive
 
 ```text
 .github/copilot-instructions.md
@@ -102,24 +126,34 @@ Combined RPI uses Follow-up after Review to route defects or missing evidence.
 .github/agents/*.agent.md
 ```
 
-Project context reaches all agents. Coding practices activate by `applyTo` glob.
-Custom agents add repository-owned roles and output contracts.
+Project context reaches all agents. Custom agents add repository-owned roles and
+output contracts.
+
+An instruction loads by `applyTo` glob, set in its frontmatter:
+
+```yaml
+applyTo: "src/**/*.js,tests/**/*.test.js"
+```
+
+Copilot loads it only when working on a matching file.
 
 ---
 
-# Show that instructions were used
+# Check that it's active
 
-Creating an instruction file doesn't show that HVE used it.
+Creating a file doesn't mean HVE used it.
 
-Show:
+| File | Check |
+|------|-------|
+| Instructions | Edit a matching file, ask a question. The file shows in References. A non-matching file doesn't load it |
+| Agent | It appears in the agent picker (`/agent` in the CLI). Its answer follows your format |
+| Prompt | Typing `/name` shows it in the picker, and it runs |
 
-1. a matching path;
-2. the rule that activated;
-3. the plan, code, or review decision it changed.
+Then find one plan, code, or review change it caused.
 
 ---
 
-# HVE starts before engineering
+# Optional: HVE starts before engineering
 
 ```text
 Business idea
@@ -129,26 +163,29 @@ Business idea
   → reviewed code
 ```
 
-Product agents test value and assumptions. Agile Coach turns intent into an
-outcome-oriented story and acceptance criteria.
+**BRD**: business requirements, why the business wants this. **PRD**: product
+requirements, what the product must do. `@BRD Builder` and `@PRD Builder` write them.
+
+Product Manager Advisor tests value and assumptions. Agile Coach turns intent into
+a user story and acceptance criteria. The lab starts from a supplied product intent.
 
 ---
 
 # Challenge sequence
 
 1. Run direct Research and Plan prompts.
-2. Add repository context, coding practices, and a custom reviewer.
-3. Use Product Manager Advisor and Agile Coach.
-4. Update the plan, then run Implement and Review.
-5. Compare the result with combined `/rpi`.
+2. Run Implement and Review.
+3. Compare the result with combined `/rpi`.
+
+Optional, if time allows, before Implement: add repository context, an `applyTo`
+instruction, and a custom reviewer, and use Product Manager Advisor and Agile Coach.
 
 ---
 
 # Build the endpoint
 
 Deliver `POST /api/decisions` within the supplied product intent and API contract.
-
-Scope control is part of the score.
+Stay inside the contract.
 
 ---
 
@@ -180,26 +217,7 @@ These checks test invalid inputs and container build boundaries.
 
 ---
 
-# Scoring
-
-| Area | Weight | Grade from |
-|------|-------:|------------|
-| HVE RPI artifact chain | 40% | Four HVE phase artifacts |
-| HVE customization and activation | 25% | Repository files and cited activation |
-| Product and Agile agent handoff | 20% | Platform output cited by Plan |
-| Feature and container validation | 15% | Output cited by Implement or Review |
-
-A manual implementation does not complete an HVE challenge.
-
----
-
 # Keep the handoff short
 
-`challenge-handoff.md` contains only:
-
-* links or paths to the four HVE artifacts;
-* the final human decision;
-* unresolved risks and the next action.
-
-Do not copy phase narratives, criteria, command output, or proposed Git text into
-the handoff.
+`challenge-handoff.md` holds the four file paths, your decision, open risks, and
+the next action. Don't copy phase text or command output into it.

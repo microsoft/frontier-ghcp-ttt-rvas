@@ -12,14 +12,15 @@
 
 Design a canvas extension for one synthetic delivery-readiness board. Write the contract first, then create the canvas in the GitHub Copilot app. Test a direct update, an agent-requested update, and a rejected update with its recovery. Compare the final canvas with the contract.
 
-A canvas is a shared interactive surface. People use visible controls while an agent calls named capabilities against the same state. It does not replace the system that owns the work.
+A **canvas** is a shared interactive surface. People use visible controls while an agent calls named **agent-callable capabilities** on the same state. A **plugin** can package a canvas with skills or MCP servers. A canvas does not replace the system that owns the work.
 
 ## Learning outcomes
 
 - Choose a canvas only when visible shared state improves the workflow.
 - Separate canvas state, human actions, and agent-callable capabilities.
 - Write validation rules that reject incomplete state changes.
-- Create a project-scoped or user-scoped canvas and review what it generated.
+- Create a project-scoped or user-scoped canvas and read what it generated.
+- Name the pros, cons, and limits of canvas extensions.
 - Recover from a rejected action without weakening the contract.
 
 ## You need
@@ -41,10 +42,11 @@ A canvas is a shared interactive surface. People use visible controls while an a
 | [`trainer-content/README.md`](trainer-content/README.md) | Minute-mapped teaching and demo plan |
 | [`slides.md`](slides.md) | Trainer-facing teaching deck |
 | [`lab/README.md`](lab/README.md) | Two-hour learner guide |
-| [`lab/starter/`](lab/starter/) | Prepared inputs and contract harness |
+| [`lab/starter/`](lab/starter/) | Prepared inputs and scaffolding tests (they check the exercise contract, not Copilot) |
 | [`lab/solution/`](lab/solution/) | Worked contract, final state, and completed change records |
 
-An optional **Feature Workbench** variant uses synthetic CI results to practice a test-gate decision:
+**Optional:** the Feature Workbench variant uses synthetic CI results to practice a test-gate decision. Skip it if time is short.
+
 
 - [`lab/starter/feature-workbench-contract.md`](lab/starter/feature-workbench-contract.md)
 - [`lab/starter/feature-workbench-sample.json`](lab/starter/feature-workbench-sample.json)
@@ -55,7 +57,7 @@ See the [curriculum glossary](../glossary.md) for canvas, capability, plugin, an
 
 ## References
 
-Canvas extensions are new and may change.
+Canvas extensions are new and may change. Check current docs for `/create-canvas`, scopes, and file paths.
 
 - [Working with canvas extensions in the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions)
 - [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)

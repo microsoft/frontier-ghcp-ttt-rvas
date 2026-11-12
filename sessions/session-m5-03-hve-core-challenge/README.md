@@ -1,5 +1,5 @@
 ---
-description: "Overview of the HVE Core RPI, customization, and product delivery challenge"
+description: "Overview of the HVE Core RPI challenge, with optional customization and product agents"
 ---
 
 # Session M5-03: HVE Core: Evidence-led delivery with RPI
@@ -16,42 +16,37 @@ description: "Overview of the HVE Core RPI, customization, and product delivery 
 
 Use Hypervelocity Engineering (HVE), a structured engineering framework for
 GitHub Copilot, to take a feature from research to reviewed code. You start with
-its file-based Research, Plan, Implement, Review (RPI) workflow. Then you add
-repository instructions, targeted coding standards, and a custom review agent.
+its file-based Research, Plan, Implement, Review (RPI) workflow. Each phase writes
+a file the next phase reads.
 
-Product Manager Advisor tests the value and scope of an Engineering Decision API
-feature. Agile Coach turns the result into an outcome-oriented story with
-acceptance criteria. You feed those artifacts back into the HVE plan before
-implementation and review.
+If time allows, you also add repository instructions, a coding standard, and a
+custom review agent, and use Product Manager Advisor and Agile Coach to refine the
+feature before implementation.
 
 ## Learning outcomes
 
-* Explain HVE's agents, prompts, instructions, and file-as-interface model.
-* Run direct HVE Research, Plan, Implement, and Review phases and inspect each
-  `.copilot-tracking/` handoff.
-* Compare direct RPI phase prompts with the combined `/rpi` orchestrator and its
-  Follow-up phase.
-* Add project context, targeted JavaScript/API standards, and a custom agent with a defined scope.
-* Use Product Manager Advisor and Agile Coach to refine value, scope, user story,
-  and acceptance criteria.
-* Deliver and review one containerized API slice through the customized HVE workflow.
+* Explain RPI, HVE's agents, prompts, and instructions, and why phases hand off through files.
+* Run direct HVE Research, Plan, Implement, and Review phases and read each
+  `.copilot-tracking/` file.
+* Compare direct phase prompts with the combined `/rpi` and its Follow-up step.
+* Deliver and review one containerized API slice.
+* Optional: add project context, an `applyTo` coding instruction, and a custom agent, and check that each is active.
+* Optional: use Product Manager Advisor and Agile Coach to refine the story and criteria.
 
 ## HVE Core requirement
 
 The hands-on challenge requires HVE Core (the extension or Copilot CLI plugin).
-Without it, learners can inspect trainer-provided artifacts but can't complete the
-challenge. Keep `.copilot-tracking/` local and ignored by Git. The challenge
-handoff lists the four phase artifacts, the final decision, unresolved risks, and
-the next action.
+Without it, learners can read trainer-provided files but can't do the lab. Keep
+`.copilot-tracking/` local and ignored by Git.
 
 ## HVE references
 
-HVE commands and generated artifacts change between versions.
+HVE commands and generated files change between versions. Check the HVE Core README for your version before you teach.
 
 * [HVE Core repository and framework overview](https://github.com/microsoft/hve-core)
 * [Install HVE Core](https://github.com/microsoft/hve-core/blob/main/docs/getting-started/install.md)
 * [RPI workflow overview](https://github.com/microsoft/hve-core/blob/main/docs/rpi/README.md)
-* [RPI commands](https://github.com/microsoft/hve-core/blob/main/docs/rpi/commands.md)
+* [Using RPI together](https://github.com/microsoft/hve-core/blob/main/docs/rpi/using-together.md)
 * [Why RPI works](https://github.com/microsoft/hve-core/blob/main/docs/rpi/why-rpi.md)
 
 ## Materials

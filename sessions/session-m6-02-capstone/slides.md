@@ -3,7 +3,7 @@ marp: true
 theme: ghcp-ttt
 paginate: true
 header: 'GitHub Copilot Train-the-Trainer'
-footer: 'Session M6-02: Bounded End-to-End Capstone'
+footer: 'Session M6-02: End-to-End Capstone'
 ---
 
 <!-- _class: lead -->
@@ -27,11 +27,20 @@ POST /api/bookmarks
 ---
 # The result is a handoff
 
-- implementation-ready issue;
-- implemented patch;
-- executable test results;
-- review decision;
-- deferred scope and next action.
+- issue;
+- patch;
+- test results;
+- review decision and next action.
+
+---
+
+# Four terms
+
+- **Synthetic data**: made-up bookmarks, such as `https://docs.example.test/node`.
+- **Specification ID**: the label of one requirement, such as `FR-007`.
+- **Response envelope**: success is `{ "data": ... }`. Failure is
+  `{ "error": { "code", "message" } }`.
+- **Baseline**: test results before the change.
 
 ---
 
@@ -39,9 +48,6 @@ POST /api/bookmarks
 
 Implement only `POST /api/bookmarks`, use synthetic data, and keep the existing
 dependencies.
-
-**Stop if the work requires another endpoint, live data, deployment, tool
-configuration, or a new dependency.**
 
 ---
 
@@ -65,12 +71,30 @@ Every acceptance criterion maps to:
 specification ID -> planned file -> executable test
 ```
 
-If the issue adds behavior missing from the specification, revise the issue before
-implementation.
+If the issue adds behavior missing from the specification, fix the issue first.
 
 ---
 
-# Scope guard
+# Worked example: spec to issue to prompt
+
+**FR-007:** a second request with the same URL returns `409`.
+
+```text
+Issue: Reject duplicate bookmark URLs
+Specification IDs: FR-007, FR-008
+Criterion: repeated url -> 409, error.code CONFLICT
+Test: "rejects a duplicate URL"
+Files: src/routes/bookmarks.js, src/models/bookmark.js
+```
+
+```text
+Implement this issue. Existing dependencies only. Don't edit tests/.
+List the files and spec IDs first, then change, then run npm test.
+```
+
+---
+
+# Scope
 
 In scope:
 
@@ -84,32 +108,27 @@ packages.
 
 ---
 
-# When work is blocked
-
-Use GitHub Copilot for the implementation.
-
-Record the blocker and a request-changes or pause decision in the handoff.
-Resume the work before claiming completion.
-
----
-
-# Run the tests
+# The failing tests are the baseline
 
 ```bash
 npm test
 ```
 
-The suite checks success, defaults, field validation, and duplicate URLs.
+Health passes. The Bookmark tests fail because the route doesn't exist. They are
+the spec as executable checks. You're done when they pass. Don't edit them.
 
 ---
 
 # Review and handover
 
-Trace the change back to the specification. Review the diff, test output,
-dependency change, and scope decisions in the issue. Record any deviation in the
-handoff.
+Passing tests are where review starts.
 
-Record one decision: approve, request changes, or pause.
+1. Run the suite.
+2. Check the diff: no edits under `tests/`, no new dependency.
+3. Name a test for each specification ID.
+4. Break a rule on purpose. The matching test must fail.
+5. Read the responses against the spec.
+6. Record the decision: approve or request changes.
 
 ---
 
@@ -117,7 +136,7 @@ Record one decision: approve, request changes, or pause.
 
 | Phase | Time |
 | --- | --- |
-| Accept the specification and scope | 25 min |
-| Write the issue and establish the baseline | 25 min |
-| Implement the accepted slice | 35 min |
-| Test, review, and hand off | 35 min |
+| Review the specification | 15 min |
+| Write the issue and run the baseline | 25 min |
+| Prompt Copilot to implement it | 40 min |
+| Review, test, and hand off | 40 min |

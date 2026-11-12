@@ -13,12 +13,13 @@ the first Delivery Decision Studio brief.
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:08 | Orient learners to the app |
-| 0:08-0:18 | Choose mode and context |
-| 0:18-0:28 | Inspect capabilities and context usage |
-| 0:28-0:40 | Compare unscoped and grounded answers |
-| 0:40-0:53 | Create, revise, and check a working brief |
-| 0:53-1:00 | Launch the lab |
+| 0:00-0:05 | Orient learners to the app and the session scope |
+| 0:05-0:17 | Choose a mode; context and reset controls |
+| 0:17-0:27 | How the app assembles context |
+| 0:27-0:32 | Inspect capabilities (short) |
+| 0:32-0:42 | Compare unscoped and grounded answers |
+| 0:42-0:55 | Create, revise, and check a working brief |
+| 0:55-1:00 | Launch the lab |
 
 ## Prepare
 
@@ -39,15 +40,64 @@ A generic chatbot doesn't meet this session's goal. Use the app and the reposito
 
 Labels move. Teach what each area is for, not a fixed click path.
 
-## Modes and context syntax
+## Scope against M2-05 and M3-01
 
-- **Interactive:** interviews, source checks, and reviewed drafts.
-- **Plan:** before a multi-step change, so the learner approves the plan.
-- **Autopilot:** work with agreed scope where you don't review every action. Not used for the M7-01 write.
+Say this in the first five minutes. M2-05 teaches developers the coding loop:
+worktrees, diffs, pull requests. M3-01 teaches canvas and plugin design. M7-01
+teaches non-developers how context gets into an answer and how to control it.
+Learners who also take M2-05 meet the same three modes. Here the question is
+which mode suits a document or decision task.
 
-`@` adds files, `#` references issues, and `/` opens commands. Run `/context`
-before the first draft. Use `/compact` only to keep a long thread. Use `/clear` or
-`/reset` for the fresh-session test.
+## Choose a mode
+
+| Mode | Choose it when | Risk |
+| --- | --- | --- |
+| Interactive | You want to review each step: interviews, source checks, drafts | Slow for long, well-defined work |
+| Plan | The change has several steps and you want to approve the approach first | A good plan can still rest on a wrong source |
+| Autopilot | Scope, sources, and the stop point are agreed, and you accept no review per action | Wrong assumptions spread before you see them |
+
+**Start in Interactive. Move to Plan before Copilot writes.** Use Autopilot only
+for work you can check afterward from a diff. M7-01 uses Interactive, then Plan,
+and never Autopilot.
+
+## Context controls
+
+`@` adds files, `#` references issues, and `/` opens commands.
+
+| Command | Use it to |
+| --- | --- |
+| `/context` | See current context usage |
+| `/compact` | Summarize earlier turns and keep the thread |
+| `/clear` or `/reset` | Start a fresh conversation |
+
+Run `/context` before the first draft. Use `/compact` when the thread still
+matters. Use `/clear` or `/reset` for the fresh-session test. The docs list the
+two as one entry; check current docs for any difference in your app version.
+
+## How the app assembles context
+
+Each answer is built from what is in the session, not from everything you know.
+
+**It can see:**
+
+- the conversation so far, including its own earlier answers;
+- files you attach with `@`, issues you reference with `#`, and files it reads
+  in the project;
+- instructions and customizations the app loads (check **Customize**);
+- anything an enabled MCP server returns.
+
+**It can't see:**
+
+- a file you only mentioned by name;
+- another chat or session, unless you carry the content over;
+- meetings, or anything in your head;
+- anything dropped by `/compact`, `/clear`, or `/reset`.
+
+An earlier wrong answer stays in context and **keeps influencing later answers**
+until you clear or compact. A fluent answer with no source may come from the
+model's general knowledge, not your project. Run `/context`, then decide: attach
+less, compact, or start fresh. Treat this list as a teaching model; check
+current docs for what your app version loads.
 
 ## Context before prompting
 
@@ -69,9 +119,9 @@ product owner. Cite the source for each factual claim.
 
 Ask learners which sources Copilot used and which statements remain uncertain.
 
-## Capability inspection
+## Capability inspection (5 minutes)
 
-Open **Customize** and identify what is available. Explain:
+Open **Customize** and identify what is available. One line each:
 
 - a **skill** provides a repeatable procedure;
 - an **agent** carries role-specific instructions and tools;
@@ -81,8 +131,8 @@ Open **Customize** and identify what is available. Explain:
 - a **canvas** provides visible shared state;
 - an **automation** repeats a task with a defined scope.
 
-Learners don't build these here. Availability depends on plan, policy, and
-installation.
+Learners don't build these here; M3-01 covers canvases and plugins. Availability
+depends on plan, policy, and installation.
 
 ## Demo: create and revise a saved brief
 

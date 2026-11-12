@@ -8,16 +8,16 @@
 
 ## What you will learn
 
-Install a repository skill and use it to interview the request owner. Turn the
-decisions into a brief and issue proposal. When a late constraint arrives, revise
-the affected decisions and check that both files still agree.
+Copy a ready-made skill into the repository and use it to interview the request
+owner. Turn the decisions into a brief and issue proposal. When a late constraint
+arrives, revise the affected decisions and check that both files still agree.
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Install and check the interview skill | 20 min |
+| 1 | Install the skill and compare it with a plain prompt | 25 min |
 | 2 | Run the first decision interview | 35 min |
 | 3 | Create the decision brief and issue proposal | 25 min |
-| 4 | Reopen one branch for a late constraint | 25 min |
+| 4 | Reopen one branch for a late constraint | 20 min |
 | 5 | Check readiness in a fresh session | 15 min |
 
 ## Before you start
@@ -27,46 +27,52 @@ Complete the track [capability setup](../../../tracks/product-and-delivery-teams
 Use the Session M7-01 `initiative-context-brief.md`. If the trainer is delivering
 Session M7-02 alone, use `starter/vague-request.md`.
 
-## Part 1: Install and check the interview skill (20 minutes)
+## Part 1: Install the skill and compare it with a plain prompt (25 minutes)
 
-Copy the supplied project skill into the root of the training repository:
+Copy the skill into the root of the training repository. You don't need to commit
+it.
 
 ```bash
-mkdir -p .github/skills/decision-interview
-cp sessions/session-m7-02-interview-and-shape-work/lab/starter/.github/skills/decision-interview/SKILL.md \
-  .github/skills/decision-interview/SKILL.md
-git add .github/skills/decision-interview/SKILL.md
-git commit -m "Add decision interview skill"
+mkdir -p .github/skills
+cp -r sessions/session-m7-02-interview-and-shape-work/lab/starter/.github/skills/decision-interview \
+  .github/skills/
 ```
 
-Open a new GitHub Copilot app session for the project. Open
-**Customize** → **Skills** → **Installed** and check that
-`decision-interview` appears.
+Open `.github/skills/decision-interview/SKILL.md` and read it. The frontmatter has
+a `name` and a `description`. Copilot reads the description to decide whether your
+request needs this skill, so it says when to use the skill and when not to. The
+body is the method: one question at a time, a recommended answer, and a stop
+condition. [Session M3-05](../../session-m3-05-agent-skills-ecosystem/README.md)
+teaches how to write one.
 
-Select **Interactive** mode for the interview. Use **Plan** only when Copilot
-proposes file changes. Don't use **Autopilot**: the request owner answers each
-round.
+Open a new app session for the project. Check that `decision-interview` appears
+under **Customize** → **Skills** → **Installed**. Use **Interactive** mode. The
+request owner answers every round, so don't use Autopilot. Context commands are
+as in [M7-01](../../session-m7-01-copilot-app-foundations/README.md).
 
-Run a short test:
+**Baseline.** Run an ordinary prompt first:
+
+```text
+Write an issue for this request: Add a clearer request status.
+```
+
+Note what Copilot assumed: user, scope, data, owner. Then run the skill in a fresh
+session (`/clear`):
 
 ```text
 /decision-interview
 
 Test request: Add a clearer request status.
-Ask only the first decision frontier, then stop.
+Ask only the first question, then stop.
 ```
 
-If the skill does not appear:
-
-1. check the file is at `.github/skills/decision-interview/SKILL.md`;
-2. check the skill name and description are present in its frontmatter;
-3. reopen the project or start a new session.
-
-Copilot CLI users can run `/skills reload` and
+If the skill doesn't appear, check the file is at
+`.github/skills/decision-interview/SKILL.md`, then reopen the project or start a
+new session. Copilot CLI users can run `/skills reload` and
 `/skills info decision-interview`.
 
-**Checkpoint:** Copilot invokes the supplied skill and returns a numbered first
-round of questions, not a drafted work item.
+**Checkpoint:** The skill asks one numbered question with a recommended answer and
+no draft. You can name two things the plain prompt guessed that the skill asked.
 
 ## Part 2: Run the first decision interview (35 minutes)
 
@@ -80,20 +86,23 @@ scope, users, success, failure, ownership, approval, and non-goals are decided o
 assigned as open questions.
 ```
 
-For each frontier (the decisions whose prerequisites are settled):
+For each **decision frontier** (the decisions whose prerequisites are settled):
 
-1. answer as the request owner;
-2. accept, reject, or revise each recommendation;
-3. require Copilot to restate the decision and reason;
-4. check that dependent questions wait for earlier decisions;
+1. answer each question as the request owner, one at a time;
+2. accept, reject, or revise the recommendation;
+3. check that Copilot restates the decision and reason;
+4. check that questions that depend on an open decision wait;
 5. ask for the next frontier.
 
-Stop when each branch has a decision or a named open question.
+Reject a **leading** question, such as "Should we show status to all users so
+support calls drop?" A useful question names one decision, offers real options,
+and doesn't assume the answer.
 
-After each round, run `/context`. Use `/compact` only if the interview must remain
-in the same session and context pressure is high. If the interview has drifted,
-use `/clear` or `/reset`, attach the approved context brief, and provide only the
-decisions the owner has settled and the open questions needed to continue.
+Stop when each branch has a decision or a named open question with an owner.
+
+Run `/context` after each round. If context is crowded and the thread matters,
+`/compact`. If the interview has drifted, `/clear`, attach the context brief, and
+paste only the settled decisions and open questions.
 
 **Checkpoint:** As the request owner, you can state the settled decisions,
 their reasons, and the open questions without relying on the chat transcript.
@@ -123,7 +132,7 @@ Do not create the GitHub issue yet.
 
 Commit the first accepted versions.
 
-## Part 4: Reopen one branch for a late constraint (25 minutes)
+## Part 4: Reopen one branch for a late constraint (20 minutes)
 
 Open `starter/late-constraint.md`.
 
@@ -153,7 +162,7 @@ rewriting the rest of the brief and proposal.
 
 ## Part 5: Check readiness in a fresh session (15 minutes)
 
-Start a new session with `/clear` or `/reset`. Attach only the decision brief and
+Start a new session with `/clear`. Attach only the decision brief and
 issue proposal.
 
 Ask Copilot to report:
@@ -177,7 +186,7 @@ criteria, hidden scope, missing owners, and conflicts with the late constraint.
 
 Submit:
 
-1. the installed `decision-interview` project skill;
+1. the `decision-interview` skill copied into `.github/skills/`;
 2. the approved decision brief;
 3. the aligned issue proposal;
 4. any fixes made after the fresh-session check.

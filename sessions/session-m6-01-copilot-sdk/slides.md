@@ -22,10 +22,10 @@ Session M6-01 | Module 6 | Advanced
 
 | Segment | Time |
 | --- | ---: |
-| The application reliability boundary | 8 min |
+| The application reliability boundary | 10 min |
 | Client, session, and streaming lifecycle | 12 min |
 | Tools, permissions, and hooks | 17 min |
-| Tests and traces | 10 min |
+| Tests | 8 min |
 | Prepared demo and lab handoff | 13 min |
 
 ---
@@ -42,6 +42,33 @@ The SDK provides an agent session. Your application still owns:
 - the records kept after the session ends.
 
 **A useful answer with an unsafe control path is still a broken application.**
+
+---
+
+# What the SDK guarantees and what this sample chooses
+
+| The SDK provides | This sample chooses |
+| --- | --- |
+| Client, session, event, and hook APIs | One session, cleanup in `finally` |
+| Event name `assistant.message_delta` | Print deltas only |
+| Hook names and return shapes | What each hook records |
+| Permission result kinds | Approve only `lookup_change_request` |
+| `onPostToolUseFailure` skips denied calls | Treat denial as policy, not error |
+
+The package is `@github/copilot-sdk`, pinned to 1.0.16. For other versions, check
+the SDK README.
+
+---
+
+# Glossary
+
+- **`assistant.message_delta`**: a piece of the streamed reply. Deltas `"CR-10"`,
+  `"42 is "`, `"ready."` print as `CR-1042 is ready.`
+- **Hook**: a function the SDK calls at a fixed point in a session.
+- **Hook return shape**: the fields a hook may return, for example
+  `{ permissionDecision: "deny", permissionDecisionReason: "..." }`.
+- **OTLP**: the wire format OpenTelemetry uses to send traces.
+- **Span**: one timed step in a trace, such as a tool call.
 
 ---
 
@@ -95,7 +122,7 @@ Cleanup belongs in `finally`.
 | `CopilotClient` | Runtime connection and client options | The application exits |
 | Session | Conversation state, tools, hooks, and events | The task is complete |
 | Event subscription | UI updates from that session | The session is no longer observed |
-| Collector connection | Trace export path | The local trace stack stops |
+| Collector connection (optional) | Trace export path | The local trace stack stops |
 
 Keep session state scoped by session ID. Remove it in the session-end path.
 
@@ -259,7 +286,7 @@ Do not turn every failure into a retry. Some failures are policy decisions.
 onPostToolUseFailure: async (input) => {
   audit.failedTools.push({
     toolName: input.toolName,
-    result: input.toolResult,
+    error: input.error,
   });
 
   return {
@@ -269,8 +296,8 @@ onPostToolUseFailure: async (input) => {
 },
 ```
 
-This hook sees tool results marked as failures. It does not replace
-`onErrorOccurred`.
+This hook sees failed tool results only. It does not fire for denied calls and
+does not replace `onErrorOccurred`.
 
 ---
 
@@ -328,7 +355,7 @@ Mock the SDK boundary. Keep synthetic data fixed.
 
 ---
 
-# Trace the same run outside the terminal
+# Optional extension: trace the run outside the terminal
 
 ```text
 CLI process
@@ -353,7 +380,7 @@ reason for one run.
 
 ---
 
-# Inspect the run in Jaeger
+# Optional extension: inspect the run in Jaeger
 
 Use Jaeger to check:
 
@@ -375,7 +402,7 @@ Trace data can contain prompts and tool details. Keep this lab synthetic.
 | Deny by default | Smaller execution boundary | More permission code |
 | Hooks for audit | One lifecycle view | Inline latency if hooks do too much |
 | Deterministic tool data | Stable tests and demos | Less realism |
-| Local tracing stack | Traces you can inspect | Docker setup and local resource use |
+| Local tracing stack (optional) | Traces you can inspect | Docker setup and local resource use |
 
 Choose controls that show what failed and why.
 
@@ -384,13 +411,12 @@ Choose controls that show what failed and why.
 # Prepared demonstration
 
 1. Run the passing tests.
-2. Start the Collector and Jaeger.
-3. Assess a known synthetic change.
-4. Watch the response stream.
-5. Request the restricted synthetic record.
-6. Show the denial in the terminal.
-7. Open the same run in Jaeger.
-8. Trigger an unknown ID and show the failure path.
+2. Assess a known synthetic change.
+3. Watch the response stream.
+4. Request the restricted synthetic record.
+5. Show the denial in the terminal.
+6. Trigger an unknown ID and show the failure path.
+7. Optional: open the same run in Jaeger.
 
 ---
 
@@ -401,5 +427,5 @@ Choose controls that show what failed and why.
 Build the CLI in `lab/starter/sdk-readiness-assistant/`.
 
 You will complete the lifecycle, streaming, readiness tool, permissions, hooks,
-tests, and OTLP export. Then you will run the known, denied, and failed paths and
-inspect the trace in Jaeger.
+and tests. Then you will run the known, denied, and failed paths. Tracing in
+Jaeger is an optional extension.

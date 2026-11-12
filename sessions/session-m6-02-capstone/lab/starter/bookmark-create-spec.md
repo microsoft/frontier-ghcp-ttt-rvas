@@ -36,10 +36,8 @@ Create one bookmark through `POST /api/bookmarks`.
 
 ## Non-goals
 
-Authentication, persistence, other Bookmark endpoints, filtering, deployment, and
-tool configuration are outside this change.
+Authentication, persistence, other Bookmark endpoints, filtering, and deployment.
 
 ## Specification review
 
-Before implementation, record any ambiguity. Resolve it with the reviewer or pause.
-Do not silently choose new product behavior.
+Ask your reviewer about any ambiguity before you implement.

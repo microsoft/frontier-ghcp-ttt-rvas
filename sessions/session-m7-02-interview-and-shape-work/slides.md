@@ -18,8 +18,7 @@ Session M7-02 | Product and Delivery Teams | 3 hours
 
 Before the session:
 
-- Copy the supplied project skill to
-  `.github/skills/decision-interview/SKILL.md`.
+- Copy the `decision-interview` folder into `.github/skills/`. No commit needed.
 - Start a new project session.
 - Check `decision-interview` under **Customize** → **Skills**.
 - Run `/decision-interview` with the short test request.
@@ -57,14 +56,72 @@ The project skill keeps this method consistent. It doesn't make the decisions.
 
 ---
 
+# Interview skill or ordinary prompt?
+
+| Ordinary prompt | Interview skill |
+| --- | --- |
+| Fills gaps with guesses | Asks about each gap |
+| Drafts the issue at once | Drafts only after the owner agrees |
+| Method changes with each prompt | Same method every run |
+| You remember what to ask | The skill carries the checklist |
+
+Use a plain prompt when the answer is a fact in the source. Use the skill when a
+**person has to decide**.
+
+**M3-05 vs M7-02:** M3-05 teaches how to write an interview skill (`grill-me`).
+Here you use a decision-focused one to shape real work.
+
+---
+
+# Anatomy of the skill
+
+```yaml
+---
+name: decision-interview
+description: Interview a request owner ... Use when ...
+  Do not use for questions that have a factual answer.
+---
+```
+
+- `name` is the folder name and the `/` command.
+- **The description triggers the skill.** Copilot compares your request with it.
+  It should say when to use the skill and when not to.
+- The body is the method Copilot follows once the skill loads.
+
+---
+
 # Interview as a decision tree
 
 Each answer can raise new questions.
 
-Ask the current **frontier**: every decision the owner can make now without
-guessing about an unsettled decision.
+The **decision frontier** is every decision the owner can make now because the
+decisions it depends on are settled.
 
-Questions that depend on this round wait for the next round.
+Ask frontier questions **one at a time**, each with a recommended answer. A
+question that depends on an open decision waits for the next frontier.
+
+---
+
+# What makes a question useful
+
+- It names **one decision** the owner can make.
+- It offers real options and a recommended answer.
+- It doesn't assume the answer.
+- It isn't already answered in the source.
+
+Leading: "Should we show status to everyone so support calls drop?"
+
+Better: "Which group needs status first: requesters, service agents, or both?"
+
+---
+
+# When to stop
+
+Stop when each branch has an accepted decision or a named open question with an
+owner. Don't keep asking to be thorough.
+
+Then summarize the decisions, open questions, and next step. The owner corrects
+the summary **before** anything is drafted.
 
 ---
 
@@ -79,17 +136,9 @@ Round 4: owner, reviewer, approval, rollout
 
 Ask GitHub Copilot to work out the next frontier from the answers the owner accepted.
 
-Use **Interactive** mode for each frontier. Switch to **Plan** before proposed
-file changes. Autopilot is outside this interview.
-
----
-
-# Check context between rounds
-
-- Run `/context`.
-- Use `/compact` only when the same thread must continue.
-- Use `/clear` or `/reset` when old assumptions are polluting the interview.
-- Resume with the approved context and the owner's settled decisions, not a transcript.
+Use **Interactive** mode for the interview and **Plan** before file changes. Run
+`/context` between rounds. If old assumptions pollute the thread, `/clear` and
+resume with the settled decisions (controls as in M7-01).
 
 ---
 
@@ -97,10 +146,10 @@ file changes. Autopilot is outside this interview.
 
 For each question:
 
-1. State the decision clearly.
+1. State the one decision clearly.
 2. Offer concrete choices when useful.
 3. Recommend an answer and explain the tradeoff.
-4. Wait for the request owner to decide.
+4. Wait for the request owner to decide, then restate the decision.
 
 GitHub Copilot frames the choice. **A person owns the choice.**
 
@@ -242,7 +291,7 @@ The interview always runs with **GitHub Copilot**.
 
 # Lab deliverables
 
-1. The installed `decision-interview` project skill.
+1. The `decision-interview` skill copied into `.github/skills/`.
 2. A revised **decision brief**.
 3. An aligned **GitHub issue proposal**.
 4. Any fixes made after the fresh-session check.

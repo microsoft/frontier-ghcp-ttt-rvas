@@ -9,12 +9,13 @@ stored. Once created, the live issues become the source of record.
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:08 | Connect the decision brief to saved GitHub issues |
-| 0:08-0:18 | Explain MCP from the learner's point of view |
-| 0:18-0:30 | Inspect tools, permissions, and repository context |
-| 0:30-0:43 | Decompose the initiative into an issue plan |
-| 0:43-0:53 | Preview, approve, and check a write |
-| 0:53-1:00 | Explain the lab guardrails |
+| 0:00-0:05 | Connect the decision brief to saved GitHub issues |
+| 0:05-0:15 | Explain MCP, tool discovery, and permissions |
+| 0:15-0:22 | Compare GitHub MCP with app-native features |
+| 0:22-0:32 | Inspect repository context; parent/child issues, labels, milestones |
+| 0:32-0:42 | Decompose the initiative into an issue plan |
+| 0:42-0:52 | Preview, approve, and check a write |
+| 0:52-1:00 | Common failures and the lab boundary |
 
 ## Prepare
 
@@ -39,6 +40,25 @@ check the resulting issue.
 
 Skip server protocols, transports, and SDKs.
 
+### Terms to define
+
+- **MCP:** a standard way to plug tools into Copilot. Use the USB-port picture.
+- **Tool discovery:** ask Copilot to list its GitHub tools. If a tool isn't listed, it can't be called.
+- **Permissions:** the connection's rights, not Copilot's. Read access can expose private data. Missing write access fails the write.
+- **Parent and child issues:** the parent holds the outcome. Each child is one reviewable piece of work.
+- **Labels and milestones:** labels classify, milestones group by target. Use only ones that exist.
+
+### GitHub MCP or app-native
+
+| | GitHub MCP | App-native (web UI, `gh`) |
+| --- | --- | --- |
+| Strength | Copilot can plan, preview, and repeat structured reads and writes | Already available; fine for one issue |
+| Cost | Needs a connection and permissions | Manual and slow for many issues |
+| Review | Tool call shows exact arguments | You see only the result |
+
+Use MCP when Copilot must read or write GitHub as part of a plan. Don't claim
+MCP is always better. Check current docs for which built-in features the app offers.
+
 ## Demo flow
 
 ### 1. Read the source
@@ -51,8 +71,8 @@ constraints, non-goals, owners, and results needed for acceptance.
 Ask Copilot to identify the target repository, list relevant labels, and search
 for duplicate or overlapping open issues.
 
-Use `lab/starter/existing-issues.json` when the training repository lacks the
-seeded records. Have learners decide what to do with each candidate:
+`lab/starter/existing-issues.json` is a fallback for when the training
+repository lacks the seeded records. The lesson is the live read, not the file. Have learners decide what to do with each candidate:
 
 - reuse `#241`: it partially overlaps the requester view;
 - leave `#256` unchanged: notifications are out of scope;
@@ -108,6 +128,9 @@ those issues directly.
 | Child issue is too broad | Split it before the write |
 | Labels don't exist | Use existing labels or leave the field unset |
 | Tool output claims success without a returned issue | Run a fresh repository read |
+| No GitHub tools listed | Check **Customize** → **MCP** → **Installed**; restart the session |
+| Read works, write fails | The account lacks issue-write access. Get access or stop |
+| Write rejected on labels, milestone, or sub-issue link | Check the name exists and the relationship method is supported |
 
 ## References
 

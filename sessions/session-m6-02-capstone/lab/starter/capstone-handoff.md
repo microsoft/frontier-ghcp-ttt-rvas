@@ -9,7 +9,6 @@
 **Constraints:**  
 **Expected files:**  
 **Reviewer:**  
-**Stop conditions:**  
 
 ### Acceptance criteria and trace
 
@@ -28,11 +27,13 @@
 **Command:**  
 **Result:**  
 **Acceptance test results:**<br>
+**Baseline (before the change):**  
+**Break-it check:**  
 **Not run or failed checks:**  
 
 ## Review decision
 
-**Decision:** Approve / Request changes / Pause  
+**Decision:** Approve / Request changes  
 **Reviewer:**  
 **Reason:**  
 **Required correction:**  
@@ -41,13 +42,8 @@
 
 **Deferred behavior:**  
 **Known risks:**  
-**Why it is deferred:**  
-**Deviation from the accepted issue:**
-
-**Reason for the deviation:**
+**Deviation from the issue:**  
 
 ## Next action
 
 **Action:**  
-**Owner:**  
-**Trigger or due point:**  

@@ -2,7 +2,7 @@
 description: "Two-hour TypeScript lab for a reliable GitHub Copilot SDK readiness assistant"
 ---
 
-# Session M6-01 lab: Build a traced change readiness assistant
+# Session M6-01 lab: Build a change readiness assistant
 
 **Duration:** 120 minutes  
 **Difficulty:** Advanced  
@@ -10,38 +10,67 @@ description: "Two-hour TypeScript lab for a reliable GitHub Copilot SDK readines
 
 ## Objective
 
-Complete a TypeScript CLI that uses the GitHub Copilot SDK to assess deterministic
-synthetic change records. Your application must stream its response and call one
-tool limited to readiness lookups. It must also deny a restricted lookup, record
-failures, pass focused tests, and export traces through an OpenTelemetry Collector
-to Jaeger.
+Complete a TypeScript CLI that uses the GitHub Copilot SDK to assess synthetic
+change records. The CLI streams the response, calls one readiness tool, denies a
+restricted lookup, records failures, and passes focused tests.
+
+Tracing with Docker Compose, an OpenTelemetry Collector, and Jaeger is an
+[optional extension](#optional-extension-trace-the-run-in-jaeger) after the core
+lab.
+
+## What the SDK does and what this sample chooses
+
+Keep these apart. You change the second column; you can't change the first.
+
+| The SDK provides | This sample chooses |
+| --- | --- |
+| `CopilotClient`, sessions, `sendAndWait`, `disconnect`, `stop` | One client, one session, cleanup in `finally` |
+| The event name `assistant.message_delta` and the `agentId` field | Print only deltas with no `agentId`, and keep the final message for records |
+| Hook names: `onPreToolUse`, `onPostToolUseFailure`, `onErrorOccurred`, `onSessionEnd` | What each hook records and returns |
+| Hook return shapes (see the glossary) | Deny `RESTRICTED-` IDs; retry once on a recoverable error |
+| `onPermissionRequest` and the result kinds `approve-once` and `reject` | Approve only `lookup_change_request` |
+| `onPostToolUseFailure` fires only for failed tool results, not for denied calls | Treat a denial as a policy result, not an error |
+| A `telemetry` client option | Endpoint, source name, and `captureContent: false` |
+
+The SDK is `@github/copilot-sdk`, pinned to **1.0.16** in `package.json` and the
+lock file. That is the version this lab was tested with. The latest version when
+this was written was 1.0.31. If you upgrade, check the SDK README for your
+version, because hook and event shapes can change.
+
+## Glossary
+
+| Term | Meaning | Example |
+| --- | --- | --- |
+| `assistant.message_delta` | A session event carrying a small piece of the streamed reply. The final `assistant.message` event carries the whole reply. | Deltas `"CR-10"`, `"42 is "`, `"ready."` print as `CR-1042 is ready.` The final message repeats the same text, so don't print it too. |
+| Hook | A function the SDK calls at a fixed point in a session. It can record, change, or block what happens next. | `onPreToolUse` runs before a tool handler. |
+| Hook return shape | The object a hook returns. Each hook accepts different fields. | Pre-tool: `{ permissionDecision: "deny", permissionDecisionReason: "..." }`. Failed tool: `{ additionalContext: "..." }`. Error: `{ errorHandling: "retry", retryCount: 1 }`. Session end: `{ sessionSummary: "..." }`. |
+| OTLP | OpenTelemetry Protocol, the wire format for traces. Used only in the extension. | The SDK sends OTLP over HTTP to `http://localhost:4318`. |
+| Span | One timed step in a trace, such as a tool call. A trace is a tree of spans for one run. | A `lookup_change_request` span sits under the session span. |
+| Synthetic data | Fake records in `fixtures/change-requests.json`. No real systems or people. | `CR-1042`, `RESTRICTED-0001` |
 
 ## Final deliverables
 
-Submit or demonstrate:
+Demonstrate:
 
 1. a working CLI under `sdk-readiness-assistant/`;
-2. client and session cleanup on every exit path;
-3. streamed parent-agent output without duplicate final text;
-4. the typed readiness tool over the supplied synthetic data;
-5. permission handling plus a pre-tool policy that visibly denies
-   `RESTRICTED-0001`;
+2. client and session cleanup on success and on thrown errors;
+3. streamed output printed once;
+4. the typed readiness tool over the synthetic data;
+5. a permission handler and pre-tool policy that deny `RESTRICTED-0001` with a
+   visible reason;
 6. failed-tool, error, and session-end hook records;
-7. passing tests and type checks;
-8. one Jaeger trace for a permitted assessment;
-9. one Jaeger trace or trace event showing the denied action;
-10. terminal output for the unknown-change failure path.
+7. passing tests and type checks.
 
 ## Time plan
 
 | Part | Work | Time |
 | --- | --- | ---: |
-| 1 | Setup and baseline | 15 min |
-| 2 | Client, session, and streaming | 20 min |
-| 3 | Readiness tool and policy | 30 min |
-| 4 | Failure hooks and cleanup | 20 min |
-| 5 | Tests | 15 min |
-| 6 | Collector, Jaeger, and final checks | 20 min |
+| Setup | Install and baseline | 15 min |
+| 1 | Client, session, and streaming | 25 min |
+| 2 | Readiness tool and policy | 30 min |
+| 3 | Failure hooks and cleanup | 25 min |
+| 4 | Tests and final run | 25 min |
+| Extension | Jaeger tracing (optional) | 20 min |
 
 ## Setup
 
@@ -51,72 +80,45 @@ Work from:
 sessions/session-m6-01-copilot-sdk/lab/starter/sdk-readiness-assistant/
 ```
 
-You need authenticated GitHub Copilot SDK access, Node.js and npm at the versions
-in `package.json`, Docker with Docker Compose, and free local ports for the
-Compose file. Use Copilot authentication, not BYOK or another provider.
-
-Run the local checks:
+You need authenticated GitHub Copilot, and Node.js and npm at the versions in
+`package.json`. Use Copilot authentication, not BYOK or another provider. Docker
+is only for the extension.
 
 ```bash
 node --version
 npm --version
-docker version
-docker compose version
 npm ci
 npm run check
 npm test
 ```
 
-Some focused tests should fail until you complete the reliability controls. The
-project must compile far enough to show those gaps. Run the authentication check in
-`src/live-demo.ts` before the live exercises.
+Some tests should fail. They are your baseline: each failing test marks a control
+you will add. The project still compiles. The authentication check in
+`src/live-demo.ts` runs before the live demo.
 
-### Project map
-
-The expected layout:
+Project files you will touch:
 
 ```text
-sdk-readiness-assistant/
-├── package.json
-├── compose.yaml
-├── otel-collector-config.yaml
-├── fixtures/
-│   └── change-requests.json
-├── src/
-│   ├── live-demo.ts
-│   ├── change-store.ts
-│   ├── permission-policy.ts
-│   ├── hook-decisions.ts
-│   └── types.ts
-└── tests/
-    ├── change-store.test.ts
-    ├── permission-policy.test.ts
-    └── hook-decisions.test.ts
+src/live-demo.ts          client, session, streaming, hooks
+src/change-store.ts       lookup over fixtures/change-requests.json
+src/permission-policy.ts  permission decisions
+src/hook-decisions.ts     pre-tool, failure, error, and end decisions
+tests/                    one test file per module
 ```
 
-Do not add external data sources or new runtime dependencies.
+Don't add data sources or runtime dependencies.
 
-## Part 1: Establish lifecycle and streaming (20 minutes)
+## Part 1: Lifecycle and streaming (25 minutes)
 
-### Goal
+Start the client, create one session, stream parent-agent output, and close
+everything on every exit path.
 
-Start the client, create one local session, stream parent-agent output, and close
-the client on every exit path.
-
-### Steps
-
-1. Open the application entry point and lifecycle module.
-2. Create `CopilotClient` with the supplied telemetry endpoint.
-3. Start the client before creating the session.
-4. Create one session with streaming enabled.
-5. Subscribe to `assistant.message_delta`.
-6. Print only parent-agent deltas.
-7. Keep final message events for audit or tests. Do not print the same response
-   again.
-8. Put client shutdown in `finally`.
-9. Keep per-session state keyed by the session ID.
-
-Use this lifecycle shape:
+1. Create `CopilotClient` and call `client.start()` before creating the session.
+2. Create one session with `streaming: true`.
+3. Subscribe to `assistant.message_delta`. Print only deltas with no `agentId`.
+4. Keep the final message for tests. Don't print it again.
+5. Put `session.disconnect()` and `client.stop()` in `finally`.
+6. Key per-session state by session ID.
 
 ```ts
 const client = new CopilotClient(clientOptions);
@@ -133,225 +135,152 @@ try {
 }
 ```
 
-Run:
-
 ```bash
 npm run check
 npm test
 ```
 
-### Checkpoint 1
+**Checkpoint 1.** The session and client close after success and after a thrown
+error. Parent text prints once. Session state isn't global.
 
-- The client starts before session creation.
-- The session disconnects after success and thrown errors.
-- The client stops after success and thrown errors.
-- Parent text streams once.
-- Per-session state is not global shared state.
+## Part 2: Readiness tool and policy (30 minutes)
 
-## Part 2: Complete the readiness tool and policy (30 minutes)
+Expose the synthetic data through one typed tool. Allow normal lookups. Deny the
+restricted record before the handler runs.
 
-### Goal
-
-Expose deterministic readiness data through one typed tool. Permit normal lookups
-and deny the restricted synthetic record before the handler runs.
-
-### Steps
-
-1. Open the supplied change records in `fixtures/change-requests.json`.
-2. Do not edit the record IDs or expected verdicts.
-3. Complete the `lookup_change_request` tool with its supplied JSON Schema.
-4. Validate the change ID inside the handler.
-5. Return the matching evidence, gaps, and verdict.
-6. Return the fixed `invalid-input` or `not-found` result for bad IDs.
-7. Add `onPermissionRequest`.
-8. Approve only the supplied readiness tool request.
-9. Reject unknown request kinds and unrelated tools.
-10. Add `onPreToolUse`.
-11. Deny IDs beginning with `RESTRICTED-` with this reason:
-
-    ```text
-    Restricted change requests cannot be read by this assistant.
-    ```
-
-12. Record whether the handler ran. The denial test must check that it did not.
-
-Do not use an approve-all helper. You need to show that unrelated requests are
-rejected while the readiness lookup is permitted.
-
-Run the focused tool and policy tests:
-
-```bash
-npm test
-```
-
-### Checkpoint 2
-
-Demonstrate:
-
-- `CR-1042` returns `ready` with no gaps;
-- `CR-2087` returns `needs-review` with fixed gaps;
-- malformed or unknown IDs return fixed results without invention;
-- a normal lookup is permitted;
-- `RESTRICTED-0001` is denied with a visible reason;
-- the denied request never enters the tool handler.
-
-## Part 3: Add failure, error, and end hooks (20 minutes)
-
-### Goal
-
-Record the expected failure paths and clear session state at the end.
-
-### Steps
-
-1. Complete `onPostToolUseFailure`.
-2. Record the tool name and failed result.
-3. Add context that tells the agent to report unknown data instead of inventing a
-   change record.
-4. Complete `onErrorOccurred`.
-5. Store the original error.
-6. Retry once only when the SDK marks the error recoverable.
-7. Abort unrecoverable errors and show a short user notification.
-8. Complete `onSessionEnd`.
-9. Record the end reason and timestamp.
-10. Delete state for the ended session.
-11. Keep cleanup safe if called more than once.
-
-Do not treat a denied tool call as an SDK error. It is a policy result.
-
-Run:
-
-```bash
-npm test
-npm run check
-```
-
-### Checkpoint 3
-
-The audit record distinguishes:
-
-- policy denial;
-- failed tool result;
-- recoverable or unrecoverable SDK error;
-- normal or abnormal session end.
-
-Session state is empty after the end hook.
-
-## Part 4: Finish the automated tests (15 minutes)
-
-### Goal
-
-Test the control path without depending on model wording or a live trace backend.
-
-Complete or repair tests for:
-
-- a known ready change;
-- a known blocked change;
-- malformed and unknown change IDs;
-- denied `RESTRICTED-0001` lookup;
-- handler non-execution after denial;
-- one retry for a recoverable error;
-- abort for an unrecoverable error;
-- session state cleanup;
-- streamed deltas rendered once;
-- client shutdown after an exception.
-
-Mock the SDK at the boundaries the starter provides. Do not call a live
-model from unit tests.
-
-Run:
-
-```bash
-npm test
-npm run check
-```
-
-If `package.json` defines linting, run:
-
-```bash
-npm run lint
-```
-
-### Checkpoint 4
-
-All tests pass twice without data or snapshot changes.
-
-## Part 5: Start tracing and run the application (20 minutes)
-
-### Goal
-
-Export one connected trace through the local Collector and inspect it in Jaeger.
-
-### Steps
-
-1. Review `compose.yaml` and `otel-collector-config.yaml`.
-2. Check the SDK OTLP HTTP endpoint is:
+1. Don't edit the record IDs or verdicts in `fixtures/change-requests.json`.
+2. Complete the `lookup_change_request` tool and its JSON Schema.
+3. Validate the ID inside the handler. Return the fixed `invalid-input` or
+   `not-found` result for bad IDs.
+4. In `onPermissionRequest`, approve only the readiness tool and reject
+   everything else. Don't use an approve-all helper.
+5. In `onPreToolUse`, deny IDs that start with `RESTRICTED-` with this reason:
 
    ```text
-   http://localhost:4318
+   Restricted change requests cannot be read by this assistant.
    ```
 
-3. Start the local stack:
+6. Record whether the handler ran. The denial test must show it didn't.
+
+```bash
+npm test
+```
+
+**Checkpoint 2.**
+
+- `CR-1042` returns `ready` with no gaps.
+- `CR-2087` returns `needs-review` with fixed gaps.
+- Malformed and unknown IDs return fixed results.
+- `RESTRICTED-0001` is denied with the reason above, and the handler never runs.
+
+## Part 3: Failure, error, and end hooks (25 minutes)
+
+1. `onPostToolUseFailure`: record the tool name and `error`. Return
+   `additionalContext` telling the agent to report unknown data, not invent a
+   record.
+2. `onErrorOccurred`: store the original error. Retry once if the SDK marks it
+   recoverable. Otherwise abort with a short `userNotification`.
+3. `onSessionEnd`: record the reason and time, and delete that session's state.
+   Make it safe to call twice.
+
+A denied tool call isn't an SDK error. It's a policy result, and it doesn't
+trigger `onPostToolUseFailure`.
+
+```bash
+npm test
+npm run check
+```
+
+**Checkpoint 3.** The audit record separates a policy denial, a failed tool, a
+recoverable or unrecoverable error, and the session end reason. Session state is
+empty after the end hook.
+
+## Part 4: Tests and final run (25 minutes)
+
+Test the control path, not the model's wording. Mock the SDK at the boundaries
+the starter provides. Don't call a live model from unit tests.
+
+Complete the tests so they cover:
+
+- known ready and blocked changes, and malformed and unknown IDs;
+- the denied `RESTRICTED-0001` lookup, and that the handler didn't run;
+- one retry for a recoverable error, and abort for an unrecoverable one;
+- session state cleanup;
+- deltas rendered once;
+- client shutdown after an exception.
+
+```bash
+npm test
+npm run check
+npm run lint   # only if package.json defines it
+```
+
+Then run the live demo:
+
+```bash
+npm run demo
+```
+
+**Final checkpoint.** Tests pass twice with no data or snapshot changes. In the
+demo, `CR-1042` streams a ready assessment, `bad-id` returns the fixed
+invalid-input result, `RESTRICTED-0001` prints the denial reason, and the session
+and client close.
+
+## Troubleshooting
+
+| Problem | Fix |
+| --- | --- |
+| `client.getAuthStatus()` reports unauthenticated | Check the GitHub Copilot sign-in and network. |
+| Session creation fails | Check the lock file, Node.js version, and Copilot access. |
+| Output is duplicated | Print deltas only. Keep the final message for records. |
+| Restricted data reaches the handler | Match the exact tool name and check `toolArgs.requestId` in `onPreToolUse`. |
+| Unknown IDs produce an invented answer | Return a failed tool result and add failure-hook context that forbids invention. |
+| Tests call the live model | Mock the session boundary. |
+| Session state remains | Delete the session ID in `onSessionEnd`. |
+
+## Solution reference
+
+Compare your work with `lab/solution/sdk-readiness-assistant/`:
+`src/live-demo.ts`, `src/change-store.ts`, `src/permission-policy.ts`,
+`src/hook-decisions.ts`, and `tests/`.
+
+## Optional extension: trace the run in Jaeger
+
+Do this after the core lab. It adds Docker Compose, an OpenTelemetry Collector,
+and Jaeger so you can see the same run as a trace. It needs Docker with Docker
+Compose and free local ports.
+
+The SDK sends **OTLP** (the OpenTelemetry wire format) over HTTP to the
+**Collector** on port 4318. The Collector forwards **spans** to Jaeger.
+
+```text
+CLI → OTLP/HTTP :4318 → OpenTelemetry Collector → Jaeger :16686
+```
+
+1. Read `compose.yaml` and `otel-collector-config.yaml`.
+2. Check `docker version` and `docker compose version`.
+3. Start the stack and wait until both services are healthy:
 
    ```bash
    docker compose -f compose.yaml up -d
    docker compose -f compose.yaml ps
    ```
 
-4. Wait until the Collector and Jaeger services are healthy.
-5. Run `npm run demo`.
-6. Check that `CR-1042` streams a ready assessment.
-7. Check that `bad-id` returns the fixed invalid-input result.
-8. Check that `RESTRICTED-0001` prints the denial reason.
-9. Check that the session disconnects and the client stops.
-10. Open the Jaeger UI at `http://localhost:16686`.
-11. Select the service name configured by the project.
-12. Find the three most recent runs.
-13. Open the denied run and check that no lookup handler work follows the policy
-    denial.
-14. Locate the permitted and invalid-input paths.
+4. Run `npm run demo`.
+5. Open `http://localhost:16686`, select the project's service name, and find the
+   three most recent traces.
+6. In the `RESTRICTED-0001` trace, check that no handler span follows the denial.
+7. Find the permitted and invalid-input traces.
+8. Stop the stack:
 
-Stop the local stack when the trainer tells you to:
-
-```bash
-docker compose -f compose.yaml down
-```
-
-### Checkpoint 5
-
-Show the trainer:
-
-- the permitted terminal run;
-- the visible denied action;
-- the invalid-input result;
-- one connected Jaeger trace;
-- the session end reason;
-- passing tests and type checks.
-
-## Troubleshooting
+   ```bash
+   docker compose -f compose.yaml down
+   ```
 
 | Problem | Fix |
 | --- | --- |
-| `client.getAuthStatus()` reports unauthenticated | Check the GitHub Copilot sign-in and network path. |
-| `CopilotClient` starts but session creation fails | Check the package lock, the Node.js version, and your GitHub Copilot access. |
-| Output is duplicated | Print `assistant.message_delta` as live output and keep the final message for records only. |
-| Restricted data reaches the handler | Match the exact tool name and inspect parsed `toolArgs.requestId` in `onPreToolUse`. |
-| Unknown IDs produce an invented answer | Return a failed tool result and add failure-hook context that forbids invention. |
-| Tests call the live model | Mock the SDK session boundary and assert deterministic events or decisions. |
-| Collector cannot bind port 4318 | Stop the conflicting process, or change the local configuration consistently. |
-| Jaeger is empty | Check container health, the Collector export pipeline, service name, and Jaeger time range. |
-| Session state remains after completion | Delete the session ID in `onSessionEnd` and keep outer cleanup in `finally`. |
-
-## Solution reference
-
-After all checkpoints, compare your work with
-`sessions/session-m6-01-copilot-sdk/lab/solution/sdk-readiness-assistant/`:
-
-1. `src/live-demo.ts`: client, session, streaming, and hooks;
-2. `src/change-store.ts`: the deterministic lookup;
-3. `src/permission-policy.ts`: permission decisions;
-4. `src/hook-decisions.ts`: prompt and pre-tool policy;
-5. `tests/`: control-path assertions;
-6. `compose.yaml` and `otel-collector-config.yaml`: trace routing.
+| Collector can't bind port 4318 | Stop the process that uses it, or change the port in both config files. |
+| Jaeger is empty | Check container health, the Collector pipeline, the service name, and the time range. |
 
 ## References
 

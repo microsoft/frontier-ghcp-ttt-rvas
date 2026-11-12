@@ -83,26 +83,47 @@ Name the files, issues, or repository that should support the answer.
 
 ---
 
+# What this session adds
+
+| Session | Covers |
+| --- | --- |
+| M2-05 | Developer loop: worktrees, diffs, pull requests |
+| M3-01 | Canvas and plugin design |
+| **M7-01** | **How context reaches the answer, mode choice, one saved brief** |
+
+---
+
 # Choose the session mode
 
-| Mode | Use in this path |
+| Mode | Choose it when |
 | --- | --- |
-| Interactive | Questions, interviews, and reviewed drafts |
-| Plan | Review a multi-step approach before changes |
-| Autopilot | Work with agreed scope and permission to act without review of every action |
+| Interactive | Interviews, source checks, drafts you review step by step |
+| Plan | Several steps; approve the approach first |
+| Autopilot | Scope, sources, and stop point agreed; no review per action |
 
-Session M7-01 uses Interactive, then Plan. The learner reviews every write.
+**Start in Interactive. Move to Plan before Copilot writes.** Autopilot risks
+spreading a wrong assumption before you see it. M7-01 never uses it.
+
+---
+
+# What the app can and can't see
+
+| It sees | It can't see |
+| --- | --- |
+| The conversation, including its own earlier answers | A file you only named |
+| Files attached with `@`, issues with `#` | Other chats or sessions |
+| Loaded instructions and MCP results | Meetings and your memory |
+
+A wrong early answer **keeps influencing later ones** until you clear or compact.
 
 ---
 
 # Use context controls
 
-- `@` adds a file.
-- `#` references an issue.
-- `/` opens commands.
-- `/context` shows current context usage.
-- `/compact` summarizes a long active session.
-- `/clear` or `/reset` starts fresh.
+- `@` adds a file, `#` references an issue, `/` opens commands.
+- `/context` shows context usage.
+- `/compact` summarizes earlier turns and keeps the thread.
+- `/clear` or `/reset` starts a fresh conversation.
 
 ---
 
@@ -118,7 +139,9 @@ Mark missing information as unknown.
 
 ---
 
-# Inspect what Copilot can use
+# Inspect what Copilot can use (briefly)
+
+Find one of each in **Customize**.
 
 - Skills provide repeatable procedures.
 - Agents carry role-specific instructions and tools.

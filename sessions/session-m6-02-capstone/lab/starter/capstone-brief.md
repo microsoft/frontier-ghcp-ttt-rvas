@@ -30,7 +30,7 @@ and review must trace back to it.
 - **Testing:** Jest + Supertest
 - **Dependencies:** Use the existing package manifest
 - **Data:** Synthetic examples only
-- **Review:** A human records the final decision
+- **Review:** A person records the final decision
 
 ## Deferred scope
 

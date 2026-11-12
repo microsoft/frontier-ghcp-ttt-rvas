@@ -15,6 +15,12 @@ Use parent-led orchestration for one delivery objective. Split four live GitHub
 issues into independent workstreams, then monitor the child sessions and review
 their results.
 
+**Terms.** In **parent-led orchestration**, one session (the parent) owns the
+objective, starts the child sessions, and reviews what they return. A **child
+session** is a separate session that works one question from its own inputs. A
+**stop condition** is the one boundary that ends a child's work, such as "stop if
+the work needs personal data."
+
 On the developer route after Session M2-05, you review your own pricing fix, its
 tests, and its real pull request instead. You need `gh` or GitHub MCP, but no
 product-track artifacts. Both routes use the same two-hour lab.
@@ -29,18 +35,25 @@ orchestration surface.
 
 You will:
 
-1. Split one objective into independent workstreams.
-2. Set inputs and hard stop conditions.
-3. Start and monitor child sessions through `/orchestrate`.
-4. Redirect, stop, accept, or reject work.
-5. Return a reviewed parent result backed by the route's sources.
-6. Separate local test success from PR readiness (developer route).
+1. Decide when to split work and when to keep it in one session.
+2. Make workstreams independent and handle shared dependencies.
+3. Set inputs and a stop condition for each.
+4. Start and monitor child sessions through `/orchestrate`.
+5. Redirect, stop, accept, or reject work.
+6. Name common failure modes and what to do about them.
+7. Return a reviewed parent result backed by the route's sources.
+8. Separate local test success from PR readiness (developer route).
 
-## Session M5-01 distinction
+## How this differs from other sessions
 
-Session M5-01 uses an optional framework for persistent roles and routing. Session M7-05
-uses built-in orchestration for temporary workstreams. The parent reviews every
-result and keeps decision authority.
+| Approach | What it is | Where |
+| --- | --- | --- |
+| Parallel chats | You run several chats yourself and merge the answers by hand. No parent holds the objective or reviews. | Not taught |
+| Delegation to one agent | You hand one task to one agent and review its output. | [M2-05](../session-m2-05-copilot-app-for-developers/README.md), [M3-02](../session-m3-02-cloud-agent/README.md) |
+| Parent-led orchestration | A parent splits one objective, runs several child sessions, and reconciles them. | M7-05 |
+| M5-01 framework | Persistent roles and routing. | [M5-01](../session-m5-01-squad-orchestration/README.md) |
+
+The parent reviews every result and keeps decision authority.
 
 ## Materials
 

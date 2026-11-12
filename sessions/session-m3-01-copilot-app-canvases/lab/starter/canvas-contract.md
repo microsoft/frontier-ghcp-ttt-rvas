@@ -39,5 +39,4 @@ Track synthetic work items until a reviewer can inspect the evidence and decide 
 - External systems: none.
 - External writes: none.
 - Dependencies: review any generated package before use.
-- Owner: ____________________
-- Retirement trigger: remove the training canvas after the lab or when no owner remains.
+- Lifetime: training only. Delete the canvas after the lab.

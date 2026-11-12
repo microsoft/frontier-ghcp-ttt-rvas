@@ -9,9 +9,6 @@ tools:
   - execute
 disable-model-invocation: true
 user-invocable: true
-metadata:
-  owner: training-maintainers
-  contract-version: "1"
 ---
 
 # Test-only writer

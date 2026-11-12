@@ -26,9 +26,6 @@ existing dependencies.
 
 **Reviewer:** Training peer acting as the human reviewer.
 
-**Stop conditions:** Pause if the work requires another endpoint, live data,
-deployment, tool configuration, or a new dependency.
-
 ### Acceptance criteria and trace
 
 | Criterion | Specification | Test |
@@ -56,7 +53,13 @@ No dependency or unrelated endpoint was added.
 
 **Command:** `npm test`
 
+**Baseline:** Before the change, `tests/health.test.js` passed and the Bookmark
+tests failed because the route was missing.
+
 **Observed result:** 2 suites and 18 tests pass.
+
+**Break-it check:** Changing the title limit from 200 to 201 made `rejects an
+invalid required field` fail. The change was reverted.
 
 The suite sends HTTP requests through Express with Supertest.
 It checks status codes, response envelopes, generated fields, defaults, validation,
@@ -84,9 +87,5 @@ this behavior. **Do not present it as production persistence.**
 
 ## Next action
 
-**Action:** Merge or copy the patch only after the actual repository reviewer repeats
-`npm test` in the approved environment.
-
-**Owner:** Repository reviewer.
-
-**Trigger:** The reviewer has the patch and passing local test output.
+**Action:** The repository reviewer repeats `npm test` before the patch is merged
+or copied.

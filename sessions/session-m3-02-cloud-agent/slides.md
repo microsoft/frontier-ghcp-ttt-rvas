@@ -11,6 +11,50 @@ footer: 'Session M3-02: Cloud Agent'
 ## Keep the Copilot cloud agent within the issue
 
 ---
+# What the cloud agent is
+
+An agent that works **on GitHub, not on your machine**. You hand it a task and come back to a pull request.
+
+```text
+issue assigned to Copilot
+    ↓
+agent session starts in a temporary environment
+    ↓
+agent reads the repo, edits, runs commands and tests
+    ↓
+agent pushes a branch and opens a draft pull request
+    ↓
+you review, comment, and merge
+```
+
+You can follow the session log while it runs. Review comments on the pull request start another round.
+
+---
+# The environment
+
+Each session gets a **fresh, temporary environment**. In an Actions-based session, it is a GitHub Actions runner.
+
+- `.github/workflows/copilot-setup-steps.yml` runs **before** the agent starts. It installs tools and dependencies so the agent can build and test.
+- The workflow must have one job named `copilot-setup-steps`, and it must be on the **default branch**.
+- Repository instructions (`.github/copilot-instructions.md`) tell the agent how to work.
+- A firewall limits network access by default.
+
+Newer sessions can also run in a cloud sandbox, which does not use setup steps. **Check current docs** for which one your plan uses.
+
+---
+# Cloud agent vs IDE and CLI agents
+
+| | Cloud agent | IDE agent mode / CLI |
+| --- | --- | --- |
+| **Runs** | On GitHub, in a temporary environment | On your machine |
+| **You** | Hand off, then review | Watch and steer live |
+| **Starts from** | An issue or a prompt | Your open workspace |
+| **Result** | A branch and a pull request | Edits in your working tree |
+| **Good for** | Well-scoped tasks you can review later | Exploration and tight feedback loops |
+
+Same models and similar tools. The difference is where it runs and how you stay involved.
+
+---
 # Issue-to-review workflow
 
 ```text
@@ -101,6 +145,17 @@ Record:
 Stop if you can't explain the baseline result or setup needs a credential.
 
 ---
+# Live demo: issue to pull request
+
+1. Show the issue and the setup workflow on the default branch.
+2. Assign the issue to Copilot.
+3. Open the session log. Narrate the plan, commands, and edits.
+4. Open the draft pull request. Check the diff and the checks.
+5. Comment once to steer, or approve.
+
+If the session is slow, show `proposed-change.diff` and say so.
+
+---
 # Start the session
 
 - Assign the fixed issue.
@@ -186,4 +241,6 @@ Stop when:
 <!-- _class: divider -->
 # Lab handoff
 
-Keep the same issue through all five checkpoints. Record the reviewer's decision.
+The lab runs **in your training repository on GitHub**. Keep the same issue through all five checkpoints and record your decision.
+
+`proposed-change.diff` is reference material only. Don't apply it.

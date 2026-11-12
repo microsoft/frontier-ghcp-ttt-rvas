@@ -1,6 +1,6 @@
 # Session M3-04 lab: Tighten a custom agent boundary
 
-**Deliverable:** A tested `.agent.md` profile, a checked LSP lookup, and a live test-only run that stops at a source-code conflict
+**Deliverable:** A tested `.agent.md` profile and a live test-only run that stops at a source-code conflict. The LSP lookup is an optional stretch.
 
 ## Lab overview
 
@@ -8,15 +8,16 @@ Start with a profile that doesn't restrict source edits. Show the problem, tight
 
 | Part | Work | Time |
 | --- | --- | --- |
-| 1 | Inspect the profile format | 20 min |
-| 2 | Inspect symbols with LSP and expose the weak boundary | 25 min |
+| 1 | Inspect the profile format | 15 min |
+| 2 | Expose the weak boundary | 15 min |
 | 3 | Tighten tools, paths, validation, and stop rules | 35 min |
-| 4 | Rerun tests and the source-conflict scenario | 25 min |
-| 5 | Review the full profile | 15 min |
+| 4 | Rerun tests and the source-conflict scenario | 30 min |
+| 5 | Review the full profile | 10 min |
+| 6 | Optional stretch: LSP lookup | 15 min |
 
 ## Before you start
 
-You need Node.js 22.22.2 or later, Git, standalone Copilot CLI with custom-agent support, and the JavaScript language server from [`lsp-setup.md`](lsp-setup.md). Check `/agent`, `/lsp show`, and `/lsp test typescript` first. Contract tests and manual traces don't replace a live profile load or an LSP lookup.
+You need Node.js 22.22.2 or later, Git, and standalone Copilot CLI with custom-agent support. Check that `/agent` works first. Contract tests and manual traces don't replace a live profile load. For the optional stretch you also need the JavaScript language server from [`lsp-setup.md`](lsp-setup.md).
 
 Copy the full lab to a fresh workspace:
 
@@ -27,11 +28,11 @@ cd ~/copilot-labs/session-m3-04/lab/starter/agent-project
 git init
 ```
 
-Read `.github/lsp.json` and `jsconfig.json` before opening the project. Keep the whole lab copy: the harness unit tests use its reference profile. `check:tight` checks the profile you create locally.
+Keep the whole lab copy: the harness unit tests use its reference profile. `check:tight` checks the profile you create locally.
 
 Don't push, merge, open an issue, or attach MCP. This lab tests the profile contract.
 
-## Part 1: Inspect the profile format
+## Part 1: Inspect the profile format (15 minutes)
 
 Open:
 
@@ -40,27 +41,18 @@ lab/solution/agent-project/PROFILE-REFERENCE.md
 lab/starter/agent-project/.github/agents/weak-test-writer.agent.md
 ```
 
-A repository profile lives under `.github/agents/` as Markdown with YAML frontmatter. `description` is required. Omitting `tools` enables all available tools, so this lab declares `read`, `search`, `edit`, and `execute`.
+A repository profile lives under `.github/agents/` as Markdown with YAML frontmatter. Fields differ by client, so check the [current docs](https://docs.github.com/en/copilot/reference/custom-agents-configuration).
+
+- `description` is required. Copilot reads it to choose the agent.
+- `tools` lists what the agent can use. Omitting it enables all tools, so this lab declares the aliases `read`, `search`, `edit`, and `execute`.
+- `disable-model-invocation: true` means Copilot won't pick the agent on its own. You select it.
+- `user-invocable` controls whether people can select it.
 
 The body tells the agent the matching task, the paths it may read and edit, the ordered procedure, the validation command, and the stop and handoff rule.
 
-**Checkpoint:** Identify which fields control selection, tool availability, manual invocation, and ownership.
+**Checkpoint:** Name the field that controls tool availability and the field that stops automatic selection.
 
-## Part 2: Expose the weak boundary
-
-### Inspect symbols (10 minutes)
-
-In a normal CLI session, ask:
-
-```text
-Use JavaScript language-server operations to find the definition and references
-of getOrdersByUser in src/order-service.js. Distinguish its caller from its
-CommonJS export. Report paths and lines. Do not edit or rename anything.
-```
-
-Inspect the actual tool call or `/lsp logs`. Check the reported caller `getUserOrderStats` against the source. A comment or export is not a call. Write the operation, returned locations, and your check in `agent-run.md`. If the agent used only text search, ask it to use the configured LSP.
-
-### Expose the profile boundary (15 minutes)
+## Part 2: Expose the weak boundary (15 minutes)
 
 ```bash
 npm run check:weak
@@ -86,7 +78,7 @@ Expected: profile stops and asks for a separate production-code decision.
 
 Don't repair the source file.
 
-## Part 3: Tighten the profile
+## Part 3: Tighten the profile (35 minutes)
 
 Create `.github/agents/test-writer.agent.md`. Use [`solution/agent-project/.github/agents/test-writer.agent.md`](solution/agent-project/.github/agents/test-writer.agent.md) as the reference.
 
@@ -103,7 +95,7 @@ The profile must:
 
 The profile can't enforce repository permissions. The environment still controls what each tool can do.
 
-## Part 4: Rerun the same contract
+## Part 4: Rerun the same contract (30 minutes)
 
 ```bash
 npm run check:tight
@@ -131,16 +123,30 @@ Record the selected profile and result in `agent-run.md`. A manual trace helps d
 
 **Checkpoint:** The contract that failed the weak profile now passes.
 
-## Part 5: Review the full profile
+## Part 5: Review the full profile (10 minutes)
 
-Use [`PROFILE-REFERENCE.md`](solution/agent-project/PROFILE-REFERENCE.md) and [`BOUNDARY-EVIDENCE.md`](solution/agent-project/BOUNDARY-EVIDENCE.md). Review:
+Use [`PROFILE-REFERENCE.md`](solution/agent-project/PROFILE-REFERENCE.md) and [`BOUNDARY-EVIDENCE.md`](solution/agent-project/BOUNDARY-EVIDENCE.md). Check:
 
 - file location and `.agent.md` suffix;
-- required and optional frontmatter;
-- tool aliases and the effect of omitting `tools`;
-- `disable-model-invocation` and `user-invocable`;
-- owner and contract version metadata;
-- body length, trigger, procedure, and stop rule.
+- `description`, `tools`, and `disable-model-invocation`;
+- the effect of omitting `tools`;
+- body trigger, procedure, and stop rule.
+
+Then decide: would a skill or an MCP server fit this need better? A skill gives know-how, an agent gives a role, and MCP gives reach. This role needs tools and limits, so an agent fits.
+
+## Part 6: Optional stretch: LSP lookup (15 minutes)
+
+Skip this unless you finish early. It needs the language server from [`lsp-setup.md`](lsp-setup.md). Check `/lsp show` and `/lsp test typescript` first, and read `.github/lsp.json` and `jsconfig.json`.
+
+In a normal CLI session, ask:
+
+```text
+Use JavaScript language-server operations to find the definition and references
+of getOrdersByUser in src/order-service.js. Distinguish its caller from its
+CommonJS export. Report paths and lines. Do not edit or rename anything.
+```
+
+Inspect the actual tool call or `/lsp logs`. Check the reported caller `getUserOrderStats` against the source. A comment or export is not a call. Write the operation, returned locations, and your check in `agent-run.md`. If the agent used only text search, ask it to use the configured LSP.
 
 ## Final deliverable
 
@@ -148,7 +154,7 @@ Use [`PROFILE-REFERENCE.md`](solution/agent-project/PROFILE-REFERENCE.md) and [`
 2. The tightened `test-writer.agent.md`.
 3. Passing profile contract tests.
 4. A source-conflict scenario that stops without editing `src/`.
-5. `agent-run.md` with the LSP lookup and the live selected-profile result.
+5. `agent-run.md` with the live selected-profile result. Add the LSP lookup if you did the stretch.
 
 ## References
 

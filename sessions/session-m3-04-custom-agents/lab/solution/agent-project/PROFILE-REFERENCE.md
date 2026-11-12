@@ -23,9 +23,6 @@ tools:
   - execute
 disable-model-invocation: true
 user-invocable: true
-metadata:
-  owner: training-maintainers
-  contract-version: "1"
 ---
 ```
 
@@ -34,15 +31,17 @@ stop conditions, and failure behavior.
 
 ## Frontmatter used here
 
+Field meanings are in the [custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration). Fields differ by client. Check current docs.
+
+
 | Property | Lab decision |
 | --- | --- |
 | `description` | Required. States the task, its scope, and the stop condition. |
 | `name` | Gives the profile a readable display name. |
 | `target` | Limits this example to `github-copilot`. |
 | `tools` | Uses the documented `read`, `search`, `edit`, and `execute` aliases. |
-| `disable-model-invocation` | Requires deliberate selection for the lab. |
+| `disable-model-invocation` | `true`: Copilot doesn't pick the agent on its own. A person must select it. |
 | `user-invocable` | Allows a learner to select the profile. |
-| `metadata` | Records a synthetic owner and contract version. |
 
 Omitting `tools` enables all available tools. This lab uses an allowlist because
 the profile may read source, edit tests, and run one known command.

@@ -10,14 +10,43 @@ reviews every run and shares the update.
 
 | Time | Segment |
 | --- | --- |
-| 0:00-0:10 | Choose the recurring draft |
-| 0:10-0:22 | Write the concise automation definition |
-| 0:22-0:35 | Configure and run the automation |
-| 0:35-0:47 | Review platform run records |
-| 0:47-0:55 | Change one issue and rerun |
-| 0:55-1:00 | Decide the authoritative system and current state |
+| 0:00-0:12 | Define automation; compare with a saved prompt and an Actions workflow |
+| 0:12-0:20 | Source reliability, useful updates, why drafts go wrong |
+| 0:20-0:28 | Write the concise automation definition |
+| 0:28-0:38 | Configure and run the automation |
+| 0:38-0:46 | Review platform run records |
+| 0:46-0:54 | Change one issue and rerun |
+| 0:54-1:00 | Scheduling pros and cons; authoritative system |
 
 Learners need Automations and GitHub MCP access.
+
+## Define the terms
+
+- **Automation:** a saved prompt with a trigger, tools, and an enabled state. The agent runs the prompt when the trigger fires.
+- **Trigger and cadence:** manual, a schedule (hourly, daily, weekly, cron), or a repository event.
+- **Local scope:** runs from the learner's machine. Cloud automations are a separate type.
+- **Enabled state:** enabled can fire; disabled can't.
+
+Based on [Using automations in the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations).
+Check current docs before class; triggers and options change.
+
+## Automation, saved prompt, or Actions workflow
+
+| | Saved prompt | Automation | GitHub Actions |
+| --- | --- | --- | --- |
+| Starts | You | Trigger or you | Event or schedule |
+| Runs | Your session | Agent with chosen tools | Fixed steps on a runner |
+| Result | Varies | Varies; review it | Repeatable |
+
+Use Actions for exact jobs like builds and tests. Use an automation for recurring
+work that needs reading and judgment, like a status draft.
+
+## Sources and drafts
+
+- **Source reliability:** live issues beat copied files. A reviewed parent result beats chat memory. When sources disagree, the draft says so.
+- **A useful update** says what changed, what is stuck, who owns it, and what happens next. Every claim has a source.
+- **Drafts go wrong** when inputs are stale, the model guesses a cause to fill a gap, or nobody reviews.
+- **Scheduling pros:** consistent, nobody forgets. **Cons:** repeats mistakes unattended, costs usage, needs an owner. That's why the lab stays manual.
 
 ## The automation definition
 

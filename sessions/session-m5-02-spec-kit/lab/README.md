@@ -9,22 +9,31 @@
 ## Overview
 
 Add task archiving to a small Python project. You implement it in stages and
-use convergence review to find missing work. Then you add a restore requirement
-through the living-spec workflow, updating the artifacts and implementation together.
+use convergence review to find missing work.
+
+Parts 1, 2, 3, 5, and 6 take about 1 hour 45 minutes. Parts 4 and 7 are **optional**.
+Do them with the time that remains.
 
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Prepare and initialize the project | 15 min |
 | 2 | Specify and clarify archive behavior | 25 min |
 | 3 | Plan, check, create tasks, and analyze | 25 min |
-| 4 | Convert tasks to GitHub Issues | 15 min |
+| 4 | Optional: convert tasks to GitHub Issues | 15 min |
 | 5 | Implement in stages and run tests | 25 min |
 | 6 | Converge the archive implementation | 15 min |
-| 7 | Evolve the living specification | 30 min |
+| 7 | Optional: evolve the living specification (restore) | 30 min |
+
+## Terms you will see
+
+- **Constitution:** the project's rules, in `.specify/memory/constitution.md`. Spec Kit reads it when it plans and reviews. A rule that can't change a plan or a review doesn't belong there.
+- **Convergence:** `/speckit-converge` compares the code, tests, spec, plan, and tasks. If something is missing, it adds tasks to `tasks.md`. You implement them and run it again until it reports **Converged**.
+- **Idempotent:** doing it twice has the same result as doing it once. Archiving an archived task succeeds and changes nothing.
+- **Skills and commands:** `specify init` writes one folder per command under `.github/skills/`, such as `.github/skills/speckit-plan/`. Typing `/speckit-plan` makes Copilot follow the instructions in that folder. Edit the folder and the command changes.
 
 ## Before you start
 
-You need Python 3.10 or later, Git, GitHub Copilot, `uv`, and a GitHub training
+You need Python 3.10 or later, Git, GitHub Copilot, and `uv`. Part 4 also needs a GitHub training
 repository where you can create issues. For a disconnected environment, the
 instructor prepares the official Spec Kit air-gapped package beforehand.
 
@@ -43,10 +52,10 @@ python -m unittest discover -s tests -v
 The two starter tests should pass. Read `feature-request.md`, but do not open
 `change-request.md` yet.
 
-Install the Spec Kit release the instructor gave you:
+Install Spec Kit v1.4.0. If your instructor gave you a different tag, use that one:
 
 ```bash
-export SPECKIT_TAG='<release-tag>'
+export SPECKIT_TAG='v1.4.0'
 uv tool install specify-cli --force \
   --from "git+https://github.com/github/spec-kit.git@${SPECKIT_TAG}"
 specify version
@@ -66,8 +75,7 @@ find .specify -maxdepth 3 -type f | sort
 find .github -maxdepth 3 -type f | sort
 ```
 
-**Checkpoint:** `.specify/memory/constitution.md`, templates, scripts, and
-Copilot integration files exist.
+**Checkpoint:** `.specify/memory/constitution.md` and the `.github/skills/speckit-*` folders exist.
 
 ## Part 2: Specify and clarify archive behavior (25 minutes)
 
@@ -159,9 +167,12 @@ Fix each material finding in the artifact that owns the decision. Run
 **Checkpoint:** each implementation task names an exact file and traces to an
 accepted user story.
 
-## Part 4: Convert tasks to GitHub Issues (15 minutes)
+## Part 4 (optional): Convert tasks to GitHub Issues (15 minutes)
 
-Commit and push the accepted artifacts:
+`/speckit-taskstoissues` comes from Spec Kit's GitHub extension. If your install
+doesn't have it, skip this part. Parts 5 and 6 don't depend on it.
+
+Commit and push the artifacts so far:
 
 ```bash
 git add .specify .github specs
@@ -178,12 +189,8 @@ Create issues from the unchecked tasks in tasks.md. Preserve task IDs, user-stor
 references, dependencies, and file paths.
 ```
 
-Open the created issues and check:
-
-- each issue maps to a task ID;
-- dependency order remains visible;
-- parallel tasks are distinguishable;
-- the issue does not add requirements absent from `spec.md`.
+Open the created issues. Each should carry a task ID and its dependencies, and
+add nothing that isn't in `spec.md`.
 
 ## Part 5: Implement in stages and run tests (25 minutes)
 
@@ -234,7 +241,11 @@ If convergence appends a new phase to `tasks.md`:
 Repeat until Spec Kit reports **Converged**. When it finds no remaining work,
 it leaves `tasks.md` unchanged.
 
-## Part 7: Evolve the living specification (30 minutes)
+## Part 7 (optional): Evolve the living specification (30 minutes)
+
+Do this part only if Parts 1 to 6 are finished and converged. A living specification
+is one you update when requirements change, then bring the plan, tasks, and code
+back in line.
 
 Open `change-request.md`. Add restoring archived tasks to the accepted behavior.
 
@@ -265,7 +276,7 @@ Use the documented living-spec sequence:
    /speckit-analyze
    ```
 
-4. Convert only the new unchecked restore tasks into issues:
+4. If you did Part 4, convert only the new unchecked restore tasks into issues:
 
    ```text
    /speckit-taskstoissues
@@ -281,21 +292,14 @@ Use the documented living-spec sequence:
    /speckit-converge
    ```
 
-The final suite should check that:
-
-- archive and restore preserve the task ID and title;
-- repeated archive and restore requests are idempotent;
-- unknown IDs produce `TaskNotFoundError`;
-- restored tasks return to the default list;
-- existing behavior remains intact.
-
-If convergence appends work, repeat the implement and converge loop.
+The final suite should cover restore the way it covers archive: ID and title
+preserved, repeated requests idempotent, unknown IDs raise `TaskNotFoundError`,
+and restored tasks return to the default list. If convergence appends work, repeat
+the implement and converge loop.
 
 ## Final deliverable
 
-1. A project constitution and an evolved feature specification.
-2. Plans, supporting design files, reviewed checklists, and dependency-ordered
-   tasks for archive and restore behavior.
-3. GitHub Issues created from the Spec Kit task list.
-4. Working archive and restore behavior with passing tests.
-5. A final **Converged** result.
+1. A constitution, a specification, a plan, and tasks for archive behavior.
+2. Working archive behavior with passing tests.
+3. A final **Converged** result.
+4. Optional: GitHub Issues from the task list, and restore behavior with its own **Converged** result.

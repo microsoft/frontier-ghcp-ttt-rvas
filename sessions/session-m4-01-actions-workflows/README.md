@@ -7,21 +7,20 @@
 
 ## Overview
 
-You use one Node.js application, `copilot-webapp`, for four workflow tasks: create CI, design a staged deployment, repair broken workflow files, and validate a local JavaScript action. Every decision traces back to the same scripts, tests, build output, and health endpoint.
-
-Submit your workflow files. At each checkpoint, record the command, the result, and the file that changed.
+You learn the parts of a GitHub Actions workflow first, then use one Node.js application, `copilot-webapp`, for three tasks: generate and lint CI with Copilot, design a staged deployment, and repair broken workflow files. Validating a local JavaScript action is optional. Every decision traces back to the same scripts, tests, build output, and health endpoint.
 
 ## Learning outcomes
 
-- Generate CI from repository facts and check it with local commands.
+- Name the parts of a workflow: trigger, job, step, runner, action, artifact, `needs`, permissions, secrets, and environments.
+- Generate CI with Copilot from repository facts, then check it with `actionlint` and local commands.
 - Design staging and production jobs without a live deployment.
 - Repair workflow syntax and behavior from exact failures.
-- Validate a JavaScript action against the application with pass and fail cases.
-- Review triggers, permissions, secrets, artifacts, and deployment gates.
+- Decide when a reusable workflow or custom action is worth it.
+- Spot common YAML mistakes in review.
 
 ## You need
 
-Node.js 20 or later and GitHub Copilot. Repository and GitHub Actions access are optional: the lab runs on local tests and YAML parsing.
+Node.js 20 or later, GitHub Copilot (CLI or agent mode in your editor), and `actionlint`. Repository and GitHub Actions access are optional: the lab runs locally.
 
 | Resource | Location |
 | --- | --- |
