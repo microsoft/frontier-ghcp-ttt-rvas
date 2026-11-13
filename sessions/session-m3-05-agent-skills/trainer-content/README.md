@@ -17,7 +17,7 @@ Learners leave knowing what a skill is, when to write one, how to write one with
 
 ## Preparation
 
-- Install `skill-creator` in `~/.copilot/skills` (see lab Part 2) and run `/skills info skill-creator`.
+- Install `skill-creator` with `npx skills add anthropics/skills --skill skill-creator -a github-copilot -g` (needs Node.js 22 or later; see lab Part 2) and run `/skills info skill-creator`.
 - Copy the starter project to a scratch folder and run the lab once. Keep the reference skill in `lab/solution/release-notes/` open for comparison.
 - Pick a second demo task you can finish in 10 minutes (a commit-message or PR-template skill works).
 
@@ -28,6 +28,10 @@ Learners leave knowing what a skill is, when to write one, how to write one with
 - Project skills live in `.github/skills`, `.claude/skills`, or `.agents/skills`. Personal skills live in `~/.copilot/skills` or `~/.agents/skills`.
 - Copilot picks a skill from the description. It then loads `SKILL.md` and can use other files in the folder. You can also name it: `Use the /name skill`.
 - It's an open standard used by several tools. Support differs by surface. Check the docs for the one you teach on.
+
+Progressive disclosure: only `name` and `description` are always in context. The body loads on a match. `references/` and `scripts/` load when a step needs them. Open `skill-creator` and point at each level.
+
+Show `npx skills add <repo> --list`, then the install. Stress reading a skill before installing it.
 
 Show: `/skills list`, `/skills info <name>`, `/skills reload`.
 

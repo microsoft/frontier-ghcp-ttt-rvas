@@ -25,7 +25,7 @@ Session M3-05 | 3 hours
 | What a skill is | 10 min |
 | Skill, agent, or MCP server? | 15 min |
 | Writing a good skill | 10 min |
-| Demo: `skill-creator` | 12 min |
+| Demo: install and use `skill-creator` | 12 min |
 | Pros, cons, and tips | 8 min |
 | Lab handoff | 5 min |
 
@@ -54,11 +54,39 @@ An open standard. Works in the CLI, the Copilot app, cloud agent, and IDE agent 
 1. You send a request.
 2. Copilot compares it with each skill's **description**.
 3. On a match, it loads `SKILL.md` into context.
-4. It follows the instructions and can use files in the folder.
+4. It follows the instructions and reads other files in the folder only when a step needs them.
 
 Or call one yourself: `Use the /release-notes skill for this.`
 
 **The description is the trigger.** Get it wrong and nothing else matters.
+
+---
+
+# Progressive disclosure
+
+Skills load in **three levels**, so unused skills cost almost no context.
+
+| Level | Loads | When |
+| --- | --- | --- |
+| 1 | `name` and `description` | Always, for every skill |
+| 2 | `SKILL.md` body | The description matches |
+| 3 | `references/`, `scripts/` | A step needs them |
+
+Install fifty skills and Copilot carries fifty descriptions. That is why **descriptions must be short and precise**, and why long content goes in `references/`.
+
+---
+
+# Install a skill
+
+```bash
+npx skills add anthropics/skills --list
+npx skills add anthropics/skills --skill skill-creator -a github-copilot -g
+```
+
+- `--list` shows what a repo offers. It installs nothing.
+- `-g` installs for you. Without it, the skill goes in the project.
+- Needs Node.js 22 or later.
+- **A skill is code you didn't write.** Read it before you install it.
 
 ---
 
@@ -218,8 +246,8 @@ Its eval and description-optimizer scripts call the `claude` CLI. Skip them. Tes
 # Lab handoff
 
 1. Run a baseline with no skill.
-2. Install `skill-creator`.
-3. Create `release-notes` with it.
+2. Install `skill-creator` with `npx skills add`.
+3. Create `release-notes` with it. Check it against the three loading levels.
 4. Test three prompts live.
 5. Fix what failed.
 6. Build `grill-me` and interview yourself about `idea.md`.

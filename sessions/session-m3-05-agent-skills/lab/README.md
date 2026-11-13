@@ -10,7 +10,7 @@ Your team writes changelog entries by hand and each one looks different. You wil
 | Part | Work | Time |
 | --- | --- | --- |
 | 1 | Baseline: no skill | 10 min |
-| 2 | Install `skill-creator` | 10 min |
+| 2 | Install `skill-creator` with `npx skills add` | 10 min |
 | 3 | Create the skill | 25 min |
 | 4 | Test it live | 20 min |
 | 5 | Fix it | 15 min |
@@ -20,7 +20,7 @@ Your team writes changelog entries by hand and each one looks different. You wil
 
 ## Before you start
 
-You need Git and the standalone Copilot CLI from Session M2-01 with skills support. Use the synthetic project in this lab.
+You need Git, Node.js 22 or later (for `npx`), and the standalone Copilot CLI from Session M2-01 with skills support. Use the synthetic project in this lab.
 
 ```bash
 mkdir -p ~/copilot-labs/session-m3-05
@@ -46,23 +46,26 @@ Save the answer as `baseline.md`. Compare it with the entries in `CHANGELOG.md`.
 
 ## Part 2: Install `skill-creator`
 
-`skill-creator` is a skill that helps you write skills. It lives in [anthropics/skills](https://github.com/anthropics/skills).
+`skill-creator` is a skill that helps you write skills. It lives in [anthropics/skills](https://github.com/anthropics/skills). Install it with the `skills` CLI, which needs Node.js 22 or later.
 
 ```bash
-git clone --depth 1 https://github.com/anthropics/skills ~/copilot-labs/session-m3-05/skills
-mkdir -p ~/.copilot/skills
-cp -R ~/copilot-labs/session-m3-05/skills/skills/skill-creator ~/.copilot/skills/
+npx skills add anthropics/skills --list
+npx skills add anthropics/skills --skill skill-creator -a github-copilot -g
 ```
 
-Restart `copilot`, or run `/skills reload`. Then run:
+The first command lists what the repository offers. The second installs one skill. `-a github-copilot` picks the agent, and `-g` installs it for your user instead of the current project. Drop `-g` to install into the project. Check where the files landed, then restart `copilot` or run `/skills reload`:
 
 ```text
 /skills info skill-creator
 ```
 
-You should see its description and location. A skill in `~/.copilot/skills` is personal: it works in every project.
+You should see its description and location. A personal skill works in every project. If the CLI fails, copy the `skills/skill-creator` folder from a clone of the repository into `~/.copilot/skills/`.
+
+**Why this matters.** `npx skills add` is how you will share skills with your own teams. It installs from any GitHub repository, so review the source first, as in Part 8.
 
 Read the first 60 lines of its `SKILL.md` before you use it. Note how it tells Copilot to work: interview first, then draft, then test.
+
+Look at how it is built. The frontmatter is short. The body points to files in `references/` and `scripts/`. That's progressive disclosure, covered in Part 3.
 
 ## Part 3: Create the skill
 
@@ -91,6 +94,16 @@ Read what it wrote.
 ├── SKILL.md
 └── references/format.md      # may differ
 ```
+
+Skills load in three levels, so Copilot doesn't spend context on skills it doesn't use:
+
+| Level | What loads | When |
+| --- | --- | --- |
+| 1 | `name` and `description` | Always, for every installed skill |
+| 2 | The `SKILL.md` body | When the description matches your request |
+| 3 | Files in `references/` and `scripts/` | Only when a step needs them |
+
+Check your draft against this. Long templates belong in `references/`, not in the body.
 
 **Checkpoint:** `SKILL.md` starts with `name` and `description` frontmatter. The directory name matches `name`. Compare it with [`solution/release-notes/SKILL.md`](solution/release-notes/SKILL.md).
 
@@ -183,7 +196,7 @@ Open [github/awesome-copilot skills](https://awesome-copilot.github.com/skills/)
 - Does it run scripts or ask for `allowed-tools`? Would you approve that?
 - Would you install it? Why or why not?
 
-Don't install it into this project.
+Don't install it into this project. To see what it would install, run `npx skills add <owner/repo> --list`, which only lists.
 
 ## Final deliverable
 
