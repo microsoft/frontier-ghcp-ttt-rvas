@@ -31,20 +31,16 @@ Session M2-07 | Copilot in Practice | Advanced | 3 hours
 
 ---
 
-# Start with one route
+# The method in six steps
 
-```text
-POST /orders/price
-```
+1. **Pick one slice** that you can finish and check.
+2. **Run the legacy code** and watch what it does.
+3. **Trace the path** from request to response.
+4. **Capture behavior** as test cases both versions can run.
+5. **Rebuild the slice** with the platform's own features.
+6. **Compare results** before you remove anything.
 
-The slice includes:
-
-- request parsing and validation;
-- pricing rules and rounding;
-- response fields and errors;
-- repeatable checks.
-
-**The health and sample-order routes stay in Java.**
+The lab applies these steps to one pricing route. The steps work for any service.
 
 ---
 
@@ -52,48 +48,60 @@ The slice includes:
 
 | Whole-service rewrite | Vertical-slice migration |
 | --- | --- |
-| Scope grows before behavior is known | One route defines the boundary |
+| Scope grows before behavior is known | One slice defines the boundary |
 | New code becomes the assumed truth | Existing behavior is captured first |
 | Cutover checks arrive late | Each slice is checked before replacement |
 | Java structure leaks into C# | Target design follows the contract |
 
-Record unknown behavior before expanding the slice.
+Record unknown behavior before you expand the slice.
+
+---
+
+# Choose a slice you can finish
+
+A good first slice:
+
+- has **one entry point**, such as a route, a job, or a message handler;
+- carries **real rules**, not just plumbing;
+- can run **alongside** the old code;
+- can be checked with **inputs and outputs**.
+
+Everything outside the slice stays in Java for now.
+
+**In the lab:** `POST /orders/price`. Health and sample routes stay in Java.
 
 ---
 
 # Run the legacy service first
 
-```bash
-cd lab/starter/legacy-java-order-service
-./mvnw test
-./mvnw package
-java -jar target/legacy-order-service-1.0.0.jar
-```
+Before you read a file:
 
-```text
-Contract fixture tests passed: 5
-Legacy order service listening on http://localhost:8080
-```
+1. build it;
+2. run its tests;
+3. start it;
+4. send it one request.
 
-Check how the service behaves before reading every file.
+Running code answers questions that reading cannot. It also gives you a baseline that proves the old behavior still works on your machine.
+
+**In the lab:** `./mvnw test`, then `./mvnw package`, then `java -jar`.
 
 ---
 
 # Trace the request path
 
+Follow one request from the edge to the response. Write down each hop.
+
 ```text
-App.java
-  → JsonCodec.readOrderRequest
-  → OrderPricingService.price
-  → JsonCodec.writeQuote
-  → HTTP 200
+entry point
+  → parse and validate input
+  → business logic
+  → map to response
+  → status code
 ```
 
-Errors from validation become HTTP 400 with:
+Note where errors leave the path and what the caller sees.
 
-```json
-{"error":"..."}
-```
+Ask Copilot to build this map. You check it against the code.
 
 ---
 
@@ -101,102 +109,56 @@ Errors from validation become HTTP 400 with:
 
 | Finding | Type | Action |
 | --- | --- | --- |
-| `GOLD` means 10% discount | External behavior | Preserve |
-| Coupon runs after tier discount | Calculation rule | Preserve and test |
-| JDK `HttpServer` | Transport choice | Replace |
-| Java getters | Language structure | Redesign |
-| Unknown throughput | Open question | Record |
+| Observable output, status, or rule | External behavior | Preserve |
+| Order of calculation steps | Business rule | Preserve and test |
+| Framework or server choice | Transport choice | Replace |
+| Getters, builders, class layout | Language structure | Redesign |
+| Unknown load or timing | Open question | Record |
 
-Do not translate incidental structure into a requirement.
-
----
-
-# Pricing order is part of the contract
-
-```text
-subtotal
-  → tier discount
-  → SAVE10 coupon
-  → shipping decision
-  → tax
-  → total
-```
-
-Moving one step changes the result.
+**Do not turn incidental structure into a requirement.**
 
 ---
 
-# Money stays in integer cents
+# Order and rounding are part of the contract
 
-```text
-rounded cents =
-(amount in cents × basis points + 5000) / 10000
-```
+Business rules often hide in sequence and arithmetic. Check:
 
-Examples:
+- the **order** of steps. Moving one changes the result.
+- the **rounding** mode and where it happens.
+- the **number type**. Use integers or decimals for money, never binary floating point.
+- the **base** each rule applies to.
 
-- `SILVER` = 500 basis points
-- `GOLD` = 1000 basis points
-- tax = 825 basis points
-
-**No binary floating point.**
-
----
-
-# Shipping uses discounted merchandise
-
-| Destination | Rule |
-| --- | --- |
-| Domestic | 795 cents |
-| Domestic at 5000+ discounted cents | Free |
-| International | 1995 cents |
-
-Tax applies to discounted merchandise. Shipping is not taxed.
+**In the lab:** subtotal, tier discount, coupon, shipping, tax. Money stays in integer cents. Half-up rounding uses `(amount × rate + 5000) / 10000`.
 
 ---
 
 # Shared fixtures hold accepted behavior
 
+Write cases as data, so both implementations run the same file.
+
 ```json
 {"name":"round-half-up",
- "request":{
-   "customerTier":"SILVER",
-   "destination":"DOMESTIC",
-   "couponCode":"SAVE10",
-   "items":[{"sku":"SKU-ROUND","quantity":1,"unitPriceCents":101}]
- },
+ "request":{"customerTier":"SILVER", "couponCode":"SAVE10", "...":"..."},
  "expected":{"totalCents":888}}
 ```
 
-The Java and .NET tests read the same file.
+Each case should name the risk it guards. Collect cases while you **discover** behavior, not after you migrate.
+
+**In the lab:** five cases in one JSONL file read by the Java and .NET tests.
 
 ---
 
-# What the five cases protect
+# Fixtures cover only what you put in them
 
-| Case | Risk |
-| --- | --- |
-| `standard-domestic` | baseline shipping and tax |
-| `silver-free-domestic-shipping` | threshold after discount |
-| `gold-save10-domestic` | discount order |
-| `gold-international` | destination rule |
-| `round-half-up` | one-cent drift |
+Shared cases check the paths you chose. Also review:
 
-Add cases when you discover behavior. Do not invent them after migration.
-
----
-
-# Contract tests cover selected behavior
-
-Shared cases check only the selected successful calculations.
-
-Also review:
-
-- invalid tiers and destinations;
-- empty orders and bad quantities;
-- unsupported coupons;
+- invalid input and missing fields;
+- empty or extreme values;
+- unsupported options;
 - overflow behavior;
-- method, path, status, and error JSON.
+- method, path, status, and error body.
+
+Where a case is missing, **write the gap down** or add the case.
 
 ---
 
@@ -205,12 +167,12 @@ Also review:
 | Java | .NET 10 |
 | --- | --- |
 | `HttpHandler` | Minimal API route |
-| `OrderRequest` | request records |
-| `OrderPricingService` | `PricingEngine` |
-| `PriceQuote` | response record |
-| fixture test main | contract test executable |
+| Request class with getters | Request record |
+| Service class | Plain class registered for injection |
+| Response class | Response record |
+| Test `main` | Test executable or test project |
 
-The target can be smaller than the source.
+The target can be smaller than the source. Move the job, not the file.
 
 ---
 
@@ -218,33 +180,41 @@ The target can be smaller than the source.
 
 | Idea | Java baseline | .NET 10 |
 | --- | --- | --- |
-| Minimal API | `HttpServer`, one `HttpHandler` class per route, body read and written by hand | `app.MapPost(path, lambda)`. The framework binds JSON to a record and injects `PricingEngine`. |
+| Minimal API | `HttpServer`, one `HttpHandler` per route, body read and written by hand | `app.MapPost(path, lambda)`. The framework binds JSON to a record and injects services. |
 | Vertical slice | Route, parsing, rules, errors, and test | The same unit moves as a whole |
-| JSONL fixtures | One case per line, read by a hand-written codec | The same file, read with `System.Text.Json` |
-| Basis points | `(amount × bp + 5000) / 10000` | The same integer formula, with checked arithmetic |
+| Fixtures as data | A hand-written codec reads each line | `System.Text.Json` reads the same file |
+| Integer arithmetic | `long` math | `long` math, with `checked` to fail on overflow |
 
 ---
 
-# Basis points in one example
+# Keep the transport layer thin
 
-1 basis point is 0.01%. `SILVER` is 500, `GOLD` is 1000, and tax is 825.
-
-```text
-SILVER on 101 cents: (101 × 500 + 5000) / 10000 = 5
+```csharp
+app.MapPost("/path",
+    (Request request, Service service) =>
+{
+    try
+    {
+        return Results.Ok(service.Run(request));
+    }
+    catch (ArgumentException exception)
+    {
+        return Results.BadRequest(new { error = exception.Message });
+    }
+});
 ```
 
-Adding 5000 before dividing by 10000 rounds half up. No floating point.
+The route binds input, calls the service, and maps the outcome to a status. The rules live in the service, where tests reach them.
 
 ---
 
-# The test project must copy the fixture
+# Tests need the shared file
 
-The Java test gets the fixture path from a system property. A .NET executable runs
-from `bin/`, so the file must be copied next to it.
+A Java test can take a path from a system property. A .NET executable runs from `bin/`, so the build must **copy the fixture** next to it.
 
 ```xml
-<None Include="../../contracts/order-pricing-cases.jsonl"
-      Link="contracts/order-pricing-cases.jsonl"
+<None Include="../../contracts/cases.jsonl"
+      Link="contracts/cases.jsonl"
       CopyToOutputDirectory="PreserveNewest" />
 ```
 
@@ -256,30 +226,9 @@ The test reads it from `AppContext.BaseDirectory`.
 
 ---
 
-# The Minimal API boundary
+# Prefer the platform to extra packages
 
-```csharp
-app.MapPost("/orders/price",
-    (OrderRequest request, PricingEngine pricing) =>
-{
-    try
-    {
-        return Results.Ok(pricing.Price(request));
-    }
-    catch (ArgumentException exception)
-    {
-        return Results.BadRequest(new { error = exception.Message });
-    }
-});
-```
-
-Keep transport code thin.
-
----
-
-# Platform APIs are enough
-
-The target uses:
+The target needs:
 
 - ASP.NET Core Minimal APIs;
 - built-in dependency injection;
@@ -287,15 +236,15 @@ The target uses:
 - C# records;
 - a console test executable.
 
-Do not add a database, mapper, mediator, or test package.
+Add a package only when the platform lacks the feature. Each one is code you now own.
 
 ---
 
 # Copilot starts with inspection
 
 ```text
-Trace POST /orders/price through the Java starter.
-Return entry point, parsing, validation, pricing,
+Trace <the route> through the Java code.
+Return entry point, parsing, validation, business logic,
 response mapping, and tests with file and symbol names.
 Do not propose .NET code yet.
 ```
@@ -307,26 +256,26 @@ The first prompt builds a map. It does not ask for a rewrite.
 # Ask for the behavior rules
 
 ```text
-Compare the Java pricing code with the shared JSON cases.
-List operation order, rounding, shipping threshold,
-accepted values, and uncovered behavior.
+Compare the Java business logic with the shared test cases.
+List operation order, rounding, thresholds, accepted values,
+and behavior no case covers.
 Do not change files.
 ```
 
-Review the answer against code and test output.
+Check each claim against the code and the test output.
 
 ---
 
 # Bound the implementation prompt
 
 ```text
-Implement PricingEngine.Price in the .NET 10 scaffold.
+Implement <the service method> in the .NET 10 scaffold.
 Preserve the shared JSON contract.
-Use integer cents, checked arithmetic, and platform APIs.
+Use integer arithmetic and platform APIs.
 Do not add packages or change the endpoint shape.
 ```
 
-Name the limits so you can check Copilot stayed within them.
+Name the limits so you can check that Copilot stayed inside them.
 
 ---
 
@@ -334,12 +283,10 @@ Name the limits so you can check Copilot stayed within them.
 
 Check:
 
-- JSON names;
-- calculation order;
-- integer arithmetic;
-- overflow handling;
-- shipping threshold;
-- tax base;
+- field and JSON names;
+- order of operations;
+- arithmetic type and overflow;
+- thresholds and the base each rule uses;
 - added dependencies.
 
 Generated code is a draft.
@@ -348,31 +295,28 @@ Generated code is a draft.
 
 # A clean migration can still be wrong
 
-This looks reasonable:
+Both lines look reasonable:
 
 ```csharp
 var couponDiscount = Percentage(subtotal, 1000);
-```
-
-The accepted behavior is:
-
-```csharp
 var couponDiscount = Percentage(afterTier, 1000);
 ```
 
-One line breaks `gold-save10-domestic`.
+Only one matches the old behavior. A shared case catches the difference. Reading the code might not.
+
+**Tests catch what a code review misses.**
 
 ---
 
 # Verification has layers
 
 ```text
-Java fixture tests
-        +
-.NET fixture tests
-        +
-same HTTP request to both services
-        +
+legacy tests
+      +
+new tests on the same cases
+      +
+same request sent to both services
+      +
 human review of uncovered edges
 ```
 
@@ -383,35 +327,25 @@ No single layer proves the whole service.
 # Prepared demo
 
 1. Run the Java contract cases.
-2. Send the gold plus coupon request.
+2. Send one request that combines several rules.
 3. Show the Java request path.
-4. Run a deliberately wrong .NET discount order.
+4. Break the rule order in the .NET code on purpose.
 5. Watch the shared case fail.
-6. restore the accepted code and rerun.
+6. Restore the accepted code and rerun.
 
-The failing case shows why calculation order matters.
-
----
-
-# Compare test and HTTP results
-
-```text
-Java:  Contract fixture tests passed: 5
-.NET:  Contract fixture tests passed: 5
-HTTP:  matching field values for one shared request
-```
+A failing case shows why the cases come first.
 
 ---
 
-# Optional: list the next slices
+# Plan the next slices
 
-| Priority | Slice | Checks before removal |
+| Priority | Slice | Check before removal |
 | --- | --- | --- |
-| P0 | Order pricing | Contract and HTTP parity |
-| P1 | Sample orders | Response contract |
-| P1 | Health | Operational contract |
+| P0 | Core business rules | Contract and HTTP parity |
+| P1 | Read-only routes | Response contract |
+| P1 | Health and operations | Operational contract |
 | P2 | Error matrix | Status and error cases |
-| P2 | Concurrency | Measured target |
+| P2 | Concurrency and load | Measured target |
 
 Keep the Java behavior until tests and review support its replacement.
 
@@ -433,7 +367,6 @@ Native alternative: JDK 17 or 21, .NET 10 SDK, Git, and `curl`.
 
 # Lab handoff
 
-Inspect the Java service, implement the .NET pricing slice, run shared contract
-cases, and compare HTTP responses. Short migration notes are optional.
+Apply the method to the order-pricing route: inspect the Java service, implement the .NET slice, run the shared cases, and compare HTTP responses. Short migration notes are optional.
 
 **Complete one route and show its test results.**
