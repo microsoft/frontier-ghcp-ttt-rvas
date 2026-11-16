@@ -172,6 +172,47 @@ Record these behaviors:
 Java details such as `HttpHandler` classes, getters, the hand-written JSON codec,
 and the package layout don't need to survive.
 
+### Optional: map the service with a skill (5 minutes)
+
+On a real service you won't read every file. The
+[`acquire-codebase-knowledge`](https://github.com/github/awesome-copilot/tree/main/skills/acquire-codebase-knowledge)
+skill from awesome-copilot scans a repository and writes seven short documents
+into `docs/codebase/`. It marks anything it can't prove as `[TODO]` or `[ASK USER]`.
+It needs Python 3.8 or later and Git. Check the skill's license and your
+organization's policy before you install it.
+
+Install it as a personal skill, so its own scripts don't show up in the scan:
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/github/awesome-copilot.git /tmp/awesome-copilot
+git -C /tmp/awesome-copilot sparse-checkout set skills/acquire-codebase-knowledge
+mkdir -p ~/.copilot/skills
+cp -R /tmp/awesome-copilot/skills/acquire-codebase-knowledge ~/.copilot/skills/
+```
+
+Start `copilot` in the **working copy root** (`~/copilot-labs/session-m2-07`), not
+inside the Java project. The contract fixture lives in `contracts/`, next to the
+project, and the skill can only cite what it can see. Ask:
+
+```text
+Map the legacy-java-order-service codebase. Focus on architecture and testing only. Don't edit source files.
+```
+
+Then compare its `ARCHITECTURE.md` and `TESTING.md` with your own trace:
+
+1. Which request-path steps did the skill find? Which did it miss?
+2. Does every claim cite a file you can open?
+3. What is marked `[TODO]` or `[ASK USER]`? Do those match your open questions?
+
+Expect many `[TODO]` markers. The project has no README, spec, or CI, so the skill
+has no stated intent to compare with. It also saves a `.codebase-scan.txt` file next
+to the seven documents. Check what it says about the test fixture path and the JSON
+parsing. A test run flagged both.
+
+Treat its output as a draft. **You still decide which behavior to preserve.**
+Delete the generated `docs/` folder and `~/.copilot/skills/acquire-codebase-knowledge`
+when you finish, so they don't end up in the migration.
+
 ### Review point 1
 
 Explain the route step by step. Say what each step does and which behavior a

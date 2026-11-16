@@ -103,6 +103,8 @@ Note where errors leave the path and what the caller sees.
 
 Ask Copilot to build this map. You check it against the code.
 
+On a large codebase, a skill such as `acquire-codebase-knowledge` can draw the first map. It guesses at intent, so you still check it.
+
 ---
 
 # Classify what you find

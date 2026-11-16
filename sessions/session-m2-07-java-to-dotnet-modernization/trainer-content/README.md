@@ -113,6 +113,26 @@ Ask learners to classify each finding:
 
 Copilot may reproduce Java structure in C#. Behavior tests establish parity.
 
+Optional skill step: Part 2 of the lab shows how to run the
+`acquire-codebase-knowledge` skill from awesome-copilot on the Java project. Use it
+to make one point: a skill can draw the first map of a large codebase fast, but it
+guesses at intent. Ask learners to compare its `ARCHITECTURE.md` and `TESTING.md`
+with their own trace, and to look at what it marked `[TODO]` or `[ASK USER]`.
+
+Run it once before the session. The install needs network access, Python 3.8 or
+later, and Git. Skip the step if the organization restricts third-party skills. The
+lab works without it. The starter has about six Java files, so don't expect the skill
+to save time here. The value is the comparison.
+
+A test run on the starter gave these results:
+
+- The skill traced the request path correctly and cited files.
+- It flagged that `ContractFixtureTest` reads a fixture outside the Java project, so run it from the working copy root.
+- It flagged that `JsonCodec` parses JSON with regexes that depend on key order.
+- It flagged that the negative-price check in `OrderPricingService.validate` can't be reached over HTTP.
+- It left about 36 `[TODO]` markers and one `[ASK USER]` question, because the project has no README or spec.
+- It wrote eight files, not seven, because it also saves the scan output.
+
 ### 3. Use integer money and explicit rounding
 
 The service stores money in cents. Percentage calculations use basis points:
