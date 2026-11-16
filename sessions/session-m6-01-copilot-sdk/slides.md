@@ -45,18 +45,20 @@ The SDK provides an agent session. Your application still owns:
 
 ---
 
-# What the SDK guarantees and what this sample chooses
+# What the SDK provides and what your app chooses
 
-| The SDK provides | This sample chooses |
+| The SDK provides | Your application chooses |
 | --- | --- |
-| Client, session, event, and hook APIs | One session, cleanup in `finally` |
-| Event name `assistant.message_delta` | Print deltas only |
+| Client, session, event, and hook APIs | How many sessions, and where cleanup runs |
+| Streaming delta events | What to render, and when |
 | Hook names and return shapes | What each hook records |
-| Permission result kinds | Approve only `lookup_change_request` |
-| `onPostToolUseFailure` skips denied calls | Treat denial as policy, not error |
+| Permission result kinds | Which requests to approve |
+| A failure hook that skips denied calls | Whether denial is policy or error |
 
-The package is `@github/copilot-sdk`, pinned to 1.0.16 (latest on npm: 1.0.31). If you
-upgrade, add `"types": ["node"]` to `tsconfig.json` and check the SDK release notes.
+Check hook and event behavior against the release notes for your SDK version.
+
+**In the lab:** the package is `@github/copilot-sdk`, pinned to 1.0.16 (latest on
+npm: 1.0.31). If you upgrade, add `"types": ["node"]` to `tsconfig.json`.
 
 ---
 
@@ -72,21 +74,24 @@ upgrade, add `"types": ["node"]` to `tsconfig.json` and check the SDK release no
 
 ---
 
-# The scenario is deliberately small
+# Start with a small, fixed scenario
 
 ```text
-Synthetic change record
+Fixed input data
         ↓
-TypeScript CLI
+CLI
         ↓
-Copilot session
+Agent session
         ↓
-Change request lookup tool
+One narrow tool
         ↓
-ready or needs-review
+Deterministic verdict
 ```
 
-The data is fixed. You build the controls around the model.
+Fixed data makes tests stable. You build the controls around the model.
+
+**In the lab:** synthetic change records, one lookup tool, and a `ready` or
+`needs-review` verdict.
 
 ---
 
@@ -343,15 +348,17 @@ so the outer `finally` block still matters.
 
 | Test | Stable assertion |
 | --- | --- |
-| `CR-1042` | Tool returns `ready` with no gaps |
-| `CR-2087` | Tool returns `needs-review` with fixed gaps |
-| Restricted ID | Pre-tool hook returns `deny` with the required reason |
+| Known good input | Tool returns the expected verdict |
+| Known bad input | Tool returns fixed gaps |
+| Restricted input | Pre-tool hook returns `deny` with the required reason |
 | Failed tool event | Failed-tool hook records the failure |
 | SDK error | Error hook chooses the expected recovery action |
 | Session completion | End hook clears state and records the reason |
 | Streaming | Deltas render once and final output is not duplicated |
 
-Mock the SDK boundary. Keep synthetic data fixed.
+Mock the SDK boundary. Keep test data fixed.
+
+**In the lab:** `CR-1042` is ready, `CR-2087` needs review, and `RESTRICTED-` IDs are denied.
 
 ---
 
@@ -390,7 +397,7 @@ Use Jaeger to check:
 - where a failed run stopped;
 - whether one CLI invocation produced one connected trace.
 
-Trace data can contain prompts and tool details. Keep this lab synthetic.
+Trace data can contain prompts and tool details. Keep sensitive data out of traces.
 
 ---
 

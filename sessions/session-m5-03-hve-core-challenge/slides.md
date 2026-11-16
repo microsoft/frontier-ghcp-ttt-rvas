@@ -36,7 +36,7 @@ Command names change between versions. **Check the HVE Core README for your vers
 | Implement | `/rpi-implement` | Code and a changes log |
 | Review | `/rpi-review` | Per-criterion verdicts and a decision |
 
-Follow-up sends defects to Implement, decision gaps to Plan, and evidence gaps to
+Follow-up sends defects to Implement, decision gaps to Plan, and missing facts to
 Research.
 
 ---
@@ -171,53 +171,37 @@ a user story and acceptance criteria. The lab starts from a supplied product int
 
 ---
 
-# Challenge sequence
+# Spot weak work with fast checks
 
-1. Run direct Research and Plan prompts.
-2. Run Implement and Review.
-3. Compare the result with combined `/rpi`.
+Agents write code that looks finished. Run a few cheap checks that try to break it.
 
-Optional, if time allows, before Implement: add repository context, an `applyTo`
-instruction, and a custom reviewer, and use Product Manager Advisor and Agile Coach.
+1. **Bad input**: send a required field as whitespace or a number.
+2. **Edge cases**: repeat a value with different case or spacing.
+3. **Malformed requests**: send broken JSON.
+4. **Error shape**: read the exact error body, not just the status code.
+5. **Build boundaries**: check which stage supplies source to the runtime image.
 
----
-
-# Build the endpoint
-
-Deliver `POST /api/decisions` within the supplied product intent and API contract.
-Stay inside the contract.
-
----
-
-# The contract
-
-| Input | Rule |
-|-------|------|
-| `title` | Required non-empty string; duplicate check ignores case |
-| `context` | Required non-empty string |
-| `decision` | Required non-empty string |
-| `status` | `proposed`, `accepted`, or `superseded` |
-
-Generate an ID and UTC timestamp. Keep state in memory.
-
-Package tested source in a non-root runtime image with production dependencies and
-a health check.
-
----
-
-# Fast checks that find weak work
-
-1. Send a required field as whitespace or a number.
-2. Create the same trimmed title with different case.
-3. Send malformed JSON.
-4. Inspect the exact error envelope.
-5. Check which stage supplies source to the runtime image.
-
-These checks test invalid inputs and container build boundaries.
+A failed check is a defect for Implement. A check nobody defined is a gap for Plan.
 
 ---
 
 # Keep the handoff short
 
-`challenge-handoff.md` holds the four file paths, your decision, open risks, and
-the next action. Don't copy phase text or command output into it.
+A handoff file points to the work. It doesn't repeat it.
+
+Include:
+
+* the paths of the phase files;
+* your decision;
+* open risks;
+* the next action.
+
+Leave out copied phase text and command output. The next reader opens the files.
+
+---
+
+# In the lab
+
+You run direct Research and Plan, then Implement and Review, then compare with combined `/rpi`.
+The task is `POST /api/decisions`, built inside the supplied product intent and API contract.
+Optional, before Implement: add repository context, an `applyTo` instruction, and a custom reviewer.

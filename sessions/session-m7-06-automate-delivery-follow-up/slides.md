@@ -41,142 +41,88 @@ reading and writing.
 
 ---
 
-# Source reliability
+# Pick authoritative sources
 
 A draft is only as good as its inputs.
 
-- Live issues beat copied status files.
+- **Live issues beat copied status files.**
 - A reviewed parent result beats chat memory.
-- When sources disagree, the draft should say so, not pick one.
+- When sources disagree, the draft says so. It doesn't pick one.
 - A claim without a source gets cut.
+
+Pick one system for status. Use **GitHub** when issues and agent work live there.
+Use **Azure Boards** when the backlog lives there. Don't keep competing status
+fields.
 
 ---
 
 # A useful update, and why drafts go wrong
 
 A useful update says **what changed, what is stuck, who owns it, and what happens
-next.** It is short and every claim has a source.
+next.** It is short, and every claim has a source.
 
 Drafts go wrong when:
 
 - inputs are stale or incomplete;
-- the model fills gaps with a guess or a cause;
+- the model guesses a cause to fill a gap;
 - the prompt asks for tone, not facts;
 - nobody reviews it.
 
 ---
 
+# Define the automation before you build it
+
+| Field | Decide |
+| --- | --- |
+| Trigger and cadence | Manual, schedule, or event |
+| Inputs | Which sources it may read |
+| Allowed output | What it may produce |
+| Prohibited side effects | Posts, messages, edits, external writes |
+| Reviewer | A named person or role |
+| Stop conditions | The hard limits |
+| State | Enabled or disabled |
+
+Give it the **minimum tools** it needs. Read-only is a good default.
+
+---
+
+# Review every run
+
+Open the run on the platform. Check status, timing, usage, and what the agent read.
+
+Then check the draft:
+
+- Trace each claim to a source.
+- Keep gaps and conflicts visible.
+- Reject causes and forecasts nobody supported.
+- Check that no prohibited side effect happened.
+- Decide: **keep, revise, disable, or pause.**
+
+---
+
+# Test a change on purpose
+
+Change one input, read it again, and rerun the same automation. The new draft
+should differ only because of that change. If it differs elsewhere, the prompt
+is too loose.
+
+---
+
 # Scheduling: pros and cons
 
-**Pros:** no one forgets; consistent timing.
+**Pros:** nobody forgets; timing is consistent.
 
-**Cons:** repeats mistakes unattended; costs usage; stale inputs produce
+**Cons:** it repeats mistakes unattended; it costs usage; stale inputs give
 confident wrong drafts; someone must own it.
 
-That's why this lab stays manual.
+**Start with supervised manual runs.** Add a cadence only after someone signs off,
+and update the enabled state when you turn it on or off.
 
 ---
 
-# Start from authoritative state
+# In the lab
 
-Use:
-
-- the live GitHub issues;
-- the reviewed Session M7-05 parent result.
-
-Skip static handoffs. They drift from the platform state.
-
----
-
-# Define the automation
-
-| Field | Decision |
-| --- | --- |
-| Trigger and cadence | Manual; no schedule |
-| Authoritative inputs | Live issues and parent result |
-| Permitted output | One draft stakeholder update |
-| Prohibited side effects | No posts, messages, edits, or external writes |
-| Reviewer | Named human role |
-| Stop conditions | Named hard boundaries |
-| Current state | Enabled or disabled |
-
----
-
-# Review run details on the platform
-
-Inspect run status, identifiers, timing, usage, and supporting results on the
-platform.
-
----
-
-# Create one manual automation
-
-```text
-Read the approved status-visibility GitHub issues and the reviewed Session M7-05
-parent result. Draft one stakeholder update from supported issue state. Name
-unresolved exceptions and owners. Boundary: draft only.
-```
-
-Use the minimum GitHub read tools.
-
----
-
-# Review the first run
-
-- Trace every claim to an issue or the parent result.
-- Keep gaps or conflicts in the source information visible.
-- Reject unsupported causes and forecasts.
-- Check that no prohibited side effect occurred.
-- Choose Keep, Revise, Disable, or Pause.
-
----
-
-# Change one approved input
-
-Update the requester-access training issue with the approved synthetic results.
-
-Retrieve the issue again. Then run the same automation.
-
-Check that the new draft differs only because of the approved issue change.
-
----
-
-# Stakeholder update
-
-State:
-
-- the reporting scope;
-- supported status changes;
-- unresolved exceptions and owners;
-- the review decision;
-- the next action.
-
-A person shares the update.
-
----
-
-# Choose one authoritative system
-
-Use **GitHub** when issues and agent work live there.
-
-Use **Azure Boards** when the delivery backlog lives there.
-
-Do not maintain competing status fields.
-
----
-
-# Scheduling stays disabled
-
-The core lab uses supervised manual runs.
-
-Enable a cadence only after separate sign-off. Update the current state when the
-automation is enabled or disabled.
-
----
-
-# Lab deliverable
-
-1. Concise automation definition
-2. Reviewed stakeholder update
-
-Run records stay on the platform.
+You build one manual, draft-only automation from the live issues and the Session
+M7-05 parent result. You review the run, change one issue, rerun, and review the
+stakeholder update. A person shares it. You deliver the automation definition and
+the reviewed update.

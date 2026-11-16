@@ -31,90 +31,52 @@ Session M2-06 | Intermediate | 3 hours
 
 ---
 
-# The inherited application
+# Broken code fails in layers
 
-The inventory tool should:
+A broken program rarely has one bug. Each fix lets execution reach the next failure.
 
-- read warehouse and ledger CSV files;
-- normalize and aggregate SKU quantities;
-- calculate stock variance;
-- write stable text and JSON reports.
+**Fix the lowest blocked layer first.** Do not refactor code Python cannot import.
 
-It currently does none of this reliably.
+---
+
+# The failure ladder
+
+```text
+parse → import → start → behavior → structure
+```
+
+- **Parse:** Python can't read the file.
+- **Import:** a module or name is missing.
+- **Start:** the entry point crashes.
+- **Behavior:** it runs and gives wrong answers.
+- **Structure:** it works, but is hard to change.
 
 ---
 
 # Python concepts you need
 
-- **Import:** `from .rules import severity_for` loads a name from a module in the same package. A missing file or name stops startup.
-- **Entry point:** `python -m inventory_reconciliation` runs `__main__.py`, which calls `main()` in `cli.py`.
-- **pytest:** runs `test_*` functions with plain `assert`. A file that can't parse or import stops collection.
-- **CSV:** every value is a string. Convert and validate `quantity`.
-- **Module-level state:** a top-level variable lives as long as the process, so calls can leak into each other.
+- **Import:** `from .rules import check` loads a name from a sibling module. A missing file or name stops startup.
+- **Entry point:** `python -m package` runs `__main__.py`.
+- **pytest:** runs `test_*` functions with plain `assert`. A file that can't import stops collection.
+- **CSV:** every value is a string. Convert and validate numbers.
+- **Module-level state:** a top-level variable lives as long as the process, so calls leak into each other.
 
 ---
 
-# The broken-state contract
-
-| Stage | Named fault |
-| --- | --- |
-| Parsing | `SYN-01`, then `SYN-02` |
-| Startup | `IMP-01`, then `IMP-02` |
-| Behavior | `LOG-01` through `LOG-03` |
-| Repeatability | `STATE-01` |
-| Design | `DESIGN-01` |
-
-Each repaired fault lets execution reach the next failure.
-
-**Core** (full loop and log entry): `SYN-01`, `IMP-01`, `LOG-01`, `LOG-03`, `STATE-01`, `DESIGN-01`.
-**Quick** (repeat a pattern, log if time allows): `SYN-02`, `IMP-02`, `LOG-02`.
-
----
-
-# Start at the lowest blocked layer
-
-```text
-parse
-  ↓
-import
-  ↓
-start
-  ↓
-behavior
-  ↓
-structure
-```
-
-Do not refactor code that Python cannot import.
-
----
-
-# Read the traceback from the bottom
+# Read a traceback from the bottom
 
 Capture four facts:
 
-1. exception type;
-2. file and line;
-3. failing source text;
-4. command that produced it.
+1. **exception type**;
+2. **file and line**;
+3. **failing source text**;
+4. **command** that produced it.
 
-That is enough to form the first hypothesis.
-
----
-
-# Use Copilot inside a boundary
-
-```text
-Explain this SyntaxError using only the shown file and traceback.
-Identify the smallest syntax repair.
-Do not refactor or change behavior.
-```
-
-**The prompt asks for a syntax-only change.** Check that the proposal stays in scope.
+That is enough for a first hypothesis. Don't guess before you have all four.
 
 ---
 
-# Repair loop
+# The repair loop
 
 ```text
 capture failure
@@ -124,20 +86,7 @@ capture failure
   → record the result
 ```
 
-If the next failure changes, the repair probably moved execution forward.
-
----
-
-# Prepared demonstration
-
-```bash
-python -m inventory_reconciliation \
-  --warehouse fixtures/input/warehouse.csv \
-  --ledger fixtures/input/ledger.csv \
-  --output-dir build
-```
-
-Expected first stop: `SYN-01` in `cli.py`.
+If the next failure is different, the repair moved execution forward. If it's the same, the hypothesis was wrong.
 
 ---
 
@@ -145,150 +94,125 @@ Expected first stop: `SYN-01` in `cli.py`.
 
 | Goal | Command |
 | --- | --- |
-| Parse package | `python -m compileall inventory_reconciliation` |
-| Import entry point | `python -c "import inventory_reconciliation.cli"` |
-| Check startup | `python -m inventory_reconciliation --help` |
-| Check behavior | `pytest -q` |
+| Parse | `python -m compileall <pkg>` |
+| Import | `python -c "import <pkg>.cli"` |
+| Start | `python -m <pkg> --help` |
+| Behavior | `pytest -q` |
 
-Use the smallest command that can disprove the current hypothesis.
+Run the **smallest command that can disprove your hypothesis**.
 
 ---
 
-# Expected outputs are the contract
+# Use Copilot inside a boundary
 
 ```text
-SKU     warehouse  ledger  variance  status  severity
-AX-100          10      10         0  MATCH   none
-BX-200           4       9        -5  SHORT   review
-CX-300           0       8        -8  SHORT   urgent
+Explain this SyntaxError using only the shown file and traceback.
+Propose the smallest repair.
+Do not refactor or change behavior.
 ```
 
-Do not edit the contract to hide a defect.
+Give Copilot the failure, the file, and a limit on scope. **A narrow prompt gives a patch you can check in seconds.**
 
 ---
 
-# Intended reconciliation rules
+# Demo: one full loop
 
-| Rule | Expected behavior |
-| --- | --- |
-| SKU identity | Trim and uppercase |
-| Duplicate rows | Sum after normalization |
-| Missing side | Use quantity zero |
-| Variance | Warehouse minus ledger |
-| Output order | Sort by SKU |
-| Repeated run | No prior results retained |
+1. Run the command and capture the first failure.
+2. Ask Copilot about that failure only.
+3. Apply the smallest change.
+4. Re-run the narrow check.
+5. Log the repair, then stop.
 
----
-
-# Classification belongs in one place
-
-| Variance | Status | Severity |
-| ---: | --- | --- |
-| `0` | `MATCH` | `none` |
-| `-1` to `-5` or `1` to `5` | `SHORT` or `OVER` | `review` |
-| absolute value `6+` | `SHORT` or `OVER` | `urgent` |
-
-The starter's duplicated rules disagree. Keep one implementation.
+Resist the second fix until the first is logged.
 
 ---
 
-# Reproduce each defect with the same fixtures
+# Fixtures and expected outputs are a contract
 
-The same fixtures always expose:
+When no spec exists, **sample inputs and expected outputs define correct behavior**.
 
-- overwritten duplicate quantities;
-- ledger-only SKUs that disappear;
-- the wrong urgent threshold;
-- stale results on a second call.
-
-Use these repeatable failures to test each diagnosis.
+- Run the program on the fixtures and diff against the expected output.
+- Fix the code, not the expected file.
+- Editing the contract to hide a defect is the wrong turn.
 
 ---
 
-# Add tests before changing structure
+# Reproduce a defect before you fix it
 
-Keep the fixture-level checks. Add focused tests for:
+Find a fixture that fails the same way every time. Then:
 
-- severity at absolute variance `6`;
-- negative quantity rejection with row context.
+- name the symptom (wrong total, missing row, stale value);
+- form a hypothesis about where it comes from;
+- fix it and watch the same fixture pass.
 
-Refactor only after the tests establish the expected behavior.
+Typical culprits: overwritten values, dropped rows, off-by-one thresholds, state kept between calls.
 
 ---
 
-# Global state creates delayed failures
+# Characterization tests come before refactoring
+
+A refactor must not change behavior. Tests are how you know.
+
+- Keep the fixture-level checks as a safety net.
+- Add a focused test for each edge you fixed: boundaries and invalid input.
+- Make invalid input fail with **context** (which row, which field).
+
+Refactor only when the tests pass.
+
+---
+
+# Remove global state
 
 ```python
-RUN_HISTORY = []
+HISTORY = []
 
-def reconcile(...):
-    RUN_HISTORY.extend(current_results)
-    return RUN_HISTORY
+def run(items):
+    HISTORY.extend(process(items))
+    return HISTORY
 ```
 
-The first call may look correct. The second call exposes the leak.
+The first call looks right. **The second call exposes the leak.**
+
+Fix: build results inside the function and return them. Test by calling twice and comparing.
 
 ---
 
-# Tangled control flow hides policy
+# Untangle control flow
+
+A function that reads, converts, merges, classifies, formats, and stores state hides its rules.
 
 ```text
-read rows
-  + normalize values
-  + merge quantities
-  + classify variance
-  + build output
-  + retain state
+parse → aggregate → classify → report
 ```
 
-Separate these jobs so each rule has one implementation.
-
----
-
-# Target design
-
-```text
-cli.py
-  → parsing.py
-  → service.py
-  → rules.py
-  → reporting.py
-```
-
-The command-line layer coordinates. It does not own business rules.
+Give each job one function. **Each rule should have one implementation**, reused everywhere. Duplicated rules drift apart.
 
 ---
 
 # Refactor in small moves
 
-1. Remove process-wide mutable results.
-2. Extract one classification function.
-3. Reuse it from service and reporting.
-4. Extract parsing and aggregation.
-5. Run tests after each move.
+1. Remove process-wide mutable state.
+2. Extract one rule into one function.
+3. Reuse it from every caller.
+4. Split parsing and aggregation.
+5. Run the tests after each move.
 
-Keep public behavior stable.
+Keep public behavior stable. The command-line layer coordinates and owns no rules.
 
 ---
 
-# Use Python LSP after the tests are green
+# Use code intelligence for navigation
 
-`.github/lsp.json` tells the CLI to start `pyright-langserver --stdio` for `.py` files.
-An LSP answers "where is this defined, who calls it?" from parsed code.
+A language server (LSP) answers "where is this defined, and who calls it?" from parsed code.
 
 ```text
 /lsp show           list configured servers
 /lsp test python    check that the server starts
 ```
 
-`/lsp test python` proves startup only. It doesn't look up code.
-Ask for the definition and references of `severity_for`.
-Inspect the actual LSP operation and check its locations.
+`/lsp test` checks startup only. Then ask for definitions and references and check the locations.
 
-Then read `service.py` for inline duplicate rules. They may not show up as
-references to that function.
-
-Approve `/plan` before structural edits.
+**References miss inline copies of a rule.** Read the code too. Approve a `/plan` before structural edits.
 
 ---
 
@@ -297,15 +221,15 @@ Approve `/plan` before structural edits.
 Ask:
 
 - Did the change touch only the current fault?
-- Which test proves the claimed behavior?
-- Did a rule move or get copied?
-- Does output order stay deterministic?
+- Which test shows the claimed behavior?
+- Did a rule move, or get copied?
+- Is output still deterministic?
 
-Check generated code against tests and fixtures.
+Check generated code against tests and fixtures, not against how confident it sounds.
 
 ---
 
-# Lab workflow
+# In the lab
 
 | Part | Time |
 | --- | ---: |
@@ -316,16 +240,7 @@ Check generated code against tests and fixtures.
 | Refactor and check | 25 min |
 | Final output comparison and tests | 5 min |
 
----
-
-# Final deliverable
-
-- repair log with the six core repairs;
-- runnable inventory command;
-- added regression tests;
-- unchanged expected outputs;
-- clean separation of parsing, rules, service, reporting, and CLI;
-- passing `pytest -q`.
+You repair an inventory-reconciliation app. Keep a repair log, add regression tests, and finish with the supplied outputs and a passing `pytest -q`.
 
 ---
 
@@ -333,7 +248,6 @@ Check generated code against tests and fixtures.
 
 # Lab handoff
 
-Work in failure order. Log the six core repairs.
+Work in failure order. One hypothesis, one change, one check.
 
-Your solution must produce the supplied text and JSON outputs,
-pass all tests, and return the same result on repeated runs.
+Log each repair. Finish with the expected outputs, passing tests, and the same result on repeated runs.

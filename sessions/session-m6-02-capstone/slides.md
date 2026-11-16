@@ -14,121 +14,123 @@ Session M6-02 | 3 hours
 
 ---
 
-# One slice
+# Run one slice, end to end
 
-Implement and review:
+A slice is **one endpoint or one feature** that goes from spec to reviewed patch.
 
-```http
-POST /api/bookmarks
-```
-
-**Everything else is deferred.**
+- Small enough to finish and review in one sitting.
+- Whole enough to touch every step: spec, issue, prompt, tests, review.
+- **Everything else is deferred.**
 
 ---
+
 # The result is a handoff
 
-- issue;
-- patch;
-- test results;
-- review decision and next action.
+A slice ends with something another engineer can pick up:
+
+- the issue;
+- the patch;
+- the test results;
+- the review decision and next action.
 
 ---
 
 # Four terms
 
-- **Synthetic data**: made-up bookmarks, such as `https://docs.example.test/node`.
+- **Synthetic data**: made-up values. Nothing real goes into a prompt or a test.
 - **Specification ID**: the label of one requirement, such as `FR-007`.
-- **Response envelope**: success is `{ "data": ... }`. Failure is
-  `{ "error": { "code", "message" } }`.
+- **Response envelope**: the fixed shape of every success and error response.
 - **Baseline**: test results before the change.
+
+---
+
+# Cut the slice from the spec
+
+An accepted spec separates two things:
+
+| Behavior | Constraint |
+| --- | --- |
+| What a caller sees: requests, responses, validation | Stack, storage, dependencies |
+| Acceptance scenarios | Files and test command |
+
+Pick the requirements that one endpoint needs. **Name what you leave out.**
 
 ---
 
 # The scope lives in the issue
 
-Implement only `POST /api/bookmarks`, use synthetic data, and keep the existing
-dependencies.
+Copilot reads the issue, not your memory of the meeting.
+
+- List what is in scope and what is out.
+- Name the data rule and the dependency rule.
+- Add no behavior the spec doesn't have. If the issue drifts, **fix the issue first**.
 
 ---
 
-# Session M5-02 is an input
-
-The accepted specification must separate:
-
-| Behavior | Implementation constraint |
-| --- | --- |
-| Observable request and response rules | Node.js, Express, in-memory storage |
-| Validation and duplicate behavior | Existing dependencies only |
-| Acceptance scenarios | Exact files and test command |
-
----
-
-# Issue trace
-
-Every acceptance criterion maps to:
+# Trace every criterion
 
 ```text
-specification ID -> planned file -> executable test
+specification ID -> issue criterion -> planned file -> prompt -> test
 ```
 
-If the issue adds behavior missing from the specification, fix the issue first.
+Each link must point to the next. A criterion with no test is a guess. A test with no
+spec ID is scope creep.
 
 ---
 
-# Worked example: spec to issue to prompt
+# Write the prompt from the issue
 
-**FR-007:** a second request with the same URL returns `409`.
+A good prompt for a slice:
 
-```text
-Issue: Reject duplicate bookmark URLs
-Specification IDs: FR-007, FR-008
-Criterion: repeated url -> 409, error.code CONFLICT
-Test: "rejects a duplicate URL"
-Files: src/routes/bookmarks.js, src/models/bookmark.js
-```
+- points at the issue and the spec IDs;
+- sets limits: existing dependencies only, don't edit `tests/`;
+- asks for the plan first: files and IDs, then the change, then the test run.
 
-```text
-Implement this issue. Existing dependencies only. Don't edit tests/.
-List the files and spec IDs first, then change, then run npm test.
-```
+**Review the plan before Copilot writes code.**
 
 ---
 
-# Scope
+# Failing tests are the baseline
 
-In scope:
+Run the suite before you change anything.
 
-- create one bookmark;
-- validate the accepted fields;
-- reject a duplicate URL;
-- return the documented envelope and status.
-
-Out of scope: authentication, persistence, other endpoints, deployment, and new
-packages.
+- Tests for the new slice fail. That is the spec as executable checks.
+- Tests for existing behavior pass. That is what you must not break.
+- You're done when the failing tests pass. **Don't edit them to get there.**
 
 ---
 
-# The failing tests are the baseline
+# Review starts at green
 
-```bash
-npm test
-```
-
-Health passes. The Bookmark tests fail because the route doesn't exist. They are
-the spec as executable checks. You're done when they pass. Don't edit them.
-
----
-
-# Review and handover
-
-Passing tests are where review starts.
+Passing tests prove less than they seem to.
 
 1. Run the suite.
-2. Check the diff: no edits under `tests/`, no new dependency.
+2. Check the diff: no edits to tests, no new dependency.
 3. Name a test for each specification ID.
 4. Break a rule on purpose. The matching test must fail.
-5. Read the responses against the spec.
-6. Record the decision: approve or request changes.
+5. Read real responses against the spec.
+
+---
+
+# What a good handoff contains
+
+- **Issue**: scope, criteria, spec IDs.
+- **Patch**: the diff, with tests untouched.
+- **Test results**: baseline and final run.
+- **Decision**: approve or request changes, and why.
+- **Next action**: one thing, with an owner.
+
+---
+
+# In the lab
+
+You build `POST /api/bookmarks` for the Bookmark API.
+
+- Start from the supplied spec and the failing starter tests.
+- Use synthetic bookmarks and the existing Node.js dependencies.
+- Out of scope: authentication, persistence, other endpoints, deployment.
+
+Details are in `lab/README.md`.
 
 ---
 

@@ -51,30 +51,32 @@ read you trigger and updates the last-refresh time.
 
 ---
 
-# Use visible state when chat stops being enough
+# When a canvas beats chat
 
-A canvas helps you review several records and make repeated updates through named
-actions. Keep that view available after the conversation ends.
+Use a canvas when the work needs:
 
-The source is the live Session M7-03 parent issue and its linked child issues, not
-the previous chat.
+- a view people can see and review after the chat ends;
+- several related records;
+- repeated updates through named actions;
+- one shared artifact that you and the agent both edit.
+
+Keep a single answer or one-off draft in chat.
 
 ---
 
-# Keep GitHub state and planning information distinct
+# Keep GitHub state and planning state apart
 
-GitHub records issue state. The canvas groups that state with planning information that
-helps people decide what to do next.
+GitHub records the facts. The canvas adds the planning view people use to decide.
 
-| GitHub fact | Canvas planning view |
+| GitHub fact | Planning view |
 | --- | --- |
 | Open issue | Ready for discovery |
 | Assigned issue | Ownership confirmed |
-| Blocked issue | Risk, dependency, and next decision |
+| Blocked issue | Risk, dependency, next decision |
 | Closed issue | Planning result recorded |
 
-Label the two kinds of state differently. Otherwise the team cannot tell whether
-they are seeing a decision or a source-system fact.
+**Label the two kinds of state differently.** A canvas can say `ready for review`
+while the issue stays open. Without labels, nobody can tell a decision from a fact.
 
 ---
 
@@ -82,18 +84,44 @@ they are seeing a decision or a source-system fact.
 
 | Field | Keep it when | Remove it when |
 | --- | --- | --- |
-| Risk | It changes sequencing or approval | It only repeats the issue body |
-| Owner | The responsible person is unclear | GitHub already makes it clear |
-| Next action | A team needs a follow-up | It is only a status synonym |
+| Risk | It changes sequencing or approval | It repeats the issue body |
+| Owner | Responsibility is unclear | GitHub already shows it |
+| Next action | A team needs a follow-up | It only restates status |
 
-The canvas should expose important work without becoming a second backlog.
+A canvas should surface important work. **Don't turn it into a second backlog.**
 
 ---
 
-# Review canvas updates
+# Ask for a canvas in plain language
 
 ```text
-Observe source state
+/create-canvas Create a delivery-planning canvas for the approved GitHub issues.
+People can update planning status and record decisions. Copilot can summarize
+and propose updates. Do not close issues, change assignees, or publish content.
+```
+
+Say what people can change, what Copilot can propose, and what is off limits.
+Then review the generated extension under **Customize** → **Canvas** and in
+`.github/extensions` (check current docs if the UI differs).
+
+---
+
+# Review the generated canvas
+
+1. Does each field support a real decision?
+2. Can you explain each action in one sentence?
+3. Are external writes excluded?
+4. Can the owner recover after an interrupted update?
+5. When do you retire the canvas?
+
+**Remove generated fields and actions that don't help anyone decide or act.**
+
+---
+
+# Review every update
+
+```text
+Read source state
       ↓
 Propose canvas update
       ↓
@@ -102,122 +130,48 @@ Review the affected record
 Accept, revise, or reject
 ```
 
-Use this loop to catch stale data and updates that lack supporting sources.
+This loop catches stale data and updates that cite no source.
 
 ---
 
-# Start from live GitHub issues
+# Drift: the canvas holds a copy
 
-The canvas should show:
+The canvas doesn't update itself when GitHub changes. Drift starts the moment
+someone comments, reassigns, or closes an issue.
 
-- parent objective;
-- issue and planning status;
-- owner or ownership gap;
-- dependency and risk;
-- decision and next action.
-
----
-
-# Create it in plain language
-
-```text
-/create-canvas Create a delivery-planning canvas for the approved GitHub issues.
-People can update planning status and record decisions. Copilot can summarize
-and propose updates. Do not close issues, change assignees, or publish content.
-```
-
-This is a no-code review. Check **Customize** → **Canvas** and `.github/extensions`
-(per the current docs; check current docs if the UI differs). Then ask Copilot for
-specific changes.
-
----
-
-# Review before use
-
-Ask:
-
-1. Does each field support a real decision?
-2. Can every action be explained?
-3. Are external writes excluded?
-4. Can the owner recover?
-5. When should the canvas be retired?
-
----
-
-# Simpler is better
-
-Remove generated fields and actions that do not help the team decide or act.
-
----
-
-# Load live GitHub issues
-
-Use GitHub MCP to retrieve the Session M7-03 issues.
-
-Copilot can move the approved fields into the canvas. GitHub remains the source for issue state.
-
----
-
-# Label planning state separately
-
-The canvas may show `ready for review` while the GitHub issue remains open.
-
-That is acceptable when the canvas labels the planning state and source-system state separately.
-
----
-
-# Check three views
-
-Compare:
+Spot it by comparing three views:
 
 - the visible canvas;
-- Copilot's report;
-- a fresh GitHub MCP read.
+- what Copilot reports;
+- a fresh read from GitHub.
 
-Resolve or explain every mismatch.
-
----
-
-# Create visible drift
-
-1. Preview and approve a GitHub issue comment through MCP.
-2. Retrieve the changed issue in a fresh request.
-3. Do not refresh the canvas.
-4. Compare the new GitHub state with the visible canvas.
-
-The canvas should show that its last refresh is older than the source change.
+**Explain or fix every mismatch.** The last-refresh time shows how old the copy is.
 
 ---
 
-# Refresh the canvas
+# Refresh and reconcile
 
-Use the approved refresh capability.
+Refresh is an action you trigger. It reads the source again and sets a new
+last-refresh time.
 
-Check:
+After a refresh, check that:
 
-- the blocker appears in planning state;
-- the next action names the owner decision;
-- GitHub state and planning state stay distinct;
-- the last-refresh time changes.
+- new blockers show in planning state;
+- next actions name who decides;
+- GitHub facts and planning state stay labeled apart.
 
 ---
 
-# Critique the live state
+# Critique before you rely on it
 
-Run `/context`, then use a fresh session when needed.
-
-Ask `/rubber-duck` to find stale claims, mixed state labels, unsafe actions, and
+Run `/context`. Use a fresh session if the old one is crowded. Then ask
+`/rubber-duck` to find stale claims, mixed state labels, unsafe actions, and
 missing owners.
 
-The live canvas and linked issues are authoritative for Session M7-05.
-
 ---
 
-# Lab result
+# In the lab
 
-- Learner-created canvas
-- Reviewed state and actions
-- Live GitHub issue data
-- A detected and reconciled state mismatch
-- Owner, refresh, recovery, and retirement rules
-- Four linked status-visibility workstream candidates
+You build a canvas from the live Session M7-03 issues, create and fix drift, and
+record owner, refresh, recovery, and retirement rules. The live canvas and linked
+issues carry into Session M7-05.

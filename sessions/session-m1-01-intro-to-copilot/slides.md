@@ -144,41 +144,37 @@ Before accepting, ask:
 
 # Demo contract
 
+Give Copilot and the reviewer the same **contract**: a signature, a docstring, and one test.
+
 ```python
-def normalize_username(value: str) -> str:
-    """Trim outer whitespace, lowercase the value,
-    and join words with hyphens."""
+def name(args: Type) -> Type:
+    """One sentence: what goes in, what comes out,
+    and the rules that matter."""
 ```
 
 ```python
-assert normalize_username("  River Team  ") == "river-team"
+assert name(typical_input) == expected_output
 ```
 
-The test checks how repeated whitespace is handled.
+Pick a test that pins down the rule most likely to go wrong.
 
 ---
 
 # Demo: inspect before accepting
 
-Review the proposed implementation against three rules:
+Check the proposed implementation against **each rule in the docstring**:
 
-1. Outer whitespace disappears.
-2. Case becomes lowercase.
-3. Each run of internal whitespace becomes one hyphen.
-
-Then run the focused test.
+1. Name the line that handles each rule.
+2. Reject any change that alters behavior the contract doesn't mention.
+3. Run the focused test.
 
 ---
 
 # A failing test is useful
 
-This version looks reasonable but mishandles repeated spaces:
+A suggestion can look reasonable and still break one rule, such as how it treats repeated or unusual input.
 
-```python
-return value.strip().lower().replace(" ", "-")
-```
-
-The test catches it while the change is still small.
+The test catches it while the change is still small. **Fix the code, not the test.**
 
 ---
 
@@ -200,7 +196,7 @@ A predicted edit can miss a reference.
 
 # Lab handoff
 
-You will extend one Python utility module:
+**In the lab**, you extend one Python utility module:
 
 1. complete `normalize_username` and `is_palindrome`;
 2. decide how apostrophes count in `word_frequency`;

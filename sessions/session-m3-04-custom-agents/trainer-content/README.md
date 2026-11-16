@@ -18,6 +18,8 @@ Start with a profile that enables every tool and permits any needed change. Run 
 | 0:52 to 0:58 | Agent vs skill vs MCP |
 | 0:58 to 1:00 | Lab handoff |
 
+The slides teach each topic in general terms. Use the weak and tightened lab profiles as your live examples for the 0:23, 0:32, and 0:47 segments. On the slides these are "Scope in the body," "Least-privilege tools and paths," and "Test an agent the same way every time."
+
 ## Preparation
 
 - Open the weak and tightened profiles side by side.

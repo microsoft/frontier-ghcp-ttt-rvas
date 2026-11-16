@@ -31,6 +31,8 @@ Learners set up their own repository in the lab. Don't set it up for them.
 
 ## One-hour plan
 
+The slides teach the general concepts. The checkpoint segments below apply them to the lab issue. Slide mapping: mental model = slides 2 to 3 and 12; issue contract = "Write an issue the agent can act on"; setup = the setup and instructions slides; demo and proposed change = "Start and watch a session" and "Review the pull request"; tests = "Review the pull request" and "Steer with review comments"; human decision = "Stop conditions".
+
 | Time | Segment | What to check |
 | --- | --- | --- |
 | 0:00 to 0:08 | Mental model | Issue, session, pull request; cloud vs IDE and CLI |

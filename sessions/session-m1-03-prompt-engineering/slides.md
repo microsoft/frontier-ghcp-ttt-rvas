@@ -173,7 +173,7 @@ A useful comment describes behavior and boundaries.
 
 # Neighboring files are context, not a contract
 
-Opening `examples/response-shapes.js` may influence a route suggestion.
+An open file, such as a sample of response shapes, may influence a suggestion.
 
 It does not override:
 
@@ -237,8 +237,9 @@ before submitting it.
 
 **Current input:** `Ctrl+X`, then `/`, then `/refine` without arguments.
 
-The lab uses five minutes of the baseline-store block for this comparison. Editor
-Chat has no `/refine`.
+Editor Chat has no `/refine`.
+
+**In the lab:** you spend five minutes of the baseline-store block on this comparison.
 
 ---
 
@@ -302,20 +303,15 @@ Your prompt and project rules set the task. Text in content never does.
 
 # Demo contract
 
-```javascript
-store.create({ title: "  Write clear prompts  " })
+Before you prompt, **write down what a correct result looks like**: one call, one expected output.
+
+```text
+call(typical input)  →  expected output
 ```
 
-must return:
+Use the contract to judge the suggestion, not the other way round.
 
-```javascript
-{
-  id: 1,
-  title: "Write clear prompts",
-  status: "pending",
-  priority: "normal"
-}
-```
+**In the demo:** `store.create({ title: "  Write clear prompts  " })` must return `{ id: 1, title: "Write clear prompts", status: "pending", priority: "normal" }`.
 
 ---
 
@@ -331,14 +327,14 @@ Compare what the model must still guess in each request.
 
 # A change request should change the prompt
 
-Priority adds:
+A new requirement changes the contract. Before you prompt again, state:
 
-- allowed values;
-- a default;
-- list filtering;
-- an invalid-input decision.
+- the new values or rules;
+- the defaults;
+- what existing behavior changes;
+- how to handle invalid input.
 
-State the new behavior before asking for another change.
+**In the lab:** the change request adds a priority field.
 
 ---
 
@@ -357,7 +353,7 @@ State enough detail to make the task testable without dictating the implementati
 
 # Lab handoff
 
-You will extend one todo API:
+**In the lab**, you extend one todo API:
 
 1. implement the baseline store;
 2. wire the REST routes;

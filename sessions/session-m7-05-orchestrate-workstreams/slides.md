@@ -70,37 +70,7 @@ small enough that splitting costs more than it saves.
 - One question per child, from separate inputs.
 - Children don't read each other's results.
 - **Shared dependency?** Move it to the parent, or settle it before you start.
-- Overlap between two children means the split is wrong. Redraw it.
-
----
-
-# Required access
-
-- `/orchestrate` creates and coordinates live child sessions (check current docs
-  for your app version).
-- Product route: GitHub MCP reads the selected issues.
-- Developer route: local project read access and Python 3.10 or later.
-- You can open, redirect, and stop child sessions.
-
----
-
-# Choose one lab route
-
-| Route | Inputs | Result |
-| --- | --- | --- |
-| Product and delivery | Four live GitHub issues | Parent result used by Session M7-06 |
-| Developer | Your M2-05 fix, tests, and pull request | Separate implementation, coverage, and PR conclusions |
-
-Each route takes 120 minutes. Developers need Session M2-05, not Sessions M7-01 to M7-04.
-
----
-
-# One parent objective
-
-> Review the four approved status-visibility issues and return one reviewed
-> result for each.
-
-The parent owns scope and review.
+- **Overlap?** If two children answer the same thing, redraw the split.
 
 ---
 
@@ -109,97 +79,58 @@ The parent owns scope and review.
 Each workstream needs:
 
 - a question with a clear scope;
-- approved inputs;
-- a stop condition;
+- the inputs it may use;
+- a **stop condition**;
 - a reviewer.
 
-The orchestration surface already holds session links, status, timing, and usage.
+Don't track progress in a status form. The orchestration surface already shows
+session links, status, timing, and usage.
 
 ---
 
-# Four independent workstreams
-
-| Workstream | Question |
-| --- | --- |
-| Public mapping | Is the mapping ready for approval? |
-| Requester status | Is the issue ready for implementation review? |
-| Empty and stale states | Are fallback states testable? |
-| Access boundary | Are the approved requester-access results ready? |
-
-Move shared questions back to the parent.
-
----
-
-# Developer workstreams
-
-| Question | Input |
-| --- | --- |
-| Does the fix meet `issue-brief.md`? | Brief and `shop/pricing.py` |
-| What do tests prove or miss? | Brief, tests, and `shop/pricing.py` |
-| What do the PR's checks and threads say? | The real PR, read with `gh` or GitHub MCP |
-
-Children don't wait for one another, and they don't edit.
-
----
-
-# Practise steering
-
-Redirect the test reviewer after its first answer:
-
-```text
-Map each rule in issue-brief.md to the test that would catch it. Which rules
-have no test? Do not edit files.
-```
-
-Inspect the revised answer. A follow-up doesn't prove the first answer was wrong.
-
----
-
-# Reconcile the readiness claim
-
-The author note says: "Local tests pass, so the PR is ready."
-
-Check the real PR:
-
-- is the `tests` check green on the head commit?
-- are any review threads unresolved?
-
-Local success doesn't override a red check or an open thread.
-
----
-
-# Start live orchestration
-
-```text
-/orchestrate Use the four workstreams in my approved plan. Keep them independent.
-Each result must answer its question, cite approved inputs, state unresolved
-gaps, and give a recommendation. Obey each stop condition.
-```
-
----
-
-# Monitor on the platform
+# Steer a running child
 
 | Signal | Action |
 | --- | --- |
-| Safe and on scope | Wait |
+| On scope | Wait |
 | Safe work needs correction | Redirect |
 | A boundary is crossed | Stop |
 | The result meets the plan | Accept |
 | The result lacks support | Reject |
-| Human authority is required | Escalate |
+| A person must decide | Escalate |
+
+A redirect is a narrower question, not a restart:
+
+```text
+Map each rule in the brief to the test that would catch it. Which rules
+have no test? Do not edit files.
+```
+
+Read the revised answer. **A follow-up doesn't prove the first answer was wrong.**
 
 ---
 
 # Review each result
 
 - Does it answer the assigned question?
-- Does it use only the approved issues and their linked sources?
+- Does it use only the inputs you gave it?
 - Did it obey the stop condition?
-- Are gaps listed?
-- Is the recommendation supported?
+- Does it list gaps?
+- Does a source back the recommendation?
 
-Reject answers that lack supporting sources.
+**Reject confident answers that cite nothing.**
+
+---
+
+# Reconcile claims against the source
+
+A child or author says, "Local tests pass, so the PR is ready."
+
+Check the real source: is the check green on the head commit? Are review threads
+still open?
+
+**A claim doesn't override the system of record.** When children agree because
+they read the same file, check the source, not the count.
 
 ---
 
@@ -212,27 +143,27 @@ Reject answers that lack supporting sources.
 | Child drifts past its question | Redirect |
 | Child crosses the stop condition | Stop |
 | Confident answer, no source | Reject |
-| Children agree because they share a source | Check the source, not the count |
+| Agreement from a shared source | Check the source |
 
 ---
 
 # The parent result is the handoff
 
-The reviewed result:
+A good parent result:
 
-- links findings to live GitHub issues;
+- links each finding to its source;
 - shows rejected claims;
 - names gaps and owners;
 - recommends the next follow-up.
 
-Session M7-06 reads this result and the live issues.
+Later work reads this result and the live sources, not chat history.
 
 ---
 
-# The human keeps authority
+# A person keeps authority
 
-Copilot coordinates work. A person reviews results and approves any issue update,
-publication, or release statement.
+Copilot coordinates work. **A person reviews results** and approves any issue
+update, publication, or release statement.
 
 ---
 
@@ -242,18 +173,20 @@ publication, or release statement.
 | --- | --- |
 | Persistent roles and routing | Temporary workstreams |
 | Optional framework setup | Built-in orchestration |
-| Shared memory | Live issues and their supporting sources |
+| Shared memory | Live sources |
 
 ---
 
-# Lab deliverable
+# In the lab
 
-1. Approved orchestration plan
-2. Live child-session results
-3. Reviewed parent result linked to live issues
+Start with `/orchestrate` (check current docs for your app version). You need
+GitHub MCP for the product route, or Python 3.10 or later and your Session M2-05
+work for the developer route.
 
-Keep progress on the orchestration surface, not in a status form.
+| Route | Inputs | Result |
+| --- | --- | --- |
+| Product and delivery | Four live GitHub issues | Parent result used by Session M7-06 |
+| Developer | Your M2-05 fix, tests, and pull request | Implementation, coverage, and PR conclusions |
 
-For developers, use the developer plan and reviewed parent result instead of
-live issues. Include the actual redirection, rejected or unresolved claims, and
-observed usage.
+You deliver an orchestration plan, live child results, and a reviewed parent
+result. Include the redirects you made and the claims you rejected.

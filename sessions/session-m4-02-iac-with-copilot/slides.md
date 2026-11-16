@@ -97,16 +97,13 @@ Terraform keeps a **state file**: what it built, and the IDs.
 
 ---
 
-# Our lab architecture
+# Start from a small design
 
-```text
-VPC 10.0.0.0/16
-├── private subnet 10.0.0.0/24  (zone a)
-├── private subnet 10.0.1.0/24  (zone b)
-└── S3 bucket: private, versioned, encrypted
-```
+Before you prompt, **sketch the design**: network, subnets, storage, and who can reach what. Copilot can only build what you describe.
 
-Small on purpose. You read all of it.
+A small design is easy to review. You can read all of it.
+
+**In the lab:** one VPC, two private subnets, and one private S3 bucket.
 
 ---
 
