@@ -1,0 +1,13 @@
+{
+  "name": "shop-app",
+  "version": "1.0.0",
+  "description": "Tiny pricing module with a known bug, for the Session M3-03 workflow lab",
+  "private": true,
+  "main": "src/pricing.js",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

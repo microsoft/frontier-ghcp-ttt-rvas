@@ -19,6 +19,7 @@ See the [curriculum glossary](../glossary.md) for MCP server, tool, transport, a
 - Add and manage MCP servers in Copilot CLI with `/mcp`, `copilot mcp add`, and the config file.
 - Use the built-in GitHub MCP server and a remote server.
 - Connect a small local server and watch Copilot call it.
+- Work a ticket end to end: read it from an MCP tracker, fix it with a test, and update it.
 - Control tool approval with prompts, `--allow-tool`, and `--deny-tool`.
 - Weigh live access against credentials, context cost, and prompt injection.
 - Choose between a skill, a custom agent, and an MCP server.
@@ -36,6 +37,7 @@ A Copilot subscription, Copilot CLI, Node.js 20 or later, and npm. Check your or
 | Lab | [`lab/README.md`](lab/README.md) |
 | Starter server (one tool) | [`lab/starter/custom-mcp/`](lab/starter/custom-mcp/) |
 | Example config file | [`lab/starter/mcp-config/mcp-config.example.json`](lab/starter/mcp-config/mcp-config.example.json) |
+| Capstone: ticket tracker server and buggy app | [`lab/workflow/`](lab/workflow/) |
 | Finished server | [`lab/solution/custom-mcp/`](lab/solution/custom-mcp/) |
 
 ## Key topics

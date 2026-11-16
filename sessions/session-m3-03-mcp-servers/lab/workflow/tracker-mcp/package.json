@@ -1,0 +1,18 @@
+{
+  "name": "tracker-mcp-server",
+  "version": "1.0.0",
+  "description": "Synthetic ticket tracker MCP server for the Session M3-03 workflow lab",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js",
+    "reset": "node -e \"require('fs').rmSync('.state', { recursive: true, force: true })\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

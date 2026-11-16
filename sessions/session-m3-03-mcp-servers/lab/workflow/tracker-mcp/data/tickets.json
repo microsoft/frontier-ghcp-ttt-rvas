@@ -1,0 +1,29 @@
+[
+  {
+    "id": "T-101",
+    "title": "Order total is off by a cent with a 10% discount",
+    "status": "open",
+    "priority": "high",
+    "description": "Customers report that an order of 3 items at $10.05 each with the SAVE10 code (10% off) is charged $27.15. The total should be $27.14: the discount applies to the whole order, then the result is rounded once to the cent. Finance flagged the difference in the weekly reconciliation.",
+    "area": "shop-app/src/pricing.js",
+    "comments": []
+  },
+  {
+    "id": "T-102",
+    "title": "Add a gift-wrap option at checkout",
+    "status": "open",
+    "priority": "low",
+    "description": "Marketing wants an optional gift-wrap fee. Design is not final. Do not start work.",
+    "area": "shop-app",
+    "comments": []
+  },
+  {
+    "id": "T-099",
+    "title": "Typo in the order confirmation email",
+    "status": "done",
+    "priority": "low",
+    "description": "Fixed in the last release.",
+    "area": "emails",
+    "comments": ["Fixed and released."]
+  }
+]

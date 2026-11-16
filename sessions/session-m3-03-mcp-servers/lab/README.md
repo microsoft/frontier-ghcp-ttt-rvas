@@ -14,6 +14,7 @@ You need a Copilot subscription, Copilot CLI, Node.js 20 or later, and npm. The 
 | 4 | Add a tool and write its description | 25 min |
 | 5 | Prompt injection and permissions | 20 min |
 | 6 | Compare, clean up, and write your rules | 10 min |
+| 7 | Capstone: fix a ticket end to end (stretch) | 30 min |
 
 ## Part 1: Look around with `/mcp` and use the GitHub server
 
@@ -175,6 +176,85 @@ copilot mcp remove microsoft-learn
 
 Write five rules you would give a team that adds MCP servers. Cover credentials, which tools to allow, how many tools to expose, who writes tool descriptions, and what to do with tool output you don't trust.
 
+## Part 7 (capstone): Fix a ticket end to end
+
+You work a ticket the way you would on the job. Copilot reads it from a tracker, you fix the bug with a test, and Copilot closes the loop in the tracker. The tracker is a second local MCP server. Its data is synthetic.
+
+The workflow:
+
+```text
+tracker (MCP)  ->  read ticket  ->  failing test  ->  fix  ->  passing test  ->  tracker (MCP): status + comment
+```
+
+Set up both projects. The `shop-app` has no dependencies and its tests pass today, because **no test covers the bug yet**.
+
+```bash
+cd sessions/session-m3-03-mcp-servers/lab/workflow
+(cd tracker-mcp && npm ci && npm test)
+(cd shop-app && npm test)
+```
+
+Connect the tracker. Use the absolute path, as in Part 3:
+
+```bash
+copilot mcp add tracker -- node "$(pwd)/tracker-mcp/src/index.js"
+```
+
+Start Copilot **in `shop-app`**. Pre-approve the two read-only tools and leave `update_ticket` on the prompt, because it changes shared data:
+
+```bash
+cd shop-app
+copilot --allow-tool='tracker(list_tickets)' --allow-tool='tracker(get_ticket)'
+```
+
+**Step 1: Pick the work.** Ask:
+
+```text
+List the open tickets in the tracker. Read the highest-priority one and tell me, in three lines, what is wrong and where. Don't change any files yet.
+```
+
+Copilot should pick `T-101` and point to `src/pricing.js`. It should not touch `T-102`.
+
+**Step 2: Reproduce.** Ask:
+
+```text
+Add a test to test/pricing.test.js that reproduces the ticket. Run npm test and show me that it fails.
+```
+
+Check that the test uses the ticket's numbers (3 items at 1005 cents, `SAVE10`, expected 2714) and fails with 2715.
+
+**Step 3: Fix.** Ask:
+
+```text
+Fix the bug in src/pricing.js. Keep money in integer cents. Run npm test.
+```
+
+Read the diff before you accept it. The discount must apply to the line total, with one rounding at the end. All tests pass, including the new one.
+
+**Step 4: Close the loop.** Ask:
+
+```text
+Update ticket T-101 to in_review with a comment: what the cause was, what you changed, and the npm test result. Then write a commit message. Don't commit.
+```
+
+Copilot asks permission to call `update_ticket`. **Read the arguments** (id, status, comment) before you choose **allow once**. Then ask Copilot to read the ticket back with `get_ticket`.
+
+**Checkpoint:** `npm test` passes in `shop-app`, T-101 shows `in_review` with a comment that names the cause and the test result, and T-102 is unchanged.
+
+Try next, if time allows:
+
+- Run the same ticket with `--deny-tool='tracker(update_ticket)'` and see how Copilot handles it.
+- Add a `GitHub` step: ask Copilot to search `github/copilot-cli` issues for a similar question. Use a public repository only.
+- Run `npm run reset` in `tracker-mcp` to put the tickets back, then repeat with a different prompt style.
+
+Clean up after the lab:
+
+```bash
+copilot mcp remove tracker
+(cd tracker-mcp && npm run reset)
+git restore shop-app
+```
+
 ## Final deliverable
 
 1. The tool calls you saw: GitHub (Part 1), Microsoft Learn (Part 2), and `get_weather` (Part 3).
@@ -182,6 +262,7 @@ Write five rules you would give a team that adds MCP servers. Cover credentials,
 3. Your notes from the vague and clear description runs.
 4. What happened with Atlantis and which permission flag you used.
 5. Your five team rules.
+6. Capstone: the new test, the diff, the `npm test` output, and the T-101 comment.
 
 ## References
 

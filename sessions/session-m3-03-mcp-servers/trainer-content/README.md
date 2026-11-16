@@ -99,6 +99,7 @@ Quick check. Ask where each belongs:
 - Part 4: results vary by model. A vague description often still works on simple prompts. Have learners try a harder prompt such as a chained question.
 - Part 5: the model may ignore the injected note. That is a valid result. Tell learners that one pass doesn't prove safety.
 - Part 6: remove servers so the next session starts clean.
+- Part 7: stretch capstone, about 30 minutes. Learners who finish Parts 1 to 6 early start it; others can do it as homework. Run `npm test` in `lab/workflow/shop-app` first. The bug is latent, so tests pass until the learner adds one. If Copilot skips the failing-test step, ask it to write the test first. Results vary by model.
 
 ## Answer key
 
@@ -106,6 +107,7 @@ Quick check. Ask where each belongs:
 - Part 3: Oslo returns 30 °C and rain.
 - Part 4: 30 °C is 86 °F. The finished tool is in `lab/solution/custom-mcp/src/index.js`.
 - Part 5: the finished injection is in the solution. A good answer denies the shell command.
+- Part 7: the cause is per-unit rounding in `discountedUnitPrice`. Item 3 x 1005 cents with `SAVE10` gives 2715 today and must give 2714. The fix is `Math.round((sum of unitCents * quantity) * (100 - percent) / 100)` over the whole order. Tickets reset with `npm run reset` in `tracker-mcp`.
 
 ## References
 
