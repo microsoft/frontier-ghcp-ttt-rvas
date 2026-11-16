@@ -123,7 +123,7 @@ A skill that **interviews you** about a plan.
 
 - Reads your file first, so it doesn't ask what you already wrote.
 - One question at a time, with a recommended answer.
-- Stops when a colleague could build from the plan.
+- **Keeps asking** until no gray area is left, not after a set number of questions.
 - Ends with decisions and open questions.
 
 Not every skill makes a file. Some change how Copilot works with you.

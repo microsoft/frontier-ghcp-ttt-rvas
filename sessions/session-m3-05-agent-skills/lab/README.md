@@ -184,20 +184,20 @@ You can ask `skill-creator` to apply a fix, or edit the file yourself. Run `/ski
 
 ## Part 6: Example: an interview skill
 
-Not every skill produces a file. Some change how Copilot works with you. A popular example is **`grill-me`**: you give Copilot a rough plan, and it interviews you until the gaps are gone.
+Not every skill produces a file. Some change how Copilot works with you. A popular example is **`grill-me`**: you give Copilot a rough plan, and it interviews you, relentlessly, until no gray area is left.
 
 1. Ask `skill-creator`:
 
-   > Create a skill called `grill-me`. When I share a plan or idea, it should interview me one question at a time, recommend an answer for each question, and finish with a summary of decisions and open questions.
+   > Create a skill called `grill-me`. When I share a plan or idea, it should read the context first, then interview me relentlessly, one question at a time, until every gray or unspecified area is settled. It should recommend an answer for each question, not stop after a set number of questions, and finish with a summary of decisions and open questions.
 
 2. Save it under `.github/skills/grill-me/` and run `/skills reload`.
 3. Start a fresh session and run: `Grill me on idea.md.`
-4. Answer at least eight questions. Notice that Copilot reads `idea.md` first and doesn't ask what the file already says.
+4. Answer every question. Don't stop it early. Notice that Copilot reads `idea.md` first, doesn't ask what the file already says, and keeps going until nothing is left unspecified.
 5. Compare your skill with [`solution/grill-me/SKILL.md`](solution/grill-me/SKILL.md). Which instructions did yours miss?
 
 Then try the same idea without the skill: `Review idea.md and tell me what's missing.` Copilot will probably return a list of gaps. Compare the two experiences.
 
-**Why a skill works here.** The interview rules ("one question at a time", "recommend an answer", "stop when a colleague could build it") are exactly the kind of instruction you forget to type. The skill stores them. Use the same pattern for design reviews, incident retros, or a spec before you start a `/plan`.
+**Why a skill works here.** The interview rules ("one question at a time", "recommend an answer", "keep going until no gray area is left") are exactly the kind of instruction you forget to type. The skill stores them. Use the same pattern for design reviews, incident retros, or a spec before you start a `/plan`.
 
 **Checkpoint:** You have a working `grill-me` skill and a summary from your interview of `idea.md`.
 

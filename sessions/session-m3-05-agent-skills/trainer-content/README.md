@@ -52,7 +52,7 @@ Key line: instructions are always on, skills load on demand.
 
 **Skill vs custom agent vs MCP server.** Use one sentence each: a skill gives Copilot know-how, a custom agent gives it a role, an MCP server gives it reach. Link back to M3-03 (MCP) and M3-04 (custom agents) rather than re-teaching them. Stress that they combine: an agent can load skills, and a skill can describe how to use an MCP server's tools.
 
-**Example: `grill-me`.** Show the slide, then run it live on `idea.md`: `Grill me on idea.md.` Let it ask three questions, answer them, and stop. Point out that it reads the file first and recommends an answer. The takeaway: skills can shape *how you work with Copilot*, not only what it produces. The finished skill is in `lab/solution/grill-me/SKILL.md`.
+**Example: `grill-me`.** Show the slide, then run it live on `idea.md`: `Grill me on idea.md.` Answer three questions, then stop. Point out that it reads the file first, recommends an answer, and would keep going until no gray area is left. The takeaway: skills can shape *how you work with Copilot*, not only what it produces. The finished skill is in `lab/solution/grill-me/SKILL.md`.
 
 **Answer key for lab Part 7:**
 
