@@ -94,123 +94,144 @@ Docs describe a typical layout. **Check what Copilot actually generated.**
 Read the entry file against the contract. Check `package.json` for packages you did not ask for.
 
 ---
-# Worked contract
+# Write the contract first
 
-| Part | Delivery-readiness rule |
+A contract is one page. Answer five questions:
+
+| Part | Question |
 | --- | --- |
-| State | item, status, review flag, evidence |
-| Status | `planned`, `in-progress`, `review`, `ready` |
-| Human actions | set status, flag review, add evidence |
-| Agent capabilities | read board, update one named item, list flagged items |
-| Validation | known item, accepted status, evidence before `ready` |
+| State | What does the canvas hold, and what are the defaults? |
+| Vocabulary | Which values are allowed (statuses, types, roles)? |
+| Human actions | What can a person do in the panel? |
+| Agent capabilities | What can the agent call, with which inputs? |
+| Validation | Which changes get rejected, and with what message? |
+
+If you can't answer one, the prompt isn't ready.
+
+---
+# Design capabilities as the agent's whole reach
+
+Good capabilities are:
+
+- **named** for one verb and one object, such as `update_item`;
+- **typed**, with an input schema that lists required fields;
+- **narrow**, so one call changes one thing;
+- **read-only** when the agent only needs to look.
+
+Avoid `manage_project`, free-form commands, and anything that writes outside the canvas.
 
 ---
 # Keep authority narrow
 
-Allowed:
-
-- read the current board;
-- update one named item;
-- list items flagged for review.
-
-Out of scope:
-
-- deployment;
-- external writes;
-- credentials;
-- hidden data imports;
-- broad actions such as "manage the project."
-
----
-# Prepared demo inputs
-
-| ID | Item | Start state | Evidence |
-| --- | --- | --- | --- |
-| DOC-101 | Draft operator guide | `planned` | none |
-| API-204 | Add retry metric | `in-progress` | test log |
-| WEB-318 | Check empty state | `review` | preview |
-
----
-# Demo sequence
-
-1. Optional: run the local scaffolding tests (they check the exercise contract, not Copilot).
-2. Create the canvas from the worked prompt.
-3. Move `WEB-318` to `ready` with a visible control.
-4. Ask the agent to move `API-204` to `review`.
-5. Ask for `DOC-101` to move to `ready`.
-6. Show the rejection, add evidence, and retry.
-
----
-# Creation prompt
-
-```text
-/create-canvas
-
-Create a delivery-readiness canvas from @prepared-items.json.
-Use the contract in @canvas-contract.md.
-People can add evidence and update one item.
-Copilot can read the board, update one named item, and list review flags.
-Reject unknown items or statuses. Require evidence before ready.
-Do not connect external systems.
-```
-
-Use project scope when `.github/extensions` is allowed. Otherwise use user scope.
-
----
-# Two paths, one state
-
-| Path | Result |
+| Usually fine | Out of scope |
 | --- | --- |
-| Human control | The item visibly changes in the canvas |
-| Agent capability | The named item changes and the response matches the canvas |
+| Read the current state | Deployments |
+| Update one named item | External writes |
+| List items by a flag | Credentials |
+| Add a note or evidence | Hidden data imports |
 
-If the response and visible state disagree, stop and inspect the artifact.
+If a capability has no use in your workflow, remove it. Each one is something the agent can do without asking.
+
+---
+# Validate before every change
+
+Put the rules **in the canvas**, so they hold for the person and the agent.
+
+Common rules:
+
+- the item exists;
+- the value is in the allowed list;
+- the transition is legal from the current state;
+- required fields are present, such as evidence or an owner.
+
+On failure: **leave the state unchanged and name the rule** in the message.
+
+---
+# One state, two paths
+
+| Path | What to check |
+| --- | --- |
+| Human control | The visible state changes at once |
+| Agent capability | The call's response matches what the canvas shows |
+
+Test both paths with the same rule. If the response and the screen disagree, stop and read the persisted state before you go on.
 
 ---
 # Rejection is part of the design
 
-Request:
+A good rejection:
 
-```text
-Move DOC-101 to ready.
-```
-
-Expected:
+1. changes nothing;
+2. names the rule that failed;
+3. tells the caller what to supply.
 
 ```text
 Rejected: evidence is required before ready.
 ```
 
-The state stays unchanged and the message names the rule.
+A rejection that says only "error" can't be fixed by a person or an agent.
 
 ---
-# Recovery keeps the rule
+# Recover without weakening the rule
 
-1. Add synthetic evidence to `DOC-101`.
-2. Retry the same transition.
-3. Check that `ready` is now accepted.
-4. Record the state before, the rejection, the correction, and the state after.
+When a change is rejected:
+
+1. supply what the rule asked for;
+2. retry the same change;
+3. check that it is now accepted.
+
+Don't loosen the rule to get past it. Record the state before, the rejection, the correction, and the state after.
+
+---
+# Write the prompt from the contract
+
+```text
+/create-canvas
+
+Create a <name> canvas from @<data file>.
+Use the contract in @<contract file>.
+People can <human actions>.
+Copilot can <capabilities, with inputs>.
+Reject <invalid cases>. Require <field> before <state>.
+Do not connect external systems.
+```
+
+Name the data, the contract, the allowed actions, the rejections, and the limits. Use project scope if `.github/extensions` is allowed. Otherwise use user scope.
 
 ---
 # Review the generated extension
 
-Check:
+Treat it like code from a new teammate. Check:
 
 - state fields and defaults;
 - visible actions;
 - agent-callable capabilities;
 - dependencies and persisted data.
 
-Remove anything the contract did not request.
+**Keep** what the contract asks for. **Revise** what is close. **Remove** the rest.
 
 ---
-# About the local tests
+# Test the rules outside Copilot
 
-`lab/starter/src/canvas-contract.mjs` and its tests are **hand-built scaffolding**. They encode this exercise's rules in plain JavaScript.
+You can test validation logic in plain code, with no canvas at all.
 
-- They do **not** run, test, or imitate Copilot canvas behavior.
-- They give you a fast check of the rules before you generate anything.
-- The real check is the generated canvas against the contract.
+- A small module encodes the rules.
+- Unit tests check each rule and each rejection message.
+- The generated canvas must give the same answers.
+
+This tests **your contract**, not Copilot. The real check is the generated canvas against the contract.
+
+---
+# Where canvases fit
+
+| Good fit | Poor fit |
+| --- | --- |
+| Delivery board with statuses | One-off answer |
+| Review checklist with evidence | A single draft |
+| Plan that a person and an agent both edit | Data that another system owns |
+| Dashboard with a few controlled actions | Broad automation |
+
+Ask: "What breaks if this stays in chat?"
 
 ---
 # Pros, cons, and limits
@@ -222,7 +243,7 @@ Remove anything the contract did not request.
 | State survives turns and handoffs | A canvas is not a system of record |
 | Capabilities limit what the agent can call | Needs the Copilot app. Project scope needs write access to `.github/extensions` |
 
-Stay in chat for a short answer or one draft. Check the current docs before teaching.
+Check the current docs before you teach.
 
 ---
 # Source of truth
@@ -230,6 +251,17 @@ Stay in chat for a short answer or one draft. Check the current docs before teac
 The canvas is a working artifact, not a system of record.
 
 If another system owns the data, label the canvas as a projection and keep external writes out of scope.
+
+---
+# In the lab
+
+You apply these ideas to one synthetic **delivery-readiness board**:
+
+- items move through `planned`, `in-progress`, `review`, and `ready`;
+- the agent can read the board, update one named item, and list review flags;
+- `ready` needs evidence.
+
+You record one direct change, one agent change, one rejection, and one recovery.
 
 ---
 <!-- _class: divider -->

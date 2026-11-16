@@ -30,8 +30,8 @@ Teach learners to define a canvas contract and explain each action. Show a rejec
 | 0:03 to 0:08 | Choose the right customization | Canvas decision explained |
 | 0:08 to 0:16 | Terms and boundaries | Canvas, plugin, capability defined |
 | 0:16 to 0:24 | Contract and generated files | State, actions, capabilities, validation |
-| 0:24 to 0:28 | Prepared inputs and scaffolding | Items understood |
-| 0:28 to 0:40 | Live or prepared demo | Two visible state changes |
+| 0:24 to 0:28 | Capabilities and validation | Narrow authority explained |
+| 0:28 to 0:40 | Prompt and live or prepared demo | Two visible state changes |
 | 0:40 to 0:46 | Rejection and recovery | Rule preserved through recovery |
 | 0:46 to 0:50 | Generated extension review | Keep, revise, or remove |
 | 0:50 to 0:56 | Pros, cons, and limits | Fit decision |
@@ -87,7 +87,9 @@ Open `../lab/starter/canvas-contract.md` and walk through it:
 
 Then explain what Copilot generates from the contract. Scope sets the location: `.github/extensions/<name>/` (project) or `~/.copilot/extensions/<name>/` (user). The docs describe a typical layout: `package.json` for metadata and dependencies, an entry file such as `extension.mjs` for behavior and capabilities, and optional JSON under `artifacts/` for state. **Layouts vary, so check what appears.**
 
-## 0:24 to 0:28: Prepared inputs and scaffolding
+## 0:24 to 0:28: Capabilities, validation, and prepared inputs
+
+The slides teach the general rules: narrow, typed capabilities and validation that names the failed rule. Then ground them in the lab data.
 
 Open `prepared-items.json`. Point out the three starting states and which item lacks evidence. Optionally run:
 
