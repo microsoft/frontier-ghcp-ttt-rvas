@@ -90,6 +90,21 @@ npx skills add anthropics/skills --skill skill-creator -a github-copilot -g
 
 ---
 
+# Global or project install?
+
+| | Personal (`-g`) | Project (no `-g`) |
+| --- | --- | --- |
+| **Location** | `~/.copilot/skills`, `~/.agents/skills` | `.github/skills`, `.claude/skills`, `.agents/skills` |
+| **Available** | In every repo on your machine | Only in this repo |
+| **Shared** | No. Only you have it | Yes. Commit it, and the team gets it |
+| **Versioned** | No. It changes when you update it | Yes. Reviewed in a PR, pinned to a commit |
+| **Setup per teammate** | Everyone installs it themselves | None |
+| **Risk** | Silent drift. A skill you forgot loads everywhere | Needs review. It runs for everyone who clones |
+
+**Rule of thumb:** personal tools like `skill-creator` go global. Skills that encode how *this* team works, like `release-notes`, go in the repo.
+
+---
+
 # Skill or something else?
 
 | Need | Use |

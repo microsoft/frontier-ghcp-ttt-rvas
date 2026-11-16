@@ -34,6 +34,15 @@ Progressive disclosure: only `name` and `description` are always in context. The
 
 Show `npx skills add <repo> --list`, then the install. Stress reading a skill before installing it.
 
+**Global or project install.** Ask the room which they'd pick for `skill-creator` and for `release-notes`, then show the slide.
+
+| | Personal (`-g`) | Project |
+| --- | --- | --- |
+| Pros | Works in every repo. No commit needed. Good for tools you use alone. | Shared through git. Reviewed in a PR. Same version for everyone. No setup per teammate. |
+| Cons | Not shared. Easy to forget it's there. Can load in repos where it doesn't belong. Drifts when you update. | Only works in that repo. Every update needs a commit. A bad skill reaches the whole team. |
+
+Personal for your own tools (`skill-creator`, `grill-me`). Project for team workflows (`release-notes`). Point out that if a personal and a project skill share a name, behavior depends on the tool's precedence. Check the current docs, and avoid duplicate names. A project skill someone else wrote is code you now run. Review it like a dependency.
+
 Show: `/skills list`, `/skills info <name>`, `/skills reload`.
 
 ## Skill, agent, or MCP server? (0:10 to 0:25)

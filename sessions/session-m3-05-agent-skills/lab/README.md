@@ -55,7 +55,7 @@ npx skills add anthropics/skills --list
 npx skills add anthropics/skills --skill skill-creator -a github-copilot -g
 ```
 
-The first command lists what the repository offers. The second installs one skill. `-a github-copilot` picks the agent, and `-g` installs it for your user instead of the current project. Drop `-g` to install into the project. Check where the files landed, then restart `copilot` or run `/skills reload`:
+The first command lists what the repository offers. The second installs one skill. `-a github-copilot` picks the agent, and `-g` installs it for your user instead of the current project. Drop `-g` to install into the project. Use `-g` for tools you use alone, like this one. Use a project install for skills your team shares. Check where the files landed, then restart `copilot` or run `/skills reload`:
 
 ```text
 /skills info skill-creator
