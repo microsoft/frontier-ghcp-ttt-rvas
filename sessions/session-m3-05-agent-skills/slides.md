@@ -204,10 +204,10 @@ A skill that helps you write skills.
 
 1. **Interviews you:** purpose, triggers, output, edge cases.
 2. **Drafts** `SKILL.md` and bundled files.
-3. **Suggests test prompts.**
-4. **Revises** from what you saw.
+3. **Proposes evals:** prompts, expected outputs, and expectations.
+4. **Revises** from scored runs and your feedback.
 
-Its eval and description-optimizer scripts call the `claude` CLI. Skip them. Test by hand.
+**It proposes the evals.** You review them, then run and score them in Copilot CLI. Skip the description optimizer, which needs the `claude` CLI.
 
 ---
 
@@ -247,11 +247,11 @@ Its eval and description-optimizer scripts call the `claude` CLI. Skip them. Tes
 
 1. Run a baseline with no skill.
 2. Install `skill-creator` with `npx skills add`.
-3. Create `release-notes` with it. Check it against the three loading levels.
-4. Test three prompts live.
-5. Fix what failed.
+3. Create `release-notes` and `evals/evals.json`. Check the three loading levels.
+4. Run and score all four eval cases live.
+5. Revise toward technical outcomes, rerun, and compare with `baseline.md`.
 6. Build `grill-me` and interview yourself about `idea.md`.
 7. Decide: skill, custom agent, or MCP server?
 8. Review one third-party skill.
 
-**Submit** your test results, both skills, and `decisions.md`.
+**Submit** both skills, evals, scored runs, baseline comparisons, and `decisions.md`.

@@ -1,7 +1,7 @@
 # Session M3-05 lab: Write, test, and fix a skill
 
 **Duration:** 2 hours
-**Deliverable:** A working `release-notes` skill, your live test results, an interview skill, and a decision table
+**Deliverable:** A working `release-notes` skill with evals, a baseline comparison before and after revision, an interview skill, and a decision table
 
 ## Lab overview
 
@@ -11,9 +11,9 @@ Your team writes changelog entries by hand and each one looks different. You wil
 | --- | --- | --- |
 | 1 | Baseline: no skill | 10 min |
 | 2 | Install `skill-creator` with `npx skills add` | 10 min |
-| 3 | Create the skill | 25 min |
+| 3 | Create the skill and evals | 25 min |
 | 4 | Test it live | 20 min |
-| 5 | Fix it | 15 min |
+| 5 | Revise, rerun, and compare | 15 min |
 | 6 | Example: an interview skill | 25 min |
 | 7 | Skill, custom agent, or MCP server? | 10 min |
 | 8 | Review a third-party skill | 5 min |
@@ -37,10 +37,12 @@ The project has three files: `CHANGELOG.md` with the team's format, `merged-prs.
 Start `copilot` in the project and ask:
 
 ```text
-Write release notes for the PRs in merged-prs.md.
+Write release notes for the PRs in merged-prs.md. Version 2.4.0, dated 2026-10-21.
 ```
 
-Save the answer as `baseline.md`. Compare it with the entries in `CHANGELOG.md`.
+Save the answer as `baseline.md` and don't edit it. You compare against it twice. Use this same prompt for eval case 1, so any difference comes from the skill. If Copilot edits `CHANGELOG.md`, save the answer, then restore the starter file.
+
+Compare `baseline.md` with the entries in `CHANGELOG.md`.
 
 **Checkpoint:** You can name at least two differences, such as missing sections, internal PRs included, or a different tone.
 
@@ -85,13 +87,21 @@ Answer its questions with these facts:
 - If the version or date is missing, ask for it.
 - It must not trigger for commit messages or PR descriptions.
 
-When `skill-creator` offers formal evals, decline. Its eval and description-optimizer scripts call the `claude` CLI, which you don't use here. You will test by hand in Part 4.
+**Accept the evals.** After the draft, `skill-creator` proposes test prompts and saves them to `evals/evals.json`. You don't have to ask. Check that its list covers these four cases, and ask for any that are missing:
+
+1. release notes with a version and date,
+2. a commit message (the skill must stay out),
+3. "What changed recently?" (observe only),
+4. release notes with no version or date (it must ask).
+
+Say yes when it offers to run them. It drafts pass/fail expectations while the runs go. Read them, and compare with [`solution/release-notes/evals/evals.json`](solution/release-notes/evals/evals.json). Skip only the description optimizer. It calls the `claude` CLI, which you don't use here.
 
 Read what it wrote.
 
 ```text
 .github/skills/release-notes/
 ├── SKILL.md
+├── evals/evals.json
 └── references/format.md      # may differ
 ```
 
@@ -105,29 +115,60 @@ Skills load in three levels, so Copilot doesn't spend context on skills it doesn
 
 Check your draft against this. Long templates belong in `references/`, not in the body.
 
-**Checkpoint:** `SKILL.md` starts with `name` and `description` frontmatter. The directory name matches `name`. Compare it with [`solution/release-notes/SKILL.md`](solution/release-notes/SKILL.md).
+**Checkpoint:** `SKILL.md` starts with `name` and `description` frontmatter. The directory name matches `name`. You have four saved eval cases with expected results. Compare the skill with [`solution/release-notes/SKILL.md`](solution/release-notes/SKILL.md).
 
 ## Part 4: Test it live
 
-Run `/skills reload`, then `/skills info release-notes`. Start a fresh session. Try three prompts and note what happens for each:
+Run `/skills reload`, then `/skills info release-notes`. Testing has two parts, because the runs check different things.
+
+**1. Output quality (`skill-creator` runs it).** Ask `skill-creator` to run the evals. For each case it starts two subagents in parallel: one follows your skill, one has no skill. It grades the expectations, writes `benchmark.md` (pass rate, time, tokens), and opens a viewer to compare outputs side by side. Save the workspace as `iteration-1`. The subagent reads the skill file directly, so this run does **not** show whether Copilot would pick the skill on its own.
+
+**2. Triggering (you run it).** Start a fresh `copilot` session for each prompt. Restore the starter `CHANGELOG.md` first.
 
 | # | Prompt | You expect |
 | --- | --- | --- |
 | 1 | `Write release notes for the PRs in merged-prs.md. Version 2.4.0, dated 2026-10-21.` | The skill loads. The entry matches the format. |
 | 2 | `Write a commit message for the CSV export change.` | The skill stays out. |
 | 3 | `What changed recently?` | Unclear. Record what you see. |
+| 4 | `Write release notes for the PRs in merged-prs.md.` | The skill loads and asks for the missing version and date. |
 
-Also try naming the skill: `Use the /release-notes skill for merged-prs.md.`
+Run prompts 1 and 2 twice each, because selection varies. Also try `Use the /release-notes skill for merged-prs.md.` Save the first prompt 1 entry as `with-skill-v1.md`.
 
-Skill selection can vary between runs. Run prompt 1 twice. Record whether it loaded both times.
+Compare `with-skill-v1.md` with `baseline.md` and [`solution/expected-output.md`](solution/expected-output.md). Note whether the skill loaded each time in `eval-results/iteration-1/triggering.md`.
 
-Compare prompt 1 with [`solution/expected-output.md`](solution/expected-output.md).
+**Checkpoint:** You have a benchmark, a trigger result for every prompt, and `with-skill-v1.md`. You can name what changed from `baseline.md`.
 
-**Checkpoint:** You have a result for each prompt and know which ones the skill got wrong.
+## Part 5: Revise, rerun, and compare
 
-## Part 5: Fix it
+**Make this revision even if the first run passed.** First save a copy of the current skill. `skill-creator` uses it as the old version in the next run:
 
-Use what you saw in Part 4. Fix one problem at a time and rerun the failing prompt.
+```bash
+cp -R .github/skills/release-notes release-notes-workspace/skill-snapshot
+```
+
+Then ask Copilot:
+
+```text
+Let's change the @.github/skills/release-notes/ skill so that it writes the
+outcome rather than the changes in the PRs. Keep the output technical but
+more high-level: lead with what users or API clients can now do, or what
+behavior improved, instead of implementation details or rewritten PR titles.
+Keep the format, PR references, measured results, limits, and upgrade actions.
+Don't invent benefits that the PR descriptions don't support.
+Update the skill, not just the current release-note output.
+```
+
+Read the diff. The rules should work for any release, not just these PRs. A good result leads with "Product pages load faster: 480 ms to 190 ms", not with the cache.
+
+Add an expectation to eval case 1: each entry leads with an outcome the PR supports and keeps the technical facts and upgrade actions.
+
+Run `/skills reload`. Ask `skill-creator` to rerun the evals as `iteration-2`, with the snapshot as the baseline. It compares the revised skill with the old one on the same cases, grades both, and shows `benchmark.md` with the difference in pass rate. Don't paste the revision request into the test prompt. The revised skill has to carry it.
+
+Then repeat the triggering checks from Part 4 in fresh sessions and save the first prompt 1 entry as `with-skill-v2.md`.
+
+In `comparison.md`, compare `with-skill-v2.md` with **`baseline.md`** (no skill) and **`with-skill-v1.md`** (first skill version). Record what improved, what stayed the same, and what got worse. Quote one before and after line. Look at format, filtering, technical accuracy, and outcome wording. Add the benchmark numbers for both iterations.
+
+Fix any remaining failure, one at a time, and rerun that case:
 
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
@@ -139,7 +180,7 @@ Use what you saw in Part 4. Fix one problem at a time and rerun the failing prom
 
 You can ask `skill-creator` to apply a fix, or edit the file yourself. Run `/skills reload` after each change.
 
-**Checkpoint:** Prompts 1 and 2 behave as expected on two runs each. Save the final skill under `.github/skills/release-notes/`.
+**Checkpoint:** Prompts 1 and 2 behave as expected on two runs each with the revised skill. You have two benchmarked iterations and a comparison against the unchanged `baseline.md`. Save the final skill and evals under `.github/skills/release-notes/`.
 
 ## Part 6: Example: an interview skill
 
@@ -200,9 +241,9 @@ Don't install it into this project. To see what it would install, run `npx skill
 
 ## Final deliverable
 
-1. `.github/skills/release-notes/SKILL.md` and any bundled files.
+1. `.github/skills/release-notes/SKILL.md`, `evals/evals.json`, and any bundled files.
 2. `.github/skills/grill-me/SKILL.md` and your interview summary for `idea.md`.
-3. Your prompt 1, 2, and 3 results, plus what you changed to fix them.
+3. `baseline.md`, `with-skill-v1.md`, `with-skill-v2.md`, both benchmarked iterations, the trigger results, and `comparison.md`.
 4. `decisions.md` with the seven choices and your third-party review.
 
 ## References

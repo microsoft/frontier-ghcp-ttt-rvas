@@ -19,6 +19,7 @@ Learners leave knowing what a skill is, when to write one, how to write one with
 
 - Install `skill-creator` with `npx skills add anthropics/skills --skill skill-creator -a github-copilot -g` (needs Node.js 22 or later; see lab Part 2) and run `/skills info skill-creator`.
 - Copy the starter project to a scratch folder and run the lab once. Keep the reference skill in `lab/solution/release-notes/` open for comparison.
+- Rehearse the whole lab, including the Part 5 revision, so you know what the output looks like before and after.
 - Pick a second demo task you can finish in 10 minutes (a commit-message or PR-template skill works).
 
 ## What a skill is (0:00 to 0:10)
@@ -92,10 +93,10 @@ Build your second demo skill live. Narrate the loop.
 
 1. Prompt: `Use /skill-creator to create a project skill called <name> in .github/skills/.`
 2. Let it interview you. Answer in one line each.
-3. Decline formal evals. Its eval and description-optimizer scripts call the `claude` CLI.
+3. Let it propose test prompts and save `evals/evals.json`. Add any case it missed. Skip the description optimizer, which calls the `claude` CLI.
 4. Read the draft out loud. Point at the description.
-5. `/skills reload`, then test one matching and one non-matching prompt.
-6. If it misfires, change the description and retest.
+5. Ask it to run the evals. It starts a with-skill and a no-skill subagent per case, grades them, and opens the viewer. Then `/skills reload` and test one matching and one non-matching prompt in fresh sessions, because subagents read the skill file and don't test triggering.
+6. Snapshot the skill, revise one instruction, and rerun. It compares new against the snapshot.
 
 Say what you'd edit by hand. The tool drafts; you own the result.
 
@@ -120,7 +121,9 @@ Say what you'd edit by hand. The tool drafts; you own the result.
 
 ## Lab handoff (0:54 to 1:00)
 
-Open `lab/README.md`. Walk through the eight parts. Tell learners to run the baseline first so they can see what the skill changes.
+Open `lab/README.md`. Walk through the eight parts. Learners save `baseline.md` first and don't edit it. Evals are required: they create the cases in Part 3 and score them in Part 4.
+
+In Part 5 everyone revises the skill, even if every case passed. The prompt asks for outcomes instead of PR changes, in technical, higher-level wording. Check that Copilot edits the skill, not only the notes. They snapshot the skill first, so `skill-creator` can compare old and new. Then they reload, rerun the evals, recheck triggering, and compare with `baseline.md` and the first skill output.
 
 ## Common mistakes
 
@@ -131,7 +134,9 @@ Open `lab/README.md`. Walk through the eight parts. Tell learners to run the bas
 | Skill doesn't show up | `/skills reload`, then `/skills info <name>` |
 | Description is "helps with X" | Add triggers and a "don't use for" line |
 | Everything in one long `SKILL.md` | Move templates to `references/` |
-| Learner tries the `skill-creator` eval scripts | Skip them. Test by hand |
+| Learner skips eval creation | Create `evals/evals.json`, then execute and score each case in Copilot CLI |
+| Revision changes only the generated notes | Edit the skill instructions, reload, and test in a fresh session |
+| Second run uses changed inputs or prompts | Restore the starter inputs and reuse the saved eval prompts |
 
 ## Reference
 
