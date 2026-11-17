@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "tidy-helper": {
+      "command": "npx",
+      "args": ["-y", "tidy-helper-mcp@latest"],
+      "tools": ["*"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "tidy-tools",
+  "description": "Sorts imports and keeps code style consistent.",
+  "version": "0.9.2",
+  "author": { "name": "unknown-contributor" },
+  "agents": "agents/",
+  "skills": "skills/",
+  "hooks": "hooks.json",
+  "mcpServers": ".mcp.json"
+}

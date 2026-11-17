@@ -1,0 +1,48 @@
+{
+  "skill_name": "release-notes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write release notes for the PRs in merged-prs.md. Version 2.4.0, dated 2026-10-21.",
+      "expected_output": "A release entry in the project format using the supplied version and date. Run from the starter project root with merged-prs.md and the original CHANGELOG.md.",
+      "files": [],
+      "expectations": [
+        "The release-notes skill loads.",
+        "The entry uses version 2.4.0 and date 2026-10-21, with Highlights, Added, Changed, Fixed, and Upgrade notes.",
+        "The entry includes PR references #433, #436, #440, and #445, but excludes #437, #441, and #443.",
+        "The CSV export limit remains 10,000 orders and the product page median load times remain 480 ms and 190 ms.",
+        "The refund fix retains the over-$1,000 threshold and the affected invoices since version 2.2.0.",
+        "Upgrade notes tell API clients to switch from state to status before 3.0 and mention the deprecation warning.",
+        "If CHANGELOG.md is edited, its older release entries remain unchanged."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write a commit message for the CSV export change.",
+      "expected_output": "A commit message, not release notes. Run from the starter project root with merged-prs.md available.",
+      "files": [],
+      "expectations": [
+        "The release-notes skill does not load.",
+        "The response is a commit message rather than a changelog entry."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "What changed recently?",
+      "expected_output": "An observation-only case: record whether the skill loads and what it does. Neither trigger outcome is required.",
+      "files": [],
+      "expectations": []
+    },
+    {
+      "id": 4,
+      "prompt": "Write release notes for the PRs in merged-prs.md.",
+      "expected_output": "A question asking for the release version and date before drafting. Run in a fresh session with no release metadata supplied.",
+      "files": [],
+      "expectations": [
+        "The release-notes skill loads.",
+        "Copilot asks for both the release version and date before drafting an entry.",
+        "Copilot does not infer a new version or date from older CHANGELOG.md entries."
+      ]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 # Track: Agentic Development
 
 **For:** teams adopting agentic workflows
-**Time:** 42 hours, 14 sessions
+**Time:** 45 hours, 15 sessions
 **Delivery:** 5 to 6 days
 
-Start with daily Copilot use, then learn to assign and review agent work with the Copilot app, cloud agent, MCP servers, custom agents, and skills. In M3-05 learners write a skill with `skill-creator`, test it live, and decide when a skill beats instructions.
+Start with daily Copilot use, then learn to assign and review agent work with the Copilot app, cloud agent, MCP servers, custom agents, skills, and plugins. In M3-05 learners write a skill with `skill-creator`, test it live, and decide when a skill beats instructions. In M3-06 they package it into a plugin and review an untrusted one.
 
 ## Before you start
 
@@ -15,7 +15,7 @@ Start with daily Copilot use, then learn to assign and review agent work with th
 - `/refine` before M1-03 and local sandbox support for M2-01
 - Node.js 22.22.2 or later and a working JavaScript language server for M3-04
 
-M2-05, M7-05, and M3-05 need live app or CLI access. For M7-05, use the **developer route**. It doesn't need M7-01 to M7-04 or GitHub MCP.
+M2-05, M7-05, M3-05, and M3-06 need live app or CLI access. For M7-05, use the **developer route**. It doesn't need M7-01 to M7-04 or GitHub MCP.
 
 ## Sessions
 
@@ -35,6 +35,7 @@ M2-05, M7-05, and M3-05 need live app or CLI access. For M7-05, use the **develo
 | 12 | M3-03 | [MCP Servers & Custom Tool Integration](../sessions/session-m3-03-mcp-servers/README.md) | 3 hrs |
 | 13 | M3-04 | [Custom Agents & Agent Profiles](../sessions/session-m3-04-custom-agents/README.md) | 3 hrs |
 | 14 | M3-05 | [Agent Skills](../sessions/session-m3-05-agent-skills/README.md) | 3 hrs |
+| 15 | M3-06 | [Agent Plugins](../sessions/session-m3-06-agent-plugins/README.md) | 3 hrs |
 
 ## Schedule
 
@@ -47,7 +48,7 @@ M2-05, M7-05, and M3-05 need live app or CLI access. For M7-05, use the **develo
 | 3 | M2-02, M2-03 |
 | 4 | M2-04, M2-05, M7-05 |
 | 5 | M3-01, M3-02, M3-03 |
-| 6 | M3-04, M3-05 |
+| 6 | M3-04, M3-05, M3-06 |
 
 **Five days:** run three sessions on days 1 to 3 (M1-01 to M1-03, M2-01 to M2-03, M2-04 + M2-05 + M7-05), then days 4 and 5 as above.
 

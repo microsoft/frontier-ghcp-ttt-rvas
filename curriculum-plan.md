@@ -29,12 +29,12 @@ Each path is a [track](tracks/README.md).
 | --- | --- | --- |
 | Copilot beginners | M1-01 to M1-03 | 9 hrs |
 | Copilot practitioners | M1-01 to M1-03, M2-01 to M2-05, M7-05, M2-06, M2-07 | 33 hrs |
-| Agentic developers | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-05 | 42 hrs |
+| Agentic developers | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-06 | 45 hrs |
 | DevOps engineers | M1-01 to M1-03, M2-01 to M2-02, M4-01 to M4-03 | 23 hrs 30 min |
 | SDK application developers | M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05, M6-01 | 39 hrs |
 | Product and delivery teams | M7-01 to M7-06 | 18 hrs |
 | HVE practitioners | M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, M5-03 | 31 hrs |
-| Everything | All 29 sessions | 88 hrs |
+| Everything | All 30 sessions | 91 hrs |
 
 ## Sessions
 
@@ -75,6 +75,7 @@ All Module 3 sessions need M1-01 to M1-03 and M2-01 to M2-04.
 | Session M3-03 | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/README.md) | | 3 hrs |
 | Session M3-04 | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/README.md) | M3-03 | 3 hrs |
 | Session M3-05 | [Agent Skills](sessions/session-m3-05-agent-skills/README.md) | M3-04 | 3 hrs |
+| Session M3-06 | [Agent Plugins](sessions/session-m3-06-agent-plugins/README.md) | M3-03, M3-04, M3-05 | 3 hrs |
 
 ### Module 4: DevOps & Infrastructure
 
@@ -116,7 +117,7 @@ All Module 7 sessions need Copilot access. Learners without it should not start 
 
 ## Delivery notes
 
-- **Schedule:** 1 to 2 sessions a day over 15 days, up to 7 teaching hours a day. Or 1 a day over 29 days.
+- **Schedule:** 1 to 2 sessions a day over 15 days, up to 7 teaching hours a day. Or 1 a day over 30 days.
 - **Group size:** 8 to 15 learners per cohort.
 - **Prep:** Plan 2 hours per session the first time you teach it.
 - **Optional and independent sessions:** M5-01 isn't a prerequisite for M5-02 or M6-02. M6-01 isn't a prerequisite for M6-02.

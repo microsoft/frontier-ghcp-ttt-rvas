@@ -1,6 +1,6 @@
 # GitHub Copilot & Agentic Workflows: Train-the-Trainer
 
-Teach GitHub Copilot and GitHub Agentic Workflows with **29 sessions in 7 modules**, including paths for product and delivery teams and HVE engineering.
+Teach GitHub Copilot and GitHub Agentic Workflows with **30 sessions in 7 modules**, including paths for product and delivery teams and HVE engineering.
 
 Most sessions pair 1 hour of trainer content with a 2-hour lab. M4-02 has a 90-minute lab, M5-02 a 2-hour 30-minute lab, and M5-03 a 3-hour lab.
 
@@ -61,6 +61,7 @@ Learners without Copilot access should start Module 7 once they have it.
 | M3-03  | [MCP Servers & Custom Tool Integration](sessions/session-m3-03-mcp-servers/)           | Advanced    | 3 hrs      | Learns what MCP servers are, adds them to Copilot, and connects a small server of your own. |
 | M3-04  | [Custom Agents & Agent Profiles](sessions/session-m3-04-custom-agents/)                | Advanced    | 3 hrs      | Checks JavaScript LSP results and a live test-only agent that stops at a source-code conflict. |
 | M3-05  | [Agent Skills](sessions/session-m3-05-agent-skills/) | Advanced    | 3 hrs      | Write a skill with `skill-creator`, test it live, and learn when skills beat instructions or agents. |
+| M3-06  | [Agent Plugins](sessions/session-m3-06-agent-plugins/) | Advanced    | 3 hrs      | Package a skill and a reviewer agent into a plugin, publish it in a marketplace, and review an untrusted plugin. |
 
 ### Module 4: DevOps & Infrastructure with Copilot (Intermediate to Advanced)
 
@@ -96,7 +97,7 @@ Learners without Copilot access should start Module 7 once they have it.
 | M7-05 | [Orchestrate Agents and Workstreams](sessions/session-m7-05-orchestrate-workstreams/) | Intermediate | 3 hrs | Supervises live child sessions over GitHub issues, or local code and PR snapshots in the developer route. |
 | M7-06 | [Automate Delivery Follow-up and Connect Work Systems](sessions/session-m7-06-automate-delivery-follow-up/) | Intermediate | 3 hrs | Runs one draft-only Automation and records whether GitHub or Azure Boards is the system of record. |
 
-**Total track duration:** 88 hours across 29 sessions
+**Total track duration:** 91 hours across 30 sessions
 
 ## Getting started
 
@@ -108,12 +109,12 @@ Learners without Copilot access should start Module 7 once they have it.
 | --- | --- | --- | --- |
 | Copilot beginners | Module 1 | M1-01 to M1-03 | 9 hrs |
 | Copilot practitioners | Modules 1 to 2 + developer orchestration | M1-01 to M1-03, M2-01 to M2-05, M7-05, M2-06 to M2-07 | 33 hrs |
-| Agentic developers | Agentic Development | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-05 | 42 hrs |
+| Agentic developers | Agentic Development | M1-01 to M1-03, M2-01 to M2-05, M7-05, M3-01 to M3-06 | 45 hrs |
 | DevOps engineers | DevOps & Automation | M1-01 to M1-03, M2-01 to M2-02, M4-01 to M4-03 | 23 hrs 30 min |
 | SDK application developers | SDK application development | M1-01 to M1-03, M2-01 to M2-04, M3-01 to M3-05, M6-01 | 39 hrs |
 | Product and delivery teams | Module 7 | M7-01 to M7-06 | 18 hrs |
 | HVE practitioners | HVE Engineering | M1-01 to M1-03, M2-01 to M2-04, M3-03 to M3-04, M5-03 | 31 hrs |
-| Everything | All modules | All 29 sessions | 88 hrs |
+| Everything | All modules | All 30 sessions | 91 hrs |
 
 ## Repository structure
 
@@ -123,7 +124,7 @@ ghcp-ttt/
 ├── curriculum-plan.md      # Session order and prerequisites
 ├── tracks/                 # Learning tracks
 ├── track-template/         # Template for new sessions
-└── sessions/               # 29 sessions, one directory each
+└── sessions/               # 30 sessions, one directory each
     ├── glossary.md
     └── session-mN-NN-slug/ # README, slides, trainer-content/, lab/
 ```

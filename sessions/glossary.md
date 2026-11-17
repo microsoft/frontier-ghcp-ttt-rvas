@@ -61,6 +61,13 @@ accepted. See [Session M6-02](session-m6-02-capstone/README.md).
 A standard interface for connecting an agent to external tools and data. See
 [Session M3-03](session-m3-03-mcp-servers/README.md).
 
+## Plugin
+
+A folder with a `plugin.json` manifest that bundles skills, custom agents,
+hooks, and MCP servers so one install adds them all. A marketplace lists
+plugins that teams can install. See
+[Session M3-06](session-m3-06-agent-plugins/README.md).
+
 ## Pull request readiness
 
 Having enough information about the scope, test results, review findings, and

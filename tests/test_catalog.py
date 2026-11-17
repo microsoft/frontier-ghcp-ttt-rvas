@@ -91,7 +91,7 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual([m["id"] for m in self.catalog["modules"]], list("1234567"))
         expected_ids = [
             f"m{module}-{index:02d}"
-            for module, count in enumerate((3, 7, 5, 3, 3, 2, 6), 1)
+            for module, count in enumerate((3, 7, 6, 3, 3, 2, 6), 1)
             for index in range(1, count + 1)
         ]
         self.assertEqual([s["id"] for s in self.catalog["sessions"]], expected_ids)
@@ -105,7 +105,7 @@ class CatalogTests(unittest.TestCase):
             (ROOT / "mkdocs.yml").read_text(encoding="utf-8"), re.MULTILINE,
         )
         self.assertCountEqual(sources, nav)
-        self.assertEqual(len(set(sources)), 87)
+        self.assertEqual(len(set(sources)), 90)
         for source in sources:
             self.assertTrue((ROOT / source).is_file(), source)
 
@@ -373,7 +373,7 @@ class CatalogTests(unittest.TestCase):
             rendered = env.get_template("main.html").render(context)
             tags = Tags(rendered)
             cards = tags.with_class("ghcp-session-card")
-            self.assertEqual(len(cards), 29)
+            self.assertEqual(len(cards), 30)
             self.assertEqual(len(tags.with_class("ghcp-sessions")), 7)
             self.assertEqual(len(tags.with_class("ghcp-track-card")), 7)
             track_cards = re.findall(

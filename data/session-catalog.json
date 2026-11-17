@@ -166,6 +166,15 @@
       "duration_minutes": 180
     },
     {
+      "id": "m3-06",
+      "slug": "session-m3-06-agent-plugins",
+      "module": "3",
+      "title": "Agent Plugins",
+      "description": "Package a skill and a read-only agent into a plugin, publish it in a marketplace, and turn it on for a repository. Review an untrusted plugin before you install it.",
+      "difficulty": "Advanced",
+      "duration_minutes": 180
+    },
+    {
       "id": "m4-01",
       "slug": "session-m4-01-actions-workflows",
       "module": "4",

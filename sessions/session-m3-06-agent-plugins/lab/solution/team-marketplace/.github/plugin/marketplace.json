@@ -1,0 +1,18 @@
+{
+  "name": "team-tools",
+  "owner": {
+    "name": "Platform Team"
+  },
+  "metadata": {
+    "description": "Plugins for the platform team's release workflow",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "release-kit",
+      "description": "Write release notes in the team format and review changelog entries before they ship.",
+      "version": "1.0.0",
+      "source": "./plugins/release-kit"
+    }
+  ]
+}

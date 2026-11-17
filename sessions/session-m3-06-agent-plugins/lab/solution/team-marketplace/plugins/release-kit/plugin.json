@@ -1,0 +1,10 @@
+{
+  "name": "release-kit",
+  "description": "Write release notes in the team format and review changelog entries before they ship.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT",
+  "keywords": ["release", "changelog"]
+}
