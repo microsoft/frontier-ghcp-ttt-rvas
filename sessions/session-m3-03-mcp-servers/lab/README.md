@@ -141,11 +141,22 @@ Copilot should call `get_weather` and answer from its result. Oslo returns 30 °
 
 ## Part 4: Add a tool and write its description
 
-Add `convert_temperature` to `src/index.js`. It takes `value` (number) and `from` (`celsius` or `fahrenheit`) and returns the converted value, rounded to two decimals. Add one entry to `toolDefinitions` and one branch to `invokeTool`. Bad input returns `isError: true`.
+Ask Copilot to add the tool. Start it in `lab/starter/custom-mcp` and use this prompt:
 
-Add two tests. Run `npm test`.
+```text
+In src/index.js, add a tool named convert_temperature. It takes value (number) and from ("celsius" or "fahrenheit") and returns the converted value, rounded to two decimals. Add one entry to toolDefinitions and one branch to invokeTool. Bad input returns isError: true. Add two tests, then run npm test.
+```
 
-Restart Copilot so it starts the changed server and reloads the tool list. (`/mcp reload` may also work. Check `/help` in your version.) Ask:
+**Read the changes before you accept or commit them.** Run `git diff` and check that you understand each line:
+
+- Does the tool definition have a clear name, description, and input schema?
+- Does the handler convert in the right direction? Check one value by hand.
+- Does bad input (a string, or an unknown `from`) return `isError: true`?
+- Do the tests fail if you break the formula? Change it once and run `npm test`.
+
+If you can't explain a line, ask Copilot about it or rewrite it. Copilot wrote it, but **you own it** once you commit it.
+
+Restart Copilot so it starts the changed server and reloads the tool list. (`/mcp reload` also works) Ask:
 
 ```text
 It's 30 degrees in Oslo. What is that in Fahrenheit? Use the weather server.
@@ -158,7 +169,7 @@ It's 30 degrees in Oslo. What is that in Fahrenheit? Use the weather server.
 
 Compare the two runs. Does Copilot call the tool in both?
 
-**Checkpoint:** Copilot calls `convert_temperature` with the right arguments. You can say how the description changed its behavior.
+**Checkpoint:** You read the diff and can explain each change. Copilot calls `convert_temperature` with the right arguments. You can say how the description changed its behavior.
 
 Compare with [`solution/custom-mcp/`](solution/custom-mcp/) afterward.
 
