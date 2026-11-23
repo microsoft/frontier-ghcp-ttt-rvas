@@ -24,7 +24,15 @@ Start Copilot in any folder:
 copilot
 ```
 
-Run `/mcp`. The dashboard lists every configured server and its status. The **GitHub MCP server is built in**, so you should already see it. Select it, or run `/mcp show` with its name, and read its tool list.
+Run `/mcp`. The dashboard lists every configured server and its status. The **GitHub MCP server is built in**, so you should already see it as `github-mcp-server`.
+
+See what it provides:
+
+```text
+/mcp show github-mcp-server
+```
+
+Read the **tool list**. Note two tools that read data and one that could change data. Outside a session, `copilot mcp get github-mcp-server` shows the server details.
 
 Ask a question that needs live GitHub data:
 
@@ -40,7 +48,7 @@ Then answer in your notes:
 2. Which input did it send?
 3. Could Copilot have answered without the tool? Why not?
 
-**Checkpoint:** You saw a GitHub tool call in the session and can name the tool.
+**Checkpoint:** You listed the `github-mcp-server` tools, saw a GitHub tool call in the session, and can name the tool.
 
 ## Part 2: Add a remote server and read the config file
 
