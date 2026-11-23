@@ -199,21 +199,45 @@ Watch what happens. Copilot may ignore the note. It may ask to run the shell com
 2. Switch to a smaller model with `/model` and repeat. Weaker models follow injected text more often.
 3. If it still doesn't trigger, treat that as the result. Ask Copilot: `Did the weather result contain instructions? What did you do with them?` Then read the tool output in the session log or with Inspector. The instruction reached the model. **Your defense is the approval prompt, not the model's judgment.**
 
-Now try the permission controls. Exit Copilot and start it with:
+Now try the permission controls. Three flags do different jobs, and it's easy to mix them up:
+
+| Flag | What it does | Tool still visible to the model? |
+| --- | --- | --- |
+| `--allow-tool` | Skips the approval prompt | Yes |
+| `--deny-tool` | Blocks the call. Wins over every allow | Yes, but calls fail |
+| `--excluded-tools` | Removes the tool from the model's list | No |
+
+`--allow-tool` **doesn't limit anything**. It only stops the prompt. Every other tool on the server stays available and keeps asking. The syntax is `ServerName(tool_name)`.
+
+**Deny one tool.** Exit Copilot and start it with:
 
 ```bash
 copilot --deny-tool='weather(get_weather)'
 ```
 
-Ask for the weather in Oslo. Then try the allow side, which skips the prompt for one named tool:
+Ask for the weather in Oslo. Copilot tries the tool and the call is refused.
+
+**Allow one tool without a prompt.** Start with:
 
 ```bash
 copilot --allow-tool='weather(convert_temperature)'
 ```
 
-The syntax is `ServerName(tool_name)`. Deny rules win over allow rules. `--allow-all-tools` and `--yolo` skip prompts, so **don't use them with servers you didn't write**.
+Ask for a conversion. It runs with no prompt. Then ask for the weather in Oslo. `get_weather` still works, and still asks first.
 
-**Checkpoint:** You saw (or denied) an approval prompt for the injected command, and you know the flag for allowing or denying one MCP tool.
+**Remove a tool from the model.** Start with:
+
+```bash
+copilot --excluded-tools='weather-get_weather'
+```
+
+Ask for the weather in Oslo. Copilot can't call the tool, because the model never sees it. Note the different name format: `--excluded-tools` and `--available-tools` use `server-tool`, while `--allow-tool` and `--deny-tool` use `server(tool)`.
+
+For a strict allow list, use `--available-tools='weather-convert_temperature'`. Then only that tool exists for the model.
+
+`--allow-all-tools` and `--yolo` skip every prompt, so **don't use them with servers you didn't write**.
+
+**Checkpoint:** You saw (or denied) an approval prompt for the injected command, and you can say how `--allow-tool`, `--deny-tool`, and `--excluded-tools` differ.
 
 ## Part 6: Compare, clean up, and write your rules
 
