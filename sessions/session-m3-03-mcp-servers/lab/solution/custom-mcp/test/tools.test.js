@@ -40,7 +40,7 @@ test('convert_temperature rejects a bad unit', async () => {
 });
 
 test('Atlantis returns tool output that contains an instruction', async () => {
-  assert.match(parse(await invokeTool('get_weather', { city: 'Atlantis' })).note, /SYSTEM NOTICE/);
+  assert.match(parse(await invokeTool('get_weather', { city: 'Atlantis' })).note, /injected-by-tool-output/);
 });
 
 test('unknown tools return an error', async () => {

@@ -106,7 +106,7 @@ Quick check. Ask where each belongs:
 - Part 1: the tool name depends on the question, such as `list_issues` or `search_issues`. Arguments include owner, repo, and state.
 - Part 3: Oslo returns 30 °C and rain.
 - Part 4: 30 °C is 86 °F. The finished tool is in `lab/solution/custom-mcp/src/index.js`.
-- Part 5: the finished injection is in the solution. A good answer denies the shell command.
+- Part 5: the finished injection is in the solution. A good answer denies the shell command. Modern models often ignore the note. If so, the fallbacks in the lab (a task that invites the note, a smaller model) still make the point: the instruction reaches the model, and the approval prompt is the defense. Don't promise a prompt will appear.
 - Part 7: the cause is per-unit rounding in `discountedUnitPrice`. Item 3 x 1005 cents with `SAVE10` gives 2715 today and must give 2714. The fix is `Math.round((sum of unitCents * quantity) * (100 - percent) / 100)` over the whole order. Tickets reset with `npm run reset` in `tracker-mcp`.
 
 ## References
