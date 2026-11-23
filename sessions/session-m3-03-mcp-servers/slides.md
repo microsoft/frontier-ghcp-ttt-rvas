@@ -143,10 +143,11 @@ The **GitHub MCP server is built in**.
 
 # Demo: GitHub server and approvals
 
-1. `/mcp`, then `/mcp show` for the GitHub server.
-2. Ask: *List the open issues labeled `bug` in a public repo.*
-3. Read the approval prompt. Say what each option means.
-4. Restart with `--deny-tool` for one tool. Ask again.
+1. Start with `copilot --add-github-mcp-toolset issues`. The default GitHub tools can't read issues.
+2. `/mcp`, then `/mcp show github-mcp-server`.
+3. Ask: *List the open issues labeled `bug` in a public repo.*
+4. Read the approval prompt. Say what each option means.
+5. Restart with `--deny-tool` for one tool. Ask again.
 
 Watch for: **which tool**, **which arguments**, and **what came back**.
 

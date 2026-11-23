@@ -18,11 +18,13 @@ You need a Copilot subscription, Copilot CLI, Node.js 20 or later, and npm. The 
 
 ## Part 1: Look around with `/mcp` and use the GitHub server
 
-Start Copilot in any folder:
+The built-in GitHub MCP server starts with a **small default set of tools**. It can search code and read files, but it **can't search or read issues**. Add the `issues` toolset when you start Copilot:
 
 ```bash
-copilot
+copilot --add-github-mcp-toolset issues
 ```
+
+Run this in any folder. The flag applies to this session only. To enable every GitHub tool, use `--enable-all-github-mcp-tools` instead, but expect a much longer tool list.
 
 Run `/mcp`. The dashboard lists every configured server and its status. The **GitHub MCP server is built in**, so you should already see it as `github-mcp-server`.
 
@@ -32,7 +34,7 @@ See what it provides:
 /mcp show github-mcp-server
 ```
 
-Read the **tool list**. Note two tools that read data and one that could change data. Outside a session, `copilot mcp get github-mcp-server` shows the server details.
+Read the **tool list**. Find the issue tools the `issues` toolset added. Note two tools that read data and one that could change data. Outside a session, `copilot mcp get github-mcp-server` shows the server details.
 
 Ask a question that needs live GitHub data:
 
