@@ -70,9 +70,17 @@ Start a fresh Copilot session and ask:
 Use the microsoft-learn server to find the current docs on adding MCP servers to Copilot CLI. Give me the page title and URL.
 ```
 
-Now limit the server. Run `/mcp edit microsoft-learn` and change **Tools** from `*` to one tool name from `/mcp show microsoft-learn`. Ask the same question again.
+Now try a harder question. It needs several searches and a judgment call:
 
-**Checkpoint:** Copilot called a Microsoft Learn tool. After the change, only the tool you kept is available.
+```text
+Use the microsoft-learn server. Find what Microsoft Learn says about securing MCP servers and about tool approval in Copilot. Compare the two sources. List 3 risks they both mention and 1 risk only one of them covers. Cite the page URL for every claim, and say which claims you could not find a source for.
+```
+
+Watch the tool calls. Copilot should **search first, fetch the pages it needs, then compare**. Check two things: does every URL exist, and does each claim match its page? Open one page and look.
+
+Now limit the server. Run `/mcp edit microsoft-learn` and change **Tools** from `*` to one tool name from `/mcp show microsoft-learn`. Ask the first question again. Then ask the harder one and note what changes.
+
+**Checkpoint:** Copilot called a Microsoft Learn tool. After the change, only the tool you kept is available. You checked at least one cited URL from the comparison.
 
 > [!NOTE]
 > Project configs also work. Put `.mcp.json` in your repository root, or `.github/mcp.json` to share it with your team. Copilot loads project servers only after you trust the folder. VS Code uses `.vscode/mcp.json` with a `servers` key instead, and the CLI doesn't read that file.
