@@ -106,6 +106,21 @@ npx --yes @modelcontextprotocol/inspector@2.5.0 --cli \
   node src/index.js --method tools/call --tool-name get_weather --tool-arg city=Oslo
 ```
 
+Now open the same server in the **browser UI**. It's easier to explore than the CLI:
+
+```bash
+npx --yes @modelcontextprotocol/inspector@2.5.0 --web node src/index.js
+```
+
+The terminal prints a local URL with a token, such as `http://127.0.0.1:6274?MCP_INSPECTOR_API_TOKEN=...`, and tries to open your browser. If it doesn't, copy the full URL. Then:
+
+1. Connect to the server.
+2. Open the **Tools** tab and select **List Tools**. Read the `get_weather` description and input schema. This is what Copilot sees.
+3. Select `get_weather`, enter `city=Oslo`, and run it. Compare the result with the CLI output.
+4. Run it again with a missing or wrong input. Read the error.
+
+Press Ctrl+C when you finish.
+
 Now connect it to Copilot. Use the **absolute path** to `src/index.js`:
 
 ```bash
