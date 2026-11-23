@@ -313,6 +313,9 @@ Update ticket T-101 to in_review with a comment: what the cause was, what you ch
 
 Copilot asks permission to call `update_ticket`. **Read the arguments** (id, status, comment) before you choose **allow once**. Then ask Copilot to read the ticket back with `get_ticket`.
 
+> [!NOTE]
+> `data/tickets.json` is the **seed file** and never changes. The server writes updates to `tracker-mcp/.state/tickets.json`, which Git ignores. Check that file, or use `get_ticket`. `npm run reset` deletes `.state` and restores the seed. Make sure `copilot mcp add` pointed at the checkout you're working in, or the state lands in another copy.
+
 **Checkpoint:** `npm test` passes in `shop-app`, T-101 shows `in_review` with a comment that names the cause and the test result, and T-102 is unchanged.
 
 Try next, if time allows:
